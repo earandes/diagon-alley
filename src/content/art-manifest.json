@@ -1,0 +1,280 @@
+{
+  "schemaVersion": 1,
+  "version": 1,
+  "date": "2026-10-10",
+  "status": "provisional_used_in_local_demo_not_final_art",
+  "origin": "Codex; composición propia manual SVG/DOM/CSS. Sin imagegen, fuentes externas, logos o semejanzas de actores.",
+  "permission": "Procedencia propia registrada; licencia de redistribución de código/arte no elegida; autorización de franquicia pendiente T01.",
+  "functionalText": "HTML localizado independiente de ilustraciones",
+  "font": "system-ui y serif del sistema; no distribuir archivos de fuentes",
+  "assets": [
+    {
+      "id": "I1-V01",
+      "version": 1,
+      "function": "Callejón y acceso Weasley",
+      "actualPath": "src/ui/Art.tsx",
+      "plannedSource": "SVG propio editable y capas DOM",
+      "dimensions": [390, 430],
+      "layers": ["fondo", "fachadas", "primer plano", "decoración"],
+      "pivots": {
+        "cartel": "centro superior",
+        "farol": "sin giro; opacidad de luz"
+      },
+      "substituteUsed": true,
+      "finalPending": "Ilustración detallada por capas coherente con A12, recorte móvil y superficies tranquilas para HTML",
+      "replacementAcceptance": "Mismos IDs/acciones, sin texto funcional embebido, prueba 320/390 px y arte ausente",
+      "stylePath": "src/ui/styles.css",
+      "editableSource": "src/ui/Art.tsx",
+      "crop": "lienzo completo; SVG escala según ancho de la vista",
+      "alt": {
+        "es": "Decoración provisional; nombre, familia, rareza y acciones en HTML equivalente.",
+        "en": "Placeholder decoration; name, family, rarity and actions in equivalent HTML."
+      },
+      "runtimeAccessibility": "Decoración aria-hidden; información y controles fuera del SVG/DOM decorativo."
+    },
+    {
+      "id": "I1-V02",
+      "version": 1,
+      "function": "Interior Weasley",
+      "actualPath": "src/ui/Art.tsx",
+      "plannedSource": "SVG/DOM propio con madera, estante y mostrador",
+      "dimensions": [390, 310],
+      "layers": ["pared", "estante", "envases", "mostrador"],
+      "pivots": {},
+      "substituteUsed": true,
+      "finalPending": "Interior teatral detallado con mostrador y estante de dulces",
+      "replacementAcceptance": "Consultar rana/álbum con HTML; sin taller ni bromas abribles",
+      "stylePath": "src/ui/styles.css",
+      "editableSource": "src/ui/Art.tsx",
+      "crop": "lienzo completo; SVG escala según ancho de la vista",
+      "alt": {
+        "es": "Decoración provisional; nombre, familia, rareza y acciones en HTML equivalente.",
+        "en": "Placeholder decoration; name, family, rarity and actions in equivalent HTML."
+      },
+      "runtimeAccessibility": "Decoración aria-hidden; información y controles fuera del SVG/DOM decorativo."
+    },
+    {
+      "id": "I1-V03",
+      "version": 1,
+      "function": "Envase y apertura de rana",
+      "actualPath": "src/ui/Art.tsx",
+      "plannedSource": "SVG/DOM propio, CSS transform/opacity",
+      "dimensions": [320, 245],
+      "layers": ["base", "tapa", "interior", "rana", "sombra", "cromo"],
+      "pivots": {
+        "tapa": "borde posterior",
+        "rana": "centro inferior",
+        "cromo": "centro"
+      },
+      "substituteUsed": true,
+      "finalPending": "Partes editables de caja pentagonal y rana de chocolate, lienzo/coordenadas coherentes",
+      "replacementAcceptance": "1,6 s postcommit, una secuencia, skip desde cada fase y equivalente estático",
+      "stylePath": "src/ui/styles.css",
+      "editableSource": "src/ui/Art.tsx",
+      "crop": "lienzo completo; SVG escala según ancho de la vista",
+      "alt": {
+        "es": "Decoración provisional; nombre, familia, rareza y acciones en HTML equivalente.",
+        "en": "Placeholder decoration; name, family, rarity and actions in equivalent HTML."
+      },
+      "runtimeAccessibility": "Decoración aria-hidden; información y controles fuera del SVG/DOM decorativo."
+    },
+    {
+      "id": "I1-V04",
+      "version": 1,
+      "function": "Cromos C01–C04 y O01–O04",
+      "actualPath": "src/ui/Art.tsx",
+      "plannedSource": "Símbolos propios de familia y marco SVG/DOM",
+      "dimensions": [120, 150],
+      "layers": ["marco", "símbolo"],
+      "pivots": {},
+      "substituteUsed": true,
+      "finalPending": "Ocho ilustraciones individuales detalladas con procedencia/permiso documentados",
+      "replacementAcceptance": "Sin actores/logos; nombre, contexto, familia, rareza y copias en HTML",
+      "stylePath": "src/ui/styles.css",
+      "editableSource": "src/ui/Art.tsx",
+      "crop": "lienzo completo; SVG escala según ancho de la vista",
+      "alt": {
+        "es": "Decoración provisional; nombre, familia, rareza y acciones en HTML equivalente.",
+        "en": "Placeholder decoration; name, family, rarity and actions in equivalent HTML."
+      },
+      "runtimeAccessibility": "Decoración aria-hidden; información y controles fuera del SVG/DOM decorativo."
+    },
+    {
+      "id": "I1-V05",
+      "version": 1,
+      "function": "Sabores S01–S04 en álbum",
+      "actualPath": "src/ui/Art.tsx",
+      "plannedSource": "Símbolo de sabor editable compartido",
+      "dimensions": [120, 150],
+      "layers": ["marco", "símbolo"],
+      "pivots": {},
+      "substituteUsed": true,
+      "finalPending": "Ilustraciones modulares de sabores; no habilitan aperturas",
+      "replacementAcceptance": "Nombre y estado conocidos/pendientes legibles sin color o imagen",
+      "stylePath": "src/ui/styles.css",
+      "editableSource": "src/ui/Art.tsx",
+      "crop": "lienzo completo; SVG escala según ancho de la vista",
+      "alt": {
+        "es": "Decoración provisional; nombre, familia, rareza y acciones en HTML equivalente.",
+        "en": "Placeholder decoration; name, family, rarity and actions in equivalent HTML."
+      },
+      "runtimeAccessibility": "Decoración aria-hidden; información y controles fuera del SVG/DOM decorativo."
+    },
+    {
+      "id": "I1-V06",
+      "version": 1,
+      "function": "Tres rarezas",
+      "actualPath": "src/i18n/messages.ts",
+      "plannedSource": "Círculo/rombo/estrella y etiqueta HTML",
+      "dimensions": null,
+      "layers": ["símbolo"],
+      "pivots": {},
+      "substituteUsed": true,
+      "finalPending": "Iconos/marcos finales revisados en contexto es/en",
+      "replacementAcceptance": "Tres IDs A14; etiqueta y forma, sin potencia/foil/shiny",
+      "stylePath": "src/ui/styles.css",
+      "editableSource": "src/i18n/messages.ts",
+      "crop": "lienzo completo; SVG escala según ancho de la vista",
+      "alt": {
+        "es": "Decoración provisional; nombre, familia, rareza y acciones en HTML equivalente.",
+        "en": "Placeholder decoration; name, family, rarity and actions in equivalent HTML."
+      },
+      "runtimeAccessibility": "Decoración aria-hidden; información y controles fuera del SVG/DOM decorativo.",
+      "sizeRule": "Símbolos Unicode inline, font-size 0.75rem; sin dimensiones de bitmap fijas."
+    }
+  ],
+  "identities": [
+    {
+      "assetId": "I1-C01",
+      "identityId": "C01",
+      "version": 1,
+      "actualPath": "src/ui/Art.tsx",
+      "component": "FamilyArt",
+      "family": "person",
+      "status": "shared_provisional_family_symbol_used",
+      "dimensions": [120, 150],
+      "finalPending": "Ilustración individual detallada con procedencia y permiso registrados; preservar identityId."
+    },
+    {
+      "assetId": "I1-C02",
+      "identityId": "C02",
+      "version": 1,
+      "actualPath": "src/ui/Art.tsx",
+      "component": "FamilyArt",
+      "family": "person",
+      "status": "shared_provisional_family_symbol_used",
+      "dimensions": [120, 150],
+      "finalPending": "Ilustración individual detallada con procedencia y permiso registrados; preservar identityId."
+    },
+    {
+      "assetId": "I1-C03",
+      "identityId": "C03",
+      "version": 1,
+      "actualPath": "src/ui/Art.tsx",
+      "component": "FamilyArt",
+      "family": "person",
+      "status": "shared_provisional_family_symbol_used",
+      "dimensions": [120, 150],
+      "finalPending": "Ilustración individual detallada con procedencia y permiso registrados; preservar identityId."
+    },
+    {
+      "assetId": "I1-C04",
+      "identityId": "C04",
+      "version": 1,
+      "actualPath": "src/ui/Art.tsx",
+      "component": "FamilyArt",
+      "family": "person",
+      "status": "shared_provisional_family_symbol_used",
+      "dimensions": [120, 150],
+      "finalPending": "Ilustración individual detallada con procedencia y permiso registrados; preservar identityId."
+    },
+    {
+      "assetId": "I1-O01",
+      "identityId": "O01",
+      "version": 1,
+      "actualPath": "src/ui/Art.tsx",
+      "component": "FamilyArt",
+      "family": "object",
+      "status": "shared_provisional_family_symbol_used",
+      "dimensions": [120, 150],
+      "finalPending": "Ilustración individual detallada con procedencia y permiso registrados; preservar identityId."
+    },
+    {
+      "assetId": "I1-O02",
+      "identityId": "O02",
+      "version": 1,
+      "actualPath": "src/ui/Art.tsx",
+      "component": "FamilyArt",
+      "family": "object",
+      "status": "shared_provisional_family_symbol_used",
+      "dimensions": [120, 150],
+      "finalPending": "Ilustración individual detallada con procedencia y permiso registrados; preservar identityId."
+    },
+    {
+      "assetId": "I1-O03",
+      "identityId": "O03",
+      "version": 1,
+      "actualPath": "src/ui/Art.tsx",
+      "component": "FamilyArt",
+      "family": "object",
+      "status": "shared_provisional_family_symbol_used",
+      "dimensions": [120, 150],
+      "finalPending": "Ilustración individual detallada con procedencia y permiso registrados; preservar identityId."
+    },
+    {
+      "assetId": "I1-O04",
+      "identityId": "O04",
+      "version": 1,
+      "actualPath": "src/ui/Art.tsx",
+      "component": "FamilyArt",
+      "family": "object",
+      "status": "shared_provisional_family_symbol_used",
+      "dimensions": [120, 150],
+      "finalPending": "Ilustración individual detallada con procedencia y permiso registrados; preservar identityId."
+    },
+    {
+      "assetId": "I1-S01",
+      "identityId": "S01",
+      "version": 1,
+      "actualPath": "src/ui/Art.tsx",
+      "component": "FamilyArt",
+      "family": "flavour",
+      "status": "shared_provisional_family_symbol_used",
+      "dimensions": [120, 150],
+      "finalPending": "Ilustración individual detallada con procedencia y permiso registrados; preservar identityId."
+    },
+    {
+      "assetId": "I1-S02",
+      "identityId": "S02",
+      "version": 1,
+      "actualPath": "src/ui/Art.tsx",
+      "component": "FamilyArt",
+      "family": "flavour",
+      "status": "shared_provisional_family_symbol_used",
+      "dimensions": [120, 150],
+      "finalPending": "Ilustración individual detallada con procedencia y permiso registrados; preservar identityId."
+    },
+    {
+      "assetId": "I1-S03",
+      "identityId": "S03",
+      "version": 1,
+      "actualPath": "src/ui/Art.tsx",
+      "component": "FamilyArt",
+      "family": "flavour",
+      "status": "shared_provisional_family_symbol_used",
+      "dimensions": [120, 150],
+      "finalPending": "Ilustración individual detallada con procedencia y permiso registrados; preservar identityId."
+    },
+    {
+      "assetId": "I1-S04",
+      "identityId": "S04",
+      "version": 1,
+      "actualPath": "src/ui/Art.tsx",
+      "component": "FamilyArt",
+      "family": "flavour",
+      "status": "shared_provisional_family_symbol_used",
+      "dimensions": [120, 150],
+      "finalPending": "Ilustración individual detallada con procedencia y permiso registrados; preservar identityId."
+    }
+  ]
+}
