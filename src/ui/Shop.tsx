@@ -6,6 +6,7 @@ export function Shop({
   state,
   language,
   identities,
+  onAlbum,
   onFrog,
   onInspect,
   listOpen,
@@ -16,6 +17,7 @@ export function Shop({
   state: DemoState;
   language: Language;
   identities: Identity[];
+  onAlbum: () => void;
   onFrog: (origin: string) => void;
   onInspect: (id: ShopProductId, origin: string) => void;
 }) {
@@ -71,6 +73,9 @@ export function Shop({
       </div>
       <p className="fine-print centered">{t('consultNoSpend')}</p>
       {!frogAvailable(state) && <p className="fine-print">{t('exhausted')}</p>}
+      <button id="shop-album" className="collection-link" onClick={onAlbum}>
+        <span aria-hidden="true">▤</span> {t('toAlbum')}
+      </button>
       <details
         id="product-list"
         className="product-list"

@@ -88,17 +88,6 @@
 .visual-v2 .shop-row small {
   color: #a8dec3;
 }
-.visual-v2 .bottom-nav {
-  background: #241720;
-  border-color: #97734d;
-}
-.visual-v2 .bottom-nav button {
-  background: transparent;
-}
-.visual-v2 .bottom-nav button[aria-current='page'] {
-  color: #f8d491;
-  background: #4a2c3d;
-}
 .visual-v2 .rarity.R01 {
   color: #c5e8c8;
 }
@@ -625,4 +614,9 @@
 }
 .symbolic-art .family-art {
   color: #edc894 !important;
+}
+
+.collection-link {
+  width: 100%;
+  margin: 18px 0;
 }

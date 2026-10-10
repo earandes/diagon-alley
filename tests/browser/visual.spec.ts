@@ -21,7 +21,13 @@ for (const language of ['es', 'en'] as const) {
     await page.locator('#consult-frog').click();
     await expect(page.locator('.stock')).toContainText('1');
     await expect(page.locator('.odds li')).toHaveCount(6);
-    await page.getByRole('navigation').getByRole('button').nth(2).click();
+    await page
+      .getByRole('button', {
+        name: language === 'es' ? '← Volver a Weasley' : '← Return to Weasley',
+        exact: true,
+      })
+      .click();
+    await page.locator('#shop-album').click();
     await expect(
       page.getByText(language === 'es' ? '4 de 12 descubrimientos' : '4 of 12 discovered', {
         exact: true,

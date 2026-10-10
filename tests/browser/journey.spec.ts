@@ -82,7 +82,7 @@ for (const language of ['es', 'en'] as const) {
   }, info) => {
     await ready(page, language);
     await noOverflow(page);
-    await mkdir('docs/visual-i1-v2/screenshots', { recursive: true });
+    await mkdir('docs/navigation-i1/screenshots', { recursive: true });
     const screenshot = async (name: string) => {
       if (info.project.name !== 'chromium') return;
       await page.evaluate(async () => {
@@ -95,11 +95,11 @@ for (const language of ['es', 'en'] as const) {
       });
       const width = page.viewportSize()!.width;
       await page.screenshot({
-        path: `docs/visual-i1-v2/screenshots/${language}-${name}-${width}.png`,
+        path: `docs/navigation-i1/screenshots/${language}-${name}-${width}.png`,
         fullPage: true,
       });
       await page.screenshot({
-        path: `docs/visual-i1-v2/screenshots/${language}-${name}-${width}-viewport.png`,
+        path: `docs/navigation-i1/screenshots/${language}-${name}-${width}-viewport.png`,
       });
     };
     await screenshot('alley');
@@ -134,10 +134,10 @@ for (const language of ['es', 'en'] as const) {
       .getByRole('button', { name: language === 'es' ? '← Álbum' : '← Album', exact: true })
       .click();
     await expect(page.locator('#identity-S04')).toBeFocused();
-    await page.getByRole('navigation').getByRole('button').first().click();
+    await page.locator('#album-to-alley').click();
     await expect(page.locator('#enter-shop')).toBeFocused();
     await page.reload();
-    await page.getByRole('navigation').getByRole('button').nth(1).click();
+    await page.locator('#enter-shop').click();
     await page.locator('#consult-frog').click();
     await expect(page.getByRole('button', { name: l.use, exact: true })).toBeDisabled();
     await page
@@ -179,7 +179,7 @@ for (const language of ['es', 'en'] as const) {
     await noOverflow(page);
     if (info.project.name === 'chromium')
       await page.screenshot({
-        path: `docs/visual-i1-v2/screenshots/${language}-reduced-result-320-200percent.png`,
+        path: `docs/navigation-i1/screenshots/${language}-reduced-result-320-200percent.png`,
         fullPage: true,
       });
     await page.getByRole('button', { name: l.album, exact: true }).click();
@@ -187,7 +187,7 @@ for (const language of ['es', 'en'] as const) {
     await noOverflow(page);
     if (info.project.name === 'chromium')
       await page.screenshot({
-        path: `docs/visual-i1-v2/screenshots/${language}-reduced-album-320-200percent.png`,
+        path: `docs/navigation-i1/screenshots/${language}-reduced-album-320-200percent.png`,
         fullPage: true,
       });
   });
@@ -266,7 +266,14 @@ for (const delay of [100, 350, 700, 1100, 1450]) {
     await expect(page.getByRole('heading', { name: labels.en.result })).toBeVisible();
     const result = await page.locator('.keepsake-card h2').innerText();
     await page.reload();
-    await page.getByRole('navigation').getByRole('button').nth(1).click();
+    const recoveredResult = page.getByRole('heading', { name: labels.en.result });
+    await expect(recoveredResult.or(page.locator('#enter-shop'))).toBeVisible();
+    // Reload may precede the separate seen receipt; both recovery routes preserve delivery.
+    if (await recoveredResult.isVisible()) {
+      await expect(page.locator('.keepsake-card h2')).toHaveText(result);
+      await page.getByRole('button', { name: labels.en.back, exact: true }).click();
+    }
+    await page.locator('#enter-shop').click();
     await page.locator('#consult-frog').click();
     await page.getByRole('button', { name: 'View saved result' }).click();
     await expect(page.locator('.keepsake-card h2')).toHaveText(result);
@@ -299,7 +306,7 @@ test('AC04/06 timed ritual settles automatically after the committed delivery', 
   await expect(page.getByRole('button', { name: 'Omitir', exact: true })).toBeVisible();
   await page.waitForTimeout(650);
   if (info.project.name === 'chromium')
-    await page.screenshot({ path: 'docs/visual-i1-v2/screenshots/es-ritual-jump-390.png' });
+    await page.screenshot({ path: 'docs/navigation-i1/screenshots/es-ritual-jump-390.png' });
   await expect(page.getByRole('heading', { name: labels.es.result })).toBeVisible();
   await expect(page.locator('.copy-count')).toHaveText('1 copia');
 });

@@ -85,7 +85,7 @@ button.text-button {
   margin: auto;
   min-height: 100vh;
   background: var(--paper);
-  padding-bottom: 100px;
+  padding-bottom: calc(24px + env(safe-area-inset-bottom));
   box-shadow: 0 0 70px #16122066;
 }
 .topbar {
@@ -610,7 +610,7 @@ select {
 .album-grid {
   list-style: none;
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 9rem), 1fr));
   gap: 14px 12px;
   padding: 0;
   margin: 20px 0;
@@ -735,40 +735,6 @@ select {
 .danger {
   color: #863b2b;
   border-color: #a2644a;
-}
-.bottom-nav {
-  position: fixed;
-  z-index: 8;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  max-width: 480px;
-  width: 100%;
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  background: #f5ebda;
-  border-top: 1px solid #b69e83;
-  padding: 6px 8px calc(6px + env(safe-area-inset-bottom));
-}
-.bottom-nav button {
-  border: none;
-  background: transparent;
-  font-size: 0.75rem;
-  line-height: 1.3;
-  font-weight: 600;
-  min-height: 57px;
-  padding: 6px 2px;
-}
-.bottom-nav button > span {
-  display: block;
-  font-size: 1.375rem;
-  margin-bottom: 4px;
-  font-family: Georgia, serif;
-}
-.bottom-nav button[aria-current='page'] {
-  color: #5c2d67;
-  background: #e7dbc5;
-  border-radius: 7px;
 }
 .demo-note {
   text-align: center;
@@ -1030,9 +996,6 @@ dialog p {
 }
 .top-controls {
   margin-left: auto;
-}
-.bottom-nav button {
-  overflow-wrap: anywhere;
 }
 .odds li strong {
   overflow-wrap: anywhere;

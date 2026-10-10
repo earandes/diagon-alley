@@ -74,9 +74,11 @@ export function App() {
   const acceptedSnapshot = useRef<StoredDemo | null>(null);
   const preferredLanguage = useRef(initialLanguage);
   const pendingLanguage = useRef<Language | null>(null);
-  const notificationChannel = useRef<BroadcastChannel | null>(null),
-    nav = useRef<HTMLElement>(null),
-    [navHeight, setNavHeight] = useState(80);
+  const notificationChannel = useRef<BroadcastChannel | null>(null);
+  const albumOrigin = useRef<{ view: View; focus: string }>({
+    view: 'alley',
+    focus: 'alley-album',
+  });
   const busyRef = useRef(false),
     attempt = useRef<{
       key: string;
@@ -216,14 +218,6 @@ export function App() {
       });
     });
   }, [view]);
-  useEffect(() => {
-    if (!nav.current) return;
-    const observer = new ResizeObserver(([entry]) =>
-      setNavHeight(entry.target.getBoundingClientRect().height),
-    );
-    observer.observe(nav.current);
-    return () => observer.disconnect();
-  }, [stored !== null]);
   const operation = stored?.state.operations[0];
   useEffect(() => {
     if (view !== 'result' || !operation || !stored) return;
@@ -405,6 +399,10 @@ export function App() {
       setBusy(false);
     }
   }
+  function openAlbum(origin: string) {
+    albumOrigin.current = { view, focus: origin };
+    go('album');
+  }
   const state = stored?.state;
   const displayIdentities =
     stored?.active.catalog.identities.map(
@@ -414,7 +412,6 @@ export function App() {
   const ambientActive = visible && sceneVisible && !reduced && !!state?.ambient;
   return (
     <div
-      style={{ paddingBottom: navHeight + 32 }}
       className={
         'app visual-v2 view-' +
         view +
@@ -522,6 +519,13 @@ export function App() {
                     {state.ambient ? t('pauseAmbient') : t('resumeAmbient')}
                   </button>
                 </div>
+                <button
+                  id="alley-album"
+                  className="collection-link"
+                  onClick={() => openAlbum('alley-album')}
+                >
+                  <span aria-hidden="true">▤</span> {t('toAlbum')}
+                </button>
                 <section className="shop-list">
                   <h2>{t('list')}</h2>
                   <p>{t('listIntro')}</p>
@@ -556,6 +560,7 @@ export function App() {
                   <p>{t('shopChoose')}</p>
                 </div>
                 <Shop
+                  onAlbum={() => openAlbum('shop-album')}
                   listOpen={productListOpen}
                   onListToggle={setProductListOpen}
                   state={state}
@@ -698,7 +703,11 @@ export function App() {
                     language={language}
                   />
                 </div>
-                <button className="primary" onClick={() => go('album')}>
+                <button
+                  id="result-album"
+                  className="primary"
+                  onClick={() => openAlbum('result-album')}
+                >
                   {t('toAlbum')} <span aria-hidden="true">→</span>
                 </button>
                 <button className="text-button" onClick={() => go('alley', alleyOrigin.current)}>
@@ -708,6 +717,13 @@ export function App() {
             )}
             {
               <div hidden={view !== 'album'}>
+                <button
+                  id="album-back"
+                  className="text-button back"
+                  onClick={() => go(albumOrigin.current.view, albumOrigin.current.focus)}
+                >
+                  ← {t('back')}
+                </button>
                 <Album
                   active={view === 'album'}
                   state={state}
@@ -718,6 +734,13 @@ export function App() {
                     go('card');
                   }}
                 />
+                <button
+                  id="album-to-alley"
+                  className="text-button back"
+                  onClick={() => go('alley', alleyOrigin.current)}
+                >
+                  {t('backAlley')}
+                </button>
               </div>
             }
             {view === 'card' && card && (
@@ -806,37 +829,6 @@ export function App() {
           </>
         )}
       </main>
-      {stored && (
-        <nav
-          ref={nav}
-          className="bottom-nav"
-          aria-label={language === 'es' ? 'Navegación principal' : 'Main navigation'}
-        >
-          <button
-            disabled={busy || view === 'reveal'}
-            aria-current={view === 'alley' ? 'page' : undefined}
-            onClick={() => go('alley', alleyOrigin.current)}
-          >
-            <span aria-hidden="true">⌂</span>
-            {t('alley')}
-          </button>
-          <button
-            disabled={busy || view === 'reveal'}
-            aria-current={view === 'shop' ? 'page' : undefined}
-            onClick={() => go('shop')}
-          >
-            <span aria-hidden="true">✦</span>Weasley
-          </button>
-          <button
-            disabled={busy || view === 'reveal'}
-            aria-current={view === 'album' ? 'page' : undefined}
-            onClick={() => go('album')}
-          >
-            <span aria-hidden="true">▤</span>
-            {t('album')}
-          </button>
-        </nav>
-      )}
       <footer className="demo-note">{t('demo')}</footer>
       <dialog
         ref={dialog}

@@ -13,7 +13,7 @@ npm run dev -- --port 5187
 
 Abrir <http://127.0.0.1:5187/>. El puerto explícito evita interferir con otros proyectos locales. Guardado asociado al origen/perfil del navegador; cambiar puerto, localhost por 127.0.0.1 o perfil cambia el almacenamiento. Para mover una partida, exportar/importar JSON desde Ajustes.
 
-Empieza con O01/O02/S01/S02 conocidos (4/12), una rana y una unidad de grageas guardada pero no abrible en I1. La rana garantiza identidad nueva entre seis candidatos; se guardan consumo/copia/operación antes del ritual omitible de 1,6 s. Recargar no concede otro regalo. Con stock cero el álbum sigue accesible. Exportación/restauración validada y reset confirmado crean/sustituyen una demo local sin valor económico.
+Empieza con O01/O02/S01/S02 conocidos (4/12), una rana y una unidad de grageas guardada pero no abrible en I1. La rana garantiza identidad nueva entre seis candidatos; se guardan consumo/copia/operación antes del ritual omitible de 1,6 s. Recargar no concede otro regalo. Sin menú inferior fijo: accesos al álbum desde callejón, Weasley y resultado, con retorno al origen y foco. Ajustes permanecen en la cabecera. Con stock cero el álbum sigue accesible. Exportación/restauración validada y reset confirmado crean/sustituyen una demo local sin valor económico.
 
 ## Verificar
 
@@ -40,6 +40,7 @@ node tools/verification/measure-contrast.mjs
 - [PRD v0.19](docs/PRD.md), [decisiones A23–A25](docs/DECISIONS.md), [Word histórico v0.5 intacto](docs/PRD_Coleccion_Magica.docx) e [instrucciones](AGENTS.md).
 - [Evidencia y matriz I1-AC01–12](docs/i1-evidence/REPORT.md): implementado/probado y cobertura pendiente separados.
 - [Capturas revisadas es/en](docs/i1-evidence/GALLERY.md).
+- [Navegación sin menú inferior A27: pruebas y capturas actualizadas](docs/navigation-i1/REPORT.md).
 - [Configuración, invariantes, versiones y dependencias](docs/i1-evidence/CONFIGURATION.md).
 - [Manifest de arte provisional utilizado](src/content/art-manifest.json).
 
