@@ -1,6 +1,6 @@
 # Colección Mágica · Callejón Diagón
 
-Maqueta móvil jugable local: **Callejón → Weasley → consultar una rana → abrirla → resultado → álbum → Callejón**. Español e inglés, guardado IndexedDB recuperable, bienvenida nueva A13/A18 y arte provisional propio identificado. Sin cuentas, backend, pagos o publicación.
+Maqueta móvil jugable local: **Callejón → Weasley → consultar una rana → abrirla → resultado → álbum → Callejón**. Español e inglés, guardado IndexedDB recuperable, bienvenida nueva A13/A18 y arte provisional identificado adaptado a los conceptos de Weasley. Sin cuentas, backend, pagos o publicación.
 
 ## Ejecutar
 
@@ -43,8 +43,8 @@ node tools/verification/measure-contrast.mjs
 - [Configuración, invariantes, versiones y dependencias](docs/i1-evidence/CONFIGURATION.md).
 - [Manifest de arte provisional utilizado](src/content/art-manifest.json).
 
-Dominio puro en `src/domain`; adaptador transaccional en `src/infrastructure`; datos e idiomas independientes en `src/content`/`src/i18n`; presentación SVG/DOM/CSS en `src/ui`. Sin arquitectura de expansiones o dependencias de IA/servicios externos.
+Dominio puro en `src/domain`; adaptador transaccional en `src/infrastructure`; datos e idiomas independientes en `src/content`/`src/i18n`; presentación raster encuadrado/SVG/DOM/CSS en `src/ui`. Sin arquitectura de expansiones o dependencias de IA/servicios externos.
 
 El recorrido está implementado y comprobado en Chromium/WebKit emulados. **Quedan pendientes lector audible, móvil físico, Firefox, arte final y sesiones A17**: no se declara cierre total de I1, certificación WCAG o validación del atractivo/balance. Autenticación e historial por cuenta A19 y dirección ambiental ampliada A20 se conservan para el producto posterior. La confirmación actual delimita primero este ensayo local.
 
-Los conceptos y estudios visuales anteriores permanecen conservados en el checkout, independientes de esta aplicación; no son assets finales integrados. La procedencia de dibujos/tooling no acredita autorización Harry Potter. T01 sigue pendiente antes de la distribución correspondiente. No hay despliegue ni monetización.
+La adaptación visual A26 integra los conceptos de interior/rana/revelación mediante encuadres de raster y controles HTML. [Evidencia visual v2](docs/visual-i1-v2/REPORT.md). La caja tiene piezas DOM con máscaras; no un rig. C01/O01/O02 usan ilustraciones aportadas; otros cromos usan grabados SVG provisionales. No son assets finales. Otros estudios anteriores permanecen independientes. La procedencia de dibujos/tooling no acredita autorización Harry Potter. T01 sigue pendiente antes de la distribución correspondiente. No hay despliegue ni monetización.

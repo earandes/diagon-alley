@@ -1,5 +1,19 @@
 import type { ErrorCode, Family, Language, RarityId } from '../domain/model';
 const es = {
+  shopChoose: 'Elige qué quieres descubrir',
+  oneAvailable: '1 disponible',
+  frogGone: 'Rana agotada',
+  openingUnavailable: 'Apertura no disponible',
+  consultBeans: 'Consultar grageas',
+  consultInvention: 'Ver invento',
+  inCollection: 'En tu colección',
+  consultNoSpend: 'Consultar no consume unidades.',
+  productsList: 'Ver productos en lista',
+  beansDetail:
+    'Conservas una unidad de grageas. Su apertura está pendiente y no está disponible en I1.',
+  inventionDetail:
+    'Este invento es un regalo conocido de tu colección. Puedes consultar su ficha; el taller todavía no está disponible.',
+  useInfo: 'La apertura consume una rana.',
   brand: 'Colección Mágica',
   eyebrow: 'UNA VISITA, UNA SORPRESA',
   alley: 'Callejón Diagón',
@@ -95,6 +109,19 @@ const es = {
   importing: 'Comprobando copia JSON…',
 };
 const en: typeof es = {
+  shopChoose: 'Choose what you would like to discover',
+  oneAvailable: '1 available',
+  frogGone: 'Frog used',
+  openingUnavailable: 'Opening unavailable',
+  consultBeans: 'Inspect the beans',
+  consultInvention: 'View invention',
+  inCollection: 'In your collection',
+  consultNoSpend: 'Inspecting does not use any units.',
+  productsList: 'View products as a list',
+  beansDetail: 'You have one saved unit of beans. Opening is pending and unavailable in I1.',
+  inventionDetail:
+    'This invention is a known gift in your collection. You can view its details; the workshop is not available yet.',
+  useInfo: 'Opening uses one frog.',
   brand: 'Magical Collection',
   eyebrow: 'ONE VISIT, ONE SURPRISE',
   alley: 'Diagon Alley',

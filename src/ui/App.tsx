@@ -24,10 +24,26 @@ import {
   progressText,
   translate,
 } from '../i18n/messages';
-import { AlleyArt, FrogBox, InteriorArt } from './Art';
+import {
+  IllustratedAlley,
+  IllustratedFrogBox,
+  ProductArtwork,
+  ShopBackdrop,
+  type ShopProductId,
+} from './VisualArt';
+import { Shop } from './Shop';
 import { Album } from './Album';
 import { IdentityDetails, Rarity } from './IdentityDetails';
-type View = 'alley' | 'shop' | 'detail' | 'reveal' | 'result' | 'album' | 'card' | 'settings';
+type View =
+  | 'alley'
+  | 'shop'
+  | 'product'
+  | 'detail'
+  | 'reveal'
+  | 'result'
+  | 'album'
+  | 'card'
+  | 'settings';
 const store = new DemoStore();
 const initialLanguage: Language = navigator.language.toLowerCase().startsWith('es') ? 'es' : 'en';
 const configInput = { catalog, table, assetVersion: 1 };
@@ -51,8 +67,13 @@ export function App() {
     data: ExportedDemo | null;
     token: Token;
   } | null>(null);
+  const [productListOpen, setProductListOpen] = useState(false);
+  const [product, setProduct] = useState<ShopProductId>('beans');
+  const [productOriginId, setProductOriginId] = useState('consult-beans');
   const [announcement, setAnnouncement] = useState('');
+  const acceptedSnapshot = useRef<StoredDemo | null>(null);
   const preferredLanguage = useRef(initialLanguage);
+  const pendingLanguage = useRef<Language | null>(null);
   const notificationChannel = useRef<BroadcastChannel | null>(null),
     nav = useRef<HTMLElement>(null),
     [navHeight, setNavHeight] = useState(80);
@@ -76,6 +97,15 @@ export function App() {
   const t = (key: Parameters<typeof translate>[1]) => translate(language, key);
   const reduced = systemReduced || !!stored?.state.reducedMotion;
   const accept = useCallback((s: StoredDemo) => {
+    const current = acceptedSnapshot.current;
+    // A slow focus/read response must not roll back a more recent commit.
+    if (
+      current &&
+      (s.generation < current.generation ||
+        (s.generation === current.generation && s.state.revision < current.state.revision))
+    )
+      return;
+    acceptedSnapshot.current = s;
     setStored(s);
     preferredLanguage.current = s.state.language;
     setLanguage(s.state.language);
@@ -106,6 +136,11 @@ export function App() {
           }
           setError(errorCode(e));
         }
+        // A choice made while start() awaited storage wins over the initial browser hint.
+        while (pendingLanguage.current && pendingLanguage.current !== s.state.language) {
+          s = await store.preferences({ language: pendingLanguage.current }, tokenOf(s));
+        }
+        pendingLanguage.current = null;
         accept(s);
         if (s.state.operations.length && s.state.seenOperationId !== s.state.operations[0].id) {
           setView('result');
@@ -380,8 +415,19 @@ export function App() {
   return (
     <div
       style={{ paddingBottom: navHeight + 32 }}
-      className={'app ' + (reduced ? 'reduced ' : '') + (!ambientActive ? 'ambient-paused' : '')}
+      className={
+        'app visual-v2 view-' +
+        view +
+        ' ' +
+        (reduced ? 'reduced ' : '') +
+        (!ambientActive ? 'ambient-paused' : '')
+      }
     >
+      {['shop', 'detail', 'product', 'reveal', 'result'].includes(view) && (
+        <div className="room-underlay">
+          <ShopBackdrop />
+        </div>
+      )}
       <header className="topbar">
         <span className="brand">
           <span aria-hidden="true">✦</span> {t('brand')}
@@ -397,6 +443,7 @@ export function App() {
               const choice = e.target.value as Language;
               if (stored) void preferences({ language: choice });
               else {
+                pendingLanguage.current = choice;
                 preferredLanguage.current = choice;
                 setLanguage(choice);
               }
@@ -451,7 +498,7 @@ export function App() {
                   <p>{t('alleyIntro')}</p>
                 </div>
                 <figure className="alley-scene" ref={scene}>
-                  <AlleyArt />
+                  <IllustratedAlley />
                   <span className="facade-name" aria-hidden="true">
                     Weasley
                   </span>
@@ -506,37 +553,57 @@ export function App() {
                 <div className="page-heading">
                   <p className="eyebrow">{t('available')}</p>
                   <h1 tabIndex={-1}>Weasley</h1>
-                  <p>{t('shopIntro')}</p>
+                  <p>{t('shopChoose')}</p>
                 </div>
-                <figure className="interior-scene" ref={scene}>
-                  <InteriorArt />
-                  <button
-                    className="shelf-button"
-                    id="shelf-frog"
-                    onClick={() => void inspect('shelf-frog')}
-                    aria-label={t('consult')}
-                  >
-                    <span aria-hidden="true">✦</span>
-                  </button>
-                </figure>
-                <p className="art-caption">{t('placeholder')}</p>
-                <section className="product-note">
-                  <p className="eyebrow">{t('welcome')}</p>
-                  <h2>{t('frog')}</h2>
-                  <p>{t('frogIntro')}</p>
-                  <p className="stock">
-                    {t('stock')}: {frogAvailable(state) ? '1' : '0'}
-                  </p>
-                  <button id="consult-frog" className="primary" onClick={() => void inspect()}>
-                    {t('consult')} <span aria-hidden="true">→</span>
-                  </button>
-                  {!frogAvailable(state) && <p>{t('exhausted')}</p>}
-                </section>
-                <section className="reserved">
-                  <h2>{t('beans')}</h2>
-                  <p>{t('beansPending')}</p>
-                </section>
+                <Shop
+                  listOpen={productListOpen}
+                  onListToggle={setProductListOpen}
+                  state={state}
+                  language={language}
+                  identities={displayIdentities}
+                  onFrog={(origin) => void inspect(origin)}
+                  onInspect={(id, origin) => {
+                    setProduct(id);
+                    setProductOriginId(origin);
+                    go('product');
+                  }}
+                />
               </>
+            )}
+            {view === 'product' && (
+              <section className="product-detail">
+                <button
+                  id="product-back"
+                  className="text-button back"
+                  onClick={() => go('shop', productOriginId)}
+                >
+                  ← {t('backShop')}
+                </button>
+                <h1 tabIndex={-1}>
+                  {product === 'beans'
+                    ? t('beans')
+                    : displayIdentities.find((i) => i.id === product)!.name[language]}
+                </h1>
+                {product === 'beans' ? (
+                  <>
+                    <ProductArtwork id="beans" />
+                    <p className="art-caption">{t('placeholder')}</p>
+                    <p className="guarantee">{t('beansDetail')}</p>
+                  </>
+                ) : (
+                  <>
+                    <div className="keepsake-card">
+                      <IdentityDetails
+                        identity={displayIdentities.find((i) => i.id === product)!}
+                        state={state}
+                        language={language}
+                      />
+                    </div>
+                    <p className="guarantee">{t('inventionDetail')}</p>
+                  </>
+                )}
+                <p className="fine-print">{t('consultNoSpend')}</p>
+              </section>
             )}
             {view === 'detail' && (
               <>
@@ -551,7 +618,7 @@ export function App() {
                   <p className="eyebrow">{t('welcome')}</p>
                   <h1 tabIndex={-1}>{t('frog')}</h1>
                 </div>
-                <FrogBox />
+                <IllustratedFrogBox />
                 <p className="art-caption">{t('placeholder')}</p>
                 <p className="guarantee">{t('newGuarantee')}</p>
                 <p className="stock">
@@ -564,6 +631,7 @@ export function App() {
                 >
                   {busy ? t('saving') : t('use')}
                 </button>
+                <p className="fine-print centered">{t('useInfo')}</p>
                 {busy && <p role="status">{t('waiting')}</p>}
                 {!frogAvailable(state) && (
                   <>
@@ -610,7 +678,7 @@ export function App() {
               <section className="opening-view">
                 <p className="eyebrow">{t('welcome')}</p>
                 <h1 tabIndex={-1}>{t('opening')}</h1>
-                <FrogBox animate />
+                <IllustratedFrogBox animate identity={operation.identity} />
                 <p className="art-caption">{t('placeholder')}</p>
                 <button className="primary" onClick={() => go('result')}>
                   {t('skip')}
@@ -622,7 +690,8 @@ export function App() {
               <section className="result-view">
                 <p className="eyebrow">{operation.isNew ? t('new') : t('repeated')}</p>
                 <h1 tabIndex={-1}>{t('result')}</h1>
-                <div className="keepsake-card">
+                <div className="keepsake-card result-keepsake">
+                  <IllustratedFrogBox settled identity={operation.identity} />
                   <IdentityDetails
                     identity={operation.identity}
                     state={state}
@@ -640,6 +709,7 @@ export function App() {
             {
               <div hidden={view !== 'album'}>
                 <Album
+                  active={view === 'album'}
                   state={state}
                   language={language}
                   identities={displayIdentities}
@@ -661,7 +731,7 @@ export function App() {
                 <h1 className="sr-only" tabIndex={-1}>
                   {t('details')}
                 </h1>
-                <div className="keepsake-card">
+                <div className="keepsake-card result-keepsake">
                   <IdentityDetails identity={card} state={state} language={language} />
                   {!copyCount(state, card.id) && <p>{t('pending')}</p>}
                 </div>

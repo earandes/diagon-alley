@@ -1,0 +1,62 @@
+
+> coleccion-magica-i1@0.1.0 typecheck
+> tsc --noEmit
+
+
+> coleccion-magica-i1@0.1.0 validate:content
+> vitest run tests/domain/content.test.ts
+
+
+ RUN  v5.0.3 /Users/enricarandes/work/diagon-alley
+
+
+ Test Files  1 passed (1)
+      Tests  10 passed (10)
+   Start at  04:30:06
+   Duration  99ms (transform 63%, import 20%, tests 11%, worker 5%)
+
+
+> coleccion-magica-i1@0.1.0 test
+> vitest run
+
+
+ RUN  v5.0.3 /Users/enricarandes/work/diagon-alley
+
+
+ Test Files  3 passed (3)
+      Tests  23 passed (23)
+   Start at  04:30:06
+   Duration  109ms (transform 61%, tests 18%, import 16%, worker 4%)
+
+
+> coleccion-magica-i1@0.1.0 build
+> tsc --noEmit && vite build
+
+vite v8.3.4 building client environment for production...
+transforming...
+✓ 31 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                   0.42 kB │ gzip:  0.31 kB
+dist/assets/index-B7OLYQG7.css   24.18 kB │ gzip:  6.66 kB
+dist/assets/index-BNwg_mYZ.js   277.35 kB │ gzip: 86.12 kB
+
+✓ built in 78ms
+
+> coleccion-magica-i1@0.1.0 typecheck
+> tsc --noEmit
+
+
+> coleccion-magica-i1@0.1.0 build
+> tsc --noEmit && vite build
+
+vite v8.3.4 building client environment for production...
+transforming...
+✓ 31 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                   0.42 kB │ gzip:  0.31 kB
+dist/assets/index-B7OLYQG7.css   24.18 kB │ gzip:  6.66 kB
+dist/assets/index-BeBnVYcZ.js   277.35 kB │ gzip: 86.12 kB
+
+✓ built in 78ms

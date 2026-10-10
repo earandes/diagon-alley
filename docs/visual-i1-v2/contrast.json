@@ -1,0 +1,60 @@
+{
+  "date": "2026-10-10T02:28:51.407Z",
+  "method": "WCAG relative luminance formula applied to explicit solid CSS text/surface pairs; not a whole-page accessibility audit",
+  "pairs": [
+    {
+      "label": "Texto principal, superficie más clara",
+      "text": "#f6e8cb",
+      "background": "#482539",
+      "ratio": 10.83
+    },
+    {
+      "label": "Texto secundario",
+      "text": "#d2bfae",
+      "background": "#482539",
+      "ratio": 7.38
+    },
+    {
+      "label": "Botón principal, extremo más oscuro",
+      "text": "#24130d",
+      "background": "#d59c54",
+      "ratio": 7.42
+    },
+    {
+      "label": "Arte provisional",
+      "text": "#d2bfae",
+      "background": "#482539",
+      "ratio": 7.38
+    },
+    {
+      "label": "Rareza habitual",
+      "text": "#c5e8c8",
+      "background": "#372331",
+      "ratio": 10.88
+    },
+    {
+      "label": "Rareza singular",
+      "text": "#afe1e7",
+      "background": "#372331",
+      "ratio": 10.19
+    },
+    {
+      "label": "Rareza extraordinaria",
+      "text": "#ffd396",
+      "background": "#372331",
+      "ratio": 10.37
+    },
+    {
+      "label": "Etiqueta de sección",
+      "text": "#f0c680",
+      "background": "#482539",
+      "ratio": 8.19
+    },
+    {
+      "label": "Foco visible",
+      "text": "#99e3d7",
+      "background": "#482539",
+      "ratio": 8.96
+    }
+  ]
+}

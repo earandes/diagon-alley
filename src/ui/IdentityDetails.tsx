@@ -1,6 +1,6 @@
 import { copyCount, type Identity, type DemoState, type Language } from '../domain/model';
 import { copiesText, familyName, rarityName, raritySymbol, translate } from '../i18n/messages';
-import { FamilyArt } from './Art';
+import { IdentityArtwork } from './VisualArt';
 export function Rarity({ identity, language }: { identity: Identity; language: Language }) {
   return (
     <span className={'rarity ' + identity.rarityId}>
@@ -21,7 +21,7 @@ export function IdentityDetails({
   return (
     <>
       <div className="keepsake-art">
-        <FamilyArt family={identity.family} />
+        <IdentityArtwork identity={identity} />
       </div>
       <p className="art-caption">{translate(language, 'placeholder')}</p>
       <h2>{identity.name[language]}</h2>

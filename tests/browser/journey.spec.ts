@@ -82,7 +82,7 @@ for (const language of ['es', 'en'] as const) {
   }, info) => {
     await ready(page, language);
     await noOverflow(page);
-    await mkdir('docs/i1-evidence/screenshots', { recursive: true });
+    await mkdir('docs/visual-i1-v2/screenshots', { recursive: true });
     const screenshot = async (name: string) => {
       if (info.project.name !== 'chromium') return;
       await page.evaluate(async () => {
@@ -95,11 +95,11 @@ for (const language of ['es', 'en'] as const) {
       });
       const width = page.viewportSize()!.width;
       await page.screenshot({
-        path: `docs/i1-evidence/screenshots/${language}-${name}-${width}.png`,
+        path: `docs/visual-i1-v2/screenshots/${language}-${name}-${width}.png`,
         fullPage: true,
       });
       await page.screenshot({
-        path: `docs/i1-evidence/screenshots/${language}-${name}-${width}-viewport.png`,
+        path: `docs/visual-i1-v2/screenshots/${language}-${name}-${width}-viewport.png`,
       });
     };
     await screenshot('alley');
@@ -179,7 +179,7 @@ for (const language of ['es', 'en'] as const) {
     await noOverflow(page);
     if (info.project.name === 'chromium')
       await page.screenshot({
-        path: `docs/i1-evidence/screenshots/${language}-reduced-result-320-200percent.png`,
+        path: `docs/visual-i1-v2/screenshots/${language}-reduced-result-320-200percent.png`,
         fullPage: true,
       });
     await page.getByRole('button', { name: l.album, exact: true }).click();
@@ -187,7 +187,7 @@ for (const language of ['es', 'en'] as const) {
     await noOverflow(page);
     if (info.project.name === 'chromium')
       await page.screenshot({
-        path: `docs/i1-evidence/screenshots/${language}-reduced-album-320-200percent.png`,
+        path: `docs/visual-i1-v2/screenshots/${language}-reduced-album-320-200percent.png`,
         fullPage: true,
       });
   });
@@ -256,8 +256,9 @@ for (const delay of [100, 350, 700, 1100, 1450]) {
   }) => {
     await ready(page, 'en');
     await inspect(page, labels.en);
-    await page.clock.install();
-    await page.clock.pauseAt(new Date());
+    const clockStart = new Date();
+    await page.clock.install({ time: clockStart });
+    await page.clock.pauseAt(new Date(clockStart.getTime() + 60000));
     await page.getByRole('button', { name: labels.en.use, exact: true }).click();
     await expect(page.getByRole('button', { name: 'Skip', exact: true })).toBeVisible();
     await page.clock.runFor(delay);
@@ -298,7 +299,7 @@ test('AC04/06 timed ritual settles automatically after the committed delivery', 
   await expect(page.getByRole('button', { name: 'Omitir', exact: true })).toBeVisible();
   await page.waitForTimeout(650);
   if (info.project.name === 'chromium')
-    await page.screenshot({ path: 'docs/i1-evidence/screenshots/es-ritual-jump-390.png' });
+    await page.screenshot({ path: 'docs/visual-i1-v2/screenshots/es-ritual-jump-390.png' });
   await expect(page.getByRole('heading', { name: labels.es.result })).toBeVisible();
   await expect(page.locator('.copy-count')).toHaveText('1 copia');
 });

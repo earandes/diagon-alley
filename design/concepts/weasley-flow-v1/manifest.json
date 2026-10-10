@@ -1,0 +1,83 @@
+{
+  "date": "2026-10-10",
+  "version": 1,
+  "status": "provisional-raster-ui-concepts",
+  "author": "AI generated under Codex direction",
+  "tool": "imagegen integrated",
+  "model": "not exposed",
+  "productReferences": [
+    "PRD v0.19",
+    "A11/A12",
+    "A13/A14/A15/A16/A18"
+  ],
+  "visualContinuityReference": "design/concepts/welcome-mobile-v1/welcome-mobile-es.png",
+  "editableSource": "exact prompts and copy.json; no layered art",
+  "permission": "not established for distribution; private design concepts",
+  "transformations": [
+    "copied original PNGs into workspace; no image editing after generation"
+  ],
+  "crop": "whole frame",
+  "pivot": null,
+  "width": 853,
+  "height": 1844,
+  "format": "PNG raster",
+  "renderedLanguages": [
+    "es"
+  ],
+  "copyLanguages": [
+    "es",
+    "en"
+  ],
+  "realAnimation": false,
+  "functionalUI": false,
+  "scriptedReward": {
+    "identity": "C01",
+    "name": "Albus Dumbledore",
+    "rarity": "R01",
+    "copies": 1,
+    "status": "scripted sample, not a random draw"
+  },
+  "assets": [
+    {
+      "id": "WEASLEY-FLOW-V1-01",
+      "path": "01-weasley-interior-es.png",
+      "prompt": "01-prompt.txt",
+      "sha256": "a7a685349dfc43c02989dd2df2dfb173c227f632f9d46cb882786364a799583c",
+      "inputImages": [],
+      "alt": {
+        "es": "Interior ilustrado de Weasley con opciones de rana de chocolate, grageas, orejas extensibles y varita de broma.",
+        "en": "Illustrated Weasley interior with Chocolate Frog, beans, Extendable Ears and Trick Wand options."
+      }
+    },
+    {
+      "id": "WEASLEY-FLOW-V1-02",
+      "path": "02-chocolate-frog-closed-es.png",
+      "prompt": "02-prompt.txt",
+      "sha256": "40ae77be056a2578fc646a9a2d6f50b8ea3b284059ada3703344185333572350",
+      "inputImages": [
+        "01-weasley-interior-es.png"
+      ],
+      "alt": {
+        "es": "Caja pentagonal cerrada de rana de chocolate, ciruela y dorada, centrada sobre un cojín, con confirmación de usar una rana.",
+        "en": "Closed purple and gold pentagonal Chocolate Frog box centered on a cushion, with confirmation to use one frog."
+      }
+    },
+    {
+      "id": "WEASLEY-FLOW-V1-03",
+      "path": "03-wizard-card-revealed-es.png",
+      "prompt": "03-prompt.txt",
+      "sha256": "ac42ce8ce098d2ff9dfec08d6359d2a205e7b1368d1d474c4f3a3d71acdfd348",
+      "inputImages": [
+        "02-chocolate-frog-closed-es.png"
+      ],
+      "generationAttempts": 2,
+      "initialFailure": "output moderation other; exact same permitted fantasy prompt retried successfully",
+      "alt": {
+        "es": "Caja abierta y rana de chocolate junto a un cromo ilustrado de Albus Dumbledore; resultado de muestra, Persona y Habitual.",
+        "en": "Open box and Chocolate Frog beside an illustrated Albus Dumbledore card; sample result, Person and Common."
+      }
+    }
+  ],
+  "finalRequired": "independent illustrated scene and subject layers, text-free assets and accessible localized UI",
+  "replacementCriterion": "retain product identities, closed/open box continuity, transactional confirmation semantics and bilingual keys; validate final assets in actual screens"
+}

@@ -1,0 +1,628 @@
+/* Presentation v2: framed existing raster + editable DOM. No reward rules here. */
+:root {
+  --paper: #24131e;
+  --ink: #f6e8cb;
+  --muted: #d2bfae;
+  --line: #775239;
+  --plum: #dba55d;
+}
+.visual-v2 {
+  color: var(--ink);
+  background: radial-gradient(ellipse at 50% 25%, #482539 0, #24131e 65%);
+}
+.visual-v2 button {
+  color: var(--ink);
+  background: #2a1822;
+  border-color: #bd905a;
+  border-radius: 24px;
+}
+.visual-v2 button:hover {
+  background: #4b2a36;
+}
+.visual-v2 button.primary {
+  color: #24130d;
+  background: linear-gradient(135deg, #f3ce88, #d59c54);
+  border: 1px solid #ffe2a2;
+  box-shadow: 0 3px 0 #78512d;
+}
+.visual-v2 button.primary:hover {
+  background: #f5d59b;
+}
+.visual-v2 button.text-button {
+  color: #f1d4a6;
+  background: transparent;
+}
+.visual-v2 button:focus-visible,
+.visual-v2 select:focus-visible,
+.visual-v2 input:focus-visible,
+.visual-v2 textarea:focus-visible,
+.visual-v2 summary:focus-visible {
+  outline: 3px solid #99e3d7;
+  outline-offset: 3px;
+}
+.visual-v2 .topbar {
+  background: #22151f;
+  border-color: #775239;
+}
+.visual-v2 .brand > span,
+.visual-v2 .eyebrow {
+  color: #f0c680;
+}
+.visual-v2 .storage-note,
+.visual-v2 .fine-print,
+.visual-v2 .version-note,
+.visual-v2 .art-caption,
+.visual-v2 .demo-note,
+.visual-v2 .origin,
+.visual-v2 .page-heading > p:not(.eyebrow) {
+  color: #d2bfae;
+}
+.visual-v2 .storage-note > span,
+.visual-v2 .stock,
+.visual-v2 .gift-note {
+  color: #a8dec3;
+}
+.visual-v2 select,
+.visual-v2 textarea {
+  color: var(--ink);
+  background: #2b1b29;
+  border-color: #987653;
+}
+.visual-v2 .top-controls select {
+  background: #2b1b29;
+}
+.visual-v2 .page-heading {
+  text-align: center;
+}
+.visual-v2 .page-heading > p:not(.eyebrow) {
+  margin-inline: auto;
+}
+.visual-v2 h1 {
+  font-size: clamp(2rem, 9vw, 2.8rem);
+  color: #f9e5bd;
+}
+.visual-v2 .shop-row {
+  background: #352131;
+  border-color: #987653;
+}
+.visual-v2 .shop-row small {
+  color: #a8dec3;
+}
+.visual-v2 .bottom-nav {
+  background: #241720;
+  border-color: #97734d;
+}
+.visual-v2 .bottom-nav button {
+  background: transparent;
+}
+.visual-v2 .bottom-nav button[aria-current='page'] {
+  color: #f8d491;
+  background: #4a2c3d;
+}
+.visual-v2 .rarity.R01 {
+  color: #c5e8c8;
+}
+.visual-v2 .rarity.R02 {
+  color: #afe1e7;
+}
+.visual-v2 .rarity.R03 {
+  color: #ffd396;
+}
+.visual-v2 .feedback {
+  color: #382b39;
+}
+.visual-v2 .feedback button {
+  color: #f6e8cb;
+}
+.visual-v2 .filters label {
+  color: var(--muted);
+}
+.visual-v2 .album-entry {
+  background: #372331;
+  border-color: #ab8152;
+  box-shadow: 0 3px 0 #1a1018;
+  border-radius: 12px;
+}
+.visual-v2 .undiscovered {
+  background: #291c26;
+  border-style: dashed;
+}
+.visual-v2 .entry-state {
+  border-color: #765336;
+}
+.visual-v2 .collection-progress progress::-webkit-progress-bar {
+  background: #5e3d4b;
+}
+.visual-v2 .collection-progress progress::-webkit-progress-value {
+  background: #e3b872;
+}
+.visual-v2 .keepsake-card {
+  background: linear-gradient(140deg, #392435, #261823);
+  border-color: #a98051;
+  outline-color: #624731;
+  box-shadow: 0 6px 0 #190f16;
+}
+.visual-v2 .keepsake-art {
+  padding: 0;
+  overflow: hidden;
+  background: #4b2d43;
+  border: 2px solid #be915b;
+  border-radius: 40% 40% 10px 10px;
+  width: 190px;
+  height: 240px;
+}
+.art-region {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  background: #3c2630;
+}
+.art-region > svg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  inset: 0;
+  pointer-events: none;
+}
+.art-region.image-missing {
+  display: grid;
+  place-items: center;
+  background: radial-gradient(ellipse, #704749, #241720);
+}
+.missing-ornament {
+  font-size: 3rem;
+  color: #ddb578;
+}
+.shop-backdrop {
+  position: relative;
+}
+.visual-v2 .interior-scene {
+  aspect-ratio: 344/290;
+  border: 0;
+  margin-top: 12px;
+}
+.visual-v2 .shelf-button {
+  left: 39%;
+  top: 38%;
+  width: 22%;
+  height: 18%;
+  background: #2e1928dd !important;
+  color: #ffe0a1;
+  border: 1px solid #ffd28b;
+  border-radius: 50%;
+}
+.shop-products {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px 12px;
+  margin-top: 18px;
+}
+.shop-product {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid #bd905a;
+  border-radius: 13px;
+  background: linear-gradient(#422731, #261722);
+  box-shadow: 0 5px 20px #0d080840;
+}
+.shop-product .product-art {
+  border-bottom: 1px solid #725137;
+}
+.product-copy {
+  flex: 1;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+.product-copy h2 {
+  font-size: 1.2rem;
+  text-align: center;
+  margin: 5px 0 8px;
+}
+.product-copy p {
+  text-align: center;
+  font-size: 0.85rem;
+  line-height: 1.45;
+  margin: 0 0 12px;
+}
+.product-copy button {
+  width: 100%;
+  font-size: 0.82rem;
+  margin-top: auto;
+}
+.product-status {
+  color: #d2bfae;
+}
+.centered {
+  text-align: center;
+}
+.product-list {
+  border-block: 1px solid #775239;
+  margin: 20px 0;
+  padding: 12px 0;
+}
+.product-list summary {
+  min-height: 44px;
+  padding: 12px 4px;
+  cursor: pointer;
+  color: #f0d5af;
+}
+.product-list ul {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+}
+.product-list button {
+  width: 100%;
+  text-align: left;
+  display: grid;
+  gap: 6px;
+  border-radius: 12px;
+}
+.product-list button span,
+.product-list button small {
+  font-weight: normal;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+.product-detail > .product-art {
+  max-width: 300px;
+  margin: 24px auto;
+  border: 1px solid #bd905a;
+  border-radius: 15px;
+}
+.product-detail h1 {
+  text-align: center;
+}
+.visual-v2 .odds {
+  background: #2a1a26;
+  border: 1px solid #886342;
+  border-radius: 12px;
+  padding: 14px;
+}
+.visual-v2 .odds li {
+  border-color: #664735;
+}
+.visual-v2 .odds li small {
+  color: #d2bfae;
+}
+.visual-v2 .guarantee {
+  background: #2b1b28;
+  border-color: #dbaa62;
+  border-radius: 0 8px 8px 0;
+  padding: 14px 16px;
+}
+.identity-art {
+  width: 100%;
+  height: 100%;
+}
+.symbolic-art {
+  background: radial-gradient(ellipse at 50% 35%, #74516b, #2c1c32);
+  border-radius: 45% 45% 3px 3px;
+  color: #efd2a0;
+  position: relative;
+}
+.symbolic-art .family-art {
+  padding: 16px;
+}
+.identity-monogram {
+  position: absolute;
+  bottom: 6%;
+  left: 0;
+  right: 0;
+  text-align: center;
+  color: #f4dcaf;
+  font:
+    1rem Georgia,
+    serif;
+  letter-spacing: 3px;
+}
+.visual-v2 .album-entry > .identity-art,
+.visual-v2 .album-entry > .product-art {
+  width: 100%;
+  height: 130px;
+  flex-shrink: 0;
+  border-radius: 8px;
+  margin-bottom: 8px;
+}
+.visual-v2 .album-entry > .product-art {
+  aspect-ratio: auto !important;
+}
+
+.visual-v2 .undiscovered .identity-art {
+  opacity: 0.6;
+}
+.visual-v2 .opening-view {
+  padding-top: 18px;
+}
+.visual-v2 .opening-view h1 {
+  font-size: 2rem;
+}
+.visual-v2 .illustrated-box {
+  width: min(100%, 360px);
+  height: auto;
+  aspect-ratio: 360/340;
+  margin: 12px auto;
+  overflow: hidden;
+}
+.illustrated-box .velvet-cushion {
+  position: absolute;
+  bottom: 1%;
+  left: 0;
+  width: 100%;
+  height: 38%;
+  border-radius: 50%;
+  border: 2px solid #c89e66;
+  background: radial-gradient(ellipse at 40% 10%, #78304b, #321222 70%);
+  box-shadow: inset 0 -10px 15px #1c1019;
+}
+.illustrated-box .box-base,
+.illustrated-box .box-lid {
+  width: 88%;
+  height: 83%;
+  top: auto;
+  bottom: 2%;
+  left: 6%;
+  background: none;
+  border: 0;
+}
+.illustrated-box .box-base {
+  clip-path: polygon(5% 35%, 96% 35%, 87% 92%, 16% 92%);
+  z-index: 2;
+}
+.illustrated-box .box-lid {
+  clip-path: polygon(50% 2%, 96% 35%, 87% 75%, 16% 75%, 5% 35%);
+  z-index: 5;
+  transform-origin: 50% 25%;
+}
+.illustrated-box .box-lid:before,
+.illustrated-box .box-lid:after,
+.illustrated-box .box-base:after {
+  display: none;
+}
+.illustrated-box .box-base > .art-region,
+.illustrated-box .box-lid > .art-region {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+}
+.illustrated-box .box-interior {
+  width: 74%;
+  height: 35%;
+  left: 13%;
+  top: auto;
+  bottom: 22%;
+  clip-path: polygon(0 20%, 50% 0, 100% 20%, 89% 95%, 11% 95%);
+  background: radial-gradient(ellipse, #c79149, #2f182f 70%);
+  z-index: 1;
+}
+.illustrated-box .frog-shadow {
+  width: 45%;
+  height: 5%;
+  left: 28%;
+  top: auto;
+  bottom: 7%;
+  background: #0c081ba0;
+  z-index: 2;
+}
+.illustrated-box .frog-subject {
+  width: 46%;
+  top: auto;
+  bottom: 15%;
+  left: 29%;
+  z-index: 4;
+}
+.illustrated-box .frog-subject .art-region {
+  background: transparent;
+}
+.illustrated-box .ritual-card {
+  width: 42%;
+  height: 60%;
+  left: 29%;
+  top: 4%;
+  font-size: 2.8rem;
+  z-index: 6;
+  background: #39283f;
+  color: #f0cc85;
+  border: 5px double #d7ae66;
+  border-radius: 35% 35% 7px 7px;
+  overflow: hidden;
+}
+.illustrated-box .reveal-glow {
+  position: absolute;
+  z-index: 0;
+  width: 90%;
+  height: 90%;
+  left: 5%;
+  top: 0;
+  background: radial-gradient(ellipse, #ebc37566, transparent 68%);
+  opacity: 0;
+}
+.illustrated-box.ritual .reveal-glow {
+  animation: glow-reveal 600ms ease-out 1000ms forwards;
+}
+.illustrated-box.settled .box-lid {
+  opacity: 0;
+}
+.illustrated-box.settled .ritual-card {
+  opacity: 1;
+}
+.illustrated-box.settled .frog-subject {
+  opacity: 1;
+  left: 68%;
+  bottom: 3%;
+  width: 30%;
+}
+.illustrated-box.settled .reveal-glow {
+  opacity: 1;
+}
+.visual-v2 .result-keepsake {
+  padding-top: 0;
+}
+.result-keepsake > .keepsake-art {
+  display: none;
+}
+.visual-v2 .result-view {
+  padding-top: 14px;
+}
+.illustrated-alley {
+  position: relative;
+  height: 100%;
+}
+.illustrated-alley > .art-region {
+  height: 100%;
+  aspect-ratio: auto !important;
+}
+
+.alley-lamp {
+  position: absolute;
+  right: 28%;
+  top: 31%;
+  width: 18%;
+  height: 25%;
+  background: radial-gradient(ellipse, #ffcc6466, transparent 68%);
+}
+.alley-hanging-sign {
+  position: absolute;
+  left: 4%;
+  top: 25%;
+  width: 19%;
+  height: 18%;
+  background: linear-gradient(140deg, #533347, #2c1b2c);
+  border: 2px solid #c39457;
+  border-radius: 50%;
+  color: #e8bd78;
+  display: grid;
+  place-items: center;
+  font-size: 2rem;
+  transform-origin: 50% 0;
+}
+.alley-hanging-sign:before {
+  content: '';
+  position: absolute;
+  bottom: 100%;
+  width: 1px;
+  height: 32%;
+  background: #b88d59;
+}
+.alley-vignette {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(transparent 60%, #20111cbb);
+}
+.visual-v2 .facade-name {
+  top: 43%;
+  left: 45%;
+  width: 48%;
+  font-size: 1.4rem;
+  color: #ffe1a2;
+  background: #271b29d9;
+  border: 1px solid #c39862;
+  border-radius: 4px;
+  padding: 5px;
+  animation: none;
+  transform: rotate(-3deg);
+}
+.visual-v2 .scene-enter {
+  left: 12%;
+  width: 76%;
+}
+@keyframes glow-reveal {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@media (max-width: 340px) {
+  .shop-products {
+    grid-template-columns: 1fr;
+  }
+  .shop-product {
+    display: grid;
+    grid-template-columns: 40% 60%;
+  }
+  .shop-product .product-art {
+    height: 100%;
+    aspect-ratio: auto !important;
+  }
+  .product-copy {
+    height: auto;
+  }
+  .product-copy h2 {
+    font-size: 1.1rem;
+  }
+  .product-copy button {
+    font-size: 0.85rem;
+  }
+  .visual-v2 .facade-name {
+    font-size: 1.1rem;
+  }
+}
+.reduced .illustrated-box * {
+  animation: none !important;
+}
+
+.visual-v2 {
+  position: relative;
+  isolation: isolate;
+}
+.room-underlay {
+  position: absolute;
+  z-index: -1;
+  top: 80px;
+  left: 0;
+  right: 0;
+  height: 650px;
+  overflow: hidden;
+  pointer-events: none;
+  opacity: 0.25;
+  mask-image: linear-gradient(#000, transparent);
+}
+.room-underlay .shop-backdrop,
+.room-underlay .art-region {
+  height: 100%;
+}
+.visual-v2 .shelf-button {
+  padding: 0;
+  overflow: hidden;
+  border-radius: 8px;
+  height: 22%;
+  top: 63%;
+}
+.visual-v2 .shelf-button .product-art {
+  width: 100%;
+  height: 100%;
+}
+
+.card-engraving {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.illustrated-box.ritual .box-base,
+.illustrated-box.settled .box-base {
+  height: 22%;
+  bottom: 7%;
+  clip-path: polygon(0 0, 100% 0, 94% 100%, 6% 100%);
+}
+.illustrated-box .box-interior {
+  height: 23%;
+  bottom: 27%;
+  background: #d3aa62;
+}
+.illustrated-box .box-interior:before {
+  content: '';
+  position: absolute;
+  inset: 3px;
+  clip-path: inherit;
+  background: radial-gradient(ellipse at 50% 65%, #644760, #211629 80%);
+}
+.symbolic-art .family-art {
+  color: #edc894 !important;
+}

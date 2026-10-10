@@ -16,14 +16,16 @@ import {
   raritySymbol,
   translate,
 } from '../i18n/messages';
-import { FamilyArt } from './Art';
+import { IdentityArtwork } from './VisualArt';
 import { Rarity } from './IdentityDetails';
 export function Album({
+  active,
   state,
   language,
   identities,
   onInspect,
 }: {
+  active: boolean;
   state: DemoState;
   language: Language;
   identities: Identity[];
@@ -85,7 +87,7 @@ export function Album({
                   onInspect(i.id);
                 }}
               >
-                <FamilyArt family={i.family} />
+                {active && <IdentityArtwork identity={i} />}
                 <strong>{i.name[language]}</strong>
                 <span>{familyName(language, i.family)}</span>
                 <Rarity identity={i} language={language} />

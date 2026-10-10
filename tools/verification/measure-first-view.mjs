@@ -37,7 +37,7 @@ try {
     physicalDevice: false,
     fpsMeasured: false,
   };
-  await writeFile('docs/i1-evidence/first-view.json', JSON.stringify(measurement, null, 2) + '\n');
+  await writeFile(process.argv[3] ?? 'docs/i1-evidence/first-view.json', JSON.stringify(measurement, null, 2) + '\n');
   console.log(JSON.stringify(measurement, null, 2));
   if (measurement.totalTransferredBytes > measurement.limitBytes) process.exitCode = 1;
 } finally {

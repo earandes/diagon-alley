@@ -1,0 +1,39 @@
+{
+  "date": "2026-10-10T02:33:01.592Z",
+  "browser": "156.0.8078.4",
+  "method": "PerformanceNavigationTiming/PerformanceResourceTiming in fresh Chromium context; production preview, cache empty, local loopback; transferSize includes browser header estimate",
+  "viewport": {
+    "width": 390,
+    "height": 844
+  },
+  "entries": [
+    {
+      "url": "http://127.0.0.1:5190/",
+      "transferSize": 728,
+      "encodedBodySize": 428,
+      "decodedBodySize": 428
+    },
+    {
+      "url": "http://127.0.0.1:5190/assets/index-BeBnVYcZ.js",
+      "transferSize": 85585,
+      "encodedBodySize": 85285,
+      "decodedBodySize": 277359
+    },
+    {
+      "url": "http://127.0.0.1:5190/assets/index-B7OLYQG7.css",
+      "transferSize": 6914,
+      "encodedBodySize": 6614,
+      "decodedBodySize": 24188
+    },
+    {
+      "url": "http://127.0.0.1:5190/art/alley-v1.webp",
+      "transferSize": 430610,
+      "encodedBodySize": 430310,
+      "decodedBodySize": 430310
+    }
+  ],
+  "totalTransferredBytes": 523837,
+  "limitBytes": 1000000,
+  "physicalDevice": false,
+  "fpsMeasured": false
+}
