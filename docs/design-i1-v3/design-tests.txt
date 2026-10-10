@@ -1,0 +1,23 @@
+
+> coleccion-magica-i1@0.1.0 test:e2e
+> playwright test tests/browser/design.spec.ts --project=chromium --project=webkit
+
+[WebServer] (node:81494) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 4 tests using 3 workers
+
+(node:81496) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:81497) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:81495) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  3 [chromium] › tests/browser/design.spec.ts:4:3 › A28 keyboard bypass, actionable first views and illustrated album details en (1.1s)
+  ✓  1 [chromium] › tests/browser/design.spec.ts:4:3 › A28 keyboard bypass, actionable first views and illustrated album details es (1.1s)
+(node:81528) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  2 [webkit] › tests/browser/design.spec.ts:4:3 › A28 keyboard bypass, actionable first views and illustrated album details es (1.4s)
+  ✓  4 [webkit] › tests/browser/design.spec.ts:4:3 › A28 keyboard bypass, actionable first views and illustrated album details en (759ms)
+
+  4 passed (3.3s)

@@ -20,6 +20,10 @@ A20 pide Callejón de fondo en toda la página, vida ambiental con lechuza/hechi
 
 A21 exige gasto adicional cero y herramientas solo para este proyecto. A22 elige Blender 4.5.9 LTS portable en `.tools/`; usar `tools/visual/blender.sh` para aislar preferencias/scripts/temp. La skill propia está en `.agents/skills/local-magic-art/SKILL.md`: leerla al producir escenas o animaciones. No modificar catálogo global de skills/MCP ni ejecutar servicios de pago/créditos. Fuentes/scripts/manifests y muestras provisionales en `tools/visual/` y `design/production/`; análisis/evidencia en `docs/preparacion-i1/ZERO_COST_PIPELINE.md`. Comandos de producción allí, sin comandos de aplicación. Las formas geométricas de estas pruebas no sustituyen el acabado A12, ni prueban cuentas/premios o valor observado.
 
+### Skills de diseño locales (A28)
+
+Enric pide instalar y usar Taste Skill, Web Design Guidelines, Awesome Design, Image-to-Code y Playwright CLI para mejorar I1. Instaladas en `.agents/skills/`, con orígenes/revisiones en `design-sources.json` y uso/adaptaciones en su README. Para trabajos visuales: Taste orienta y audita; Image-to-Code analiza las referencias aportadas; Awesome Design/fantasy estructura tokens/componentes; Web Design Guidelines comprueba UI; Playwright CLI inspecciona el resultado junto con las pruebas existentes. Leer sus SKILL.md cuando se apliquen. Son guías, no aprobación de producto o arte. Conservar A11/A12/A26, navegación sin barra inferior A27, stack A23 y alcance A25. Sus defaults de generación de imagen, Tailwind/Motion/GSAP, fuentes externas, paletas o nuevas capacidades no prevalecen sobre las instrucciones del proyecto. No instalar globalmente ni añadir gasto. CLI local mediante `npx --no-install playwright-cli`, con sesiones de este proyecto; no cerrar sesiones ajenas. Evidencia A28 en `docs/design-i1-v3/REPORT.md`.
+
 ## Identidad y requisitos que se deben conservar
 
 - El marco es el **Callejón Diagón**, con **Weasley como primera tienda jugable**. La entrada debe permitir ir del callejón a la tienda y regresar. No sustituirlo por un universo original ni empezar directamente en una tienda aislada.

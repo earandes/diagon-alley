@@ -31,5 +31,8 @@ const result = {
     };
   }),
 };
-await writeFile('docs/visual-i1-v2/contrast.json', JSON.stringify(result, null, 2) + '\n');
+await writeFile(
+  process.argv[2] ?? 'docs/visual-i1-v2/contrast.json',
+  JSON.stringify(result, null, 2) + '\n',
+);
 console.log(result);

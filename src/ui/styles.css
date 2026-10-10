@@ -83,7 +83,7 @@ button.text-button {
 .app {
   max-width: 480px;
   margin: auto;
-  min-height: 100vh;
+  min-height: 100dvh;
   background: var(--paper);
   padding-bottom: calc(24px + env(safe-area-inset-bottom));
   box-shadow: 0 0 70px #16122066;

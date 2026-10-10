@@ -41,6 +41,8 @@ node tools/verification/measure-contrast.mjs
 - [Evidencia y matriz I1-AC01–12](docs/i1-evidence/REPORT.md): implementado/probado y cobertura pendiente separados.
 - [Capturas revisadas es/en](docs/i1-evidence/GALLERY.md).
 - [Navegación sin menú inferior A27: pruebas y capturas actualizadas](docs/navigation-i1/REPORT.md).
+- [Mejora de diseño A28, uso de las cinco skills y capturas Playwright CLI](docs/design-i1-v3/REPORT.md).
+- [Skills locales, fuentes fijadas y comandos de inspección](.agents/skills/README.md); [sistema de interfaz aplicado](docs/design-i1-v3/DESIGN.md).
 - [Configuración, invariantes, versiones y dependencias](docs/i1-evidence/CONFIGURATION.md).
 - [Manifest de arte provisional utilizado](src/content/art-manifest.json).
 

@@ -425,6 +425,9 @@ export function App() {
           <ShopBackdrop />
         </div>
       )}
+      <a className="skip-link" href="#main-content">
+        {t('skipContent')}
+      </a>
       <header className="topbar">
         <span className="brand">
           <span aria-hidden="true">✦</span> {t('brand')}
@@ -470,7 +473,7 @@ export function App() {
       <div className="sr-only" role="status" aria-live="polite" aria-atomic="true">
         {announcement}
       </div>
-      <main ref={main} aria-busy={busy}>
+      <main id="main-content" ref={main} tabIndex={-1} aria-busy={busy}>
         {error && (
           <section role="alert" className="feedback error">
             <p>{errorText(language, error)}</p>
@@ -555,7 +558,6 @@ export function App() {
                   ← {t('backAlley')}
                 </button>
                 <div className="page-heading">
-                  <p className="eyebrow">{t('available')}</p>
                   <h1 tabIndex={-1}>Weasley</h1>
                   <p>{t('shopChoose')}</p>
                 </div>
@@ -698,6 +700,7 @@ export function App() {
                 <div className="keepsake-card result-keepsake">
                   <IllustratedFrogBox settled identity={operation.identity} />
                   <IdentityDetails
+                    showArtwork={false}
                     identity={operation.identity}
                     state={state}
                     language={language}
@@ -754,7 +757,7 @@ export function App() {
                 <h1 className="sr-only" tabIndex={-1}>
                   {t('details')}
                 </h1>
-                <div className="keepsake-card result-keepsake">
+                <div className="keepsake-card">
                   <IdentityDetails identity={card} state={state} language={language} />
                   {!copyCount(state, card.id) && <p>{t('pending')}</p>}
                 </div>
@@ -802,6 +805,7 @@ export function App() {
                     {t('importFile')}
                     <input
                       type="file"
+                      name="game-backup-file"
                       accept="application/json,.json"
                       onChange={(e) => void importFile(e)}
                     />
@@ -809,6 +813,8 @@ export function App() {
                   <label>
                     {t('paste')}
                     <textarea
+                      name="game-backup"
+                      autoComplete="off"
                       value={json}
                       onChange={(e) => setJson(e.target.value)}
                       spellCheck={false}

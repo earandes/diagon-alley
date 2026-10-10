@@ -1,0 +1,46 @@
+- generic [ref=e3]:
+  - banner [ref=e4]:
+    - generic [ref=e5]: ✦ Magical Collection
+    - generic [ref=e6]:
+      - generic [ref=e7]: Language
+      - combobox "Language" [ref=e8]:
+        - option "Español"
+        - option "English" [selected]
+      - button "Settings" [ref=e9] [cursor=pointer]: ⚙
+  - paragraph [ref=e10]: ◇ Saved on this device
+  - status [ref=e11]
+  - main [ref=e12]:
+    - button "← Return to the alley" [ref=e38] [cursor=pointer]
+    - generic [ref=e39]:
+      - paragraph [ref=e40]: Shop available
+      - heading "Weasley" [active] [level=1] [ref=e41]
+      - paragraph [ref=e42]: Choose what you would like to discover
+    - figure [ref=e43]:
+      - button "Inspect the frog" [ref=e46] [cursor=pointer]
+    - paragraph [ref=e48]: Placeholder artwork
+    - generic [ref=e49]:
+      - article [ref=e50]:
+        - generic [ref=e52]:
+          - heading "Chocolate Frog" [level=2] [ref=e53]
+          - paragraph [ref=e54]: 1 available
+          - button "Inspect the frog" [ref=e55] [cursor=pointer]
+      - article [ref=e56]:
+        - generic [ref=e58]:
+          - heading "Every Flavour Beans" [level=2] [ref=e59]
+          - paragraph [ref=e60]: Opening unavailable
+          - button "Inspect the beans" [ref=e61] [cursor=pointer]
+      - article [ref=e62]:
+        - generic [ref=e64]:
+          - heading "Extendable Ears" [level=2] [ref=e65]
+          - paragraph [ref=e66]: In your collection
+          - button "View invention" [ref=e67] [cursor=pointer]
+      - article [ref=e68]:
+        - generic [ref=e70]:
+          - heading "Trick Wand" [level=2] [ref=e71]
+          - paragraph [ref=e72]: In your collection
+          - button "View invention" [ref=e73] [cursor=pointer]
+    - paragraph [ref=e74]: Inspecting does not use any units.
+    - button "View in album" [ref=e75] [cursor=pointer]: ▤ View in album
+    - group [ref=e76]:
+      - generic "View products as a list" [ref=e77] [cursor=pointer]
+  - contentinfo [ref=e14]: LOCAL DEMO · I1

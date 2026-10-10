@@ -1,0 +1,47 @@
+- generic [ref=f3e3]:
+  - link "Skip to content" [ref=f3e4] [cursor=pointer]:
+    - /url: "#main-content"
+  - banner [ref=f3e5]:
+    - generic [ref=f3e6]: ✦ Magical Collection
+    - generic [ref=f3e7]:
+      - generic [ref=f3e8]: Language
+      - combobox "Language" [ref=f3e9]:
+        - option "Español"
+        - option "English" [selected]
+      - button "Settings" [ref=f3e10] [cursor=pointer]: ⚙
+  - paragraph [ref=f3e11]: ◇ Saved on this device
+  - status [ref=f3e12]
+  - main [ref=f3e13]:
+    - button "← Return to the alley" [ref=f3e38] [cursor=pointer]
+    - generic [ref=f3e39]:
+      - heading "Weasley" [active] [level=1] [ref=f3e40]
+      - paragraph [ref=f3e41]: Choose what you would like to discover
+    - figure [ref=f3e42]:
+      - button "Inspect the frog" [ref=f3e45] [cursor=pointer]
+    - paragraph [ref=f3e47]: Placeholder artwork
+    - generic [ref=f3e48]:
+      - article [ref=f3e49]:
+        - generic [ref=f3e51]:
+          - heading "Chocolate Frog" [level=2] [ref=f3e52]
+          - paragraph [ref=f3e53]: 1 available
+          - button "Inspect the frog" [ref=f3e54] [cursor=pointer]
+      - article [ref=f3e55]:
+        - generic [ref=f3e57]:
+          - heading "Every Flavour Beans" [level=2] [ref=f3e58]
+          - paragraph [ref=f3e59]: Opening unavailable
+          - button "Inspect the beans" [ref=f3e60] [cursor=pointer]
+      - article [ref=f3e61]:
+        - generic [ref=f3e63]:
+          - heading "Extendable Ears" [level=2] [ref=f3e64]
+          - paragraph [ref=f3e65]: In your collection
+          - button "View invention" [ref=f3e66] [cursor=pointer]
+      - article [ref=f3e67]:
+        - generic [ref=f3e69]:
+          - heading "Trick Wand" [level=2] [ref=f3e70]
+          - paragraph [ref=f3e71]: In your collection
+          - button "View invention" [ref=f3e72] [cursor=pointer]
+    - paragraph [ref=f3e73]: Inspecting does not use any units.
+    - button "View in album" [ref=f3e74] [cursor=pointer]: ▤ View in album
+    - group [ref=f3e75]:
+      - generic "View products as a list" [ref=f3e76] [cursor=pointer]
+  - contentinfo [ref=f3e37]: LOCAL DEMO · I1

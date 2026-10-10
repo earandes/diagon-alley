@@ -1,5 +1,6 @@
 import type { ErrorCode, Family, Language, RarityId } from '../domain/model';
 const es = {
+  skipContent: 'Saltar al contenido',
   shopChoose: 'Elige qué quieres descubrir',
   oneAvailable: '1 disponible',
   frogGone: 'Rana agotada',
@@ -109,6 +110,7 @@ const es = {
   importing: 'Comprobando copia JSON…',
 };
 const en: typeof es = {
+  skipContent: 'Skip to content',
   shopChoose: 'Choose what you would like to discover',
   oneAvailable: '1 available',
   frogGone: 'Frog used',

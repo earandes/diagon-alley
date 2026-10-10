@@ -1,0 +1,35 @@
+- generic [ref=f3e3]:
+  - link "Skip to content" [ref=f3e4] [cursor=pointer]:
+    - /url: "#main-content"
+  - banner [ref=f3e5]:
+    - generic [ref=f3e6]: ✦ Magical Collection
+    - generic [ref=f3e7]:
+      - generic [ref=f3e8]: Language
+      - combobox "Language" [ref=f3e9]:
+        - option "Español"
+        - option "English" [selected]
+      - button "Settings" [ref=f3e10] [cursor=pointer]: ⚙
+  - paragraph [ref=f3e11]: ◇ Saved on this device
+  - status [ref=f3e12]
+  - main [ref=f3e13]:
+    - generic [ref=f3e14]:
+      - paragraph [ref=f3e15]: ONE VISIT, ONE SURPRISE
+      - heading "Diagon Alley" [active] [level=1] [ref=f3e16]
+      - paragraph [ref=f3e17]: Something extraordinary awaits behind that door.
+    - figure [ref=f3e18]:
+      - generic [ref=f3e22]: ✦
+      - generic [aria-hidden]: Weasley
+      - button "Enter Weasley" [ref=f3e24] [cursor=pointer]: Enter Weasley →
+    - generic [ref=f3e25]:
+      - paragraph [ref=f3e26]: Placeholder artwork
+      - button "Pause ambience" [ref=f3e27] [cursor=pointer]
+    - button "View in album" [ref=f3e28] [cursor=pointer]: ▤ View in album
+    - generic [ref=f3e29]:
+      - heading "Explore by list" [level=2] [ref=f3e30]
+      - paragraph [ref=f3e31]: The same door, your way.
+      - button "Weasley Shop available" [ref=f3e32] [cursor=pointer]:
+        - generic [ref=f3e33]:
+          - strong [ref=f3e34]: Weasley
+          - generic [ref=f3e35]: Shop available
+        - generic [aria-hidden] [ref=f3e36]: →
+  - contentinfo [ref=f3e37]: LOCAL DEMO · I1

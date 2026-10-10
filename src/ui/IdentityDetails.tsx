@@ -10,19 +10,23 @@ export function Rarity({ identity, language }: { identity: Identity; language: L
   );
 }
 export function IdentityDetails({
+  showArtwork = true,
   identity,
   state,
   language,
 }: {
+  showArtwork?: boolean;
   identity: Identity;
   state: DemoState;
   language: Language;
 }) {
   return (
     <>
-      <div className="keepsake-art">
-        <IdentityArtwork identity={identity} />
-      </div>
+      {showArtwork && (
+        <div className="keepsake-art">
+          <IdentityArtwork identity={identity} />
+        </div>
+      )}
       <p className="art-caption">{translate(language, 'placeholder')}</p>
       <h2>{identity.name[language]}</h2>
       <p>

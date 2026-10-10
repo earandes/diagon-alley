@@ -1,0 +1,53 @@
+{
+  "installedAt": "2026-10-10",
+  "scope": "project",
+  "skills": [
+    {
+      "id": "taste-skill",
+      "repo": "Leonxlnx/taste-skill",
+      "revision": "717446e07a78d4e6d7918b1fde1a263378eebac9",
+      "path": "skills/taste-skill",
+      "license": "MIT",
+      "skillSha256": "aa194351b246b8b4799099d4ed7b033d29eab6e6e3d58d8d2172978be7b3ec89"
+    },
+    {
+      "id": "image-to-code-skill",
+      "repo": "Leonxlnx/taste-skill",
+      "revision": "717446e07a78d4e6d7918b1fde1a263378eebac9",
+      "path": "skills/image-to-code-skill",
+      "license": "MIT",
+      "skillSha256": "4c060a8064a8b13380bc2ef3d6e6a1d0b1e316aa093cd9807d0ce9e4eeb037fa"
+    },
+    {
+      "id": "awesome-design-fantasy",
+      "repo": "bergside/awesome-design-skills",
+      "revision": "f631a09b4fcc0166f2e2c1a8c81906ef680c57e8",
+      "path": "skills/fantasy",
+      "license": "MIT",
+      "skillSha256": "15cf65a5840f21d905a413e1c233e187650a63a3aed4a4c78e6f528fa451dc41"
+    },
+    {
+      "id": "playwright-cli",
+      "repo": "microsoft/playwright-cli",
+      "revision": "b85c7a736bb473bf55b584e54a09ffa698d6d871",
+      "path": "skills/playwright-cli",
+      "license": "Apache-2.0",
+      "skillSha256": "9bba755285a4c9ad72a4a41b9c7baef6fb516d329c0b44ed0573715f4479b906"
+    },
+    {
+      "id": "web-design-guidelines",
+      "repo": "vercel-labs/agent-skills",
+      "revision": "063bee94c3f4df8453406c830b0a7df0f2860278",
+      "path": "skills/web-design-guidelines",
+      "license": "No declarada por el repositorio consultado; pendiente",
+      "skillSha256": "f4647ca866a3accf763777f83e7682954f0187cd6bea7eea0399796652414e8f"
+    }
+  ],
+  "guidelinesRevision": "434b7f91364665f2f733b310ec54809bf8f37937",
+  "cli": {
+    "package": "@playwright/cli",
+    "version": "0.1.22",
+    "scope": "devDependency",
+    "license": "Apache-2.0"
+  }
+}

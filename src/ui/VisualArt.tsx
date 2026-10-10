@@ -74,7 +74,7 @@ export function IdentityArtwork({ identity }: { identity: Identity }) {
   if (identity.id === 'O01' || identity.id === 'O02') return <ProductArtwork id={identity.id} />;
   if (identity.family !== 'flavour')
     return (
-      <div className="identity-art">
+      <div className="identity-art artwork" aria-hidden="true">
         <CardEngraving identity={identity} />
       </div>
     );
