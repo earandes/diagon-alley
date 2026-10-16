@@ -316,6 +316,9 @@ test('A69 CardReveal actual: four ranks, new/repeat, skip, reduced, language/pac
         await page.locator('[data-qa-start]').click();
         await expect(page.locator('.reveal[data-opening-state="result"]')).toBeVisible();
         await expect(page.locator('.holographic-card')).toBeVisible();
+        expect(
+          await page.locator('.card-stars').evaluate((el) => getComputedStyle(el).opacity),
+        ).toBe('1');
         const resultUsableMs = await actionElapsed(page);
         expect(await preserved(page)).toEqual(before);
         await report(page, `opening-${pack}-${lang}-${rarity}`, {
@@ -383,6 +386,28 @@ test('A69 CardReveal actual: four ranks, new/repeat, skip, reduced, language/pac
   expect(await preserved(page)).toEqual(missingArtRecord);
 });
 
+async function freezeSpellPhase(page: Page, desired: 'anticipation' | 'impact') {
+  await page.evaluate(async (phase) => {
+    const events = JSON.parse(window.__a69Fixture.battle).events;
+    await new Promise<void>((resolve, reject) => {
+      const until = performance.now() + 15000;
+      const observe = () => {
+        const panel = document.querySelector<HTMLElement>('.battle-panel')!;
+        if (
+          events[Number(panel.dataset.replayCursor)]?.kind === 'spell-cast' &&
+          panel.dataset.replayPhase === phase
+        ) {
+          document.querySelector<HTMLButtonElement>('.replay-controls button:first-child')!.click();
+          resolve();
+        } else if (performance.now() >= until) reject(Error('No requested spell phase observed'));
+        else requestAnimationFrame(observe);
+      };
+      observe();
+    });
+  }, desired);
+  await expect(page.locator('.battle-panel')).toHaveAttribute('data-replay-phase', desired);
+}
+
 test('A69 selected visual evidence and 30 serial scene teardown cycles (one Linux Chromium project)', async ({
   page,
 }) => {
@@ -395,29 +420,10 @@ test('A69 selected visual evidence and 30 serial scene teardown cycles (one Linu
   await expect(page.locator('.scene-canvas')).toHaveAttribute('data-art-ready', 'true');
   if (capture) {
     await mkdir(root, { recursive: true });
-    await expect
-      .poll(
-        () =>
-          page.evaluate(() => {
-            const panel = document.querySelector<HTMLElement>('.battle-panel')!;
-            const events = JSON.parse(window.__a69Fixture.battle).events;
-            return (
-              events[Number(panel.dataset.replayCursor)]?.kind === 'spell-cast' &&
-              panel.dataset.replayPhase === 'anticipation'
-            );
-          }),
-        { intervals: [10, 15, 20] },
-      )
-      .toBe(true);
-    await pause(page).evaluate((el: HTMLButtonElement) => el.click());
+    await freezeSpellPhase(page, 'anticipation');
     await page.screenshot({ path: resolve(root, 'selected-arena-anticipation.png') });
     await auto(page).click();
-    await expect
-      .poll(() => page.locator('.battle-panel').getAttribute('data-replay-phase'), {
-        intervals: [15, 20, 25],
-      })
-      .toBe('impact');
-    await pause(page).evaluate((el: HTMLButtonElement) => el.click());
+    await freezeSpellPhase(page, 'impact');
     await page.screenshot({ path: resolve(root, 'selected-arena-contact.png') });
     await skip(page).click();
     await expect(page.locator('[data-arena-outcome]')).toBeVisible();

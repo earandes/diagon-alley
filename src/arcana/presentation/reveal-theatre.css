@@ -201,3 +201,11 @@
 .game-shell .reveal .opening-lid {
   transform-origin: 50% 70%;
 }
+
+/* A usable confirmed result must not leave its functional rank/stars fading. */
+.game-shell .reveal[data-opening-state='result'] .holographic-card .rarity-badge,
+.game-shell .reveal[data-opening-state='result'] .holographic-card .card-stars {
+  animation: none !important;
+  opacity: 1;
+  transform: none;
+}
