@@ -15,7 +15,7 @@ Se eligió figura existente+objeto articulado frente a transformar solo el retra
 ## Estado técnico
 
 - Tipos,542unitarios y77integraciones PostgreSQL/Redis locales correctos.
-- Build/content/scan correctos; artefacto dual14.694.430B, aviso conocido de chunk>500kB.
+- Build/content/scan correctos; artefacto dual14.694.698B, aviso conocido de chunk>500kB.
 - Preflight permitió el host, pero no se ejecutó navegador localA70.
 - CI Linux, capturas seleccionadas, rendimiento y recorridos gráficos todavía pendientes. [Plan y límites QA](QA.md).
 
@@ -24,3 +24,5 @@ Main anteriorf5d3a89 está validado enCI38964171860; no se presenta como prueba 
 ## Corrección del primer ensayo
 
 CI38970176308 cancelada explícitamente tras detectar un localizador erróneo en el ensayo de autoridad. La evidencia parcial también permitió corregir doble identidad visual del jefe nominal; legacy mantiene su alias. Se refuerzan getters de estado vivo, transformaciones reales del cuenco y métricas DOM/figuras. [Cronología QA](QA.md). El candidato nuevo necesita su propia validación; no se presentan esos resultados parciales como una batería correcta.
+
+Segunda matrizA70:46correctos/3fallidosWebKit/5omisiones intencionadas,9,3min. Los24recorridos de autoridad generaron reportes completos. Se aísla la importación fallida y se compacta preparación tras inspección de evidencia, conservando todas las aserciones. Pendiente comprobar el candidato corregido completo.

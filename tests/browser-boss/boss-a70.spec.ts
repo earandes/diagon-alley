@@ -184,6 +184,14 @@ for (const language of ['es', 'en'] as const)
       await expect(prelude.locator('.boss-opponent-details')).not.toHaveAttribute('open', '');
       expect(await readGame(page)).toEqual(before);
       await changeLanguage(page, language);
+      const prepareTeam = page.locator('.node-team-prepare');
+      await prepareTeam.click();
+      await expect(page.locator('.preparation-dialog[open]')).toBeVisible();
+      expect(await readGame(page)).toEqual(before);
+      await page.keyboard.press('Escape');
+      await expect(prepareTeam).toBeFocused();
+      await expect(prelude).toBeVisible();
+      expect(await readGame(page)).toEqual(before);
       const actionStarted = Date.now();
       await confirmEvent(page, language);
       const committed = await readGame(page);
@@ -209,7 +217,10 @@ for (const language of ['es', 'en'] as const)
       await expect(closure).toBeVisible();
       await expect(closure).toHaveAttribute('data-closure-boss', leader.wizardId);
       expect(await closure.locator('[data-boss-fact]').count()).toBeLessThanOrEqual(2);
-      if (language === 'es' && pack === 'diagon-alley') await capture(page, 'boss-closure');
+      if (language === 'es' && pack === 'diagon-alley') {
+        await expect(closure.locator('.closure-spoils')).toHaveCSS('opacity', '1');
+        await capture(page, 'boss-closure');
+      }
       await page.reload();
       await expect(closure).toBeVisible();
       expect(await readGame(page)).toEqual(committed);
@@ -538,7 +549,7 @@ declare global {
   }
 }
 
-test('A70 absent art and failed renderer import have a usable static result', async ({ page }) => {
+test('A70 absent art has a usable static result', async ({ page }) => {
   let failedImages = 0;
   await page.route('**/*', async (route) => {
     if (route.request().resourceType() === 'image') {
@@ -554,7 +565,12 @@ test('A70 absent art and failed renderer import have a usable static result', as
   await expect(page.locator('.arena-exit')).toBeEnabled();
   expect(failedImages).toBeGreaterThan(0);
   expect(await preserved(page)).toEqual(absentArtState);
-  await page.unroute('**/*');
+  await report('absent-art-fallback', { fixture: true, failedImages, stateUnchanged: true });
+});
+
+// A new test receives a fresh context: a previous successful renderer import
+// must not satisfy this deliberate network failure from an engine cache.
+test('A70 fresh-context renderer import failure has a usable static result', async ({ page }) => {
   let failedImports = 0;
   await page.route(/\/assets\/pixi-scenes-[^/]+\.js/, async (route) => {
     failedImports++;
@@ -562,15 +578,16 @@ test('A70 absent art and failed renderer import have a usable static result', as
   });
   await page.goto(`${fixture}?player=5&challenge=mastery`);
   const failedImportState = await preserved(page);
+  await expect.poll(() => failedImports).toBeGreaterThan(0);
   await expect(page.locator('.scene-fallback')).toBeVisible();
   await expect(page.locator('[data-arena-outcome]')).toBeVisible();
   await expect(page.locator('.arena-exit')).toBeEnabled();
   await expect(page.locator('.pedestal')).toHaveCount(10);
   expect(failedImports).toBeGreaterThan(0);
   expect(await preserved(page)).toEqual(failedImportState);
-  await report('art-import-fallback', {
+  await report('import-fallback', {
     fixture: true,
-    failedImages,
+    freshContext: true,
     failedImports,
     stateUnchanged: true,
   });

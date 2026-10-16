@@ -5,7 +5,7 @@
 }
 .boss-prelude-hero {
   display: grid;
-  grid-template-columns: minmax(80px, 30%) minmax(0, 1fr);
+  grid-template-columns: minmax(72px, 26%) minmax(0, 1fr);
   align-items: center;
   gap: 16px;
   text-align: left;
@@ -14,7 +14,7 @@
 }
 .boss-prelude-hero > img {
   width: 100%;
-  height: clamp(110px, 17vh, 180px);
+  height: clamp(110px, 15vh, 136px);
   object-fit: contain;
   object-position: bottom center;
 }
@@ -45,8 +45,8 @@
   min-width: 0;
 }
 .node-preparation .boss-roster > div > img {
-  width: 48px;
-  height: 60px;
+  width: min(100%, 40px);
+  height: 50px;
   object-fit: cover;
   border: 1px solid var(--pack-border);
   border-radius: 6px;
@@ -56,7 +56,7 @@
   overflow-wrap: anywhere;
   text-align: center;
 }
-.boss-roster .affinity-label {
+.boss-roster .tactical-affinity {
   font-size: 0.7rem;
 }
 .boss-opponent-details > summary {
@@ -124,4 +124,16 @@
   .boss-roster small {
     font-size: 0.65rem;
   }
+}
+
+.boss-prelude-hero > div {
+  min-width: 0;
+}
+.boss-prelude-hero .boss-roster {
+  justify-content: flex-start;
+  gap: 4px;
+  margin: 8px 0;
+}
+.boss-prelude-hero .boss-roster > div {
+  max-width: 76px;
 }

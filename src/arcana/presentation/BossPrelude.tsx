@@ -51,7 +51,11 @@ export function BossPrelude({
       data-boss-roster-size={opponents.length}
       aria-label={leader.name}
     >
-      <div className="boss-prelude-hero">
+      <div
+        className="boss-prelude-hero"
+        data-boss-opponent={leader.unit.id}
+        data-boss-opponent-index={leader.index}
+      >
         <Artwork asset={leader.figure} language={language} decorative eager />
         <div>
           <h4>{leader.name}</h4>
@@ -59,29 +63,29 @@ export function BossPrelude({
           <span className="boss-roster-count">
             {opponents.length} · {t.roster}
           </span>
-        </div>
-      </div>
-      <div className="event-opponents boss-roster" aria-label={t.roster}>
-        {opponents.map((unit, index) => (
-          <div key={unit.id} data-boss-opponent={unit.id}>
-            <Artwork
-              asset={
-                index === leader.index
-                  ? leader.portrait
-                  : unit.wizardId === 'rival'
-                    ? activePack.arenaAppearances.rivals[
-                        index % activePack.arenaAppearances.rivals.length
-                      ]
-                    : `character.${unit.wizardId}.portrait`
-              }
-              language={language}
-              decorative
-              eager
-            />
-            <small>{name(unit, index)}</small>
-            <AffinityLabel affinity={unit.affinity} language={language} />
+          <div className="event-opponents boss-roster" aria-label={t.roster}>
+            {opponents.map((unit, index) =>
+              index === leader.index ? null : (
+                <div key={unit.id} data-boss-opponent={unit.id} data-boss-opponent-index={index}>
+                  <Artwork
+                    asset={
+                      unit.wizardId === 'rival'
+                        ? activePack.arenaAppearances.rivals[
+                            index % activePack.arenaAppearances.rivals.length
+                          ]
+                        : `character.${unit.wizardId}.portrait`
+                    }
+                    language={language}
+                    decorative
+                    eager
+                  />
+                  <small>{name(unit, index)}</small>
+                  <AffinityLabel affinity={unit.affinity} language={language} />
+                </div>
+              ),
+            )}
           </div>
-        ))}
+        </div>
       </div>
       <details className="boss-opponent-details">
         <summary>{t.details}</summary>

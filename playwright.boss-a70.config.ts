@@ -8,6 +8,7 @@ export default defineSafeConfig({
   testMatch: 'boss-a70.spec.ts',
   outputDir: 'test-results/boss-a70',
   timeout: 180000,
+  maxFailures: 1,
   expect: { timeout: 10000 },
   use: {
     baseURL: 'http://127.0.0.1:5470',
