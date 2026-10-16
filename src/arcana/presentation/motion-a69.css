@@ -167,3 +167,11 @@
     animation: none;
   }
 }
+
+/* Keep the compact map receipt out of the team touch targets. Expand for details. */
+@media (max-width: 600px) {
+  .arcana-map-view .receipt-disclosure:not([open]) > summary .confirmed-recruit,
+  .arcana-map-view .receipt-disclosure:not([open]) > summary .node-confirmed-vitals {
+    display: none;
+  }
+}

@@ -26,7 +26,8 @@ test('confirmed opening finishes, language does not replay it, and reload retain
     { timeout: 10_000 },
   );
   await expect(page.getByRole('button', { name: 'Skip animation', exact: true })).toHaveCount(0);
-  await expect(page.locator('[data-celebration]')).toHaveCount(1);
+  // A69 keeps the choreography in the reveal theatre; no second confetti layer.
+  await expect(page.locator('.opening-theatre')).toHaveCount(1);
   await expect(page.locator('[data-celebration]')).toHaveCount(0);
   await changeLanguage(page, 'es');
   await expect(page.locator('[data-celebration]')).toHaveCount(0);
