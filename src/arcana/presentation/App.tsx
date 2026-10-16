@@ -597,11 +597,7 @@ export function App() {
                       language={language}
                       onSelect={selectNode}
                       confirmedReceiptId={
-                        ready &&
-                        state.receipt?.kind === 'advance-node' &&
-                        state.receipt.run.id === run.id
-                          ? state.receipt.id
-                          : undefined
+                        ready && state.receipt?.id === savedNode?.id ? savedNode?.id : undefined
                       }
                     />
                   </>
