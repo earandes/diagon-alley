@@ -78,7 +78,7 @@ export async function createPixiScene(host: HTMLElement, data: SceneData) {
   let viewWidth = host.clientWidth,
     viewHeight = host.clientHeight;
   const paint = () => {
-    if (destroyed) return;
+    if (destroyed || document.hidden) return;
     // React commits the log frame after the clock advances. Never mix the new
     // event's phase with the previous event's actor, target or condition.
     if (

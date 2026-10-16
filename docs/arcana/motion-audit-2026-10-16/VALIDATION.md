@@ -1,30 +1,65 @@
-# Validación A69 · plan previo
+# Validación A69
 
-## Riesgos funcionales
+## Riesgos y cobertura prevista
 
-UnitariosTDD: reloj mantienefracciónalpausar/2x/oculto, no saltaresultados, clamp0/total, omisiónempotente; recetasdecoreografíaporrarity/new-repeat finitas; guardonce no se rearmaporidioma/pack/montaje; errores/pendientes no disparanéxito. Regresiones dominio yPGRedis reales aunque no se cambieregla, para preservardeA68. Tipos, build,scanner, contentpacks. No testsdeimplementaciónpuramenteespejo.
+TDD: reloj que conserva fracción al pausar, acelerar y ocultar; omisión idempotente; recetas finitas por rareza y nuevo/repetido; historial visual acotado; datos PV/PM procedentes del resultado guardado. Pendiente y error no deben producir éxito. Se ejecutan regresiones del dominio y PostgreSQL/Redis aunque A69 no cambie economía, para conservar la dependencia A68.
 
-BrowserLinux compilado: mismoBattleLog/receiptantesdespués, pausa/2x/inspector/oculto/omitir/reducido/contextlost; ES/ENyambospacks;1280×900/390×844/865×1079;3×3,5×3,5×5fixturesdeclaradas;apertura4rangos/nuevo/repetido/recarga/GSAPoassetfallido;nodospacto/refugio/cofre/encuentro,forja/bóveda,yconsultahistóricasinreplay;A68matrizpendiente. Teclado,foco,toqueemulado/texto200%;no evidencia física/humana.
+Linux compilado: mismo BattleLog y estado antes/después, pausa, 2x, inspector, ocultación, omisión, reducido y pérdida de contexto. ES/EN y ambos packs a 1280×900, 390×844 y 865×1079. Composiciones 3×3, 5×3 y 5×5 mediante fixtures declaradas, sin cambiar la campaña. Apertura de cuatro rangos, descubrimiento/copia, recarga, cambio de pack e idioma, asset ausente e import fallido. Regresiones de ruta, Pacto, refugio, cofre, encuentro, forja, bóveda y consulta histórica; matriz A68 independiente.
 
-## Medición desde la acción
+Teclado, foco, toque emulado y texto al 200 % se distinguen de dispositivo físico y lector hablado. La ocultación sintética prueba el listener de visibilidad; no demuestra comportamiento del sistema operativo de un teléfono.
 
-Frío: antespointer/tecla deconfirmar/abrirreplay→primerobjetointencional→resultadoutilizable; incluirred/commit/import/decode/animación, no movercostoapantallaanterior. Medirbaseyactualenentornoequivalente, conmismafixture/seed ypack, cachefría explícita. Repeticióncaliente10–20s y30reentradas secuencialescontextos sinmatrizcapturas. Fasesnormal/pausa/oculto/2x/omisión/desmontaje. Registrarcuántasmuestras,entorno/SHA/API, P50/P95/pico, no FPSdesdeunticker sinpaint.
+## Medición y presupuestos
 
-Objetivos, **no medidosA69**:
--60Hz:presupuestoframe16.7ms;P95≤20msdesktopemulado, sin nuevas tareas>50msatribuiblesafecto; dispositivos reales porvalidardespués. WebKitlongtaskAPIausentenoseconvierteencero.
--Capaefectos≤2msCPU/frame propuesto;simultáneos1proyectil+1impacto/curación,≤12marcasGraphics deimpacto, FrogMagic≤24sprites/2texturasprepaint28×28; sin Canvasnuevo.
--Arena10texturas de342×428≈5.86MBRGBAdecode como referenciaA58;objetivo≤12MBtexturaspropiasenunaescena, conteoyestimaciónw×h×4 (noGPUtotal),resolution≤2actual. Fondosnosubira4Kporbrillo.
--AperturaDPR≤1.5actual;recursosincrementalescomprimidosobjetivo≤150KB, no lote;JSincrementalgzip≤15KBobjetivoinicial. Builddual14MBnoesdescargainicial.
--Pausa/oculto:cursor/renderCountestablesexceptopaintúnicodeestadopendiente/resize;no rAF/tickermantenidoinnecesariamente. Omisión→estadofinal≤100msobjetivoDOM,sinrednueva. Desmontaje:0ticker/rAF/listener/observerpropio;0texturasvivasdelrendererretirado,memoriapostGCsincrecimientomonótono30ciclos (noexigirGCinmediata).
+Medir desde pointer/tecla hasta resultado utilizable, conservando red, confirmación, import, decode y animación donde existan. No trasladar trabajo a otra pantalla para fabricar una mejora. Registrar entorno, SHA, fixtures, caché, número de muestras, P50/P95 y pico.
 
-## Evidencia gráfica y Mac
+El harness A69 parte de un **resultado ya confirmado** y mide presentación/carga/animación; no tiene una operación de autoridad y no acredita latencia de red de una compra real. Las baterías integradas del juego comprueban operaciones reales por separado. Una nueva navegación no equivale automáticamente a caché de red vacía.
 
-HOST-INCIDENTvigente. Ningúnnavegadorlocalparaestaampliación; no reinstalar/reconfigurar/falsificarprocess.platform. Linuxunworker, bloquocomún, mediaoff,retries0. Capturasmanualesoptinseleccionadas:1arenaanticipación/impacto/finaly1aperturapeak/resultadoporcontextomuestra, no todamatriz. Capturaestática≠movimiento; medirtrayectorias/transform/duraciónenruntime.
+| Presupuesto propuesto | Objetivo y alcance |
+| --- | --- |
+| Frame a 60 Hz | 16,7 ms por frame; P95 ≤20 ms en escritorio emulado. Ninguna nueva tarea >50 ms atribuible al efecto. No es garantía en móvil físico. |
+| CPU de efectos | ≤2 ms/frame como objetivo; medir con perfil atribuible antes de afirmarlo. |
+| Simultaneidad | Un proyectil y un impacto o curación; ≤12 marcas Graphics; FrogMagic ≤24 sprites y dos texturas precocinadas de 28×28. |
+| Texturas propias | ≤12 MiB por arena; estimación ancho×alto×4, no memoria GPU total. Referencia de figuras: unas 5,86 MB RGBA para diez. |
+| Resolución | Arena DPR≤2; apertura DPR≤1,5. No subir fondos a 4K para añadir brillo. |
+| Payload incremental | Objetivo ≤150 kB comprimidos de arte y ≤15 kB gzip de JS. Un build dual de unos 14 MB no es una descarga inicial. |
+| Pausa y ocultación | Cursor y renderCount estables, salvo un paint de estado pendiente o resize; sin ticker/RAF mantenido innecesariamente. |
+| Omisión | Resultado DOM utilizable en ≤100 ms como objetivo, sin otra operación de red. |
+| Desmontaje | Cero recursos propios activos. Comprobar 30 ciclos en serie: Canvas retirado y texturas propias destruidas. Memoria de heap/GPU y post-GC requieren medición específica; estos atributos no prueban ausencia global de fugas. |
 
-Pushrama devalidación autorizado comopasonecesario haciamain; no pushmain hastaCIcandidataresuelta. Conservartrials aislados, no abrirpartidahabitual. SiCI externano disponible, registrarpendiente yno falsearvalidadocompleto o repetirgráficosMac. Sesiónhumana10minposterior para distinguiractor/impacto/nuevorepetido;no bloqueatécnicapor sísola.
+Medir también 10–20 s de uso sostenido por separado del arranque. No calcular FPS solo desde el ticker si no se pinta. Si WebKit no expone Long Tasks, registrar ausencia de API, nunca cero tareas. Las cifras históricas A58 no se convierten en medidas actuales o comparaciones equivalentes. La comparación aislada A69 antes/después queda limitada si no existe la misma muestra reconstruida; no se afirmará una mejora porcentual sin ella.
 
-Revisión cruzada antes de CI: se corrigió un posible fotograma con fase nueva y actor anterior, rechazando paints con cursores distintos. Las cifras de impacto conservan una clave por evento/unidad a través de eventos de contabilidad; su ventana CSS de520ms termina en opacidad cero y pausa con la reproducción. Una prueba adicional confirma identidad estable y sustitución por el siguiente cambio real. No cambia HP ni BattleLog. RED inicial: módulo ausente; GREEN:1/1. La primera ejecución CI se canceló antes de usar sus resultados para validar, al incorporar estas correcciones.
+## Mac y evidencia seleccionada
 
-La matriz estacional se separa del descubrimiento general de tests porque necesita toque y un calendario declarado. El launcher privado de ensayo admite `ARCANA_TRIAL_CLOCK_ISO`, inyectado exclusivamente por servidor; la configuración A68 fija20octubre2026. Sin esa variable se conserva Redis TIME. Sesiones y límites mantienen su autoridad Redis. No existe control público para cambiar fechas. La prueba HTTP con PostgreSQL/Redis dio un RED real de serverTime y después GREEN; 77 integraciones correctas, incluidos estado y participación con el mismo reloj. La segunda ejecución se canceló para incorporar esta corrección antes de interpretar resultados; no se acredita una suite cancelada.
+Rige HOST-INCIDENT. A69 no ejecuta navegador local, matrices, perfiles o grabaciones. `npm run test:browser:check` solo comprueba el preflight. No se reinstalan herramientas, alteran límites o elude el guard mediante otro script.
 
-La evidencia parcial de una ejecución cancelada mostró una expectativa histórica de confeti y un timeout en el toque del equipo a320px. Se actualiza la prueba para exigir el teatro de revelación y ausencia de la segunda capa de confeti, conservando las aserciones económicas/idioma/recarga. El resumen de recluta/condición se pliega en el mapa estrecho hasta abrir sus detalles: el receipt no invade los retratos táctiles del equipo. Se añade serialización de workflows CI además del guard de cada suite; no se aumentan los límites del Mac ni se habilitan reintentos.
+Linux usa un worker, lock común, media automática desactivada y cero reintentos. El workflow añade serialización entre ejecuciones. La evidencia gráfica es explícita: tres imágenes seleccionadas de arena y una de apertura en un proyecto Chromium. Una captura estática no acredita movimiento; secuencias, transformaciones, tiempo y pausa se comprueban en ejecución.
+
+No se utiliza la partida habitual. La rama/PR es un paso necesario para comprobar en Linux; main se actualiza tras resolver el candidato. Si CI no está disponible, el estado queda pendiente sin regresar a gráficos del Mac.
+
+## Ejecución local y correcciones previas
+
+515 pruebas unitarias y 77 integraciones PostgreSQL/Redis correctas; tipos, build y escaneo correctos. Comandos y salidas en `evidence/`. El build mantiene el aviso conocido del chunk principal superior a 500 kB.
+
+La revisión cruzada detectó un posible paint con fase nueva y actor anterior: se rechaza cuando los cursores difieren. Las cifras de daño mantienen identidad por unidad/evento a través de sucesos de contabilidad; su ventana CSS de 520 ms termina en opacidad cero y pausa con el replay. No se modifica HP ni BattleLog. Prueba adicional: RED por módulo ausente y GREEN 1/1.
+
+La matriz estacional sale del descubrimiento general porque necesita toque y calendario declarado. El launcher privado acepta `ARCANA_TRIAL_CLOCK_ISO` en servidor; A68 fija 20 de octubre de 2026. Sin variable, mantiene Redis TIME. Sesiones y límites conservan autoridad Redis. No existe control público de fechas. La prueba HTTP con PostgreSQL/Redis dio un RED real de serverTime y después GREEN.
+
+La evidencia parcial de ejecuciones canceladas mostró una expectativa antigua de confeti y un timeout de toque a 320 px. Se exige ahora el teatro de revelación y ausencia de confeti duplicado, manteniendo las aserciones económicas. El resumen del recluta/condición se pliega en mapa estrecho hasta consultar detalles, para no invadir retratos del equipo. Las ejecuciones canceladas no se cuentan como suites validadas ni se reintentan automáticamente.
+
+## Sesión humana posterior
+
+Duración sugerida: unos diez minutos, con objetivos sin explicar la solución.
+
+1. Observar un combate y explicar quién actúa, a quién afecta y qué cambia. Hipótesis: el contacto local facilita esa lectura sin depender del registro.
+2. Abrir una rana nueva y una repetida, reconocer la diferencia y continuar. Hipótesis: el ritmo y la materialidad dan importancia al hallazgo sin convertir la repetición en espera.
+3. Cambiar una pieza o composición y consultar un resultado anterior. Observar si distingue selección, cambio guardado y consulta histórica.
+
+Registrar dudas, ayuda, objetivos percibidos y pausas. No atribuir diversión o comprensión a simulaciones. Dispositivos físicos y lector hablado permanecen pendientes.
+
+Los resultados Linux y sus límites se añaden en el informe tras completar la ejecución.
+
+## Primer resultado Linux completo y corrección
+
+CI [38947929656](https://github.com/earandes/diagon-alley/actions/runs/38947929656), candidato `8335ce0`: tipos, 515 unitarios, 77 PostgreSQL/Redis, build, suite general, A67, A63, A66, A65, doce proyectos A68, PWA y perfiles A67 correctos. A69:16 correctos,3 fallidos y5 omitidos intencionados. Los tres fallos Chromium proceden del mismo caso: una actualización pendiente hacía un paint adicional después de ocultar el documento, aunque cursor y reloj quedaban congelados. WebKit no reprodujo esa carrera en esta ejecución.
+
+Se corrige `paint` para rechazar también `document.hidden`; no se elimina la aserción ni se aumenta su tolerancia. La nueva ejecución debe verificar el cese de dibujo y recuperación al volver visible, junto con las regresiones. La CI fallida sigue siendo evidencia de detección, no validación completa.
