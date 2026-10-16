@@ -1,0 +1,515 @@
+{
+  "meaning": "Source declarations, not browser-computed duration or executed movement",
+  "declarations": [
+    {
+      "file": "src/arcana/presentation/arena-a63.css",
+      "line": 268,
+      "declaration": "animation: arena-delta-a63 300ms ease-out both;"
+    },
+    {
+      "file": "src/arcana/presentation/arena-a63.css",
+      "line": 274,
+      "declaration": "animation: none;"
+    },
+    {
+      "file": "src/arcana/presentation/arena-a63.css",
+      "line": 357,
+      "declaration": "@keyframes arena-delta-a63 {"
+    },
+    {
+      "file": "src/arcana/presentation/arena-a63.css",
+      "line": 369,
+      "declaration": "animation: none;"
+    },
+    {
+      "file": "src/arcana/presentation/celebration-a59.css",
+      "line": 32,
+      "declaration": "animation: a59-reward-halo var(--burst-duration) cubic-bezier(0.18, 0.7, 0.2, 1) both;"
+    },
+    {
+      "file": "src/arcana/presentation/celebration-a59.css",
+      "line": 42,
+      "declaration": "animation: a59-reward-particle var(--particle-duration) cubic-bezier(0.18, 0.7, 0.2, 1)"
+    },
+    {
+      "file": "src/arcana/presentation/celebration-a59.css",
+      "line": 94,
+      "declaration": "@keyframes a59-reward-particle {"
+    },
+    {
+      "file": "src/arcana/presentation/celebration-a59.css",
+      "line": 110,
+      "declaration": "@keyframes a59-reward-halo {"
+    },
+    {
+      "file": "src/arcana/presentation/celebration-a59.css",
+      "line": 129,
+      "declaration": "animation: none;"
+    },
+    {
+      "file": "src/arcana/presentation/contextual-preparation.css",
+      "line": 308,
+      "declaration": "transition:"
+    },
+    {
+      "file": "src/arcana/presentation/contextual-preparation.css",
+      "line": 319,
+      "declaration": "transition: none;"
+    },
+    {
+      "file": "src/arcana/presentation/contextual-preparation.css",
+      "line": 325,
+      "declaration": "transition: none;"
+    },
+    {
+      "file": "src/arcana/presentation/encounter-a67.css",
+      "line": 106,
+      "declaration": "transition:"
+    },
+    {
+      "file": "src/arcana/presentation/encounter-a67.css",
+      "line": 324,
+      "declaration": "transition: none;"
+    },
+    {
+      "file": "src/arcana/presentation/encounter-a67.css",
+      "line": 331,
+      "declaration": "transition: none;"
+    },
+    {
+      "file": "src/arcana/presentation/expedition-closure.css",
+      "line": 41,
+      "declaration": ".game-shell[data-reduced='false'] .closure-spoils { animation: closure-arrive 340ms ease-out both; }"
+    },
+    {
+      "file": "src/arcana/presentation/expedition-closure.css",
+      "line": 42,
+      "declaration": "@keyframes closure-arrive { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }"
+    },
+    {
+      "file": "src/arcana/presentation/expedition-closure.css",
+      "line": 49,
+      "declaration": "@media (prefers-reduced-motion: reduce) { .game-shell .closure-spoils { animation: none !important; } }"
+    },
+    {
+      "file": "src/arcana/presentation/expedition-intentions.css",
+      "line": 35,
+      "declaration": "transition:"
+    },
+    {
+      "file": "src/arcana/presentation/expedition-intentions.css",
+      "line": 168,
+      "declaration": "transition: none;"
+    },
+    {
+      "file": "src/arcana/presentation/expedition-intentions.css",
+      "line": 176,
+      "declaration": "transition: none;"
+    },
+    {
+      "file": "src/arcana/presentation/expedition-preparation.css",
+      "line": 425,
+      "declaration": "transition: transform 0.2s ease;"
+    },
+    {
+      "file": "src/arcana/presentation/expedition-preparation.css",
+      "line": 614,
+      "declaration": "transition: none;"
+    },
+    {
+      "file": "src/arcana/presentation/expedition-preparation.css",
+      "line": 618,
+      "declaration": "transition: none;"
+    },
+    {
+      "file": "src/arcana/presentation/expedition-preparation.css",
+      "line": 740,
+      "declaration": "transition:"
+    },
+    {
+      "file": "src/arcana/presentation/expedition-preparation.css",
+      "line": 759,
+      "declaration": "animation: preparation-seal-in 180ms ease-out both;"
+    },
+    {
+      "file": "src/arcana/presentation/expedition-preparation.css",
+      "line": 761,
+      "declaration": "@keyframes preparation-seal-in {"
+    },
+    {
+      "file": "src/arcana/presentation/expedition-preparation.css",
+      "line": 894,
+      "declaration": "transition: none;"
+    },
+    {
+      "file": "src/arcana/presentation/expedition-preparation.css",
+      "line": 897,
+      "declaration": "animation: none;"
+    },
+    {
+      "file": "src/arcana/presentation/expedition-preparation.css",
+      "line": 901,
+      "declaration": "animation: none;"
+    },
+    {
+      "file": "src/arcana/presentation/expedition-preparation.css",
+      "line": 904,
+      "declaration": "transition: none;"
+    },
+    {
+      "file": "src/arcana/presentation/game-experience.css",
+      "line": 124,
+      "declaration": "animation: lantern-breathe 6s ease-in-out infinite alternate;"
+    },
+    {
+      "file": "src/arcana/presentation/game-experience.css",
+      "line": 140,
+      "declaration": "animation: alley-mist 18s ease-in-out infinite alternate;"
+    },
+    {
+      "file": "src/arcana/presentation/game-experience.css",
+      "line": 149,
+      "declaration": "animation: alley-mote 14s linear infinite;"
+    },
+    {
+      "file": "src/arcana/presentation/game-experience.css",
+      "line": 154,
+      "declaration": "@keyframes lantern-breathe {"
+    },
+    {
+      "file": "src/arcana/presentation/game-experience.css",
+      "line": 162,
+      "declaration": "@keyframes alley-mist {"
+    },
+    {
+      "file": "src/arcana/presentation/game-experience.css",
+      "line": 172,
+      "declaration": "@keyframes alley-mote {"
+    },
+    {
+      "file": "src/arcana/presentation/game-experience.css",
+      "line": 421,
+      "declaration": "transition: none;"
+    },
+    {
+      "file": "src/arcana/presentation/game-stage.css",
+      "line": 160,
+      "declaration": "transition: transform 160ms ease-out;"
+    },
+    {
+      "file": "src/arcana/presentation/game-stage.css",
+      "line": 431,
+      "declaration": "transition: transform 180ms ease-out;"
+    },
+    {
+      "file": "src/arcana/presentation/game-stage.css",
+      "line": 946,
+      "declaration": "transition: none;"
+    },
+    {
+      "file": "src/arcana/presentation/game-stage.css",
+      "line": 1072,
+      "declaration": "transition: none;"
+    },
+    {
+      "file": "src/arcana/presentation/map-a60.css",
+      "line": 47,
+      "declaration": "transition:"
+    },
+    {
+      "file": "src/arcana/presentation/map-a60.css",
+      "line": 99,
+      "declaration": "animation: a60-route-invitation 900ms ease-out 2;"
+    },
+    {
+      "file": "src/arcana/presentation/map-a60.css",
+      "line": 215,
+      "declaration": "@keyframes a60-route-invitation {"
+    },
+    {
+      "file": "src/arcana/presentation/map-a60.css",
+      "line": 227,
+      "declaration": "animation: none !important;"
+    },
+    {
+      "file": "src/arcana/presentation/map-a60.css",
+      "line": 228,
+      "declaration": "transition: none;"
+    },
+    {
+      "file": "src/arcana/presentation/map-a60.css",
+      "line": 238,
+      "declaration": "animation: none !important;"
+    },
+    {
+      "file": "src/arcana/presentation/map-a60.css",
+      "line": 239,
+      "declaration": "transition: none;"
+    },
+    {
+      "file": "src/arcana/presentation/node-event-dialog.css",
+      "line": 19,
+      "declaration": "animation: a60-event-arrive 200ms ease-out both;"
+    },
+    {
+      "file": "src/arcana/presentation/node-event-dialog.css",
+      "line": 48,
+      "declaration": "animation: a60-event-object 350ms ease-out both;"
+    },
+    {
+      "file": "src/arcana/presentation/node-event-dialog.css",
+      "line": 161,
+      "declaration": "@keyframes a60-event-arrive {"
+    },
+    {
+      "file": "src/arcana/presentation/node-event-dialog.css",
+      "line": 171,
+      "declaration": "@keyframes a60-event-object {"
+    },
+    {
+      "file": "src/arcana/presentation/node-event-dialog.css",
+      "line": 195,
+      "declaration": "animation: none;"
+    },
+    {
+      "file": "src/arcana/presentation/node-event-dialog.css",
+      "line": 200,
+      "declaration": "animation: none;"
+    },
+    {
+      "file": "src/arcana/presentation/reveal-theatre.css",
+      "line": 75,
+      "declaration": "animation: a60-orbit-settle 1400ms ease-out both;"
+    },
+    {
+      "file": "src/arcana/presentation/reveal-theatre.css",
+      "line": 79,
+      "declaration": "animation: a60-starlight 1200ms ease-out both;"
+    },
+    {
+      "file": "src/arcana/presentation/reveal-theatre.css",
+      "line": 82,
+      "declaration": "animation: a60-crown 1300ms ease-out both;"
+    },
+    {
+      "file": "src/arcana/presentation/reveal-theatre.css",
+      "line": 85,
+      "declaration": "animation: a60-rank-stamp 600ms cubic-bezier(0.18, 0.8, 0.3, 1.12) both;"
+    },
+    {
+      "file": "src/arcana/presentation/reveal-theatre.css",
+      "line": 88,
+      "declaration": "animation: a60-rank-stamp 650ms 160ms ease-out both;"
+    },
+    {
+      "file": "src/arcana/presentation/reveal-theatre.css",
+      "line": 129,
+      "declaration": "@keyframes a60-orbit-settle {"
+    },
+    {
+      "file": "src/arcana/presentation/reveal-theatre.css",
+      "line": 142,
+      "declaration": "@keyframes a60-starlight {"
+    },
+    {
+      "file": "src/arcana/presentation/reveal-theatre.css",
+      "line": 155,
+      "declaration": "@keyframes a60-crown {"
+    },
+    {
+      "file": "src/arcana/presentation/reveal-theatre.css",
+      "line": 168,
+      "declaration": "@keyframes a60-rank-stamp {"
+    },
+    {
+      "file": "src/arcana/presentation/reveal-theatre.css",
+      "line": 180,
+      "declaration": "animation: none !important;"
+    },
+    {
+      "file": "src/arcana/presentation/reveal-theatre.css",
+      "line": 184,
+      "declaration": "animation: none !important;"
+    },
+    {
+      "file": "src/arcana/presentation/seasonal-event.css",
+      "line": 388,
+      "declaration": "animation: seasonal-lantern-reveal 0.45s ease-out both;"
+    },
+    {
+      "file": "src/arcana/presentation/seasonal-event.css",
+      "line": 422,
+      "declaration": "@keyframes seasonal-lantern-reveal {"
+    },
+    {
+      "file": "src/arcana/presentation/seasonal-event.css",
+      "line": 435,
+      "declaration": "animation: none;"
+    },
+    {
+      "file": "src/arcana/presentation/seasonal-event.css",
+      "line": 436,
+      "declaration": "transition: none;"
+    },
+    {
+      "file": "src/arcana/presentation/seasonal-event.css",
+      "line": 442,
+      "declaration": "animation: none;"
+    },
+    {
+      "file": "src/arcana/presentation/seasonal-event.css",
+      "line": 443,
+      "declaration": "transition: none;"
+    },
+    {
+      "file": "src/arcana/presentation/shop-journey.css",
+      "line": 106,
+      "declaration": "transition: transform 220ms ease-out;"
+    },
+    {
+      "file": "src/arcana/presentation/shop-journey.css",
+      "line": 123,
+      "declaration": "transition: transform 220ms ease-out;"
+    },
+    {
+      "file": "src/arcana/presentation/shop-journey.css",
+      "line": 217,
+      "declaration": "animation: shop-arrive 200ms ease-out both;"
+    },
+    {
+      "file": "src/arcana/presentation/shop-journey.css",
+      "line": 219,
+      "declaration": "@keyframes shop-arrive {"
+    },
+    {
+      "file": "src/arcana/presentation/shop-journey.css",
+      "line": 395,
+      "declaration": "transition: transform 160ms ease-out;"
+    },
+    {
+      "file": "src/arcana/presentation/shop-journey.css",
+      "line": 596,
+      "declaration": "transition: transform 200ms ease-out;"
+    },
+    {
+      "file": "src/arcana/presentation/shop-journey.css",
+      "line": 889,
+      "declaration": "transition: none;"
+    },
+    {
+      "file": "src/arcana/presentation/shop-journey.css",
+      "line": 898,
+      "declaration": "animation: none !important;"
+    },
+    {
+      "file": "src/arcana/presentation/shop-journey.css",
+      "line": 899,
+      "declaration": "transition: none !important;"
+    },
+    {
+      "file": "src/arcana/presentation/shop-journey.css",
+      "line": 1231,
+      "declaration": "transition: transform 160ms ease-out;"
+    },
+    {
+      "file": "src/arcana/presentation/shop-journey.css",
+      "line": 1280,
+      "declaration": "transition: none;"
+    },
+    {
+      "file": "src/arcana/presentation/shop-journey.css",
+      "line": 1285,
+      "declaration": "transition: none;"
+    },
+    {
+      "file": "src/arcana/presentation/styles.css",
+      "line": 849,
+      "declaration": "animation: arcana-confetti var(--duration) ease-out both;"
+    },
+    {
+      "file": "src/arcana/presentation/styles.css",
+      "line": 851,
+      "declaration": "@keyframes arcana-confetti {"
+    },
+    {
+      "file": "src/arcana/presentation/styles.css",
+      "line": 896,
+      "declaration": "transition: none;"
+    },
+    {
+      "file": "src/arcana/presentation/styles.css",
+      "line": 1085,
+      "declaration": "animation: arena-entry var(--arena-entry, 350ms) ease-out both;"
+    },
+    {
+      "file": "src/arcana/presentation/styles.css",
+      "line": 1087,
+      "declaration": "@keyframes arena-entry {"
+    },
+    {
+      "file": "src/arcana/presentation/styles.css",
+      "line": 1099,
+      "declaration": "animation: none !important;"
+    },
+    {
+      "file": "src/arcana/presentation/styles.css",
+      "line": 1108,
+      "declaration": "animation: none;"
+    },
+    {
+      "file": "src/arcana/presentation/styles.css",
+      "line": 1159,
+      "declaration": "transition:"
+    },
+    {
+      "file": "src/arcana/presentation/styles.css",
+      "line": 1402,
+      "declaration": "transition: none;"
+    },
+    {
+      "file": "src/arcana/presentation/styles.css",
+      "line": 1409,
+      "declaration": "transition: none;"
+    },
+    {
+      "file": "src/arcana/presentation/styles.css",
+      "line": 1752,
+      "declaration": "transition: none !important;"
+    },
+    {
+      "file": "src/arcana/presentation/styles.css",
+      "line": 1756,
+      "declaration": "transition: none !important;"
+    },
+    {
+      "file": "src/arcana/presentation/tactical-a65.css",
+      "line": 88,
+      "declaration": "transition:"
+    },
+    {
+      "file": "src/arcana/presentation/tactical-a65.css",
+      "line": 106,
+      "declaration": "transition:"
+    },
+    {
+      "file": "src/arcana/presentation/tactical-a65.css",
+      "line": 299,
+      "declaration": "transition: none;"
+    },
+    {
+      "file": "src/arcana/presentation/tactical-a65.css",
+      "line": 306,
+      "declaration": "transition: none;"
+    },
+    {
+      "file": "src/arcana/presentation/tactical-a65.css",
+      "line": 373,
+      "declaration": "transition: none;"
+    },
+    {
+      "file": "src/arcana/presentation/tactical-a65.css",
+      "line": 377,
+      "declaration": "transition: none;"
+    }
+  ]
+}

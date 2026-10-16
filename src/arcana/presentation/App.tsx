@@ -1,4 +1,5 @@
 import { challengeText } from './ExpeditionChallenge';
+import { SeasonalEvent } from './SeasonalEvent';
 import { previewEncounterTrade } from '../domain/exploration/encounter-trades';
 import { encounterText } from './encounter-messages';
 import type { ExpeditionChallenge } from '../domain/exploration/challenges';
@@ -258,8 +259,10 @@ export function App() {
     selectedNode?.kind === 'pact' &&
     !!run &&
     run.members.length < 5;
+  const nodeBefore = useRef<{ nodeId: string; run: NonNullable<typeof run> } | null>(null);
   const resolveNode = (options: NodeOptions = nodeOptions) => {
     if (!run || !selected || !ready || !availableNodeIds.has(selected)) return;
+    nodeBefore.current = { nodeId: selected, run };
     void controller.perform({
       kind: 'advance-node',
       request: {
@@ -364,7 +367,10 @@ export function App() {
         {t('skipToContent')}
       </a>
       <div className="game-world-backdrop" aria-hidden="true" />
-      <SceneAtmosphere reduced={motion.reduced} />
+      <SceneAtmosphere
+        reduced={motion.reduced}
+        active={view !== 'battle' && !selected && !preparing}
+      />
       <header className="game-header">
         <h1>
           {view === 'map' && content
@@ -374,6 +380,28 @@ export function App() {
             <small className="challenge-reminder">{challengeText(language, run.challenge)}</small>
           )}
         </h1>
+        {game &&
+          (content?.seasonalEdition || game.seasonal?.participations.length) &&
+          state.serverTime !== null &&
+          view !== 'battle' && (
+            <SeasonalEvent
+              state={game}
+              language={language}
+              serverTime={state.serverTime}
+              edition={content?.seasonalEdition}
+              busy={!ready}
+              reducedMotion={motion.reduced}
+              error={state.error}
+              onRecover={() => void (state.pending ? controller.recover() : controller.load())}
+              recoverLabel={state.pending ? t('recoverOperation') : t('refreshState')}
+              onAction={(request) => void controller.perform({ kind: 'seasonal-event', request })}
+              onPrepareRoute={() => {
+                setView('map');
+                if (run && run.status !== 'active') openPreparation();
+                else document.getElementById('content')?.focus({ preventScroll: true });
+              }}
+            />
+          )}
         <GameSettings
           language={language}
           onLanguage={setLanguage}
@@ -502,6 +530,12 @@ export function App() {
                 {!closure && savedNode && (
                   <NodeResult
                     receipt={savedNode}
+                    confirmed={ready && state.receipt?.id === savedNode.id}
+                    previousRun={
+                      nodeBefore.current?.nodeId === savedNode.request.nodeId
+                        ? nodeBefore.current.run
+                        : undefined
+                    }
                     language={language}
                     onReplay={() => setView('battle')}
                     onMissions={() => setView('missions')}
@@ -511,6 +545,7 @@ export function App() {
                   <>
                     <ExpeditionClosure
                       game={game}
+                      confirmedReceiptId={ready ? state.receipt?.id : undefined}
                       language={language}
                       ready={ready}
                       onAction={closureAction}
@@ -556,7 +591,19 @@ export function App() {
                       language={language}
                       onPrepare={(origin) => openPreparation('formation', origin)}
                     />
-                    <MapPanel run={run} ready={ready} language={language} onSelect={selectNode} />
+                    <MapPanel
+                      run={run}
+                      ready={ready}
+                      language={language}
+                      onSelect={selectNode}
+                      confirmedReceiptId={
+                        ready &&
+                        state.receipt?.kind === 'advance-node' &&
+                        state.receipt.run.id === run.id
+                          ? state.receipt.id
+                          : undefined
+                      }
+                    />
                   </>
                 )}
 

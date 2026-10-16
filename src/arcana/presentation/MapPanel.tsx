@@ -11,6 +11,9 @@ import { SceneCanvas } from './scenes/SceneCanvas';
 import { text, type MessageKey } from './translations';
 import './map-a60.css';
 import { mapText } from './map-messages';
+import { useConfirmedMotion } from './useConfirmedMotion';
+import { useReducedMotion } from './useReducedMotion';
+import './motion-a69.css';
 const nodeLabels: Record<NodeKind, MessageKey> = {
   duel: 'arcaneDuel',
   refuge: 'alchemyRefuge',
@@ -24,12 +27,22 @@ export function MapPanel({
   ready,
   language,
   onSelect,
+  confirmedReceiptId,
 }: {
   run: Run;
   ready: boolean;
   language: Language;
   onSelect: (id: string, origin: HTMLButtonElement) => void;
+  confirmedReceiptId?: string;
 }) {
+  const { reduced } = useReducedMotion();
+  const confirmedMotion = useConfirmedMotion(
+    'map-route',
+    confirmedReceiptId,
+    !!confirmedReceiptId,
+    reduced,
+    280,
+  );
   const [list, setList] = useState(false),
     scroll = useRef<HTMLDivElement>(null),
     [size, setSize] = useState({ width: 390, height: 600 }),
@@ -47,6 +60,9 @@ export function MapPanel({
   const incomingChoices = layout.edges.filter(
     (edge) => available.includes(edge.to.id) && edge.from.id === run.visited.at(-1),
   );
+  const confirmedPoint = layout.nodes.find((point) => point.id === run.visited.at(-1));
+  const previousPoint =
+    run.visited.length > 1 ? layout.nodes.find((point) => point.id === run.visited.at(-2)) : origin;
   const originLabel = mapText(language, 'origin');
   const leader = run.members.find((member) => member.source === 'owned') ?? run.members[0];
   useLayoutEffect(() => {
@@ -80,6 +96,7 @@ export function MapPanel({
         }
         data-node={id}
         data-node-kind={kind}
+        data-confirmed-motion={confirmedMotion && id === run.visited.at(-1)}
         data-node-state={
           run.visited.includes(id) ? 'visited' : available.includes(id) ? 'available' : 'locked'
         }
@@ -147,6 +164,7 @@ export function MapPanel({
             className="branch-map"
             data-region={run.zoneId}
             data-map-axis={horizontal ? 'horizontal' : 'vertical'}
+            data-motion-policy="confirmed"
             style={{ height: layout.height }}
           >
             <Artwork
@@ -161,6 +179,20 @@ export function MapPanel({
               data={{ kind: 'map', layout, visited: run.visited, available }}
               language={language}
             />
+            {confirmedMotion && previousPoint && confirmedPoint && (
+              <svg
+                className="motion-map-confirmed-trace"
+                data-confirmed-route-motion={confirmedReceiptId}
+                viewBox={`0 0 ${layout.width} ${layout.height}`}
+                aria-hidden="true"
+                preserveAspectRatio="none"
+              >
+                <path
+                  pathLength="1"
+                  d={`M ${previousPoint.x} ${previousPoint.y} L ${confirmedPoint.x} ${confirmedPoint.y}`}
+                />
+              </svg>
+            )}
             <svg
               className="map-origin-trail"
               viewBox={`0 0 ${layout.width} ${layout.height}`}

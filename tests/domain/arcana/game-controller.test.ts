@@ -25,6 +25,8 @@ import {
 } from '../../../src/arcana/application/shop-use-cases';
 import { runInitial, campaignFixture } from './support/run-fixtures';
 import { catalogFixture, toadFixture, shopFixture } from './support/fixtures';
+import { SeasonalEventUseCase } from '../../../src/arcana/application/seasonal-events';
+import { seasonalEdition } from '../../../src/arcana/infrastructure/content/seasonal-content';
 const opening = () => ({ catalog: catalogFixture, table: toadFixture, shop: shopFixture });
 class Metadata implements ClientOperations {
   pending: PendingOperation | null = null;
@@ -60,6 +62,11 @@ const fixture = (goldKeys = 0) => {
   };
   const purchase = new PurchaseProductUseCase(games, opening);
   const gateway: ClientGateway = {
+    seasonalEvent: vi.fn((command) =>
+      new SeasonalEventUseCase(games, () => seasonalEdition, {
+        now: async () => seasonalEdition.startsAt + 100,
+      }).execute('player', command),
+    ),
     state: vi.fn(async () => projectPlayerStatus(state, 0)),
     content: vi.fn(async () => projectPublicContent(opening(), campaignFixture())),
     operation: vi.fn(async (key) => {
@@ -101,6 +108,28 @@ const action = {
   request: { product: 'cacao-toad' as const, quantity: 1, priceVersion: 1 },
 };
 describe('ARCANA recoverable client orchestration', () => {
+  it('A68 recovers a committed seasonal participation after lost response without resubmission', async () => {
+    const { controller, gateway, operations, keys, state } = fixture();
+    const initial = state();
+    await controller.load();
+    const execute = gateway.seasonalEvent!;
+    gateway.seasonalEvent = vi.fn(async (command) => {
+      await execute(command);
+      throw new ArcanaClientError('NETWORK_ERROR', 0, true);
+    });
+    await controller.perform({
+      kind: 'seasonal-event',
+      request: { editionId: seasonalEdition.editionId, version: 1, action: 'join' },
+    });
+    expect(controller.getSnapshot().status).toBe('recovery-required');
+    const restored = new GameController(gateway, operations, keys);
+    await restored.load();
+    expect(restored.getSnapshot().status).toBe('ready');
+    expect(restored.getSnapshot().receipt?.kind).toBe('seasonal-event');
+    expect(gateway.seasonalEvent).toHaveBeenCalledTimes(1);
+    expect(state().seasonal?.participations).toHaveLength(1);
+    expect(state().inventory).toEqual(initial.inventory);
+  });
   it('persists and recovers a buy-open intent after a lost response without another POST', async () => {
     const { controller, gateway, operations, state } = fixture();
     await controller.load();

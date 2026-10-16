@@ -29,6 +29,8 @@ import { ArcanaError } from '../../../src/arcana/domain/errors';
 import { SeededRandom } from '../../../src/arcana/infrastructure/random/seeded-random';
 import { catalogFixture, toadFixture, shopFixture } from './support/fixtures';
 import { campaignFixture, runInitial } from './support/run-fixtures';
+import { SeasonalEventUseCase } from '../../../src/arcana/application/seasonal-events';
+import { seasonalEdition } from '../../../src/arcana/infrastructure/content/seasonal-content';
 import {
   SetTeamUseCase,
   EquipEquipmentUseCase,
@@ -82,6 +84,8 @@ const setup = () => {
     })),
   };
   const services: ArcanaApiServices = {
+    seasonalConfiguration: () => seasonalEdition,
+    seasonalEvent: new SeasonalEventUseCase(games, () => seasonalEdition, clock),
     games,
     sessions,
     limits,
@@ -133,6 +137,61 @@ const advance = {
   request: { runId: 'start', nodeId: 'duel', campaignVersion: 1, assignments: [] },
 };
 describe('ARCANA Fastify authenticated command API', () => {
+  it('A68 keeps seasonal intents strict, read-only consultation and recoverable joins', async () => {
+    const { app, games, clock } = setup();
+    clock.now.mockResolvedValue(seasonalEdition.startsAt + 100);
+    const before = games.state;
+    const content = await app.inject({ method: 'GET', url: '/api/content', headers: auth });
+    expect(content.json().seasonalEdition).toEqual(seasonalEdition);
+    expect(games.state).toEqual(before);
+    const payload = {
+      key: 'seasonal-join',
+      expectedRevision: before.revision,
+      request: {
+        editionId: seasonalEdition.editionId,
+        version: seasonalEdition.version,
+        action: 'join',
+      },
+    };
+    for (const field of [
+      { serverTime: seasonalEdition.startsAt },
+      { completedObjectiveIds: ['a', 'b', 'c'] },
+      { action: 'grant' },
+    ]) {
+      const invalid = await app.inject({
+        method: 'POST',
+        url: '/api/events/seasonal',
+        headers: auth,
+        payload: { ...payload, request: { ...payload.request, ...field } },
+      });
+      expect(invalid.statusCode).toBe(400);
+      expect(games.state).toEqual(before);
+    }
+    const joined = await app.inject({
+      method: 'POST',
+      url: '/api/events/seasonal',
+      headers: auth,
+      payload,
+    });
+    expect(joined.statusCode).toBe(200);
+    expect(joined.json().receipt.kind).toBe('seasonal-event');
+    expect(games.state.inventory).toEqual(before.inventory);
+    clock.now.mockRejectedValue(new Error('clock unavailable'));
+    const replay = await app.inject({
+      method: 'POST',
+      url: '/api/events/seasonal',
+      headers: auth,
+      payload,
+    });
+    expect(replay.statusCode).toBe(200);
+    expect(replay.json()).toEqual(joined.json());
+    const recovered = await app.inject({
+      method: 'GET',
+      url: '/api/operations/seasonal-join',
+      headers: auth,
+    });
+    expect(recovered.json()).toEqual(joined.json());
+  });
   it('accepts one strict buy-open command and recovers the same committed receipt', async () => {
     const { app, games, random } = setup();
     const payload = {

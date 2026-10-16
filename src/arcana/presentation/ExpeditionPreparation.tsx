@@ -20,6 +20,8 @@ import { equipmentSpecializationText } from './equipment-specialization';
 import { prepText } from './prep-messages';
 import { text } from './translations';
 import './expedition-preparation.css';
+import { useSelectionMotion } from './useSelectionMotion';
+import { useReducedMotion } from './useReducedMotion';
 
 function PreparationGear({
   copy,
@@ -44,9 +46,19 @@ function PreparationGear({
     `${numbers.format(before)} → ${numbers.format(after)}`;
   const loadout = game.team?.loadouts.find((entry) => entry.copyId === copy.copyId);
   const equippedId = slot === 'wand' ? loadout?.wandId : loadout?.broomId;
+  const { reduced } = useReducedMotion();
+  const slotMotion = useSelectionMotion(
+    `${copy.copyId}:${loadout?.wandId ?? ''}:${loadout?.broomId ?? ''}`,
+    reduced,
+    160,
+  );
   return (
     <div className="preparation-gear">
-      <div className="preparation-gear-slots" aria-label={prepText(language, 'equipment')}>
+      <div
+        className="preparation-gear-slots"
+        ref={slotMotion}
+        aria-label={prepText(language, 'equipment')}
+      >
         {(['wand', 'broom'] as const).map((kind) => {
           const id = kind === 'wand' ? loadout?.wandId : loadout?.broomId;
           const item = game.inventory.equipment?.find((entry) => entry.id === id);
@@ -61,7 +73,7 @@ function PreparationGear({
               onClick={() => setSlot(slot === kind ? null : kind)}
             >
               {item ? (
-                <EquipmentArt item={item} language={language} />
+                <EquipmentArt item={item} language={language} selectionMotion={false} />
               ) : (
                 <Artwork asset="ui.clear" language={language} decorative />
               )}

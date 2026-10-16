@@ -1,3 +1,4 @@
+import { bindSeasonalRun, type SeasonalEdition } from '../domain/seasonal/events';
 import { previewEncounterTrade } from '../domain/exploration/encounter-trades';
 import { nodeOptionsSnapshot } from './node-options';
 import { randomizeRoute } from '../domain/exploration/randomize-route';
@@ -139,6 +140,7 @@ export class StartRunUseCase {
     private readonly games: GameTransactions,
     private readonly configuration: () => CampaignConfiguration,
     private readonly routes?: { seeds: BattleSeeds; random: CombatRandomFactory },
+    private readonly seasonal?: { clock: AuthorityClock; configuration?: () => SeasonalEdition },
   ) {}
   execute = async (
     playerId: string,
@@ -146,6 +148,24 @@ export class StartRunUseCase {
   ): Promise<OperationResult> => {
     if (!validDomainId(command.key)) throw new ArcanaError('INVALID_OPERATION');
     validateStart(command.request);
+    // Recovery never depends on today's calendar or an available clock.
+    let seasonalNow: number | undefined;
+    if (this.seasonal) {
+      const observed = await this.games.read(playerId);
+      checkPlayer(observed, playerId);
+      const prior = observed.receipts.find((r) => r.id === command.key);
+      if (prior) {
+        if (prior.kind !== 'start-run' || !sameStart(prior.request, command.request))
+          throw new ArcanaError('OPERATION_CONFLICT');
+        return operationResult(observed, command.key);
+      }
+      if (
+        observed.seasonal?.participations.some(
+          (p) => p.completedObjectiveIds.length < p.edition.objectiveIds.length,
+        )
+      )
+        seasonalNow = await this.seasonal.clock.now();
+    }
     const state = await this.games.transact(playerId, (current) => {
       checkPlayer(current, playerId);
       const prior = current.receipts.find((r) => r.id === command.key);
@@ -218,6 +238,9 @@ export class StartRunUseCase {
       return gameSnapshot({
         ...current,
         revision: current.revision + 1,
+        ...(current.seasonal && seasonalNow !== undefined
+          ? { seasonal: bindSeasonalRun(current.seasonal, run.id, seasonalNow) }
+          : {}),
         team: selectTeam(
           current.team ?? EMPTY_TEAM,
           command.request.copyIds,

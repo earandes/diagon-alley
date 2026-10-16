@@ -2,10 +2,23 @@ import type { Rarity } from '../domain/collection/rarity';
 import type { ReactNode } from 'react';
 const ranks = { common: 0, unusual: 1, epic: 2, 'arcane-legendary': 3 } as const;
 /** Original vector stage decoration. It cannot reveal or change the confirmed result. */
-export function RevealTheatre({ rarity, children }: { rarity: Rarity; children?: ReactNode }) {
+export function RevealTheatre({
+  rarity,
+  isNew = true,
+  children,
+}: {
+  rarity: Rarity;
+  isNew?: boolean;
+  children?: ReactNode;
+}) {
   const rank = ranks[rarity];
   return (
-    <div className="opening-theatre" data-theatre-rank={rank} aria-hidden="true">
+    <div
+      className="opening-theatre"
+      data-theatre-rank={rank}
+      data-theatre-discovery={isNew ? 'new' : 'repeat'}
+      aria-hidden="true"
+    >
       <div className="theatre-aura" />
       <svg className="theatre-engraving" viewBox="0 0 600 520" fill="none">
         <g className="theatre-orbits" stroke="currentColor">

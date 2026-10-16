@@ -33,6 +33,9 @@ import { ArcanaError, type ArcanaErrorCode } from '../../domain/errors';
 import { validDomainId } from '../../domain/identifiers';
 import type { SetIntentionUseCase, SetIntentionRequest } from '../../application/set-intention';
 import { setIntentionSchema } from './schemas';
+import { seasonalEventSchema } from './schemas';
+import type { SeasonalEventUseCase, SeasonalRequest } from '../../application/seasonal-events';
+import type { SeasonalEdition } from '../../domain/seasonal/events';
 import {
   purchaseSchema,
   openingSchema,
@@ -48,6 +51,8 @@ import {
 } from './schemas';
 
 export interface ArcanaApiServices {
+  readonly seasonalEvent?: SeasonalEventUseCase;
+  readonly seasonalConfiguration?: () => SeasonalEdition;
   readonly setIntention?: SetIntentionUseCase;
   readonly forgeWand: ForgeWandUseCase;
   readonly openVault: OpenObsidianVaultUseCase;
@@ -190,7 +195,11 @@ export function createArcanaApi(services: ArcanaApiServices, policy: HttpPolicy)
     ),
   );
   app.get('/api/content', { schema: query }, async () => {
-    return projectPublicContent(services.opening(), services.campaign());
+    return projectPublicContent(
+      services.opening(),
+      services.campaign(),
+      services.seasonalConfiguration?.(),
+    );
   });
   app.get<{ Params: { id: string } }>(
     '/api/operations/:id',
@@ -213,6 +222,14 @@ export function createArcanaApi(services: ArcanaApiServices, policy: HttpPolicy)
     (request) => {
       if (!services.setIntention) throw new ArcanaError('INVALID_OPERATION');
       return services.setIntention.execute(identity(request).playerId, request.body);
+    },
+  );
+  app.post<{ Body: OperationCommand<SeasonalRequest> }>(
+    '/api/events/seasonal',
+    { schema: { ...query, body: seasonalEventSchema } },
+    (request) => {
+      if (!services.seasonalEvent) throw new ArcanaError('INVALID_OPERATION');
+      return services.seasonalEvent.execute(identity(request).playerId, request.body);
     },
   );
   app.post<{ Body: OperationCommand<BuyOpenToadRequest> }>(

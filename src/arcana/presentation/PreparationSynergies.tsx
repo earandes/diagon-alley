@@ -3,6 +3,8 @@ import type { Language } from '../domain/collection/wizards';
 import { preparationSynergies, type PreparationMember } from './contextual-preparation';
 import { contextualText as c } from './contextual-messages';
 import { Artwork } from './Artwork';
+import { useSelectionMotion } from './useSelectionMotion';
+import { useReducedMotion } from './useReducedMotion';
 export function PreparationSynergies({
   members,
   previous,
@@ -16,8 +18,16 @@ export function PreparationSynergies({
 }) {
   const active = preparationSynergies(members, rules);
   const before = previous && preparationSynergies(previous, rules);
+  const { reduced } = useReducedMotion();
+  const motion = useSelectionMotion<HTMLDetailsElement>(
+    JSON.stringify(
+      active.map(({ affinity, threshold, value }) => ({ affinity, threshold, value })),
+    ),
+    reduced,
+    180,
+  );
   return (
-    <details className="preparation-synergies" data-preparation-synergies>
+    <details className="preparation-synergies" data-preparation-synergies ref={motion}>
       <summary aria-label={c(language, 'formationPreview')}>
         <Artwork asset="node.refuge" language={language} decorative />
         {active.length ? (

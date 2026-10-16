@@ -11,6 +11,8 @@ import { prepText } from './prep-messages';
 import './expedition-preparation.css';
 import { cromodex } from '../application/client/read-models';
 import { savedCopies, text, type MessageKey } from './translations';
+import { useSelectionMotion } from './useSelectionMotion';
+import { useReducedMotion } from './useReducedMotion';
 const rarityLabels = {
   common: 'common',
   unusual: 'unusual',
@@ -58,6 +60,8 @@ export function CollectionPanel({
   const currentPage = Math.min(page, pages - 1);
   const visibleEntries = entries.slice(currentPage * 4, currentPage * 4 + 4);
   const inspectedEntry = allEntries.find((entry) => entry.wizard.id === inspected);
+  const { reduced } = useReducedMotion();
+  const pageMotion = useSelectionMotion(`${rarity}:${discovery}:${currentPage}`, reduced, 160);
   return (
     <section className="collection-panel">
       <h2>{t('chromodex')}</h2>
@@ -122,7 +126,7 @@ export function CollectionPanel({
         </div>
       </details>
       {!entries.length && <p role="status">{t('noMatchingCards')}</p>}
-      <div className="album">
+      <div className="album" ref={pageMotion} data-album-motion="selection-only">
         {visibleEntries.map((entry) => (
           <article
             key={entry.wizard.id}

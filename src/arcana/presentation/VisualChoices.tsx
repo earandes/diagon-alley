@@ -33,6 +33,13 @@ export function VisualChoices({
   useEffect(() => {
     if (reduced) animation.current?.cancel();
   }, [reduced]);
+  useEffect(() => {
+    const pause = () => {
+      if (document.hidden) animation.current?.cancel();
+    };
+    document.addEventListener('visibilitychange', pause);
+    return () => document.removeEventListener('visibilitychange', pause);
+  }, []);
   return (
     <fieldset className="visual-choices" disabled={disabled}>
       <legend>{label}</legend>
@@ -49,11 +56,11 @@ export function VisualChoices({
             disabled={option.disabled}
             onClick={(event) => {
               animation.current?.cancel();
-              if (!reduced)
+              if (!reduced && !document.hidden && value !== option.id)
                 animation.current = animate(
                   event.currentTarget,
-                  { transform: ['translateY(0)', 'translateY(-5px)', 'translateY(0)'] },
-                  { duration: 0.2, ease: 'easeOut' },
+                  { transform: ['translateY(0)', 'translateY(-3px)', 'translateY(0)'] },
+                  { duration: 0.16, ease: [0.16, 1, 0.3, 1] },
                 );
               onChange(option.id);
             }}

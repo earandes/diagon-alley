@@ -16,6 +16,7 @@ import { validDomainId } from '../../domain/identifiers';
 import { ArcanaClientError } from '../../application/client/errors';
 import type { AuthorityState, ClientGateway } from '../../application/client/ports';
 import type { SetIntentionRequest } from '../../application/set-intention';
+import type { SeasonalRequest } from '../../application/seasonal-events';
 export { ArcanaClientError } from '../../application/client/errors';
 export type { AuthorityState } from '../../application/client/ports';
 type FetchTransport = (input: string | URL | Request, init?: RequestInit) => Promise<Response>;
@@ -54,6 +55,8 @@ export class ArcanaHttpClient implements ClientGateway {
     return this.result(await this.request('GET', `/operations/${encodeURIComponent(key)}`), key);
   }
   purchase = (command: OperationCommand<PurchaseRequest>) => this.command('/purchases', command);
+  seasonalEvent = (command: OperationCommand<SeasonalRequest>) =>
+    this.command('/events/seasonal', command);
   setIntention = (command: OperationCommand<SetIntentionRequest>) =>
     this.command('/intentions', command);
   buyOpenToad = (command: OperationCommand<BuyOpenToadRequest>) =>

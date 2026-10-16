@@ -1,0 +1,15 @@
+
+> coleccion-magica-i1@0.1.0 test:browser:local
+> node tools/verification/run-local-browser-smoke.mjs
+
+{"allowed":true,"reasons":[],"load":2.498046875,"cores":11,"windowServerRssMb":38.03125,"windowServerCpu":0,"scope":"1 Chromium, 1 test, sin vídeo/trazas/capturas, límite total60s; no reproduce carga"}
+[WebServer] (node:28032) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:28055) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 1 test using 1 worker
+
+(node:28080) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Smoke detenido: procesos propios superan1,5GB RSS

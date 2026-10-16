@@ -1,4 +1,5 @@
 import { encounterOfferSnapshot } from '../domain/exploration/encounter-trades';
+import { seasonalEditionSnapshot, type SeasonalEdition } from '../domain/seasonal/events';
 import { EXPEDITION_CHALLENGES, type ExpeditionChallenge } from '../domain/exploration/challenges';
 import { encounterChoiceSnapshot } from '../domain/exploration/encounters';
 import { unitSnapshot, type Affinity } from '../domain/combat/engine';
@@ -19,6 +20,7 @@ import { ArcanaError } from '../domain/errors';
 import type { OpeningConfiguration } from './shop-use-cases';
 import type { CampaignConfiguration } from './run-use-cases';
 export interface PublicContent {
+  readonly seasonalEdition?: SeasonalEdition;
   readonly commerce?: CommerceCatalogs;
   readonly catalog: WizardCatalog;
   readonly toadTable: ToadTable;
@@ -39,11 +41,13 @@ export interface PublicContent {
 export function projectPublicContent(
   opening: OpeningConfiguration,
   campaign: CampaignConfiguration,
+  seasonalEdition?: SeasonalEdition,
 ): PublicContent {
   validateToadTable(opening.catalog, opening.table);
   validateShop(opening.shop);
   validateCampaign(campaign);
   return publicContentSnapshot({
+    ...(seasonalEdition ? { seasonalEdition } : {}),
     ...(opening.commerce ? { commerce: opening.commerce } : {}),
     catalog: opening.catalog,
     toadTable: opening.table,
@@ -101,6 +105,9 @@ export function publicContentSnapshot(value: unknown): PublicContent {
   )
     throw new ArcanaError('INVALID_CAMPAIGN');
   return Object.freeze({
+    ...(content.seasonalEdition === undefined
+      ? {}
+      : { seasonalEdition: seasonalEditionSnapshot(content.seasonalEdition) }),
     ...(content.commerce === undefined ? {} : { commerce: commerceSnapshot(content.commerce) }),
     catalog: Object.freeze({
       version: opening.catalog.version,

@@ -1,3 +1,5 @@
+import { seasonalStateSnapshot, type SeasonalState } from '../domain/seasonal/events';
+import { seasonalReceiptSnapshot, type SeasonalReceipt } from './seasonal-events';
 import { encounterTradeSnapshot } from '../domain/exploration/encounter-trades';
 import { nodeOptionsSnapshot } from './node-options';
 import { encounterResolutionSnapshot } from '../domain/exploration/encounters';
@@ -63,6 +65,7 @@ export interface OpeningReceipt {
   readonly isNew: boolean;
 }
 export type OperationReceipt =
+  | SeasonalReceipt
   | SetIntentionReceipt
   | PurchaseReceipt
   | OpeningReceipt
@@ -82,6 +85,7 @@ export interface GameState {
   readonly receipts: readonly OperationReceipt[];
   readonly exploration?: ExplorationState;
   readonly team?: Team;
+  readonly seasonal?: SeasonalState;
 }
 
 /** Changes run in isolation and are returned only after their durable commit succeeds. */
@@ -131,6 +135,51 @@ export function validateGame(value: unknown): asserts value is GameState {
     )
       throw Error();
     validateInventory(state.inventory);
+    if (state.seasonal !== undefined) {
+      const seasonal = seasonalStateSnapshot(state.seasonal);
+      const seasonalReceipts = state.receipts
+        .filter((r): r is SeasonalReceipt => r.kind === 'seasonal-event')
+        .map(seasonalReceiptSnapshot);
+      for (const participation of seasonal.participations) {
+        const joined = seasonalReceipts.find(
+          (r) =>
+            r.request.action === 'join' && r.request.editionId === participation.edition.editionId,
+        );
+        if (
+          !joined ||
+          joined.participation.joinedAt !== participation.joinedAt ||
+          JSON.stringify(joined.participation.edition) !== JSON.stringify(participation.edition)
+        )
+          throw Error();
+        for (const runId of participation.boundRunIds) {
+          if (
+            joined.run?.id !== runId &&
+            !state.receipts.some((r) => r.kind === 'start-run' && r.run.id === runId)
+          )
+            throw Error();
+        }
+        for (const opportunity of participation.opportunities) {
+          const resolved = seasonalReceipts.find(
+            (r) =>
+              r.request.editionId === participation.edition.editionId &&
+              r.request.action === opportunity.action &&
+              r.request.runId === opportunity.runId &&
+              r.run?.visited.length === opportunity.visited,
+          );
+          if (
+            !resolved ||
+            JSON.stringify(resolved.participation.opportunities.at(-1)) !==
+              JSON.stringify(opportunity)
+          )
+            throw Error();
+        }
+      }
+      for (const keepsake of seasonal.keepsakes) {
+        const granted = seasonalReceipts.find((r) => r.id === keepsake.operationId);
+        if (!granted || JSON.stringify(granted.keepsake) !== JSON.stringify(keepsake))
+          throw Error();
+      }
+    }
     validateTeam(
       state.team ?? EMPTY_TEAM,
       state.copies.map((c) => c.copyId),
@@ -162,7 +211,22 @@ export function validateGame(value: unknown): asserts value is GameState {
     const purchased = new Set<string>();
     for (const receipt of state.receipts as readonly OperationReceipt[]) {
       if (!validDomainId(receipt.id)) throw Error();
-      if (receipt.kind === 'set-intention') {
+      if (receipt.kind === 'seasonal-event') {
+        seasonalReceiptSnapshot(receipt);
+        if (
+          !state.seasonal?.participations.some(
+            (p) => p.edition.editionId === receipt.request.editionId,
+          )
+        )
+          throw Error();
+        if (
+          receipt.keepsake &&
+          !state.seasonal.keepsakes.some(
+            (k) => k.id === receipt.keepsake!.id && k.operationId === receipt.id,
+          )
+        )
+          throw Error();
+      } else if (receipt.kind === 'set-intention') {
         intentionReceiptSnapshot(receipt);
       } else if (receipt.kind === 'starter-kit') {
         const copy = state.copies.find((c) => c.copyId === receipt.copyId);
@@ -480,6 +544,7 @@ export function gameSnapshot(state: GameState): GameState {
   validateGame(state);
   return Object.freeze({
     schemaVersion: 1,
+    ...(state.seasonal === undefined ? {} : { seasonal: seasonalStateSnapshot(state.seasonal) }),
     playerId: state.playerId,
     revision: state.revision,
     inventory: inventorySnapshot(state.inventory),
@@ -495,6 +560,7 @@ export function gameSnapshot(state: GameState): GameState {
 }
 
 function snapshotReceipt(receipt: OperationReceipt): OperationReceipt {
+  if (receipt.kind === 'seasonal-event') return seasonalReceiptSnapshot(receipt);
   if (receipt.kind === 'set-intention') return intentionReceiptSnapshot(receipt);
   if (receipt.kind === 'buy-open-toad')
     return Object.freeze({

@@ -104,3 +104,9 @@ CREATE TABLE IF NOT EXISTS arcana_team_loadouts (
   FOREIGN KEY (player_id, wand_id) REFERENCES arcana_equipment(player_id, equipment_id),
   FOREIGN KEY (player_id, broom_id) REFERENCES arcana_equipment(player_id, equipment_id)
 );
+
+-- A68 additive, edition snapshots/history remain separate from economic inventory.
+CREATE TABLE IF NOT EXISTS arcana_seasonal_state (
+  player_id text PRIMARY KEY REFERENCES arcana_accounts(player_id) ON DELETE CASCADE,
+  state jsonb NOT NULL CHECK (jsonb_typeof(state) = 'object')
+);

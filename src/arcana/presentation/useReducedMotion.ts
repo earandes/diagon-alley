@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
 export function useReducedMotion() {
   const [system, setSystem] = useState(
-      () => matchMedia('(prefers-reduced-motion: reduce)').matches,
+      () =>
+        typeof matchMedia === 'function' && matchMedia('(prefers-reduced-motion: reduce)').matches,
     ),
     [own, setOwn] = useState(() => {
       try {
@@ -11,6 +12,7 @@ export function useReducedMotion() {
       }
     });
   useEffect(() => {
+    if (typeof matchMedia !== 'function') return;
     const query = matchMedia('(prefers-reduced-motion: reduce)'),
       change = () => setSystem(query.matches);
     const preference = (event: Event) => setOwn((event as CustomEvent<boolean>).detail);

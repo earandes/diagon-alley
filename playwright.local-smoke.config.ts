@@ -7,6 +7,7 @@ export default defineBoundedLocalSmoke({
   use: {
     baseURL: 'http://127.0.0.1:5455',
     serviceWorkers: 'block',
+    hasTouch: true,
     viewport: { width: 865, height: 900 },
   },
   projects: [{ name: 'chromium-local-smoke', use: { browserName: 'chromium' } }],

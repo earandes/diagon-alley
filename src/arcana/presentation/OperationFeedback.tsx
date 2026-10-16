@@ -5,6 +5,7 @@ import type { Language } from '../domain/collection/wizards';
 import { activePack } from './content-packs/active';
 import { text } from './translations';
 import { Artwork } from './Artwork';
+import { claimVisualEvent } from './visual-history';
 
 function feedback(receipt: OperationReceipt | null, language: Language) {
   if (receipt?.kind === 'purchase')
@@ -32,17 +33,16 @@ export function OperationFeedback({
   reduced: boolean;
 }) {
   const region = useRef<HTMLDivElement>(null);
-  const seen = useRef(new Set<string>());
   const [announcement, setAnnouncement] = useState<{ value: string; language: Language } | null>(
     null,
   );
   const value = feedback(receipt, language);
   useEffect(() => {
     const element = region.current;
-    if (!receipt || !value || !element || seen.current.has(receipt.id)) return;
-    seen.current.add(receipt.id);
+    if (!receipt || !value || !element || !claimVisualEvent('operation-feedback', receipt.id))
+      return;
     setAnnouncement({ value, language });
-    if (reduced) return;
+    if (reduced || document.hidden) return;
     const animation = animate(
       element,
       {
@@ -50,7 +50,7 @@ export function OperationFeedback({
         opacity: [0.7, 1],
       },
       {
-        duration: Math.min(220, activePack.animations.feedback.durationMs) / 1000,
+        duration: Math.min(180, activePack.animations.feedback.durationMs) / 1000,
         ease: [0.16, 1, 0.3, 1],
       },
     );

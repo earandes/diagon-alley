@@ -6,6 +6,7 @@ const paletteColor = (key: keyof typeof activePack.palette) =>
 import type { MapLayout } from './map-layout';
 import type { ReplayFrame } from '../../application/client/battle-replay';
 import type { BattleEvent } from '../../domain/combat/engine';
+import type { ReplayClock } from '../motion/replay-clock';
 export interface ArenaPosition {
   readonly id: string;
   readonly x: number;
@@ -27,6 +28,7 @@ export type SceneData =
       readonly next: BattleEvent | null;
       readonly playing: boolean;
       readonly speed: 1 | 2;
+      readonly clock?: Pick<ReplayClock, 'snapshot'>;
     };
 export async function createPixiScene(host: HTMLElement, data: SceneData) {
   const app = new Application();
@@ -60,7 +62,10 @@ export async function createPixiScene(host: HTMLElement, data: SceneData) {
   const textures = new Map<string, Texture>(),
     figures = new Map<string, Sprite>(),
     loading = new Set<string>();
-  const poses = new Map<string, { x: number; y: number; alive: boolean; entered: number }>();
+  const poses = new Map<
+    string,
+    { x: number; y: number; alive: boolean; entered: number; sx: number; sy: number }
+  >();
   let destroyed = false;
   app.stage.addChild(sparks);
   const positions = new Map<string, { x: number; y: number }>();
@@ -73,6 +78,7 @@ export async function createPixiScene(host: HTMLElement, data: SceneData) {
   let viewWidth = host.clientWidth,
     viewHeight = host.clientHeight;
   const paint = () => {
+    if (destroyed) return;
     const width = viewWidth,
       height = viewHeight;
     if (width < 1 || height < 1) return;
@@ -154,7 +160,14 @@ export async function createPixiScene(host: HTMLElement, data: SceneData) {
                 figure.anchor.set(0.5, 0.5);
                 app.stage.addChildAt(figure, Math.max(1, app.stage.children.length - 1));
                 figures.set(unit.id, figure);
-                poses.set(unit.id, { x: 0, y: 0, alive: unit.hp > 0, entered: performance.now() });
+                poses.set(unit.id, {
+                  x: 0,
+                  y: 0,
+                  alive: unit.hp > 0,
+                  entered: performance.now(),
+                  sx: 1,
+                  sy: 1,
+                });
               }
               const pivot = asset?.pivot ?? [0.5, 0.9];
               figure.anchor.set(pivot[0], pivot[1]);
@@ -171,6 +184,8 @@ export async function createPixiScene(host: HTMLElement, data: SceneData) {
               pose.x = figure.x;
               pose.y = figure.y;
               pose.alive = unit.hp > 0;
+              pose.sx = figure.scale.x;
+              pose.sy = figure.scale.y;
             }
           }
         }
@@ -183,22 +198,40 @@ export async function createPixiScene(host: HTMLElement, data: SceneData) {
       );
       for (const [id, figure] of figures) {
         const pose = poses.get(id)!;
-        const entry = current.playing
-          ? Math.min(
-              (performance.now() - pose.entered) / Math.max(1, activePack.animations.arena.entryMs),
-              1,
-            )
-          : 1;
+        const entry = current.clock
+          ? current.clock.snapshot().cursor === 0
+            ? current.clock.snapshot().progress
+            : 1
+          : current.playing
+            ? Math.min(
+                (performance.now() - pose.entered) /
+                  Math.max(1, activePack.animations.arena.entryMs),
+                1,
+              )
+            : 1;
         const hit =
           current.next?.kind === 'spell-cast' &&
           !current.next.missed &&
           current.next.targetId === id;
-        const progress = elapsed / activePack.animations.arena.eventMs;
-        figure.position.set(pose.x, pose.y + 8 * (1 - entry));
+        const progress =
+          current.clock?.snapshot().progress ??
+          Math.min(elapsed / activePack.animations.arena.eventMs, 1);
+        const actor = current.next?.kind === 'spell-cast' && current.next.actorId === id;
+        const direction = pose.x < viewWidth / 2 ? 1 : -1;
+        const anticipation = actor && progress < 0.18 ? Math.sin((progress / 0.18) * Math.PI) : 0;
+        const contact =
+          hit && progress >= 0.78 ? Math.sin(((progress - 0.78) / 0.22) * Math.PI) : 0;
+        figure.position.set(
+          pose.x - direction * anticipation * 3 - direction * contact * 6,
+          pose.y + 8 * (1 - entry),
+        );
+        figure.scale.set(
+          pose.sx * (1 - anticipation * 0.025),
+          pose.sy * (1 + anticipation * 0.025),
+        );
         figure.alpha = entry * (pose.alive ? 1 : 0.35);
         figure.rotation =
-          (pose.alive ? 0 : 0.12) +
-          (hit && progress > 0.7 && progress < 1 ? Math.sin(progress * Math.PI * 6) * 0.05 : 0);
+          (pose.alive ? 0 : 0.12) + -direction * (anticipation * 0.025 + contact * 0.035);
       }
     }
     sparks.clear();
@@ -207,16 +240,19 @@ export async function createPixiScene(host: HTMLElement, data: SceneData) {
       if (event?.kind === 'spell-cast') {
         const from = positions.get(event.actorId)!,
           to = positions.get(event.targetId)!,
-          p = Math.min(elapsed / activePack.animations.arena.eventMs, 1),
-          center = { x: width / 2, y: (from.y + to.y) / 2 },
-          attack =
-            p < 0.5
-              ? { x: from.x + (center.x - from.x) * p * 2, y: from.y + (center.y - from.y) * p * 2 }
-              : {
-                  x: center.x + (to.x - center.x) * (p - 0.5) * 2,
-                  y: center.y + (to.y - center.y) * (p - 0.5) * 2,
-                };
-        if (!event.missed || p < 0.55) {
+          p =
+            current.clock?.snapshot().progress ??
+            Math.min(elapsed / activePack.animations.arena.eventMs, 1),
+          flight = Math.max(0, Math.min((p - 0.18) / 0.6, 1)),
+          attack = {
+            x: from.x + (to.x - from.x) * flight,
+            y:
+              from.y +
+              (to.y - from.y) * flight -
+              Math.sin(flight * Math.PI) * 22 -
+              (event.missed ? flight * 42 : 0),
+          };
+        if (p >= 0.18 && p < 0.78) {
           sparks
             .moveTo(from.x, from.y)
             .lineTo(attack.x, attack.y)
@@ -226,20 +262,32 @@ export async function createPixiScene(host: HTMLElement, data: SceneData) {
             .circle(attack.x, attack.y, 13)
             .fill({ color: paletteColor('legendaryAccent'), alpha: 0.18 });
         }
-        if (p < 0.5) {
+        if (!event.missed && p >= 0.78 && p < 1) {
+          const impact = (p - 0.78) / 0.22;
           sparks
-            .circle(to.x + (center.x - to.x) * p * 2, to.y + (center.y - to.y) * p * 2, 4)
-            .fill(paletteColor('focus'));
-        }
-        if (p > 0.35 && p < 0.8) {
+            .circle(to.x, to.y, 10 + impact * 22)
+            .stroke({ color: paletteColor('legendaryAccent'), width: 2, alpha: 1 - impact });
           for (let i = 0; i < 8; i++) {
             const angle = (i * Math.PI) / 4,
-              r = 8 + (p - 0.35) * 60;
+              r = 8 + impact * 25;
             sparks
-              .circle(center.x + Math.cos(angle) * r, center.y + Math.sin(angle) * r, 3 * (1 - p))
-              .fill({ color: paletteColor('gold'), alpha: 1 - p });
+              .circle(to.x + Math.cos(angle) * r, to.y + Math.sin(angle) * r, 2 * (1 - impact))
+              .fill({ color: paletteColor('gold'), alpha: 1 - impact });
           }
         }
+      } else if (event?.kind === 'healed' || event?.kind === 'burn-tick') {
+        const target = positions.get(event.actorId);
+        const p =
+          current.clock?.snapshot().progress ??
+          Math.min(elapsed / activePack.animations.arena.eventMs, 1);
+        if (target && p < 1)
+          sparks
+            .ellipse(target.x, target.y + 10 - p * 12, 12 + p * 20, 6 + p * 7)
+            .stroke({
+              color: paletteColor(event.kind === 'healed' ? 'unusualAccent' : 'rivalAccent'),
+              width: 2,
+              alpha: Math.sin(p * Math.PI) * 0.8,
+            });
       }
     }
     app.render();
@@ -247,7 +295,7 @@ export async function createPixiScene(host: HTMLElement, data: SceneData) {
   };
   app.ticker.add((ticker) => {
     if (current.kind === 'arena' && current.playing) {
-      elapsed += ticker.deltaMS * current.speed;
+      if (!current.clock) elapsed += ticker.deltaMS * current.speed;
       paint();
     }
   });
@@ -259,8 +307,9 @@ export async function createPixiScene(host: HTMLElement, data: SceneData) {
       stamp = nextStamp;
       elapsed = 0;
     }
-    if (next.kind === 'arena' && next.playing) app.start();
+    if (next.kind === 'arena' && next.playing && !document.hidden) app.start();
     else app.stop();
+    host.dataset.activeTicking = String(next.kind === 'arena' && next.playing && !document.hidden);
     paint();
   };
   const observer = new ResizeObserver(([entry]) => {
@@ -269,17 +318,34 @@ export async function createPixiScene(host: HTMLElement, data: SceneData) {
     paint();
   });
   observer.observe(host);
+  const visibility = () => {
+    if (destroyed) return;
+    if (document.hidden) {
+      app.stop();
+      host.dataset.activeTicking = 'false';
+    } else {
+      if (current.kind === 'arena' && current.playing) app.start();
+      host.dataset.activeTicking = String(current.kind === 'arena' && current.playing);
+      paint();
+    }
+  };
+  document.addEventListener('visibilitychange', visibility);
   update(data);
   return {
     update,
     destroy: () => {
       destroyed = true;
       observer.disconnect();
+      document.removeEventListener('visibilitychange', visibility);
       app.stop();
       app.destroy({ removeView: true, releaseGlobalResources: false }, { children: true });
       for (const texture of textures.values()) texture.destroy(true);
       textures.clear();
       figures.clear();
+      host.dataset.destroyed = 'true';
+      host.dataset.activeTicking = 'false';
+      host.dataset.textureCount = '0';
+      host.dataset.textureBytes = '0';
     },
   };
 }

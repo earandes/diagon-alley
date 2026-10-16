@@ -8,7 +8,9 @@ permissions:
 jobs:
   check:
     runs-on: ubuntu-latest
-    timeout-minutes: 35
+    # A68 adds 12 isolated projects; A69 adds six serial presentation projects,
+    # full opening fixtures and one 30-cycle lifetime sample. No added workers.
+    timeout-minutes: 55
     services:
       postgres:
         image: postgres:16.9@sha256:ddfe3e8713e3ee5b8f286082cb12512488dfbf3f5a1ecb0b74a42e6055af0a5f
@@ -54,6 +56,12 @@ jobs:
       - if: ${{ !cancelled() && steps.build.outcome == 'success' }}
         run: npx playwright test --config playwright.intentions-a65.config.ts
       - if: ${{ !cancelled() && steps.build.outcome == 'success' }}
+        run: npx playwright test --config playwright.seasonal-a68.config.ts
+      - if: ${{ !cancelled() && steps.build.outcome == 'success' }}
+        # Explicit selected Linux evidence: four images in one Chromium project,
+        # never screenshots of the full pack/language/viewport matrix.
+        run: ARCANA_CAPTURE_A69=1 npx playwright test --config playwright.motion-a69.config.ts
+      - if: ${{ !cancelled() && steps.build.outcome == 'success' }}
         run: npm run test:pwa -- --project chromium --project webkit
       - id: reference
         if: ${{ !cancelled() && steps.build.outcome == 'success' }}
@@ -73,4 +81,13 @@ jobs:
             test-results-gameplay-a63/**/error-context.md
             test-results-header-pact-a66/**/error-context.md
             test-results-intentions-a65/**/error-context.md
+          if-no-files-found: ignore
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: a69-motion-and-seasonal-evidence
+          path: |
+            docs/arcana/motion-audit-2026-10-16/evidence/linux/**
+            test-results/motion-a69/**/error-context.md
+            test-results-seasonal-a68/**/error-context.md
           if-no-files-found: ignore

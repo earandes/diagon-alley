@@ -1,10 +1,14 @@
-import { useEffect, useRef, useState } from 'react';
-import { activePack, wizardName } from './content-packs/active';
+import { useEffect, useRef, useState, useSyncExternalStore } from 'react';
+import {
+  activePack,
+  wizardName,
+  selectedContentPackId,
+  subscribeContentPack,
+} from './content-packs/active';
 import { Artwork } from './Artwork';
 import { FrogMagic } from './FrogMagic';
 import { GameSettings } from './GameSettings';
 import { useReducedMotion } from './useReducedMotion';
-import { Celebration } from './Celebration';
 import { StarRating } from './StarRating';
 import { RarityBadge } from './RarityBadge';
 import type { ToadOpeningReceipt } from '../application/game';
@@ -13,7 +17,28 @@ import { text } from './translations';
 import './reveal-finale.css';
 import './reveal-theatre.css';
 import { RevealTheatre } from './RevealTheatre';
-const revealedMagic = new Set<string>();
+import { claimVisualEvent, hasVisualEvent } from './visual-history';
+import {
+  openingMotionRecipe,
+  type OpeningMotionRecipe,
+  type OpeningPhase,
+} from './opening-motion-model';
+
+interface OpeningSession {
+  id: string;
+  packId: string;
+  admitted: boolean;
+  finished: boolean;
+  elapsed: number;
+  recipe: OpeningMotionRecipe;
+}
+interface OpeningView {
+  id: string;
+  finished: boolean;
+  magic: boolean;
+  paused: boolean;
+  phase: OpeningPhase;
+}
 export function CardReveal({
   receipt,
   language,
@@ -29,25 +54,34 @@ export function CardReveal({
   onClose?: () => void;
   onLanguage?: (language: Language) => void;
 }) {
-  const motion = useReducedMotion();
-  const announced = useRef(new Set<string>());
-  const [announcement, setAnnouncement] = useState<{ language: Language; value: string } | null>(
-    null,
-  );
-  useEffect(() => {
-    if (announced.current.has(receipt.id)) return;
-    announced.current.add(receipt.id);
-    setAnnouncement({
-      language,
-      value: text(language, receipt.isNew ? 'newDiscovery' : 'newCopy'),
-    });
-  }, [receipt.id, language]);
+  const motion = useReducedMotion(),
+    noMotion = reduced || motion.reduced;
+  const packId = useSyncExternalStore(subscribeContentPack, selectedContentPackId);
+  const session = useRef<OpeningSession | null>(null);
+  const [omittedId, setOmittedId] = useState<string | null>(null);
+  const [view, setView] = useState<OpeningView>(() => ({
+    id: receipt.id,
+    finished: noMotion || hasVisualEvent('opening', receipt.id),
+    magic: false,
+    paused: document.hidden,
+    phase: 'anticipation',
+  }));
+  const [announcement, setAnnouncement] = useState<{
+    id: string;
+    language: Language;
+    value: string;
+  } | null>(null);
   const stage = useRef<HTMLDivElement>(null),
     region = useRef<HTMLDialogElement>(null),
     heading = useRef<HTMLHeadingElement>(null);
+  const omitted = omittedId === receipt.id;
+  const finished =
+    view.id === receipt.id ? view.finished : noMotion || hasVisualEvent('opening', receipt.id);
+  const magic = view.id === receipt.id && view.magic;
+  const staticResult = finished || noMotion || omitted;
   useEffect(() => {
-    const current = region.current;
-    const origin = document.activeElement instanceof HTMLElement ? document.activeElement : null;
+    const current = region.current,
+      origin = document.activeElement instanceof HTMLElement ? document.activeElement : null;
     if (current && !current.open) current.showModal();
     heading.current?.focus({ preventScroll: true });
     return () => {
@@ -55,155 +89,192 @@ export function CardReveal({
       origin?.focus({ preventScroll: true });
     };
   }, [receipt.id]);
-  const [omitted, setOmitted] = useState(false),
-    [finished, setFinished] = useState(reduced),
-    [magic, setMagic] = useState(false);
   useEffect(() => {
-    if (reduced || omitted) {
-      revealedMagic.add(receipt.id);
-      setMagic(false);
+    if (!staticResult || !claimVisualEvent('opening-result', receipt.id)) return;
+    setAnnouncement({
+      id: receipt.id,
+      language,
+      value: text(language, receipt.isNew ? 'newDiscovery' : 'newCopy'),
+    });
+  }, [staticResult, receipt.id, language]);
+  useEffect(() => {
+    if (!session.current || session.current.id !== receipt.id) {
+      const admitted = claimVisualEvent('opening', receipt.id);
+      session.current = {
+        id: receipt.id,
+        packId,
+        admitted,
+        finished: !admitted || noMotion || omitted,
+        elapsed: 0,
+        recipe: openingMotionRecipe(
+          activePack.animations.opening,
+          receipt.wizard.rarity,
+          receipt.isNew,
+        ),
+      };
     }
-  }, [reduced, omitted, receipt.id]);
-  useEffect(() => {
-    if (finished) return;
-    if (reduced || omitted) {
-      setFinished(true);
+    const current = session.current;
+    const finishStatic = () => {
+      current.finished = true;
+      setView({ id: receipt.id, finished: true, magic: false, paused: false, phase: 'finish' });
+    };
+    if (noMotion || omitted || current.packId !== packId || current.finished) {
+      finishStatic();
       return;
     }
-    let cancelled = false;
-    let animation: { revert: () => void } | null = null;
+    let cancelled = false,
+      context: gsap.Context | null = null,
+      timeline: gsap.core.Timeline | null = null;
+    const paused = () => {
+      if (cancelled) return;
+      const hidden = document.hidden;
+      if (hidden) timeline?.pause();
+      else timeline?.resume();
+      setView((v) => (v.id === receipt.id ? { ...v, paused: hidden } : v));
+    };
+    setView({
+      id: receipt.id,
+      finished: false,
+      magic: false,
+      paused: document.hidden,
+      phase: 'anticipation',
+    });
+    document.addEventListener('visibilitychange', paused);
     void import('gsap')
       .then(({ gsap }) => {
         if (cancelled || !stage.current) return;
-        const timings = activePack.animations.opening;
-        animation = gsap.context(() => {
-          const timeline = gsap.timeline({
+        const recipe = current.recipe,
+          l = recipe.labels,
+          d = recipe.durations,
+          at = (value: number) => value / 1000;
+        const phase = (value: OpeningPhase) => {
+          if (!cancelled)
+            setView((v) => ({
+              ...v,
+              id: receipt.id,
+              phase: value,
+              magic: v.magic || value === 'reveal',
+            }));
+        };
+        context = gsap.context(() => {
+          timeline = gsap.timeline({
+            paused: true,
+            onUpdate: () => {
+              if (timeline) current.elapsed = timeline.time() * 1000;
+            },
             onComplete: () => {
-              if (!cancelled) {
-                if (!revealedMagic.has(receipt.id)) {
-                  revealedMagic.add(receipt.id);
-                  setMagic(true);
-                }
-                setFinished(true);
-              }
+              if (cancelled) return;
+              current.finished = true;
+              setView((v) => ({ ...v, id: receipt.id, finished: true, phase: 'finish' }));
             },
           });
-          // A cosmetic sequence over an already committed receipt: anticipation, escape,
-          // then the card takes the stage. Skip/reduced never send another command.
+          for (const [name, time] of Object.entries(l)) timeline.addLabel(name, at(time));
           timeline.fromTo(
             '.opening-closed',
-            { y: 0, rotation: -2 },
-            {
-              y: -7,
-              rotation: 2,
-              duration: 0.18,
-              repeat: 3,
-              yoyo: true,
-              ease: 'sine.inOut',
-            },
-            0,
-          );
-          timeline.fromTo(
-            '.opening-ring',
-            { opacity: 0, scale: 0.3 },
-            {
-              opacity: 0.75,
-              scale: 1.2,
-              duration: 0.7,
-              ease: 'power2.out',
-            },
-            0.4,
+            { y: 0, rotation: -1 },
+            { y: -4, rotation: 1, duration: at(l.seal), ease: 'sine.inOut' },
+            'anticipation',
           );
           timeline.to(
             '.opening-seal',
-            { scale: 1.35, y: -30, opacity: 0, duration: timings.sealMs / 1000 },
-            0.55,
+            { scale: 1.1, y: -14, opacity: 0, duration: at(d.seal), ease: 'power2.in' },
+            'seal',
           );
-          timeline.to('.opening-closed', { opacity: 0, duration: 0.15 }, 0.8);
-          timeline.fromTo('.opening-base', { opacity: 0 }, { opacity: 1, duration: 0.18 }, 0.8);
+          timeline.to('.opening-closed', { opacity: 0, duration: at(d.lid * 0.25) }, 'lid');
+          timeline.fromTo(
+            '.opening-base',
+            { opacity: 0 },
+            { opacity: 1, duration: at(d.lid * 0.25) },
+            'lid',
+          );
           timeline.fromTo(
             '.opening-lid',
-            { opacity: 1, y: 0, rotation: 0 },
-            {
-              y: -180,
-              x: 75,
-              rotation: 26,
-              opacity: 0,
-              duration: timings.lidMs / 1000,
-              ease: 'power2.in',
-            },
-            0.85,
+            { opacity: 1, y: 0, rotation: 0, transformOrigin: '50% 70%' },
+            { y: -110, x: 32, rotation: 18, opacity: 0, duration: at(d.lid), ease: 'power2.out' },
+            'lid',
           );
           timeline.fromTo(
             '.opening-subject',
-            { opacity: 0, y: 55, scaleX: 1.15, scaleY: 0.65 },
-            {
-              opacity: 1,
-              y: -100,
-              scaleX: 1,
-              scaleY: 1,
-              duration: timings.subjectMs / 1000,
-              ease: 'back.out(1.3)',
-            },
-            1.1,
+            { opacity: 0, y: 38, scaleX: 1.08, scaleY: 0.78 },
+            { opacity: 1, y: -72, scaleX: 1, scaleY: 1, duration: at(d.hop), ease: 'power2.out' },
+            'hop',
           );
           timeline.to(
             '.opening-subject',
-            { y: 10, scaleY: 0.78, scaleX: 1.15, duration: 0.22, ease: 'power2.in' },
-            1.8,
+            { y: 8, scaleY: 0.82, scaleX: 1.08, duration: at(d.settle), ease: 'power2.in' },
+            'settle',
           );
           timeline.to(
             '.opening-subject',
             {
               opacity: 0,
-              x: 240,
-              y: -180,
-              scaleY: 1.1,
-              scaleX: 0.9,
-              rotation: 18,
-              duration: 0.55,
+              x: 150,
+              y: -100,
+              scaleY: 1.05,
+              scaleX: 0.95,
+              rotation: 12,
+              duration: at(d.escape),
               ease: 'power2.out',
             },
-            2.05,
+            'escape',
           );
-          timeline.to('.opening-base', { opacity: 0, y: 35, scale: 0.85, duration: 0.45 }, 2.1);
+          timeline.to(
+            '.opening-base',
+            { opacity: 0, y: 20, scale: 0.94, duration: at(d.escape) },
+            'escape',
+          );
           timeline.fromTo(
             '.opening-card-back',
-            { opacity: 0, y: 80, rotateY: 0, scale: 0.6 },
-            { opacity: 1, y: 0, rotateY: 0, scale: 1, duration: 0.65, ease: 'power3.out' },
-            2.15,
+            { opacity: 0, y: 60, rotateY: 0, scale: 0.78 },
+            { opacity: 1, y: 0, scale: 1, duration: at(d.card), ease: 'power3.out' },
+            'card',
           );
           timeline.to(
             '.opening-card-back',
-            { rotateY: 90, opacity: 0, duration: 0.45, ease: 'power2.in' },
-            2.85,
+            { rotateY: 90, opacity: 0, duration: at(d.flip), ease: 'power2.in' },
+            'flip',
           );
           timeline.fromTo(
             '.opening-card',
             { opacity: 0, y: 0, rotateY: -90, scale: 1 },
-            {
-              opacity: 1,
-              y: 0,
-              rotateY: 0,
-              scale: 1,
-              duration: timings.cardMs / 1000,
-              ease: 'power2.out',
-            },
-            3.2,
+            { opacity: 1, rotateY: 0, duration: at(d.reveal), ease: 'power2.out' },
+            'reveal',
           );
-          timeline.to('.opening-ring', { opacity: 0.25, scale: 1.45, duration: 0.6 }, 3.2);
-          timeline.fromTo('.opening-theatre', { opacity: 0 }, { opacity: 1, duration: 0.55 }, 3.1);
+          timeline.fromTo(
+            '.opening-theatre',
+            { opacity: 0 },
+            { opacity: recipe.intensity, duration: at(d.reveal), ease: 'power2.out' },
+            'reveal',
+          );
+          timeline.fromTo(
+            '.opening-ring',
+            { opacity: 0, scale: 0.8 },
+            { opacity: recipe.intensity * 0.5, scale: 1.2, duration: at(d.reveal) },
+            'reveal',
+          );
+          for (const name of Object.keys(l) as OpeningPhase[])
+            timeline.call(() => phase(name), [], name);
+          // Keep the final settle in the same presentation clock, not a second timeout.
+          timeline.to({ rest: 0 }, { rest: 1, duration: at(l.finish - l.resolve) }, 'resolve');
+          timeline.time(at(current.elapsed), false);
+          if (!document.hidden) timeline.resume();
         }, stage);
       })
       .catch(() => {
-        if (!cancelled) setFinished(true);
+        if (!cancelled) finishStatic();
       });
     return () => {
       cancelled = true;
-      animation?.revert();
+      if (timeline) current.elapsed = timeline.time() * 1000;
+      timeline?.kill();
+      context?.revert();
+      document.removeEventListener('visibilitychange', paused);
     };
-  }, [receipt.id, reduced, omitted, finished]);
-  const staticResult = finished || reduced || omitted;
+  }, [receipt.id, noMotion, omitted, packId]);
+  const recipe =
+    session.current?.id === receipt.id
+      ? session.current.recipe
+      : openingMotionRecipe(activePack.animations.opening, receipt.wizard.rarity, receipt.isNew);
   return (
     <dialog
       ref={region}
@@ -215,7 +286,10 @@ export function CardReveal({
       }}
       data-opening-state={staticResult ? 'result' : 'playing'}
       data-rarity={receipt.wizard.rarity}
-      data-reveal-magic={magic && !reduced && !omitted ? 'cast' : 'still'}
+      data-reveal-magic={magic && !noMotion && !omitted ? 'cast' : 'still'}
+      data-opening-phase={view.phase}
+      data-discovery={receipt.isNew ? 'new' : 'repeat'}
+      data-paused={view.paused}
     >
       {onLanguage && (
         <GameSettings
@@ -231,20 +305,18 @@ export function CardReveal({
       </h2>
       <div
         ref={stage}
+        onErrorCapture={() => setOmittedId(receipt.id)}
         className={`opening-stage ${staticResult ? 'opening-finished' : ''}`}
         aria-hidden="true"
       >
         <div className="opening-ring"></div>
-        <RevealTheatre rarity={receipt.wizard.rarity}>
-          {finished && receipt.isNew && (
-            <Celebration
-              receiptId={receipt.id}
-              reduced={reduced || omitted}
-              rarity={receipt.wizard.rarity}
-            />
-          )}
-        </RevealTheatre>
-        <FrogMagic active={!staticResult} />
+        <RevealTheatre rarity={receipt.wizard.rarity} isNew={receipt.isNew} />
+        <FrogMagic
+          active={magic && !noMotion && !omitted}
+          paused={view.paused}
+          durationMs={recipe.magicMs}
+          count={recipe.sparkCount}
+        />
         <div className="opening-base opening-piece">
           <Artwork asset="toad.base" language={language} decorative eager />
         </div>
@@ -289,10 +361,10 @@ export function CardReveal({
         {text(language, receipt.isNew ? 'newDiscovery' : 'newCopy')}
       </p>
       <span className="visually-hidden" role="status" lang={announcement?.language}>
-        {announcement?.value}
+        {announcement?.id === receipt.id ? announcement.value : undefined}
       </span>
       {!staticResult && (
-        <button onClick={() => setOmitted(true)}>{text(language, 'skipReveal')}</button>
+        <button onClick={() => setOmittedId(receipt.id)}>{text(language, 'skipReveal')}</button>
       )}
       <div className="reveal-actions">
         {onCollection && staticResult && (

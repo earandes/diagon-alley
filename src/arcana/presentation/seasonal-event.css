@@ -1,0 +1,473 @@
+.game-header > .seasonal-event {
+  /* The wallet occupies the centre above this row. Keep the invitation beside Settings. */
+  margin-inline-start: auto;
+  flex: 0 0 auto;
+}
+.seasonal-invitation {
+  position: relative;
+  display: grid;
+  justify-items: center;
+  width: 3.1rem;
+  min-height: 3.1rem;
+  padding: 0.15rem;
+  border: 0;
+  color: #ffe4ac;
+  background: radial-gradient(ellipse, #16212de8 0 48%, transparent 72%);
+  font-size: 0.72rem;
+  line-height: 1.15;
+  text-align: center;
+  text-shadow: 0 1px 4px #000;
+}
+.seasonal-invitation-label {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+.seasonal-invitation-art {
+  width: 2.5rem;
+  height: 2.8rem;
+}
+.seasonal-invitation small {
+  position: absolute;
+  bottom: 0.1rem;
+  inset-inline-end: 0;
+  padding: 0.1rem 0.2rem;
+  border-radius: 0.3rem;
+  background: #091929;
+  color: #fff5df;
+}
+.seasonal-invitation-check {
+  position: absolute;
+  inset-inline-end: 0.1rem;
+  top: 1.8rem;
+  color: #bde8c9;
+}
+.seasonal-lantern {
+  display: inline-grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+.seasonal-lantern img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.seasonal-lantern-fallback {
+  font-size: 2.5rem;
+  color: #edbf6c;
+}
+.seasonal-dialog {
+  width: min(47rem, calc(100vw - 1rem));
+  max-width: 100%;
+  max-height: min(92dvh, 58rem);
+  padding: 0;
+  overflow: auto;
+  overscroll-behavior: contain;
+  color: #f7ebd4;
+  border: 1px solid #c39d63;
+  border-radius: 1.35rem 0.4rem 1.35rem 0.4rem;
+  background: radial-gradient(ellipse at 50% 0, #40303c, #0c1c2a 65%);
+  box-shadow:
+    0 1.5rem 5rem #000a,
+    inset 0 0 0 4px #122031;
+}
+.seasonal-dialog::backdrop {
+  background: #020c19bf;
+}
+.seasonal-story {
+  padding: clamp(0.9rem, 3vw, 1.8rem);
+  min-width: 0;
+}
+.seasonal-heading {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0.5rem;
+  align-items: center;
+}
+.seasonal-edition {
+  color: #edc782;
+  font-size: 0.76rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.seasonal-heading h2 {
+  grid-column: 1 / -1;
+  text-align: center;
+  font:
+    500 clamp(1.2rem, 3vw, 1.65rem) / 1.4 'Cinzel',
+    Georgia,
+    serif;
+  margin: 0.5rem 0;
+}
+.seasonal-close {
+  min-height: 2.75rem;
+  min-width: 2.75rem;
+  border: 0;
+  background: transparent;
+  color: #ffebc2;
+}
+.seasonal-intro {
+  max-width: 40rem;
+  margin: 0.3rem auto 1.1rem;
+  text-align: center;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+.seasonal-windows {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(0.4rem, 2vw, 1.1rem);
+  margin: 0.5rem 0;
+  padding: 0;
+  list-style: none;
+}
+.seasonal-window {
+  display: grid;
+  gap: 0.25rem;
+  justify-items: center;
+  color: #d7cad6;
+  text-align: center;
+  font-size: 0.8rem;
+  min-width: 0;
+}
+.seasonal-window small {
+  font-size: 0.72rem;
+}
+.seasonal-window-frame {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  max-width: 10.2rem;
+  aspect-ratio: 4 / 3;
+  border: 0.2rem solid #75543d;
+  border-top: 0.4rem solid #b28c55;
+  border-radius: 42% 42% 0.25rem 0.25rem;
+  background: linear-gradient(140deg, #3e2c47, #0b1626);
+  box-shadow: 0 0.3rem 0.6rem #0007;
+}
+.seasonal-window-frame > img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 60%;
+  opacity: 0.6;
+}
+.seasonal-window-glass {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(100deg, #50315c75, #0f11286e);
+  box-shadow: inset 0 0 1.5rem #392149;
+}
+.seasonal-window-glass::before,
+.seasonal-window-glass::after {
+  content: '';
+  position: absolute;
+  background: #6e5137;
+}
+.seasonal-window-glass::before {
+  left: 49%;
+  width: 0.15rem;
+  height: 100%;
+}
+.seasonal-window-glass::after {
+  top: 48%;
+  height: 0.15rem;
+  width: 100%;
+}
+.seasonal-window-sigil {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  color: #d7b8ed;
+  font-size: 2.5rem;
+  text-shadow: 0 0 0.6rem #401867;
+}
+.seasonal-window[aria-current='step'] .seasonal-window-frame {
+  outline: 2px solid #f7d89a;
+  outline-offset: 3px;
+}
+.seasonal-window[data-lit='true'] {
+  color: #ffe6a3;
+}
+.seasonal-window[data-lit='true'] .seasonal-window-frame {
+  border-color: #d5aa5f;
+}
+.seasonal-window[data-lit='true'] .seasonal-window-glass {
+  background: #efb74c20;
+  box-shadow: inset 0 0 1.6rem #f9c65b78;
+}
+.seasonal-window[data-lit='true'] .seasonal-window-sigil {
+  color: #fff5bf;
+  text-shadow: 0 0 0.8rem #ffd069;
+}
+.seasonal-progress {
+  text-align: center;
+  color: #efca87;
+  font-size: 0.85rem;
+  margin: 0.75rem 0;
+}
+.seasonal-reward-preview {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin: 0.4rem 0;
+}
+.seasonal-reward-preview strong {
+  font-family: 'Cinzel', Georgia, serif;
+}
+.seasonal-reward-preview p,
+.seasonal-cost {
+  font-size: 0.82rem;
+  line-height: 1.5;
+  color: #e9dfcc;
+}
+.seasonal-reward-art {
+  width: 4.4rem;
+  height: 5.2rem;
+}
+.seasonal-discover,
+.seasonal-waiting {
+  text-align: center;
+}
+.seasonal-primary {
+  display: block;
+  min-height: 2.8rem;
+  max-width: 100%;
+  margin: 0.8rem auto 0.4rem;
+  padding: 0.65rem 1.35rem;
+  background: linear-gradient(#e6cd93, #b8904f);
+  border: 1px solid #ffe6ab;
+  color: #161d27;
+  font-weight: 700;
+  border-radius: 0.25rem;
+}
+.seasonal-secondary {
+  min-height: 2.8rem;
+  padding: 0.5rem 1.1rem;
+  color: #ffe6b1;
+  background: #132737;
+  border: 1px solid #8f7b55;
+}
+.seasonal-choice-tray {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.7rem;
+}
+.seasonal-choice {
+  position: relative;
+  display: grid;
+  justify-items: center;
+  align-content: start;
+  gap: 0.35rem;
+  min-width: 0;
+  min-height: 9rem;
+  padding: 0.6rem;
+  background: linear-gradient(0deg, #0b1825e0, #20364540);
+  border: 1px solid #756c67;
+  border-radius: 0.45rem;
+  color: #f6e5c4;
+  text-align: center;
+}
+.seasonal-choice strong {
+  font-family: 'Cinzel', Georgia, serif;
+  font-size: 0.9rem;
+}
+.seasonal-choice > span:not(.seasonal-choice-object),
+.seasonal-choice small {
+  font-size: 0.8rem;
+  line-height: 1.4;
+}
+.seasonal-choice[aria-pressed='true'] {
+  border-color: #f4ce7e;
+  background: #5141264f;
+  box-shadow: inset 0 -3px #d8b46a;
+}
+.seasonal-choice:disabled {
+  opacity: 0.62;
+}
+.seasonal-choice-object {
+  display: grid;
+  place-items: center;
+  width: 3.2rem;
+  height: 3.2rem;
+  font-size: 2.8rem;
+  color: #f9d995;
+}
+.seasonal-choice-object img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.seasonal-choice-seal {
+  position: absolute;
+  inset-inline-end: 0.4rem;
+  top: 0.4rem;
+  display: grid;
+  place-items: center;
+  width: 1.65rem;
+  height: 1.65rem;
+  background: #245548;
+  border: 1px solid #e2c17a;
+  border-radius: 50%;
+}
+.seasonal-trade-preview {
+  margin: 0.7rem 0;
+  padding: 0.6rem;
+  border-top: 1px solid #a38a5a66;
+}
+.seasonal-trade-preview h3 {
+  font-size: 0.9rem;
+  margin: 0.5rem 0;
+}
+.seasonal-trade-preview p {
+  font-size: 0.84rem;
+  line-height: 1.5;
+}
+.seasonal-trade-preview ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 0.4rem;
+}
+.seasonal-trade-preview li {
+  display: grid;
+  grid-template-columns: 2.2rem 1fr auto auto;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.79rem;
+}
+.seasonal-trade-preview li img {
+  width: 2rem;
+  height: 2.6rem;
+  object-fit: cover;
+  border-radius: 0.15rem;
+}
+.seasonal-trade-preview [data-direction='gain'] {
+  color: #bbe8c6;
+}
+.seasonal-trade-preview [data-direction='cost'] {
+  color: #f7d2a2;
+}
+.seasonal-draft-hint,
+.seasonal-last-result {
+  margin: 0.65rem auto;
+  font-size: 0.78rem;
+  text-align: center;
+  color: #dcc9a9;
+}
+.seasonal-finale {
+  text-align: center;
+  padding: 0.6rem 0;
+}
+.seasonal-finale h3 {
+  margin: 0.15rem 0 0.5rem;
+  font:
+    500 1.25rem/1.3 'Cinzel',
+    Georgia,
+    serif;
+  color: #f8d792;
+}
+.seasonal-finale p,
+.seasonal-finale small {
+  font-size: 0.82rem;
+  line-height: 1.5;
+}
+.seasonal-finale-art {
+  width: 6rem;
+  height: 7rem;
+}
+.seasonal-finale[data-reveal='true'] .seasonal-finale-art {
+  animation: seasonal-lantern-reveal 0.45s ease-out both;
+}
+.seasonal-details,
+.seasonal-history {
+  border-top: 1px solid #7b694e;
+  margin-top: 1rem;
+  padding-top: 0.5rem;
+  font-size: 0.8rem;
+  line-height: 1.6;
+}
+.seasonal-details summary,
+.seasonal-history summary {
+  min-height: 2.75rem;
+  align-content: center;
+  cursor: pointer;
+  color: #f1d49b;
+}
+.seasonal-details p {
+  margin: 0.4rem 0;
+}
+.seasonal-error {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #e7a574;
+  background: #452c26;
+  font-size: 0.85rem;
+}
+.seasonal-error p {
+  margin: 0.25rem 0;
+}
+.seasonal-event button:focus-visible,
+.seasonal-event summary:focus-visible {
+  outline: 3px solid #ffe1a0;
+  outline-offset: 3px;
+}
+@keyframes seasonal-lantern-reveal {
+  from {
+    opacity: 0.3;
+    transform: translateY(0.5rem);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.seasonal-event[data-reduced='true'] *,
+.seasonal-event[data-reduced='true'] *::before,
+.seasonal-event[data-reduced='true'] *::after {
+  animation: none;
+  transition: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .seasonal-event *,
+  .seasonal-event *::before,
+  .seasonal-event *::after {
+    animation: none;
+    transition: none;
+  }
+}
+@media (max-width: 440px) {
+  .seasonal-dialog {
+    width: calc(100vw - 0.7rem);
+    max-height: 94dvh;
+  }
+  .seasonal-story {
+    padding: 0.8rem;
+  }
+  .seasonal-choice-tray {
+    gap: 0.4rem;
+  }
+  .seasonal-choice {
+    padding: 0.5rem 0.35rem;
+  }
+  .seasonal-trade-preview li {
+    grid-template-columns: 2rem minmax(0, 1fr);
+    gap: 0.25rem 0.5rem;
+  }
+  .seasonal-trade-preview li img {
+    grid-row: span 2;
+  }
+  .seasonal-vital-name {
+    grid-column: 2;
+  }
+  .seasonal-trade-preview li > span:not(.seasonal-vital-name) {
+    grid-column: 2;
+  }
+}

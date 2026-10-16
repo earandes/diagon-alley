@@ -1,0 +1,27 @@
+
+> coleccion-magica-i1@0.1.0 test:browser:local
+> node tools/verification/run-local-browser-smoke.mjs
+
+{"allowed":true,"reasons":[],"load":2.42041015625,"cores":11,"windowServerRssMb":38.046875,"windowServerCpu":0,"scope":"1 Chromium, 1 test, sin vídeo/trazas/capturas, límite total60s; no reproduce carga"}
+[WebServer] (node:27257) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:27280) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 1 test using 1 worker
+
+(node:27305) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  1 [chromium-local-smoke] › tests/browser-trial/browser-local-smoke-a67.spec.ts:7:1 › bounded local pact cancellation and Halloween keepsake journey (30.0s)
+Testing stopped early after 1 maximum allowed failures.
+
+
+  1) [chromium-local-smoke] › tests/browser-trial/browser-local-smoke-a67.spec.ts:7:1 › bounded local pact cancellation and Halloween keepsake journey 
+
+    Test timeout of 30000ms exceeded.
+
+    Error Context: test-results-local-smoke/browser-local-smoke-a67-bo-6088a--Halloween-keepsake-journey-chromium-local-smoke/error-context.md
+
+  1 failed
+    [chromium-local-smoke] › tests/browser-trial/browser-local-smoke-a67.spec.ts:7:1 › bounded local pact cancellation and Halloween keepsake journey 
+  1 error was not a part of any test, see above for details

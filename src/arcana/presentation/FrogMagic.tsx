@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 
-const DURATION_MS = 3200;
-const SPARK_COUNT = 24;
+const MAX_DURATION_MS = 3200;
+const MAX_SPARK_COUNT = 24;
 const SPRITE_SIZE = 28;
 
 /** Prepaint the small glow once; every animation frame only composites these sprites. */
@@ -30,16 +30,41 @@ function sparkSprite(color: string): HTMLCanvasElement | null {
 }
 
 /** A bounded cosmetic burst; it owns no random/economic input or game state. */
-export function FrogMagic({ active }: { active: boolean }) {
+export function FrogMagic({
+  active,
+  paused = false,
+  durationMs = MAX_DURATION_MS,
+  count = MAX_SPARK_COUNT,
+}: {
+  active: boolean;
+  paused?: boolean;
+  durationMs?: number;
+  count?: number;
+}) {
+  const pauseState = useRef(paused),
+    control = useRef<(() => void) | null>(null);
+  pauseState.current = paused;
+  useEffect(() => {
+    control.current?.();
+  }, [paused]);
   const host = useRef<HTMLDivElement>(null);
   useEffect(() => {
     const element = host.current;
     if (!active || !element) return;
+    const duration = Number.isFinite(durationMs)
+      ? Math.max(1, Math.min(MAX_DURATION_MS, durationMs))
+      : MAX_DURATION_MS;
+    const sparkCount = Number.isFinite(count)
+      ? Math.max(0, Math.min(MAX_SPARK_COUNT, Math.floor(count)))
+      : MAX_SPARK_COUNT;
+    let disposed = false;
     let canvas: HTMLCanvasElement | undefined;
     let frame = 0;
     let observer: ResizeObserver | undefined;
     let visibility: (() => void) | undefined;
     const dispose = () => {
+      disposed = true;
+      control.current = null;
       cancelAnimationFrame(frame);
       observer?.disconnect();
       if (visibility) document.removeEventListener('visibilitychange', visibility);
@@ -52,14 +77,20 @@ export function FrogMagic({ active }: { active: boolean }) {
       const ink = canvas.getContext('2d', { alpha: true });
       const gold = sparkSprite('#f4d995'),
         teal = sparkSprite('#b7e5e0');
-      if (!ink || !gold || !teal) return;
+      if (!ink || !gold || !teal) {
+        dispose();
+        return;
+      }
       const surface = canvas;
       const resolution = Math.min(devicePixelRatio || 1, 1.5);
       let width = 0,
         height = 0;
       const resize = () => {
-        width = element.clientWidth || 480;
-        height = element.clientHeight || 480;
+        const nextWidth = element.clientWidth || 480;
+        const nextHeight = element.clientHeight || 480;
+        if (width === nextWidth && height === nextHeight) return;
+        width = nextWidth;
+        height = nextHeight;
         surface.width = Math.round(width * resolution);
         surface.height = Math.round(height * resolution);
       };
@@ -74,15 +105,20 @@ export function FrogMagic({ active }: { active: boolean }) {
         previous: number | undefined,
         renderCount = 0;
       const draw = (time: number) => {
+        frame = 0;
+        if (disposed || document.hidden || pauseState.current) {
+          previous = undefined;
+          return;
+        }
         if (previous !== undefined) elapsed += time - previous;
         previous = time;
-        const progress = Math.min(elapsed / DURATION_MS, 1);
+        const progress = Math.min(elapsed / duration, 1);
         ink.setTransform(resolution, 0, 0, resolution, 0, 0);
         ink.clearRect(0, 0, width, height);
         ink.globalCompositeOperation = 'lighter';
         ink.globalAlpha = Math.sin(progress * Math.PI) * 0.8;
         const scale = 0.7 + Math.sin(progress * Math.PI) * 0.8;
-        for (let index = 0; index < SPARK_COUNT; index++) {
+        for (let index = 0; index < sparkCount; index++) {
           const phase = index * 2.39996 + progress * 2.4;
           const distance = (35 + (index % 7) * 13) * (0.3 + progress * 1.9);
           ink.save();
@@ -103,8 +139,10 @@ export function FrogMagic({ active }: { active: boolean }) {
         cancelAnimationFrame(frame);
         // Hidden time must not become one giant simulation step on return.
         previous = undefined;
-        if (!document.hidden && elapsed < DURATION_MS) frame = requestAnimationFrame(draw);
+        if (!disposed && !document.hidden && !pauseState.current && elapsed < duration)
+          frame = requestAnimationFrame(draw);
       };
+      control.current = visibility;
       document.addEventListener('visibilitychange', visibility);
       visibility();
     } catch {
@@ -112,6 +150,6 @@ export function FrogMagic({ active }: { active: boolean }) {
       // The DOM illustration and committed card are the complete fallback.
     }
     return dispose;
-  }, [active]);
+  }, [active, durationMs, count]);
   return <div className="frog-magic" ref={host} aria-hidden="true" />;
 }

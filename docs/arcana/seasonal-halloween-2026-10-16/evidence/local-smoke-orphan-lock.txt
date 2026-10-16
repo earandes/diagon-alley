@@ -1,0 +1,23 @@
+
+> coleccion-magica-i1@0.1.0 test:browser:local
+> node tools/verification/run-local-browser-smoke.mjs
+
+{"allowed":true,"reasons":[],"load":4.6337890625,"cores":11,"windowServerRssMb":38.046875,"windowServerCpu":0,"scope":"1 Chromium, 1 test, sin vídeo/trazas/capturas, límite total60s; no reproduce carga"}
+[WebServer] (node:29402) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:29425) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+Error: Bloqueo huérfano (PID 28031 ausente): /Users/enricarandes/work/diagon-alley/.git/arcana-browser-suite.lock. Revisarlo y retirarlo explícitamente antes de continuar.
+
+   at ../../tools/verification/playwright-suite-lock.ts:27
+
+  25 |       if ((probe as NodeJS.ErrnoException).code !== 'ESRCH') throw probe;
+  26 |       // Fail closed: two stale-lock reapers could otherwise delete a new owner's lock.
+> 27 |       throw Error(
+     |             ^
+  28 |         `Bloqueo huérfano (PID ${owner.pid} ausente): ${directory}. Revisarlo y retirarlo explícitamente antes de continuar.`,
+  29 |       );
+  30 |     }
+    at acquireBrowserSuiteLock (/Users/enricarandes/work/diagon-alley/tools/verification/playwright-suite-lock.ts:27:13)
+    at setup (/Users/enricarandes/work/diagon-alley/tools/verification/playwright-suite-lock.ts:52:19)
+

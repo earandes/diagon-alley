@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "assets": [
+    {
+      "id": "seasonal.pumpkin-lantern",
+      "function": "Entry invitation and permanent non-power keepsake",
+      "file": "pumpkin-lantern.svg",
+      "editableSource": "pumpkin-lantern.svg",
+      "author": "Project-authored vector illustration, Codex-assisted",
+      "tool": "Local source editor",
+      "provenance": "Original geometric pumpkin and lantern handle; no downloaded graphic or paid generation",
+      "rights": "Original project contribution; no third-party graphic attribution required; franchise distribution rights remain separate",
+      "width": 160,
+      "height": 192,
+      "alpha": true,
+      "pivot": [0.5, 0.9],
+      "crop": "Centered silhouette with transparent margin",
+      "variants": ["shared-static"],
+      "states": "Selection, availability, confirmed progress and reward status are DOM/CSS, not image variants",
+      "consumer": "src/arcana/presentation/SeasonalEvent.tsx",
+      "status": "Implemented original vector; human art acceptance pending",
+      "acceptance": "Readable at 40px and 96px, text remains outside image, missing art preserves semantic action"
+    }
+  ]
+}

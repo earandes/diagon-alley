@@ -183,3 +183,21 @@
 .game-shell[data-reduced='true'] .reveal[data-reveal-magic] * {
   animation: none !important;
 }
+/* A69: one finite, phase-bound flourish; historical views keep the engraving still. */
+.game-shell .reveal[data-paused='true'] * {
+  animation-play-state: paused !important;
+}
+.game-shell .reveal[data-discovery='repeat'] .theatre-aura {
+  opacity: 0.45;
+}
+.game-shell .reveal[data-discovery='repeat'] .theatre-engraving {
+  opacity: 0.32;
+}
+.game-shell .reveal[data-discovery='repeat'][data-reveal-magic='cast'] .theatre-orbits,
+.game-shell .reveal[data-discovery='repeat'][data-reveal-magic='cast'] .theatre-rays,
+.game-shell .reveal[data-discovery='repeat'][data-reveal-magic='cast'] .theatre-crown {
+  animation: none;
+}
+.game-shell .reveal .opening-lid {
+  transform-origin: 50% 70%;
+}

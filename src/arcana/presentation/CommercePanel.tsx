@@ -1,11 +1,11 @@
 import { GameSettings } from './GameSettings';
 import { useReducedMotion } from './useReducedMotion';
 import { VisualChoices } from './VisualChoices';
-import { activePack } from './content-packs/active';
 import { commerceOffers } from '../application/client/read-models';
 import { EquipmentArt } from './EquipmentArt';
 import { Artwork } from './Artwork';
-import { Celebration } from './Celebration';
+import { useConfirmedMotion } from './useConfirmedMotion';
+import './motion-a69.css';
 import { useEffect, useRef, useState } from 'react';
 import type {
   CommerceCatalogs,
@@ -77,6 +77,13 @@ export function CommercePanel({
   const result = ([receipt, ...[...game.receipts].reverse()].find(
     (r) => r?.kind === (mode === 'workshop' ? 'forge-wand' : 'open-vault'),
   ) ?? null) as ForgeReceipt | VaultReceipt | null;
+  const resultMotion = useConfirmedMotion(
+    'commerce-result',
+    result?.id,
+    !!result && receipt?.id === result.id && !pending && !error,
+    reduced || motion.reduced,
+    400,
+  );
   const offers = commerceOffers(game.inventory, content);
   const offer = offers.recipes.find(({ recipe }) => recipe.wood === wood && recipe.core === core),
     recipe = offer?.recipe;
@@ -117,35 +124,6 @@ export function CommercePanel({
       setQuote(null);
     }
   }, [result?.id, quote]);
-  useEffect(() => {
-    if (reduced || !receipt || receipt.id !== result?.id) return;
-    let cancelled = false;
-    let animation: { revert: () => void } | null = null;
-    void import('gsap')
-      .then(({ gsap }) => {
-        const art = resultRegion.current?.querySelector('.equipment-art, .vault-loot-art');
-        if (cancelled || !art) return;
-        animation = gsap.context(
-          () =>
-            gsap.fromTo(
-              art,
-              { scale: 0.93, opacity: 0.6 },
-              {
-                scale: 1,
-                opacity: 1,
-                duration: activePack.animations.feedback.durationMs / 1000,
-                ease: 'power2.out',
-              },
-            ),
-          resultRegion,
-        );
-      })
-      .catch(() => {});
-    return () => {
-      cancelled = true;
-      animation?.revert();
-    };
-  }, [receipt?.id, result?.id, reduced]);
   return (
     <section
       className={`commerce-panel shop-interior shop-${mode}`}
@@ -287,6 +265,7 @@ export function CommercePanel({
         <section
           ref={resultRegion}
           className="notice commerce-result"
+          data-confirmed-motion={resultMotion}
           aria-label={t('confirmedEquipmentResult')}
         >
           <h3 ref={resultHeading} tabIndex={-1}>
@@ -294,7 +273,7 @@ export function CommercePanel({
           </h3>
           {result.kind === 'forge-wand' ? (
             <>
-              <EquipmentArt item={result.equipment} language={language} />
+              <EquipmentArt item={result.equipment} language={language} selectionMotion={false} />
               <p>{equipmentName(result.equipment, language)}</p>
             </>
           ) : (
@@ -340,11 +319,6 @@ export function CommercePanel({
             <Artwork asset="ui.map" language={language} decorative />
             {shopText(language, 'prepareGear')}
           </button>
-          <Celebration
-            receiptId={result.id}
-            reduced={reduced}
-            enabled={receipt?.id === result.id}
-          />
         </section>
       )}
       <div className="shop-counter-tools">

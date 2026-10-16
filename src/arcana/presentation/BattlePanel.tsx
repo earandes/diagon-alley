@@ -13,6 +13,7 @@ import { SceneCanvas } from './scenes/SceneCanvas';
 import { text, type MessageKey } from './translations';
 import { arenaText } from './arena-messages';
 import './arena-a63.css';
+import { useBattlePlayback } from './motion/useBattlePlayback';
 const affinities = {
   neutral: 'neutral',
   alchemy: 'alchemy',
@@ -63,9 +64,8 @@ function BattlePlayback({
   confirmedPresentation = false,
 }: BattlePanelProps & { replay: BattleReplay }) {
   const total = combat.events.length,
-    [cursor, setCursor] = useState(reduced ? total : 0),
-    [playing, setPlaying] = useState(!reduced),
-    [speed, setSpeed] = useState<1 | 2>(1),
+    playback = useBattlePlayback(combat.events, activePack.animations.arena.eventMs, reduced),
+    { cursor, playing, speed, setPlaying, setSpeed } = playback,
     frame = useMemo(() => replay.frame(cursor), [replay, cursor]);
   const stage = useRef<HTMLDivElement>(null);
   const inspector = useRef<HTMLDialogElement>(null);
@@ -137,20 +137,6 @@ function BattlePlayback({
   const t = (key: MessageKey, values?: Record<string, string | number>) =>
       text(language, key, values),
     format = new Intl.NumberFormat(language === 'es' ? 'es-ES' : 'en-US');
-  useEffect(() => {
-    if (reduced) {
-      setCursor(total);
-      setPlaying(false);
-    }
-  }, [reduced, total]);
-  useEffect(() => {
-    if (!playing || reduced || cursor >= total) return;
-    const timer = setTimeout(
-      () => setCursor((c) => Math.min(c + 1, total)),
-      activePack.animations.arena.eventMs / speed,
-    );
-    return () => clearTimeout(timer);
-  }, [playing, reduced, cursor, total, speed]);
   const savedNode = game.receipts.find(
     (r) => r.kind === 'advance-node' && r.battle?.id === combat.id,
   );
@@ -277,6 +263,10 @@ function BattlePlayback({
       className="battle-panel arena-a63"
       data-replay-cursor={cursor}
       data-replay-total={total}
+      data-replay-progress={playback.progress.toFixed(4)}
+      data-replay-phase={playback.phase}
+      data-replay-playing={playing && playback.visible}
+      data-replay-speed={speed}
     >
       <header className="arena-heading">
         <button
@@ -321,7 +311,7 @@ function BattlePlayback({
             title={t('skipPlayback')}
             onClick={() => {
               setPlaying(false);
-              setCursor(total);
+              playback.skip();
             }}
           >
             <span aria-hidden="true">▸▸|</span>
@@ -352,7 +342,7 @@ function BattlePlayback({
         <SceneCanvas
           onUnavailable={() => {
             setPlaying(false);
-            setCursor(total);
+            playback.skip();
           }}
           data={{
             kind: 'arena',
@@ -360,7 +350,8 @@ function BattlePlayback({
             appearances,
             frame,
             next,
-            playing: playing && !reduced && cursor < total,
+            clock: playback.clock,
+            playing: playing && playback.visible && !reduced && cursor < total,
             speed,
           }}
           language={language}

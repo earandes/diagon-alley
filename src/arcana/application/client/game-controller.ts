@@ -263,6 +263,9 @@ export class GameController {
   }
   private send(pending: PendingOperation): Promise<OperationResult> {
     switch (pending.kind) {
+      case 'seasonal-event':
+        if (!this.gateway.seasonalEvent) throw new Error('Seasonal transport unavailable');
+        return this.gateway.seasonalEvent(pending.command);
       case 'set-intention':
         if (!this.gateway.setIntention) throw new Error('Intention transport unavailable');
         return this.gateway.setIntention(pending.command);

@@ -5,6 +5,13 @@ import type { NodeReceipt } from '../application/run-contracts';
 import type { Language } from '../domain/collection/wizards';
 import type { NodeKind } from '../domain/exploration/route';
 import { text, type MessageKey } from './translations';
+import type { Run } from '../domain/exploration/run';
+import { useConfirmedMotion } from './useConfirmedMotion';
+import { useReducedMotion } from './useReducedMotion';
+import { confirmedRecruit, recordedNodeChanges } from './node-result-motion';
+import { encounterText } from './encounter-messages';
+import { themedName } from './content-packs/active';
+import './motion-a69.css';
 const kinds: Record<NodeKind, MessageKey> = {
   duel: 'arcaneDuel',
   refuge: 'alchemyRefuge',
@@ -19,21 +26,48 @@ export function NodeResult({
   onReplay,
   onMissions,
   returnAction,
+  confirmed = false,
+  previousRun,
 }: {
   receipt: NodeReceipt;
   language: Language;
   onReplay: () => void;
   onMissions: () => void;
   returnAction?: { label: string; onReturn: (origin: HTMLButtonElement) => void };
+  confirmed?: boolean;
+  previousRun?: Run;
 }) {
   const kind = receipt.run.graph.nodes.find((n) => n.id === receipt.request.nodeId)!.kind;
-  const numbers = new Intl.NumberFormat(language === 'es' ? 'es-ES' : 'en-US');
+  const numbers = new Intl.NumberFormat(language === 'es' ? 'es-ES' : 'en-US', {
+    maximumFractionDigits: 2,
+  });
+  const { reduced } = useReducedMotion();
+  const recruit = kind === 'pact' ? confirmedRecruit(receipt) : undefined;
+  const changes = recordedNodeChanges(receipt, previousRun).filter(
+    (v) => v.beforeHp !== v.afterHp || v.beforeMana !== v.afterMana,
+  );
+  const motion = useConfirmedMotion(
+    'node-result',
+    receipt.id,
+    confirmed &&
+      !receipt.battle &&
+      (!!recruit ||
+        changes.length > 0 ||
+        receipt.reward.crowns > 0 ||
+        receipt.reward.products.length > 0),
+    reduced,
+    280,
+  );
   const countKey = (count: number, one: MessageKey, many: MessageKey) =>
     text(language, new Intl.PluralRules(language).select(count) === 'one' ? one : many, {
       count: numbers.format(count),
     });
   return (
-    <section className="node-result notice" aria-label={text(language, 'confirmedNodeResult')}>
+    <section
+      className="node-result notice"
+      data-confirmed-motion={motion}
+      aria-label={text(language, 'confirmedNodeResult')}
+    >
       <details className="receipt-disclosure" key={receipt.id}>
         <summary aria-label={text(language, 'confirmedNodeResult')}>
           <Artwork
@@ -72,6 +106,61 @@ export function NodeResult({
               ) : null;
             })}
           </span>
+          {recruit && (
+            <span className="confirmed-recruit" data-confirmed-recruit={recruit.unit.id}>
+              <Artwork
+                asset={`character.${recruit.unit.wizardId}.thumbnail`}
+                language={language}
+                decorative
+              />
+              <span>{themedName(recruit.unit.wizardId, recruit.unit.id, language)}</span>
+              <Artwork asset="ui.temporary" language={language} decorative />
+            </span>
+          )}
+          {!!changes.length && (
+            <span className="node-confirmed-vitals">
+              {changes.map((vital, index) => {
+                const member = receipt.run.members.find((m) => m.unit.id === vital.unitId);
+                const name = member
+                  ? themedName(member.unit.wizardId, member.unit.id, language)
+                  : encounterText(language, 'companion', { number: index + 1 });
+                return (
+                  <span className="node-confirmed-change" key={vital.unitId}>
+                    {member && (
+                      <Artwork
+                        asset={`character.${member.unit.wizardId}.thumbnail`}
+                        language={language}
+                        decorative
+                      />
+                    )}
+                    {(
+                      [
+                        ['health', vital.beforeHp, vital.afterHp],
+                        ['mana', vital.beforeMana, vital.afterMana],
+                      ] as const
+                    ).map(([resource, before, after]) =>
+                      before !== undefined && after !== undefined && before !== after ? (
+                        <span key={resource} data-direction={after > before ? 'gain' : 'cost'}>
+                          <span className="visually-hidden">
+                            {encounterText(language, 'change', {
+                              name,
+                              resource: encounterText(language, resource),
+                              before: numbers.format(before),
+                              after: numbers.format(after),
+                            })}
+                          </span>
+                          <span aria-hidden="true">
+                            {encounterText(language, resource)} {after > before ? '+' : '−'}
+                            {numbers.format(Math.abs(after - before))}
+                          </span>
+                        </span>
+                      ) : null,
+                    )}
+                  </span>
+                );
+              })}
+            </span>
+          )}
           <span className="receipt-expand" aria-hidden="true">
             ⌄
           </span>

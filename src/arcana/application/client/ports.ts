@@ -1,4 +1,5 @@
 import { nodeOptionsSnapshot } from '../node-options';
+import type { SeasonalRequest } from '../seasonal-events';
 import type { ForgeWandRequest, OpenVaultRequest } from '../../domain/economy/commerce';
 import type { PurchaseRequest } from '../../domain/economy/inventory';
 import { validDomainId } from '../../domain/identifiers';
@@ -16,6 +17,7 @@ import { intentionRequestSnapshot, type SetIntentionRequest } from '../set-inten
 export type { PlayerStatus as AuthorityState } from '../player-status';
 import type { PlayerStatus as AuthorityState } from '../player-status';
 export interface ClientGateway {
+  seasonalEvent?(command: OperationCommand<SeasonalRequest>): Promise<OperationResult>;
   setIntention?(command: OperationCommand<SetIntentionRequest>): Promise<OperationResult>;
   state(): Promise<AuthorityState>;
   content(): Promise<PublicContent>;
@@ -32,6 +34,7 @@ export interface ClientGateway {
   logout(): Promise<void>;
 }
 interface ActionRequests {
+  'seasonal-event': SeasonalRequest;
   'set-intention': SetIntentionRequest;
   'forge-wand': ForgeWandRequest;
   'open-vault': OpenVaultRequest;
@@ -97,6 +100,23 @@ export function pendingSnapshot(value: unknown): PendingOperation {
     const r = command.request;
     let request: unknown;
     switch (value.kind) {
+      case 'seasonal-event':
+        fields(r, ['editionId', 'version', 'action'], ['runId']);
+        if (
+          !validDomainId(r.editionId) ||
+          !version(r.version) ||
+          typeof r.action !== 'string' ||
+          !['join', 'dispel', 'prepare'].includes(r.action) ||
+          (r.action === 'join' ? r.runId !== undefined : !validDomainId(r.runId))
+        )
+          throw Error();
+        request = {
+          editionId: r.editionId,
+          version: r.version,
+          action: r.action,
+          ...(r.runId === undefined ? {} : { runId: r.runId }),
+        };
+        break;
       case 'set-intention':
         fields(r, ['afterRunId', 'choice']);
         request = intentionRequestSnapshot(r as unknown as SetIntentionRequest);

@@ -1,3 +1,4 @@
+import type { SeasonalState } from '../../domain/seasonal/events';
 import { readFile } from 'node:fs/promises';
 import type { Pool, PoolClient } from 'pg';
 import {
@@ -41,6 +42,10 @@ async function loadGame(client: PoolClient, playerId: string, lock: boolean): Pr
     [playerId],
   );
   if (!account.rowCount) throw new ArcanaError('PLAYER_NOT_FOUND');
+  const seasonal = await client.query<{ state: SeasonalState }>(
+    'SELECT state FROM arcana_seasonal_state WHERE player_id=$1',
+    [playerId],
+  );
   const inventory = await client.query<{
     crowns: string;
     gold_keys: string;
@@ -129,6 +134,7 @@ async function loadGame(client: PoolClient, playerId: string, lock: boolean): Pr
     schemaVersion: 1,
     playerId,
     revision: Number(account.rows[0].revision),
+    ...(seasonal.rowCount ? { seasonal: seasonal.rows[0].state } : {}),
     inventory: {
       crowns: Number(row.crowns),
       goldKeys: Number(row.gold_keys),
@@ -194,6 +200,7 @@ async function writeGame(client: PoolClient, state: GameState): Promise<void> {
   );
   // All aggregate replacement writes stay in this tx. Optimize deltas only after measuring real workloads.
   for (const table of [
+    'arcana_seasonal_state',
     'arcana_team_members',
     'arcana_team_loadouts',
     'arcana_equipment',
@@ -205,6 +212,11 @@ async function writeGame(client: PoolClient, state: GameState): Promise<void> {
     'arcana_unlocked_zones',
   ])
     await client.query(`DELETE FROM ${table} WHERE player_id=$1`, [state.playerId]);
+  if (state.seasonal)
+    await client.query('INSERT INTO arcana_seasonal_state (player_id,state) VALUES ($1,$2)', [
+      state.playerId,
+      JSON.stringify(state.seasonal),
+    ]);
   for (const [ordinal, unit] of state.inventory.products.entries())
     await client.query(
       'INSERT INTO arcana_product_units (player_id,unit_id,kind,status,operation_id,ordinal) VALUES ($1,$2,$3,$4,$5,$6)',

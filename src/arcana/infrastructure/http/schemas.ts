@@ -17,6 +17,14 @@ export const purchaseSchema = command({
   quantity: { type: 'integer', minimum: 1, maximum: 1000 },
   priceVersion: version,
 });
+export const seasonalEventSchema = command(
+  {
+    editionId: id,
+    version,
+    action: { type: 'string', enum: ['join', 'dispel', 'prepare'] },
+  },
+  { runId: id },
+);
 export const buyOpeningSchema = command({
   priceVersion: version,
   catalogVersion: version,

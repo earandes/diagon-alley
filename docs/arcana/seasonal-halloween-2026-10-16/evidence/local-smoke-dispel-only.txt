@@ -1,0 +1,18 @@
+
+> coleccion-magica-i1@0.1.0 test:browser:local
+> node tools/verification/run-local-browser-smoke.mjs
+
+{"allowed":true,"reasons":[],"load":2.361328125,"cores":11,"windowServerRssMb":38.03125,"windowServerCpu":4.6,"scope":"1 Chromium, 1 test, sin vídeo/trazas/capturas, límite total60s; no reproduce carga"}
+[WebServer] (node:27831) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:27854) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 1 test using 1 worker
+
+(node:27879) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+{"a68ActionToUsableMs":[201,210,213],"scope":"one context, one viewport, reduced, lantern error-handler fixture and blocked facade image, keyboard cancel, ES/EN and pack switch; no media"}
+  ✓  1 [chromium-local-smoke] › tests/browser-trial/browser-local-smoke-a67.spec.ts:7:1 › bounded local pact cancellation and Halloween keepsake journey (4.1s)
+
+  1 passed (5.4s)

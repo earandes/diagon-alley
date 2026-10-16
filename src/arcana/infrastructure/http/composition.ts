@@ -21,7 +21,11 @@ import {
 import { createArcanaApi, type HttpPolicy, type ArcanaApiServices } from './api';
 import { SetTeamUseCase, EquipEquipmentUseCase } from '../../application/team-use-cases';
 import { SetIntentionUseCase } from '../../application/set-intention';
+import { SeasonalEventUseCase } from '../../application/seasonal-events';
+import type { SeasonalEdition } from '../../domain/seasonal/events';
+import { seasonalEdition } from '../content/seasonal-content';
 interface CompositionOptions {
+  readonly seasonal?: () => SeasonalEdition;
   readonly pool: Pool;
   readonly redis: ConstructorParameters<typeof RedisAuthority>[0];
   readonly namespace: string;
@@ -42,6 +46,12 @@ export function composeArcanaApi(options: CompositionOptions) {
     return config;
   };
   const services: ArcanaApiServices = {
+    seasonalConfiguration: options.seasonal ?? (() => seasonalEdition),
+    seasonalEvent: new SeasonalEventUseCase(
+      games,
+      options.seasonal ?? (() => seasonalEdition),
+      authority,
+    ),
     setIntention: new SetIntentionUseCase(games, () => ({
       ownedAffinities: options.campaign().ownedAffinities ?? {},
       beanPrice:
@@ -58,7 +68,12 @@ export function composeArcanaApi(options: CompositionOptions) {
     purchase: new PurchaseProductUseCase(games, options.opening),
     buyOpenToad: new BuyAndOpenCocoaToadUseCase(games, options.opening, new CryptoTickets()),
     openToad: new OpenCocoaToadUseCase(games, options.opening, new CryptoTickets()),
-    startRun: new StartRunUseCase(games, options.campaign, { seeds, random }),
+    startRun: new StartRunUseCase(
+      games,
+      options.campaign,
+      { seeds, random },
+      { clock: authority, configuration: options.seasonal ?? (() => seasonalEdition) },
+    ),
     setTeam: new SetTeamUseCase(games, options.campaign),
     equipEquipment: new EquipEquipmentUseCase(games),
     advanceNode: new AdvanceNodeUseCase(
