@@ -81,6 +81,8 @@ async function frozen(page: Page) {
   return page.locator('.scene-canvas').evaluate((el: HTMLElement) => ({
     angle: el.dataset.bossPropAngle,
     activity: el.dataset.bossPropActivity,
+    scaleX: el.dataset.bossPropScaleX,
+    scaleY: el.dataset.bossPropScaleY,
     layers: el.dataset.bossPropLayers,
     pose: el.dataset.bossPropPose,
     renders: el.dataset.renderCount,
@@ -90,13 +92,14 @@ async function freezeBossCast(page: Page) {
   await page.evaluate(
     () =>
       new Promise<void>((done, reject) => {
+        const events = JSON.parse(window.__a70Fixture.battle).events;
         const until = performance.now() + 15000;
         const observe = () => {
           const host = document.querySelector<HTMLElement>('.scene-canvas');
           const cursor = Number(
             document.querySelector<HTMLElement>('.battle-panel')?.dataset.replayCursor,
           );
-          const event = JSON.parse(window.__a70Fixture.battle).events[cursor];
+          const event = events[cursor];
           if (
             host?.dataset.bossPropPose === 'cast' &&
             event?.kind === 'spell-cast' &&
@@ -138,7 +141,7 @@ for (const language of ['es', 'en'] as const)
       const plan = run.campaignSnapshot!.nodes.find((node) => node.nodeId === bossId)!;
       if (plan.kind !== 'boss') throw Error('Expected real saved boss plan');
       const leader = plan.opponents.find((unit) => unit.wizardId !== 'rival') ?? plan.opponents[0];
-      const origin = page.locator(`[data-node="${bossId}"] > button`);
+      const origin = page.locator(`button[data-node="${bossId}"]`);
       await origin.focus();
       await origin.press('Enter');
       const prelude = page.locator('[data-boss-prelude]');
@@ -190,7 +193,9 @@ for (const language of ['es', 'en'] as const)
       const confirmedBattle = JSON.stringify(receipt.battle);
       await expect(page.locator('.battle-panel')).toHaveAttribute('data-boss-leader', leader.id);
       await fits(page, receipt.battle.input.player.length + receipt.battle.input.rival.length);
-      const actionToUsableArenaMs = Date.now() - actionStarted;
+      const actionToDomUsableUpperBoundMs = Date.now() - actionStarted;
+      await expect(page.locator('.scene-canvas')).toHaveAttribute('data-art-ready', 'true');
+      const actionToFiguresReadyUpperBoundMs = Date.now() - actionStarted;
       if (await skip(page, language).isEnabled()) await skip(page, language).click();
       await expect(page.locator('[data-arena-outcome]')).toBeVisible();
       expect(JSON.stringify((await readGame(page)).receipts.at(-1))).toBe(JSON.stringify(receipt));
@@ -268,7 +273,8 @@ for (const language of ['es', 'en'] as const)
         leaderWizardId: leader.wizardId,
         reward: receipt.reward,
         firstVictory: receipt.firstVictory,
-        actionToUsableArenaMs,
+        actionToDomUsableUpperBoundMs,
+        actionToFiguresReadyUpperBoundMs,
         battleUnchanged: true,
         reloadExact: true,
         selectionDidNotConsume: true,
@@ -290,6 +296,8 @@ test('A70 real boss profile fixtures: poses pause speed hidden inspector skip pa
     const scene = page.locator('.scene-canvas');
     const leader = await page.evaluate(() => window.__a70Fixture.leader);
     await expect(panel).toHaveAttribute('data-boss-leader', leader);
+    const genericAlias = await page.evaluate(() => window.__a70Fixture.bossAlias);
+    await expect(panel.locator(`.arena-portrait[data-art="${genericAlias}"]`)).toHaveCount(0);
     await pause(page).click();
     await expect(scene).toHaveAttribute('data-art-ready', 'true');
     await expect(scene).toHaveAttribute('data-visible-figures', String(playerCount + rivalCount));
@@ -326,6 +334,16 @@ test('A70 real boss profile fixtures: poses pause speed hidden inspector skip pa
     expect(await retiredHost!.evaluate((el: HTMLElement) => el.dataset.textureCount)).toBe('0');
     expect(await panel.getAttribute('data-replay-cursor')).toBe(cursor);
     expect(await panel.getAttribute('data-replay-progress')).toBe(progress);
+    if (profile === 'discovery') {
+      // The new ARCANA renderer samples the same paused cast. Check the actual
+      // bowl Sprite transform, not just a pose name calculated by the model.
+      const bowl = await frozen(page);
+      expect(bowl.pose).toBe('cast');
+      expect(Number(bowl.activity)).toBeGreaterThan(0);
+      expect(Number(bowl.scaleX)).toBeLessThan(1);
+      expect(Number(bowl.scaleY)).toBeGreaterThan(1);
+      if (selected()) await capture(page, 'boss-object-arcana-cast');
+    }
     await control(page, 'language');
     expect(await panel.getAttribute('data-replay-cursor')).toBe(cursor);
     await page.locator('.arena-inspect').first().tap();
@@ -346,7 +364,8 @@ test('A70 real boss profile fixtures: poses pause speed hidden inspector skip pa
     });
     await skip(page, 'en').click();
     await expect(page.locator('[data-arena-outcome]')).toBeVisible();
-    if (profile === 'discovery') await capture(page, 'boss-result');
+    await expect(scene).toHaveAttribute('data-boss-prop-scale-x', '1');
+    await expect(scene).toHaveAttribute('data-boss-prop-scale-y', '1');
     expect(await preserved(page)).toEqual(before);
     const resource = await scene.evaluate((el: HTMLElement) => ({ ...el.dataset }));
     await control(page, 'unmount');

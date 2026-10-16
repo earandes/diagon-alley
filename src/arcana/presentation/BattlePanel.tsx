@@ -151,13 +151,16 @@ function BattlePlayback({
     (savedNode?.kind === 'advance-node' &&
       savedNode.run.graph.nodes.find((n) => n.id === savedNode.request.nodeId)?.kind === 'boss');
   const boss = isBoss ? bossPresentation(combat.input.rival, language) : undefined;
+  // The generic boss skin belongs to the old all-neutral roster. In a named
+  // formation it must not introduce a second, contradictory chief identity.
+  const legacyBoss = boss?.unit.wizardId === 'rival';
   const figureKey = (
     unit: Combat['input']['player'][number],
     side: 'player' | 'rival',
     index: number,
   ) =>
     unit.wizardId === 'rival' && side === 'rival'
-      ? isBoss && index === activePack.arenaAppearances.bossPosition
+      ? legacyBoss && index === activePack.arenaAppearances.bossPosition
         ? activePack.arenaAppearances.boss
         : activePack.arenaAppearances.rivals[index % activePack.arenaAppearances.rivals.length]
       : `character.${unit.wizardId}.figure`;
@@ -173,7 +176,7 @@ function BattlePlayback({
       game.copies.find((c) => c.copyId === id)?.wizard.name[language] ??
         content?.catalog.wizards.find((w) => w.id === u?.wizardId)?.name[language] ??
         t(
-          isBoss &&
+          legacyBoss &&
             combat.input.rival.findIndex((r) => r.id === id) ===
               activePack.arenaAppearances.bossPosition
             ? 'zoneBoss'

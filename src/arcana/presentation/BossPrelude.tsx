@@ -38,7 +38,10 @@ export function BossPrelude({
     synergies = activeSynergies(opponents);
   const name = (unit: CombatUnitInput, index: number) =>
     unit.wizardId === 'rival'
-      ? text(language, index === activePack.arenaAppearances.bossPosition ? 'zoneBoss' : 'opponent')
+      ? text(
+          language,
+          leader.unit.wizardId === 'rival' && index === leader.index ? 'zoneBoss' : 'opponent',
+        )
       : themedName(unit.wizardId, text(language, 'opponent'), language);
   return (
     <section

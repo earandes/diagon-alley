@@ -62,12 +62,27 @@ const game: GameState = {
 const content = projectPublicContent(configuration.opening, configuration.campaign);
 declare global {
   interface Window {
-    __a70Fixture: { battle: string; game: string; leader: string; retired: HTMLElement[] };
+    __a70Fixture: {
+      battle: string;
+      game: string;
+      bossAlias: string;
+      leader: string;
+      retired: HTMLElement[];
+    };
   }
 }
 window.__a70Fixture = {
-  battle: JSON.stringify(battle),
-  game: JSON.stringify(game),
+  // Re-serialize the actual objects on each observation. Comparing strings saved
+  // at setup would always pass even if presentation accidentally mutated them.
+  get battle() {
+    return JSON.stringify(battle);
+  },
+  get game() {
+    return JSON.stringify(game);
+  },
+  get bossAlias() {
+    return activePack.arenaAppearances.boss;
+  },
   leader: plan.opponents[0].id,
   retired: [],
 };

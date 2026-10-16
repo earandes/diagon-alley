@@ -9,7 +9,13 @@ export default defineSafeConfig({
   outputDir: 'test-results/boss-a70',
   timeout: 180000,
   expect: { timeout: 10000 },
-  use: { baseURL: 'http://127.0.0.1:5470', serviceWorkers: 'block', hasTouch: true },
+  use: {
+    baseURL: 'http://127.0.0.1:5470',
+    serviceWorkers: 'block',
+    hasTouch: true,
+    actionTimeout: 10000,
+    navigationTimeout: 20000,
+  },
   projects: (['chromium', 'webkit'] as const).flatMap((browserName) =>
     [
       { width: 1280, height: 900 },

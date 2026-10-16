@@ -32,6 +32,7 @@ describe('A70 read-only boss prelude', () => {
         expect(html).toContain('data-boss-leader="saved-0"');
         expect(html).toContain(pack === 'diagon-alley' ? 'Hermione Granger' : 'Circe');
         expect(html).toContain('data-boss-roster-size="3"');
+        expect(html).not.toContain(language === 'es' ? 'Jefe de Zona' : 'Zone Boss');
         expect(html).not.toContain('data-boss-active-synergy="fire"');
         expect(html).not.toContain('<button');
         expect(JSON.stringify(units)).toBe(before);

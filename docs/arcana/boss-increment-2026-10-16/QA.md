@@ -12,7 +12,7 @@ Consulta de solo lectura a GitHub: main `f5d3a891d5f5a6c1a69a28b46b8c96de8ead82b
 
 La nueva batería usa una preview de aplicación en5470 y una preview estática de fixture en5471; no son suites paralelas. El servidor de aplicación recibe un namespace aleatorio, utiliza PostgreSQL/Redis reales y cada test tiene contexto/cuenta independiente. No se reutiliza sesión personal.
 
-Capturas nuevas: solo Linux y `ARCANA_CAPTURE_A70=1`; únicamente proyecto Chromium1280. Máximo cuatro viewportPNG: preparación, cierre, objeto durante lanzamiento confirmado y desenlace. No capturas de toda la matriz, fullPage, vídeo o perfiles continuos.
+Capturas nuevas: solo Linux y `ARCANA_CAPTURE_A70=1`; únicamente proyecto Chromium1280. Máximo cuatro viewportPNG: preparación, cierre, libro durante lanzamiento confirmado y cuenco durante la misma fase tras swap en pausa. No capturas de toda la matriz, fullPage, vídeo o perfiles continuos.
 
 ## Recorrido autoritativo
 
@@ -20,7 +20,7 @@ Seis proyectos: Chromium/WebKit ×1280×900,390×844,865×1079. Cuatro casos ES/
 
 La ruta usa `preparedRoutePath`, una política técnica que consulta snapshots públicos y simula decisiones para encontrar una ruta viable. No es comportamiento observado de jugador, recomendador de producto ni demostración de que todas las ramas ganen. Los recursos del recorrido proceden de operaciones reales; no se inyectan monedas, premios o victoria.
 
-La latencia `actionToUsableArenaMs` se mide desde el inicio del comando UI de confirmación hasta arena utilizable con actores comprobados; incluye API real, guardado, respuesta, React y carga. No se interpreta como duración humana de combate.
+Se distinguen `actionToDomUsableUpperBoundMs` y `actionToFiguresReadyUpperBoundMs`: desde antes del click de confirmación, incluyendo espera Playwright, comando/commit/API, consulta de estado y aserciones DOM; la segunda espera además `data-art-ready` para las figuras del renderer. Son límites superiores comprobados, no timestamps exactos del primer frame ni coste aislado de decode. Las fixtures miden por separado navegación→arte/overlay listo. No se interpreta como duración humana de combate.
 
 ## Fixtures de presentación declaradas
 
@@ -43,3 +43,13 @@ Una muestra Chromium1280 mide arranque nuevo documento y10s de replay cálido, o
 ## Pendientes que no equivalen a cobertura
 
 Ejecución Linux A70, inspección de los cuatroPNG y resultados de tipos/build/pruebas se registrarán posteriormente. No hay ejecución gráfica local A70. Dispositivo físico, lector hablado, percepción de identidad, comprensión del jefe y satisfacción siguen pendientes. Una imagen estática no demuestra movimiento; los tests de fases y las mediciones tienen un propósito distinto.
+
+## Revisión de cobertura durante la primera CI
+
+El candidato inicialf67830e comprobaba carga del cuenco tras swap, pero no su escala efectiva; la actividad positiva solo se exigía al libro. Antes de declarar completo se amplía el test para observar escalas reales del Sprite ARCANA en la misma fase pausada y retorno a1 al omitir. Se sustituye la captura de desenlace por la del cuenco para mantener el límite de4PNG. No se presenta la inferencia del modelo como prueba ejecutada. La nueva instrumentación/medición requiere candidato y CI propios.
+
+El primer candidato se cancela explícitamente para sustituirlo por el ensayo reforzado: getters de observación serializan objetos vivos (las cadenas guardadas al setup no acreditaban ausencia de mutación), escala real de cuenco, captura ARCANA y medidas DOM/figuras separadas. Se declaran10s por acción y20s navegación enLinux dentro del límite total180s del recorrido; no se modifica ningún control delMac ni se añaden reintentos. Los resultados parciales/cancelados no se consideran una batería superada.
+
+La evidencia parcial deCI38970176308 identifica además un fallo concreto del ensayo: el localizador buscaba un botón hijo de `[data-node]`, pero `MapPanel` coloca `data-node` en el propio botón. Cinco casos de autoridad alcanzaron la posición anterior al jefe y agotaron el límite al enfocar un elemento inexistente; no es una pérdida de partida o fallo del jefe. Se corrige a `button[data-node]`, manteniendo consulta/cancelación/foco y todas las aserciones económicas. Los perfiles de presentación Chromium1280 llegaron a generar evidencia, pero la ejecución cancelada no valida la matriz completa.
+
+La inspección de la imagen parcial de lanzamiento mostró la contradicción de identidad: cabeceraHermione mientras el neutral de la segunda posición seguía usando aspecto/etiqueta de jefe. La presentación nominal deja de aplicar el alias de jefe a sus acompañantes neutrales; legacy todo-neutral conserva su alias. No se cambian IDs/stats/composición. Regresión: roster nominal no muestra el alias genérico, incluida la imagen que recibe Pixi. La imagen parcial no es evidencia del candidato corregido.

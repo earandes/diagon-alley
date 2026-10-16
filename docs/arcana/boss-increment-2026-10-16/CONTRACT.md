@@ -48,7 +48,7 @@ Primero una muestra en contexto con fuentes existentes. Máximo2–3capas por pa
 1. Completado: fuentes/estado, boss real, alternativas y contrato previo.
 2. Implementado: proyección/identidad/cierre, objetos y prelude/preparación; TDD de hechos/poses/consulta.
 3. Comprobado localmente sin navegador:542unitarios,77PGRedis,tipos/build/content/scan. MuestrasCPU inspeccionadas; integración arena/reloj preparada. Preflight solo consulta, sin lanzar smoke.
-4. Pendiente: candidato/PR, CI Linux serial, capturas seleccionadas y corrección.
+4. En curso: PR3, primerCI38970176308 cancelado; selector/falsa doble identidad y cobertura corregidos. Preparar candidato reforzado y ejecutar CI Linux serial, capturas seleccionadas y corrección.
 5. Pendiente: documentación final y entrega de rama validada. Main/despliegue excluidos.
 
 Root integra App/NodePreparation/BattlePanel/Pixi y coordinación. Agente hechos: boss-presentation.ts, boss-facts.ts, BossBattleFacts.tsx, ExpeditionClosure y mensajes/tests propios. Arte: fuentes/exports/manifest, sin editar renderer. QA: tests/browser-boss yconfig A70, sin lanzar suites; root coordina única ejecución. No agentes abren navegador o servicios en paralelo.

@@ -326,6 +326,11 @@ export async function createPixiScene(host: HTMLElement, data: SceneData) {
           );
           host.dataset.bossPropActivity = String(activity);
           host.dataset.bossPropLayers = String(pieces?.length ?? 0);
+          const movingPiece = pieces?.find((_, index) =>
+            ['book-cover', 'bowl-contents'].includes(propArt!.layers[index].motion),
+          );
+          host.dataset.bossPropScaleX = String(movingPiece?.scale.x ?? 1);
+          host.dataset.bossPropScaleY = String(movingPiece?.scale.y ?? 1);
         }
       }
     }
@@ -368,13 +373,11 @@ export async function createPixiScene(host: HTMLElement, data: SceneData) {
           };
         if (p >= 0.18 && p < 0.78) {
           if (source) {
-            sparks
-              .ellipse(from.x, from.y, 10 + Math.sin(flight * Math.PI) * 5, 4)
-              .stroke({
-                color: paletteColor('gold'),
-                width: 1.5,
-                alpha: Math.sin(flight * Math.PI) * 0.8,
-              });
+            sparks.ellipse(from.x, from.y, 10 + Math.sin(flight * Math.PI) * 5, 4).stroke({
+              color: paletteColor('gold'),
+              width: 1.5,
+              alpha: Math.sin(flight * Math.PI) * 0.8,
+            });
           }
           sparks
             .moveTo(from.x, from.y)
