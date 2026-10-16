@@ -18,13 +18,13 @@ for (const language of ['es', 'en'] as const)
     await expect(energy).toHaveAttribute('value', '50');
     await startExpedition(page, language);
     await expect(page.locator('.branch-map')).toBeVisible();
-    let goal: 'encounter' | 'boss' = 'encounter';
-    while ((await readGame(page)).exploration!.run!.status === 'active') {
-      const id = (await pathTo(page, goal))[0];
+    // This checks a saved victory receipt; choose the complete surviving path before branching.
+    // Optimizing only to an intermediate encounter can strand this fixture before the boss.
+    const path = await pathTo(page, 'boss');
+    for (const id of path) {
       const kind = (await readGame(page)).exploration!.run!.graph.nodes.find(
         (n) => n.id === id,
       )!.kind;
-      if (kind === 'encounter') goal = 'boss';
       await page.locator(`[data-node="${id}"]`).click();
       const before =
         kind === 'encounter' ? (await (await page.request.get('/api/state')).json()).state : null;

@@ -1,0 +1,43 @@
+check	Run npm run test:e2e -- --project chromium --project webkit	﻿2026-10-16T15:54:08.4228478Z ##[group]Run npm run test:e2e -- --project chromium --project webkit
+check	Run npm run test:e2e -- --project chromium --project webkit	2026-10-16T15:54:08.4228796Z [36;1mnpm run test:e2e -- --project chromium --project webkit[0m
+check	Run npm run test:e2e -- --project chromium --project webkit	2026-10-16T15:54:08.4282293Z shell: /usr/bin/bash -e {0}
+check	Run npm run test:e2e -- --project chromium --project webkit	2026-10-16T15:54:08.4282461Z ##[endgroup]
+check	Run npm run test:e2e -- --project chromium --project webkit	2026-10-16T15:54:08.5033976Z 
+check	Run npm run test:e2e -- --project chromium --project webkit	2026-10-16T15:54:08.5034584Z > coleccion-magica-i1@0.1.0 test:e2e
+check	Run npm run test:e2e -- --project chromium --project webkit	2026-10-16T15:54:08.5035219Z > playwright test --config playwright.trial.config.ts --project chromium --project webkit
+check	Run npm run test:e2e -- --project chromium --project webkit	2026-10-16T15:54:08.5035576Z 
+check	Run npm run test:e2e -- --project chromium --project webkit	2026-10-16T15:54:16.9455689Z 
+check	Run npm run test:e2e -- --project chromium --project webkit	2026-10-16T15:54:16.9456408Z Running 56 tests using 1 worker
+check	Run npm run test:e2e -- --project chromium --project webkit	2026-10-16T16:00:11.5572229Z ·····································F··················
+check	Run npm run test:e2e -- --project chromium --project webkit	2026-10-16T16:00:11.5577466Z 
+check	Run npm run test:e2e -- --project chromium --project webkit	2026-10-16T16:00:11.5584938Z   1) [webkit] › tests/browser-trial/hud-results.spec.ts:7:3 › authority HUD and boss result survives reload in es 
+check	Run npm run test:e2e -- --project chromium --project webkit	2026-10-16T16:00:11.5585636Z 
+check	Run npm run test:e2e -- --project chromium --project webkit	2026-10-16T16:00:11.5593659Z     Error: expect(locator).toContainText(expected) failed
+check	Run npm run test:e2e -- --project chromium --project webkit	2026-10-16T16:00:11.5594116Z 
+check	Run npm run test:e2e -- --project chromium --project webkit	2026-10-16T16:00:11.5594588Z     Locator: getByRole('region', { name: 'Resultado de nodo confirmado', exact: true })
+check	Run npm run test:e2e -- --project chromium --project webkit	2026-10-16T16:00:11.5595165Z     Expected substring: "50 Coronas"
+check	Run npm run test:e2e -- --project chromium --project webkit	2026-10-16T16:00:11.5596809Z     Received string:    "⌄Resultado de nodo confirmado · Jefe de ZonaResultado guardado en servidor. Consultarlo no consume recursos.Otra expediciónDerrotaVer combate guardadoVida y maná guardados del equipoUnidad 1: PV 0/100 · PM 35/40Unidad 2: PV 0/80 · PM 29/40Unidad 3: PV 0/95 · PM 22/40"
+check	Run npm run test:e2e -- --project chromium --project webkit	2026-10-16T16:00:11.5598019Z     Timeout: 5000ms
+check	Run npm run test:e2e -- --project chromium --project webkit	2026-10-16T16:00:11.5598308Z 
+check	Run npm run test:e2e -- --project chromium --project webkit	2026-10-16T16:00:11.5598506Z     Call log:
+check	Run npm run test:e2e -- --project chromium --project webkit	2026-10-16T16:00:11.5599141Z       - Expect "toContainText" getByRole('region', { name: 'Resultado de nodo confirmado', exact: true }) with timeout 5000ms
+check	Run npm run test:e2e -- --project chromium --project webkit	2026-10-16T16:00:11.5600089Z       - waiting for getByRole('region', { name: 'Resultado de nodo confirmado', exact: true })
+check	Run npm run test:e2e -- --project chromium --project webkit	2026-10-16T16:00:11.5600999Z         14 × locator resolved to <section class="node-result notice" aria-label="Resultado de nodo confirmado">…</section>
+check	Run npm run test:e2e -- --project chromium --project webkit	2026-10-16T16:00:11.5602676Z            - unexpected value "⌄Resultado de nodo confirmado · Jefe de ZonaResultado guardado en servidor. Consultarlo no consume recursos.Otra expediciónDerrotaVer combate guardadoVida y maná guardados del equipoUnidad 1: PV 0/100 · PM 35/40Unidad 2: PV 0/80 · PM 29/40Unidad 3: PV 0/95 · PM 22/40"
+check	Run npm run test:e2e -- --project chromium --project webkit	2026-10-16T16:00:11.5604141Z 
+check	Run npm run test:e2e -- --project chromium --project webkit	2026-10-16T16:00:11.5604261Z 
+check	Run npm run test:e2e -- --project chromium --project webkit	2026-10-16T16:00:11.5604474Z       148 |       exact: true,
+check	Run npm run test:e2e -- --project chromium --project webkit	2026-10-16T16:00:11.5604837Z       149 |     });
+check	Run npm run test:e2e -- --project chromium --project webkit	2026-10-16T16:00:11.5605156Z     > 150 |     await expect(result).toContainText(en ? '50 Crowns' : '50 Coronas');
+check	Run npm run test:e2e -- --project chromium --project webkit	2026-10-16T16:00:11.5605571Z           |                          ^
+check	Run npm run test:e2e -- --project chromium --project webkit	2026-10-16T16:00:11.5605983Z       151 |     await expect(result).toContainText(en ? '1 Gold Key' : '1 Llave de Oro');
+check	Run npm run test:e2e -- --project chromium --project webkit	2026-10-16T16:00:11.5606441Z       152 |     await expect(result).toContainText(
+check	Run npm run test:e2e -- --project chromium --project webkit	2026-10-16T16:00:11.5606771Z       153 |       en
+check	Run npm run test:e2e -- --project chromium --project webkit	2026-10-16T16:00:11.5607248Z         at /home/runner/work/diagon-alley/diagon-alley/tests/browser-trial/hud-results.spec.ts:150:26
+check	Run npm run test:e2e -- --project chromium --project webkit	2026-10-16T16:00:11.5607600Z 
+check	Run npm run test:e2e -- --project chromium --project webkit	2026-10-16T16:00:11.5607990Z     Error Context: test-results-arcana-journey/hud-results-authority-HUD--82584-esult-survives-reload-in-es-webkit/error-context.md
+check	Run npm run test:e2e -- --project chromium --project webkit	2026-10-16T16:00:11.5608422Z 
+check	Run npm run test:e2e -- --project chromium --project webkit	2026-10-16T16:00:11.5608606Z   1 failed
+check	Run npm run test:e2e -- --project chromium --project webkit	2026-10-16T16:00:11.5609040Z     [webkit] › tests/browser-trial/hud-results.spec.ts:7:3 › authority HUD and boss result survives reload in es 
+check	Run npm run test:e2e -- --project chromium --project webkit	2026-10-16T16:00:11.5609448Z   55 passed (6.0m)
+check	Run npm run test:e2e -- --project chromium --project webkit	2026-10-16T16:00:11.5797580Z ##[error]Process completed with exit code 1.
