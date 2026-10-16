@@ -179,6 +179,10 @@ test('A69 arena real 3x3, 5x3, 5x5: both packs and ES/EN keep all actors and con
         await page.goto(`${fixture}?pack=${pack}&lang=${lang}&player=${player}&rival=${rival}`);
         await expect(page.locator('.scene-canvas[data-renderer="webgl"]')).toBeVisible();
         await expect(page.locator('.scene-canvas')).toHaveAttribute('data-art-ready', 'true');
+        await expect(page.locator('.scene-canvas')).toHaveAttribute(
+          'data-visible-figures',
+          String(player + rival),
+        );
         const navigationToSceneReadyMs = await page.evaluate(() => performance.now());
         await pause(page, lang).click();
         const before = await preserved(page);
@@ -230,7 +234,10 @@ test('A69 replay clock: pause, 2x, inspector, hidden, skip and renderer failure 
   await page.goto(`${fixture}?player=5&rival=5`);
   const panel = page.locator('.battle-panel');
   const scene = page.locator('.scene-canvas');
+  // Pause before the async renderer is ready: swapping layers must not fade actors away.
+  await pause(page).click();
   await expect(scene).toHaveAttribute('data-art-ready', 'true');
+  await expect(scene).toHaveAttribute('data-visible-figures', '10');
   const before = await preserved(page);
   await expect
     .poll(async () => Number(await scene.getAttribute('data-render-count')))

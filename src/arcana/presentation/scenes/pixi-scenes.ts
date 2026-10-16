@@ -237,7 +237,9 @@ export async function createPixiScene(host: HTMLElement, data: SceneData) {
           pose.sx * (1 - anticipation * 0.025),
           pose.sy * (1 + anticipation * 0.025),
         );
-        figure.alpha = entry * (pose.alive ? 1 : 0.35);
+        // DOM portraits are already present while textures load. Keep that
+        // presence when swapping layers, including a pause during entry.
+        figure.alpha = pose.alive ? 1 : 0.35;
         figure.rotation =
           (pose.alive ? 0 : 0.12) + -direction * (anticipation * 0.025 + contact * 0.035);
       }
@@ -296,6 +298,11 @@ export async function createPixiScene(host: HTMLElement, data: SceneData) {
           });
       }
     }
+    const visibleFigures = String(
+      [...figures.values()].filter((figure) => figure.visible && figure.alpha >= 0.3).length,
+    );
+    if (host.dataset.visibleFigures !== visibleFigures)
+      host.dataset.visibleFigures = visibleFigures;
     app.render();
     host.dataset.renderCount = String(++renders);
   };
@@ -355,6 +362,7 @@ export async function createPixiScene(host: HTMLElement, data: SceneData) {
       host.dataset.activeTicking = 'false';
       host.dataset.textureCount = '0';
       host.dataset.textureBytes = '0';
+      host.dataset.visibleFigures = '0';
     },
   };
 }
