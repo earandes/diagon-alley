@@ -77,3 +77,9 @@ Una pieza fallida deja la figura original, actor/objetivo, PV, nombres, acciones
 Para aprobar la muestra en contexto: reposo sin doble contorno; cubierta/página sin huecos ni brazo recortado; origen del hechizo coincide con el objeto; todos los actores y PV legibles; pause/2x/hidden/skip y cambio de pack conservan fase; desmontaje libera recursos propios. Comprobar ambas presentaciones y tres tamaños en Linux bajo protección del repositorio. Esta tarea delegada no declara esas pruebas ejecutadas ni aceptación estética/humana/física.
 
 Comprobación CPU ejecutada: cuatro crops RGBA, un fotograma, alpha transparente, dimensiones y hashes coincidentes con el manifest; límites de peso cumplidos. Una segunda ejecución del exportador produjo exactamente los mismos SHA256 runtime. `prettier` formateó únicamente `boss-art.ts`. No se ejecutaron build/tipos/suites desde este agente; el coordinador los ejecuta sobre la integración conjunta.
+
+## Integración comprobada por coordinación
+
+CI38977202497, candidato0189d3a: la batería A70 terminó correctamente. Se inspeccionaron los cuatroPNG [en contexto](GALLERY.md), incluidos libro y cuenco durante una fase real pausada. Las aserciones observan transformaciones efectivas de los Sprite, retorno al reposo, cambio de pack, pausa/ocultación/omisión, fallo exclusivo de cubierta y desmontaje. Las matrices de geometría y acciones incluyen ambos motores y los tres tamaños; no se presentan los cuatroPNG de escritorio como inspección visual de toda la matriz.
+
+No hay cuerpo articulado ni nueva pose anatómica. La superficie del cuenco conserva una presencia pequeña; su percepción se observará con una persona. Los recursos se entregan como muestra integrada técnicamente comprobada, sin declarar aceptación estética definitiva, licencia nueva o prueba física. Las regresiones conjuntas y límites de rendimiento se registran en [QA](QA.md) y [mediciones](PERFORMANCE.md).

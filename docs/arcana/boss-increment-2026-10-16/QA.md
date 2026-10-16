@@ -1,6 +1,33 @@
-# A70 · Validación técnica prevista y límites
+# A70 · Validación técnica ejecutada y límites
 
-16 octubre 2026. Este documento distingue pruebas preparadas de pruebas ejecutadas. La preparación de esta batería no acredita que sus casos hayan pasado. Root coordina la ejecución serial y registrará SHA, comandos y resultados al terminar.
+Contrato inicial16octubre; cierre técnico17octubre2026. La batería completa del candidato0189d3a terminó correctamente enCI Linux38977202497. El plan inicial y las iteraciones se conservan abajo como historia, separados del resultado final.
+
+## Cierre técnico ejecutado
+
+[CI38977202497](https://github.com/earandes/diagon-alley/actions/runs/38977202497), head `0189d3aacd44c7130556cda5948758a608b583aa`, merge ensayado `024e88dd21fbb6274a3756133d80043f49014f81`: **completed/success**, sin retries o suites simultáneas. PostgreSQL16.9/Redis7 reales enCI. Localmente se ejecutaron tipos, dominio, integración real, contenido, build/scan y preflight; ningún navegadorA70. [Metadatos originales](evidence/ci-result.json), [resúmenes de consola](evidence/ci-command-results.txt), [artifacts](evidence/ci-artifacts.json).
+
+| Comando real enCI | Resultado |
+| --- | --- |
+| `npm run typecheck` | Correcto |
+| `npm run validate:content` |6correctos |
+| `npm test` |542correctos,75archivos |
+| `npm run test:integration` |77correctos,13archivos, servicios reales |
+| `npm run build` / `npm run verify:arcana:build` | Correctos;14.695.088B de artefacto dual privado; aviso conocido de chunk>500kB |
+| `ARCANA_CAPTURE_A70=1 npx playwright test --config playwright.boss-a70.config.ts` |55correctos/5omisiones intencionadas,8,7min |
+| `npx playwright test --config playwright.seasonal-a68.config.ts` |12correctos |
+| `ARCANA_CAPTURE_A69=1 npx playwright test --config playwright.motion-a69.config.ts` |19correctos/5omisiones intencionadas |
+| `ARCANA_TRIAL_COMPILED=1 npm run test:e2e -- --project chromium --project webkit --reporter=line,github` |56correctos |
+| `npx playwright test --config playwright.progression-a67.config.ts --project chromium-a67 --project webkit-a67` |20correctos |
+| `npx playwright test --config playwright.gameplay-a63.config.ts` |16correctos |
+| `npx playwright test --config playwright.header-pact-a66.config.ts` |20correctos |
+| `npx playwright test --config playwright.intentions-a65.config.ts` |8correctos |
+| `npm run test:pwa -- --project chromium --project webkit` |12correctos |
+| `node tools/verification/build-a66-reference.mjs` | Referencia construida |
+| `A67_PERFORMANCE_VARIANT=baseline/current npx playwright test --config playwright.performance-a67.config.ts` |1+1correctos; dos comandos separados y seriales |
+
+Las diez omisiones son las muestras sostenidas que solo se ejecutan en un proyecto por suite, no fallos reintentados o recorridos descartados. A70 conserva67fichas JSON y cuatroPNG seleccionados. [Galería](GALLERY.md), [mediciones y presupuesto no cumplido A69](PERFORMANCE.md). Los24recorridos autoritativos son ganadores; los estados primera/repetida/derrota/empate se distinguen en proyecciones y fixtures/contratos existentes. No se afirma una matriz de derrotas reales que no se ejecutó.
+
+La documentación posterior mantiene idénticos los44objetos raíz no documentales del merge ensayado: [prueba de equivalencia](evidence/validated-code-objects.json). Si su push genera otraCI, se informa su estado separadamente y no se confunde con esta ejecución correcta. [Compatibilidad](COMPATIBILITY.md). Main sigue sujeto a autorización posterior.
 
 ## Referencia comprobada
 
@@ -30,6 +57,8 @@ Casos: identidad real, todos los actores visibles/sin scroll ordinario, pausa an
 
 La ocultación usa una condición sintética Page Visibility para activar el listener real; no prueba una aplicación en segundo plano en teléfono físico. El cambio de idioma/pack en fixture usa controles QA privados; el recorrido autoritativo cambia idioma en Ajustes.
 
+La pérdida de renderer se provoca con un evento `webglcontextlost` controlado que activa la recuperación real; no se derriba un driver/procesoGPU. El aumento de texto usa raízCSS al200%, no zoom nativo de un dispositivo. Toque es emulado. Las peticiones de imagen/importación se abortan de verdad en el contexto de ensayo, sin afectar sesiones ajenas.
+
 Una muestra Chromium1280 mide arranque nuevo documento y10s de replay cálido, ocho ciclos seriales, texturas y paints. Conserva intervalos rAF y Long Tasks cuando la API existe. No son tiempos GPU ni prueba de memoria total. El cache del sistema operativo no se limpia. Los actores difieren de A69: no se atribuye un porcentaje causal de mejora respecto a aquella referencia.
 
 ## Cobertura reutilizada
@@ -42,7 +71,7 @@ Una muestra Chromium1280 mide arranque nuevo documento y10s de replay cálido, o
 
 ## Pendientes que no equivalen a cobertura
 
-Ejecución Linux A70, inspección de los cuatroPNG y resultados de tipos/build/pruebas se registrarán posteriormente. No hay ejecución gráfica local A70. Dispositivo físico, lector hablado, percepción de identidad, comprensión del jefe y satisfacción siguen pendientes. Una imagen estática no demuestra movimiento; los tests de fases y las mediciones tienen un propósito distinto.
+La ejecución LinuxA70, la inspección de los cuatroPNG y tipos/build/pruebas están registradas en el cierre técnico siguiente. No hay ejecución gráfica local A70. Dispositivo físico, lector hablado, percepción de identidad, comprensión del jefe y satisfacción siguen pendientes. Una imagen estática no demuestra movimiento; los tests de fases y las mediciones tienen un propósito distinto.
 
 ## Revisión de cobertura durante la primera CI
 

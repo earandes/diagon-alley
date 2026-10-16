@@ -1,0 +1,39 @@
+{
+  "fixture": true,
+  "engine": "webkit",
+  "viewport": {
+    "width": 865,
+    "height": 1079
+  },
+  "media": "off",
+  "newDocument": true,
+  "networkCacheReset": false,
+  "sha": "024e88dd21fbb6274a3756133d80043f49014f81",
+  "frameMs": {
+    "samples": 25,
+    "p50": 16,
+    "p95": 125,
+    "max": 135
+  },
+  "longTasks": null,
+  "renderer": [
+    {
+      "renderer": "webgl",
+      "activeTicking": "false",
+      "artReady": "true",
+      "visibleFigures": "6",
+      "renderCount": "17",
+      "textureCount": "6",
+      "textureBytes": "3513024"
+    }
+  ],
+  "budgetTargetsNotProof": {
+    "p95FrameMs": 20,
+    "maximumFrameMs": 50,
+    "skipUsableMs": 100
+  },
+  "skipUsableMs": 34,
+  "navigationToSceneReadyMs": 501,
+  "freshContextFirstNavigation": true,
+  "declaration": "Fixed-seed presentation fixture; no account operation or human play observation"
+}

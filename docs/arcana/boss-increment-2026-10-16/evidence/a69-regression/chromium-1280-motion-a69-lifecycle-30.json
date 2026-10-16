@@ -1,0 +1,237 @@
+{
+  "fixture": true,
+  "engine": "chromium",
+  "viewport": {
+    "width": 1280,
+    "height": 900
+  },
+  "media": "off",
+  "newDocument": true,
+  "networkCacheReset": false,
+  "sha": "024e88dd21fbb6274a3756133d80043f49014f81",
+  "frameMs": {
+    "samples": 817,
+    "p50": 16.700000000000728,
+    "p95": 83.39999999999782,
+    "max": 216.5
+  },
+  "longTasks": [
+    91,
+    149,
+    97,
+    149,
+    82,
+    137,
+    86,
+    151,
+    97,
+    176,
+    94,
+    149,
+    81,
+    148,
+    82,
+    154,
+    83,
+    170,
+    83,
+    162,
+    86,
+    153,
+    83,
+    151,
+    85,
+    151,
+    82,
+    165,
+    96,
+    147,
+    82,
+    146,
+    84,
+    141,
+    83,
+    152,
+    83,
+    165,
+    97,
+    151,
+    82,
+    151,
+    81,
+    153,
+    82,
+    148,
+    84,
+    162,
+    82,
+    148,
+    83,
+    151,
+    88,
+    147,
+    89,
+    162,
+    86,
+    170
+  ],
+  "renderer": [],
+  "budgetTargetsNotProof": {
+    "p95FrameMs": 20,
+    "maximumFrameMs": 50,
+    "skipUsableMs": 100
+  },
+  "counts": [
+    {
+      "cycle": 1,
+      "textures": "6",
+      "bytes": "3513024"
+    },
+    {
+      "cycle": 2,
+      "textures": "6",
+      "bytes": "3513024"
+    },
+    {
+      "cycle": 3,
+      "textures": "6",
+      "bytes": "3513024"
+    },
+    {
+      "cycle": 4,
+      "textures": "6",
+      "bytes": "3513024"
+    },
+    {
+      "cycle": 5,
+      "textures": "6",
+      "bytes": "3513024"
+    },
+    {
+      "cycle": 6,
+      "textures": "6",
+      "bytes": "3513024"
+    },
+    {
+      "cycle": 7,
+      "textures": "6",
+      "bytes": "3513024"
+    },
+    {
+      "cycle": 8,
+      "textures": "6",
+      "bytes": "3513024"
+    },
+    {
+      "cycle": 9,
+      "textures": "6",
+      "bytes": "3513024"
+    },
+    {
+      "cycle": 10,
+      "textures": "6",
+      "bytes": "3513024"
+    },
+    {
+      "cycle": 11,
+      "textures": "6",
+      "bytes": "3513024"
+    },
+    {
+      "cycle": 12,
+      "textures": "6",
+      "bytes": "3513024"
+    },
+    {
+      "cycle": 13,
+      "textures": "6",
+      "bytes": "3513024"
+    },
+    {
+      "cycle": 14,
+      "textures": "6",
+      "bytes": "3513024"
+    },
+    {
+      "cycle": 15,
+      "textures": "6",
+      "bytes": "3513024"
+    },
+    {
+      "cycle": 16,
+      "textures": "6",
+      "bytes": "3513024"
+    },
+    {
+      "cycle": 17,
+      "textures": "6",
+      "bytes": "3513024"
+    },
+    {
+      "cycle": 18,
+      "textures": "6",
+      "bytes": "3513024"
+    },
+    {
+      "cycle": 19,
+      "textures": "6",
+      "bytes": "3513024"
+    },
+    {
+      "cycle": 20,
+      "textures": "6",
+      "bytes": "3513024"
+    },
+    {
+      "cycle": 21,
+      "textures": "6",
+      "bytes": "3513024"
+    },
+    {
+      "cycle": 22,
+      "textures": "6",
+      "bytes": "3513024"
+    },
+    {
+      "cycle": 23,
+      "textures": "6",
+      "bytes": "3513024"
+    },
+    {
+      "cycle": 24,
+      "textures": "6",
+      "bytes": "3513024"
+    },
+    {
+      "cycle": 25,
+      "textures": "6",
+      "bytes": "3513024"
+    },
+    {
+      "cycle": 26,
+      "textures": "6",
+      "bytes": "3513024"
+    },
+    {
+      "cycle": 27,
+      "textures": "6",
+      "bytes": "3513024"
+    },
+    {
+      "cycle": 28,
+      "textures": "6",
+      "bytes": "3513024"
+    },
+    {
+      "cycle": 29,
+      "textures": "6",
+      "bytes": "3513024"
+    },
+    {
+      "cycle": 30,
+      "textures": "6",
+      "bytes": "3513024"
+    }
+  ],
+  "limitation": "Resource counters and detached host state; not GPU-process RSS or forced-GC heap proof"
+}

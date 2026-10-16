@@ -1,0 +1,3 @@
+check	Run ARCANA_CAPTURE_A70=1 npx playwright test --config playwright.boss-a70.config.ts	2026-10-16T22:37:20.4573398Z   5 skipped
+check	Run ARCANA_CAPTURE_A70=1 npx playwright test --config playwright.boss-a70.config.ts	2026-10-16T22:37:20.4573875Z   55 passed (8.4m)
+check	Run npx playwright test --config playwright.seasonal-a68.config.ts	2026-10-16T22:39:47.8886182Z   12 passed (2.4m)

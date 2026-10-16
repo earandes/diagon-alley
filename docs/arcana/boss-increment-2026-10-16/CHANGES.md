@@ -1,6 +1,10 @@
 # A70 · Archivos del incremento
 
-Basef5d3a89; candidatof67830e. Solo archivos propios del recorrido del jefe, fuentes de cuatro piezas y validación. No se incluyen los archivos históricos no rastreados ajenos ni datos de la cuenta habitual.
+Base `f5d3a89`; código validado `0189d3a`, merge `024e88dd21fbb6274a3756133d80043f49014f81`, CI38977202497 correcta. El cierre posterior modifica solo documentación/evidencia y el resumidor de JSON sin navegador. Los44objetos raíz no documentales conservan sus hashes. No se incluyen archivos históricos ajenos no rastreados ni datos de la cuenta habitual.
+
+53archivos de código/configuración/diseño/documentación y306archivos de evidencia. [Inventario completo legible por máquina](evidence/changed-files.json); incluye capturas seleccionadas, fuentes de medición, consola y las iteraciones identificadas.
+
+## Código, arte y documentos
 
 - `.github/workflows/checks.yml`
 - `DESIGN.md`
@@ -22,25 +26,13 @@ Basef5d3a89; candidatof67830e. Solo archivos propios del recorrido del jefe, fue
 - `docs/arcana/boss-increment-2026-10-16/CHANGES.md`
 - `docs/arcana/boss-increment-2026-10-16/COMPATIBILITY.md`
 - `docs/arcana/boss-increment-2026-10-16/CONTRACT.md`
+- `docs/arcana/boss-increment-2026-10-16/GALLERY.md`
 - `docs/arcana/boss-increment-2026-10-16/JOURNEY.md`
 - `docs/arcana/boss-increment-2026-10-16/MOTION.md`
+- `docs/arcana/boss-increment-2026-10-16/PERFORMANCE.md`
 - `docs/arcana/boss-increment-2026-10-16/QA.md`
 - `docs/arcana/boss-increment-2026-10-16/REPORT.md`
-- `docs/arcana/boss-increment-2026-10-16/evidence/build-scan.txt`
-- `docs/arcana/boss-increment-2026-10-16/evidence/build.txt`
-- `docs/arcana/boss-increment-2026-10-16/evidence/content.txt`
-- `docs/arcana/boss-increment-2026-10-16/evidence/facts-green.txt`
-- `docs/arcana/boss-increment-2026-10-16/evidence/facts-red.txt`
-- `docs/arcana/boss-increment-2026-10-16/evidence/integration.txt`
-- `docs/arcana/boss-increment-2026-10-16/evidence/motion-green.txt`
-- `docs/arcana/boss-increment-2026-10-16/evidence/motion-red.txt`
-- `docs/arcana/boss-increment-2026-10-16/evidence/preflight.txt`
-- `docs/arcana/boss-increment-2026-10-16/evidence/prelude-green.txt`
-- `docs/arcana/boss-increment-2026-10-16/evidence/prelude-red.txt`
-- `docs/arcana/boss-increment-2026-10-16/evidence/protected-source-objects.json`
-- `docs/arcana/boss-increment-2026-10-16/evidence/types-first.txt`
-- `docs/arcana/boss-increment-2026-10-16/evidence/types.txt`
-- `docs/arcana/boss-increment-2026-10-16/evidence/unit.txt`
+- `docs/arcana/boss-increment-2026-10-16/summarize.mjs`
 - `playwright.boss-a70.config.ts`
 - `src/arcana/presentation/BattlePanel.tsx`
 - `src/arcana/presentation/BossBattleFacts.tsx`

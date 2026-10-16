@@ -1,0 +1,265 @@
+{
+  "records": 67,
+  "sourceShas": [
+    "024e88dd21fbb6274a3756133d80043f49014f81"
+  ],
+  "authority": {
+    "chromium": {
+      "cases": 12,
+      "actionToDomUsableUpperBoundMs": {
+        "samples": 12,
+        "min": 543,
+        "max": 881
+      },
+      "actionToFiguresReadyUpperBoundMs": {
+        "samples": 12,
+        "min": 545,
+        "max": 906
+      }
+    },
+    "webkit": {
+      "cases": 12,
+      "actionToDomUsableUpperBoundMs": {
+        "samples": 12,
+        "min": 534,
+        "max": 1991
+      },
+      "actionToFiguresReadyUpperBoundMs": {
+        "samples": 12,
+        "min": 536,
+        "max": 3620
+      }
+    }
+  },
+  "presentation": {
+    "chromium": {
+      "cases": 9,
+      "navigationToReadyUpperBoundMs": {
+        "samples": 9,
+        "min": 450.6000000000349,
+        "max": 767.4000000000233
+      },
+      "ownTextureBytes": {
+        "samples": 9,
+        "min": 4206980,
+        "max": 7008644
+      }
+    },
+    "webkit": {
+      "cases": 9,
+      "navigationToReadyUpperBoundMs": {
+        "samples": 9,
+        "min": 414,
+        "max": 1668
+      },
+      "ownTextureBytes": {
+        "samples": 9,
+        "min": 4206980,
+        "max": 7008644
+      }
+    }
+  },
+  "warmWindows": [
+    {
+      "file": "chromium-1280-boss-a70-performance-lifetimes.json",
+      "engine": "chromium",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "windowMs": 10000,
+      "rafIntervalsMs": {
+        "samples": 593,
+        "p50": 16.699999999999818,
+        "p95": 16.799999999999272,
+        "max": 33.400000000000546
+      },
+      "longTasksMs": [],
+      "actualPaints": 568,
+      "cycles": 8,
+      "ownTextureBytes": {
+        "samples": 8,
+        "min": 5938752,
+        "max": 5938752
+      },
+      "imageLoad": {
+        "observedThroughMs": 10740.5,
+        "networkResources": 11,
+        "resourceDurationMs": {
+          "samples": 11,
+          "p50": 20.79999999998836,
+          "p95": 31.29999999998836,
+          "max": 31.400000000023283
+        },
+        "decodePromiseSpansMs": {
+          "samples": 12,
+          "p50": 117.79999999998836,
+          "p95": 199.20000000001164,
+          "max": 200.70000000001164
+        },
+        "postResponseWaitMs": {
+          "samples": 11,
+          "p50": 117.79999999998836,
+          "p95": 139.40000000002328,
+          "max": 191.89999999996508
+        },
+        "decoded": [
+          {
+            "image": "/assets/figure-Bi1B5vMt.webp",
+            "start": 284,
+            "end": 369.5,
+            "width": 342,
+            "height": 428,
+            "failed": false,
+            "promiseSpanMs": 85.5,
+            "postResponseWaitMs": 85.5,
+            "resourceEndedBeforeDecodeCall": true
+          },
+          {
+            "image": "/assets/figure-J0bPvLkg.webp",
+            "start": 284.1000000000349,
+            "end": 380.9000000000233,
+            "width": 342,
+            "height": 428,
+            "failed": false,
+            "promiseSpanMs": 96.79999999998836,
+            "postResponseWaitMs": 96.79999999998836,
+            "resourceEndedBeforeDecodeCall": true
+          },
+          {
+            "image": "/assets/figure-VlQJ4Mnx.webp",
+            "start": 284.20000000001164,
+            "end": 387.20000000001164,
+            "width": 342,
+            "height": 428,
+            "failed": false,
+            "promiseSpanMs": 103,
+            "postResponseWaitMs": 103,
+            "resourceEndedBeforeDecodeCall": true
+          },
+          {
+            "image": "/assets/figure-xazZc3VG.webp",
+            "start": 284.29999999998836,
+            "end": 392.29999999998836,
+            "width": 342,
+            "height": 428,
+            "failed": false,
+            "promiseSpanMs": 108,
+            "postResponseWaitMs": 108,
+            "resourceEndedBeforeDecodeCall": true
+          },
+          {
+            "image": "/assets/figure-CPGOgPTU.webp",
+            "start": 284.4000000000233,
+            "end": 397.6000000000349,
+            "width": 342,
+            "height": 428,
+            "failed": false,
+            "promiseSpanMs": 113.20000000001164,
+            "postResponseWaitMs": 113.20000000001164,
+            "resourceEndedBeforeDecodeCall": true
+          },
+          {
+            "image": "/assets/figure-HE2P3K7l.webp",
+            "start": 284.5,
+            "end": 402.29999999998836,
+            "width": 342,
+            "height": 428,
+            "failed": false,
+            "promiseSpanMs": 117.79999999998836,
+            "postResponseWaitMs": 117.79999999998836,
+            "resourceEndedBeforeDecodeCall": true
+          },
+          {
+            "image": "/assets/figure-Dw0yVnEW.webp",
+            "start": 284.5,
+            "end": 408.70000000001164,
+            "width": 342,
+            "height": 428,
+            "failed": false,
+            "promiseSpanMs": 124.20000000001164,
+            "postResponseWaitMs": 124.20000000001164,
+            "resourceEndedBeforeDecodeCall": true
+          },
+          {
+            "image": "/assets/figure-DBVYYcEI.webp",
+            "start": 284.6000000000349,
+            "end": 414.79999999998836,
+            "width": 342,
+            "height": 428,
+            "failed": false,
+            "promiseSpanMs": 130.19999999995343,
+            "postResponseWaitMs": 130.19999999995343,
+            "resourceEndedBeforeDecodeCall": true
+          },
+          {
+            "image": "/assets/figure-DtaykeOT.webp",
+            "start": 284.70000000001164,
+            "end": 419.4000000000233,
+            "width": 342,
+            "height": 428,
+            "failed": false,
+            "promiseSpanMs": 134.70000000001164,
+            "postResponseWaitMs": 134.70000000001164,
+            "resourceEndedBeforeDecodeCall": true
+          },
+          {
+            "image": "/assets/figure-CVKs9iP6.webp",
+            "start": 284.79999999998836,
+            "end": 424.20000000001164,
+            "width": 342,
+            "height": 428,
+            "failed": false,
+            "promiseSpanMs": 139.40000000002328,
+            "postResponseWaitMs": 139.40000000002328,
+            "resourceEndedBeforeDecodeCall": true
+          },
+          {
+            "image": "inline-image",
+            "start": 402.70000000001164,
+            "end": 601.9000000000233,
+            "width": 96,
+            "height": 109,
+            "failed": false,
+            "promiseSpanMs": 199.20000000001164,
+            "postResponseWaitMs": null,
+            "resourceEndedBeforeDecodeCall": null
+          },
+          {
+            "image": "/assets/book-cover-gC_caB7t.webp",
+            "start": 402.79999999998836,
+            "end": 603.5,
+            "width": 96,
+            "height": 109,
+            "failed": false,
+            "promiseSpanMs": 200.70000000001164,
+            "postResponseWaitMs": 191.89999999996508,
+            "resourceEndedBeforeDecodeCall": false
+          }
+        ]
+      },
+      "startup": {
+        "elapsedUpperBoundMs": 683.7999999999884,
+        "rafIntervalsMs": {
+          "samples": 14,
+          "p50": 16.700000000000045,
+          "p95": 100,
+          "max": 233.29999999999995
+        },
+        "longTasksMs": [
+          58,
+          86,
+          172
+        ]
+      }
+    }
+  ],
+  "limitations": [
+    "Authority action bounds include Playwright waits, API commit/state polling and UI assertions; they are not human timings.",
+    "Presentation fixtures use prolonged player stats, not campaign balance; setup also resolves their log.",
+    "New document is not an OS/driver cache reset. rAF intervals are not GPU timings.",
+    "Resource counters cover owned textures only, not total GPU memory or a global leak proof.",
+    "Image resource and decode promise spans overlap; post-response wait also includes scheduling, not decoder CPU time.",
+    "Do not pool percentiles from separate windows or claim causal improvement against different A69 fixtures."
+  ]
+}

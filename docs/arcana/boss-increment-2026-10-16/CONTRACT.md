@@ -48,7 +48,7 @@ Primero una muestra en contexto con fuentes existentes. Máximo2–3capas por pa
 1. Completado: fuentes/estado, boss real, alternativas y contrato previo.
 2. Implementado: proyección/identidad/cierre, objetos y prelude/preparación; TDD de hechos/poses/consulta.
 3. Comprobado localmente sin navegador:542unitarios,77PGRedis,tipos/build/content/scan. MuestrasCPU inspeccionadas; integración arena/reloj preparada. Preflight solo consulta, sin lanzar smoke.
-4. En curso: PR3,2ac0835 produjo24recorridos completos y46casos correctos;3fallos del ensayo de importWebKit corregidos por aislamiento. Preparación compactada tras inspección; candidato siguiente y CI completos pendientes. Las dos CIcanceladas conservan evidencia identificada, sin afirmación de cobertura completa.
-5. Pendiente: documentación final y entrega de rama validada. Main/despliegue excluidos.
+4. Completado técnicamente: candidato0189d3a, merge024e88dd21fbb6274a3756133d80043f49014f81, CI38977202497 correcta. A70:55casos/5omisiones intencionadas; las regresiones de Halloween, A69, general, A67/A63/A66/A65 yPWA también correctas. Cuatro capturas inspeccionadas y correcciones verificadas. El objetivo de rendimiento genéricoA69 no se cumple en una muestra; se conserva como límite, sin atribuir causa.
+5. Completado: documentación/evidencia final y entrega de rama/PR3. Los objetos de código/configuración/pruebas/arte no documentales se contrastan con el merge ensayado antes de cerrar. Main/despliegue excluidos; sesión humana y dispositivo físico pendientes.
 
 Root integra App/NodePreparation/BattlePanel/Pixi y coordinación. Agente hechos: boss-presentation.ts, boss-facts.ts, BossBattleFacts.tsx, ExpeditionClosure y mensajes/tests propios. Arte: fuentes/exports/manifest, sin editar renderer. QA: tests/browser-boss yconfig A70, sin lanzar suites; root coordina única ejecución. No agentes abren navegador o servicios en paralelo.

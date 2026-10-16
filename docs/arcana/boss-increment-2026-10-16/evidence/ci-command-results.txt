@@ -1,0 +1,20 @@
+check	Run npm run validate:content	2026-10-16T22:41:47.9376794Z  Test Files  1 passed (1)
+check	Run npm run validate:content	2026-10-16T22:41:47.9377608Z       Tests  6 passed (6)
+check	Run npm test	2026-10-16T22:42:00.0529841Z  Test Files  75 passed (75)
+check	Run npm test	2026-10-16T22:42:00.0532834Z       Tests  542 passed (542)
+check	Run npm run test:integration	2026-10-16T22:42:16.3730827Z  Test Files  13 passed (13)
+check	Run npm run test:integration	2026-10-16T22:42:16.3732928Z       Tests  77 passed (77)
+check	Run npm run verify:arcana:build	2026-10-16T22:42:29.1601784Z diagon-alley build content scan passed; total distributed bytes: 14695088. Historical I1 excluded. Private thematic dual build; ARCANA-only distribution not certified.
+check	Run ARCANA_CAPTURE_A70=1 npx playwright test --config playwright.boss-a70.config.ts	2026-10-16T22:52:04.5343560Z   5 skipped
+check	Run ARCANA_CAPTURE_A70=1 npx playwright test --config playwright.boss-a70.config.ts	2026-10-16T22:52:04.5346476Z   55 passed (8.7m)
+check	Run npx playwright test --config playwright.seasonal-a68.config.ts	2026-10-16T22:54:37.6344907Z   12 passed (2.5m)
+check	Run ARCANA_CAPTURE_A69=1 npx playwright test --config playwright.motion-a69.config.ts	2026-10-16T23:01:50.7631239Z   5 skipped
+check	Run ARCANA_CAPTURE_A69=1 npx playwright test --config playwright.motion-a69.config.ts	2026-10-16T23:01:50.7631664Z   19 passed (7.2m)
+check	Run ARCANA_TRIAL_COMPILED=1 npm run test:e2e -- --project chromium --project webkit --reporter=line,github	2026-10-16T23:08:02.1047126Z   56 passed (6.2m)
+check	Run npx playwright test --config playwright.progression-a67.config.ts --project chromium-a67 --project webkit-a67	2026-10-16T23:11:32.0354283Z   20 passed (3.5m)
+check	Run npx playwright test --config playwright.gameplay-a63.config.ts	2026-10-16T23:16:08.0668778Z   16 passed (4.6m)
+check	Run npx playwright test --config playwright.header-pact-a66.config.ts	2026-10-16T23:19:32.9722265Z   20 passed (3.4m)
+check	Run npx playwright test --config playwright.intentions-a65.config.ts	2026-10-16T23:22:25.3244202Z   8 passed (2.9m)
+check	Run npm run test:pwa -- --project chromium --project webkit	2026-10-16T23:22:48.6678532Z   12 passed (22.6s)
+check	Run A67_PERFORMANCE_VARIANT=baseline npx playwright test --config playwright.performance-a67.config.ts	2026-10-16T23:23:09.9374879Z   1 passed (8.4s)
+check	Run A67_PERFORMANCE_VARIANT=current npx playwright test --config playwright.performance-a67.config.ts	2026-10-16T23:23:19.3584508Z   1 passed (8.6s)

@@ -33,7 +33,12 @@ const imageLoad = (window) => {
     return {
       ...entry,
       promiseSpanMs: entry.end - entry.start,
-      postResponseWaitMs: resource ? Math.max(0, entry.end - resource.responseEnd) : null,
+      // A DOM image may have fetched this URL before Pixi calls decode(). Do not
+      // count that idle gap as decoder wait or add it to the original promise span.
+      postResponseWaitMs: resource
+        ? Math.max(0, entry.end - Math.max(entry.start, resource.responseEnd))
+        : null,
+      resourceEndedBeforeDecodeCall: resource ? resource.responseEnd < entry.start : null,
     };
   });
   return {

@@ -1,0 +1,202 @@
+{
+  "fixtureRecords": 200,
+  "testedMergeShas": [
+    "024e88dd21fbb6274a3756133d80043f49014f81"
+  ],
+  "engines": {
+    "chromium": {
+      "openingActionToResultMs": {
+        "samples": 48,
+        "minimum": 2835,
+        "maximum": 3359.899999999907
+      },
+      "skipActionToResultMs": {
+        "samples": 36,
+        "minimum": 8.300000000046566,
+        "maximum": 56.5
+      },
+      "freshContextArenaBootMs": {
+        "samples": 3,
+        "minimum": 564.1000000000931,
+        "maximum": 681.1999999999534
+      },
+      "freshContextOpeningBootMs": {
+        "samples": 3,
+        "minimum": 144.59999999997672,
+        "maximum": 177.89999999990687
+      },
+      "ownTextureBytes": {
+        "samples": 40,
+        "minimum": 3513024,
+        "maximum": 7004160
+      },
+      "longTaskApi": [
+        "supported"
+      ],
+      "maximumReportedLongTaskMs": 232,
+      "freshContextArenaFrameWindows": [
+        {
+          "viewport": {
+            "width": 1280,
+            "height": 900
+          },
+          "frameMs": {
+            "samples": 36,
+            "p50": 16.700000000000003,
+            "p95": 133.39999999999998,
+            "max": 200
+          },
+          "longTasks": [
+            53,
+            123,
+            143
+          ]
+        },
+        {
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "frameMs": {
+            "samples": 30,
+            "p50": 16.700000000000003,
+            "p95": 100,
+            "max": 166.70000000000005
+          },
+          "longTasks": [
+            93,
+            94
+          ]
+        },
+        {
+          "viewport": {
+            "width": 865,
+            "height": 1079
+          },
+          "frameMs": {
+            "samples": 36,
+            "p50": 16.700000000000045,
+            "p95": 116.59999999999997,
+            "max": 216.59999999999997
+          },
+          "longTasks": [
+            54,
+            106,
+            162
+          ]
+        }
+      ]
+    },
+    "webkit": {
+      "openingActionToResultMs": {
+        "samples": 48,
+        "minimum": 2564,
+        "maximum": 3572
+      },
+      "skipActionToResultMs": {
+        "samples": 36,
+        "minimum": 17,
+        "maximum": 37
+      },
+      "freshContextArenaBootMs": {
+        "samples": 3,
+        "minimum": 466,
+        "maximum": 521
+      },
+      "freshContextOpeningBootMs": {
+        "samples": 3,
+        "minimum": 130,
+        "maximum": 153
+      },
+      "ownTextureBytes": {
+        "samples": 39,
+        "minimum": 3513024,
+        "maximum": 7004160
+      },
+      "longTaskApi": [
+        "unavailable"
+      ],
+      "maximumReportedLongTaskMs": null,
+      "freshContextArenaFrameWindows": [
+        {
+          "viewport": {
+            "width": 1280,
+            "height": 900
+          },
+          "frameMs": {
+            "samples": 23,
+            "p50": 21,
+            "p95": 130,
+            "max": 141
+          },
+          "longTasks": null
+        },
+        {
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "frameMs": {
+            "samples": 27,
+            "p50": 17,
+            "p95": 98,
+            "max": 133
+          },
+          "longTasks": null
+        },
+        {
+          "viewport": {
+            "width": 865,
+            "height": 1079
+          },
+          "frameMs": {
+            "samples": 25,
+            "p50": 16,
+            "p95": 125,
+            "max": 135
+          },
+          "longTasks": null
+        }
+      ]
+    }
+  },
+  "warm": [
+    {
+      "engine": "chromium",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "windowMs": 10000,
+      "frameMs": {
+        "samples": 504,
+        "p50": 16.699999999999818,
+        "p95": 33.399999999999636,
+        "max": 33.400000000001455
+      },
+      "warmDraws": 477,
+      "p95TargetMs": 20,
+      "p95TargetMet": false,
+      "longTasks": []
+    }
+  ],
+  "lifecycle": [
+    {
+      "cycles": 30,
+      "ownTextureBytesDuringMount": {
+        "samples": 30,
+        "minimum": 3513024,
+        "maximum": 3513024
+      },
+      "limitation": "Resource counters and detached host state; not GPU-process RSS or forced-GC heap proof"
+    }
+  ],
+  "limits": [
+    "Declared presentation fixtures, not human play",
+    "First fresh context only is cold; later navigations can reuse network cache",
+    "Opening action starts with an already confirmed receipt; authority latency is not included",
+    "Texture counters are not GPU-process memory",
+    "Ranges describe this sample matrix, not a population distribution",
+    "Frame percentiles remain per-window; they are not pooled from summaries"
+  ]
+}
