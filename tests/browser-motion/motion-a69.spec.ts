@@ -178,6 +178,8 @@ test('A69 arena real 3x3, 5x3, 5x5: both packs and ES/EN keep all actors and con
       ]) {
         await page.goto(`${fixture}?pack=${pack}&lang=${lang}&player=${player}&rival=${rival}`);
         await expect(page.locator('.scene-canvas[data-renderer="webgl"]')).toBeVisible();
+        await expect(page.locator('.scene-canvas')).toHaveAttribute('data-art-ready', 'true');
+        const navigationToSceneReadyMs = await page.evaluate(() => performance.now());
         await pause(page, lang).click();
         const before = await preserved(page);
         const panel = page.locator('.battle-panel');
@@ -197,6 +199,9 @@ test('A69 arena real 3x3, 5x3, 5x5: both packs and ES/EN keep all actors and con
         expect(await preserved(page)).toEqual(before);
         await report(page, `arena-${pack}-${lang}-${player}x${rival}`, {
           skipUsableMs,
+          navigationToSceneReadyMs,
+          freshContextFirstNavigation:
+            pack === 'diagon-alley' && lang === 'es' && player === 3 && rival === 3,
           declaration:
             'Fixed-seed presentation fixture; no account operation or human play observation',
         });
@@ -311,6 +316,8 @@ test('A69 CardReveal actual: four ranks, new/repeat, skip, reduced, language/pac
         await page.goto(
           `${fixture}?kind=opening&pack=${pack}&lang=${lang}&rarity=${rarity}&manual`,
         );
+        await expect(page.locator('[data-qa-start]')).toBeEnabled();
+        const documentBootToReadyMs = await page.evaluate(() => performance.now());
         const before = await preserved(page);
         await markAction(page, '[data-qa-start]');
         await page.locator('[data-qa-start]').click();
@@ -324,6 +331,9 @@ test('A69 CardReveal actual: four ranks, new/repeat, skip, reduced, language/pac
         await report(page, `opening-${pack}-${lang}-${rarity}`, {
           isNew: true,
           resultUsableMs,
+          documentBootToReadyMs,
+          freshContextFirstNavigation:
+            pack === 'diagon-alley' && lang === 'es' && rarity === 'common',
           action:
             'Explicit fixture presentation, includes image/decode/animation; no network authority command in this declared fixture',
         });
