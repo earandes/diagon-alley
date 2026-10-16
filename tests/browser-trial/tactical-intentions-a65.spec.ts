@@ -5,7 +5,7 @@ import { resolve } from 'node:path';
 import { changeLanguage, startExpedition } from './game-fixture';
 import { readGame, reachNode, confirmEvent } from './route-helpers';
 import type { GameState } from '../../src/arcana/application/game';
-import type { NodeGraph } from '../../src/arcana/domain/exploration/route';
+import { preparedRoutePath } from '../support/prepared-route';
 
 const evidence = resolve('docs/arcana/tactical-increment-2026-10-16/evidence/after-intentions');
 async function capture(page: Page, name: string) {
@@ -67,33 +67,6 @@ async function capture(page: Page, name: string) {
   await page.setViewportSize({ width: 1280, height: 900 });
 }
 /** Technical setup on a fresh authority account. These API actions are not player observations. */
-function safePath(graph: NodeGraph): string[] {
-  const paths: string[][] = [];
-  const visit = (id: string, prefix: string[]) => {
-    const node = graph.nodes.find((n) => n.id === id)!;
-    const path = [...prefix, id];
-    if (!node.next.length) paths.push(path);
-    else node.next.forEach((next) => visit(next, path));
-  };
-  graph.nodes.filter((n) => n.row === 0).forEach((n) => visit(n.id, []));
-  const score = (path: string[]) =>
-    path.reduce((value, id) => {
-      const kind = graph.nodes.find((n) => n.id === id)!.kind;
-      return (
-        value +
-        (kind === 'duel'
-          ? 100
-          : kind === 'pact'
-            ? -10
-            : kind === 'refuge'
-              ? -5
-              : kind === 'chest'
-                ? -3
-                : 0)
-      );
-    }, 0);
-  return paths.sort((a, b) => score(a) - score(b))[0];
-}
 async function command(page: Page, path: string, state: GameState, request: unknown) {
   const response = await page.request.post(`/api/${path}`, {
     headers: {
@@ -109,7 +82,7 @@ async function command(page: Page, path: string, state: GameState, request: unkn
 async function technicalClosure(page: Page) {
   let state = await readGame(page);
   const original = state.exploration!.run!;
-  const chosen = safePath(original.graph);
+  const chosen = preparedRoutePath(original, 'boss');
   const setup: { nodeId: string; kind: string; revision: number }[] = [];
   for (const nodeId of chosen) {
     const run = state.exploration!.run!;
