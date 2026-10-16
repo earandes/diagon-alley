@@ -61,7 +61,9 @@ async function measure(page: Page, target: Locator, complete: () => Promise<unkn
 async function confirm(page: Page) {
   const candidates = page.locator('[data-pact-candidate]');
   if (await candidates.count()) await candidates.first().click();
-  const pass = page.locator('[data-preparation="encounter"] [data-visual-value="pass"]');
+  const pass = page.locator(
+    '[data-encounter-offer] [data-encounter-choice="pass"], [data-preparation="encounter"] [data-visual-value="pass"]',
+  );
   if (await pass.count()) await pass.click();
   await page.locator('.node-confirm-action').click();
   await expect(page.locator('.node-event-dialog')).toHaveCount(0);
