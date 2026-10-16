@@ -1,0 +1,121 @@
+# Archivos del incremento A68 + A69
+
+Base: main `2b9df81`; código ensayado `6910a48`. La documentación final conserva esos árboles de código. No se incluyen carpetas históricas no rastreadas ajenas, datos personales ni build generado.
+
+## Aplicación, pruebas, herramientas y documentación
+
+- `.github/workflows/checks.yml`
+- `DESIGN.md`
+- `docs/DECISIONS.md`
+- `docs/PRD.md`
+- `docs/arcana/motion-audit-2026-10-16/ASSETS.md`
+- `docs/arcana/motion-audit-2026-10-16/AUDIT.md`
+- `docs/arcana/motion-audit-2026-10-16/BACKLOG.md`
+- `docs/arcana/motion-audit-2026-10-16/CHANGES.md`
+- `docs/arcana/motion-audit-2026-10-16/CONTRACT.md`
+- `docs/arcana/motion-audit-2026-10-16/GALLERY.md`
+- `docs/arcana/motion-audit-2026-10-16/MOTION.md`
+- `docs/arcana/motion-audit-2026-10-16/PERFORMANCE.md`
+- `docs/arcana/motion-audit-2026-10-16/REGISTRO-ARENA.md`
+- `docs/arcana/motion-audit-2026-10-16/REGISTRO-OPENING.md`
+- `docs/arcana/motion-audit-2026-10-16/REGISTRO-QA.md`
+- `docs/arcana/motion-audit-2026-10-16/REGISTRO-UI.md`
+- `docs/arcana/motion-audit-2026-10-16/REPORT.md`
+- `docs/arcana/motion-audit-2026-10-16/SCREENS.md`
+- `docs/arcana/motion-audit-2026-10-16/TECHNOLOGY.md`
+- `docs/arcana/motion-audit-2026-10-16/VALIDATION.md`
+- `docs/arcana/motion-audit-2026-10-16/summarize.mjs`
+- `docs/arcana/seasonal-halloween-2026-10-16/ASSETS.md`
+- `docs/arcana/seasonal-halloween-2026-10-16/CHANGES.md`
+- `docs/arcana/seasonal-halloween-2026-10-16/CONTEXT-STUDY.png`
+- `docs/arcana/seasonal-halloween-2026-10-16/CONTRACT.md`
+- `docs/arcana/seasonal-halloween-2026-10-16/DESIGN-STUDY.md`
+- `docs/arcana/seasonal-halloween-2026-10-16/EXTENDING.md`
+- `docs/arcana/seasonal-halloween-2026-10-16/MOTION.md`
+- `docs/arcana/seasonal-halloween-2026-10-16/PLAN.md`
+- `docs/arcana/seasonal-halloween-2026-10-16/QA-BACKEND.md`
+- `docs/arcana/seasonal-halloween-2026-10-16/QA.md`
+- `docs/arcana/seasonal-halloween-2026-10-16/REPORT.md`
+- `docs/arcana/seasonal-halloween-2026-10-16/render-context-study.py`
+- `playwright.local-smoke.config.ts`
+- `playwright.motion-a69.config.ts`
+- `playwright.seasonal-a68.config.ts`
+- `playwright.trial.config.ts`
+- `src/arcana/application/client/game-controller.ts`
+- `src/arcana/application/client/ports.ts`
+- `src/arcana/application/game.ts`
+- `src/arcana/application/public-content.ts`
+- `src/arcana/application/run-use-cases.ts`
+- `src/arcana/application/seasonal-events.ts`
+- `src/arcana/content/halloween-2026.json`
+- `src/arcana/domain/errors.ts`
+- `src/arcana/domain/seasonal/events.ts`
+- `src/arcana/infrastructure/content/seasonal-content.ts`
+- `src/arcana/infrastructure/http/api.ts`
+- `src/arcana/infrastructure/http/client.ts`
+- `src/arcana/infrastructure/http/composition.ts`
+- `src/arcana/infrastructure/http/local-runtime.ts`
+- `src/arcana/infrastructure/http/schemas.ts`
+- `src/arcana/infrastructure/postgres/game-transactions.ts`
+- `src/arcana/infrastructure/postgres/schema.sql`
+- `src/arcana/presentation/App.tsx`
+- `src/arcana/presentation/BattlePanel.tsx`
+- `src/arcana/presentation/CardReveal.tsx`
+- `src/arcana/presentation/CollectionPanel.tsx`
+- `src/arcana/presentation/CommercePanel.tsx`
+- `src/arcana/presentation/EquipmentArt.tsx`
+- `src/arcana/presentation/ExpeditionClosure.tsx`
+- `src/arcana/presentation/ExpeditionPreparation.tsx`
+- `src/arcana/presentation/FrogMagic.tsx`
+- `src/arcana/presentation/MapPanel.tsx`
+- `src/arcana/presentation/NodeResult.tsx`
+- `src/arcana/presentation/OperationFeedback.tsx`
+- `src/arcana/presentation/PreparationSynergies.tsx`
+- `src/arcana/presentation/RevealTheatre.tsx`
+- `src/arcana/presentation/SceneAtmosphere.tsx`
+- `src/arcana/presentation/SeasonalEvent.tsx`
+- `src/arcana/presentation/VisualChoices.tsx`
+- `src/arcana/presentation/art/seasonal-a68/manifest.json`
+- `src/arcana/presentation/art/seasonal-a68/pumpkin-lantern.svg`
+- `src/arcana/presentation/motion-a69.css`
+- `src/arcana/presentation/motion/battle-deltas.ts`
+- `src/arcana/presentation/motion/replay-clock.ts`
+- `src/arcana/presentation/motion/useBattlePlayback.ts`
+- `src/arcana/presentation/node-result-motion.ts`
+- `src/arcana/presentation/opening-motion-model.ts`
+- `src/arcana/presentation/reveal-theatre.css`
+- `src/arcana/presentation/scenes/SceneCanvas.tsx`
+- `src/arcana/presentation/scenes/pixi-scenes.ts`
+- `src/arcana/presentation/seasonal-event.css`
+- `src/arcana/presentation/seasonal-messages.ts`
+- `src/arcana/presentation/styles.css`
+- `src/arcana/presentation/useConfirmedMotion.ts`
+- `src/arcana/presentation/useReducedMotion.ts`
+- `src/arcana/presentation/useSelectionMotion.ts`
+- `src/arcana/presentation/visual-history.ts`
+- `tests/browser-motion/motion-a69-harness.tsx`
+- `tests/browser-motion/motion-a69.html`
+- `tests/browser-motion/motion-a69.spec.ts`
+- `tests/browser-motion/vite-motion-a69.config.ts`
+- `tests/browser-trial/browser-local-smoke-a67.spec.ts`
+- `tests/browser-trial/seasonal-a68.spec.ts`
+- `tests/browser-trial/visual-polish.spec.ts`
+- `tests/domain/arcana/battle-deltas-a69.test.ts`
+- `tests/domain/arcana/game-controller.test.ts`
+- `tests/domain/arcana/http-api.test.ts`
+- `tests/domain/arcana/node-result-motion-a69.test.ts`
+- `tests/domain/arcana/opening-motion-model.test.ts`
+- `tests/domain/arcana/replay-clock-a69.test.ts`
+- `tests/domain/arcana/seasonal-a68.test.ts`
+- `tests/domain/arcana/seasonal-presentation-a68.test.ts`
+- `tests/domain/arcana/seasonal-transport-a68.test.ts`
+- `tests/domain/arcana/visual-history-a69.test.ts`
+- `tests/integration/arcana/seasonal-events-a68.test.ts`
+- `tools/arcana/a68-route-study.mjs`
+- `tools/arcana/local-authority-plugin.ts`
+
+## Evidencia
+
+Los archivos bajo `evidence/` incluyen salidas de comandos, JSON de medición, metadatos de CI y cuatro PNG finales seleccionados. `evidence/iteration-*` conserva muestras parciales identificadas. El artefacto completo se vincula a CI38959694470; no hay grabaciones ni capturas automáticas extensas.
+
+[Índice con tamaños y SHA256](evidence-index.json). Los hashes son para procedencia/revisión, no autoridad de la partida.

@@ -1,0 +1,26 @@
+{
+  "fixture": true,
+  "engine": "chromium",
+  "viewport": {
+    "width": 865,
+    "height": 1079
+  },
+  "media": "off",
+  "newDocument": true,
+  "networkCacheReset": false,
+  "sha": "10d2657e19b251b3c9b8c64f45bc3a30efc3c148",
+  "frameMs": {
+    "samples": 7,
+    "p50": 16.700000000000003,
+    "p95": 16.700000000000003,
+    "max": 16.700000000000003
+  },
+  "longTasks": [],
+  "renderer": [],
+  "budgetTargetsNotProof": {
+    "p95FrameMs": 20,
+    "maximumFrameMs": 50,
+    "skipUsableMs": 100
+  },
+  "isNew": false
+}

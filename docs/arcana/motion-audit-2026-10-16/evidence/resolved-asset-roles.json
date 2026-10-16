@@ -1,0 +1,5675 @@
+{
+  "scope": "Active manifest resolution, not evidence that every role was drawn or downloaded in one screen",
+  "roles": [
+    {
+      "pack": "diagon-alley",
+      "role": "node.duel",
+      "file": "src/arcana/presentation/content-packs/diagon-alley/art/nodes-a59/duel.svg",
+      "bytes": 3251,
+      "exists": true,
+      "width": 256,
+      "height": 256,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "alt": {
+        "es": "Duelo: varitas cruzadas y hechizo luminoso",
+        "en": "Duel: crossed wands and a bright spell"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "node.refuge",
+      "file": "src/arcana/presentation/content-packs/diagon-alley/art/nodes-a59/refuge.svg",
+      "bytes": 3471,
+      "exists": true,
+      "width": 256,
+      "height": 256,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "alt": {
+        "es": "Refugio: caldero de cobre con poción reparadora",
+        "en": "Refuge: copper cauldron with a restorative potion"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "node.chest",
+      "file": "src/arcana/presentation/content-packs/diagon-alley/art/nodes-a59/chest.svg",
+      "bytes": 3557,
+      "exists": true,
+      "width": 256,
+      "height": 256,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "alt": {
+        "es": "Botín: baúl de madera con monedas y gema",
+        "en": "Loot: wooden trunk with coins and a gem"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "node.pact",
+      "file": "src/arcana/presentation/content-packs/diagon-alley/art/nodes-a59/pact.svg",
+      "bytes": 3419,
+      "exists": true,
+      "width": 256,
+      "height": 256,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "alt": {
+        "es": "Aliado temporal: carta encantada con retrato y reloj de arena",
+        "en": "Temporary ally: enchanted portrait card and hourglass"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "node.encounter",
+      "file": "src/arcana/presentation/content-packs/diagon-alley/art/nodes-a59/encounter.svg",
+      "bytes": 3241,
+      "exists": true,
+      "width": 256,
+      "height": 256,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "alt": {
+        "es": "Encuentro: invitación sellada de contenido misterioso",
+        "en": "Encounter: sealed invitation with mysterious contents"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "node.boss",
+      "file": "src/arcana/presentation/content-packs/diagon-alley/art/nodes-a59/boss.svg",
+      "bytes": 3358,
+      "exists": true,
+      "width": 256,
+      "height": 256,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "alt": {
+        "es": "Jefe: máscara oscura entre humo verde",
+        "en": "Boss: dark mask amid green smoke"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "currency.crowns",
+      "file": "src/arcana/presentation/content-packs/diagon-alley/art/currency/galleon.svg",
+      "bytes": 2045,
+      "exists": true,
+      "width": 256,
+      "height": 256,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "alt": {
+        "es": "Galeones",
+        "en": "Galleons"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "currency.essence",
+      "file": "src/arcana/presentation/content-packs/arcana/art/icons/currency-essence.svg",
+      "bytes": 1788,
+      "exists": true,
+      "width": 256,
+      "height": 256,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "alt": {
+        "es": "Energía",
+        "en": "Energy"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "character.apprentice.figure",
+      "file": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/apprentice/figure.webp",
+      "bytes": 30776,
+      "exists": true,
+      "width": 342,
+      "height": 428,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Harry Potter",
+        "en": "Illustration of Harry Potter"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "character.apprentice.portrait",
+      "file": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/apprentice/portrait.webp",
+      "bytes": 81394,
+      "exists": true,
+      "width": 512,
+      "height": 640,
+      "alpha": false,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Harry Potter",
+        "en": "Illustration of Harry Potter"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "character.apprentice.thumbnail",
+      "file": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/apprentice/thumbnail.webp",
+      "bytes": 5834,
+      "exists": true,
+      "width": 96,
+      "height": 120,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Harry Potter",
+        "en": "Illustration of Harry Potter"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "character.ash-wanderer.figure",
+      "file": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/ash-wanderer/figure.webp",
+      "bytes": 30428,
+      "exists": true,
+      "width": 342,
+      "height": 428,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Remus Lupin",
+        "en": "Illustration of Remus Lupin"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "character.ash-wanderer.portrait",
+      "file": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/ash-wanderer/portrait.webp",
+      "bytes": 45750,
+      "exists": true,
+      "width": 512,
+      "height": 640,
+      "alpha": false,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Remus Lupin",
+        "en": "Illustration of Remus Lupin"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "character.ash-wanderer.thumbnail",
+      "file": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/ash-wanderer/thumbnail.webp",
+      "bytes": 4830,
+      "exists": true,
+      "width": 96,
+      "height": 120,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Remus Lupin",
+        "en": "Illustration of Remus Lupin"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "character.aurora-sage.figure",
+      "file": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/aurora-sage/figure.webp",
+      "bytes": 29992,
+      "exists": true,
+      "width": 342,
+      "height": 428,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Newt Scamander",
+        "en": "Illustration of Newt Scamander"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "character.aurora-sage.portrait",
+      "file": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/aurora-sage/portrait.webp",
+      "bytes": 52996,
+      "exists": true,
+      "width": 512,
+      "height": 640,
+      "alpha": false,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Newt Scamander",
+        "en": "Illustration of Newt Scamander"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "character.aurora-sage.thumbnail",
+      "file": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/aurora-sage/thumbnail.webp",
+      "bytes": 4962,
+      "exists": true,
+      "width": 96,
+      "height": 120,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Newt Scamander",
+        "en": "Illustration of Newt Scamander"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "character.cinder-dancer.figure",
+      "file": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/cinder-dancer/figure.webp",
+      "bytes": 26916,
+      "exists": true,
+      "width": 342,
+      "height": 428,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Fred Weasley",
+        "en": "Illustration of Fred Weasley"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "character.cinder-dancer.portrait",
+      "file": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/cinder-dancer/portrait.webp",
+      "bytes": 38166,
+      "exists": true,
+      "width": 512,
+      "height": 640,
+      "alpha": false,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Fred Weasley",
+        "en": "Illustration of Fred Weasley"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "character.cinder-dancer.thumbnail",
+      "file": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/cinder-dancer/thumbnail.webp",
+      "bytes": 5230,
+      "exists": true,
+      "width": 96,
+      "height": 120,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Fred Weasley",
+        "en": "Illustration of Fred Weasley"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "character.circe.figure",
+      "file": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/circe/figure.webp",
+      "bytes": 38468,
+      "exists": true,
+      "width": 342,
+      "height": 428,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Hermione Granger",
+        "en": "Illustration of Hermione Granger"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "character.circe.portrait",
+      "file": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/circe/portrait.webp",
+      "bytes": 87634,
+      "exists": true,
+      "width": 512,
+      "height": 640,
+      "alpha": false,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Hermione Granger",
+        "en": "Illustration of Hermione Granger"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "character.circe.thumbnail",
+      "file": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/circe/thumbnail.webp",
+      "bytes": 5786,
+      "exists": true,
+      "width": 96,
+      "height": 120,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Hermione Granger",
+        "en": "Illustration of Hermione Granger"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "character.comet-scholar.figure",
+      "file": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/comet-scholar/figure.webp",
+      "bytes": 23108,
+      "exists": true,
+      "width": 342,
+      "height": 428,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Cho Chang",
+        "en": "Illustration of Cho Chang"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "character.comet-scholar.portrait",
+      "file": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/comet-scholar/portrait.webp",
+      "bytes": 33362,
+      "exists": true,
+      "width": 512,
+      "height": 640,
+      "alpha": false,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Cho Chang",
+        "en": "Illustration of Cho Chang"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "character.comet-scholar.thumbnail",
+      "file": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/comet-scholar/thumbnail.webp",
+      "bytes": 4814,
+      "exists": true,
+      "width": 96,
+      "height": 120,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Cho Chang",
+        "en": "Illustration of Cho Chang"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "character.copper-sage.figure",
+      "file": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/copper-sage/figure.webp",
+      "bytes": 33266,
+      "exists": true,
+      "width": 342,
+      "height": 428,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Arthur Weasley",
+        "en": "Illustration of Arthur Weasley"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "character.copper-sage.portrait",
+      "file": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/copper-sage/portrait.webp",
+      "bytes": 57664,
+      "exists": true,
+      "width": 512,
+      "height": 640,
+      "alpha": false,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Arthur Weasley",
+        "en": "Illustration of Arthur Weasley"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "character.copper-sage.thumbnail",
+      "file": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/copper-sage/thumbnail.webp",
+      "bytes": 5236,
+      "exists": true,
+      "width": 96,
+      "height": 120,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Arthur Weasley",
+        "en": "Illustration of Arthur Weasley"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "character.crystal-watch.figure",
+      "file": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/crystal-watch/figure.webp",
+      "bytes": 23390,
+      "exists": true,
+      "width": 342,
+      "height": 428,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Filius Flitwick",
+        "en": "Illustration of Filius Flitwick"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "character.crystal-watch.portrait",
+      "file": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/crystal-watch/portrait.webp",
+      "bytes": 33232,
+      "exists": true,
+      "width": 512,
+      "height": 640,
+      "alpha": false,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Filius Flitwick",
+        "en": "Illustration of Filius Flitwick"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "character.crystal-watch.thumbnail",
+      "file": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/crystal-watch/thumbnail.webp",
+      "bytes": 5016,
+      "exists": true,
+      "width": 96,
+      "height": 120,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Filius Flitwick",
+        "en": "Illustration of Filius Flitwick"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "character.dawn-oracle.figure",
+      "file": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/dawn-oracle/figure.webp",
+      "bytes": 37208,
+      "exists": true,
+      "width": 342,
+      "height": 428,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Sybill Trelawney",
+        "en": "Illustration of Sybill Trelawney"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "character.dawn-oracle.portrait",
+      "file": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/dawn-oracle/portrait.webp",
+      "bytes": 62256,
+      "exists": true,
+      "width": 512,
+      "height": 640,
+      "alpha": false,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Sybill Trelawney",
+        "en": "Illustration of Sybill Trelawney"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "character.dawn-oracle.thumbnail",
+      "file": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/dawn-oracle/thumbnail.webp",
+      "bytes": 6050,
+      "exists": true,
+      "width": 96,
+      "height": 120,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Sybill Trelawney",
+        "en": "Illustration of Sybill Trelawney"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "character.dew-alchemist.figure",
+      "file": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/dew-alchemist/figure.webp",
+      "bytes": 25944,
+      "exists": true,
+      "width": 342,
+      "height": 428,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Neville Longbottom",
+        "en": "Illustration of Neville Longbottom"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "character.dew-alchemist.portrait",
+      "file": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/dew-alchemist/portrait.webp",
+      "bytes": 39736,
+      "exists": true,
+      "width": 512,
+      "height": 640,
+      "alpha": false,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Neville Longbottom",
+        "en": "Illustration of Neville Longbottom"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "character.dew-alchemist.thumbnail",
+      "file": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/dew-alchemist/thumbnail.webp",
+      "bytes": 5056,
+      "exists": true,
+      "width": 96,
+      "height": 120,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Neville Longbottom",
+        "en": "Illustration of Neville Longbottom"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "character.echo-mage.figure",
+      "file": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/echo-mage/figure.webp",
+      "bytes": 25332,
+      "exists": true,
+      "width": 342,
+      "height": 428,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Draco Malfoy",
+        "en": "Illustration of Draco Malfoy"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "character.echo-mage.portrait",
+      "file": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/echo-mage/portrait.webp",
+      "bytes": 40378,
+      "exists": true,
+      "width": 512,
+      "height": 640,
+      "alpha": false,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Draco Malfoy",
+        "en": "Illustration of Draco Malfoy"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "character.echo-mage.thumbnail",
+      "file": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/echo-mage/thumbnail.webp",
+      "bytes": 5126,
+      "exists": true,
+      "width": 96,
+      "height": 120,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Draco Malfoy",
+        "en": "Illustration of Draco Malfoy"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "character.ember-keeper.figure",
+      "file": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/ember-keeper/figure.webp",
+      "bytes": 26914,
+      "exists": true,
+      "width": 342,
+      "height": 428,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Ron Weasley",
+        "en": "Illustration of Ron Weasley"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "character.ember-keeper.portrait",
+      "file": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/ember-keeper/portrait.webp",
+      "bytes": 39894,
+      "exists": true,
+      "width": 512,
+      "height": 640,
+      "alpha": false,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Ron Weasley",
+        "en": "Illustration of Ron Weasley"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "character.ember-keeper.thumbnail",
+      "file": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/ember-keeper/thumbnail.webp",
+      "bytes": 5128,
+      "exists": true,
+      "width": 96,
+      "height": 120,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Ron Weasley",
+        "en": "Illustration of Ron Weasley"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "character.flamel.figure",
+      "file": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/flamel/figure.webp",
+      "bytes": 35432,
+      "exists": true,
+      "width": 342,
+      "height": 428,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Nicolás Flamel",
+        "en": "Illustration of Nicolas Flamel"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "character.flamel.portrait",
+      "file": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/flamel/portrait.webp",
+      "bytes": 57438,
+      "exists": true,
+      "width": 512,
+      "height": 640,
+      "alpha": false,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Nicolás Flamel",
+        "en": "Illustration of Nicolas Flamel"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "character.flamel.thumbnail",
+      "file": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/flamel/thumbnail.webp",
+      "bytes": 5954,
+      "exists": true,
+      "width": 96,
+      "height": 120,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Nicolás Flamel",
+        "en": "Illustration of Nicolas Flamel"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "character.merlin.figure",
+      "file": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/merlin/figure.webp",
+      "bytes": 39482,
+      "exists": true,
+      "width": 342,
+      "height": 428,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Albus Dumbledore",
+        "en": "Illustration of Albus Dumbledore"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "character.merlin.portrait",
+      "file": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/merlin/portrait.webp",
+      "bytes": 96570,
+      "exists": true,
+      "width": 512,
+      "height": 640,
+      "alpha": false,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Albus Dumbledore",
+        "en": "Illustration of Albus Dumbledore"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "character.merlin.thumbnail",
+      "file": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/merlin/thumbnail.webp",
+      "bytes": 5978,
+      "exists": true,
+      "width": 96,
+      "height": 120,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Albus Dumbledore",
+        "en": "Illustration of Albus Dumbledore"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "character.mist-seer.figure",
+      "file": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/mist-seer/figure.webp",
+      "bytes": 29556,
+      "exists": true,
+      "width": 342,
+      "height": 428,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Luna Lovegood",
+        "en": "Illustration of Luna Lovegood"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "character.mist-seer.portrait",
+      "file": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/mist-seer/portrait.webp",
+      "bytes": 50578,
+      "exists": true,
+      "width": 512,
+      "height": 640,
+      "alpha": false,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Luna Lovegood",
+        "en": "Illustration of Luna Lovegood"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "character.mist-seer.thumbnail",
+      "file": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/mist-seer/thumbnail.webp",
+      "bytes": 6222,
+      "exists": true,
+      "width": 96,
+      "height": 120,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Luna Lovegood",
+        "en": "Illustration of Luna Lovegood"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "character.moon-herbalist.figure",
+      "file": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/moon-herbalist/figure.webp",
+      "bytes": 31086,
+      "exists": true,
+      "width": 342,
+      "height": 428,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Pomona Sprout",
+        "en": "Illustration of Pomona Sprout"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "character.moon-herbalist.portrait",
+      "file": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/moon-herbalist/portrait.webp",
+      "bytes": 47544,
+      "exists": true,
+      "width": 512,
+      "height": 640,
+      "alpha": false,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Pomona Sprout",
+        "en": "Illustration of Pomona Sprout"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "character.moon-herbalist.thumbnail",
+      "file": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/moon-herbalist/thumbnail.webp",
+      "bytes": 5376,
+      "exists": true,
+      "width": 96,
+      "height": 120,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Pomona Sprout",
+        "en": "Illustration of Pomona Sprout"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "character.morgana.figure",
+      "file": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/morgana/figure.webp",
+      "bytes": 27072,
+      "exists": true,
+      "width": 342,
+      "height": 428,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Minerva McGonagall",
+        "en": "Illustration of Minerva McGonagall"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "character.morgana.portrait",
+      "file": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/morgana/portrait.webp",
+      "bytes": 37466,
+      "exists": true,
+      "width": 512,
+      "height": 640,
+      "alpha": false,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Minerva McGonagall",
+        "en": "Illustration of Minerva McGonagall"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "character.morgana.thumbnail",
+      "file": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/morgana/thumbnail.webp",
+      "bytes": 5182,
+      "exists": true,
+      "width": 96,
+      "height": 120,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Minerva McGonagall",
+        "en": "Illustration of Minerva McGonagall"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "character.moss-guardian.figure",
+      "file": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/moss-guardian/figure.webp",
+      "bytes": 27692,
+      "exists": true,
+      "width": 342,
+      "height": 428,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Molly Weasley",
+        "en": "Illustration of Molly Weasley"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "character.moss-guardian.portrait",
+      "file": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/moss-guardian/portrait.webp",
+      "bytes": 40590,
+      "exists": true,
+      "width": 512,
+      "height": 640,
+      "alpha": false,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Molly Weasley",
+        "en": "Illustration of Molly Weasley"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "character.moss-guardian.thumbnail",
+      "file": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/moss-guardian/thumbnail.webp",
+      "bytes": 4612,
+      "exists": true,
+      "width": 96,
+      "height": 120,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Molly Weasley",
+        "en": "Illustration of Molly Weasley"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "character.night-forger.figure",
+      "file": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/night-forger/figure.webp",
+      "bytes": 30470,
+      "exists": true,
+      "width": 342,
+      "height": 428,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Rubeus Hagrid",
+        "en": "Illustration of Rubeus Hagrid"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "character.night-forger.portrait",
+      "file": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/night-forger/portrait.webp",
+      "bytes": 47494,
+      "exists": true,
+      "width": 512,
+      "height": 640,
+      "alpha": false,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Rubeus Hagrid",
+        "en": "Illustration of Rubeus Hagrid"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "character.night-forger.thumbnail",
+      "file": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/night-forger/thumbnail.webp",
+      "bytes": 4428,
+      "exists": true,
+      "width": 96,
+      "height": 120,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Rubeus Hagrid",
+        "en": "Illustration of Rubeus Hagrid"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "character.obsidian-seer.figure",
+      "file": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/obsidian-seer/figure.webp",
+      "bytes": 31048,
+      "exists": true,
+      "width": 342,
+      "height": 428,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Bellatrix Lestrange",
+        "en": "Illustration of Bellatrix Lestrange"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "character.obsidian-seer.portrait",
+      "file": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/obsidian-seer/portrait.webp",
+      "bytes": 47364,
+      "exists": true,
+      "width": 512,
+      "height": 640,
+      "alpha": false,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Bellatrix Lestrange",
+        "en": "Illustration of Bellatrix Lestrange"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "character.obsidian-seer.thumbnail",
+      "file": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/obsidian-seer/thumbnail.webp",
+      "bytes": 4776,
+      "exists": true,
+      "width": 96,
+      "height": 120,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Bellatrix Lestrange",
+        "en": "Illustration of Bellatrix Lestrange"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "character.paracelso.figure",
+      "file": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/paracelso/figure.webp",
+      "bytes": 18308,
+      "exists": true,
+      "width": 342,
+      "height": 428,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Severus Snape",
+        "en": "Illustration of Severus Snape"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "character.paracelso.portrait",
+      "file": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/paracelso/portrait.webp",
+      "bytes": 25808,
+      "exists": true,
+      "width": 512,
+      "height": 640,
+      "alpha": false,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Severus Snape",
+        "en": "Illustration of Severus Snape"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "character.paracelso.thumbnail",
+      "file": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/paracelso/thumbnail.webp",
+      "bytes": 3962,
+      "exists": true,
+      "width": 96,
+      "height": 120,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Severus Snape",
+        "en": "Illustration of Severus Snape"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "character.root-speaker.figure",
+      "file": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/root-speaker/figure.webp",
+      "bytes": 33468,
+      "exists": true,
+      "width": 342,
+      "height": 428,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Alastor Moody",
+        "en": "Illustration of Alastor Moody"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "character.root-speaker.portrait",
+      "file": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/root-speaker/portrait.webp",
+      "bytes": 50816,
+      "exists": true,
+      "width": 512,
+      "height": 640,
+      "alpha": false,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Alastor Moody",
+        "en": "Illustration of Alastor Moody"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "character.root-speaker.thumbnail",
+      "file": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/root-speaker/thumbnail.webp",
+      "bytes": 5856,
+      "exists": true,
+      "width": 96,
+      "height": 120,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Alastor Moody",
+        "en": "Illustration of Alastor Moody"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "character.rune-weaver.figure",
+      "file": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/rune-weaver/figure.webp",
+      "bytes": 26344,
+      "exists": true,
+      "width": 342,
+      "height": 428,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Ginny Weasley",
+        "en": "Illustration of Ginny Weasley"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "character.rune-weaver.portrait",
+      "file": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/rune-weaver/portrait.webp",
+      "bytes": 41082,
+      "exists": true,
+      "width": 512,
+      "height": 640,
+      "alpha": false,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Ginny Weasley",
+        "en": "Illustration of Ginny Weasley"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "character.rune-weaver.thumbnail",
+      "file": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/rune-weaver/thumbnail.webp",
+      "bytes": 5408,
+      "exists": true,
+      "width": 96,
+      "height": 120,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Ginny Weasley",
+        "en": "Illustration of Ginny Weasley"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "character.shadow-scribe.figure",
+      "file": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/shadow-scribe/figure.webp",
+      "bytes": 26646,
+      "exists": true,
+      "width": 342,
+      "height": 428,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Sirius Black",
+        "en": "Illustration of Sirius Black"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "character.shadow-scribe.portrait",
+      "file": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/shadow-scribe/portrait.webp",
+      "bytes": 41570,
+      "exists": true,
+      "width": 512,
+      "height": 640,
+      "alpha": false,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Sirius Black",
+        "en": "Illustration of Sirius Black"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "character.shadow-scribe.thumbnail",
+      "file": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/shadow-scribe/thumbnail.webp",
+      "bytes": 4750,
+      "exists": true,
+      "width": 96,
+      "height": 120,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Sirius Black",
+        "en": "Illustration of Sirius Black"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "character.silver-sentinel.figure",
+      "file": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/silver-sentinel/figure.webp",
+      "bytes": 26010,
+      "exists": true,
+      "width": 342,
+      "height": 428,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Kingsley Shacklebolt",
+        "en": "Illustration of Kingsley Shacklebolt"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "character.silver-sentinel.portrait",
+      "file": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/silver-sentinel/portrait.webp",
+      "bytes": 42740,
+      "exists": true,
+      "width": 512,
+      "height": 640,
+      "alpha": false,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Kingsley Shacklebolt",
+        "en": "Illustration of Kingsley Shacklebolt"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "character.silver-sentinel.thumbnail",
+      "file": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/silver-sentinel/thumbnail.webp",
+      "bytes": 4506,
+      "exists": true,
+      "width": 96,
+      "height": 120,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Kingsley Shacklebolt",
+        "en": "Illustration of Kingsley Shacklebolt"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "character.star-binder.figure",
+      "file": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/star-binder/figure.webp",
+      "bytes": 25338,
+      "exists": true,
+      "width": 342,
+      "height": 428,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Cedric Diggory",
+        "en": "Illustration of Cedric Diggory"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "character.star-binder.portrait",
+      "file": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/star-binder/portrait.webp",
+      "bytes": 38152,
+      "exists": true,
+      "width": 512,
+      "height": 640,
+      "alpha": false,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Cedric Diggory",
+        "en": "Illustration of Cedric Diggory"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "character.star-binder.thumbnail",
+      "file": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/star-binder/thumbnail.webp",
+      "bytes": 5056,
+      "exists": true,
+      "width": 96,
+      "height": 120,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Cedric Diggory",
+        "en": "Illustration of Cedric Diggory"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "character.storm-caller.figure",
+      "file": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/storm-caller/figure.webp",
+      "bytes": 29888,
+      "exists": true,
+      "width": 342,
+      "height": 428,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Nymphadora Tonks",
+        "en": "Illustration of Nymphadora Tonks"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "character.storm-caller.portrait",
+      "file": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/storm-caller/portrait.webp",
+      "bytes": 57468,
+      "exists": true,
+      "width": 512,
+      "height": 640,
+      "alpha": false,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Nymphadora Tonks",
+        "en": "Illustration of Nymphadora Tonks"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "character.storm-caller.thumbnail",
+      "file": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/storm-caller/thumbnail.webp",
+      "bytes": 5942,
+      "exists": true,
+      "width": 96,
+      "height": 120,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Nymphadora Tonks",
+        "en": "Illustration of Nymphadora Tonks"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "character.sun-priestess.figure",
+      "file": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/sun-priestess/figure.webp",
+      "bytes": 24986,
+      "exists": true,
+      "width": 342,
+      "height": 428,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Fleur Delacour",
+        "en": "Illustration of Fleur Delacour"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "character.sun-priestess.portrait",
+      "file": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/sun-priestess/portrait.webp",
+      "bytes": 32858,
+      "exists": true,
+      "width": 512,
+      "height": 640,
+      "alpha": false,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Fleur Delacour",
+        "en": "Illustration of Fleur Delacour"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "character.sun-priestess.thumbnail",
+      "file": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/sun-priestess/thumbnail.webp",
+      "bytes": 5266,
+      "exists": true,
+      "width": 96,
+      "height": 120,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Fleur Delacour",
+        "en": "Illustration of Fleur Delacour"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "character.veil-walker.figure",
+      "file": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/veil-walker/figure.webp",
+      "bytes": 22044,
+      "exists": true,
+      "width": 342,
+      "height": 428,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Lord Voldemort",
+        "en": "Illustration of Lord Voldemort"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "character.veil-walker.portrait",
+      "file": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/veil-walker/portrait.webp",
+      "bytes": 28006,
+      "exists": true,
+      "width": 512,
+      "height": 640,
+      "alpha": false,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Lord Voldemort",
+        "en": "Illustration of Lord Voldemort"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "character.veil-walker.thumbnail",
+      "file": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/veil-walker/thumbnail.webp",
+      "bytes": 5190,
+      "exists": true,
+      "width": 96,
+      "height": 120,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Lord Voldemort",
+        "en": "Illustration of Lord Voldemort"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "character.wind-reader.figure",
+      "file": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/wind-reader/figure.webp",
+      "bytes": 27402,
+      "exists": true,
+      "width": 342,
+      "height": 428,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de George Weasley",
+        "en": "Illustration of George Weasley"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "character.wind-reader.portrait",
+      "file": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/wind-reader/portrait.webp",
+      "bytes": 45382,
+      "exists": true,
+      "width": 512,
+      "height": 640,
+      "alpha": false,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de George Weasley",
+        "en": "Illustration of George Weasley"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "character.wind-reader.thumbnail",
+      "file": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/wind-reader/thumbnail.webp",
+      "bytes": 4990,
+      "exists": true,
+      "width": 96,
+      "height": 120,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de George Weasley",
+        "en": "Illustration of George Weasley"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "rival.arcanist-1.figure",
+      "file": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/echo-mage/figure.webp",
+      "bytes": 25332,
+      "exists": true,
+      "width": 342,
+      "height": 428,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Draco Malfoy",
+        "en": "Illustration of Draco Malfoy"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "rival.arcanist-2.figure",
+      "file": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/paracelso/figure.webp",
+      "bytes": 18308,
+      "exists": true,
+      "width": 342,
+      "height": 428,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Severus Snape",
+        "en": "Illustration of Severus Snape"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "rival.arcanist-3.figure",
+      "file": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/obsidian-seer/figure.webp",
+      "bytes": 31048,
+      "exists": true,
+      "width": 342,
+      "height": 428,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Bellatrix Lestrange",
+        "en": "Illustration of Bellatrix Lestrange"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "rival.boss.figure",
+      "file": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/veil-walker/figure.webp",
+      "bytes": 22044,
+      "exists": true,
+      "width": 342,
+      "height": 428,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Lord Voldemort",
+        "en": "Illustration of Lord Voldemort"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "scene.arena",
+      "file": "src/arcana/presentation/content-packs/arcana/art/scene/arena.webp",
+      "bytes": 227860,
+      "exists": true,
+      "width": 1280,
+      "height": 854,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "alt": {
+        "es": "Escenario arena",
+        "en": "arena scenery"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "scene.boulevard",
+      "file": "src/arcana/presentation/content-packs/diagon-alley/art/scene/diagon-alley.webp",
+      "bytes": 445688,
+      "exists": true,
+      "width": 1536,
+      "height": 1024,
+      "alpha": false,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "alt": {
+        "es": "Callejón Diagón ilustrado al anochecer",
+        "en": "Illustrated Diagon Alley at dusk"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "scene.confectionery",
+      "file": "src/arcana/presentation/content-packs/diagon-alley/art/scene/sweetshop.webp",
+      "bytes": 144968,
+      "exists": true,
+      "width": 1280,
+      "height": 854,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "alt": {
+        "es": "Mostrador de dulces y frascos iluminados",
+        "en": "Illuminated sweet counter and jars"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "scene.passage",
+      "file": "src/arcana/presentation/content-packs/diagon-alley/art/scene/diagon-alley.webp",
+      "bytes": 445688,
+      "exists": true,
+      "width": 1536,
+      "height": 1024,
+      "alpha": false,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "alt": {
+        "es": "Ruta del Callejón Diagón",
+        "en": "Diagon Alley route"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "scene.vault",
+      "file": "src/arcana/presentation/content-packs/arcana/art/scene/vault.webp",
+      "bytes": 177114,
+      "exists": true,
+      "width": 1280,
+      "height": 854,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "alt": {
+        "es": "Escenario vault",
+        "en": "vault scenery"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "scene.workshop",
+      "file": "src/arcana/presentation/content-packs/arcana/art/scene/workshop.webp",
+      "bytes": 178002,
+      "exists": true,
+      "width": 1280,
+      "height": 854,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "alt": {
+        "es": "Escenario workshop",
+        "en": "workshop scenery"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "product.bean-earth",
+      "file": "src/arcana/presentation/content-packs/arcana/art/product/bean-earth.webp",
+      "bytes": 61842,
+      "exists": true,
+      "width": 640,
+      "height": 640,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "alt": {
+        "es": "Ilustración bean-earth",
+        "en": "bean-earth illustration"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "beans.jar",
+      "file": "src/arcana/presentation/content-packs/diagon-alley/art/props/beans-jar.webp",
+      "bytes": 61450,
+      "exists": true,
+      "width": 512,
+      "height": 512,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "alt": {
+        "es": "Tarro de grageas de todos los sabores",
+        "en": "Every Flavour Beans jar"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "product.bean-mint",
+      "file": "src/arcana/presentation/content-packs/arcana/art/product/bean-mint.webp",
+      "bytes": 60518,
+      "exists": true,
+      "width": 640,
+      "height": 640,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "alt": {
+        "es": "Ilustración bean-mint",
+        "en": "bean-mint illustration"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "product.bean-pepper",
+      "file": "src/arcana/presentation/content-packs/arcana/art/product/bean-pepper.webp",
+      "bytes": 67558,
+      "exists": true,
+      "width": 640,
+      "height": 640,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "alt": {
+        "es": "Ilustración bean-pepper",
+        "en": "bean-pepper illustration"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "product.bean-soap",
+      "file": "src/arcana/presentation/content-packs/arcana/art/product/bean-soap.webp",
+      "bytes": 44200,
+      "exists": true,
+      "width": 640,
+      "height": 640,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "alt": {
+        "es": "Ilustración bean-soap",
+        "en": "bean-soap illustration"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "product.broom-cadet-zephyr",
+      "file": "src/arcana/presentation/content-packs/arcana/art/product/broom-cadet-zephyr.webp",
+      "bytes": 40582,
+      "exists": true,
+      "width": 640,
+      "height": 640,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "alt": {
+        "es": "Ilustración broom-cadet-zephyr",
+        "en": "broom-cadet-zephyr illustration"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "product.broom-wind-arrow",
+      "file": "src/arcana/presentation/content-packs/arcana/art/product/broom-wind-arrow.webp",
+      "bytes": 46350,
+      "exists": true,
+      "width": 640,
+      "height": 640,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "alt": {
+        "es": "Ilustración broom-wind-arrow",
+        "en": "broom-wind-arrow illustration"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "product.broom-zephyr-2000",
+      "file": "src/arcana/presentation/content-packs/arcana/art/product/broom-zephyr-2000.webp",
+      "bytes": 45902,
+      "exists": true,
+      "width": 640,
+      "height": 640,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "alt": {
+        "es": "Ilustración broom-zephyr-2000",
+        "en": "broom-zephyr-2000 illustration"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "card.back",
+      "file": "src/arcana/presentation/content-packs/diagon-alley/art/card/back.svg",
+      "bytes": 3337,
+      "exists": true,
+      "width": 512,
+      "height": 640,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "alt": {
+        "es": "Reverso de cromo mágico",
+        "en": "Wizard card back"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "card.frame",
+      "file": "src/arcana/presentation/content-packs/diagon-alley/art/card/frame.svg",
+      "bytes": 2177,
+      "exists": true,
+      "width": 512,
+      "height": 640,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "alt": {
+        "es": "Marco de cromo mágico",
+        "en": "Wizard card frame"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "toad.subject",
+      "file": "src/arcana/presentation/content-packs/diagon-alley/art/frog/chocolate-frog.webp",
+      "bytes": 109080,
+      "exists": true,
+      "width": 1024,
+      "height": 683,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.85
+      ],
+      "alt": {
+        "es": "Rana de chocolate",
+        "en": "Chocolate Frog"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "product.core-dragon",
+      "file": "src/arcana/presentation/content-packs/arcana/art/product/core-dragon.webp",
+      "bytes": 52870,
+      "exists": true,
+      "width": 640,
+      "height": 640,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "alt": {
+        "es": "Ilustración core-dragon",
+        "en": "core-dragon illustration"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "product.core-phoenix",
+      "file": "src/arcana/presentation/content-packs/arcana/art/product/core-phoenix.webp",
+      "bytes": 70284,
+      "exists": true,
+      "width": 640,
+      "height": 640,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "alt": {
+        "es": "Ilustración core-phoenix",
+        "en": "core-phoenix illustration"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "product.core-wyvern",
+      "file": "src/arcana/presentation/content-packs/arcana/art/product/core-wyvern.webp",
+      "bytes": 47250,
+      "exists": true,
+      "width": 640,
+      "height": 640,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "alt": {
+        "es": "Ilustración core-wyvern",
+        "en": "core-wyvern illustration"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "product.gold-key",
+      "file": "src/arcana/presentation/content-packs/arcana/art/product/gold-key.webp",
+      "bytes": 65990,
+      "exists": true,
+      "width": 640,
+      "height": 640,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "alt": {
+        "es": "Ilustración gold-key",
+        "en": "gold-key illustration"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "product.loot-chest",
+      "file": "src/arcana/presentation/content-packs/arcana/art/product/loot-chest.webp",
+      "bytes": 100992,
+      "exists": true,
+      "width": 640,
+      "height": 640,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "alt": {
+        "es": "Ilustración loot-chest",
+        "en": "loot-chest illustration"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "toad.base",
+      "file": "src/arcana/presentation/content-packs/diagon-alley/art/frog/base.webp",
+      "bytes": 21918,
+      "exists": true,
+      "width": 768,
+      "height": 768,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.72
+      ],
+      "alt": {
+        "es": "Base de la caja de Rana de Chocolate",
+        "en": "Chocolate Frog box base"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "toad.box",
+      "file": "src/arcana/presentation/content-packs/diagon-alley/art/frog/model-closed.webp",
+      "bytes": 33366,
+      "exists": true,
+      "width": 768,
+      "height": 768,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.72
+      ],
+      "alt": {
+        "es": "Caja cerrada de Rana de Chocolate",
+        "en": "Closed Chocolate Frog box"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "toad.lid",
+      "file": "src/arcana/presentation/content-packs/diagon-alley/art/frog/lid.webp",
+      "bytes": 26906,
+      "exists": true,
+      "width": 768,
+      "height": 768,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.49
+      ],
+      "alt": {
+        "es": "Tapa de la caja de Rana de Chocolate",
+        "en": "Chocolate Frog box lid"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "pwa.icon.192",
+      "file": "src/arcana/presentation/content-packs/arcana/art/pwa/icon/192.png",
+      "bytes": 66950,
+      "exists": true,
+      "width": 192,
+      "height": 192,
+      "alpha": false,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "alt": {
+        "es": "Icono ARCANA",
+        "en": "ARCANA icon"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "pwa.icon.512",
+      "file": "src/arcana/presentation/content-packs/arcana/art/pwa/icon/512.png",
+      "bytes": 454987,
+      "exists": true,
+      "width": 512,
+      "height": 512,
+      "alpha": false,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "alt": {
+        "es": "Icono ARCANA",
+        "en": "ARCANA icon"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "toad.seal",
+      "file": "src/arcana/presentation/content-packs/diagon-alley/art/frog/seal.webp",
+      "bytes": 3522,
+      "exists": true,
+      "width": 768,
+      "height": 768,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.72
+      ],
+      "alt": {
+        "es": "Sello de la caja de Rana de Chocolate",
+        "en": "Chocolate Frog box seal"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "product.wand-birch",
+      "file": "src/arcana/presentation/content-packs/arcana/art/product/wand-birch.webp",
+      "bytes": 32994,
+      "exists": true,
+      "width": 640,
+      "height": 640,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "alt": {
+        "es": "Ilustración wand-birch",
+        "en": "wand-birch illustration"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "product.wand-elder",
+      "file": "src/arcana/presentation/content-packs/arcana/art/product/wand-elder.webp",
+      "bytes": 30038,
+      "exists": true,
+      "width": 640,
+      "height": 640,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "alt": {
+        "es": "Ilustración wand-elder",
+        "en": "wand-elder illustration"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "product.wand-willow",
+      "file": "src/arcana/presentation/content-packs/arcana/art/product/wand-willow.webp",
+      "bytes": 28448,
+      "exists": true,
+      "width": 640,
+      "height": 640,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "alt": {
+        "es": "Ilustración wand-willow",
+        "en": "wand-willow illustration"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "rarity.common",
+      "file": "src/arcana/presentation/content-packs/arcana/art/rarity/common.svg",
+      "bytes": 214,
+      "exists": true,
+      "width": 32,
+      "height": 32,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "alt": {
+        "es": "Emblema de rareza Común",
+        "en": "Common rarity emblem"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "rarity.unusual",
+      "file": "src/arcana/presentation/content-packs/arcana/art/rarity/unusual.svg",
+      "bytes": 229,
+      "exists": true,
+      "width": 32,
+      "height": 32,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "alt": {
+        "es": "Emblema de rareza Inusual",
+        "en": "Unusual rarity emblem"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "rarity.epic",
+      "file": "src/arcana/presentation/content-packs/arcana/art/rarity/epic.svg",
+      "bytes": 263,
+      "exists": true,
+      "width": 32,
+      "height": 32,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "alt": {
+        "es": "Emblema de rareza Épico",
+        "en": "Epic rarity emblem"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "rarity.arcane-legendary",
+      "file": "src/arcana/presentation/content-packs/arcana/art/rarity/arcane-legendary.svg",
+      "bytes": 225,
+      "exists": true,
+      "width": 32,
+      "height": 32,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "alt": {
+        "es": "Emblema de rareza Arcano Legendario",
+        "en": "Arcane Legendary rarity emblem"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "ui.seal",
+      "file": "src/arcana/presentation/content-packs/arcana/art/ui/seal.svg",
+      "bytes": 726,
+      "exists": true,
+      "width": 256,
+      "height": 256,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "alt": {
+        "es": "Seleccionado",
+        "en": "Selected"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "ui.clear",
+      "file": "src/arcana/presentation/content-packs/arcana/art/ui/clear.svg",
+      "bytes": 706,
+      "exists": true,
+      "width": 256,
+      "height": 256,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "alt": {
+        "es": "Sin objeto",
+        "en": "No item"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "ui.map",
+      "file": "src/arcana/presentation/content-packs/diagon-alley/art/props/map.svg",
+      "bytes": 2484,
+      "exists": true,
+      "width": 512,
+      "height": 512,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "alt": {
+        "es": "Explorar el mapa",
+        "en": "Explore map"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "ui.collection",
+      "file": "src/arcana/presentation/content-packs/diagon-alley/art/props/album.svg",
+      "bytes": 2128,
+      "exists": true,
+      "width": 512,
+      "height": 512,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "alt": {
+        "es": "Álbum de cromos de magos",
+        "en": "Wizard card album"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "ui.shop",
+      "file": "src/arcana/presentation/content-packs/diagon-alley/art/props/sweetshop.svg",
+      "bytes": 1834,
+      "exists": true,
+      "width": 512,
+      "height": 512,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "alt": {
+        "es": "Dulcería",
+        "en": "Sweetshop"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "ui.missions",
+      "file": "src/arcana/presentation/content-packs/diagon-alley/art/props/letter.svg",
+      "bytes": 1707,
+      "exists": true,
+      "width": 512,
+      "height": 512,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "alt": {
+        "es": "Encargos y regiones",
+        "en": "Quests and regions"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "ui.temporary",
+      "file": "src/arcana/presentation/content-packs/arcana/art/ui/temporary.svg",
+      "bytes": 801,
+      "exists": true,
+      "width": 256,
+      "height": 256,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "alt": {
+        "es": "Aliado temporal",
+        "en": "Temporary ally"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "ui.owned",
+      "file": "src/arcana/presentation/content-packs/arcana/art/ui/owned.svg",
+      "bytes": 776,
+      "exists": true,
+      "width": 256,
+      "height": 256,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "alt": {
+        "es": "Copia propia",
+        "en": "Owned copy"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "ui.motion",
+      "file": "src/arcana/presentation/content-packs/arcana/art/ui/motion.svg",
+      "bytes": 779,
+      "exists": true,
+      "width": 256,
+      "height": 256,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "alt": {
+        "es": "Movimiento reducido",
+        "en": "Reduced motion"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "ui.frame",
+      "file": "src/arcana/presentation/content-packs/arcana/art/ui/frame.svg",
+      "bytes": 450,
+      "exists": true,
+      "width": 320,
+      "height": 96,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "alt": {
+        "es": "Marco de latón",
+        "en": "Brass frame"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "ui.health",
+      "file": "src/arcana/presentation/content-packs/arcana/art/icons/ui-health.svg",
+      "bytes": 191,
+      "exists": true,
+      "width": 256,
+      "height": 256,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "alt": {
+        "es": "Recuperar vida",
+        "en": "Restore health"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "ui.pass",
+      "file": "src/arcana/presentation/content-packs/arcana/art/icons/ui-pass.svg",
+      "bytes": 230,
+      "exists": true,
+      "width": 256,
+      "height": 256,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "alt": {
+        "es": "Pasar",
+        "en": "Pass"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "character.dumbledore.historical",
+      "file": "src/arcana/presentation/content-packs/diagon-alley/art/character/dumbledore-historical.webp",
+      "bytes": 48890,
+      "exists": true,
+      "width": 311,
+      "height": 414,
+      "alpha": false,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "alt": {
+        "es": "Ilustración histórica de Albus Dumbledore",
+        "en": "Historical Albus Dumbledore illustration"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "ui.team",
+      "file": "src/arcana/presentation/content-packs/diagon-alley/art/props/team.svg",
+      "bytes": 1902,
+      "exists": true,
+      "width": 512,
+      "height": 512,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "alt": {
+        "es": "Preparar equipo",
+        "en": "Prepare party"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "ui.market",
+      "file": "src/arcana/presentation/content-packs/diagon-alley/art/props/sweetshop.svg",
+      "bytes": 1834,
+      "exists": true,
+      "width": 512,
+      "height": 512,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "alt": {
+        "es": "Dulcería",
+        "en": "Sweetshop"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "ui.settings",
+      "file": "src/arcana/presentation/content-packs/diagon-alley/art/props/settings.svg",
+      "bytes": 1712,
+      "exists": true,
+      "width": 512,
+      "height": 512,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "alt": {
+        "es": "Ajustes",
+        "en": "Settings"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "fx.sparkles",
+      "file": "src/arcana/presentation/content-packs/diagon-alley/art/fx/sparkles.svg",
+      "bytes": 5085,
+      "exists": true,
+      "width": 512,
+      "height": 512,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "alt": {
+        "es": "Destellos dorados decorativos",
+        "en": "Decorative golden sparkles"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "fx.halo",
+      "file": "src/arcana/presentation/content-packs/diagon-alley/art/fx/halo.svg",
+      "bytes": 1047,
+      "exists": true,
+      "width": 512,
+      "height": 512,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "alt": {
+        "es": "Halo mágico decorativo",
+        "en": "Decorative magical halo"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "fx.portal",
+      "file": "src/arcana/presentation/content-packs/diagon-alley/art/fx/halo.svg",
+      "bytes": 1047,
+      "exists": true,
+      "width": 512,
+      "height": 512,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "alt": {
+        "es": "Halo mágico decorativo",
+        "en": "Decorative magical halo"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "fx.ring",
+      "file": "src/arcana/presentation/content-packs/diagon-alley/art/fx/ring.svg",
+      "bytes": 2254,
+      "exists": true,
+      "width": 512,
+      "height": 512,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "alt": {
+        "es": "Anillo mágico decorativo",
+        "en": "Decorative magical ring"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "fx.shadow",
+      "file": "src/arcana/presentation/content-packs/diagon-alley/art/fx/shadow.svg",
+      "bytes": 1217,
+      "exists": true,
+      "width": 512,
+      "height": 512,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.65
+      ],
+      "alt": {
+        "es": "Sombra decorativa de rana",
+        "en": "Decorative frog shadow"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "toad.interior",
+      "file": "src/arcana/presentation/content-packs/diagon-alley/art/frog/interior.webp",
+      "bytes": 10456,
+      "exists": true,
+      "width": 768,
+      "height": 768,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.72
+      ],
+      "alt": {
+        "es": "Interior de la caja de Rana de Chocolate",
+        "en": "Chocolate Frog box interior"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "prop.lantern",
+      "file": "src/arcana/presentation/content-packs/diagon-alley/art/props/lantern.svg",
+      "bytes": 1613,
+      "exists": true,
+      "width": 512,
+      "height": 512,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.07
+      ],
+      "alt": {
+        "es": "Farol del Callejón",
+        "en": "Alley lantern"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "beans.packet",
+      "file": "src/arcana/presentation/content-packs/diagon-alley/art/props/beans-packet.svg",
+      "bytes": 1888,
+      "exists": true,
+      "width": 512,
+      "height": 512,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "alt": {
+        "es": "Bolsa de grageas de todos los sabores",
+        "en": "Every Flavour Beans packet"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "fx.spell-trail",
+      "file": "src/arcana/presentation/content-packs/diagon-alley/art/fx/spell-trail.svg",
+      "bytes": 1348,
+      "exists": true,
+      "width": 512,
+      "height": 512,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "alt": {
+        "es": "Estela de hechizo decorativa",
+        "en": "Decorative spell trail"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "shopfront.confectionery",
+      "file": "src/arcana/presentation/content-packs/diagon-alley/art/storefronts-a59/confectionery.webp",
+      "bytes": 45772,
+      "exists": true,
+      "width": 430,
+      "height": 574,
+      "alpha": false,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Fachada de la dulcería",
+        "en": "Sweetshop facade"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "shopfront.workshop",
+      "file": "src/arcana/presentation/content-packs/diagon-alley/art/storefronts-a59/workshop.webp",
+      "bytes": 42744,
+      "exists": true,
+      "width": 430,
+      "height": 574,
+      "alpha": false,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Fachada de Ollivanders",
+        "en": "Ollivanders facade"
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "role": "shopfront.vault",
+      "file": "src/arcana/presentation/content-packs/diagon-alley/art/storefronts-a59/vault.webp",
+      "bytes": 43766,
+      "exists": true,
+      "width": 430,
+      "height": 574,
+      "alpha": false,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Entrada de Gringotts",
+        "en": "Gringotts entrance"
+      }
+    },
+    {
+      "pack": "arcana",
+      "role": "node.duel",
+      "file": "src/arcana/presentation/content-packs/arcana/art/icons/node-duel.svg",
+      "bytes": 866,
+      "exists": true,
+      "width": 256,
+      "height": 256,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "alt": {
+        "es": "Duelo",
+        "en": "Duel"
+      }
+    },
+    {
+      "pack": "arcana",
+      "role": "node.refuge",
+      "file": "src/arcana/presentation/content-packs/arcana/art/icons/node-refuge.svg",
+      "bytes": 997,
+      "exists": true,
+      "width": 256,
+      "height": 256,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "alt": {
+        "es": "Refugio",
+        "en": "Refuge"
+      }
+    },
+    {
+      "pack": "arcana",
+      "role": "node.chest",
+      "file": "src/arcana/presentation/content-packs/arcana/art/icons/node-chest.svg",
+      "bytes": 1012,
+      "exists": true,
+      "width": 256,
+      "height": 256,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "alt": {
+        "es": "Cofre",
+        "en": "Chest"
+      }
+    },
+    {
+      "pack": "arcana",
+      "role": "node.pact",
+      "file": "src/arcana/presentation/content-packs/arcana/art/icons/node-pact.svg",
+      "bytes": 952,
+      "exists": true,
+      "width": 256,
+      "height": 256,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "alt": {
+        "es": "Pacto",
+        "en": "Pact"
+      }
+    },
+    {
+      "pack": "arcana",
+      "role": "node.encounter",
+      "file": "src/arcana/presentation/content-packs/arcana/art/icons/node-encounter.svg",
+      "bytes": 1107,
+      "exists": true,
+      "width": 256,
+      "height": 256,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "alt": {
+        "es": "Encuentro",
+        "en": "Encounter"
+      }
+    },
+    {
+      "pack": "arcana",
+      "role": "node.boss",
+      "file": "src/arcana/presentation/content-packs/arcana/art/icons/node-boss.svg",
+      "bytes": 972,
+      "exists": true,
+      "width": 256,
+      "height": 256,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "alt": {
+        "es": "Jefe",
+        "en": "Boss"
+      }
+    },
+    {
+      "pack": "arcana",
+      "role": "currency.crowns",
+      "file": "src/arcana/presentation/content-packs/arcana/art/icons/currency-crowns.svg",
+      "bytes": 1987,
+      "exists": true,
+      "width": 256,
+      "height": 256,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "alt": {
+        "es": "Coronas",
+        "en": "Crowns"
+      }
+    },
+    {
+      "pack": "arcana",
+      "role": "currency.essence",
+      "file": "src/arcana/presentation/content-packs/arcana/art/icons/currency-essence.svg",
+      "bytes": 1788,
+      "exists": true,
+      "width": 256,
+      "height": 256,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "alt": {
+        "es": "Esencia",
+        "en": "Essence"
+      }
+    },
+    {
+      "pack": "arcana",
+      "role": "character.apprentice.figure",
+      "file": "src/arcana/presentation/content-packs/arcana/art/character/apprentice/figure.webp",
+      "bytes": 34930,
+      "exists": true,
+      "width": 342,
+      "height": 512,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "alt": {
+        "es": "Figura de Aprendiz de Alquimia",
+        "en": "Figure of Alchemy Apprentice"
+      }
+    },
+    {
+      "pack": "arcana",
+      "role": "character.apprentice.portrait",
+      "file": "src/arcana/presentation/content-packs/arcana/art/character/apprentice/portrait.webp",
+      "bytes": 88726,
+      "exists": true,
+      "width": 512,
+      "height": 640,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "alt": {
+        "es": "Retrato de Aprendiz de Alquimia",
+        "en": "Portrait of Alchemy Apprentice"
+      }
+    },
+    {
+      "pack": "arcana",
+      "role": "character.apprentice.thumbnail",
+      "file": "src/arcana/presentation/content-packs/arcana/art/character/apprentice/thumbnail.webp",
+      "bytes": 6558,
+      "exists": true,
+      "width": 96,
+      "height": 120,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "alt": {
+        "es": "Aprendiz de Alquimia",
+        "en": "Alchemy Apprentice"
+      }
+    },
+    {
+      "pack": "arcana",
+      "role": "character.ash-wanderer.figure",
+      "file": "src/arcana/presentation/content-packs/arcana/art/character/ash-wanderer/figure.webp",
+      "bytes": 33290,
+      "exists": true,
+      "width": 342,
+      "height": 512,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "alt": {
+        "es": "Figura de Caminante de Ceniza",
+        "en": "Figure of Ash Wanderer"
+      }
+    },
+    {
+      "pack": "arcana",
+      "role": "character.ash-wanderer.portrait",
+      "file": "src/arcana/presentation/content-packs/arcana/art/character/ash-wanderer/portrait.webp",
+      "bytes": 97334,
+      "exists": true,
+      "width": 512,
+      "height": 640,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "alt": {
+        "es": "Retrato de Caminante de Ceniza",
+        "en": "Portrait of Ash Wanderer"
+      }
+    },
+    {
+      "pack": "arcana",
+      "role": "character.ash-wanderer.thumbnail",
+      "file": "src/arcana/presentation/content-packs/arcana/art/character/ash-wanderer/thumbnail.webp",
+      "bytes": 6872,
+      "exists": true,
+      "width": 96,
+      "height": 120,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "alt": {
+        "es": "Caminante de Ceniza",
+        "en": "Ash Wanderer"
+      }
+    },
+    {
+      "pack": "arcana",
+      "role": "character.aurora-sage.figure",
+      "file": "src/arcana/presentation/content-packs/arcana/art/character/aurora-sage/figure.webp",
+      "bytes": 32362,
+      "exists": true,
+      "width": 342,
+      "height": 512,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "alt": {
+        "es": "Figura de Sabia de la Aurora",
+        "en": "Figure of Aurora Sage"
+      }
+    },
+    {
+      "pack": "arcana",
+      "role": "character.aurora-sage.portrait",
+      "file": "src/arcana/presentation/content-packs/arcana/art/character/aurora-sage/portrait.webp",
+      "bytes": 85992,
+      "exists": true,
+      "width": 512,
+      "height": 640,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "alt": {
+        "es": "Retrato de Sabia de la Aurora",
+        "en": "Portrait of Aurora Sage"
+      }
+    },
+    {
+      "pack": "arcana",
+      "role": "character.aurora-sage.thumbnail",
+      "file": "src/arcana/presentation/content-packs/arcana/art/character/aurora-sage/thumbnail.webp",
+      "bytes": 6702,
+      "exists": true,
+      "width": 96,
+      "height": 120,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "alt": {
+        "es": "Sabia de la Aurora",
+        "en": "Aurora Sage"
+      }
+    },
+    {
+      "pack": "arcana",
+      "role": "character.cinder-dancer.figure",
+      "file": "src/arcana/presentation/content-packs/arcana/art/character/cinder-dancer/figure.webp",
+      "bytes": 33592,
+      "exists": true,
+      "width": 342,
+      "height": 512,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "alt": {
+        "es": "Figura de Danzante de las Ascuas",
+        "en": "Figure of Cinder Dancer"
+      }
+    },
+    {
+      "pack": "arcana",
+      "role": "character.cinder-dancer.portrait",
+      "file": "src/arcana/presentation/content-packs/arcana/art/character/cinder-dancer/portrait.webp",
+      "bytes": 97086,
+      "exists": true,
+      "width": 512,
+      "height": 640,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "alt": {
+        "es": "Retrato de Danzante de las Ascuas",
+        "en": "Portrait of Cinder Dancer"
+      }
+    },
+    {
+      "pack": "arcana",
+      "role": "character.cinder-dancer.thumbnail",
+      "file": "src/arcana/presentation/content-packs/arcana/art/character/cinder-dancer/thumbnail.webp",
+      "bytes": 6690,
+      "exists": true,
+      "width": 96,
+      "height": 120,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "alt": {
+        "es": "Danzante de las Ascuas",
+        "en": "Cinder Dancer"
+      }
+    },
+    {
+      "pack": "arcana",
+      "role": "character.circe.figure",
+      "file": "src/arcana/presentation/content-packs/arcana/art/character/circe/figure.webp",
+      "bytes": 40204,
+      "exists": true,
+      "width": 342,
+      "height": 512,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "alt": {
+        "es": "Figura de Circe",
+        "en": "Figure of Circe"
+      }
+    },
+    {
+      "pack": "arcana",
+      "role": "character.circe.portrait",
+      "file": "src/arcana/presentation/content-packs/arcana/art/character/circe/portrait.webp",
+      "bytes": 112476,
+      "exists": true,
+      "width": 512,
+      "height": 640,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "alt": {
+        "es": "Retrato de Circe",
+        "en": "Portrait of Circe"
+      }
+    },
+    {
+      "pack": "arcana",
+      "role": "character.circe.thumbnail",
+      "file": "src/arcana/presentation/content-packs/arcana/art/character/circe/thumbnail.webp",
+      "bytes": 7916,
+      "exists": true,
+      "width": 96,
+      "height": 120,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "alt": {
+        "es": "Circe",
+        "en": "Circe"
+      }
+    },
+    {
+      "pack": "arcana",
+      "role": "character.comet-scholar.figure",
+      "file": "src/arcana/presentation/content-packs/arcana/art/character/comet-scholar/figure.webp",
+      "bytes": 31232,
+      "exists": true,
+      "width": 342,
+      "height": 512,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "alt": {
+        "es": "Figura de Erudita del Cometa",
+        "en": "Figure of Comet Scholar"
+      }
+    },
+    {
+      "pack": "arcana",
+      "role": "character.comet-scholar.portrait",
+      "file": "src/arcana/presentation/content-packs/arcana/art/character/comet-scholar/portrait.webp",
+      "bytes": 84050,
+      "exists": true,
+      "width": 512,
+      "height": 640,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "alt": {
+        "es": "Retrato de Erudita del Cometa",
+        "en": "Portrait of Comet Scholar"
+      }
+    },
+    {
+      "pack": "arcana",
+      "role": "character.comet-scholar.thumbnail",
+      "file": "src/arcana/presentation/content-packs/arcana/art/character/comet-scholar/thumbnail.webp",
+      "bytes": 6516,
+      "exists": true,
+      "width": 96,
+      "height": 120,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "alt": {
+        "es": "Erudita del Cometa",
+        "en": "Comet Scholar"
+      }
+    },
+    {
+      "pack": "arcana",
+      "role": "character.copper-sage.figure",
+      "file": "src/arcana/presentation/content-packs/arcana/art/character/copper-sage/figure.webp",
+      "bytes": 38274,
+      "exists": true,
+      "width": 342,
+      "height": 512,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "alt": {
+        "es": "Figura de Sabio del Cobre",
+        "en": "Figure of Copper Sage"
+      }
+    },
+    {
+      "pack": "arcana",
+      "role": "character.copper-sage.portrait",
+      "file": "src/arcana/presentation/content-packs/arcana/art/character/copper-sage/portrait.webp",
+      "bytes": 94900,
+      "exists": true,
+      "width": 512,
+      "height": 640,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "alt": {
+        "es": "Retrato de Sabio del Cobre",
+        "en": "Portrait of Copper Sage"
+      }
+    },
+    {
+      "pack": "arcana",
+      "role": "character.copper-sage.thumbnail",
+      "file": "src/arcana/presentation/content-packs/arcana/art/character/copper-sage/thumbnail.webp",
+      "bytes": 7426,
+      "exists": true,
+      "width": 96,
+      "height": 120,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "alt": {
+        "es": "Sabio del Cobre",
+        "en": "Copper Sage"
+      }
+    },
+    {
+      "pack": "arcana",
+      "role": "character.crystal-watch.figure",
+      "file": "src/arcana/presentation/content-packs/arcana/art/character/crystal-watch/figure.webp",
+      "bytes": 29252,
+      "exists": true,
+      "width": 342,
+      "height": 512,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "alt": {
+        "es": "Figura de Vigía del Cristal",
+        "en": "Figure of Crystal Watcher"
+      }
+    },
+    {
+      "pack": "arcana",
+      "role": "character.crystal-watch.portrait",
+      "file": "src/arcana/presentation/content-packs/arcana/art/character/crystal-watch/portrait.webp",
+      "bytes": 76596,
+      "exists": true,
+      "width": 512,
+      "height": 640,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "alt": {
+        "es": "Retrato de Vigía del Cristal",
+        "en": "Portrait of Crystal Watcher"
+      }
+    },
+    {
+      "pack": "arcana",
+      "role": "character.crystal-watch.thumbnail",
+      "file": "src/arcana/presentation/content-packs/arcana/art/character/crystal-watch/thumbnail.webp",
+      "bytes": 6160,
+      "exists": true,
+      "width": 96,
+      "height": 120,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "alt": {
+        "es": "Vigía del Cristal",
+        "en": "Crystal Watcher"
+      }
+    },
+    {
+      "pack": "arcana",
+      "role": "character.dawn-oracle.figure",
+      "file": "src/arcana/presentation/content-packs/arcana/art/character/dawn-oracle/figure.webp",
+      "bytes": 30726,
+      "exists": true,
+      "width": 342,
+      "height": 512,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "alt": {
+        "es": "Figura de Oráculo del Alba",
+        "en": "Figure of Dawn Oracle"
+      }
+    },
+    {
+      "pack": "arcana",
+      "role": "character.dawn-oracle.portrait",
+      "file": "src/arcana/presentation/content-packs/arcana/art/character/dawn-oracle/portrait.webp",
+      "bytes": 78762,
+      "exists": true,
+      "width": 512,
+      "height": 640,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "alt": {
+        "es": "Retrato de Oráculo del Alba",
+        "en": "Portrait of Dawn Oracle"
+      }
+    },
+    {
+      "pack": "arcana",
+      "role": "character.dawn-oracle.thumbnail",
+      "file": "src/arcana/presentation/content-packs/arcana/art/character/dawn-oracle/thumbnail.webp",
+      "bytes": 5900,
+      "exists": true,
+      "width": 96,
+      "height": 120,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "alt": {
+        "es": "Oráculo del Alba",
+        "en": "Dawn Oracle"
+      }
+    },
+    {
+      "pack": "arcana",
+      "role": "character.dew-alchemist.figure",
+      "file": "src/arcana/presentation/content-packs/arcana/art/character/dew-alchemist/figure.webp",
+      "bytes": 31358,
+      "exists": true,
+      "width": 342,
+      "height": 512,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "alt": {
+        "es": "Figura de Alquimista del Rocío",
+        "en": "Figure of Dew Alchemist"
+      }
+    },
+    {
+      "pack": "arcana",
+      "role": "character.dew-alchemist.portrait",
+      "file": "src/arcana/presentation/content-packs/arcana/art/character/dew-alchemist/portrait.webp",
+      "bytes": 81388,
+      "exists": true,
+      "width": 512,
+      "height": 640,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "alt": {
+        "es": "Retrato de Alquimista del Rocío",
+        "en": "Portrait of Dew Alchemist"
+      }
+    },
+    {
+      "pack": "arcana",
+      "role": "character.dew-alchemist.thumbnail",
+      "file": "src/arcana/presentation/content-packs/arcana/art/character/dew-alchemist/thumbnail.webp",
+      "bytes": 6066,
+      "exists": true,
+      "width": 96,
+      "height": 120,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "alt": {
+        "es": "Alquimista del Rocío",
+        "en": "Dew Alchemist"
+      }
+    },
+    {
+      "pack": "arcana",
+      "role": "character.echo-mage.figure",
+      "file": "src/arcana/presentation/content-packs/arcana/art/character/echo-mage/figure.webp",
+      "bytes": 35928,
+      "exists": true,
+      "width": 342,
+      "height": 512,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "alt": {
+        "es": "Figura de Mago del Eco",
+        "en": "Figure of Echo Mage"
+      }
+    },
+    {
+      "pack": "arcana",
+      "role": "character.echo-mage.portrait",
+      "file": "src/arcana/presentation/content-packs/arcana/art/character/echo-mage/portrait.webp",
+      "bytes": 97352,
+      "exists": true,
+      "width": 512,
+      "height": 640,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "alt": {
+        "es": "Retrato de Mago del Eco",
+        "en": "Portrait of Echo Mage"
+      }
+    },
+    {
+      "pack": "arcana",
+      "role": "character.echo-mage.thumbnail",
+      "file": "src/arcana/presentation/content-packs/arcana/art/character/echo-mage/thumbnail.webp",
+      "bytes": 7594,
+      "exists": true,
+      "width": 96,
+      "height": 120,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "alt": {
+        "es": "Mago del Eco",
+        "en": "Echo Mage"
+      }
+    },
+    {
+      "pack": "arcana",
+      "role": "character.ember-keeper.figure",
+      "file": "src/arcana/presentation/content-packs/arcana/art/character/ember-keeper/figure.webp",
+      "bytes": 38010,
+      "exists": true,
+      "width": 342,
+      "height": 512,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "alt": {
+        "es": "Figura de Guardián de las Brasas",
+        "en": "Figure of Ember Keeper"
+      }
+    },
+    {
+      "pack": "arcana",
+      "role": "character.ember-keeper.portrait",
+      "file": "src/arcana/presentation/content-packs/arcana/art/character/ember-keeper/portrait.webp",
+      "bytes": 108778,
+      "exists": true,
+      "width": 512,
+      "height": 640,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "alt": {
+        "es": "Retrato de Guardián de las Brasas",
+        "en": "Portrait of Ember Keeper"
+      }
+    },
+    {
+      "pack": "arcana",
+      "role": "character.ember-keeper.thumbnail",
+      "file": "src/arcana/presentation/content-packs/arcana/art/character/ember-keeper/thumbnail.webp",
+      "bytes": 7626,
+      "exists": true,
+      "width": 96,
+      "height": 120,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "alt": {
+        "es": "Guardián de las Brasas",
+        "en": "Ember Keeper"
+      }
+    },
+    {
+      "pack": "arcana",
+      "role": "character.flamel.figure",
+      "file": "src/arcana/presentation/content-packs/arcana/art/character/flamel/figure.webp",
+      "bytes": 33106,
+      "exists": true,
+      "width": 342,
+      "height": 512,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "alt": {
+        "es": "Figura de Nicolás Flamel",
+        "en": "Figure of Nicolas Flamel"
+      }
+    },
+    {
+      "pack": "arcana",
+      "role": "character.flamel.portrait",
+      "file": "src/arcana/presentation/content-packs/arcana/art/character/flamel/portrait.webp",
+      "bytes": 92722,
+      "exists": true,
+      "width": 512,
+      "height": 640,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "alt": {
+        "es": "Retrato de Nicolás Flamel",
+        "en": "Portrait of Nicolas Flamel"
+      }
+    },
+    {
+      "pack": "arcana",
+      "role": "character.flamel.thumbnail",
+      "file": "src/arcana/presentation/content-packs/arcana/art/character/flamel/thumbnail.webp",
+      "bytes": 6784,
+      "exists": true,
+      "width": 96,
+      "height": 120,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "alt": {
+        "es": "Nicolás Flamel",
+        "en": "Nicolas Flamel"
+      }
+    },
+    {
+      "pack": "arcana",
+      "role": "character.merlin.figure",
+      "file": "src/arcana/presentation/content-packs/arcana/art/character/merlin/figure.webp",
+      "bytes": 38904,
+      "exists": true,
+      "width": 342,
+      "height": 512,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "alt": {
+        "es": "Figura de Merlín",
+        "en": "Figure of Merlin"
+      }
+    },
+    {
+      "pack": "arcana",
+      "role": "character.merlin.portrait",
+      "file": "src/arcana/presentation/content-packs/arcana/art/character/merlin/portrait.webp",
+      "bytes": 99078,
+      "exists": true,
+      "width": 512,
+      "height": 640,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "alt": {
+        "es": "Retrato de Merlín",
+        "en": "Portrait of Merlin"
+      }
+    },
+    {
+      "pack": "arcana",
+      "role": "character.merlin.thumbnail",
+      "file": "src/arcana/presentation/content-packs/arcana/art/character/merlin/thumbnail.webp",
+      "bytes": 7004,
+      "exists": true,
+      "width": 96,
+      "height": 120,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "alt": {
+        "es": "Merlín",
+        "en": "Merlin"
+      }
+    },
+    {
+      "pack": "arcana",
+      "role": "character.mist-seer.figure",
+      "file": "src/arcana/presentation/content-packs/arcana/art/character/mist-seer/figure.webp",
+      "bytes": 34610,
+      "exists": true,
+      "width": 342,
+      "height": 512,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "alt": {
+        "es": "Figura de Vidente de la Bruma",
+        "en": "Figure of Mist Seer"
+      }
+    },
+    {
+      "pack": "arcana",
+      "role": "character.mist-seer.portrait",
+      "file": "src/arcana/presentation/content-packs/arcana/art/character/mist-seer/portrait.webp",
+      "bytes": 97618,
+      "exists": true,
+      "width": 512,
+      "height": 640,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "alt": {
+        "es": "Retrato de Vidente de la Bruma",
+        "en": "Portrait of Mist Seer"
+      }
+    },
+    {
+      "pack": "arcana",
+      "role": "character.mist-seer.thumbnail",
+      "file": "src/arcana/presentation/content-packs/arcana/art/character/mist-seer/thumbnail.webp",
+      "bytes": 6292,
+      "exists": true,
+      "width": 96,
+      "height": 120,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "alt": {
+        "es": "Vidente de la Bruma",
+        "en": "Mist Seer"
+      }
+    },
+    {
+      "pack": "arcana",
+      "role": "character.moon-herbalist.figure",
+      "file": "src/arcana/presentation/content-packs/arcana/art/character/moon-herbalist/figure.webp",
+      "bytes": 45352,
+      "exists": true,
+      "width": 342,
+      "height": 512,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "alt": {
+        "es": "Figura de Herborista Lunar",
+        "en": "Figure of Moon Herbalist"
+      }
+    },
+    {
+      "pack": "arcana",
+      "role": "character.moon-herbalist.portrait",
+      "file": "src/arcana/presentation/content-packs/arcana/art/character/moon-herbalist/portrait.webp",
+      "bytes": 136662,
+      "exists": true,
+      "width": 512,
+      "height": 640,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "alt": {
+        "es": "Retrato de Herborista Lunar",
+        "en": "Portrait of Moon Herbalist"
+      }
+    },
+    {
+      "pack": "arcana",
+      "role": "character.moon-herbalist.thumbnail",
+      "file": "src/arcana/presentation/content-packs/arcana/art/character/moon-herbalist/thumbnail.webp",
+      "bytes": 8566,
+      "exists": true,
+      "width": 96,
+      "height": 120,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "alt": {
+        "es": "Herborista Lunar",
+        "en": "Moon Herbalist"
+      }
+    },
+    {
+      "pack": "arcana",
+      "role": "character.morgana.figure",
+      "file": "src/arcana/presentation/content-packs/arcana/art/character/morgana/figure.webp",
+      "bytes": 32984,
+      "exists": true,
+      "width": 342,
+      "height": 512,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "alt": {
+        "es": "Figura de Morgana Le Fay",
+        "en": "Figure of Morgana Le Fay"
+      }
+    },
+    {
+      "pack": "arcana",
+      "role": "character.morgana.portrait",
+      "file": "src/arcana/presentation/content-packs/arcana/art/character/morgana/portrait.webp",
+      "bytes": 87282,
+      "exists": true,
+      "width": 512,
+      "height": 640,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "alt": {
+        "es": "Retrato de Morgana Le Fay",
+        "en": "Portrait of Morgana Le Fay"
+      }
+    },
+    {
+      "pack": "arcana",
+      "role": "character.morgana.thumbnail",
+      "file": "src/arcana/presentation/content-packs/arcana/art/character/morgana/thumbnail.webp",
+      "bytes": 6118,
+      "exists": true,
+      "width": 96,
+      "height": 120,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "alt": {
+        "es": "Morgana Le Fay",
+        "en": "Morgana Le Fay"
+      }
+    },
+    {
+      "pack": "arcana",
+      "role": "character.moss-guardian.figure",
+      "file": "src/arcana/presentation/content-packs/arcana/art/character/moss-guardian/figure.webp",
+      "bytes": 40504,
+      "exists": true,
+      "width": 342,
+      "height": 512,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "alt": {
+        "es": "Figura de Guardiana del Musgo",
+        "en": "Figure of Moss Guardian"
+      }
+    },
+    {
+      "pack": "arcana",
+      "role": "character.moss-guardian.portrait",
+      "file": "src/arcana/presentation/content-packs/arcana/art/character/moss-guardian/portrait.webp",
+      "bytes": 118872,
+      "exists": true,
+      "width": 512,
+      "height": 640,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "alt": {
+        "es": "Retrato de Guardiana del Musgo",
+        "en": "Portrait of Moss Guardian"
+      }
+    },
+    {
+      "pack": "arcana",
+      "role": "character.moss-guardian.thumbnail",
+      "file": "src/arcana/presentation/content-packs/arcana/art/character/moss-guardian/thumbnail.webp",
+      "bytes": 7328,
+      "exists": true,
+      "width": 96,
+      "height": 120,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "alt": {
+        "es": "Guardiana del Musgo",
+        "en": "Moss Guardian"
+      }
+    },
+    {
+      "pack": "arcana",
+      "role": "character.night-forger.figure",
+      "file": "src/arcana/presentation/content-packs/arcana/art/character/night-forger/figure.webp",
+      "bytes": 30096,
+      "exists": true,
+      "width": 342,
+      "height": 512,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "alt": {
+        "es": "Figura de Forjador Nocturno",
+        "en": "Figure of Night Forger"
+      }
+    },
+    {
+      "pack": "arcana",
+      "role": "character.night-forger.portrait",
+      "file": "src/arcana/presentation/content-packs/arcana/art/character/night-forger/portrait.webp",
+      "bytes": 83256,
+      "exists": true,
+      "width": 512,
+      "height": 640,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "alt": {
+        "es": "Retrato de Forjador Nocturno",
+        "en": "Portrait of Night Forger"
+      }
+    },
+    {
+      "pack": "arcana",
+      "role": "character.night-forger.thumbnail",
+      "file": "src/arcana/presentation/content-packs/arcana/art/character/night-forger/thumbnail.webp",
+      "bytes": 5826,
+      "exists": true,
+      "width": 96,
+      "height": 120,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "alt": {
+        "es": "Forjador Nocturno",
+        "en": "Night Forger"
+      }
+    },
+    {
+      "pack": "arcana",
+      "role": "character.obsidian-seer.figure",
+      "file": "src/arcana/presentation/content-packs/arcana/art/character/obsidian-seer/figure.webp",
+      "bytes": 33774,
+      "exists": true,
+      "width": 342,
+      "height": 512,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "alt": {
+        "es": "Figura de Vidente de Obsidiana",
+        "en": "Figure of Obsidian Seer"
+      }
+    },
+    {
+      "pack": "arcana",
+      "role": "character.obsidian-seer.portrait",
+      "file": "src/arcana/presentation/content-packs/arcana/art/character/obsidian-seer/portrait.webp",
+      "bytes": 87792,
+      "exists": true,
+      "width": 512,
+      "height": 640,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "alt": {
+        "es": "Retrato de Vidente de Obsidiana",
+        "en": "Portrait of Obsidian Seer"
+      }
+    },
+    {
+      "pack": "arcana",
+      "role": "character.obsidian-seer.thumbnail",
+      "file": "src/arcana/presentation/content-packs/arcana/art/character/obsidian-seer/thumbnail.webp",
+      "bytes": 6662,
+      "exists": true,
+      "width": 96,
+      "height": 120,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "alt": {
+        "es": "Vidente de Obsidiana",
+        "en": "Obsidian Seer"
+      }
+    },
+    {
+      "pack": "arcana",
+      "role": "character.paracelso.figure",
+      "file": "src/arcana/presentation/content-packs/arcana/art/character/paracelso/figure.webp",
+      "bytes": 35430,
+      "exists": true,
+      "width": 342,
+      "height": 512,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "alt": {
+        "es": "Figura de Paracelso",
+        "en": "Figure of Paracelsus"
+      }
+    },
+    {
+      "pack": "arcana",
+      "role": "character.paracelso.portrait",
+      "file": "src/arcana/presentation/content-packs/arcana/art/character/paracelso/portrait.webp",
+      "bytes": 88016,
+      "exists": true,
+      "width": 512,
+      "height": 640,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "alt": {
+        "es": "Retrato de Paracelso",
+        "en": "Portrait of Paracelsus"
+      }
+    },
+    {
+      "pack": "arcana",
+      "role": "character.paracelso.thumbnail",
+      "file": "src/arcana/presentation/content-packs/arcana/art/character/paracelso/thumbnail.webp",
+      "bytes": 6914,
+      "exists": true,
+      "width": 96,
+      "height": 120,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "alt": {
+        "es": "Paracelso",
+        "en": "Paracelsus"
+      }
+    },
+    {
+      "pack": "arcana",
+      "role": "character.root-speaker.figure",
+      "file": "src/arcana/presentation/content-packs/arcana/art/character/root-speaker/figure.webp",
+      "bytes": 33986,
+      "exists": true,
+      "width": 342,
+      "height": 512,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "alt": {
+        "es": "Figura de Orador de las Raíces",
+        "en": "Figure of Root Speaker"
+      }
+    },
+    {
+      "pack": "arcana",
+      "role": "character.root-speaker.portrait",
+      "file": "src/arcana/presentation/content-packs/arcana/art/character/root-speaker/portrait.webp",
+      "bytes": 96676,
+      "exists": true,
+      "width": 512,
+      "height": 640,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "alt": {
+        "es": "Retrato de Orador de las Raíces",
+        "en": "Portrait of Root Speaker"
+      }
+    },
+    {
+      "pack": "arcana",
+      "role": "character.root-speaker.thumbnail",
+      "file": "src/arcana/presentation/content-packs/arcana/art/character/root-speaker/thumbnail.webp",
+      "bytes": 6788,
+      "exists": true,
+      "width": 96,
+      "height": 120,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "alt": {
+        "es": "Orador de las Raíces",
+        "en": "Root Speaker"
+      }
+    },
+    {
+      "pack": "arcana",
+      "role": "character.rune-weaver.figure",
+      "file": "src/arcana/presentation/content-packs/arcana/art/character/rune-weaver/figure.webp",
+      "bytes": 35590,
+      "exists": true,
+      "width": 342,
+      "height": 512,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "alt": {
+        "es": "Figura de Tejedora de Runas",
+        "en": "Figure of Rune Weaver"
+      }
+    },
+    {
+      "pack": "arcana",
+      "role": "character.rune-weaver.portrait",
+      "file": "src/arcana/presentation/content-packs/arcana/art/character/rune-weaver/portrait.webp",
+      "bytes": 106366,
+      "exists": true,
+      "width": 512,
+      "height": 640,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "alt": {
+        "es": "Retrato de Tejedora de Runas",
+        "en": "Portrait of Rune Weaver"
+      }
+    },
+    {
+      "pack": "arcana",
+      "role": "character.rune-weaver.thumbnail",
+      "file": "src/arcana/presentation/content-packs/arcana/art/character/rune-weaver/thumbnail.webp",
+      "bytes": 6862,
+      "exists": true,
+      "width": 96,
+      "height": 120,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "alt": {
+        "es": "Tejedora de Runas",
+        "en": "Rune Weaver"
+      }
+    },
+    {
+      "pack": "arcana",
+      "role": "character.shadow-scribe.figure",
+      "file": "src/arcana/presentation/content-packs/arcana/art/character/shadow-scribe/figure.webp",
+      "bytes": 26796,
+      "exists": true,
+      "width": 342,
+      "height": 512,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "alt": {
+        "es": "Figura de Escriba de las Sombras",
+        "en": "Figure of Shadow Scribe"
+      }
+    },
+    {
+      "pack": "arcana",
+      "role": "character.shadow-scribe.portrait",
+      "file": "src/arcana/presentation/content-packs/arcana/art/character/shadow-scribe/portrait.webp",
+      "bytes": 65896,
+      "exists": true,
+      "width": 512,
+      "height": 640,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "alt": {
+        "es": "Retrato de Escriba de las Sombras",
+        "en": "Portrait of Shadow Scribe"
+      }
+    },
+    {
+      "pack": "arcana",
+      "role": "character.shadow-scribe.thumbnail",
+      "file": "src/arcana/presentation/content-packs/arcana/art/character/shadow-scribe/thumbnail.webp",
+      "bytes": 5220,
+      "exists": true,
+      "width": 96,
+      "height": 120,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "alt": {
+        "es": "Escriba de las Sombras",
+        "en": "Shadow Scribe"
+      }
+    },
+    {
+      "pack": "arcana",
+      "role": "character.silver-sentinel.figure",
+      "file": "src/arcana/presentation/content-packs/arcana/art/character/silver-sentinel/figure.webp",
+      "bytes": 37200,
+      "exists": true,
+      "width": 342,
+      "height": 512,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "alt": {
+        "es": "Figura de Centinela de Plata",
+        "en": "Figure of Silver Sentinel"
+      }
+    },
+    {
+      "pack": "arcana",
+      "role": "character.silver-sentinel.portrait",
+      "file": "src/arcana/presentation/content-packs/arcana/art/character/silver-sentinel/portrait.webp",
+      "bytes": 102154,
+      "exists": true,
+      "width": 512,
+      "height": 640,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "alt": {
+        "es": "Retrato de Centinela de Plata",
+        "en": "Portrait of Silver Sentinel"
+      }
+    },
+    {
+      "pack": "arcana",
+      "role": "character.silver-sentinel.thumbnail",
+      "file": "src/arcana/presentation/content-packs/arcana/art/character/silver-sentinel/thumbnail.webp",
+      "bytes": 7232,
+      "exists": true,
+      "width": 96,
+      "height": 120,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "alt": {
+        "es": "Centinela de Plata",
+        "en": "Silver Sentinel"
+      }
+    },
+    {
+      "pack": "arcana",
+      "role": "character.star-binder.figure",
+      "file": "src/arcana/presentation/content-packs/arcana/art/character/star-binder/figure.webp",
+      "bytes": 36450,
+      "exists": true,
+      "width": 342,
+      "height": 512,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "alt": {
+        "es": "Figura de Enlazadora de Estrellas",
+        "en": "Figure of Star Binder"
+      }
+    },
+    {
+      "pack": "arcana",
+      "role": "character.star-binder.portrait",
+      "file": "src/arcana/presentation/content-packs/arcana/art/character/star-binder/portrait.webp",
+      "bytes": 104210,
+      "exists": true,
+      "width": 512,
+      "height": 640,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "alt": {
+        "es": "Retrato de Enlazadora de Estrellas",
+        "en": "Portrait of Star Binder"
+      }
+    },
+    {
+      "pack": "arcana",
+      "role": "character.star-binder.thumbnail",
+      "file": "src/arcana/presentation/content-packs/arcana/art/character/star-binder/thumbnail.webp",
+      "bytes": 7084,
+      "exists": true,
+      "width": 96,
+      "height": 120,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "alt": {
+        "es": "Enlazadora de Estrellas",
+        "en": "Star Binder"
+      }
+    },
+    {
+      "pack": "arcana",
+      "role": "character.storm-caller.figure",
+      "file": "src/arcana/presentation/content-packs/arcana/art/character/storm-caller/figure.webp",
+      "bytes": 38796,
+      "exists": true,
+      "width": 342,
+      "height": 512,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "alt": {
+        "es": "Figura de Invocadora de Tormentas",
+        "en": "Figure of Storm Caller"
+      }
+    },
+    {
+      "pack": "arcana",
+      "role": "character.storm-caller.portrait",
+      "file": "src/arcana/presentation/content-packs/arcana/art/character/storm-caller/portrait.webp",
+      "bytes": 101866,
+      "exists": true,
+      "width": 512,
+      "height": 640,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "alt": {
+        "es": "Retrato de Invocadora de Tormentas",
+        "en": "Portrait of Storm Caller"
+      }
+    },
+    {
+      "pack": "arcana",
+      "role": "character.storm-caller.thumbnail",
+      "file": "src/arcana/presentation/content-packs/arcana/art/character/storm-caller/thumbnail.webp",
+      "bytes": 7120,
+      "exists": true,
+      "width": 96,
+      "height": 120,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "alt": {
+        "es": "Invocadora de Tormentas",
+        "en": "Storm Caller"
+      }
+    },
+    {
+      "pack": "arcana",
+      "role": "character.sun-priestess.figure",
+      "file": "src/arcana/presentation/content-packs/arcana/art/character/sun-priestess/figure.webp",
+      "bytes": 33726,
+      "exists": true,
+      "width": 342,
+      "height": 512,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "alt": {
+        "es": "Figura de Sacerdotisa Solar",
+        "en": "Figure of Sun Priestess"
+      }
+    },
+    {
+      "pack": "arcana",
+      "role": "character.sun-priestess.portrait",
+      "file": "src/arcana/presentation/content-packs/arcana/art/character/sun-priestess/portrait.webp",
+      "bytes": 82582,
+      "exists": true,
+      "width": 512,
+      "height": 640,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "alt": {
+        "es": "Retrato de Sacerdotisa Solar",
+        "en": "Portrait of Sun Priestess"
+      }
+    },
+    {
+      "pack": "arcana",
+      "role": "character.sun-priestess.thumbnail",
+      "file": "src/arcana/presentation/content-packs/arcana/art/character/sun-priestess/thumbnail.webp",
+      "bytes": 6666,
+      "exists": true,
+      "width": 96,
+      "height": 120,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "alt": {
+        "es": "Sacerdotisa Solar",
+        "en": "Sun Priestess"
+      }
+    },
+    {
+      "pack": "arcana",
+      "role": "character.veil-walker.figure",
+      "file": "src/arcana/presentation/content-packs/arcana/art/character/veil-walker/figure.webp",
+      "bytes": 26628,
+      "exists": true,
+      "width": 342,
+      "height": 512,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "alt": {
+        "es": "Figura de Caminante del Velo",
+        "en": "Figure of Veil Walker"
+      }
+    },
+    {
+      "pack": "arcana",
+      "role": "character.veil-walker.portrait",
+      "file": "src/arcana/presentation/content-packs/arcana/art/character/veil-walker/portrait.webp",
+      "bytes": 65826,
+      "exists": true,
+      "width": 512,
+      "height": 640,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "alt": {
+        "es": "Retrato de Caminante del Velo",
+        "en": "Portrait of Veil Walker"
+      }
+    },
+    {
+      "pack": "arcana",
+      "role": "character.veil-walker.thumbnail",
+      "file": "src/arcana/presentation/content-packs/arcana/art/character/veil-walker/thumbnail.webp",
+      "bytes": 5346,
+      "exists": true,
+      "width": 96,
+      "height": 120,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "alt": {
+        "es": "Caminante del Velo",
+        "en": "Veil Walker"
+      }
+    },
+    {
+      "pack": "arcana",
+      "role": "character.wind-reader.figure",
+      "file": "src/arcana/presentation/content-packs/arcana/art/character/wind-reader/figure.webp",
+      "bytes": 43572,
+      "exists": true,
+      "width": 342,
+      "height": 512,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "alt": {
+        "es": "Figura de Lector del Viento",
+        "en": "Figure of Wind Reader"
+      }
+    },
+    {
+      "pack": "arcana",
+      "role": "character.wind-reader.portrait",
+      "file": "src/arcana/presentation/content-packs/arcana/art/character/wind-reader/portrait.webp",
+      "bytes": 121878,
+      "exists": true,
+      "width": 512,
+      "height": 640,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "alt": {
+        "es": "Retrato de Lector del Viento",
+        "en": "Portrait of Wind Reader"
+      }
+    },
+    {
+      "pack": "arcana",
+      "role": "character.wind-reader.thumbnail",
+      "file": "src/arcana/presentation/content-packs/arcana/art/character/wind-reader/thumbnail.webp",
+      "bytes": 8640,
+      "exists": true,
+      "width": 96,
+      "height": 120,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "alt": {
+        "es": "Lector del Viento",
+        "en": "Wind Reader"
+      }
+    },
+    {
+      "pack": "arcana",
+      "role": "rival.arcanist-1.figure",
+      "file": "src/arcana/presentation/content-packs/arcana/art/rival/arcanist-1/figure.webp",
+      "bytes": 34308,
+      "exists": true,
+      "width": 342,
+      "height": 512,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "alt": {
+        "es": "Figura de rival ARCANA",
+        "en": "ARCANA rival figure"
+      }
+    },
+    {
+      "pack": "arcana",
+      "role": "rival.arcanist-2.figure",
+      "file": "src/arcana/presentation/content-packs/arcana/art/rival/arcanist-2/figure.webp",
+      "bytes": 28644,
+      "exists": true,
+      "width": 342,
+      "height": 512,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "alt": {
+        "es": "Figura de rival ARCANA",
+        "en": "ARCANA rival figure"
+      }
+    },
+    {
+      "pack": "arcana",
+      "role": "rival.arcanist-3.figure",
+      "file": "src/arcana/presentation/content-packs/arcana/art/rival/arcanist-3/figure.webp",
+      "bytes": 36952,
+      "exists": true,
+      "width": 342,
+      "height": 512,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "alt": {
+        "es": "Figura de rival ARCANA",
+        "en": "ARCANA rival figure"
+      }
+    },
+    {
+      "pack": "arcana",
+      "role": "rival.boss.figure",
+      "file": "src/arcana/presentation/content-packs/arcana/art/rival/boss/figure.webp",
+      "bytes": 34084,
+      "exists": true,
+      "width": 342,
+      "height": 512,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "alt": {
+        "es": "Figura de rival ARCANA",
+        "en": "ARCANA rival figure"
+      }
+    },
+    {
+      "pack": "arcana",
+      "role": "scene.arena",
+      "file": "src/arcana/presentation/content-packs/arcana/art/scene/arena.webp",
+      "bytes": 227860,
+      "exists": true,
+      "width": 1280,
+      "height": 854,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "alt": {
+        "es": "Escenario arena",
+        "en": "arena scenery"
+      }
+    },
+    {
+      "pack": "arcana",
+      "role": "scene.boulevard",
+      "file": "src/arcana/presentation/content-packs/arcana/art/scene/boulevard.webp",
+      "bytes": 288504,
+      "exists": true,
+      "width": 1280,
+      "height": 854,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "alt": {
+        "es": "Escenario boulevard",
+        "en": "boulevard scenery"
+      }
+    },
+    {
+      "pack": "arcana",
+      "role": "scene.confectionery",
+      "file": "src/arcana/presentation/content-packs/arcana/art/scene/confectionery.webp",
+      "bytes": 148382,
+      "exists": true,
+      "width": 1280,
+      "height": 854,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "alt": {
+        "es": "Escenario confectionery",
+        "en": "confectionery scenery"
+      }
+    },
+    {
+      "pack": "arcana",
+      "role": "scene.passage",
+      "file": "src/arcana/presentation/content-packs/arcana/art/scene/passage.webp",
+      "bytes": 268726,
+      "exists": true,
+      "width": 1280,
+      "height": 854,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "alt": {
+        "es": "Escenario passage",
+        "en": "passage scenery"
+      }
+    },
+    {
+      "pack": "arcana",
+      "role": "scene.vault",
+      "file": "src/arcana/presentation/content-packs/arcana/art/scene/vault.webp",
+      "bytes": 177114,
+      "exists": true,
+      "width": 1280,
+      "height": 854,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "alt": {
+        "es": "Escenario vault",
+        "en": "vault scenery"
+      }
+    },
+    {
+      "pack": "arcana",
+      "role": "scene.workshop",
+      "file": "src/arcana/presentation/content-packs/arcana/art/scene/workshop.webp",
+      "bytes": 178002,
+      "exists": true,
+      "width": 1280,
+      "height": 854,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "alt": {
+        "es": "Escenario workshop",
+        "en": "workshop scenery"
+      }
+    },
+    {
+      "pack": "arcana",
+      "role": "product.bean-earth",
+      "file": "src/arcana/presentation/content-packs/arcana/art/product/bean-earth.webp",
+      "bytes": 61842,
+      "exists": true,
+      "width": 640,
+      "height": 640,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "alt": {
+        "es": "Ilustración bean-earth",
+        "en": "bean-earth illustration"
+      }
+    },
+    {
+      "pack": "arcana",
+      "role": "beans.jar",
+      "file": "src/arcana/presentation/content-packs/arcana/art/beans/jar.webp",
+      "bytes": 90510,
+      "exists": true,
+      "width": 640,
+      "height": 640,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "alt": {
+        "es": "Ilustración bean-jar",
+        "en": "bean-jar illustration"
+      }
+    },
+    {
+      "pack": "arcana",
+      "role": "product.bean-mint",
+      "file": "src/arcana/presentation/content-packs/arcana/art/product/bean-mint.webp",
+      "bytes": 60518,
+      "exists": true,
+      "width": 640,
+      "height": 640,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "alt": {
+        "es": "Ilustración bean-mint",
+        "en": "bean-mint illustration"
+      }
+    },
+    {
+      "pack": "arcana",
+      "role": "product.bean-pepper",
+      "file": "src/arcana/presentation/content-packs/arcana/art/product/bean-pepper.webp",
+      "bytes": 67558,
+      "exists": true,
+      "width": 640,
+      "height": 640,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "alt": {
+        "es": "Ilustración bean-pepper",
+        "en": "bean-pepper illustration"
+      }
+    },
+    {
+      "pack": "arcana",
+      "role": "product.bean-soap",
+      "file": "src/arcana/presentation/content-packs/arcana/art/product/bean-soap.webp",
+      "bytes": 44200,
+      "exists": true,
+      "width": 640,
+      "height": 640,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "alt": {
+        "es": "Ilustración bean-soap",
+        "en": "bean-soap illustration"
+      }
+    },
+    {
+      "pack": "arcana",
+      "role": "product.broom-cadet-zephyr",
+      "file": "src/arcana/presentation/content-packs/arcana/art/product/broom-cadet-zephyr.webp",
+      "bytes": 40582,
+      "exists": true,
+      "width": 640,
+      "height": 640,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "alt": {
+        "es": "Ilustración broom-cadet-zephyr",
+        "en": "broom-cadet-zephyr illustration"
+      }
+    },
+    {
+      "pack": "arcana",
+      "role": "product.broom-wind-arrow",
+      "file": "src/arcana/presentation/content-packs/arcana/art/product/broom-wind-arrow.webp",
+      "bytes": 46350,
+      "exists": true,
+      "width": 640,
+      "height": 640,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "alt": {
+        "es": "Ilustración broom-wind-arrow",
+        "en": "broom-wind-arrow illustration"
+      }
+    },
+    {
+      "pack": "arcana",
+      "role": "product.broom-zephyr-2000",
+      "file": "src/arcana/presentation/content-packs/arcana/art/product/broom-zephyr-2000.webp",
+      "bytes": 45902,
+      "exists": true,
+      "width": 640,
+      "height": 640,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "alt": {
+        "es": "Ilustración broom-zephyr-2000",
+        "en": "broom-zephyr-2000 illustration"
+      }
+    },
+    {
+      "pack": "arcana",
+      "role": "card.back",
+      "file": "src/arcana/presentation/content-packs/arcana/art/card/back.webp",
+      "bytes": 109372,
+      "exists": true,
+      "width": 512,
+      "height": 640,
+      "alpha": false,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "alt": {
+        "es": "Ilustración card-back",
+        "en": "card-back illustration"
+      }
+    },
+    {
+      "pack": "arcana",
+      "role": "card.frame",
+      "file": "src/arcana/presentation/content-packs/arcana/art/card/frame.webp",
+      "bytes": 53282,
+      "exists": true,
+      "width": 512,
+      "height": 640,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "alt": {
+        "es": "Ilustración card-frame",
+        "en": "card-frame illustration"
+      }
+    },
+    {
+      "pack": "arcana",
+      "role": "toad.subject",
+      "file": "src/arcana/presentation/content-packs/arcana/art/toad/subject.webp",
+      "bytes": 80948,
+      "exists": true,
+      "width": 640,
+      "height": 640,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "alt": {
+        "es": "Ilustración cocoa-toad-subject",
+        "en": "cocoa-toad-subject illustration"
+      }
+    },
+    {
+      "pack": "arcana",
+      "role": "product.core-dragon",
+      "file": "src/arcana/presentation/content-packs/arcana/art/product/core-dragon.webp",
+      "bytes": 52870,
+      "exists": true,
+      "width": 640,
+      "height": 640,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "alt": {
+        "es": "Ilustración core-dragon",
+        "en": "core-dragon illustration"
+      }
+    },
+    {
+      "pack": "arcana",
+      "role": "product.core-phoenix",
+      "file": "src/arcana/presentation/content-packs/arcana/art/product/core-phoenix.webp",
+      "bytes": 70284,
+      "exists": true,
+      "width": 640,
+      "height": 640,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "alt": {
+        "es": "Ilustración core-phoenix",
+        "en": "core-phoenix illustration"
+      }
+    },
+    {
+      "pack": "arcana",
+      "role": "product.core-wyvern",
+      "file": "src/arcana/presentation/content-packs/arcana/art/product/core-wyvern.webp",
+      "bytes": 47250,
+      "exists": true,
+      "width": 640,
+      "height": 640,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "alt": {
+        "es": "Ilustración core-wyvern",
+        "en": "core-wyvern illustration"
+      }
+    },
+    {
+      "pack": "arcana",
+      "role": "product.gold-key",
+      "file": "src/arcana/presentation/content-packs/arcana/art/product/gold-key.webp",
+      "bytes": 65990,
+      "exists": true,
+      "width": 640,
+      "height": 640,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "alt": {
+        "es": "Ilustración gold-key",
+        "en": "gold-key illustration"
+      }
+    },
+    {
+      "pack": "arcana",
+      "role": "product.loot-chest",
+      "file": "src/arcana/presentation/content-packs/arcana/art/product/loot-chest.webp",
+      "bytes": 100992,
+      "exists": true,
+      "width": 640,
+      "height": 640,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "alt": {
+        "es": "Ilustración loot-chest",
+        "en": "loot-chest illustration"
+      }
+    },
+    {
+      "pack": "arcana",
+      "role": "toad.base",
+      "file": "src/arcana/presentation/content-packs/arcana/art/toad/base.webp",
+      "bytes": 68074,
+      "exists": true,
+      "width": 640,
+      "height": 640,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "alt": {
+        "es": "Ilustración toad-box-base",
+        "en": "toad-box-base illustration"
+      }
+    },
+    {
+      "pack": "arcana",
+      "role": "toad.box",
+      "file": "src/arcana/presentation/content-packs/arcana/art/toad/box.webp",
+      "bytes": 95740,
+      "exists": true,
+      "width": 640,
+      "height": 640,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "alt": {
+        "es": "Ilustración toad-box-closed",
+        "en": "toad-box-closed illustration"
+      }
+    },
+    {
+      "pack": "arcana",
+      "role": "toad.lid",
+      "file": "src/arcana/presentation/content-packs/arcana/art/toad/lid.webp",
+      "bytes": 69936,
+      "exists": true,
+      "width": 640,
+      "height": 640,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "alt": {
+        "es": "Ilustración toad-box-lid",
+        "en": "toad-box-lid illustration"
+      }
+    },
+    {
+      "pack": "arcana",
+      "role": "pwa.icon.192",
+      "file": "src/arcana/presentation/content-packs/arcana/art/pwa/icon/192.png",
+      "bytes": 66950,
+      "exists": true,
+      "width": 192,
+      "height": 192,
+      "alpha": false,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "alt": {
+        "es": "Icono ARCANA",
+        "en": "ARCANA icon"
+      }
+    },
+    {
+      "pack": "arcana",
+      "role": "pwa.icon.512",
+      "file": "src/arcana/presentation/content-packs/arcana/art/pwa/icon/512.png",
+      "bytes": 454987,
+      "exists": true,
+      "width": 512,
+      "height": 512,
+      "alpha": false,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "alt": {
+        "es": "Icono ARCANA",
+        "en": "ARCANA icon"
+      }
+    },
+    {
+      "pack": "arcana",
+      "role": "toad.seal",
+      "file": "src/arcana/presentation/content-packs/arcana/art/toad/seal.webp",
+      "bytes": 112296,
+      "exists": true,
+      "width": 640,
+      "height": 640,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "alt": {
+        "es": "Ilustración toad-seal",
+        "en": "toad-seal illustration"
+      }
+    },
+    {
+      "pack": "arcana",
+      "role": "product.wand-birch",
+      "file": "src/arcana/presentation/content-packs/arcana/art/product/wand-birch.webp",
+      "bytes": 32994,
+      "exists": true,
+      "width": 640,
+      "height": 640,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "alt": {
+        "es": "Ilustración wand-birch",
+        "en": "wand-birch illustration"
+      }
+    },
+    {
+      "pack": "arcana",
+      "role": "product.wand-elder",
+      "file": "src/arcana/presentation/content-packs/arcana/art/product/wand-elder.webp",
+      "bytes": 30038,
+      "exists": true,
+      "width": 640,
+      "height": 640,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "alt": {
+        "es": "Ilustración wand-elder",
+        "en": "wand-elder illustration"
+      }
+    },
+    {
+      "pack": "arcana",
+      "role": "product.wand-willow",
+      "file": "src/arcana/presentation/content-packs/arcana/art/product/wand-willow.webp",
+      "bytes": 28448,
+      "exists": true,
+      "width": 640,
+      "height": 640,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "alt": {
+        "es": "Ilustración wand-willow",
+        "en": "wand-willow illustration"
+      }
+    },
+    {
+      "pack": "arcana",
+      "role": "rarity.common",
+      "file": "src/arcana/presentation/content-packs/arcana/art/rarity/common.svg",
+      "bytes": 214,
+      "exists": true,
+      "width": 32,
+      "height": 32,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "alt": {
+        "es": "Emblema de rareza Común",
+        "en": "Common rarity emblem"
+      }
+    },
+    {
+      "pack": "arcana",
+      "role": "rarity.unusual",
+      "file": "src/arcana/presentation/content-packs/arcana/art/rarity/unusual.svg",
+      "bytes": 229,
+      "exists": true,
+      "width": 32,
+      "height": 32,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "alt": {
+        "es": "Emblema de rareza Inusual",
+        "en": "Unusual rarity emblem"
+      }
+    },
+    {
+      "pack": "arcana",
+      "role": "rarity.epic",
+      "file": "src/arcana/presentation/content-packs/arcana/art/rarity/epic.svg",
+      "bytes": 263,
+      "exists": true,
+      "width": 32,
+      "height": 32,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "alt": {
+        "es": "Emblema de rareza Épico",
+        "en": "Epic rarity emblem"
+      }
+    },
+    {
+      "pack": "arcana",
+      "role": "rarity.arcane-legendary",
+      "file": "src/arcana/presentation/content-packs/arcana/art/rarity/arcane-legendary.svg",
+      "bytes": 225,
+      "exists": true,
+      "width": 32,
+      "height": 32,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "alt": {
+        "es": "Emblema de rareza Arcano Legendario",
+        "en": "Arcane Legendary rarity emblem"
+      }
+    },
+    {
+      "pack": "arcana",
+      "role": "ui.seal",
+      "file": "src/arcana/presentation/content-packs/arcana/art/ui/seal.svg",
+      "bytes": 726,
+      "exists": true,
+      "width": 256,
+      "height": 256,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "alt": {
+        "es": "Seleccionado",
+        "en": "Selected"
+      }
+    },
+    {
+      "pack": "arcana",
+      "role": "ui.clear",
+      "file": "src/arcana/presentation/content-packs/arcana/art/ui/clear.svg",
+      "bytes": 706,
+      "exists": true,
+      "width": 256,
+      "height": 256,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "alt": {
+        "es": "Sin objeto",
+        "en": "No item"
+      }
+    },
+    {
+      "pack": "arcana",
+      "role": "ui.map",
+      "file": "src/arcana/presentation/content-packs/arcana/art/ui/map.svg",
+      "bytes": 879,
+      "exists": true,
+      "width": 256,
+      "height": 256,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "alt": {
+        "es": "Mapa",
+        "en": "Map"
+      }
+    },
+    {
+      "pack": "arcana",
+      "role": "ui.collection",
+      "file": "src/arcana/presentation/content-packs/arcana/art/ui/collection.svg",
+      "bytes": 863,
+      "exists": true,
+      "width": 256,
+      "height": 256,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "alt": {
+        "es": "Cromodex",
+        "en": "Chromodex"
+      }
+    },
+    {
+      "pack": "arcana",
+      "role": "ui.shop",
+      "file": "src/arcana/presentation/content-packs/arcana/art/ui/shop.svg",
+      "bytes": 926,
+      "exists": true,
+      "width": 256,
+      "height": 256,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "alt": {
+        "es": "Bazar",
+        "en": "Bazaar"
+      }
+    },
+    {
+      "pack": "arcana",
+      "role": "ui.missions",
+      "file": "src/arcana/presentation/content-packs/arcana/art/ui/missions.svg",
+      "bytes": 834,
+      "exists": true,
+      "width": 256,
+      "height": 256,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "alt": {
+        "es": "Misiones",
+        "en": "Missions"
+      }
+    },
+    {
+      "pack": "arcana",
+      "role": "ui.temporary",
+      "file": "src/arcana/presentation/content-packs/arcana/art/ui/temporary.svg",
+      "bytes": 801,
+      "exists": true,
+      "width": 256,
+      "height": 256,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "alt": {
+        "es": "Aliado temporal",
+        "en": "Temporary ally"
+      }
+    },
+    {
+      "pack": "arcana",
+      "role": "ui.owned",
+      "file": "src/arcana/presentation/content-packs/arcana/art/ui/owned.svg",
+      "bytes": 776,
+      "exists": true,
+      "width": 256,
+      "height": 256,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "alt": {
+        "es": "Copia propia",
+        "en": "Owned copy"
+      }
+    },
+    {
+      "pack": "arcana",
+      "role": "ui.motion",
+      "file": "src/arcana/presentation/content-packs/arcana/art/ui/motion.svg",
+      "bytes": 779,
+      "exists": true,
+      "width": 256,
+      "height": 256,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "alt": {
+        "es": "Movimiento reducido",
+        "en": "Reduced motion"
+      }
+    },
+    {
+      "pack": "arcana",
+      "role": "ui.frame",
+      "file": "src/arcana/presentation/content-packs/arcana/art/ui/frame.svg",
+      "bytes": 450,
+      "exists": true,
+      "width": 320,
+      "height": 96,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "alt": {
+        "es": "Marco de latón",
+        "en": "Brass frame"
+      }
+    },
+    {
+      "pack": "arcana",
+      "role": "ui.health",
+      "file": "src/arcana/presentation/content-packs/arcana/art/icons/ui-health.svg",
+      "bytes": 191,
+      "exists": true,
+      "width": 256,
+      "height": 256,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "alt": {
+        "es": "Recuperar vida",
+        "en": "Restore health"
+      }
+    },
+    {
+      "pack": "arcana",
+      "role": "ui.pass",
+      "file": "src/arcana/presentation/content-packs/arcana/art/icons/ui-pass.svg",
+      "bytes": 230,
+      "exists": true,
+      "width": 256,
+      "height": 256,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "alt": {
+        "es": "Pasar",
+        "en": "Pass"
+      }
+    },
+    {
+      "pack": "arcana",
+      "role": "ui.settings",
+      "file": "src/arcana/presentation/content-packs/arcana/art/ui/motion.svg",
+      "bytes": 779,
+      "exists": true,
+      "width": 256,
+      "height": 256,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "alt": {
+        "es": "Ajustes",
+        "en": "Settings"
+      }
+    }
+  ]
+}

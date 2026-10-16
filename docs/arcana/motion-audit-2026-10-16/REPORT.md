@@ -1,6 +1,6 @@
 # A69 · Magia con intención
 
-16 de octubre de 2026. Auditoría y propuesta terminadas antes de implementar. La última instrucción autoriza implementar, validar e integrar en main; no desplegar. Base: main `2b9df81` más Halloween A68 pendiente de validación gráfica.
+16 de octubre de 2026. Auditoría y propuesta terminadas antes de implementar. La última instrucción autoriza implementar, validar e integrar en main; no desplegar. Base inicial: main `2b9df81` más Halloween A68, cuya validación gráfica se completa en este incremento.
 
 ## Qué cambia
 
@@ -23,12 +23,16 @@ Todo utiliza las ilustraciones y runtimes existentes. No se fabrican poses artic
 - [Diez coreografías](MOTION.md), [recursos y fuentes editables](ASSETS.md).
 - [Tecnologías y fuentes oficiales](TECHNOLOGY.md), [backlog](BACKLOG.md).
 - [Contrato y plan vivo](CONTRACT.md), [validación y presupuestos](VALIDATION.md).
-- Registros de [apertura](REGISTRO-OPENING.md), interfaz y QA cuando finalicen.
+- Registros de [apertura](REGISTRO-OPENING.md), [interfaz](REGISTRO-UI.md), [reloj/renderer](REGISTRO-ARENA.md) y [QA](REGISTRO-QA.md). [Galería inspeccionada](GALLERY.md) y [rendimiento medido](PERFORMANCE.md).
 
-Comprobación local sin navegador: tipos, 514 unitarios, 76 integraciones PostgreSQL/Redis, build y escaneo del artefacto correctos. CI Linux y sus resultados se añadirán tras ejecutar el candidato. Los tiempos presupuestados son objetivos hasta disponer de medición; no son rendimiento acreditado en móviles físicos. El build mantiene el aviso conocido de chunk principal superior a 500 kB.
+Comprobación local sin navegador: tipos, 515 unitarios, 77 integraciones PostgreSQL/Redis, build y escaneo del artefacto correctos. CI Linux [38959694470](https://github.com/earandes/diagon-alley/actions/runs/38959694470) completa correctamente sobre el candidato `6910a48`: A68 12 casos; A69 19 correctos y 5 omisiones intencionadas; general 56; A67 20; A63 16; A66 20; A65 8; PWA 12; dos perfiles A67 correctos. Las cinco omisiones limitan la muestra de 30 ciclos/capturas a un solo proyecto; no son fallos ocultos. [Resultado completo y comandos](VALIDATION.md#resultado-final-linux). Los presupuestos y las medidas se distinguen en [PERFORMANCE](PERFORMANCE.md); no acreditan rendimiento en móviles físicos. El build mantiene el aviso conocido de chunk principal superior a 500 kB.
 
 ## Conservar, rehacer, investigar
 
 Conservar el acabado ilustrado, el núcleo autoritativo, el fallback DOM, Canvas2D de ranas y el stack actual. Rehacer la coordinación temporal y las respuestas visuales descritas. Investigar mediante una sola muestra futura un personaje con piezas/poses reales antes de producir un lote; Rive/Lottie/otro renderer no están justificados para este incremento.
 
 La revisión humana debe comprobar contacto perceptible, comprensión de cambios y equilibrio entre espectáculo y ritmo. La sesión humana, lector de pantalla hablado y dispositivos físicos siguen pendientes; automatizaciones y emulación no los sustituyen.
+
+## Integración
+
+El candidato validado incluye A68 y A69. El cierre de documentación y evidencia no modifica aplicación, pruebas, herramientas ni configuración ensayadas. Main se integra por avance directo después de comprobar esa equivalencia; el SHA remoto y el estado de su CI se comunican en la entrega. No se despliega. [Archivos y procedencia](CHANGES.md).

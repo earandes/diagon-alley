@@ -1,5 +1,17 @@
 # A68 · Comprobaciones ejecutadas y límite actual
 
+## Cierre técnico posterior A69 ·16octubre2026
+
+La validación pendiente se ha resuelto en [CI Linux38959694470](https://github.com/earandes/diagon-alley/actions/runs/38959694470), candidato6910a48: **12/12 casos A68**, ambos motores, tres tamaños y variantes normal/fallo de renderer;515unitarios,77integraciones PostgreSQL/Redis y todas las regresiones correctas. [Comandos, metadatos y límites vigentes](../motion-audit-2026-10-16/VALIDATION.md#resultado-final-linux). El servidor de ensayo fija20octubre mediante reloj inyectado privado; sin configuración conserva RedisTIME. No existe control de calendario público.
+
+El recorrido ampliado verifica participación, cancelación de intercambio, intercambio confirmado y reparación, tres objetivos, concesión única, recarga y consulta en ES/EN/ambos packs, toque emulado/teclado/reducido y fallback. La fixture de condición porPG está declarada; no utiliza ni altera la cuenta habitual. Concurrencia y respuesta perdida se comprueban además con conexionesPG/contratos, sin afirmar una sesión humana de dos pestañas. El límite del ensayo Linux se ajustó a60s con10s por interacción después de dos timeouts documentados; no cambió ningún límite del Mac ni se usa ese timeout como métrica de producto.
+
+No se repitieron gráficos locales. Sesión humana, lector hablado y dispositivo físico permanecen pendientes. La instrucción final A69 autoriza integrar el conjunto auditado A68+A69 en main tras validar; sustituye exclusivamente el no-push de esta entrega histórica. No despliegue. El registro siguiente conserva el estado y límites de aquella fase, no el estado técnico final.
+
+---
+
+### Registro histórico de la entrega inicial
+
 16octubre2026, Node24.20.0, Vitest5.0.3, Playwright1.64.0, Mac anfitrión. Cuentas/namespaces aislados. No partida habitual, commit, push, despliegue, servicios pagados, navegador personal o configuración global modificados.
 
 ## Resultado disponible

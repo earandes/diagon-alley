@@ -1,0 +1,250 @@
+{
+  "conclusion": "success",
+  "headSha": "6910a48471198d7d4fbd220df257abf7423ab7b5",
+  "jobs": [
+    {
+      "completedAt": "2026-10-16T20:35:19Z",
+      "conclusion": "success",
+      "databaseId": 117171335184,
+      "name": "check",
+      "startedAt": "2026-10-16T20:05:33Z",
+      "status": "completed",
+      "steps": [
+        {
+          "completedAt": "2026-10-16T20:05:34Z",
+          "conclusion": "success",
+          "name": "Set up job",
+          "number": 1,
+          "startedAt": "2026-10-16T20:05:34Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-16T20:05:47Z",
+          "conclusion": "success",
+          "name": "Initialize containers",
+          "number": 2,
+          "startedAt": "2026-10-16T20:05:34Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-16T20:06:00Z",
+          "conclusion": "success",
+          "name": "Run actions/checkout@v4",
+          "number": 3,
+          "startedAt": "2026-10-16T20:05:47Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-16T20:06:02Z",
+          "conclusion": "success",
+          "name": "Run actions/setup-node@v4",
+          "number": 4,
+          "startedAt": "2026-10-16T20:06:00Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-16T20:06:06Z",
+          "conclusion": "success",
+          "name": "Run npm ci --no-fund --no-audit",
+          "number": 5,
+          "startedAt": "2026-10-16T20:06:02Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-16T20:06:14Z",
+          "conclusion": "success",
+          "name": "Run npm run typecheck",
+          "number": 6,
+          "startedAt": "2026-10-16T20:06:06Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-16T20:06:15Z",
+          "conclusion": "success",
+          "name": "Run npm run validate:content",
+          "number": 7,
+          "startedAt": "2026-10-16T20:06:14Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-16T20:06:24Z",
+          "conclusion": "success",
+          "name": "Run npm test",
+          "number": 8,
+          "startedAt": "2026-10-16T20:06:15Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-16T20:06:37Z",
+          "conclusion": "success",
+          "name": "Run npm run test:integration",
+          "number": 9,
+          "startedAt": "2026-10-16T20:06:24Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-16T20:06:46Z",
+          "conclusion": "success",
+          "name": "Run npm run build",
+          "number": 10,
+          "startedAt": "2026-10-16T20:06:37Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-16T20:06:46Z",
+          "conclusion": "success",
+          "name": "Run npm run verify:arcana:build",
+          "number": 11,
+          "startedAt": "2026-10-16T20:06:46Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-16T20:07:41Z",
+          "conclusion": "success",
+          "name": "Run npx playwright install --with-deps chromium webkit",
+          "number": 12,
+          "startedAt": "2026-10-16T20:06:46Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-16T20:10:01Z",
+          "conclusion": "success",
+          "name": "Run npx playwright test --config playwright.seasonal-a68.config.ts",
+          "number": 13,
+          "startedAt": "2026-10-16T20:07:41Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-16T20:16:56Z",
+          "conclusion": "success",
+          "name": "Run ARCANA_CAPTURE_A69=1 npx playwright test --config playwright.motion-a69.config.ts",
+          "number": 14,
+          "startedAt": "2026-10-16T20:10:01Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-16T20:16:58Z",
+          "conclusion": "success",
+          "name": "Run actions/upload-artifact@v4",
+          "number": 15,
+          "startedAt": "2026-10-16T20:16:56Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-16T20:22:13Z",
+          "conclusion": "success",
+          "name": "Run ARCANA_TRIAL_COMPILED=1 npm run test:e2e -- --project chromium --project webkit --reporter=line,github",
+          "number": 16,
+          "startedAt": "2026-10-16T20:16:58Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-16T20:25:11Z",
+          "conclusion": "success",
+          "name": "Run npx playwright test --config playwright.progression-a67.config.ts --project chromium-a67 --project webkit-a67",
+          "number": 17,
+          "startedAt": "2026-10-16T20:22:13Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-16T20:29:31Z",
+          "conclusion": "success",
+          "name": "Run npx playwright test --config playwright.gameplay-a63.config.ts",
+          "number": 18,
+          "startedAt": "2026-10-16T20:25:11Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-16T20:32:18Z",
+          "conclusion": "success",
+          "name": "Run npx playwright test --config playwright.header-pact-a66.config.ts",
+          "number": 19,
+          "startedAt": "2026-10-16T20:29:31Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-16T20:34:27Z",
+          "conclusion": "success",
+          "name": "Run npx playwright test --config playwright.intentions-a65.config.ts",
+          "number": 20,
+          "startedAt": "2026-10-16T20:32:18Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-16T20:34:47Z",
+          "conclusion": "success",
+          "name": "Run npm run test:pwa -- --project chromium --project webkit",
+          "number": 21,
+          "startedAt": "2026-10-16T20:34:27Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-16T20:34:56Z",
+          "conclusion": "success",
+          "name": "Run node tools/verification/build-a66-reference.mjs",
+          "number": 22,
+          "startedAt": "2026-10-16T20:34:47Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-16T20:35:04Z",
+          "conclusion": "success",
+          "name": "Run A67_PERFORMANCE_VARIANT=baseline npx playwright test --config playwright.performance-a67.config.ts",
+          "number": 23,
+          "startedAt": "2026-10-16T20:34:56Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-16T20:35:12Z",
+          "conclusion": "success",
+          "name": "Run A67_PERFORMANCE_VARIANT=current npx playwright test --config playwright.performance-a67.config.ts",
+          "number": 24,
+          "startedAt": "2026-10-16T20:35:04Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-16T20:35:14Z",
+          "conclusion": "success",
+          "name": "Run actions/upload-artifact@v4",
+          "number": 25,
+          "startedAt": "2026-10-16T20:35:12Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-16T20:35:14Z",
+          "conclusion": "success",
+          "name": "Post Run actions/setup-node@v4",
+          "number": 48,
+          "startedAt": "2026-10-16T20:35:14Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-16T20:35:14Z",
+          "conclusion": "success",
+          "name": "Post Run actions/checkout@v4",
+          "number": 49,
+          "startedAt": "2026-10-16T20:35:14Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-16T20:35:17Z",
+          "conclusion": "success",
+          "name": "Stop containers",
+          "number": 50,
+          "startedAt": "2026-10-16T20:35:14Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-16T20:35:17Z",
+          "conclusion": "success",
+          "name": "Complete job",
+          "number": 51,
+          "startedAt": "2026-10-16T20:35:17Z",
+          "status": "completed"
+        }
+      ],
+      "url": "https://github.com/earandes/diagon-alley/actions/runs/38959694470/job/117171335184"
+    }
+  ],
+  "url": "https://github.com/earandes/diagon-alley/actions/runs/38959694470"
+}

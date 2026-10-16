@@ -1,81 +1,118 @@
-# Dirección y diez fichas de coreografía A69
+# Dirección de movimiento y diez coreografías
 
-## Gramática: magia con causa, peso y reposo
+Estas fichas son el **diseño previo** a la implementación. [REGISTRO-OPENING](REGISTRO-OPENING.md), [REGISTRO-UI](REGISTRO-UI.md) y [VALIDATION](VALIDATION.md) distinguen lo integrado, lo probado y lo pendiente. Los tiempos siguientes son objetivos orientativos; el rendimiento se mide por separado.
 
-Papel: flexión breve y asentamiento, nunca gelatina. Metal/madera: recorrido corto, contacto legible y retorno. Magia: nace del objeto/actor, recorre una dirección y termina en su objetivo. Personas: traslado del recorte y peso de la peana; no fingir rodillas/manos articuladas desde un bitmap. Un evento tiene un foco, como máximo dos capas de respuesta y una consecuencia visible. Estado de error/pendiente es estable; no tiene confeti de éxito.
+## Gramática: causa, peso y reposo
 
-IntensidadI cotidiana80–180ms, desplazamiento1–4px/escala.98→1; II táctica180–420ms,6–12px y sello local; III descubrimiento450–900ms de resolución, no mayor espera de red; IV excepcional600–1400ms solo en rareza/jefe/recuerdo nuevo, sin fullscreenflash. Son objetivos de diseño, no datos medidos. No loops nuevos. Ease-out para asentarse (`cubic-bezier(.16,1,.3,1)`/`power3.out`), ease-in para lanzamiento corto, back moderado solo en objetos elásticos. Variante reducida: mismo estado y foco, sin trayectoria/escala/temblor. Audio no implementado ni activado.
+El papel flexiona y se asienta sin parecer gelatina. Metal y madera recorren distancias cortas con contacto legible. La magia nace de un objeto o actor, recorre una dirección y termina en su objetivo. Un recorte de persona puede trasladarse o inclinarse; no tiene rodillas ni manos articuladas por parecer pintado.
 
-## M01 · Arena: un solo tiempo de presentación
+Un evento tiene un foco y, como máximo, dos capas de respuesta. Pendiente y error son estados estables. La intensidad responde a la importancia, no a cuántas partículas se pueden dibujar.
 
-**Antes/evidencia:** BattlePanel.tsx146–155 avanza cursor consetTimeout; pixi-scenes.ts acumulaelapsed porTicker. Pausar/reanudar vuelve a dar intervaloentero alDOM conservando elapsedCanvas; ocultar no suspende explícitamente ambos. La trayectoria actual pasa por centro y el golpe tiembla antes de que termine el evento. Hecho de código; nueva desviación temporal aún no medida en ejecución.
+| Nivel | Uso | Movimiento orientativo |
+| --- | --- | --- |
+| I · Cotidiano | Seleccionar, consultar, cambiar página | 80–180 ms; 1–4 px; escala 0,98→1 |
+| II · Táctico | Composición, reclutamiento, condición | 180–420 ms; 6–12 px o sello localizado |
+| III · Descubrimiento | Carta nueva, objeto importante | Resolución de 450–900 ms, además de fases materiales justificadas |
+| IV · Excepcional | Rareza superior, jefe o recuerdo nuevo | Resolución de 600–1400 ms; sin flash de pantalla completa |
 
-**Después/sensación:** intención, impulso, contacto y peso claramente del mismo hechizo. Anticipación0–18% (actorinclina2°, retroceso2px); lanzamiento18–78% (hazfino curvo desdeactor aobjetivo, sin proyectil rival ficticio); contacto78–90% (anillofinito localizado yrecorte4–7px); asentamiento90–100%. Duraciónguía650ms1x/325ms2x delpack. Fallo se desvía sinimpacto; curación aroascendente local, burnbrasa breve, manaexhausted sinproyectil, caído rota6°y atenúa sinocultarPV; logexistente, sin cálculo de daño/RNG.
+Asentamiento con `cubic-bezier(.16,1,.3,1)` o `power3.out`; lanzamiento breve con aceleración; rebote moderado solo cuando el objeto lo admite. Sin loops nuevos. Movimiento reducido conserva estado, foco y datos, eliminando trayectoria, escala y temblor. Audio no implementado ni activado.
 
-**Capas/tech:** figuras actuales/pivotes, GraphicsPixi de bajo coste, deltaDOM yHPproyectados delBattleLog. Tiempo deevento conservado por reloj puro compartido con renderer; no60rerendersReact/s. Pausa/inspector/oculto congelan fracción,2x mantiene fracción, omitir salta afinal. Reducido/fallorenderer resultado+registro sinespera. Limpieza ticker/RAF/observer/texturas.
+## M01 · Arena con un solo tiempo de presentación
 
-**Aceptar:** mismo cursor/fracción alpausar100ms/reanudar o cambiarvelocidad; oculto noavance; ceroPOST durante replay; actor ytargetcorrectos antes/contacto; ≤1efecto protagonista,10figuras visibles, mismoslogsaldos. MuestraLinux antesde ampliar efectos. No shake global/hitstop bloqueante enestaentrega; estudiar solo si contacto aún insuficiente.
+**Problema y evidencia:** el timer React y el ticker Pixi anteriores conservan tiempos distintos. El efecto muestra una trayectoria ambigua y un proyectil desde el objetivo que no existe en el log. Hecho de fuente; no medición de desfase en jugadores.
 
-## M02 · Apertura: objeto→rana→carta→identidad
+**Sensación y secuencia:** intención → impulso → contacto → peso. Anticipación 0–18 %: actor retrocede 2 px e inclina unos 2°. Lanzamiento 18–78 %: haz fino curvo del actor al objetivo. Contacto 78–90 %: anillo finito y reacción local de 4–7 px. Asentamiento 90–100 %. Referencia del pack: 650 ms a 1x, 325 ms a 2x para un hechizo. Fallo se desvía sin golpe; curación usa un aro ascendente; quemadura, una brasa breve; agotamiento de PM no fabrica un hechizo. Una caída atenúa e inclina sin ocultar PV.
 
-**Antes:** CardReveal usaabsolutos0.4/0.85/1.1/2.15/3.2 másduracionespack; todasrareza comparten ritual yremount puede repetirlo. FrogMagic3200ms propio, no ligado a faseGSAP. A58 midió que Canvas2D evitaba eltirónWebGL; conservarlo.
+**Capas, recursos y coste:** figuras actuales con pivote, un `Graphics` local, PV y cifras DOM. Reloj puro común con renderer, sin 60 renders React/s. Máximo un proyectil y un impacto; ocho marcas pequeñas en contacto. No calcula daño, azar ni resultado.
 
-**Después:** cajaaprieta sello120–180ms; sellocede conimpulso; tapa pivota sobrebisagraexistente ysale; rana comprime/salta/aterriza/huyedel mismopunto; dorsocarta ocupa su espacio y girafrente; marcoasienta y nombre/rareza/estrellas cierran. Descubrimiento nuevo tieneascenso deintensidad por cuatro rangos existentes; copia repetida resuelve más rápido con estampa breve, sinfingir identidadnueva. Guía ritual1.8–3.8s segúnnuevo/rareza, ajustado trasmuestra, nocosteeconómico.
+**Control y aceptación:** pausa, inspector y ocultación congelan fase; 2x conserva fracción; omitir llega al resultado confirmado. Reducido o fallo de renderer conserva resultado, controles y registro. Liberar ticker, RAF, observer, listeners y texturas propias. Comprobar actor/objetivo, todos los participantes, ausencia de POST y BattleLog intacto. No shake global ni hit-stop bloqueante en este incremento.
 
-**Tech/assets:** GSAPcontext/timeline conetiquetas derivadas deconfig, Canvas2D24spritesmáximo duranteventana significativa; rango modificaresolución/silueta/númeroacotado, no nuevo renderer/filtros. Una rana plana se deforma comoobjeto; patasanimadas requerirían nuevaspiezas (propuestaASSETS).
+## M02 · Caja → rana → carta → identidad
 
-**Interrumpir:** omitir/reducido/recuperar muestranmisma carta; salirlibera. Idioma/pack/retornohistórico no reinician; pestañaoculta pausa o concluyeestáticosegúncontrato explícito, nunca salta un resultado distinto. Decodificaciónfallida no bloquea estático, ni se precargaotra pantalla paraocultararranque.
+**Problema y evidencia:** posiciones temporales absolutas mezcladas con duraciones del pack; ritual uniforme y protección parcial frente a remontaje. A58 documentó el tirón del renderer anterior y su mejora mediante Canvas2D.
 
-**Aceptar:** unaoperaciónmismaID antes/después; pose/tapaseal rastreables; fotografíaresultado final visible sin salto; comparación frío A58 desdeacción+red+decode+ritual; sin reintroducir la tarea>200ms. Medir1new+1repeat+4rangos porfixtures declaradas, no reponderar tabla.
+**Sensación y secuencia:** la caja comprime el sello durante 120–180 ms; el sello cede; tapa y base se separan; la rana comprime, salta, asienta y huye; el dorso ocupa su lugar y gira al frente; marco, nombre, rareza y estrellas cierran. Guía total: 1,8–3,8 s. Un descubrimiento aumenta la resolución según los cuatro rangos existentes; una copia repetida resuelve antes, sin fingir una identidad nueva.
 
-## M03 · Mapa: la ruta responde a la decisión
+**Capas, recursos y coste:** piezas actuales de caja/tapa/sello, rana plana, dorso, marco y retrato. Timeline GSAP con etiquetas derivadas de configuración. Canvas2D conserva dos sprites precocinados y un máximo de 24 destellos durante la fase significativa. Escalar el bitmap no es animación anatómica; patas articuladas requieren una muestra futura de piezas o poses.
 
-**Antes:** Pixidibuja aristaspunteadas porvisited/available; estático y eficiente, sintrazo direccional deconfirmación. **Después:** alreceipt nuevo, últimoenlace se traza180–300ms desdeorigen hacia visitado y el nodoasienta1.04→1; los siguientes nodos aumentancontraste una vez. Inicio permanece nointeractivo.
+**Control y aceptación:** omitir, reducido, recuperación y fallo dejan la misma carta disponible. Idioma, pack y consulta histórica no reinician el ritual. La pestaña oculta pausa; salir limpia la timeline y Canvas. Decodificación fallida no bloquea el resultado ni justifica precargar otra pantalla para esconder la espera. Medir desde acción, red y carga hasta resultado utilizable; fixtures de cuatro rarezas y nuevo/repetido sin modificar probabilidades.
 
-**Assets/tech:** puntos/Graphics actuales o únicoSVGpath decorativo del layout compartido, no textura nueva. No reroute, noanimartransiciones deconsulta. EventID/visitedlongitud controlaonce, preservapausaoculto, reducido cambiaestado directo. **Aceptar:** coordenadas igualDOM/canvas,ningúnnodo tapado, mapacompleto sin scroll, ≤300ms ytickerparado alfinal; elección/cancelación no trazaavance.
+## M03 · La ruta responde a una decisión
 
-## M04 · Pacto: de retrato a acompañante
+**Problema y evidencia:** aristas punteadas eficientes, pero sin reconocimiento direccional del paso confirmado.
 
-**Antes:** selecciónsello yconfirmación, resultado textual/miniaturaenHUD sinpuenteclaro. **Después:** eleccióneleva carta4px/140ms, reversa alescogerotra; trasconfirmaciónretrato vuelve aescala1 con sello ypuesto delHUD asienta220ms. No hacer una carta volar porencima dediálogos/navegación ni simular queyaestá reclutada duranteborrador. Procedenciareloj/temporal permanece.
+**Secuencia:** después del recibo, el último enlace se traza desde el origen al nodo visitado en 180–300 ms. El nodo asienta de 1,04 a 1 y las siguientes opciones quedan estables. El marcador de inicio permanece no interactivo.
 
-**Assets/tech:** retratos/thumbnail actuales, CSS/WAAPI/Motionmini acotado porIDdeoperación. Reducido/foco conservan sello/estado. Sustitución muestra puesto real, no elimina copia. **Aceptar:** cancelar sin traslados permanentes; solo candidato confirmado reacciona; idioma/pack/navegar no repite; equipofull/reemplazo validanreglas actuales.
+**Recursos y tecnología:** un SVG decorativo sobre el layout compartido, o geometría actual equivalente; sin textura nueva ni ticker permanente. Ease-out. Un ID de operación limita la presentación.
 
-## M05 · Refugio y encuentro: se ve lo que cambia
+**Control y aceptación:** ocultación o reducido asientan directamente; cancelar o consultar no dibuja avance. Coincidencia DOM/canvas, ningún nodo tapado, mapa completo sin scroll y cierre del efecto antes de 300 ms.
 
-**Antes:** preview exacto pero paso decondición/resultadopoco material. **Después:** elecciónPV/PM respira una vez130ms, confirmacióndetieneobjeto, ganancia verde asciende4px y costePMseasienta2px durante240ms; después valoresguardadosestables. Distintos signos/etiquetas, no solo color. Encuentroaleatoriolegacy usaúnicamente receipt yefectoreal, no una ruleta nueva.
+## M04 · El retrato se convierte en acompañante
 
-**Assets/tech:** medallones/frasco/refugio actuales, deltasDOM yfunción compartida; no animar números pasando por cifrasficticias. Reducido númerofinal+signos. **Aceptar:** previewyresultado exactos, sin éxito antesCOMMIT;0beneficio/ineligibilidadsinanimaciónengañosayopciónpasar legible.
+**Problema y evidencia:** selección y confirmación funcionan, pero el resultado queda poco conectado con el equipo.
 
-## M06 · Cofre, forja y bóveda: acción material confirmada
+**Secuencia:** seleccionar eleva la carta 4 px durante unos 140 ms y revierte al elegir otra. Solo tras confirmar, retrato y sello reconocen al candidato incorporado con un asentamiento de unos 220 ms. La procedencia temporal sigue visible. No se presenta reclutamiento durante el borrador.
 
-**Antes:** CommercePanel vuelve a ejecutar popGSAP alremontar receipt; grantvisual puede parecer nuevo. **Después:** úniconuevorecibo dispara cierre/impacto deobjeto160ms yresultadoasienta240ms. Forjavaritaaparecedesdepeana existente, nofantasearanimacióndeherramientassinassets. Bóvedallaveseñala cerradura antesdeconfirmar; despuésbotíngarantizadoguardado, no suertevisual secundaria. Cofremuestracantidadesconorigen.
+**Recursos y coste:** retratos y miniaturas actuales, CSS o Motion mini por ID confirmado. No vuelo sobre diálogos o navegación. El traslado animado a un puesto del HUD queda condicionado a una muestra que no invada controles; el mínimo implementable es retrato y sello confirmados.
 
-**Tech:** pequeñas transformaciones delPNG/DOMexistente, sello/costebreve, registrohistóricoestático conID. Sin llave/saldo/error:brilloenobjetonecesario únicofocosemántico, nuncafalsaconcesión. **Aceptar:** anular conservaestado;misma key/grant no reaniman alconsultar; recuerdoassetfaltante conservaobjeto/nombre/cantidad.
+**Control y aceptación:** cancelar no deja una incorporación visual; reemplazar respeta reglas y copias. Reducido mantiene sello y estado. Idioma, pack o regreso no repiten celebración. En móvil el recibo compacto no cubre retratos; los detalles se consultan a demanda.
 
-## M07 · Preparación: el objeto encaja y la formación responde
+## M05 · La condición cambia de forma visible
 
-**Antes:** selecciónobjetos/slots ypreviews, movimientogenérico; cambiosinmediatos de sinergia. **Después:** varita/escoba/grageaasientan enpuesto4px→0/160ms; sellodecomposición seentinta180ms cuando cambieefectoreal. Borradordegragea tiene borde/fuente distinto delequipoguardado, sincelebración deconsumo.
+**Problema y evidencia:** la vista previa es exacta, pero el resultado PV/PM puede parecer un salto numérico sin origen.
 
-**Tech:** CSS/WAAPI porintencióndelusuario ykey deestado, comparaciones de dominio; no copiarstats o engine. Reducido estático. **Aceptar:** 1–5/copiasduplicadas/temporales tienenpuestocorrecto, Alquimia2→3 solo activaelbonusreal, quitar/cancelarrevierteborradorsin consumir/descubrirsabor.
+**Secuencia:** elección del objeto en 130 ms; confirmar detiene el borrador. Ganancia asciende 4 px y coste se asienta 2 px durante unos 240 ms; después quedan los valores guardados. Signos, recurso y unidad distinguen coste y beneficio, además del color.
 
-## M08 · Álbum y sabores: hojear, encontrar, reconocer
+**Recursos y coste:** retrato, símbolos PV/PM y diagnósticos del recibo. CSS local; no recalcular efectos en React. En refugio se necesita un snapshot anterior exacto y compatible. Si falta, no se invierte un porcentaje para inventarlo.
 
-**Antes:** paginación/filterstate conilustración; sinpaso claro entrehojas ydetalle. **Después:** hoja saliente desvanece100ms, entranteasienta3px/160ms, sin doblaruna sola imagen como libro3D. Ficha seabrirá desdeunmarcodeconsulta ymarca de identidadreciénhallada solo cuando proceda del recibo nuevo, no cada filtro. Saboresreveladossoloactivaciónconfirmada.
+**Control y aceptación:** cancelar no anima un cambio confirmado; reducido conserva cifras estáticas. Contrastar antes/después con estado guardado para refugio, tratos, encuentro legacy y decisiones estacionales. Una consulta histórica no vuelve a parecer una curación.
 
-**Tech/assets:** DOMgrid/portraitsinvariantes, transformación delcontenido sininterceptarbotones; sin recargar todaspáginas. Reducido instantáneo. **Aceptar:** filtrounopensamientodefoco, no reproduce premio/hallazgoporhojear; 200%texto/empty conserveacciones; no escucha-hoverúnica.
+## M06 · Cofre, forja y bóveda tienen materia
 
-## M09 · Navegación y diálogo: entrar, consultar, volver
+**Problema y evidencia:** volver a montar un recibo podía reproducir el pop del objeto y parecer otra concesión.
 
-**Antes:** transicionesdiversasCSS/GSAP/estadosalgunasloopambientales. **Después:** entrada/interior/cancelacióndeconsulta tienenasentamiento120–180ms ydirección coherente (objetoconsultado seabre desdecentro, salida se disuelve), sin desplazartoda laweb. Pendiente/recuperación sellosinfirmar estático; éxito solo trasreceipt. Errorcon foco yacciónclara, sinshakeglobal.
+**Secuencia:** solo un recibo nuevo activa un impulso de 160 ms y asentamiento del objeto de 240 ms. La varita aparece desde su peana; la bóveda devuelve el botín confirmado; el cofre conserva cantidades y procedencia. No fabricar una segunda tirada visual.
 
-**Tech:** CSS/WAAPIeventual, sin nueva librería. Cancelar/unmount abortaeffect sinbloquearfocusrestore; navegaciónhashatrásmantienelasrutas. **Aceptar:** transiciones no retardan operación ni dobletap; offline/UNKNOWN_COMMITnocelebran; semanticadialog/teclado permanece; conarti ausente sepuedeterminarelrecorrido.
+**Recursos y coste:** PNG de objetos, llave, sello y peanas actuales; transformación CSS o WAAPI breve. No prometer herramientas trabajando ni tapa articulada donde falta arte separado. Sin partículas genéricas adicionales.
 
-## M10 · Cierre, Halloween y ambiente: un solo protagonista
+**Control y aceptación:** consultar vuelve estático; error, falta de llave o saldo no celebran éxito. Cancelar conserva recursos; respuesta perdida recupera el mismo objeto; arte ausente conserva nombre y cantidad. La animación no mantiene un saldo antiguo como vigente.
 
-**Antes:** closure-spoils340ms se repite porremount;Halloween yasepara grantnuevo/historia; ambientelamparas/mist/motes devarios11–21s permanece detrasdeescenas. **Después:** nuevocierre ilumina botínuna vez260–420ms, suuso esprincipal; consultahistórica estática. Halloween3luces mantienenritmofinito,recuerdo450ms solo grantnuevo. Ambiente se suspende conmodal/replay/oculto/reducido yvuelveaquietud en lugar deañadir másloops.
+## M07 · Objetos que encajan y formación que responde
 
-**Tech/assets:** CSS/finitesello/objetosvigentes + prioridad escena existente. No newtickerparabackground. **Aceptar:** animacionesambientalesdetenidas durantefoco yoculto, ningúncelebrationhistórico, seguimientotrasusarbotínseinforma porstockreal; nextintention no concede recursos.
+**Problema y evidencia:** cambios de equipo y sinergia tienen poco reconocimiento específico.
 
-## Muestra e iteración
+**Secuencia:** varita, escoba o gragea asientan 4 px→0 en 160 ms. El símbolo de composición responde durante 180 ms cuando cambia el efecto real. Consultar una formación ya guardada permanece estático. El borrador de gragea no se celebra como consumo.
 
-Primera muestra implementada en contexto: un hechizo y una apertura normal/repetida con recursos existentes, snapshotsdepruebaetiquetados y cuentaaislada. Capturas seleccionadas de anticipación/contacto/resoluciónsoloLinux;no seconfunden conregistrotemporal. Medirritmoyliberación;revisarantesdeadmitir spritesheetnuevo/rig. Propuestasdeposesarticuladas/audio/quebrado3D quedan fueradelprimerincremento.
+**Recursos y tecnología:** slots, objetos y retratos existentes; firma de cambio y Motion mini/CSS. Comparaciones del dominio compartido; sin duplicar estadísticas o fórmulas. Evitar dos transforms anidados para el mismo gesto.
+
+**Control y aceptación:** cancelar o quitar revierte el borrador sin consumir ni descubrir. Cubrir 1–5 unidades, temporales, duplicados, vacío→equipado y equipamiento diferente. Alquimia 2→3 responde al bono real; 2→2 no finge otro umbral. Reducido elimina el tween.
+
+## M08 · Hojear y reconocer
+
+**Problema y evidencia:** filtro o página cambia de golpe y no tiene una transición local coherente.
+
+**Secuencia propuesta:** salida de hoja de 100 ms y asentamiento de entrada de 3 px/160 ms. El mínimo integrado puede omitir la salida para no retrasar la consulta. No deformar una imagen plana como un libro 3D ni poner una marca de descubrimiento por filtrar.
+
+**Recursos y coste:** grid y retratos actuales; transformación del contenido, sin interceptar botones ni cargar todas las páginas. Un nuevo sabor sigue dependiendo de la activación confirmada.
+
+**Control y aceptación:** primera consulta estática, filtro conserva foco, reducido inmediato. Vacíos y texto ampliado conservan acciones. Cambiar página no reproduce premios ni hallazgos; hover, foco y toque tienen consulta equivalente.
+
+## M09 · Diálogos y operaciones con un ritmo común
+
+**Problema y evidencia:** entradas por montaje y confirmaciones tienen ritmos distintos; una operación incierta necesita estabilidad, no espectáculo.
+
+**Secuencia:** entrada del diálogo en 160 ms, objeto en 180 ms y reconocimiento breve del recibo. Cierre inmediato para devolver foco. Pendiente, offline y error conservan explicación y recuperación, sin una animación de éxito.
+
+**Recursos y coste:** superficies, iconos y sellos actuales; CSS/Motion mini finitos. No tween global sobre toda la aplicación ni shake por cada error. No añadir un spinner que represente un progreso inexistente.
+
+**Control y aceptación:** controles disponibles sin esperar al tween, cancelación inmediata y foco al origen. Una identidad confirmada se anuncia una vez; cambio de idioma o navegación no vuelve a conceder ni animar. Fallo de renderer no elimina semántica DOM.
+
+## M10 · Cierre protagonista y ambiente subordinado
+
+**Problema y evidencia:** cierre montado puede volver a animar botín; ambiente sigue compitiendo con la escena focal.
+
+**Secuencia:** resultado breve, botín asienta en unos 340 ms y orientación por stock actual. Un recuerdo nuevo puede tener su cierre excepcional existente, finito; el histórico permanece estático. El ambiente pausa durante arena, diálogos y pestaña oculta, y vuelve sin salto de lógica.
+
+**Recursos y tecnología:** ilustraciones y objetos actuales, caché visual acotada y CSS de visibilidad/prioridad. Sin más motas, audio automático, premios adicionales o pantalla nueva de misión. Usar botín actualiza la orientación sin iniciar otra expedición.
+
+**Control y aceptación:** victoria inicial, repetida, derrota y empate conservan su cierre correcto. La intención no tapa llave/rana/equipo pendiente. Reducido muestra el mismo resultado y acciones; liberar timers y listeners al salir. Interés por repetir y satisfacción siguen siendo hipótesis para la sesión humana.

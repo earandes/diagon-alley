@@ -1,0 +1,18 @@
+{
+  "candidate": "6910a48471198d7d4fbd220df257abf7423ab7b5",
+  "ci": "https://github.com/earandes/diagon-alley/actions/runs/38959694470",
+  "conclusion": "success",
+  "treesOrBlobs": {
+    "src": "210e0f940a40986f2b4434edc8dc6cb981b645ec",
+    "tests": "47a5329c726fe0f9bc5cc4be979e6b4c3c581af9",
+    "tools": "57318d1df27049ef8b1f1887894103a9b6cc1e15",
+    ".github": "fa4a10c25372d91760a5595c77c3d953ac401717",
+    "package.json": "7624c06b3bf5c620b39cb74042a7a0a3467f0823",
+    "package-lock.json": "f8d0c9d8aab1a5931825ecd76ccc979dea21862c",
+    "playwright.motion-a69.config.ts": "16577400200c8ce4e9502acf2191c40891850b9d",
+    "playwright.seasonal-a68.config.ts": "7b5340e97cce4389f37a6315fe0b7ef075b25c6d",
+    "playwright.local-smoke.config.ts": "324b278f236cff7cbbd455c90795db6be6d08af7",
+    "playwright.trial.config.ts": "cfc015993bed6e533570f56d49b5d7f5e8bfd7ee"
+  },
+  "note": "Final evidence-only commit must preserve these objects. Compare git diff candidate..final; documentation does not change tested runtime."
+}

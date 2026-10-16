@@ -1,36 +1,50 @@
 # A69 · Dirección de movimiento y ejecución posterior
 
-16octubre2026. Base main2b9df81 + incremento localA68. Enric pide primero investigación/auditoría/propuesta sin implementación ni producción en lote; su última instrucción autoriza después implementar, validar y subir a main. Se ejecutan en ese orden. No nueva dependencia, lote, audio, publicación o despliegue. Los Word y archivos históricos permanecen intactos.
+16 de octubre de 2026. Base: main `2b9df81` más el incremento local A68. La última instrucción de Enric autoriza: **auditar y proponer primero; después implementar, validar y subir a main**. No autoriza despliegue, audio, nuevas dependencias o producción en lote. Los Word y evidencias históricas permanecen intactos.
 
-## Estado y propósito
+## Estado inicial y experiencia buscada
 
-Stack comprobado: React19.3/Pixi8.22/GSAP3.15/Motion14.2(mini)/CSS/Canvas2D. Una región; Diagon principal/ARCANA, ES/EN desdeAjustes. Inventario autoritativoPG, Redis, resultados guardados antes deanimar. A68 local tiene495unitarios/76integraciones ysmokeparcial; matrizLinux pendiente. No usar CI histórica como evidencia del árbol nuevo.
+Stack comprobado: React 19.3, Pixi 8.22, GSAP 3.15, Motion 14.2 mini, CSS y Canvas2D. Una región; Diagon Alley principal y ARCANA intercambiable; ES/EN desde Ajustes. PostgreSQL conserva inventario y operaciones; Redis proporciona autoridad temporal y sesiones. El resultado se guarda antes de animar.
 
-Buscamos leer acción→consecuencia mediante peso, contacto, ritmo y retorno al reposo. No aumentar ruido o prometer rig desde un bitmap. Recorridos: preparar→nodo→resultado→ruta; preparar→arena→impactos→desenlace; compra/apertura→descubrimiento→álbum; objeto→confirmación→uso/historia. El resultado persistido no depende de la coreografía.
+Al iniciar esta fase A68 tenía 495 unitarios, 76 integraciones y un smoke básico correcto. La ampliación gráfica local había alcanzado el watchdog; no se considera validada su matriz Linux ni se reutiliza CI histórica como prueba del nuevo árbol.
 
-## Alcance de la ejecución posterior al informe
+Buscamos leer acción → consecuencia mediante peso, contacto, ritmo y retorno al reposo. Un recorte plano no se presenta como rig. El resultado persistido no depende de coreografía ni de metadatos visuales.
 
-Diez mejoras priorizadas M01–M10 de MOTION.md/BACKLOG.md, implementadas con recursos actuales donde la auditoría confirme consumidor real. Primera unidad completa de implementación: relojes y efectos de combate confirmados + ciclo de vida/pausa/omisión, seguida por apertura y feedback contextual compartido. Rehacer personajes/capas/fotogramas nuevos queda como muestra futura propuesta, sin lote ni instalación. Ninguna regla/estadística/economía/RNG/snapshot cambia.
+## Alcance y recorridos
 
-Se preserva todoA68. La integración del juego auditado necesita sus archivos locales relacionados: incluirlos de forma explícita, validar su matriz pendiente en Linux y registrar la autorización nueva de integración, sin añadir untracked históricos ajenos. Ningún push a main hasta comprobar el candidato; se permite rama/PR de comprobación como paso necesario paraCI Linux. No desplegar.
+Diez mejoras M01–M10 de [MOTION](MOTION.md) y [BACKLOG](BACKLOG.md), con assets actuales y consumidores reales:
 
-## Invariantes y aceptación
+- Preparación → nodo → resultado → ruta.
+- Preparación → arena → impactos → desenlace.
+- Compra o unidad poseída → apertura → descubrimiento → álbum.
+- Objeto → confirmación → uso → consulta histórica.
 
-Solo eventos existentes y receipts confirmados disparan éxito; consulta, cancelación, offline o respuesta incierta no producen celebración. Idioma/pack, navegación histórica yrecarga no repiten ritos. Esos metadatos visuales no conceden ni niegan objetos. Pausa/2x/oculto mantienen fase/cursor consistente; omitir lleva al resultado confirmado y libera recursos. No esperar decoding infinito ni esconder espera de red tras otra pantalla.
+Primero se integra arena y ciclo de vida; después apertura; finalmente feedback contextual compartido. Nuevas poses, piezas articuladas y mecanismos permanecen como muestras propuestas, sin lote. Ninguna regla, estadística, economía, RNG o snapshot se modifica por A69.
 
-Misma semántica DOM accesible con renderer/arte ausentes, reducido estático equivalente, controles siempre accesibles, sinvictoriaanticipada. Relojes, rAF/ticker/timeline/listeners/texturas se destruyen al desmontar. Medición desdeacción hastaresultado utilizable, diferenciar frío/sostenido/pausa/omisión y softwarefixture de dispositivo real.
+Se preserva A68. Integrar el juego auditado requiere incluir explícitamente sus dependencias locales y comprobar Halloween en Linux. La autorización final de integración sustituye el no-push de aquella fase únicamente para este conjunto validado; no se incorporan archivos históricos no rastreados ajenos. Rama y PR de comprobación son pasos necesarios para CI. Main se actualiza después de validar; no se despliega.
+
+## Invariantes y recuperación
+
+Solo sucesos y recibos confirmados disparan éxito. Consulta, cancelación, offline y respuesta incierta no conceden ni celebran premios. Idioma, pack, navegación histórica y recarga no vuelven a ejecutar operaciones.
+
+La caché visual acotada de sesión evita repeticiones de presentación; no es autoridad económica. Perderla puede repetir una animación, nunca conceder otro objeto. El registro y la recuperación de operaciones se conservan.
+
+Pausa, 2x y ocultación mantienen fase y cursor. Omitir llega al resultado guardado y libera recursos. Fallback DOM, teclado, foco, texto funcional y movimiento reducido conservan acciones equivalentes. No anunciar victoria antes de reproducir el resultado ni ocultar espera mediante un saldo obsoleto. Limpiar RAF, ticker, timeline, listeners, observers y texturas propias al salir.
 
 ## Método y seguridad
 
-1. Leer fuentes/código/evidencia y consultar fuentesoficiales.
-2. Completar inventario+diagnóstico+10fichas+tecnología+assets+validación antes de tocarapp.
-3. TDD en comportamiento relevante, implementar por archivos asignados, comprobar tipos/unit/PGRedis/build.
-4. Ningún navegador local nuevo: A68 ya agotó ampliaciones porwatchdog. Matrices/perfiles/capturas seleccionadas soloCI Linux, serializadas conguard original, sin vídeo/trazas/auto-retries. No aumentar límites delMac ni scripts alternativos.
-5. Rama de candidato con cambios explícitos →CI Linux →corregir →main ySHA/CI comprobados. La autorización final deEnric permiteesta fase, sin publicación.
+1. Leer fuentes, código y evidencia; consultar documentación oficial.
+2. Completar inventario, diagnóstico, diez fichas, tecnología, assets y validación antes de editar la app.
+3. TDD de riesgos relevantes; implementación por recorridos; tipos, unitarios, PostgreSQL/Redis y build.
+4. Ningún navegador local nuevo. A68 ya alcanzó el watchdog al ampliar. Linux ejecuta matrices y evidencia seleccionada en serie, con guard original, sin vídeo, trazas o reintentos automáticos. No aumentar límites del Mac ni usar scripts alternativos.
+5. Revisar diff y dependencias; candidato en PR → CI → correcciones → main, SHA y estado real de CI.
 
 ## Plan vivo
 
-- Completado: auditoría y propuesta consolidada antes de editar la aplicación.
-- Implementado localmente: M01–M10 con assets vigentes; 514 unitarios y tipos correctos.
-- Pendiente: validaciónLinuxA68+A69/regresiones/performancecomparables.
-- Pendiente: revisión de diff, integraciónmain/CI yentrega conlimitacioneshumanas/físicas.
+- **Completado:** auditoría y propuesta antes de editar la aplicación.
+- **Implementado localmente:** M01–M10 con assets vigentes; registros por bloque.
+- **Comprobado localmente:** 515 unitarios, 77 integraciones PostgreSQL/Redis, tipos y build.
+- **Comprobado en Linux:** CI38959694470 completa correcta; A68 12/12, A69 19 correctos/5 omisiones intencionadas y todas las regresiones. Rendimiento y límites en PERFORMANCE.md.
+- **Inspeccionado:** cuatro capturas seleccionadas del candidato6910a48; no se confunden imágenes estáticas con evidencia de movimiento.
+- **Cierre:** integración por avance directo en main y verificación remota tras guardar únicamente documentación/evidencia. El resultado remoto se registra en la entrega.
+- **Posterior:** observación humana, dispositivos físicos y muestra de articulación. No bloquean por sí solos la entrega técnica ni se dan por realizadas.

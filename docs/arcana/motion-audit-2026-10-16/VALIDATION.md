@@ -56,7 +56,7 @@ Duración sugerida: unos diez minutos, con objetivos sin explicar la solución.
 
 Registrar dudas, ayuda, objetivos percibidos y pausas. No atribuir diversión o comprensión a simulaciones. Dispositivos físicos y lector hablado permanecen pendientes.
 
-Los resultados Linux y sus límites se añaden en el informe tras completar la ejecución.
+La siguiente cronología conserva estados intermedios. El resultado vigente está en «Resultado final Linux» al final; las menciones históricas a pendientes no describen el candidato final.
 
 ## Primer resultado Linux completo y corrección
 
@@ -81,3 +81,37 @@ El harness distingue ahora cambio de pack de remontaje: el primero conserva la c
 La traza de mapa exige coincidencia con el último recibo del nodo actual, usando el read-model existente. No basta compartir runId: un refresco tras otra pestaña puede conservar un recibo local anterior. Es protección deducida de las condiciones de renderizado; no se presenta esa carrera específica como observación humana o reproducción gráfica ejecutada.
 
 La entrada de figuras conserva opacidad1 para unidades vivas y0,35 para caídas. Los retratos DOM ya están presentes mientras se cargan texturas: multiplicar de nuevo por la fase de entrada podía atenuarlos al sustituir la capa, especialmente si se pausaba antes de que el renderer estuviera listo. Se conserva el desplazamiento de entrada sin ese segundo fade. La matriz comprueba el número de figuras renderables reales y una pausa anterior a la carga asíncrona; ese contador de sprites no sustituye una prueba de contraste/píxeles. No cambia el BattleLog ni se ocultan actores para ajustar tamaño.
+
+## Resultado final Linux
+
+[CI38959694470](https://github.com/earandes/diagon-alley/actions/runs/38959694470) **success**, 16octubre2026, 20:05:33–20:35:19UTC, Ubuntu/Node24, head `6910a48471198d7d4fbd220df257abf7423ab7b5`, merge ensayado `10d2657e19b251b3c9b8c64f45bc3a30efc3c148`. Un worker, secuencial, retries0. [Metadatos descargados](evidence/ci-38959694470.json), [resultados del log](evidence/ci-results.txt).
+
+| Comando real | Resultado |
+| --- | --- |
+| `npm run typecheck` | Correcto |
+| `npm run validate:content` | 6 correctos |
+| `npm test` | 515 correctos,72 archivos |
+| `npm run test:integration` | 77 correctos,13 archivos, PostgreSQL16.9/Redis7 reales |
+| `npm run build` | Correcto; aviso conocido de chunk >500kB |
+| `npm run verify:arcana:build` | Correcto;14.658.287bytes de artefacto privado dual, I1 histórico excluido |
+| `npx playwright test --config playwright.seasonal-a68.config.ts` | 12 correctos,2.3min |
+| `ARCANA_CAPTURE_A69=1 npx playwright test --config playwright.motion-a69.config.ts` | 19 correctos,5 omitidos intencionados,6.9min |
+| `ARCANA_TRIAL_COMPILED=1 npm run test:e2e -- --project chromium --project webkit --reporter=line,github` | 56 correctos |
+| `npx playwright test --config playwright.progression-a67.config.ts --project chromium-a67 --project webkit-a67` | 20 correctos |
+| `npx playwright test --config playwright.gameplay-a63.config.ts` | 16 correctos |
+| `npx playwright test --config playwright.header-pact-a66.config.ts` | 20 correctos |
+| `npx playwright test --config playwright.intentions-a65.config.ts` | 8 correctos |
+| `npm run test:pwa -- --project chromium --project webkit` | 12 correctos |
+| `node tools/verification/build-a66-reference.mjs` | Referencia reconstruida |
+| `A67_PERFORMANCE_VARIANT=baseline npx playwright test --config playwright.performance-a67.config.ts` | 1 correcto |
+| `A67_PERFORMANCE_VARIANT=current npx playwright test --config playwright.performance-a67.config.ts` | 1 correcto |
+
+Las cinco omisiones A69 son la misma muestra de capturas/30ciclos, ejecutada solo en Chromium1280 para evitar duplicarla en otros cinco proyectos. Las demás pruebas cubren ambos motores y los tres tamaños; no se ocultan fallos con reintentos.
+
+A69 comprueba el mismo BattleLog, pausa temprana antes de texturas, pausa/2x/ocultación/inspector/omisión, host anterior destruido al cambiar pack, DOM visible ante pérdida de contexto, cuatro rarezas, nuevo/repetido, omitido/reducido, idioma/pack y consulta/remontaje sin ritual repetido. Las cifras del renderer son instrumentación de recursos propios, no perfil GPU ni prueba de ausencia global de fugas. Las matrices integradas conservan operaciones/recompensas en PostgreSQL/Redis y recorridos A63/A65/A66/A67/A68. No acreditan todos los interleavings asíncronos posibles.
+
+Cuatro capturas seleccionadas del candidato final inspeccionadas desde archivos: figuras/PV presentes, contacto local, caídos reconocibles y rango/estrellas legibles al resultado. [Galería](GALLERY.md). No hay vídeo ni captura por celda. DOM y Canvas se inspeccionan mediante imagen e instrumentación; no se equipara una imagen estática con continuidad temporal.
+
+[Medidas de presentación](PERFORMANCE.md): diez segundos calientes conP95rAF16,7ms y574paints; arranque con picos hasta392ms WebKit. Los perfiles heredados de Pacto/Taller sí incluyen API/red desde pointerdown: [referencia](evidence/regression-performance/baseline.json) y [actual](evidence/regression-performance/current.json), una muestra de9acciones cada uno. Pacto-confirmar utilizable198→191,4ms y asentado232,5→232,6ms; no se atribuye una mejora estadística a una muestra. La apertura A69 parte de recibo confirmado y no incluye compra/red. Sin medición CPU atribuible/GPU total ni teléfono físico.
+
+No se ejecutó navegador local para A69. Los intentos A68 anteriores y sus detenciones permanecen en su carpeta histórica. La sesión humana, lector hablado, dispositivo físico y muestra articulada siguen pendientes y no se presentan como cobertura técnica ejecutada. La comprensión y satisfacción son hipótesis.
