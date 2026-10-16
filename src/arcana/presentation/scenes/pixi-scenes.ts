@@ -79,6 +79,14 @@ export async function createPixiScene(host: HTMLElement, data: SceneData) {
     viewHeight = host.clientHeight;
   const paint = () => {
     if (destroyed) return;
+    // React commits the log frame after the clock advances. Never mix the new
+    // event's phase with the previous event's actor, target or condition.
+    if (
+      current.kind === 'arena' &&
+      current.clock &&
+      current.clock.snapshot().cursor !== current.frame.cursor
+    )
+      return;
     const width = viewWidth,
       height = viewHeight;
     if (width < 1 || height < 1) return;
@@ -281,13 +289,11 @@ export async function createPixiScene(host: HTMLElement, data: SceneData) {
           current.clock?.snapshot().progress ??
           Math.min(elapsed / activePack.animations.arena.eventMs, 1);
         if (target && p < 1)
-          sparks
-            .ellipse(target.x, target.y + 10 - p * 12, 12 + p * 20, 6 + p * 7)
-            .stroke({
-              color: paletteColor(event.kind === 'healed' ? 'unusualAccent' : 'rivalAccent'),
-              width: 2,
-              alpha: Math.sin(p * Math.PI) * 0.8,
-            });
+          sparks.ellipse(target.x, target.y + 10 - p * 12, 12 + p * 20, 6 + p * 7).stroke({
+            color: paletteColor(event.kind === 'healed' ? 'unusualAccent' : 'rivalAccent'),
+            width: 2,
+            alpha: Math.sin(p * Math.PI) * 0.8,
+          });
       }
     }
     app.render();
