@@ -313,10 +313,13 @@ export async function createPixiScene(host: HTMLElement, data: SceneData) {
       stamp = nextStamp;
       elapsed = 0;
     }
-    if (next.kind === 'arena' && next.playing && !document.hidden) app.start();
+    const ticking = next.kind === 'arena' && next.playing && !document.hidden;
+    if (ticking) app.start();
     else app.stop();
-    host.dataset.activeTicking = String(next.kind === 'arena' && next.playing && !document.hidden);
-    paint();
+    host.dataset.activeTicking = String(ticking);
+    // An active ticker paints the next frame. React phase updates only invalidate
+    // geometry; painting immediately as well needlessly submits a second frame.
+    if (!ticking) paint();
   };
   const observer = new ResizeObserver(([entry]) => {
     viewWidth = entry.contentRect.width;
