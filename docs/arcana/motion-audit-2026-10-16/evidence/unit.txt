@@ -6,12 +6,12 @@
  RUN  v5.0.3 /Users/enricarandes/work/diagon-alley
 
 
- Test Files  71 passed (71)
-      Tests  514 passed (514)
-   Start at  20:13:22
-   Duration  2.49s (transform 56%, import 25%, tests 18%, worker 1%)
+ Test Files  72 passed (72)
+      Tests  515 passed (515)
+   Start at  20:19:01
+   Duration  2.06s (transform 53%, import 27%, tests 19%, worker 1%)
 
-  Transform  transforming modules took 9.64s · 56% of tracked time, re-done on every run
+  Transform  transforming modules took 7.34s · 53% of tracked time, re-done on every run
              persist transforms across runs with fsModuleCache: true
              learn more: https://vitest.dev/guide/improving-performance#caching-between-reruns
 

@@ -17,6 +17,7 @@ const isolatedExperience = [
   '**/*-a66.spec.ts',
   '**/*-a67.spec.ts',
   '**/browser-local-smoke-a67.spec.ts',
+  '**/seasonal-a68.spec.ts',
 ];
 export default defineConfig({
   testDir: './tests/browser-trial',

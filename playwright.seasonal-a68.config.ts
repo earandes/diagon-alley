@@ -25,7 +25,10 @@ export default defineSafeConfig({
     command:
       'npx --no-install vite preview --host 127.0.0.1 --port 5456 --strictPort --mode arcana',
     url: 'http://127.0.0.1:5456/',
-    env: { ARCANA_TRIAL_NAMESPACE: `a68-seasonal-${randomUUID()}` },
+    env: {
+      ARCANA_TRIAL_NAMESPACE: `a68-seasonal-${randomUUID()}`,
+      ARCANA_TRIAL_CLOCK_ISO: '2026-10-20T12:00:00+02:00',
+    },
     reuseExistingServer: false,
   },
 });

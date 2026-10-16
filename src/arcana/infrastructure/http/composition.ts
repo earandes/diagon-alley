@@ -1,3 +1,4 @@
+import type { AuthorityClock } from '../../application/authority-ports';
 import { ForgeWandUseCase, OpenObsidianVaultUseCase } from '../../application/commerce-use-cases';
 import { ArcanaError } from '../../domain/errors';
 import type { Pool } from 'pg';
@@ -25,6 +26,7 @@ import { SeasonalEventUseCase } from '../../application/seasonal-events';
 import type { SeasonalEdition } from '../../domain/seasonal/events';
 import { seasonalEdition } from '../content/seasonal-content';
 interface CompositionOptions {
+  readonly clock?: AuthorityClock;
   readonly seasonal?: () => SeasonalEdition;
   readonly pool: Pool;
   readonly redis: ConstructorParameters<typeof RedisAuthority>[0];
@@ -38,6 +40,7 @@ interface CompositionOptions {
 export function composeArcanaApi(options: CompositionOptions) {
   const games = options.games ?? new PostgresGameTransactions(options.pool);
   const authority = new RedisAuthority(options.redis, options.namespace);
+  const clock = options.clock ?? authority;
   const seeds = new CryptoBattleSeeds(),
     random = { fromSeed: (seed: number) => new SeededRandom(seed) };
   const commerce = () => {
@@ -50,7 +53,7 @@ export function composeArcanaApi(options: CompositionOptions) {
     seasonalEvent: new SeasonalEventUseCase(
       games,
       options.seasonal ?? (() => seasonalEdition),
-      authority,
+      clock,
     ),
     setIntention: new SetIntentionUseCase(games, () => ({
       ownedAffinities: options.campaign().ownedAffinities ?? {},
@@ -62,7 +65,7 @@ export function composeArcanaApi(options: CompositionOptions) {
     games,
     sessions: authority,
     limits: authority,
-    clock: authority,
+    clock,
     opening: options.opening,
     campaign: options.campaign,
     purchase: new PurchaseProductUseCase(games, options.opening),
@@ -72,7 +75,7 @@ export function composeArcanaApi(options: CompositionOptions) {
       games,
       options.campaign,
       { seeds, random },
-      { clock: authority, configuration: options.seasonal ?? (() => seasonalEdition) },
+      { clock, configuration: options.seasonal ?? (() => seasonalEdition) },
     ),
     setTeam: new SetTeamUseCase(games, options.campaign),
     equipEquipment: new EquipEquipmentUseCase(games),
@@ -80,7 +83,7 @@ export function composeArcanaApi(options: CompositionOptions) {
       games,
       options.campaign,
       new ResolveCombatUseCase(new CombatEngine(random), seeds),
-      authority,
+      clock,
       random,
       seeds,
     ),

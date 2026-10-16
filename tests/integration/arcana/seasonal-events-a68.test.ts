@@ -1,3 +1,5 @@
+import { composeArcanaApi } from '../../../src/arcana/infrastructure/http/composition';
+import { trialConfiguration } from '../../../src/arcana/infrastructure/content/trial-configuration';
 import { randomUUID } from 'node:crypto';
 import { Pool } from 'pg';
 import { createClient } from 'redis';
@@ -462,4 +464,34 @@ describe('A68 seasonal operations on real PostgreSQL and Redis', () => {
     });
     expect(await games.read(s.playerId)).toEqual(before);
   });
+});
+
+it('injects the same server trial clock into status and seasonal decisions without changing session authority', async () => {
+  const f = await setup({ start: false });
+  const config = trialConfiguration();
+  const runtime = composeArcanaApi({
+    pool,
+    redis,
+    namespace,
+    clock: f.clock,
+    opening: () => config.opening,
+    campaign: campaignFixture,
+    policy: { bodyLimit: 16384, maximumPerIp: 1000, maximumPerPlayer: 500, windowMs: 60000 },
+  });
+  try {
+    const grant = await runtime.authority.issue(f.playerId, 60000);
+    const headers = { authorization: `Bearer ${grant.token}` };
+    const status = await runtime.app.inject({ method: 'GET', url: '/api/state', headers });
+    expect(status.json().serverTime).toBe(during);
+    const response = await runtime.app.inject({
+      method: 'POST',
+      url: '/api/events/seasonal',
+      headers,
+      payload: await command(f, 'join', 'trial-clock'),
+    });
+    expect(response.statusCode).toBe(200);
+    expect((await games.read(f.playerId)).seasonal?.participations).toHaveLength(1);
+  } finally {
+    await runtime.app.close();
+  }
 });

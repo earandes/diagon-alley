@@ -18,7 +18,16 @@ async function runtime(loader: ViteDevServer, port: number): Promise<LocalTrial>
   const module = (await loader.ssrLoadModule(
     '/src/arcana/infrastructure/http/local-runtime.ts',
   )) as { createLocalTrial: typeof createLocalTrial };
-  return module.createLocalTrial(`http://127.0.0.1:${port}`, process.env.ARCANA_TRIAL_NAMESPACE);
+  // Opt-in server-side fixture only; no browser command can alter authority time.
+  const configured = process.env.ARCANA_TRIAL_CLOCK_ISO;
+  const fixedNow = configured === undefined ? undefined : Date.parse(configured);
+  if (fixedNow !== undefined && !Number.isSafeInteger(fixedNow))
+    throw new Error('Invalid trial clock');
+  return module.createLocalTrial(
+    `http://127.0.0.1:${port}`,
+    process.env.ARCANA_TRIAL_NAMESPACE,
+    fixedNow === undefined ? undefined : { now: async () => fixedNow },
+  );
 }
 /** Opt-in local authority for source and compiled-artifact verification, never a deployment server. */
 export function localAuthority(): Plugin {
