@@ -354,6 +354,9 @@ test('A69 CardReveal actual: four ranks, new/repeat, skip, reduced, language/pac
       await control(page, 'language');
       await control(page, 'pack');
       await expect(page.locator('.reveal')).toHaveAttribute('data-opening-state', 'result');
+      await control(page, 'unmount');
+      await control(page, 'mount');
+      await expect(page.locator('.reveal')).toHaveAttribute('data-opening-state', 'result');
       expect(await preserved(page)).toEqual(before);
       await report(page, `opening-${pack}-${lang}-repeat`, { isNew: false });
     }

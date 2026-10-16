@@ -97,6 +97,7 @@ function Fixture() {
   useEffect(() => {
     document.documentElement.lang = lang;
   }, [lang]);
+  const [, refreshPack] = useState(0);
   const unmount = () => {
     window.__a69Fixture.retired.push(...document.querySelectorAll<HTMLElement>('.scene-canvas'));
     setMounted(false);
@@ -165,7 +166,7 @@ function Fixture() {
           data-qa-pack
           onClick={() => {
             setContentPack(activePack.id === 'arcana' ? 'diagon-alley' : 'arcana');
-            setGeneration((n) => n + 1);
+            refreshPack((n) => n + 1);
           }}
         >
           Fixture pack
