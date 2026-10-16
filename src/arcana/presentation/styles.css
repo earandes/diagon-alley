@@ -1103,7 +1103,7 @@ button[data-primary-action]:hover:not(:disabled) {
 .arena-stage .scene-canvas {
   z-index: 2;
 }
-.arena-stage:has(.scene-canvas[data-art-ready='true']) .arena-portrait {
+.arena-stage:has(.scene-canvas[data-renderer='webgl'][data-art-ready='true']) .arena-portrait {
   opacity: 0 !important;
   animation: none;
 }

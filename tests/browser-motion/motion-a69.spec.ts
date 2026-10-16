@@ -249,6 +249,14 @@ test('A69 replay clock: pause, 2x, inspector, hidden, skip and renderer failure 
   await expect(panel).toHaveAttribute('data-replay-speed', '2');
   expect(await panel.getAttribute('data-replay-cursor')).toBe(frozen);
   expect(await panel.getAttribute('data-replay-progress')).toBe(phase);
+  const retiredHost = await scene.elementHandle();
+  await control(page, 'pack');
+  await expect(scene).toHaveAttribute('data-art-ready', 'true');
+  expect(await retiredHost!.evaluate((el: HTMLElement) => el.dataset.destroyed)).toBe('true');
+  expect(await retiredHost!.evaluate((el: HTMLElement) => el.dataset.textureCount)).toBe('0');
+  expect(await panel.getAttribute('data-replay-cursor')).toBe(frozen);
+  expect(await panel.getAttribute('data-replay-progress')).toBe(phase);
+  await expect(page.locator('.scene-canvas canvas')).toHaveCount(1);
   await auto(page).click();
   await expect
     .poll(async () => Number(await panel.getAttribute('data-replay-cursor')))
@@ -293,6 +301,7 @@ test('A69 replay clock: pause, 2x, inspector, hidden, skip and renderer failure 
       el.dispatchEvent(new Event('webglcontextlost', { bubbles: true, cancelable: true })),
     );
   await expect(page.locator('.scene-fallback')).toBeVisible();
+  await expect(page.locator('.arena-portrait').first()).not.toHaveCSS('opacity', '0');
   await expect(page.locator('[data-arena-outcome]')).toBeVisible();
   await expect(page.locator('.arena-exit')).toBeEnabled();
   await expect(page.locator('.pedestal')).toHaveCount(8);

@@ -29,7 +29,10 @@ export function SceneCanvas({
       unavailable = true;
       renderer.current?.destroy();
       renderer.current = null;
-      if (node) delete node.dataset.renderer;
+      if (node) {
+        delete node.dataset.renderer;
+        delete node.dataset.artReady;
+      }
       setFailed(true);
       failureCallback.current?.();
     };
@@ -54,6 +57,10 @@ export function SceneCanvas({
       node?.removeEventListener('webglcontextlost', abandon, true);
       renderer.current?.destroy();
       renderer.current = null;
+      if (node) {
+        delete node.dataset.renderer;
+        delete node.dataset.artReady;
+      }
     };
   }, [data.kind, packId]);
   useEffect(() => {
@@ -61,7 +68,12 @@ export function SceneCanvas({
   }, [data]);
   return (
     <>
-      <div className={`scene-canvas scene-${data.kind}`} ref={host} aria-hidden="true" />
+      <div
+        key={`${data.kind}:${packId}`}
+        className={`scene-canvas scene-${data.kind}`}
+        ref={host}
+        aria-hidden="true"
+      />
       {failed && <p className="scene-fallback">{text(language, 'graphicsUnavailable')}</p>}
     </>
   );
