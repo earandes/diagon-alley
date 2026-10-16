@@ -2,7 +2,7 @@ import { test, expect, type Page, type Locator } from '@playwright/test';
 import { mkdir, writeFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
 import { changeLanguage, startExpedition } from './game-fixture';
-import { readGame } from './route-helpers';
+import { readGame, expectMapFits } from './route-helpers';
 import { routePath } from '../support/arcana-route';
 import type { Language } from '../../src/arcana/domain/collection/wizards';
 
@@ -31,6 +31,14 @@ async function enter(page: Page, language: Language, pack = 'diagon-alley') {
   await page.goto('/');
   if (language === 'en') await changeLanguage(page, language);
   await page.locator('.portal-enter').click();
+  await expect(page.locator('[data-expedition-preparation="new"]')).toBeVisible();
+  const challenge = page.locator('[data-challenge-picker] > summary');
+  if (await challenge.count()) {
+    // A65 threat contracts belong to Tactical; Discovery intentionally has neutral intro duels.
+    await challenge.click();
+    await page.locator('[data-expedition-challenge="tactical"]').click();
+    await challenge.click();
+  }
   await startExpedition(page, language);
 }
 async function measure(page: Page, target: Locator, complete: () => Promise<unknown>) {
@@ -85,6 +93,7 @@ async function mapGeometry(page: Page) {
   const game = await readGame(page);
   const count = game.exploration!.run!.graph.nodes.length;
   await expect(page.locator('.map-node')).toHaveCount(count);
+  await expectMapFits(page);
   const result = await page.evaluate(() => {
     const host = document.querySelector('.map-scroll')!,
       viewport = { width: innerWidth, height: innerHeight };

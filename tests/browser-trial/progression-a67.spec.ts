@@ -3,7 +3,7 @@ import { Pool } from 'pg';
 import { mkdir, writeFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
 import { changeLanguage, startExpedition } from './game-fixture';
-import { readGame } from './route-helpers';
+import { readGame, expectMapFits } from './route-helpers';
 import { preparedRoutePath } from '../support/prepared-route';
 import { previewEncounterTrade } from '../../src/arcana/domain/exploration/encounter-trades';
 import type { Language } from '../../src/arcana/domain/collection/wizards';
@@ -151,30 +151,7 @@ async function conditionFixture(page: Page) {
 async function mapGeometry(page: Page) {
   const game = await readGame(page);
   await expect(page.locator('.map-node')).toHaveCount(game.exploration!.run!.graph.nodes.length);
-  // WebKit can deliver the viewport resize before ResizeObserver updates the scene layout.
-  // Wait for the actual geometry, never clip or remove actors to satisfy the assertion.
-  await expect
-    .poll(
-      () =>
-        page.locator('.map-scroll').evaluate((el) => {
-          const host = el.getBoundingClientRect();
-          return (
-            el.scrollHeight <= el.clientHeight + 1 &&
-            el.scrollWidth <= el.clientWidth + 1 &&
-            [...el.querySelectorAll('.map-node > button')].every((node) => {
-              const box = node.getBoundingClientRect();
-              return (
-                box.left >= host.left - 1 &&
-                box.right <= host.right + 1 &&
-                box.top >= host.top - 1 &&
-                box.bottom <= host.bottom + 1
-              );
-            })
-          );
-        }),
-      { message: 'The resized map and every actor must fit without scrolling' },
-    )
-    .toBe(true);
+  await expectMapFits(page);
 }
 for (const language of ['es', 'en'] as const)
   for (const pack of ['diagon-alley', 'arcana'] as const) {

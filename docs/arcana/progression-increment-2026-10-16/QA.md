@@ -25,6 +25,16 @@ La política de ruta del harness elige un camino sobrevivible usando el contenid
 
 Suites completas rechazadas en macOS antes de arrancar navegador/servidor; un worker global por suite y bloqueo entre comandos/worktrees; vídeo, traza y screenshot automáticos desactivados. Solo smoke fijo mediante watchdog, con límite 60 s y parada por presión o fallo de monitor. No garantiza inmunidad del compositor. [Diagnóstico y límites](HOST-INCIDENT.md).
 
+## Historial de CI y correcciones del harness
+
+- `38927428811`, SHA c858fa4: 55/56 regresiones. HUD esperaba botín de victoria tras escoger una rama solo hasta Encuentro y después perder el jefe. El receipt de derrota era correcto. Se fija el camino completo de la prueba antes de bifurcar; no se cambian rivales o premios.
+- `38928713276`, SHA16f76ea: regresión56/56. A67 16/20: cuatro WebKit leían altura anterior de escena inmediatamente tras cambiar viewport (744 frente contenedor672). La comprobación nueva espera a la geometría observable de ResizeObserver/React y exige además que cada actor esté dentro. No añade scroll, recorta actores o relaja el tamaño permitido. El resultado de esta corrección se registra en CI posterior; aquel16/20 no se convierte en aprobado.
+
+- `38930280886`, SHAcf8654c: regresión56/56, A6720/20, cierreA6316/16, intenciones8/8 y PWA12/12. Cabecera/Pactos14/20: tres lecturas de resize sin esperar y tres expectativas de amenaza especial en un duelo introductorio neutral de Descubrimiento. Se comparte la comprobación de geometría observable y el recorrido táctico elige Táctica explícitamente; la cabecera A66 sigue comprobándose en Descubrimiento. No se rebajan las aserciones de amenaza.
+- La comparación A66 no llegó a ejecutarse en esa corrida: `git archive` superaba el bufferstdout de256MB para un árbol de534.593.535bytes. El extractor escribe temporal en disco, extrae y retira ese archivo; no carga el árbol en el heap. El perfil A67 sí se ejecutó, pero sin pareja no demuestra una diferencia de latencia. CI35min permite las suites secuenciales; regresión general sobre buildcompilado en la siguiente corrida.
+
+La política técnica de ruta usa candidato0, refugioPV y pasar encuentros sin grageas. Para la cuenta inicial y sus tres Pactos coincide con lo confirmado. No es una política óptima general; el fallback BFS no acredita victoria y las fixtures futuras con equipo lleno deben declarar si sustituyen o pasan antes de reutilizarla. No se deduce diversidad o dificultad de una fixture elegida para comprobar el receipt ganador.
+
 ## Pendiente de cerrar
 
 Regresión Linux sobre SHA exacto, comparación A66/A67 de acciones equivalentes, integración/main remoto/CI. No publicar ni desplegar. Dispositivo físico, lector hablado, diversión y comprensión humana quedan para sesión posterior.

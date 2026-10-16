@@ -4,6 +4,33 @@ import type { GameState } from '../../src/arcana/application/game';
 import type { NodeKind } from '../../src/arcana/domain/exploration/route';
 export const readGame = async (page: Page): Promise<GameState> =>
   (await (await page.request.get('/api/state')).json()).state;
+/** ResizeObserver/React can settle a frame after WebKit reports a new viewport. */
+export async function expectMapFits(page: Page) {
+  await expect
+    .poll(
+      () =>
+        page.locator('.map-scroll').evaluate((el) => {
+          const host = el.getBoundingClientRect();
+          return (
+            document.documentElement.scrollWidth <= innerWidth + 1 &&
+            document.documentElement.scrollHeight <= innerHeight + 1 &&
+            el.scrollHeight <= el.clientHeight + 1 &&
+            el.scrollWidth <= el.clientWidth + 1 &&
+            [...el.querySelectorAll('.map-node > button')].every((node) => {
+              const box = node.getBoundingClientRect();
+              return (
+                box.left >= host.left - 1 &&
+                box.right <= host.right + 1 &&
+                box.top >= host.top - 1 &&
+                box.bottom <= host.bottom + 1
+              );
+            })
+          );
+        }),
+      { message: 'The resized map and every actor must fit without scrolling' },
+    )
+    .toBe(true);
+}
 export async function pathTo(page: Page, kind: NodeKind) {
   await expect(page.locator('dialog')).toHaveCount(0);
   await expect(page.locator('[data-map-phase]')).toHaveAttribute('data-map-phase', 'route');

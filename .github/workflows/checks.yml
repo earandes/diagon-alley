@@ -8,7 +8,7 @@ permissions:
 jobs:
   check:
     runs-on: ubuntu-latest
-    timeout-minutes: 25
+    timeout-minutes: 35
     services:
       postgres:
         image: postgres:16.9@sha256:ddfe3e8713e3ee5b8f286082cb12512488dfbf3f5a1ecb0b74a42e6055af0a5f
@@ -44,7 +44,7 @@ jobs:
       - run: npm run verify:arcana:build
       - run: npx playwright install --with-deps chromium webkit
       - if: ${{ !cancelled() && steps.build.outcome == 'success' }}
-        run: npm run test:e2e -- --project chromium --project webkit
+        run: ARCANA_TRIAL_COMPILED=1 npm run test:e2e -- --project chromium --project webkit
       - if: ${{ !cancelled() && steps.build.outcome == 'success' }}
         run: npx playwright test --config playwright.progression-a67.config.ts --project chromium-a67 --project webkit-a67
       - if: ${{ !cancelled() && steps.build.outcome == 'success' }}

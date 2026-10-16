@@ -22,3 +22,5 @@ Los históricos A62 son referencias de composición, no condiciones/cuentas equi
 [Vídeo breve conservado de forja→equipo→arena](evidence/gallery/videos/forge-equip-arena-es-chromium.webm). Se convirtió una grabación existente; no se volvió a grabar tras el incidente. No se ha generado otro vídeo para completar una casilla de entrega. El BattleLog/estado y las pruebas de autoridad aportan evidencia distinta a estas imágenes.
 
 Inspección final de copias: marco4:5 sin deformación, dos alternativas y costes legibles a390, retratos de destinatarios, resultado PV/PM, ambos bandos de arena simultáneos. Taller puede desplazarse; la restricción sin scroll ordinario se aplica al mapa/arena. No prueba lector hablado, dispositivo físico o comprensión.
+
+La última revisión funcional abrevia el título común a «Encuentro» / «Encounter» en ambos packs para evitar sugerir azar en los tratos fijos. Estas capturas conservadas preceden ese ajuste de texto; no se han retocado ni vuelto a capturar en el Mac.

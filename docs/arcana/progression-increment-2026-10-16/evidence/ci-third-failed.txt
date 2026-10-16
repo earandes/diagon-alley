@@ -1,0 +1,167 @@
+check	Run npx playwright test --config playwright.header-pact-a66.config.ts	﻿2026-10-16T16:32:33.7321246Z ##[group]Run npx playwright test --config playwright.header-pact-a66.config.ts
+check	Run npx playwright test --config playwright.header-pact-a66.config.ts	2026-10-16T16:32:33.7322121Z [36;1mnpx playwright test --config playwright.header-pact-a66.config.ts[0m
+check	Run npx playwright test --config playwright.header-pact-a66.config.ts	2026-10-16T16:32:33.7385829Z shell: /usr/bin/bash -e {0}
+check	Run npx playwright test --config playwright.header-pact-a66.config.ts	2026-10-16T16:32:33.7386220Z ##[endgroup]
+check	Run npx playwright test --config playwright.header-pact-a66.config.ts	2026-10-16T16:32:37.2980006Z [WebServer] WebSocket server error: Port 24678 is already in use
+check	Run npx playwright test --config playwright.header-pact-a66.config.ts	2026-10-16T16:32:38.7128632Z 
+check	Run npx playwright test --config playwright.header-pact-a66.config.ts	2026-10-16T16:32:38.7129663Z Running 20 tests using 1 worker
+check	Run npx playwright test --config playwright.header-pact-a66.config.ts	2026-10-16T16:34:55.4773851Z ····FF·F······FFF···
+check	Run npx playwright test --config playwright.header-pact-a66.config.ts	2026-10-16T16:34:55.4783011Z 
+check	Run npx playwright test --config playwright.header-pact-a66.config.ts	2026-10-16T16:34:55.4792061Z   1) [chromium-a66] › tests/browser-trial/tactical-pacts-a65.spec.ts:133:5 › A65 choose, compare, prepare and resolve es diagon-alley 
+check	Run npx playwright test --config playwright.header-pact-a66.config.ts	2026-10-16T16:34:55.4792801Z 
+check	Run npx playwright test --config playwright.header-pact-a66.config.ts	2026-10-16T16:34:55.4793177Z     Error: expect(locator).toBeVisible() failed
+check	Run npx playwright test --config playwright.header-pact-a66.config.ts	2026-10-16T16:34:55.4793636Z 
+check	Run npx playwright test --config playwright.header-pact-a66.config.ts	2026-10-16T16:34:55.4794134Z     Locator: locator('[data-node="pasaje:5:0"] [data-threat="undefined"]')
+check	Run npx playwright test --config playwright.header-pact-a66.config.ts	2026-10-16T16:34:55.4795206Z     Expected: visible
+check	Run npx playwright test --config playwright.header-pact-a66.config.ts	2026-10-16T16:34:55.4795765Z     Timeout: 5000ms
+check	Run npx playwright test --config playwright.header-pact-a66.config.ts	2026-10-16T16:34:55.4796258Z     Error: element(s) not found
+check	Run npx playwright test --config playwright.header-pact-a66.config.ts	2026-10-16T16:34:55.4796631Z 
+check	Run npx playwright test --config playwright.header-pact-a66.config.ts	2026-10-16T16:34:55.4796800Z     Call log:
+check	Run npx playwright test --config playwright.header-pact-a66.config.ts	2026-10-16T16:34:55.4798010Z       - Expect "toBeVisible" locator('[data-node="pasaje:5:0"] [data-threat="undefined"]') with timeout 5000ms
+check	Run npx playwright test --config playwright.header-pact-a66.config.ts	2026-10-16T16:34:55.4799375Z       - waiting for locator('[data-node="pasaje:5:0"] [data-threat="undefined"]')
+check	Run npx playwright test --config playwright.header-pact-a66.config.ts	2026-10-16T16:34:55.4799934Z 
+check	Run npx playwright test --config playwright.header-pact-a66.config.ts	2026-10-16T16:34:55.4799947Z 
+check	Run npx playwright test --config playwright.header-pact-a66.config.ts	2026-10-16T16:34:55.4800164Z       221 |       await expect(
+check	Run npx playwright test --config playwright.header-pact-a66.config.ts	2026-10-16T16:34:55.4800935Z       222 |         page.locator(`[data-node="${duelId}"] [data-threat="${plan.threat}"]`),
+check	Run npx playwright test --config playwright.header-pact-a66.config.ts	2026-10-16T16:34:55.4801682Z     > 223 |       ).toBeVisible();
+check	Run npx playwright test --config playwright.header-pact-a66.config.ts	2026-10-16T16:34:55.4802160Z           |         ^
+check	Run npx playwright test --config playwright.header-pact-a66.config.ts	2026-10-16T16:34:55.4802786Z       224 |       await page.locator(`[data-node="${duelId}"]`).click();
+check	Run npx playwright test --config playwright.header-pact-a66.config.ts	2026-10-16T16:34:55.4803875Z       225 |       await expect(page.locator('.tactical-threat-help')).toBeVisible();
+check	Run npx playwright test --config playwright.header-pact-a66.config.ts	2026-10-16T16:34:55.4805016Z       226 |       await page.locator('.tactical-threat-help > summary').click();
+check	Run npx playwright test --config playwright.header-pact-a66.config.ts	2026-10-16T16:34:55.4806231Z         at /home/runner/work/diagon-alley/diagon-alley/tests/browser-trial/tactical-pacts-a65.spec.ts:223:9
+check	Run npx playwright test --config playwright.header-pact-a66.config.ts	2026-10-16T16:34:55.4806989Z 
+check	Run npx playwright test --config playwright.header-pact-a66.config.ts	2026-10-16T16:34:55.4808297Z     Error Context: test-results-header-pact-a66/tactical-pacts-a65-A65-cho-9f575-and-resolve-es-diagon-alley-chromium-a66/error-context.md
+check	Run npx playwright test --config playwright.header-pact-a66.config.ts	2026-10-16T16:34:55.4809410Z 
+check	Run npx playwright test --config playwright.header-pact-a66.config.ts	2026-10-16T16:34:55.4810449Z   2) [chromium-a66] › tests/browser-trial/tactical-pacts-a65.spec.ts:133:5 › A65 choose, compare, prepare and resolve es arcana 
+check	Run npx playwright test --config playwright.header-pact-a66.config.ts	2026-10-16T16:34:55.4811401Z 
+check	Run npx playwright test --config playwright.header-pact-a66.config.ts	2026-10-16T16:34:55.4811711Z     Error: expect(locator).toBeVisible() failed
+check	Run npx playwright test --config playwright.header-pact-a66.config.ts	2026-10-16T16:34:55.4812117Z 
+check	Run npx playwright test --config playwright.header-pact-a66.config.ts	2026-10-16T16:34:55.4812586Z     Locator: locator('[data-node="pasaje:5:0"] [data-threat="undefined"]')
+check	Run npx playwright test --config playwright.header-pact-a66.config.ts	2026-10-16T16:34:55.4813317Z     Expected: visible
+check	Run npx playwright test --config playwright.header-pact-a66.config.ts	2026-10-16T16:34:55.4813752Z     Timeout: 5000ms
+check	Run npx playwright test --config playwright.header-pact-a66.config.ts	2026-10-16T16:34:55.4814301Z     Error: element(s) not found
+check	Run npx playwright test --config playwright.header-pact-a66.config.ts	2026-10-16T16:34:55.4814634Z 
+check	Run npx playwright test --config playwright.header-pact-a66.config.ts	2026-10-16T16:34:55.4814796Z     Call log:
+check	Run npx playwright test --config playwright.header-pact-a66.config.ts	2026-10-16T16:34:55.4815741Z       - Expect "toBeVisible" locator('[data-node="pasaje:5:0"] [data-threat="undefined"]') with timeout 5000ms
+check	Run npx playwright test --config playwright.header-pact-a66.config.ts	2026-10-16T16:34:55.4817042Z       - waiting for locator('[data-node="pasaje:5:0"] [data-threat="undefined"]')
+check	Run npx playwright test --config playwright.header-pact-a66.config.ts	2026-10-16T16:34:55.4817952Z 
+check	Run npx playwright test --config playwright.header-pact-a66.config.ts	2026-10-16T16:34:55.4817972Z 
+check	Run npx playwright test --config playwright.header-pact-a66.config.ts	2026-10-16T16:34:55.4818193Z       221 |       await expect(
+check	Run npx playwright test --config playwright.header-pact-a66.config.ts	2026-10-16T16:34:55.4819002Z       222 |         page.locator(`[data-node="${duelId}"] [data-threat="${plan.threat}"]`),
+check	Run npx playwright test --config playwright.header-pact-a66.config.ts	2026-10-16T16:34:55.4819839Z     > 223 |       ).toBeVisible();
+check	Run npx playwright test --config playwright.header-pact-a66.config.ts	2026-10-16T16:34:55.4820323Z           |         ^
+check	Run npx playwright test --config playwright.header-pact-a66.config.ts	2026-10-16T16:34:55.4820964Z       224 |       await page.locator(`[data-node="${duelId}"]`).click();
+check	Run npx playwright test --config playwright.header-pact-a66.config.ts	2026-10-16T16:34:55.4822063Z       225 |       await expect(page.locator('.tactical-threat-help')).toBeVisible();
+check	Run npx playwright test --config playwright.header-pact-a66.config.ts	2026-10-16T16:34:55.4823061Z       226 |       await page.locator('.tactical-threat-help > summary').click();
+check	Run npx playwright test --config playwright.header-pact-a66.config.ts	2026-10-16T16:34:55.4824455Z         at /home/runner/work/diagon-alley/diagon-alley/tests/browser-trial/tactical-pacts-a65.spec.ts:223:9
+check	Run npx playwright test --config playwright.header-pact-a66.config.ts	2026-10-16T16:34:55.4825778Z 
+check	Run npx playwright test --config playwright.header-pact-a66.config.ts	2026-10-16T16:34:55.4826811Z     Error Context: test-results-header-pact-a66/tactical-pacts-a65-A65-cho-f5ba3-epare-and-resolve-es-arcana-chromium-a66/error-context.md
+check	Run npx playwright test --config playwright.header-pact-a66.config.ts	2026-10-16T16:34:55.4828109Z 
+check	Run npx playwright test --config playwright.header-pact-a66.config.ts	2026-10-16T16:34:55.4829140Z   3) [chromium-a66] › tests/browser-trial/tactical-pacts-a65.spec.ts:133:5 › A65 choose, compare, prepare and resolve en arcana 
+check	Run npx playwright test --config playwright.header-pact-a66.config.ts	2026-10-16T16:34:55.4829956Z 
+check	Run npx playwright test --config playwright.header-pact-a66.config.ts	2026-10-16T16:34:55.4830205Z     Error: expect(locator).toBeVisible() failed
+check	Run npx playwright test --config playwright.header-pact-a66.config.ts	2026-10-16T16:34:55.4830554Z 
+check	Run npx playwright test --config playwright.header-pact-a66.config.ts	2026-10-16T16:34:55.4830950Z     Locator: locator('[data-node="pasaje:3:1"] [data-threat="undefined"]')
+check	Run npx playwright test --config playwright.header-pact-a66.config.ts	2026-10-16T16:34:55.4831566Z     Expected: visible
+check	Run npx playwright test --config playwright.header-pact-a66.config.ts	2026-10-16T16:34:55.4831914Z     Timeout: 5000ms
+check	Run npx playwright test --config playwright.header-pact-a66.config.ts	2026-10-16T16:34:55.4832303Z     Error: element(s) not found
+check	Run npx playwright test --config playwright.header-pact-a66.config.ts	2026-10-16T16:34:55.4832561Z 
+check	Run npx playwright test --config playwright.header-pact-a66.config.ts	2026-10-16T16:34:55.4832940Z     Call log:
+check	Run npx playwright test --config playwright.header-pact-a66.config.ts	2026-10-16T16:34:55.4833748Z       - Expect "toBeVisible" locator('[data-node="pasaje:3:1"] [data-threat="undefined"]') with timeout 5000ms
+check	Run npx playwright test --config playwright.header-pact-a66.config.ts	2026-10-16T16:34:55.4834868Z       - waiting for locator('[data-node="pasaje:3:1"] [data-threat="undefined"]')
+check	Run npx playwright test --config playwright.header-pact-a66.config.ts	2026-10-16T16:34:55.4835369Z 
+check	Run npx playwright test --config playwright.header-pact-a66.config.ts	2026-10-16T16:34:55.4835384Z 
+check	Run npx playwright test --config playwright.header-pact-a66.config.ts	2026-10-16T16:34:55.4835556Z       221 |       await expect(
+check	Run npx playwright test --config playwright.header-pact-a66.config.ts	2026-10-16T16:34:55.4836251Z       222 |         page.locator(`[data-node="${duelId}"] [data-threat="${plan.threat}"]`),
+check	Run npx playwright test --config playwright.header-pact-a66.config.ts	2026-10-16T16:34:55.4836957Z     > 223 |       ).toBeVisible();
+check	Run npx playwright test --config playwright.header-pact-a66.config.ts	2026-10-16T16:34:55.4837574Z           |         ^
+check	Run npx playwright test --config playwright.header-pact-a66.config.ts	2026-10-16T16:34:55.4838098Z       224 |       await page.locator(`[data-node="${duelId}"]`).click();
+check	Run npx playwright test --config playwright.header-pact-a66.config.ts	2026-10-16T16:34:55.4838913Z       225 |       await expect(page.locator('.tactical-threat-help')).toBeVisible();
+check	Run npx playwright test --config playwright.header-pact-a66.config.ts	2026-10-16T16:34:55.4839811Z       226 |       await page.locator('.tactical-threat-help > summary').click();
+check	Run npx playwright test --config playwright.header-pact-a66.config.ts	2026-10-16T16:34:55.4840905Z         at /home/runner/work/diagon-alley/diagon-alley/tests/browser-trial/tactical-pacts-a65.spec.ts:223:9
+check	Run npx playwright test --config playwright.header-pact-a66.config.ts	2026-10-16T16:34:55.4841628Z 
+check	Run npx playwright test --config playwright.header-pact-a66.config.ts	2026-10-16T16:34:55.4842564Z     Error Context: test-results-header-pact-a66/tactical-pacts-a65-A65-cho-ff478-epare-and-resolve-en-arcana-chromium-a66/error-context.md
+check	Run npx playwright test --config playwright.header-pact-a66.config.ts	2026-10-16T16:34:55.4843576Z 
+check	Run npx playwright test --config playwright.header-pact-a66.config.ts	2026-10-16T16:34:55.4844556Z   4) [webkit-a66] › tests/browser-trial/tactical-pacts-a65.spec.ts:133:5 › A65 choose, compare, prepare and resolve es diagon-alley 
+check	Run npx playwright test --config playwright.header-pact-a66.config.ts	2026-10-16T16:34:55.4845359Z 
+check	Run npx playwright test --config playwright.header-pact-a66.config.ts	2026-10-16T16:34:55.4845670Z     Error: expect(received).toBeLessThanOrEqual(expected)
+check	Run npx playwright test --config playwright.header-pact-a66.config.ts	2026-10-16T16:34:55.4846061Z 
+check	Run npx playwright test --config playwright.header-pact-a66.config.ts	2026-10-16T16:34:55.4846216Z     Expected: <= 673
+check	Run npx playwright test --config playwright.header-pact-a66.config.ts	2026-10-16T16:34:55.4846545Z     Received:    744
+check	Run npx playwright test --config playwright.header-pact-a66.config.ts	2026-10-16T16:34:55.4846728Z 
+check	Run npx playwright test --config playwright.header-pact-a66.config.ts	2026-10-16T16:34:55.4847401Z       118 |   expect(result.document.width).toBeLessThanOrEqual(result.viewport.width + 1);
+check	Run npx playwright test --config playwright.header-pact-a66.config.ts	2026-10-16T16:34:55.4848572Z       119 |   expect(result.document.height).toBeLessThanOrEqual(result.viewport.height + 1);
+check	Run npx playwright test --config playwright.header-pact-a66.config.ts	2026-10-16T16:34:55.4849773Z     > 120 |   expect(result.host.scrollHeight).toBeLessThanOrEqual(result.host.height + 1);
+check	Run npx playwright test --config playwright.header-pact-a66.config.ts	2026-10-16T16:34:55.4850641Z           |                                    ^
+check	Run npx playwright test --config playwright.header-pact-a66.config.ts	2026-10-16T16:34:55.4851483Z       121 |   expect(result.host.scrollWidth).toBeLessThanOrEqual(result.host.width + 1);
+check	Run npx playwright test --config playwright.header-pact-a66.config.ts	2026-10-16T16:34:55.4852340Z       122 |   for (const node of result.nodes) {
+check	Run npx playwright test --config playwright.header-pact-a66.config.ts	2026-10-16T16:34:55.4852994Z       123 |     expect(node.x).toBeGreaterThanOrEqual(-1);
+check	Run npx playwright test --config playwright.header-pact-a66.config.ts	2026-10-16T16:34:55.4854185Z         at mapGeometry (/home/runner/work/diagon-alley/diagon-alley/tests/browser-trial/tactical-pacts-a65.spec.ts:120:36)
+check	Run npx playwright test --config playwright.header-pact-a66.config.ts	2026-10-16T16:34:55.4855720Z         at /home/runner/work/diagon-alley/diagon-alley/tests/browser-trial/tactical-pacts-a65.spec.ts:147:23
+check	Run npx playwright test --config playwright.header-pact-a66.config.ts	2026-10-16T16:34:55.4856478Z 
+check	Run npx playwright test --config playwright.header-pact-a66.config.ts	2026-10-16T16:34:55.4857665Z     Error Context: test-results-header-pact-a66/tactical-pacts-a65-A65-cho-9f575-and-resolve-es-diagon-alley-webkit-a66/error-context.md
+check	Run npx playwright test --config playwright.header-pact-a66.config.ts	2026-10-16T16:34:55.4858735Z 
+check	Run npx playwright test --config playwright.header-pact-a66.config.ts	2026-10-16T16:34:55.4859766Z   5) [webkit-a66] › tests/browser-trial/tactical-pacts-a65.spec.ts:133:5 › A65 choose, compare, prepare and resolve es arcana 
+check	Run npx playwright test --config playwright.header-pact-a66.config.ts	2026-10-16T16:34:55.4860979Z 
+check	Run npx playwright test --config playwright.header-pact-a66.config.ts	2026-10-16T16:34:55.4861321Z     Error: expect(received).toBeLessThanOrEqual(expected)
+check	Run npx playwright test --config playwright.header-pact-a66.config.ts	2026-10-16T16:34:55.4861751Z 
+check	Run npx playwright test --config playwright.header-pact-a66.config.ts	2026-10-16T16:34:55.4861906Z     Expected: <= 673
+check	Run npx playwright test --config playwright.header-pact-a66.config.ts	2026-10-16T16:34:55.4862269Z     Received:    744
+check	Run npx playwright test --config playwright.header-pact-a66.config.ts	2026-10-16T16:34:55.4862486Z 
+check	Run npx playwright test --config playwright.header-pact-a66.config.ts	2026-10-16T16:34:55.4863041Z       118 |   expect(result.document.width).toBeLessThanOrEqual(result.viewport.width + 1);
+check	Run npx playwright test --config playwright.header-pact-a66.config.ts	2026-10-16T16:34:55.4864165Z       119 |   expect(result.document.height).toBeLessThanOrEqual(result.viewport.height + 1);
+check	Run npx playwright test --config playwright.header-pact-a66.config.ts	2026-10-16T16:34:55.4865240Z     > 120 |   expect(result.host.scrollHeight).toBeLessThanOrEqual(result.host.height + 1);
+check	Run npx playwright test --config playwright.header-pact-a66.config.ts	2026-10-16T16:34:55.4866001Z           |                                    ^
+check	Run npx playwright test --config playwright.header-pact-a66.config.ts	2026-10-16T16:34:55.4866771Z       121 |   expect(result.host.scrollWidth).toBeLessThanOrEqual(result.host.width + 1);
+check	Run npx playwright test --config playwright.header-pact-a66.config.ts	2026-10-16T16:34:55.4867766Z       122 |   for (const node of result.nodes) {
+check	Run npx playwright test --config playwright.header-pact-a66.config.ts	2026-10-16T16:34:55.4868560Z       123 |     expect(node.x).toBeGreaterThanOrEqual(-1);
+check	Run npx playwright test --config playwright.header-pact-a66.config.ts	2026-10-16T16:34:55.4869669Z         at mapGeometry (/home/runner/work/diagon-alley/diagon-alley/tests/browser-trial/tactical-pacts-a65.spec.ts:120:36)
+check	Run npx playwright test --config playwright.header-pact-a66.config.ts	2026-10-16T16:34:55.4871068Z         at /home/runner/work/diagon-alley/diagon-alley/tests/browser-trial/tactical-pacts-a65.spec.ts:147:23
+check	Run npx playwright test --config playwright.header-pact-a66.config.ts	2026-10-16T16:34:55.4871766Z 
+check	Run npx playwright test --config playwright.header-pact-a66.config.ts	2026-10-16T16:34:55.4872693Z     Error Context: test-results-header-pact-a66/tactical-pacts-a65-A65-cho-f5ba3-epare-and-resolve-es-arcana-webkit-a66/error-context.md
+check	Run npx playwright test --config playwright.header-pact-a66.config.ts	2026-10-16T16:34:55.4873665Z 
+check	Run npx playwright test --config playwright.header-pact-a66.config.ts	2026-10-16T16:34:55.4874635Z   6) [webkit-a66] › tests/browser-trial/tactical-pacts-a65.spec.ts:133:5 › A65 choose, compare, prepare and resolve en diagon-alley 
+check	Run npx playwright test --config playwright.header-pact-a66.config.ts	2026-10-16T16:34:55.4875464Z 
+check	Run npx playwright test --config playwright.header-pact-a66.config.ts	2026-10-16T16:34:55.4875763Z     Error: expect(received).toBeLessThanOrEqual(expected)
+check	Run npx playwright test --config playwright.header-pact-a66.config.ts	2026-10-16T16:34:55.4876158Z 
+check	Run npx playwright test --config playwright.header-pact-a66.config.ts	2026-10-16T16:34:55.4876297Z     Expected: <= 673
+check	Run npx playwright test --config playwright.header-pact-a66.config.ts	2026-10-16T16:34:55.4876636Z     Received:    744
+check	Run npx playwright test --config playwright.header-pact-a66.config.ts	2026-10-16T16:34:55.4876848Z 
+check	Run npx playwright test --config playwright.header-pact-a66.config.ts	2026-10-16T16:34:55.4877552Z       118 |   expect(result.document.width).toBeLessThanOrEqual(result.viewport.width + 1);
+check	Run npx playwright test --config playwright.header-pact-a66.config.ts	2026-10-16T16:34:55.4878669Z       119 |   expect(result.document.height).toBeLessThanOrEqual(result.viewport.height + 1);
+check	Run npx playwright test --config playwright.header-pact-a66.config.ts	2026-10-16T16:34:55.4879774Z     > 120 |   expect(result.host.scrollHeight).toBeLessThanOrEqual(result.host.height + 1);
+check	Run npx playwright test --config playwright.header-pact-a66.config.ts	2026-10-16T16:34:55.4880605Z           |                                    ^
+check	Run npx playwright test --config playwright.header-pact-a66.config.ts	2026-10-16T16:34:55.4881416Z       121 |   expect(result.host.scrollWidth).toBeLessThanOrEqual(result.host.width + 1);
+check	Run npx playwright test --config playwright.header-pact-a66.config.ts	2026-10-16T16:34:55.4882222Z       122 |   for (const node of result.nodes) {
+check	Run npx playwright test --config playwright.header-pact-a66.config.ts	2026-10-16T16:34:55.4882831Z       123 |     expect(node.x).toBeGreaterThanOrEqual(-1);
+check	Run npx playwright test --config playwright.header-pact-a66.config.ts	2026-10-16T16:34:55.4883978Z         at mapGeometry (/home/runner/work/diagon-alley/diagon-alley/tests/browser-trial/tactical-pacts-a65.spec.ts:120:36)
+check	Run npx playwright test --config playwright.header-pact-a66.config.ts	2026-10-16T16:34:55.4885443Z         at /home/runner/work/diagon-alley/diagon-alley/tests/browser-trial/tactical-pacts-a65.spec.ts:147:23
+check	Run npx playwright test --config playwright.header-pact-a66.config.ts	2026-10-16T16:34:55.4886180Z 
+check	Run npx playwright test --config playwright.header-pact-a66.config.ts	2026-10-16T16:34:55.4887108Z     Error Context: test-results-header-pact-a66/tactical-pacts-a65-A65-cho-b8de2-and-resolve-en-diagon-alley-webkit-a66/error-context.md
+check	Run npx playwright test --config playwright.header-pact-a66.config.ts	2026-10-16T16:34:55.4888250Z 
+check	Run npx playwright test --config playwright.header-pact-a66.config.ts	2026-10-16T16:34:55.4888391Z   6 failed
+check	Run npx playwright test --config playwright.header-pact-a66.config.ts	2026-10-16T16:34:55.4889604Z     [chromium-a66] › tests/browser-trial/tactical-pacts-a65.spec.ts:133:5 › A65 choose, compare, prepare and resolve es diagon-alley 
+check	Run npx playwright test --config playwright.header-pact-a66.config.ts	2026-10-16T16:34:55.4891445Z     [chromium-a66] › tests/browser-trial/tactical-pacts-a65.spec.ts:133:5 › A65 choose, compare, prepare and resolve es arcana 
+check	Run npx playwright test --config playwright.header-pact-a66.config.ts	2026-10-16T16:34:55.4893098Z     [chromium-a66] › tests/browser-trial/tactical-pacts-a65.spec.ts:133:5 › A65 choose, compare, prepare and resolve en arcana 
+check	Run npx playwright test --config playwright.header-pact-a66.config.ts	2026-10-16T16:34:55.4894841Z     [webkit-a66] › tests/browser-trial/tactical-pacts-a65.spec.ts:133:5 › A65 choose, compare, prepare and resolve es diagon-alley 
+check	Run npx playwright test --config playwright.header-pact-a66.config.ts	2026-10-16T16:34:55.4896610Z     [webkit-a66] › tests/browser-trial/tactical-pacts-a65.spec.ts:133:5 › A65 choose, compare, prepare and resolve es arcana 
+check	Run npx playwright test --config playwright.header-pact-a66.config.ts	2026-10-16T16:34:55.4898624Z     [webkit-a66] › tests/browser-trial/tactical-pacts-a65.spec.ts:133:5 › A65 choose, compare, prepare and resolve en diagon-alley 
+check	Run npx playwright test --config playwright.header-pact-a66.config.ts	2026-10-16T16:34:55.4899778Z   14 passed (2.3m)
+check	Run npx playwright test --config playwright.header-pact-a66.config.ts	2026-10-16T16:34:55.5194480Z ##[error]Process completed with exit code 1.
+check	Run node tools/verification/build-a66-reference.mjs	﻿2026-10-16T16:38:05.7285643Z ##[group]Run node tools/verification/build-a66-reference.mjs
+check	Run node tools/verification/build-a66-reference.mjs	2026-10-16T16:38:05.7286135Z [36;1mnode tools/verification/build-a66-reference.mjs[0m
+check	Run node tools/verification/build-a66-reference.mjs	2026-10-16T16:38:05.7350511Z shell: /usr/bin/bash -e {0}
+check	Run node tools/verification/build-a66-reference.mjs	2026-10-16T16:38:05.7350846Z ##[endgroup]
+check	Run node tools/verification/build-a66-reference.mjs	2026-10-16T16:38:06.5061605Z file:///home/runner/work/diagon-alley/diagon-alley/tools/verification/build-a66-reference.mjs:21
+check	Run node tools/verification/build-a66-reference.mjs	2026-10-16T16:38:06.5062905Z   if (r.status !== 0) throw Error(r.stderr || `${cmd} failed`);
+check	Run node tools/verification/build-a66-reference.mjs	2026-10-16T16:38:06.5063525Z                             ^
+check	Run node tools/verification/build-a66-reference.mjs	2026-10-16T16:38:06.5063767Z 
+check	Run node tools/verification/build-a66-reference.mjs	2026-10-16T16:38:06.5063889Z Error
+check	Run node tools/verification/build-a66-reference.mjs	2026-10-16T16:38:06.5064701Z     at run (file:///home/runner/work/diagon-alley/diagon-alley/tools/verification/build-a66-reference.mjs:21:29)
+check	Run node tools/verification/build-a66-reference.mjs	2026-10-16T16:38:06.5066019Z     at file:///home/runner/work/diagon-alley/diagon-alley/tools/verification/build-a66-reference.mjs:24:17
+check	Run node tools/verification/build-a66-reference.mjs	2026-10-16T16:38:06.5067053Z     at ModuleJob.run (node:internal/modules/esm/module_job:561:25)
+check	Run node tools/verification/build-a66-reference.mjs	2026-10-16T16:38:06.5068332Z     at async node:internal/modules/esm/loader:647:26
+check	Run node tools/verification/build-a66-reference.mjs	2026-10-16T16:38:06.5069253Z     at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5)
+check	Run node tools/verification/build-a66-reference.mjs	2026-10-16T16:38:06.5069813Z 
+check	Run node tools/verification/build-a66-reference.mjs	2026-10-16T16:38:06.5069957Z Node.js v24.21.0
+check	Run node tools/verification/build-a66-reference.mjs	2026-10-16T16:38:06.5355053Z ##[error]Process completed with exit code 1.
