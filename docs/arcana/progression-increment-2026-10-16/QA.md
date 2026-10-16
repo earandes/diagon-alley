@@ -35,6 +35,10 @@ Suites completas rechazadas en macOS antes de arrancar navegador/servidor; un wo
 
 La política técnica de ruta usa candidato0, refugioPV y pasar encuentros sin grageas. Para la cuenta inicial y sus tres Pactos coincide con lo confirmado. No es una política óptima general; el fallback BFS no acredita victoria y las fixtures futuras con equipo lleno deben declarar si sustituyen o pasan antes de reutilizarla. No se deduce diversidad o dificultad de una fixture elegida para comprobar el receipt ganador.
 
-## Pendiente de cerrar
+## Validación final de código
 
-Regresión Linux sobre SHA exacto, comparación A66/A67 de acciones equivalentes, integración/main remoto/CI. No publicar ni desplegar. Dispositivo físico, lector hablado, diversión y comprensión humana quedan para sesión posterior.
+[CI38934126220](https://github.com/earandes/diagon-alley/actions/runs/38934126220) correcta sobre `13447f0eeec0afaed83e7313b964cb05993aa7a0`. 465unitarios,63integración real y134casos de navegador:56regresióncompilada,20A67,16cierreA63,20cabecera/Pactos,8intenciones,12PWA y2perfiles. ReferenciaA66 reconstruida y compilada correctamente; comparación ejecutada, no pendiente. Logs/metadata en `evidence/ci-validated*`, datos en PERFORMANCE.md.
+
+El preparador táctico elige Táctica explícitamente y reconoce el selector de pasar de encuentros nuevos/legacy. Geometría esperaResizeObserver y comprueba todos los actores; no se oculta contenido ni se concede un premio para fabricar una victoria. Una corrida adicional38933970398 se canceló temprano para completar ese selector; no se cuenta como superada.
+
+Integración autorizada por fast-forward; la CI exacta del commit final de main se vuelve a consultar y comunicar en la entrega. Sin publicación/despliegue. Dispositivo físico, lector hablado, diversión y comprensión humana quedan para la sesión posterior.

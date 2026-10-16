@@ -1,6 +1,6 @@
 # A67 · Encuentros, especializaciones y progresión
 
-16 octubre 2026. Implementación integrada localmente; validación no gráfica ejecutada. La regresión gráfica y comparación de rendimiento Linux, integración en main y SHA/CI remotos permanecen pendientes hasta registrarse expresamente aquí.
+16 octubre 2026. Implementado y validado técnicamente en Linux. Integración autorizada en main mediante fast-forward, sin despliegue. La evidencia versionada corresponde a `13447f0eeec0afaed83e7313b964cb05993aa7a0`; los commits posteriores de documentación no cambian aplicación, pruebas o herramientas. El SHA remoto final y resultado de su CI se comunican en la entrega.
 
 ## Qué puede decidir el jugador
 
@@ -27,10 +27,14 @@ Ofertas y adversarios se fijan en snapshot al iniciar. El nuevo contenido usa ve
 - Local final no gráfica: 465 pruebas unitarias/presentación, 63 de integración con PostgreSQL/Redis reales, tipos/build/skins y scanner. Logs `evidence/*-release.txt`.
 - Antes del incidente: batería A67 20/20 y refinamiento posterior de encuentros/adversos 16/16. Forja final 3/4 y regresión 39/56 quedaron interrumpidas; no se dan por completadas.
 - Tras el incidente: un único smoke local autorizado, 1/1 en 3,6 s, sin grabación ni capturas; watchdog y limpieza de procesos propios. Seis pruebas puras de protección. No se ha repetido la carga que provocó el incidente.
-- Linux CI: pendiente de ejecución/registro sobre SHA exacto. No se cuenta una configuración de workflow como una prueba ejecutada.
+- [Linux CI38934126220](https://github.com/earandes/diagon-alley/actions/runs/38934126220), SHA13447f0: **correcta**. 465 unitarios,63 integración PostgreSQL/Redis,134 casos de navegador:56 regresión,20A67,16cierre,20cabecera/Pactos,8intenciones,12PWA y2 perfiles. Tipos/build/skins/scanner correctos. Detalle y tiempos reales en `evidence/ci-validated.json`, `ci-validated-summary.txt` y PERFORMANCE.md. Las corridas fallidas anteriores permanecen registradas.
 
 [Galería](GALLERY.md), [QA](QA.md), [rendimiento](PERFORMANCE.md), [contratos backend](QA-BACKEND.md), [encuentros](QA-ENCOUNTERS.md), [incidente del host](HOST-INCIDENT.md).
 
 ## Límites y siguiente observación humana
 
 No hay pruebas con jugadores, dispositivo físico, lector audible o retención. Viewports son emulación. Observar comprensión de coste PV/PM, elección de núcleo y relación iniciativa/supervivencia, intención al repetir, expectativas ante dificultad sin premio extra, uso de omisión y utilidad marginal del duplicado. La economía protegida mantiene colas largas y ventaja de cofres seguros; cualquier conversión de excedentes, rareza probabilística o acceso al resto de bóveda requiere propuesta/decisión separada.
+
+## Integración y revisión
+
+Se incluyen las dependencias A65/A66 que estaban locales, el alcance A67 y evidencia seleccionada. Sin reset, force-push, secretos o temporales masivos; fuentes/Word y evidencia histórica conservados. [Archivos y responsabilidades](CHANGES.md). Revisión estática adicional sin hallazgos materiales reproducibles en autoridad/compatibilidad; no sustituye la CI. [PR1](https://github.com/earandes/diagon-alley/pull/1) conserva el recorrido de revisión. La única workflow es checks; no se añadió despliegue.

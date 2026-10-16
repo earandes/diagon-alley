@@ -1,0 +1,15 @@
+check	Run npm run validate:content	2026-10-16T16:43:42.5571996Z [2m      Tests [22m [1m[32m6 passed[39m[22m[90m (6)[39m
+check	Run npm test	2026-10-16T16:43:49.1179404Z [2m      Tests [22m [1m[32m465 passed[39m[22m[90m (465)[39m
+check	Run npm run test:integration	2026-10-16T16:43:56.9292249Z [2m      Tests [22m [1m[32m63 passed[39m[22m[90m (63)[39m
+check	Run npm run build	2026-10-16T16:44:03.6199450Z dist/assets/index-C4MKDucW.css                    181.59 kB │ gzip:  35.04 kB
+check	Run npm run build	2026-10-16T16:44:03.6207522Z dist/assets/index-BYL3TiWM.js                     949.53 kB │ gzip: 293.44 kB
+check	Run ARCANA_TRIAL_COMPILED=1 npm run test:e2e -- --project chromium --project webkit	2026-10-16T16:49:55.9090393Z   56 passed (5.3m)
+check	Run npx playwright test --config playwright.progression-a67.config.ts --project chromium-a67 --project webkit-a67	2026-10-16T16:52:33.3468278Z   20 passed (2.6m)
+check	Run npx playwright test --config playwright.gameplay-a63.config.ts	2026-10-16T16:55:59.2948619Z   16 passed (3.4m)
+check	Run npx playwright test --config playwright.header-pact-a66.config.ts	2026-10-16T16:58:19.2831089Z   20 passed (2.3m)
+check	Run npx playwright test --config playwright.intentions-a65.config.ts	2026-10-16T17:00:13.0945576Z   8 passed (1.9m)
+check	Run npm run test:pwa -- --project chromium --project webkit	2026-10-16T17:00:31.9143495Z   12 passed (18.3s)
+check	Run node tools/verification/build-a66-reference.mjs	2026-10-16T17:00:40.0427837Z dist/assets/index-CXZ6aLLm.css                    170.86 kB │ gzip:  33.47 kB
+check	Run node tools/verification/build-a66-reference.mjs	2026-10-16T17:00:40.0433300Z dist/assets/index-C0G3eSn0.js                     929.03 kB │ gzip: 287.54 kB
+check	Run A67_PERFORMANCE_VARIANT=baseline npx playwright test --config playwright.performance-a67.config.ts	2026-10-16T17:00:48.7456013Z   1 passed (8.1s)
+check	Run A67_PERFORMANCE_VARIANT=current npx playwright test --config playwright.performance-a67.config.ts	2026-10-16T17:00:56.8027682Z   1 passed (7.5s)
