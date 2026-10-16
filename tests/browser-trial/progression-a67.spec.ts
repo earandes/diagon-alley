@@ -151,14 +151,30 @@ async function conditionFixture(page: Page) {
 async function mapGeometry(page: Page) {
   const game = await readGame(page);
   await expect(page.locator('.map-node')).toHaveCount(game.exploration!.run!.graph.nodes.length);
-  const geometry = await page.locator('.map-scroll').evaluate((el) => ({
-    width: el.clientWidth,
-    scrollWidth: el.scrollWidth,
-    height: el.clientHeight,
-    scrollHeight: el.scrollHeight,
-  }));
-  expect(geometry.scrollHeight).toBeLessThanOrEqual(geometry.height + 1);
-  expect(geometry.scrollWidth).toBeLessThanOrEqual(geometry.width + 1);
+  // WebKit can deliver the viewport resize before ResizeObserver updates the scene layout.
+  // Wait for the actual geometry, never clip or remove actors to satisfy the assertion.
+  await expect
+    .poll(
+      () =>
+        page.locator('.map-scroll').evaluate((el) => {
+          const host = el.getBoundingClientRect();
+          return (
+            el.scrollHeight <= el.clientHeight + 1 &&
+            el.scrollWidth <= el.clientWidth + 1 &&
+            [...el.querySelectorAll('.map-node > button')].every((node) => {
+              const box = node.getBoundingClientRect();
+              return (
+                box.left >= host.left - 1 &&
+                box.right <= host.right + 1 &&
+                box.top >= host.top - 1 &&
+                box.bottom <= host.bottom + 1
+              );
+            })
+          );
+        }),
+      { message: 'The resized map and every actor must fit without scrolling' },
+    )
+    .toBe(true);
 }
 for (const language of ['es', 'en'] as const)
   for (const pack of ['diagon-alley', 'arcana'] as const) {

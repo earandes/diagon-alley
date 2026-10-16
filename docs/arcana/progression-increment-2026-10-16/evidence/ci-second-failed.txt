@@ -1,0 +1,100 @@
+check	Run npx playwright test --config playwright.progression-a67.config.ts --project chromium-a67 --project webkit-a67	﻿2026-10-16T16:09:33.7826993Z ##[group]Run npx playwright test --config playwright.progression-a67.config.ts --project chromium-a67 --project webkit-a67
+check	Run npx playwright test --config playwright.progression-a67.config.ts --project chromium-a67 --project webkit-a67	2026-10-16T16:09:33.7827656Z [36;1mnpx playwright test --config playwright.progression-a67.config.ts --project chromium-a67 --project webkit-a67[0m
+check	Run npx playwright test --config playwright.progression-a67.config.ts --project chromium-a67 --project webkit-a67	2026-10-16T16:09:33.7881650Z shell: /usr/bin/bash -e {0}
+check	Run npx playwright test --config playwright.progression-a67.config.ts --project chromium-a67 --project webkit-a67	2026-10-16T16:09:33.7881822Z ##[endgroup]
+check	Run npx playwright test --config playwright.progression-a67.config.ts --project chromium-a67 --project webkit-a67	2026-10-16T16:09:36.5871825Z [WebServer] WebSocket server error: Port 24678 is already in use
+check	Run npx playwright test --config playwright.progression-a67.config.ts --project chromium-a67 --project webkit-a67	2026-10-16T16:09:38.2019403Z 
+check	Run npx playwright test --config playwright.progression-a67.config.ts --project chromium-a67 --project webkit-a67	2026-10-16T16:09:38.2020360Z Running 20 tests using 1 worker
+check	Run npx playwright test --config playwright.progression-a67.config.ts --project chromium-a67 --project webkit-a67	2026-10-16T16:11:42.6585313Z ··········FFFF······
+check	Run npx playwright test --config playwright.progression-a67.config.ts --project chromium-a67 --project webkit-a67	2026-10-16T16:11:42.6590691Z 
+check	Run npx playwright test --config playwright.progression-a67.config.ts --project chromium-a67 --project webkit-a67	2026-10-16T16:11:42.6599249Z   1) [webkit-a67] › tests/browser-trial/progression-a67.spec.ts:165:5 › A67 encounter full journey es diagon-alley 
+check	Run npx playwright test --config playwright.progression-a67.config.ts --project chromium-a67 --project webkit-a67	2026-10-16T16:11:42.6599688Z 
+check	Run npx playwright test --config playwright.progression-a67.config.ts --project chromium-a67 --project webkit-a67	2026-10-16T16:11:42.6599874Z     Error: expect(received).toBeLessThanOrEqual(expected)
+check	Run npx playwright test --config playwright.progression-a67.config.ts --project chromium-a67 --project webkit-a67	2026-10-16T16:11:42.6600091Z 
+check	Run npx playwright test --config playwright.progression-a67.config.ts --project chromium-a67 --project webkit-a67	2026-10-16T16:11:42.6600180Z     Expected: <= 673
+check	Run npx playwright test --config playwright.progression-a67.config.ts --project chromium-a67 --project webkit-a67	2026-10-16T16:11:42.6600379Z     Received:    744
+check	Run npx playwright test --config playwright.progression-a67.config.ts --project chromium-a67 --project webkit-a67	2026-10-16T16:11:42.6600525Z 
+check	Run npx playwright test --config playwright.progression-a67.config.ts --project chromium-a67 --project webkit-a67	2026-10-16T16:11:42.6600617Z       158 |     scrollHeight: el.scrollHeight,
+check	Run npx playwright test --config playwright.progression-a67.config.ts --project chromium-a67 --project webkit-a67	2026-10-16T16:11:42.6600785Z       159 |   }));
+check	Run npx playwright test --config playwright.progression-a67.config.ts --project chromium-a67 --project webkit-a67	2026-10-16T16:11:42.6601012Z     > 160 |   expect(geometry.scrollHeight).toBeLessThanOrEqual(geometry.height + 1);
+check	Run npx playwright test --config playwright.progression-a67.config.ts --project chromium-a67 --project webkit-a67	2026-10-16T16:11:42.6601266Z           |                                 ^
+check	Run npx playwright test --config playwright.progression-a67.config.ts --project chromium-a67 --project webkit-a67	2026-10-16T16:11:42.6601524Z       161 |   expect(geometry.scrollWidth).toBeLessThanOrEqual(geometry.width + 1);
+check	Run npx playwright test --config playwright.progression-a67.config.ts --project chromium-a67 --project webkit-a67	2026-10-16T16:11:42.6601744Z       162 | }
+check	Run npx playwright test --config playwright.progression-a67.config.ts --project chromium-a67 --project webkit-a67	2026-10-16T16:11:42.6601899Z       163 | for (const language of ['es', 'en'] as const)
+check	Run npx playwright test --config playwright.progression-a67.config.ts --project chromium-a67 --project webkit-a67	2026-10-16T16:11:42.6602253Z         at mapGeometry (/home/runner/work/diagon-alley/diagon-alley/tests/browser-trial/progression-a67.spec.ts:160:33)
+check	Run npx playwright test --config playwright.progression-a67.config.ts --project chromium-a67 --project webkit-a67	2026-10-16T16:11:42.6602838Z         at /home/runner/work/diagon-alley/diagon-alley/tests/browser-trial/progression-a67.spec.ts:185:9
+check	Run npx playwright test --config playwright.progression-a67.config.ts --project chromium-a67 --project webkit-a67	2026-10-16T16:11:42.6603047Z 
+check	Run npx playwright test --config playwright.progression-a67.config.ts --project chromium-a67 --project webkit-a67	2026-10-16T16:11:42.6603341Z     Error Context: test-results-progression-a67/progression-a67-A67-encounter-full-journey-es-diagon-alley-webkit-a67/error-context.md
+check	Run npx playwright test --config playwright.progression-a67.config.ts --project chromium-a67 --project webkit-a67	2026-10-16T16:11:42.6603650Z 
+check	Run npx playwright test --config playwright.progression-a67.config.ts --project chromium-a67 --project webkit-a67	2026-10-16T16:11:42.6603935Z     Error Context: test-results-progression-a67/progression-a67-A67-encounter-full-journey-es-diagon-alley-webkit-a67/error-context.md
+check	Run npx playwright test --config playwright.progression-a67.config.ts --project chromium-a67 --project webkit-a67	2026-10-16T16:11:42.6604227Z 
+check	Run npx playwright test --config playwright.progression-a67.config.ts --project chromium-a67 --project webkit-a67	2026-10-16T16:11:42.6604506Z   2) [webkit-a67] › tests/browser-trial/progression-a67.spec.ts:165:5 › A67 encounter full journey es arcana 
+check	Run npx playwright test --config playwright.progression-a67.config.ts --project chromium-a67 --project webkit-a67	2026-10-16T16:11:42.6605136Z 
+check	Run npx playwright test --config playwright.progression-a67.config.ts --project chromium-a67 --project webkit-a67	2026-10-16T16:11:42.6605244Z     Error: expect(received).toBeLessThanOrEqual(expected)
+check	Run npx playwright test --config playwright.progression-a67.config.ts --project chromium-a67 --project webkit-a67	2026-10-16T16:11:42.6605374Z 
+check	Run npx playwright test --config playwright.progression-a67.config.ts --project chromium-a67 --project webkit-a67	2026-10-16T16:11:42.6605428Z     Expected: <= 673
+check	Run npx playwright test --config playwright.progression-a67.config.ts --project chromium-a67 --project webkit-a67	2026-10-16T16:11:42.6605555Z     Received:    744
+check	Run npx playwright test --config playwright.progression-a67.config.ts --project chromium-a67 --project webkit-a67	2026-10-16T16:11:42.6605631Z 
+check	Run npx playwright test --config playwright.progression-a67.config.ts --project chromium-a67 --project webkit-a67	2026-10-16T16:11:42.6605714Z       158 |     scrollHeight: el.scrollHeight,
+check	Run npx playwright test --config playwright.progression-a67.config.ts --project chromium-a67 --project webkit-a67	2026-10-16T16:11:42.6605874Z       159 |   }));
+check	Run npx playwright test --config playwright.progression-a67.config.ts --project chromium-a67 --project webkit-a67	2026-10-16T16:11:42.6606091Z     > 160 |   expect(geometry.scrollHeight).toBeLessThanOrEqual(geometry.height + 1);
+check	Run npx playwright test --config playwright.progression-a67.config.ts --project chromium-a67 --project webkit-a67	2026-10-16T16:11:42.6606339Z           |                                 ^
+check	Run npx playwright test --config playwright.progression-a67.config.ts --project chromium-a67 --project webkit-a67	2026-10-16T16:11:42.6606614Z       161 |   expect(geometry.scrollWidth).toBeLessThanOrEqual(geometry.width + 1);
+check	Run npx playwright test --config playwright.progression-a67.config.ts --project chromium-a67 --project webkit-a67	2026-10-16T16:11:42.6606829Z       162 | }
+check	Run npx playwright test --config playwright.progression-a67.config.ts --project chromium-a67 --project webkit-a67	2026-10-16T16:11:42.6606984Z       163 | for (const language of ['es', 'en'] as const)
+check	Run npx playwright test --config playwright.progression-a67.config.ts --project chromium-a67 --project webkit-a67	2026-10-16T16:11:42.6607602Z         at mapGeometry (/home/runner/work/diagon-alley/diagon-alley/tests/browser-trial/progression-a67.spec.ts:160:33)
+check	Run npx playwright test --config playwright.progression-a67.config.ts --project chromium-a67 --project webkit-a67	2026-10-16T16:11:42.6608204Z         at /home/runner/work/diagon-alley/diagon-alley/tests/browser-trial/progression-a67.spec.ts:185:9
+check	Run npx playwright test --config playwright.progression-a67.config.ts --project chromium-a67 --project webkit-a67	2026-10-16T16:11:42.6608413Z 
+check	Run npx playwright test --config playwright.progression-a67.config.ts --project chromium-a67 --project webkit-a67	2026-10-16T16:11:42.6608684Z     Error Context: test-results-progression-a67/progression-a67-A67-encounter-full-journey-es-arcana-webkit-a67/error-context.md
+check	Run npx playwright test --config playwright.progression-a67.config.ts --project chromium-a67 --project webkit-a67	2026-10-16T16:11:42.6608969Z 
+check	Run npx playwright test --config playwright.progression-a67.config.ts --project chromium-a67 --project webkit-a67	2026-10-16T16:11:42.6609231Z     Error Context: test-results-progression-a67/progression-a67-A67-encounter-full-journey-es-arcana-webkit-a67/error-context.md
+check	Run npx playwright test --config playwright.progression-a67.config.ts --project chromium-a67 --project webkit-a67	2026-10-16T16:11:42.6609510Z 
+check	Run npx playwright test --config playwright.progression-a67.config.ts --project chromium-a67 --project webkit-a67	2026-10-16T16:11:42.6610205Z   3) [webkit-a67] › tests/browser-trial/progression-a67.spec.ts:165:5 › A67 encounter full journey en diagon-alley 
+check	Run npx playwright test --config playwright.progression-a67.config.ts --project chromium-a67 --project webkit-a67	2026-10-16T16:11:42.6610893Z 
+check	Run npx playwright test --config playwright.progression-a67.config.ts --project chromium-a67 --project webkit-a67	2026-10-16T16:11:42.6611148Z     Error: expect(received).toBeLessThanOrEqual(expected)
+check	Run npx playwright test --config playwright.progression-a67.config.ts --project chromium-a67 --project webkit-a67	2026-10-16T16:11:42.6611362Z 
+check	Run npx playwright test --config playwright.progression-a67.config.ts --project chromium-a67 --project webkit-a67	2026-10-16T16:11:42.6611437Z     Expected: <= 673
+check	Run npx playwright test --config playwright.progression-a67.config.ts --project chromium-a67 --project webkit-a67	2026-10-16T16:11:42.6611620Z     Received:    744
+check	Run npx playwright test --config playwright.progression-a67.config.ts --project chromium-a67 --project webkit-a67	2026-10-16T16:11:42.6611732Z 
+check	Run npx playwright test --config playwright.progression-a67.config.ts --project chromium-a67 --project webkit-a67	2026-10-16T16:11:42.6613227Z       158 |     scrollHeight: el.scrollHeight,
+check	Run npx playwright test --config playwright.progression-a67.config.ts --project chromium-a67 --project webkit-a67	2026-10-16T16:11:42.6613547Z       159 |   }));
+check	Run npx playwright test --config playwright.progression-a67.config.ts --project chromium-a67 --project webkit-a67	2026-10-16T16:11:42.6613897Z     > 160 |   expect(geometry.scrollHeight).toBeLessThanOrEqual(geometry.height + 1);
+check	Run npx playwright test --config playwright.progression-a67.config.ts --project chromium-a67 --project webkit-a67	2026-10-16T16:11:42.6614286Z           |                                 ^
+check	Run npx playwright test --config playwright.progression-a67.config.ts --project chromium-a67 --project webkit-a67	2026-10-16T16:11:42.6614698Z       161 |   expect(geometry.scrollWidth).toBeLessThanOrEqual(geometry.width + 1);
+check	Run npx playwright test --config playwright.progression-a67.config.ts --project chromium-a67 --project webkit-a67	2026-10-16T16:11:42.6615038Z       162 | }
+check	Run npx playwright test --config playwright.progression-a67.config.ts --project chromium-a67 --project webkit-a67	2026-10-16T16:11:42.6615283Z       163 | for (const language of ['es', 'en'] as const)
+check	Run npx playwright test --config playwright.progression-a67.config.ts --project chromium-a67 --project webkit-a67	2026-10-16T16:11:42.6615829Z         at mapGeometry (/home/runner/work/diagon-alley/diagon-alley/tests/browser-trial/progression-a67.spec.ts:160:33)
+check	Run npx playwright test --config playwright.progression-a67.config.ts --project chromium-a67 --project webkit-a67	2026-10-16T16:11:42.6616535Z         at /home/runner/work/diagon-alley/diagon-alley/tests/browser-trial/progression-a67.spec.ts:185:9
+check	Run npx playwright test --config playwright.progression-a67.config.ts --project chromium-a67 --project webkit-a67	2026-10-16T16:11:42.6616876Z 
+check	Run npx playwright test --config playwright.progression-a67.config.ts --project chromium-a67 --project webkit-a67	2026-10-16T16:11:42.6617510Z     Error Context: test-results-progression-a67/progression-a67-A67-encounter-full-journey-en-diagon-alley-webkit-a67/error-context.md
+check	Run npx playwright test --config playwright.progression-a67.config.ts --project chromium-a67 --project webkit-a67	2026-10-16T16:11:42.6618011Z 
+check	Run npx playwright test --config playwright.progression-a67.config.ts --project chromium-a67 --project webkit-a67	2026-10-16T16:11:42.6618476Z     Error Context: test-results-progression-a67/progression-a67-A67-encounter-full-journey-en-diagon-alley-webkit-a67/error-context.md
+check	Run npx playwright test --config playwright.progression-a67.config.ts --project chromium-a67 --project webkit-a67	2026-10-16T16:11:42.6618812Z 
+check	Run npx playwright test --config playwright.progression-a67.config.ts --project chromium-a67 --project webkit-a67	2026-10-16T16:11:42.6619106Z   4) [webkit-a67] › tests/browser-trial/progression-a67.spec.ts:165:5 › A67 encounter full journey en arcana 
+check	Run npx playwright test --config playwright.progression-a67.config.ts --project chromium-a67 --project webkit-a67	2026-10-16T16:11:42.6619323Z 
+check	Run npx playwright test --config playwright.progression-a67.config.ts --project chromium-a67 --project webkit-a67	2026-10-16T16:11:42.6619425Z     Error: expect(received).toBeLessThanOrEqual(expected)
+check	Run npx playwright test --config playwright.progression-a67.config.ts --project chromium-a67 --project webkit-a67	2026-10-16T16:11:42.6619556Z 
+check	Run npx playwright test --config playwright.progression-a67.config.ts --project chromium-a67 --project webkit-a67	2026-10-16T16:11:42.6619606Z     Expected: <= 673
+check	Run npx playwright test --config playwright.progression-a67.config.ts --project chromium-a67 --project webkit-a67	2026-10-16T16:11:42.6619732Z     Received:    744
+check	Run npx playwright test --config playwright.progression-a67.config.ts --project chromium-a67 --project webkit-a67	2026-10-16T16:11:42.6619804Z 
+check	Run npx playwright test --config playwright.progression-a67.config.ts --project chromium-a67 --project webkit-a67	2026-10-16T16:11:42.6619883Z       158 |     scrollHeight: el.scrollHeight,
+check	Run npx playwright test --config playwright.progression-a67.config.ts --project chromium-a67 --project webkit-a67	2026-10-16T16:11:42.6620043Z       159 |   }));
+check	Run npx playwright test --config playwright.progression-a67.config.ts --project chromium-a67 --project webkit-a67	2026-10-16T16:11:42.6620257Z     > 160 |   expect(geometry.scrollHeight).toBeLessThanOrEqual(geometry.height + 1);
+check	Run npx playwright test --config playwright.progression-a67.config.ts --project chromium-a67 --project webkit-a67	2026-10-16T16:11:42.6620523Z           |                                 ^
+check	Run npx playwright test --config playwright.progression-a67.config.ts --project chromium-a67 --project webkit-a67	2026-10-16T16:11:42.6620765Z       161 |   expect(geometry.scrollWidth).toBeLessThanOrEqual(geometry.width + 1);
+check	Run npx playwright test --config playwright.progression-a67.config.ts --project chromium-a67 --project webkit-a67	2026-10-16T16:11:42.6621153Z       162 | }
+check	Run npx playwright test --config playwright.progression-a67.config.ts --project chromium-a67 --project webkit-a67	2026-10-16T16:11:42.6621308Z       163 | for (const language of ['es', 'en'] as const)
+check	Run npx playwright test --config playwright.progression-a67.config.ts --project chromium-a67 --project webkit-a67	2026-10-16T16:11:42.6621646Z         at mapGeometry (/home/runner/work/diagon-alley/diagon-alley/tests/browser-trial/progression-a67.spec.ts:160:33)
+check	Run npx playwright test --config playwright.progression-a67.config.ts --project chromium-a67 --project webkit-a67	2026-10-16T16:11:42.6622070Z         at /home/runner/work/diagon-alley/diagon-alley/tests/browser-trial/progression-a67.spec.ts:185:9
+check	Run npx playwright test --config playwright.progression-a67.config.ts --project chromium-a67 --project webkit-a67	2026-10-16T16:11:42.6622278Z 
+check	Run npx playwright test --config playwright.progression-a67.config.ts --project chromium-a67 --project webkit-a67	2026-10-16T16:11:42.6622548Z     Error Context: test-results-progression-a67/progression-a67-A67-encounter-full-journey-en-arcana-webkit-a67/error-context.md
+check	Run npx playwright test --config playwright.progression-a67.config.ts --project chromium-a67 --project webkit-a67	2026-10-16T16:11:42.6622833Z 
+check	Run npx playwright test --config playwright.progression-a67.config.ts --project chromium-a67 --project webkit-a67	2026-10-16T16:11:42.6623100Z     Error Context: test-results-progression-a67/progression-a67-A67-encounter-full-journey-en-arcana-webkit-a67/error-context.md
+check	Run npx playwright test --config playwright.progression-a67.config.ts --project chromium-a67 --project webkit-a67	2026-10-16T16:11:42.6623385Z 
+check	Run npx playwright test --config playwright.progression-a67.config.ts --project chromium-a67 --project webkit-a67	2026-10-16T16:11:42.6623434Z   4 failed
+check	Run npx playwright test --config playwright.progression-a67.config.ts --project chromium-a67 --project webkit-a67	2026-10-16T16:11:42.6623758Z     [webkit-a67] › tests/browser-trial/progression-a67.spec.ts:165:5 › A67 encounter full journey es diagon-alley 
+check	Run npx playwright test --config playwright.progression-a67.config.ts --project chromium-a67 --project webkit-a67	2026-10-16T16:11:42.6624225Z     [webkit-a67] › tests/browser-trial/progression-a67.spec.ts:165:5 › A67 encounter full journey es arcana 
+check	Run npx playwright test --config playwright.progression-a67.config.ts --project chromium-a67 --project webkit-a67	2026-10-16T16:11:42.6624690Z     [webkit-a67] › tests/browser-trial/progression-a67.spec.ts:165:5 › A67 encounter full journey en diagon-alley 
+check	Run npx playwright test --config playwright.progression-a67.config.ts --project chromium-a67 --project webkit-a67	2026-10-16T16:11:42.6625144Z     [webkit-a67] › tests/browser-trial/progression-a67.spec.ts:165:5 › A67 encounter full journey en arcana 
+check	Run npx playwright test --config playwright.progression-a67.config.ts --project chromium-a67 --project webkit-a67	2026-10-16T16:11:42.6625408Z   16 passed (2.1m)
+check	Run npx playwright test --config playwright.progression-a67.config.ts --project chromium-a67 --project webkit-a67	2026-10-16T16:11:42.6842889Z ##[error]Process completed with exit code 1.
