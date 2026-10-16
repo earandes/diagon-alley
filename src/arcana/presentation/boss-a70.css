@@ -1,0 +1,127 @@
+/* A70: identity is read from the saved roster; this scene never starts a battle. */
+.boss-prelude {
+  width: 100%;
+  color: var(--pack-ink);
+}
+.boss-prelude-hero {
+  display: grid;
+  grid-template-columns: minmax(80px, 30%) minmax(0, 1fr);
+  align-items: center;
+  gap: 16px;
+  text-align: left;
+  padding: 0 12px;
+  border-bottom: 1px solid var(--pack-border);
+}
+.boss-prelude-hero > img {
+  width: 100%;
+  height: clamp(110px, 17vh, 180px);
+  object-fit: contain;
+  object-position: bottom center;
+}
+.boss-prelude h4 {
+  font-family: var(--font-heading, Georgia, serif);
+  font-weight: normal;
+  font-size: clamp(1.15rem, 3.5vw, 1.7rem);
+  color: var(--pack-gold);
+  margin: 0 0 8px;
+}
+.boss-roster-count {
+  display: block;
+  margin-top: 8px;
+  font-size: 0.8rem;
+}
+.node-preparation .boss-roster {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin: 10px 0;
+}
+.node-preparation .boss-roster > div {
+  display: grid;
+  justify-items: center;
+  gap: 4px;
+  flex: 1;
+  max-width: 94px;
+  min-width: 0;
+}
+.node-preparation .boss-roster > div > img {
+  width: 48px;
+  height: 60px;
+  object-fit: cover;
+  border: 1px solid var(--pack-border);
+  border-radius: 6px;
+}
+.boss-roster small {
+  font-size: 0.7rem;
+  overflow-wrap: anywhere;
+  text-align: center;
+}
+.boss-roster .affinity-label {
+  font-size: 0.7rem;
+}
+.boss-opponent-details > summary {
+  min-height: 44px;
+  align-content: center;
+  cursor: pointer;
+  color: var(--pack-gold);
+}
+.boss-opponent-stats {
+  display: grid;
+  gap: 8px;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  text-align: left;
+}
+.boss-opponent-stats dl {
+  margin: 8px 0;
+}
+.boss-opponent-stats dl > div {
+  display: flex;
+  gap: 8px;
+  justify-content: space-between;
+  font-size: 0.8rem;
+}
+.boss-opponent-stats dd {
+  margin: 0;
+  font-variant-numeric: tabular-nums;
+}
+.boss-synergy-summary {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  font-size: 0.8rem;
+}
+.boss-prelude .preparation-synergies {
+  margin: 0 auto 8px;
+}
+.boss-prelude .preparation-synergies > summary {
+  min-height: 44px;
+}
+.arena-a63 .arena-heading .boss-arena-name {
+  font-size: clamp(0.9rem, 2.5vw, 1.3rem);
+}
+.arena-a63 [data-boss-unit='true'] .arena-position {
+  border-width: 2px;
+  color: var(--pack-gold);
+}
+.arena-a63 [data-boss-unit='true'] .arena-figure-space::after {
+  content: '';
+  position: absolute;
+  inset: 6% 12% 0;
+  border-inline: 1px solid #d8b86f88;
+  border-radius: 44% 44% 0 0;
+  pointer-events: none;
+}
+@media (max-width: 500px) {
+  .boss-prelude-hero {
+    gap: 8px;
+  }
+  .boss-prelude-hero > img {
+    height: 110px;
+  }
+  .node-preparation .boss-roster {
+    gap: 4px;
+  }
+  .boss-roster small {
+    font-size: 0.65rem;
+  }
+}

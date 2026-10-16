@@ -1,0 +1,25 @@
+
+ RUN  v5.0.3 /Users/enricarandes/work/diagon-alley
+
+ ❯ tests/domain/arcana/boss-prelude-a70.test.ts (0 test)
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/domain/arcana/boss-prelude-a70.test.ts [ tests/domain/arcana/boss-prelude-a70.test.ts ]
+Error: Cannot find module '../../../src/arcana/presentation/BossPrelude' imported from /Users/enricarandes/work/diagon-alley/tests/domain/arcana/boss-prelude-a70.test.ts
+ ❯ tests/domain/arcana/boss-prelude-a70.test.ts:5:1
+      3| import { renderToStaticMarkup } from 'react-dom/server';
+      4| import type { CombatUnitInput } from '../../../src/arcana/domain/comba…
+      5| import { BossPrelude } from '../../../src/arcana/presentation/BossPrel…
+       | ^
+      6| import { setContentPack } from '../../../src/arcana/presentation/conte…
+      7| const units: CombatUnitInput[] = ['circe', 'rival', 'rival'].map((wiza…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  no tests
+   Start at  23:26:19
+   Duration  81ms (worker 96%, environment 4%)
+

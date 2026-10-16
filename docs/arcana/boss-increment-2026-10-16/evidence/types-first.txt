@@ -1,0 +1,7 @@
+
+> coleccion-magica-i1@0.1.0 typecheck
+> tsc --noEmit && tsc --project tsconfig.worker.json --noEmit
+
+tests/browser-boss/boss-a70.spec.ts(13,27): error TS6133: 'lang' is declared but its value is never read.
+tests/domain/arcana/boss-prelude-a70.test.ts(7,7): error TS2322: Type '{ id: string; wizardId: string; level: number; affinity: "neutral" | "fire"; hp: number; maxHp: number; mana: number; maxMana: number; power: number; speed: number; }[]' is not assignable to type 'CombatUnitInput[]'.
+  Type '{ id: string; wizardId: string; level: number; affinity: "neutral" | "fire"; hp: number; maxHp: number; mana: number; maxMana: number; power: number; speed: number; }' is missing the following properties from type 'CombatUnitInput': wandPowerBonus, wandMultiplier, broomInitiative

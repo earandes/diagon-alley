@@ -1,0 +1,74 @@
+{
+  "id": "a70-circe-arcana",
+  "version": 1,
+  "identityId": "circe",
+  "pack": "arcana",
+  "sourceFigure": "src/arcana/presentation/content-packs/arcana/art/character/circe/figure.webp",
+  "sourceSha256": "90a61dcffaa1d7f079f3cb366d24c816c3ba461e3da8328a4d65dcfef14771ba",
+  "figureSize": [
+    342,
+    512
+  ],
+  "origin": [
+    0.7456140350877193,
+    0.3125
+  ],
+  "layers": [
+    {
+      "id": "bowl-contents",
+      "motion": "bowl-contents",
+      "source": "src/arcana/presentation/content-packs/arcana/art/character/circe/figure.webp",
+      "editable": "design/arcana/boss-a70/bowl-contents.svg",
+      "runtime": "src/arcana/presentation/content-packs/arcana/art/boss-a70/bowl-contents.webp",
+      "rectPixels": [
+        234,
+        158,
+        43,
+        19
+      ],
+      "pivot": [
+        0.5,
+        0.55
+      ],
+      "dimensions": [
+        43,
+        19
+      ],
+      "bytes": 724,
+      "rgbaBytes": 3268,
+      "sha256": "8e2c541a69a67e27d47f3036126be61e07726d0e3eca06d17f74f6aa9b443c11"
+    },
+    {
+      "id": "bowl-rim",
+      "motion": "bowl-rim",
+      "source": "src/arcana/presentation/content-packs/arcana/art/character/circe/figure.webp",
+      "editable": "design/arcana/boss-a70/bowl-rim.svg",
+      "runtime": "src/arcana/presentation/content-packs/arcana/art/boss-a70/bowl-rim.webp",
+      "rectPixels": [
+        237,
+        162,
+        38,
+        8
+      ],
+      "pivot": [
+        0.5,
+        0.55
+      ],
+      "dimensions": [
+        38,
+        8
+      ],
+      "bytes": 942,
+      "rgbaBytes": 1216,
+      "sha256": "5b9eb649bffa5ee4a74b2b97402a5636ab766cebbed133b19d4c639b0f64eb79"
+    }
+  ],
+  "production": "CPU Pillow derivation, crop/mask plus original vector-like paper/ripple paths; no inference or GPU",
+  "scope": "Object articulation only. Existing body, face, anatomy and base figure unchanged.",
+  "provenance": "Existing A58 Diagon master and ARCANA production-v1 master; source manifests retained. New paths authored for this project.",
+  "rights": "Existing provenance is not a Harry Potter distribution licence. Private technical sample; no publication authorised.",
+  "fallback": "Original figure and generic confirmed BattleLog projectile; no new rule or item.",
+  "totalRuntimeBytes": 1666,
+  "totalRgbaBytes": 4484,
+  "preview": "selected-composites.png: selected CPU composites only, not screenshots or timing evidence"
+}

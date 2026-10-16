@@ -11,6 +11,10 @@ import './expedition-closure.css';
 import './motion-a69.css';
 import { useConfirmedMotion } from './useConfirmedMotion';
 import { useReducedMotion } from './useReducedMotion';
+import { bossPresentation } from './boss-presentation';
+import { bossText } from './boss-messages';
+import { BossBattleFacts } from './BossBattleFacts';
+import './boss-closure-a70.css';
 
 export function ExpeditionClosure({
   game,
@@ -45,6 +49,12 @@ export function ExpeditionClosure({
   }, [runId]);
   if (!closure) return null;
   const { run, receipt, actions } = closure;
+  const bossBattle =
+    receipt?.battle &&
+    run.graph.nodes.some((node) => node.id === receipt.request.nodeId && node.kind === 'boss')
+      ? receipt.battle
+      : undefined;
+  const adversary = bossBattle ? bossPresentation(bossBattle.input.rival, language) : undefined;
   const t = (key: Parameters<typeof closureText>[1], values?: Record<string, string | number>) =>
     closureText(language, key, values);
   const numbers = new Intl.NumberFormat(language === 'es' ? 'es-ES' : 'en-US');
@@ -65,11 +75,12 @@ export function ExpeditionClosure({
       className="expedition-closure"
       data-expedition-closure={run.status}
       data-confirmed-motion={confirmedMotion}
+      data-closure-boss={adversary?.unit.wizardId}
       aria-labelledby="expedition-closure-title"
     >
       <div className="closure-stage">
         <Artwork
-          asset={run.status === 'won' ? 'rival.boss.figure' : 'ui.map'}
+          asset={adversary?.figure ?? 'ui.map'}
           language={language}
           className="closure-hero"
           decorative
@@ -79,6 +90,11 @@ export function ExpeditionClosure({
           {t(run.status === 'active' ? 'lost' : run.status)}
         </h2>
         <p className="closure-region">{regionAppearance(run.zoneId, language).name}</p>
+        {adversary && (
+          <p className="closure-adversary">
+            {bossText(language, 'faced', { name: adversary.name })}
+          </p>
+        )}
         {receipt?.firstVictory === false && <small>{t('repeated')}</small>}
         {receipt && (
           <div className="closure-spoils" aria-label={t('spoils')}>
@@ -142,6 +158,7 @@ export function ExpeditionClosure({
             </button>
           ))}
         </div>
+        {bossBattle && <BossBattleFacts combat={bossBattle} language={language} />}
       </div>
       <details className="closure-history">
         <summary>

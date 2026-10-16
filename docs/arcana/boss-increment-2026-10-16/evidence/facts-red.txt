@@ -1,0 +1,25 @@
+
+ RUN  v5.0.3 /Users/enricarandes/work/diagon-alley
+
+ ❯ tests/domain/arcana/boss-facts-a70.test.ts (0 test)
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/domain/arcana/boss-facts-a70.test.ts [ tests/domain/arcana/boss-facts-a70.test.ts ]
+Error: Cannot find module '../../../src/arcana/presentation/boss-presentation' imported from /Users/enricarandes/work/diagon-alley/tests/domain/arcana/boss-facts-a70.test.ts
+ ❯ tests/domain/arcana/boss-facts-a70.test.ts:4:1
+      2| import { createElement } from 'react';
+      3| import { renderToStaticMarkup } from 'react-dom/server';
+      4| import { bossPresentation } from '../../../src/arcana/presentation/bos…
+       | ^
+      5| import { bossBattleFacts } from '../../../src/arcana/presentation/boss…
+      6| import { BossBattleFacts } from '../../../src/arcana/presentation/Boss…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  no tests
+   Start at  23:24:53
+   Duration  95ms (worker 97%, environment 3%)
+

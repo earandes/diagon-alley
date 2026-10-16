@@ -1,0 +1,24 @@
+
+ RUN  v5.0.3 /Users/enricarandes/work/diagon-alley
+
+ ❯ tests/domain/arcana/boss-motion-a70.test.ts (0 test)
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/domain/arcana/boss-motion-a70.test.ts [ tests/domain/arcana/boss-motion-a70.test.ts ]
+Error: Cannot find module '../../../src/arcana/presentation/motion/boss-motion' imported from /Users/enricarandes/work/diagon-alley/tests/domain/arcana/boss-motion-a70.test.ts
+ ❯ tests/domain/arcana/boss-motion-a70.test.ts:2:1
+      1| import { describe, expect, it } from 'vitest';
+      2| import { bossPropPose } from '../../../src/arcana/presentation/motion/…
+       | ^
+      3| import type { BattleEvent } from '../../../src/arcana/domain/combat/en…
+      4| const cast = { kind: 'spell-cast', actorId: 'boss', targetId: 'ally', …
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  no tests
+   Start at  23:25:33
+   Duration  69ms (worker 96%, environment 4%)
+

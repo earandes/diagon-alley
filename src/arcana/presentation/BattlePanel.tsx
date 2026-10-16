@@ -15,6 +15,8 @@ import { arenaText } from './arena-messages';
 import './arena-a63.css';
 import { useBattlePlayback } from './motion/useBattlePlayback';
 import { battleVisualChanges } from './motion/battle-deltas';
+import { bossPresentation } from './boss-presentation';
+import './boss-a70.css';
 const affinities = {
   neutral: 'neutral',
   alchemy: 'alchemy',
@@ -30,6 +32,8 @@ const flavours = {
 interface BattlePanelProps {
   combat: Combat;
   confirmedPresentation?: boolean;
+  /** Declared presentation fixtures only; the app derives this from its saved node. */
+  bossEncounter?: boolean;
   game: GameState;
   content: PublicContent | null;
   language: Language;
@@ -63,6 +67,7 @@ function BattlePlayback({
   onBack,
   replay,
   confirmedPresentation = false,
+  bossEncounter,
 }: BattlePanelProps & { replay: BattleReplay }) {
   const total = combat.events.length,
     playback = useBattlePlayback(combat.events, activePack.animations.arena.eventMs, reduced),
@@ -142,8 +147,10 @@ function BattlePlayback({
     (r) => r.kind === 'advance-node' && r.battle?.id === combat.id,
   );
   const isBoss =
-    savedNode?.kind === 'advance-node' &&
-    savedNode.run.graph.nodes.find((n) => n.id === savedNode.request.nodeId)?.kind === 'boss';
+    bossEncounter ??
+    (savedNode?.kind === 'advance-node' &&
+      savedNode.run.graph.nodes.find((n) => n.id === savedNode.request.nodeId)?.kind === 'boss');
+  const boss = isBoss ? bossPresentation(combat.input.rival, language) : undefined;
   const figureKey = (
     unit: Combat['input']['player'][number],
     side: 'player' | 'rival',
@@ -273,6 +280,7 @@ function BattlePlayback({
       data-replay-phase={playback.phase}
       data-replay-playing={playing && playback.visible}
       data-replay-speed={speed}
+      data-boss-leader={boss?.unit.id}
     >
       <header className="arena-heading">
         <button
@@ -283,7 +291,9 @@ function BattlePlayback({
         >
           <span aria-hidden="true">←</span>
         </button>
-        <h2>{t('combatArena')}</h2>
+        <h2 className={boss ? 'boss-arena-name' : undefined} aria-label={t('combatArena')}>
+          {boss?.name ?? t('combatArena')}
+        </h2>
         <span className="arena-round">
           {arenaText(language, 'round')} {format.format(frame.round)}
         </span>
@@ -359,6 +369,8 @@ function BattlePlayback({
             clock: playback.clock,
             playing: playing && playback.visible && !reduced && cursor < total,
             speed,
+            boss: boss && { id: boss.unit.id, wizardId: boss.unit.wizardId },
+            reduced,
           }}
           language={language}
         />
@@ -384,6 +396,7 @@ function BattlePlayback({
                       className="pedestal"
                       key={unit.id}
                       data-unit={unit.id}
+                      data-boss-unit={unit.id === boss?.unit.id || undefined}
                       data-acting={acting || undefined}
                       data-target={targeted || undefined}
                       data-fallen={unit.hp === 0 || undefined}

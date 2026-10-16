@@ -49,6 +49,16 @@ jobs:
       - run: npm run verify:arcana:build
       - run: npx playwright install --with-deps chromium webkit
       - if: ${{ !cancelled() && steps.build.outcome == 'success' }}
+        run: ARCANA_CAPTURE_A70=1 npx playwright test --config playwright.boss-a70.config.ts
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: a70-boss-evidence
+          path: |
+            docs/arcana/boss-increment-2026-10-16/evidence/linux/**
+            test-results/boss-a70/**/error-context.md
+          if-no-files-found: ignore
+      - if: ${{ !cancelled() && steps.build.outcome == 'success' }}
         run: npx playwright test --config playwright.seasonal-a68.config.ts
       - if: ${{ !cancelled() && steps.build.outcome == 'success' }}
         # Explicit selected Linux evidence: four images in one Chromium project,

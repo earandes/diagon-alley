@@ -1,0 +1,79 @@
+/* A70: facts follow the confirmed result and treasure; the next action stays primary. */
+.game-shell .closure-adversary {
+  margin: 2px 0 8px;
+  color: #ead9b4;
+  font-size: 0.9rem;
+}
+.game-shell .boss-battle-facts {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin: 12px auto 16px;
+  max-width: 600px;
+}
+.game-shell .boss-battle-fact {
+  flex: 1 1 230px;
+  min-width: 0;
+  max-width: 100%;
+  padding: 4px 10px;
+  border: 1px solid #d7b56b44;
+  border-radius: 10px;
+  background: #162a32a6;
+  text-align: left;
+}
+.game-shell .boss-battle-fact > summary {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 48px;
+  cursor: pointer;
+  list-style: none;
+}
+.game-shell .boss-battle-fact > summary::-webkit-details-marker {
+  display: none;
+}
+.game-shell .boss-battle-fact > summary::after {
+  content: '+';
+  color: var(--pack-gold);
+  margin-left: auto;
+}
+.game-shell .boss-battle-fact[open] > summary::after {
+  content: '−';
+}
+.game-shell .boss-battle-fact > summary:focus-visible {
+  outline: 2px solid var(--pack-gold);
+  outline-offset: 3px;
+  border-radius: 5px;
+}
+.game-shell .boss-battle-fact > summary img {
+  width: 32px;
+  height: 40px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+.game-shell .boss-battle-fact > summary > span {
+  display: grid;
+  min-width: 0;
+  gap: 2px;
+  font-size: 0.82rem;
+  overflow-wrap: anywhere;
+}
+.game-shell .boss-battle-fact small {
+  color: #dfc686;
+  font-size: 0.72rem;
+}
+.game-shell .boss-battle-fact p {
+  margin: 4px 0 8px;
+  font-size: 0.86rem;
+  line-height: 1.45;
+}
+@media (max-width: 500px) {
+  .game-shell .boss-battle-facts {
+    gap: 6px;
+    margin-top: 8px;
+  }
+  .game-shell .boss-battle-fact {
+    flex-basis: 100%;
+  }
+}

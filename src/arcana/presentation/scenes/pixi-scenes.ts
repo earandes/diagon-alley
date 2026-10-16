@@ -7,6 +7,9 @@ import type { MapLayout } from './map-layout';
 import type { ReplayFrame } from '../../application/client/battle-replay';
 import type { BattleEvent } from '../../domain/combat/engine';
 import type { ReplayClock } from '../motion/replay-clock';
+import { bossArt } from '../boss-art';
+import { bossPropPose } from '../motion/boss-motion';
+import { selectedContentPackId } from '../content-packs/active';
 export interface ArenaPosition {
   readonly id: string;
   readonly x: number;
@@ -29,6 +32,8 @@ export type SceneData =
       readonly playing: boolean;
       readonly speed: 1 | 2;
       readonly clock?: Pick<ReplayClock, 'snapshot'>;
+      readonly boss?: { readonly id: string; readonly wizardId: string };
+      readonly reduced?: boolean;
     };
 export async function createPixiScene(host: HTMLElement, data: SceneData) {
   const app = new Application();
@@ -66,6 +71,12 @@ export async function createPixiScene(host: HTMLElement, data: SceneData) {
     string,
     { x: number; y: number; alive: boolean; entered: number; sx: number; sy: number }
   >();
+  // Only the current boss sample loads these cropped pieces. No extra ticker/context.
+  const bossPieces = new Map<string, Sprite[]>();
+  const propArt =
+    data.kind === 'arena' && data.boss
+      ? bossArt(selectedContentPackId(), data.boss.wizardId)
+      : null;
   let destroyed = false;
   app.stage.addChild(sparks);
   const positions = new Map<string, { x: number; y: number }>();
@@ -194,6 +205,48 @@ export async function createPixiScene(host: HTMLElement, data: SceneData) {
               pose.alive = unit.hp > 0;
               pose.sx = figure.scale.x;
               pose.sy = figure.scale.y;
+              if (current.boss?.id === unit.id && propArt) {
+                for (const layer of propArt.layers) {
+                  const key = `a70:${layer.url}`;
+                  if (textures.has(key) || loading.has(key)) continue;
+                  loading.add(key);
+                  const image = new Image();
+                  image.src = layer.url;
+                  void image
+                    .decode()
+                    .then(() => {
+                      if (destroyed) return;
+                      textures.set(key, Texture.from(image));
+                      host.dataset.textureCount = String(textures.size);
+                      host.dataset.textureBytes = String(
+                        [...textures.values()].reduce((n, t) => n + t.width * t.height * 4, 0),
+                      );
+                      dirty = true;
+                      paint();
+                    })
+                    .catch(() => {
+                      /* The original painted object remains intact. */
+                    });
+                }
+                if (
+                  !bossPieces.has(unit.id) &&
+                  propArt.layers.every((layer) => textures.has(`a70:${layer.url}`))
+                ) {
+                  const pieces = propArt.layers.map((layer) => {
+                    const piece = new Sprite(textures.get(`a70:${layer.url}`)!);
+                    piece.anchor.set(...layer.pivot);
+                    piece.position.set(
+                      (layer.rect[0] + layer.rect[2] * layer.pivot[0] - figure.anchor.x) *
+                        texture.width,
+                      (layer.rect[1] + layer.rect[3] * layer.pivot[1] - figure.anchor.y) *
+                        texture.height,
+                    );
+                    figure!.addChild(piece);
+                    return piece;
+                  });
+                  bossPieces.set(unit.id, pieces);
+                }
+              }
             }
           }
         }
@@ -242,13 +295,64 @@ export async function createPixiScene(host: HTMLElement, data: SceneData) {
         figure.alpha = pose.alive ? 1 : 0.35;
         figure.rotation =
           (pose.alive ? 0 : 0.12) + -direction * (anticipation * 0.025 + contact * 0.035);
+        if (current.boss?.id === id) {
+          const sample = bossPropPose(current.next, progress, id, pose.alive, !!current.reduced);
+          figure.y += sample.fall * 6;
+          figure.rotation += sample.fall * 0.08;
+          const pieces = bossPieces.get(id);
+          host.dataset.bossPropReady = String(!!pieces);
+          host.dataset.bossPropUnit = id;
+          host.dataset.bossPropPose = sample.phase;
+          const activity = sample.activity;
+          pieces?.forEach((piece, index) => {
+            const layer = propArt!.layers[index];
+            piece.alpha = activity;
+            piece.rotation = 0;
+            piece.scale.set(1, 1);
+            if (layer.motion === 'book-cover') {
+              piece.rotation = activity * -0.035;
+              piece.scale.x = 1 - activity * 0.06;
+              piece.alpha = Math.min(activity * 6, 1);
+            } else if (layer.motion === 'book-pages') {
+              piece.rotation = activity * 0.025;
+              piece.scale.x = 1 + activity * 0.04;
+            } else if (layer.motion === 'bowl-contents') {
+              piece.scale.set(1 - activity * 0.1, 1 + activity * 0.08);
+            }
+          });
+          host.dataset.bossPropAngle = String(
+            pieces?.find((_, index) => propArt!.layers[index].motion === 'book-cover')?.rotation ??
+              0,
+          );
+          host.dataset.bossPropActivity = String(activity);
+          host.dataset.bossPropLayers = String(pieces?.length ?? 0);
+        }
       }
     }
     sparks.clear();
     if (current.kind === 'arena') {
       const event = current.next;
       if (event?.kind === 'spell-cast') {
-        const from = positions.get(event.actorId)!,
+        const baseFrom = positions.get(event.actorId)!,
+          leader = figures.get(event.actorId),
+          source =
+            current.boss?.id === event.actorId && bossPieces.has(event.actorId) ? propArt : null,
+          dx =
+            source && leader
+              ? (source.origin[0] - leader.anchor.x) * leader.texture.width * leader.scale.x
+              : 0,
+          dy =
+            source && leader
+              ? (source.origin[1] - leader.anchor.y) * leader.texture.height * leader.scale.y
+              : 0,
+          rotation = leader?.rotation ?? 0,
+          from =
+            source && leader
+              ? {
+                  x: leader.x + dx * Math.cos(rotation) - dy * Math.sin(rotation),
+                  y: leader.y + dx * Math.sin(rotation) + dy * Math.cos(rotation),
+                }
+              : baseFrom,
           to = positions.get(event.targetId)!,
           p =
             current.clock?.snapshot().progress ??
@@ -263,6 +367,15 @@ export async function createPixiScene(host: HTMLElement, data: SceneData) {
               (event.missed ? flight * 42 : 0),
           };
         if (p >= 0.18 && p < 0.78) {
+          if (source) {
+            sparks
+              .ellipse(from.x, from.y, 10 + Math.sin(flight * Math.PI) * 5, 4)
+              .stroke({
+                color: paletteColor('gold'),
+                width: 1.5,
+                alpha: Math.sin(flight * Math.PI) * 0.8,
+              });
+          }
           sparks
             .moveTo(from.x, from.y)
             .lineTo(attack.x, attack.y)
@@ -358,11 +471,14 @@ export async function createPixiScene(host: HTMLElement, data: SceneData) {
       for (const texture of textures.values()) texture.destroy(true);
       textures.clear();
       figures.clear();
+      bossPieces.clear();
       host.dataset.destroyed = 'true';
       host.dataset.activeTicking = 'false';
       host.dataset.textureCount = '0';
       host.dataset.textureBytes = '0';
       host.dataset.visibleFigures = '0';
+      host.dataset.bossPropReady = 'false';
+      host.dataset.bossPropLayers = '0';
     },
   };
 }

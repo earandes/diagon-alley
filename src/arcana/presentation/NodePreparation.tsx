@@ -1,3 +1,4 @@
+import { BossPrelude } from './BossPrelude';
 import { EncounterPreparation } from './EncounterPreparation';
 import { Artwork } from './Artwork';
 import { VisualChoices } from './VisualChoices';
@@ -67,7 +68,8 @@ export function NodePreparation({
   );
   return (
     <div className="node-preparation" data-preparation={plan.kind} data-event-kind={plan.kind}>
-      {combat && (
+      {plan.kind === 'boss' && <BossPrelude opponents={plan.opponents} rules={rules} language={language} />}
+      {plan.kind === 'duel' && (
         <>
           {plan.threat && <ThreatHelp threat={plan.threat} language={language} />}
           <div className="event-opponents" aria-label={t('nodeOpponents')}>
