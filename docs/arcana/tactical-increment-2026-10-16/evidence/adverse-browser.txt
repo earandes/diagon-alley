@@ -1,0 +1,14 @@
+[WebServer] (node:63373) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:63397) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] WebSocket server error: Port 24678 is already in use
+
+Running 2 tests using 1 worker
+
+(node:63431) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  1 [chromium-adverse-a65] › tests/browser-trial/tactical-adverse-a65.spec.ts:5:45 › A65 es missing character art and renderer retain keyboard choice and reduced motion (1.2s)
+  ✓  2 [chromium-adverse-a65] › tests/browser-trial/tactical-adverse-a65.spec.ts:5:45 › A65 en missing character art and renderer retain keyboard choice and reduced motion (1.0s)
+
+  2 passed (4.5s)

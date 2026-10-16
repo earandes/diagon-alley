@@ -1,3 +1,4 @@
+import { text } from '../../src/arcana/presentation/translations';
 import { startExpedition } from './game-fixture';
 import { changeLanguage } from './game-fixture';
 import { pathTo, confirmEvent, readGame } from './route-helpers';
@@ -28,10 +29,17 @@ for (const language of ['es', 'en'] as const)
       const before =
         kind === 'encounter' ? (await (await page.request.get('/api/state')).json()).state : null;
       if (kind === 'encounter') {
-        await page.locator('.node-help summary').click();
-        await expect(page.getByRole('dialog')).toContainText(
-          en ? 'This encounter may grant loot' : 'Este encuentro puede entregar botín',
-        );
+        if (await page.locator('[data-encounter-offer]').count()) {
+          await expect(
+            page.locator('[data-encounter-choice]:not([data-encounter-choice="pass"])'),
+          ).toHaveCount(2);
+          await expect(page.locator('.node-confirm-action')).toBeDisabled();
+        } else {
+          await page.locator('.node-help summary').click();
+          await expect(page.getByRole('dialog')).toContainText(
+            en ? 'This encounter may grant loot' : 'Este encuentro puede entregar botín',
+          );
+        }
         await button('Cancelar', 'Cancel').click();
         expect((await (await page.request.get('/api/state')).json()).state).toEqual(before);
         await page.locator(`[data-node="${id}"]`).click();
@@ -63,7 +71,25 @@ for (const language of ['es', 'en'] as const)
         await page.locator(`[data-node="${id}"]`).click();
       }
       await confirmEvent(page, language);
-      if (kind === 'encounter') {
+      if (
+        kind === 'encounter' &&
+        (await readGame(page)).receipts.at(-1)?.kind === 'advance-node' &&
+        !(
+          (await readGame(page)).receipts.at(
+            -1,
+          ) as import('../../src/arcana/application/run-contracts').NodeReceipt
+        ).encounter
+      ) {
+        const saved = await readGame(page);
+        await page.locator('.receipt-disclosure > summary').click();
+        await expect(page.locator('.receipt-body')).toContainText(text(language, 'nodePassed'));
+        await page.reload();
+        await expect(page.locator('.branch-map')).toBeVisible();
+        expect(await readGame(page)).toEqual(saved);
+        await changeLanguage(page, en ? 'es' : 'en');
+        expect(await readGame(page)).toEqual(saved);
+        await changeLanguage(page, language);
+      } else if (kind === 'encounter') {
         await page.locator('.receipt-disclosure > summary').click();
         const region = page.getByRole('region', {
           name: en ? 'Encounter outcome' : 'Resultado del encuentro',

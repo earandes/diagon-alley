@@ -1,0 +1,389 @@
+[WebServer] (node:51596) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:51622) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] WebSocket server error: Port 24678 is already in use
+[WebServer] (node:51634) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:51662) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] WebSocket server error: Port 24678 is already in use
+
+Running 20 tests using 1 worker
+
+(node:51663) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 [chromium-a67] › tests/browser-trial/progression-a67.spec.ts:163:5 › A67 encounter full journey es diagon-alley (5.9s)
+  ✓   2 [chromium-a67] › tests/browser-trial/progression-a67.spec.ts:163:5 › A67 encounter full journey es arcana (4.5s)
+  ✓   3 [chromium-a67] › tests/browser-trial/progression-a67.spec.ts:163:5 › A67 encounter full journey en diagon-alley (6.6s)
+  ✓   4 [chromium-a67] › tests/browser-trial/progression-a67.spec.ts:163:5 › A67 encounter full journey en arcana (5.1s)
+  ✘   5 [chromium-a67] › tests/browser-trial/progression-a67.spec.ts:263:3 › A67 group trade response recovery and pass es (6.2s)
+(node:52004) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   6 [chromium-a67] › tests/browser-trial/progression-a67.spec.ts:306:3 › A67 forge specializations equip V2 then replay es (6.4s)
+  ✓   7 [chromium-a67] › tests/browser-trial/progression-a67.spec.ts:379:3 › A67 missing art renderer reduced and enlarged encounter es (1.8s)
+  ✘   8 [chromium-a67] › tests/browser-trial/progression-a67.spec.ts:263:3 › A67 group trade response recovery and pass en (5.6s)
+(node:52177) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   9 [chromium-a67] › tests/browser-trial/progression-a67.spec.ts:306:3 › A67 forge specializations equip V2 then replay en (6.0s)
+  ✓  10 [chromium-a67] › tests/browser-trial/progression-a67.spec.ts:379:3 › A67 missing art renderer reduced and enlarged encounter en (2.8s)
+(node:52301) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  11 [webkit-a67] › tests/browser-trial/progression-a67.spec.ts:163:5 › A67 encounter full journey es diagon-alley (6.8s)
+  ✓  12 [webkit-a67] › tests/browser-trial/progression-a67.spec.ts:163:5 › A67 encounter full journey es arcana (4.6s)
+  ✓  13 [webkit-a67] › tests/browser-trial/progression-a67.spec.ts:163:5 › A67 encounter full journey en diagon-alley (5.9s)
+  ✓  14 [webkit-a67] › tests/browser-trial/progression-a67.spec.ts:163:5 › A67 encounter full journey en arcana (4.5s)
+  ✘  15 [webkit-a67] › tests/browser-trial/progression-a67.spec.ts:263:3 › A67 group trade response recovery and pass es (5.0s)
+(node:52700) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  16 [webkit-a67] › tests/browser-trial/progression-a67.spec.ts:306:3 › A67 forge specializations equip V2 then replay es (4.9s)
+  ✓  17 [webkit-a67] › tests/browser-trial/progression-a67.spec.ts:379:3 › A67 missing art renderer reduced and enlarged encounter es (1.8s)
+  ✘  18 [webkit-a67] › tests/browser-trial/progression-a67.spec.ts:263:3 › A67 group trade response recovery and pass en (3.6s)
+(node:52853) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  19 [webkit-a67] › tests/browser-trial/progression-a67.spec.ts:306:3 › A67 forge specializations equip V2 then replay en (5.2s)
+  ✓  20 [webkit-a67] › tests/browser-trial/progression-a67.spec.ts:379:3 › A67 missing art renderer reduced and enlarged encounter en (2.9s)
+
+
+  1) [chromium-a67] › tests/browser-trial/progression-a67.spec.ts:263:3 › A67 group trade response recovery and pass es 
+
+    Error: expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 6
+    + Received  + 6
+
+    @@ -2,14 +2,14 @@
+        Object {
+          "source": "owned",
+          "unit": Object {
+            "affinity": "alchemy",
+            "broomInitiative": 3,
+    -       "hp": 40,
+    +       "hp": 50,
+            "id": "starter:apprentice",
+            "level": 1,
+    -       "mana": 28,
+    +       "mana": 20,
+            "maxHp": 100,
+            "maxMana": 40,
+            "power": 10,
+            "speed": 6,
+            "wandMultiplier": 1,
+    @@ -20,14 +20,14 @@
+        Object {
+          "source": "temporary",
+          "unit": Object {
+            "affinity": "alchemy",
+            "broomInitiative": 0,
+    -       "hp": 32,
+    +       "hp": 40,
+            "id": "pasaje:0:0:choice:0",
+            "level": 1,
+    -       "mana": 28,
+    +       "mana": 20,
+            "maxHp": 80,
+            "maxMana": 40,
+            "power": 12,
+            "speed": 8,
+            "wandMultiplier": 1,
+    @@ -38,14 +38,14 @@
+        Object {
+          "source": "temporary",
+          "unit": Object {
+            "affinity": "alchemy",
+            "broomInitiative": 0,
+    -       "hp": 32,
+    +       "hp": 40,
+            "id": "pasaje:3:2:choice:0",
+            "level": 1,
+    -       "mana": 28,
+    +       "mana": 20,
+            "maxHp": 80,
+            "maxMana": 40,
+            "power": 12,
+            "speed": 8,
+            "wandMultiplier": 1,
+
+      294 |     await expect(recovery).toBeVisible();
+      295 |     const committed = await readGame(page);
+    > 296 |     expect(committed.exploration!.run!.members).toEqual(
+          |                                                 ^
+      297 |       previewEncounterTrade(run.members, plan.offer, group.id).members,
+      298 |     );
+      299 |     await recovery.click();
+        at /Users/enricarandes/work/diagon-alley/tests/browser-trial/progression-a67.spec.ts:296:49
+
+    attachment #1: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results-progression-a67/progression-a67-A67-group--76e69-sponse-recovery-and-pass-es-chromium-a67/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results-progression-a67/progression-a67-A67-group--76e69-sponse-recovery-and-pass-es-chromium-a67/error-context.md
+
+    Error Context: test-results-progression-a67/progression-a67-A67-group--76e69-sponse-recovery-and-pass-es-chromium-a67/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results-progression-a67/progression-a67-A67-group--76e69-sponse-recovery-and-pass-es-chromium-a67/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results-progression-a67/progression-a67-A67-group--76e69-sponse-recovery-and-pass-es-chromium-a67/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) [chromium-a67] › tests/browser-trial/progression-a67.spec.ts:263:3 › A67 group trade response recovery and pass en 
+
+    Error: expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 6
+    + Received  + 6
+
+    @@ -2,14 +2,14 @@
+        Object {
+          "source": "owned",
+          "unit": Object {
+            "affinity": "alchemy",
+            "broomInitiative": 3,
+    -       "hp": 40,
+    +       "hp": 50,
+            "id": "starter:apprentice",
+            "level": 1,
+    -       "mana": 28,
+    +       "mana": 20,
+            "maxHp": 100,
+            "maxMana": 40,
+            "power": 10,
+            "speed": 6,
+            "wandMultiplier": 1,
+    @@ -20,14 +20,14 @@
+        Object {
+          "source": "temporary",
+          "unit": Object {
+            "affinity": "alchemy",
+            "broomInitiative": 0,
+    -       "hp": 32,
+    +       "hp": 40,
+            "id": "pasaje:0:0:choice:0",
+            "level": 1,
+    -       "mana": 28,
+    +       "mana": 20,
+            "maxHp": 80,
+            "maxMana": 40,
+            "power": 12,
+            "speed": 8,
+            "wandMultiplier": 1,
+    @@ -38,14 +38,14 @@
+        Object {
+          "source": "temporary",
+          "unit": Object {
+            "affinity": "alchemy",
+            "broomInitiative": 0,
+    -       "hp": 38,
+    +       "hp": 47.5,
+            "id": "pasaje:1:0:choice:0",
+            "level": 1,
+    -       "mana": 28,
+    +       "mana": 20,
+            "maxHp": 95,
+            "maxMana": 40,
+            "power": 10,
+            "speed": 6,
+            "wandMultiplier": 1,
+
+      294 |     await expect(recovery).toBeVisible();
+      295 |     const committed = await readGame(page);
+    > 296 |     expect(committed.exploration!.run!.members).toEqual(
+          |                                                 ^
+      297 |       previewEncounterTrade(run.members, plan.offer, group.id).members,
+      298 |     );
+      299 |     await recovery.click();
+        at /Users/enricarandes/work/diagon-alley/tests/browser-trial/progression-a67.spec.ts:296:49
+
+    attachment #1: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results-progression-a67/progression-a67-A67-group--69a06-sponse-recovery-and-pass-en-chromium-a67/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results-progression-a67/progression-a67-A67-group--69a06-sponse-recovery-and-pass-en-chromium-a67/error-context.md
+
+    Error Context: test-results-progression-a67/progression-a67-A67-group--69a06-sponse-recovery-and-pass-en-chromium-a67/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results-progression-a67/progression-a67-A67-group--69a06-sponse-recovery-and-pass-en-chromium-a67/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results-progression-a67/progression-a67-A67-group--69a06-sponse-recovery-and-pass-en-chromium-a67/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  3) [webkit-a67] › tests/browser-trial/progression-a67.spec.ts:263:3 › A67 group trade response recovery and pass es 
+
+    Error: expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 6
+    + Received  + 6
+
+    @@ -2,14 +2,14 @@
+        Object {
+          "source": "owned",
+          "unit": Object {
+            "affinity": "alchemy",
+            "broomInitiative": 3,
+    -       "hp": 40,
+    +       "hp": 50,
+            "id": "starter:apprentice",
+            "level": 1,
+    -       "mana": 28,
+    +       "mana": 20,
+            "maxHp": 100,
+            "maxMana": 40,
+            "power": 10,
+            "speed": 6,
+            "wandMultiplier": 1,
+    @@ -20,14 +20,14 @@
+        Object {
+          "source": "temporary",
+          "unit": Object {
+            "affinity": "alchemy",
+            "broomInitiative": 0,
+    -       "hp": 32,
+    +       "hp": 40,
+            "id": "pasaje:0:0:choice:0",
+            "level": 1,
+    -       "mana": 28,
+    +       "mana": 20,
+            "maxHp": 80,
+            "maxMana": 40,
+            "power": 12,
+            "speed": 8,
+            "wandMultiplier": 1,
+    @@ -38,14 +38,14 @@
+        Object {
+          "source": "temporary",
+          "unit": Object {
+            "affinity": "alchemy",
+            "broomInitiative": 0,
+    -       "hp": 38,
+    +       "hp": 47.5,
+            "id": "pasaje:1:0:choice:0",
+            "level": 1,
+    -       "mana": 28,
+    +       "mana": 20,
+            "maxHp": 95,
+            "maxMana": 40,
+            "power": 10,
+            "speed": 6,
+            "wandMultiplier": 1,
+
+      294 |       exact: true,
+      295 |     });
+    > 296 |     await expect.poll(() => responseLost).toBe(true);
+          |                                                 ^
+      297 |     await expect(recovery).toBeVisible();
+      298 |     const committed = await readGame(page);
+      299 |     expect(committed.exploration!.run!.members).toEqual(
+        at /Users/enricarandes/work/diagon-alley/tests/browser-trial/progression-a67.spec.ts:296:49
+
+    attachment #1: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results-progression-a67/progression-a67-A67-group--76e69-sponse-recovery-and-pass-es-webkit-a67/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results-progression-a67/progression-a67-A67-group--76e69-sponse-recovery-and-pass-es-webkit-a67/error-context.md
+
+    Error Context: test-results-progression-a67/progression-a67-A67-group--76e69-sponse-recovery-and-pass-es-webkit-a67/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results-progression-a67/progression-a67-A67-group--76e69-sponse-recovery-and-pass-es-webkit-a67/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results-progression-a67/progression-a67-A67-group--76e69-sponse-recovery-and-pass-es-webkit-a67/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  4) [webkit-a67] › tests/browser-trial/progression-a67.spec.ts:263:3 › A67 group trade response recovery and pass en 
+
+    Error: expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 6
+    + Received  + 6
+
+    @@ -2,14 +2,14 @@
+        Object {
+          "source": "owned",
+          "unit": Object {
+            "affinity": "alchemy",
+            "broomInitiative": 3,
+    -       "hp": 40,
+    +       "hp": 50,
+            "id": "starter:apprentice",
+            "level": 1,
+    -       "mana": 28,
+    +       "mana": 20,
+            "maxHp": 100,
+            "maxMana": 40,
+            "power": 10,
+            "speed": 6,
+            "wandMultiplier": 1,
+    @@ -20,14 +20,14 @@
+        Object {
+          "source": "temporary",
+          "unit": Object {
+            "affinity": "alchemy",
+            "broomInitiative": 0,
+    -       "hp": 32,
+    +       "hp": 40,
+            "id": "pasaje:0:0:choice:0",
+            "level": 1,
+    -       "mana": 28,
+    +       "mana": 20,
+            "maxHp": 80,
+            "maxMana": 40,
+            "power": 12,
+            "speed": 8,
+            "wandMultiplier": 1,
+    @@ -38,14 +38,14 @@
+        Object {
+          "source": "temporary",
+          "unit": Object {
+            "affinity": "alchemy",
+            "broomInitiative": 0,
+    -       "hp": 38,
+    +       "hp": 47.5,
+            "id": "pasaje:1:0:choice:0",
+            "level": 1,
+    -       "mana": 28,
+    +       "mana": 20,
+            "maxHp": 95,
+            "maxMana": 40,
+            "power": 10,
+            "speed": 6,
+            "wandMultiplier": 1,
+
+      294 |       exact: true,
+      295 |     });
+    > 296 |     await expect.poll(() => responseLost).toBe(true);
+          |                                                 ^
+      297 |     await expect(recovery).toBeVisible();
+      298 |     const committed = await readGame(page);
+      299 |     expect(committed.exploration!.run!.members).toEqual(
+        at /Users/enricarandes/work/diagon-alley/tests/browser-trial/progression-a67.spec.ts:296:49
+
+    attachment #1: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results-progression-a67/progression-a67-A67-group--69a06-sponse-recovery-and-pass-en-webkit-a67/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results-progression-a67/progression-a67-A67-group--69a06-sponse-recovery-and-pass-en-webkit-a67/error-context.md
+
+    Error Context: test-results-progression-a67/progression-a67-A67-group--69a06-sponse-recovery-and-pass-en-webkit-a67/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results-progression-a67/progression-a67-A67-group--69a06-sponse-recovery-and-pass-en-webkit-a67/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results-progression-a67/progression-a67-A67-group--69a06-sponse-recovery-and-pass-en-webkit-a67/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  4 failed
+    [chromium-a67] › tests/browser-trial/progression-a67.spec.ts:263:3 › A67 group trade response recovery and pass es 
+    [chromium-a67] › tests/browser-trial/progression-a67.spec.ts:263:3 › A67 group trade response recovery and pass en 
+    [webkit-a67] › tests/browser-trial/progression-a67.spec.ts:263:3 › A67 group trade response recovery and pass es 
+    [webkit-a67] › tests/browser-trial/progression-a67.spec.ts:263:3 › A67 group trade response recovery and pass en 
+  16 passed (1.7m)

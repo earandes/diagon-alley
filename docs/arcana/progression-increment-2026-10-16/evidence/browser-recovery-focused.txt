@@ -1,0 +1,60 @@
+[WebServer] (node:53016) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:53047) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] WebSocket server error: Port 24678 is already in use
+[WebServer] (node:53067) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:53093) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] WebSocket server error: Port 24678 is already in use
+
+Running 1 test using 1 worker
+
+(node:53096) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  1 [chromium-a67] › tests/browser-trial/progression-a67.spec.ts:263:3 › A67 group trade response recovery and pass es (4.6s)
+
+
+  1) [chromium-a67] › tests/browser-trial/progression-a67.spec.ts:263:3 › A67 group trade response recovery and pass es 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByRole('button', { name: 'Recuperar operación', exact: true })
+    Expected: visible
+    Error: strict mode violation: getByRole('button', { name: 'Recuperar operación', exact: true }) resolved to 2 elements:
+        1) <button>Recuperar operación</button> aka getByRole('button', { name: 'Recuperar operación' }).first()
+        2) <button>Recuperar operación</button> aka getByRole('dialog', { name: 'Confirmación de nodo' }).getByRole('button', { name: 'Recuperar operación' })
+
+    Call log:
+      - Expect "toBeVisible" getByRole('button', { name: 'Recuperar operación', exact: true }) with timeout 5000ms
+      - waiting for getByRole('button', { name: 'Recuperar operación', exact: true })
+
+
+      295 |     });
+      296 |     await expect.poll(() => responseLost).toBe(true);
+    > 297 |     await expect(recovery).toBeVisible();
+          |                            ^
+      298 |     const committed = await readGame(page);
+      299 |     expect(committed.exploration!.run!.members).toEqual(
+      300 |       previewEncounterTrade(run.members, plan.offer, group.id).members,
+        at /Users/enricarandes/work/diagon-alley/tests/browser-trial/progression-a67.spec.ts:297:28
+
+    attachment #1: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results-progression-a67/progression-a67-A67-group--76e69-sponse-recovery-and-pass-es-chromium-a67/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results-progression-a67/progression-a67-A67-group--76e69-sponse-recovery-and-pass-es-chromium-a67/error-context.md
+
+    Error Context: test-results-progression-a67/progression-a67-A67-group--76e69-sponse-recovery-and-pass-es-chromium-a67/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results-progression-a67/progression-a67-A67-group--76e69-sponse-recovery-and-pass-es-chromium-a67/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results-progression-a67/progression-a67-A67-group--76e69-sponse-recovery-and-pass-es-chromium-a67/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 failed
+    [chromium-a67] › tests/browser-trial/progression-a67.spec.ts:263:3 › A67 group trade response recovery and pass es 

@@ -1,0 +1,200 @@
+.expedition-intentions {
+  width: min(100%, 36rem);
+  margin: 1rem auto 0;
+  padding: 0.8rem 0.5rem;
+  border-top: 1px solid #b89a5970;
+  color: #f4e7c7;
+}
+.expedition-intentions h3 {
+  font-size: 1rem;
+  text-align: center;
+  margin: 0 0 0.5rem;
+}
+.intention-choices {
+  display: flex;
+  justify-content: center;
+  gap: 0.55rem;
+}
+.intention-choice {
+  flex: 1 1 0;
+  min-width: 0;
+  max-width: 11rem;
+}
+.intention-object {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  min-height: 8rem;
+  padding: 0.3rem;
+  border: 1px solid transparent;
+  border-radius: 50% 50% 0.6rem 0.6rem;
+  color: inherit;
+  background: radial-gradient(ellipse at center, #d3ae5830, transparent 68%);
+  transition:
+    transform 140ms ease-out,
+    border-color 140ms ease-out;
+}
+.intention-object:hover,
+.intention-object:focus-visible {
+  transform: translateY(-2px);
+  border-color: #e6c77f;
+}
+.intention-object[aria-pressed='true'] {
+  border-color: #e6c77f;
+  background: radial-gradient(ellipse at center, #d3ae584d, transparent 75%);
+}
+.intention-object:disabled {
+  opacity: 1;
+}
+.intention-object img {
+  width: 4rem;
+  height: 4rem;
+  object-fit: contain;
+  filter: drop-shadow(0 3px 5px #0008);
+}
+.intention-object-label {
+  font-size: 0.8rem;
+  text-align: center;
+  line-height: 1.2;
+  margin-top: 0.25rem;
+}
+.intention-object-label small {
+  display: block;
+  color: #dbc58e;
+  font-size: 0.72rem;
+  margin-top: 0.2rem;
+}
+.intention-seal {
+  position: absolute;
+  top: 0.2rem;
+  right: 0.2rem;
+  padding: 0.15rem 0.35rem;
+  border: 1px solid #eadca8;
+  border-radius: 50%;
+  background: #294940;
+}
+.intention-explanation {
+  margin-top: 0.2rem;
+  font-size: 0.75rem;
+}
+.intention-explanation summary,
+.intention-purpose summary {
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  text-align: center;
+  color: #e6c77f;
+}
+.intention-explanation p,
+.intention-purpose p,
+.intention-reminder p {
+  line-height: 1.5;
+  margin: 0.5rem 0;
+}
+.intention-purpose {
+  font-size: 0.75rem;
+  text-align: center;
+}
+.intention-release {
+  display: block;
+  margin: 0.3rem auto;
+  min-height: 44px;
+  background: transparent;
+  color: #dfd4ba;
+  border: none;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.intention-reminder {
+  width: min(100%, 24rem);
+  margin: 0.4rem auto;
+  border: 1px solid #c7a66170;
+  border-radius: 0.6rem;
+  background: #0d1a2ae8;
+  color: #f1e4c4;
+  font-size: 0.8rem;
+}
+.intention-reminder > summary {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  min-height: 44px;
+  padding: 0.35rem 0.55rem;
+  cursor: pointer;
+}
+.intention-reminder > summary > img {
+  width: 2rem;
+  height: 2rem;
+  object-fit: contain;
+}
+.intention-reminder summary small {
+  display: block;
+  color: #d6bd83;
+  font-size: 0.72rem;
+}
+.intention-state-mark {
+  margin-left: auto;
+  font-size: 1.1rem;
+}
+.intention-reminder > div {
+  padding: 0 0.7rem 0.65rem;
+}
+.intention-reminder > div > button {
+  display: block;
+  min-height: 44px;
+  margin-top: 0.3rem;
+}
+.intention-reminder[data-intention-status='completed'] {
+  border-color: #e5c472;
+}
+@media (max-width: 430px) {
+  .intention-choices {
+    gap: 0.15rem;
+  }
+  .intention-object {
+    min-height: 7rem;
+  }
+  .intention-object img {
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .intention-object {
+    transition: none;
+  }
+  .intention-object:hover,
+  .intention-object:focus-visible {
+    transform: none;
+  }
+}
+[data-reduced='true'] .intention-object {
+  transition: none;
+}
+[data-reduced='true'] .intention-object:hover,
+[data-reduced='true'] .intention-object:focus-visible {
+  transform: none;
+}
+/* Reserve actual route space: the plan never sits behind the scene or over a node. */
+.arcana-map-view .expedition-panel[data-map-phase='route'] > .intention-reminder {
+  position: absolute;
+  top: 42px;
+  left: 12px;
+  z-index: 6;
+  width: min(260px, calc(100% - 92px));
+  margin: 0;
+}
+.arcana-map-view
+  .expedition-panel[data-map-phase='route']:has(> .intention-reminder)
+  > .map-scroll {
+  height: calc(100% - 96px);
+  margin-top: 96px;
+}
+.arcana-map-view .expedition-panel[data-map-phase='route'] > .intention-reminder[open] {
+  max-height: min(380px, calc(100% - 100px));
+  overflow: auto;
+}

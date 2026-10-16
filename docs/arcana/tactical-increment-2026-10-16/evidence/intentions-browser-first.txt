@@ -1,0 +1,195 @@
+[WebServer] (node:59102) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:59126) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] WebSocket server error: Port 24678 is already in use
+[WebServer] (node:59135) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:59162) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] WebSocket server error: Port 24678 is already in use
+
+Running 8 tests using 1 worker
+
+(node:59163) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  1 [chromium-intentions-a65] › tests/browser-trial/tactical-intentions-a65.spec.ts:118:5 › A65 intention selection preparation activation recovery es diagon-alley (7.2s)
+  ✓  2 [chromium-intentions-a65] › tests/browser-trial/tactical-intentions-a65.spec.ts:118:5 › A65 intention selection preparation activation recovery es arcana (5.7s)
+  ✓  3 [chromium-intentions-a65] › tests/browser-trial/tactical-intentions-a65.spec.ts:118:5 › A65 intention selection preparation activation recovery en diagon-alley (8.3s)
+  ✓  4 [chromium-intentions-a65] › tests/browser-trial/tactical-intentions-a65.spec.ts:118:5 › A65 intention selection preparation activation recovery en arcana (6.0s)
+(node:59610) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  5 [webkit-intentions-a65] › tests/browser-trial/tactical-intentions-a65.spec.ts:118:5 › A65 intention selection preparation activation recovery es diagon-alley (7.1s)
+(node:59704) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  6 [webkit-intentions-a65] › tests/browser-trial/tactical-intentions-a65.spec.ts:118:5 › A65 intention selection preparation activation recovery es arcana (6.8s)
+(node:59772) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  7 [webkit-intentions-a65] › tests/browser-trial/tactical-intentions-a65.spec.ts:118:5 › A65 intention selection preparation activation recovery en diagon-alley (6.8s)
+(node:59872) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  8 [webkit-intentions-a65] › tests/browser-trial/tactical-intentions-a65.spec.ts:118:5 › A65 intention selection preparation activation recovery en arcana (7.0s)
+
+
+  1) [webkit-intentions-a65] › tests/browser-trial/tactical-intentions-a65.spec.ts:118:5 › A65 intention selection preparation activation recovery es diagon-alley 
+
+    Error: expect(locator).toBeFocused() failed
+
+    Locator:  locator('[data-intention-choice="bean"] > button')
+    Expected: focused
+    Received: inactive
+    Timeout:  5000ms
+
+    Call log:
+      - Expect "toBeFocused" locator('[data-intention-choice="bean"] > button') with timeout 5000ms
+      - waiting for locator('[data-intention-choice="bean"] > button')
+        14 × locator resolved to <button type="button" aria-pressed="true" aria-disabled="true" class="intention-object" aria-label="Elegir Prueba un sabor">…</button>
+           - unexpected value "inactive"
+
+
+      135 |       await choose.click();
+      136 |       await expect(choose).toHaveAttribute('aria-pressed', 'true');
+    > 137 |       await expect(choose).toBeFocused();
+          |                            ^
+      138 |       const selected = await readGame(page);
+      139 |       expect(selected.inventory).toEqual(before.inventory);
+      140 |       expect(selected.copies).toEqual(before.copies);
+        at /Users/enricarandes/work/diagon-alley/tests/browser-trial/tactical-intentions-a65.spec.ts:137:28
+
+    attachment #1: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results-intentions-a65/tactical-intentions-a65-A6-5e9c5-on-recovery-es-diagon-alley-webkit-intentions-a65/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results-intentions-a65/tactical-intentions-a65-A6-5e9c5-on-recovery-es-diagon-alley-webkit-intentions-a65/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results-intentions-a65/tactical-intentions-a65-A6-5e9c5-on-recovery-es-diagon-alley-webkit-intentions-a65/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results-intentions-a65/tactical-intentions-a65-A6-5e9c5-on-recovery-es-diagon-alley-webkit-intentions-a65/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) [webkit-intentions-a65] › tests/browser-trial/tactical-intentions-a65.spec.ts:118:5 › A65 intention selection preparation activation recovery es arcana 
+
+    Error: expect(locator).toBeFocused() failed
+
+    Locator:  locator('[data-intention-choice="bean"] > button')
+    Expected: focused
+    Received: inactive
+    Timeout:  5000ms
+
+    Call log:
+      - Expect "toBeFocused" locator('[data-intention-choice="bean"] > button') with timeout 5000ms
+      - waiting for locator('[data-intention-choice="bean"] > button')
+        14 × locator resolved to <button type="button" aria-pressed="true" aria-disabled="true" class="intention-object" aria-label="Elegir Prueba un sabor">…</button>
+           - unexpected value "inactive"
+
+
+      135 |       await choose.click();
+      136 |       await expect(choose).toHaveAttribute('aria-pressed', 'true');
+    > 137 |       await expect(choose).toBeFocused();
+          |                            ^
+      138 |       const selected = await readGame(page);
+      139 |       expect(selected.inventory).toEqual(before.inventory);
+      140 |       expect(selected.copies).toEqual(before.copies);
+        at /Users/enricarandes/work/diagon-alley/tests/browser-trial/tactical-intentions-a65.spec.ts:137:28
+
+    attachment #1: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results-intentions-a65/tactical-intentions-a65-A6-b46ba-tivation-recovery-es-arcana-webkit-intentions-a65/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results-intentions-a65/tactical-intentions-a65-A6-b46ba-tivation-recovery-es-arcana-webkit-intentions-a65/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results-intentions-a65/tactical-intentions-a65-A6-b46ba-tivation-recovery-es-arcana-webkit-intentions-a65/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results-intentions-a65/tactical-intentions-a65-A6-b46ba-tivation-recovery-es-arcana-webkit-intentions-a65/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  3) [webkit-intentions-a65] › tests/browser-trial/tactical-intentions-a65.spec.ts:118:5 › A65 intention selection preparation activation recovery en diagon-alley 
+
+    Error: expect(locator).toBeFocused() failed
+
+    Locator:  locator('[data-intention-choice="bean"] > button')
+    Expected: focused
+    Received: inactive
+    Timeout:  5000ms
+
+    Call log:
+      - Expect "toBeFocused" locator('[data-intention-choice="bean"] > button') with timeout 5000ms
+      - waiting for locator('[data-intention-choice="bean"] > button')
+        14 × locator resolved to <button type="button" aria-pressed="true" aria-disabled="true" class="intention-object" aria-label="Choose Try a flavour">…</button>
+           - unexpected value "inactive"
+
+
+      135 |       await choose.click();
+      136 |       await expect(choose).toHaveAttribute('aria-pressed', 'true');
+    > 137 |       await expect(choose).toBeFocused();
+          |                            ^
+      138 |       const selected = await readGame(page);
+      139 |       expect(selected.inventory).toEqual(before.inventory);
+      140 |       expect(selected.copies).toEqual(before.copies);
+        at /Users/enricarandes/work/diagon-alley/tests/browser-trial/tactical-intentions-a65.spec.ts:137:28
+
+    attachment #1: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results-intentions-a65/tactical-intentions-a65-A6-c3008-on-recovery-en-diagon-alley-webkit-intentions-a65/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results-intentions-a65/tactical-intentions-a65-A6-c3008-on-recovery-en-diagon-alley-webkit-intentions-a65/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results-intentions-a65/tactical-intentions-a65-A6-c3008-on-recovery-en-diagon-alley-webkit-intentions-a65/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results-intentions-a65/tactical-intentions-a65-A6-c3008-on-recovery-en-diagon-alley-webkit-intentions-a65/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  4) [webkit-intentions-a65] › tests/browser-trial/tactical-intentions-a65.spec.ts:118:5 › A65 intention selection preparation activation recovery en arcana 
+
+    Error: expect(locator).toBeFocused() failed
+
+    Locator:  locator('[data-intention-choice="bean"] > button')
+    Expected: focused
+    Received: inactive
+    Timeout:  5000ms
+
+    Call log:
+      - Expect "toBeFocused" locator('[data-intention-choice="bean"] > button') with timeout 5000ms
+      - waiting for locator('[data-intention-choice="bean"] > button')
+        14 × locator resolved to <button type="button" aria-pressed="true" aria-disabled="true" class="intention-object" aria-label="Choose Try a flavour">…</button>
+           - unexpected value "inactive"
+
+
+      135 |       await choose.click();
+      136 |       await expect(choose).toHaveAttribute('aria-pressed', 'true');
+    > 137 |       await expect(choose).toBeFocused();
+          |                            ^
+      138 |       const selected = await readGame(page);
+      139 |       expect(selected.inventory).toEqual(before.inventory);
+      140 |       expect(selected.copies).toEqual(before.copies);
+        at /Users/enricarandes/work/diagon-alley/tests/browser-trial/tactical-intentions-a65.spec.ts:137:28
+
+    attachment #1: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results-intentions-a65/tactical-intentions-a65-A6-a2f3a-tivation-recovery-en-arcana-webkit-intentions-a65/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results-intentions-a65/tactical-intentions-a65-A6-a2f3a-tivation-recovery-en-arcana-webkit-intentions-a65/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results-intentions-a65/tactical-intentions-a65-A6-a2f3a-tivation-recovery-en-arcana-webkit-intentions-a65/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results-intentions-a65/tactical-intentions-a65-A6-a2f3a-tivation-recovery-en-arcana-webkit-intentions-a65/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  4 failed
+    [webkit-intentions-a65] › tests/browser-trial/tactical-intentions-a65.spec.ts:118:5 › A65 intention selection preparation activation recovery es diagon-alley 
+    [webkit-intentions-a65] › tests/browser-trial/tactical-intentions-a65.spec.ts:118:5 › A65 intention selection preparation activation recovery es arcana 
+    [webkit-intentions-a65] › tests/browser-trial/tactical-intentions-a65.spec.ts:118:5 › A65 intention selection preparation activation recovery en diagon-alley 
+    [webkit-intentions-a65] › tests/browser-trial/tactical-intentions-a65.spec.ts:118:5 › A65 intention selection preparation activation recovery en arcana 
+  4 passed (60.0s)

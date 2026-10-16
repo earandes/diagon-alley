@@ -7,7 +7,12 @@ import { ArcanaError } from '../domain/errors';
 import type { GameState } from './game';
 import type { CampaignConfiguration } from './run-use-cases';
 /** Cross-context coordination reads only owned equipment referenced by the team's loadout. */
-export function equipmentBonuses(inventory: Inventory, team: Team, copyId: string) {
+export function equipmentBonuses(
+  inventory: Inventory,
+  team: Team,
+  copyId: string,
+  specialized = true,
+) {
   const loadout = team.loadouts.find((l) => l.copyId === copyId),
     items = inventory.equipment ?? [];
   const wand = items.find((item) => item.id === loadout?.wandId && item.kind === 'wand');
@@ -16,6 +21,12 @@ export function equipmentBonuses(inventory: Inventory, team: Team, copyId: strin
     wandPowerBonus: wand?.kind === 'wand' ? wand.powerBonus : 0,
     wandMultiplier: wand?.kind === 'wand' ? wand.multiplier : 1,
     broomInitiative: broom?.kind === 'broom' ? broom.initiative : 0,
+    ...(specialized && wand?.kind === 'wand' && wand.initiativeBonus !== undefined
+      ? { wandInitiativeBonus: wand.initiativeBonus }
+      : {}),
+    ...(specialized && wand?.kind === 'wand' && wand.healing !== undefined
+      ? { wandHealing: wand.healing }
+      : {}),
   };
 }
 export function prepareOwnedUnit(
@@ -52,7 +63,17 @@ export function refreshRunEquipment(run: Run, state: GameState, team: Team): Run
       ? member
       : {
           ...member,
-          unit: { ...member.unit, ...equipmentBonuses(state.inventory, team, member.unit.id) },
+          unit: {
+            ...member.unit,
+            wandInitiativeBonus: undefined,
+            wandHealing: undefined,
+            ...equipmentBonuses(
+              state.inventory,
+              team,
+              member.unit.id,
+              run.equipmentRulesVersion === 2,
+            ),
+          },
         };
   return runSnapshot({
     ...run,

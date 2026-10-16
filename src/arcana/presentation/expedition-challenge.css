@@ -1,0 +1,83 @@
+.expedition-challenge {
+  margin: 8px auto;
+  width: min(100%, 420px);
+  color: var(--pack-ink);
+  text-align: center;
+}
+.expedition-challenge > summary {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  cursor: pointer;
+  color: var(--pack-gold);
+}
+.expedition-challenge > summary::-webkit-details-marker {
+  display: none;
+}
+.expedition-challenge > summary img {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+}
+.expedition-challenge > div {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+}
+.game-shell .expedition-challenge button {
+  position: relative;
+  min-width: 0;
+  min-height: 88px;
+  padding: 8px 4px;
+  margin: 0;
+  border: 1px solid #ad986466;
+  border-radius: 10px;
+  background: #0c1b29;
+  color: var(--pack-ink);
+  font-size: 0.8rem;
+}
+.expedition-challenge button > img:first-child {
+  display: block;
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+  margin: 0 auto 4px;
+}
+.game-shell .expedition-challenge button[aria-pressed='true'] {
+  border-color: var(--pack-gold);
+  background: #263c37;
+}
+.expedition-challenge .challenge-seal {
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  right: 2px;
+  top: 2px;
+}
+.expedition-challenge p {
+  margin: 8px auto;
+  font-size: 0.82rem;
+  line-height: 1.4;
+  max-width: 38ch;
+}
+.expedition-challenge small {
+  display: block;
+  font-size: 0.72rem;
+  color: #d8cbb0;
+}
+.expedition-challenge :focus-visible {
+  outline: 3px solid #a7e8ed;
+  outline-offset: 3px;
+}
+.game-shell .game-header .challenge-reminder {
+  display: block;
+  margin-top: 3px;
+  font:
+    0.65rem system-ui,
+    sans-serif;
+  letter-spacing: 0.04em;
+  color: #e9d4a4;
+}

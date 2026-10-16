@@ -1,0 +1,44 @@
+{
+  "seeds": [
+    0,
+    127
+  ],
+  "routes": 1171,
+  "withoutRefuge": 390,
+  "withoutDuel": 170,
+  "maxBattlesWithoutRefuge": 5,
+  "firstNoRefuge": {
+    "seed": 0,
+    "route": [
+      {
+        "id": "pasaje:0:0",
+        "kind": "pact"
+      },
+      {
+        "id": "pasaje:1:0",
+        "kind": "pact"
+      },
+      {
+        "id": "pasaje:2:0",
+        "kind": "duel"
+      },
+      {
+        "id": "pasaje:3:0",
+        "kind": "chest"
+      },
+      {
+        "id": "pasaje:5:0",
+        "kind": "duel"
+      },
+      {
+        "id": "pasaje:2:2",
+        "kind": "encounter"
+      },
+      {
+        "id": "pasaje:6:0",
+        "kind": "boss"
+      }
+    ]
+  },
+  "limit": "Topological paths only. Refuge is not always reachable from every chosen branch. Safe seed path existence is separately simulated; never an automatic reroute."
+}

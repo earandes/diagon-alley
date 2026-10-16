@@ -1,3 +1,4 @@
+import { EncounterTradeOutcome } from './EncounterTradeOutcome';
 import { Artwork } from './Artwork';
 import { EncounterOutcome } from './EncounterOutcome';
 import type { NodeReceipt } from '../application/run-contracts';
@@ -82,7 +83,10 @@ export function NodeResult({
           <p className="visually-hidden">{text(language, 'nodeResultSaved')}</p>
           <button
             onClick={(event) => {
-              if (returnAction) { returnAction.onReturn(event.currentTarget); return; }
+              if (returnAction) {
+                returnAction.onReturn(event.currentTarget);
+                return;
+              }
               event.currentTarget.closest('details')?.removeAttribute('open');
               const target = document.querySelector<HTMLButtonElement>(
                 '[data-node]:not(:disabled), [data-start-run]',
@@ -131,9 +135,17 @@ export function NodeResult({
               </div>
             ) : null;
           })}
-          {kind === 'encounter' && receipt.request.encounterAction !== 'pass' && (
-            <EncounterOutcome resolution={receipt.encounter?.resolution} language={language} />
-          )}
+          {kind === 'encounter' &&
+            receipt.request.encounterAction !== 'pass' &&
+            (receipt.encounter?.trade ? (
+              <EncounterTradeOutcome
+                trade={receipt.encounter.trade}
+                members={receipt.run.members}
+                language={language}
+              />
+            ) : (
+              <EncounterOutcome resolution={receipt.encounter?.resolution} language={language} />
+            ))}
           {receipt.firstVictory === false && <p>{text(language, 'repeatVictoryReward')}</p>}
           {kind === 'refuge' && (
             <p>

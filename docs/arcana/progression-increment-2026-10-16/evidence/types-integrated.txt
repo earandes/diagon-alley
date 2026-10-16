@@ -1,0 +1,10 @@
+
+> coleccion-magica-i1@0.1.0 typecheck
+> tsc --noEmit && tsc --project tsconfig.worker.json --noEmit
+
+src/arcana/infrastructure/content/trial-configuration.ts(30,79): error TS2345: Argument of type '{ version: number; recipes: { id: string; crowns: number; wood: string; core: string; powerBonus: number; multiplier: number; }[]; }' is not assignable to parameter of type 'ForgeCatalog'.
+  Types of property 'recipes' are incompatible.
+    Type '{ id: string; crowns: number; wood: string; core: string; powerBonus: number; multiplier: number; }[]' is not assignable to type 'readonly WandRecipe[]'.
+      Type '{ id: string; crowns: number; wood: string; core: string; powerBonus: number; multiplier: number; }' is not assignable to type 'WandRecipe'.
+        Types of property 'wood' are incompatible.
+          Type 'string' is not assignable to type '"birch" | "willow" | "elder"'.

@@ -1,0 +1,18 @@
+/* A66: the region is the map's single identity; modal settings replace the inert gear. */
+.game-shell:has(dialog[open]) > .game-header > .settings-trigger,
+.game-shell:has(.reveal) > .game-header > .settings-trigger {
+  visibility: hidden;
+}
+.game-shell.arcana-map-view > .game-header h1 {
+  font-size: clamp(0.78rem, 1.65vw, 1rem);
+  letter-spacing: 0.06em;
+}
+/* Historical single-candidate snapshots use the same rectangular portrait silhouette. */
+.game-shell .node-event-dialog .pact-preview::before {
+  border-radius: 8px;
+}
+.game-shell .node-event-dialog .pact-preview > img:first-child {
+  border: 4px double #bfa66b;
+  border-radius: 8px;
+  object-fit: cover;
+}

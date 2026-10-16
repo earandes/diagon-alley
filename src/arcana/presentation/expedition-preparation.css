@@ -917,3 +917,23 @@
     padding: 20px 16px;
   }
 }
+
+/* A67: the core identifies the specialization even when the wood is identical. */
+.preparation-gear .equipment-art {
+  width: 64px;
+  height: 64px;
+}
+.preparation-gear .equipment-art img {
+  padding: 0;
+}
+.preparation-gear .equipment-art .core-art {
+  width: 28px;
+  height: 32px;
+  padding: 0;
+  right: -4px;
+  bottom: -2px;
+}
+.preparation-gear-tray .equipment-art {
+  width: 48px;
+  height: 48px;
+}

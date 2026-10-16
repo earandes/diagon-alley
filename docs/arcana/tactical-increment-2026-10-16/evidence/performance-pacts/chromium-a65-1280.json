@@ -1,0 +1,77 @@
+{
+  "browser": "chromium-a65",
+  "viewport": {
+    "width": 1280,
+    "height": 900
+  },
+  "scope": "Fresh isolated compiled GUI; Diagon Alley ES; normal motion; serial run. Pact scenes wait for image decode and finite authored transitions. Arena window is 8 seconds from pointerdown, including HTTP and renderer startup. rAF cadence is not displayed GPU FPS or physical device evidence. WebKit has no longtask API when reported null. No equivalent before baseline or improvement percentage.",
+  "profiles": [
+    {
+      "name": "open-pact",
+      "inputToVisibleMs": 30.100000000558794,
+      "inputToDecodedAndSettledMs": 396.1000000005588,
+      "images": 8,
+      "broken": 0,
+      "network": []
+    },
+    {
+      "name": "select-candidate",
+      "inputToVisibleMs": 12.099999999627471,
+      "inputToDecodedAndSettledMs": 227,
+      "images": 10,
+      "broken": 0,
+      "network": []
+    },
+    {
+      "name": "confirmed-recruitment",
+      "inputToVisibleMs": 187.59999999962747,
+      "inputToDecodedAndSettledMs": 1927.4000000003725,
+      "images": 22,
+      "broken": 0,
+      "network": [
+        {
+          "path": "/api/nodes/advance",
+          "durationMs": 51.799999999813735
+        },
+        {
+          "path": "/api/state",
+          "durationMs": 12.099999999627471
+        }
+      ]
+    }
+  ],
+  "arena": {
+    "inputMs": 4295.800000000745,
+    "elapsedMs": 8013.699999999255,
+    "rafCallbacks": 457,
+    "estimatedRafHz": 57.02734067909237,
+    "p95FrameMs": 16.700000000000728,
+    "maxFrameMs": 366.60000000000036,
+    "longtasks": [
+      {
+        "startMs": 162,
+        "durationMs": 351
+      }
+    ],
+    "network": [
+      {
+        "path": "/api/nodes/advance",
+        "durationMs": 56.40000000037253
+      },
+      {
+        "path": "/api/state",
+        "durationMs": 17.600000000558794
+      }
+    ],
+    "viewport": {
+      "width": 1280,
+      "height": 900
+    },
+    "document": {
+      "width": 1280,
+      "height": 900
+    },
+    "inputToArenaVisibleMs": 522.5999999996275,
+    "inputToPortraitsDecodedMs": 526.6999999992549
+  }
+}

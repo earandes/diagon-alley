@@ -1,0 +1,485 @@
+
+> coleccion-magica-i1@0.1.0 test:e2e
+> playwright test --config playwright.trial.config.ts --project chromium --project webkit
+
+[WebServer] (node:50627) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:50652) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] WebSocket server error: Port 24678 is already in use
+[WebServer] (node:50662) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:50693) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] WebSocket server error: Port 24678 is already in use
+[WebServer] (node:50694) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:50719) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] WebSocket server error: Port 24678 is already in use
+[WebServer] (node:50722) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:50747) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] WebSocket server error: Port 24678 is already in use
+
+Running 56 tests using 1 worker
+
+(node:50753) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 [chromium] › tests/browser-trial/asset-interface.spec.ts:5:3 › A54 illustrated controls, preview and reduced motion es (723ms)
+  ✓   2 [chromium] › tests/browser-trial/asset-interface.spec.ts:5:3 › A54 illustrated controls, preview and reduced motion en (576ms)
+  ✓   3 [chromium] › tests/browser-trial/asset-interface.spec.ts:46:1 › A54 motion preference updates already mounted choices and missing art retains actions (490ms)
+  ✓   4 [chromium] › tests/browser-trial/commerce.spec.ts:7:3 › forge, equip and spend a boss key atomically in es (7.0s)
+  ✓   5 [chromium] › tests/browser-trial/commerce.spec.ts:7:3 › forge, equip and spend a boss key atomically in en (6.7s)
+  ✓   6 [chromium] › tests/browser-trial/game-feel.spec.ts:9:5 › A52 confirmed feedback and orientation es reduced=false (2.9s)
+  ✓   7 [chromium] › tests/browser-trial/game-feel.spec.ts:9:5 › A52 confirmed feedback and orientation es reduced=true (2.0s)
+  ✓   8 [chromium] › tests/browser-trial/game-feel.spec.ts:9:5 › A52 confirmed feedback and orientation en reduced=false (3.1s)
+  ✓   9 [chromium] › tests/browser-trial/game-feel.spec.ts:9:5 › A52 confirmed feedback and orientation en reduced=true (2.1s)
+  ✘  10 [chromium] › tests/browser-trial/hud-results.spec.ts:6:3 › authority HUD and boss result survives reload in es (30.2s)
+(node:51459) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  11 [chromium] › tests/browser-trial/hud-results.spec.ts:6:3 › authority HUD and boss result survives reload in en (30.3s)
+(node:51799) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  12 [chromium] › tests/browser-trial/journey.spec.ts:6:3 › local ARCANA journey and reload in es (9.2s)
+  ✓  13 [chromium] › tests/browser-trial/journey.spec.ts:6:3 › local ARCANA journey and reload in en (9.2s)
+  ✘  14 [chromium] › tests/browser-trial/region-map.spec.ts:7:3 › A55 illustrated region and inspectable team es (31.9s)
+(node:52462) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  15 [chromium] › tests/browser-trial/region-map.spec.ts:7:3 › A55 illustrated region and inspectable team en (31.9s)
+(node:52933) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  16 [chromium] › tests/browser-trial/replay.spec.ts:25:1 › keeps the first available map node above the fixed navigation after starting (771ms)
+  ✓  17 [chromium] › tests/browser-trial/replay.spec.ts:36:1 › pause, Auto, 2x, language and skip only replay the committed log (4.7s)
+  ✓  18 [chromium] › tests/browser-trial/replay.spec.ts:63:1 › branching map and equivalent list keep identical accessible actions with WebGL absent (1.4s)
+  ✓  19 [chromium] › tests/browser-trial/replay.spec.ts:97:1 › measures real WebGL rendering and responsive layout, without attributing emulation to a phone (10.9s)
+  ✓  20 [chromium] › tests/browser-trial/replay.spec.ts:152:1 › skipping a GSAP reveal and changing language preserves the confirmed card without another POST (820ms)
+  ✓  21 [chromium] › tests/browser-trial/replay.spec.ts:173:1 › falls back to the static confirmed result after a WebGL context loss event without another operation (2.4s)
+  ✓  22 [chromium] › tests/browser-trial/replay.spec.ts:195:1 › keeps the card static and confirmed when the lazy GSAP asset is missing (646ms)
+  ✓  23 [chromium] › tests/browser-trial/team-beans.spec.ts:8:3 › Album discovery, preparation equipment and bean confirmation in es (4.3s)
+  ✓  24 [chromium] › tests/browser-trial/team-beans.spec.ts:8:3 › Album discovery, preparation equipment and bean confirmation in en (5.4s)
+  ✓  25 [chromium] › tests/browser-trial/visual-polish.spec.ts:9:1 › confirmed opening finishes, language does not replay it, and reload retains its real reward (6.0s)
+  ✓  26 [chromium] › tests/browser-trial/visual-polish.spec.ts:43:1 › reduced motion and missing art leave a confirmed result available without celebration (535ms)
+  ✓  27 [chromium] › tests/browser-trial/visual-polish.spec.ts:62:1 › zero balance disables purchases and preserves all confirmed openings (1.1s)
+  ✓  28 [chromium] › tests/browser-trial/visual-polish.spec.ts:91:1 › a definitive server rejection clears synchronization and never grants an optimistic purchase (625ms)
+(node:53371) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  29 [webkit] › tests/browser-trial/asset-interface.spec.ts:5:3 › A54 illustrated controls, preview and reduced motion es (1.0s)
+  ✓  30 [webkit] › tests/browser-trial/asset-interface.spec.ts:5:3 › A54 illustrated controls, preview and reduced motion en (935ms)
+  ✓  31 [webkit] › tests/browser-trial/asset-interface.spec.ts:46:1 › A54 motion preference updates already mounted choices and missing art retains actions (730ms)
+  ✓  32 [webkit] › tests/browser-trial/commerce.spec.ts:7:3 › forge, equip and spend a boss key atomically in es (6.8s)
+  ✓  33 [webkit] › tests/browser-trial/commerce.spec.ts:7:3 › forge, equip and spend a boss key atomically in en (6.9s)
+  ✓  34 [webkit] › tests/browser-trial/game-feel.spec.ts:9:5 › A52 confirmed feedback and orientation es reduced=false (3.3s)
+  ✓  35 [webkit] › tests/browser-trial/game-feel.spec.ts:9:5 › A52 confirmed feedback and orientation es reduced=true (2.4s)
+  ✓  36 [webkit] › tests/browser-trial/game-feel.spec.ts:9:5 › A52 confirmed feedback and orientation en reduced=false (3.3s)
+  ✓  37 [webkit] › tests/browser-trial/game-feel.spec.ts:9:5 › A52 confirmed feedback and orientation en reduced=true (2.4s)
+  ✘  38 [webkit] › tests/browser-trial/hud-results.spec.ts:6:3 › authority HUD and boss result survives reload in es (30.1s)
+(node:53690) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  39 [webkit] › tests/browser-trial/hud-results.spec.ts:6:3 › authority HUD and boss result survives reload in en (30.2s)
+(node:54041) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  40 [webkit] › tests/browser-trial/journey.spec.ts:6:3 › local ARCANA journey and reload in es (8.0s)
+  ✓  41 [webkit] › tests/browser-trial/journey.spec.ts:6:3 › local ARCANA journey and reload in en (8.3s)
+  ✘  42 [webkit] › tests/browser-trial/region-map.spec.ts:7:3 › A55 illustrated region and inspectable team es (30.8s)
+(node:54665) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  43 [webkit] › tests/browser-trial/region-map.spec.ts:7:3 › A55 illustrated region and inspectable team en (30.8s)
+(node:55133) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  44 [webkit] › tests/browser-trial/replay.spec.ts:25:1 › keeps the first available map node above the fixed navigation after starting (897ms)
+  ✓  45 [webkit] › tests/browser-trial/replay.spec.ts:36:1 › pause, Auto, 2x, language and skip only replay the committed log (4.3s)
+  ✓  46 [webkit] › tests/browser-trial/replay.spec.ts:63:1 › branching map and equivalent list keep identical accessible actions with WebGL absent (1.4s)
+  ✓  47 [webkit] › tests/browser-trial/replay.spec.ts:97:1 › measures real WebGL rendering and responsive layout, without attributing emulation to a phone (10.3s)
+  ✓  48 [webkit] › tests/browser-trial/replay.spec.ts:152:1 › skipping a GSAP reveal and changing language preserves the confirmed card without another POST (989ms)
+  ✓  49 [webkit] › tests/browser-trial/replay.spec.ts:173:1 › falls back to the static confirmed result after a WebGL context loss event without another operation (2.7s)
+  ✓  50 [webkit] › tests/browser-trial/replay.spec.ts:195:1 › keeps the card static and confirmed when the lazy GSAP asset is missing (862ms)
+  ✓  51 [webkit] › tests/browser-trial/team-beans.spec.ts:8:3 › Album discovery, preparation equipment and bean confirmation in es (5.0s)
+  ✓  52 [webkit] › tests/browser-trial/team-beans.spec.ts:8:3 › Album discovery, preparation equipment and bean confirmation in en (4.9s)
+  ✓  53 [webkit] › tests/browser-trial/visual-polish.spec.ts:9:1 › confirmed opening finishes, language does not replay it, and reload retains its real reward (6.4s)
+  ✓  54 [webkit] › tests/browser-trial/visual-polish.spec.ts:43:1 › reduced motion and missing art leave a confirmed result available without celebration (588ms)
+  ✓  55 [webkit] › tests/browser-trial/visual-polish.spec.ts:62:1 › zero balance disables purchases and preserves all confirmed openings (1.3s)
+  ✓  56 [webkit] › tests/browser-trial/visual-polish.spec.ts:91:1 › a definitive server rejection clears synchronization and never grants an optimistic purchase (765ms)
+
+
+  1) [chromium] › tests/browser-trial/hud-results.spec.ts:6:3 › authority HUD and boss result survives reload in es 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.click: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for locator('.node-help summary')
+
+
+      29 |         kind === 'encounter' ? (await (await page.request.get('/api/state')).json()).state : null;
+      30 |       if (kind === 'encounter') {
+    > 31 |         await page.locator('.node-help summary').click();
+         |                                                  ^
+      32 |         await expect(page.getByRole('dialog')).toContainText(
+      33 |           en ? 'This encounter may grant loot' : 'Este encuentro puede entregar botín',
+      34 |         );
+        at /Users/enricarandes/work/diagon-alley/tests/browser-trial/hud-results.spec.ts:31:50
+
+    Error Context: test-results-arcana-journey/hud-results-authority-HUD--82584-esult-survives-reload-in-es-chromium/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results-arcana-journey/hud-results-authority-HUD--82584-esult-survives-reload-in-es-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results-arcana-journey/hud-results-authority-HUD--82584-esult-survives-reload-in-es-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) [chromium] › tests/browser-trial/hud-results.spec.ts:6:3 › authority HUD and boss result survives reload in en 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.click: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for locator('.node-help summary')
+
+
+      29 |         kind === 'encounter' ? (await (await page.request.get('/api/state')).json()).state : null;
+      30 |       if (kind === 'encounter') {
+    > 31 |         await page.locator('.node-help summary').click();
+         |                                                  ^
+      32 |         await expect(page.getByRole('dialog')).toContainText(
+      33 |           en ? 'This encounter may grant loot' : 'Este encuentro puede entregar botín',
+      34 |         );
+        at /Users/enricarandes/work/diagon-alley/tests/browser-trial/hud-results.spec.ts:31:50
+
+    Error Context: test-results-arcana-journey/hud-results-authority-HUD--35a58-esult-survives-reload-in-en-chromium/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results-arcana-journey/hud-results-authority-HUD--35a58-esult-survives-reload-in-en-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results-arcana-journey/hud-results-authority-HUD--35a58-esult-survives-reload-in-en-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  3) [chromium] › tests/browser-trial/region-map.spec.ts:7:3 › A55 illustrated region and inspectable team es 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.click: Test timeout of 30000ms exceeded.
+    Browser logs:
+
+    <launching> /Users/enricarandes/Library/Caches/ms-playwright/chromium_headless_shell-1248/chrome-headless-shell-mac-arm64/chrome-headless-shell --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-edgeupdater --disable-extensions --disable-features=AvoidUnnecessaryBeforeUnloadCheckSync,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,BlockOriginHeaderModificationOnRedirect,Translate,AutoDeElevate,OptimizationHints,NetworkTimeServiceQuerying,AimEnabled,msForceBrowserSignIn,msEdgeUpdateLaunchServicesPreferredVersion --enable-features=CDPScreenshotNewSurface --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --disable-updater-scheduler --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --disable-infobars --disable-search-engine-choice-screen --disable-sync --enable-unsafe-swiftshader --headless --hide-scrollbars --mute-audio --blink-settings=primaryHoverType=2,availableHoverTypes=2,primaryPointerType=4,availablePointerTypes=4 --no-sandbox --user-data-dir=/var/folders/dk/8yh6f1md5gg6kfv98m1kpddm0000gn/T/playwright_chromiumdev_profile-FWsC0d --remote-debugging-pipe --no-startup-window
+    <launched> pid=51800
+    [pid=51800][err] [1016/165925.126928:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+    [pid=51800][err] [1016/165925.155299:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+    [pid=51800][err] [1016/165925.193475:INFO:CONSOLE:3] "Service Worker registration blocked by Playwright", source:  (3)
+    [pid=51800][err] [1016/165925.626164:ERROR:gpu/command_buffer/service/gl_utils.cc:431] [.WebGL-0x11405282a00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+    [pid=51800][err] [1016/165925.827363:INFO:CONSOLE:0] "[.WebGL-0x11405282a00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels", source: http://127.0.0.1:5430/#/map (0)
+    [pid=51800][err] [1016/165925.908820:ERROR:gpu/command_buffer/service/gl_utils.cc:431] [.WebGL-0x11405282a00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+    [pid=51800][err] [1016/165925.913347:INFO:CONSOLE:0] "[.WebGL-0x11405282a00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels", source: http://127.0.0.1:5430/#/map (0)
+    [pid=51800][err] [1016/165926.191922:ERROR:gpu/command_buffer/service/gl_utils.cc:431] [.WebGL-0x11405282a00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+    [pid=51800][err] [1016/165926.194113:INFO:CONSOLE:0] "[.WebGL-0x11405282a00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels", source: http://127.0.0.1:5430/#/map (0)
+    [pid=51800][err] [1016/165926.258385:ERROR:gpu/command_buffer/service/gl_utils.cc:431] [.WebGL-0x11405282a00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels (this message will no longer repeat)
+    [pid=51800][err] [1016/165926.260116:INFO:CONSOLE:0] "[.WebGL-0x11405282a00]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels (this message will no longer repeat)", source: http://127.0.0.1:5430/#/map (0)
+    [pid=51800][err] [1016/165928.940187:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+    [pid=51800][err] [1016/165928.953230:INFO:CONSOLE:3] "Service Worker registration blocked by Playwright", source:  (3)
+    [pid=51800][err] [1016/165933.798387:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+    [pid=51800][err] [1016/165933.812860:INFO:CONSOLE:3] "Service Worker registration blocked by Playwright", source:  (3)
+    [pid=51800][err] [1016/165934.268386:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+    [pid=51800][err] [1016/165934.310819:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+    [pid=51800][err] [1016/165934.345615:INFO:CONSOLE:3] "Service Worker registration blocked by Playwright", source:  (3)
+    [pid=51800][err] [1016/165938.139662:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+    [pid=51800][err] [1016/165938.154456:INFO:CONSOLE:3] "Service Worker registration blocked by Playwright", source:  (3)
+    [pid=51800][err] [1016/165943.009655:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+    [pid=51800][err] [1016/165943.022499:INFO:CONSOLE:3] "Service Worker registration blocked by Playwright", source:  (3)
+    [pid=51800][err] [1016/165943.512829:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+    [pid=51800][err] [1016/165943.564939:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+    [pid=51800][err] [1016/165943.604250:INFO:CONSOLE:3] "Service Worker registration blocked by Playwright", source:  (3)
+    [pid=51800] <gracefully close start>
+    Call log:
+      - waiting for getByRole('heading', { level: 2 }).first()
+        - locator resolved to <h2 class="visually-hidden">Tu Equipo</h2>
+      - attempting click action
+        2 × waiting for element to be visible, enabled and stable
+          - element is visible, enabled and stable
+          - scrolling into view if needed
+          - done scrolling
+          - <button class="team-token" aria-expanded="true" aria-controls="_r_1_" aria-haspopup="dialog" aria-label="Aprendiz de Alquimia" data-team-member="starter:apprentice">…</button> from <div class="team-unit">…</div> subtree intercepts pointer events
+        - retrying click action
+        - waiting 20ms
+        2 × waiting for element to be visible, enabled and stable
+          - element is visible, enabled and stable
+          - scrolling into view if needed
+          - done scrolling
+          - <button class="team-token" aria-expanded="true" aria-controls="_r_1_" aria-haspopup="dialog" aria-label="Aprendiz de Alquimia" data-team-member="starter:apprentice">…</button> from <div class="team-unit">…</div> subtree intercepts pointer events
+        - retrying click action
+          - waiting 100ms
+        58 × waiting for element to be visible, enabled and stable
+           - element is visible, enabled and stable
+           - scrolling into view if needed
+           - done scrolling
+           - <button class="team-token" aria-expanded="true" aria-controls="_r_1_" aria-haspopup="dialog" aria-label="Aprendiz de Alquimia" data-team-member="starter:apprentice">…</button> from <div class="team-unit">…</div> subtree intercepts pointer events
+         - retrying click action
+           - waiting 500ms
+        - waiting for element to be visible, enabled and stable
+
+
+      49 |     await portrait.click();
+      50 |     await expect(card).toBeVisible();
+    > 51 |     await page.getByRole('heading', { level: 2 }).first().click();
+         |                                                           ^
+      52 |     await expect(card).toBeHidden();
+      53 |     expect(await read()).toEqual(before);
+      54 |     await expect(page.locator('.region-map-art')).toBeHidden();
+        at /Users/enricarandes/work/diagon-alley/tests/browser-trial/region-map.spec.ts:51:59
+
+    Error Context: test-results-arcana-journey/region-map-A55-illustrated-region-and-inspectable-team-es-chromium/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results-arcana-journey/region-map-A55-illustrated-region-and-inspectable-team-es-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results-arcana-journey/region-map-A55-illustrated-region-and-inspectable-team-es-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  4) [chromium] › tests/browser-trial/region-map.spec.ts:7:3 › A55 illustrated region and inspectable team en 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.click: Test timeout of 30000ms exceeded.
+    Browser logs:
+
+    <launching> /Users/enricarandes/Library/Caches/ms-playwright/chromium_headless_shell-1248/chrome-headless-shell-mac-arm64/chrome-headless-shell --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-edgeupdater --disable-extensions --disable-features=AvoidUnnecessaryBeforeUnloadCheckSync,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,BlockOriginHeaderModificationOnRedirect,Translate,AutoDeElevate,OptimizationHints,NetworkTimeServiceQuerying,AimEnabled,msForceBrowserSignIn,msEdgeUpdateLaunchServicesPreferredVersion --enable-features=CDPScreenshotNewSurface --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --disable-updater-scheduler --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --disable-infobars --disable-search-engine-choice-screen --disable-sync --enable-unsafe-swiftshader --headless --hide-scrollbars --mute-audio --blink-settings=primaryHoverType=2,availableHoverTypes=2,primaryPointerType=4,availablePointerTypes=4 --no-sandbox --user-data-dir=/var/folders/dk/8yh6f1md5gg6kfv98m1kpddm0000gn/T/playwright_chromiumdev_profile-fPimzC --remote-debugging-pipe --no-startup-window
+    <launched> pid=52463
+    [pid=52463][err] [1016/170017.331578:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+    [pid=52463][err] [1016/170017.373959:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+    [pid=52463][err] [1016/170017.417359:INFO:CONSOLE:3] "Service Worker registration blocked by Playwright", source:  (3)
+    [pid=52463][err] [1016/170017.996883:ERROR:gpu/command_buffer/service/gl_utils.cc:431] [.WebGL-0x13c00451000]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+    [pid=52463][err] [1016/170018.198651:INFO:CONSOLE:0] "[.WebGL-0x13c00451000]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels", source: http://127.0.0.1:5430/#/map (0)
+    [pid=52463] <gracefully close start>
+    Call log:
+      - waiting for getByRole('heading', { level: 2 }).first()
+        - locator resolved to <h2 class="visually-hidden">Your Team</h2>
+      - attempting click action
+        2 × waiting for element to be visible, enabled and stable
+          - element is visible, enabled and stable
+          - scrolling into view if needed
+          - done scrolling
+          - <button class="team-token" aria-expanded="true" aria-controls="_r_1_" aria-haspopup="dialog" aria-label="Alchemy Apprentice" data-team-member="starter:apprentice">…</button> from <div class="team-unit">…</div> subtree intercepts pointer events
+        - retrying click action
+        - waiting 20ms
+        2 × waiting for element to be visible, enabled and stable
+          - element is visible, enabled and stable
+          - scrolling into view if needed
+          - done scrolling
+          - <button class="team-token" aria-expanded="true" aria-controls="_r_1_" aria-haspopup="dialog" aria-label="Alchemy Apprentice" data-team-member="starter:apprentice">…</button> from <div class="team-unit">…</div> subtree intercepts pointer events
+        - retrying click action
+          - waiting 100ms
+        58 × waiting for element to be visible, enabled and stable
+           - element is visible, enabled and stable
+           - scrolling into view if needed
+           - done scrolling
+           - <button class="team-token" aria-expanded="true" aria-controls="_r_1_" aria-haspopup="dialog" aria-label="Alchemy Apprentice" data-team-member="starter:apprentice">…</button> from <div class="team-unit">…</div> subtree intercepts pointer events
+         - retrying click action
+           - waiting 500ms
+        - waiting for element to be visible, enabled and stable
+
+
+      49 |     await portrait.click();
+      50 |     await expect(card).toBeVisible();
+    > 51 |     await page.getByRole('heading', { level: 2 }).first().click();
+         |                                                           ^
+      52 |     await expect(card).toBeHidden();
+      53 |     expect(await read()).toEqual(before);
+      54 |     await expect(page.locator('.region-map-art')).toBeHidden();
+        at /Users/enricarandes/work/diagon-alley/tests/browser-trial/region-map.spec.ts:51:59
+
+    Error Context: test-results-arcana-journey/region-map-A55-illustrated-region-and-inspectable-team-en-chromium/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results-arcana-journey/region-map-A55-illustrated-region-and-inspectable-team-en-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results-arcana-journey/region-map-A55-illustrated-region-and-inspectable-team-en-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  5) [webkit] › tests/browser-trial/hud-results.spec.ts:6:3 › authority HUD and boss result survives reload in es 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.click: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for locator('.node-help summary')
+
+
+      29 |       const before =
+      30 |         kind === 'encounter' ? (await (await page.request.get('/api/state')).json()).state : null;
+    > 31 |       if (kind === 'encounter') {
+         |                                  ^
+      32 |         if (await page.locator('[data-encounter-offer]').count()) {
+      33 |           await expect(
+      34 |             page.locator('[data-encounter-choice]:not([data-encounter-choice="pass"])'),
+        at /Users/enricarandes/work/diagon-alley/tests/browser-trial/hud-results.spec.ts:31:50
+
+    Error Context: test-results-arcana-journey/hud-results-authority-HUD--82584-esult-survives-reload-in-es-webkit/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results-arcana-journey/hud-results-authority-HUD--82584-esult-survives-reload-in-es-webkit/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results-arcana-journey/hud-results-authority-HUD--82584-esult-survives-reload-in-es-webkit/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  6) [webkit] › tests/browser-trial/hud-results.spec.ts:6:3 › authority HUD and boss result survives reload in en 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.click: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for locator('.node-help summary')
+
+
+      29 |       const before =
+      30 |         kind === 'encounter' ? (await (await page.request.get('/api/state')).json()).state : null;
+    > 31 |       if (kind === 'encounter') {
+         |                                  ^
+      32 |         if (await page.locator('[data-encounter-offer]').count()) {
+      33 |           await expect(
+      34 |             page.locator('[data-encounter-choice]:not([data-encounter-choice="pass"])'),
+        at /Users/enricarandes/work/diagon-alley/tests/browser-trial/hud-results.spec.ts:31:50
+
+    Error Context: test-results-arcana-journey/hud-results-authority-HUD--35a58-esult-survives-reload-in-en-webkit/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results-arcana-journey/hud-results-authority-HUD--35a58-esult-survives-reload-in-en-webkit/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results-arcana-journey/hud-results-authority-HUD--35a58-esult-survives-reload-in-en-webkit/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  7) [webkit] › tests/browser-trial/region-map.spec.ts:7:3 › A55 illustrated region and inspectable team es 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.click: Test timeout of 30000ms exceeded.
+    Browser logs:
+
+    <launching> /Users/enricarandes/Library/Caches/ms-playwright/webkit-2370/pw_run.sh --inspector-pipe --headless --no-startup-window
+    <launched> pid=54043
+    [pid=54043] <gracefully close start>
+    Call log:
+      - waiting for getByRole('heading', { level: 2 }).first()
+        - locator resolved to <h2 class="visually-hidden">Tu Equipo</h2>
+      - attempting click action
+        2 × waiting for element to be visible, enabled and stable
+          - element is visible, enabled and stable
+          - scrolling into view if needed
+          - done scrolling
+          - <button class="team-token" aria-expanded="true" aria-controls="_r_1_" aria-haspopup="dialog" aria-label="Aprendiz de Alquimia" data-team-member="starter:apprentice">…</button> from <div class="team-unit">…</div> subtree intercepts pointer events
+        - retrying click action
+        - waiting 20ms
+        2 × waiting for element to be visible, enabled and stable
+          - element is visible, enabled and stable
+          - scrolling into view if needed
+          - done scrolling
+          - <button class="team-token" aria-expanded="true" aria-controls="_r_1_" aria-haspopup="dialog" aria-label="Aprendiz de Alquimia" data-team-member="starter:apprentice">…</button> from <div class="team-unit">…</div> subtree intercepts pointer events
+        - retrying click action
+          - waiting 100ms
+        56 × waiting for element to be visible, enabled and stable
+           - element is visible, enabled and stable
+           - scrolling into view if needed
+           - done scrolling
+           - <button class="team-token" aria-expanded="true" aria-controls="_r_1_" aria-haspopup="dialog" aria-label="Aprendiz de Alquimia" data-team-member="starter:apprentice">…</button> from <div class="team-unit">…</div> subtree intercepts pointer events
+         - retrying click action
+           - waiting 500ms
+        - waiting for element to be visible, enabled and stable
+
+
+      49 |     await portrait.click();
+      50 |     await expect(card).toBeVisible();
+    > 51 |     await page.locator('.game-header h1').click();
+         |                                                   ^
+      52 |     await expect(card).toBeHidden();
+      53 |     expect(await read()).toEqual(before);
+      54 |     await expect(page.locator('.region-map-art')).toBeHidden();
+        at /Users/enricarandes/work/diagon-alley/tests/browser-trial/region-map.spec.ts:51:59
+
+    Error Context: test-results-arcana-journey/region-map-A55-illustrated-region-and-inspectable-team-es-webkit/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results-arcana-journey/region-map-A55-illustrated-region-and-inspectable-team-es-webkit/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results-arcana-journey/region-map-A55-illustrated-region-and-inspectable-team-es-webkit/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  8) [webkit] › tests/browser-trial/region-map.spec.ts:7:3 › A55 illustrated region and inspectable team en 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.click: Test timeout of 30000ms exceeded.
+    Browser logs:
+
+    <launching> /Users/enricarandes/Library/Caches/ms-playwright/webkit-2370/pw_run.sh --inspector-pipe --headless --no-startup-window
+    <launched> pid=54666
+    [pid=54666] <gracefully close start>
+    Call log:
+      - waiting for getByRole('heading', { level: 2 }).first()
+        - locator resolved to <h2 class="visually-hidden">Your Team</h2>
+      - attempting click action
+        2 × waiting for element to be visible, enabled and stable
+          - element is visible, enabled and stable
+          - scrolling into view if needed
+          - done scrolling
+          - <button class="team-token" aria-expanded="true" aria-controls="_r_1_" aria-haspopup="dialog" aria-label="Alchemy Apprentice" data-team-member="starter:apprentice">…</button> from <div class="team-unit">…</div> subtree intercepts pointer events
+        - retrying click action
+        - waiting 20ms
+        2 × waiting for element to be visible, enabled and stable
+          - element is visible, enabled and stable
+          - scrolling into view if needed
+          - done scrolling
+          - <button class="team-token" aria-expanded="true" aria-controls="_r_1_" aria-haspopup="dialog" aria-label="Alchemy Apprentice" data-team-member="starter:apprentice">…</button> from <div class="team-unit">…</div> subtree intercepts pointer events
+        - retrying click action
+          - waiting 100ms
+        55 × waiting for element to be visible, enabled and stable
+           - element is visible, enabled and stable
+           - scrolling into view if needed
+           - done scrolling
+           - <button class="team-token" aria-expanded="true" aria-controls="_r_1_" aria-haspopup="dialog" aria-label="Alchemy Apprentice" data-team-member="starter:apprentice">…</button> from <div class="team-unit">…</div> subtree intercepts pointer events
+         - retrying click action
+           - waiting 500ms
+        - waiting for element to be visible, enabled and stable
+
+
+      49 |     await portrait.click();
+      50 |     await expect(card).toBeVisible();
+    > 51 |     await page.locator('.game-header h1').click();
+         |                                                   ^
+      52 |     await expect(card).toBeHidden();
+      53 |     expect(await read()).toEqual(before);
+      54 |     await expect(page.locator('.region-map-art')).toBeHidden();
+        at /Users/enricarandes/work/diagon-alley/tests/browser-trial/region-map.spec.ts:51:59
+
+    Error Context: test-results-arcana-journey/region-map-A55-illustrated-region-and-inspectable-team-en-webkit/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results-arcana-journey/region-map-A55-illustrated-region-and-inspectable-team-en-webkit/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results-arcana-journey/region-map-A55-illustrated-region-and-inspectable-team-en-webkit/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  8 failed
+    [chromium] › tests/browser-trial/hud-results.spec.ts:6:3 › authority HUD and boss result survives reload in es 
+    [chromium] › tests/browser-trial/hud-results.spec.ts:6:3 › authority HUD and boss result survives reload in en 
+    [chromium] › tests/browser-trial/region-map.spec.ts:7:3 › A55 illustrated region and inspectable team es 
+    [chromium] › tests/browser-trial/region-map.spec.ts:7:3 › A55 illustrated region and inspectable team en 
+    [webkit] › tests/browser-trial/hud-results.spec.ts:6:3 › authority HUD and boss result survives reload in es 
+    [webkit] › tests/browser-trial/hud-results.spec.ts:6:3 › authority HUD and boss result survives reload in en 
+    [webkit] › tests/browser-trial/region-map.spec.ts:7:3 › A55 illustrated region and inspectable team es 
+    [webkit] › tests/browser-trial/region-map.spec.ts:7:3 › A55 illustrated region and inspectable team en 
+  48 passed (7.1m)

@@ -1,0 +1,39 @@
+[WebServer] (node:53797) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:53823) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] WebSocket server error: Port 24678 is already in use
+[WebServer] (node:53837) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:53864) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] WebSocket server error: Port 24678 is already in use
+
+Running 20 tests using 1 worker
+
+(node:53866) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 [chromium-a67] › tests/browser-trial/progression-a67.spec.ts:163:5 › A67 encounter full journey es diagon-alley (8.4s)
+  ✓   2 [chromium-a67] › tests/browser-trial/progression-a67.spec.ts:163:5 › A67 encounter full journey es arcana (5.0s)
+  ✓   3 [chromium-a67] › tests/browser-trial/progression-a67.spec.ts:163:5 › A67 encounter full journey en diagon-alley (7.2s)
+  ✓   4 [chromium-a67] › tests/browser-trial/progression-a67.spec.ts:163:5 › A67 encounter full journey en arcana (5.9s)
+  ✓   5 [chromium-a67] › tests/browser-trial/progression-a67.spec.ts:263:3 › A67 group trade response recovery and pass es (5.4s)
+  ✓   6 [chromium-a67] › tests/browser-trial/progression-a67.spec.ts:309:3 › A67 forge specializations equip V2 then replay es (5.3s)
+  ✓   7 [chromium-a67] › tests/browser-trial/progression-a67.spec.ts:382:3 › A67 missing art renderer reduced and enlarged encounter es (1.8s)
+  ✓   8 [chromium-a67] › tests/browser-trial/progression-a67.spec.ts:263:3 › A67 group trade response recovery and pass en (4.0s)
+  ✓   9 [chromium-a67] › tests/browser-trial/progression-a67.spec.ts:309:3 › A67 forge specializations equip V2 then replay en (5.3s)
+  ✓  10 [chromium-a67] › tests/browser-trial/progression-a67.spec.ts:382:3 › A67 missing art renderer reduced and enlarged encounter en (1.8s)
+(node:54509) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  11 [webkit-a67] › tests/browser-trial/progression-a67.spec.ts:163:5 › A67 encounter full journey es diagon-alley (5.9s)
+  ✓  12 [webkit-a67] › tests/browser-trial/progression-a67.spec.ts:163:5 › A67 encounter full journey es arcana (4.1s)
+  ✓  13 [webkit-a67] › tests/browser-trial/progression-a67.spec.ts:163:5 › A67 encounter full journey en diagon-alley (5.4s)
+  ✓  14 [webkit-a67] › tests/browser-trial/progression-a67.spec.ts:163:5 › A67 encounter full journey en arcana (4.7s)
+  ✓  15 [webkit-a67] › tests/browser-trial/progression-a67.spec.ts:263:3 › A67 group trade response recovery and pass es (4.9s)
+  ✓  16 [webkit-a67] › tests/browser-trial/progression-a67.spec.ts:309:3 › A67 forge specializations equip V2 then replay es (4.8s)
+  ✓  17 [webkit-a67] › tests/browser-trial/progression-a67.spec.ts:382:3 › A67 missing art renderer reduced and enlarged encounter es (1.7s)
+  ✓  18 [webkit-a67] › tests/browser-trial/progression-a67.spec.ts:263:3 › A67 group trade response recovery and pass en (4.3s)
+  ✓  19 [webkit-a67] › tests/browser-trial/progression-a67.spec.ts:309:3 › A67 forge specializations equip V2 then replay en (4.6s)
+  ✓  20 [webkit-a67] › tests/browser-trial/progression-a67.spec.ts:382:3 › A67 missing art renderer reduced and enlarged encounter en (2.6s)
+
+  20 passed (1.6m)

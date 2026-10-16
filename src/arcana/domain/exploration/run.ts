@@ -1,6 +1,9 @@
 import { validateCombatUnit, unitSnapshot, type CombatUnitInput } from '../combat/engine';
 import { ArcanaError } from '../errors';
 import { validDomainId } from '../identifiers';
+import { campaignSnapshot, validateCampaign, type Campaign } from './nodes';
+import { sameGraph } from './route';
+import { intentionSnapshot, type ExpeditionIntention } from './intentions';
 import { validateGraph, type NodeGraph, type RouteRun } from './route';
 
 export interface RunMember {
@@ -8,6 +11,10 @@ export interface RunMember {
   readonly unit: CombatUnitInput;
 }
 export interface Run extends RouteRun {
+  readonly tacticalVersion?: 1 | 2;
+  readonly equipmentRulesVersion?: 2;
+  readonly challenge?: 'discovery' | 'tactical' | 'mastery';
+  readonly campaignSnapshot?: Campaign;
   readonly routeGeneration?: { readonly version: 1; readonly seed: number };
   readonly campaignVersion: number;
   readonly zoneId: string;
@@ -24,6 +31,7 @@ export interface ExplorationState {
   readonly run: Run | null;
   readonly victories: readonly Victory[];
   readonly unlockedZones: readonly string[];
+  readonly intention?: ExpeditionIntention | null;
 }
 const version = (n: number) => Number.isSafeInteger(n) && n > 0;
 export function validateRun(run: Run): void {
@@ -47,7 +55,23 @@ export function validateRun(run: Run): void {
       run.routeGeneration.seed > 0xffffffff)
   )
     throw new ArcanaError('INVALID_ROUTE');
+  if (
+    (run.equipmentRulesVersion !== undefined && run.equipmentRulesVersion !== 2) ||
+    (run.challenge !== undefined &&
+      (!['discovery', 'tactical', 'mastery'].includes(run.challenge) || run.tacticalVersion !== 2))
+  )
+    throw new ArcanaError('INVALID_ROUTE');
   validateGraph(run.graph);
+  if (run.campaignSnapshot !== undefined) {
+    validateCampaign(run.campaignSnapshot);
+    if (
+      ![1, 2].includes(run.tacticalVersion ?? 0) ||
+      run.campaignVersion !== run.campaignSnapshot.version ||
+      run.zoneId !== run.campaignSnapshot.zoneId ||
+      !sameGraph(run.graph, run.campaignSnapshot.graph)
+    )
+      throw new ArcanaError('INVALID_ROUTE');
+  } else if (run.tacticalVersion !== undefined) throw new ArcanaError('INVALID_ROUTE');
   if (run.graphVersion !== run.graph.version) throw new ArcanaError('INVALID_ROUTE');
   const ids = new Set<string>();
   if (run.reserves !== undefined && !Array.isArray(run.reserves))
@@ -87,6 +111,7 @@ export function runSnapshot(run: Run): Run {
   validateRun(run);
   return Object.freeze({
     ...run,
+    ...(run.campaignSnapshot ? { campaignSnapshot: campaignSnapshot(run.campaignSnapshot) } : {}),
     ...(run.routeGeneration ? { routeGeneration: Object.freeze({ ...run.routeGeneration }) } : {}),
     graph: Object.freeze({
       version: run.graph.version,
@@ -120,6 +145,7 @@ export function explorationSnapshot(state: ExplorationState): ExplorationState {
     throw new ArcanaError('INVALID_ROUTE');
   return Object.freeze({
     run: state.run === null ? null : runSnapshot(state.run),
+    ...(state.intention == null ? {} : { intention: intentionSnapshot(state.intention) }),
     victories: Object.freeze(state.victories.map((v) => Object.freeze({ ...v }))),
     unlockedZones: Object.freeze([...state.unlockedZones]),
   });

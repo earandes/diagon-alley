@@ -1,5 +1,5 @@
 import { it, expect } from 'vitest';
-import { activeSynergies } from '../../../src/arcana/domain/combat/synergies';
+import { activeSynergies, synergyProgress } from '../../../src/arcana/domain/combat/synergies';
 it('uses the same alive affinity thresholds for preview and battle', () => {
   const units = [
     ...Array.from({ length: 3 }, () => ({ hp: 1, affinity: 'alchemy' as const })),
@@ -24,4 +24,30 @@ it('excludes neutral, fallen and below-threshold units', () => {
       { hp: 0, affinity: 'shadows' },
     ]),
   ).toEqual([]);
+});
+it('projects incomplete covens with the exact battle thresholds and no state mutation', () => {
+  const units = [
+    { hp: 1, affinity: 'alchemy' as const },
+    { hp: 1, affinity: 'alchemy' as const },
+    { hp: 0, affinity: 'alchemy' as const },
+    { hp: 1, affinity: 'neutral' as const },
+  ];
+  const before = structuredClone(units);
+  const incomplete = synergyProgress(units);
+  expect(incomplete).toEqual([
+    { affinity: 'fire', members: 0, threshold: 2, active: false },
+    { affinity: 'alchemy', members: 2, threshold: 3, active: false },
+    { affinity: 'shadows', members: 0, threshold: 1, active: false },
+  ]);
+  const proposed = [...units, { hp: 1, affinity: 'alchemy' as const }];
+  expect(synergyProgress(proposed).find((s) => s.affinity === 'alchemy')).toEqual({
+    affinity: 'alchemy',
+    members: 3,
+    threshold: 3,
+    active: true,
+  });
+  expect(activeSynergies(proposed)).toEqual([{ affinity: 'alchemy', members: 3, threshold: 3 }]);
+  expect(Object.isFrozen(incomplete)).toBe(true);
+  expect(Object.isFrozen(incomplete[0])).toBe(true);
+  expect(units).toEqual(before);
 });

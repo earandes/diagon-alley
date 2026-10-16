@@ -1,3 +1,6 @@
+import { forgeCatalogSnapshot, type ForgeCatalog } from '../../domain/economy/commerce';
+import { specializedForge } from './equipment-content';
+import { progressionContent } from './progression-content';
 import data from '../../content/trial-v1.json';
 import type { OpeningConfiguration } from '../../application/shop-use-cases';
 import type { StarterConfiguration } from '../../application/team-use-cases';
@@ -24,7 +27,10 @@ export function trialConfiguration(): {
     catalog: config.catalog,
     table: config.toadTable,
     shop: config.shop,
-    commerce: config.commerce,
+    commerce: {
+      ...config.commerce,
+      forge: specializedForge(forgeCatalogSnapshot(config.commerce.forge as ForgeCatalog)),
+    },
   } as OpeningConfiguration;
   const base = config.campaign as unknown as Omit<Campaign, 'nodes'>;
   const affinities = config.affinities as Record<string, Affinity>;
@@ -90,6 +96,13 @@ export function trialConfiguration(): {
   });
   const campaign: CampaignConfiguration = {
     ...base,
+    equipmentRulesVersion: 2,
+    tacticalContent: {
+      version: 2,
+      nodes: progressionContent(nodes, opening.catalog, affinities, base.graph, 'discovery'),
+    },
+    challengeContent: (challenge, graph) =>
+      progressionContent(nodes, opening.catalog, affinities, graph, challenge),
     routeVariation: true,
     ownedAffinities: Object.freeze({ ...affinities }),
     nodes,

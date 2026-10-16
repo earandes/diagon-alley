@@ -1,0 +1,72 @@
+{
+  "browser": "webkit-a65",
+  "viewport": {
+    "width": 390,
+    "height": 844
+  },
+  "scope": "Fresh isolated compiled GUI; Diagon Alley ES; normal motion; serial run. Pact scenes wait for image decode and finite authored transitions. Arena window is 8 seconds from pointerdown, including HTTP and renderer startup. rAF cadence is not displayed GPU FPS or physical device evidence. WebKit has no longtask API when reported null. No equivalent before baseline or improvement percentage.",
+  "profiles": [
+    {
+      "name": "open-pact",
+      "inputToVisibleMs": 26,
+      "inputToDecodedAndSettledMs": 377,
+      "images": 8,
+      "broken": 0,
+      "network": []
+    },
+    {
+      "name": "select-candidate",
+      "inputToVisibleMs": 12,
+      "inputToDecodedAndSettledMs": 191,
+      "images": 10,
+      "broken": 0,
+      "network": []
+    },
+    {
+      "name": "confirmed-recruitment",
+      "inputToVisibleMs": 95,
+      "inputToDecodedAndSettledMs": 1914,
+      "images": 22,
+      "broken": 0,
+      "network": [
+        {
+          "path": "/api/nodes/advance",
+          "durationMs": 42
+        },
+        {
+          "path": "/api/state",
+          "durationMs": 11
+        }
+      ]
+    }
+  ],
+  "arena": {
+    "inputMs": 4036,
+    "elapsedMs": 8008,
+    "rafCallbacks": 480,
+    "estimatedRafHz": 59.94005994005994,
+    "p95FrameMs": 25,
+    "maxFrameMs": 40,
+    "longtasks": null,
+    "network": [
+      {
+        "path": "/api/nodes/advance",
+        "durationMs": 49
+      },
+      {
+        "path": "/api/state",
+        "durationMs": 13
+      }
+    ],
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "document": {
+      "width": 390,
+      "height": 844
+    },
+    "inputToArenaVisibleMs": 146,
+    "inputToPortraitsDecodedMs": 149
+  }
+}

@@ -1,5 +1,6 @@
 import { regionAppearance } from './content-packs/active';
 import { Artwork } from './Artwork';
+import { ThreatBadge, tacticalText } from './TacticalBadge';
 import { useLayoutEffect, useMemo, useRef, useState } from 'react';
 import type { Run } from '../domain/exploration/run';
 import type { Language } from '../domain/collection/wizards';
@@ -64,57 +65,67 @@ export function MapPanel({
     measure();
     return () => observer.disconnect();
   }, [list]);
-  const button = (id: string, kind: NodeKind) => (
-    <button
-      key={id}
-      className="map-event-medallion"
-      title={text(language, nodeLabels[kind])}
-      data-node={id}
-      data-node-kind={kind}
-      data-node-state={
-        run.visited.includes(id) ? 'visited' : available.includes(id) ? 'available' : 'locked'
-      }
-      disabled={!ready || !available.includes(id)}
-      onClick={(event) => onSelect(id, event.currentTarget)}
-    >
-      <span className="node-asset" aria-hidden="true">
-        <Artwork asset={`node.${kind}`} language={language} className="node-icon" decorative />
-      </span>
-      {run.visited.includes(id) && (
-        <span className="node-visited-mark" aria-hidden="true">
-          ✓
+  const button = (id: string, kind: NodeKind) => {
+    const plan = run.campaignSnapshot?.nodes.find((candidate) => candidate.nodeId === id);
+    const threat = plan?.kind === 'duel' ? plan.threat : undefined;
+    const label = text(language, nodeLabels[kind]);
+    return (
+      <button
+        key={id}
+        className="map-event-medallion"
+        title={
+          threat
+            ? `${label} · ${tacticalText(language, threat === 'fire' ? 'fireThreat' : 'vanguard')}`
+            : label
+        }
+        data-node={id}
+        data-node-kind={kind}
+        data-node-state={
+          run.visited.includes(id) ? 'visited' : available.includes(id) ? 'available' : 'locked'
+        }
+        disabled={!ready || !available.includes(id)}
+        onClick={(event) => onSelect(id, event.currentTarget)}
+      >
+        <span className="node-asset" aria-hidden="true">
+          <Artwork asset={`node.${kind}`} language={language} className="node-icon" decorative />
         </span>
-      )}
-      {available.includes(id) && (
-        <span className="node-ready-mark" aria-hidden="true">
-          ▴
-        </span>
-      )}
-      <strong className="node-label">{text(language, nodeLabels[kind])}</strong>
-      <small className="visually-hidden">
-        {text(
-          language,
-          run.visited.includes(id) ? 'visited' : available.includes(id) ? 'available' : 'locked',
+        {threat && <ThreatBadge threat={threat} language={language} compact />}
+        {run.visited.includes(id) && (
+          <span className="node-visited-mark" aria-hidden="true">
+            ✓
+          </span>
         )}
-      </small>
-      {available.includes(id) && (
-        <small className="node-effect visually-hidden">
+        {available.includes(id) && (
+          <span className="node-ready-mark" aria-hidden="true">
+            ▴
+          </span>
+        )}
+        <strong className="node-label">{text(language, nodeLabels[kind])}</strong>
+        <small className="visually-hidden">
           {text(
             language,
-            kind === 'duel' || kind === 'boss'
-              ? 'nodeCombatCost'
-              : kind === 'refuge'
-                ? 'nodeRefugeHint'
-                : kind === 'pact'
-                  ? 'nodePactHint'
-                  : kind === 'chest'
-                    ? 'nodeChestHint'
-                    : 'nodeChanceHint',
+            run.visited.includes(id) ? 'visited' : available.includes(id) ? 'available' : 'locked',
           )}
         </small>
-      )}
-    </button>
-  );
+        {available.includes(id) && (
+          <small className="node-effect visually-hidden">
+            {text(
+              language,
+              kind === 'duel' || kind === 'boss'
+                ? 'nodeCombatCost'
+                : kind === 'refuge'
+                  ? 'nodeRefugeHint'
+                  : kind === 'pact'
+                    ? 'nodePactHint'
+                    : kind === 'chest'
+                      ? 'nodeChestHint'
+                      : 'nodeChanceHint',
+            )}
+          </small>
+        )}
+      </button>
+    );
+  };
   return (
     <>
       <button

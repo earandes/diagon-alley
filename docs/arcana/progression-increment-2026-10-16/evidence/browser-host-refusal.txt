@@ -1,0 +1,13 @@
+Error: Baterías gráficas desactivadas en macOS tras el incidente de WindowServer del 16/10/2026. Ejecutarlas en CI Linux. No repetir capturas, vídeo o WebKit localmente para reproducir el fallo.
+    at safePlaywrightConfig (file:///Users/enricarandes/work/diagon-alley/tools/verification/playwright-safety.ts:12:36)
+    at defineConfig (file:///Users/enricarandes/work/diagon-alley/tools/verification/playwright-safety.ts:33:16)
+    at file:///Users/enricarandes/work/diagon-alley/playwright.progression-a67.config.ts:4:16
+    at ModuleJob.run (node:internal/modules/esm/module_job:561:25)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at node:internal/modules/esm/loader:647:26
+    at requireOrImport (/Users/enricarandes/work/diagon-alley/node_modules/playwright/lib/common/index.js:1096:12)
+    at loadUserConfig (/Users/enricarandes/work/diagon-alley/node_modules/playwright/lib/common/index.js:1283:46)
+    at loadConfig (/Users/enricarandes/work/diagon-alley/node_modules/playwright/lib/common/index.js:1290:22)
+    at Object.loadConfigFromFile (/Users/enricarandes/work/diagon-alley/node_modules/playwright/lib/common/index.js:1508:10)
+    at runTests (/Users/enricarandes/work/diagon-alley/node_modules/playwright/lib/cli/testActions.js:44:18)
+    at _Command.<anonymous> (/Users/enricarandes/work/diagon-alley/node_modules/playwright/lib/program.js:55:7)

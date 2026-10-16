@@ -29,8 +29,14 @@ export function preparationUnit(
     (m) => m.source === 'owned' && m.unit.id === copy.copyId,
   )?.unit;
   const stats = copy.wizard.stats;
-  const bonuses = equipmentBonuses(game.inventory, game.team ?? EMPTY_TEAM, copy.copyId);
-  if (recorded) return { ...recorded, ...bonuses };
+  const bonuses = equipmentBonuses(
+    game.inventory,
+    game.team ?? EMPTY_TEAM,
+    copy.copyId,
+    !run || run.equipmentRulesVersion === 2,
+  );
+  if (recorded)
+    return { ...recorded, wandInitiativeBonus: undefined, wandHealing: undefined, ...bonuses };
   return {
     id: copy.copyId,
     wizardId: copy.wizard.id,
@@ -98,6 +104,8 @@ export function previewEquipment(
     powerAfter: equipmentSpellPower(after),
     initiativeBefore: equipmentInitiative(before),
     initiativeAfter: equipmentInitiative(after),
+    healingBefore: before.wandHealing ?? 0,
+    healingAfter: after.wandHealing ?? 0,
   };
 }
 /** Selecting an occupied portrait removes that jar; selecting another moves it without consumption. */

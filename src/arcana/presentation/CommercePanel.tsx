@@ -86,6 +86,8 @@ export function CommercePanel({
     core: recipe.core,
     powerBonus: recipe.powerBonus,
     multiplier: recipe.multiplier,
+    ...(recipe.initiativeBonus === undefined ? {} : { initiativeBonus: recipe.initiativeBonus }),
+    ...(recipe.healing === undefined ? {} : { healing: recipe.healing }),
   });
   const percent = new Intl.NumberFormat(language === 'es' ? 'es-ES' : 'en-US', {
     style: 'percent',

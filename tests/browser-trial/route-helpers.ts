@@ -1,14 +1,14 @@
+import { preparedRoutePath } from '../support/prepared-route';
 import { expect, type Page } from '@playwright/test';
 import type { GameState } from '../../src/arcana/application/game';
 import type { NodeKind } from '../../src/arcana/domain/exploration/route';
-import { routePath } from '../support/arcana-route';
 export const readGame = async (page: Page): Promise<GameState> =>
   (await (await page.request.get('/api/state')).json()).state;
 export async function pathTo(page: Page, kind: NodeKind) {
   await expect(page.locator('dialog')).toHaveCount(0);
   await expect(page.locator('[data-map-phase]')).toHaveAttribute('data-map-phase', 'route');
   const run = (await readGame(page)).exploration!.run!;
-  return routePath(run.graph, run.visited, kind);
+  return preparedRoutePath(run, kind);
 }
 export async function confirmEvent(page: Page, language: 'es' | 'en') {
   const directRecruit = page.locator('[data-pact-action="recruit"]');
@@ -17,6 +17,15 @@ export async function confirmEvent(page: Page, language: 'es' | 'en') {
     await directRecruit.click();
   } else {
     const confirm = page.locator('.node-confirm-action');
+    const encounterPass = page.locator('[data-encounter-offer] [data-encounter-choice="pass"]');
+    if (await encounterPass.count()) await encounterPass.click();
+    const candidate = page.locator('[data-pact-candidate]').first();
+    if (await candidate.count()) {
+      if (await candidate.isEnabled()) await candidate.click();
+      else await page.locator('[data-pact-choice="pass"]').click();
+      const replacement = page.locator('[data-tactical-pact] [data-visual-value]').first();
+      if (!(await confirm.isEnabled()) && (await replacement.count())) await replacement.click();
+    }
     const pass = page.locator('[data-preparation="pact"] [data-visual-value="pass"]');
     if ((await pass.count()) && (await pass.isEnabled()) && !(await confirm.isEnabled()))
       await pass.click();

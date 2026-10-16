@@ -10,6 +10,8 @@ export type Equipment =
       readonly core: 'dragon' | 'phoenix' | 'wyvern' | null;
       readonly powerBonus: number;
       readonly multiplier: number;
+      readonly initiativeBonus?: number;
+      readonly healing?: number;
     }
   | {
       readonly id: string;
@@ -31,7 +33,10 @@ export function validateEquipment(items: readonly Equipment[]): void {
         !Number.isFinite(item.powerBonus) ||
         item.powerBonus < 0 ||
         !Number.isFinite(item.multiplier) ||
-        item.multiplier <= 0
+        item.multiplier <= 0 ||
+        [item.initiativeBonus, item.healing].some(
+          (value) => value !== undefined && (!Number.isFinite(value) || value < 0 || value > 10),
+        )
       )
         throw new ArcanaError('INVALID_EQUIPMENT');
     } else if (item.kind === 'broom') {
@@ -57,6 +62,10 @@ export function equipmentSnapshot(items: readonly Equipment[]): readonly Equipme
             core: item.core,
             powerBonus: item.powerBonus,
             multiplier: item.multiplier,
+            ...(item.initiativeBonus === undefined
+              ? {}
+              : { initiativeBonus: item.initiativeBonus }),
+            ...(item.healing === undefined ? {} : { healing: item.healing }),
           })
         : Object.freeze({
             id: item.id,

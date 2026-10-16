@@ -1,0 +1,479 @@
+/* A67: a character-led encounter, with provisional deals on one shared stage. */
+.game-shell .node-event-dialog:has(.tactical-encounter) > .node-confirmation-art {
+  width: 38px;
+  height: 38px;
+  margin: 0 auto 5px;
+  padding: 0;
+}
+.game-shell .node-event-dialog:has(.tactical-encounter) > h3 {
+  margin-bottom: 16px;
+  font-size: clamp(1.1rem, 3vw, 1.4rem);
+}
+.game-shell .tactical-encounter {
+  color: var(--ink, #fff0d0);
+  text-align: center;
+}
+.game-shell .encounter-host {
+  display: grid;
+  grid-template-columns: minmax(80px, 112px) minmax(0, 1fr);
+  gap: 20px;
+  align-items: center;
+  max-width: 360px;
+  margin: 0 auto 20px;
+  text-align: left;
+}
+.game-shell .encounter-host-frame {
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  border: 4px double #cbb179;
+  border-radius: 6px;
+  background: #101c26;
+  box-shadow: 0 9px 19px #0007;
+}
+.game-shell .encounter-host-frame > img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.game-shell .encounter-host-story h4 {
+  margin: 0 0 9px;
+  color: #f2d99f;
+  font-family: var(--font-display, Georgia, serif);
+  font-size: clamp(1.05rem, 3vw, 1.3rem);
+  font-weight: 500;
+  line-height: 1.25;
+  text-wrap: balance;
+}
+.game-shell .encounter-host-name {
+  display: block;
+  font-size: 0.8rem;
+  color: #f2e7cc;
+}
+.game-shell .encounter-help {
+  margin-top: 8px;
+  font-size: 0.85rem;
+  line-height: 1.45;
+}
+.game-shell .encounter-help > summary {
+  display: flex;
+  width: 44px;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  list-style: none;
+}
+.game-shell .encounter-help > summary::-webkit-details-marker {
+  display: none;
+}
+.game-shell .encounter-help > summary > span {
+  display: grid;
+  width: 26px;
+  height: 26px;
+  place-items: center;
+  border: 1px solid #b8a36c;
+  border-radius: 50%;
+  color: #e6d4a9;
+  font-family: Georgia, serif;
+  font-style: italic;
+}
+.game-shell .encounter-help[open] {
+  grid-column: 1 / -1;
+}
+.game-shell .encounter-help p {
+  margin: 6px 0;
+}
+.game-shell .encounter-offer-tray {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin: 0 auto;
+  max-width: 440px;
+}
+.game-shell .encounter-offer-object {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  align-items: center;
+  min-width: 0;
+  margin: 0;
+  padding: 8px 6px 12px;
+  border: 1px solid #807857;
+  border-radius: 9px;
+  background: #101e2b99;
+  color: #f5e8c9;
+  transition:
+    border-color 160ms ease-out,
+    background-color 160ms ease-out,
+    transform 160ms ease-out;
+}
+.game-shell .encounter-offer-object[aria-pressed='true'] {
+  border-color: #edce85;
+  background: #254438;
+  box-shadow: inset 0 0 0 1px #edce85;
+}
+.game-shell .encounter-offer-art {
+  position: relative;
+  display: block;
+  width: 70px;
+  height: 58px;
+}
+.game-shell .encounter-offer-art > img:first-child {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.game-shell .encounter-offer-art .encounter-choice-seal {
+  position: absolute;
+  right: -8px;
+  bottom: -3px;
+  width: 27px;
+  height: 27px;
+  object-fit: contain;
+}
+.game-shell .encounter-offer-object > strong {
+  font-size: 0.88rem;
+  line-height: 1.25;
+  font-weight: 600;
+}
+.game-shell .encounter-benefit,
+.game-shell .encounter-cost {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  min-height: 24px;
+  font-size: 0.82rem;
+  font-variant-numeric: tabular-nums;
+}
+.game-shell .encounter-benefit {
+  color: #d0edc4;
+}
+.game-shell .encounter-cost {
+  color: #f1cfa7;
+}
+.game-shell .encounter-benefit img,
+.game-shell .encounter-cost img {
+  width: 23px;
+  height: 23px;
+  object-fit: contain;
+}
+.game-shell .encounter-offer-object > small {
+  font-size: 0.75rem;
+  line-height: 1.3;
+}
+.game-shell .encounter-targets {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 5px;
+  margin: 18px auto 8px;
+}
+.game-shell .encounter-target {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  flex: 0 1 74px;
+  min-width: 44px;
+  margin: 0;
+  padding: 4px;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  background: transparent;
+  color: #f5e8c9;
+}
+.game-shell .encounter-target[aria-pressed='true'] {
+  border-color: #e8ca83;
+  background: #254438;
+}
+.game-shell .encounter-target > span:not(.encounter-target-image) {
+  font-size: 0.68rem;
+  line-height: 1.25;
+  overflow-wrap: anywhere;
+}
+.game-shell .encounter-target > small {
+  font-size: 0.65rem;
+  line-height: 1.2;
+  font-variant-numeric: tabular-nums;
+}
+.game-shell .encounter-target-image {
+  position: relative;
+  width: 40px;
+  height: 50px;
+}
+.game-shell .encounter-target-image > img:first-child {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: 1px solid #ad9562;
+  border-radius: 4px;
+}
+.game-shell .encounter-target-image .encounter-target-seal {
+  position: absolute;
+  right: -6px;
+  bottom: -5px;
+  width: 20px;
+  height: 20px;
+}
+.game-shell .encounter-preview {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px 12px;
+  margin-top: 16px;
+  padding-top: 12px;
+  border-top: 1px solid #756b4a;
+}
+.game-shell .encounter-preview-unit {
+  display: grid;
+  grid-template-columns: 28px auto;
+  grid-template-rows: repeat(2, auto);
+  align-items: center;
+  column-gap: 6px;
+  font-size: 0.74rem;
+  line-height: 1.4;
+  font-variant-numeric: tabular-nums;
+}
+.game-shell .encounter-preview-unit > img {
+  grid-row: 1 / 3;
+  width: 28px;
+  height: 35px;
+  border-radius: 3px;
+  object-fit: cover;
+}
+.game-shell .encounter-preview-unit > [data-direction='gain'] {
+  color: #d0edc4;
+}
+.game-shell .encounter-preview-unit > [data-direction='cost'] {
+  color: #f1cfa7;
+}
+.game-shell .encounter-draft-state {
+  margin: 14px auto 4px;
+  max-width: 36ch;
+  font-size: 0.8rem;
+  line-height: 1.35;
+  color: #e7d8b4;
+}
+.game-shell .encounter-pass {
+  display: inline-flex;
+  gap: 7px;
+  justify-content: center;
+  align-items: center;
+  min-height: 44px;
+  margin: 5px 0 0;
+  padding: 4px 8px;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  background: transparent;
+  color: #eee0be;
+  font-size: 0.83rem;
+}
+.game-shell .encounter-pass > img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+.game-shell .encounter-pass[aria-pressed='true'] {
+  border-color: #bda56e;
+}
+.game-shell .encounter-pass > .encounter-pass-seal {
+  width: 22px;
+  height: 22px;
+}
+.game-shell .tactical-encounter button:focus-visible,
+.game-shell .encounter-help > summary:focus-visible {
+  outline: 3px solid #b0eddf;
+  outline-offset: 3px;
+}
+.game-shell .tactical-encounter button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+@media (hover: hover) {
+  .game-shell .encounter-offer-object:not(:disabled):hover {
+    transform: translateY(-2px);
+    border-color: #edce85;
+  }
+  .game-shell .encounter-target:not(:disabled):hover {
+    border-color: #bda56e;
+  }
+  .game-shell .encounter-pass:not(:disabled):hover {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+}
+@media (max-width: 440px) {
+  .game-shell .encounter-host {
+    grid-template-columns: 88px minmax(0, 1fr);
+    gap: 14px;
+    margin-bottom: 16px;
+  }
+  .game-shell .encounter-offer-tray {
+    gap: 10px;
+  }
+  .game-shell .encounter-offer-art {
+    width: 56px;
+    height: 48px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .game-shell .encounter-offer-object {
+    transition: none;
+  }
+  .game-shell .encounter-offer-object:not(:disabled):hover {
+    transform: none;
+  }
+}
+.game-shell[data-reduced='true'] .encounter-offer-object {
+  transition: none;
+}
+.game-shell[data-reduced='true'] .encounter-offer-object:not(:disabled):hover {
+  transform: none;
+}
+.game-shell .encounter-saved-host {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin: 16px 0 10px;
+}
+.game-shell .encounter-saved-host > img:first-child {
+  width: 48px;
+  height: 60px;
+  border: 1px solid #bda56e;
+  border-radius: 4px;
+  object-fit: cover;
+}
+.game-shell .encounter-saved-host h4 {
+  margin: 0 0 4px;
+  font-family: var(--font-display, Georgia, serif);
+  color: #f2d99f;
+}
+.game-shell .encounter-saved-host span {
+  font-size: 0.85rem;
+}
+.game-shell .encounter-saved-host > img:last-child {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
+.game-shell .encounter-saved-vitals {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+.game-shell .encounter-saved-unit {
+  display: grid;
+  grid-template-columns: auto auto;
+  align-items: center;
+  gap: 3px 8px;
+  font-size: 0.82rem;
+  font-variant-numeric: tabular-nums;
+}
+.game-shell .encounter-saved-unit > img {
+  grid-row: 1 / 4;
+  width: 36px;
+  height: 45px;
+  object-fit: cover;
+}
+.game-shell .encounter-saved-unit > strong {
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+.game-shell .encounter-saved-unit > span {
+  grid-column: 2;
+}
+.game-shell .encounter-saved-unit:not(:has(> img)) > span {
+  grid-column: 1 / -1;
+}
+.game-shell .encounter-saved-unit > [data-direction='gain'] {
+  color: #d0edc4;
+}
+.game-shell .encounter-saved-unit > [data-direction='cost'] {
+  color: #f1cfa7;
+}
+/* The actual formation supplies both scope symbols, including ARCANA without ui.team. */
+.game-shell .encounter-scope-single,
+.game-shell .encounter-scope-team {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+.game-shell .encounter-scope-single > img {
+  width: 38px;
+  height: 48px;
+  object-fit: cover;
+  border: 1px solid #bda56e;
+  border-radius: 4px;
+}
+.game-shell .encounter-scope-team > img {
+  width: 29px;
+  height: 37px;
+  object-fit: cover;
+  border: 1px solid #bda56e;
+  border-radius: 3px;
+}
+.game-shell .encounter-scope-team > img + img {
+  margin-left: -10px;
+}
+.game-shell .encounter-scope-team > img:nth-child(2) {
+  z-index: 1;
+  transform: translateY(-5px);
+}
+.game-shell .encounter-targets {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 3px;
+}
+.game-shell .encounter-target {
+  min-width: 0;
+}
+.game-shell .encounter-target > small {
+  white-space: nowrap;
+  font-size: 0.68rem;
+}
+@media (max-width: 440px) {
+  .game-shell .node-event-dialog:has(.tactical-encounter) {
+    padding: 20px 18px 18px;
+  }
+  .game-shell .node-event-dialog:has(.tactical-encounter) > h3 {
+    margin-bottom: 12px;
+  }
+  .game-shell .encounter-host {
+    grid-template-columns: 72px minmax(0, 1fr);
+    margin-bottom: 12px;
+  }
+  .game-shell .encounter-host-story h4 {
+    font-size: 1.05rem;
+    margin-bottom: 6px;
+  }
+  .game-shell .encounter-help {
+    margin-top: 2px;
+  }
+  .game-shell .encounter-targets {
+    margin-top: 12px;
+  }
+  .game-shell .encounter-target {
+    padding: 3px 1px;
+  }
+  .game-shell .encounter-target > span:not(.encounter-target-image) {
+    font-size: 0.62rem;
+  }
+  .game-shell .encounter-preview {
+    margin-top: 10px;
+    padding-top: 8px;
+  }
+  .game-shell .encounter-draft-state {
+    margin-top: 10px;
+    font-size: 0.75rem;
+  }
+  .game-shell .node-event-dialog:has(.tactical-encounter) .node-confirm-action {
+    min-height: 58px;
+    margin-top: 10px;
+  }
+}

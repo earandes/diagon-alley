@@ -1,0 +1,30 @@
+
+> coleccion-magica-i1@0.1.0 test:pwa
+> playwright test --config playwright.pwa.config.ts
+
+[WebServer] (node:65799) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:65825) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] WebSocket server error: Port 24678 is already in use
+
+Running 12 tests using 1 worker
+
+(node:65926) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 [chromium] › tests/browser-pwa/shell.spec.ts:4:3 › PWA shell, offline authority isolation and reconnect in es (1.6s)
+  ✓   2 [chromium] › tests/browser-pwa/shell.spec.ts:4:3 › PWA shell, offline authority isolation and reconnect in en (1.3s)
+  ✓   3 [chromium] › tests/browser-pwa/shell.spec.ts:109:1 › blocked worker registration retains the normal online game without an unhandled rejection (246ms)
+  ✓   4 [chromium] › tests/browser-pwa/shell.spec.ts:128:1 › a shell update waits for existing clients and activation preserves other app caches (1.3s)
+  ✓   5 [chromium] › tests/browser-pwa/shell.spec.ts:178:3 › lost buy-open response survives offline reload with the original operation in es (631ms)
+  ✓   6 [chromium] › tests/browser-pwa/shell.spec.ts:178:3 › lost buy-open response survives offline reload with the original operation in en (781ms)
+(node:65992) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   7 [webkit] › tests/browser-pwa/shell.spec.ts:4:3 › PWA shell, offline authority isolation and reconnect in es (1.8s)
+  ✓   8 [webkit] › tests/browser-pwa/shell.spec.ts:4:3 › PWA shell, offline authority isolation and reconnect in en (1.5s)
+  ✓   9 [webkit] › tests/browser-pwa/shell.spec.ts:109:1 › blocked worker registration retains the normal online game without an unhandled rejection (459ms)
+  ✓  10 [webkit] › tests/browser-pwa/shell.spec.ts:128:1 › a shell update waits for existing clients and activation preserves other app caches (702ms)
+  ✓  11 [webkit] › tests/browser-pwa/shell.spec.ts:178:3 › lost buy-open response survives offline reload with the original operation in es (932ms)
+  ✓  12 [webkit] › tests/browser-pwa/shell.spec.ts:178:3 › lost buy-open response survives offline reload with the original operation in en (1.1s)
+
+  12 passed (15.5s)

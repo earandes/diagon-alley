@@ -1,4 +1,4 @@
-import { defineConfig } from '@playwright/test';
+import { defineSafeConfig as defineConfig } from './tools/verification/playwright-safety';
 import { randomUUID } from 'node:crypto';
 const namespace = `diagon-redesign-${randomUUID()}`;
 const compiledPreview = process.env.ARCANA_REDESIGN_COMPILED_PREVIEW === '1';

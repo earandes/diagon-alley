@@ -1,0 +1,29 @@
+src/arcana/application/client/ports.ts 47ms
+src/arcana/application/public-content.ts 16ms
+src/arcana/application/game.ts 40ms
+src/arcana/application/run-contracts.ts 2ms (unchanged)
+src/arcana/application/run-use-cases.ts 30ms
+src/arcana/application/node-options.ts 4ms
+src/arcana/domain/exploration/challenges.ts 1ms
+src/arcana/domain/exploration/encounter-trades.ts 8ms
+src/arcana/domain/exploration/nodes.ts 10ms (unchanged)
+src/arcana/domain/exploration/run.ts 11ms
+src/arcana/infrastructure/content/progression-content.ts 5ms
+src/arcana/infrastructure/content/trial-configuration.ts 5ms
+src/arcana/presentation/App.tsx 46ms
+src/arcana/presentation/ExpeditionPreparation.tsx 35ms
+src/arcana/presentation/ExpeditionChallenge.tsx 4ms
+src/arcana/presentation/expedition-challenge.css 12ms
+src/arcana/presentation/NodePreparation.tsx 15ms
+src/arcana/presentation/NodeResult.tsx 9ms
+src/arcana/presentation/BattlePanel.tsx 18ms
+src/arcana/presentation/arena-messages.ts 1ms (unchanged)
+tests/domain/arcana/encounter-trades-a67.test.ts 2ms
+tests/domain/arcana/progression-content-a67.test.ts 3ms
+tests/domain/arcana/node-options.test.ts 2ms
+tests/domain/arcana/tactical-balance.test.ts 7ms
+tests/domain/arcana/tactical-run.test.ts 7ms
+tests/browser-trial/region-map.spec.ts 4ms (unchanged)
+tests/browser-trial/hud-results.spec.ts 10ms
+tests/browser-trial/route-helpers.ts 3ms
+playwright.trial.config.ts 3ms (unchanged)

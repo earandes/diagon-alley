@@ -1,0 +1,63 @@
+{
+  "baseCommit": "97573b0d95c027d0192914afcb73d32e74fb23a6",
+  "description": "Reconstructed A66 runtime: initial dirty-path inventory and prior patch; early A67 gear hunks excluded by restoring those paths to HEAD; ExpeditionPreparation retains only the A65 intention reminder. Types/build passed. Not a historical git commit.",
+  "patchSha256": "c01f6944b1213af3745523f2c1b2a235c0e01b4ee8f8321ac69c188ee16ba388",
+  "extraFiles": [
+    {
+      "path": "src/arcana/application/client/expedition-intentions.ts",
+      "sha256": "8711d478d693014030080d374c0e0a6ca4c06105cd86451b24c215dffdc51dd6"
+    },
+    {
+      "path": "src/arcana/application/set-intention.ts",
+      "sha256": "efc12d0735ac7df8654332fe8ced9f4aedbeb949559e964ce110af6f519a9c49"
+    },
+    {
+      "path": "src/arcana/content/tactical-v1.json",
+      "sha256": "8a0d8a4b7541311b60c16a0dc36fb2ee6aa6921bec4aadc1c03943730e2ddddb"
+    },
+    {
+      "path": "src/arcana/domain/exploration/intentions.ts",
+      "sha256": "822116c0f307c36acf599d6f2d7d7e8bd329b5609f64bc997255bae8e50f7c66"
+    },
+    {
+      "path": "src/arcana/infrastructure/content/tactical-content.ts",
+      "sha256": "25b1f4952f7dc970e51d94812eca6a1c944cd631edf9501d031db33205abfb57"
+    },
+    {
+      "path": "src/arcana/presentation/ExpeditionIntentions.tsx",
+      "sha256": "0d27dd605c3bc07a8aa198bc3c80733a9a8f80fac74f68e910d2b98efde935a0"
+    },
+    {
+      "path": "src/arcana/presentation/TacticalBadge.tsx",
+      "sha256": "12ab05df94a4aab4c329e2cc672b899b08d0ec40d0e9faaca89cadc31d03acc4"
+    },
+    {
+      "path": "src/arcana/presentation/art/tactical-a65/manifest.json",
+      "sha256": "3b6c51864a7f7e6d1acd91327d8d269bb127513e089c9df2b90b8477d59c9e8c"
+    },
+    {
+      "path": "src/arcana/presentation/art/tactical-a65/threat-fire.svg",
+      "sha256": "d8c01c97d1a395b2107c0b646637de6612ee932544f25bbed554bdc93136c37c"
+    },
+    {
+      "path": "src/arcana/presentation/art/tactical-a65/threat-vanguard.svg",
+      "sha256": "7b5b87521dc90ca3760f30a59a7c0a5654aaf4ab6f6b65fc711b5e260b08c74f"
+    },
+    {
+      "path": "src/arcana/presentation/expedition-intentions.css",
+      "sha256": "7eb41f0865777128bcba012248aa6faa12a35192b694a87f4be06c9472440baf"
+    },
+    {
+      "path": "src/arcana/presentation/header-pact.css",
+      "sha256": "d24c2f575512a08796c09161c62a0216ed792e63561f9861d1523e594bf4d74b"
+    },
+    {
+      "path": "src/arcana/presentation/intention-messages.ts",
+      "sha256": "9a512b1bd4a496ecce28b8d1052f96f617e4b7b88572c4323a57700a1dabeb78"
+    },
+    {
+      "path": "src/arcana/presentation/tactical-a65.css",
+      "sha256": "9e56eede5326e43cc9c76577dfefa0b03650cffa83a40f2094abe4d7f823c0d0"
+    }
+  ]
+}

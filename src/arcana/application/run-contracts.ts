@@ -1,3 +1,4 @@
+import type { EncounterTradeResolution } from '../domain/exploration/encounter-trades';
 import type { EncounterResolution } from '../domain/exploration/encounters';
 import type { Combat } from '../domain/combat/engine';
 import type { Reward } from '../domain/economy/rewards';
@@ -6,6 +7,7 @@ export interface StartRunRequest {
   readonly zoneId: string;
   readonly campaignVersion: number;
   readonly copyIds: readonly string[];
+  readonly challenge?: 'discovery' | 'tactical' | 'mastery';
 }
 export interface BeanAssignment {
   readonly unitId: string;
@@ -14,8 +16,11 @@ export interface BeanAssignment {
 export interface NodeOptions {
   readonly refugeAction?: 'heal' | 'focus';
   readonly pactAction?: 'recruit' | 'pass';
+  readonly recruitId?: string;
   readonly replaceUnitId?: string;
-  readonly encounterAction?: 'risk' | 'pass';
+  readonly encounterAction?: 'risk' | 'pass' | 'trade';
+  readonly encounterChoiceId?: string;
+  readonly encounterUnitId?: string;
 }
 export interface AdvanceNodeRequest extends NodeOptions {
   readonly runId: string;
@@ -41,5 +46,6 @@ export interface NodeReceipt {
     readonly seed: number;
     readonly choice: number;
     readonly resolution?: EncounterResolution;
+    readonly trade?: EncounterTradeResolution;
   } | null;
 }

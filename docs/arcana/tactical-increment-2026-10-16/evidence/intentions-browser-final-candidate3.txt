@@ -1,0 +1,27 @@
+[WebServer] (node:62740) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:62764) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] WebSocket server error: Port 24678 is already in use
+[WebServer] (node:62778) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:62802) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] WebSocket server error: Port 24678 is already in use
+
+Running 8 tests using 1 worker
+
+(node:62803) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  1 [chromium-intentions-a65] › tests/browser-trial/tactical-intentions-a65.spec.ts:160:5 › A65 intention selection preparation activation recovery es diagon-alley (7.9s)
+  ✓  2 [chromium-intentions-a65] › tests/browser-trial/tactical-intentions-a65.spec.ts:160:5 › A65 intention selection preparation activation recovery es arcana (6.8s)
+  ✓  3 [chromium-intentions-a65] › tests/browser-trial/tactical-intentions-a65.spec.ts:160:5 › A65 intention selection preparation activation recovery en diagon-alley (7.9s)
+  ✓  4 [chromium-intentions-a65] › tests/browser-trial/tactical-intentions-a65.spec.ts:160:5 › A65 intention selection preparation activation recovery en arcana (7.2s)
+(node:63216) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  5 [webkit-intentions-a65] › tests/browser-trial/tactical-intentions-a65.spec.ts:160:5 › A65 intention selection preparation activation recovery es diagon-alley (8.3s)
+  ✓  6 [webkit-intentions-a65] › tests/browser-trial/tactical-intentions-a65.spec.ts:160:5 › A65 intention selection preparation activation recovery es arcana (6.6s)
+  ✓  7 [webkit-intentions-a65] › tests/browser-trial/tactical-intentions-a65.spec.ts:160:5 › A65 intention selection preparation activation recovery en diagon-alley (7.7s)
+  ✓  8 [webkit-intentions-a65] › tests/browser-trial/tactical-intentions-a65.spec.ts:160:5 › A65 intention selection preparation activation recovery en arcana (5.9s)
+
+  8 passed (1.0m)

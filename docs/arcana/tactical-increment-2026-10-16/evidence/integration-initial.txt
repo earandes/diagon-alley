@@ -1,0 +1,41 @@
+
+> coleccion-magica-i1@0.1.0 test:integration
+> vitest run --config vitest.integration.config.ts
+
+
+ RUN  v5.0.3 /Users/enricarandes/work/diagon-alley
+
+ ❯ tests/integration/arcana/trial-gateway.test.ts (3 tests | 1 failed) 173ms
+   ❯ local trial cookie gateway with authoritative SQL/Redis (3)
+     × executes apprentice→temporary pacts→valid battle on the persisted generated route without extra permanent gifts 63ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/integration/arcana/trial-gateway.test.ts > local trial cookie gateway with authoritative SQL/Redis > executes apprentice→temporary pacts→valid battle on the persisted generated route without extra permanent gifts
+AssertionError: expected 422 to be 200 // Object.is equality
+
+- Expected
++ Received
+
+- 200
++ 422
+
+ ❯ tests/integration/arcana/trial-gateway.test.ts:163:33
+    161|         },
+    162|       });
+    163|       expect(result.statusCode).toBe(200);
+       |                                 ^
+    164|       state = result.json().state;
+    165|     }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed | 8 passed (9)
+      Tests  1 failed | 42 passed (43)
+   Start at  15:08:15
+   Duration  4.60s (tests 83%, import 13%, transform 4%)
+
+    Isolate  9 workers spawned · ~54ms startup each (spawn + environment, per file)
+             at least ~434ms faster with isolate: false — reuses workers across files instead of one per file
+

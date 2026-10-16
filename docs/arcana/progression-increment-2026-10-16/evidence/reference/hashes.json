@@ -1,0 +1,21 @@
+{
+  "note": "A65 JSON and synergies from working tree; combat engine from HEAD before A67 equipment edit; engine unchanged by A65 except external synergy semantics.",
+  "files": {
+    "tactical-content.ts": "25b1f4952f7dc970e51d94812eca6a1c944cd631edf9501d031db33205abfb57",
+    "simulate-tactics.mjs": "950d31970c700c6d2359bc1e5007689906d4ab6ec9f56dc1938c40a376b6864a",
+    "trial-v1.json": "d2b88567d8f190eac47ad74aee4a6195b71c28ab53717e9d8706bff8713c3049",
+    "tactical-v1.json": "8a0d8a4b7541311b60c16a0dc36fb2ee6aa6921bec4aadc1c03943730e2ddddb",
+    "domain/errors.ts": "9e551cfb6d87337134b5fc414c42fc291f554dca6fd1a526d8c1deaed3a942fe",
+    "domain/identifiers.ts": "20e92ec6f365ff30e0b35203f50d9e6f1790b1defa23eddd54bee452f2fa696e",
+    "domain/combat/equipment-effects.ts": "1968f4e7dc5933cd153c8840e1da7e08117cc62ccd82255dc6ff10394e97d1c5",
+    "domain/combat/mana.ts": "a9d5df7d7b33e0a9fb6829888c9687b4e3e213937c155c18088044111b7e7df5",
+    "domain/combat/engine.ts": "df1d5a6da0109b89a8b57ac80993966b6d11bb721bcf7e5ab5e3c5cbef266e60",
+    "domain/combat/seed.ts": "6bdf44767466355b4593f3a650bfad66bd0ab99c13b64a7d2f8408e5a2121f31",
+    "domain/combat/random.ts": "ebb8b3a5a4fda618f686341bb889a2ad5de0a0fea772998f1e711e5f04d8095a",
+    "domain/combat/beans.ts": "e692ede04874642ecff86c306454de584edbd689f8ca114b318388550c543740",
+    "domain/combat/synergies.ts": "ec8929d0339a6f141846b12e878b3e3b6f48454d2330fa33284e544a710d786c",
+    "domain/exploration/route.ts": "210748a9f92797a5bc42da45ef048183939b6f2ea3d867ae9725e7a5289d20f4",
+    "domain/exploration/randomize-route.ts": "87f435dfb70afc2325485aab196262e926179dbfb8d1377a3b31ca16eff76516",
+    "infrastructure/random/seeded-random.ts": "1d5e3ccfbe43f9c2789d38af88e9519dde24627df83659c9fa6460cd8421e754"
+  }
+}

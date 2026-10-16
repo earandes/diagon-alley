@@ -1,0 +1,7 @@
+Command: npx --no-install playwright test --config playwright.tactics-a65.config.ts
+Compiled candidate 3; PostgreSQL/Redis through isolated trial namespace; workers=1.
+Result: 12 passed (59.0s), exit code 0.
+8 complete journeys (ES/EN x Diagon/ARCANA x Chromium/WebKit).
+2 lost response recoveries (one per engine), 2 shared-pending two-tab protections (one per engine).
+Earlier failed harness runs: wrong skip label, premature reads while command in flight, and assumed second POST despite client pending lock. Those assertions were corrected; production code unchanged for this functional pass.
+Per-action measurement JSON is DOM readiness only; image decode and full transition time are not included. Dedicated performance profiles are recorded separately.

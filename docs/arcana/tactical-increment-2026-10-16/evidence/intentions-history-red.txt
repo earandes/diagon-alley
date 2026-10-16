@@ -1,0 +1,80 @@
+
+ RUN  v5.0.3 /Users/enricarandes/work/diagon-alley
+
+ ❯ tests/domain/arcana/expedition-intentions.test.ts (9 tests | 2 failed) 7ms
+   ❯ A65 voluntary intentions are evidence-bound and do not grant prizes (9)
+     × does not offer a synergy already activated before a defeat with all members fallen 4ms
+     × does not call an owned companion new when it fought earlier and was later removed 0ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/domain/arcana/expedition-intentions.test.ts > A65 voluntary intentions are evidence-bound and do not grant prizes > does not offer a synergy already activated before a defeat with all members fallen
+AssertionError: expected [ { kind: 'synergy', …(1) }, …(1) ] to not deep equally contain { Object (kind, affinity) }
+
+- Expected:
+{
+  "affinity": "alchemy",
+  "kind": "synergy",
+}
+
++ Received:
+[
+  {
+    "affinity": "alchemy",
+    "kind": "synergy",
+  },
+  {
+    "kind": "bean",
+  },
+]
+
+ ❯ tests/domain/arcana/expedition-intentions.test.ts:74:57
+     72|         team: 'player' as const, affinity: 'alchemy' as const, members…
+     73|     };
+     74|     expect(availableIntentions(game, availability)).not.toContainEqual…
+       |                                                         ^
+     75|   });
+     76|   it('does not call an owned companion new when it fought earlier and …
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  tests/domain/arcana/expedition-intentions.test.ts > A65 voluntary intentions are evidence-bound and do not grant prizes > does not call an owned companion new when it fought earlier and was later removed
+AssertionError: expected [ …(3) ] to not deep equally contain { kind: 'new-companion', …(1) }
+
+- Expected:
+{
+  "kind": "new-companion",
+  "wizardId": "circe",
+}
+
++ Received:
+[
+  {
+    "kind": "new-companion",
+    "wizardId": "circe",
+  },
+  {
+    "affinity": "shadows",
+    "kind": "synergy",
+  },
+  {
+    "kind": "bean",
+  },
+]
+
+ ❯ tests/domain/arcana/expedition-intentions.test.ts:79:57
+     77|     const base = closedGame();
+     78|     const game = { ...base, receipts: [battleReceipt('old-run', [], 'c…
+     79|     expect(availableIntentions(game, availability)).not.toContainEqual…
+       |                                                         ^
+     80|   });
+     81|   it('suggests only owned new companions, reachable synergies and an a…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  2 failed | 7 passed (9)
+   Start at  15:15:07
+   Duration  125ms (transform 69%, import 15%, tests 12%, worker 3%)
+

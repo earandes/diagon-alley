@@ -12,9 +12,11 @@ import type { PublicContent } from '../public-content';
 import type { StartRunRequest, AdvanceNodeRequest } from '../run-contracts';
 import type { SetTeamRequest, EquipEquipmentRequest } from '../team-contracts';
 import { ArcanaClientError } from './errors';
+import { intentionRequestSnapshot, type SetIntentionRequest } from '../set-intention';
 export type { PlayerStatus as AuthorityState } from '../player-status';
 import type { PlayerStatus as AuthorityState } from '../player-status';
 export interface ClientGateway {
+  setIntention?(command: OperationCommand<SetIntentionRequest>): Promise<OperationResult>;
   state(): Promise<AuthorityState>;
   content(): Promise<PublicContent>;
   operation(key: string): Promise<OperationResult>;
@@ -30,6 +32,7 @@ export interface ClientGateway {
   logout(): Promise<void>;
 }
 interface ActionRequests {
+  'set-intention': SetIntentionRequest;
   'forge-wand': ForgeWandRequest;
   'open-vault': OpenVaultRequest;
   purchase: PurchaseRequest;
@@ -94,6 +97,10 @@ export function pendingSnapshot(value: unknown): PendingOperation {
     const r = command.request;
     let request: unknown;
     switch (value.kind) {
+      case 'set-intention':
+        fields(r, ['afterRunId', 'choice']);
+        request = intentionRequestSnapshot(r as unknown as SetIntentionRequest);
+        break;
       case 'forge-wand':
         fields(r, ['recipeId', 'catalogVersion']);
         if (!validDomainId(r.recipeId) || !version(r.catalogVersion)) throw Error();
@@ -137,12 +144,19 @@ export function pendingSnapshot(value: unknown): PendingOperation {
         };
         break;
       case 'start-run':
-        fields(r, ['zoneId', 'campaignVersion', 'copyIds']);
+        fields(r, ['zoneId', 'campaignVersion', 'copyIds'], ['challenge']);
+        if (
+          r.challenge !== undefined &&
+          (typeof r.challenge !== 'string' ||
+            !['discovery', 'tactical', 'mastery'].includes(r.challenge))
+        )
+          throw Error();
         if (!validDomainId(r.zoneId) || !version(r.campaignVersion) || !ids(r.copyIds, 1))
           throw Error();
         request = {
           zoneId: r.zoneId,
           campaignVersion: r.campaignVersion,
+          ...(r.challenge === undefined ? {} : { challenge: r.challenge }),
           copyIds: Object.freeze([...r.copyIds]),
         };
         break;
@@ -150,7 +164,15 @@ export function pendingSnapshot(value: unknown): PendingOperation {
         fields(
           r,
           ['runId', 'nodeId', 'campaignVersion', 'assignments'],
-          ['refugeAction', 'pactAction', 'replaceUnitId', 'encounterAction'],
+          [
+            'refugeAction',
+            'pactAction',
+            'recruitId',
+            'replaceUnitId',
+            'encounterAction',
+            'encounterChoiceId',
+            'encounterUnitId',
+          ],
         );
         const options = nodeOptionsSnapshot(r);
         if (

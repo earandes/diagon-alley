@@ -1,17 +1,22 @@
+import { ChallengeChoice } from './ExpeditionChallenge';
+import type { ExpeditionChallenge } from '../domain/exploration/challenges';
 import { useEffect, useId, useRef, useState } from 'react';
 import type { GameState } from '../application/game';
 import type { PublicContent } from '../application/public-content';
 import { preparationUnit, preparationFormation, previewEquipment } from './contextual-preparation';
 import { equipmentSpellPower, equipmentInitiative } from '../domain/combat/equipment-effects';
 import { PreparationSynergies } from './PreparationSynergies';
+import { IntentionReminder } from './ExpeditionIntentions';
 import { contextualText as c } from './contextual-messages';
 import './contextual-preparation.css';
 import type { EquipEquipmentRequest, SetTeamRequest } from '../application/team-contracts';
 import type { Language, OwnedWizard, WizardCatalog } from '../domain/collection/wizards';
 import type { EquipmentSlot } from '../domain/economy/equipment';
 import { Artwork } from './Artwork';
+import { EquipmentArt } from './EquipmentArt';
 import { themedName, wizardName } from './content-packs/active';
 import { equipmentName } from './equipment-label';
+import { equipmentSpecializationText } from './equipment-specialization';
 import { prepText } from './prep-messages';
 import { text } from './translations';
 import './expedition-preparation.css';
@@ -55,17 +60,11 @@ function PreparationGear({
               })}
               onClick={() => setSlot(slot === kind ? null : kind)}
             >
-              <Artwork
-                asset={
-                  item
-                    ? item.kind === 'wand'
-                      ? `product.wand-${item.wood}`
-                      : `product.broom-${item.model}`
-                    : 'ui.clear'
-                }
-                language={language}
-                decorative
-              />
+              {item ? (
+                <EquipmentArt item={item} language={language} />
+              ) : (
+                <Artwork asset="ui.clear" language={language} decorative />
+              )}
               <span>{item ? equipmentName(item, language) : prepText(language, 'remove')}</span>
             </button>
           );
@@ -128,15 +127,7 @@ function PreparationGear({
                   title={label}
                   onClick={() => onEquip({ copyId: copy.copyId, slot, equipmentId: item.id })}
                 >
-                  <Artwork
-                    asset={
-                      item.kind === 'wand'
-                        ? `product.wand-${item.wood}`
-                        : `product.broom-${item.model}`
-                    }
-                    language={language}
-                    decorative
-                  />
+                  <EquipmentArt item={item} language={language} />
                   <span>{name}</span>
                   <small className="gear-stat-comparison" data-equipment-preview={slot}>
                     {slot === 'wand' ? text(language, 'power') : c(language, 'initiative')}{' '}
@@ -144,6 +135,24 @@ function PreparationGear({
                       ? comparison(preview.powerBefore, preview.powerAfter)
                       : comparison(preview.initiativeBefore, preview.initiativeAfter)}
                   </small>
+                  {slot === 'wand' &&
+                    (preview.initiativeBefore !== preview.initiativeAfter ||
+                      preview.healingBefore !== preview.healingAfter) && (
+                      <small className="gear-stat-comparison" data-specialization-preview>
+                        {c(language, 'initiative')}{' '}
+                        {comparison(preview.initiativeBefore, preview.initiativeAfter)}
+                        {' · '}
+                        {equipmentSpecializationText('healing', language)}{' '}
+                        {comparison(preview.healingBefore, preview.healingAfter)}
+                      </small>
+                    )}
+                  {slot === 'wand' &&
+                    item.kind === 'wand' &&
+                    (item.healing || item.initiativeBonus) &&
+                    game.exploration?.run?.status === 'active' &&
+                    game.exploration.run.equipmentRulesVersion !== 2 && (
+                      <small>{equipmentSpecializationText('legacy', language)}</small>
+                    )}
                   {ownerCopy && ownerCopy.copyId !== copy.copyId && (
                     <small className="preparation-gear-owner">
                       {wizardName(ownerCopy.wizard, language)}
@@ -193,7 +202,7 @@ export function ExpeditionPreparation({
   ready: boolean;
   onTeam: (request: SetTeamRequest) => void;
   onEquip: (request: EquipEquipmentRequest) => void;
-  onStart: (copyIds: readonly string[]) => void;
+  onStart: (copyIds: readonly string[], challenge?: ExpeditionChallenge) => void;
   onClose?: () => void;
 }) {
   const numbers = new Intl.NumberFormat(language === 'es' ? 'es-ES' : 'en-US', {
@@ -213,6 +222,16 @@ export function ExpeditionPreparation({
   const inspectionOrigin = useRef<HTMLButtonElement | null>(null);
   const inspectionTitle = useId();
   const [page, setPage] = useState(0);
+  const [challenge, setChallenge] = useState<ExpeditionChallenge>('discovery');
+  const lastRun = game.exploration?.run;
+  const recommendedChallenge =
+    lastRun?.status === 'won'
+      ? lastRun.challenge === 'discovery'
+        ? 'tactical'
+        : lastRun.challenge === 'tactical'
+          ? 'mastery'
+          : undefined
+      : undefined;
   useEffect(() => {
     setChosen(committedKey ? committedKey.split('|') : []);
   }, [committedKey, run?.id]);
@@ -279,6 +298,7 @@ export function ExpeditionPreparation({
           </button>
         )}
       </header>
+      {content && <IntentionReminder game={game} content={content} language={language} />}
       {context === 'beans' && (
         <section
           className="preparation-beans-destination"
@@ -322,6 +342,15 @@ export function ExpeditionPreparation({
       )}
       {context === 'formation' && (
         <>
+          {!run && content?.campaign.challenges && (
+            <ChallengeChoice
+              recommended={recommendedChallenge}
+              value={challenge}
+              onChange={setChallenge}
+              language={language}
+              ready={ready}
+            />
+          )}
           <div
             className="preparation-formation"
             aria-label={p('capacity', { count: formation.length })}
@@ -625,7 +654,11 @@ export function ExpeditionPreparation({
               className="preparation-confirm game-object"
               data-preparation-confirm
               disabled={!canConfirm}
-              onClick={() => (run ? onTeam({ copyIds: chosen }) : onStart(chosen))}
+              onClick={() =>
+                run
+                  ? onTeam({ copyIds: chosen })
+                  : onStart(chosen, content?.campaign.challenges ? challenge : undefined)
+              }
             >
               <Artwork asset={run ? 'ui.seal' : 'ui.map'} language={language} decorative />
               <span>{p(run ? (changed ? 'save' : 'saved') : 'start')}</span>

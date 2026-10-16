@@ -1,0 +1,28 @@
+
+> coleccion-magica-i1@0.1.0 test
+> vitest run tests/domain/arcana/encounter-trades-a67.test.ts
+
+
+ RUN  v5.0.3 /Users/enricarandes/work/diagon-alley
+
+ ❯ tests/domain/arcana/encounter-trades-a67.test.ts (0 test)
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/domain/arcana/encounter-trades-a67.test.ts [ tests/domain/arcana/encounter-trades-a67.test.ts ]
+Error: Cannot find module '../../../src/arcana/domain/exploration/encounter-trades' imported from /Users/enricarandes/work/diagon-alley/tests/domain/arcana/encounter-trades-a67.test.ts
+ ❯ tests/domain/arcana/encounter-trades-a67.test.ts:2:1
+      1| import { describe, it, expect } from 'vitest';
+      2| import { previewEncounterTrade, encounterOfferSnapshot, type Encounter…
+       | ^
+      3| import { campaignFixture, runInitial } from './support/run-fixtures';
+      4| const offer: EncounterOffer = { id:'healer-v1', npcId:'flamel', kind:'…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  no tests
+   Start at  16:47:01
+   Duration  71ms (worker 96%, environment 4%)
+

@@ -1,0 +1,407 @@
+{
+  "language": "es",
+  "pack": "diagon-alley",
+  "engine": "chromium-a65",
+  "profile": "pointerdown → usable DOM; includes network/renderer wait; not FPS",
+  "openPactMs": 41.200000000186265,
+  "selectCandidateMs": 12.600000000558794,
+  "confirmPactMs": 93.8999999994412,
+  "geometry": [
+    {
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "document": {
+        "width": 1280,
+        "height": 900
+      },
+      "host": {
+        "width": 1280,
+        "height": 744,
+        "scrollWidth": 1280,
+        "scrollHeight": 744,
+        "top": 68,
+        "bottom": 812
+      },
+      "nodes": [
+        {
+          "id": "pasaje:0:0",
+          "x": 16,
+          "y": 398,
+          "width": 72,
+          "height": 72
+        },
+        {
+          "id": "pasaje:1:1",
+          "x": 212,
+          "y": 108,
+          "width": 72,
+          "height": 72
+        },
+        {
+          "id": "pasaje:1:0",
+          "x": 212,
+          "y": 688,
+          "width": 72,
+          "height": 72
+        },
+        {
+          "id": "pasaje:3:2",
+          "x": 408,
+          "y": 108,
+          "width": 72,
+          "height": 72
+        },
+        {
+          "id": "pasaje:5:1",
+          "x": 408,
+          "y": 398,
+          "width": 72,
+          "height": 72
+        },
+        {
+          "id": "pasaje:5:2",
+          "x": 408,
+          "y": 688,
+          "width": 72,
+          "height": 72
+        },
+        {
+          "id": "pasaje:3:0",
+          "x": 604,
+          "y": 108,
+          "width": 72,
+          "height": 72
+        },
+        {
+          "id": "pasaje:2:2",
+          "x": 604,
+          "y": 398,
+          "width": 72,
+          "height": 72
+        },
+        {
+          "id": "pasaje:5:0",
+          "x": 604,
+          "y": 688,
+          "width": 72,
+          "height": 72
+        },
+        {
+          "id": "pasaje:2:0",
+          "x": 800,
+          "y": 108,
+          "width": 72,
+          "height": 72
+        },
+        {
+          "id": "pasaje:4:0",
+          "x": 800,
+          "y": 398,
+          "width": 72,
+          "height": 72
+        },
+        {
+          "id": "pasaje:4:1",
+          "x": 800,
+          "y": 688,
+          "width": 72,
+          "height": 72
+        },
+        {
+          "id": "pasaje:4:2",
+          "x": 996,
+          "y": 108,
+          "width": 72,
+          "height": 72
+        },
+        {
+          "id": "pasaje:2:1",
+          "x": 996,
+          "y": 398,
+          "width": 72,
+          "height": 72
+        },
+        {
+          "id": "pasaje:3:1",
+          "x": 996,
+          "y": 688,
+          "width": 72,
+          "height": 72
+        },
+        {
+          "id": "pasaje:6:0",
+          "x": 1192,
+          "y": 398,
+          "width": 72,
+          "height": 72
+        }
+      ]
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "document": {
+        "width": 390,
+        "height": 844
+      },
+      "host": {
+        "width": 390,
+        "height": 672,
+        "scrollWidth": 390,
+        "scrollHeight": 672,
+        "top": 94,
+        "bottom": 766
+      },
+      "nodes": [
+        {
+          "id": "pasaje:0:0",
+          "x": 171,
+          "y": 654,
+          "width": 48,
+          "height": 48
+        },
+        {
+          "id": "pasaje:1:1",
+          "x": 105.984375,
+          "y": 565.328125,
+          "width": 48,
+          "height": 48
+        },
+        {
+          "id": "pasaje:1:0",
+          "x": 235.984375,
+          "y": 565.328125,
+          "width": 48,
+          "height": 48
+        },
+        {
+          "id": "pasaje:3:2",
+          "x": 73.5,
+          "y": 476.65625,
+          "width": 48,
+          "height": 48
+        },
+        {
+          "id": "pasaje:5:1",
+          "x": 171,
+          "y": 476.65625,
+          "width": 48,
+          "height": 48
+        },
+        {
+          "id": "pasaje:5:2",
+          "x": 268.5,
+          "y": 476.65625,
+          "width": 48,
+          "height": 48
+        },
+        {
+          "id": "pasaje:3:0",
+          "x": 73.5,
+          "y": 388,
+          "width": 48,
+          "height": 48
+        },
+        {
+          "id": "pasaje:2:2",
+          "x": 171,
+          "y": 388,
+          "width": 48,
+          "height": 48
+        },
+        {
+          "id": "pasaje:5:0",
+          "x": 268.5,
+          "y": 388,
+          "width": 48,
+          "height": 48
+        },
+        {
+          "id": "pasaje:2:0",
+          "x": 73.5,
+          "y": 299.328125,
+          "width": 48,
+          "height": 48
+        },
+        {
+          "id": "pasaje:4:0",
+          "x": 171,
+          "y": 299.328125,
+          "width": 48,
+          "height": 48
+        },
+        {
+          "id": "pasaje:4:1",
+          "x": 268.5,
+          "y": 299.328125,
+          "width": 48,
+          "height": 48
+        },
+        {
+          "id": "pasaje:4:2",
+          "x": 73.5,
+          "y": 210.65625,
+          "width": 48,
+          "height": 48
+        },
+        {
+          "id": "pasaje:2:1",
+          "x": 171,
+          "y": 210.65625,
+          "width": 48,
+          "height": 48
+        },
+        {
+          "id": "pasaje:3:1",
+          "x": 268.5,
+          "y": 210.65625,
+          "width": 48,
+          "height": 48
+        },
+        {
+          "id": "pasaje:6:0",
+          "x": 171,
+          "y": 122,
+          "width": 48,
+          "height": 48
+        }
+      ]
+    },
+    {
+      "viewport": {
+        "width": 865,
+        "height": 1079
+      },
+      "document": {
+        "width": 865,
+        "height": 1079
+      },
+      "host": {
+        "width": 865,
+        "height": 923,
+        "scrollWidth": 865,
+        "scrollHeight": 923,
+        "top": 68,
+        "bottom": 991
+      },
+      "nodes": [
+        {
+          "id": "pasaje:0:0",
+          "x": 404.5,
+          "y": 875,
+          "width": 56,
+          "height": 56
+        },
+        {
+          "id": "pasaje:1:1",
+          "x": 260.328125,
+          "y": 744.5,
+          "width": 56,
+          "height": 56
+        },
+        {
+          "id": "pasaje:1:0",
+          "x": 548.65625,
+          "y": 744.5,
+          "width": 56,
+          "height": 56
+        },
+        {
+          "id": "pasaje:3:2",
+          "x": 188.25,
+          "y": 614,
+          "width": 56,
+          "height": 56
+        },
+        {
+          "id": "pasaje:5:1",
+          "x": 404.5,
+          "y": 614,
+          "width": 56,
+          "height": 56
+        },
+        {
+          "id": "pasaje:5:2",
+          "x": 620.75,
+          "y": 614,
+          "width": 56,
+          "height": 56
+        },
+        {
+          "id": "pasaje:3:0",
+          "x": 188.25,
+          "y": 483.5,
+          "width": 56,
+          "height": 56
+        },
+        {
+          "id": "pasaje:2:2",
+          "x": 404.5,
+          "y": 483.5,
+          "width": 56,
+          "height": 56
+        },
+        {
+          "id": "pasaje:5:0",
+          "x": 620.75,
+          "y": 483.5,
+          "width": 56,
+          "height": 56
+        },
+        {
+          "id": "pasaje:2:0",
+          "x": 188.25,
+          "y": 353,
+          "width": 56,
+          "height": 56
+        },
+        {
+          "id": "pasaje:4:0",
+          "x": 404.5,
+          "y": 353,
+          "width": 56,
+          "height": 56
+        },
+        {
+          "id": "pasaje:4:1",
+          "x": 620.75,
+          "y": 353,
+          "width": 56,
+          "height": 56
+        },
+        {
+          "id": "pasaje:4:2",
+          "x": 188.25,
+          "y": 222.5,
+          "width": 56,
+          "height": 56
+        },
+        {
+          "id": "pasaje:2:1",
+          "x": 404.5,
+          "y": 222.5,
+          "width": 56,
+          "height": 56
+        },
+        {
+          "id": "pasaje:3:1",
+          "x": 620.75,
+          "y": 222.5,
+          "width": 56,
+          "height": 56
+        },
+        {
+          "id": "pasaje:6:0",
+          "x": 404.5,
+          "y": 92,
+          "width": 56,
+          "height": 56
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,696 @@
+[WebServer] (node:50819) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:50845) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] WebSocket server error: Port 24678 is already in use
+[WebServer] (node:50862) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:50888) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] WebSocket server error: Port 24678 is already in use
+
+Running 20 tests using 1 worker
+
+(node:50889) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘   1 [chromium-a67] › tests/browser-trial/progression-a67.spec.ts:163:5 › A67 encounter full journey es diagon-alley (496ms)
+(node:50904) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘   2 [chromium-a67] › tests/browser-trial/progression-a67.spec.ts:163:5 › A67 encounter full journey es arcana (378ms)
+(node:50917) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘   3 [chromium-a67] › tests/browser-trial/progression-a67.spec.ts:163:5 › A67 encounter full journey en diagon-alley (541ms)
+(node:50935) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘   4 [chromium-a67] › tests/browser-trial/progression-a67.spec.ts:163:5 › A67 encounter full journey en arcana (471ms)
+(node:50954) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘   5 [chromium-a67] › tests/browser-trial/progression-a67.spec.ts:263:3 › A67 group trade response recovery and pass es (459ms)
+(node:50973) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘   6 [chromium-a67] › tests/browser-trial/progression-a67.spec.ts:306:3 › A67 forge specializations equip V2 then replay es (374ms)
+(node:50990) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘   7 [chromium-a67] › tests/browser-trial/progression-a67.spec.ts:379:3 › A67 missing art renderer reduced and enlarged encounter es (282ms)
+(node:50996) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘   8 [chromium-a67] › tests/browser-trial/progression-a67.spec.ts:263:3 › A67 group trade response recovery and pass en (517ms)
+(node:51013) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘   9 [chromium-a67] › tests/browser-trial/progression-a67.spec.ts:306:3 › A67 forge specializations equip V2 then replay en (493ms)
+(node:51030) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  10 [chromium-a67] › tests/browser-trial/progression-a67.spec.ts:379:3 › A67 missing art renderer reduced and enlarged encounter en (407ms)
+(node:51041) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  11 [webkit-a67] › tests/browser-trial/progression-a67.spec.ts:163:5 › A67 encounter full journey es diagon-alley (808ms)
+(node:51072) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  12 [webkit-a67] › tests/browser-trial/progression-a67.spec.ts:163:5 › A67 encounter full journey es arcana (615ms)
+(node:51099) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  13 [webkit-a67] › tests/browser-trial/progression-a67.spec.ts:163:5 › A67 encounter full journey en diagon-alley (800ms)
+(node:51127) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  14 [webkit-a67] › tests/browser-trial/progression-a67.spec.ts:163:5 › A67 encounter full journey en arcana (762ms)
+(node:51152) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  15 [webkit-a67] › tests/browser-trial/progression-a67.spec.ts:263:3 › A67 group trade response recovery and pass es (627ms)
+(node:51177) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  16 [webkit-a67] › tests/browser-trial/progression-a67.spec.ts:306:3 › A67 forge specializations equip V2 then replay es (625ms)
+(node:51202) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  17 [webkit-a67] › tests/browser-trial/progression-a67.spec.ts:379:3 › A67 missing art renderer reduced and enlarged encounter es (473ms)
+(node:51227) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  18 [webkit-a67] › tests/browser-trial/progression-a67.spec.ts:263:3 › A67 group trade response recovery and pass en (853ms)
+(node:51253) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  19 [webkit-a67] › tests/browser-trial/progression-a67.spec.ts:306:3 › A67 forge specializations equip V2 then replay en (838ms)
+(node:51278) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  20 [webkit-a67] › tests/browser-trial/progression-a67.spec.ts:379:3 › A67 missing art renderer reduced and enlarged encounter en (671ms)
+
+
+  1) [chromium-a67] › tests/browser-trial/progression-a67.spec.ts:163:5 › A67 encounter full journey es diagon-alley 
+
+    TypeError: Cannot read properties of undefined (reading 'playerId')
+
+      64 |   if (language === 'en') await changeLanguage(page, language);
+      65 |   await page.locator('.portal-enter').click();
+    > 66 |   created.add((await readGame(page)).playerId);
+         |                                      ^
+      67 |   await expect(page.locator('[data-expedition-preparation="new"]')).toBeVisible();
+      68 |   if (start) await startExpedition(page, language);
+      69 | }
+        at enter (/Users/enricarandes/work/diagon-alley/tests/browser-trial/progression-a67.spec.ts:66:38)
+        at /Users/enricarandes/work/diagon-alley/tests/browser-trial/progression-a67.spec.ts:167:7
+
+    attachment #1: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results-progression-a67/progression-a67-A67-encounter-full-journey-es-diagon-alley-chromium-a67/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results-progression-a67/progression-a67-A67-encounter-full-journey-es-diagon-alley-chromium-a67/error-context.md
+
+    Error Context: test-results-progression-a67/progression-a67-A67-encounter-full-journey-es-diagon-alley-chromium-a67/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results-progression-a67/progression-a67-A67-encounter-full-journey-es-diagon-alley-chromium-a67/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results-progression-a67/progression-a67-A67-encounter-full-journey-es-diagon-alley-chromium-a67/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) [chromium-a67] › tests/browser-trial/progression-a67.spec.ts:163:5 › A67 encounter full journey es arcana 
+
+    TypeError: Cannot read properties of undefined (reading 'playerId')
+
+      64 |   if (language === 'en') await changeLanguage(page, language);
+      65 |   await page.locator('.portal-enter').click();
+    > 66 |   created.add((await readGame(page)).playerId);
+         |                                      ^
+      67 |   await expect(page.locator('[data-expedition-preparation="new"]')).toBeVisible();
+      68 |   if (start) await startExpedition(page, language);
+      69 | }
+        at enter (/Users/enricarandes/work/diagon-alley/tests/browser-trial/progression-a67.spec.ts:66:38)
+        at /Users/enricarandes/work/diagon-alley/tests/browser-trial/progression-a67.spec.ts:167:7
+
+    attachment #1: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results-progression-a67/progression-a67-A67-encounter-full-journey-es-arcana-chromium-a67/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results-progression-a67/progression-a67-A67-encounter-full-journey-es-arcana-chromium-a67/error-context.md
+
+    Error Context: test-results-progression-a67/progression-a67-A67-encounter-full-journey-es-arcana-chromium-a67/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results-progression-a67/progression-a67-A67-encounter-full-journey-es-arcana-chromium-a67/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results-progression-a67/progression-a67-A67-encounter-full-journey-es-arcana-chromium-a67/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  3) [chromium-a67] › tests/browser-trial/progression-a67.spec.ts:163:5 › A67 encounter full journey en diagon-alley 
+
+    TypeError: Cannot read properties of undefined (reading 'playerId')
+
+      64 |   if (language === 'en') await changeLanguage(page, language);
+      65 |   await page.locator('.portal-enter').click();
+    > 66 |   created.add((await readGame(page)).playerId);
+         |                                      ^
+      67 |   await expect(page.locator('[data-expedition-preparation="new"]')).toBeVisible();
+      68 |   if (start) await startExpedition(page, language);
+      69 | }
+        at enter (/Users/enricarandes/work/diagon-alley/tests/browser-trial/progression-a67.spec.ts:66:38)
+        at /Users/enricarandes/work/diagon-alley/tests/browser-trial/progression-a67.spec.ts:167:7
+
+    attachment #1: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results-progression-a67/progression-a67-A67-encounter-full-journey-en-diagon-alley-chromium-a67/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results-progression-a67/progression-a67-A67-encounter-full-journey-en-diagon-alley-chromium-a67/error-context.md
+
+    Error Context: test-results-progression-a67/progression-a67-A67-encounter-full-journey-en-diagon-alley-chromium-a67/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results-progression-a67/progression-a67-A67-encounter-full-journey-en-diagon-alley-chromium-a67/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results-progression-a67/progression-a67-A67-encounter-full-journey-en-diagon-alley-chromium-a67/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  4) [chromium-a67] › tests/browser-trial/progression-a67.spec.ts:163:5 › A67 encounter full journey en arcana 
+
+    TypeError: Cannot read properties of undefined (reading 'playerId')
+
+      64 |   if (language === 'en') await changeLanguage(page, language);
+      65 |   await page.locator('.portal-enter').click();
+    > 66 |   created.add((await readGame(page)).playerId);
+         |                                      ^
+      67 |   await expect(page.locator('[data-expedition-preparation="new"]')).toBeVisible();
+      68 |   if (start) await startExpedition(page, language);
+      69 | }
+        at enter (/Users/enricarandes/work/diagon-alley/tests/browser-trial/progression-a67.spec.ts:66:38)
+        at /Users/enricarandes/work/diagon-alley/tests/browser-trial/progression-a67.spec.ts:167:7
+
+    attachment #1: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results-progression-a67/progression-a67-A67-encounter-full-journey-en-arcana-chromium-a67/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results-progression-a67/progression-a67-A67-encounter-full-journey-en-arcana-chromium-a67/error-context.md
+
+    Error Context: test-results-progression-a67/progression-a67-A67-encounter-full-journey-en-arcana-chromium-a67/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results-progression-a67/progression-a67-A67-encounter-full-journey-en-arcana-chromium-a67/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results-progression-a67/progression-a67-A67-encounter-full-journey-en-arcana-chromium-a67/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  5) [chromium-a67] › tests/browser-trial/progression-a67.spec.ts:263:3 › A67 group trade response recovery and pass es 
+
+    TypeError: Cannot read properties of undefined (reading 'playerId')
+
+      64 |   if (language === 'en') await changeLanguage(page, language);
+      65 |   await page.locator('.portal-enter').click();
+    > 66 |   created.add((await readGame(page)).playerId);
+         |                                      ^
+      67 |   await expect(page.locator('[data-expedition-preparation="new"]')).toBeVisible();
+      68 |   if (start) await startExpedition(page, language);
+      69 | }
+        at enter (/Users/enricarandes/work/diagon-alley/tests/browser-trial/progression-a67.spec.ts:66:38)
+        at /Users/enricarandes/work/diagon-alley/tests/browser-trial/progression-a67.spec.ts:264:5
+
+    attachment #1: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results-progression-a67/progression-a67-A67-group--76e69-sponse-recovery-and-pass-es-chromium-a67/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results-progression-a67/progression-a67-A67-group--76e69-sponse-recovery-and-pass-es-chromium-a67/error-context.md
+
+    Error Context: test-results-progression-a67/progression-a67-A67-group--76e69-sponse-recovery-and-pass-es-chromium-a67/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results-progression-a67/progression-a67-A67-group--76e69-sponse-recovery-and-pass-es-chromium-a67/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results-progression-a67/progression-a67-A67-group--76e69-sponse-recovery-and-pass-es-chromium-a67/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  6) [chromium-a67] › tests/browser-trial/progression-a67.spec.ts:306:3 › A67 forge specializations equip V2 then replay es 
+
+    TypeError: Cannot read properties of undefined (reading 'playerId')
+
+      64 |   if (language === 'en') await changeLanguage(page, language);
+      65 |   await page.locator('.portal-enter').click();
+    > 66 |   created.add((await readGame(page)).playerId);
+         |                                      ^
+      67 |   await expect(page.locator('[data-expedition-preparation="new"]')).toBeVisible();
+      68 |   if (start) await startExpedition(page, language);
+      69 | }
+        at enter (/Users/enricarandes/work/diagon-alley/tests/browser-trial/progression-a67.spec.ts:66:38)
+        at /Users/enricarandes/work/diagon-alley/tests/browser-trial/progression-a67.spec.ts:307:5
+
+    attachment #1: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results-progression-a67/progression-a67-A67-forge--9dc78-ons-equip-V2-then-replay-es-chromium-a67/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results-progression-a67/progression-a67-A67-forge--9dc78-ons-equip-V2-then-replay-es-chromium-a67/error-context.md
+
+    Error Context: test-results-progression-a67/progression-a67-A67-forge--9dc78-ons-equip-V2-then-replay-es-chromium-a67/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results-progression-a67/progression-a67-A67-forge--9dc78-ons-equip-V2-then-replay-es-chromium-a67/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results-progression-a67/progression-a67-A67-forge--9dc78-ons-equip-V2-then-replay-es-chromium-a67/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  7) [chromium-a67] › tests/browser-trial/progression-a67.spec.ts:379:3 › A67 missing art renderer reduced and enlarged encounter es 
+
+    TypeError: Cannot read properties of undefined (reading 'playerId')
+
+      64 |   if (language === 'en') await changeLanguage(page, language);
+      65 |   await page.locator('.portal-enter').click();
+    > 66 |   created.add((await readGame(page)).playerId);
+         |                                      ^
+      67 |   await expect(page.locator('[data-expedition-preparation="new"]')).toBeVisible();
+      68 |   if (start) await startExpedition(page, language);
+      69 | }
+        at enter (/Users/enricarandes/work/diagon-alley/tests/browser-trial/progression-a67.spec.ts:66:38)
+        at /Users/enricarandes/work/diagon-alley/tests/browser-trial/progression-a67.spec.ts:392:5
+
+    attachment #1: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results-progression-a67/progression-a67-A67-missin-462b4-d-and-enlarged-encounter-es-chromium-a67/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results-progression-a67/progression-a67-A67-missin-462b4-d-and-enlarged-encounter-es-chromium-a67/error-context.md
+
+    Error Context: test-results-progression-a67/progression-a67-A67-missin-462b4-d-and-enlarged-encounter-es-chromium-a67/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results-progression-a67/progression-a67-A67-missin-462b4-d-and-enlarged-encounter-es-chromium-a67/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results-progression-a67/progression-a67-A67-missin-462b4-d-and-enlarged-encounter-es-chromium-a67/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  8) [chromium-a67] › tests/browser-trial/progression-a67.spec.ts:263:3 › A67 group trade response recovery and pass en 
+
+    TypeError: Cannot read properties of undefined (reading 'playerId')
+
+      64 |   if (language === 'en') await changeLanguage(page, language);
+      65 |   await page.locator('.portal-enter').click();
+    > 66 |   created.add((await readGame(page)).playerId);
+         |                                      ^
+      67 |   await expect(page.locator('[data-expedition-preparation="new"]')).toBeVisible();
+      68 |   if (start) await startExpedition(page, language);
+      69 | }
+        at enter (/Users/enricarandes/work/diagon-alley/tests/browser-trial/progression-a67.spec.ts:66:38)
+        at /Users/enricarandes/work/diagon-alley/tests/browser-trial/progression-a67.spec.ts:264:5
+
+    attachment #1: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results-progression-a67/progression-a67-A67-group--69a06-sponse-recovery-and-pass-en-chromium-a67/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results-progression-a67/progression-a67-A67-group--69a06-sponse-recovery-and-pass-en-chromium-a67/error-context.md
+
+    Error Context: test-results-progression-a67/progression-a67-A67-group--69a06-sponse-recovery-and-pass-en-chromium-a67/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results-progression-a67/progression-a67-A67-group--69a06-sponse-recovery-and-pass-en-chromium-a67/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results-progression-a67/progression-a67-A67-group--69a06-sponse-recovery-and-pass-en-chromium-a67/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  9) [chromium-a67] › tests/browser-trial/progression-a67.spec.ts:306:3 › A67 forge specializations equip V2 then replay en 
+
+    TypeError: Cannot read properties of undefined (reading 'playerId')
+
+      64 |   if (language === 'en') await changeLanguage(page, language);
+      65 |   await page.locator('.portal-enter').click();
+    > 66 |   created.add((await readGame(page)).playerId);
+         |                                      ^
+      67 |   await expect(page.locator('[data-expedition-preparation="new"]')).toBeVisible();
+      68 |   if (start) await startExpedition(page, language);
+      69 | }
+        at enter (/Users/enricarandes/work/diagon-alley/tests/browser-trial/progression-a67.spec.ts:66:38)
+        at /Users/enricarandes/work/diagon-alley/tests/browser-trial/progression-a67.spec.ts:307:5
+
+    attachment #1: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results-progression-a67/progression-a67-A67-forge--b7a80-ons-equip-V2-then-replay-en-chromium-a67/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results-progression-a67/progression-a67-A67-forge--b7a80-ons-equip-V2-then-replay-en-chromium-a67/error-context.md
+
+    Error Context: test-results-progression-a67/progression-a67-A67-forge--b7a80-ons-equip-V2-then-replay-en-chromium-a67/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results-progression-a67/progression-a67-A67-forge--b7a80-ons-equip-V2-then-replay-en-chromium-a67/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results-progression-a67/progression-a67-A67-forge--b7a80-ons-equip-V2-then-replay-en-chromium-a67/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  10) [chromium-a67] › tests/browser-trial/progression-a67.spec.ts:379:3 › A67 missing art renderer reduced and enlarged encounter en 
+
+    TypeError: Cannot read properties of undefined (reading 'playerId')
+
+      64 |   if (language === 'en') await changeLanguage(page, language);
+      65 |   await page.locator('.portal-enter').click();
+    > 66 |   created.add((await readGame(page)).playerId);
+         |                                      ^
+      67 |   await expect(page.locator('[data-expedition-preparation="new"]')).toBeVisible();
+      68 |   if (start) await startExpedition(page, language);
+      69 | }
+        at enter (/Users/enricarandes/work/diagon-alley/tests/browser-trial/progression-a67.spec.ts:66:38)
+        at /Users/enricarandes/work/diagon-alley/tests/browser-trial/progression-a67.spec.ts:392:5
+
+    attachment #1: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results-progression-a67/progression-a67-A67-missin-a70e1-d-and-enlarged-encounter-en-chromium-a67/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results-progression-a67/progression-a67-A67-missin-a70e1-d-and-enlarged-encounter-en-chromium-a67/error-context.md
+
+    Error Context: test-results-progression-a67/progression-a67-A67-missin-a70e1-d-and-enlarged-encounter-en-chromium-a67/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results-progression-a67/progression-a67-A67-missin-a70e1-d-and-enlarged-encounter-en-chromium-a67/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results-progression-a67/progression-a67-A67-missin-a70e1-d-and-enlarged-encounter-en-chromium-a67/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  11) [webkit-a67] › tests/browser-trial/progression-a67.spec.ts:163:5 › A67 encounter full journey es diagon-alley 
+
+    TypeError: Cannot read properties of undefined (reading 'playerId')
+
+      64 |   if (language === 'en') await changeLanguage(page, language);
+      65 |   await page.locator('.portal-enter').click();
+    > 66 |   created.add((await readGame(page)).playerId);
+         |                                      ^
+      67 |   await expect(page.locator('[data-expedition-preparation="new"]')).toBeVisible();
+      68 |   if (start) await startExpedition(page, language);
+      69 | }
+        at enter (/Users/enricarandes/work/diagon-alley/tests/browser-trial/progression-a67.spec.ts:66:38)
+        at /Users/enricarandes/work/diagon-alley/tests/browser-trial/progression-a67.spec.ts:167:7
+
+    attachment #1: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results-progression-a67/progression-a67-A67-encounter-full-journey-es-diagon-alley-webkit-a67/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results-progression-a67/progression-a67-A67-encounter-full-journey-es-diagon-alley-webkit-a67/error-context.md
+
+    Error Context: test-results-progression-a67/progression-a67-A67-encounter-full-journey-es-diagon-alley-webkit-a67/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results-progression-a67/progression-a67-A67-encounter-full-journey-es-diagon-alley-webkit-a67/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results-progression-a67/progression-a67-A67-encounter-full-journey-es-diagon-alley-webkit-a67/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  12) [webkit-a67] › tests/browser-trial/progression-a67.spec.ts:163:5 › A67 encounter full journey es arcana 
+
+    TypeError: Cannot read properties of undefined (reading 'playerId')
+
+      64 |   if (language === 'en') await changeLanguage(page, language);
+      65 |   await page.locator('.portal-enter').click();
+    > 66 |   created.add((await readGame(page)).playerId);
+         |                                      ^
+      67 |   await expect(page.locator('[data-expedition-preparation="new"]')).toBeVisible();
+      68 |   if (start) await startExpedition(page, language);
+      69 | }
+        at enter (/Users/enricarandes/work/diagon-alley/tests/browser-trial/progression-a67.spec.ts:66:38)
+        at /Users/enricarandes/work/diagon-alley/tests/browser-trial/progression-a67.spec.ts:167:7
+
+    attachment #1: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results-progression-a67/progression-a67-A67-encounter-full-journey-es-arcana-webkit-a67/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results-progression-a67/progression-a67-A67-encounter-full-journey-es-arcana-webkit-a67/error-context.md
+
+    Error Context: test-results-progression-a67/progression-a67-A67-encounter-full-journey-es-arcana-webkit-a67/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results-progression-a67/progression-a67-A67-encounter-full-journey-es-arcana-webkit-a67/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results-progression-a67/progression-a67-A67-encounter-full-journey-es-arcana-webkit-a67/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  13) [webkit-a67] › tests/browser-trial/progression-a67.spec.ts:163:5 › A67 encounter full journey en diagon-alley 
+
+    TypeError: Cannot read properties of undefined (reading 'playerId')
+
+      64 |   if (language === 'en') await changeLanguage(page, language);
+      65 |   await page.locator('.portal-enter').click();
+    > 66 |   created.add((await readGame(page)).playerId);
+         |                                      ^
+      67 |   await expect(page.locator('[data-expedition-preparation="new"]')).toBeVisible();
+      68 |   if (start) await startExpedition(page, language);
+      69 | }
+        at enter (/Users/enricarandes/work/diagon-alley/tests/browser-trial/progression-a67.spec.ts:66:38)
+        at /Users/enricarandes/work/diagon-alley/tests/browser-trial/progression-a67.spec.ts:167:7
+
+    attachment #1: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results-progression-a67/progression-a67-A67-encounter-full-journey-en-diagon-alley-webkit-a67/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results-progression-a67/progression-a67-A67-encounter-full-journey-en-diagon-alley-webkit-a67/error-context.md
+
+    Error Context: test-results-progression-a67/progression-a67-A67-encounter-full-journey-en-diagon-alley-webkit-a67/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results-progression-a67/progression-a67-A67-encounter-full-journey-en-diagon-alley-webkit-a67/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results-progression-a67/progression-a67-A67-encounter-full-journey-en-diagon-alley-webkit-a67/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  14) [webkit-a67] › tests/browser-trial/progression-a67.spec.ts:163:5 › A67 encounter full journey en arcana 
+
+    TypeError: Cannot read properties of undefined (reading 'playerId')
+
+      64 |   if (language === 'en') await changeLanguage(page, language);
+      65 |   await page.locator('.portal-enter').click();
+    > 66 |   created.add((await readGame(page)).playerId);
+         |                                      ^
+      67 |   await expect(page.locator('[data-expedition-preparation="new"]')).toBeVisible();
+      68 |   if (start) await startExpedition(page, language);
+      69 | }
+        at enter (/Users/enricarandes/work/diagon-alley/tests/browser-trial/progression-a67.spec.ts:66:38)
+        at /Users/enricarandes/work/diagon-alley/tests/browser-trial/progression-a67.spec.ts:167:7
+
+    attachment #1: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results-progression-a67/progression-a67-A67-encounter-full-journey-en-arcana-webkit-a67/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results-progression-a67/progression-a67-A67-encounter-full-journey-en-arcana-webkit-a67/error-context.md
+
+    Error Context: test-results-progression-a67/progression-a67-A67-encounter-full-journey-en-arcana-webkit-a67/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results-progression-a67/progression-a67-A67-encounter-full-journey-en-arcana-webkit-a67/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results-progression-a67/progression-a67-A67-encounter-full-journey-en-arcana-webkit-a67/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  15) [webkit-a67] › tests/browser-trial/progression-a67.spec.ts:263:3 › A67 group trade response recovery and pass es 
+
+    TypeError: Cannot read properties of undefined (reading 'playerId')
+
+      64 |   if (language === 'en') await changeLanguage(page, language);
+      65 |   await page.locator('.portal-enter').click();
+    > 66 |   created.add((await readGame(page)).playerId);
+         |                                      ^
+      67 |   await expect(page.locator('[data-expedition-preparation="new"]')).toBeVisible();
+      68 |   if (start) await startExpedition(page, language);
+      69 | }
+        at enter (/Users/enricarandes/work/diagon-alley/tests/browser-trial/progression-a67.spec.ts:66:38)
+        at /Users/enricarandes/work/diagon-alley/tests/browser-trial/progression-a67.spec.ts:264:5
+
+    attachment #1: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results-progression-a67/progression-a67-A67-group--76e69-sponse-recovery-and-pass-es-webkit-a67/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results-progression-a67/progression-a67-A67-group--76e69-sponse-recovery-and-pass-es-webkit-a67/error-context.md
+
+    Error Context: test-results-progression-a67/progression-a67-A67-group--76e69-sponse-recovery-and-pass-es-webkit-a67/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results-progression-a67/progression-a67-A67-group--76e69-sponse-recovery-and-pass-es-webkit-a67/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results-progression-a67/progression-a67-A67-group--76e69-sponse-recovery-and-pass-es-webkit-a67/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  16) [webkit-a67] › tests/browser-trial/progression-a67.spec.ts:306:3 › A67 forge specializations equip V2 then replay es 
+
+    TypeError: Cannot read properties of undefined (reading 'playerId')
+
+      64 |   if (language === 'en') await changeLanguage(page, language);
+      65 |   await page.locator('.portal-enter').click();
+    > 66 |   created.add((await readGame(page)).playerId);
+         |                                      ^
+      67 |   await expect(page.locator('[data-expedition-preparation="new"]')).toBeVisible();
+      68 |   if (start) await startExpedition(page, language);
+      69 | }
+        at enter (/Users/enricarandes/work/diagon-alley/tests/browser-trial/progression-a67.spec.ts:66:38)
+        at /Users/enricarandes/work/diagon-alley/tests/browser-trial/progression-a67.spec.ts:307:5
+
+    attachment #1: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results-progression-a67/progression-a67-A67-forge--9dc78-ons-equip-V2-then-replay-es-webkit-a67/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results-progression-a67/progression-a67-A67-forge--9dc78-ons-equip-V2-then-replay-es-webkit-a67/error-context.md
+
+    Error Context: test-results-progression-a67/progression-a67-A67-forge--9dc78-ons-equip-V2-then-replay-es-webkit-a67/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results-progression-a67/progression-a67-A67-forge--9dc78-ons-equip-V2-then-replay-es-webkit-a67/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results-progression-a67/progression-a67-A67-forge--9dc78-ons-equip-V2-then-replay-es-webkit-a67/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  17) [webkit-a67] › tests/browser-trial/progression-a67.spec.ts:379:3 › A67 missing art renderer reduced and enlarged encounter es 
+
+    TypeError: Cannot read properties of undefined (reading 'playerId')
+
+      64 |   if (language === 'en') await changeLanguage(page, language);
+      65 |   await page.locator('.portal-enter').click();
+    > 66 |   created.add((await readGame(page)).playerId);
+         |                                      ^
+      67 |   await expect(page.locator('[data-expedition-preparation="new"]')).toBeVisible();
+      68 |   if (start) await startExpedition(page, language);
+      69 | }
+        at enter (/Users/enricarandes/work/diagon-alley/tests/browser-trial/progression-a67.spec.ts:66:38)
+        at /Users/enricarandes/work/diagon-alley/tests/browser-trial/progression-a67.spec.ts:392:5
+
+    attachment #1: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results-progression-a67/progression-a67-A67-missin-462b4-d-and-enlarged-encounter-es-webkit-a67/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results-progression-a67/progression-a67-A67-missin-462b4-d-and-enlarged-encounter-es-webkit-a67/error-context.md
+
+    Error Context: test-results-progression-a67/progression-a67-A67-missin-462b4-d-and-enlarged-encounter-es-webkit-a67/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results-progression-a67/progression-a67-A67-missin-462b4-d-and-enlarged-encounter-es-webkit-a67/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results-progression-a67/progression-a67-A67-missin-462b4-d-and-enlarged-encounter-es-webkit-a67/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  18) [webkit-a67] › tests/browser-trial/progression-a67.spec.ts:263:3 › A67 group trade response recovery and pass en 
+
+    TypeError: Cannot read properties of undefined (reading 'playerId')
+
+      64 |   if (language === 'en') await changeLanguage(page, language);
+      65 |   await page.locator('.portal-enter').click();
+    > 66 |   await expect(page.locator('[data-expedition-preparation="new"]')).toBeVisible();
+         |                                      ^
+      67 |   created.add((await readGame(page)).playerId);
+      68 |   if (start) await startExpedition(page, language);
+      69 | }
+        at enter (/Users/enricarandes/work/diagon-alley/tests/browser-trial/progression-a67.spec.ts:66:38)
+        at /Users/enricarandes/work/diagon-alley/tests/browser-trial/progression-a67.spec.ts:264:5
+
+    attachment #1: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results-progression-a67/progression-a67-A67-group--69a06-sponse-recovery-and-pass-en-webkit-a67/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results-progression-a67/progression-a67-A67-group--69a06-sponse-recovery-and-pass-en-webkit-a67/error-context.md
+
+    Error Context: test-results-progression-a67/progression-a67-A67-group--69a06-sponse-recovery-and-pass-en-webkit-a67/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results-progression-a67/progression-a67-A67-group--69a06-sponse-recovery-and-pass-en-webkit-a67/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results-progression-a67/progression-a67-A67-group--69a06-sponse-recovery-and-pass-en-webkit-a67/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  19) [webkit-a67] › tests/browser-trial/progression-a67.spec.ts:306:3 › A67 forge specializations equip V2 then replay en 
+
+    TypeError: Cannot read properties of undefined (reading 'playerId')
+
+      64 |   if (language === 'en') await changeLanguage(page, language);
+      65 |   await page.locator('.portal-enter').click();
+    > 66 |   await expect(page.locator('[data-expedition-preparation="new"]')).toBeVisible();
+         |                                      ^
+      67 |   created.add((await readGame(page)).playerId);
+      68 |   if (start) await startExpedition(page, language);
+      69 | }
+        at enter (/Users/enricarandes/work/diagon-alley/tests/browser-trial/progression-a67.spec.ts:66:38)
+        at /Users/enricarandes/work/diagon-alley/tests/browser-trial/progression-a67.spec.ts:307:5
+
+    attachment #1: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results-progression-a67/progression-a67-A67-forge--b7a80-ons-equip-V2-then-replay-en-webkit-a67/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results-progression-a67/progression-a67-A67-forge--b7a80-ons-equip-V2-then-replay-en-webkit-a67/error-context.md
+
+    Error Context: test-results-progression-a67/progression-a67-A67-forge--b7a80-ons-equip-V2-then-replay-en-webkit-a67/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results-progression-a67/progression-a67-A67-forge--b7a80-ons-equip-V2-then-replay-en-webkit-a67/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results-progression-a67/progression-a67-A67-forge--b7a80-ons-equip-V2-then-replay-en-webkit-a67/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  20) [webkit-a67] › tests/browser-trial/progression-a67.spec.ts:379:3 › A67 missing art renderer reduced and enlarged encounter en 
+
+    TypeError: Cannot read properties of undefined (reading 'playerId')
+
+      64 |   if (language === 'en') await changeLanguage(page, language);
+      65 |   await page.locator('.portal-enter').click();
+    > 66 |   await expect(page.locator('[data-expedition-preparation="new"]')).toBeVisible();
+         |                                      ^
+      67 |   created.add((await readGame(page)).playerId);
+      68 |   if (start) await startExpedition(page, language);
+      69 | }
+        at enter (/Users/enricarandes/work/diagon-alley/tests/browser-trial/progression-a67.spec.ts:66:38)
+        at /Users/enricarandes/work/diagon-alley/tests/browser-trial/progression-a67.spec.ts:392:5
+
+    attachment #1: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results-progression-a67/progression-a67-A67-missin-a70e1-d-and-enlarged-encounter-en-webkit-a67/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results-progression-a67/progression-a67-A67-missin-a70e1-d-and-enlarged-encounter-en-webkit-a67/error-context.md
+
+    Error Context: test-results-progression-a67/progression-a67-A67-missin-a70e1-d-and-enlarged-encounter-en-webkit-a67/error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results-progression-a67/progression-a67-A67-missin-a70e1-d-and-enlarged-encounter-en-webkit-a67/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results-progression-a67/progression-a67-A67-missin-a70e1-d-and-enlarged-encounter-en-webkit-a67/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  20 failed
+    [chromium-a67] › tests/browser-trial/progression-a67.spec.ts:163:5 › A67 encounter full journey es diagon-alley 
+    [chromium-a67] › tests/browser-trial/progression-a67.spec.ts:163:5 › A67 encounter full journey es arcana 
+    [chromium-a67] › tests/browser-trial/progression-a67.spec.ts:163:5 › A67 encounter full journey en diagon-alley 
+    [chromium-a67] › tests/browser-trial/progression-a67.spec.ts:163:5 › A67 encounter full journey en arcana 
+    [chromium-a67] › tests/browser-trial/progression-a67.spec.ts:263:3 › A67 group trade response recovery and pass es 
+    [chromium-a67] › tests/browser-trial/progression-a67.spec.ts:306:3 › A67 forge specializations equip V2 then replay es 
+    [chromium-a67] › tests/browser-trial/progression-a67.spec.ts:379:3 › A67 missing art renderer reduced and enlarged encounter es 
+    [chromium-a67] › tests/browser-trial/progression-a67.spec.ts:263:3 › A67 group trade response recovery and pass en 
+    [chromium-a67] › tests/browser-trial/progression-a67.spec.ts:306:3 › A67 forge specializations equip V2 then replay en 
+    [chromium-a67] › tests/browser-trial/progression-a67.spec.ts:379:3 › A67 missing art renderer reduced and enlarged encounter en 
+    [webkit-a67] › tests/browser-trial/progression-a67.spec.ts:163:5 › A67 encounter full journey es diagon-alley 
+    [webkit-a67] › tests/browser-trial/progression-a67.spec.ts:163:5 › A67 encounter full journey es arcana 
+    [webkit-a67] › tests/browser-trial/progression-a67.spec.ts:163:5 › A67 encounter full journey en diagon-alley 
+    [webkit-a67] › tests/browser-trial/progression-a67.spec.ts:163:5 › A67 encounter full journey en arcana 
+    [webkit-a67] › tests/browser-trial/progression-a67.spec.ts:263:3 › A67 group trade response recovery and pass es 
+    [webkit-a67] › tests/browser-trial/progression-a67.spec.ts:306:3 › A67 forge specializations equip V2 then replay es 
+    [webkit-a67] › tests/browser-trial/progression-a67.spec.ts:379:3 › A67 missing art renderer reduced and enlarged encounter es 
+    [webkit-a67] › tests/browser-trial/progression-a67.spec.ts:263:3 › A67 group trade response recovery and pass en 
+    [webkit-a67] › tests/browser-trial/progression-a67.spec.ts:306:3 › A67 forge specializations equip V2 then replay en 
+    [webkit-a67] › tests/browser-trial/progression-a67.spec.ts:379:3 › A67 missing art renderer reduced and enlarged encounter en 

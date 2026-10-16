@@ -1,0 +1,36 @@
+{
+  "version": 1,
+  "author": "Project-authored SVG by Codex for Enric Arandes",
+  "tool": "Editable hand-authored SVG source",
+  "provenance": "Original linework; existing Teatro de alquimia palette and medallion grammar; no external image or generated paid service",
+  "license": "Project-owned original artwork; no third-party asset attribution required",
+  "assets": [
+    {
+      "id": "threat.vanguard",
+      "file": "threat-vanguard.svg",
+      "width": 64,
+      "height": 64,
+      "transparent": true,
+      "pivot": [0.5, 0.5],
+      "crop": "contain",
+      "variants": ["compact", "labelled"],
+      "consumer": "TacticalBadge.tsx / ThreatBadge",
+      "meaning": "High-initiative composition",
+      "acceptance": "Crescent and angular outline distinguish from fire silhouette at 28 CSS px; labelled equivalent always available"
+    },
+    {
+      "id": "threat.fire",
+      "file": "threat-fire.svg",
+      "width": 64,
+      "height": 64,
+      "transparent": true,
+      "pivot": [0.5, 0.5],
+      "crop": "contain",
+      "variants": ["compact", "labelled"],
+      "consumer": "TacticalBadge.tsx / ThreatBadge",
+      "meaning": "Fire burn composition",
+      "acceptance": "Flame and pointed shield distinguish from initiative crescent at 28 CSS px; labelled equivalent always available"
+    }
+  ],
+  "states": "No text in art. Default/hover/focus/selected/disabled provided semantically by consuming controls. Missing icon retains the localized label. Identical artwork across both content packs because affinities/rules are shared."
+}

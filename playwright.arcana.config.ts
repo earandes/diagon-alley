@@ -1,4 +1,4 @@
-import { defineConfig } from '@playwright/test';
+import { defineSafeConfig as defineConfig } from './tools/verification/playwright-safety';
 export default defineConfig({
   testDir: './tests/browser-arcana',
   outputDir: 'test-results-arcana',

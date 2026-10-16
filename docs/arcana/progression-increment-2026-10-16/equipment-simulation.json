@@ -1,0 +1,354 @@
+{
+  "kind": "Declared synthetic equal-team equipment fixtures, not player behavior",
+  "seeds": 32,
+  "scenarios": 3600,
+  "combats": 345600,
+  "configuration": [
+    {
+      "id": "birch-dragon",
+      "crowns": 15,
+      "wood": "birch",
+      "core": "dragon",
+      "powerBonus": 2,
+      "multiplier": 1.2
+    },
+    {
+      "id": "birch-phoenix",
+      "crowns": 15,
+      "wood": "birch",
+      "core": "phoenix",
+      "powerBonus": 2,
+      "multiplier": 1,
+      "healing": 2
+    },
+    {
+      "id": "birch-wyvern",
+      "crowns": 15,
+      "wood": "birch",
+      "core": "wyvern",
+      "powerBonus": 2,
+      "multiplier": 1,
+      "initiativeBonus": 3
+    }
+  ],
+  "selection": "strictly more wins, then strictly more remaining HP among victories; defeat/identical ties excluded",
+  "counts": {
+    "dragon": 1560,
+    "phoenix": 247,
+    "wyvern": 373
+  },
+  "witnesses": {
+    "dragon": [
+      {
+        "player": [
+          "flamel",
+          "apprentice",
+          "merlin"
+        ],
+        "rival": "flamel",
+        "condition": 0.5,
+        "beans": false,
+        "results": [
+          {
+            "core": "dragon",
+            "wins": 32,
+            "draws": 0,
+            "hp": 14.5,
+            "rounds": 14
+          },
+          {
+            "core": "phoenix",
+            "wins": 0,
+            "draws": 0,
+            "hp": 0,
+            "rounds": 13
+          },
+          {
+            "core": "wyvern",
+            "wins": 0,
+            "draws": 0,
+            "hp": 0,
+            "rounds": 9
+          }
+        ],
+        "winner": "dragon"
+      },
+      {
+        "player": [
+          "paracelso",
+          "apprentice",
+          "merlin"
+        ],
+        "rival": "ember-keeper",
+        "condition": 0.5,
+        "beans": false,
+        "results": [
+          {
+            "core": "dragon",
+            "wins": 32,
+            "draws": 0,
+            "hp": 6.5,
+            "rounds": 12
+          },
+          {
+            "core": "phoenix",
+            "wins": 0,
+            "draws": 0,
+            "hp": 0,
+            "rounds": 11
+          },
+          {
+            "core": "wyvern",
+            "wins": 0,
+            "draws": 0,
+            "hp": 0,
+            "rounds": 8
+          }
+        ],
+        "winner": "dragon"
+      },
+      {
+        "player": [
+          "paracelso",
+          "apprentice",
+          "merlin"
+        ],
+        "rival": "moss-guardian",
+        "condition": 0.5,
+        "beans": false,
+        "results": [
+          {
+            "core": "dragon",
+            "wins": 32,
+            "draws": 0,
+            "hp": 6.5,
+            "rounds": 12
+          },
+          {
+            "core": "phoenix",
+            "wins": 0,
+            "draws": 0,
+            "hp": 0,
+            "rounds": 11
+          },
+          {
+            "core": "wyvern",
+            "wins": 0,
+            "draws": 0,
+            "hp": 0,
+            "rounds": 8
+          }
+        ],
+        "winner": "dragon"
+      }
+    ],
+    "phoenix": [
+      {
+        "player": [
+          "flamel",
+          "apprentice",
+          "merlin"
+        ],
+        "rival": "copper-sage",
+        "condition": 0.5,
+        "beans": true,
+        "results": [
+          {
+            "core": "dragon",
+            "wins": 21,
+            "draws": 0,
+            "hp": 35.890625,
+            "rounds": 10.03125
+          },
+          {
+            "core": "phoenix",
+            "wins": 32,
+            "draws": 0,
+            "hp": 55.5,
+            "rounds": 12.375
+          },
+          {
+            "core": "wyvern",
+            "wins": 8,
+            "draws": 0,
+            "hp": 15.125,
+            "rounds": 10.53125
+          }
+        ],
+        "winner": "phoenix"
+      },
+      {
+        "player": [
+          "flamel",
+          "apprentice",
+          "merlin"
+        ],
+        "rival": "shadow-scribe",
+        "condition": 0.5,
+        "beans": true,
+        "results": [
+          {
+            "core": "dragon",
+            "wins": 21,
+            "draws": 0,
+            "hp": 35.890625,
+            "rounds": 10.03125
+          },
+          {
+            "core": "phoenix",
+            "wins": 32,
+            "draws": 0,
+            "hp": 55.5,
+            "rounds": 12.375
+          },
+          {
+            "core": "wyvern",
+            "wins": 8,
+            "draws": 0,
+            "hp": 15.125,
+            "rounds": 10.53125
+          }
+        ],
+        "winner": "phoenix"
+      },
+      {
+        "player": [
+          "flamel",
+          "apprentice",
+          "merlin"
+        ],
+        "rival": "wind-reader",
+        "condition": 0.5,
+        "beans": true,
+        "results": [
+          {
+            "core": "dragon",
+            "wins": 21,
+            "draws": 0,
+            "hp": 35.890625,
+            "rounds": 10.03125
+          },
+          {
+            "core": "phoenix",
+            "wins": 32,
+            "draws": 0,
+            "hp": 55.5,
+            "rounds": 12.375
+          },
+          {
+            "core": "wyvern",
+            "wins": 8,
+            "draws": 0,
+            "hp": 15.125,
+            "rounds": 10.53125
+          }
+        ],
+        "winner": "phoenix"
+      }
+    ],
+    "wyvern": [
+      {
+        "player": [
+          "flamel",
+          "apprentice",
+          "merlin"
+        ],
+        "rival": "mist-seer",
+        "condition": 0.5,
+        "beans": true,
+        "results": [
+          {
+            "core": "dragon",
+            "wins": 0,
+            "draws": 0,
+            "hp": 0,
+            "rounds": 8
+          },
+          {
+            "core": "phoenix",
+            "wins": 0,
+            "draws": 0,
+            "hp": 0,
+            "rounds": 8.25
+          },
+          {
+            "core": "wyvern",
+            "wins": 8,
+            "draws": 0,
+            "hp": 4.625,
+            "rounds": 8.9375
+          }
+        ],
+        "winner": "wyvern"
+      },
+      {
+        "player": [
+          "flamel",
+          "apprentice",
+          "merlin"
+        ],
+        "rival": "moon-herbalist",
+        "condition": 0.5,
+        "beans": true,
+        "results": [
+          {
+            "core": "dragon",
+            "wins": 0,
+            "draws": 0,
+            "hp": 0,
+            "rounds": 8.25
+          },
+          {
+            "core": "phoenix",
+            "wins": 0,
+            "draws": 0,
+            "hp": 0,
+            "rounds": 8.4375
+          },
+          {
+            "core": "wyvern",
+            "wins": 8,
+            "draws": 0,
+            "hp": 6.625,
+            "rounds": 8.875
+          }
+        ],
+        "winner": "wyvern"
+      },
+      {
+        "player": [
+          "flamel",
+          "apprentice",
+          "merlin"
+        ],
+        "rival": "comet-scholar",
+        "condition": 0.5,
+        "beans": true,
+        "results": [
+          {
+            "core": "dragon",
+            "wins": 0,
+            "draws": 0,
+            "hp": 0,
+            "rounds": 8
+          },
+          {
+            "core": "phoenix",
+            "wins": 0,
+            "draws": 0,
+            "hp": 0,
+            "rounds": 8.25
+          },
+          {
+            "core": "wyvern",
+            "wins": 8,
+            "draws": 0,
+            "hp": 4.625,
+            "rounds": 8.9375
+          }
+        ],
+        "winner": "wyvern"
+      }
+    ]
+  }
+}

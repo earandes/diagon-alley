@@ -48,7 +48,7 @@ for (const language of ['es', 'en'] as const)
     await expect(portrait).toBeFocused();
     await portrait.click();
     await expect(card).toBeVisible();
-    await page.getByRole('heading', { level: 2 }).first().click();
+    await page.locator('.game-header h1').click();
     await expect(card).toBeHidden();
     expect(await read()).toEqual(before);
     await expect(page.locator('.region-map-art')).toBeHidden();

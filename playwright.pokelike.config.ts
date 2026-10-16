@@ -1,4 +1,4 @@
-import { defineConfig } from '@playwright/test';
+import { defineSafeConfig as defineConfig } from './tools/verification/playwright-safety';
 import { randomUUID } from 'node:crypto';
 
 const namespace = `diagon-a60-${randomUUID()}`;

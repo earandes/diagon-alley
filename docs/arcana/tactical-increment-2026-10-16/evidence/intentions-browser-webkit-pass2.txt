@@ -1,0 +1,54 @@
+[WebServer] (node:60683) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:60712) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] WebSocket server error: Port 24678 is already in use
+[WebServer] (node:60750) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:60774) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] WebSocket server error: Port 24678 is already in use
+
+Running 4 tests using 1 worker
+
+(node:60788) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  1 [webkit-intentions-a65] › tests/browser-trial/tactical-intentions-a65.spec.ts:119:5 › A65 intention selection preparation activation recovery es diagon-alley (7.8s)
+  ✘  2 [webkit-intentions-a65] › tests/browser-trial/tactical-intentions-a65.spec.ts:119:5 › A65 intention selection preparation activation recovery es arcana (1.3s)
+
+
+  1) [webkit-intentions-a65] › tests/browser-trial/tactical-intentions-a65.spec.ts:119:5 › A65 intention selection preparation activation recovery es arcana 
+
+    Test was interrupted.
+
+    Error: apiRequestContext.post: Test ended.
+
+      55 | }
+      56 | async function command(page: Page, path: string, state: GameState, request: unknown) {
+    > 57 |   const response = await page.request.post(`/api/${path}`, {
+         |                                       ^
+      58 |     headers: {
+      59 |       Origin: new URL(page.url()).origin,
+      60 |       'X-Arcana-Player': state.playerId,
+        at command (/Users/enricarandes/work/diagon-alley/tests/browser-trial/tactical-intentions-a65.spec.ts:57:39)
+        at technicalClosure (/Users/enricarandes/work/diagon-alley/tests/browser-trial/tactical-intentions-a65.spec.ts:90:19)
+        at /Users/enricarandes/work/diagon-alley/tests/browser-trial/tactical-intentions-a65.spec.ts:133:40
+
+    attachment #1: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results-intentions-a65/tactical-intentions-a65-A6-b46ba-tivation-recovery-es-arcana-webkit-intentions-a65/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results-intentions-a65/tactical-intentions-a65-A6-b46ba-tivation-recovery-es-arcana-webkit-intentions-a65/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results-intentions-a65/tactical-intentions-a65-A6-b46ba-tivation-recovery-es-arcana-webkit-intentions-a65/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results-intentions-a65/tactical-intentions-a65-A6-b46ba-tivation-recovery-es-arcana-webkit-intentions-a65/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 interrupted
+    [webkit-intentions-a65] › tests/browser-trial/tactical-intentions-a65.spec.ts:119:5 › A65 intention selection preparation activation recovery es arcana 
+  2 did not run
+  1 passed (12.5s)

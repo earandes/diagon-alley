@@ -21,6 +21,7 @@ CREATE TABLE IF NOT EXISTS arcana_exploration (
   run_state jsonb,
   CHECK ((run_id IS NULL AND run_state IS NULL) OR (run_id IS NOT NULL AND run_state IS NOT NULL))
 );
+ALTER TABLE arcana_exploration ADD COLUMN IF NOT EXISTS intention jsonb;
 CREATE TABLE IF NOT EXISTS arcana_victories (
   player_id text NOT NULL REFERENCES arcana_accounts(player_id) ON DELETE CASCADE,
   level_id text NOT NULL,

@@ -1,0 +1,148 @@
+[WebServer] (node:60021) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:60045) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] WebSocket server error: Port 24678 is already in use
+[WebServer] (node:60059) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:60083) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] WebSocket server error: Port 24678 is already in use
+
+Running 4 tests using 1 worker
+
+(node:60118) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  1 [webkit-intentions-a65] › tests/browser-trial/tactical-intentions-a65.spec.ts:119:5 › A65 intention selection preparation activation recovery es diagon-alley (2.8s)
+(node:60232) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  2 [webkit-intentions-a65] › tests/browser-trial/tactical-intentions-a65.spec.ts:119:5 › A65 intention selection preparation activation recovery es arcana (2.4s)
+(node:60288) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  3 [webkit-intentions-a65] › tests/browser-trial/tactical-intentions-a65.spec.ts:119:5 › A65 intention selection preparation activation recovery en diagon-alley (2.8s)
+(node:60352) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  4 [webkit-intentions-a65] › tests/browser-trial/tactical-intentions-a65.spec.ts:119:5 › A65 intention selection preparation activation recovery en arcana (2.5s)
+
+
+  1) [webkit-intentions-a65] › tests/browser-trial/tactical-intentions-a65.spec.ts:119:5 › A65 intention selection preparation activation recovery es diagon-alley 
+
+    Error: expect(received).toBeNull()
+
+    Received: {"afterRunId": "7887848f-c96d-4ecf-8692-2eec6ba1c980", "choice": {"kind": "bean"}, "runId": null, "version": 1}
+
+      153 |       await expect(page.locator('#content')).toBeFocused();
+      154 |       const cancelled = await readGame(page);
+    > 155 |       expect(cancelled.exploration!.intention ?? null).toBeNull();
+          |                                                        ^
+      156 |       expect(cancelled.inventory).toEqual(before.inventory);
+      157 |       await choose.click();
+      158 |       await expect(choose).toHaveAttribute('aria-pressed', 'true');
+        at /Users/enricarandes/work/diagon-alley/tests/browser-trial/tactical-intentions-a65.spec.ts:155:56
+
+    attachment #1: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results-intentions-a65/tactical-intentions-a65-A6-5e9c5-on-recovery-es-diagon-alley-webkit-intentions-a65/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results-intentions-a65/tactical-intentions-a65-A6-5e9c5-on-recovery-es-diagon-alley-webkit-intentions-a65/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results-intentions-a65/tactical-intentions-a65-A6-5e9c5-on-recovery-es-diagon-alley-webkit-intentions-a65/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results-intentions-a65/tactical-intentions-a65-A6-5e9c5-on-recovery-es-diagon-alley-webkit-intentions-a65/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) [webkit-intentions-a65] › tests/browser-trial/tactical-intentions-a65.spec.ts:119:5 › A65 intention selection preparation activation recovery es arcana 
+
+    Error: expect(received).toBeNull()
+
+    Received: {"afterRunId": "21ebbfe8-8993-42c1-9577-44c73399ba82", "choice": {"kind": "bean"}, "runId": null, "version": 1}
+
+      153 |       await expect(page.locator('#content')).toBeFocused();
+      154 |       const cancelled = await readGame(page);
+    > 155 |       expect(cancelled.exploration!.intention ?? null).toBeNull();
+          |                                                        ^
+      156 |       expect(cancelled.inventory).toEqual(before.inventory);
+      157 |       await choose.click();
+      158 |       await expect(choose).toHaveAttribute('aria-pressed', 'true');
+        at /Users/enricarandes/work/diagon-alley/tests/browser-trial/tactical-intentions-a65.spec.ts:155:56
+
+    attachment #1: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results-intentions-a65/tactical-intentions-a65-A6-b46ba-tivation-recovery-es-arcana-webkit-intentions-a65/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results-intentions-a65/tactical-intentions-a65-A6-b46ba-tivation-recovery-es-arcana-webkit-intentions-a65/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results-intentions-a65/tactical-intentions-a65-A6-b46ba-tivation-recovery-es-arcana-webkit-intentions-a65/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results-intentions-a65/tactical-intentions-a65-A6-b46ba-tivation-recovery-es-arcana-webkit-intentions-a65/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  3) [webkit-intentions-a65] › tests/browser-trial/tactical-intentions-a65.spec.ts:119:5 › A65 intention selection preparation activation recovery en diagon-alley 
+
+    Error: expect(received).toBeNull()
+
+    Received: {"afterRunId": "354f283c-71b8-4998-8073-fb26fc724033", "choice": {"kind": "bean"}, "runId": null, "version": 1}
+
+      153 |       await expect(page.locator('#content')).toBeFocused();
+      154 |       const cancelled = await readGame(page);
+    > 155 |       expect(cancelled.exploration!.intention ?? null).toBeNull();
+          |                                                        ^
+      156 |       expect(cancelled.inventory).toEqual(before.inventory);
+      157 |       await choose.click();
+      158 |       await expect(choose).toHaveAttribute('aria-pressed', 'true');
+        at /Users/enricarandes/work/diagon-alley/tests/browser-trial/tactical-intentions-a65.spec.ts:155:56
+
+    attachment #1: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results-intentions-a65/tactical-intentions-a65-A6-c3008-on-recovery-en-diagon-alley-webkit-intentions-a65/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results-intentions-a65/tactical-intentions-a65-A6-c3008-on-recovery-en-diagon-alley-webkit-intentions-a65/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results-intentions-a65/tactical-intentions-a65-A6-c3008-on-recovery-en-diagon-alley-webkit-intentions-a65/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results-intentions-a65/tactical-intentions-a65-A6-c3008-on-recovery-en-diagon-alley-webkit-intentions-a65/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  4) [webkit-intentions-a65] › tests/browser-trial/tactical-intentions-a65.spec.ts:119:5 › A65 intention selection preparation activation recovery en arcana 
+
+    Error: expect(received).toBeNull()
+
+    Received: {"afterRunId": "85bd678f-f08e-4c87-a99b-a896c4ad79ef", "choice": {"kind": "bean"}, "runId": null, "version": 1}
+
+      153 |       await expect(page.locator('#content')).toBeFocused();
+      154 |       const cancelled = await readGame(page);
+    > 155 |       expect(cancelled.exploration!.intention ?? null).toBeNull();
+          |                                                        ^
+      156 |       expect(cancelled.inventory).toEqual(before.inventory);
+      157 |       await choose.click();
+      158 |       await expect(choose).toHaveAttribute('aria-pressed', 'true');
+        at /Users/enricarandes/work/diagon-alley/tests/browser-trial/tactical-intentions-a65.spec.ts:155:56
+
+    attachment #1: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results-intentions-a65/tactical-intentions-a65-A6-a2f3a-tivation-recovery-en-arcana-webkit-intentions-a65/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results-intentions-a65/tactical-intentions-a65-A6-a2f3a-tivation-recovery-en-arcana-webkit-intentions-a65/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results-intentions-a65/tactical-intentions-a65-A6-a2f3a-tivation-recovery-en-arcana-webkit-intentions-a65/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results-intentions-a65/tactical-intentions-a65-A6-a2f3a-tivation-recovery-en-arcana-webkit-intentions-a65/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  4 failed
+    [webkit-intentions-a65] › tests/browser-trial/tactical-intentions-a65.spec.ts:119:5 › A65 intention selection preparation activation recovery es diagon-alley 
+    [webkit-intentions-a65] › tests/browser-trial/tactical-intentions-a65.spec.ts:119:5 › A65 intention selection preparation activation recovery es arcana 
+    [webkit-intentions-a65] › tests/browser-trial/tactical-intentions-a65.spec.ts:119:5 › A65 intention selection preparation activation recovery en diagon-alley 
+    [webkit-intentions-a65] › tests/browser-trial/tactical-intentions-a65.spec.ts:119:5 › A65 intention selection preparation activation recovery en arcana 

@@ -90,7 +90,13 @@ test('branching map and equivalent list keep identical accessible actions with W
   const next = page.locator('[data-node]:not(:disabled)').first();
   await expect(next).toBeEnabled();
   await next.click();
-  await expect(page.locator('.node-confirm-action, [data-pact-action="recruit"]')).toBeFocused();
+  await expect(
+    page
+      .locator(
+        '[data-pact-candidate]:not(:disabled), [data-pact-choice]:not(:disabled), .node-confirm-action:not(:disabled), [data-pact-action="recruit"]',
+      )
+      .first(),
+  ).toBeFocused();
   await page.getByRole('button', { name: 'Cancelar', exact: true }).click();
   await expect(next).toBeFocused();
 });

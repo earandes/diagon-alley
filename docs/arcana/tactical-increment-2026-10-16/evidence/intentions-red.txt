@@ -1,0 +1,24 @@
+
+ RUN  v5.0.3 /Users/enricarandes/work/diagon-alley
+
+ ❯ tests/domain/arcana/expedition-intentions.test.ts (0 test)
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/domain/arcana/expedition-intentions.test.ts [ tests/domain/arcana/expedition-intentions.test.ts ]
+Error: Cannot find module '../../../src/arcana/domain/exploration/intentions' imported from /Users/enricarandes/work/diagon-alley/tests/domain/arcana/expedition-intentions.test.ts
+ ❯ tests/domain/arcana/expedition-intentions.test.ts:2:1
+      1| import { describe, expect, it } from 'vitest';
+      2| import { bindIntention, intentionSnapshot } from '../../../src/arcana/…
+       | ^
+      3| import { availableIntentions, intentionProgress } from '../../../src/a…
+      4| import { runInitial, campaignFixture } from './support/run-fixtures';
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  no tests
+   Start at  15:02:17
+   Duration  75ms (worker 96%, environment 4%)
+

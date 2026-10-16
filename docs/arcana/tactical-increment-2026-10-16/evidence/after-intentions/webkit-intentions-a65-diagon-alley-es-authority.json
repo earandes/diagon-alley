@@ -1,0 +1,144 @@
+{
+  "language": "es",
+  "pack": "diagon-alley",
+  "technicalSetup": [
+    {
+      "nodeId": "pasaje:0:0",
+      "kind": "pact",
+      "revision": 3
+    },
+    {
+      "nodeId": "pasaje:1:0",
+      "kind": "pact",
+      "revision": 4
+    },
+    {
+      "nodeId": "pasaje:3:2",
+      "kind": "pact",
+      "revision": 5
+    },
+    {
+      "nodeId": "pasaje:5:2",
+      "kind": "refuge",
+      "revision": 6
+    },
+    {
+      "nodeId": "pasaje:2:1",
+      "kind": "refuge",
+      "revision": 7
+    },
+    {
+      "nodeId": "pasaje:5:1",
+      "kind": "chest",
+      "revision": 8
+    },
+    {
+      "nodeId": "pasaje:6:0",
+      "kind": "boss",
+      "revision": 9
+    }
+  ],
+  "playerId": "trial-2c23e00c-6188-4bcc-8d3b-bf2877d66a0a",
+  "selectionRevision": 10,
+  "cancelledRevision": 11,
+  "nextRunId": "6dc267ee-a0d7-42ae-86aa-b938d07114e9",
+  "activationReceiptId": "830bd491-708d-4d55-b984-b3a11b751ffd",
+  "flavour": {
+    "hp": 100,
+    "kind": "bean-activated",
+    "round": 0,
+    "unitId": "70c9ad30-fb91-4921-964a-acbed90a0e1b:loot:0",
+    "actorId": "starter:apprentice",
+    "flavour": "earth",
+    "sequence": 3
+  },
+  "inventoryBeforeSelection": {
+    "crowns": 110,
+    "goldKeys": 1,
+    "essence": {
+      "points": 45,
+      "cursor": 1792156664303
+    },
+    "products": [
+      {
+        "id": "70c9ad30-fb91-4921-964a-acbed90a0e1b:loot:0",
+        "kind": "random-beans",
+        "status": "available"
+      },
+      {
+        "id": "df39b6c7-8951-409f-b6f2-2946c78258a1:loot:0",
+        "kind": "cacao-toad",
+        "status": "available"
+      }
+    ],
+    "equipment": [
+      {
+        "id": "starter:wand",
+        "version": 1,
+        "kind": "wand",
+        "wood": "birch",
+        "core": null,
+        "powerBonus": 2,
+        "multiplier": 1
+      },
+      {
+        "id": "starter:broom",
+        "version": 1,
+        "kind": "broom",
+        "model": "cadet-zephyr",
+        "initiative": 3
+      }
+    ]
+  },
+  "inventoryAfterCombat": {
+    "crowns": 140,
+    "goldKeys": 1,
+    "essence": {
+      "points": 40,
+      "cursor": 1792156664303
+    },
+    "products": [
+      {
+        "id": "70c9ad30-fb91-4921-964a-acbed90a0e1b:loot:0",
+        "kind": "random-beans",
+        "status": "consumed",
+        "operationId": "830bd491-708d-4d55-b984-b3a11b751ffd"
+      },
+      {
+        "id": "df39b6c7-8951-409f-b6f2-2946c78258a1:loot:0",
+        "kind": "cacao-toad",
+        "status": "available"
+      },
+      {
+        "id": "2919d88c-a5c9-47e3-aef0-6f52aebc9fc8:loot:0",
+        "kind": "random-beans",
+        "status": "available"
+      },
+      {
+        "id": "830bd491-708d-4d55-b984-b3a11b751ffd:loot:0",
+        "kind": "random-beans",
+        "status": "available"
+      }
+    ],
+    "equipment": [
+      {
+        "id": "starter:wand",
+        "version": 1,
+        "kind": "wand",
+        "wood": "birch",
+        "core": null,
+        "powerBonus": 2,
+        "multiplier": 1
+      },
+      {
+        "id": "starter:broom",
+        "version": 1,
+        "kind": "broom",
+        "model": "cadet-zephyr",
+        "initiative": 3
+      }
+    ]
+  },
+  "reloadExact": true,
+  "pageErrors": []
+}

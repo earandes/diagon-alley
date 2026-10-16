@@ -31,6 +31,8 @@ import type { SetTeamUseCase, EquipEquipmentUseCase } from '../../application/te
 import type { SetTeamRequest, EquipEquipmentRequest } from '../../application/team-contracts';
 import { ArcanaError, type ArcanaErrorCode } from '../../domain/errors';
 import { validDomainId } from '../../domain/identifiers';
+import type { SetIntentionUseCase, SetIntentionRequest } from '../../application/set-intention';
+import { setIntentionSchema } from './schemas';
 import {
   purchaseSchema,
   openingSchema,
@@ -46,6 +48,7 @@ import {
 } from './schemas';
 
 export interface ArcanaApiServices {
+  readonly setIntention?: SetIntentionUseCase;
   readonly forgeWand: ForgeWandUseCase;
   readonly openVault: OpenObsidianVaultUseCase;
   readonly games: GameTransactions;
@@ -203,6 +206,14 @@ export function createArcanaApi(services: ArcanaApiServices, policy: HttpPolicy)
     '/api/purchases',
     { schema: { ...query, body: purchaseSchema } },
     (request) => services.purchase.execute(identity(request).playerId, request.body),
+  );
+  app.post<{ Body: OperationCommand<SetIntentionRequest> }>(
+    '/api/intentions',
+    { schema: { ...query, body: setIntentionSchema } },
+    (request) => {
+      if (!services.setIntention) throw new ArcanaError('INVALID_OPERATION');
+      return services.setIntention.execute(identity(request).playerId, request.body);
+    },
   );
   app.post<{ Body: OperationCommand<BuyOpenToadRequest> }>(
     '/api/toads/buy-open',

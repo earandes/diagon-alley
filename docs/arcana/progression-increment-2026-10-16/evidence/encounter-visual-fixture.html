@@ -1,0 +1,19 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>A67 declared presentation fixture</title><style>body{margin:0;background:#101b2c} .fixture-scene{position:fixed;inset:0;width:100%;height:100%;object-fit:cover;opacity:.5} .fixture-marker{position:fixed;bottom:8px;left:8px;font:11px system-ui;color:white}</style></head><body><div id="fixture"></div><script type="module">
+import React,{useState,useRef,useEffect} from 'react';
+import {createRoot} from 'react-dom/client';
+import {EncounterPreparation} from '/src/arcana/presentation/EncounterPreparation.tsx';
+import {Artwork} from '/src/arcana/presentation/Artwork.tsx';
+import {activePack,setContentPack} from '/src/arcana/presentation/content-packs/active.ts';
+import {previewEncounterTrade} from '/src/arcana/domain/exploration/encounter-trades.ts';
+import {encounterText} from '/src/arcana/presentation/encounter-messages.ts';
+import {campaignFixture,runInitial} from '/tests/domain/arcana/support/run-fixtures.ts';
+import '/src/arcana/presentation/styles.css';
+import '/src/arcana/presentation/game-stage.css';
+import '/src/arcana/presentation/game-experience.css';
+import '/src/arcana/presentation/node-event-dialog.css';
+const query=new URLSearchParams(location.search),language=query.get('lang')??'es',kind=query.get('kind')??'healer';setContentPack(query.get('pack')??'diagon-alley');
+const campaign=campaignFixture(),game=runInitial();
+const run={id:'fixture',campaignVersion:1,zoneId:'pasaje',graphVersion:1,graph:campaign.graph,status:'active',visited:[],members:Array.from({length:5},(_,index)=>({source:index?'temporary':'owned',unit:{...campaign.prepareOwned(game.copies[0]),id:`unit-${index}`,wizardId:['apprentice','rune-weaver','moon-herbalist','ember-keeper','star-binder'][index],hp:50,maxHp:100,mana:20,maxMana:40}}))};
+const offer={id:`fixture-${kind}`,npcId:kind==='healer'?'moon-herbalist':'flamel',kind,options:[{id:'single',scope:'unit',restore:kind==='healer'?'hp':'mana',fraction:kind==='healer'?.4:.5,costFraction:.2},{id:'group',scope:'team',restore:kind==='healer'?'hp':'mana',fraction:kind==='healer'?.15:.2,costFraction:.1}]};
+function Fixture(){const [options,onChange]=useState(query.get('state')==='unit'?{encounterAction:'trade',encounterChoiceId:'single',encounterUnitId:'unit-0'}:query.get('state')==='team'?{encounterAction:'trade',encounterChoiceId:'group'}:{}),dialog=useRef(null);useEffect(()=>dialog.current.showModal(),[]);const preview=previewEncounterTrade(run.members,offer,options.encounterChoiceId,options.encounterUnitId);return React.createElement('div',{className:'arcana-shell game-shell','data-reduced':query.get('reduced')??'false',style:{'--ink':activePack.palette?.ink??'#fff0d0'}},React.createElement(Artwork,{asset:'scene.boulevard',language,className:'fixture-scene',decorative:true,eager:true}),React.createElement('dialog',{ref:dialog,className:'notice node-event-dialog','data-event-kind':'encounter'},React.createElement(Artwork,{asset:'node.encounter',language,className:'node-confirmation-art',decorative:true,eager:true}),React.createElement('h3',null,language==='es'?'Encuentro':'Encounter'),React.createElement(EncounterPreparation,{offer,run,options,onChange,language,ready:true}),React.createElement('button',{className:'node-confirm-action',disabled:options.encounterAction!=='pass'&&!preview.eligible},encounterText(language,options.encounterAction==='pass'?'pass':'accept'))),React.createElement('span',{className:'fixture-marker'},'Fixture de presentación · sin API ni operaciones'))};createRoot(document.getElementById('fixture')).render(React.createElement(Fixture));
+</script></body></html>

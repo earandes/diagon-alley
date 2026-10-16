@@ -1,0 +1,4 @@
+Command: A65_PROFILE=1 npx --no-install playwright test --config playwright.tactics-a65.config.ts
+Result: 4 passed (53.2s), exit code 0.
+Serial, no concurrent builds/runners confirmed by coordinator.
+Diagon Alley ES normal motion, Chromium/WebKit, 1280x900 and 390x844, fresh isolated account per case.

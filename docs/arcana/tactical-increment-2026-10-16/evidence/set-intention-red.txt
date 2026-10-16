@@ -1,0 +1,104 @@
+
+ RUN  v5.0.3 /Users/enricarandes/work/diagon-alley
+
+ ❯ tests/domain/arcana/set-intention.test.ts (5 tests | 5 failed) 10ms
+   ❯ SetIntention explicit authority boundary (5)
+     × stores a viable plan without buying, consuming, selecting formation or advancing 4ms
+     × recovers the same operation before checking a stale revision and rejects key reuse 0ms
+     × cancels without a reward or resource effect, including during the explicitly bound run 0ms
+     × rejects stale tabs, mismatched runs and targets that are not actually available 3ms
+     × retains prior state when durable commit fails 2ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 5 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/domain/arcana/set-intention.test.ts > SetIntention explicit authority boundary > stores a viable plan without buying, consuming, selecting formation or advancing
+ArcanaError: INVALID_GAME
+ ❯ validateGame src/arcana/application/game.ts:435:11
+    433|         throw Error();
+    434|   } catch {
+    435|     throw new ArcanaError('INVALID_GAME');
+       |           ^
+    436|   }
+    437| }
+ ❯ gameSnapshot src/arcana/application/game.ts:440:3
+ ❯ src/arcana/application/set-intention.ts:68:14
+ ❯ Object.transact tests/domain/arcana/set-intention.test.ts:18:46
+ ❯ SetIntentionUseCase.execute src/arcana/application/set-intention.ts:48:36
+ ❯ tests/domain/arcana/set-intention.test.ts:28:36
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/5]⎯
+
+ FAIL  tests/domain/arcana/set-intention.test.ts > SetIntention explicit authority boundary > recovers the same operation before checking a stale revision and rejects key reuse
+ArcanaError: INVALID_GAME
+ ❯ validateGame src/arcana/application/game.ts:435:11
+    433|         throw Error();
+    434|   } catch {
+    435|     throw new ArcanaError('INVALID_GAME');
+       |           ^
+    436|   }
+    437| }
+ ❯ gameSnapshot src/arcana/application/game.ts:440:3
+ ❯ src/arcana/application/set-intention.ts:68:14
+ ❯ Object.transact tests/domain/arcana/set-intention.test.ts:18:46
+ ❯ SetIntentionUseCase.execute src/arcana/application/set-intention.ts:48:36
+ ❯ tests/domain/arcana/set-intention.test.ts:39:35
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/5]⎯
+
+ FAIL  tests/domain/arcana/set-intention.test.ts > SetIntention explicit authority boundary > cancels without a reward or resource effect, including during the explicitly bound run
+ArcanaError: INVALID_GAME
+ ❯ validateGame src/arcana/application/game.ts:435:11
+    433|         throw Error();
+    434|   } catch {
+    435|     throw new ArcanaError('INVALID_GAME');
+       |           ^
+    436|   }
+    437| }
+ ❯ gameSnapshot src/arcana/application/game.ts:440:3
+ ❯ src/arcana/application/set-intention.ts:68:14
+ ❯ Object.transact tests/domain/arcana/set-intention.test.ts:18:46
+ ❯ SetIntentionUseCase.execute src/arcana/application/set-intention.ts:48:36
+ ❯ tests/domain/arcana/set-intention.test.ts:46:21
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/5]⎯
+
+ FAIL  tests/domain/arcana/set-intention.test.ts > SetIntention explicit authority boundary > rejects stale tabs, mismatched runs and targets that are not actually available
+AssertionError: expected ArcanaError: STALE_GAME { code: 'STA…' } to match object { code: 'REVISION_CONFLICT' }
+(1 matching property omitted from actual)
+
+- Expected
++ Received
+
+- {
+-   "code": "REVISION_CONFLICT",
++ ArcanaError {
++   "code": "STALE_GAME",
+  }
+
+ ❯ tests/domain/arcana/set-intention.test.ts:59:85
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/5]⎯
+
+ FAIL  tests/domain/arcana/set-intention.test.ts > SetIntention explicit authority boundary > retains prior state when durable commit fails
+AssertionError: expected [Function] to throw error including 'save failed' but got 'INVALID_GAME'
+
+Expected: "save failed"
+Received: "INVALID_GAME"
+
+ ❯ tests/domain/arcana/set-intention.test.ts:68:55
+     66|     const failing: GameTransactions = { read: f.games.read, transact: …
+     67|     const useCase = new SetIntentionUseCase(failing, () => ({ ownedAff…
+     68|     await expect(useCase.execute('player', selection)).rejects.toThrow…
+       |                                                       ^
+     69|     expect(f.state()).toEqual(before);
+     70|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/5]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  5 failed (5)
+   Start at  15:04:55
+   Duration  142ms (transform 71%, import 15%, tests 12%, worker 2%)
+

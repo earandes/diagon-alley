@@ -12,6 +12,7 @@ import { ArcanaError } from '../../domain/errors';
 import { validDomainId } from '../../domain/identifiers';
 import type { Run } from '../../domain/exploration/run';
 import type { Equipment } from '../../domain/economy/equipment';
+import type { ExpeditionIntention } from '../../domain/exploration/intentions';
 
 export async function applyGameSchema(pool: Pool): Promise<void> {
   const client = await pool.connect();
@@ -75,10 +76,11 @@ async function loadGame(client: PoolClient, playerId: string, lock: boolean): Pr
   }>('SELECT operation_id, receipt FROM arcana_operations WHERE player_id=$1 ORDER BY ordinal', [
     playerId,
   ]);
-  const exploration = await client.query<{ run_id: string | null; run_state: Run | null }>(
-    'SELECT run_id, run_state FROM arcana_exploration WHERE player_id=$1',
-    [playerId],
-  );
+  const exploration = await client.query<{
+    run_id: string | null;
+    run_state: Run | null;
+    intention: ExpeditionIntention | null;
+  }>('SELECT run_id, run_state, intention FROM arcana_exploration WHERE player_id=$1', [playerId]);
   const victories = await client.query<{ level_id: string; campaign_version: number }>(
     'SELECT level_id, campaign_version FROM arcana_victories WHERE player_id=$1 ORDER BY ordinal',
     [playerId],
@@ -159,6 +161,9 @@ async function loadGame(client: PoolClient, playerId: string, lock: boolean): Pr
       ? {
           exploration: {
             run: exploration.rows[0].run_state,
+            ...(exploration.rows[0].intention === null
+              ? {}
+              : { intention: exploration.rows[0].intention }),
             victories: victories.rows.map((v) => ({
               levelId: v.level_id,
               version: v.campaign_version,
@@ -243,8 +248,13 @@ async function writeGame(client: PoolClient, state: GameState): Promise<void> {
   if (state.exploration) {
     const { run, victories, unlockedZones } = state.exploration;
     await client.query(
-      'INSERT INTO arcana_exploration (player_id,run_id,run_state) VALUES ($1,$2,$3)',
-      [state.playerId, run?.id ?? null, run === null ? null : JSON.stringify(run)],
+      'INSERT INTO arcana_exploration (player_id,run_id,run_state,intention) VALUES ($1,$2,$3,$4)',
+      [
+        state.playerId,
+        run?.id ?? null,
+        run === null ? null : JSON.stringify(run),
+        state.exploration.intention ? JSON.stringify(state.exploration.intention) : null,
+      ],
     );
     for (const [ordinal, victory] of victories.entries())
       await client.query(

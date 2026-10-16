@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "pacts": [
+    ["rune-weaver", "circe"],
+    ["flamel", "ember-keeper"],
+    ["rune-weaver", "morgana"]
+  ],
+  "duels": [
+    { "threat": "fire", "leaders": ["circe", "ember-keeper"] },
+    { "threat": "vanguard", "leaders": ["storm-caller", "rune-weaver"] }
+  ]
+}

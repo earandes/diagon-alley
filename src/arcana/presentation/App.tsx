@@ -1,9 +1,16 @@
+import { challengeText } from './ExpeditionChallenge';
+import { previewEncounterTrade } from '../domain/exploration/encounter-trades';
+import { encounterText } from './encounter-messages';
+import type { ExpeditionChallenge } from '../domain/exploration/challenges';
 import { NodePreparation } from './NodePreparation';
 import { ExpeditionClosure } from './ExpeditionClosure';
+import { ExpeditionIntentions, IntentionReminder } from './ExpeditionIntentions';
+import type { IntentionChoice } from '../domain/exploration/intentions';
 import { closureText } from './closure-messages';
 import { expeditionClosure, type ClosureAction } from '../application/client/expedition-closure';
 import { nodeActionLabel } from './node-event-messages';
 import './node-event-dialog.css';
+import './header-pact.css';
 import { GameSettings } from './GameSettings';
 import { SweetshopScene } from './SweetshopScene';
 import { JourneyCabinet } from './JourneyCabinet';
@@ -70,7 +77,10 @@ export function App() {
     }),
     [selected, setSelected] = useState<string | null>(null),
     [nodeOptions, setNodeOptions] = useState<NodeOptions>({}),
-    [beanDraft, setBeanDraft] = useState<{ scope: string; values: readonly BeanAssignment[] }>({ scope: '', values: [] }),
+    [beanDraft, setBeanDraft] = useState<{ scope: string; values: readonly BeanAssignment[] }>({
+      scope: '',
+      values: [],
+    }),
     [entryError, setEntryError] = useState(false),
     [preparing, setPreparing] = useState(false),
     [preparationContext, setPreparationContext] = useState<'formation' | 'beans'>('formation'),
@@ -110,12 +120,14 @@ export function App() {
     if (!selected || !dialog.current) return;
     const current = dialog.current;
     if (!nodeOrigin.current?.isConnected)
-      nodeOrigin.current = [...document.querySelectorAll<HTMLButtonElement>('[data-node]')]
-        .find(button => button.dataset.node === selected) ?? null;
+      nodeOrigin.current =
+        [...document.querySelectorAll<HTMLButtonElement>('[data-node]')].find(
+          (button) => button.dataset.node === selected,
+        ) ?? null;
     current.showModal();
     current
       .querySelector<HTMLButtonElement>(
-        '[data-pact-action]:not(:disabled),.node-confirm-action:not(:disabled)',
+        '[data-encounter-choice]:not(:disabled),[data-pact-candidate]:not(:disabled),[data-pact-choice]:not(:disabled),[data-pact-action]:not(:disabled),.node-confirm-action:not(:disabled)',
       )
       ?.focus({ preventScroll: true });
     return () => {
@@ -163,11 +175,16 @@ export function App() {
     else void controller.refreshStatus();
   }, [online]);
   useEffect(() => {
-    if (state.receipt?.kind === 'start-run') { setPreparing(false); setView('map'); }
+    if (state.receipt?.kind === 'start-run') {
+      setPreparing(false);
+      setView('map');
+    }
     if (state.receipt?.kind === 'advance-node') {
       setSelected(null);
       if (state.receipt.battle) setView('battle');
     }
+    if (state.receipt?.kind === 'set-intention' && state.receipt.intention === null)
+      document.querySelector<HTMLElement>('#content')?.focus({ preventScroll: true });
     // Navigate only for a newly confirmed receipt; visiting a saved screen never sends a command.
   }, [state.receipt]);
   useEffect(() => {
@@ -188,11 +205,21 @@ export function App() {
     content = state.content,
     run = game?.exploration?.run;
   // A draft belongs to one authority snapshot and chosen node, never to language or theme.
-  const beanScope = JSON.stringify([game?.playerId, run?.id, game?.revision, selected,
-    content?.campaign.version, content?.combatRules.version, content?.combatRules.beans.version]);
+  const beanScope = JSON.stringify([
+    game?.playerId,
+    run?.id,
+    game?.revision,
+    selected,
+    content?.campaign.version,
+    content?.combatRules.version,
+    content?.combatRules.beans.version,
+  ]);
   const assignments = beanDraft.scope === beanScope ? beanDraft.values : NO_BEAN_ASSIGNMENTS;
-  const setAssignments = (values: readonly BeanAssignment[]) => setBeanDraft({ scope: beanScope, values });
-  useEffect(() => { setSelected(null); }, [run?.id]);
+  const setAssignments = (values: readonly BeanAssignment[]) =>
+    setBeanDraft({ scope: beanScope, values });
+  useEffect(() => {
+    setSelected(null);
+  }, [run?.id]);
   const availableNodeIds = new Set(run?.status === 'active' ? routeOptions(run, run.graph) : []);
   const availableNodeKey = [...availableNodeIds].join('|');
   useEffect(() => {
@@ -203,18 +230,31 @@ export function App() {
       setBeanDraft({ scope: '', values: [] });
     }
   }, [selected, ready, run?.id, availableNodeKey]);
-  const combatChoices = run?.status === 'active'
-    ? run.graph.nodes.filter(node => (node.kind === 'duel' || node.kind === 'boss') && availableNodeIds.has(node.id))
-      .map(node => ({ id: node.id, kind: node.kind as 'duel' | 'boss' })) : [];
+  const combatChoices =
+    run?.status === 'active'
+      ? run.graph.nodes
+          .filter(
+            (node) =>
+              (node.kind === 'duel' || node.kind === 'boss') && availableNodeIds.has(node.id),
+          )
+          .map((node) => ({ id: node.id, kind: node.kind as 'duel' | 'boss' }))
+      : [];
   const openCombatPreparation = (id: string) => {
-    if (!ready || !combatChoices.some(node => node.id === id)) return;
+    if (!ready || !combatChoices.some((node) => node.id === id)) return;
     nodeOrigin.current = null;
-    setAssignments([]); setNodeOptions({}); setPreparing(false); setView('map'); setSelected(id);
+    setAssignments([]);
+    setNodeOptions({});
+    setPreparing(false);
+    setView('map');
+    setSelected(id);
   };
   const selectedNode = run?.graph.nodes.find((node) => node.id === selected);
-  const selectedPlan = content?.campaign.nodes?.find((plan) => plan.nodeId === selected);
+  const selectedPlan = (run?.campaignSnapshot?.nodes ?? content?.campaign.nodes)?.find(
+    (plan) => plan.nodeId === selected,
+  );
   const directPact =
     selectedPlan?.kind === 'pact' &&
+    !selectedPlan.recruits &&
     selectedNode?.kind === 'pact' &&
     !!run &&
     run.members.length < 5;
@@ -233,6 +273,11 @@ export function App() {
   };
   const savedNode = game ? latestNodeReceipt(game) : null;
   const closure = game ? expeditionClosure(game) : null;
+  const chooseIntention = (choice: IntentionChoice | null) => {
+    const afterRunId = choice ? run?.id : game?.exploration?.intention?.afterRunId;
+    if (!ready || !afterRunId) return;
+    void controller.perform({ kind: 'set-intention', request: { afterRunId, choice } });
+  };
   const openingFromClosure = useRef<{ runId: string; unitId: string } | null>(null);
   const closureAction = (action: ClosureAction, origin?: HTMLElement) => {
     if (!ready || !game || !content) return;
@@ -240,16 +285,20 @@ export function App() {
     else if (action === 'frog' && closure?.frogId) {
       openingFromClosure.current = { runId: closure.run.id, unitId: closure.frogId };
       setBazaarPlace('confectionery');
-      void controller.perform({ kind: 'open-toad', request: {
-        unitId: closure.frogId, catalogVersion: content.catalog.version,
-        tableVersion: content.toadTable.version,
-      } });
+      void controller.perform({
+        kind: 'open-toad',
+        request: {
+          unitId: closure.frogId,
+          catalogVersion: content.catalog.version,
+          tableVersion: content.toadTable.version,
+        },
+      });
     } else openPreparation('formation', origin);
   };
   const battle =
     state.receipt?.kind === 'advance-node' ? state.receipt.battle : (savedNode?.battle ?? null);
   const label = (kind: NodeKind) => t(nodes[kind]);
-  const startExpedition = (copyIds: readonly string[]) => {
+  const startExpedition = (copyIds: readonly string[], challenge?: ExpeditionChallenge) => {
     if (!content) return;
     void controller.perform({
       kind: 'start-run',
@@ -257,6 +306,7 @@ export function App() {
         zoneId: content.campaign.zoneId,
         campaignVersion: content.campaign.version,
         copyIds,
+        ...(challenge ? { challenge } : {}),
       },
     });
   };
@@ -316,7 +366,14 @@ export function App() {
       <div className="game-world-backdrop" aria-hidden="true" />
       <SceneAtmosphere reduced={motion.reduced} />
       <header className="game-header">
-        <h1>{activePack.brand}</h1>
+        <h1>
+          {view === 'map' && content
+            ? regionAppearance(run?.zoneId ?? content.campaign.zoneId, language).name
+            : activePack.brand}
+          {view === 'map' && run?.status === 'active' && run.challenge && (
+            <small className="challenge-reminder">{challengeText(language, run.challenge)}</small>
+          )}
+        </h1>
         <GameSettings
           language={language}
           onLanguage={setLanguage}
@@ -350,19 +407,30 @@ export function App() {
         </main>
       ) : (
         <>
-          {view === 'battle' ? <details className="battle-wallet">
-            <summary aria-label={closureText(language, 'wallet')} title={closureText(language, 'wallet')}>
-              <Artwork asset="currency.crowns" language={language} decorative />
-              <span className="visually-hidden">{closureText(language, 'wallet')}</span>
-            </summary>
-            <PlayerHud state={state} connected={online} language={language}
-              onRefresh={() => void controller.refreshStatus()} />
-          </details> : <PlayerHud
-            state={state}
-            connected={online}
-            language={language}
-            onRefresh={() => void controller.refreshStatus()}
-          />}
+          {view === 'battle' ? (
+            <details className="battle-wallet">
+              <summary
+                aria-label={closureText(language, 'wallet')}
+                title={closureText(language, 'wallet')}
+              >
+                <Artwork asset="currency.crowns" language={language} decorative />
+                <span className="visually-hidden">{closureText(language, 'wallet')}</span>
+              </summary>
+              <PlayerHud
+                state={state}
+                connected={online}
+                language={language}
+                onRefresh={() => void controller.refreshStatus()}
+              />
+            </details>
+          ) : (
+            <PlayerHud
+              state={state}
+              connected={online}
+              language={language}
+              onRefresh={() => void controller.refreshStatus()}
+            />
+          )}
           <main id="content" tabIndex={-1}>
             <OperationFeedback
               receipt={state.error || state.pending ? null : state.receipt}
@@ -408,9 +476,13 @@ export function App() {
                   onClose={() => {
                     setDismissedOpening(state.receipt!.id);
                     const origin = openingFromClosure.current;
-                    if (origin && origin.runId === run?.id && run?.status !== 'active' &&
+                    if (
+                      origin &&
+                      origin.runId === run?.id &&
+                      run?.status !== 'active' &&
                       state.receipt?.kind === 'open-toad' &&
-                      state.receipt.request.unitId === origin.unitId) {
+                      state.receipt.request.unitId === origin.unitId
+                    ) {
                       openingFromClosure.current = null;
                       setView('map');
                     }
@@ -422,14 +494,11 @@ export function App() {
                 className="expedition-panel"
                 data-map-phase={closure ? 'closed' : !run ? 'entry' : 'route'}
               >
-                {!closure && <div className="expedition-heading">
-                  <div className="section-title">
-                    <h2>
-                      {regionAppearance(run?.zoneId ?? content.campaign.zoneId, language).name}
-                    </h2>
+                {!closure && (
+                  <div className="expedition-heading">
+                    <ExpeditionGuide run={run} language={language} />
                   </div>
-                  <ExpeditionGuide run={run} language={language} />
-                </div>}
+                )}
                 {!closure && savedNode && (
                   <NodeResult
                     receipt={savedNode}
@@ -439,9 +508,23 @@ export function App() {
                   />
                 )}
                 {closure ? (
-                  <ExpeditionClosure game={game} language={language} ready={ready}
-                    onAction={closureAction} onReplay={() => setView('battle')}
-                    onMissions={() => setView('missions')} />
+                  <>
+                    <ExpeditionClosure
+                      game={game}
+                      language={language}
+                      ready={ready}
+                      onAction={closureAction}
+                      onReplay={() => setView('battle')}
+                      onMissions={() => setView('missions')}
+                    />
+                    <ExpeditionIntentions
+                      game={game}
+                      content={content}
+                      language={language}
+                      ready={ready}
+                      onChoose={chooseIntention}
+                    />
+                  </>
                 ) : !run ? (
                   <div className="region-entry preparation-entry">
                     <ExpeditionPreparation
@@ -460,6 +543,13 @@ export function App() {
                   </div>
                 ) : (
                   <>
+                    <IntentionReminder
+                      game={game}
+                      content={content}
+                      language={language}
+                      ready={ready}
+                      onCancel={() => chooseIntention(null)}
+                    />
                     <TeamHud
                       game={game}
                       content={content}
@@ -516,7 +606,10 @@ export function App() {
                         run={run}
                         game={game}
                         language={language}
-                        rounding={content.campaign.rounding ?? 'floor'}
+                        rules={run.campaignSnapshot?.combatRules ?? content.combatRules}
+                        rounding={
+                          run.campaignSnapshot?.rounding ?? content.campaign.rounding ?? 'floor'
+                        }
                         options={nodeOptions}
                         ready={ready}
                         onChange={setNodeOptions}
@@ -528,38 +621,42 @@ export function App() {
                         run.graph.nodes.find((n) => n.id === selected)!.kind,
                       ) && (
                         <>
-                        <button className="node-team-prepare" onClick={event => openPreparation('formation', event.currentTarget)} disabled={!ready}>
-                          <Artwork asset="ui.team" language={language} decorative />
-                          <span>{prepText(language, 'equipment')}</span>
-                        </button>
-                        <details className="node-bean-preparation">
-                          <summary
-                            aria-label={t('nodeBeanPreparation', {
-                              count: game.inventory.products.filter(
-                                (p) => p.kind === 'random-beans' && p.status === 'available',
-                              ).length,
-                            })}
+                          <button
+                            className="node-team-prepare"
+                            onClick={(event) => openPreparation('formation', event.currentTarget)}
+                            disabled={!ready}
                           >
-                            <Artwork asset="beans.jar" language={language} decorative eager />
-                            <span aria-hidden="true">
-                              {assignments.length} /{' '}
-                              {
-                                game.inventory.products.filter(
+                            <Artwork asset="ui.team" language={language} decorative />
+                            <span>{prepText(language, 'equipment')}</span>
+                          </button>
+                          <details className="node-bean-preparation">
+                            <summary
+                              aria-label={t('nodeBeanPreparation', {
+                                count: game.inventory.products.filter(
                                   (p) => p.kind === 'random-beans' && p.status === 'available',
-                                ).length
-                              }
-                            </span>
-                          </summary>
-                          <BeanAssignments
-                            run={run}
-                            game={game}
-                            content={content}
-                            language={language}
-                            ready={ready}
-                            assignments={assignments}
-                            onChange={setAssignments}
-                          />
-                        </details>
+                                ).length,
+                              })}
+                            >
+                              <Artwork asset="beans.jar" language={language} decorative eager />
+                              <span aria-hidden="true">
+                                {assignments.length} /{' '}
+                                {
+                                  game.inventory.products.filter(
+                                    (p) => p.kind === 'random-beans' && p.status === 'available',
+                                  ).length
+                                }
+                              </span>
+                            </summary>
+                            <BeanAssignments
+                              run={run}
+                              game={game}
+                              content={content}
+                              language={language}
+                              ready={ready}
+                              assignments={assignments}
+                              onChange={setAssignments}
+                            />
+                          </details>
                         </>
                       )}
                     {state.error && (
@@ -578,43 +675,85 @@ export function App() {
                         )}
                       </section>
                     )}
-                    <div className={['duel', 'boss'].includes(selectedNode!.kind) ? 'node-event-actions node-combat-actions' : 'node-event-actions'}>
-                    {!directPact && (
-                      <button
-                        aria-label={nodeActionLabel(language, selectedNode!.kind)}
-                        title={nodeActionLabel(language, selectedNode!.kind)}
-                        className="node-confirm-action"
-                        autoFocus
-                        disabled={
-                          !ready ||
-                          (run.graph.nodes.find((n) => n.id === selected)?.kind === 'pact' &&
-                            run.members.length === 5 &&
-                            nodeOptions.pactAction !== 'pass' &&
-                            !nodeOptions.replaceUnitId)
-                        }
-                        onClick={() => resolveNode()}
-                      >
-                        <Artwork
-                          asset={`node.${selectedNode!.kind}`}
-                          language={language}
-                          decorative
-                        />
-                        <span>{nodeActionLabel(language, selectedNode!.kind)}</span>
-                      </button>
-                    )}
-                    {state.pending && (
-                      <button disabled={!online} onClick={() => void controller.recover()}>
-                        {t('recoverOperation')}
-                      </button>
-                    )}
-                    <button
-                      className="node-cancel-action"
-                      aria-label={t(ready ? 'cancel' : 'close')}
-                      title={t(ready ? 'cancel' : 'close')}
-                      onClick={() => setSelected(null)}
+                    <div
+                      className={
+                        ['duel', 'boss'].includes(selectedNode!.kind)
+                          ? 'node-event-actions node-combat-actions'
+                          : 'node-event-actions'
+                      }
                     >
-                      <span aria-hidden="true">×</span>
-                    </button>
+                      {!directPact && (
+                        <button
+                          aria-label={
+                            selectedPlan?.kind === 'encounter' && selectedPlan.offer
+                              ? encounterText(
+                                  language,
+                                  nodeOptions.encounterAction === 'pass' ? 'pass' : 'accept',
+                                )
+                              : nodeActionLabel(language, selectedNode!.kind)
+                          }
+                          title={
+                            selectedPlan?.kind === 'encounter' && selectedPlan.offer
+                              ? encounterText(
+                                  language,
+                                  nodeOptions.encounterAction === 'pass' ? 'pass' : 'accept',
+                                )
+                              : nodeActionLabel(language, selectedNode!.kind)
+                          }
+                          className="node-confirm-action"
+                          autoFocus
+                          disabled={
+                            !ready ||
+                            (selectedPlan?.kind === 'encounter' &&
+                              selectedPlan.offer !== undefined &&
+                              nodeOptions.encounterAction !== 'pass' &&
+                              !previewEncounterTrade(
+                                run.members,
+                                selectedPlan.offer,
+                                nodeOptions.encounterChoiceId,
+                                nodeOptions.encounterUnitId,
+                              ).eligible) ||
+                            (selectedPlan?.kind === 'pact' &&
+                              selectedPlan.recruits !== undefined &&
+                              nodeOptions.pactAction !== 'pass' &&
+                              !selectedPlan.recruits.some(
+                                (unit) => unit.id === nodeOptions.recruitId,
+                              )) ||
+                            (run.graph.nodes.find((n) => n.id === selected)?.kind === 'pact' &&
+                              run.members.length === 5 &&
+                              nodeOptions.pactAction !== 'pass' &&
+                              !nodeOptions.replaceUnitId)
+                          }
+                          onClick={() => resolveNode()}
+                        >
+                          <Artwork
+                            asset={`node.${selectedNode!.kind}`}
+                            language={language}
+                            decorative
+                          />
+                          <span>
+                            {selectedPlan?.kind === 'encounter' && selectedPlan.offer
+                              ? encounterText(
+                                  language,
+                                  nodeOptions.encounterAction === 'pass' ? 'pass' : 'accept',
+                                )
+                              : nodeActionLabel(language, selectedNode!.kind)}
+                          </span>
+                        </button>
+                      )}
+                      {state.pending && (
+                        <button disabled={!online} onClick={() => void controller.recover()}>
+                          {t('recoverOperation')}
+                        </button>
+                      )}
+                      <button
+                        className="node-cancel-action"
+                        aria-label={t(ready ? 'cancel' : 'close')}
+                        title={t(ready ? 'cancel' : 'close')}
+                        onClick={() => setSelected(null)}
+                      >
+                        <span aria-hidden="true">×</span>
+                      </button>
                     </div>
                   </dialog>
                 )}
@@ -728,11 +867,14 @@ export function App() {
                 context={preparationContext}
                 combatChoices={combatChoices}
                 onCombatNode={openCombatPreparation}
-                onReturnToMap={() => { setPreparing(false); setView('map'); }}
+                onReturnToMap={() => {
+                  setPreparing(false);
+                  setView('map');
+                }}
                 language={language}
                 ready={ready}
-                onStart={(ids) => {
-                  startExpedition(ids);
+                onStart={(ids, challenge) => {
+                  startExpedition(ids, challenge);
                 }}
                 onTeam={(request) => void controller.perform({ kind: 'set-team', request })}
                 onEquip={(request) => void controller.perform({ kind: 'equip-equipment', request })}

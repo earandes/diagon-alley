@@ -263,6 +263,9 @@ export class GameController {
   }
   private send(pending: PendingOperation): Promise<OperationResult> {
     switch (pending.kind) {
+      case 'set-intention':
+        if (!this.gateway.setIntention) throw new Error('Intention transport unavailable');
+        return this.gateway.setIntention(pending.command);
       case 'forge-wand':
         return this.gateway.forgeWand(pending.command);
       case 'open-vault':

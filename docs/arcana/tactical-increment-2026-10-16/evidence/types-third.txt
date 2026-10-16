@@ -1,0 +1,6 @@
+
+> coleccion-magica-i1@0.1.0 typecheck
+> tsc --noEmit && tsc --project tsconfig.worker.json --noEmit
+
+tests/browser-trial/tactical-adverse-a65.spec.ts(8,228): error TS2683: 'this' implicitly has type 'any' because it does not have a type annotation.
+tests/browser-trial/tactical-adverse-a65.spec.ts(8,233): error TS2345: Argument of type '"2d"' is not assignable to parameter of type '"webgpu"'.

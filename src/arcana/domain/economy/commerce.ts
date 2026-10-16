@@ -19,6 +19,8 @@ export interface WandRecipe {
   readonly core: Exclude<Extract<Equipment, { kind: 'wand' }>['core'], null>;
   readonly powerBonus: number;
   readonly multiplier: number;
+  readonly initiativeBonus?: number;
+  readonly healing?: number;
 }
 export interface ForgeCatalog {
   readonly version: number;
@@ -89,6 +91,8 @@ export function forgeCatalogSnapshot(catalog: ForgeCatalog): ForgeCatalog {
           core: r.core,
           powerBonus: r.powerBonus,
           multiplier: r.multiplier,
+          ...(r.initiativeBonus === undefined ? {} : { initiativeBonus: r.initiativeBonus }),
+          ...(r.healing === undefined ? {} : { healing: r.healing }),
         },
       ])[0];
       if (gear.kind !== 'wand') throw Error();
@@ -99,6 +103,8 @@ export function forgeCatalogSnapshot(catalog: ForgeCatalog): ForgeCatalog {
         core: r.core,
         powerBonus: gear.powerBonus,
         multiplier: gear.multiplier,
+        ...(gear.initiativeBonus === undefined ? {} : { initiativeBonus: gear.initiativeBonus }),
+        ...(gear.healing === undefined ? {} : { healing: gear.healing }),
       });
     });
     return Object.freeze({ version: catalog.version, recipes: Object.freeze(recipes) });
@@ -183,6 +189,8 @@ export function forgeWand(
       core: recipe.core,
       powerBonus: recipe.powerBonus,
       multiplier: recipe.multiplier,
+      ...(recipe.initiativeBonus === undefined ? {} : { initiativeBonus: recipe.initiativeBonus }),
+      ...(recipe.healing === undefined ? {} : { healing: recipe.healing }),
     },
   ])[0];
   return Object.freeze({

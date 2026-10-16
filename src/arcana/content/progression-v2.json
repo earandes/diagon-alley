@@ -1,0 +1,54 @@
+{
+  "version": 2,
+  "profiles": {
+    "discovery": { "introThroughRow": 2, "bossLeaders": ["circe"], "bossNeutrals": 2 },
+    "tactical": { "bossLeaders": ["storm-caller", "rune-weaver"], "bossNeutrals": 2 },
+    "mastery": {
+      "lateFromRow": 4,
+      "lateFire": ["circe", "ember-keeper", "copper-sage"],
+      "lateVanguard": ["storm-caller", "mist-seer", "morgana"],
+      "bossLeaders": ["circe", "ember-keeper", "copper-sage", "storm-caller", "mist-seer"],
+      "bossNeutrals": 0
+    }
+  },
+  "encounters": {
+    "healer": {
+      "npcId": "flamel",
+      "options": [
+        {
+          "id": "mend-one",
+          "scope": "unit",
+          "restore": "hp",
+          "fraction": 0.4,
+          "costFraction": 0.2
+        },
+        {
+          "id": "mend-team",
+          "scope": "team",
+          "restore": "hp",
+          "fraction": 0.15,
+          "costFraction": 0.1
+        }
+      ]
+    },
+    "scholar": {
+      "npcId": "morgana",
+      "options": [
+        {
+          "id": "focus-one",
+          "scope": "unit",
+          "restore": "mana",
+          "fraction": 0.5,
+          "costFraction": 0.2
+        },
+        {
+          "id": "focus-team",
+          "scope": "team",
+          "restore": "mana",
+          "fraction": 0.2,
+          "costFraction": 0.1
+        }
+      ]
+    }
+  }
+}

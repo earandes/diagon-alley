@@ -27,11 +27,14 @@ export const openingSchema = command({
   catalogVersion: version,
   tableVersion: version,
 });
-export const startRunSchema = command({
-  zoneId: id,
-  campaignVersion: version,
-  copyIds: { type: 'array', minItems: 1, maxItems: 5, uniqueItems: true, items: id },
-});
+export const startRunSchema = command(
+  {
+    zoneId: id,
+    campaignVersion: version,
+    copyIds: { type: 'array', minItems: 1, maxItems: 5, uniqueItems: true, items: id },
+  },
+  { challenge: { type: 'string', enum: ['discovery', 'tactical', 'mastery'] } },
+);
 export const advanceNodeSchema = command(
   {
     runId: id,
@@ -49,8 +52,11 @@ export const advanceNodeSchema = command(
 
     refugeAction: { type: 'string', enum: ['heal', 'focus'] },
     pactAction: { type: 'string', enum: ['recruit', 'pass'] },
+    recruitId: id,
     replaceUnitId: id,
-    encounterAction: { type: 'string', enum: ['risk', 'pass'] },
+    encounterAction: { type: 'string', enum: ['risk', 'pass', 'trade'] },
+    encounterChoiceId: id,
+    encounterUnitId: id,
   },
 );
 export const operationParams = object({ id });
@@ -66,3 +72,14 @@ export const equipEquipmentSchema = command({
 
 export const forgeWandSchema = command({ recipeId: id, catalogVersion: version });
 export const openVaultSchema = command({ tableVersion: version });
+export const setIntentionSchema = command({
+  afterRunId: id,
+  choice: {
+    anyOf: [
+      { type: 'null' },
+      object({ kind: { const: 'bean' } }),
+      object({ kind: { const: 'new-companion' }, wizardId: id }),
+      object({ kind: { const: 'synergy' }, affinity: { enum: ['alchemy', 'fire', 'shadows'] } }),
+    ],
+  },
+});

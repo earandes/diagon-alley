@@ -1,0 +1,16 @@
+
+> coleccion-magica-i1@0.1.0 test:integration
+> vitest run --config vitest.integration.config.ts
+
+
+ RUN  v5.0.3 /Users/enricarandes/work/diagon-alley
+
+
+ Test Files  12 passed (12)
+      Tests  63 passed (63)
+   Start at  17:47:26
+   Duration  9.33s (tests 87%, import 10%, transform 3%)
+
+    Isolate  12 workers spawned · ~60ms startup each (spawn + environment, per file)
+             at least ~657ms faster with isolate: false — reuses workers across files instead of one per file
+

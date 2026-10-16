@@ -1,5 +1,7 @@
 # Diagon Alley / ARCANA
 
+> **Pruebas gráficas · protección del Mac (16 octubre2026):** tras la caída de WindowServer registrada durante las pruebas, las configuraciones Playwright rechazan las baterías completas en macOS **antes de abrir navegador o servidor**. Ejecutarlas en CI Linux, una batería a la vez entre procesos/worktrees, sin vídeo/trazas/capturas automáticas ni reintentos por defecto. Enric autoriza un smoke local controlado: `npm run test:browser:check` hace solo el preflight; `npm run test:browser:local` permite un único test Chromium, sin grabación/capturas, máximo60s y vigilancia cada2s. Rechaza carga alta, presión/cambio deWindowServer o servicios no saludables; cancela solo procesos propios si se superan los umbrales. Para evidencia manual A67 en Linux, `ARCANA_CAPTURE_EVIDENCE=1` habilita capturas seleccionadas. Las pruebas de dominio, tipos y build no abren navegador. [Diagnóstico y límites](docs/arcana/progression-increment-2026-10-16/HOST-INCIDENT.md). No repetir localmente el fallo como comprobación.
+
 > **A60 ·15 octubre2026:** revisión directa de PokéLike y diez anotaciones implementadas: comprar/abrir una rana con un solo comando atómico, uso de grageas visible, mapa legible y formación compacta, revelación por rareza. [Análisis: qué cambiar/conservar](docs/arcana/pokelike-2026-10-15/POKELIKE-ANALYSIS.md), [antes/después](docs/arcana/pokelike-2026-10-15/GALLERY.md), [informe/pruebas](docs/arcana/pokelike-2026-10-15/REPORT.md). `npm run test:pokelike` y `npm run test:commerce` aíslan estos flujos de la partida del propietario. Configuración económica conservada; no desplegado ni validación de retención.
 
 > **A59 ·15 octubre2026:** las16anotaciones se implementan como recorrido de juego: entrada y mapa con fondo continuo/ambiente ligero, elección de compañeros antes de ruta, configuración fuera del álbum, callejón de tres fachadas pintadas e interiores, libros de probabilidades, bóveda/cerradura y recompensa por rareza. [Informe](docs/arcana/annotations-2026-10-15/REPORT.md), [antes/después](docs/arcana/annotations-2026-10-15/GALLERY.md). `npm run test:experience` comprueba este incremento; los flujos históricos siguen separados en `npm run test:e2e`. Conserva kit/IDs/reglas/economía/partidas, es/en y ARCANA; no publicación.
@@ -139,3 +141,23 @@ Después de `npm run services:up` y `npm run build`, recorrido A63 aislado en Ch
 Regresión general sobre compilado: `ARCANA_TRIAL_COMPILED=1 ARCANA_TRIAL_TEST_PORT_BASE=5370 ARCANA_NODES_EVIDENCE_ROOT=docs/arcana/gameplay-increment-2026-10-16/evidence/regression-nodes npm run test:e2e`. Las fixtures de transporte bloquean worker para interceptar de forma fiable; `npm run test:pwa` prueba por separado worker/offline/reconexión. Los perfiles de rendimiento deben ejecutarse solos con las variables explícitas de la documentación A63.
 
 Preparación A63 compilada y vídeo: `npx --no-install playwright test --config playwright.preparation-a63.config.ts` (5367/5368 aislados). Perfiles de acciones, ejecutar sin otros navegadores/builds: `npx --no-install playwright test --config playwright.actions-a63.config.ts` (5380/5381 aislados).
+
+### A65 · Pactos, rivales e intención (16 octubre)
+
+Dos candidatos temporales por Pacto, dos familias de rivales con preparación distinta y una intención voluntaria para la siguiente expedición. Cambios tácticos solo en **nuevas expediciones**; las activas conservan su contenido. Versión de campaña y derechos a premios únicos intactos. [Informe](docs/arcana/tactical-increment-2026-10-16/REPORT.md), [capturas/vídeos](docs/arcana/tactical-increment-2026-10-16/GALLERY.md), [simulación y límites](docs/arcana/tactical-increment-2026-10-16/TACTICS.md).
+
+Con servicios arriba y build actualizado, suites compiladas aisladas:
+
+```sh
+npx --no-install playwright test --config playwright.tactics-a65.config.ts
+npx --no-install playwright test --config playwright.intentions-a65.config.ts
+npx --no-install playwright test --config playwright.adverse-a65.config.ts
+```
+
+Perfiles dedicados, sin otros runners/builds: `A65_PROFILE=1 npx --no-install playwright test --config playwright.tactics-a65.config.ts`. No confundir muestras técnicas/simulaciones con pruebas humanas. Sin nuevas dependencias, costes o publicación.
+
+### A67 · Encuentros, equipo y progresión
+
+Nuevas expediciones: Descubrimiento, Táctico o Maestría explícitos, sin nuevos premios ni costes. TratosPV/PMdeterministas con personajes y dos alcances; ForgeV2especializa nuevas varitas en potencia, iniciativa o recuperación. Runs/equipo anteriores mantienen sus snapshots; una campaña no renueva premiosúnicos al cambiar desafío. [Contrato](docs/arcana/progression-increment-2026-10-16/CONTRACT.md), [estudio](docs/arcana/progression-increment-2026-10-16/STUDY.md), [completitud y duración condicional](docs/arcana/progression-increment-2026-10-16/COMPLETION.md), [QAservidor](docs/arcana/progression-increment-2026-10-16/QA-BACKEND.md). Integración/CI todavía en curso; no despliegue.
+
+Baterías completas sobreLinux con servicios y build: `npx playwright test --config playwright.progression-a67.config.ts`. EnMac solo `npm run test:browser:local` tras `npm run test:browser:check`, con preflight, untestChromium y watchdog. LaCI incluye regresiones, ambos motores, cierre, PWA y comparación serialcontra referenciaA66 reconstruida. Capturas y vídeos se conservan como evidencia anterior; por defecto no se generan grabaciones nuevas.

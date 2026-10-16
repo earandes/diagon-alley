@@ -28,7 +28,9 @@
     "test:art": "playwright test --config playwright.art.config.ts",
     "test:experience": "playwright test --config playwright.experience.config.ts",
     "test:pokelike": "playwright test --config playwright.pokelike.config.ts",
-    "test:commerce": "playwright test --config playwright.commerce-a60.config.ts"
+    "test:commerce": "playwright test --config playwright.commerce-a60.config.ts",
+    "test:browser:local": "node tools/verification/run-local-browser-smoke.mjs",
+    "test:browser:check": "node tools/verification/run-local-browser-smoke.mjs --check"
   },
   "dependencies": {
     "fastify": "5.12.5",

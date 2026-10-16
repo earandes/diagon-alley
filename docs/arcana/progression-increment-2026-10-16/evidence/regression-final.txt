@@ -1,0 +1,346 @@
+
+> coleccion-magica-i1@0.1.0 test:e2e
+> playwright test --config playwright.trial.config.ts --project chromium --project webkit
+
+[WebServer] (node:71724) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:71749) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] WebSocket server error: Port 24678 is already in use
+[WebServer] (node:71757) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:71788) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] WebSocket server error: Port 24678 is already in use
+[WebServer] (node:71790) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:71815) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] WebSocket server error: Port 24678 is already in use
+[WebServer] (node:71819) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:71846) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] WebSocket server error: Port 24678 is already in use
+
+Running 56 tests using 1 worker
+
+(node:71848) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 [chromium] › tests/browser-trial/asset-interface.spec.ts:5:3 › A54 illustrated controls, preview and reduced motion es (668ms)
+  ✓   2 [chromium] › tests/browser-trial/asset-interface.spec.ts:5:3 › A54 illustrated controls, preview and reduced motion en (587ms)
+  ✓   3 [chromium] › tests/browser-trial/asset-interface.spec.ts:46:1 › A54 motion preference updates already mounted choices and missing art retains actions (523ms)
+  ✓   4 [chromium] › tests/browser-trial/commerce.spec.ts:7:3 › forge, equip and spend a boss key atomically in es (7.4s)
+  ✓   5 [chromium] › tests/browser-trial/commerce.spec.ts:7:3 › forge, equip and spend a boss key atomically in en (6.9s)
+  ✓   6 [chromium] › tests/browser-trial/game-feel.spec.ts:9:5 › A52 confirmed feedback and orientation es reduced=false (2.9s)
+  ✓   7 [chromium] › tests/browser-trial/game-feel.spec.ts:9:5 › A52 confirmed feedback and orientation es reduced=true (1.9s)
+  ✓   8 [chromium] › tests/browser-trial/game-feel.spec.ts:9:5 › A52 confirmed feedback and orientation en reduced=false (3.0s)
+  ✓   9 [chromium] › tests/browser-trial/game-feel.spec.ts:9:5 › A52 confirmed feedback and orientation en reduced=true (2.1s)
+  ✓  10 [chromium] › tests/browser-trial/hud-results.spec.ts:7:3 › authority HUD and boss result survives reload in es (8.1s)
+  ✓  11 [chromium] › tests/browser-trial/hud-results.spec.ts:7:3 › authority HUD and boss result survives reload in en (8.3s)
+  ✓  12 [chromium] › tests/browser-trial/journey.spec.ts:6:3 › local ARCANA journey and reload in es (8.9s)
+  ✓  13 [chromium] › tests/browser-trial/journey.spec.ts:6:3 › local ARCANA journey and reload in en (9.9s)
+  ✓  14 [chromium] › tests/browser-trial/region-map.spec.ts:7:3 › A55 illustrated region and inspectable team es (2.3s)
+  ✓  15 [chromium] › tests/browser-trial/region-map.spec.ts:7:3 › A55 illustrated region and inspectable team en (2.4s)
+  ✓  16 [chromium] › tests/browser-trial/replay.spec.ts:25:1 › keeps the first available map node above the fixed navigation after starting (654ms)
+  ✓  17 [chromium] › tests/browser-trial/replay.spec.ts:36:1 › pause, Auto, 2x, language and skip only replay the committed log (4.2s)
+  ✓  18 [chromium] › tests/browser-trial/replay.spec.ts:63:1 › branching map and equivalent list keep identical accessible actions with WebGL absent (1.7s)
+  ✓  19 [chromium] › tests/browser-trial/replay.spec.ts:97:1 › measures real WebGL rendering and responsive layout, without attributing emulation to a phone (11.2s)
+  ✓  20 [chromium] › tests/browser-trial/replay.spec.ts:152:1 › skipping a GSAP reveal and changing language preserves the confirmed card without another POST (843ms)
+  ✓  21 [chromium] › tests/browser-trial/replay.spec.ts:173:1 › falls back to the static confirmed result after a WebGL context loss event without another operation (3.4s)
+  ✓  22 [chromium] › tests/browser-trial/replay.spec.ts:195:1 › keeps the card static and confirmed when the lazy GSAP asset is missing (693ms)
+  ✓  23 [chromium] › tests/browser-trial/team-beans.spec.ts:8:3 › Album discovery, preparation equipment and bean confirmation in es (5.3s)
+  ✓  24 [chromium] › tests/browser-trial/team-beans.spec.ts:8:3 › Album discovery, preparation equipment and bean confirmation in en (5.4s)
+  ✓  25 [chromium] › tests/browser-trial/visual-polish.spec.ts:9:1 › confirmed opening finishes, language does not replay it, and reload retains its real reward (6.5s)
+  ✓  26 [chromium] › tests/browser-trial/visual-polish.spec.ts:43:1 › reduced motion and missing art leave a confirmed result available without celebration (537ms)
+  ✓  27 [chromium] › tests/browser-trial/visual-polish.spec.ts:62:1 › zero balance disables purchases and preserves all confirmed openings (1.0s)
+  ✓  28 [chromium] › tests/browser-trial/visual-polish.spec.ts:91:1 › a definitive server rejection clears synchronization and never grants an optimistic purchase (603ms)
+(node:72983) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  29 [webkit] › tests/browser-trial/asset-interface.spec.ts:5:3 › A54 illustrated controls, preview and reduced motion es (934ms)
+  ✓  30 [webkit] › tests/browser-trial/asset-interface.spec.ts:5:3 › A54 illustrated controls, preview and reduced motion en (885ms)
+  ✓  31 [webkit] › tests/browser-trial/asset-interface.spec.ts:46:1 › A54 motion preference updates already mounted choices and missing art retains actions (704ms)
+  ✓  32 [webkit] › tests/browser-trial/commerce.spec.ts:7:3 › forge, equip and spend a boss key atomically in es (6.5s)
+  ✘  33 [webkit] › tests/browser-trial/commerce.spec.ts:7:3 › forge, equip and spend a boss key atomically in en (6.3s)
+(node:73029) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  34 [webkit] › tests/browser-trial/game-feel.spec.ts:9:5 › A52 confirmed feedback and orientation es reduced=false (3.6s)
+  ✓  35 [webkit] › tests/browser-trial/game-feel.spec.ts:9:5 › A52 confirmed feedback and orientation es reduced=true (2.4s)
+  ✓  36 [webkit] › tests/browser-trial/game-feel.spec.ts:9:5 › A52 confirmed feedback and orientation en reduced=false (3.5s)
+  ✓  37 [webkit] › tests/browser-trial/game-feel.spec.ts:9:5 › A52 confirmed feedback and orientation en reduced=true (2.7s)
+  ✓  38 [webkit] › tests/browser-trial/hud-results.spec.ts:7:3 › authority HUD and boss result survives reload in es (7.2s)
+  ✓  39 [webkit] › tests/browser-trial/hud-results.spec.ts:7:3 › authority HUD and boss result survives reload in en (7.2s)
+[WebServer] node:events:505
+[WebServer]     throw er; // Unhandled 'error' event
+[WebServer]     ^
+[WebServer] 
+[WebServer] Error: Connection terminated unexpectedly
+[WebServer]     at Connection.<anonymous> (/Users/enricarandes/work/diagon-alley/node_modules/pg/lib/client.js:204:73)
+[WebServer]     at Connection.wrapper (node:events:639:12)
+[WebServer]     at Connection.emit (node:events:514:28)
+[WebServer]     at Socket.<anonymous> (/Users/enricarandes/work/diagon-alley/node_modules/pg/lib/connection.js:64:12)
+[WebServer]     at Socket.emit (node:events:514:28)
+[WebServer]     at TCP.<anonymous> (node:net:362:12)
+[WebServer] Emitted 'error' event on BoundPool instance at:
+[WebServer]     at Client.idleListener (/Users/enricarandes/work/diagon-alley/node_modules/pg-pool/index.js:62:10)
+[WebServer]     at Client.emit (node:events:514:28)
+[WebServer]     at Client._handleErrorEvent (/Users/enricarandes/work/diagon-alley/node_modules/pg/lib/client.js:422:10)
+[WebServer]     at Connection.<anonymous> (/Users/enricarandes/work/diagon-alley/node_modules/pg/lib/client.js:222:16)
+[WebServer]     at Connection.wrapper (node:events:639:12)
+[WebServer]     at Connection.emit (node:events:514:28)
+[WebServer]     at Socket.<anonymous> (/Users/enricarandes/work/diagon-alley/node_modules/pg/lib/connection.js:64:12)
+[WebServer]     at Socket.emit (node:events:514:28)
+[WebServer]     at TCP.<anonymous> (node:net:362:12) {
+[WebServer]   client: Client {
+[WebServer]     _events: [Object: null prototype] { error: [Function (anonymous)] },
+[WebServer]     _eventsCount: 1,
+[WebServer]     _maxListeners: undefined,
+[WebServer]     connectionParameters: ConnectionParameters {
+[WebServer]       user: 'arcana_dev',
+[WebServer]       database: 'arcana_dev',
+[WebServer]       port: 55432,
+[WebServer]       host: '127.0.0.1',
+[WebServer]       binary: false,
+[WebServer]       options: undefined,
+[WebServer]       ssl: false,
+[WebServer]       sslnegotiation: undefined,
+[WebServer]       client_encoding: '',
+[WebServer]       replication: undefined,
+[WebServer]       isDomainSocket: false,
+[WebServer]       application_name: undefined,
+[WebServer]       fallback_application_name: undefined,
+[WebServer]       statement_timeout: false,
+[WebServer]       lock_timeout: false,
+[WebServer]       idle_in_transaction_session_timeout: false,
+[WebServer]       query_timeout: false,
+[WebServer]       connect_timeout: 3
+[WebServer]     },
+[WebServer]     user: 'arcana_dev',
+[WebServer]     database: 'arcana_dev',
+[WebServer]     port: 55432,
+[WebServer]     host: '127.0.0.1',
+[WebServer]     replication: undefined,
+[WebServer]     _Promise: [Function: Promise],
+[WebServer]     _types: TypeOverrides {
+[WebServer]       _types: {
+[WebServer]         getTypeParser: [Function: getTypeParser],
+[WebServer]         setTypeParser: [Function: setTypeParser],
+[WebServer]         arrayParser: { create: [Function: create] },
+[WebServer]         builtins: {
+[WebServer]           BOOL: 16,
+[WebServer]           BYTEA: 17,
+[WebServer]           CHAR: 18,
+[WebServer]           INT8: 20,
+[WebServer]           INT2: 21,
+[WebServer]           INT4: 23,
+[WebServer]           REGPROC: 24,
+[WebServer]           TEXT: 25,
+[WebServer]           OID: 26,
+[WebServer]           TID: 27,
+[WebServer]           XID: 28,
+[WebServer]           CID: 29,
+[WebServer]           JSON: 114,
+[WebServer]           XML: 142,
+[WebServer]           PG_NODE_TREE: 194,
+[WebServer]           SMGR: 210,
+[WebServer]           PATH: 602,
+[WebServer]           POLYGON: 604,
+[WebServer]           CIDR: 650,
+[WebServer]           FLOAT4: 700,
+[WebServer]           FLOAT8: 701,
+[WebServer]           ABSTIME: 702,
+[WebServer]           RELTIME: 703,
+[WebServer]           TINTERVAL: 704,
+[WebServer]           CIRCLE: 718,
+[WebServer]           MACADDR8: 774,
+[WebServer]           MONEY: 790,
+[WebServer]           MACADDR: 829,
+[WebServer]           INET: 869,
+[WebServer]           ACLITEM: 1033,
+[WebServer]           BPCHAR: 1042,
+[WebServer]           VARCHAR: 1043,
+[WebServer]           DATE: 1082,
+[WebServer]           TIME: 1083,
+[WebServer]           TIMESTAMP: 1114,
+[WebServer]           TIMESTAMPTZ: 1184,
+[WebServer]           INTERVAL: 1186,
+[WebServer]           TIMETZ: 1266,
+[WebServer]           BIT: 1560,
+[WebServer]           VARBIT: 1562,
+[WebServer]           NUMERIC: 1700,
+[WebServer]           REFCURSOR: 1790,
+[WebServer]           REGPROCEDURE: 2202,
+[WebServer]           REGOPER: 2203,
+[WebServer]           REGOPERATOR: 2204,
+[WebServer]           REGCLASS: 2205,
+[WebServer]           REGTYPE: 2206,
+[WebServer]           UUID: 2950,
+[WebServer]           TXID_SNAPSHOT: 2970,
+[WebServer]           PG_LSN: 3220,
+[WebServer]           PG_NDISTINCT: 3361,
+[WebServer]           PG_DEPENDENCIES: 3402,
+[WebServer]           TSVECTOR: 3614,
+[WebServer]           TSQUERY: 3615,
+[WebServer]           GTSVECTOR: 3642,
+[WebServer]           REGCONFIG: 3734,
+[WebServer]           REGDICTIONARY: 3769,
+[WebServer]           JSONB: 3802,
+[WebServer]           REGNAMESPACE: 4089,
+[WebServer]           REGROLE: 4096
+[WebServer]         }
+[WebServer]       },
+[WebServer]       text: {},
+[WebServer]       binary: {}
+[WebServer]     },
+[WebServer]     _ending: true,
+[WebServer]     _ended: true,
+[WebServer]     _connecting: false,
+[WebServer]     _connected: true,
+[WebServer]     _connectionError: false,
+[WebServer]     _queryable: false,
+[WebServer]     _activeQuery: null,
+[WebServer]     _txStatus: 'I',
+[WebServer]     enableChannelBinding: false,
+[WebServer]     scramMaxIterations: 100000,
+[WebServer]     connection: Connection {
+[WebServer]       _events: [Object: null prototype] {
+[WebServer]         newListener: [Function (anonymous)],
+[WebServer]         connect: [Function (anonymous)],
+[WebServer]         sslconnect: [Function (anonymous)],
+[WebServer]         authenticationCleartextPassword: [Function: bound _handleAuthCleartextPassword],
+[WebServer]         authenticationMD5Password: [Function: bound _handleAuthMD5Password],
+[WebServer]         authenticationSASL: [Function: bound _handleAuthSASL],
+[WebServer]         authenticationSASLContinue: [Function: bound _handleAuthSASLContinue] AsyncFunction,
+[WebServer]         authenticationSASLFinal: [Function: bound _handleAuthSASLFinal],
+[WebServer]         backendKeyData: [Function: bound _handleBackendKeyData],
+[WebServer]         error: [Function: bound _handleErrorEvent],
+[WebServer]         errorMessage: [Function: bound _handleErrorMessage],
+[WebServer]         readyForQuery: [Function: bound _handleReadyForQuery],
+[WebServer]         notice: [Function: bound _handleNotice],
+[WebServer]         rowDescription: [Function: bound _handleRowDescription],
+[WebServer]         dataRow: [Function: bound _handleDataRow],
+[WebServer]         portalSuspended: [Function: bound _handlePortalSuspended],
+[WebServer]         emptyQuery: [Function: bound _handleEmptyQuery],
+[WebServer]         commandComplete: [Function: bound _handleCommandComplete],
+[WebServer]         parseComplete: [Function: bound _handleParseComplete],
+[WebServer]         copyInResponse: [Function: bound _handleCopyInResponse],
+[WebServer]         copyData: [Function: bound _handleCopyData],
+[WebServer]         notification: [Function: bound _handleNotification]
+[WebServer]       },
+[WebServer]       _eventsCount: 22,
+[WebServer]       _maxListeners: undefined,
+[WebServer]       stream: Socket {
+[WebServer]         connecting: false,
+[WebServer]         _hadError: false,
+[WebServer]         _parent: null,
+[WebServer]         _host: null,
+[WebServer]         _closeAfterHandlingError: false,
+[WebServer]         _events: {
+[WebServer]           close: [Function (anonymous)],
+[WebServer]           error: [Function: reportStreamError],
+[WebServer]           prefinish: undefined,
+[WebServer]           finish: undefined,
+[WebServer]           drain: undefined,
+[WebServer]           data: [Function (anonymous)],
+[WebServer]           end: [
+[WebServer]             [Function: onReadableStreamEnd],
+[WebServer]             [Function (anonymous)],
+[WebServer]             Symbol(events.emitting): 0
+[WebServer]           ],
+[WebServer]           readable: undefined,
+[WebServer]           connect: undefined
+[WebServer]         },
+[WebServer]         _readableState: ReadableState {
+[WebServer]           highWaterMark: 65536,
+[WebServer]           buffer: [],
+[WebServer]           bufferIndex: 0,
+[WebServer]           length: 0,
+[WebServer]           pipes: [],
+[WebServer]           awaitDrainWriters: null,
+[WebServer]           Symbol(kState): 194512756
+[WebServer]         },
+[WebServer]         _writableState: WritableState {
+[WebServer]           highWaterMark: 65536,
+[WebServer]           length: 0,
+[WebServer]           corked: 0,
+[WebServer]           onwrite: [Function (anonymous)],
+[WebServer]           writelen: 0,
+[WebServer]           bufferedIndex: 0,
+[WebServer]           pendingcb: 0,
+[WebServer]           Symbol(kState): 1091450228,
+[WebServer]           Symbol(kBufferedValue): null,
+[WebServer]           Symbol(kWriteCbValue): null
+[WebServer]         },
+[WebServer]         allowHalfOpen: false,
+[WebServer]         _maxListeners: undefined,
+[WebServer]         _eventsCount: 4,
+[WebServer]         _sockname: null,
+[WebServer]         _pendingData: null,
+[WebServer]         _pendingEncoding: '',
+[WebServer]         server: null,
+[WebServer]         _server: null,
+[WebServer]         write: [Function: writeAfterFIN],
+[WebServer]         Symbol(async_id_symbol): 118510,
+[WebServer]         Symbol(kHandle): null,
+[WebServer]         Symbol(lastWriteQueueSize): 0,
+[WebServer]         Symbol(timeout): null,
+[WebServer]         Symbol(kBuffer): null,
+[WebServer]         Symbol(kBufferCb): null,
+[WebServer]         Symbol(kBufferGen): null,
+[WebServer]         Symbol(shapeMode): true,
+[WebServer]         Symbol(kCapture): false,
+[WebServer]         Symbol(kSetNoDelay): true,
+[WebServer]         Symbol(kSetKeepAlive): false,
+[WebServer]         Symbol(kSetKeepAliveInitialDelay): 0,
+[WebServer]         Symbol(kSetTOS): undefined,
+[WebServer]         Symbol(kBytesRead): 14379025,
+[WebServer]         Symbol(kBytesWritten): 2697178
+[WebServer]       },
+[WebServer]       _keepAlive: false,
+[WebServer]       _keepAliveInitialDelayMillis: 0,
+[WebServer]       parsedStatements: {},
+[WebServer]       submittedNamedStatements: {},
+[WebServer]       ssl: false,
+[WebServer]       sslNegotiation: 'postgres',
+[WebServer]       _ending: false,
+[WebServer]       _emitMessage: false,
+[WebServer]       _connecting: true,
+[WebServer]       Symbol(shapeMode): false,
+[WebServer]       Symbol(kCapture): false
+[WebServer]     },
+[WebServer]     _queryQueue: [],
+[WebServer]     _sentQueryQueue: [],
+[WebServer]     pipeline: false,
+[WebServer]     binary: false,
+[WebServer]     processID: 10651,
+[WebServer]     secretKey: 552681919,
+[WebServer]     ssl: false,
+[WebServer]     sslNegotiation: 'postgres',
+[WebServer]     _connectionTimeoutMillis: 3000,
+[WebServer]     _connectionCallback: null,
+[WebServer]     connectionTimeoutHandle: Timeout {
+[WebServer]       _idleTimeout: -1,
+[WebServer]       _idlePrev: null,
+[WebServer]       _idleNext: null,
+[WebServer]       _idleStart: 112343,
+[WebServer]       _onTimeout: undefined,
+[WebServer]       _timerArgs: undefined,
+[WebServer]       _repeat: null,
+[WebServer]       _destroyed: true,
+[WebServer]       Symbol(refed): false,
+[WebServer]       Symbol(kHasPrimitive): false,
+[WebServer]       Symbol(asyncId): 118509,
+[WebServer]       Symbol(triggerId): 0,
+[WebServer]       Symbol(kAsyncContextFrame): undefined
+[WebServer]     },
+[WebServer]     saslSession: null,
+[WebServer]     release: [Function (anonymous)],
+[WebServer]     readyForQuery: true,
+[WebServer]     hasExecuted: true,
+[WebServer]     _poolUseCount: 238,
+[WebServer]     Symbol(shapeMode): false,
+[WebServer]     Symbol(kCapture): false
+[WebServer]   }
+[WebServer] }
+[WebServer] 
+[WebServer] Node.js v24.20.0

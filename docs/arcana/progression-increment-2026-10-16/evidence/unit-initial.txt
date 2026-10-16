@@ -1,0 +1,86 @@
+
+> coleccion-magica-i1@0.1.0 test
+> vitest run
+
+
+ RUN  v5.0.3 /Users/enricarandes/work/diagon-alley
+
+ ❯ tests/domain/arcana/tactical-balance.test.ts (6 tests | 3 failed) 10ms
+   ❯ A65 tactical content changes the useful preparation without new stats (6)
+     × offers two viable initial plans whose preference reverses with the rival 3ms
+     × gives both second-Pact candidates a condition where they preserve more health 2ms
+     × makes recovery valuable without inventing a healing effect or consuming a bean 1ms
+ ❯ tests/domain/arcana/tactical-run.test.ts (3 tests | 1 failed) 69ms
+   × fixes two offers and combat content in a new run without changing campaign reward version 21ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 4 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/domain/arcana/tactical-balance.test.ts > A65 tactical content changes the useful preparation without new stats > offers two viable initial plans whose preference reverses with the rival
+AssertionError: expected 3 to be greater than 3
+ ❯ tests/domain/arcana/tactical-balance.test.ts:79:56
+     77|       ]);
+     78|       // Real arrival IDs participate in initiative tie-breaking; comp…
+     79|       expect(af.player.filter((u) => u.hp > 0).length).toBeGreaterThan(
+       |                                                        ^
+     80|         sf.player.filter((u) => u.hp > 0).length,
+     81|       );
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/4]⎯
+
+ FAIL  tests/domain/arcana/tactical-balance.test.ts > A65 tactical content changes the useful preparation without new stats > gives both second-Pact candidates a condition where they preserve more health
+AssertionError: expected 211 to be greater than 215
+ ❯ tests/domain/arcana/tactical-balance.test.ts:131:35
+    129|       offense = compare('circe', 0.8);
+    130|     expect(hp(healing[0].player)).toBeGreaterThan(hp(healing[1].player…
+    131|     expect(hp(offense[1].player)).toBeGreaterThan(hp(offense[0].player…
+       |                                   ^
+    132|   });
+    133|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/4]⎯
+
+ FAIL  tests/domain/arcana/tactical-balance.test.ts > A65 tactical content changes the useful preparation without new stats > makes recovery valuable without inventing a healing effect or consuming a bean
+AssertionError: expected 'player' to be 'rival' // Object.is equality
+
+Expected: "rival"
+Received: "player"
+
+ ❯ tests/domain/arcana/tactical-balance.test.ts:156:46
+    154|     const before = structuredClone(weakened);
+    155|     const recovered = weakened.map((u) => ({ ...u, hp: Math.min(u.maxH…
+    156|     expect(resolve(weakened, 0, 12).outcome).toBe('rival');
+       |                                              ^
+    157|     expect(resolve(recovered, 0, 12).outcome).toBe('player');
+    158|     expect(weakened).toEqual(before);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/4]⎯
+
+ FAIL  tests/domain/arcana/tactical-run.test.ts > fixes two offers and combat content in a new run without changing campaign reward version
+AssertionError: expected 2 to be 1 // Object.is equality
+
+- Expected
++ Received
+
+- 1
++ 2
+
+ ❯ tests/domain/arcana/tactical-run.test.ts:54:31
+     52|   });
+     53|   const run = s.state.exploration!.run!;
+     54|   expect(run.tacticalVersion).toBe(1);
+       |                               ^
+     55|   expect(run.campaignSnapshot?.version).toBe(s.config.version);
+     56|   const pact = run.campaignSnapshot!.nodes.find((n) => n.kind === 'pac…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/4]⎯
+
+
+ Test Files  2 failed | 57 passed (59)
+      Tests  4 failed | 448 passed (452)
+   Start at  16:52:55
+   Duration  2.06s (transform 54%, import 25%, tests 19%, worker 1%)
+
+  Transform  transforming modules took 6.96s · 54% of tracked time, re-done on every run
+             persist transforms across runs with fsModuleCache: true
+             learn more: https://vitest.dev/guide/improving-performance#caching-between-reruns
+

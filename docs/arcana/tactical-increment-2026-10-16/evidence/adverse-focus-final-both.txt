@@ -1,0 +1,18 @@
+[WebServer] (node:66235) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:66259) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] WebSocket server error: Port 24678 is already in use
+
+Running 4 tests using 1 worker
+
+(node:66274) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  1 [chromium-adverse-a65] › tests/browser-trial/tactical-adverse-a65.spec.ts:6:3 › A65 es missing character art and renderer retain keyboard choice and reduced motion (921ms)
+  ✓  2 [chromium-adverse-a65] › tests/browser-trial/tactical-adverse-a65.spec.ts:6:3 › A65 en missing character art and renderer retain keyboard choice and reduced motion (975ms)
+(node:66306) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  3 [webkit-adverse-a65] › tests/browser-trial/tactical-adverse-a65.spec.ts:6:3 › A65 es missing character art and renderer retain keyboard choice and reduced motion (1.3s)
+  ✓  4 [webkit-adverse-a65] › tests/browser-trial/tactical-adverse-a65.spec.ts:6:3 › A65 en missing character art and renderer retain keyboard choice and reduced motion (1.3s)
+
+  4 passed (7.1s)

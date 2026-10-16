@@ -1,3 +1,4 @@
+import { previewEncounterTrade } from '../domain/exploration/encounter-trades';
 import { nodeOptionsSnapshot } from './node-options';
 import { randomizeRoute } from '../domain/exploration/randomize-route';
 import { resolveEncounter } from '../domain/exploration/encounters';
@@ -14,7 +15,14 @@ import { createSeed } from '../domain/combat/seed';
 import { spendCombatEssence } from '../domain/economy/essence';
 import { inventorySnapshot } from '../domain/economy/inventory';
 import { grantReward, victoryReward, NO_REWARD, type Reward } from '../domain/economy/rewards';
-import { selectEncounter, validateCampaign, type Campaign } from '../domain/exploration/nodes';
+import {
+  campaignSnapshot,
+  selectEncounter,
+  validateCampaign,
+  type Campaign,
+  type NodePlan,
+} from '../domain/exploration/nodes';
+import { bindIntention } from '../domain/exploration/intentions';
 import { advanceRoute, createRoute, sameGraph } from '../domain/exploration/route';
 import {
   healRun,
@@ -46,6 +54,12 @@ import { prepareOwnedUnit } from './prepare-team';
 import { EMPTY_TEAM, selectTeam } from '../domain/collection/team';
 
 export interface CampaignConfiguration extends Campaign {
+  readonly equipmentRulesVersion?: 2;
+  readonly challengeContent?: (
+    challenge: 'discovery' | 'tactical' | 'mastery',
+    graph: Campaign['graph'],
+  ) => readonly NodePlan[];
+  readonly tacticalContent?: { readonly version: 1 | 2; readonly nodes: readonly NodePlan[] };
   readonly routeVariation?: boolean;
   /** Optional public preparation metadata; authority still constructs every owned unit. */
   readonly ownedAffinities?: Readonly<Record<string, CombatUnitInput['affinity']>>;
@@ -69,13 +83,17 @@ export class ResolveCombatUseCase {
 const sameStart = (a: StartRunRequest, b: StartRunRequest) =>
   a.zoneId === b.zoneId &&
   a.campaignVersion === b.campaignVersion &&
+  a.challenge === b.challenge &&
   a.copyIds.length === b.copyIds.length &&
   a.copyIds.every((id, i) => id === b.copyIds[i]);
 const sameAdvance = (a: AdvanceNodeRequest, b: AdvanceNodeRequest) =>
   a.refugeAction === b.refugeAction &&
   a.pactAction === b.pactAction &&
+  a.recruitId === b.recruitId &&
   a.replaceUnitId === b.replaceUnitId &&
   a.encounterAction === b.encounterAction &&
+  a.encounterChoiceId === b.encounterChoiceId &&
+  a.encounterUnitId === b.encounterUnitId &&
   a.runId === b.runId &&
   a.nodeId === b.nodeId &&
   a.campaignVersion === b.campaignVersion &&
@@ -91,6 +109,8 @@ function validateStart(request: StartRunRequest): void {
     !request ||
     !validDomainId(request.zoneId) ||
     !validVersion(request.campaignVersion) ||
+    (request.challenge !== undefined &&
+      !['discovery', 'tactical', 'mastery'].includes(request.challenge)) ||
     !Array.isArray(request.copyIds) ||
     request.copyIds.length < 1 ||
     request.copyIds.length > 5 ||
@@ -137,6 +157,8 @@ export class StartRunUseCase {
       checkRevision(current, command.expectedRevision);
       const config = this.configuration();
       validateCampaign(config);
+      if (command.request.challenge !== undefined && !config.challengeContent)
+        throw new ArcanaError('STALE_CAMPAIGN');
       if (
         config.zoneId !== command.request.zoneId ||
         config.version !== command.request.campaignVersion
@@ -163,6 +185,22 @@ export class StartRunUseCase {
         ? randomizeRoute(config.graph, this.routes!.random.fromSeed(routeGeneration.seed))
         : config.graph;
       const run = runSnapshot({
+        ...(config.equipmentRulesVersion
+          ? { equipmentRulesVersion: config.equipmentRulesVersion }
+          : {}),
+        ...(config.challengeContent ? { challenge: command.request.challenge ?? 'discovery' } : {}),
+        ...(config.tacticalContent
+          ? {
+              tacticalVersion: config.tacticalContent.version,
+              campaignSnapshot: campaignSnapshot({
+                ...config,
+                graph,
+                nodes:
+                  config.challengeContent?.(command.request.challenge ?? 'discovery', graph) ??
+                  config.tacticalContent.nodes,
+              }),
+            }
+          : {}),
         ...(routeGeneration ? { routeGeneration } : {}),
         ...createRoute(command.key, graph),
         campaignVersion: config.version,
@@ -186,7 +224,13 @@ export class StartRunUseCase {
           current.copies.map((c) => c.copyId),
           current.inventory.equipment ?? [],
         ),
-        exploration: { ...exploration, run },
+        exploration: {
+          ...exploration,
+          run,
+          ...(exploration.intention === undefined
+            ? {}
+            : { intention: bindIntention(exploration.intention, exploration.run?.id, run.id) }),
+        },
         receipts: [...current.receipts, receipt],
       });
     });
@@ -228,7 +272,7 @@ export class AdvanceNodeUseCase {
       if (!exploration || !original || original.id !== command.request.runId)
         throw new ArcanaError('INVALID_ROUTE');
       if (original.status !== 'active') throw new ArcanaError('RUN_CLOSED');
-      const config = this.configuration();
+      const config = original.campaignSnapshot ?? this.configuration();
       validateCampaign(config);
       if (
         config.version !== command.request.campaignVersion ||
@@ -236,9 +280,11 @@ export class AdvanceNodeUseCase {
         config.zoneId !== original.zoneId ||
         !sameGraph(
           original.graph,
-          original.routeGeneration
-            ? randomizeRoute(config.graph, this.random.fromSeed(original.routeGeneration.seed))
-            : config.graph,
+          original.campaignSnapshot
+            ? original.campaignSnapshot.graph
+            : original.routeGeneration
+              ? randomizeRoute(config.graph, this.random.fromSeed(original.routeGeneration.seed))
+              : config.graph,
         )
       )
         throw new ArcanaError('STALE_CAMPAIGN');
@@ -341,7 +387,15 @@ export class AdvanceNodeUseCase {
           if (members.length < 3 || options.replaceUnitId !== undefined)
             throw new ArcanaError('INVALID_FORMATION');
         } else {
-          if (members.some((m) => m.unit.id === plan.recruit.id))
+          const recruit = plan.recruits
+            ? plan.recruits.find((unit) => unit.id === options.recruitId)
+            : plan.recruit;
+          if (
+            !recruit ||
+            (!plan.recruits && options.recruitId !== undefined && options.recruitId !== recruit.id)
+          )
+            throw new ArcanaError('INVALID_OPERATION');
+          if (members.some((m) => m.unit.id === recruit.id))
             throw new ArcanaError('INVALID_FORMATION');
           if (options.replaceUnitId !== undefined) {
             const replaced = members.find((m) => m.unit.id === options.replaceUnitId);
@@ -350,9 +404,30 @@ export class AdvanceNodeUseCase {
             members = members.filter((m) => m.unit.id !== options.replaceUnitId);
           }
           if (members.length >= 5) throw new ArcanaError('INVALID_FORMATION');
-          members = [...members, { source: 'temporary', unit: plan.recruit }];
+          members = [...members, { source: 'temporary', unit: recruit }];
         }
+      } else if (plan.kind === 'encounter' && options.encounterAction !== 'pass' && plan.offer) {
+        if (options.encounterAction !== 'trade') throw new ArcanaError('INVALID_OPERATION');
+        const projected = previewEncounterTrade(
+          members,
+          plan.offer,
+          options.encounterChoiceId,
+          options.encounterUnitId,
+        );
+        if (!projected.eligible) throw new ArcanaError('INVALID_FORMATION');
+        members = projected.members;
+        encounter = {
+          seed: 0,
+          choice: plan.offer.options.findIndex((o) => o.id === options.encounterChoiceId),
+          trade: {
+            offer: plan.offer,
+            choiceId: options.encounterChoiceId!,
+            ...(options.encounterUnitId ? { unitId: options.encounterUnitId } : {}),
+            vitals: projected.vitals,
+          },
+        };
       } else if (plan.kind === 'encounter' && options.encounterAction !== 'pass') {
+        if (options.encounterAction === 'trade') throw new ArcanaError('INVALID_OPERATION');
         for (const option of plan.choices)
           if (option.effect.kind === 'reward')
             grantReward(inventory, option.effect.reward, command.key);
@@ -383,7 +458,7 @@ export class AdvanceNodeUseCase {
         ...current,
         revision: current.revision + 1,
         inventory,
-        exploration: { run, victories, unlockedZones },
+        exploration: { ...exploration, run, victories, unlockedZones },
         receipts: [...current.receipts, receipt],
       });
     });

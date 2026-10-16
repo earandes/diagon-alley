@@ -1,0 +1,1904 @@
+diff --git a/DESIGN.md b/DESIGN.md
+index f683bdb..df16d5f 100644
+--- a/DESIGN.md
++++ b/DESIGN.md
+@@ -91,3 +91,19 @@ Arena con dos bandos simultáneos de3–5 figuras/PV, ordinales, actor/objetivo
+ Preparación agrupa puestos ocupados, retratos propios/temporales y objetos. Tarro único→portador, borrar/mover por el mismo gesto; barra de confirmación adherida al desplegar grageas. Sinergias y comparadores de equipo usan reglas compartidas y condición registrada. La tienda orienta a preparación real, sin elegir ramas automáticamente. Equipo guardado y borrador de grageas tienen consecuencias y mensajes distintos.
+ 
+ Movimiento: llegada de botín340ms ease-out Y8px; selección140ms Y≤2px; delta300ms Y5px. Reducido estático, sin loops nuevos, shake/flashes o audio. Apertura existente sin rehacer; resultado guardado antes de todo efecto. [Guion completo](docs/arcana/gameplay-increment-2026-10-16/MOTION.md), [interacciones](docs/arcana/gameplay-increment-2026-10-16/INTERACTIONS.md), [capturas](docs/arcana/gameplay-increment-2026-10-16/GALLERY.md). Arte y licencias previos conservados, sin nuevos assets pagados. Comprensión/diversión siguen hipótesis hasta sesión humana.
++
++## Incremento A65 · Elegir un plan
++
++Pactos nuevos presentan dos retratos temporales: tocar elige borrador, sello/marco indican selección y confirmar incorpora una sola opción. Conteos de afinidad antes→después/umbral comparten `synergyProgress` con el motor; detalle de atributos/sinergia a demanda. Equipo lleno solo permite sustitución temporal explícita o pasar, nunca expulsar copias propias. Runs heredadas conservan su Pacto anterior.
++
++Fuego y Vanguardia tienen composiciones reales diferentes y emblemas SVG originales compartidos en mapa/consulta. Silueta+nombre+afinidad complementan color. Vanguardia usa iniciativa existente; Fuego activa la quemadura vigente. No habilidades inventadas ni pronóstico de victoria. El mapa mantiene todos los nodos y sus estados.
++
++El cierre A63 conserva prioridad del botín. Una bandeja inferior ofrece hasta tres intenciones viables sin premio: otra copia propia, otra sinergia o probar gragea sin garantizar sabor nuevo. Selección/cancelación son operaciones explícitas sin recursos; la intención se vincula a la siguiente expedición confirmada. Estado cumplido procede del BattleLog de esa run. Recordatorio en preparación y banda reservada de96px del mapa, sin solaparse con nodos; detalles ampliados admiten scroll accesible. Elegir conserva foco, abandonar lo devuelve al contenido. Sin misión cobrable, navegación/compra/consumo automático o región adicional.
++
++Retratos/objetos existentes reutilizados; dos emblemas64px editables, exports de28/40px por CSS. Selección140–160ms ease-out, hasta2px, estática con reducido. Sin audio, bucles o partículas nuevas. Oferta/rivales/reglas se congelan por run bajo versión táctica independiente de la versión económica; no repetir premios únicos al cambiar contenido. [Diseño y evidencia A65](docs/arcana/tactical-increment-2026-10-16/REPORT.md), [assets](docs/arcana/tactical-increment-2026-10-16/ASSETS.md), [movimiento](docs/arcana/tactical-increment-2026-10-16/MOTION.md). Diferencias tácticas simuladas; comprensión/diversión pendientes de sesión humana.
++
++## A66 · Cabecera y cartas del Pacto
++
++En el mapa, el nombre regional localizado ocupa la cabecera y sustituye la marca repetida. El HUD económico y la guía conservan sus funciones. Al mostrar un diálogo se oculta el acceso inerte a Ajustes de la cabecera; el del contexto activo permanece disponible.
++
++El retrato del Pacto se integra en un marco rectangular 4:5, sin deformación. Elegirlo dibuja borde dorado y sello; consultar «i» no recluta. Los datos completos siguen bajo demanda y la comparación compartida pierde el recuadro dominante. Una acción principal confirma el pacto. Pasar solo aparece desde el mínimo de integrantes ya exigido por dominio y conserva su selección/confirmación; no se modifica la regla. Cerrar cancela el borrador. La inspección tiene área de44px y nombre accesible con personaje. Transiciones finitas de160ms y alternativa estática con reducido. Sin assets nuevos. [Evidencia A66](docs/arcana/header-pact-2026-10-16/REPORT.md).
+diff --git a/README.md b/README.md
+index 01b4be8..12b70a4 100644
+--- a/README.md
++++ b/README.md
+@@ -139,3 +139,17 @@ Después de `npm run services:up` y `npm run build`, recorrido A63 aislado en Ch
+ Regresión general sobre compilado: `ARCANA_TRIAL_COMPILED=1 ARCANA_TRIAL_TEST_PORT_BASE=5370 ARCANA_NODES_EVIDENCE_ROOT=docs/arcana/gameplay-increment-2026-10-16/evidence/regression-nodes npm run test:e2e`. Las fixtures de transporte bloquean worker para interceptar de forma fiable; `npm run test:pwa` prueba por separado worker/offline/reconexión. Los perfiles de rendimiento deben ejecutarse solos con las variables explícitas de la documentación A63.
+ 
+ Preparación A63 compilada y vídeo: `npx --no-install playwright test --config playwright.preparation-a63.config.ts` (5367/5368 aislados). Perfiles de acciones, ejecutar sin otros navegadores/builds: `npx --no-install playwright test --config playwright.actions-a63.config.ts` (5380/5381 aislados).
++
++### A65 · Pactos, rivales e intención (16 octubre)
++
++Dos candidatos temporales por Pacto, dos familias de rivales con preparación distinta y una intención voluntaria para la siguiente expedición. Cambios tácticos solo en **nuevas expediciones**; las activas conservan su contenido. Versión de campaña y derechos a premios únicos intactos. [Informe](docs/arcana/tactical-increment-2026-10-16/REPORT.md), [capturas/vídeos](docs/arcana/tactical-increment-2026-10-16/GALLERY.md), [simulación y límites](docs/arcana/tactical-increment-2026-10-16/TACTICS.md).
++
++Con servicios arriba y build actualizado, suites compiladas aisladas:
++
++```sh
++npx --no-install playwright test --config playwright.tactics-a65.config.ts
++npx --no-install playwright test --config playwright.intentions-a65.config.ts
++npx --no-install playwright test --config playwright.adverse-a65.config.ts
++```
++
++Perfiles dedicados, sin otros runners/builds: `A65_PROFILE=1 npx --no-install playwright test --config playwright.tactics-a65.config.ts`. No confundir muestras técnicas/simulaciones con pruebas humanas. Sin nuevas dependencias, costes o publicación.
+diff --git a/docs/DECISIONS.md b/docs/DECISIONS.md
+index 7fa961b..71de81f 100644
+--- a/docs/DECISIONS.md
++++ b/docs/DECISIONS.md
+@@ -1,5 +1,9 @@
+ # Decisiones de Colección Mágica
+ 
++**A66 — 16 octubre 2026, autorizado e implementado localmente:** Enric solicita resolver ajustes/nombre de zona duplicados y mejorar el encuadre y exceso de acciones del Pacto. Una identidad regional en cabecera, engranaje contextual y dos cartas seleccionables con detalle bajo demanda. Se conserva selección provisional y confirmación explícita, sustitución/pasar según reglas actuales, comparación compartida, es/en/swap y toda la autoridad A65. Ningún cambio de economía, contenido táctico o partidas. [Contrato y referencia inicial](arcana/header-pact-2026-10-16/CONTRACT.md); [comprobaciones técnicas, capturas y límites](arcana/header-pact-2026-10-16/REPORT.md). No publicación/push ni comprensión humana atribuida.
++
++**A65 — 16 octubre 2026, autorizado e implementado:** Pactos con dos candidatos temporales, dos composiciones rivales con personajes/reglas existentes e intención voluntaria para otra expedición, sin premio. Incluye diseño/arte necesario/implementación/simulación/QA, sesión humana posterior. No precios, pesos, premios, stats, habilidades, XP/canjes/pity o regiones nuevos. Contenido táctico versión independiente de campaña: nuevas runs congelan planes/reglas, legacy conserva configuración anterior y derechos de primeras victorias. [Contrato previo](arcana/tactical-increment-2026-10-16/CONTRACT.md). Sin publicación/despliegue/push; [Implementación, resultados y límites](arcana/tactical-increment-2026-10-16/REPORT.md):431unitarias,49integraciónPG/Redis,recorridoscompiladosES/EN/ambospacks y regresiones correctos. Tareas largas de arena y sesión humana pendientes, sin atribuir diversión o aceptación física.
++
+ **A64 — 16 octubre 2026, integración autorizada:** Enric solicita subir los cambios a main. Se integra A63 con el núcleo/arte/autoridad ARCANA de los que depende y evidencia seleccionada, conservando trabajo local no incluido. Push del repositorio autorizado; sin despliegue. [Alcance y comprobaciones](arcana/main-integration-2026-10-16/REPORT.md). Las prohibiciones de push anteriores quedan como historial de esos incrementos.
+ 
+ **A63 —16 octubre2026, implementación autorizada por Enric:** cierre de expedición→uso de botín, arena legible sin spoiler y preparación contextual de equipo/consumibles. Sustituye solo el alcance de análisis A62 para B01/B02/B03; sesión humana posterior no bloquea. Mantener reglas, economía, identidad/operaciones, una región, es/en y swap; sin publicación/despliegue/push. [Contrato previo](arcana/gameplay-increment-2026-10-16/CONTRACT.md). Estado: implementado localmente; comandos, cobertura técnica y límites en el [informe A63](arcana/gameplay-increment-2026-10-16/REPORT.md). Sesión humana pendiente. Las demás propuestas A62 siguen pendientes.
+diff --git a/docs/PRD.md b/docs/PRD.md
+index d7b2439..0e7d139 100644
+--- a/docs/PRD.md
++++ b/docs/PRD.md
+@@ -1,5 +1,9 @@
+ # Diagon Alley / ARCANA
+ 
++**Versión 1.0.32 · 16 octubre 2026 · A66:** ajuste de cabecera y Pacto autorizado por Enric. El mapa usa una sola identidad regional localizada; el acceso a Ajustes de fondo se oculta durante los diálogos. Los candidatos se presentan como cartas rectangulares, con selección por retrato, inspección a demanda y confirmación explícita; Pasar se muestra cuando la regla existente lo permite. Sin cambios de dominio, ofertas, economía o partidas. [Contrato](arcana/header-pact-2026-10-16/CONTRACT.md), [validación y límites](arcana/header-pact-2026-10-16/REPORT.md). Word y evidencia histórica intactos.
++
++**Versión 1.0.31 ·16 octubre2026 · A65 implementado localmente:** dos opciones temporales por Pacto, dos composiciones rivales con reglas existentes y una intención voluntaria posterior al cierre. Datos tácticos versionados para nuevas expediciones, sin reiniciar primeras victorias, alterar partidas activas o cambiar economía/estadísticas/habilidades. [Contrato](arcana/tactical-increment-2026-10-16/CONTRACT.md). Word intactos; [validación técnica y límites](arcana/tactical-increment-2026-10-16/REPORT.md), sin resultados humanos atribuidos.
++
+ **Versión1.0.30 ·16 octubre2026 · A63 implementado localmente:** B01/B02/B03 de A62: cierre y botín accionable, arena con actores/resultado legibles y preparación contextual. Conserva economía/reglas/partidas/es-en/swap y una región. [Contrato](arcana/gameplay-increment-2026-10-16/CONTRACT.md). La sesión humana queda para después, no bloquea; demás propuestas no aplicadas. Word intactos.
+ 
+ **Versión1.0.29 ·15 octubre2026 · A61 autorizado/en curso:** goal ordenado de sesión guiada humana en ordenador → tres mejoras de mayor impacto observadas → diseño de progresión durante ruta/duplicados/siguiente objetivo tras jefe. Una región, es/en/swap, assets y persistencia conservados; cambios económicos solo escenarios y propuestas, sin modificar configuración o partidas. [Contrato](arcana/a61-guided-playtest-2026-10-15/CONTRACT.md), [registro](arcana/a61-guided-playtest-2026-10-15/SESSION.md). Objetivo1 enviado, resultados humanos e implementación todavía pendientes; no se modifica Word.
+@@ -187,3 +191,5 @@ Español e inglés conservados, seleccionables solo dentro de Ajustes según A57
+ 1.0.29 registra A61 autorizado como goal ordenado. La sesión y las tres mejoras no se consideran ejecutadas por existir esta entrada; progreso/duplicados/economía nuevos siguen pendientes de diseño/escenarios.
+ 
+ 1.0.30 registra autorización e implementación local A63. Cierre propio con destinos por stock vigente; arena simultánea sin desenlace anticipado; preparación contextual objeto→portador y comparación con reglas compartidas. Evidencia y límites en el informe A63; no atribuye resultados humanos.
++
++1.0.31 registra A65: ofertas dobles temporales, familias Fuego/Vanguardia con unidades existentes e intención voluntaria sin premio. Nuevas runs congelan contenido táctico independiente de campaña; legacy y primeras victorias conservados. Simulación y QA documentados; precios/pesos/premios/stats maestros/Word intactos. Sesión humana y optimización de arranque de arena pendientes.
+diff --git a/playwright.trial.config.ts b/playwright.trial.config.ts
+index 030b284..4a2df15 100644
+--- a/playwright.trial.config.ts
++++ b/playwright.trial.config.ts
+@@ -2,9 +2,10 @@ import { defineConfig } from '@playwright/test';
+ import { randomUUID } from 'node:crypto';
+ const namespace = 'arcana-browser-' + randomUUID();
+ const compiled = process.env.ARCANA_TRIAL_COMPILED === '1';
+-const command = (port: number) => compiled
+-  ? `npx --no-install vite preview --host 127.0.0.1 --port ${port} --strictPort --mode arcana`
+-  : `npm run dev:arcana -- --port ${port}`;
++const command = (port: number) =>
++  compiled
++    ? `npx --no-install vite preview --host 127.0.0.1 --port ${port} --strictPort --mode arcana`
++    : `npm run dev:arcana -- --port ${port}`;
+ const port = Number(process.env.ARCANA_TRIAL_TEST_PORT_BASE ?? 5189);
+ const isolatedExperience = [
+   '**/annotation-experience.spec.ts',
+@@ -12,11 +13,12 @@ const isolatedExperience = [
+   '**/commerce-a60.spec.ts',
+   '**/pokelike-experience.spec.ts',
+   '**/*-a63.spec.ts',
++  '**/*-a65.spec.ts',
+ ];
+ export default defineConfig({
+   testDir: './tests/browser-trial',
+   // A63 profiles/journeys have dedicated configs and isolated manual authorities.
+-  testIgnore: '**/*-a63.spec.ts',
++  testIgnore: ['**/*-a63.spec.ts', '**/*-a65.spec.ts'],
+   outputDir: 'test-results-arcana-journey',
+   workers: 1,
+   fullyParallel: false,
+diff --git a/src/arcana/application/client/game-controller.ts b/src/arcana/application/client/game-controller.ts
+index 0431642..d794111 100644
+--- a/src/arcana/application/client/game-controller.ts
++++ b/src/arcana/application/client/game-controller.ts
+@@ -263,6 +263,9 @@ export class GameController {
+   }
+   private send(pending: PendingOperation): Promise<OperationResult> {
+     switch (pending.kind) {
++      case 'set-intention':
++        if (!this.gateway.setIntention) throw new Error('Intention transport unavailable');
++        return this.gateway.setIntention(pending.command);
+       case 'forge-wand':
+         return this.gateway.forgeWand(pending.command);
+       case 'open-vault':
+diff --git a/src/arcana/application/client/ports.ts b/src/arcana/application/client/ports.ts
+index 86cf26a..56430ba 100644
+--- a/src/arcana/application/client/ports.ts
++++ b/src/arcana/application/client/ports.ts
+@@ -12,9 +12,11 @@ import type { PublicContent } from '../public-content';
+ import type { StartRunRequest, AdvanceNodeRequest } from '../run-contracts';
+ import type { SetTeamRequest, EquipEquipmentRequest } from '../team-contracts';
+ import { ArcanaClientError } from './errors';
++import { intentionRequestSnapshot, type SetIntentionRequest } from '../set-intention';
+ export type { PlayerStatus as AuthorityState } from '../player-status';
+ import type { PlayerStatus as AuthorityState } from '../player-status';
+ export interface ClientGateway {
++  setIntention?(command: OperationCommand<SetIntentionRequest>): Promise<OperationResult>;
+   state(): Promise<AuthorityState>;
+   content(): Promise<PublicContent>;
+   operation(key: string): Promise<OperationResult>;
+@@ -30,6 +32,7 @@ export interface ClientGateway {
+   logout(): Promise<void>;
+ }
+ interface ActionRequests {
++  'set-intention': SetIntentionRequest;
+   'forge-wand': ForgeWandRequest;
+   'open-vault': OpenVaultRequest;
+   purchase: PurchaseRequest;
+@@ -94,6 +97,10 @@ export function pendingSnapshot(value: unknown): PendingOperation {
+     const r = command.request;
+     let request: unknown;
+     switch (value.kind) {
++      case 'set-intention':
++        fields(r, ['afterRunId', 'choice']);
++        request = intentionRequestSnapshot(r as unknown as SetIntentionRequest);
++        break;
+       case 'forge-wand':
+         fields(r, ['recipeId', 'catalogVersion']);
+         if (!validDomainId(r.recipeId) || !version(r.catalogVersion)) throw Error();
+@@ -150,7 +157,7 @@ export function pendingSnapshot(value: unknown): PendingOperation {
+         fields(
+           r,
+           ['runId', 'nodeId', 'campaignVersion', 'assignments'],
+-          ['refugeAction', 'pactAction', 'replaceUnitId', 'encounterAction'],
++          ['refugeAction', 'pactAction', 'recruitId', 'replaceUnitId', 'encounterAction'],
+         );
+         const options = nodeOptionsSnapshot(r);
+         if (
+diff --git a/src/arcana/application/game.ts b/src/arcana/application/game.ts
+index a01d8b7..9e4f0f1 100644
+--- a/src/arcana/application/game.ts
++++ b/src/arcana/application/game.ts
+@@ -22,6 +22,7 @@ import { createSeed } from '../domain/combat/seed';
+ import { EMPTY_TEAM, teamSnapshot, validateTeam, type Team } from '../domain/collection/team';
+ import type { StarterKitReceipt, TeamReceipt } from './team-contracts';
+ import { equipmentSnapshot } from '../domain/economy/equipment';
++import { intentionReceiptSnapshot, type SetIntentionReceipt } from './set-intention';
+ import type { ForgeReceipt, VaultReceipt } from './commerce-contracts';
+ 
+ export interface OpenToadRequest {
+@@ -61,6 +62,7 @@ export interface OpeningReceipt {
+   readonly isNew: boolean;
+ }
+ export type OperationReceipt =
++  | SetIntentionReceipt
+   | PurchaseReceipt
+   | OpeningReceipt
+   | BuyOpenToadReceipt
+@@ -159,7 +161,9 @@ export function validateGame(value: unknown): asserts value is GameState {
+     const purchased = new Set<string>();
+     for (const receipt of state.receipts as readonly OperationReceipt[]) {
+       if (!validDomainId(receipt.id)) throw Error();
+-      if (receipt.kind === 'starter-kit') {
++      if (receipt.kind === 'set-intention') {
++        intentionReceiptSnapshot(receipt);
++      } else if (receipt.kind === 'starter-kit') {
+         const copy = state.copies.find((c) => c.copyId === receipt.copyId);
+         validateCatalog({ version: receipt.catalogVersion, wizards: [receipt.wizard] });
+         if (
+@@ -455,6 +459,7 @@ export function gameSnapshot(state: GameState): GameState {
+ }
+ 
+ function snapshotReceipt(receipt: OperationReceipt): OperationReceipt {
++  if (receipt.kind === 'set-intention') return intentionReceiptSnapshot(receipt);
+   if (receipt.kind === 'buy-open-toad')
+     return Object.freeze({
+       ...receipt,
+diff --git a/src/arcana/application/node-options.ts b/src/arcana/application/node-options.ts
+index 78eb194..3a5bb3d 100644
+--- a/src/arcana/application/node-options.ts
++++ b/src/arcana/application/node-options.ts
+@@ -14,12 +14,16 @@ export function nodeOptionsSnapshot(value: unknown, kind?: NodeKind): NodeOption
+       !['risk', 'pass'].includes(options.encounterAction)) ||
+     (options.replaceUnitId !== undefined &&
+       (!validDomainId(options.replaceUnitId) || options.pactAction === 'pass')) ||
++    (options.recruitId !== undefined &&
++      (!validDomainId(options.recruitId) || options.pactAction === 'pass')) ||
+     [options.refugeAction, options.pactAction, options.encounterAction].filter(
+       (v) => v !== undefined,
+     ).length > 1 ||
+     (kind !== undefined &&
+       ((options.refugeAction !== undefined && kind !== 'refuge') ||
+-        ((options.pactAction !== undefined || options.replaceUnitId !== undefined) &&
++        ((options.pactAction !== undefined ||
++          options.replaceUnitId !== undefined ||
++          options.recruitId !== undefined) &&
+           kind !== 'pact') ||
+         (options.encounterAction !== undefined && kind !== 'encounter')))
+   )
+@@ -27,6 +31,7 @@ export function nodeOptionsSnapshot(value: unknown, kind?: NodeKind): NodeOption
+   return Object.freeze({
+     ...(options.refugeAction === undefined ? {} : { refugeAction: options.refugeAction }),
+     ...(options.pactAction === undefined ? {} : { pactAction: options.pactAction }),
++    ...(options.recruitId === undefined ? {} : { recruitId: options.recruitId }),
+     ...(options.replaceUnitId === undefined ? {} : { replaceUnitId: options.replaceUnitId }),
+     ...(options.encounterAction === undefined ? {} : { encounterAction: options.encounterAction }),
+   });
+diff --git a/src/arcana/application/public-content.ts b/src/arcana/application/public-content.ts
+index ba57e98..4f40ec2 100644
+--- a/src/arcana/application/public-content.ts
++++ b/src/arcana/application/public-content.ts
+@@ -77,9 +77,17 @@ export function publicContentSnapshot(value: unknown): PublicContent {
+     validateCampaign({ ...campaign, nodes: campaign.nodes, rounding: campaign.rounding! });
+   const rules = campaign.combatRules;
+   const affinities = campaign.ownedAffinities;
+-  if (affinities !== undefined && (!affinities || typeof affinities !== 'object' || Array.isArray(affinities) ||
+-    Object.entries(affinities).some(([id, affinity]) =>
+-      !opening.catalog.wizards.some(w => w.id === id) || !['neutral', 'alchemy', 'fire', 'shadows'].includes(affinity))))
++  if (
++    affinities !== undefined &&
++    (!affinities ||
++      typeof affinities !== 'object' ||
++      Array.isArray(affinities) ||
++      Object.entries(affinities).some(
++        ([id, affinity]) =>
++          !opening.catalog.wizards.some((w) => w.id === id) ||
++          !['neutral', 'alchemy', 'fire', 'shadows'].includes(affinity),
++      ))
++  )
+     throw new ArcanaError('INVALID_CAMPAIGN');
+   return Object.freeze({
+     ...(content.commerce === undefined ? {} : { commerce: commerceSnapshot(content.commerce) }),
+@@ -146,7 +154,7 @@ export function publicContentSnapshot(value: unknown): PublicContent {
+   });
+ }
+ 
+-function publicNodePlan(plan: NodePlan): NodePlan {
++export function publicNodePlan(plan: NodePlan): NodePlan {
+   const base = { nodeId: plan.nodeId, kind: plan.kind };
+   const reward = (value: Reward) =>
+     Object.freeze({
+@@ -161,6 +169,7 @@ function publicNodePlan(plan: NodePlan): NodePlan {
+         ...base,
+         kind: plan.kind,
+         levelId: plan.levelId,
++        ...(plan.threat ? { threat: plan.threat } : {}),
+         opponents: Object.freeze(plan.opponents.map(unitSnapshot)),
+         reward: reward(plan.reward),
+       });
+@@ -169,7 +178,12 @@ function publicNodePlan(plan: NodePlan): NodePlan {
+     case 'refuge':
+       return Object.freeze({ ...base, kind: plan.kind });
+     case 'pact':
+-      return Object.freeze({ ...base, kind: plan.kind, recruit: unitSnapshot(plan.recruit) });
++      return Object.freeze({
++        ...base,
++        kind: plan.kind,
++        recruit: unitSnapshot(plan.recruit),
++        ...(plan.recruits ? { recruits: Object.freeze(plan.recruits.map(unitSnapshot)) } : {}),
++      });
+     case 'encounter':
+       return Object.freeze({
+         ...base,
+diff --git a/src/arcana/application/run-contracts.ts b/src/arcana/application/run-contracts.ts
+index f07af62..b83cf05 100644
+--- a/src/arcana/application/run-contracts.ts
++++ b/src/arcana/application/run-contracts.ts
+@@ -14,6 +14,7 @@ export interface BeanAssignment {
+ export interface NodeOptions {
+   readonly refugeAction?: 'heal' | 'focus';
+   readonly pactAction?: 'recruit' | 'pass';
++  readonly recruitId?: string;
+   readonly replaceUnitId?: string;
+   readonly encounterAction?: 'risk' | 'pass';
+ }
+diff --git a/src/arcana/application/run-use-cases.ts b/src/arcana/application/run-use-cases.ts
+index d130798..ad7652d 100644
+--- a/src/arcana/application/run-use-cases.ts
++++ b/src/arcana/application/run-use-cases.ts
+@@ -14,7 +14,14 @@ import { createSeed } from '../domain/combat/seed';
+ import { spendCombatEssence } from '../domain/economy/essence';
+ import { inventorySnapshot } from '../domain/economy/inventory';
+ import { grantReward, victoryReward, NO_REWARD, type Reward } from '../domain/economy/rewards';
+-import { selectEncounter, validateCampaign, type Campaign } from '../domain/exploration/nodes';
++import {
++  campaignSnapshot,
++  selectEncounter,
++  validateCampaign,
++  type Campaign,
++  type NodePlan,
++} from '../domain/exploration/nodes';
++import { bindIntention } from '../domain/exploration/intentions';
+ import { advanceRoute, createRoute, sameGraph } from '../domain/exploration/route';
+ import {
+   healRun,
+@@ -46,6 +53,7 @@ import { prepareOwnedUnit } from './prepare-team';
+ import { EMPTY_TEAM, selectTeam } from '../domain/collection/team';
+ 
+ export interface CampaignConfiguration extends Campaign {
++  readonly tacticalContent?: { readonly version: 1; readonly nodes: readonly NodePlan[] };
+   readonly routeVariation?: boolean;
+   /** Optional public preparation metadata; authority still constructs every owned unit. */
+   readonly ownedAffinities?: Readonly<Record<string, CombatUnitInput['affinity']>>;
+@@ -74,6 +82,7 @@ const sameStart = (a: StartRunRequest, b: StartRunRequest) =>
+ const sameAdvance = (a: AdvanceNodeRequest, b: AdvanceNodeRequest) =>
+   a.refugeAction === b.refugeAction &&
+   a.pactAction === b.pactAction &&
++  a.recruitId === b.recruitId &&
+   a.replaceUnitId === b.replaceUnitId &&
+   a.encounterAction === b.encounterAction &&
+   a.runId === b.runId &&
+@@ -163,6 +172,16 @@ export class StartRunUseCase {
+         ? randomizeRoute(config.graph, this.routes!.random.fromSeed(routeGeneration.seed))
+         : config.graph;
+       const run = runSnapshot({
++        ...(config.tacticalContent
++          ? {
++              tacticalVersion: config.tacticalContent.version,
++              campaignSnapshot: campaignSnapshot({
++                ...config,
++                graph,
++                nodes: config.tacticalContent.nodes,
++              }),
++            }
++          : {}),
+         ...(routeGeneration ? { routeGeneration } : {}),
+         ...createRoute(command.key, graph),
+         campaignVersion: config.version,
+@@ -186,7 +205,13 @@ export class StartRunUseCase {
+           current.copies.map((c) => c.copyId),
+           current.inventory.equipment ?? [],
+         ),
+-        exploration: { ...exploration, run },
++        exploration: {
++          ...exploration,
++          run,
++          ...(exploration.intention === undefined
++            ? {}
++            : { intention: bindIntention(exploration.intention, exploration.run?.id, run.id) }),
++        },
+         receipts: [...current.receipts, receipt],
+       });
+     });
+@@ -228,7 +253,7 @@ export class AdvanceNodeUseCase {
+       if (!exploration || !original || original.id !== command.request.runId)
+         throw new ArcanaError('INVALID_ROUTE');
+       if (original.status !== 'active') throw new ArcanaError('RUN_CLOSED');
+-      const config = this.configuration();
++      const config = original.campaignSnapshot ?? this.configuration();
+       validateCampaign(config);
+       if (
+         config.version !== command.request.campaignVersion ||
+@@ -236,9 +261,11 @@ export class AdvanceNodeUseCase {
+         config.zoneId !== original.zoneId ||
+         !sameGraph(
+           original.graph,
+-          original.routeGeneration
+-            ? randomizeRoute(config.graph, this.random.fromSeed(original.routeGeneration.seed))
+-            : config.graph,
++          original.campaignSnapshot
++            ? original.campaignSnapshot.graph
++            : original.routeGeneration
++              ? randomizeRoute(config.graph, this.random.fromSeed(original.routeGeneration.seed))
++              : config.graph,
+         )
+       )
+         throw new ArcanaError('STALE_CAMPAIGN');
+@@ -341,7 +368,15 @@ export class AdvanceNodeUseCase {
+           if (members.length < 3 || options.replaceUnitId !== undefined)
+             throw new ArcanaError('INVALID_FORMATION');
+         } else {
+-          if (members.some((m) => m.unit.id === plan.recruit.id))
++          const recruit = plan.recruits
++            ? plan.recruits.find((unit) => unit.id === options.recruitId)
++            : plan.recruit;
++          if (
++            !recruit ||
++            (!plan.recruits && options.recruitId !== undefined && options.recruitId !== recruit.id)
++          )
++            throw new ArcanaError('INVALID_OPERATION');
++          if (members.some((m) => m.unit.id === recruit.id))
+             throw new ArcanaError('INVALID_FORMATION');
+           if (options.replaceUnitId !== undefined) {
+             const replaced = members.find((m) => m.unit.id === options.replaceUnitId);
+@@ -350,7 +385,7 @@ export class AdvanceNodeUseCase {
+             members = members.filter((m) => m.unit.id !== options.replaceUnitId);
+           }
+           if (members.length >= 5) throw new ArcanaError('INVALID_FORMATION');
+-          members = [...members, { source: 'temporary', unit: plan.recruit }];
++          members = [...members, { source: 'temporary', unit: recruit }];
+         }
+       } else if (plan.kind === 'encounter' && options.encounterAction !== 'pass') {
+         for (const option of plan.choices)
+@@ -383,7 +418,7 @@ export class AdvanceNodeUseCase {
+         ...current,
+         revision: current.revision + 1,
+         inventory,
+-        exploration: { run, victories, unlockedZones },
++        exploration: { ...exploration, run, victories, unlockedZones },
+         receipts: [...current.receipts, receipt],
+       });
+     });
+diff --git a/src/arcana/domain/combat/synergies.ts b/src/arcana/domain/combat/synergies.ts
+index eff2b93..288aa6c 100644
+--- a/src/arcana/domain/combat/synergies.ts
++++ b/src/arcana/domain/combat/synergies.ts
+@@ -4,18 +4,33 @@ export interface ActiveSynergy {
+   readonly members: number;
+   readonly threshold: number;
+ }
++export interface SynergyProgress extends ActiveSynergy {
++  readonly active: boolean;
++}
+ /** Shared MVP thresholds; fallen units do not activate a coven when a battle starts. */
+-export function activeSynergies(
++export function synergyProgress(
+   units: readonly { readonly hp: number; readonly affinity: Affinity }[],
+-): readonly ActiveSynergy[] {
++): readonly SynergyProgress[] {
+   const counts = { fire: 0, alchemy: 0, shadows: 0 },
+     thresholds = { fire: 2, alchemy: 3, shadows: 1 };
+   for (const unit of units) if (unit.hp > 0 && unit.affinity !== 'neutral') counts[unit.affinity]++;
+   return Object.freeze(
+-    (['fire', 'alchemy', 'shadows'] as const)
+-      .filter((affinity) => counts[affinity] >= thresholds[affinity])
+-      .map((affinity) =>
+-        Object.freeze({ affinity, members: counts[affinity], threshold: thresholds[affinity] }),
+-      ),
++    (['fire', 'alchemy', 'shadows'] as const).map((affinity) =>
++      Object.freeze({
++        affinity,
++        members: counts[affinity],
++        threshold: thresholds[affinity],
++        active: counts[affinity] >= thresholds[affinity],
++      }),
++    ),
++  );
++}
++export function activeSynergies(
++  units: readonly { readonly hp: number; readonly affinity: Affinity }[],
++): readonly ActiveSynergy[] {
++  return Object.freeze(
++    synergyProgress(units)
++      .filter((synergy) => synergy.active)
++      .map(({ affinity, members, threshold }) => Object.freeze({ affinity, members, threshold })),
+   );
+ }
+diff --git a/src/arcana/domain/exploration/nodes.ts b/src/arcana/domain/exploration/nodes.ts
+index 06d5914..5362c0a 100644
+--- a/src/arcana/domain/exploration/nodes.ts
++++ b/src/arcana/domain/exploration/nodes.ts
+@@ -30,10 +30,16 @@ export type NodePlan =
+       readonly levelId: string;
+       readonly opponents: readonly CombatUnitInput[];
+       readonly reward: Reward;
++      readonly threat?: 'fire' | 'vanguard';
+     }
+   | { readonly nodeId: string; readonly kind: 'refuge' }
+   | { readonly nodeId: string; readonly kind: 'chest'; readonly reward: Reward }
+-  | { readonly nodeId: string; readonly kind: 'pact'; readonly recruit: CombatUnitInput }
++  | {
++      readonly nodeId: string;
++      readonly kind: 'pact';
++      readonly recruit: CombatUnitInput;
++      readonly recruits?: readonly CombatUnitInput[];
++    }
+   | {
+       readonly nodeId: string;
+       readonly kind: 'encounter';
+@@ -68,6 +74,7 @@ export function validateCampaign(campaign: Campaign): void {
+     for (const plan of campaign.nodes as readonly NodePlan[]) {
+       if (campaign.graph.nodes.find((n) => n.id === plan.nodeId)?.kind !== plan.kind) throw Error();
+       if (plan.kind === 'duel' || plan.kind === 'boss') {
++        if (plan.threat !== undefined && !['fire', 'vanguard'].includes(plan.threat)) throw Error();
+         if (!validDomainId(plan.levelId) || plan.opponents.some((u) => u.beanUnitId !== undefined))
+           throw Error();
+         validateReward(plan.reward);
+@@ -83,6 +90,19 @@ export function validateCampaign(campaign: Campaign): void {
+       else if (plan.kind === 'pact') {
+         validateCombatUnit(plan.recruit);
+         if (plan.recruit.beanUnitId !== undefined || plan.recruit.hp <= 0) throw Error();
++        if (plan.recruits !== undefined) {
++          if (
++            !Array.isArray(plan.recruits) ||
++            plan.recruits.length !== 2 ||
++            new Set(plan.recruits.map((u) => u.id)).size !== 2 ||
++            plan.recruits[0].id !== plan.recruit.id
++          )
++            throw Error();
++          for (const unit of plan.recruits) {
++            validateCombatUnit(unit);
++            if (unit.beanUnitId !== undefined || unit.hp <= 0) throw Error();
++          }
++        }
+       } else if (plan.kind === 'encounter') {
+         if (!Array.isArray(plan.choices) || !plan.choices.length) throw Error();
+         let total = 0;
+@@ -97,6 +117,27 @@ export function validateCampaign(campaign: Campaign): void {
+     throw new ArcanaError('INVALID_CAMPAIGN');
+   }
+ }
++/** Durable public campaign data only. No authority callbacks or live catalog lookups. */
++export function campaignSnapshot(campaign: Campaign): Campaign {
++  validateCampaign(campaign);
++  const copy = structuredClone({
++    version: campaign.version,
++    zoneId: campaign.zoneId,
++    nextZoneId: campaign.nextZoneId,
++    graph: campaign.graph,
++    combatRules: campaign.combatRules,
++    rounding: campaign.rounding,
++    nodes: campaign.nodes,
++  });
++  const freeze = (value: unknown): void => {
++    if (value && typeof value === 'object') {
++      for (const child of Object.values(value)) freeze(child);
++      Object.freeze(value);
++    }
++  };
++  freeze(copy);
++  return copy;
++}
+ export function selectEncounter(
+   plan: Extract<NodePlan, { kind: 'encounter' }>,
+   random: RandomTickets,
+diff --git a/src/arcana/domain/exploration/run.ts b/src/arcana/domain/exploration/run.ts
+index e705533..7043996 100644
+--- a/src/arcana/domain/exploration/run.ts
++++ b/src/arcana/domain/exploration/run.ts
+@@ -1,6 +1,9 @@
+ import { validateCombatUnit, unitSnapshot, type CombatUnitInput } from '../combat/engine';
+ import { ArcanaError } from '../errors';
+ import { validDomainId } from '../identifiers';
++import { campaignSnapshot, validateCampaign, type Campaign } from './nodes';
++import { sameGraph } from './route';
++import { intentionSnapshot, type ExpeditionIntention } from './intentions';
+ import { validateGraph, type NodeGraph, type RouteRun } from './route';
+ 
+ export interface RunMember {
+@@ -8,6 +11,8 @@ export interface RunMember {
+   readonly unit: CombatUnitInput;
+ }
+ export interface Run extends RouteRun {
++  readonly tacticalVersion?: 1;
++  readonly campaignSnapshot?: Campaign;
+   readonly routeGeneration?: { readonly version: 1; readonly seed: number };
+   readonly campaignVersion: number;
+   readonly zoneId: string;
+@@ -24,6 +29,7 @@ export interface ExplorationState {
+   readonly run: Run | null;
+   readonly victories: readonly Victory[];
+   readonly unlockedZones: readonly string[];
++  readonly intention?: ExpeditionIntention | null;
+ }
+ const version = (n: number) => Number.isSafeInteger(n) && n > 0;
+ export function validateRun(run: Run): void {
+@@ -48,6 +54,16 @@ export function validateRun(run: Run): void {
+   )
+     throw new ArcanaError('INVALID_ROUTE');
+   validateGraph(run.graph);
++  if (run.campaignSnapshot !== undefined) {
++    validateCampaign(run.campaignSnapshot);
++    if (
++      run.tacticalVersion !== 1 ||
++      run.campaignVersion !== run.campaignSnapshot.version ||
++      run.zoneId !== run.campaignSnapshot.zoneId ||
++      !sameGraph(run.graph, run.campaignSnapshot.graph)
++    )
++      throw new ArcanaError('INVALID_ROUTE');
++  } else if (run.tacticalVersion !== undefined) throw new ArcanaError('INVALID_ROUTE');
+   if (run.graphVersion !== run.graph.version) throw new ArcanaError('INVALID_ROUTE');
+   const ids = new Set<string>();
+   if (run.reserves !== undefined && !Array.isArray(run.reserves))
+@@ -87,6 +103,7 @@ export function runSnapshot(run: Run): Run {
+   validateRun(run);
+   return Object.freeze({
+     ...run,
++    ...(run.campaignSnapshot ? { campaignSnapshot: campaignSnapshot(run.campaignSnapshot) } : {}),
+     ...(run.routeGeneration ? { routeGeneration: Object.freeze({ ...run.routeGeneration }) } : {}),
+     graph: Object.freeze({
+       version: run.graph.version,
+@@ -120,6 +137,7 @@ export function explorationSnapshot(state: ExplorationState): ExplorationState {
+     throw new ArcanaError('INVALID_ROUTE');
+   return Object.freeze({
+     run: state.run === null ? null : runSnapshot(state.run),
++    ...(state.intention == null ? {} : { intention: intentionSnapshot(state.intention) }),
+     victories: Object.freeze(state.victories.map((v) => Object.freeze({ ...v }))),
+     unlockedZones: Object.freeze([...state.unlockedZones]),
+   });
+diff --git a/src/arcana/infrastructure/content/trial-configuration.ts b/src/arcana/infrastructure/content/trial-configuration.ts
+index cac5799..db06cc1 100644
+--- a/src/arcana/infrastructure/content/trial-configuration.ts
++++ b/src/arcana/infrastructure/content/trial-configuration.ts
+@@ -7,6 +7,7 @@ import type { Affinity, CombatUnitInput } from '../../domain/combat/engine';
+ import type { Campaign, NodePlan } from '../../domain/exploration/nodes';
+ import type { Reward } from '../../domain/economy/rewards';
+ import { ArcanaError } from '../../domain/errors';
++import { tacticalContent } from './tactical-content';
+ interface Stats {
+   hp: number;
+   mana: number;
+@@ -90,6 +91,7 @@ export function trialConfiguration(): {
+   });
+   const campaign: CampaignConfiguration = {
+     ...base,
++    tacticalContent: tacticalContent(nodes, opening.catalog, affinities),
+     routeVariation: true,
+     ownedAffinities: Object.freeze({ ...affinities }),
+     nodes,
+diff --git a/src/arcana/infrastructure/http/api.ts b/src/arcana/infrastructure/http/api.ts
+index e81c4e5..6da507f 100644
+--- a/src/arcana/infrastructure/http/api.ts
++++ b/src/arcana/infrastructure/http/api.ts
+@@ -31,6 +31,8 @@ import type { SetTeamUseCase, EquipEquipmentUseCase } from '../../application/te
+ import type { SetTeamRequest, EquipEquipmentRequest } from '../../application/team-contracts';
+ import { ArcanaError, type ArcanaErrorCode } from '../../domain/errors';
+ import { validDomainId } from '../../domain/identifiers';
++import type { SetIntentionUseCase, SetIntentionRequest } from '../../application/set-intention';
++import { setIntentionSchema } from './schemas';
+ import {
+   purchaseSchema,
+   openingSchema,
+@@ -46,6 +48,7 @@ import {
+ } from './schemas';
+ 
+ export interface ArcanaApiServices {
++  readonly setIntention?: SetIntentionUseCase;
+   readonly forgeWand: ForgeWandUseCase;
+   readonly openVault: OpenObsidianVaultUseCase;
+   readonly games: GameTransactions;
+@@ -204,6 +207,14 @@ export function createArcanaApi(services: ArcanaApiServices, policy: HttpPolicy)
+     { schema: { ...query, body: purchaseSchema } },
+     (request) => services.purchase.execute(identity(request).playerId, request.body),
+   );
++  app.post<{ Body: OperationCommand<SetIntentionRequest> }>(
++    '/api/intentions',
++    { schema: { ...query, body: setIntentionSchema } },
++    (request) => {
++      if (!services.setIntention) throw new ArcanaError('INVALID_OPERATION');
++      return services.setIntention.execute(identity(request).playerId, request.body);
++    },
++  );
+   app.post<{ Body: OperationCommand<BuyOpenToadRequest> }>(
+     '/api/toads/buy-open',
+     { schema: { ...query, body: buyOpeningSchema } },
+diff --git a/src/arcana/infrastructure/http/client.ts b/src/arcana/infrastructure/http/client.ts
+index 82eb00d..335418a 100644
+--- a/src/arcana/infrastructure/http/client.ts
++++ b/src/arcana/infrastructure/http/client.ts
+@@ -15,6 +15,7 @@ import { publicContentSnapshot, type PublicContent } from '../../application/pub
+ import { validDomainId } from '../../domain/identifiers';
+ import { ArcanaClientError } from '../../application/client/errors';
+ import type { AuthorityState, ClientGateway } from '../../application/client/ports';
++import type { SetIntentionRequest } from '../../application/set-intention';
+ export { ArcanaClientError } from '../../application/client/errors';
+ export type { AuthorityState } from '../../application/client/ports';
+ type FetchTransport = (input: string | URL | Request, init?: RequestInit) => Promise<Response>;
+@@ -53,6 +54,8 @@ export class ArcanaHttpClient implements ClientGateway {
+     return this.result(await this.request('GET', `/operations/${encodeURIComponent(key)}`), key);
+   }
+   purchase = (command: OperationCommand<PurchaseRequest>) => this.command('/purchases', command);
++  setIntention = (command: OperationCommand<SetIntentionRequest>) =>
++    this.command('/intentions', command);
+   buyOpenToad = (command: OperationCommand<BuyOpenToadRequest>) =>
+     this.command('/toads/buy-open', command);
+   openToad = (command: OperationCommand<OpenToadRequest>) => this.command('/toads/open', command);
+diff --git a/src/arcana/infrastructure/http/composition.ts b/src/arcana/infrastructure/http/composition.ts
+index 9122333..24d31c0 100644
+--- a/src/arcana/infrastructure/http/composition.ts
++++ b/src/arcana/infrastructure/http/composition.ts
+@@ -20,6 +20,7 @@ import {
+ } from '../../application/run-use-cases';
+ import { createArcanaApi, type HttpPolicy, type ArcanaApiServices } from './api';
+ import { SetTeamUseCase, EquipEquipmentUseCase } from '../../application/team-use-cases';
++import { SetIntentionUseCase } from '../../application/set-intention';
+ interface CompositionOptions {
+   readonly pool: Pool;
+   readonly redis: ConstructorParameters<typeof RedisAuthority>[0];
+@@ -41,6 +42,11 @@ export function composeArcanaApi(options: CompositionOptions) {
+     return config;
+   };
+   const services: ArcanaApiServices = {
++    setIntention: new SetIntentionUseCase(games, () => ({
++      ownedAffinities: options.campaign().ownedAffinities ?? {},
++      beanPrice:
++        options.opening().shop.products.find((p) => p.kind === 'random-beans')?.crowns ?? Infinity,
++    })),
+     forgeWand: new ForgeWandUseCase(games, commerce),
+     openVault: new OpenObsidianVaultUseCase(games, commerce, new CryptoTickets()),
+     games,
+diff --git a/src/arcana/infrastructure/http/schemas.ts b/src/arcana/infrastructure/http/schemas.ts
+index 9554190..5e682c7 100644
+--- a/src/arcana/infrastructure/http/schemas.ts
++++ b/src/arcana/infrastructure/http/schemas.ts
+@@ -49,6 +49,7 @@ export const advanceNodeSchema = command(
+ 
+     refugeAction: { type: 'string', enum: ['heal', 'focus'] },
+     pactAction: { type: 'string', enum: ['recruit', 'pass'] },
++    recruitId: id,
+     replaceUnitId: id,
+     encounterAction: { type: 'string', enum: ['risk', 'pass'] },
+   },
+@@ -66,3 +67,14 @@ export const equipEquipmentSchema = command({
+ 
+ export const forgeWandSchema = command({ recipeId: id, catalogVersion: version });
+ export const openVaultSchema = command({ tableVersion: version });
++export const setIntentionSchema = command({
++  afterRunId: id,
++  choice: {
++    anyOf: [
++      { type: 'null' },
++      object({ kind: { const: 'bean' } }),
++      object({ kind: { const: 'new-companion' }, wizardId: id }),
++      object({ kind: { const: 'synergy' }, affinity: { enum: ['alchemy', 'fire', 'shadows'] } }),
++    ],
++  },
++});
+diff --git a/src/arcana/infrastructure/postgres/game-transactions.ts b/src/arcana/infrastructure/postgres/game-transactions.ts
+index 3d3ecf0..697ada0 100644
+--- a/src/arcana/infrastructure/postgres/game-transactions.ts
++++ b/src/arcana/infrastructure/postgres/game-transactions.ts
+@@ -12,6 +12,7 @@ import { ArcanaError } from '../../domain/errors';
+ import { validDomainId } from '../../domain/identifiers';
+ import type { Run } from '../../domain/exploration/run';
+ import type { Equipment } from '../../domain/economy/equipment';
++import type { ExpeditionIntention } from '../../domain/exploration/intentions';
+ 
+ export async function applyGameSchema(pool: Pool): Promise<void> {
+   const client = await pool.connect();
+@@ -75,10 +76,11 @@ async function loadGame(client: PoolClient, playerId: string, lock: boolean): Pr
+   }>('SELECT operation_id, receipt FROM arcana_operations WHERE player_id=$1 ORDER BY ordinal', [
+     playerId,
+   ]);
+-  const exploration = await client.query<{ run_id: string | null; run_state: Run | null }>(
+-    'SELECT run_id, run_state FROM arcana_exploration WHERE player_id=$1',
+-    [playerId],
+-  );
++  const exploration = await client.query<{
++    run_id: string | null;
++    run_state: Run | null;
++    intention: ExpeditionIntention | null;
++  }>('SELECT run_id, run_state, intention FROM arcana_exploration WHERE player_id=$1', [playerId]);
+   const victories = await client.query<{ level_id: string; campaign_version: number }>(
+     'SELECT level_id, campaign_version FROM arcana_victories WHERE player_id=$1 ORDER BY ordinal',
+     [playerId],
+@@ -159,6 +161,9 @@ async function loadGame(client: PoolClient, playerId: string, lock: boolean): Pr
+       ? {
+           exploration: {
+             run: exploration.rows[0].run_state,
++            ...(exploration.rows[0].intention === null
++              ? {}
++              : { intention: exploration.rows[0].intention }),
+             victories: victories.rows.map((v) => ({
+               levelId: v.level_id,
+               version: v.campaign_version,
+@@ -243,8 +248,13 @@ async function writeGame(client: PoolClient, state: GameState): Promise<void> {
+   if (state.exploration) {
+     const { run, victories, unlockedZones } = state.exploration;
+     await client.query(
+-      'INSERT INTO arcana_exploration (player_id,run_id,run_state) VALUES ($1,$2,$3)',
+-      [state.playerId, run?.id ?? null, run === null ? null : JSON.stringify(run)],
++      'INSERT INTO arcana_exploration (player_id,run_id,run_state,intention) VALUES ($1,$2,$3,$4)',
++      [
++        state.playerId,
++        run?.id ?? null,
++        run === null ? null : JSON.stringify(run),
++        state.exploration.intention ? JSON.stringify(state.exploration.intention) : null,
++      ],
+     );
+     for (const [ordinal, victory] of victories.entries())
+       await client.query(
+diff --git a/src/arcana/infrastructure/postgres/schema.sql b/src/arcana/infrastructure/postgres/schema.sql
+index c6f3bb1..0cdc649 100644
+--- a/src/arcana/infrastructure/postgres/schema.sql
++++ b/src/arcana/infrastructure/postgres/schema.sql
+@@ -21,6 +21,7 @@ CREATE TABLE IF NOT EXISTS arcana_exploration (
+   run_state jsonb,
+   CHECK ((run_id IS NULL AND run_state IS NULL) OR (run_id IS NOT NULL AND run_state IS NOT NULL))
+ );
++ALTER TABLE arcana_exploration ADD COLUMN IF NOT EXISTS intention jsonb;
+ CREATE TABLE IF NOT EXISTS arcana_victories (
+   player_id text NOT NULL REFERENCES arcana_accounts(player_id) ON DELETE CASCADE,
+   level_id text NOT NULL,
+diff --git a/src/arcana/presentation/App.tsx b/src/arcana/presentation/App.tsx
+index 80acf5b..1830bae 100644
+--- a/src/arcana/presentation/App.tsx
++++ b/src/arcana/presentation/App.tsx
+@@ -1,9 +1,12 @@
+ import { NodePreparation } from './NodePreparation';
+ import { ExpeditionClosure } from './ExpeditionClosure';
++import { ExpeditionIntentions, IntentionReminder } from './ExpeditionIntentions';
++import type { IntentionChoice } from '../domain/exploration/intentions';
+ import { closureText } from './closure-messages';
+ import { expeditionClosure, type ClosureAction } from '../application/client/expedition-closure';
+ import { nodeActionLabel } from './node-event-messages';
+ import './node-event-dialog.css';
++import './header-pact.css';
+ import { GameSettings } from './GameSettings';
+ import { SweetshopScene } from './SweetshopScene';
+ import { JourneyCabinet } from './JourneyCabinet';
+@@ -70,7 +73,10 @@ export function App() {
+     }),
+     [selected, setSelected] = useState<string | null>(null),
+     [nodeOptions, setNodeOptions] = useState<NodeOptions>({}),
+-    [beanDraft, setBeanDraft] = useState<{ scope: string; values: readonly BeanAssignment[] }>({ scope: '', values: [] }),
++    [beanDraft, setBeanDraft] = useState<{ scope: string; values: readonly BeanAssignment[] }>({
++      scope: '',
++      values: [],
++    }),
+     [entryError, setEntryError] = useState(false),
+     [preparing, setPreparing] = useState(false),
+     [preparationContext, setPreparationContext] = useState<'formation' | 'beans'>('formation'),
+@@ -110,12 +116,14 @@ export function App() {
+     if (!selected || !dialog.current) return;
+     const current = dialog.current;
+     if (!nodeOrigin.current?.isConnected)
+-      nodeOrigin.current = [...document.querySelectorAll<HTMLButtonElement>('[data-node]')]
+-        .find(button => button.dataset.node === selected) ?? null;
++      nodeOrigin.current =
++        [...document.querySelectorAll<HTMLButtonElement>('[data-node]')].find(
++          (button) => button.dataset.node === selected,
++        ) ?? null;
+     current.showModal();
+     current
+       .querySelector<HTMLButtonElement>(
+-        '[data-pact-action]:not(:disabled),.node-confirm-action:not(:disabled)',
++        '[data-pact-candidate]:not(:disabled),[data-pact-choice]:not(:disabled),[data-pact-action]:not(:disabled),.node-confirm-action:not(:disabled)',
+       )
+       ?.focus({ preventScroll: true });
+     return () => {
+@@ -163,11 +171,16 @@ export function App() {
+     else void controller.refreshStatus();
+   }, [online]);
+   useEffect(() => {
+-    if (state.receipt?.kind === 'start-run') { setPreparing(false); setView('map'); }
++    if (state.receipt?.kind === 'start-run') {
++      setPreparing(false);
++      setView('map');
++    }
+     if (state.receipt?.kind === 'advance-node') {
+       setSelected(null);
+       if (state.receipt.battle) setView('battle');
+     }
++    if (state.receipt?.kind === 'set-intention' && state.receipt.intention === null)
++      document.querySelector<HTMLElement>('#content')?.focus({ preventScroll: true });
+     // Navigate only for a newly confirmed receipt; visiting a saved screen never sends a command.
+   }, [state.receipt]);
+   useEffect(() => {
+@@ -188,11 +201,21 @@ export function App() {
+     content = state.content,
+     run = game?.exploration?.run;
+   // A draft belongs to one authority snapshot and chosen node, never to language or theme.
+-  const beanScope = JSON.stringify([game?.playerId, run?.id, game?.revision, selected,
+-    content?.campaign.version, content?.combatRules.version, content?.combatRules.beans.version]);
++  const beanScope = JSON.stringify([
++    game?.playerId,
++    run?.id,
++    game?.revision,
++    selected,
++    content?.campaign.version,
++    content?.combatRules.version,
++    content?.combatRules.beans.version,
++  ]);
+   const assignments = beanDraft.scope === beanScope ? beanDraft.values : NO_BEAN_ASSIGNMENTS;
+-  const setAssignments = (values: readonly BeanAssignment[]) => setBeanDraft({ scope: beanScope, values });
+-  useEffect(() => { setSelected(null); }, [run?.id]);
++  const setAssignments = (values: readonly BeanAssignment[]) =>
++    setBeanDraft({ scope: beanScope, values });
++  useEffect(() => {
++    setSelected(null);
++  }, [run?.id]);
+   const availableNodeIds = new Set(run?.status === 'active' ? routeOptions(run, run.graph) : []);
+   const availableNodeKey = [...availableNodeIds].join('|');
+   useEffect(() => {
+@@ -203,18 +226,31 @@ export function App() {
+       setBeanDraft({ scope: '', values: [] });
+     }
+   }, [selected, ready, run?.id, availableNodeKey]);
+-  const combatChoices = run?.status === 'active'
+-    ? run.graph.nodes.filter(node => (node.kind === 'duel' || node.kind === 'boss') && availableNodeIds.has(node.id))
+-      .map(node => ({ id: node.id, kind: node.kind as 'duel' | 'boss' })) : [];
++  const combatChoices =
++    run?.status === 'active'
++      ? run.graph.nodes
++          .filter(
++            (node) =>
++              (node.kind === 'duel' || node.kind === 'boss') && availableNodeIds.has(node.id),
++          )
++          .map((node) => ({ id: node.id, kind: node.kind as 'duel' | 'boss' }))
++      : [];
+   const openCombatPreparation = (id: string) => {
+-    if (!ready || !combatChoices.some(node => node.id === id)) return;
++    if (!ready || !combatChoices.some((node) => node.id === id)) return;
+     nodeOrigin.current = null;
+-    setAssignments([]); setNodeOptions({}); setPreparing(false); setView('map'); setSelected(id);
++    setAssignments([]);
++    setNodeOptions({});
++    setPreparing(false);
++    setView('map');
++    setSelected(id);
+   };
+   const selectedNode = run?.graph.nodes.find((node) => node.id === selected);
+-  const selectedPlan = content?.campaign.nodes?.find((plan) => plan.nodeId === selected);
++  const selectedPlan = (run?.campaignSnapshot?.nodes ?? content?.campaign.nodes)?.find(
++    (plan) => plan.nodeId === selected,
++  );
+   const directPact =
+     selectedPlan?.kind === 'pact' &&
++    !selectedPlan.recruits &&
+     selectedNode?.kind === 'pact' &&
+     !!run &&
+     run.members.length < 5;
+@@ -233,6 +269,11 @@ export function App() {
+   };
+   const savedNode = game ? latestNodeReceipt(game) : null;
+   const closure = game ? expeditionClosure(game) : null;
++  const chooseIntention = (choice: IntentionChoice | null) => {
++    const afterRunId = choice ? run?.id : game?.exploration?.intention?.afterRunId;
++    if (!ready || !afterRunId) return;
++    void controller.perform({ kind: 'set-intention', request: { afterRunId, choice } });
++  };
+   const openingFromClosure = useRef<{ runId: string; unitId: string } | null>(null);
+   const closureAction = (action: ClosureAction, origin?: HTMLElement) => {
+     if (!ready || !game || !content) return;
+@@ -240,10 +281,14 @@ export function App() {
+     else if (action === 'frog' && closure?.frogId) {
+       openingFromClosure.current = { runId: closure.run.id, unitId: closure.frogId };
+       setBazaarPlace('confectionery');
+-      void controller.perform({ kind: 'open-toad', request: {
+-        unitId: closure.frogId, catalogVersion: content.catalog.version,
+-        tableVersion: content.toadTable.version,
+-      } });
++      void controller.perform({
++        kind: 'open-toad',
++        request: {
++          unitId: closure.frogId,
++          catalogVersion: content.catalog.version,
++          tableVersion: content.toadTable.version,
++        },
++      });
+     } else openPreparation('formation', origin);
+   };
+   const battle =
+@@ -316,7 +361,11 @@ export function App() {
+       <div className="game-world-backdrop" aria-hidden="true" />
+       <SceneAtmosphere reduced={motion.reduced} />
+       <header className="game-header">
+-        <h1>{activePack.brand}</h1>
++        <h1>
++          {view === 'map' && content
++            ? regionAppearance(run?.zoneId ?? content.campaign.zoneId, language).name
++            : activePack.brand}
++        </h1>
+         <GameSettings
+           language={language}
+           onLanguage={setLanguage}
+@@ -350,19 +399,30 @@ export function App() {
+         </main>
+       ) : (
+         <>
+-          {view === 'battle' ? <details className="battle-wallet">
+-            <summary aria-label={closureText(language, 'wallet')} title={closureText(language, 'wallet')}>
+-              <Artwork asset="currency.crowns" language={language} decorative />
+-              <span className="visually-hidden">{closureText(language, 'wallet')}</span>
+-            </summary>
+-            <PlayerHud state={state} connected={online} language={language}
+-              onRefresh={() => void controller.refreshStatus()} />
+-          </details> : <PlayerHud
+-            state={state}
+-            connected={online}
+-            language={language}
+-            onRefresh={() => void controller.refreshStatus()}
+-          />}
++          {view === 'battle' ? (
++            <details className="battle-wallet">
++              <summary
++                aria-label={closureText(language, 'wallet')}
++                title={closureText(language, 'wallet')}
++              >
++                <Artwork asset="currency.crowns" language={language} decorative />
++                <span className="visually-hidden">{closureText(language, 'wallet')}</span>
++              </summary>
++              <PlayerHud
++                state={state}
++                connected={online}
++                language={language}
++                onRefresh={() => void controller.refreshStatus()}
++              />
++            </details>
++          ) : (
++            <PlayerHud
++              state={state}
++              connected={online}
++              language={language}
++              onRefresh={() => void controller.refreshStatus()}
++            />
++          )}
+           <main id="content" tabIndex={-1}>
+             <OperationFeedback
+               receipt={state.error || state.pending ? null : state.receipt}
+@@ -408,9 +468,13 @@ export function App() {
+                   onClose={() => {
+                     setDismissedOpening(state.receipt!.id);
+                     const origin = openingFromClosure.current;
+-                    if (origin && origin.runId === run?.id && run?.status !== 'active' &&
++                    if (
++                      origin &&
++                      origin.runId === run?.id &&
++                      run?.status !== 'active' &&
+                       state.receipt?.kind === 'open-toad' &&
+-                      state.receipt.request.unitId === origin.unitId) {
++                      state.receipt.request.unitId === origin.unitId
++                    ) {
+                       openingFromClosure.current = null;
+                       setView('map');
+                     }
+@@ -422,14 +486,11 @@ export function App() {
+                 className="expedition-panel"
+                 data-map-phase={closure ? 'closed' : !run ? 'entry' : 'route'}
+               >
+-                {!closure && <div className="expedition-heading">
+-                  <div className="section-title">
+-                    <h2>
+-                      {regionAppearance(run?.zoneId ?? content.campaign.zoneId, language).name}
+-                    </h2>
++                {!closure && (
++                  <div className="expedition-heading">
++                    <ExpeditionGuide run={run} language={language} />
+                   </div>
+-                  <ExpeditionGuide run={run} language={language} />
+-                </div>}
++                )}
+                 {!closure && savedNode && (
+                   <NodeResult
+                     receipt={savedNode}
+@@ -439,9 +500,23 @@ export function App() {
+                   />
+                 )}
+                 {closure ? (
+-                  <ExpeditionClosure game={game} language={language} ready={ready}
+-                    onAction={closureAction} onReplay={() => setView('battle')}
+-                    onMissions={() => setView('missions')} />
++                  <>
++                    <ExpeditionClosure
++                      game={game}
++                      language={language}
++                      ready={ready}
++                      onAction={closureAction}
++                      onReplay={() => setView('battle')}
++                      onMissions={() => setView('missions')}
++                    />
++                    <ExpeditionIntentions
++                      game={game}
++                      content={content}
++                      language={language}
++                      ready={ready}
++                      onChoose={chooseIntention}
++                    />
++                  </>
+                 ) : !run ? (
+                   <div className="region-entry preparation-entry">
+                     <ExpeditionPreparation
+@@ -460,6 +535,13 @@ export function App() {
+                   </div>
+                 ) : (
+                   <>
++                    <IntentionReminder
++                      game={game}
++                      content={content}
++                      language={language}
++                      ready={ready}
++                      onCancel={() => chooseIntention(null)}
++                    />
+                     <TeamHud
+                       game={game}
+                       content={content}
+@@ -516,7 +598,10 @@ export function App() {
+                         run={run}
+                         game={game}
+                         language={language}
+-                        rounding={content.campaign.rounding ?? 'floor'}
++                        rules={run.campaignSnapshot?.combatRules ?? content.combatRules}
++                        rounding={
++                          run.campaignSnapshot?.rounding ?? content.campaign.rounding ?? 'floor'
++                        }
+                         options={nodeOptions}
+                         ready={ready}
+                         onChange={setNodeOptions}
+@@ -528,38 +613,42 @@ export function App() {
+                         run.graph.nodes.find((n) => n.id === selected)!.kind,
+                       ) && (
+                         <>
+-                        <button className="node-team-prepare" onClick={event => openPreparation('formation', event.currentTarget)} disabled={!ready}>
+-                          <Artwork asset="ui.team" language={language} decorative />
+-                          <span>{prepText(language, 'equipment')}</span>
+-                        </button>
+-                        <details className="node-bean-preparation">
+-                          <summary
+-                            aria-label={t('nodeBeanPreparation', {
+-                              count: game.inventory.products.filter(
+-                                (p) => p.kind === 'random-beans' && p.status === 'available',
+-                              ).length,
+-                            })}
++                          <button
++                            className="node-team-prepare"
++                            onClick={(event) => openPreparation('formation', event.currentTarget)}
++                            disabled={!ready}
+                           >
+-                            <Artwork asset="beans.jar" language={language} decorative eager />
+-                            <span aria-hidden="true">
+-                              {assignments.length} /{' '}
+-                              {
+-                                game.inventory.products.filter(
++                            <Artwork asset="ui.team" language={language} decorative />
++                            <span>{prepText(language, 'equipment')}</span>
++                          </button>
++                          <details className="node-bean-preparation">
++                            <summary
++                              aria-label={t('nodeBeanPreparation', {
++                                count: game.inventory.products.filter(
+                                   (p) => p.kind === 'random-beans' && p.status === 'available',
+-                                ).length
+-                              }
+-                            </span>
+-                          </summary>
+-                          <BeanAssignments
+-                            run={run}
+-                            game={game}
+-                            content={content}
+-                            language={language}
+-                            ready={ready}
+-                            assignments={assignments}
+-                            onChange={setAssignments}
+-                          />
+-                        </details>
++                                ).length,
++                              })}
++                            >
++                              <Artwork asset="beans.jar" language={language} decorative eager />
++                              <span aria-hidden="true">
++                                {assignments.length} /{' '}
++                                {
++                                  game.inventory.products.filter(
++                                    (p) => p.kind === 'random-beans' && p.status === 'available',
++                                  ).length
++                                }
++                              </span>
++                            </summary>
++                            <BeanAssignments
++                              run={run}
++                              game={game}
++                              content={content}
++                              language={language}
++                              ready={ready}
++                              assignments={assignments}
++                              onChange={setAssignments}
++                            />
++                          </details>
+                         </>
+                       )}
+                     {state.error && (
+@@ -578,43 +667,55 @@ export function App() {
+                         )}
+                       </section>
+                     )}
+-                    <div className={['duel', 'boss'].includes(selectedNode!.kind) ? 'node-event-actions node-combat-actions' : 'node-event-actions'}>
+-                    {!directPact && (
++                    <div
++                      className={
++                        ['duel', 'boss'].includes(selectedNode!.kind)
++                          ? 'node-event-actions node-combat-actions'
++                          : 'node-event-actions'
++                      }
++                    >
++                      {!directPact && (
++                        <button
++                          aria-label={nodeActionLabel(language, selectedNode!.kind)}
++                          title={nodeActionLabel(language, selectedNode!.kind)}
++                          className="node-confirm-action"
++                          autoFocus
++                          disabled={
++                            !ready ||
++                            (selectedPlan?.kind === 'pact' &&
++                              selectedPlan.recruits !== undefined &&
++                              nodeOptions.pactAction !== 'pass' &&
++                              !selectedPlan.recruits.some(
++                                (unit) => unit.id === nodeOptions.recruitId,
++                              )) ||
++                            (run.graph.nodes.find((n) => n.id === selected)?.kind === 'pact' &&
++                              run.members.length === 5 &&
++                              nodeOptions.pactAction !== 'pass' &&
++                              !nodeOptions.replaceUnitId)
++                          }
++                          onClick={() => resolveNode()}
++                        >
++                          <Artwork
++                            asset={`node.${selectedNode!.kind}`}
++                            language={language}
++                            decorative
++                          />
++                          <span>{nodeActionLabel(language, selectedNode!.kind)}</span>
++                        </button>
++                      )}
++                      {state.pending && (
++                        <button disabled={!online} onClick={() => void controller.recover()}>
++                          {t('recoverOperation')}
++                        </button>
++                      )}
+                       <button
+-                        aria-label={nodeActionLabel(language, selectedNode!.kind)}
+-                        title={nodeActionLabel(language, selectedNode!.kind)}
+-                        className="node-confirm-action"
+-                        autoFocus
+-                        disabled={
+-                          !ready ||
+-                          (run.graph.nodes.find((n) => n.id === selected)?.kind === 'pact' &&
+-                            run.members.length === 5 &&
+-                            nodeOptions.pactAction !== 'pass' &&
+-                            !nodeOptions.replaceUnitId)
+-                        }
+-                        onClick={() => resolveNode()}
++                        className="node-cancel-action"
++                        aria-label={t(ready ? 'cancel' : 'close')}
++                        title={t(ready ? 'cancel' : 'close')}
++                        onClick={() => setSelected(null)}
+                       >
+-                        <Artwork
+-                          asset={`node.${selectedNode!.kind}`}
+-                          language={language}
+-                          decorative
+-                        />
+-                        <span>{nodeActionLabel(language, selectedNode!.kind)}</span>
+-                      </button>
+-                    )}
+-                    {state.pending && (
+-                      <button disabled={!online} onClick={() => void controller.recover()}>
+-                        {t('recoverOperation')}
++                        <span aria-hidden="true">×</span>
+                       </button>
+-                    )}
+-                    <button
+-                      className="node-cancel-action"
+-                      aria-label={t(ready ? 'cancel' : 'close')}
+-                      title={t(ready ? 'cancel' : 'close')}
+-                      onClick={() => setSelected(null)}
+-                    >
+-                      <span aria-hidden="true">×</span>
+-                    </button>
+                     </div>
+                   </dialog>
+                 )}
+@@ -728,7 +829,10 @@ export function App() {
+                 context={preparationContext}
+                 combatChoices={combatChoices}
+                 onCombatNode={openCombatPreparation}
+-                onReturnToMap={() => { setPreparing(false); setView('map'); }}
++                onReturnToMap={() => {
++                  setPreparing(false);
++                  setView('map');
++                }}
+                 language={language}
+                 ready={ready}
+                 onStart={(ids) => {
+diff --git a/src/arcana/presentation/ExpeditionPreparation.tsx b/src/arcana/presentation/ExpeditionPreparation.tsx
+index 90ed0a0..f492e7a 100644
+--- a/src/arcana/presentation/ExpeditionPreparation.tsx
++++ b/src/arcana/presentation/ExpeditionPreparation.tsx
+@@ -1,3 +1,4 @@
++import { IntentionReminder } from './ExpeditionIntentions';
+ import { useEffect, useId, useRef, useState } from 'react';
+ import type { GameState } from '../application/game';
+ import type { PublicContent } from '../application/public-content';
+@@ -279,6 +280,7 @@ export function ExpeditionPreparation({
+           </button>
+         )}
+       </header>
++      {content && <IntentionReminder game={game} content={content} language={language} />}
+       {context === 'beans' && (
+         <section
+           className="preparation-beans-destination"
+diff --git a/src/arcana/presentation/MapPanel.tsx b/src/arcana/presentation/MapPanel.tsx
+index 3a76560..97b670c 100644
+--- a/src/arcana/presentation/MapPanel.tsx
++++ b/src/arcana/presentation/MapPanel.tsx
+@@ -1,5 +1,6 @@
+ import { regionAppearance } from './content-packs/active';
+ import { Artwork } from './Artwork';
++import { ThreatBadge, tacticalText } from './TacticalBadge';
+ import { useLayoutEffect, useMemo, useRef, useState } from 'react';
+ import type { Run } from '../domain/exploration/run';
+ import type { Language } from '../domain/collection/wizards';
+@@ -64,57 +65,67 @@ export function MapPanel({
+     measure();
+     return () => observer.disconnect();
+   }, [list]);
+-  const button = (id: string, kind: NodeKind) => (
+-    <button
+-      key={id}
+-      className="map-event-medallion"
+-      title={text(language, nodeLabels[kind])}
+-      data-node={id}
+-      data-node-kind={kind}
+-      data-node-state={
+-        run.visited.includes(id) ? 'visited' : available.includes(id) ? 'available' : 'locked'
+-      }
+-      disabled={!ready || !available.includes(id)}
+-      onClick={(event) => onSelect(id, event.currentTarget)}
+-    >
+-      <span className="node-asset" aria-hidden="true">
+-        <Artwork asset={`node.${kind}`} language={language} className="node-icon" decorative />
+-      </span>
+-      {run.visited.includes(id) && (
+-        <span className="node-visited-mark" aria-hidden="true">
+-          ✓
+-        </span>
+-      )}
+-      {available.includes(id) && (
+-        <span className="node-ready-mark" aria-hidden="true">
+-          ▴
++  const button = (id: string, kind: NodeKind) => {
++    const plan = run.campaignSnapshot?.nodes.find((candidate) => candidate.nodeId === id);
++    const threat = plan?.kind === 'duel' ? plan.threat : undefined;
++    const label = text(language, nodeLabels[kind]);
++    return (
++      <button
++        key={id}
++        className="map-event-medallion"
++        title={
++          threat
++            ? `${label} · ${tacticalText(language, threat === 'fire' ? 'fireThreat' : 'vanguard')}`
++            : label
++        }
++        data-node={id}
++        data-node-kind={kind}
++        data-node-state={
++          run.visited.includes(id) ? 'visited' : available.includes(id) ? 'available' : 'locked'
++        }
++        disabled={!ready || !available.includes(id)}
++        onClick={(event) => onSelect(id, event.currentTarget)}
++      >
++        <span className="node-asset" aria-hidden="true">
++          <Artwork asset={`node.${kind}`} language={language} className="node-icon" decorative />
+         </span>
+-      )}
+-      <strong className="node-label">{text(language, nodeLabels[kind])}</strong>
+-      <small className="visually-hidden">
+-        {text(
+-          language,
+-          run.visited.includes(id) ? 'visited' : available.includes(id) ? 'available' : 'locked',
++        {threat && <ThreatBadge threat={threat} language={language} compact />}
++        {run.visited.includes(id) && (
++          <span className="node-visited-mark" aria-hidden="true">
++            ✓
++          </span>
++        )}
++        {available.includes(id) && (
++          <span className="node-ready-mark" aria-hidden="true">
++            ▴
++          </span>
+         )}
+-      </small>
+-      {available.includes(id) && (
+-        <small className="node-effect visually-hidden">
++        <strong className="node-label">{text(language, nodeLabels[kind])}</strong>
++        <small className="visually-hidden">
+           {text(
+             language,
+-            kind === 'duel' || kind === 'boss'
+-              ? 'nodeCombatCost'
+-              : kind === 'refuge'
+-                ? 'nodeRefugeHint'
+-                : kind === 'pact'
+-                  ? 'nodePactHint'
+-                  : kind === 'chest'
+-                    ? 'nodeChestHint'
+-                    : 'nodeChanceHint',
++            run.visited.includes(id) ? 'visited' : available.includes(id) ? 'available' : 'locked',
+           )}
+         </small>
+-      )}
+-    </button>
+-  );
++        {available.includes(id) && (
++          <small className="node-effect visually-hidden">
++            {text(
++              language,
++              kind === 'duel' || kind === 'boss'
++                ? 'nodeCombatCost'
++                : kind === 'refuge'
++                  ? 'nodeRefugeHint'
++                  : kind === 'pact'
++                    ? 'nodePactHint'
++                    : kind === 'chest'
++                      ? 'nodeChestHint'
++                      : 'nodeChanceHint',
++            )}
++          </small>
++        )}
++      </button>
++    );
++  };
+   return (
+     <>
+       <button
+diff --git a/src/arcana/presentation/NodePreparation.tsx b/src/arcana/presentation/NodePreparation.tsx
+index c85bca4..75d42f3 100644
+--- a/src/arcana/presentation/NodePreparation.tsx
++++ b/src/arcana/presentation/NodePreparation.tsx
+@@ -8,7 +8,12 @@ import type { Run } from '../domain/exploration/run';
+ import type { GameState } from '../application/game';
+ import type { NodeOptions } from '../application/run-contracts';
+ import type { Language } from '../domain/collection/wizards';
++import type { CombatRules, CombatUnitInput } from '../domain/combat/engine';
++import { synergyProgress } from '../domain/combat/synergies';
++import { PreparationSynergies } from './PreparationSynergies';
++import { AffinityLabel, ThreatHelp, tacticalText } from './TacticalBadge';
+ import './node-a60.css';
++import './tactical-a65.css';
+ 
+ export function NodePreparation({
+   plan,
+@@ -20,6 +25,7 @@ export function NodePreparation({
+   onResolve,
+   language,
+   ready,
++  rules,
+ }: {
+   plan: NodePlan;
+   run: Run;
+@@ -30,6 +36,7 @@ export function NodePreparation({
+   onResolve?: (options: NodeOptions) => void;
+   language: Language;
+   ready: boolean;
++  rules?: CombatRules;
+ }) {
+   const t = (key: Parameters<typeof text>[1]) => text(language, key);
+   const combat = plan.kind === 'duel' || plan.kind === 'boss';
+@@ -60,31 +67,73 @@ export function NodePreparation({
+   return (
+     <div className="node-preparation" data-preparation={plan.kind} data-event-kind={plan.kind}>
+       {combat && (
+-        <div className="event-opponents" aria-label={t('nodeOpponents')}>
+-          {plan.opponents.map((unit, index) => (
+-            <div key={unit.id}>
+-              <Artwork
+-                asset={
+-                  unit.wizardId === 'rival'
+-                    ? plan.kind === 'boss' && index === activePack.arenaAppearances.bossPosition
+-                      ? activePack.arenaAppearances.boss
+-                      : activePack.arenaAppearances.rivals[
+-                          index % activePack.arenaAppearances.rivals.length
+-                        ]
+-                    : `character.${unit.wizardId}.portrait`
+-                }
+-                language={language}
+-                eager
+-                decorative
+-              />
+-              <span>
+-                <Artwork asset="ui.health" language={language} eager decorative />
+-                {unit.hp}
+-              </span>
+-              <span title={t('power')}>✦ {unit.power}</span>
+-            </div>
+-          ))}
+-        </div>
++        <>
++          {plan.threat && <ThreatHelp threat={plan.threat} language={language} />}
++          <div className="event-opponents" aria-label={t('nodeOpponents')}>
++            {plan.opponents.map((unit, index) => (
++              <div key={unit.id}>
++                <Artwork
++                  asset={
++                    unit.wizardId === 'rival'
++                      ? plan.kind === 'boss' && index === activePack.arenaAppearances.bossPosition
++                        ? activePack.arenaAppearances.boss
++                        : activePack.arenaAppearances.rivals[
++                            index % activePack.arenaAppearances.rivals.length
++                          ]
++                      : `character.${unit.wizardId}.portrait`
++                  }
++                  language={language}
++                  eager
++                  decorative
++                />
++                <span>
++                  <Artwork asset="ui.health" language={language} eager decorative />
++                  {unit.hp}
++                </span>
++                <span title={t('power')}>✦ {unit.power}</span>
++              </div>
++            ))}
++          </div>
++          {plan.threat && (
++            <details className="tactical-rival-inspector">
++              <summary>{tacticalText(language, 'inspect')}</summary>
++              <div>
++                {plan.opponents.map((unit) => (
++                  <section key={unit.id}>
++                    <strong>
++                      {unit.wizardId === 'rival'
++                        ? t('opponent')
++                        : themedName(unit.wizardId, unit.wizardId, language)}
++                    </strong>
++                    <AffinityLabel affinity={unit.affinity} language={language} />
++                    <dl>
++                      <div>
++                        <dt>{tacticalText(language, 'health')}</dt>
++                        <dd>
++                          {unit.hp} / {unit.maxHp}
++                        </dd>
++                      </div>
++                      <div>
++                        <dt>{tacticalText(language, 'mana')}</dt>
++                        <dd>
++                          {unit.mana} / {unit.maxMana}
++                        </dd>
++                      </div>
++                      <div>
++                        <dt>{tacticalText(language, 'power')}</dt>
++                        <dd>{unit.power}</dd>
++                      </div>
++                      <div>
++                        <dt>{tacticalText(language, 'speed')}</dt>
++                        <dd>{unit.speed}</dd>
++                      </div>
++                    </dl>
++                  </section>
++                ))}
++              </div>
++            </details>
++          )}
++        </>
+       )}
+       {reward && (
+         <div className="event-loot" aria-label={t('nodeLootPreview')}>
+@@ -158,7 +207,18 @@ export function NodePreparation({
+           </div>
+         </>
+       )}
+-      {plan.kind === 'pact' && (
++      {plan.kind === 'pact' && plan.recruits && (
++        <TacticalPact
++          recruits={plan.recruits}
++          run={run}
++          options={options}
++          onChange={onChange}
++          language={language}
++          ready={ready}
++          rules={rules}
++        />
++      )}
++      {plan.kind === 'pact' && !plan.recruits && (
+         <>
+           <div className="pact-preview">
+             <Artwork
+@@ -249,3 +309,203 @@ export function NodePreparation({
+     </div>
+   );
+ }
++
++function TacticalPact({
++  recruits,
++  run,
++  options,
++  onChange,
++  language,
++  ready,
++  rules,
++}: {
++  recruits: readonly CombatUnitInput[];
++  run: Run;
++  options: NodeOptions;
++  onChange: (options: NodeOptions) => void;
++  language: Language;
++  ready: boolean;
++  rules?: CombatRules;
++}) {
++  const t = (key: Parameters<typeof text>[1]) => text(language, key);
++  const c = (key: Parameters<typeof tacticalText>[1]) => tacticalText(language, key);
++  const full = run.members.length === 5;
++  const replacements = run.members.filter((member) => member.source === 'temporary');
++  const canRecruit = !full || replacements.length > 0;
++  const selected =
++    options.pactAction !== 'pass'
++      ? recruits.find((candidate) => candidate.id === options.recruitId)
++      : undefined;
++  const replacement = replacements.find((member) => member.unit.id === options.replaceUnitId);
++  const proposed =
++    selected && (!full || replacement)
++      ? [
++          ...run.members.filter((member) => !full || member.unit.id !== replacement?.unit.id),
++          { source: 'temporary' as const, unit: selected },
++        ]
++      : undefined;
++  const beforeSynergies = synergyProgress(run.members.map(({ unit }) => unit));
++  return (
++    <section className="tactical-pact" aria-label={c('choose')} data-tactical-pact>
++      <div className="tactical-pact-offers" role="group" aria-label={c('choose')}>
++        {recruits.map((candidate) => {
++          const chosen = candidate.id === selected?.id;
++          const name = themedName(candidate.wizardId, candidate.wizardId, language);
++          const before = beforeSynergies.find((synergy) => synergy.affinity === candidate.affinity);
++          const candidateMembers =
++            !full || replacement
++              ? [
++                  ...run.members.filter(
++                    (member) => !full || member.unit.id !== replacement?.unit.id,
++                  ),
++                  { unit: candidate },
++                ]
++              : undefined;
++          const after =
++            candidateMembers &&
++            synergyProgress(candidateMembers.map(({ unit }) => unit)).find(
++              (synergy) => synergy.affinity === candidate.affinity,
++            );
++          return (
++            <article className="tactical-pact-candidate" key={candidate.id} data-selected={chosen}>
++              <button
++                type="button"
++                className="tactical-pact-portrait"
++                aria-label={`${t('nodeRecruit')}: ${name} · ${t('temporaryAlly')}`}
++                aria-pressed={chosen}
++                disabled={!ready || !canRecruit}
++                data-pact-candidate={candidate.id}
++                onClick={() =>
++                  onChange({
++                    pactAction: 'recruit',
++                    recruitId: candidate.id,
++                    ...(full && replacement ? { replaceUnitId: replacement.unit.id } : {}),
++                  })
++                }
++              >
++                <span className="tactical-pact-portrait-stage">
++                  <span className="tactical-pact-portrait-image">
++                    <Artwork
++                      asset={`character.${candidate.wizardId}.portrait`}
++                      language={language}
++                      decorative
++                      eager
++                    />
++                  </span>
++                  <Artwork
++                    asset="ui.temporary"
++                    language={language}
++                    className="tactical-pact-origin"
++                    decorative
++                    eager
++                  />
++                  {chosen && (
++                    <Artwork
++                      asset="ui.seal"
++                      language={language}
++                      className="tactical-pact-seal"
++                      decorative
++                      eager
++                    />
++                  )}
++                </span>
++                <strong>{name}</strong>
++                <AffinityLabel affinity={candidate.affinity} language={language} />
++                {before && (
++                  <span
++                    className="tactical-pact-progress"
++                    data-affinity-progress={candidate.affinity}
++                  >
++                    <span>
++                      {before.members}
++                      {after ? ` → ${after.members}` : ''} / {before.threshold}
++                    </span>
++                    {after?.active && (
++                      <Artwork asset="ui.seal" language={language} decorative eager />
++                    )}
++                    <span className="visually-hidden">
++                      {after?.active ? c('active') : c('inactive')}
++                    </span>
++                  </span>
++                )}
++              </button>
++              <details className="tactical-pact-inspector">
++                <summary aria-label={`${c('inspect')}: ${name}`} title={`${c('inspect')}: ${name}`}>
++                  <span aria-hidden="true">i</span>
++                </summary>
++                <p>{t('temporaryAlly')}</p>
++                <dl>
++                  <div>
++                    <dt>{c('health')}</dt>
++                    <dd>
++                      {candidate.hp} / {candidate.maxHp}
++                    </dd>
++                  </div>
++                  <div>
++                    <dt>{c('mana')}</dt>
++                    <dd>
++                      {candidate.mana} / {candidate.maxMana}
++                    </dd>
++                  </div>
++                  <div>
++                    <dt>{c('power')}</dt>
++                    <dd>{candidate.power}</dd>
++                  </div>
++                  <div>
++                    <dt>{c('speed')}</dt>
++                    <dd>{candidate.speed}</dd>
++                  </div>
++                </dl>
++              </details>
++            </article>
++          );
++        })}
++      </div>
++      {full && canRecruit && options.pactAction !== 'pass' && (
++        <VisualChoices
++          label={c('replacing')}
++          value={options.replaceUnitId ?? ''}
++          options={replacements.map(({ unit }) => ({
++            id: unit.id,
++            label: themedName(unit.wizardId, unit.id, language),
++            asset: `character.${unit.wizardId}.portrait`,
++            caption: `${unit.hp} / ${unit.maxHp}`,
++          }))}
++          onChange={(replaceUnitId) =>
++            onChange({
++              pactAction: 'recruit',
++              ...(selected ? { recruitId: selected.id } : {}),
++              replaceUnitId,
++            })
++          }
++          language={language}
++          disabled={!ready}
++        />
++      )}
++      {proposed && rules && (
++        <PreparationSynergies
++          members={proposed}
++          previous={run.members}
++          rules={rules}
++          language={language}
++        />
++      )}
++      <p className="tactical-pact-status" aria-live="polite">
++        {!canRecruit ? c('fullOwned') : selected ? c('pending') : t('temporaryAlly')}
++      </p>
++      {run.members.length >= 3 && (
++        <button
++          type="button"
++          className="tactical-pact-pass"
++          aria-pressed={options.pactAction === 'pass'}
++          disabled={!ready || run.members.length < 3}
++          data-pact-choice="pass"
++          onClick={() => onChange({ pactAction: 'pass' })}
++        >
++          <Artwork asset="ui.pass" language={language} decorative eager />
++          {t('nodePass')}
++        </button>
++      )}
++    </section>
++  );
++}
+diff --git a/tests/browser-trial/gameplay-increment-a63.spec.ts b/tests/browser-trial/gameplay-increment-a63.spec.ts
+index b244356..533c065 100644
+--- a/tests/browser-trial/gameplay-increment-a63.spec.ts
++++ b/tests/browser-trial/gameplay-increment-a63.spec.ts
+@@ -4,7 +4,7 @@ import { resolve } from 'node:path';
+ import { changeLanguage, startExpedition } from './game-fixture';
+ import { readGame, reachNode, confirmEvent } from './route-helpers';
+ 
+-const evidence = resolve('docs/arcana/gameplay-increment-2026-10-16/evidence/after');
++const evidence = resolve(process.env.A63_EVIDENCE_ROOT ?? 'docs/arcana/gameplay-increment-2026-10-16/evidence/after');
+ async function capture(page: Page, name: string) {
+   await mkdir(evidence, { recursive: true });
+   for (const size of [{ width: 1280, height: 900 }, { width: 390, height: 844 }, { width: 865, height: 1079 }]) {
+diff --git a/tests/browser-trial/replay.spec.ts b/tests/browser-trial/replay.spec.ts
+index 4b09f68..3e31baf 100644
+--- a/tests/browser-trial/replay.spec.ts
++++ b/tests/browser-trial/replay.spec.ts
+@@ -90,7 +90,7 @@ test('branching map and equivalent list keep identical accessible actions with W
+   const next = page.locator('[data-node]:not(:disabled)').first();
+   await expect(next).toBeEnabled();
+   await next.click();
+-  await expect(page.locator('.node-confirm-action, [data-pact-action="recruit"]')).toBeFocused();
++  await expect(page.locator('[data-pact-candidate]:not(:disabled), [data-pact-choice]:not(:disabled), .node-confirm-action:not(:disabled), [data-pact-action="recruit"]').first()).toBeFocused();
+   await page.getByRole('button', { name: 'Cancelar', exact: true }).click();
+   await expect(next).toBeFocused();
+ });
+diff --git a/tests/browser-trial/route-helpers.ts b/tests/browser-trial/route-helpers.ts
+index ab511b0..5eb8853 100644
+--- a/tests/browser-trial/route-helpers.ts
++++ b/tests/browser-trial/route-helpers.ts
+@@ -17,6 +17,13 @@ export async function confirmEvent(page: Page, language: 'es' | 'en') {
+     await directRecruit.click();
+   } else {
+     const confirm = page.locator('.node-confirm-action');
++    const candidate = page.locator('[data-pact-candidate]').first();
++    if (await candidate.count()) {
++      if (await candidate.isEnabled()) await candidate.click();
++      else await page.locator('[data-pact-choice="pass"]').click();
++      const replacement = page.locator('[data-tactical-pact] [data-visual-value]').first();
++      if (!(await confirm.isEnabled()) && (await replacement.count())) await replacement.click();
++    }
+     const pass = page.locator('[data-preparation="pact"] [data-visual-value="pass"]');
+     if ((await pass.count()) && (await pass.isEnabled()) && !(await confirm.isEnabled()))
+       await pass.click();
+diff --git a/tests/domain/arcana/synergies.test.ts b/tests/domain/arcana/synergies.test.ts
+index 677925a..f74f3dd 100644
+--- a/tests/domain/arcana/synergies.test.ts
++++ b/tests/domain/arcana/synergies.test.ts
+@@ -1,5 +1,5 @@
+ import { it, expect } from 'vitest';
+-import { activeSynergies } from '../../../src/arcana/domain/combat/synergies';
++import { activeSynergies, synergyProgress } from '../../../src/arcana/domain/combat/synergies';
+ it('uses the same alive affinity thresholds for preview and battle', () => {
+   const units = [
+     ...Array.from({ length: 3 }, () => ({ hp: 1, affinity: 'alchemy' as const })),
+@@ -25,3 +25,29 @@ it('excludes neutral, fallen and below-threshold units', () => {
+     ]),
+   ).toEqual([]);
+ });
++it('projects incomplete covens with the exact battle thresholds and no state mutation', () => {
++  const units = [
++    { hp: 1, affinity: 'alchemy' as const },
++    { hp: 1, affinity: 'alchemy' as const },
++    { hp: 0, affinity: 'alchemy' as const },
++    { hp: 1, affinity: 'neutral' as const },
++  ];
++  const before = structuredClone(units);
++  const incomplete = synergyProgress(units);
++  expect(incomplete).toEqual([
++    { affinity: 'fire', members: 0, threshold: 2, active: false },
++    { affinity: 'alchemy', members: 2, threshold: 3, active: false },
++    { affinity: 'shadows', members: 0, threshold: 1, active: false },
++  ]);
++  const proposed = [...units, { hp: 1, affinity: 'alchemy' as const }];
++  expect(synergyProgress(proposed).find((s) => s.affinity === 'alchemy')).toEqual({
++    affinity: 'alchemy',
++    members: 3,
++    threshold: 3,
++    active: true,
++  });
++  expect(activeSynergies(proposed)).toEqual([{ affinity: 'alchemy', members: 3, threshold: 3 }]);
++  expect(Object.isFrozen(incomplete)).toBe(true);
++  expect(Object.isFrozen(incomplete[0])).toBe(true);
++  expect(units).toEqual(before);
++});
+diff --git a/tests/integration/arcana/trial-gateway.test.ts b/tests/integration/arcana/trial-gateway.test.ts
+index fc651cd..ab88ca4 100644
+--- a/tests/integration/arcana/trial-gateway.test.ts
++++ b/tests/integration/arcana/trial-gateway.test.ts
+@@ -157,7 +157,21 @@ describe('local trial cookie gateway with authoritative SQL/Redis', () => {
+         payload: {
+           key: 'advance-' + nodeId,
+           expectedRevision: state.revision,
+-          request: { runId: 'run', nodeId, campaignVersion: 1, assignments: [] },
++          request: {
++            runId: 'run',
++            nodeId,
++            campaignVersion: 1,
++            assignments: [],
++            ...(state.exploration.run.campaignSnapshot?.nodes.find(
++              (plan: { nodeId: string; kind: string }) => plan.nodeId === nodeId,
++            )?.kind === 'pact'
++              ? {
++                  recruitId: state.exploration.run.campaignSnapshot.nodes.find(
++                    (plan: { nodeId: string }) => plan.nodeId === nodeId,
++                  ).recruits[0].id,
++                }
++              : {}),
++          },
+         },
+       });
+       expect(result.statusCode).toBe(200);

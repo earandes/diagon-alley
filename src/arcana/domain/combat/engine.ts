@@ -34,6 +34,8 @@ export interface CombatUnitInput {
   readonly wandPowerBonus: number;
   readonly wandMultiplier: number;
   readonly broomInitiative: number;
+  readonly wandInitiativeBonus?: number;
+  readonly wandHealing?: number;
   readonly beanUnitId?: string;
 }
 export interface CombatRules {
@@ -77,7 +79,7 @@ export type BattleEventData =
   | {
       readonly kind: 'healed';
       readonly actorId: string;
-      readonly source: 'alchemy';
+      readonly source: 'alchemy' | 'equipment';
       readonly amount: number;
       readonly hp: number;
     }
@@ -131,6 +133,9 @@ export function validateCombatUnit(unit: CombatUnitInput, shadowInitiative = 0):
     !['neutral', 'alchemy', 'fire', 'shadows'].includes(unit.affinity) ||
     ![unit.hp, unit.maxHp, unit.power, unit.speed, unit.wandPowerBonus, unit.broomInitiative].every(
       finiteNonnegative,
+    ) ||
+    [unit.wandInitiativeBonus, unit.wandHealing].some(
+      (value) => value !== undefined && (!Number.isFinite(value) || value < 0 || value > 10),
     ) ||
     unit.maxHp <= 0 ||
     unit.hp > unit.maxHp ||
@@ -207,6 +212,10 @@ export function unitSnapshot(unit: CombatUnitInput): CombatUnitInput {
     wandPowerBonus: unit.wandPowerBonus,
     wandMultiplier: unit.wandMultiplier,
     broomInitiative: unit.broomInitiative,
+    ...(unit.wandInitiativeBonus === undefined
+      ? {}
+      : { wandInitiativeBonus: unit.wandInitiativeBonus }),
+    ...(unit.wandHealing === undefined ? {} : { wandHealing: unit.wandHealing }),
     ...(unit.beanUnitId === undefined ? {} : { beanUnitId: unit.beanUnitId }),
   });
 }
@@ -290,10 +299,7 @@ export class CombatEngine {
             : null;
     };
     const initiative = (fighter: Fighter) =>
-      initiativeWithBean(
-        fighter,
-        equipmentInitiative(fighter, bonuses[fighter.team].shadows),
-      );
+      initiativeWithBean(fighter, equipmentInitiative(fighter, bonuses[fighter.team].shadows));
     let rounds = 0;
     for (let round = 1; round <= rules.maxRounds && outcome() === null; round++) {
       rounds = round;
@@ -326,6 +332,17 @@ export class CombatEngine {
             hp: actor.hp,
           });
         }
+        const equipmentHealing = Math.min(actor.maxHp - actor.hp, actor.wandHealing ?? 0);
+        if (equipmentHealing > 0) {
+          actor.hp += equipmentHealing;
+          emit(round, {
+            kind: 'healed',
+            actorId: actor.id,
+            source: 'equipment',
+            amount: equipmentHealing,
+            hp: actor.hp,
+          });
+        }
         if (actor.mana < rules.spellManaCost)
           emit(round, { kind: 'mana-exhausted', actorId: actor.id, mana: actor.mana });
         else {
@@ -334,10 +351,7 @@ export class CombatEngine {
             createManaPoints(actor.mana, actor.maxMana),
             rules.spellManaCost,
           ).current;
-          const spell = spellWithBean(
-            actor,
-            equipmentSpellPower(actor),
-          );
+          const spell = spellWithBean(actor, equipmentSpellPower(actor));
           actor.effect = spell.carrier.effect;
           const damage = Math.min(target.hp, spell.damage);
           target.hp -= damage;

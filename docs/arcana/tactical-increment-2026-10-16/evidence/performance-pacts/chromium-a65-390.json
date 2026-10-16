@@ -1,0 +1,81 @@
+{
+  "browser": "chromium-a65",
+  "viewport": {
+    "width": 390,
+    "height": 844
+  },
+  "scope": "Fresh isolated compiled GUI; Diagon Alley ES; normal motion; serial run. Pact scenes wait for image decode and finite authored transitions. Arena window is 8 seconds from pointerdown, including HTTP and renderer startup. rAF cadence is not displayed GPU FPS or physical device evidence. WebKit has no longtask API when reported null. No equivalent before baseline or improvement percentage.",
+  "profiles": [
+    {
+      "name": "open-pact",
+      "inputToVisibleMs": 19.700000000186265,
+      "inputToDecodedAndSettledMs": 397.09999999962747,
+      "images": 8,
+      "broken": 0,
+      "network": []
+    },
+    {
+      "name": "select-candidate",
+      "inputToVisibleMs": 10.5,
+      "inputToDecodedAndSettledMs": 197.79999999981374,
+      "images": 10,
+      "broken": 0,
+      "network": []
+    },
+    {
+      "name": "confirmed-recruitment",
+      "inputToVisibleMs": 89.40000000037253,
+      "inputToDecodedAndSettledMs": 1897.2999999998137,
+      "images": 22,
+      "broken": 0,
+      "network": [
+        {
+          "path": "/api/nodes/advance",
+          "durationMs": 38.39999999944121
+        },
+        {
+          "path": "/api/state",
+          "durationMs": 10.099999999627471
+        }
+      ]
+    }
+  ],
+  "arena": {
+    "inputMs": 3890.7999999998137,
+    "elapsedMs": 8011.700000000186,
+    "rafCallbacks": 462,
+    "estimatedRafHz": 57.66566396644773,
+    "p95FrameMs": 16.700000000000728,
+    "maxFrameMs": 183.30000000000018,
+    "longtasks": [
+      {
+        "startMs": 101.80000000074506,
+        "durationMs": 174
+      },
+      {
+        "startMs": 292,
+        "durationMs": 164
+      }
+    ],
+    "network": [
+      {
+        "path": "/api/nodes/advance",
+        "durationMs": 50.39999999944121
+      },
+      {
+        "path": "/api/state",
+        "durationMs": 21.09999999962747
+      }
+    ],
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "document": {
+      "width": 390,
+      "height": 844
+    },
+    "inputToArenaVisibleMs": 464.6000000005588,
+    "inputToPortraitsDecodedMs": 476.20000000018626
+  }
+}

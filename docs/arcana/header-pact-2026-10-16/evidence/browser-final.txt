@@ -1,0 +1,38 @@
+[WebServer] (node:42828) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:42854) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:42865) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:42894) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] WebSocket server error: Port 24678 is already in use
+
+Running 20 tests using 1 worker
+
+(node:42895) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 [chromium-a66] › tests/browser-trial/header-pact-a66.spec.ts:14:5 › A66 single header and framed pact es diagon-alley (2.4s)
+  ✓   2 [chromium-a66] › tests/browser-trial/header-pact-a66.spec.ts:14:5 › A66 single header and framed pact es arcana (1.7s)
+  ✓   3 [chromium-a66] › tests/browser-trial/header-pact-a66.spec.ts:14:5 › A66 single header and framed pact en diagon-alley (1.9s)
+  ✓   4 [chromium-a66] › tests/browser-trial/header-pact-a66.spec.ts:14:5 › A66 single header and framed pact en arcana (1.9s)
+  ✓   5 [chromium-a66] › tests/browser-trial/tactical-pacts-a65.spec.ts:133:5 › A65 choose, compare, prepare and resolve es diagon-alley (6.9s)
+  ✓   6 [chromium-a66] › tests/browser-trial/tactical-pacts-a65.spec.ts:133:5 › A65 choose, compare, prepare and resolve es arcana (4.4s)
+  ✓   7 [chromium-a66] › tests/browser-trial/tactical-pacts-a65.spec.ts:133:5 › A65 choose, compare, prepare and resolve en diagon-alley (6.8s)
+  ✓   8 [chromium-a66] › tests/browser-trial/tactical-pacts-a65.spec.ts:133:5 › A65 choose, compare, prepare and resolve en arcana (4.5s)
+  ✓   9 [chromium-a66] › tests/browser-trial/tactical-pacts-a65.spec.ts:286:1 › A65 transport fixture: lost recruitment response recovers exactly one chosen ally (1.6s)
+  ✓  10 [chromium-a66] › tests/browser-trial/tactical-pacts-a65.spec.ts:326:1 › A65 transport fixture: two tabs cannot recruit both offers from one pact (2.3s)
+(node:43320) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  11 [webkit-a66] › tests/browser-trial/header-pact-a66.spec.ts:14:5 › A66 single header and framed pact es diagon-alley (2.2s)
+  ✓  12 [webkit-a66] › tests/browser-trial/header-pact-a66.spec.ts:14:5 › A66 single header and framed pact es arcana (1.4s)
+  ✓  13 [webkit-a66] › tests/browser-trial/header-pact-a66.spec.ts:14:5 › A66 single header and framed pact en diagon-alley (1.7s)
+  ✓  14 [webkit-a66] › tests/browser-trial/header-pact-a66.spec.ts:14:5 › A66 single header and framed pact en arcana (1.6s)
+  ✓  15 [webkit-a66] › tests/browser-trial/tactical-pacts-a65.spec.ts:133:5 › A65 choose, compare, prepare and resolve es diagon-alley (6.3s)
+  ✓  16 [webkit-a66] › tests/browser-trial/tactical-pacts-a65.spec.ts:133:5 › A65 choose, compare, prepare and resolve es arcana (4.1s)
+  ✓  17 [webkit-a66] › tests/browser-trial/tactical-pacts-a65.spec.ts:133:5 › A65 choose, compare, prepare and resolve en diagon-alley (6.5s)
+  ✓  18 [webkit-a66] › tests/browser-trial/tactical-pacts-a65.spec.ts:133:5 › A65 choose, compare, prepare and resolve en arcana (4.2s)
+  ✓  19 [webkit-a66] › tests/browser-trial/tactical-pacts-a65.spec.ts:286:1 › A65 transport fixture: lost recruitment response recovers exactly one chosen ally (1.5s)
+  ✓  20 [webkit-a66] › tests/browser-trial/tactical-pacts-a65.spec.ts:326:1 › A65 transport fixture: two tabs cannot recruit both offers from one pact (2.2s)
+
+  20 passed (1.2m)

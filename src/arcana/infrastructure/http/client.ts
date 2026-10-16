@@ -15,6 +15,7 @@ import { publicContentSnapshot, type PublicContent } from '../../application/pub
 import { validDomainId } from '../../domain/identifiers';
 import { ArcanaClientError } from '../../application/client/errors';
 import type { AuthorityState, ClientGateway } from '../../application/client/ports';
+import type { SetIntentionRequest } from '../../application/set-intention';
 export { ArcanaClientError } from '../../application/client/errors';
 export type { AuthorityState } from '../../application/client/ports';
 type FetchTransport = (input: string | URL | Request, init?: RequestInit) => Promise<Response>;
@@ -53,6 +54,8 @@ export class ArcanaHttpClient implements ClientGateway {
     return this.result(await this.request('GET', `/operations/${encodeURIComponent(key)}`), key);
   }
   purchase = (command: OperationCommand<PurchaseRequest>) => this.command('/purchases', command);
+  setIntention = (command: OperationCommand<SetIntentionRequest>) =>
+    this.command('/intentions', command);
   buyOpenToad = (command: OperationCommand<BuyOpenToadRequest>) =>
     this.command('/toads/buy-open', command);
   openToad = (command: OperationCommand<OpenToadRequest>) => this.command('/toads/open', command);

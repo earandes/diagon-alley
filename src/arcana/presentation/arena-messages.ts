@@ -1,6 +1,7 @@
 import type { Language } from '../domain/collection/wizards';
 const messages = {
   es: {
+    equipmentHeal: '{name} recupera {value} PV con su varita.',
     saved: 'Combate guardado',
     continue: 'Continuar',
     savedHelp:
@@ -13,6 +14,7 @@ const messages = {
     savedResources: 'Recursos guardados',
   },
   en: {
+    equipmentHeal: '{name} restores {value} HP with their wand.',
     saved: 'Battle saved',
     continue: 'Continue',
     savedHelp: 'Playback does not change saved condition, inventory or rewards.',

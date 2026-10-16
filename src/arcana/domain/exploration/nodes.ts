@@ -1,3 +1,4 @@
+import { encounterOfferSnapshot, type EncounterOffer } from './encounter-trades';
 import { encounterChoiceSnapshot } from './encounters';
 import type { Localized } from '../collection/wizards';
 import {
@@ -30,14 +31,21 @@ export type NodePlan =
       readonly levelId: string;
       readonly opponents: readonly CombatUnitInput[];
       readonly reward: Reward;
+      readonly threat?: 'fire' | 'vanguard';
     }
   | { readonly nodeId: string; readonly kind: 'refuge' }
   | { readonly nodeId: string; readonly kind: 'chest'; readonly reward: Reward }
-  | { readonly nodeId: string; readonly kind: 'pact'; readonly recruit: CombatUnitInput }
+  | {
+      readonly nodeId: string;
+      readonly kind: 'pact';
+      readonly recruit: CombatUnitInput;
+      readonly recruits?: readonly CombatUnitInput[];
+    }
   | {
       readonly nodeId: string;
       readonly kind: 'encounter';
       readonly choices: readonly EncounterChoice[];
+      readonly offer?: EncounterOffer;
     };
 export interface Campaign {
   readonly version: number;
@@ -68,6 +76,7 @@ export function validateCampaign(campaign: Campaign): void {
     for (const plan of campaign.nodes as readonly NodePlan[]) {
       if (campaign.graph.nodes.find((n) => n.id === plan.nodeId)?.kind !== plan.kind) throw Error();
       if (plan.kind === 'duel' || plan.kind === 'boss') {
+        if (plan.threat !== undefined && !['fire', 'vanguard'].includes(plan.threat)) throw Error();
         if (!validDomainId(plan.levelId) || plan.opponents.some((u) => u.beanUnitId !== undefined))
           throw Error();
         validateReward(plan.reward);
@@ -83,7 +92,21 @@ export function validateCampaign(campaign: Campaign): void {
       else if (plan.kind === 'pact') {
         validateCombatUnit(plan.recruit);
         if (plan.recruit.beanUnitId !== undefined || plan.recruit.hp <= 0) throw Error();
+        if (plan.recruits !== undefined) {
+          if (
+            !Array.isArray(plan.recruits) ||
+            plan.recruits.length !== 2 ||
+            new Set(plan.recruits.map((u) => u.id)).size !== 2 ||
+            plan.recruits[0].id !== plan.recruit.id
+          )
+            throw Error();
+          for (const unit of plan.recruits) {
+            validateCombatUnit(unit);
+            if (unit.beanUnitId !== undefined || unit.hp <= 0) throw Error();
+          }
+        }
       } else if (plan.kind === 'encounter') {
+        if (plan.offer !== undefined) encounterOfferSnapshot(plan.offer);
         if (!Array.isArray(plan.choices) || !plan.choices.length) throw Error();
         let total = 0;
         for (const choice of plan.choices) {
@@ -96,6 +119,27 @@ export function validateCampaign(campaign: Campaign): void {
   } catch {
     throw new ArcanaError('INVALID_CAMPAIGN');
   }
+}
+/** Durable public campaign data only. No authority callbacks or live catalog lookups. */
+export function campaignSnapshot(campaign: Campaign): Campaign {
+  validateCampaign(campaign);
+  const copy = structuredClone({
+    version: campaign.version,
+    zoneId: campaign.zoneId,
+    nextZoneId: campaign.nextZoneId,
+    graph: campaign.graph,
+    combatRules: campaign.combatRules,
+    rounding: campaign.rounding,
+    nodes: campaign.nodes,
+  });
+  const freeze = (value: unknown): void => {
+    if (value && typeof value === 'object') {
+      for (const child of Object.values(value)) freeze(child);
+      Object.freeze(value);
+    }
+  };
+  freeze(copy);
+  return copy;
 }
 export function selectEncounter(
   plan: Extract<NodePlan, { kind: 'encounter' }>,

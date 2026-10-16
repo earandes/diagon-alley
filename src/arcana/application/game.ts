@@ -1,3 +1,4 @@
+import { encounterTradeSnapshot } from '../domain/exploration/encounter-trades';
 import { nodeOptionsSnapshot } from './node-options';
 import { encounterResolutionSnapshot } from '../domain/exploration/encounters';
 import {
@@ -22,6 +23,7 @@ import { createSeed } from '../domain/combat/seed';
 import { EMPTY_TEAM, teamSnapshot, validateTeam, type Team } from '../domain/collection/team';
 import type { StarterKitReceipt, TeamReceipt } from './team-contracts';
 import { equipmentSnapshot } from '../domain/economy/equipment';
+import { intentionReceiptSnapshot, type SetIntentionReceipt } from './set-intention';
 import type { ForgeReceipt, VaultReceipt } from './commerce-contracts';
 
 export interface OpenToadRequest {
@@ -61,6 +63,7 @@ export interface OpeningReceipt {
   readonly isNew: boolean;
 }
 export type OperationReceipt =
+  | SetIntentionReceipt
   | PurchaseReceipt
   | OpeningReceipt
   | BuyOpenToadReceipt
@@ -159,7 +162,9 @@ export function validateGame(value: unknown): asserts value is GameState {
     const purchased = new Set<string>();
     for (const receipt of state.receipts as readonly OperationReceipt[]) {
       if (!validDomainId(receipt.id)) throw Error();
-      if (receipt.kind === 'starter-kit') {
+      if (receipt.kind === 'set-intention') {
+        intentionReceiptSnapshot(receipt);
+      } else if (receipt.kind === 'starter-kit') {
         const copy = state.copies.find((c) => c.copyId === receipt.copyId);
         validateCatalog({ version: receipt.catalogVersion, wizards: [receipt.wizard] });
         if (
@@ -320,6 +325,8 @@ export function validateGame(value: unknown): asserts value is GameState {
             receipt.run.visited.length ||
             receipt.run.status !== 'active' ||
             receipt.request.zoneId !== receipt.run.zoneId ||
+            (receipt.request.challenge !== undefined &&
+              receipt.request.challenge !== receipt.run.challenge) ||
             !Array.isArray(receipt.request.copyIds) ||
             receipt.request.copyIds.length !== receipt.run.members.length ||
             receipt.run.members.some(
@@ -352,6 +359,39 @@ export function validateGame(value: unknown): asserts value is GameState {
           )
             throw Error();
           if (receipt.encounter !== null) {
+            const plan = receipt.run.campaignSnapshot?.nodes.find(
+              (n) => n.nodeId === receipt.request.nodeId,
+            );
+            if (receipt.request.encounterAction === 'trade') {
+              if (
+                !receipt.encounter.trade ||
+                receipt.encounter.resolution !== undefined ||
+                receipt.encounter.seed !== 0 ||
+                plan?.kind !== 'encounter' ||
+                !plan.offer ||
+                receipt.encounter.trade.offer.id !== plan.offer.id ||
+                receipt.encounter.trade.choiceId !== receipt.request.encounterChoiceId ||
+                receipt.encounter.trade.unitId !== receipt.request.encounterUnitId ||
+                receipt.encounter.choice !==
+                  plan.offer.options.findIndex((o) => o.id === receipt.request.encounterChoiceId) ||
+                receipt.reward.crowns !== 0 ||
+                receipt.reward.goldKeys !== 0 ||
+                receipt.reward.products.length
+              )
+                throw Error();
+              const trade = encounterTradeSnapshot(receipt.encounter.trade, receipt.run.members);
+              // Persisted offer must match the immutable run's mechanics, not only its id.
+              if (
+                trade.offer.npcId !== plan.offer.npcId ||
+                trade.offer.kind !== plan.offer.kind ||
+                trade.offer.options.some((o, i) =>
+                  Object.entries(o).some(
+                    ([k, v]) => plan.offer!.options[i]?.[k as keyof typeof o] !== v,
+                  ),
+                )
+              )
+                throw Error();
+            } else if (receipt.encounter.trade !== undefined) throw Error();
             createSeed(receipt.encounter.seed);
             if (!Number.isSafeInteger(receipt.encounter.choice) || receipt.encounter.choice < 0)
               throw Error();
@@ -455,6 +495,7 @@ export function gameSnapshot(state: GameState): GameState {
 }
 
 function snapshotReceipt(receipt: OperationReceipt): OperationReceipt {
+  if (receipt.kind === 'set-intention') return intentionReceiptSnapshot(receipt);
   if (receipt.kind === 'buy-open-toad')
     return Object.freeze({
       ...receipt,
@@ -538,6 +579,14 @@ function snapshotReceipt(receipt: OperationReceipt): OperationReceipt {
                 : Object.freeze({
                     seed: receipt.encounter.seed,
                     choice: receipt.encounter.choice,
+                    ...(receipt.encounter.trade
+                      ? {
+                          trade: encounterTradeSnapshot(
+                            receipt.encounter.trade,
+                            receipt.run.members,
+                          ),
+                        }
+                      : {}),
                     ...(receipt.encounter.resolution === undefined
                       ? {}
                       : {

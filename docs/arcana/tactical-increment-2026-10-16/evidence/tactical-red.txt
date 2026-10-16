@@ -1,0 +1,33 @@
+
+ RUN  v5.0.3 /Users/enricarandes/work/diagon-alley
+
+ ❯ tests/domain/arcana/tactical-run.test.ts (1 test | 1 failed) 7ms
+   × fixes two offers and combat content in a new run without changing campaign reward version 6ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/domain/arcana/tactical-run.test.ts > fixes two offers and combat content in a new run without changing campaign reward version
+AssertionError: expected undefined to be 1 // Object.is equality
+
+- Expected:
+1
+
++ Received:
+undefined
+
+ ❯ tests/domain/arcana/tactical-run.test.ts:17:66
+     15| it('fixes two offers and combat content in a new run without changing …
+     16|  const s=setup();await s.start.execute('player',{key:'new',expectedRev…
+     17|  const run=s.state.exploration!.run!;expect(run.tacticalVersion).toBe(…
+       |                                                                  ^
+     18|  const pact=run.campaignSnapshot!.nodes.find(n=>n.kind==='pact')!;if(p…
+     19|  const base={runId:run.id,nodeId:pact.nodeId,campaignVersion:run.campa…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed (1)
+   Start at  15:02:58
+   Duration  159ms (transform 76%, import 15%, tests 7%, worker 2%)
+

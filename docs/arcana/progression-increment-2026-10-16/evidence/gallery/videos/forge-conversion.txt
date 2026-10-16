@@ -1,0 +1,34 @@
+ffmpeg version 8.0.1 Copyright (c) 2000-2025 the FFmpeg developers
+  built with Apple clang version 17.0.0 (clang-1700.6.3.2)
+  configuration: --prefix=/opt/homebrew/Cellar/ffmpeg/8.0.1_4 --enable-shared --enable-pthreads --enable-version3 --cc=clang --host-cflags= --host-ldflags= --enable-ffplay --enable-gpl --enable-libsvtav1 --enable-libopus --enable-libx264 --enable-libmp3lame --enable-libdav1d --enable-libvpx --enable-libx265 --enable-openssl --enable-videotoolbox --enable-audiotoolbox --enable-neon
+  libavutil      60.  8.100 / 60.  8.100
+  libavcodec     62. 11.100 / 62. 11.100
+  libavformat    62.  3.100 / 62.  3.100
+  libavdevice    62.  1.100 / 62.  1.100
+  libavfilter    11.  4.100 / 11.  4.100
+  libswscale      9.  1.100 /  9.  1.100
+  libswresample   6.  1.100 /  6.  1.100
+Input #0, matroska,webm, from 'test-results-progression-a67/progression-a67-A67-forge--9dc78-ons-equip-V2-then-replay-es-chromium-a67/video.webm':
+  Metadata:
+    creation_time   : 2026-10-16T15:03:19.130000Z
+    ENCODER         : Lavf61.1.100
+  Duration: 00:00:05.96, start: 0.000000, bitrate: 1963 kb/s
+  Stream #0:0(eng): Video: vp9 (Profile 0), yuv420p(tv, progressive), 800x562, SAR 1:1 DAR 400:281, 25 fps, 25 tbr, 1k tbn (default)
+    Metadata:
+      ENCODER         : Lavc61.3.100 libvpx-vp9
+      DURATION        : 00:00:05.960000000
+Stream mapping:
+  Stream #0:0 -> #0:0 (vp9 (native) -> vp9 (libvpx-vp9))
+Press [q] to stop, [?] for help
+[libvpx-vp9 @ 0x7535044a80] v1.16.0
+Output #0, webm, to 'docs/arcana/progression-increment-2026-10-16/evidence/gallery/videos/forge-equip-arena-es-chromium.webm':
+  Metadata:
+    encoder         : Lavf62.3.100
+  Stream #0:0(eng): Video: vp9, yuv420p(tv, progressive), 800x562 [SAR 1:1 DAR 400:281], q=2-31, 24 fps, 1k tbn (default)
+    Metadata:
+      encoder         : Lavc62.11.100 libvpx-vp9
+      DURATION        : 00:00:05.960000000
+    Side data:
+      cpb: bitrate max/min/avg: 0/0/0 buffer size: 0 vbv_delay: N/A
+frame=    8 fps=0.0 q=36.0 size=       0KiB time=00:00:00.33 bitrate=  11.3kbits/s speed=0.654x elapsed=0:00:00.51    frame=   15 fps= 15 q=34.0 size=       0KiB time=00:00:00.62 bitrate=   6.0kbits/s speed=0.613x elapsed=0:00:01.02    frame=   22 fps= 14 q=36.0 size=       0KiB time=00:00:00.91 bitrate=   4.1kbits/s speed=0.599x elapsed=0:00:01.53    frame=   31 fps= 15 q=26.0 size=       0KiB time=00:00:01.29 bitrate=   2.9kbits/s speed=0.633x elapsed=0:00:02.04    frame=   40 fps= 16 q=36.0 size=       0KiB time=00:00:01.66 bitrate=   2.3kbits/s speed=0.655x elapsed=0:00:02.54    frame=   47 fps= 15 q=34.0 size=       0KiB time=00:00:01.95 bitrate=   1.9kbits/s speed=0.641x elapsed=0:00:03.05    frame=   52 fps= 15 q=36.0 size=       0KiB time=00:00:02.16 bitrate=   1.7kbits/s speed=0.608x elapsed=0:00:03.56    frame=   56 fps= 14 q=36.0 size=       0KiB time=00:00:02.33 bitrate=   1.6kbits/s speed=0.573x elapsed=0:00:04.07    frame=   60 fps= 13 q=36.0 size=       0KiB time=00:00:02.50 bitrate=   1.5kbits/s speed=0.545x elapsed=0:00:04.58    frame=   70 fps= 14 q=36.0 size=       0KiB time=00:00:02.91 bitrate=   1.3kbits/s speed=0.573x elapsed=0:00:05.08    frame=   80 fps= 14 q=36.0 size=       0KiB time=00:00:03.33 bitrate=   1.1kbits/s speed=0.596x elapsed=0:00:05.59    frame=   89 fps= 15 q=26.0 size=       0KiB time=00:00:03.70 bitrate=   1.0kbits/s speed=0.608x elapsed=0:00:06.09    frame=   98 fps= 15 q=36.0 size=       0KiB time=00:00:04.08 bitrate=   0.9kbits/s speed=0.619x elapsed=0:00:06.59    frame=  105 fps= 15 q=26.0 size=       0KiB time=00:00:04.37 bitrate=   0.9kbits/s speed=0.615x elapsed=0:00:07.10    frame=  112 fps= 15 q=36.0 size=       0KiB time=00:00:04.66 bitrate=   0.8kbits/s speed=0.612x elapsed=0:00:07.61    frame=  119 fps= 15 q=34.0 size=       0KiB time=00:00:04.95 bitrate=   0.8kbits/s speed=0.61x elapsed=0:00:08.12    frame=  119 fps= 14 q=34.0 size=       0KiB time=00:00:04.95 bitrate=   0.8kbits/s speed=0.574x elapsed=0:00:08.63    [out#0/webm @ 0x7534c1c240] video:781KiB audio:0KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: 0.188597%
+frame=  143 fps= 16 q=34.0 Lsize=     783KiB time=00:00:05.95 bitrate=1076.3kbits/s speed=0.656x elapsed=0:00:09.08    

@@ -1,10 +1,11 @@
-import { defineConfig } from '@playwright/test';
+import { defineSafeConfig as defineConfig } from './tools/verification/playwright-safety';
 import { randomUUID } from 'node:crypto';
 const namespace = 'arcana-browser-' + randomUUID();
 const compiled = process.env.ARCANA_TRIAL_COMPILED === '1';
-const command = (port: number) => compiled
-  ? `npx --no-install vite preview --host 127.0.0.1 --port ${port} --strictPort --mode arcana`
-  : `npm run dev:arcana -- --port ${port}`;
+const command = (port: number) =>
+  compiled
+    ? `npx --no-install vite preview --host 127.0.0.1 --port ${port} --strictPort --mode arcana`
+    : `npm run dev:arcana -- --port ${port}`;
 const port = Number(process.env.ARCANA_TRIAL_TEST_PORT_BASE ?? 5189);
 const isolatedExperience = [
   '**/annotation-experience.spec.ts',
@@ -12,11 +13,15 @@ const isolatedExperience = [
   '**/commerce-a60.spec.ts',
   '**/pokelike-experience.spec.ts',
   '**/*-a63.spec.ts',
+  '**/*-a65.spec.ts',
+  '**/*-a66.spec.ts',
+  '**/*-a67.spec.ts',
+  '**/browser-local-smoke-a67.spec.ts',
 ];
 export default defineConfig({
   testDir: './tests/browser-trial',
   // A63 profiles/journeys have dedicated configs and isolated manual authorities.
-  testIgnore: '**/*-a63.spec.ts',
+  testIgnore: ['**/*-a63.spec.ts', '**/*-a65.spec.ts', '**/*-a66.spec.ts', '**/*-a67.spec.ts'],
   outputDir: 'test-results-arcana-journey',
   workers: 1,
   fullyParallel: false,

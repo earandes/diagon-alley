@@ -20,6 +20,7 @@ import {
 } from '../../application/run-use-cases';
 import { createArcanaApi, type HttpPolicy, type ArcanaApiServices } from './api';
 import { SetTeamUseCase, EquipEquipmentUseCase } from '../../application/team-use-cases';
+import { SetIntentionUseCase } from '../../application/set-intention';
 interface CompositionOptions {
   readonly pool: Pool;
   readonly redis: ConstructorParameters<typeof RedisAuthority>[0];
@@ -41,6 +42,11 @@ export function composeArcanaApi(options: CompositionOptions) {
     return config;
   };
   const services: ArcanaApiServices = {
+    setIntention: new SetIntentionUseCase(games, () => ({
+      ownedAffinities: options.campaign().ownedAffinities ?? {},
+      beanPrice:
+        options.opening().shop.products.find((p) => p.kind === 'random-beans')?.crowns ?? Infinity,
+    })),
     forgeWand: new ForgeWandUseCase(games, commerce),
     openVault: new OpenObsidianVaultUseCase(games, commerce, new CryptoTickets()),
     games,

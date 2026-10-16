@@ -239,6 +239,10 @@ function BattlePlayback({
       case 'mana-exhausted':
         return t('noManaEvent', { name: name(event.actorId) });
       case 'healed':
+        if (event.source === 'equipment')
+          return arenaText(language, 'equipmentHeal')
+            .replace('{name}', name(event.actorId))
+            .replace('{value}', format.format(event.amount));
         return t('healEvent', { name: name(event.actorId), value: format.format(event.amount) });
       case 'burn-tick':
         return t('burnEvent', { name: name(event.actorId), value: format.format(event.damage) });

@@ -1,0 +1,14 @@
+
+> coleccion-magica-i1@0.1.0 services:up
+> docker compose -f compose.arcana.yml up -d --wait
+
+ Container arcana-local-redis-1  Created
+ Container arcana-local-postgres-1  Created
+ Container arcana-local-redis-1  Starting
+ Container arcana-local-postgres-1  Starting
+ Container arcana-local-redis-1  Started
+ Container arcana-local-postgres-1  Started
+ Container arcana-local-redis-1  Waiting
+ Container arcana-local-postgres-1  Waiting
+ Container arcana-local-redis-1  Healthy
+ Container arcana-local-postgres-1  Healthy

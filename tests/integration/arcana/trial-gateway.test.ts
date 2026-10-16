@@ -157,7 +157,21 @@ describe('local trial cookie gateway with authoritative SQL/Redis', () => {
         payload: {
           key: 'advance-' + nodeId,
           expectedRevision: state.revision,
-          request: { runId: 'run', nodeId, campaignVersion: 1, assignments: [] },
+          request: {
+            runId: 'run',
+            nodeId,
+            campaignVersion: 1,
+            assignments: [],
+            ...(state.exploration.run.campaignSnapshot?.nodes.find(
+              (plan: { nodeId: string; kind: string }) => plan.nodeId === nodeId,
+            )?.kind === 'pact'
+              ? {
+                  recruitId: state.exploration.run.campaignSnapshot.nodes.find(
+                    (plan: { nodeId: string }) => plan.nodeId === nodeId,
+                  ).recruits[0].id,
+                }
+              : {}),
+          },
         },
       });
       expect(result.statusCode).toBe(200);

@@ -1,3 +1,5 @@
+import { encounterOfferSnapshot } from '../domain/exploration/encounter-trades';
+import { EXPEDITION_CHALLENGES, type ExpeditionChallenge } from '../domain/exploration/challenges';
 import { encounterChoiceSnapshot } from '../domain/exploration/encounters';
 import { unitSnapshot, type Affinity } from '../domain/combat/engine';
 import type { Reward } from '../domain/economy/rewards';
@@ -26,6 +28,7 @@ export interface PublicContent {
     readonly zoneId: string;
     readonly nextZoneId: string;
     readonly graph: NodeGraph;
+    readonly challenges?: readonly ExpeditionChallenge[];
     readonly nodes?: readonly NodePlan[];
     readonly rounding?: 'floor' | 'ceil';
     readonly ownedAffinities?: Readonly<Record<string, Affinity>>;
@@ -50,6 +53,7 @@ export function projectPublicContent(
       zoneId: campaign.zoneId,
       nextZoneId: campaign.nextZoneId,
       graph: campaign.graph,
+      ...(campaign.challengeContent ? { challenges: EXPEDITION_CHALLENGES } : {}),
       nodes: campaign.nodes,
       rounding: campaign.rounding,
       ownedAffinities: campaign.ownedAffinities,
@@ -75,11 +79,26 @@ export function publicContentSnapshot(value: unknown): PublicContent {
     throw new ArcanaError('INVALID_CAMPAIGN');
   if (campaign.nodes !== undefined)
     validateCampaign({ ...campaign, nodes: campaign.nodes, rounding: campaign.rounding! });
+  if (
+    campaign.challenges !== undefined &&
+    (!Array.isArray(campaign.challenges) ||
+      campaign.challenges.length !== 3 ||
+      campaign.challenges.some((c, i) => c !== EXPEDITION_CHALLENGES[i]))
+  )
+    throw new ArcanaError('INVALID_CAMPAIGN');
   const rules = campaign.combatRules;
   const affinities = campaign.ownedAffinities;
-  if (affinities !== undefined && (!affinities || typeof affinities !== 'object' || Array.isArray(affinities) ||
-    Object.entries(affinities).some(([id, affinity]) =>
-      !opening.catalog.wizards.some(w => w.id === id) || !['neutral', 'alchemy', 'fire', 'shadows'].includes(affinity))))
+  if (
+    affinities !== undefined &&
+    (!affinities ||
+      typeof affinities !== 'object' ||
+      Array.isArray(affinities) ||
+      Object.entries(affinities).some(
+        ([id, affinity]) =>
+          !opening.catalog.wizards.some((w) => w.id === id) ||
+          !['neutral', 'alchemy', 'fire', 'shadows'].includes(affinity),
+      ))
+  )
     throw new ArcanaError('INVALID_CAMPAIGN');
   return Object.freeze({
     ...(content.commerce === undefined ? {} : { commerce: commerceSnapshot(content.commerce) }),
@@ -105,6 +124,7 @@ export function publicContentSnapshot(value: unknown): PublicContent {
       ),
     }),
     campaign: Object.freeze({
+      ...(campaign.challenges ? { challenges: Object.freeze([...campaign.challenges]) } : {}),
       ...(affinities === undefined ? {} : { ownedAffinities: Object.freeze({ ...affinities }) }),
       ...(campaign.nodes
         ? { nodes: Object.freeze(campaign.nodes.map(publicNodePlan)), rounding: campaign.rounding }
@@ -146,7 +166,7 @@ export function publicContentSnapshot(value: unknown): PublicContent {
   });
 }
 
-function publicNodePlan(plan: NodePlan): NodePlan {
+export function publicNodePlan(plan: NodePlan): NodePlan {
   const base = { nodeId: plan.nodeId, kind: plan.kind };
   const reward = (value: Reward) =>
     Object.freeze({
@@ -161,6 +181,7 @@ function publicNodePlan(plan: NodePlan): NodePlan {
         ...base,
         kind: plan.kind,
         levelId: plan.levelId,
+        ...(plan.threat ? { threat: plan.threat } : {}),
         opponents: Object.freeze(plan.opponents.map(unitSnapshot)),
         reward: reward(plan.reward),
       });
@@ -169,12 +190,18 @@ function publicNodePlan(plan: NodePlan): NodePlan {
     case 'refuge':
       return Object.freeze({ ...base, kind: plan.kind });
     case 'pact':
-      return Object.freeze({ ...base, kind: plan.kind, recruit: unitSnapshot(plan.recruit) });
+      return Object.freeze({
+        ...base,
+        kind: plan.kind,
+        recruit: unitSnapshot(plan.recruit),
+        ...(plan.recruits ? { recruits: Object.freeze(plan.recruits.map(unitSnapshot)) } : {}),
+      });
     case 'encounter':
       return Object.freeze({
         ...base,
         kind: plan.kind,
         choices: Object.freeze(plan.choices.map(encounterChoiceSnapshot)),
+        ...(plan.offer ? { offer: encounterOfferSnapshot(plan.offer) } : {}),
       });
   }
 }

@@ -1,0 +1,344 @@
+{
+  "generatedAt": "2026-10-16T15:46:58.108Z",
+  "images": [
+    {
+      "id": "before-map-865",
+      "source": "docs/arcana/progression-increment-2026-10-16/evidence/before/map-865.png",
+      "target": "docs/arcana/progression-increment-2026-10-16/evidence/gallery/before-map-865.webp",
+      "note": "A67 reference captured before implementation; different random route/accounts from after.",
+      "sourceSha256": "56450f75a26fdbd0d25625766d84c534d2bfd46ac79768e6031ea60804b35af9",
+      "targetSha256": "e7ace0965ed09345acd5157d60c5b928e40f7a7c0acaea9fc78819fbbad6f77f",
+      "bytes": 181734,
+      "transformation": "PNG→WebP quality85. Original dimensions preserved; no crop, retouch or UI changes.",
+      "command": [
+        "python3",
+        "Pillow Image.open(source).save(target, format=WEBP, quality=85, method=6)"
+      ]
+    },
+    {
+      "id": "historical-encounter-390",
+      "source": "docs/arcana/expert-review-2026-10-15/evidence/captures/es-node-encounter-390.png",
+      "target": "docs/arcana/progression-increment-2026-10-16/evidence/gallery/historical-encounter-390.webp",
+      "note": "Historical A62 browser capture2026-10-15; not an equivalent A67 baseline.",
+      "sourceSha256": "a3290fa48e67c29398afb6a83caab25d416ab887da6affc744240e118e36d415",
+      "targetSha256": "a69bfec5d002d9234897a6de8ffe2ea85dd33f1ed755f23561742bab97728d1d",
+      "bytes": 15554,
+      "transformation": "PNG→WebP quality85. Original dimensions preserved; no crop, retouch or UI changes.",
+      "command": [
+        "python3",
+        "Pillow Image.open(source).save(target, format=WEBP, quality=85, method=6)"
+      ]
+    },
+    {
+      "id": "historical-workshop-390",
+      "source": "docs/arcana/expert-review-2026-10-15/evidence/captures/es-25-workshop-390.png",
+      "target": "docs/arcana/progression-increment-2026-10-16/evidence/gallery/historical-workshop-390.webp",
+      "note": "Historical A62 browser capture2026-10-15; not an equivalent A67 baseline.",
+      "sourceSha256": "e37dc988bd67c40e5d1081b7f2196e0ace257a5a4c94fd3c3116a9a1c55e3d6e",
+      "targetSha256": "e860965d0e7d3f1e2ba119abd84d64aba5e7a63f89092531d778132dc2769584",
+      "bytes": 38038,
+      "transformation": "PNG→WebP quality85. Original dimensions preserved; no crop, retouch or UI changes.",
+      "command": [
+        "python3",
+        "Pillow Image.open(source).save(target, format=WEBP, quality=85, method=6)"
+      ]
+    },
+    {
+      "id": "challenge-1280",
+      "source": "docs/arcana/progression-increment-2026-10-16/evidence/browser/chromium-a67-diagon-alley-es-challenge-picker-1280.png",
+      "target": "docs/arcana/progression-increment-2026-10-16/evidence/gallery/challenge-1280.webp",
+      "note": "A67 isolated account; no economic operation on challenge selection.",
+      "sourceSha256": "2b51f35bb177a306cb005cbd1e4e17fbe04c22248c13da71adb50b3d95a1a1d6",
+      "targetSha256": "0fc78facb2c41fe8590e8fdb5753532ca702574f10651cc5eff6a9210b201e72",
+      "bytes": 144734,
+      "transformation": "PNG→WebP quality85. Original dimensions preserved; no crop, retouch or UI changes.",
+      "command": [
+        "python3",
+        "Pillow Image.open(source).save(target, format=WEBP, quality=85, method=6)"
+      ]
+    },
+    {
+      "id": "challenge-390",
+      "source": "docs/arcana/progression-increment-2026-10-16/evidence/browser/chromium-a67-diagon-alley-es-challenge-picker-390.png",
+      "target": "docs/arcana/progression-increment-2026-10-16/evidence/gallery/challenge-390.webp",
+      "note": "A67 isolated account; no economic operation on challenge selection.",
+      "sourceSha256": "6f547e3b956b77bd6d6a523f2dc79d10ec8e9d68f6a33540bdf21eff2879c28d",
+      "targetSha256": "cafb6c282b69d8efd6111d3877af08f8d7c9b3bacec28d71b684e4d315da1dd2",
+      "bytes": 42286,
+      "transformation": "PNG→WebP quality85. Original dimensions preserved; no crop, retouch or UI changes.",
+      "command": [
+        "python3",
+        "Pillow Image.open(source).save(target, format=WEBP, quality=85, method=6)"
+      ]
+    },
+    {
+      "id": "challenge-865",
+      "source": "docs/arcana/progression-increment-2026-10-16/evidence/browser/chromium-a67-diagon-alley-es-challenge-picker-865.png",
+      "target": "docs/arcana/progression-increment-2026-10-16/evidence/gallery/challenge-865.webp",
+      "note": "A67 isolated account; no economic operation on challenge selection.",
+      "sourceSha256": "06f334e16b1b9c2b9a1d9cb38583d7ea90b9ba833ff7bfd518be4fd4516d61a9",
+      "targetSha256": "0e38df339179891caefa068b457f4f1f9c8664e730f6440e0bbd51c715955694",
+      "bytes": 78400,
+      "transformation": "PNG→WebP quality85. Original dimensions preserved; no crop, retouch or UI changes.",
+      "command": [
+        "python3",
+        "Pillow Image.open(source).save(target, format=WEBP, quality=85, method=6)"
+      ]
+    },
+    {
+      "id": "map-discovery-865",
+      "source": "docs/arcana/progression-increment-2026-10-16/evidence/browser/chromium-a67-diagon-alley-es-map-discovery-865.png",
+      "target": "docs/arcana/progression-increment-2026-10-16/evidence/gallery/map-discovery-865.webp",
+      "note": "A67 Discovery new run.",
+      "sourceSha256": "30574e49838af835eb0aef1f82875dc92c8c9813e2e074a6911f8093ff435738",
+      "targetSha256": "c993b9ef9ee95d18d636198251fb6d6b22e71d9eea691e45d3e9dbd918ee400f",
+      "bytes": 181580,
+      "transformation": "PNG→WebP quality85. Original dimensions preserved; no crop, retouch or UI changes.",
+      "command": [
+        "python3",
+        "Pillow Image.open(source).save(target, format=WEBP, quality=85, method=6)"
+      ]
+    },
+    {
+      "id": "map-tactical-390",
+      "source": "docs/arcana/progression-increment-2026-10-16/evidence/browser/chromium-a67-en-map-tactical-390.png",
+      "target": "docs/arcana/progression-increment-2026-10-16/evidence/gallery/map-tactical-390.webp",
+      "note": "A67 Tactical new run with forged equipment; English.",
+      "sourceSha256": "6754fed3f50c67f89de21fcab4905fd92cfd79764a3678deb37cd64fc32e3a91",
+      "targetSha256": "484f870c8de581c263496ba34fe9f57585dfe81d548d2868b94aead88727cbbd",
+      "bytes": 80350,
+      "transformation": "PNG→WebP quality85. Original dimensions preserved; no crop, retouch or UI changes.",
+      "command": [
+        "python3",
+        "Pillow Image.open(source).save(target, format=WEBP, quality=85, method=6)"
+      ]
+    },
+    {
+      "id": "encounter-es-1280",
+      "source": "docs/arcana/progression-increment-2026-10-16/evidence/browser/chromium-a67-diagon-alley-es-encounter-unit-1280.png",
+      "target": "docs/arcana/progression-increment-2026-10-16/evidence/gallery/encounter-es-1280.webp",
+      "note": "A67 unit trade; declared SQL fixture50%HP/MP on own newly created account.",
+      "sourceSha256": "206512dd418490bb9d5eeac2f4fb2d454c752df9825d1fe34165420a62d3a3c1",
+      "targetSha256": "93ff47ccb7eed1f80d1a97c45b517d2d4785d216f60422876747bd3324851f1c",
+      "bytes": 48388,
+      "transformation": "PNG→WebP quality85. Original dimensions preserved; no crop, retouch or UI changes.",
+      "command": [
+        "python3",
+        "Pillow Image.open(source).save(target, format=WEBP, quality=85, method=6)"
+      ]
+    },
+    {
+      "id": "encounter-es-390",
+      "source": "docs/arcana/progression-increment-2026-10-16/evidence/browser/chromium-a67-diagon-alley-es-encounter-unit-390.png",
+      "target": "docs/arcana/progression-increment-2026-10-16/evidence/gallery/encounter-es-390.webp",
+      "note": "A67 unit trade; declared SQL fixture50%HP/MP on own newly created account.",
+      "sourceSha256": "57e9725979b6a849238074c8a0e0ae3d9d1e12d6ab680895b1571721543e1793",
+      "targetSha256": "c9b440c64becab082008ed8ad064fb95c422f759159ecb21e33148eac4c59636",
+      "bytes": 30112,
+      "transformation": "PNG→WebP quality85. Original dimensions preserved; no crop, retouch or UI changes.",
+      "command": [
+        "python3",
+        "Pillow Image.open(source).save(target, format=WEBP, quality=85, method=6)"
+      ]
+    },
+    {
+      "id": "encounter-es-865",
+      "source": "docs/arcana/progression-increment-2026-10-16/evidence/browser/chromium-a67-diagon-alley-es-encounter-unit-865.png",
+      "target": "docs/arcana/progression-increment-2026-10-16/evidence/gallery/encounter-es-865.webp",
+      "note": "A67 unit trade; declared SQL fixture50%HP/MP on own newly created account.",
+      "sourceSha256": "82b24107c663b9f2683dcf37ddb1a6f39147b6d64e60739838d0952d9f07471b",
+      "targetSha256": "47b956478a4942c214796f4e3d6ec60a1ec3232205e00153a40f778c60c2079f",
+      "bytes": 44860,
+      "transformation": "PNG→WebP quality85. Original dimensions preserved; no crop, retouch or UI changes.",
+      "command": [
+        "python3",
+        "Pillow Image.open(source).save(target, format=WEBP, quality=85, method=6)"
+      ]
+    },
+    {
+      "id": "encounter-arcana-en-1280",
+      "source": "docs/arcana/progression-increment-2026-10-16/evidence/browser/chromium-a67-arcana-en-encounter-unit-1280.png",
+      "target": "docs/arcana/progression-increment-2026-10-16/evidence/gallery/encounter-arcana-en-1280.webp",
+      "note": "A67 ARCANA English reduced motion; declared condition fixture.",
+      "sourceSha256": "1a55100da2e52500d7b306faa6299f2c36de8a9f111e76cdcd054e88b389ab71",
+      "targetSha256": "cb47f245aa9ed5199810805ed5961fed4945e3637c52aab055a27c648cf6ca2d",
+      "bytes": 51392,
+      "transformation": "PNG→WebP quality85. Original dimensions preserved; no crop, retouch or UI changes.",
+      "command": [
+        "python3",
+        "Pillow Image.open(source).save(target, format=WEBP, quality=85, method=6)"
+      ]
+    },
+    {
+      "id": "encounter-arcana-en-390",
+      "source": "docs/arcana/progression-increment-2026-10-16/evidence/browser/chromium-a67-arcana-en-encounter-unit-390.png",
+      "target": "docs/arcana/progression-increment-2026-10-16/evidence/gallery/encounter-arcana-en-390.webp",
+      "note": "A67 ARCANA English reduced motion; declared condition fixture.",
+      "sourceSha256": "fc3aabdf21331be4ad0b9436c5ee37a41d7ea6a626ed95720e1b17a088100417",
+      "targetSha256": "d9a139c2892b59a1f9b069f2a3203c3fcdb6de0d5af1e2299230becf74d5e8d1",
+      "bytes": 31364,
+      "transformation": "PNG→WebP quality85. Original dimensions preserved; no crop, retouch or UI changes.",
+      "command": [
+        "python3",
+        "Pillow Image.open(source).save(target, format=WEBP, quality=85, method=6)"
+      ]
+    },
+    {
+      "id": "encounter-arcana-en-865",
+      "source": "docs/arcana/progression-increment-2026-10-16/evidence/browser/chromium-a67-arcana-en-encounter-unit-865.png",
+      "target": "docs/arcana/progression-increment-2026-10-16/evidence/gallery/encounter-arcana-en-865.webp",
+      "note": "A67 ARCANA English reduced motion; declared condition fixture.",
+      "sourceSha256": "e0438d5bb8e5a6a63da2c5f08f9942d5a55a1ed6505973ac4d69c6eff7419934",
+      "targetSha256": "94bc24582197f93ce827958075ef69bd997cd541bf697ba3daeb5e528bb981be",
+      "bytes": 42706,
+      "transformation": "PNG→WebP quality85. Original dimensions preserved; no crop, retouch or UI changes.",
+      "command": [
+        "python3",
+        "Pillow Image.open(source).save(target, format=WEBP, quality=85, method=6)"
+      ]
+    },
+    {
+      "id": "encounter-team-1280",
+      "source": "docs/arcana/progression-increment-2026-10-16/evidence/browser/chromium-a67-es-encounter-group-1280.png",
+      "target": "docs/arcana/progression-increment-2026-10-16/evidence/gallery/encounter-team-1280.webp",
+      "note": "A67 team trade before lost-response recovery; declared condition fixture.",
+      "sourceSha256": "927be62ea9f7cb0c31f56bc8b7a342adfc4e83bb9486e3bbce32549fab63a309",
+      "targetSha256": "d40c3c46f1413cf75aa301faa7f0bcc465a6c3514f1fe8a3156a2b014a8018f6",
+      "bytes": 47452,
+      "transformation": "PNG→WebP quality85. Original dimensions preserved; no crop, retouch or UI changes.",
+      "command": [
+        "python3",
+        "Pillow Image.open(source).save(target, format=WEBP, quality=85, method=6)"
+      ]
+    },
+    {
+      "id": "encounter-team-390",
+      "source": "docs/arcana/progression-increment-2026-10-16/evidence/browser/chromium-a67-es-encounter-group-390.png",
+      "target": "docs/arcana/progression-increment-2026-10-16/evidence/gallery/encounter-team-390.webp",
+      "note": "A67 team trade before lost-response recovery; declared condition fixture.",
+      "sourceSha256": "7bde863a9f8ffe6efebcfedb163789b6f150fe5894b377cbe5bb4d11a353b6fb",
+      "targetSha256": "1389e4add50d68824948d458f944fd1985b4610be9d35d2078aec554673b7a9e",
+      "bytes": 27874,
+      "transformation": "PNG→WebP quality85. Original dimensions preserved; no crop, retouch or UI changes.",
+      "command": [
+        "python3",
+        "Pillow Image.open(source).save(target, format=WEBP, quality=85, method=6)"
+      ]
+    },
+    {
+      "id": "encounter-saved-1280",
+      "source": "docs/arcana/progression-increment-2026-10-16/evidence/browser/chromium-a67-diagon-alley-es-encounter-confirmed-1280.png",
+      "target": "docs/arcana/progression-increment-2026-10-16/evidence/gallery/encounter-saved-1280.webp",
+      "note": "A67 authority-confirmed persisted trade result, optional receipt opened.",
+      "sourceSha256": "83296c5b6c6b31ce5d5f3f720b62952cf48c72bdc83a834ff2d5e529a80a631a",
+      "targetSha256": "6813fe5b45ef129e6cc2f0759c2918f90304cb961c0d460684cec92e9ac42c2b",
+      "bytes": 227942,
+      "transformation": "PNG→WebP quality85. Original dimensions preserved; no crop, retouch or UI changes.",
+      "command": [
+        "python3",
+        "Pillow Image.open(source).save(target, format=WEBP, quality=85, method=6)"
+      ]
+    },
+    {
+      "id": "encounter-saved-390",
+      "source": "docs/arcana/progression-increment-2026-10-16/evidence/browser/chromium-a67-diagon-alley-es-encounter-confirmed-390.png",
+      "target": "docs/arcana/progression-increment-2026-10-16/evidence/gallery/encounter-saved-390.webp",
+      "note": "A67 authority-confirmed persisted trade result, optional receipt opened.",
+      "sourceSha256": "76523194ff2601b11b0723b32b3f4627525e7232e1566a7df5a375f5d777d7b5",
+      "targetSha256": "bf8e1fc72d19d98595fb920b53a87741f117e265c22ccf3a32883ccaed9adb50",
+      "bytes": 54120,
+      "transformation": "PNG→WebP quality85. Original dimensions preserved; no crop, retouch or UI changes.",
+      "command": [
+        "python3",
+        "Pillow Image.open(source).save(target, format=WEBP, quality=85, method=6)"
+      ]
+    },
+    {
+      "id": "workshop-es-390",
+      "source": "docs/arcana/progression-increment-2026-10-16/evidence/browser/chromium-a67-es-workshop-v2-390.png",
+      "target": "docs/arcana/progression-increment-2026-10-16/evidence/gallery/workshop-es-390.webp",
+      "note": "A67 real ForgeV2 purchases, fixed original costs.",
+      "sourceSha256": "a7cc99d46c8b0a3168c9b1403006c58055199c095cfbd9043e53f75e69d19d61",
+      "targetSha256": "5dbfe482e2cff34ae734ac268525b3afef3a0285b455c5b9cd7a680618492405",
+      "bytes": 46982,
+      "transformation": "PNG→WebP quality85. Original dimensions preserved; no crop, retouch or UI changes.",
+      "command": [
+        "python3",
+        "Pillow Image.open(source).save(target, format=WEBP, quality=85, method=6)"
+      ]
+    },
+    {
+      "id": "workshop-en-1280",
+      "source": "docs/arcana/progression-increment-2026-10-16/evidence/browser/chromium-a67-en-workshop-v2-1280.png",
+      "target": "docs/arcana/progression-increment-2026-10-16/evidence/gallery/workshop-en-1280.webp",
+      "note": "A67 real ForgeV2 purchases, English.",
+      "sourceSha256": "e888ac794c2a02bbe1ce075952da295b6ba2fd568abdedaa73c1b807c4b2ec0c",
+      "targetSha256": "6ea1439f08fac0610088a5b9861c87816ae04dea034a36eecdbbca0bc32eb30e",
+      "bytes": 132890,
+      "transformation": "PNG→WebP quality85. Original dimensions preserved; no crop, retouch or UI changes.",
+      "command": [
+        "python3",
+        "Pillow Image.open(source).save(target, format=WEBP, quality=85, method=6)"
+      ]
+    },
+    {
+      "id": "arena-specialized-1280",
+      "source": "docs/arcana/progression-increment-2026-10-16/evidence/browser/chromium-a67-es-specialized-arena-1280.png",
+      "target": "docs/arcana/progression-increment-2026-10-16/evidence/gallery/arena-specialized-1280.webp",
+      "note": "A67 real confirmed BattleLog after Phoenix equipment; replay is not simulation.",
+      "sourceSha256": "c3f54b0ce34c0a19092f85636f8597f6046ca7f7339a1c5da0167b8ca6add404",
+      "targetSha256": "f9a0fdaba9e6a140151abb717f8d9e69192b59d0b6da290e8c474723fd27fcb4",
+      "bytes": 152456,
+      "transformation": "PNG→WebP quality85. Original dimensions preserved; no crop, retouch or UI changes.",
+      "command": [
+        "python3",
+        "Pillow Image.open(source).save(target, format=WEBP, quality=85, method=6)"
+      ]
+    },
+    {
+      "id": "arena-specialized-390",
+      "source": "docs/arcana/progression-increment-2026-10-16/evidence/browser/chromium-a67-es-specialized-arena-390.png",
+      "target": "docs/arcana/progression-increment-2026-10-16/evidence/gallery/arena-specialized-390.webp",
+      "note": "A67 real confirmed BattleLog after Phoenix equipment; replay is not simulation.",
+      "sourceSha256": "e1b7c772e93a810eec7e8552cb496dc2e037c347251e3aadac0a99727fe44454",
+      "targetSha256": "0659c8fcc5fe84d50895f21da76fb0b5f30248c477572ff4860105fe98d0279d",
+      "bytes": 52522,
+      "transformation": "PNG→WebP quality85. Original dimensions preserved; no crop, retouch or UI changes.",
+      "command": [
+        "python3",
+        "Pillow Image.open(source).save(target, format=WEBP, quality=85, method=6)"
+      ]
+    },
+    {
+      "id": "adverse-es-390",
+      "source": "docs/arcana/progression-increment-2026-10-16/evidence/browser/chromium-a67-es-adverse-encounter-200-390.png",
+      "target": "docs/arcana/progression-increment-2026-10-16/evidence/gallery/adverse-es-390.webp",
+      "note": "Declared missing WebP/WebGL fixtures, text200%, reduced motion. Scroll allowed.",
+      "sourceSha256": "9756c8240e0f78713e999f539b15788ed402d1fdcba77bf4717cb173f821347f",
+      "targetSha256": "5f1172ced5cfcc48f49bdc6013256601acdf612a717f3f1fb3ea48d865e3b272",
+      "bytes": 32334,
+      "transformation": "PNG→WebP quality85. Original dimensions preserved; no crop, retouch or UI changes.",
+      "command": [
+        "python3",
+        "Pillow Image.open(source).save(target, format=WEBP, quality=85, method=6)"
+      ]
+    },
+    {
+      "id": "adverse-en-865",
+      "source": "docs/arcana/progression-increment-2026-10-16/evidence/browser/chromium-a67-en-adverse-encounter-200-865.png",
+      "target": "docs/arcana/progression-increment-2026-10-16/evidence/gallery/adverse-en-865.webp",
+      "note": "Declared missing WebP/WebGL fixtures, text200%, English.",
+      "sourceSha256": "36cc9f0a8efe3fb9a2218e5bf7c02f4b66b33cf21baba0f19e0c640876151ec3",
+      "targetSha256": "c3dd8ead8519e2a43c4eefcb10d0d226dfaf7b483f17360a21176d4e191a0675",
+      "bytes": 38810,
+      "transformation": "PNG→WebP quality85. Original dimensions preserved; no crop, retouch or UI changes.",
+      "command": [
+        "python3",
+        "Pillow Image.open(source).save(target, format=WEBP, quality=85, method=6)"
+      ]
+    }
+  ],
+  "totalImageBytes": 1824880,
+  "tool": "Bundled local Python/Pillow/libwebp; no paid service",
+  "originals": "PNG originals retained locally in evidence/browser and historical sources, not overwritten."
+}

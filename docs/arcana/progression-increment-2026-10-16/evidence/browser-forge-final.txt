@@ -1,0 +1,58 @@
+[WebServer] (node:73098) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:73124) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] WebSocket server error: Port 24678 is already in use
+[WebServer] (node:73144) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:73170) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] WebSocket server error: Port 24678 is already in use
+
+Running 4 tests using 1 worker
+
+(node:73172) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  1 [chromium-a67] › tests/browser-trial/progression-a67.spec.ts:309:3 › A67 forge specializations equip V2 then replay es (7.1s)
+  ✓  2 [chromium-a67] › tests/browser-trial/progression-a67.spec.ts:309:3 › A67 forge specializations equip V2 then replay en (6.8s)
+(node:73360) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  3 [webkit-a67] › tests/browser-trial/progression-a67.spec.ts:309:3 › A67 forge specializations equip V2 then replay es (6.1s)
+  ✘  4 [webkit-a67] › tests/browser-trial/progression-a67.spec.ts:309:3 › A67 forge specializations equip V2 then replay en (5.2s)
+
+
+  1) [webkit-a67] › tests/browser-trial/progression-a67.spec.ts:309:3 › A67 forge specializations equip V2 then replay en 
+
+    Error: page.setViewportSize: Target page, context or browser has been closed
+    Browser logs:
+
+    <launching> /Users/enricarandes/Library/Caches/ms-playwright/webkit-2370/pw_run.sh --inspector-pipe --headless --no-startup-window
+    <launched> pid=73361
+    [pid=73361][err] 2026-10-16 17:08:50.284 Playwright[73367:697861] HIToolbox: received notification of WindowServer event port death.
+    [pid=73361][err] 2026-10-16 17:08:50.284 Playwright[73367:697861] port matched the WindowServer port created in BindCGSToRunLoop
+
+      53 |     });
+      54 |   }
+    > 55 |   await page.setViewportSize(sizes[0]);
+         |              ^
+      56 |   return geometry;
+      57 | }
+      58 | async function enter(page: Page, language: Language, pack = 'diagon-alley', start = true) {
+        at capture (/Users/enricarandes/work/diagon-alley/tests/browser-trial/progression-a67.spec.ts:55:14)
+        at /Users/enricarandes/work/diagon-alley/tests/browser-trial/progression-a67.spec.ts:361:5
+
+    Error Context: test-results-progression-a67/progression-a67-A67-forge--b7a80-ons-equip-V2-then-replay-en-webkit-a67/error-context.md
+
+    Error Context: test-results-progression-a67/progression-a67-A67-forge--b7a80-ons-equip-V2-then-replay-en-webkit-a67/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results-progression-a67/progression-a67-A67-forge--b7a80-ons-equip-V2-then-replay-en-webkit-a67/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results-progression-a67/progression-a67-A67-forge--b7a80-ons-equip-V2-then-replay-en-webkit-a67/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 failed
+    [webkit-a67] › tests/browser-trial/progression-a67.spec.ts:309:3 › A67 forge specializations equip V2 then replay en 
+  3 passed (29.2s)

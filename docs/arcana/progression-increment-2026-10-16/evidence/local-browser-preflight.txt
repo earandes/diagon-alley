@@ -1,0 +1,5 @@
+
+> coleccion-magica-i1@0.1.0 test:browser:check
+> node tools/verification/run-local-browser-smoke.mjs --check
+
+{"allowed":false,"reasons":["PostgreSQL/Redis no están verificados como saludables"],"load":4.22998046875,"cores":11,"windowServerRssMb":174.71875,"windowServerCpu":5.6,"scope":"1 Chromium, 1 test, sin vídeo/trazas/capturas, límite total60s; no reproduce carga"}
