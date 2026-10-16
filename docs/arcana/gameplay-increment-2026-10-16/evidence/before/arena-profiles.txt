@@ -1,0 +1,166 @@
+
+Running 4 tests using 1 worker
+
+(node:32667) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  1 [chromium] › tests/browser-trial/arena-profile-a63.spec.ts:8:2 › arena profile 1280 (6.2s)
+(node:32679) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  2 [chromium] › tests/browser-trial/arena-profile-a63.spec.ts:8:2 › arena profile 390 (7.0s)
+(node:32690) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  3 [webkit] › tests/browser-trial/arena-profile-a63.spec.ts:8:2 › arena profile 1280 (7.1s)
+(node:32708) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  4 [webkit] › tests/browser-trial/arena-profile-a63.spec.ts:8:2 › arena profile 390 (6.8s)
+
+
+  1) [chromium] › tests/browser-trial/arena-profile-a63.spec.ts:8:2 › arena profile 1280 ───────────
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: locator('.arena')
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" locator('.arena') with timeout 5000ms
+      - waiting for locator('.arena')
+
+
+      19 |    return {frames:frames.length,meanFps:1000/(frames.reduce((a,b)=>a+b,0)/frames.length),p95ms:sorted[Math.floor(sorted.length*.95)],maxFrameMs:Math.max(...frames),longtasks:supports?longtasks:null,clickAtMs:clickAt,sampleWindowMs:performance.now()-start,viewport:{width:innerWidth,height:innerHeight},document:{width:document.documentElement.scrollWidth,height:document.documentElement.scrollHeight}};
+      20 |   });
+    > 21 |   await page.locator('.node-confirm-action').click();await expect(page.locator('.arena')).toBeVisible();
+         |                                                                                           ^
+      22 |   const result=await sample;const root=resolve(`docs/arcana/gameplay-increment-2026-10-16/evidence/${phase}/arena-profiles`);await mkdir(root,{recursive:true});
+      23 |   await writeFile(resolve(root,`${info.project.name}-${viewport.width}.json`),JSON.stringify({phase,browser:info.project.name,scope:'Real isolated GUI 3vs3 combat, starts before action; no user or physical device',...result},null,2));
+      24 |   await page.screenshot({path:resolve(root,`${info.project.name}-${viewport.width}.png`),fullPage:true});
+        at /Users/enricarandes/work/diagon-alley/tests/browser-trial/arena-profile-a63.spec.ts:21:91
+
+    Error: page.evaluate: Test ended.
+
+       9 |   await page.setViewportSize(viewport);await page.goto('/');await page.locator('.portal-enter').click();await startExpedition(page);
+      10 |   const node=await reachNode(page,'duel','es');await page.locator(`[data-node="${node}"]`).click();
+    > 11 |   const sample=page.evaluate(async()=>{
+         |                     ^
+      12 |    const frames:number[]=[],longtasks:number[]=[];const start=performance.now();let prior=start,clickAt:number|null=null;
+      13 |    const mark=()=>{clickAt=performance.now()-start};document.addEventListener('pointerdown',mark,{once:true});
+      14 |    const supports=PerformanceObserver.supportedEntryTypes.includes('longtask');
+        at /Users/enricarandes/work/diagon-alley/tests/browser-trial/arena-profile-a63.spec.ts:11:21
+
+    Error Context: test-results-profile-a63/arena-profile-a63-arena-profile-1280-chromium/error-context.md
+
+  2) [chromium] › tests/browser-trial/arena-profile-a63.spec.ts:8:2 › arena profile 390 ────────────
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: locator('.arena')
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" locator('.arena') with timeout 5000ms
+      - waiting for locator('.arena')
+
+
+      19 |    return {frames:frames.length,meanFps:1000/(frames.reduce((a,b)=>a+b,0)/frames.length),p95ms:sorted[Math.floor(sorted.length*.95)],maxFrameMs:Math.max(...frames),longtasks:supports?longtasks:null,clickAtMs:clickAt,sampleWindowMs:performance.now()-start,viewport:{width:innerWidth,height:innerHeight},document:{width:document.documentElement.scrollWidth,height:document.documentElement.scrollHeight}};
+      20 |   });
+    > 21 |   await page.locator('.node-confirm-action').click();await expect(page.locator('.arena')).toBeVisible();
+         |                                                                                           ^
+      22 |   const result=await sample;const root=resolve(`docs/arcana/gameplay-increment-2026-10-16/evidence/${phase}/arena-profiles`);await mkdir(root,{recursive:true});
+      23 |   await writeFile(resolve(root,`${info.project.name}-${viewport.width}.json`),JSON.stringify({phase,browser:info.project.name,scope:'Real isolated GUI 3vs3 combat, starts before action; no user or physical device',...result},null,2));
+      24 |   await page.screenshot({path:resolve(root,`${info.project.name}-${viewport.width}.png`),fullPage:true});
+        at /Users/enricarandes/work/diagon-alley/tests/browser-trial/arena-profile-a63.spec.ts:21:91
+
+    Error: page.evaluate: Test ended.
+
+       9 |   await page.setViewportSize(viewport);await page.goto('/');await page.locator('.portal-enter').click();await startExpedition(page);
+      10 |   const node=await reachNode(page,'duel','es');await page.locator(`[data-node="${node}"]`).click();
+    > 11 |   const sample=page.evaluate(async()=>{
+         |                     ^
+      12 |    const frames:number[]=[],longtasks:number[]=[];const start=performance.now();let prior=start,clickAt:number|null=null;
+      13 |    const mark=()=>{clickAt=performance.now()-start};document.addEventListener('pointerdown',mark,{once:true});
+      14 |    const supports=PerformanceObserver.supportedEntryTypes.includes('longtask');
+        at /Users/enricarandes/work/diagon-alley/tests/browser-trial/arena-profile-a63.spec.ts:11:21
+
+    Error Context: test-results-profile-a63/arena-profile-a63-arena-profile-390-chromium/error-context.md
+
+  3) [webkit] › tests/browser-trial/arena-profile-a63.spec.ts:8:2 › arena profile 1280 ─────────────
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: locator('.arena')
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" locator('.arena') with timeout 5000ms
+      - waiting for locator('.arena')
+
+
+      19 |    return {frames:frames.length,meanFps:1000/(frames.reduce((a,b)=>a+b,0)/frames.length),p95ms:sorted[Math.floor(sorted.length*.95)],maxFrameMs:Math.max(...frames),longtasks:supports?longtasks:null,clickAtMs:clickAt,sampleWindowMs:performance.now()-start,viewport:{width:innerWidth,height:innerHeight},document:{width:document.documentElement.scrollWidth,height:document.documentElement.scrollHeight}};
+      20 |   });
+    > 21 |   await page.locator('.node-confirm-action').click();await expect(page.locator('.arena')).toBeVisible();
+         |                                                                                           ^
+      22 |   const result=await sample;const root=resolve(`docs/arcana/gameplay-increment-2026-10-16/evidence/${phase}/arena-profiles`);await mkdir(root,{recursive:true});
+      23 |   await writeFile(resolve(root,`${info.project.name}-${viewport.width}.json`),JSON.stringify({phase,browser:info.project.name,scope:'Real isolated GUI 3vs3 combat, starts before action; no user or physical device',...result},null,2));
+      24 |   await page.screenshot({path:resolve(root,`${info.project.name}-${viewport.width}.png`),fullPage:true});
+        at /Users/enricarandes/work/diagon-alley/tests/browser-trial/arena-profile-a63.spec.ts:21:91
+
+    Error: page.evaluate: Test ended.
+
+       9 |   await page.setViewportSize(viewport);await page.goto('/');await page.locator('.portal-enter').click();await startExpedition(page);
+      10 |   const node=await reachNode(page,'duel','es');await page.locator(`[data-node="${node}"]`).click();
+    > 11 |   const sample=page.evaluate(async()=>{
+         |                     ^
+      12 |    const frames:number[]=[],longtasks:number[]=[];const start=performance.now();let prior=start,clickAt:number|null=null;
+      13 |    const mark=()=>{clickAt=performance.now()-start};document.addEventListener('pointerdown',mark,{once:true});
+      14 |    const supports=PerformanceObserver.supportedEntryTypes.includes('longtask');
+        at /Users/enricarandes/work/diagon-alley/tests/browser-trial/arena-profile-a63.spec.ts:11:21
+
+    Error Context: test-results-profile-a63/arena-profile-a63-arena-profile-1280-webkit/error-context.md
+
+  4) [webkit] › tests/browser-trial/arena-profile-a63.spec.ts:8:2 › arena profile 390 ──────────────
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: locator('.arena')
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" locator('.arena') with timeout 5000ms
+      - waiting for locator('.arena')
+
+
+      19 |    return {frames:frames.length,meanFps:1000/(frames.reduce((a,b)=>a+b,0)/frames.length),p95ms:sorted[Math.floor(sorted.length*.95)],maxFrameMs:Math.max(...frames),longtasks:supports?longtasks:null,clickAtMs:clickAt,sampleWindowMs:performance.now()-start,viewport:{width:innerWidth,height:innerHeight},document:{width:document.documentElement.scrollWidth,height:document.documentElement.scrollHeight}};
+      20 |   });
+    > 21 |   await page.locator('.node-confirm-action').click();await expect(page.locator('.arena')).toBeVisible();
+         |                                                                                           ^
+      22 |   const result=await sample;const root=resolve(`docs/arcana/gameplay-increment-2026-10-16/evidence/${phase}/arena-profiles`);await mkdir(root,{recursive:true});
+      23 |   await writeFile(resolve(root,`${info.project.name}-${viewport.width}.json`),JSON.stringify({phase,browser:info.project.name,scope:'Real isolated GUI 3vs3 combat, starts before action; no user or physical device',...result},null,2));
+      24 |   await page.screenshot({path:resolve(root,`${info.project.name}-${viewport.width}.png`),fullPage:true});
+        at /Users/enricarandes/work/diagon-alley/tests/browser-trial/arena-profile-a63.spec.ts:21:91
+
+    Error: page.evaluate: Test ended.
+
+       9 |   await page.setViewportSize(viewport);await page.goto('/');await page.locator('.portal-enter').click();await startExpedition(page);
+      10 |   const node=await reachNode(page,'duel','es');await page.locator(`[data-node="${node}"]`).click();
+    > 11 |   const sample=page.evaluate(async()=>{
+         |                     ^
+      12 |    const frames:number[]=[],longtasks:number[]=[];const start=performance.now();let prior=start,clickAt:number|null=null;
+      13 |    const mark=()=>{clickAt=performance.now()-start};document.addEventListener('pointerdown',mark,{once:true});
+      14 |    const supports=PerformanceObserver.supportedEntryTypes.includes('longtask');
+        at /Users/enricarandes/work/diagon-alley/tests/browser-trial/arena-profile-a63.spec.ts:11:21
+
+    Error Context: test-results-profile-a63/arena-profile-a63-arena-profile-390-webkit/error-context.md
+
+  4 failed
+    [chromium] › tests/browser-trial/arena-profile-a63.spec.ts:8:2 › arena profile 1280 ────────────
+    [chromium] › tests/browser-trial/arena-profile-a63.spec.ts:8:2 › arena profile 390 ─────────────
+    [webkit] › tests/browser-trial/arena-profile-a63.spec.ts:8:2 › arena profile 1280 ──────────────
+    [webkit] › tests/browser-trial/arena-profile-a63.spec.ts:8:2 › arena profile 390 ───────────────

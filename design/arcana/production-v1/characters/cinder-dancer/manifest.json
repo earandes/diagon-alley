@@ -1,0 +1,52 @@
+{
+  "id": "character-cinder-dancer",
+  "identityId": "cinder-dancer",
+  "direction": "teatro-de-alquimia",
+  "version": "1",
+  "state": "reviewed-standalone-not-integrated",
+  "tool": "built-in imagegen",
+  "source": "master-v1.png",
+  "preparedAsset": "arena-master-v1.png",
+  "prompts": [
+    "prompt-v1.md"
+  ],
+  "references": [
+    "../rune-weaver/arena-master-v1.png"
+  ],
+  "dimensions": [
+    1024,
+    1536
+  ],
+  "transparency": {
+    "mode": "RGBA",
+    "alphaMin": 0,
+    "alphaMax": 255,
+    "fullyTransparentPixels": 1154758,
+    "cornerAlpha": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "subjectBoundsAlphaGt20": [
+      141,
+      210,
+      901,
+      1336
+    ]
+  },
+  "preparation": "Deterministic LANCZOS resize1024x1536->819x1229,position102,154 on transparent1024x1536canvas for10%safe margins. Source preserved.",
+  "crop": "none",
+  "pivotNormalized": [
+    0.5,
+    0.87
+  ],
+  "variants": [],
+  "sourceEditable": "Raster alpha master; no layers or rig",
+  "textAlternative": {
+    "es": "Danzante de las Ascuas, mago sonriente de trenzas oscuras, abrigo naranja cobrizo, pantalón crema, varita y cuenco de brasas.",
+    "en": "Cinder Dancer, a smiling braided mage with a copper orange coat, cream trousers, a wand and ember bowl."
+  },
+  "review": "Inspected whitecomposite: recognizablewarmmaleadultface, darkbraids, gracefulbalancedgroundedstance, copperorangeflowingcoat, greenbelt, smallbowlflamecontained. Fullhandsfeet/noletters. Realalpha confirmed. Neutralcurrentnameverified. Actualthumbnail/mobileintegration pending.",
+  "sha256": "a971ee8eee54dd59b06a9b764b271663654d38e3d165b54de956d1bf325aa94f"
+}

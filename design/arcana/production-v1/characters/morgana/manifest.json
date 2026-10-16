@@ -1,0 +1,54 @@
+{
+  "id": "character-morgana",
+  "identityId": "morgana",
+  "direction": "teatro-de-alquimia",
+  "version": "1",
+  "state": "reviewed-standalone-not-integrated",
+  "tool": "built-in imagegen",
+  "source": "master-v1.png",
+  "preparedAsset": "arena-master-v1.png",
+  "prompts": [
+    "prompt-v1.md"
+  ],
+  "references": [
+    "../../../concepts-2026-10-14/teatro-de-alquimia.png",
+    "../apprentice/arena-master-v1.png"
+  ],
+  "dimensions": [
+    1024,
+    1536
+  ],
+  "transparency": {
+    "mode": "RGBA",
+    "alphaMin": 0,
+    "alphaMax": 255,
+    "fullyTransparentPixels": 1062449,
+    "cornerAlpha": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "subjectBoundsAlphaGt20": [
+      141,
+      159,
+      882,
+      1378
+    ]
+  },
+  "preparation": "Deterministic LANCZOS resize 1024x1536 -> 850x1275; positioned [54,130] on transparent 1024x1536 canvas for >=10% safe margins. No painted changes. Source preserved.",
+  "crop": "none",
+  "pivotNormalized": [
+    0.5,
+    0.896
+  ],
+  "variants": [],
+  "sourceEditable": "Raster alpha master; no layers or rig",
+  "textAlternative": {
+    "es": "Morgana, maga de trenzas negras, capa verde y vestido ciruela, broche de media luna, libro y baston de espino.",
+    "en": "Morgana, a black-braided mage wearing a green mantle and plum dress, with a crescent clasp, spellbook and thornwood staff."
+  },
+  "review": "Inspected original and prepared artwork. Distinct adult dignified woman, raven braids and warm brown complexion, angular expressive face. Natural hands, closed blank book, full feet and staff. Emerald/copper/plum paint coherent with Teatro. Nonsexualized attire. Integration and actual miniature readability remain to be verified.",
+  "originalGenerationPath": "/Users/enricarandes/.codex/generated_images/01a13af8-fd53-7331-8146-bb20ec42fa6b/exec-ce573e74-919c-43eb-91a8-ef90d30928a7.png",
+  "sha256": "7d9598908d572b74cadb9f474cbb51eebacdb167014272e98bd6599abeb7d09e"
+}

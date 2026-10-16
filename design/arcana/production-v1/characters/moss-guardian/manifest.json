@@ -1,0 +1,58 @@
+{
+  "id": "character-moss-guardian",
+  "identityId": "moss-guardian",
+  "name": {
+    "es": "Guardiana del Musgo",
+    "en": "Moss Guardian"
+  },
+  "direction": "teatro-de-alquimia",
+  "version": "1",
+  "state": "reviewed-standalone-not-integrated",
+  "tool": "built-in imagegen",
+  "source": "master-v1.png",
+  "preparedAsset": "arena-master-v1.png",
+  "prompts": [
+    "prompt-v1.md"
+  ],
+  "references": [
+    "../../../concepts-2026-10-14/teatro-de-alquimia.png",
+    "../apprentice/arena-master-v1.png"
+  ],
+  "dimensions": [
+    1024,
+    1536
+  ],
+  "transparency": {
+    "mode": "RGBA",
+    "alphaMin": 0,
+    "alphaMax": 255,
+    "fullyTransparentPixels": 998468,
+    "cornerAlpha": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "subjectBoundsAlphaGt20": [
+      143,
+      161,
+      880,
+      1375
+    ]
+  },
+  "preparation": "Deterministic LANCZOS resize 1024x1536 -> 901x1352, positioned [60,103] on transparent 1024x1536 canvas for >=10% safe margins. No painted changes. Source preserved.",
+  "crop": "none",
+  "pivotNormalized": [
+    0.5,
+    0.896
+  ],
+  "variants": [],
+  "sourceEditable": "Raster alpha master; no layers or rig",
+  "textAlternative": {
+    "es": "Guardiana del Musgo, mujer de trenza oscura con capa de retales verdes, baston de raiz y cesta de musgo.",
+    "en": "Moss Guardian, a dark-braided woman in a green patchwork mantle, carrying a root staff and moss basket."
+  },
+  "review": "Inspected original and prepared image. Middle-aged warm brown Latina guardian, broad friendly face, green-threaded dark braid, strong sturdy stance. Visible moss/olive stitched patchwork, copper fern clasp, moss basket and root staff distinguish from cream Moon Herbalist. Complete hands/boots/basket/staff and painterly Teatro coherence. Integration and actual miniature readability remain to be verified.",
+  "originalGenerationPath": "/Users/enricarandes/.codex/generated_images/01a13af8-fd53-7331-8146-bb20ec42fa6b/exec-1df8de7d-de92-4c87-b563-3dbc3fe0a7e7.png",
+  "sha256": "ddcd1da01fd5865540d91a61051a2ddd138134a14b97e356fb7d6b3d58369c0d"
+}

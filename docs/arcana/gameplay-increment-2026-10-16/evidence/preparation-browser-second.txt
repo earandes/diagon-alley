@@ -1,0 +1,134 @@
+[WebServer] (node:38528) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:38554) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 2 tests using 1 worker
+
+(node:38567) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  1 [chromium] › docs/arcana/gameplay-increment-2026-10-16/evidence/preparation.spec.ts:7:2 › contextual beans complete journey es (1.6s)
+(node:38591) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  2 [chromium] › docs/arcana/gameplay-increment-2026-10-16/evidence/preparation.spec.ts:7:2 › contextual beans complete journey en (21.4s)
+
+
+  1) [chromium] › docs/arcana/gameplay-increment-2026-10-16/evidence/preparation.spec.ts:7:2 › contextual beans complete journey es 
+
+    Error: expect(received).toEqual(expected) // deep equality
+
+    - Expected  -  3
+    + Received  + 22
+
+    @@ -25,11 +25,11 @@
+              },
+            },
+          },
+        ],
+        "inventory": Object {
+    -     "crowns": 50,
+    +     "crowns": 45,
+          "equipment": Array [
+            Object {
+              "core": null,
+              "id": "starter:wand",
+              "kind": "wand",
+    @@ -49,12 +49,18 @@
+          "essence": Object {
+            "cursor": 1792107577829,
+            "points": 50,
+          },
+          "goldKeys": 0,
+    -     "products": Array [],
+    +     "products": Array [
+    +       Object {
+    +         "id": "6ac69683-601b-4ced-aec2-e24fb2757364:0",
+    +         "kind": "random-beans",
+    +         "status": "available",
+            },
+    +     ],
+    +   },
+        "playerId": "trial-e37fe9e7-784f-4080-9347-235c5f0e58f7",
+        "receipts": Array [
+          Object {
+            "catalogVersion": 2,
+            "copyId": "starter:apprentice",
+    @@ -82,12 +88,25 @@
+                "power": 10,
+                "speed": 6,
+              },
+            },
+          },
+    +     Object {
+    +       "id": "6ac69683-601b-4ced-aec2-e24fb2757364",
+    +       "kind": "purchase",
+    +       "request": Object {
+    +         "priceVersion": 1,
+    +         "product": "random-beans",
+    +         "quantity": 1,
+    +       },
+    +       "spentCrowns": 5,
+    +       "unitIds": Array [
+    +         "6ac69683-601b-4ced-aec2-e24fb2757364:0",
+            ],
+    -   "revision": 1,
+    +     },
+    +   ],
+    +   "revision": 2,
+        "schemaVersion": 1,
+        "team": Object {
+          "copyIds": Array [
+            "starter:apprentice",
+          ],
+
+      23 |   await page.keyboard.press('Escape');
+      24 |   await expect(page.locator('.bean-prepare-action')).toBeFocused();
+    > 25 |   expect(await readGame(page)).toEqual(bought);
+         |                                ^
+      26 |   await b('Mapa', 'Map').click();
+      27 |   await startExpedition(page, language);
+      28 |   for (let i = 0; i < 2; i++) { const state = await readGame(page); const run = state.exploration!.run!; const node = run.graph.nodes.find((n) => n.kind === 'pact' && !run.visited.includes(n.id) && (run.visited.length === 0 ? n.row === 0 : run.graph.nodes.find((n) => n.id === run.visited.at(-1))!.next.includes(n.id)))!; await page.locator(`[data-node="${node.id}"]`).click(); await confirmEvent(page, language); }
+        at /Users/enricarandes/work/diagon-alley/docs/arcana/gameplay-increment-2026-10-16/evidence/preparation.spec.ts:25:32
+
+    Error Context: docs/arcana/gameplay-increment-2026-10-16/evidence/preparation-results/preparation-contextual-beans-complete-journey-es-chromium/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    docs/arcana/gameplay-increment-2026-10-16/evidence/preparation-results/preparation-contextual-beans-complete-journey-es-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace docs/arcana/gameplay-increment-2026-10-16/evidence/preparation-results/preparation-contextual-beans-complete-journey-es-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) [chromium] › docs/arcana/gameplay-increment-2026-10-16/evidence/preparation.spec.ts:7:2 › contextual beans complete journey en 
+
+    Test was interrupted.
+
+    Error: locator.click: Test ended.
+    Call log:
+      - waiting for getByRole('button', { name: 'Alley', exact: true })
+
+
+      12 |   await page.goto('/'); if (en) await changeLanguage(page, 'en');
+      13 |   await b('Comenzar ensayo local', 'Start local trial').click();
+    > 14 |   await b('Callejón', 'Alley').click();
+         |                                ^
+      15 |   await page.locator('[data-shop="confectionery"]').click();
+      16 |   await b('Grageas de Todos los Sabores', 'Every Flavour Beans').click();
+      17 |   await b('Comprar Grageas de Todos los Sabores · 5 Galeones', 'Buy Every Flavour Beans · 5 Galleons').click();
+        at /Users/enricarandes/work/diagon-alley/docs/arcana/gameplay-increment-2026-10-16/evidence/preparation.spec.ts:14:32
+
+    Error Context: docs/arcana/gameplay-increment-2026-10-16/evidence/preparation-results/preparation-contextual-beans-complete-journey-en-chromium/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    docs/arcana/gameplay-increment-2026-10-16/evidence/preparation-results/preparation-contextual-beans-complete-journey-en-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace docs/arcana/gameplay-increment-2026-10-16/evidence/preparation-results/preparation-contextual-beans-complete-journey-en-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 failed
+    [chromium] › docs/arcana/gameplay-increment-2026-10-16/evidence/preparation.spec.ts:7:2 › contextual beans complete journey es 
+  1 interrupted
+    [chromium] › docs/arcana/gameplay-increment-2026-10-16/evidence/preparation.spec.ts:7:2 › contextual beans complete journey en 

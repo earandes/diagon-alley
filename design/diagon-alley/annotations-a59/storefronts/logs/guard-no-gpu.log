@@ -1,0 +1,6 @@
+usage: diagon-a59-storefronts.py [-h] [--prepare]
+                                 [--id {confectionery,workshop,vault}]
+                                 [--attempt ATTEMPT] [--generate] [--export]
+                                 [--gpu-coordination-confirmed]
+                                 [--root-sample-reviewed]
+diagon-a59-storefronts.py: error: GPU coordination flag required; do not run while browser benchmarks are active

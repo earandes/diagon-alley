@@ -1,0 +1,395 @@
+/* A63: a single object shelf feeds a compact row of carriers. No economic state lives here. */
+.contextual-beans {
+  min-width: 0;
+}
+.bean-object-shelf {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding: 4px 3px 8px;
+}
+.game-shell .bean-jar-choice {
+  flex: 0 0 58px;
+  width: 58px;
+  min-height: 64px;
+  padding: 4px;
+  position: relative;
+  border: 1px solid #cda75c55;
+  border-radius: 12px;
+  background: #0b1625;
+}
+.bean-jar-choice > img:first-child {
+  width: 40px;
+  height: 44px;
+  object-fit: contain;
+}
+.bean-jar-choice > span {
+  display: block;
+  font-size: 0.75rem;
+}
+.game-shell .bean-jar-choice[aria-pressed='true'] {
+  border-color: var(--pack-gold);
+  box-shadow: inset 0 0 0 2px #cda75c55;
+}
+.bean-jar-choice .bean-assigned-seal {
+  position: absolute;
+  right: -2px;
+  top: -2px;
+  width: 22px;
+  height: 22px;
+}
+.bean-carrier-instruction,
+.bean-draft-count {
+  margin: 6px 0;
+  text-align: center;
+  font-size: 0.75rem;
+}
+.bean-carrier-row {
+  display: flex;
+  justify-content: center;
+  gap: clamp(4px, 1.3vw, 9px);
+}
+.game-shell .bean-carrier {
+  flex: 1 1 0;
+  min-width: 44px;
+  max-width: 100px;
+  padding: 5px 3px;
+  border: 1px solid #cda75c55;
+  background: #0b1625;
+  border-radius: 8px 8px 18px 18px;
+  position: relative;
+  margin: 0;
+}
+.bean-carrier .bean-recipient-portrait {
+  width: 100%;
+  height: clamp(50px, 13vw, 76px);
+  object-fit: contain;
+}
+.bean-carrier .bean-origin-seal {
+  position: absolute;
+  top: 44px;
+  right: 0;
+  width: 23px;
+  height: 23px;
+  object-fit: contain;
+}
+.bean-carrier .bean-position {
+  position: absolute;
+  left: 4px;
+  top: 4px;
+  font-size: 0.7rem;
+  color: var(--pack-gold);
+}
+.bean-carrier-name {
+  display: block;
+  font-size: 0.6rem;
+  line-height: 1.2;
+  overflow-wrap: anywhere;
+}
+.bean-condition {
+  display: block;
+  font-size: 0.65rem;
+  margin-top: 5px;
+  font-variant-numeric: tabular-nums;
+}
+.bean-carrier-assigned {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  min-height: 22px;
+  font-size: 0.7rem;
+  color: var(--pack-gold);
+}
+.bean-carrier-assigned img {
+  width: 20px;
+  height: 23px;
+  object-fit: contain;
+}
+.game-shell .bean-carrier[aria-pressed='true'] {
+  border-color: var(--pack-gold);
+  box-shadow: inset 0 0 0 2px #cda75c55;
+}
+.bean-context-help {
+  font-size: 0.75rem;
+  margin-top: 8px;
+}
+.bean-context-help summary {
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.bean-context-help p {
+  font-size: 0.75rem;
+  line-height: 1.5;
+}
+.preparation-synergies {
+  border-block: 1px solid #cda75c33;
+  margin: 8px 0;
+  font-size: 0.75rem;
+}
+.preparation-synergies > summary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 44px;
+  cursor: pointer;
+  list-style: none;
+}
+.preparation-synergies > summary::-webkit-details-marker {
+  display: none;
+}
+.preparation-synergies > summary > img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
+.preparation-synergies > summary span {
+  display: inline-flex;
+  gap: 4px;
+}
+.preparation-synergies > summary strong {
+  color: var(--pack-gold);
+}
+.preparation-synergy-detail {
+  padding: 8px;
+  background: #07121c88;
+}
+.preparation-synergy-detail p {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-size: 0.75rem;
+}
+.preparation-synergy-detail small {
+  display: block;
+  line-height: 1.5;
+}
+.preparation-beans-destination {
+  display: grid;
+  grid-template-columns: 52px minmax(0, 1fr);
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  margin-bottom: 14px;
+  background: #392b1766;
+  border: 1px solid #cda75c66;
+  border-radius: 10px;
+}
+.preparation-beans-destination > img {
+  width: 50px;
+  height: 58px;
+  object-fit: contain;
+}
+.preparation-beans-destination strong {
+  font-size: 0.85rem;
+  color: var(--pack-gold);
+}
+.preparation-beans-destination p {
+  font-size: 0.75rem;
+  line-height: 1.5;
+  margin: 4px 0;
+}
+.game-shell .preparation-beans-destination > button {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 6px 12px;
+  border: 1px solid #cda75c77;
+}
+.preparation-beans-destination button img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
+.preparation-beans-destination button span {
+  font-size: 0.8rem;
+}
+.preparation-position .preparation-temporary-seal {
+  position: absolute;
+  right: -4px;
+  bottom: -4px;
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+.preparation-position.preparation-vacant {
+  opacity: 0.4;
+  transform: scale(0.82);
+}
+.preparation-position[data-condition='fallen'] {
+  border-style: dashed;
+  filter: grayscale(0.7);
+}
+.preparation-affinity {
+  font-size: 0.8rem;
+  margin: 4px 0;
+  color: var(--pack-gold);
+}
+.gear-stat-comparison {
+  display: block;
+  font-size: 0.65rem;
+  line-height: 1.4;
+  color: #b6e4dd;
+  margin-top: 5px;
+  font-variant-numeric: tabular-nums;
+}
+@media (max-width: 430px) {
+  .bean-carrier .bean-origin-seal {
+    top: 36px;
+    width: 20px;
+    height: 20px;
+  }
+}
+.preparation-combat-destinations {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.game-shell .preparation-combat-destinations > button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 140px;
+  padding: 6px 12px;
+  border: 1px solid var(--pack-gold);
+  border-radius: 10px;
+  background: #0b1625;
+}
+.preparation-combat-destinations button > img {
+  width: 54px;
+  height: 54px;
+  object-fit: contain;
+}
+.preparation-combat-destinations span {
+  font-size: 0.75rem;
+}
+.preparation-combat-destinations small {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  font-size: 0.75rem;
+}
+.preparation-combat-destinations small img {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+}
+.game-shell .node-team-prepare {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-height: 44px;
+  padding: 5px 10px;
+  margin: 8px auto;
+  border: 1px solid #cda75c66;
+  border-radius: 8px;
+  background: #101e2d;
+}
+.node-team-prepare > img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
+.node-team-prepare > span {
+  font-size: 0.8rem;
+}
+.bean-jar-choice,
+.bean-carrier {
+  transition:
+    transform 140ms ease-out,
+    border-color 140ms ease-out;
+}
+.bean-jar-choice[aria-pressed='true'],
+.bean-carrier[aria-pressed='true'] {
+  transform: translateY(-2px);
+}
+@media (prefers-reduced-motion: reduce) {
+  .bean-jar-choice,
+  .bean-carrier {
+    transition: none;
+    transform: none;
+  }
+}
+.game-shell[data-reduced='true'] .bean-jar-choice,
+.game-shell[data-reduced='true'] .bean-carrier {
+  transition: none;
+  transform: none;
+}
+/* The carrier shelf fits a single short panel; expanded rules remain scrollable. */
+.contextual-beans {
+  padding: 8px;
+  margin: 6px 0;
+}
+.contextual-beans .bean-object-shelf {
+  padding-block: 2px 5px;
+}
+.contextual-beans .bean-jar-choice {
+  flex-basis: 48px;
+  width: 48px;
+  min-height: 54px;
+}
+.contextual-beans .bean-jar-choice > img:first-child {
+  width: 32px;
+  height: 34px;
+}
+.contextual-beans .bean-carrier .bean-recipient-portrait {
+  height: clamp(44px, 11vw, 60px);
+}
+.contextual-beans .bean-carrier .bean-origin-seal {
+  top: 30px;
+}
+.contextual-beans .preparation-synergies {
+  margin-block: 4px;
+}
+.contextual-beans .preparation-synergies > summary {
+  min-height: 44px;
+}
+.game-shell dialog.notice.node-event-dialog:has(.node-combat-actions) {
+  scroll-padding-bottom: 90px;
+}
+.game-shell .node-event-dialog > .node-event-actions.node-combat-actions {
+  position: sticky;
+  bottom: -24px;
+  z-index: 4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin: 14px -10px -12px;
+  padding: 10px;
+  background: #101e2b;
+  box-shadow: 0 -8px 16px #101e2be8;
+}
+.game-shell .node-event-dialog > .node-combat-actions .node-confirm-action {
+  flex: 1 1 0;
+  min-width: 0;
+  min-height: 52px;
+  max-width: none;
+  margin: 0;
+  padding: 6px 10px;
+  font-size: 0.9rem;
+  gap: 7px;
+}
+.game-shell .node-event-dialog > .node-combat-actions .node-confirm-action img {
+  width: 32px;
+  height: 32px;
+}
+.game-shell .node-event-dialog > .node-combat-actions .node-cancel-action {
+  position: static;
+  flex: 0 0 44px;
+  width: 44px;
+  min-width: 44px;
+  height: 52px;
+  margin: 0;
+  border-radius: 10px;
+}

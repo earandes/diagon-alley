@@ -1,0 +1,26 @@
+{
+  "mfluxVersion": "0.22.0",
+  "mfluxPypiArtifacts": [
+    {
+      "file": "mflux-0.22.0-py3-none-any.whl",
+      "sha256": "b3c863f1e64718f1fed657448307d00a5702870b9e8fce18c547f5a16f9851dd",
+      "size": 1487763
+    },
+    {
+      "file": "mflux-0.22.0.tar.gz",
+      "sha256": "8a9a9c92c47ed4a35d8e7e962ca684ef6c81c1350b943044962aa0b9cd4e5790",
+      "size": 1104393
+    }
+  ],
+  "mfluxDocsRevision": "b534021a9c8c45bb064959d754870fd98322e447",
+  "modelId": "mlx-community/flux2-klein-4b-4bit",
+  "modelRevision": "860e87183ceb29e39627c0612ebd66d8ea66e68c",
+  "modelBytes": 4619708452,
+  "licenses": {
+    "mflux": "MIT",
+    "model": "Apache-2.0"
+  },
+  "installationScope": ".tools/diagon-illustration",
+  "networkPurpose": "Public package/model downloads only; no account/auth token or inference API.",
+  "cashCost": 0
+}

@@ -1,0 +1,15 @@
+# Contrato previo de mapa/reproducción A39
+
+11 octubre 2026. Continuación del MVP A30/A32/A38; balance sigue de ensayo. PixiJS v8 y GSAP son requisitos explícitos, no nuevos servicios o generación de arte. Instalación solo local y sin scripts/gasto; versiones exactas/lockfile y fuentes de API verificadas.
+
+Mapa: coordenadas visuales por fila/columna del grafo confirmado, avance ascendente sobre pergamino, aristas punteadas y seis tipos. Canvas decorativo/escénico no decide adyacencia: botones DOM superpuestos y lista equivalente llaman a la misma selección/confirmación. Nodo actual/disponible/visitado/bloqueado con texto/forma; foco y listado sobreviven a WebGL/arte ausentes. Scroll inicial al tramo disponible sin animación si motion reducido. No calcular ni modificar Run en Pixi.
+
+Arena: proyección pura de BattleLog confirmado por número de eventos consumidos. PV/PM se copian de eventos (`hp`, `targetHp`, `mana`); no recomputar daños/azar/turnos. Input inicia frame, combat-finished termina, resultado SQL permanece inmutable. Valida referencias/bounds, orden y frame final antes de reproducir. DOM muestra 3–5 peanas a izquierda/derecha, nivel/atributos/varita/consumible/sinergias; Pixi escenario/proyectiles/colisión central solo visual. El impacto final sigue los campos del log. No resolver otro engine en cliente.
+
+Reproducción Auto/pausa/2x/omitir: controles solo mueven cursor/tiempo visual, nunca HTTP/key/Esencia. Movimiento reducido o WebGL fallido mantiene resultado estático y registro accesible. Cambiar idioma no reinicia, rearma o gasta. Timer/ticker/timeline cancelados al cerrar/unmount; Pixi destruido incluso al completar init después de unmount. Renderer lazy para no cargar motor al iniciar sin run; pausar ticker de mapa estático.
+
+Apertura: GSAP de sello/carta después de receipt, con omisión y variante estática; guardado anterior a la animación. No regenerar assets/sorteo por frame o cambio de idioma. Mantener resultado confirmado ante recarga; anuncio una sola vez por presentación del receipt.
+
+TDD antes de código: cursor inicial/intermedio/final, replay repetible sin RNG, HP/PM/bean/sinergias por eventos, límites/referencias corruptas; coordenadas/edges ascendentes alineados con DOM. Navegador es/en: pausa/congelación, 2x/Auto/omitir, cambio de idioma, sin POST durante replay, reduced motion, WebGL ausente y mapa/lista misma acción. Render 390/1280 y bundle medidos, FPS se registra con entorno real sin atribuir móvil físico a emulación. No cerrar goal por integrar canvas.
+
+Implementación A39 incluye listener de pérdida de contexto que descarta renderer/ticker y termina en frame estático confirmado; prueba simula evento estándar en navegador, no fallo físico de GPU. Asset GSAP bloqueado no genera rechazo JS sin tratar ni duplica entrega. Geometría fija cacheada, posiciones/dimensiones leídas por ResizeObserver en lugar de forzar layout cada frame. Los perfiles reportan FPS medidos y no los convierten en garantía de 60 FPS sostenidos/dispositivo físico.

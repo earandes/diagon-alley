@@ -1,0 +1,65 @@
+{
+  "id": "cocoa-toad-subject",
+  "identity": "cocoa-toad",
+  "function": "Chocolate toad appearance and hop layer in confirmed opening presentation",
+  "version": "1",
+  "status": "illustration-reviewed-runtime-framing-pending",
+  "path": "original-v1.png",
+  "author": "OpenAI integrated imagegen",
+  "tool": "image_gen.imagegen built-in",
+  "prompt": "prompt-v1.md",
+  "references": [
+    "design/arcana/concepts-2026-10-14/teatro-de-alquimia.png"
+  ],
+  "provenance": "new original raster chocolate-toad illustration",
+  "sourceAvailable": "original-v1.png; prompt-v1.md",
+  "editableLayers": false,
+  "rig": false,
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "requestedDimensions": [
+    1024,
+    1024
+  ],
+  "crop": "full source preserved",
+  "pivot": {
+    "normalized": [
+      0.5,
+      0.9
+    ],
+    "purpose": "feet-ground position for screen-space hop",
+    "status": "proposed"
+  },
+  "variants": [],
+  "transparency": {
+    "realAlpha": true,
+    "mode": "RGBA",
+    "range": [
+      0,
+      255
+    ],
+    "fullyTransparentPixels": 833007,
+    "totalPixels": 1572516,
+    "bodyBoundingBoxAlpha16": [
+      77,
+      134,
+      1187,
+      1127
+    ]
+  },
+  "alt": {
+    "es": "Sapo de chocolate marrón, con ojos grandes y decoración dorada, agachado para saltar.",
+    "en": "Brown chocolate toad with large eyes and gold decoration, crouched ready to hop."
+  },
+  "review": {
+    "visual": "Inspected complete standalone subject, all feet present, clear cocoa material and original gold botanical molded details; friendly readable eyes. No box, text or background. Painterly dimensional illustration consistent with selected warm theatrical confectionery treatment.",
+    "limitations": [
+      "Tool output is1254square rather than requested1024.",
+      "Main subject approx88.5%width rather than requested80%, needing renderer inset.",
+      "Verylowalpha speckles extend to outer canvas edges; avoid alpha>0 cropping.",
+      "Single crouched raster pose; screen-space GSAP hop does not imply an articulated character rig or an animation-frame sequence."
+    ]
+  }
+}

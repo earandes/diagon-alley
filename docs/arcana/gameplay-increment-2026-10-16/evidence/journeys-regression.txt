@@ -1,0 +1,58 @@
+
+> coleccion-magica-i1@0.1.0 test:e2e
+> playwright test --config playwright.trial.config.ts
+
+[WebServer] (node:41109) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:41141) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:41171) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:41197) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 92 tests using 1 worker
+
+(node:41202) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 [chromium] › tests/browser-trial/arena-profile-a63.spec.ts:8:2 › arena profile 1280 (11.0s)
+  ✓   2 [chromium] › tests/browser-trial/arena-profile-a63.spec.ts:8:2 › arena profile 390 (10.0s)
+  ✓   3 [chromium] › tests/browser-trial/asset-interface.spec.ts:5:3 › A54 illustrated controls, preview and reduced motion es (699ms)
+  ✓   4 [chromium] › tests/browser-trial/asset-interface.spec.ts:5:3 › A54 illustrated controls, preview and reduced motion en (769ms)
+  ✓   5 [chromium] › tests/browser-trial/asset-interface.spec.ts:46:1 › A54 motion preference updates already mounted choices and missing art retains actions (1.1s)
+  ✘   6 [chromium] › tests/browser-trial/commerce.spec.ts:7:3 › forge, equip and spend a boss key atomically in es (5.5s)
+
+
+  1) [chromium] › tests/browser-trial/commerce.spec.ts:7:3 › forge, equip and spend a boss key atomically in es 
+
+    Test was interrupted.
+
+    Error: apiRequestContext.get: Test ended.
+
+       at route-helpers.ts:6
+
+      4 | import { routePath } from '../support/arcana-route';
+      5 | export const readGame = async (page: Page): Promise<GameState> =>
+    > 6 |   (await (await page.request.get('/api/state')).json()).state;
+        |                              ^
+      7 | export async function pathTo(page: Page, kind: NodeKind) {
+      8 |   await expect(page.locator('dialog')).toHaveCount(0);
+      9 |   await expect(page.locator('[data-map-phase]')).toHaveAttribute('data-map-phase', 'route');
+        at readGame (/Users/enricarandes/work/diagon-alley/tests/browser-trial/route-helpers.ts:6:30)
+        at confirmEvent (/Users/enricarandes/work/diagon-alley/tests/browser-trial/route-helpers.ts:27:26)
+        at /Users/enricarandes/work/diagon-alley/tests/browser-trial/commerce.spec.ts:60:7
+
+    Error Context: test-results-arcana-journey/commerce-forge-equip-and-spend-a-boss-key-atomically-in-es-chromium/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results-arcana-journey/commerce-forge-equip-and-spend-a-boss-key-atomically-in-es-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results-arcana-journey/commerce-forge-equip-and-spend-a-boss-key-atomically-in-es-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 interrupted
+    [chromium] › tests/browser-trial/commerce.spec.ts:7:3 › forge, equip and spend a boss key atomically in es 
+  86 did not run
+  5 passed (33.5s)

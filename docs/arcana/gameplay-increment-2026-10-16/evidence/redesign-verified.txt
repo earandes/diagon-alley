@@ -1,0 +1,35 @@
+[WebServer] (node:59314) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:59422) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] WebSocket server error: Port 24678 is already in use
+[WebServer] (node:59642) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:59667) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] WebSocket server error: Port 24678 is already in use
+
+Running 16 tests using 1 worker
+
+(node:59696) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 [chromium-redesign] › tests/browser-trial/game-redesign.spec.ts:181:1 › A57 starts in Diagon Alley with language confined to settings and no conventional forms (2.2s)
+  ✓   2 [chromium-redesign] › tests/browser-trial/game-redesign.spec.ts:215:1 › A57 swaps world and language over a saved expedition without rewriting authority state (3.4s)
+  ✓   3 [chromium-redesign] › tests/browser-trial/game-redesign.spec.ts:248:3 › A57 tastes are discovered by committed use, not ownership, and survive swap/reload es (6.3s)
+  ✓   4 [chromium-redesign] › tests/browser-trial/game-redesign.spec.ts:367:5 › A57 chocolate frog reveal is cosmetic, skippable and durable es reduced=false (3.6s)
+  ✓   5 [chromium-redesign] › tests/browser-trial/game-redesign.spec.ts:367:5 › A57 chocolate frog reveal is cosmetic, skippable and durable es reduced=true (2.1s)
+  ✓   6 [chromium-redesign] › tests/browser-trial/game-redesign.spec.ts:248:3 › A57 tastes are discovered by committed use, not ownership, and survive swap/reload en (3.7s)
+  ✓   7 [chromium-redesign] › tests/browser-trial/game-redesign.spec.ts:367:5 › A57 chocolate frog reveal is cosmetic, skippable and durable en reduced=false (3.2s)
+  ✓   8 [chromium-redesign] › tests/browser-trial/game-redesign.spec.ts:367:5 › A57 chocolate frog reveal is cosmetic, skippable and durable en reduced=true (2.0s)
+(node:60616) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   9 [webkit-redesign] › tests/browser-trial/game-redesign.spec.ts:181:1 › A57 starts in Diagon Alley with language confined to settings and no conventional forms (1.7s)
+  ✓  10 [webkit-redesign] › tests/browser-trial/game-redesign.spec.ts:215:1 › A57 swaps world and language over a saved expedition without rewriting authority state (2.2s)
+  ✓  11 [webkit-redesign] › tests/browser-trial/game-redesign.spec.ts:248:3 › A57 tastes are discovered by committed use, not ownership, and survive swap/reload es (2.9s)
+  ✓  12 [webkit-redesign] › tests/browser-trial/game-redesign.spec.ts:367:5 › A57 chocolate frog reveal is cosmetic, skippable and durable es reduced=false (2.0s)
+  ✓  13 [webkit-redesign] › tests/browser-trial/game-redesign.spec.ts:367:5 › A57 chocolate frog reveal is cosmetic, skippable and durable es reduced=true (1.4s)
+  ✓  14 [webkit-redesign] › tests/browser-trial/game-redesign.spec.ts:248:3 › A57 tastes are discovered by committed use, not ownership, and survive swap/reload en (2.6s)
+  ✓  15 [webkit-redesign] › tests/browser-trial/game-redesign.spec.ts:367:5 › A57 chocolate frog reveal is cosmetic, skippable and durable en reduced=false (2.1s)
+  ✓  16 [webkit-redesign] › tests/browser-trial/game-redesign.spec.ts:367:5 › A57 chocolate frog reveal is cosmetic, skippable and durable en reduced=true (1.5s)
+
+  16 passed (47.3s)

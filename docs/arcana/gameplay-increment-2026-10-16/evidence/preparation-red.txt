@@ -1,0 +1,25 @@
+
+ RUN  v5.0.3 /Users/enricarandes/work/diagon-alley
+
+ ❯ tests/domain/arcana/contextual-preparation.test.ts (0 test)
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/domain/arcana/contextual-preparation.test.ts [ tests/domain/arcana/contextual-preparation.test.ts ]
+Error: Cannot find module '../../../src/arcana/presentation/contextual-preparation' imported from /Users/enricarandes/work/diagon-alley/tests/domain/arcana/contextual-preparation.test.ts
+ ❯ tests/domain/arcana/contextual-preparation.test.ts:6:1
+      4| import { runInitial, campaignFixture } from './support/run-fixtures';
+      5| import { starterEquipment } from '../../../src/arcana/domain/economy/e…
+      6| import { preparationUnit, preparationFormation, preparationSynergies, …
+       | ^
+      7| import type { Run } from '../../../src/arcana/domain/exploration/run';
+      8|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  no tests
+   Start at  01:35:32
+   Duration  134ms (worker 97%, environment 3%)
+

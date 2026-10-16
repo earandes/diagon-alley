@@ -1,0 +1,59 @@
+{
+  "id": "rival-arcanist-1",
+  "appearanceId": "arcanist-1",
+  "serverWizardId": "rival",
+  "name": {
+    "es": "Rival ARCANA",
+    "en": "ARCANA rival"
+  },
+  "direction": "teatro-de-alquimia",
+  "version": "1",
+  "state": "reviewed-standalone-not-integrated",
+  "tool": "built-in imagegen",
+  "source": "master-v1.png",
+  "preparedAsset": "arena-master-v1.png",
+  "prompts": [
+    "prompt-v1.md"
+  ],
+  "references": [
+    "../../../concepts-2026-10-14/teatro-de-alquimia.png",
+    "../../characters/apprentice/arena-master-v1.png"
+  ],
+  "dimensions": [
+    1024,
+    1536
+  ],
+  "transparency": {
+    "mode": "RGBA",
+    "alphaMin": 0,
+    "alphaMax": 255,
+    "fullyTransparentPixels": 1090929,
+    "cornerAlpha": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "subjectBoundsAlphaGt20": [
+      176,
+      162,
+      849,
+      1373
+    ]
+  },
+  "preparation": "Deterministic LANCZOS resize 1024x1536 -> 870x1305, positioned [69,127] on transparent 1024x1536 canvas for >=10% safe margins. No painted changes. Source preserved.",
+  "crop": "none",
+  "pivotNormalized": [
+    0.5,
+    0.895
+  ],
+  "variants": [],
+  "sourceEditable": "Raster alpha master; no layers or rig",
+  "textAlternative": {
+    "es": "Rival ARCANA de pelo negro corto, capa gris y verde azulado, mirada competitiva y baston oscuro de espinas.",
+    "en": "ARCANA rival with short black hair, a gray and muted teal mantle, focused competitive gaze and dark thorn staff."
+  },
+  "review": "Inspected original and prepared image. Adult pale weathered male, sharp brows/short black hair, competitive expression without villain caricature. Gray/cocoa/muted teal, geometric restrained cloak trim and iron thorn staff distinguish from player roster. Complete natural hands/feet/staff; same Teatro player-art quality. Appearance only for existing rival ID, no new catalog identity/stats/rewards. Integration and actual miniature readability remain to be verified.",
+  "originalGenerationPath": "/Users/enricarandes/.codex/generated_images/01a13af8-fd53-7331-8146-bb20ec42fa6b/exec-27b8f742-f51a-4038-a294-f036f28f6adf.png",
+  "sha256": "a7ba8fbc04657114efa6f1a8eedbc64986620f54d303b93ca09d1d41ecc00c4c"
+}

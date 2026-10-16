@@ -1,0 +1,36 @@
+{
+  "id": "confectionery",
+  "role": "shopfront.confectionery",
+  "attempt": 1,
+  "seed": 591201,
+  "master": "design/diagon-alley/annotations-a59/storefronts/masters/confectionery--seed-591201--attempt-1.png",
+  "sha256": "449edc574239b4868f17fb2c75c773bf1f254cb23db5a1fb098b5c21d16e54ca",
+  "promptFile": "design/diagon-alley/annotations-a59/storefronts/prompts/confectionery.txt",
+  "promptSha256": "3a09c37cc1179bfb4c67a5e275e592dd9334f7daff88fc7e4889eb138982228d",
+  "model": "mlx-community/flux2-klein-4b-4bit",
+  "modelRevision": "860e87183ceb29e39627c0612ebd66d8ea66e68c",
+  "modelIntegrityReference": "design/diagon-alley/illustrated-v2/evidence/model-integrity.json",
+  "modelLicense": "Apache-2.0",
+  "verifiedWeightSha256": {
+    "text_encoder/0.safetensors": "c2d90b9bcb81b6f4205033e592af5117b13bda0e2ef1e4c5d910920d20102234",
+    "text_encoder/1.safetensors": "6f9fd41251913a84119daf7ddb3620f37f7ab65d1bcfdffcd33e858cb36774f7",
+    "transformer/0.safetensors": "3a75fc123a9ceb583b0d0202cc37166da3e1fc0ac8cd4a430987ceaf8e845b27",
+    "transformer/1.safetensors": "06998c075c1d9543f17f1cc7ae7170c365cdb3c09a1f78056804a252bb168fd5",
+    "vae/0.safetensors": "efd1802b013d6b17f30946574b1d23c89b8c8e8181876220c00089efac6a0a2c"
+  },
+  "width": 768,
+  "height": 1024,
+  "steps": 4,
+  "guidance": 1.0,
+  "mode": "offline local Metal text-to-image",
+  "cashCost": 0,
+  "loadSeconds": 2.06,
+  "generationSeconds": 33.66,
+  "gpuPeakMemoryBytes": 9420226224,
+  "tool": {
+    "mflux": "0.22.0",
+    "mlx": "0.32.4"
+  },
+  "status": "sample awaiting root visual review; not mapped to runtime",
+  "permission": "Private project prototype. Model license does not resolve franchise distribution permission."
+}

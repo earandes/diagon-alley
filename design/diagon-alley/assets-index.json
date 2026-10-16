@@ -1,0 +1,394 @@
+{
+  "scene.boulevard": {
+    "path": "art/scene/diagon-alley.webp",
+    "width": 1536,
+    "height": 1024,
+    "alpha": false,
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "alt": {
+      "es": "Callejón Diagón ilustrado al anochecer",
+      "en": "Illustrated Diagon Alley at dusk"
+    }
+  },
+  "scene.confectionery": {
+    "path": "art/scene/sweetshop.webp",
+    "width": 1280,
+    "height": 854,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "alt": {
+      "es": "Mostrador de dulces y frascos iluminados",
+      "en": "Illuminated sweet counter and jars"
+    }
+  },
+  "toad.box": {
+    "path": "art/frog/model-closed.webp",
+    "width": 768,
+    "height": 768,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.72
+    ],
+    "alt": {
+      "es": "Pieza pentagonal de rana: closed",
+      "en": "Pentagonal frog box part: closed"
+    }
+  },
+  "toad.subject": {
+    "path": "art/frog/chocolate-frog.webp",
+    "width": 1024,
+    "height": 683,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.85
+    ],
+    "alt": {
+      "es": "Rana de chocolate",
+      "en": "Chocolate Frog"
+    }
+  },
+  "beans.jar": {
+    "path": "art/props/beans-jar.webp",
+    "width": 512,
+    "height": 512,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.9
+    ],
+    "alt": {
+      "es": "Tarro de grageas de todos los sabores",
+      "en": "Every Flavour Beans jar"
+    }
+  },
+  "character.dumbledore.historical": {
+    "path": "art/character/dumbledore-historical.webp",
+    "width": 311,
+    "height": 414,
+    "alpha": false,
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "alt": {
+      "es": "Ilustración histórica de Albus Dumbledore",
+      "en": "Historical Albus Dumbledore illustration"
+    }
+  },
+  "ui.map": {
+    "path": "art/props/map.svg",
+    "width": 512,
+    "height": 512,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "alt": {
+      "es": "Explorar el mapa",
+      "en": "Explore map"
+    }
+  },
+  "ui.collection": {
+    "path": "art/props/album.svg",
+    "width": 512,
+    "height": 512,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "alt": {
+      "es": "Álbum de cromos de magos",
+      "en": "Wizard card album"
+    }
+  },
+  "ui.team": {
+    "path": "art/props/team.svg",
+    "width": 512,
+    "height": 512,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "alt": {
+      "es": "Preparar equipo",
+      "en": "Prepare party"
+    }
+  },
+  "ui.market": {
+    "path": "art/props/sweetshop.svg",
+    "width": 512,
+    "height": 512,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "alt": {
+      "es": "Dulcería",
+      "en": "Sweetshop"
+    }
+  },
+  "ui.shop": {
+    "path": "art/props/sweetshop.svg",
+    "width": 512,
+    "height": 512,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "alt": {
+      "es": "Dulcería",
+      "en": "Sweetshop"
+    }
+  },
+  "ui.settings": {
+    "path": "art/props/settings.svg",
+    "width": 512,
+    "height": 512,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "alt": {
+      "es": "Ajustes",
+      "en": "Settings"
+    }
+  },
+  "ui.missions": {
+    "path": "art/props/letter.svg",
+    "width": 512,
+    "height": 512,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "alt": {
+      "es": "Encargos y regiones",
+      "en": "Quests and regions"
+    }
+  },
+  "prop.lantern": {
+    "path": "art/props/lantern.svg",
+    "width": 512,
+    "height": 512,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.07
+    ],
+    "alt": {
+      "es": "Farol del Callejón",
+      "en": "Alley lantern"
+    }
+  },
+  "beans.packet": {
+    "path": "art/props/beans-packet.svg",
+    "width": 512,
+    "height": 512,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.9
+    ],
+    "alt": {
+      "es": "Bolsa de grageas de todos los sabores",
+      "en": "Every Flavour Beans packet"
+    }
+  },
+  "fx.sparkles": {
+    "path": "art/fx/sparkles.svg",
+    "width": 512,
+    "height": 512,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "alt": {
+      "es": "Destellos dorados decorativos",
+      "en": "Decorative golden sparkles"
+    }
+  },
+  "fx.halo": {
+    "path": "art/fx/halo.svg",
+    "width": 512,
+    "height": 512,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "alt": {
+      "es": "Halo mágico decorativo",
+      "en": "Decorative magical halo"
+    }
+  },
+  "fx.portal": {
+    "path": "art/fx/halo.svg",
+    "width": 512,
+    "height": 512,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "alt": {
+      "es": "Halo mágico decorativo",
+      "en": "Decorative magical halo"
+    }
+  },
+  "fx.ring": {
+    "path": "art/fx/ring.svg",
+    "width": 512,
+    "height": 512,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "alt": {
+      "es": "Anillo mágico decorativo",
+      "en": "Decorative magical ring"
+    }
+  },
+  "fx.shadow": {
+    "path": "art/fx/shadow.svg",
+    "width": 512,
+    "height": 512,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.65
+    ],
+    "alt": {
+      "es": "Sombra decorativa de rana",
+      "en": "Decorative frog shadow"
+    }
+  },
+  "fx.spell-trail": {
+    "path": "art/fx/spell-trail.svg",
+    "width": 512,
+    "height": 512,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "alt": {
+      "es": "Estela de hechizo decorativa",
+      "en": "Decorative spell trail"
+    }
+  },
+  "card.back": {
+    "path": "art/card/back.svg",
+    "width": 512,
+    "height": 640,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "alt": {
+      "es": "Reverso de cromo mágico",
+      "en": "Wizard card back"
+    }
+  },
+  "card.frame": {
+    "path": "art/card/frame.svg",
+    "width": 512,
+    "height": 640,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "alt": {
+      "es": "Marco de cromo mágico",
+      "en": "Wizard card frame"
+    }
+  },
+  "toad.base": {
+    "path": "art/frog/base.webp",
+    "width": 768,
+    "height": 768,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.72
+    ],
+    "alt": {
+      "es": "Pieza pentagonal de rana: base",
+      "en": "Pentagonal frog box part: base"
+    }
+  },
+  "toad.lid": {
+    "path": "art/frog/lid.webp",
+    "width": 768,
+    "height": 768,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.49
+    ],
+    "alt": {
+      "es": "Pieza pentagonal de rana: lid",
+      "en": "Pentagonal frog box part: lid"
+    }
+  },
+  "toad.interior": {
+    "path": "art/frog/interior.webp",
+    "width": 768,
+    "height": 768,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.72
+    ],
+    "alt": {
+      "es": "Pieza pentagonal de rana: interior",
+      "en": "Pentagonal frog box part: interior"
+    }
+  },
+  "toad.seal": {
+    "path": "art/frog/seal.webp",
+    "width": 768,
+    "height": 768,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.72
+    ],
+    "alt": {
+      "es": "Pieza pentagonal de rana: seal",
+      "en": "Pentagonal frog box part: seal"
+    }
+  },
+  "currency.crowns": {
+    "path": "art/currency/galleon.svg",
+    "width": 256,
+    "height": 256,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "alt": {
+      "es": "Galeones",
+      "en": "Galleons"
+    }
+  }
+}

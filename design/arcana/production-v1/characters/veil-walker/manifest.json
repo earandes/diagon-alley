@@ -1,0 +1,52 @@
+{
+  "id": "character-veil-walker",
+  "identityId": "veil-walker",
+  "direction": "teatro-de-alquimia",
+  "version": "1",
+  "state": "reviewed-standalone-not-integrated",
+  "tool": "built-in imagegen",
+  "source": "master-v1.png",
+  "preparedAsset": "arena-master-v1.png",
+  "prompts": [
+    "prompt-v1.md"
+  ],
+  "references": [
+    "../shadow-scribe/arena-master-v1.png"
+  ],
+  "dimensions": [
+    1024,
+    1536
+  ],
+  "transparency": {
+    "mode": "RGBA",
+    "alphaMin": 0,
+    "alphaMax": 255,
+    "fullyTransparentPixels": 1172898,
+    "cornerAlpha": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "subjectBoundsAlphaGt20": [
+      243,
+      206,
+      820,
+      1322
+    ]
+  },
+  "preparation": "Deterministic LANCZOS resize1024x1536->819x1229,position102,154 on transparent1024x1536canvas for10%safe margins. Source preserved.",
+  "crop": "none",
+  "pivotNormalized": [
+    0.5,
+    0.861
+  ],
+  "variants": [],
+  "sourceEditable": "Raster alpha master; no layers or rig",
+  "textAlternative": {
+    "es": "Caminante del Velo, mago de cabello oscuro suelto, capa gris y púrpura, cuello crema, bastón y pequeña máscara junto al cinturón.",
+    "en": "Veil Walker, a mage with loose dark hair, a grey and purple cloak, cream collar, walking staff and a small mask at the belt."
+  },
+  "review": "Inspected whitecomposite: cleanangularoliveface clearlyvisible, loosemediumhair, layeredpurplecharcoalveilcloth/creamcollar andsmallmask distinguishfromAshWanderer/ShadowScribe. Naturalhandscompletefeet/noletters. Realalpha confirmed. Nameverified. Actualthumbnail/mobileintegration pending.",
+  "sha256": "7e2958c1f29600dfe8750986780ec490df6f334caab04f9c2e1877b6e87856b9"
+}

@@ -1,0 +1,24 @@
+{
+  "id": "copper-sage",
+  "name": "Arthur Weasley",
+  "master": "design/diagon-alley/illustrated-v2/samples/copper-sage.png",
+  "sha256": "090167f5a9d6bc9e07485d5baf0420c9e8b6dd428ce87d1499942e91f39254d1",
+  "seed": 58110,
+  "promptFile": "design/diagon-alley/illustrated-v2/prompts/copper-sage.txt",
+  "model": "mlx-community/flux2-klein-4b-4bit",
+  "modelRevision": "860e87183ceb29e39627c0612ebd66d8ea66e68c",
+  "steps": 4,
+  "guidance": 1.0,
+  "width": 768,
+  "height": 1024,
+  "generationSeconds": 32.81,
+  "loadSeconds": 0.74,
+  "tool": {
+    "mflux": "0.22.0",
+    "mlx": "0.32.4"
+  },
+  "cashCost": 0,
+  "generationMode": "offline local Metal text-to-image",
+  "gpuPeakMemoryBytes": 9421779236,
+  "status": "sample awaiting coordinator visual review"
+}

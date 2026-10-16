@@ -1,0 +1,7 @@
+Use case: illustration-story
+Asset type: single current SOAP / RANCID SOAP flavor candybean sprite for ARCANA.
+Image1 familySTYLEreferenceonly: Teatrowarmhandpainted rounded kidneycandy with smallgoldbotanicalmark. NEWbean is IVORY/CREAM notbrown.
+Subject: ONE kidney-shaped ivory-and-cream glossy candy with faintpalegraymarbling, warmgoldupperleftgloss, lightgoldtinybotanicalleafmark. Subtle attachedsmallivorybubbleaccent restingagainstsurface ifneededforsoapidentity, notfloatingbubblebackground andnocluster. Clearlycandybean notrealbarsoap or seed. Strongroundedconfectionshape andgentlewaist, cleanwarmcreamcolor visuallydistinctfrommintgreen,pepperred,earthbrown.
+Composition: centerednominal1024square truealphacanvas, target65%subjectwidth andatleast10%clearmargin everyedge. Fullyvisibleoutline no externalshadow.
+Style: originalTeatropremiumstorybookgouache, tactileglazed sweetsurface andsubtlebrushtexture, artistdimensionaldepth notphoto/3Drender/flatplaceholder.
+No bakedtextnameslettersnumberseffectstatslogoswatermark, jarbowlsceneUI, multiplebeans, otherflavors, largebubblebackground. CurrentJabónRancionameandeffect staylocalizedDOM, noindependentopening/collection. Exactlyoneusablecandy sprite.

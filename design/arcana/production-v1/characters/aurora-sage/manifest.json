@@ -1,0 +1,52 @@
+{
+  "id": "character-aurora-sage",
+  "identityId": "aurora-sage",
+  "direction": "teatro-de-alquimia",
+  "version": "1",
+  "state": "reviewed-standalone-not-integrated",
+  "tool": "built-in imagegen",
+  "source": "master-v1.png",
+  "preparedAsset": "arena-master-v1.png",
+  "prompts": [
+    "prompt-v1.md"
+  ],
+  "references": [
+    "../star-binder/arena-master-v1.png"
+  ],
+  "dimensions": [
+    1024,
+    1536
+  ],
+  "transparency": {
+    "mode": "RGBA",
+    "alphaMin": 0,
+    "alphaMax": 255,
+    "fullyTransparentPixels": 1119465,
+    "cornerAlpha": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "subjectBoundsAlphaGt20": [
+      194,
+      192,
+      854,
+      1333
+    ]
+  },
+  "preparation": "Deterministic LANCZOS resize1024x1536->819x1229,position102,154 on transparent1024x1536canvas for10%safe margins. Source preserved.",
+  "crop": "none",
+  "pivotNormalized": [
+    0.5,
+    0.868
+  ],
+  "variants": [],
+  "sourceEditable": "Raster alpha master; no layers or rig",
+  "textAlternative": {
+    "es": "Sabia de la Aurora, maga de trenza rubia rojiza, abrigo esmeralda y rosa grisáceo, broche ámbar, prisma y varita.",
+    "en": "Aurora Sage, a mage with a strawberry blonde braid, emerald and rose-grey coat, amber clasp, prism and wand."
+  },
+  "review": "Inspected whitecomposite: gentleadultfreckledface, strawberrybraid, emeraldrosegraypalette with violetlining, iridescentprismandslenderwand formdistinct groundedidentity. Completefeetnaturalhands/noletters. Realalpha confirmed. Nameverified. Actualthumbnail/mobileintegration pending.",
+  "sha256": "20480588989cbedceb03273487cc92aad803296723711da3d1baaec2dd8592a4"
+}

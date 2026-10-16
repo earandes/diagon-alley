@@ -1,0 +1,61 @@
+{
+  "id": "arcana",
+  "version": 5,
+  "brand": "ARCANA",
+  "direction": "teatro-de-alquimia",
+  "palette": {
+    "background": "#0d211f",
+    "surface": "#17322d",
+    "ink": "#f3e7cb",
+    "gold": "#d8b86f",
+    "muted": "#c3bea9",
+    "border": "#8f7950",
+    "paper": "#ead9b5",
+    "paperInk": "#332a1d",
+    "focus": "#8be2d0",
+    "rivalSurface": "#40272a",
+    "rivalAccent": "#ce8680",
+    "commonAccent": "#b49c6c",
+    "unusualAccent": "#79cdbd",
+    "epicAccent": "#b1a1dc",
+    "legendaryAccent": "#e9bd70"
+  },
+  "animations": {
+    "opening": {
+      "sealMs": 250,
+      "lidMs": 400,
+      "subjectMs": 650,
+      "cardMs": 500,
+      "holdMs": 150
+    },
+    "celebration": {
+      "durationMs": 1200,
+      "count": 28
+    },
+    "arena": {
+      "eventMs": 650,
+      "entryMs": 350
+    },
+    "feedback": {
+      "durationMs": 350
+    }
+  },
+  "arenaAppearances": {
+    "rivals": [
+      "rival.arcanist-1.figure",
+      "rival.arcanist-2.figure",
+      "rival.arcanist-3.figure"
+    ],
+    "boss": "rival.boss.figure",
+    "bossPosition": 1
+  },
+  "regions": {
+    "pasaje": {
+      "name": {
+        "es": "El Pasaje Torcido",
+        "en": "The Crooked Passage"
+      },
+      "mapAsset": "scene.passage"
+    }
+  }
+}

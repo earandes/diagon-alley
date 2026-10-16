@@ -1,0 +1,7 @@
+Use case: illustration-story.
+Asset type: ARCANA game reusable single character master for card portrait, miniature, and arena; isolated full-body cutout.
+Reference image role: visual style only. Match its painterly realistic theatrical 2D gouache/storybook finish, rich emerald fabric, cream highlights, warm amber light, tactile brass ornament and expressive faces. Do not reproduce its old wizard or any UI.
+Primary subject: an original young adult alchemy apprentice, about 24, short tousled auburn hair, warm expressive face with freckles, confident welcoming three-quarter front pose. Practical forest-emerald mantle over cream linen shirt, moss trousers, brown boots, brass fasteners. Brass flask and small satchel at waist, a simple wooden wand held naturally in the right hand. No existing franchise character likeness or marks.
+Composition: exactly one person isolated, entire head, hands, boots and wand fully visible. Subject centered fills central 80 percent of a portrait 2:3 canvas, nominal 1024x1536. Keep clean 10 percent safe margins, readable silhouette at miniature scale. Detailed face, believable anatomy, distinct clothes layers. No background, no floor, no cast-shadow plate, no additional objects floating outside the figure.
+Lighting: amber rim and soft warm frontal light, preserving readable emerald and cream material.
+Output: truly transparent background with alpha channel, no checkerboard baked in, no words, no typography, no logo, no card frame, no watermark. One standalone production illustration, no sheet, no collage, no UI.

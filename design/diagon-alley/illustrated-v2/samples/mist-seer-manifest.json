@@ -1,0 +1,24 @@
+{
+  "id": "mist-seer",
+  "name": "Luna Lovegood",
+  "master": "design/diagon-alley/illustrated-v2/samples/mist-seer.png",
+  "sha256": "3f9087ad800a8005230dc8d6643205ce6ca2de54698442c42d6aa4e440b3fbc6",
+  "seed": 58108,
+  "promptFile": "design/diagon-alley/illustrated-v2/prompts/mist-seer.txt",
+  "model": "mlx-community/flux2-klein-4b-4bit",
+  "modelRevision": "860e87183ceb29e39627c0612ebd66d8ea66e68c",
+  "steps": 4,
+  "guidance": 1.0,
+  "width": 768,
+  "height": 1024,
+  "generationSeconds": 33.03,
+  "loadSeconds": 0.74,
+  "tool": {
+    "mflux": "0.22.0",
+    "mlx": "0.32.4"
+  },
+  "cashCost": 0,
+  "generationMode": "offline local Metal text-to-image",
+  "gpuPeakMemoryBytes": 9421779236,
+  "status": "sample awaiting coordinator visual review"
+}

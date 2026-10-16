@@ -1,0 +1,36 @@
+{
+  "id": "scene-confectionery",
+  "identity": "confectionery",
+  "function": "Reusable opaque confectionery backdrop",
+  "version": 1,
+  "status": "visually-reviewed-source-awaiting-integration",
+  "author": "OpenAI imagegen built-in",
+  "tool": "image_gen.imagegen",
+  "provenance": "New original generated illustration using selected ARCANA concept as style reference",
+  "prompt": "prompt-v1.md",
+  "references": [
+    "design/arcana/concepts-2026-10-14/teatro-de-alquimia.png"
+  ],
+  "original": "original-v1.png",
+  "availableSource": "Raster PNG original; no editable layers or rig",
+  "dimensions": {
+    "width": 1536,
+    "height": 1024
+  },
+  "crop": "full image; protect counter in mobile layout",
+  "pivot": {
+    "x": 0.5,
+    "y": 0.5
+  },
+  "variants": [],
+  "transparency": false,
+  "alt": {
+    "es": "Interior ilustrado de una confitería de alquimistas, con faroles cálidos, hojas y mostrador de madera vacío.",
+    "en": "Illustrated alchemist confectionery interior with warm lanterns, foliage and an empty wooden counter."
+  },
+  "review": {
+    "date": "2026-10-14",
+    "observed": "No text, UI, characters or foreground products. Quiet dark central space; rich gouache botanical edges and timber counter fit selected concept. Opaque output confirmed by sips.",
+    "limits": "Mobile crop and contrast with real DOM remain for integration QA. Source is flattened raster."
+  }
+}

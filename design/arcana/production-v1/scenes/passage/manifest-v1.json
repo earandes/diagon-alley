@@ -1,0 +1,36 @@
+{
+  "id": "scene-passage",
+  "identity": "pasaje-torcido",
+  "function": "Map backdrop, independent graph remains in renderer",
+  "version": 1,
+  "status": "visually-reviewed-source-awaiting-integration",
+  "author": "OpenAI built-in imagegen",
+  "tool": "image_gen.imagegen",
+  "prompt": "prompt-v1.md",
+  "references": [
+    "design/arcana/concepts-2026-10-14/teatro-de-alquimia.png",
+    "design/arcana/production-v1/scenes/boulevard/original-v1.png"
+  ],
+  "original": "original-v1.png",
+  "availableSource": "Flattened raster PNG, no editable layers or rig",
+  "dimensions": {
+    "width": 1536,
+    "height": 1024
+  },
+  "crop": "Full image; central shadowed cobblestone passage for narrow crop",
+  "pivot": {
+    "x": 0.5,
+    "y": 0.5
+  },
+  "variants": [],
+  "transparency": false,
+  "alt": {
+    "es": "Pasaje Torcido ilustrado, con arco en sombra, adoquines, enredaderas y faroles laterales.",
+    "en": "Illustrated Twisted Passage with a shadowed arch, cobblestones, leafy vines and lanterns at the sides."
+  },
+  "review": {
+    "date": "2026-10-14",
+    "observed": "No lettering, UI, people or embedded map graph. Side architecture and botanical canopy frame dark central passage. Coherent with boulevard, more secluded. Central path readable as quiet backdrop.",
+    "limits": "Responsive crop and map overlay contrast remain integration QA. Opaque confirmed."
+  }
+}

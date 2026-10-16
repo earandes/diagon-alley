@@ -1,0 +1,229 @@
+
+Running 12 tests using 1 worker
+
+(node:41045) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 [chromium-a63] › tests/browser-trial/gameplay-increment-a63.spec.ts:17:1 › A63 repeated boss keeps previous stock separate from the new reward (12.0s)
+  ✓   2 [chromium-a63] › tests/browser-trial/gameplay-increment-a63.spec.ts:41:1 › A63 earned frog recovers lost response and reload during reveal without another charge (6.5s)
+  ✓   3 [chromium-a63] › tests/browser-trial/gameplay-increment-a63.spec.ts:71:3 › A63 closing journey uses earned loot then starts deliberately es diagon-alley (13.0s)
+  ✓   4 [chromium-a63] › tests/browser-trial/gameplay-increment-a63.spec.ts:71:3 › A63 closing journey uses earned loot then starts deliberately es arcana (5.1s)
+  ✓   5 [chromium-a63] › tests/browser-trial/gameplay-increment-a63.spec.ts:71:3 › A63 closing journey uses earned loot then starts deliberately en diagon-alley (12.4s)
+  ✓   6 [chromium-a63] › tests/browser-trial/gameplay-increment-a63.spec.ts:71:3 › A63 closing journey uses earned loot then starts deliberately en arcana (7.3s)
+(node:41614) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   7 [webkit-a63] › tests/browser-trial/gameplay-increment-a63.spec.ts:17:1 › A63 repeated boss keeps previous stock separate from the new reward (9.5s)
+  ✘   8 [webkit-a63] › tests/browser-trial/gameplay-increment-a63.spec.ts:41:1 › A63 earned frog recovers lost response and reload during reveal without another charge (9.9s)
+(node:41920) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘   9 [webkit-a63] › tests/browser-trial/gameplay-increment-a63.spec.ts:71:3 › A63 closing journey uses earned loot then starts deliberately es diagon-alley (16.1s)
+(node:42045) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  10 [webkit-a63] › tests/browser-trial/gameplay-increment-a63.spec.ts:71:3 › A63 closing journey uses earned loot then starts deliberately es arcana (10.7s)
+(node:42353) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  11 [webkit-a63] › tests/browser-trial/gameplay-increment-a63.spec.ts:71:3 › A63 closing journey uses earned loot then starts deliberately en diagon-alley (17.5s)
+(node:42530) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  12 [webkit-a63] › tests/browser-trial/gameplay-increment-a63.spec.ts:71:3 › A63 closing journey uses earned loot then starts deliberately en arcana (11.0s)
+
+
+  1) [webkit-a63] › tests/browser-trial/gameplay-increment-a63.spec.ts:41:1 › A63 earned frog recovers lost response and reload during reveal without another charge 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByRole('button', { name: 'Recuperar operación', exact: true })
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" getByRole('button', { name: 'Recuperar operación', exact: true }) with timeout 5000ms
+      - waiting for getByRole('button', { name: 'Recuperar operación', exact: true })
+
+
+      53 |   }, { times: 1 });
+      54 |   await page.locator('[data-closure-action="frog"]').click();
+    > 55 |   await expect(page.getByRole('button', { name: 'Recuperar operación', exact: true })).toBeVisible();
+         |                                                                                        ^
+      56 |   await expect(page.locator('.reveal')).toHaveCount(0);
+      57 |   const committed = await readGame(page);
+      58 |   expect(committed.copies).toHaveLength(before.copies.length + 1);
+        at /Users/enricarandes/work/diagon-alley/tests/browser-trial/gameplay-increment-a63.spec.ts:55:88
+
+    attachment #1: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results-gameplay-a63/gameplay-increment-a63-A63-bf105-veal-without-another-charge-webkit-a63/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results-gameplay-a63/gameplay-increment-a63-A63-bf105-veal-without-another-charge-webkit-a63/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results-gameplay-a63/gameplay-increment-a63-A63-bf105-veal-without-another-charge-webkit-a63/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results-gameplay-a63/gameplay-increment-a63-A63-bf105-veal-without-another-charge-webkit-a63/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) [webkit-a63] › tests/browser-trial/gameplay-increment-a63.spec.ts:71:3 › A63 closing journey uses earned loot then starts deliberately es diagon-alley 
+
+    Error: expect(locator).toBeFocused() failed
+
+    Locator:  locator('[data-expedition-closure="won"]').locator('[data-closure-action="prepare"]')
+    Expected: focused
+    Received: inactive
+    Timeout:  5000ms
+
+    Call log:
+      - Expect "toBeFocused" locator('[data-expedition-closure="won"]').locator('[data-closure-action="prepare"]') with timeout 5000ms
+      - waiting for locator('[data-expedition-closure="won"]').locator('[data-closure-action="prepare"]')
+        14 × locator resolved to <button type="button" class="closure-secondary" data-closure-action="prepare">…</button>
+           - unexpected value "inactive"
+
+
+      128 |     await page.keyboard.press('Escape');
+      129 |     await expect(closure).toBeVisible();
+    > 130 |     await expect(closure.locator('[data-closure-action="prepare"]')).toBeFocused();
+          |                                                                      ^
+      131 |     await closure.locator('[data-closure-action="prepare"]').click();
+      132 |     await startExpedition(page, language);
+      133 |     const next = await readGame(page);
+        at /Users/enricarandes/work/diagon-alley/tests/browser-trial/gameplay-increment-a63.spec.ts:130:70
+
+    attachment #1: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results-gameplay-a63/gameplay-increment-a63-A63-1a161-eliberately-es-diagon-alley-webkit-a63/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results-gameplay-a63/gameplay-increment-a63-A63-1a161-eliberately-es-diagon-alley-webkit-a63/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results-gameplay-a63/gameplay-increment-a63-A63-1a161-eliberately-es-diagon-alley-webkit-a63/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results-gameplay-a63/gameplay-increment-a63-A63-1a161-eliberately-es-diagon-alley-webkit-a63/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  3) [webkit-a63] › tests/browser-trial/gameplay-increment-a63.spec.ts:71:3 › A63 closing journey uses earned loot then starts deliberately es arcana 
+
+    Error: expect(locator).toBeFocused() failed
+
+    Locator:  locator('[data-expedition-closure="won"]').locator('[data-closure-action="prepare"]')
+    Expected: focused
+    Received: inactive
+    Timeout:  5000ms
+
+    Call log:
+      - Expect "toBeFocused" locator('[data-expedition-closure="won"]').locator('[data-closure-action="prepare"]') with timeout 5000ms
+      - waiting for locator('[data-expedition-closure="won"]').locator('[data-closure-action="prepare"]')
+        14 × locator resolved to <button type="button" class="closure-secondary" data-closure-action="prepare">…</button>
+           - unexpected value "inactive"
+
+
+      128 |     await page.keyboard.press('Escape');
+      129 |     await expect(closure).toBeVisible();
+    > 130 |     await expect(closure.locator('[data-closure-action="prepare"]')).toBeFocused();
+          |                                                                      ^
+      131 |     await closure.locator('[data-closure-action="prepare"]').click();
+      132 |     await startExpedition(page, language);
+      133 |     const next = await readGame(page);
+        at /Users/enricarandes/work/diagon-alley/tests/browser-trial/gameplay-increment-a63.spec.ts:130:70
+
+    attachment #1: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results-gameplay-a63/gameplay-increment-a63-A63-6a294-arts-deliberately-es-arcana-webkit-a63/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results-gameplay-a63/gameplay-increment-a63-A63-6a294-arts-deliberately-es-arcana-webkit-a63/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results-gameplay-a63/gameplay-increment-a63-A63-6a294-arts-deliberately-es-arcana-webkit-a63/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results-gameplay-a63/gameplay-increment-a63-A63-6a294-arts-deliberately-es-arcana-webkit-a63/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  4) [webkit-a63] › tests/browser-trial/gameplay-increment-a63.spec.ts:71:3 › A63 closing journey uses earned loot then starts deliberately en diagon-alley 
+
+    Error: expect(locator).toBeFocused() failed
+
+    Locator:  locator('[data-expedition-closure="won"]').locator('[data-closure-action="prepare"]')
+    Expected: focused
+    Received: inactive
+    Timeout:  5000ms
+
+    Call log:
+      - Expect "toBeFocused" locator('[data-expedition-closure="won"]').locator('[data-closure-action="prepare"]') with timeout 5000ms
+      - waiting for locator('[data-expedition-closure="won"]').locator('[data-closure-action="prepare"]')
+        14 × locator resolved to <button type="button" class="closure-secondary" data-closure-action="prepare">…</button>
+           - unexpected value "inactive"
+
+
+      128 |     await page.keyboard.press('Escape');
+      129 |     await expect(closure).toBeVisible();
+    > 130 |     await expect(closure.locator('[data-closure-action="prepare"]')).toBeFocused();
+          |                                                                      ^
+      131 |     await closure.locator('[data-closure-action="prepare"]').click();
+      132 |     await startExpedition(page, language);
+      133 |     const next = await readGame(page);
+        at /Users/enricarandes/work/diagon-alley/tests/browser-trial/gameplay-increment-a63.spec.ts:130:70
+
+    attachment #1: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results-gameplay-a63/gameplay-increment-a63-A63-855a7-eliberately-en-diagon-alley-webkit-a63/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results-gameplay-a63/gameplay-increment-a63-A63-855a7-eliberately-en-diagon-alley-webkit-a63/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results-gameplay-a63/gameplay-increment-a63-A63-855a7-eliberately-en-diagon-alley-webkit-a63/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results-gameplay-a63/gameplay-increment-a63-A63-855a7-eliberately-en-diagon-alley-webkit-a63/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  5) [webkit-a63] › tests/browser-trial/gameplay-increment-a63.spec.ts:71:3 › A63 closing journey uses earned loot then starts deliberately en arcana 
+
+    Error: expect(locator).toBeFocused() failed
+
+    Locator:  locator('[data-expedition-closure="won"]').locator('[data-closure-action="prepare"]')
+    Expected: focused
+    Received: inactive
+    Timeout:  5000ms
+
+    Call log:
+      - Expect "toBeFocused" locator('[data-expedition-closure="won"]').locator('[data-closure-action="prepare"]') with timeout 5000ms
+      - waiting for locator('[data-expedition-closure="won"]').locator('[data-closure-action="prepare"]')
+        14 × locator resolved to <button type="button" class="closure-secondary" data-closure-action="prepare">…</button>
+           - unexpected value "inactive"
+
+
+      128 |     await page.keyboard.press('Escape');
+      129 |     await expect(closure).toBeVisible();
+    > 130 |     await expect(closure.locator('[data-closure-action="prepare"]')).toBeFocused();
+          |                                                                      ^
+      131 |     await closure.locator('[data-closure-action="prepare"]').click();
+      132 |     await startExpedition(page, language);
+      133 |     const next = await readGame(page);
+        at /Users/enricarandes/work/diagon-alley/tests/browser-trial/gameplay-increment-a63.spec.ts:130:70
+
+    attachment #1: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results-gameplay-a63/gameplay-increment-a63-A63-94688-arts-deliberately-en-arcana-webkit-a63/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results-gameplay-a63/gameplay-increment-a63-A63-94688-arts-deliberately-en-arcana-webkit-a63/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results-gameplay-a63/gameplay-increment-a63-A63-94688-arts-deliberately-en-arcana-webkit-a63/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results-gameplay-a63/gameplay-increment-a63-A63-94688-arts-deliberately-en-arcana-webkit-a63/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  5 failed
+    [webkit-a63] › tests/browser-trial/gameplay-increment-a63.spec.ts:41:1 › A63 earned frog recovers lost response and reload during reveal without another charge 
+    [webkit-a63] › tests/browser-trial/gameplay-increment-a63.spec.ts:71:3 › A63 closing journey uses earned loot then starts deliberately es diagon-alley 
+    [webkit-a63] › tests/browser-trial/gameplay-increment-a63.spec.ts:71:3 › A63 closing journey uses earned loot then starts deliberately es arcana 
+    [webkit-a63] › tests/browser-trial/gameplay-increment-a63.spec.ts:71:3 › A63 closing journey uses earned loot then starts deliberately en diagon-alley 
+    [webkit-a63] › tests/browser-trial/gameplay-increment-a63.spec.ts:71:3 › A63 closing journey uses earned loot then starts deliberately en arcana 
+  7 passed (2.3m)

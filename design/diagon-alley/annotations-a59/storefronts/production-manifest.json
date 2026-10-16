@@ -1,0 +1,280 @@
+{
+  "version": 1,
+  "date": "2026-10-15T14:54:55.023664+02:00",
+  "scope": "A59 three storefront paintings only; A58 untouched",
+  "cashCost": 0,
+  "apiCalls": 0,
+  "generationSeconds": 101.93,
+  "runtimeBytes": 132282,
+  "model": "mlx-community/flux2-klein-4b-4bit",
+  "modelRevision": "860e87183ceb29e39627c0612ebd66d8ea66e68c",
+  "modelLicense": "Apache-2.0",
+  "toolLicense": "MFLUX MIT",
+  "permission": "Private project prototype; model license does not resolve franchise distribution permission. No publication.",
+  "records": [
+    {
+      "id": "confectionery",
+      "source": {
+        "id": "confectionery",
+        "role": "shopfront.confectionery",
+        "attempt": 1,
+        "seed": 591201,
+        "master": "design/diagon-alley/annotations-a59/storefronts/masters/confectionery--seed-591201--attempt-1.png",
+        "sha256": "449edc574239b4868f17fb2c75c773bf1f254cb23db5a1fb098b5c21d16e54ca",
+        "promptFile": "design/diagon-alley/annotations-a59/storefronts/prompts/confectionery.txt",
+        "promptSha256": "3a09c37cc1179bfb4c67a5e275e592dd9334f7daff88fc7e4889eb138982228d",
+        "model": "mlx-community/flux2-klein-4b-4bit",
+        "modelRevision": "860e87183ceb29e39627c0612ebd66d8ea66e68c",
+        "modelIntegrityReference": "design/diagon-alley/illustrated-v2/evidence/model-integrity.json",
+        "modelLicense": "Apache-2.0",
+        "verifiedWeightSha256": {
+          "text_encoder/0.safetensors": "c2d90b9bcb81b6f4205033e592af5117b13bda0e2ef1e4c5d910920d20102234",
+          "text_encoder/1.safetensors": "6f9fd41251913a84119daf7ddb3620f37f7ab65d1bcfdffcd33e858cb36774f7",
+          "transformer/0.safetensors": "3a75fc123a9ceb583b0d0202cc37166da3e1fc0ac8cd4a430987ceaf8e845b27",
+          "transformer/1.safetensors": "06998c075c1d9543f17f1cc7ae7170c365cdb3c09a1f78056804a252bb168fd5",
+          "vae/0.safetensors": "efd1802b013d6b17f30946574b1d23c89b8c8e8181876220c00089efac6a0a2c"
+        },
+        "width": 768,
+        "height": 1024,
+        "steps": 4,
+        "guidance": 1.0,
+        "mode": "offline local Metal text-to-image",
+        "cashCost": 0,
+        "loadSeconds": 2.06,
+        "generationSeconds": 33.66,
+        "gpuPeakMemoryBytes": 9420226224,
+        "tool": {
+          "mflux": "0.22.0",
+          "mlx": "0.32.4"
+        },
+        "status": "sample awaiting root visual review; not mapped to runtime",
+        "permission": "Private project prototype. Model license does not resolve franchise distribution permission."
+      },
+      "export": {
+        "id": "confectionery",
+        "role": "shopfront.confectionery",
+        "source": "design/diagon-alley/annotations-a59/storefronts/masters/confectionery--seed-591201--attempt-1.png",
+        "sourceSha256": "449edc574239b4868f17fb2c75c773bf1f254cb23db5a1fb098b5c21d16e54ca",
+        "path": "design/diagon-alley/annotations-a59/storefronts/exports/confectionery--seed-591201--attempt-1--borderless.webp",
+        "sha256": "dd61e200a832ab000a24170ff088761499443f0773dab6bc556c7c732261fa39",
+        "width": 430,
+        "height": 574,
+        "alpha": false,
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "quality": 84,
+        "bytes": 45772,
+        "sourceCrop": [
+          20,
+          27,
+          751,
+          998
+        ],
+        "transform": "Optional paper-margin trim, then Lanczos centered fit to430x574; no paint retouch or embedded text",
+        "alt": {
+          "es": "Dulcería del Callejón",
+          "en": "Alley Sweet Shop"
+        },
+        "status": "accepted by root integrator for runtime integration; mapping owned by root",
+        "labelArea": {
+          "coordinateSpace": "normalized export bounds; after sourceCrop and430x574 fit",
+          "left": 0.12,
+          "top": 0.205,
+          "width": 0.76,
+          "height": 0.07,
+          "ink": "#f1d8a4",
+          "textEmbeddedInRuntimeImage": false
+        }
+      },
+      "validation": {
+        "actualSize": [
+          430,
+          574
+        ],
+        "format": "WEBP",
+        "sha256Matches": true,
+        "under50KiB": true,
+        "visualReview": "root integrator accepted painterly architecture and blank sign zones",
+        "humanApprovalClaim": false
+      }
+    },
+    {
+      "id": "workshop",
+      "source": {
+        "id": "workshop",
+        "role": "shopfront.workshop",
+        "attempt": 1,
+        "seed": 591202,
+        "master": "design/diagon-alley/annotations-a59/storefronts/masters/workshop--seed-591202--attempt-1.png",
+        "sha256": "db1751095537062e96bb68c0cd36e5fcbc0f4fbc7f9804d2f6e3355fc134417e",
+        "promptFile": "design/diagon-alley/annotations-a59/storefronts/prompts/workshop.txt",
+        "promptSha256": "5c3c06478f6d1d04a38a0d34c2bfcfb493905f4dc92a4ce02708eb38d123ab3b",
+        "model": "mlx-community/flux2-klein-4b-4bit",
+        "modelRevision": "860e87183ceb29e39627c0612ebd66d8ea66e68c",
+        "modelIntegrityReference": "design/diagon-alley/illustrated-v2/evidence/model-integrity.json",
+        "modelLicense": "Apache-2.0",
+        "verifiedWeightSha256": {
+          "text_encoder/0.safetensors": "c2d90b9bcb81b6f4205033e592af5117b13bda0e2ef1e4c5d910920d20102234",
+          "text_encoder/1.safetensors": "6f9fd41251913a84119daf7ddb3620f37f7ab65d1bcfdffcd33e858cb36774f7",
+          "transformer/0.safetensors": "3a75fc123a9ceb583b0d0202cc37166da3e1fc0ac8cd4a430987ceaf8e845b27",
+          "transformer/1.safetensors": "06998c075c1d9543f17f1cc7ae7170c365cdb3c09a1f78056804a252bb168fd5",
+          "vae/0.safetensors": "efd1802b013d6b17f30946574b1d23c89b8c8e8181876220c00089efac6a0a2c"
+        },
+        "width": 768,
+        "height": 1024,
+        "steps": 4,
+        "guidance": 1.0,
+        "mode": "offline local Metal text-to-image",
+        "cashCost": 0,
+        "loadSeconds": 1.99,
+        "generationSeconds": 33.95,
+        "gpuPeakMemoryBytes": 9420226224,
+        "tool": {
+          "mflux": "0.22.0",
+          "mlx": "0.32.4"
+        },
+        "status": "sample awaiting root visual review; not mapped to runtime",
+        "permission": "Private project prototype. Model license does not resolve franchise distribution permission."
+      },
+      "export": {
+        "id": "workshop",
+        "role": "shopfront.workshop",
+        "source": "design/diagon-alley/annotations-a59/storefronts/masters/workshop--seed-591202--attempt-1.png",
+        "sourceSha256": "db1751095537062e96bb68c0cd36e5fcbc0f4fbc7f9804d2f6e3355fc134417e",
+        "path": "design/diagon-alley/annotations-a59/storefronts/exports/workshop--seed-591202--attempt-1--borderless.webp",
+        "sha256": "7c353f4740910a36546a7c7619573b0a58306ba61c00d9a7e152ef7d57830e69",
+        "width": 430,
+        "height": 574,
+        "alpha": false,
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "quality": 84,
+        "bytes": 42744,
+        "sourceCrop": [
+          14,
+          19,
+          756,
+          1010
+        ],
+        "transform": "Optional paper-margin trim, then Lanczos centered fit to430x574; no paint retouch or embedded text",
+        "alt": {
+          "es": "Ollivanders",
+          "en": "Ollivanders"
+        },
+        "status": "accepted by root integrator for runtime integration; mapping owned by root",
+        "labelArea": {
+          "coordinateSpace": "normalized export bounds; after sourceCrop and430x574 fit",
+          "left": 0.12,
+          "top": 0.168,
+          "width": 0.76,
+          "height": 0.066,
+          "ink": "#e9d9ac",
+          "textEmbeddedInRuntimeImage": false
+        }
+      },
+      "validation": {
+        "actualSize": [
+          430,
+          574
+        ],
+        "format": "WEBP",
+        "sha256Matches": true,
+        "under50KiB": true,
+        "visualReview": "root integrator accepted painterly architecture and blank sign zones",
+        "humanApprovalClaim": false
+      }
+    },
+    {
+      "id": "vault",
+      "source": {
+        "id": "vault",
+        "role": "shopfront.vault",
+        "attempt": 1,
+        "seed": 591203,
+        "master": "design/diagon-alley/annotations-a59/storefronts/masters/vault--seed-591203--attempt-1.png",
+        "sha256": "d64df23a1958bc4b08b0fd73f1b3da5ea7c1fa58adb9932094bd92a4cb23fdc7",
+        "promptFile": "design/diagon-alley/annotations-a59/storefronts/prompts/vault.txt",
+        "promptSha256": "60128140047e71d9fc1ee9ffbb5d6a90b40bae06fbd77e49203c60eb7fb9c0de",
+        "model": "mlx-community/flux2-klein-4b-4bit",
+        "modelRevision": "860e87183ceb29e39627c0612ebd66d8ea66e68c",
+        "modelIntegrityReference": "design/diagon-alley/illustrated-v2/evidence/model-integrity.json",
+        "modelLicense": "Apache-2.0",
+        "verifiedWeightSha256": {
+          "text_encoder/0.safetensors": "c2d90b9bcb81b6f4205033e592af5117b13bda0e2ef1e4c5d910920d20102234",
+          "text_encoder/1.safetensors": "6f9fd41251913a84119daf7ddb3620f37f7ab65d1bcfdffcd33e858cb36774f7",
+          "transformer/0.safetensors": "3a75fc123a9ceb583b0d0202cc37166da3e1fc0ac8cd4a430987ceaf8e845b27",
+          "transformer/1.safetensors": "06998c075c1d9543f17f1cc7ae7170c365cdb3c09a1f78056804a252bb168fd5",
+          "vae/0.safetensors": "efd1802b013d6b17f30946574b1d23c89b8c8e8181876220c00089efac6a0a2c"
+        },
+        "width": 768,
+        "height": 1024,
+        "steps": 4,
+        "guidance": 1.0,
+        "mode": "offline local Metal text-to-image",
+        "cashCost": 0,
+        "loadSeconds": 1.99,
+        "generationSeconds": 34.32,
+        "gpuPeakMemoryBytes": 9420224176,
+        "tool": {
+          "mflux": "0.22.0",
+          "mlx": "0.32.4"
+        },
+        "status": "sample awaiting root visual review; not mapped to runtime",
+        "permission": "Private project prototype. Model license does not resolve franchise distribution permission."
+      },
+      "export": {
+        "id": "vault",
+        "role": "shopfront.vault",
+        "source": "design/diagon-alley/annotations-a59/storefronts/masters/vault--seed-591203--attempt-1.png",
+        "sourceSha256": "d64df23a1958bc4b08b0fd73f1b3da5ea7c1fa58adb9932094bd92a4cb23fdc7",
+        "path": "design/diagon-alley/annotations-a59/storefronts/exports/vault--seed-591203--attempt-1--borderless.webp",
+        "sha256": "3071739f95f36e9342ae7731723c01b8348696409542a7c05946be7fa68c5b04",
+        "width": 430,
+        "height": 574,
+        "alpha": false,
+        "pivot": [
+          0.5,
+          0.5
+        ],
+        "quality": 76,
+        "bytes": 43766,
+        "sourceCrop": [
+          10,
+          12,
+          759,
+          1014
+        ],
+        "transform": "Optional paper-margin trim, then Lanczos centered fit to430x574; no paint retouch or embedded text",
+        "alt": {
+          "es": "Gringotts",
+          "en": "Gringotts"
+        },
+        "status": "accepted by root integrator for runtime integration; mapping owned by root",
+        "labelArea": {
+          "coordinateSpace": "normalized export bounds; after sourceCrop and430x574 fit",
+          "left": 0.28,
+          "top": 0.383,
+          "width": 0.44,
+          "height": 0.032,
+          "ink": "#493722",
+          "textEmbeddedInRuntimeImage": false
+        }
+      },
+      "validation": {
+        "actualSize": [
+          430,
+          574
+        ],
+        "format": "WEBP",
+        "sha256Matches": true,
+        "under50KiB": true,
+        "visualReview": "root integrator accepted painterly architecture and blank sign zones",
+        "humanApprovalClaim": false
+      }
+    }
+  ]
+}

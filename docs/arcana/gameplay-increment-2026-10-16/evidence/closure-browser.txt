@@ -1,0 +1,9 @@
+
+Running 2 tests using 1 worker
+
+(node:32250) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  1 [chromium-a63] › tests/browser-trial/gameplay-increment-a63.spec.ts:17:3 › A63 closing journey uses earned loot then starts deliberately es (12.7s)
+  ✓  2 [chromium-a63] › tests/browser-trial/gameplay-increment-a63.spec.ts:17:3 › A63 closing journey uses earned loot then starts deliberately en (13.2s)
+
+  2 passed (26.3s)

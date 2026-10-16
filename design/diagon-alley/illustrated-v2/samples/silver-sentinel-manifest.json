@@ -1,0 +1,24 @@
+{
+  "id": "silver-sentinel",
+  "name": "Kingsley Shacklebolt",
+  "master": "design/diagon-alley/illustrated-v2/samples/silver-sentinel.png",
+  "sha256": "6e69ec7b2573792214ee631b1c5f3296928005d62f22d97dbfd4fef19cdeaed3",
+  "seed": 58126,
+  "promptFile": "design/diagon-alley/illustrated-v2/prompts/silver-sentinel.txt",
+  "model": "mlx-community/flux2-klein-4b-4bit",
+  "modelRevision": "860e87183ceb29e39627c0612ebd66d8ea66e68c",
+  "steps": 4,
+  "guidance": 1.0,
+  "width": 768,
+  "height": 1024,
+  "generationSeconds": 29.5,
+  "loadSeconds": 0.74,
+  "tool": {
+    "mflux": "0.22.0",
+    "mlx": "0.32.4"
+  },
+  "cashCost": 0,
+  "generationMode": "offline local Metal text-to-image",
+  "gpuPeakMemoryBytes": 9421779596,
+  "status": "sample awaiting coordinator visual review"
+}

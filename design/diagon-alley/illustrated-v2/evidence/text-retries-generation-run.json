@@ -1,0 +1,106 @@
+{
+  "generated": [
+    {
+      "id": "storm-caller",
+      "name": "Nymphadora Tonks",
+      "master": "design/diagon-alley/illustrated-v2/samples/storm-caller_1.png",
+      "sha256": "e0552f514ce19f0fda4fa6a439b4e5bf22f2fd9b28706933243cda2305e6c00f",
+      "seed": 5811402,
+      "promptFile": "design/diagon-alley/illustrated-v2/prompts/storm-caller-retry.txt",
+      "model": "mlx-community/flux2-klein-4b-4bit",
+      "modelRevision": "860e87183ceb29e39627c0612ebd66d8ea66e68c",
+      "steps": 4,
+      "guidance": 1.0,
+      "width": 768,
+      "height": 1024,
+      "generationSeconds": 32.82,
+      "loadSeconds": 0.78,
+      "tool": {
+        "mflux": "0.22.0",
+        "mlx": "0.32.4"
+      },
+      "cashCost": 0,
+      "generationMode": "offline local Metal text-to-image",
+      "gpuPeakMemoryBytes": 9420224176,
+      "status": "sample awaiting coordinator visual review",
+      "outputPathTracking": "Repaired against exact native saved PNG and metadata, not nominal destination."
+    },
+    {
+      "id": "night-forger",
+      "name": "Rubeus Hagrid",
+      "master": "design/diagon-alley/illustrated-v2/samples/night-forger_1.png",
+      "sha256": "2bc444abf66a943b76ebe5f906ea175097643c99aec9c10968dbafe70ea84732",
+      "seed": 5811802,
+      "promptFile": "design/diagon-alley/illustrated-v2/prompts/night-forger-retry.txt",
+      "model": "mlx-community/flux2-klein-4b-4bit",
+      "modelRevision": "860e87183ceb29e39627c0612ebd66d8ea66e68c",
+      "steps": 4,
+      "guidance": 1.0,
+      "width": 768,
+      "height": 1024,
+      "generationSeconds": 34.9,
+      "loadSeconds": 0.78,
+      "tool": {
+        "mflux": "0.22.0",
+        "mlx": "0.32.4"
+      },
+      "cashCost": 0,
+      "generationMode": "offline local Metal text-to-image",
+      "gpuPeakMemoryBytes": 9421779128,
+      "status": "sample awaiting coordinator visual review",
+      "outputPathTracking": "Repaired against exact native saved PNG and metadata, not nominal destination."
+    },
+    {
+      "id": "root-speaker",
+      "name": "Alastor Moody",
+      "master": "design/diagon-alley/illustrated-v2/samples/root-speaker_1.png",
+      "sha256": "3d6ed9ffb5ff7c99de381951d5a6583240d7523132b3dd0a8a8a7fd9d0b6303f",
+      "seed": 5812402,
+      "promptFile": "design/diagon-alley/illustrated-v2/prompts/root-speaker-retry.txt",
+      "model": "mlx-community/flux2-klein-4b-4bit",
+      "modelRevision": "860e87183ceb29e39627c0612ebd66d8ea66e68c",
+      "steps": 4,
+      "guidance": 1.0,
+      "width": 768,
+      "height": 1024,
+      "generationSeconds": 35.49,
+      "loadSeconds": 0.78,
+      "tool": {
+        "mflux": "0.22.0",
+        "mlx": "0.32.4"
+      },
+      "cashCost": 0,
+      "generationMode": "offline local Metal text-to-image",
+      "gpuPeakMemoryBytes": 9421779128,
+      "status": "sample awaiting coordinator visual review",
+      "outputPathTracking": "Repaired against exact native saved PNG and metadata, not nominal destination."
+    },
+    {
+      "id": "veil-walker",
+      "name": "Lord Voldemort",
+      "master": "design/diagon-alley/illustrated-v2/samples/veil-walker_1.png",
+      "sha256": "f952a0c0564585c47f9fb93cbdd6371159d1382885088cdfb07cac389812e568",
+      "seed": 5812902,
+      "promptFile": "design/diagon-alley/illustrated-v2/prompts/veil-walker-retry.txt",
+      "model": "mlx-community/flux2-klein-4b-4bit",
+      "modelRevision": "860e87183ceb29e39627c0612ebd66d8ea66e68c",
+      "steps": 4,
+      "guidance": 1.0,
+      "width": 768,
+      "height": 1024,
+      "generationSeconds": 34.01,
+      "loadSeconds": 0.78,
+      "tool": {
+        "mflux": "0.22.0",
+        "mlx": "0.32.4"
+      },
+      "cashCost": 0,
+      "generationMode": "offline local Metal text-to-image",
+      "gpuPeakMemoryBytes": 9421779128,
+      "status": "sample awaiting coordinator visual review",
+      "outputPathTracking": "Repaired against exact native saved PNG and metadata, not nominal destination."
+    }
+  ],
+  "wallSeconds": 141.64,
+  "cashCost": 0
+}

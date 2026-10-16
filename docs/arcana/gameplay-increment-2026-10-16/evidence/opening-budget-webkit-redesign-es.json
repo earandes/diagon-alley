@@ -1,0 +1,174 @@
+{
+  "runtime": "compiled-preview",
+  "viewport": {
+    "width": 1280,
+    "height": 900
+  },
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/27.2 Safari/605.1.15",
+  "sampleMs": 650,
+  "browserFps": 60,
+  "p95FrameMs": 17,
+  "maxFrameMs": 19,
+  "framesAbove25Ms": 0,
+  "renderer": "canvas2d",
+  "draws": 40,
+  "resources": [
+    {
+      "url": "http://127.0.0.1:5217/assets/index-BW-Qd-aH.css",
+      "transferBytes": 31593,
+      "encodedBytes": 31293,
+      "decodedBytes": 160072
+    },
+    {
+      "url": "http://127.0.0.1:5217/manifest.webmanifest",
+      "transferBytes": 687,
+      "encodedBytes": 387,
+      "decodedBytes": 387
+    },
+    {
+      "url": "http://127.0.0.1:5217/assets/index-DxGcLPQF.js",
+      "transferBytes": 280584,
+      "encodedBytes": 280284,
+      "decodedBytes": 908740
+    },
+    {
+      "url": "http://127.0.0.1:5217/service-worker.js",
+      "transferBytes": 4405,
+      "encodedBytes": 4105,
+      "decodedBytes": 12315
+    },
+    {
+      "url": "http://127.0.0.1:5217/assets/diagon-alley-B2GNQH3M.webp",
+      "transferBytes": 445988,
+      "encodedBytes": 445688,
+      "decodedBytes": 445688
+    },
+    {
+      "url": "http://127.0.0.1:5217/assets/cinzel-latin-variable-Dzu6Mfm8.ttf",
+      "transferBytes": 125768,
+      "encodedBytes": 125468,
+      "decodedBytes": 125468
+    },
+    {
+      "url": "http://127.0.0.1:5217/api/state",
+      "transferBytes": 333,
+      "encodedBytes": 33,
+      "decodedBytes": 33
+    },
+    {
+      "url": "http://127.0.0.1:5217/api/trial/session",
+      "transferBytes": 300,
+      "encodedBytes": 0,
+      "decodedBytes": 0
+    },
+    {
+      "url": "http://127.0.0.1:5217/api/state",
+      "transferBytes": 1789,
+      "encodedBytes": 1489,
+      "decodedBytes": 1489
+    },
+    {
+      "url": "http://127.0.0.1:5217/api/content",
+      "transferBytes": 20756,
+      "encodedBytes": 20456,
+      "decodedBytes": 20456
+    },
+    {
+      "url": "http://127.0.0.1:5217/assets/gold-key-BjWN3vz9.webp",
+      "transferBytes": 0,
+      "encodedBytes": 0,
+      "decodedBytes": 0
+    },
+    {
+      "url": "http://127.0.0.1:5217/assets/portrait-EpU4QcSS.webp",
+      "transferBytes": 0,
+      "encodedBytes": 0,
+      "decodedBytes": 0
+    },
+    {
+      "url": "http://127.0.0.1:5217/assets/confectionery-C8y_cbpi.webp",
+      "transferBytes": 46072,
+      "encodedBytes": 45772,
+      "decodedBytes": 45772
+    },
+    {
+      "url": "http://127.0.0.1:5217/assets/workshop-C3Z6eIGe.webp",
+      "transferBytes": 43044,
+      "encodedBytes": 42744,
+      "decodedBytes": 42744
+    },
+    {
+      "url": "http://127.0.0.1:5217/assets/vault-CUoNKkir.webp",
+      "transferBytes": 44066,
+      "encodedBytes": 43766,
+      "decodedBytes": 43766
+    },
+    {
+      "url": "http://127.0.0.1:5217/assets/model-closed-DNWtSp_M.webp",
+      "transferBytes": 33666,
+      "encodedBytes": 33366,
+      "decodedBytes": 33366
+    },
+    {
+      "url": "http://127.0.0.1:5217/assets/beans-jar-DhHjPnrD.webp",
+      "transferBytes": 61750,
+      "encodedBytes": 61450,
+      "decodedBytes": 61450
+    },
+    {
+      "url": "http://127.0.0.1:5217/assets/sweetshop-wC3Fbm-U.webp",
+      "transferBytes": 145268,
+      "encodedBytes": 144968,
+      "decodedBytes": 144968
+    },
+    {
+      "url": "http://127.0.0.1:5217/api/toads/buy-open",
+      "transferBytes": 3431,
+      "encodedBytes": 3131,
+      "decodedBytes": 3131
+    },
+    {
+      "url": "http://127.0.0.1:5217/api/state",
+      "transferBytes": 2946,
+      "encodedBytes": 2646,
+      "decodedBytes": 2646
+    },
+    {
+      "url": "http://127.0.0.1:5217/assets/model-closed-DNWtSp_M.webp",
+      "transferBytes": 0,
+      "encodedBytes": 0,
+      "decodedBytes": 0
+    },
+    {
+      "url": "http://127.0.0.1:5217/assets/gsap-806FECi5.js",
+      "transferBytes": 0,
+      "encodedBytes": 0,
+      "decodedBytes": 0
+    },
+    {
+      "url": "http://127.0.0.1:5217/assets/portrait-CFUgH8HR.webp",
+      "transferBytes": 43040,
+      "encodedBytes": 42740,
+      "decodedBytes": 42740
+    },
+    {
+      "url": "http://127.0.0.1:5217/assets/base-CYPeLpRU.webp",
+      "transferBytes": 22218,
+      "encodedBytes": 21918,
+      "decodedBytes": 21918
+    },
+    {
+      "url": "http://127.0.0.1:5217/assets/lid-DZPWNkdN.webp",
+      "transferBytes": 27206,
+      "encodedBytes": 26906,
+      "decodedBytes": 26906
+    },
+    {
+      "url": "http://127.0.0.1:5217/assets/chocolate-frog-BC6TById.webp",
+      "transferBytes": 109380,
+      "encodedBytes": 109080,
+      "decodedBytes": 109080
+    }
+  ],
+  "totalTransferBytes": 1494290
+}

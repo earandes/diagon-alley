@@ -1,0 +1,9 @@
+Use case: product-mockup
+Asset type: final individual game sprite, ARCANA cocoa-toad closed gift box, no interface.
+Input image: STYLE reference only; take rich original gouache storybook theatrical palette and the cocoa-brown green-ribbon box. Do not copy the full mockup and do not embed any UI or words.
+Primary request: a single CLOSED rectangular hinged confectionery gift box isolated on real alpha transparent background. Warm cocoa-brown textured paperboard, delicate antique-gold botanical vine engraving, central original stylized gold toad crest, forest-green ribbon vertically centered over the lid and front. Distinct handcrafted premium fairytale packaging, painterly but production-clean silhouette.
+Composition: 1024 x 1024 square sprite; frontal three-quarter slightly top-down camera, modest visible right side, low shallow rectangular box depth; the closed top is clearly separated from the base with a hinge seam. Box takes approximately 80 percent of width, safely centered with at least 10 percent transparent margin. Maintain fully visible edges and softly dimensional painterly highlights, no external cast shadow.
+Lighting: warm amber upper-left highlight, forest-green reflected tones, deep warm cocoa texture. Rich crisp illustrated details visible at thumbnail scale, not photorealistic or shiny plastic.
+Text: none. No writing, letters, numbers, product name, logos, watermarks or UI anywhere; the front panel is decorative only.
+Constraints: EXACTLY one object only, CLOSED lid lying horizontal over base, not upright or open. No chocolates visible, no frog outside the box, no table, scene, card, ribbon extending outside margins, poster, grid or multi-view sheet. Real transparent alpha background. This is an original folklore prop, not any franchise packaging.
+Technical purpose: later derive separate base, lid and interior layers with this same camera; visually clear box corners and lid boundary. No claim of editable layers or rig.

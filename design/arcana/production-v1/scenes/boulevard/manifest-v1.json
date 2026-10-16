@@ -1,0 +1,36 @@
+{
+  "id": "scene-boulevard",
+  "identity": "boulevard",
+  "function": "Reusable welcome backdrop",
+  "version": 1,
+  "status": "visually-reviewed-source-awaiting-integration",
+  "author": "OpenAI built-in imagegen",
+  "tool": "image_gen.imagegen",
+  "prompt": "prompt-v1.md",
+  "references": [
+    "design/arcana/concepts-2026-10-14/teatro-de-alquimia.png",
+    "design/arcana/production-v1/scenes/confectionery/original-v1.png"
+  ],
+  "original": "original-v1.png",
+  "availableSource": "Flattened raster PNG, no editable layers or rig",
+  "dimensions": {
+    "width": 1536,
+    "height": 1024
+  },
+  "crop": "Full image; central street stays visible in mobile crop",
+  "pivot": {
+    "x": 0.5,
+    "y": 0.5
+  },
+  "variants": [],
+  "transparency": false,
+  "alt": {
+    "es": "Bulevar ilustrado al anochecer, con calle adoquinada, fachadas de madera, faroles cálidos y enredaderas.",
+    "en": "Illustrated twilight boulevard with cobblestones, timber fronts, warm lanterns and leafy vines."
+  },
+  "review": {
+    "date": "2026-10-14",
+    "observed": "No text/UI/characters, original botanical flags carry no lettering. Warm shadowed center and bright peripheral lanterns match selected palette. Lower cobbles show warm detail; DOM overlay should retain a dark scrim for contrast.",
+    "limits": "Actual responsive crop and DOM text contrast remain integration QA. Opaque image confirmed."
+  }
+}

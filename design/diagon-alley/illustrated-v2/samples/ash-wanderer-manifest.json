@@ -1,0 +1,24 @@
+{
+  "id": "ash-wanderer",
+  "name": "Remus Lupin",
+  "master": "design/diagon-alley/illustrated-v2/samples/ash-wanderer.png",
+  "sha256": "dc803178a59a86e6dc23fd531ed4f07d002876edbde47f1ada4c92de5d90588c",
+  "seed": 58112,
+  "promptFile": "design/diagon-alley/illustrated-v2/prompts/ash-wanderer.txt",
+  "model": "mlx-community/flux2-klein-4b-4bit",
+  "modelRevision": "860e87183ceb29e39627c0612ebd66d8ea66e68c",
+  "steps": 4,
+  "guidance": 1.0,
+  "width": 768,
+  "height": 1024,
+  "generationSeconds": 32.97,
+  "loadSeconds": 0.74,
+  "tool": {
+    "mflux": "0.22.0",
+    "mlx": "0.32.4"
+  },
+  "cashCost": 0,
+  "generationMode": "offline local Metal text-to-image",
+  "gpuPeakMemoryBytes": 9421779344,
+  "status": "sample awaiting coordinator visual review"
+}

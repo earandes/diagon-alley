@@ -1,0 +1,66 @@
+[WebServer] (node:37765) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:37791) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 18 tests using 1 worker
+
+(node:37794) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 [chromium] › tests/browser-arcana/arena-a63.spec.ts:7:3 › A63 simultaneous 3–5 actors, no spoiler and inspector in es (5.7s)
+  ✓   2 [chromium] › tests/browser-arcana/arena-a63.spec.ts:7:3 › A63 simultaneous 3–5 actors, no spoiler and inspector in en (5.8s)
+  ✓   3 [chromium] › tests/browser-arcana/arena-a63.spec.ts:147:1 › A63 replay controls, reduced, missing renderer, assets and enlarged text preserve record (8.0s)
+  ✓   4 [chromium] › tests/browser-arcana/arena-passives.spec.ts:4:3 › recorded passives and team identity in es (1.5s)
+  ✓   5 [chromium] › tests/browser-arcana/arena-passives.spec.ts:4:3 › recorded passives and team identity in en (1.2s)
+  ✓   6 [chromium] › tests/browser-arcana/arena-passives.spec.ts:69:1 › invalid recorded activation shows recovery instead of crashing the application (385ms)
+  ✓   7 [chromium] › tests/browser-arcana/arena-passives.spec.ts:82:1 › Shadows I benefits neutral allies and uses singular contributor text in both languages (1.2s)
+  ✘   8 [chromium] › tests/browser-arcana/contrast.spec.ts:3:1 › checks arena text against its actual rendered background and the replay focus indicator (1.2s)
+(node:38052) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   9 [chromium] › tests/browser-arcana/arena-load.spec.ts:2:1 › five-unit arena text grows at 200 percent without clipping functional labels (735ms)
+(node:38066) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  10 [webkit] › tests/browser-arcana/arena-a63.spec.ts:7:3 › A63 simultaneous 3–5 actors, no spoiler and inspector in es (3.6s)
+  ✓  11 [webkit] › tests/browser-arcana/arena-a63.spec.ts:7:3 › A63 simultaneous 3–5 actors, no spoiler and inspector in en (3.3s)
+  ✓  12 [webkit] › tests/browser-arcana/arena-a63.spec.ts:147:1 › A63 replay controls, reduced, missing renderer, assets and enlarged text preserve record (7.5s)
+  ✓  13 [webkit] › tests/browser-arcana/arena-passives.spec.ts:4:3 › recorded passives and team identity in es (823ms)
+  ✓  14 [webkit] › tests/browser-arcana/arena-passives.spec.ts:4:3 › recorded passives and team identity in en (961ms)
+  ✓  15 [webkit] › tests/browser-arcana/arena-passives.spec.ts:69:1 › invalid recorded activation shows recovery instead of crashing the application (596ms)
+  ✓  16 [webkit] › tests/browser-arcana/arena-passives.spec.ts:82:1 › Shadows I benefits neutral allies and uses singular contributor text in both languages (958ms)
+  ✓  17 [webkit] › tests/browser-arcana/contrast.spec.ts:3:1 › checks arena text against its actual rendered background and the replay focus indicator (1.1s)
+(node:38206) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  18 [webkit] › tests/browser-arcana/arena-load.spec.ts:2:1 › five-unit arena text grows at 200 percent without clipping functional labels (724ms)
+
+
+  1) [chromium] › tests/browser-arcana/contrast.spec.ts:3:1 › checks arena text against its actual rendered background and the replay focus indicator 
+
+    Error: 4
+
+    expect(received).toBeGreaterThanOrEqual(expected)
+
+    Expected: >= 4.5
+    Received:    3.8072593803748305
+
+      87 |   });
+      88 |   for (const result of report)
+    > 89 |     expect(result.minimumRatio, String(result.text)).toBeGreaterThanOrEqual(4.5);
+         |                                                      ^
+      90 |   const control = page.getByRole('button', { name: 'Volver al mapa', exact: true });
+      91 |   await page.keyboard.press('Tab');
+      92 |   await control.focus();
+        at /Users/enricarandes/work/diagon-alley/tests/browser-arcana/contrast.spec.ts:89:54
+
+    Error Context: docs/arcana/gameplay-increment-2026-10-16/evidence/arena-results/contrast-checks-arena-text-7c259--the-replay-focus-indicator-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    docs/arcana/gameplay-increment-2026-10-16/evidence/arena-results/contrast-checks-arena-text-7c259--the-replay-focus-indicator-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace docs/arcana/gameplay-increment-2026-10-16/evidence/arena-results/contrast-checks-arena-text-7c259--the-replay-focus-indicator-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 failed
+    [chromium] › tests/browser-arcana/contrast.spec.ts:3:1 › checks arena text against its actual rendered background and the replay focus indicator 
+  17 passed (47.4s)

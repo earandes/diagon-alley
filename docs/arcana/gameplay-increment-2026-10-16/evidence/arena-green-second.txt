@@ -1,0 +1,74 @@
+[WebServer] (node:33164) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:33190) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 3 tests using 1 worker
+
+(node:33191) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  1 [chromium] › tests/browser-arcana/arena-a63.spec.ts:5:3 › A63 simultaneous 3–5 actors, no spoiler and inspector in es (1.2s)
+(node:33207) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  2 [chromium] › tests/browser-arcana/arena-a63.spec.ts:5:3 › A63 simultaneous 3–5 actors, no spoiler and inspector in en (1.0s)
+(node:33218) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  3 [chromium] › tests/browser-arcana/arena-a63.spec.ts:87:1 › A63 replay controls, reduced, missing renderer, assets and enlarged text preserve record (2.9s)
+
+
+  1) [chromium] › tests/browser-arcana/arena-a63.spec.ts:5:3 › A63 simultaneous 3–5 actors, no spoiler and inspector in es 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: true
+    Received: false
+
+      52 |         expect(
+      53 |           await page.evaluate(() => document.documentElement.scrollHeight <= innerHeight + 1),
+    > 54 |         ).toBe(true);
+         |           ^
+      55 |         expect(
+      56 |           await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1),
+      57 |         ).toBe(true);
+        at /Users/enricarandes/work/diagon-alley/tests/browser-arcana/arena-a63.spec.ts:54:11
+
+    Error Context: docs/arcana/gameplay-increment-2026-10-16/evidence/arena-results/arena-a63-A63-simultaneous-4267c-spoiler-and-inspector-in-es-chromium/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    docs/arcana/gameplay-increment-2026-10-16/evidence/arena-results/arena-a63-A63-simultaneous-4267c-spoiler-and-inspector-in-es-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace docs/arcana/gameplay-increment-2026-10-16/evidence/arena-results/arena-a63-A63-simultaneous-4267c-spoiler-and-inspector-in-es-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) [chromium] › tests/browser-arcana/arena-a63.spec.ts:5:3 › A63 simultaneous 3–5 actors, no spoiler and inspector in en 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: true
+    Received: false
+
+      52 |         expect(
+      53 |           await page.evaluate(() => document.documentElement.scrollHeight <= innerHeight + 1),
+    > 54 |         ).toBe(true);
+         |           ^
+      55 |         expect(
+      56 |           await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1),
+      57 |         ).toBe(true);
+        at /Users/enricarandes/work/diagon-alley/tests/browser-arcana/arena-a63.spec.ts:54:11
+
+    Error Context: docs/arcana/gameplay-increment-2026-10-16/evidence/arena-results/arena-a63-A63-simultaneous-1704b-spoiler-and-inspector-in-en-chromium/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    docs/arcana/gameplay-increment-2026-10-16/evidence/arena-results/arena-a63-A63-simultaneous-1704b-spoiler-and-inspector-in-en-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace docs/arcana/gameplay-increment-2026-10-16/evidence/arena-results/arena-a63-A63-simultaneous-1704b-spoiler-and-inspector-in-en-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2 failed
+    [chromium] › tests/browser-arcana/arena-a63.spec.ts:5:3 › A63 simultaneous 3–5 actors, no spoiler and inspector in es 
+    [chromium] › tests/browser-arcana/arena-a63.spec.ts:5:3 › A63 simultaneous 3–5 actors, no spoiler and inspector in en 
+  1 passed (6.9s)

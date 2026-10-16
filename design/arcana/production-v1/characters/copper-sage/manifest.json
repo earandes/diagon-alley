@@ -1,0 +1,63 @@
+{
+  "id": "character-copper-sage",
+  "identityId": "copper-sage",
+  "name": {
+    "es": "Sabio del Cobre",
+    "en": "Copper Sage"
+  },
+  "direction": "teatro-de-alquimia",
+  "version": "1",
+  "state": "reviewed-standalone-not-integrated",
+  "tool": "built-in imagegen",
+  "source": "master-v1.png",
+  "preparedAsset": "arena-master-v1.png",
+  "discardedStudy": "master-study-v1.png",
+  "prompts": [
+    "prompt-study-v1.md",
+    "prompt-v1.md"
+  ],
+  "references": [
+    "../../../concepts-2026-10-14/teatro-de-alquimia.png",
+    "../apprentice/arena-master-v1.png"
+  ],
+  "dimensions": [
+    1024,
+    1536
+  ],
+  "transparency": {
+    "mode": "RGBA",
+    "alphaMin": 0,
+    "alphaMax": 255,
+    "fullyTransparentPixels": 1064969,
+    "cornerAlpha": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "subjectBoundsAlphaGt20": [
+      130,
+      158,
+      894,
+      1378
+    ]
+  },
+  "preparation": "Deterministic LANCZOS resize 1024x1536 -> 860x1290, positioned [74,132] on transparent 1024x1536 canvas for >=10% safe margins. No painted changes. Sources preserved.",
+  "crop": "none",
+  "pivotNormalized": [
+    0.5,
+    0.897
+  ],
+  "variants": [],
+  "sourceEditable": "Raster alpha master; no layers or rig",
+  "textAlternative": {
+    "es": "Sabio del Cobre, inventor de pelo rizado con mecha gris, abrigo naranja, fajin turquesa y astrolabio de bronce.",
+    "en": "Copper Sage, a curly-haired inventor with a gray streak, orange coat, turquoise sash and bronze astrolabe."
+  },
+  "review": "Inspected original edited and prepared image. Warm mature South Asian man with curly gray-streaked hair, short beard, copper-orange coat, turquoise sash and bronze astrolabe. Targeted identity correction preserves coat/props from study and aligns existing Sabio del Cobre name without catalog edits. Natural hands, full boots/staff/instrument, no letters/numbers. Teatro coherence. Integration and actual miniature readability remain to be verified.",
+  "originalGenerationPaths": [
+    "/Users/enricarandes/.codex/generated_images/01a13af8-fd53-7331-8146-bb20ec42fa6b/exec-936d49ea-1d91-4b83-b115-1cbc679abda8.png",
+    "/Users/enricarandes/.codex/generated_images/01a13af8-fd53-7331-8146-bb20ec42fa6b/exec-b47efd85-5b3e-475f-8267-4afc97a72e74.png"
+  ],
+  "sha256": "9bd1b94e736900cbe5980033aba93ba21203ad12ee3972b901367ca938bb7df6"
+}

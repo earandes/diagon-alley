@@ -1,0 +1,48 @@
+[WebServer] (node:38802) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:38831) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 1 test using 1 worker
+
+(node:38849) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  1 [chromium] › docs/arcana/gameplay-increment-2026-10-16/evidence/preparation.spec.ts:7:2 › contextual beans complete journey es (4.3s)
+
+
+  1) [chromium] › docs/arcana/gameplay-increment-2026-10-16/evidence/preparation.spec.ts:7:2 › contextual beans complete journey es 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: locator('[data-active-synergy="alchemy"]')
+    Expected: visible
+    Error: strict mode violation: locator('[data-active-synergy="alchemy"]') resolved to 2 elements:
+        1) <span data-active-synergy="alchemy">…</span> aka getByRole('dialog', { name: 'Confirmación de nodo' }).getByText('Alquimia III')
+        2) <span data-active-synergy="alchemy">…</span> aka getByRole('region', { name: 'Prepara tu expedición' }).getByText('Alquimia III')
+
+    Call log:
+      - Expect "toBeVisible" locator('[data-active-synergy="alchemy"]') with timeout 5000ms
+      - waiting for locator('[data-active-synergy="alchemy"]')
+
+
+      36 |   await expect(page.locator('.node-confirm-action')).toBeVisible();
+      37 |   await page.locator('.node-team-prepare').click();
+    > 38 |   await expect(page.locator('[data-active-synergy="alchemy"]')).toBeVisible();
+         |                                                                 ^
+      39 |   await shot('formation');
+      40 |   await page.locator('.preparation-position button').first().click();
+      41 |   await expect(page.locator('.preparation-inspection[open]')).toBeVisible();
+        at /Users/enricarandes/work/diagon-alley/docs/arcana/gameplay-increment-2026-10-16/evidence/preparation.spec.ts:38:65
+
+    Error Context: docs/arcana/gameplay-increment-2026-10-16/evidence/preparation-results/preparation-contextual-beans-complete-journey-es-chromium/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    docs/arcana/gameplay-increment-2026-10-16/evidence/preparation-results/preparation-contextual-beans-complete-journey-es-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace docs/arcana/gameplay-increment-2026-10-16/evidence/preparation-results/preparation-contextual-beans-complete-journey-es-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 failed
+    [chromium] › docs/arcana/gameplay-increment-2026-10-16/evidence/preparation.spec.ts:7:2 › contextual beans complete journey es 

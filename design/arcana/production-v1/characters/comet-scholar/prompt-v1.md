@@ -1,0 +1,8 @@
+Use case: illustration-story.
+Asset type: ARCANA Comet Scholar identityId comet-scholar (Erudita del Cometa), original standalone full-body transparent character.
+Reference1 selected Teatro de alquimia realistic theatrical hand-painted storybook/gouache; Reference2 apprentice matching technique only, not identity or outfit. Rich textures, warm amber light, expressive realistic human faces and fine copper details.
+Subject: young adult East Asian woman scholar about twenty-eight, medium-slim grounded stance, straight black shoulder-length hair with short fringe, bright curious intelligent face, warm light-medium complexion. Clearly distinct from other scholars/mages. Dark teal tailored coat with small copper comet pin over parchment-cream modest underrobe and practical dark trousers, sturdy brown boots. Holds a plain CLOSED rolled map scroll in one natural hand (no writing visible) and a small brass sky spyglass telescope in the other. No staff, no book, no extra celestial scene. Clear compact recognizable silhouette.
+Pose: broad frontal three-quarter full-body, confident friendly curiosity, natural anatomy/fingers, entire head/hair/coat/scroll/spyglass/both feet visible.
+Canvas nominal1024x1536portrait, exactly one character and props fully inside central80%, >=10% genuinely transparent safe margins all four sides. No crop.
+Color/material: dark teal, parchment cream, copper comet brooch, warm softly lit brass, tactile painterly textile, polished Teatro illustrated realism.
+Output real transparent alpha background, no sky scene, no floor, no castshadow plate, no glow behind figure. No words, letters, numbers, UI, card, frame, logo, watermark, franchise or film likeness. Single standalone character illustration, no sheet or collage.

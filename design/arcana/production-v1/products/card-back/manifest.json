@@ -1,0 +1,49 @@
+{
+  "id": "card-back",
+  "identity": "card-back",
+  "function": "Replaceable illustrated reverse and pending-card presentation; text provided by DOM",
+  "version": "1",
+  "status": "illustration-reviewed",
+  "path": "original-v1.png",
+  "author": "OpenAI integrated imagegen",
+  "tool": "image_gen.imagegen built-in",
+  "prompt": "prompt-v1.md",
+  "references": [
+    "design/arcana/concepts-2026-10-14/teatro-de-alquimia.png"
+  ],
+  "provenance": "Original opaque collectible card reverse illustration",
+  "sourceAvailable": "original-v1.png; prompt-v1.md",
+  "editableLayers": false,
+  "rig": false,
+  "dimensions": [
+    1122,
+    1402
+  ],
+  "requestedDimensions": [
+    1024,
+    1280
+  ],
+  "crop": "full source; nearly4:5 aspect",
+  "pivot": [
+    0.5,
+    0.5
+  ],
+  "variants": [],
+  "transparency": {
+    "required": false,
+    "present": false,
+    "mode": "RGB"
+  },
+  "alt": {
+    "es": "Dorso de cromo verde oscuro con hojas doradas y una bellota sobre una luna creciente.",
+    "en": "Dark green card back with gold leaves and an acorn above a crescent moon."
+  },
+  "review": {
+    "visual": "Inspected fullbleed straighton rectangular reverse. Rich forestgreen texturedsurface, balanced botanicalgoldframe and central acorn/crescentmedallion. No typography, characters, numbered ranks or rarities.",
+    "limitations": [
+      "Tool output1122x1402 rather than1024x1280 requested; preservefullcomposition or fitnear4:5 duringexport.",
+      "Fourpoint goldornaments are decorative accents, not star ratings; rating remains separateDOM.",
+      "Single flattened raster illustration, not editablepaintlayers."
+    ]
+  }
+}

@@ -1,0 +1,772 @@
+import { NodePreparation } from './NodePreparation';
+import { ExpeditionClosure } from './ExpeditionClosure';
+import { closureText } from './closure-messages';
+import { expeditionClosure, type ClosureAction } from '../application/client/expedition-closure';
+import { nodeActionLabel } from './node-event-messages';
+import './node-event-dialog.css';
+import { GameSettings } from './GameSettings';
+import { SweetshopScene } from './SweetshopScene';
+import { JourneyCabinet } from './JourneyCabinet';
+import { Artwork } from './Artwork';
+import { ExpeditionGuide } from './ExpeditionGuide';
+import { OperationFeedback } from './OperationFeedback';
+import { visualAsset } from './content-packs/art';
+import type { CSSProperties } from 'react';
+import {
+  activePack,
+  regionAppearance,
+  subscribeContentPack,
+  selectedContentPackId,
+} from './content-packs/active';
+import { useNavigation } from './useNavigation';
+import { operationErrorKey } from './operation-error';
+import { useOnline } from './useOnline';
+import { CommercePanel } from './CommercePanel';
+import { NodeAnnouncement } from './NodeAnnouncement';
+import { PlayerHud } from './PlayerHud';
+import { TeamHud } from './TeamHud';
+import { ExpeditionPreparation } from './ExpeditionPreparation';
+import { SceneAtmosphere } from './SceneAtmosphere';
+import { ShopHub } from './ShopHub';
+import { prepText } from './prep-messages';
+import { NodeResult } from './NodeResult';
+import { text, type MessageKey } from './translations';
+import { useEffect, useState, useSyncExternalStore, useRef } from 'react';
+import { CollectionPanel } from './CollectionPanel';
+import { BeanAssignments } from './BeanAssignments';
+import type { BeanAssignment, NodeOptions } from '../application/run-contracts';
+import { MapPanel } from './MapPanel';
+import { BattlePanel } from './BattlePanel';
+import { CardReveal } from './CardReveal';
+import { useReducedMotion } from './useReducedMotion';
+import { GameController } from '../application/client/game-controller';
+import { latestNodeReceipt, routeOptions } from '../application/client/read-models';
+import { ArcanaHttpClient } from '../infrastructure/http/client';
+import { IndexedDbClientOperations } from '../infrastructure/client/client-operations';
+import type { Language } from '../domain/collection/wizards';
+import type { NodeKind } from '../domain/exploration/route';
+const controller = new GameController(
+  new ArcanaHttpClient('/api', () => null, undefined, 'cookie'),
+  new IndexedDbClientOperations(),
+  () => crypto.randomUUID(),
+);
+const nodes: Record<NodeKind, MessageKey> = {
+  duel: 'arcaneDuel',
+  refuge: 'alchemyRefuge',
+  chest: 'lootChest',
+  pact: 'magicPact',
+  encounter: 'chanceEncounter',
+  boss: 'zoneBoss',
+};
+const NO_BEAN_ASSIGNMENTS: readonly BeanAssignment[] = Object.freeze([]);
+export function App() {
+  const packId = useSyncExternalStore(subscribeContentPack, selectedContentPackId);
+  const [language, setLanguage] = useState<Language>(() => {
+      try {
+        return localStorage.getItem('arcana-language') === 'en' ? 'en' : 'es';
+      } catch {
+        return 'es';
+      }
+    }),
+    [selected, setSelected] = useState<string | null>(null),
+    [nodeOptions, setNodeOptions] = useState<NodeOptions>({}),
+    [beanDraft, setBeanDraft] = useState<{ scope: string; values: readonly BeanAssignment[] }>({ scope: '', values: [] }),
+    [entryError, setEntryError] = useState(false),
+    [preparing, setPreparing] = useState(false),
+    [preparationContext, setPreparationContext] = useState<'formation' | 'beans'>('formation'),
+    [dismissedOpening, setDismissedOpening] = useState<string | null>(null);
+  const { view, setView, bazaarPlace, setBazaarPlace } = useNavigation();
+  const online = useOnline();
+  const navigation = useRef<HTMLElement>(null);
+  const motion = useReducedMotion(),
+    dialog = useRef<HTMLDialogElement>(null),
+    preparationDialog = useRef<HTMLDialogElement>(null),
+    preparationOrigin = useRef<HTMLElement | null>(null),
+    nodeOrigin = useRef<HTMLElement | null>(null);
+  const openPreparation = (context: 'formation' | 'beans' = 'formation', origin?: HTMLElement) => {
+    preparationOrigin.current =
+      origin ?? (document.activeElement instanceof HTMLElement ? document.activeElement : null);
+    setPreparationContext(context);
+    setPreparing(true);
+  };
+  useEffect(() => {
+    if (!preparing || !preparationDialog.current) return;
+    const element = preparationDialog.current;
+    element.showModal();
+    return () => {
+      if (element.open) element.close();
+      const origin = preparationOrigin.current;
+      if (origin?.isConnected) origin.focus({ preventScroll: true });
+      else document.getElementById('content')?.focus({ preventScroll: true });
+    };
+  }, [preparing, view]);
+  const selectNode = (id: string, origin: HTMLButtonElement) => {
+    nodeOrigin.current = origin;
+    setAssignments([]);
+    setNodeOptions({});
+    setSelected(id);
+  };
+  useEffect(() => {
+    if (!selected || !dialog.current) return;
+    const current = dialog.current;
+    if (!nodeOrigin.current?.isConnected)
+      nodeOrigin.current = [...document.querySelectorAll<HTMLButtonElement>('[data-node]')]
+        .find(button => button.dataset.node === selected) ?? null;
+    current.showModal();
+    current
+      .querySelector<HTMLButtonElement>(
+        '[data-pact-action]:not(:disabled),.node-confirm-action:not(:disabled)',
+      )
+      ?.focus({ preventScroll: true });
+    return () => {
+      if (current.open) current.close();
+      const origin = nodeOrigin.current;
+      if (origin?.isConnected && !(origin instanceof HTMLButtonElement && origin.disabled))
+        origin.focus();
+      else document.getElementById('content')?.focus({ preventScroll: true });
+    };
+  }, [selected, view]);
+  const state = useSyncExternalStore(controller.subscribe, controller.getSnapshot),
+    t = (key: MessageKey, values?: Record<string, string | number>) => text(language, key, values);
+  useEffect(() => {
+    const nav = navigation.current;
+    const shell = nav?.closest<HTMLElement>('.arcana-shell');
+    if (!nav || !shell) return;
+    const measure = () =>
+      shell.style.setProperty('--nav-height', `${Math.ceil(nav.getBoundingClientRect().height)}px`);
+    const observer = new ResizeObserver(measure);
+    observer.observe(nav);
+    measure();
+    return () => observer.disconnect();
+  }, [state.game?.playerId]);
+  useEffect(() => {
+    document.documentElement.lang = language;
+    for (const [key, value] of Object.entries(activePack.palette))
+      document.documentElement.style.setProperty(
+        '--pack-' + key.replace(/[A-Z]/g, (letter) => '-' + letter.toLowerCase()),
+        value,
+      );
+    document.title = `${activePack.brand} · ${text(language, 'theHiddenBoulevard')}`;
+    try {
+      localStorage.setItem('arcana-language', language);
+    } catch {
+      /* Preferences are optional. */
+    }
+  }, [language, packId]);
+  useEffect(() => {
+    if (navigator.onLine) void controller.load();
+  }, []);
+  useEffect(() => {
+    if (!online) return;
+    const current = controller.getSnapshot();
+    if (!current.game || current.pending || current.error) void controller.load();
+    else void controller.refreshStatus();
+  }, [online]);
+  useEffect(() => {
+    if (state.receipt?.kind === 'start-run') { setPreparing(false); setView('map'); }
+    if (state.receipt?.kind === 'advance-node') {
+      setSelected(null);
+      if (state.receipt.battle) setView('battle');
+    }
+    // Navigate only for a newly confirmed receipt; visiting a saved screen never sends a command.
+  }, [state.receipt]);
+  useEffect(() => {
+    if (!state.game?.playerId) return;
+    const refresh = () => {
+      if (navigator.onLine && document.visibilityState === 'visible')
+        void controller.refreshStatus();
+    };
+    const interval = window.setInterval(refresh, 60_000);
+    document.addEventListener('visibilitychange', refresh);
+    return () => {
+      window.clearInterval(interval);
+      document.removeEventListener('visibilitychange', refresh);
+    };
+  }, [state.game?.playerId]);
+  const ready = online && state.status === 'ready' && !state.refreshingStatus,
+    game = state.game,
+    content = state.content,
+    run = game?.exploration?.run;
+  // A draft belongs to one authority snapshot and chosen node, never to language or theme.
+  const beanScope = JSON.stringify([game?.playerId, run?.id, game?.revision, selected,
+    content?.campaign.version, content?.combatRules.version, content?.combatRules.beans.version]);
+  const assignments = beanDraft.scope === beanScope ? beanDraft.values : NO_BEAN_ASSIGNMENTS;
+  const setAssignments = (values: readonly BeanAssignment[]) => setBeanDraft({ scope: beanScope, values });
+  useEffect(() => { setSelected(null); }, [run?.id]);
+  const availableNodeIds = new Set(run?.status === 'active' ? routeOptions(run, run.graph) : []);
+  const availableNodeKey = [...availableNodeIds].join('|');
+  useEffect(() => {
+    // Another tab may finish this node while its local confirmation is open.
+    if (selected && ready && !availableNodeIds.has(selected)) {
+      setSelected(null);
+      setNodeOptions({});
+      setBeanDraft({ scope: '', values: [] });
+    }
+  }, [selected, ready, run?.id, availableNodeKey]);
+  const combatChoices = run?.status === 'active'
+    ? run.graph.nodes.filter(node => (node.kind === 'duel' || node.kind === 'boss') && availableNodeIds.has(node.id))
+      .map(node => ({ id: node.id, kind: node.kind as 'duel' | 'boss' })) : [];
+  const openCombatPreparation = (id: string) => {
+    if (!ready || !combatChoices.some(node => node.id === id)) return;
+    nodeOrigin.current = null;
+    setAssignments([]); setNodeOptions({}); setPreparing(false); setView('map'); setSelected(id);
+  };
+  const selectedNode = run?.graph.nodes.find((node) => node.id === selected);
+  const selectedPlan = content?.campaign.nodes?.find((plan) => plan.nodeId === selected);
+  const directPact =
+    selectedPlan?.kind === 'pact' &&
+    selectedNode?.kind === 'pact' &&
+    !!run &&
+    run.members.length < 5;
+  const resolveNode = (options: NodeOptions = nodeOptions) => {
+    if (!run || !selected || !ready || !availableNodeIds.has(selected)) return;
+    void controller.perform({
+      kind: 'advance-node',
+      request: {
+        runId: run.id,
+        nodeId: selected,
+        campaignVersion: run.campaignVersion,
+        assignments,
+        ...options,
+      },
+    });
+  };
+  const savedNode = game ? latestNodeReceipt(game) : null;
+  const closure = game ? expeditionClosure(game) : null;
+  const openingFromClosure = useRef<{ runId: string; unitId: string } | null>(null);
+  const closureAction = (action: ClosureAction, origin?: HTMLElement) => {
+    if (!ready || !game || !content) return;
+    if (action === 'vault') setBazaarPlace('vault');
+    else if (action === 'frog' && closure?.frogId) {
+      openingFromClosure.current = { runId: closure.run.id, unitId: closure.frogId };
+      setBazaarPlace('confectionery');
+      void controller.perform({ kind: 'open-toad', request: {
+        unitId: closure.frogId, catalogVersion: content.catalog.version,
+        tableVersion: content.toadTable.version,
+      } });
+    } else openPreparation('formation', origin);
+  };
+  const battle =
+    state.receipt?.kind === 'advance-node' ? state.receipt.battle : (savedNode?.battle ?? null);
+  const label = (kind: NodeKind) => t(nodes[kind]);
+  const startExpedition = (copyIds: readonly string[]) => {
+    if (!content) return;
+    void controller.perform({
+      kind: 'start-run',
+      request: {
+        zoneId: content.campaign.zoneId,
+        campaignVersion: content.campaign.version,
+        copyIds,
+      },
+    });
+  };
+  const scene =
+    !game || (view === 'shop' && bazaarPlace === 'street')
+      ? 'scene.boulevard'
+      : view === 'shop'
+        ? `scene.${bazaarPlace}`
+        : view === 'battle'
+          ? 'scene.arena'
+          : regionAppearance(run?.zoneId ?? content?.campaign.zoneId ?? '', language).mapAsset;
+  const enter = async () => {
+    if (!online) return;
+    setEntryError(false);
+    try {
+      const response = await fetch('/api/trial/session', {
+        method: 'POST',
+        credentials: 'same-origin',
+        headers: { 'Content-Type': 'application/json' },
+        body: '{}',
+      });
+      if (!response.ok) throw Error();
+      await controller.load();
+    } catch {
+      setEntryError(true);
+    }
+  };
+  return (
+    <div
+      className={`arcana-shell game-shell${game && view === 'map' ? ' arcana-map-view' : ''}`}
+      data-reduced={motion.reduced}
+      data-view={!game ? 'welcome' : view}
+      data-content-pack={activePack.id}
+      style={
+        {
+          ...Object.fromEntries(
+            Object.entries(activePack.palette).map(([key, value]) => [
+              '--pack-' + key.replace(/[A-Z]/g, (letter) => '-' + letter.toLowerCase()),
+              value,
+            ]),
+          ),
+          '--control-frame': `url("${visualAsset('ui.frame')?.url ?? ''}")`,
+          '--scene-url': `url("${visualAsset(scene)?.url ?? ''}")`,
+        } as CSSProperties
+      }
+    >
+      <a
+        href="#content"
+        className="skip-link"
+        onClick={(event) => {
+          event.preventDefault();
+          document.getElementById('content')?.focus();
+        }}
+      >
+        {t('skipToContent')}
+      </a>
+      <div className="game-world-backdrop" aria-hidden="true" />
+      <SceneAtmosphere reduced={motion.reduced} />
+      <header className="game-header">
+        <h1>{activePack.brand}</h1>
+        <GameSettings
+          language={language}
+          onLanguage={setLanguage}
+          reduced={motion.reduced}
+          ownReduced={motion.own}
+          onReduced={motion.change}
+        />
+      </header>
+
+      {!online && (
+        <p role="status" className="notice connection-note">
+          {t(game ? 'offlinePriorReading' : 'offlineNeedsConnection')}
+        </p>
+      )}
+      <NodeAnnouncement receipt={state.receipt} language={language} />
+      {!game ? (
+        <main id="content" tabIndex={-1} className="welcome">
+          <h2>{t('theHiddenBoulevard')}</h2>
+          <span className="visually-hidden">{t('anApprenticeAWandAndAPathTo')}</span>
+          <p className="visually-hidden">{t('theTrialSessionStaysInThisBrowserFor')}</p>
+          <button
+            className="portal-enter game-object"
+            aria-label={t('startLocalTrial')}
+            disabled={!online || state.status === 'loading'}
+            onClick={() => void enter()}
+          >
+            <Artwork asset="ui.map" language={language} decorative />
+            <span>{t('gameEnterWorld')}</span>
+          </button>
+          {entryError && <p role="alert">{t('theTrialCouldNotStartCheckThatThe')}</p>}
+        </main>
+      ) : (
+        <>
+          {view === 'battle' ? <details className="battle-wallet">
+            <summary aria-label={closureText(language, 'wallet')} title={closureText(language, 'wallet')}>
+              <Artwork asset="currency.crowns" language={language} decorative />
+              <span className="visually-hidden">{closureText(language, 'wallet')}</span>
+            </summary>
+            <PlayerHud state={state} connected={online} language={language}
+              onRefresh={() => void controller.refreshStatus()} />
+          </details> : <PlayerHud
+            state={state}
+            connected={online}
+            language={language}
+            onRefresh={() => void controller.refreshStatus()}
+          />}
+          <main id="content" tabIndex={-1}>
+            <OperationFeedback
+              receipt={state.error || state.pending ? null : state.receipt}
+              language={language}
+              reduced={motion.reduced}
+            />
+            {state.error && state.error !== 'UNAUTHORIZED' && (
+              <section role="alert" className="notice">
+                <p>{t(operationErrorKey(state.error))}</p>
+                <button
+                  disabled={!online}
+                  onClick={() => void (state.pending ? controller.recover() : controller.load())}
+                >
+                  {state.pending ? t('recoverOperation') : t('refreshState')}
+                </button>
+              </section>
+            )}
+            {online &&
+              (state.status === 'loading' ||
+                state.status === 'sending' ||
+                state.status === 'recovering' ||
+                state.refreshingStatus) && (
+                <p role="status">
+                  {state.pending
+                    ? t('recoveringTheOperationWaitBeforeSpendingAgain')
+                    : t('synchronizingState')}
+                </p>
+              )}
+            {view === 'shop' &&
+              (state.receipt?.kind === 'open-toad' || state.receipt?.kind === 'buy-open-toad') &&
+              dismissedOpening !== state.receipt.id && (
+                <CardReveal
+                  key={state.receipt.id}
+                  receipt={state.receipt}
+                  language={language}
+                  reduced={motion.reduced}
+                  onLanguage={setLanguage}
+                  onCollection={() => {
+                    openingFromClosure.current = null;
+                    setDismissedOpening(state.receipt!.id);
+                    setView('collection');
+                  }}
+                  onClose={() => {
+                    setDismissedOpening(state.receipt!.id);
+                    const origin = openingFromClosure.current;
+                    if (origin && origin.runId === run?.id && run?.status !== 'active' &&
+                      state.receipt?.kind === 'open-toad' &&
+                      state.receipt.request.unitId === origin.unitId) {
+                      openingFromClosure.current = null;
+                      setView('map');
+                    }
+                  }}
+                />
+              )}
+            {view === 'map' && content && (
+              <section
+                className="expedition-panel"
+                data-map-phase={closure ? 'closed' : !run ? 'entry' : 'route'}
+              >
+                {!closure && <div className="expedition-heading">
+                  <div className="section-title">
+                    <h2>
+                      {regionAppearance(run?.zoneId ?? content.campaign.zoneId, language).name}
+                    </h2>
+                  </div>
+                  <ExpeditionGuide run={run} language={language} />
+                </div>}
+                {!closure && savedNode && (
+                  <NodeResult
+                    receipt={savedNode}
+                    language={language}
+                    onReplay={() => setView('battle')}
+                    onMissions={() => setView('missions')}
+                  />
+                )}
+                {closure ? (
+                  <ExpeditionClosure game={game} language={language} ready={ready}
+                    onAction={closureAction} onReplay={() => setView('battle')}
+                    onMissions={() => setView('missions')} />
+                ) : !run ? (
+                  <div className="region-entry preparation-entry">
+                    <ExpeditionPreparation
+                      key="new-entry"
+                      game={game}
+                      catalog={content.catalog}
+                      content={content}
+                      language={language}
+                      ready={ready}
+                      onTeam={(request) => void controller.perform({ kind: 'set-team', request })}
+                      onEquip={(request) =>
+                        void controller.perform({ kind: 'equip-equipment', request })
+                      }
+                      onStart={startExpedition}
+                    />
+                  </div>
+                ) : (
+                  <>
+                    <TeamHud
+                      game={game}
+                      content={content}
+                      language={language}
+                      onPrepare={(origin) => openPreparation('formation', origin)}
+                    />
+                    <MapPanel run={run} ready={ready} language={language} onSelect={selectNode} />
+                  </>
+                )}
+
+                {selected && run && (
+                  <dialog
+                    ref={dialog}
+                    onCancel={() => setSelected(null)}
+                    aria-label={t('nodeConfirmation')}
+                    className="notice node-event-dialog"
+                    data-event-kind={selectedNode?.kind}
+                  >
+                    <Artwork
+                      asset={`node.${run.graph.nodes.find((n) => n.id === selected)!.kind}`}
+                      language={language}
+                      className="node-confirmation-art"
+                      decorative
+                    />
+                    <GameSettings
+                      language={language}
+                      onLanguage={setLanguage}
+                      reduced={motion.reduced}
+                      ownReduced={motion.own}
+                      onReduced={motion.change}
+                    />
+                    <h3>{label(run.graph.nodes.find((n) => n.id === selected)!.kind)}</h3>
+                    <p className="visually-hidden">
+                      {['duel', 'boss'].includes(
+                        run.graph.nodes.find((n) => n.id === selected)!.kind,
+                      )
+                        ? t('uses5EssenceAutomaticCombatWithYourCurrent')
+                        : t('resolveThisEventWithYourCurrentTeam')}
+                    </p>
+                    {['duel', 'boss'].includes(
+                      run.graph.nodes.find((n) => n.id === selected)!.kind,
+                    ) && (
+                      <div
+                        className="node-cost"
+                        aria-label={t('uses5EssenceAutomaticCombatWithYourCurrent')}
+                      >
+                        <Artwork asset="currency.essence" language={language} decorative />
+                        <strong>5</strong>
+                      </div>
+                    )}
+                    {selectedPlan && (
+                      <NodePreparation
+                        plan={selectedPlan}
+                        run={run}
+                        game={game}
+                        language={language}
+                        rounding={content.campaign.rounding ?? 'floor'}
+                        options={nodeOptions}
+                        ready={ready}
+                        onChange={setNodeOptions}
+                        onResolve={directPact ? resolveNode : undefined}
+                      />
+                    )}
+                    {content &&
+                      ['duel', 'boss'].includes(
+                        run.graph.nodes.find((n) => n.id === selected)!.kind,
+                      ) && (
+                        <>
+                        <button className="node-team-prepare" onClick={event => openPreparation('formation', event.currentTarget)} disabled={!ready}>
+                          <Artwork asset="ui.team" language={language} decorative />
+                          <span>{prepText(language, 'equipment')}</span>
+                        </button>
+                        <details className="node-bean-preparation">
+                          <summary
+                            aria-label={t('nodeBeanPreparation', {
+                              count: game.inventory.products.filter(
+                                (p) => p.kind === 'random-beans' && p.status === 'available',
+                              ).length,
+                            })}
+                          >
+                            <Artwork asset="beans.jar" language={language} decorative eager />
+                            <span aria-hidden="true">
+                              {assignments.length} /{' '}
+                              {
+                                game.inventory.products.filter(
+                                  (p) => p.kind === 'random-beans' && p.status === 'available',
+                                ).length
+                              }
+                            </span>
+                          </summary>
+                          <BeanAssignments
+                            run={run}
+                            game={game}
+                            content={content}
+                            language={language}
+                            ready={ready}
+                            assignments={assignments}
+                            onChange={setAssignments}
+                          />
+                        </details>
+                        </>
+                      )}
+                    {state.error && (
+                      <section role="alert">
+                        <p>{t(operationErrorKey(state.error))}</p>
+                        {!state.pending && (
+                          <button
+                            disabled={!online}
+                            onClick={() => {
+                              setSelected(null);
+                              void controller.load();
+                            }}
+                          >
+                            {t('refreshState')}
+                          </button>
+                        )}
+                      </section>
+                    )}
+                    <div className={['duel', 'boss'].includes(selectedNode!.kind) ? 'node-event-actions node-combat-actions' : 'node-event-actions'}>
+                    {!directPact && (
+                      <button
+                        aria-label={nodeActionLabel(language, selectedNode!.kind)}
+                        title={nodeActionLabel(language, selectedNode!.kind)}
+                        className="node-confirm-action"
+                        autoFocus
+                        disabled={
+                          !ready ||
+                          (run.graph.nodes.find((n) => n.id === selected)?.kind === 'pact' &&
+                            run.members.length === 5 &&
+                            nodeOptions.pactAction !== 'pass' &&
+                            !nodeOptions.replaceUnitId)
+                        }
+                        onClick={() => resolveNode()}
+                      >
+                        <Artwork
+                          asset={`node.${selectedNode!.kind}`}
+                          language={language}
+                          decorative
+                        />
+                        <span>{nodeActionLabel(language, selectedNode!.kind)}</span>
+                      </button>
+                    )}
+                    {state.pending && (
+                      <button disabled={!online} onClick={() => void controller.recover()}>
+                        {t('recoverOperation')}
+                      </button>
+                    )}
+                    <button
+                      className="node-cancel-action"
+                      aria-label={t(ready ? 'cancel' : 'close')}
+                      title={t(ready ? 'cancel' : 'close')}
+                      onClick={() => setSelected(null)}
+                    >
+                      <span aria-hidden="true">×</span>
+                    </button>
+                    </div>
+                  </dialog>
+                )}
+              </section>
+            )}
+            {view === 'shop' && content && (
+              <section>
+                {bazaarPlace === 'street' && (
+                  <ShopHub language={language} onEnter={setBazaarPlace} />
+                )}
+                {bazaarPlace === 'confectionery' && (
+                  <SweetshopScene
+                    game={game}
+                    content={content}
+                    language={language}
+                    ready={ready}
+                    onStreet={() => setBazaarPlace('street')}
+                    onPurchase={(request) => void controller.perform({ kind: 'purchase', request })}
+                    onOpen={(request) => void controller.perform({ kind: 'open-toad', request })}
+                    onBuyOpen={(request) =>
+                      void controller.perform({ kind: 'buy-open-toad', request })
+                    }
+                    onPrepare={(origin) => openPreparation('beans', origin)}
+                  />
+                )}
+                {(bazaarPlace === 'workshop' || bazaarPlace === 'vault') && content.commerce && (
+                  <CommercePanel
+                    key={bazaarPlace}
+                    reduced={motion.reduced}
+                    mode={bazaarPlace}
+                    connected={online}
+                    content={content.commerce}
+                    game={game}
+                    receipt={state.receipt}
+                    language={language}
+                    ready={ready}
+                    pending={!!state.pending}
+                    error={state.error}
+                    onForge={(request) => void controller.perform({ kind: 'forge-wand', request })}
+                    onVault={(request) => void controller.perform({ kind: 'open-vault', request })}
+                    onRecover={() => void controller.recover()}
+                    onPrepare={(origin) => openPreparation('formation', origin)}
+                    onStreet={() => setBazaarPlace('street')}
+                    onMap={() => setView('map')}
+                    onLanguage={setLanguage}
+                  />
+                )}
+              </section>
+            )}
+            {view === 'collection' && content && (
+              <CollectionPanel
+                game={game}
+                catalog={content.catalog}
+                language={language}
+                onPrepare={(origin) => openPreparation('formation', origin)}
+              />
+            )}
+            {view === 'battle' && battle && (
+              <BattlePanel
+                key={battle.id}
+                combat={battle}
+                confirmedPresentation={
+                  state.receipt?.kind === 'advance-node' && state.receipt.battle?.id === battle.id
+                }
+                game={game}
+                content={content}
+                language={language}
+                reduced={motion.reduced}
+                onBack={() => setView('map')}
+              />
+            )}
+            {view === 'battle' && !battle && (
+              <section>
+                <h2>{t('combatArena')}</h2>
+                <p>{t('noSavedBattle')}</p>
+                <button onClick={() => setView('map')}>{t('backToMap')}</button>
+              </section>
+            )}
+            {view === 'missions' && (
+              <JourneyCabinet
+                game={game}
+                language={language}
+                onMap={() => setView('map')}
+                onCollection={() => setView('collection')}
+                onShop={() => setBazaarPlace('street')}
+                onVault={() => {
+                  setView('shop');
+                  setBazaarPlace('vault');
+                }}
+              />
+            )}
+          </main>
+          {preparing && content && (
+            <dialog
+              ref={preparationDialog}
+              className="preparation-dialog"
+              aria-label={prepText(language, 'preparation')}
+              onCancel={() => setPreparing(false)}
+            >
+              <GameSettings
+                language={language}
+                onLanguage={setLanguage}
+                reduced={motion.reduced}
+                ownReduced={motion.own}
+                onReduced={motion.change}
+              />
+              <ExpeditionPreparation
+                game={game}
+                catalog={content.catalog}
+                content={content}
+                context={preparationContext}
+                combatChoices={combatChoices}
+                onCombatNode={openCombatPreparation}
+                onReturnToMap={() => { setPreparing(false); setView('map'); }}
+                language={language}
+                ready={ready}
+                onStart={(ids) => {
+                  startExpedition(ids);
+                }}
+                onTeam={(request) => void controller.perform({ kind: 'set-team', request })}
+                onEquip={(request) => void controller.perform({ kind: 'equip-equipment', request })}
+                onClose={() => setPreparing(false)}
+              />
+              {state.error && <p role="alert">{t(operationErrorKey(state.error))}</p>}
+              {state.pending && (
+                <button disabled={!online} onClick={() => void controller.recover()}>
+                  {t('recoverOperation')}
+                </button>
+              )}
+            </dialog>
+          )}
+          <nav ref={navigation} aria-label={t('mainNavigation')}>
+            {(
+              [
+                ['map', 'map'],
+                ['collection', 'chromodex'],
+                ['shop', 'bazaar'],
+                ['missions', 'missions'],
+              ] as const
+            ).map(([key, label]) => (
+              <button
+                key={key}
+                aria-current={view === key ? 'page' : undefined}
+                onClick={() => (key === 'shop' ? setBazaarPlace('street') : setView(key))}
+              >
+                <Artwork asset={`ui.${key}`} language={language} decorative />
+                <span>{t(label)}</span>
+              </button>
+            ))}
+          </nav>
+        </>
+      )}
+    </div>
+  );
+}

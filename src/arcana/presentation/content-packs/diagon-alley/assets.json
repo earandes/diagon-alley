@@ -1,0 +1,2345 @@
+{
+  "node.duel": {
+    "path": "art/nodes-a59/duel.svg",
+    "width": 256,
+    "height": 256,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "alt": {
+      "es": "Duelo: varitas cruzadas y hechizo luminoso",
+      "en": "Duel: crossed wands and a bright spell"
+    }
+  },
+  "node.refuge": {
+    "path": "art/nodes-a59/refuge.svg",
+    "width": 256,
+    "height": 256,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "alt": {
+      "es": "Refugio: caldero de cobre con poción reparadora",
+      "en": "Refuge: copper cauldron with a restorative potion"
+    }
+  },
+  "node.chest": {
+    "path": "art/nodes-a59/chest.svg",
+    "width": 256,
+    "height": 256,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "alt": {
+      "es": "Botín: baúl de madera con monedas y gema",
+      "en": "Loot: wooden trunk with coins and a gem"
+    }
+  },
+  "node.pact": {
+    "path": "art/nodes-a59/pact.svg",
+    "width": 256,
+    "height": 256,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "alt": {
+      "es": "Aliado temporal: carta encantada con retrato y reloj de arena",
+      "en": "Temporary ally: enchanted portrait card and hourglass"
+    }
+  },
+  "node.encounter": {
+    "path": "art/nodes-a59/encounter.svg",
+    "width": 256,
+    "height": 256,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "alt": {
+      "es": "Encuentro: invitación sellada de contenido misterioso",
+      "en": "Encounter: sealed invitation with mysterious contents"
+    }
+  },
+  "node.boss": {
+    "path": "art/nodes-a59/boss.svg",
+    "width": 256,
+    "height": 256,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "alt": {
+      "es": "Jefe: máscara oscura entre humo verde",
+      "en": "Boss: dark mask amid green smoke"
+    }
+  },
+  "currency.crowns": {
+    "path": "art/currency/galleon.svg",
+    "width": 256,
+    "height": 256,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "alt": {
+      "es": "Galeones",
+      "en": "Galleons"
+    }
+  },
+  "currency.essence": {
+    "path": "art/icons/currency-essence.svg",
+    "width": 256,
+    "height": 256,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "alt": {
+      "es": "Energía",
+      "en": "Energy"
+    },
+    "sourcePack": "arcana"
+  },
+  "character.apprentice.figure": {
+    "width": 342,
+    "height": 428,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.95
+    ],
+    "alt": {
+      "es": "Ilustración de Harry Potter",
+      "en": "Illustration of Harry Potter"
+    },
+    "path": "art/character-illustrated-v2/apprentice/figure.webp"
+  },
+  "character.apprentice.portrait": {
+    "width": 512,
+    "height": 640,
+    "alpha": false,
+    "pivot": [
+      0.5,
+      0.95
+    ],
+    "alt": {
+      "es": "Ilustración de Harry Potter",
+      "en": "Illustration of Harry Potter"
+    },
+    "path": "art/character-illustrated-v2/apprentice/portrait.webp"
+  },
+  "character.apprentice.thumbnail": {
+    "width": 96,
+    "height": 120,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.95
+    ],
+    "alt": {
+      "es": "Ilustración de Harry Potter",
+      "en": "Illustration of Harry Potter"
+    },
+    "path": "art/character-illustrated-v2/apprentice/thumbnail.webp"
+  },
+  "character.ash-wanderer.figure": {
+    "width": 342,
+    "height": 428,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.95
+    ],
+    "alt": {
+      "es": "Ilustración de Remus Lupin",
+      "en": "Illustration of Remus Lupin"
+    },
+    "path": "art/character-illustrated-v2/ash-wanderer/figure.webp"
+  },
+  "character.ash-wanderer.portrait": {
+    "width": 512,
+    "height": 640,
+    "alpha": false,
+    "pivot": [
+      0.5,
+      0.95
+    ],
+    "alt": {
+      "es": "Ilustración de Remus Lupin",
+      "en": "Illustration of Remus Lupin"
+    },
+    "path": "art/character-illustrated-v2/ash-wanderer/portrait.webp"
+  },
+  "character.ash-wanderer.thumbnail": {
+    "width": 96,
+    "height": 120,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.95
+    ],
+    "alt": {
+      "es": "Ilustración de Remus Lupin",
+      "en": "Illustration of Remus Lupin"
+    },
+    "path": "art/character-illustrated-v2/ash-wanderer/thumbnail.webp"
+  },
+  "character.aurora-sage.figure": {
+    "width": 342,
+    "height": 428,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.95
+    ],
+    "alt": {
+      "es": "Ilustración de Newt Scamander",
+      "en": "Illustration of Newt Scamander"
+    },
+    "path": "art/character-illustrated-v2/aurora-sage/figure.webp"
+  },
+  "character.aurora-sage.portrait": {
+    "width": 512,
+    "height": 640,
+    "alpha": false,
+    "pivot": [
+      0.5,
+      0.95
+    ],
+    "alt": {
+      "es": "Ilustración de Newt Scamander",
+      "en": "Illustration of Newt Scamander"
+    },
+    "path": "art/character-illustrated-v2/aurora-sage/portrait.webp"
+  },
+  "character.aurora-sage.thumbnail": {
+    "width": 96,
+    "height": 120,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.95
+    ],
+    "alt": {
+      "es": "Ilustración de Newt Scamander",
+      "en": "Illustration of Newt Scamander"
+    },
+    "path": "art/character-illustrated-v2/aurora-sage/thumbnail.webp"
+  },
+  "character.cinder-dancer.figure": {
+    "width": 342,
+    "height": 428,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.95
+    ],
+    "alt": {
+      "es": "Ilustración de Fred Weasley",
+      "en": "Illustration of Fred Weasley"
+    },
+    "path": "art/character-illustrated-v2/cinder-dancer/figure.webp"
+  },
+  "character.cinder-dancer.portrait": {
+    "width": 512,
+    "height": 640,
+    "alpha": false,
+    "pivot": [
+      0.5,
+      0.95
+    ],
+    "alt": {
+      "es": "Ilustración de Fred Weasley",
+      "en": "Illustration of Fred Weasley"
+    },
+    "path": "art/character-illustrated-v2/cinder-dancer/portrait.webp"
+  },
+  "character.cinder-dancer.thumbnail": {
+    "width": 96,
+    "height": 120,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.95
+    ],
+    "alt": {
+      "es": "Ilustración de Fred Weasley",
+      "en": "Illustration of Fred Weasley"
+    },
+    "path": "art/character-illustrated-v2/cinder-dancer/thumbnail.webp"
+  },
+  "character.circe.figure": {
+    "width": 342,
+    "height": 428,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.95
+    ],
+    "alt": {
+      "es": "Ilustración de Hermione Granger",
+      "en": "Illustration of Hermione Granger"
+    },
+    "path": "art/character-illustrated-v2/circe/figure.webp"
+  },
+  "character.circe.portrait": {
+    "width": 512,
+    "height": 640,
+    "alpha": false,
+    "pivot": [
+      0.5,
+      0.95
+    ],
+    "alt": {
+      "es": "Ilustración de Hermione Granger",
+      "en": "Illustration of Hermione Granger"
+    },
+    "path": "art/character-illustrated-v2/circe/portrait.webp"
+  },
+  "character.circe.thumbnail": {
+    "width": 96,
+    "height": 120,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.95
+    ],
+    "alt": {
+      "es": "Ilustración de Hermione Granger",
+      "en": "Illustration of Hermione Granger"
+    },
+    "path": "art/character-illustrated-v2/circe/thumbnail.webp"
+  },
+  "character.comet-scholar.figure": {
+    "width": 342,
+    "height": 428,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.95
+    ],
+    "alt": {
+      "es": "Ilustración de Cho Chang",
+      "en": "Illustration of Cho Chang"
+    },
+    "path": "art/character-illustrated-v2/comet-scholar/figure.webp"
+  },
+  "character.comet-scholar.portrait": {
+    "width": 512,
+    "height": 640,
+    "alpha": false,
+    "pivot": [
+      0.5,
+      0.95
+    ],
+    "alt": {
+      "es": "Ilustración de Cho Chang",
+      "en": "Illustration of Cho Chang"
+    },
+    "path": "art/character-illustrated-v2/comet-scholar/portrait.webp"
+  },
+  "character.comet-scholar.thumbnail": {
+    "width": 96,
+    "height": 120,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.95
+    ],
+    "alt": {
+      "es": "Ilustración de Cho Chang",
+      "en": "Illustration of Cho Chang"
+    },
+    "path": "art/character-illustrated-v2/comet-scholar/thumbnail.webp"
+  },
+  "character.copper-sage.figure": {
+    "width": 342,
+    "height": 428,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.95
+    ],
+    "alt": {
+      "es": "Ilustración de Arthur Weasley",
+      "en": "Illustration of Arthur Weasley"
+    },
+    "path": "art/character-illustrated-v2/copper-sage/figure.webp"
+  },
+  "character.copper-sage.portrait": {
+    "width": 512,
+    "height": 640,
+    "alpha": false,
+    "pivot": [
+      0.5,
+      0.95
+    ],
+    "alt": {
+      "es": "Ilustración de Arthur Weasley",
+      "en": "Illustration of Arthur Weasley"
+    },
+    "path": "art/character-illustrated-v2/copper-sage/portrait.webp"
+  },
+  "character.copper-sage.thumbnail": {
+    "width": 96,
+    "height": 120,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.95
+    ],
+    "alt": {
+      "es": "Ilustración de Arthur Weasley",
+      "en": "Illustration of Arthur Weasley"
+    },
+    "path": "art/character-illustrated-v2/copper-sage/thumbnail.webp"
+  },
+  "character.crystal-watch.figure": {
+    "width": 342,
+    "height": 428,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.95
+    ],
+    "alt": {
+      "es": "Ilustración de Filius Flitwick",
+      "en": "Illustration of Filius Flitwick"
+    },
+    "path": "art/character-illustrated-v2/crystal-watch/figure.webp"
+  },
+  "character.crystal-watch.portrait": {
+    "width": 512,
+    "height": 640,
+    "alpha": false,
+    "pivot": [
+      0.5,
+      0.95
+    ],
+    "alt": {
+      "es": "Ilustración de Filius Flitwick",
+      "en": "Illustration of Filius Flitwick"
+    },
+    "path": "art/character-illustrated-v2/crystal-watch/portrait.webp"
+  },
+  "character.crystal-watch.thumbnail": {
+    "width": 96,
+    "height": 120,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.95
+    ],
+    "alt": {
+      "es": "Ilustración de Filius Flitwick",
+      "en": "Illustration of Filius Flitwick"
+    },
+    "path": "art/character-illustrated-v2/crystal-watch/thumbnail.webp"
+  },
+  "character.dawn-oracle.figure": {
+    "width": 342,
+    "height": 428,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.95
+    ],
+    "alt": {
+      "es": "Ilustración de Sybill Trelawney",
+      "en": "Illustration of Sybill Trelawney"
+    },
+    "path": "art/character-illustrated-v2/dawn-oracle/figure.webp"
+  },
+  "character.dawn-oracle.portrait": {
+    "width": 512,
+    "height": 640,
+    "alpha": false,
+    "pivot": [
+      0.5,
+      0.95
+    ],
+    "alt": {
+      "es": "Ilustración de Sybill Trelawney",
+      "en": "Illustration of Sybill Trelawney"
+    },
+    "path": "art/character-illustrated-v2/dawn-oracle/portrait.webp"
+  },
+  "character.dawn-oracle.thumbnail": {
+    "width": 96,
+    "height": 120,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.95
+    ],
+    "alt": {
+      "es": "Ilustración de Sybill Trelawney",
+      "en": "Illustration of Sybill Trelawney"
+    },
+    "path": "art/character-illustrated-v2/dawn-oracle/thumbnail.webp"
+  },
+  "character.dew-alchemist.figure": {
+    "width": 342,
+    "height": 428,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.95
+    ],
+    "alt": {
+      "es": "Ilustración de Neville Longbottom",
+      "en": "Illustration of Neville Longbottom"
+    },
+    "path": "art/character-illustrated-v2/dew-alchemist/figure.webp"
+  },
+  "character.dew-alchemist.portrait": {
+    "width": 512,
+    "height": 640,
+    "alpha": false,
+    "pivot": [
+      0.5,
+      0.95
+    ],
+    "alt": {
+      "es": "Ilustración de Neville Longbottom",
+      "en": "Illustration of Neville Longbottom"
+    },
+    "path": "art/character-illustrated-v2/dew-alchemist/portrait.webp"
+  },
+  "character.dew-alchemist.thumbnail": {
+    "width": 96,
+    "height": 120,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.95
+    ],
+    "alt": {
+      "es": "Ilustración de Neville Longbottom",
+      "en": "Illustration of Neville Longbottom"
+    },
+    "path": "art/character-illustrated-v2/dew-alchemist/thumbnail.webp"
+  },
+  "character.echo-mage.figure": {
+    "width": 342,
+    "height": 428,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.95
+    ],
+    "alt": {
+      "es": "Ilustración de Draco Malfoy",
+      "en": "Illustration of Draco Malfoy"
+    },
+    "path": "art/character-illustrated-v2/echo-mage/figure.webp"
+  },
+  "character.echo-mage.portrait": {
+    "width": 512,
+    "height": 640,
+    "alpha": false,
+    "pivot": [
+      0.5,
+      0.95
+    ],
+    "alt": {
+      "es": "Ilustración de Draco Malfoy",
+      "en": "Illustration of Draco Malfoy"
+    },
+    "path": "art/character-illustrated-v2/echo-mage/portrait.webp"
+  },
+  "character.echo-mage.thumbnail": {
+    "width": 96,
+    "height": 120,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.95
+    ],
+    "alt": {
+      "es": "Ilustración de Draco Malfoy",
+      "en": "Illustration of Draco Malfoy"
+    },
+    "path": "art/character-illustrated-v2/echo-mage/thumbnail.webp"
+  },
+  "character.ember-keeper.figure": {
+    "width": 342,
+    "height": 428,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.95
+    ],
+    "alt": {
+      "es": "Ilustración de Ron Weasley",
+      "en": "Illustration of Ron Weasley"
+    },
+    "path": "art/character-illustrated-v2/ember-keeper/figure.webp"
+  },
+  "character.ember-keeper.portrait": {
+    "width": 512,
+    "height": 640,
+    "alpha": false,
+    "pivot": [
+      0.5,
+      0.95
+    ],
+    "alt": {
+      "es": "Ilustración de Ron Weasley",
+      "en": "Illustration of Ron Weasley"
+    },
+    "path": "art/character-illustrated-v2/ember-keeper/portrait.webp"
+  },
+  "character.ember-keeper.thumbnail": {
+    "width": 96,
+    "height": 120,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.95
+    ],
+    "alt": {
+      "es": "Ilustración de Ron Weasley",
+      "en": "Illustration of Ron Weasley"
+    },
+    "path": "art/character-illustrated-v2/ember-keeper/thumbnail.webp"
+  },
+  "character.flamel.figure": {
+    "width": 342,
+    "height": 428,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.95
+    ],
+    "alt": {
+      "es": "Ilustración de Nicolás Flamel",
+      "en": "Illustration of Nicolas Flamel"
+    },
+    "path": "art/character-illustrated-v2/flamel/figure.webp"
+  },
+  "character.flamel.portrait": {
+    "width": 512,
+    "height": 640,
+    "alpha": false,
+    "pivot": [
+      0.5,
+      0.95
+    ],
+    "alt": {
+      "es": "Ilustración de Nicolás Flamel",
+      "en": "Illustration of Nicolas Flamel"
+    },
+    "path": "art/character-illustrated-v2/flamel/portrait.webp"
+  },
+  "character.flamel.thumbnail": {
+    "width": 96,
+    "height": 120,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.95
+    ],
+    "alt": {
+      "es": "Ilustración de Nicolás Flamel",
+      "en": "Illustration of Nicolas Flamel"
+    },
+    "path": "art/character-illustrated-v2/flamel/thumbnail.webp"
+  },
+  "character.merlin.figure": {
+    "width": 342,
+    "height": 428,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.95
+    ],
+    "alt": {
+      "es": "Ilustración de Albus Dumbledore",
+      "en": "Illustration of Albus Dumbledore"
+    },
+    "path": "art/character-illustrated-v2/merlin/figure.webp"
+  },
+  "character.merlin.portrait": {
+    "width": 512,
+    "height": 640,
+    "alpha": false,
+    "pivot": [
+      0.5,
+      0.95
+    ],
+    "alt": {
+      "es": "Ilustración de Albus Dumbledore",
+      "en": "Illustration of Albus Dumbledore"
+    },
+    "path": "art/character-illustrated-v2/merlin/portrait.webp"
+  },
+  "character.merlin.thumbnail": {
+    "width": 96,
+    "height": 120,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.95
+    ],
+    "alt": {
+      "es": "Ilustración de Albus Dumbledore",
+      "en": "Illustration of Albus Dumbledore"
+    },
+    "path": "art/character-illustrated-v2/merlin/thumbnail.webp"
+  },
+  "character.mist-seer.figure": {
+    "width": 342,
+    "height": 428,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.95
+    ],
+    "alt": {
+      "es": "Ilustración de Luna Lovegood",
+      "en": "Illustration of Luna Lovegood"
+    },
+    "path": "art/character-illustrated-v2/mist-seer/figure.webp"
+  },
+  "character.mist-seer.portrait": {
+    "width": 512,
+    "height": 640,
+    "alpha": false,
+    "pivot": [
+      0.5,
+      0.95
+    ],
+    "alt": {
+      "es": "Ilustración de Luna Lovegood",
+      "en": "Illustration of Luna Lovegood"
+    },
+    "path": "art/character-illustrated-v2/mist-seer/portrait.webp"
+  },
+  "character.mist-seer.thumbnail": {
+    "width": 96,
+    "height": 120,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.95
+    ],
+    "alt": {
+      "es": "Ilustración de Luna Lovegood",
+      "en": "Illustration of Luna Lovegood"
+    },
+    "path": "art/character-illustrated-v2/mist-seer/thumbnail.webp"
+  },
+  "character.moon-herbalist.figure": {
+    "width": 342,
+    "height": 428,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.95
+    ],
+    "alt": {
+      "es": "Ilustración de Pomona Sprout",
+      "en": "Illustration of Pomona Sprout"
+    },
+    "path": "art/character-illustrated-v2/moon-herbalist/figure.webp"
+  },
+  "character.moon-herbalist.portrait": {
+    "width": 512,
+    "height": 640,
+    "alpha": false,
+    "pivot": [
+      0.5,
+      0.95
+    ],
+    "alt": {
+      "es": "Ilustración de Pomona Sprout",
+      "en": "Illustration of Pomona Sprout"
+    },
+    "path": "art/character-illustrated-v2/moon-herbalist/portrait.webp"
+  },
+  "character.moon-herbalist.thumbnail": {
+    "width": 96,
+    "height": 120,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.95
+    ],
+    "alt": {
+      "es": "Ilustración de Pomona Sprout",
+      "en": "Illustration of Pomona Sprout"
+    },
+    "path": "art/character-illustrated-v2/moon-herbalist/thumbnail.webp"
+  },
+  "character.morgana.figure": {
+    "width": 342,
+    "height": 428,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.95
+    ],
+    "alt": {
+      "es": "Ilustración de Minerva McGonagall",
+      "en": "Illustration of Minerva McGonagall"
+    },
+    "path": "art/character-illustrated-v2/morgana/figure.webp"
+  },
+  "character.morgana.portrait": {
+    "width": 512,
+    "height": 640,
+    "alpha": false,
+    "pivot": [
+      0.5,
+      0.95
+    ],
+    "alt": {
+      "es": "Ilustración de Minerva McGonagall",
+      "en": "Illustration of Minerva McGonagall"
+    },
+    "path": "art/character-illustrated-v2/morgana/portrait.webp"
+  },
+  "character.morgana.thumbnail": {
+    "width": 96,
+    "height": 120,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.95
+    ],
+    "alt": {
+      "es": "Ilustración de Minerva McGonagall",
+      "en": "Illustration of Minerva McGonagall"
+    },
+    "path": "art/character-illustrated-v2/morgana/thumbnail.webp"
+  },
+  "character.moss-guardian.figure": {
+    "width": 342,
+    "height": 428,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.95
+    ],
+    "alt": {
+      "es": "Ilustración de Molly Weasley",
+      "en": "Illustration of Molly Weasley"
+    },
+    "path": "art/character-illustrated-v2/moss-guardian/figure.webp"
+  },
+  "character.moss-guardian.portrait": {
+    "width": 512,
+    "height": 640,
+    "alpha": false,
+    "pivot": [
+      0.5,
+      0.95
+    ],
+    "alt": {
+      "es": "Ilustración de Molly Weasley",
+      "en": "Illustration of Molly Weasley"
+    },
+    "path": "art/character-illustrated-v2/moss-guardian/portrait.webp"
+  },
+  "character.moss-guardian.thumbnail": {
+    "width": 96,
+    "height": 120,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.95
+    ],
+    "alt": {
+      "es": "Ilustración de Molly Weasley",
+      "en": "Illustration of Molly Weasley"
+    },
+    "path": "art/character-illustrated-v2/moss-guardian/thumbnail.webp"
+  },
+  "character.night-forger.figure": {
+    "width": 342,
+    "height": 428,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.95
+    ],
+    "alt": {
+      "es": "Ilustración de Rubeus Hagrid",
+      "en": "Illustration of Rubeus Hagrid"
+    },
+    "path": "art/character-illustrated-v2/night-forger/figure.webp"
+  },
+  "character.night-forger.portrait": {
+    "width": 512,
+    "height": 640,
+    "alpha": false,
+    "pivot": [
+      0.5,
+      0.95
+    ],
+    "alt": {
+      "es": "Ilustración de Rubeus Hagrid",
+      "en": "Illustration of Rubeus Hagrid"
+    },
+    "path": "art/character-illustrated-v2/night-forger/portrait.webp"
+  },
+  "character.night-forger.thumbnail": {
+    "width": 96,
+    "height": 120,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.95
+    ],
+    "alt": {
+      "es": "Ilustración de Rubeus Hagrid",
+      "en": "Illustration of Rubeus Hagrid"
+    },
+    "path": "art/character-illustrated-v2/night-forger/thumbnail.webp"
+  },
+  "character.obsidian-seer.figure": {
+    "width": 342,
+    "height": 428,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.95
+    ],
+    "alt": {
+      "es": "Ilustración de Bellatrix Lestrange",
+      "en": "Illustration of Bellatrix Lestrange"
+    },
+    "path": "art/character-illustrated-v2/obsidian-seer/figure.webp"
+  },
+  "character.obsidian-seer.portrait": {
+    "width": 512,
+    "height": 640,
+    "alpha": false,
+    "pivot": [
+      0.5,
+      0.95
+    ],
+    "alt": {
+      "es": "Ilustración de Bellatrix Lestrange",
+      "en": "Illustration of Bellatrix Lestrange"
+    },
+    "path": "art/character-illustrated-v2/obsidian-seer/portrait.webp"
+  },
+  "character.obsidian-seer.thumbnail": {
+    "width": 96,
+    "height": 120,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.95
+    ],
+    "alt": {
+      "es": "Ilustración de Bellatrix Lestrange",
+      "en": "Illustration of Bellatrix Lestrange"
+    },
+    "path": "art/character-illustrated-v2/obsidian-seer/thumbnail.webp"
+  },
+  "character.paracelso.figure": {
+    "width": 342,
+    "height": 428,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.95
+    ],
+    "alt": {
+      "es": "Ilustración de Severus Snape",
+      "en": "Illustration of Severus Snape"
+    },
+    "path": "art/character-illustrated-v2/paracelso/figure.webp"
+  },
+  "character.paracelso.portrait": {
+    "width": 512,
+    "height": 640,
+    "alpha": false,
+    "pivot": [
+      0.5,
+      0.95
+    ],
+    "alt": {
+      "es": "Ilustración de Severus Snape",
+      "en": "Illustration of Severus Snape"
+    },
+    "path": "art/character-illustrated-v2/paracelso/portrait.webp"
+  },
+  "character.paracelso.thumbnail": {
+    "width": 96,
+    "height": 120,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.95
+    ],
+    "alt": {
+      "es": "Ilustración de Severus Snape",
+      "en": "Illustration of Severus Snape"
+    },
+    "path": "art/character-illustrated-v2/paracelso/thumbnail.webp"
+  },
+  "character.root-speaker.figure": {
+    "width": 342,
+    "height": 428,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.95
+    ],
+    "alt": {
+      "es": "Ilustración de Alastor Moody",
+      "en": "Illustration of Alastor Moody"
+    },
+    "path": "art/character-illustrated-v2/root-speaker/figure.webp"
+  },
+  "character.root-speaker.portrait": {
+    "width": 512,
+    "height": 640,
+    "alpha": false,
+    "pivot": [
+      0.5,
+      0.95
+    ],
+    "alt": {
+      "es": "Ilustración de Alastor Moody",
+      "en": "Illustration of Alastor Moody"
+    },
+    "path": "art/character-illustrated-v2/root-speaker/portrait.webp"
+  },
+  "character.root-speaker.thumbnail": {
+    "width": 96,
+    "height": 120,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.95
+    ],
+    "alt": {
+      "es": "Ilustración de Alastor Moody",
+      "en": "Illustration of Alastor Moody"
+    },
+    "path": "art/character-illustrated-v2/root-speaker/thumbnail.webp"
+  },
+  "character.rune-weaver.figure": {
+    "width": 342,
+    "height": 428,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.95
+    ],
+    "alt": {
+      "es": "Ilustración de Ginny Weasley",
+      "en": "Illustration of Ginny Weasley"
+    },
+    "path": "art/character-illustrated-v2/rune-weaver/figure.webp"
+  },
+  "character.rune-weaver.portrait": {
+    "width": 512,
+    "height": 640,
+    "alpha": false,
+    "pivot": [
+      0.5,
+      0.95
+    ],
+    "alt": {
+      "es": "Ilustración de Ginny Weasley",
+      "en": "Illustration of Ginny Weasley"
+    },
+    "path": "art/character-illustrated-v2/rune-weaver/portrait.webp"
+  },
+  "character.rune-weaver.thumbnail": {
+    "width": 96,
+    "height": 120,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.95
+    ],
+    "alt": {
+      "es": "Ilustración de Ginny Weasley",
+      "en": "Illustration of Ginny Weasley"
+    },
+    "path": "art/character-illustrated-v2/rune-weaver/thumbnail.webp"
+  },
+  "character.shadow-scribe.figure": {
+    "width": 342,
+    "height": 428,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.95
+    ],
+    "alt": {
+      "es": "Ilustración de Sirius Black",
+      "en": "Illustration of Sirius Black"
+    },
+    "path": "art/character-illustrated-v2/shadow-scribe/figure.webp"
+  },
+  "character.shadow-scribe.portrait": {
+    "width": 512,
+    "height": 640,
+    "alpha": false,
+    "pivot": [
+      0.5,
+      0.95
+    ],
+    "alt": {
+      "es": "Ilustración de Sirius Black",
+      "en": "Illustration of Sirius Black"
+    },
+    "path": "art/character-illustrated-v2/shadow-scribe/portrait.webp"
+  },
+  "character.shadow-scribe.thumbnail": {
+    "width": 96,
+    "height": 120,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.95
+    ],
+    "alt": {
+      "es": "Ilustración de Sirius Black",
+      "en": "Illustration of Sirius Black"
+    },
+    "path": "art/character-illustrated-v2/shadow-scribe/thumbnail.webp"
+  },
+  "character.silver-sentinel.figure": {
+    "width": 342,
+    "height": 428,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.95
+    ],
+    "alt": {
+      "es": "Ilustración de Kingsley Shacklebolt",
+      "en": "Illustration of Kingsley Shacklebolt"
+    },
+    "path": "art/character-illustrated-v2/silver-sentinel/figure.webp"
+  },
+  "character.silver-sentinel.portrait": {
+    "width": 512,
+    "height": 640,
+    "alpha": false,
+    "pivot": [
+      0.5,
+      0.95
+    ],
+    "alt": {
+      "es": "Ilustración de Kingsley Shacklebolt",
+      "en": "Illustration of Kingsley Shacklebolt"
+    },
+    "path": "art/character-illustrated-v2/silver-sentinel/portrait.webp"
+  },
+  "character.silver-sentinel.thumbnail": {
+    "width": 96,
+    "height": 120,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.95
+    ],
+    "alt": {
+      "es": "Ilustración de Kingsley Shacklebolt",
+      "en": "Illustration of Kingsley Shacklebolt"
+    },
+    "path": "art/character-illustrated-v2/silver-sentinel/thumbnail.webp"
+  },
+  "character.star-binder.figure": {
+    "width": 342,
+    "height": 428,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.95
+    ],
+    "alt": {
+      "es": "Ilustración de Cedric Diggory",
+      "en": "Illustration of Cedric Diggory"
+    },
+    "path": "art/character-illustrated-v2/star-binder/figure.webp"
+  },
+  "character.star-binder.portrait": {
+    "width": 512,
+    "height": 640,
+    "alpha": false,
+    "pivot": [
+      0.5,
+      0.95
+    ],
+    "alt": {
+      "es": "Ilustración de Cedric Diggory",
+      "en": "Illustration of Cedric Diggory"
+    },
+    "path": "art/character-illustrated-v2/star-binder/portrait.webp"
+  },
+  "character.star-binder.thumbnail": {
+    "width": 96,
+    "height": 120,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.95
+    ],
+    "alt": {
+      "es": "Ilustración de Cedric Diggory",
+      "en": "Illustration of Cedric Diggory"
+    },
+    "path": "art/character-illustrated-v2/star-binder/thumbnail.webp"
+  },
+  "character.storm-caller.figure": {
+    "width": 342,
+    "height": 428,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.95
+    ],
+    "alt": {
+      "es": "Ilustración de Nymphadora Tonks",
+      "en": "Illustration of Nymphadora Tonks"
+    },
+    "path": "art/character-illustrated-v2/storm-caller/figure.webp"
+  },
+  "character.storm-caller.portrait": {
+    "width": 512,
+    "height": 640,
+    "alpha": false,
+    "pivot": [
+      0.5,
+      0.95
+    ],
+    "alt": {
+      "es": "Ilustración de Nymphadora Tonks",
+      "en": "Illustration of Nymphadora Tonks"
+    },
+    "path": "art/character-illustrated-v2/storm-caller/portrait.webp"
+  },
+  "character.storm-caller.thumbnail": {
+    "width": 96,
+    "height": 120,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.95
+    ],
+    "alt": {
+      "es": "Ilustración de Nymphadora Tonks",
+      "en": "Illustration of Nymphadora Tonks"
+    },
+    "path": "art/character-illustrated-v2/storm-caller/thumbnail.webp"
+  },
+  "character.sun-priestess.figure": {
+    "width": 342,
+    "height": 428,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.95
+    ],
+    "alt": {
+      "es": "Ilustración de Fleur Delacour",
+      "en": "Illustration of Fleur Delacour"
+    },
+    "path": "art/character-illustrated-v2/sun-priestess/figure.webp"
+  },
+  "character.sun-priestess.portrait": {
+    "width": 512,
+    "height": 640,
+    "alpha": false,
+    "pivot": [
+      0.5,
+      0.95
+    ],
+    "alt": {
+      "es": "Ilustración de Fleur Delacour",
+      "en": "Illustration of Fleur Delacour"
+    },
+    "path": "art/character-illustrated-v2/sun-priestess/portrait.webp"
+  },
+  "character.sun-priestess.thumbnail": {
+    "width": 96,
+    "height": 120,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.95
+    ],
+    "alt": {
+      "es": "Ilustración de Fleur Delacour",
+      "en": "Illustration of Fleur Delacour"
+    },
+    "path": "art/character-illustrated-v2/sun-priestess/thumbnail.webp"
+  },
+  "character.veil-walker.figure": {
+    "width": 342,
+    "height": 428,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.95
+    ],
+    "alt": {
+      "es": "Ilustración de Lord Voldemort",
+      "en": "Illustration of Lord Voldemort"
+    },
+    "path": "art/character-illustrated-v2/veil-walker/figure.webp"
+  },
+  "character.veil-walker.portrait": {
+    "width": 512,
+    "height": 640,
+    "alpha": false,
+    "pivot": [
+      0.5,
+      0.95
+    ],
+    "alt": {
+      "es": "Ilustración de Lord Voldemort",
+      "en": "Illustration of Lord Voldemort"
+    },
+    "path": "art/character-illustrated-v2/veil-walker/portrait.webp"
+  },
+  "character.veil-walker.thumbnail": {
+    "width": 96,
+    "height": 120,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.95
+    ],
+    "alt": {
+      "es": "Ilustración de Lord Voldemort",
+      "en": "Illustration of Lord Voldemort"
+    },
+    "path": "art/character-illustrated-v2/veil-walker/thumbnail.webp"
+  },
+  "character.wind-reader.figure": {
+    "width": 342,
+    "height": 428,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.95
+    ],
+    "alt": {
+      "es": "Ilustración de George Weasley",
+      "en": "Illustration of George Weasley"
+    },
+    "path": "art/character-illustrated-v2/wind-reader/figure.webp"
+  },
+  "character.wind-reader.portrait": {
+    "width": 512,
+    "height": 640,
+    "alpha": false,
+    "pivot": [
+      0.5,
+      0.95
+    ],
+    "alt": {
+      "es": "Ilustración de George Weasley",
+      "en": "Illustration of George Weasley"
+    },
+    "path": "art/character-illustrated-v2/wind-reader/portrait.webp"
+  },
+  "character.wind-reader.thumbnail": {
+    "width": 96,
+    "height": 120,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.95
+    ],
+    "alt": {
+      "es": "Ilustración de George Weasley",
+      "en": "Illustration of George Weasley"
+    },
+    "path": "art/character-illustrated-v2/wind-reader/thumbnail.webp"
+  },
+  "rival.arcanist-1.figure": {
+    "width": 342,
+    "height": 428,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.95
+    ],
+    "alt": {
+      "es": "Ilustración de Draco Malfoy",
+      "en": "Illustration of Draco Malfoy"
+    },
+    "path": "art/character-illustrated-v2/echo-mage/figure.webp"
+  },
+  "rival.arcanist-2.figure": {
+    "width": 342,
+    "height": 428,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.95
+    ],
+    "alt": {
+      "es": "Ilustración de Severus Snape",
+      "en": "Illustration of Severus Snape"
+    },
+    "path": "art/character-illustrated-v2/paracelso/figure.webp"
+  },
+  "rival.arcanist-3.figure": {
+    "width": 342,
+    "height": 428,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.95
+    ],
+    "alt": {
+      "es": "Ilustración de Bellatrix Lestrange",
+      "en": "Illustration of Bellatrix Lestrange"
+    },
+    "path": "art/character-illustrated-v2/obsidian-seer/figure.webp"
+  },
+  "rival.boss.figure": {
+    "width": 342,
+    "height": 428,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.95
+    ],
+    "alt": {
+      "es": "Ilustración de Lord Voldemort",
+      "en": "Illustration of Lord Voldemort"
+    },
+    "path": "art/character-illustrated-v2/veil-walker/figure.webp"
+  },
+  "scene.arena": {
+    "path": "art/scene/arena.webp",
+    "width": 1280,
+    "height": 854,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.9
+    ],
+    "alt": {
+      "es": "Escenario arena",
+      "en": "arena scenery"
+    },
+    "sourcePack": "arcana"
+  },
+  "scene.boulevard": {
+    "path": "art/scene/diagon-alley.webp",
+    "width": 1536,
+    "height": 1024,
+    "alpha": false,
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "alt": {
+      "es": "Callejón Diagón ilustrado al anochecer",
+      "en": "Illustrated Diagon Alley at dusk"
+    }
+  },
+  "scene.confectionery": {
+    "path": "art/scene/sweetshop.webp",
+    "width": 1280,
+    "height": 854,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "alt": {
+      "es": "Mostrador de dulces y frascos iluminados",
+      "en": "Illuminated sweet counter and jars"
+    }
+  },
+  "scene.passage": {
+    "path": "art/scene/diagon-alley.webp",
+    "width": 1536,
+    "height": 1024,
+    "alpha": false,
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "alt": {
+      "es": "Ruta del Callejón Diagón",
+      "en": "Diagon Alley route"
+    }
+  },
+  "scene.vault": {
+    "path": "art/scene/vault.webp",
+    "width": 1280,
+    "height": 854,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.9
+    ],
+    "alt": {
+      "es": "Escenario vault",
+      "en": "vault scenery"
+    },
+    "sourcePack": "arcana"
+  },
+  "scene.workshop": {
+    "path": "art/scene/workshop.webp",
+    "width": 1280,
+    "height": 854,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.9
+    ],
+    "alt": {
+      "es": "Escenario workshop",
+      "en": "workshop scenery"
+    },
+    "sourcePack": "arcana"
+  },
+  "product.bean-earth": {
+    "path": "art/product/bean-earth.webp",
+    "width": 640,
+    "height": 640,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.9
+    ],
+    "alt": {
+      "es": "Ilustración bean-earth",
+      "en": "bean-earth illustration"
+    },
+    "sourcePack": "arcana"
+  },
+  "beans.jar": {
+    "path": "art/props/beans-jar.webp",
+    "width": 512,
+    "height": 512,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.9
+    ],
+    "alt": {
+      "es": "Tarro de grageas de todos los sabores",
+      "en": "Every Flavour Beans jar"
+    }
+  },
+  "product.bean-mint": {
+    "path": "art/product/bean-mint.webp",
+    "width": 640,
+    "height": 640,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.9
+    ],
+    "alt": {
+      "es": "Ilustración bean-mint",
+      "en": "bean-mint illustration"
+    },
+    "sourcePack": "arcana"
+  },
+  "product.bean-pepper": {
+    "path": "art/product/bean-pepper.webp",
+    "width": 640,
+    "height": 640,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.9
+    ],
+    "alt": {
+      "es": "Ilustración bean-pepper",
+      "en": "bean-pepper illustration"
+    },
+    "sourcePack": "arcana"
+  },
+  "product.bean-soap": {
+    "path": "art/product/bean-soap.webp",
+    "width": 640,
+    "height": 640,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.9
+    ],
+    "alt": {
+      "es": "Ilustración bean-soap",
+      "en": "bean-soap illustration"
+    },
+    "sourcePack": "arcana"
+  },
+  "product.broom-cadet-zephyr": {
+    "path": "art/product/broom-cadet-zephyr.webp",
+    "width": 640,
+    "height": 640,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.9
+    ],
+    "alt": {
+      "es": "Ilustración broom-cadet-zephyr",
+      "en": "broom-cadet-zephyr illustration"
+    },
+    "sourcePack": "arcana"
+  },
+  "product.broom-wind-arrow": {
+    "path": "art/product/broom-wind-arrow.webp",
+    "width": 640,
+    "height": 640,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.9
+    ],
+    "alt": {
+      "es": "Ilustración broom-wind-arrow",
+      "en": "broom-wind-arrow illustration"
+    },
+    "sourcePack": "arcana"
+  },
+  "product.broom-zephyr-2000": {
+    "path": "art/product/broom-zephyr-2000.webp",
+    "width": 640,
+    "height": 640,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.9
+    ],
+    "alt": {
+      "es": "Ilustración broom-zephyr-2000",
+      "en": "broom-zephyr-2000 illustration"
+    },
+    "sourcePack": "arcana"
+  },
+  "card.back": {
+    "path": "art/card/back.svg",
+    "width": 512,
+    "height": 640,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "alt": {
+      "es": "Reverso de cromo mágico",
+      "en": "Wizard card back"
+    }
+  },
+  "card.frame": {
+    "path": "art/card/frame.svg",
+    "width": 512,
+    "height": 640,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "alt": {
+      "es": "Marco de cromo mágico",
+      "en": "Wizard card frame"
+    }
+  },
+  "toad.subject": {
+    "path": "art/frog/chocolate-frog.webp",
+    "width": 1024,
+    "height": 683,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.85
+    ],
+    "alt": {
+      "es": "Rana de chocolate",
+      "en": "Chocolate Frog"
+    }
+  },
+  "product.core-dragon": {
+    "path": "art/product/core-dragon.webp",
+    "width": 640,
+    "height": 640,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.9
+    ],
+    "alt": {
+      "es": "Ilustración core-dragon",
+      "en": "core-dragon illustration"
+    },
+    "sourcePack": "arcana"
+  },
+  "product.core-phoenix": {
+    "path": "art/product/core-phoenix.webp",
+    "width": 640,
+    "height": 640,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.9
+    ],
+    "alt": {
+      "es": "Ilustración core-phoenix",
+      "en": "core-phoenix illustration"
+    },
+    "sourcePack": "arcana"
+  },
+  "product.core-wyvern": {
+    "path": "art/product/core-wyvern.webp",
+    "width": 640,
+    "height": 640,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.9
+    ],
+    "alt": {
+      "es": "Ilustración core-wyvern",
+      "en": "core-wyvern illustration"
+    },
+    "sourcePack": "arcana"
+  },
+  "product.gold-key": {
+    "path": "art/product/gold-key.webp",
+    "width": 640,
+    "height": 640,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.9
+    ],
+    "alt": {
+      "es": "Ilustración gold-key",
+      "en": "gold-key illustration"
+    },
+    "sourcePack": "arcana"
+  },
+  "product.loot-chest": {
+    "path": "art/product/loot-chest.webp",
+    "width": 640,
+    "height": 640,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.9
+    ],
+    "alt": {
+      "es": "Ilustración loot-chest",
+      "en": "loot-chest illustration"
+    },
+    "sourcePack": "arcana"
+  },
+  "toad.base": {
+    "path": "art/frog/base.webp",
+    "width": 768,
+    "height": 768,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.72
+    ],
+    "alt": {
+      "es": "Base de la caja de Rana de Chocolate",
+      "en": "Chocolate Frog box base"
+    }
+  },
+  "toad.box": {
+    "path": "art/frog/model-closed.webp",
+    "width": 768,
+    "height": 768,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.72
+    ],
+    "alt": {
+      "es": "Caja cerrada de Rana de Chocolate",
+      "en": "Closed Chocolate Frog box"
+    }
+  },
+  "toad.lid": {
+    "path": "art/frog/lid.webp",
+    "width": 768,
+    "height": 768,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.49
+    ],
+    "alt": {
+      "es": "Tapa de la caja de Rana de Chocolate",
+      "en": "Chocolate Frog box lid"
+    }
+  },
+  "pwa.icon.192": {
+    "path": "art/pwa/icon/192.png",
+    "width": 192,
+    "height": 192,
+    "alpha": false,
+    "pivot": [
+      0.5,
+      0.9
+    ],
+    "alt": {
+      "es": "Icono ARCANA",
+      "en": "ARCANA icon"
+    },
+    "sourcePack": "arcana"
+  },
+  "pwa.icon.512": {
+    "path": "art/pwa/icon/512.png",
+    "width": 512,
+    "height": 512,
+    "alpha": false,
+    "pivot": [
+      0.5,
+      0.9
+    ],
+    "alt": {
+      "es": "Icono ARCANA",
+      "en": "ARCANA icon"
+    },
+    "sourcePack": "arcana"
+  },
+  "toad.seal": {
+    "path": "art/frog/seal.webp",
+    "width": 768,
+    "height": 768,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.72
+    ],
+    "alt": {
+      "es": "Sello de la caja de Rana de Chocolate",
+      "en": "Chocolate Frog box seal"
+    }
+  },
+  "product.wand-birch": {
+    "path": "art/product/wand-birch.webp",
+    "width": 640,
+    "height": 640,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.9
+    ],
+    "alt": {
+      "es": "Ilustración wand-birch",
+      "en": "wand-birch illustration"
+    },
+    "sourcePack": "arcana"
+  },
+  "product.wand-elder": {
+    "path": "art/product/wand-elder.webp",
+    "width": 640,
+    "height": 640,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.9
+    ],
+    "alt": {
+      "es": "Ilustración wand-elder",
+      "en": "wand-elder illustration"
+    },
+    "sourcePack": "arcana"
+  },
+  "product.wand-willow": {
+    "path": "art/product/wand-willow.webp",
+    "width": 640,
+    "height": 640,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.9
+    ],
+    "alt": {
+      "es": "Ilustración wand-willow",
+      "en": "wand-willow illustration"
+    },
+    "sourcePack": "arcana"
+  },
+  "rarity.common": {
+    "path": "art/rarity/common.svg",
+    "width": 32,
+    "height": 32,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "alt": {
+      "es": "Emblema de rareza Común",
+      "en": "Common rarity emblem"
+    },
+    "sourcePack": "arcana"
+  },
+  "rarity.unusual": {
+    "path": "art/rarity/unusual.svg",
+    "width": 32,
+    "height": 32,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "alt": {
+      "es": "Emblema de rareza Inusual",
+      "en": "Unusual rarity emblem"
+    },
+    "sourcePack": "arcana"
+  },
+  "rarity.epic": {
+    "path": "art/rarity/epic.svg",
+    "width": 32,
+    "height": 32,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "alt": {
+      "es": "Emblema de rareza Épico",
+      "en": "Epic rarity emblem"
+    },
+    "sourcePack": "arcana"
+  },
+  "rarity.arcane-legendary": {
+    "path": "art/rarity/arcane-legendary.svg",
+    "width": 32,
+    "height": 32,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "alt": {
+      "es": "Emblema de rareza Arcano Legendario",
+      "en": "Arcane Legendary rarity emblem"
+    },
+    "sourcePack": "arcana"
+  },
+  "ui.seal": {
+    "path": "art/ui/seal.svg",
+    "width": 256,
+    "height": 256,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "alt": {
+      "es": "Seleccionado",
+      "en": "Selected"
+    },
+    "sourcePack": "arcana"
+  },
+  "ui.clear": {
+    "path": "art/ui/clear.svg",
+    "width": 256,
+    "height": 256,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "alt": {
+      "es": "Sin objeto",
+      "en": "No item"
+    },
+    "sourcePack": "arcana"
+  },
+  "ui.map": {
+    "path": "art/props/map.svg",
+    "width": 512,
+    "height": 512,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "alt": {
+      "es": "Explorar el mapa",
+      "en": "Explore map"
+    }
+  },
+  "ui.collection": {
+    "path": "art/props/album.svg",
+    "width": 512,
+    "height": 512,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "alt": {
+      "es": "Álbum de cromos de magos",
+      "en": "Wizard card album"
+    }
+  },
+  "ui.shop": {
+    "path": "art/props/sweetshop.svg",
+    "width": 512,
+    "height": 512,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "alt": {
+      "es": "Dulcería",
+      "en": "Sweetshop"
+    }
+  },
+  "ui.missions": {
+    "path": "art/props/letter.svg",
+    "width": 512,
+    "height": 512,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "alt": {
+      "es": "Encargos y regiones",
+      "en": "Quests and regions"
+    }
+  },
+  "ui.temporary": {
+    "path": "art/ui/temporary.svg",
+    "width": 256,
+    "height": 256,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "alt": {
+      "es": "Aliado temporal",
+      "en": "Temporary ally"
+    },
+    "sourcePack": "arcana"
+  },
+  "ui.owned": {
+    "path": "art/ui/owned.svg",
+    "width": 256,
+    "height": 256,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "alt": {
+      "es": "Copia propia",
+      "en": "Owned copy"
+    },
+    "sourcePack": "arcana"
+  },
+  "ui.motion": {
+    "path": "art/ui/motion.svg",
+    "width": 256,
+    "height": 256,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "alt": {
+      "es": "Movimiento reducido",
+      "en": "Reduced motion"
+    },
+    "sourcePack": "arcana"
+  },
+  "ui.frame": {
+    "path": "art/ui/frame.svg",
+    "width": 320,
+    "height": 96,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "alt": {
+      "es": "Marco de latón",
+      "en": "Brass frame"
+    },
+    "sourcePack": "arcana"
+  },
+  "ui.health": {
+    "path": "art/icons/ui-health.svg",
+    "width": 256,
+    "height": 256,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "alt": {
+      "es": "Recuperar vida",
+      "en": "Restore health"
+    },
+    "sourcePack": "arcana"
+  },
+  "ui.pass": {
+    "path": "art/icons/ui-pass.svg",
+    "width": 256,
+    "height": 256,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "alt": {
+      "es": "Pasar",
+      "en": "Pass"
+    },
+    "sourcePack": "arcana"
+  },
+  "character.dumbledore.historical": {
+    "path": "art/character/dumbledore-historical.webp",
+    "width": 311,
+    "height": 414,
+    "alpha": false,
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "alt": {
+      "es": "Ilustración histórica de Albus Dumbledore",
+      "en": "Historical Albus Dumbledore illustration"
+    }
+  },
+  "ui.team": {
+    "path": "art/props/team.svg",
+    "width": 512,
+    "height": 512,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "alt": {
+      "es": "Preparar equipo",
+      "en": "Prepare party"
+    }
+  },
+  "ui.market": {
+    "path": "art/props/sweetshop.svg",
+    "width": 512,
+    "height": 512,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "alt": {
+      "es": "Dulcería",
+      "en": "Sweetshop"
+    }
+  },
+  "ui.settings": {
+    "path": "art/props/settings.svg",
+    "width": 512,
+    "height": 512,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "alt": {
+      "es": "Ajustes",
+      "en": "Settings"
+    }
+  },
+  "fx.sparkles": {
+    "path": "art/fx/sparkles.svg",
+    "width": 512,
+    "height": 512,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "alt": {
+      "es": "Destellos dorados decorativos",
+      "en": "Decorative golden sparkles"
+    }
+  },
+  "fx.halo": {
+    "path": "art/fx/halo.svg",
+    "width": 512,
+    "height": 512,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "alt": {
+      "es": "Halo mágico decorativo",
+      "en": "Decorative magical halo"
+    }
+  },
+  "fx.portal": {
+    "path": "art/fx/halo.svg",
+    "width": 512,
+    "height": 512,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "alt": {
+      "es": "Halo mágico decorativo",
+      "en": "Decorative magical halo"
+    }
+  },
+  "fx.ring": {
+    "path": "art/fx/ring.svg",
+    "width": 512,
+    "height": 512,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "alt": {
+      "es": "Anillo mágico decorativo",
+      "en": "Decorative magical ring"
+    }
+  },
+  "fx.shadow": {
+    "path": "art/fx/shadow.svg",
+    "width": 512,
+    "height": 512,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.65
+    ],
+    "alt": {
+      "es": "Sombra decorativa de rana",
+      "en": "Decorative frog shadow"
+    }
+  },
+  "toad.interior": {
+    "path": "art/frog/interior.webp",
+    "width": 768,
+    "height": 768,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.72
+    ],
+    "alt": {
+      "es": "Interior de la caja de Rana de Chocolate",
+      "en": "Chocolate Frog box interior"
+    }
+  },
+  "prop.lantern": {
+    "path": "art/props/lantern.svg",
+    "width": 512,
+    "height": 512,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.07
+    ],
+    "alt": {
+      "es": "Farol del Callejón",
+      "en": "Alley lantern"
+    }
+  },
+  "beans.packet": {
+    "path": "art/props/beans-packet.svg",
+    "width": 512,
+    "height": 512,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.9
+    ],
+    "alt": {
+      "es": "Bolsa de grageas de todos los sabores",
+      "en": "Every Flavour Beans packet"
+    }
+  },
+  "fx.spell-trail": {
+    "path": "art/fx/spell-trail.svg",
+    "width": 512,
+    "height": 512,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "alt": {
+      "es": "Estela de hechizo decorativa",
+      "en": "Decorative spell trail"
+    }
+  },
+  "shopfront.confectionery": {
+    "path": "art/storefronts-a59/confectionery.webp",
+    "width": 430,
+    "height": 574,
+    "alpha": false,
+    "pivot": [
+      0.5,
+      0.95
+    ],
+    "alt": {
+      "es": "Fachada de la dulcería",
+      "en": "Sweetshop facade"
+    }
+  },
+  "shopfront.workshop": {
+    "path": "art/storefronts-a59/workshop.webp",
+    "width": 430,
+    "height": 574,
+    "alpha": false,
+    "pivot": [
+      0.5,
+      0.95
+    ],
+    "alt": {
+      "es": "Fachada de Ollivanders",
+      "en": "Ollivanders facade"
+    }
+  },
+  "shopfront.vault": {
+    "path": "art/storefronts-a59/vault.webp",
+    "width": 430,
+    "height": 574,
+    "alpha": false,
+    "pivot": [
+      0.5,
+      0.95
+    ],
+    "alt": {
+      "es": "Entrada de Gringotts",
+      "en": "Gringotts entrance"
+    }
+  }
+}

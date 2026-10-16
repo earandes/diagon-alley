@@ -1,0 +1,54 @@
+{
+  "id": "character-ember-keeper",
+  "identityId": "ember-keeper",
+  "direction": "teatro-de-alquimia",
+  "version": "1",
+  "state": "reviewed-standalone-not-integrated",
+  "tool": "built-in imagegen",
+  "source": "master-v1.png",
+  "preparedAsset": "arena-master-v1.png",
+  "prompts": [
+    "prompt-v1.md"
+  ],
+  "references": [
+    "../../../concepts-2026-10-14/teatro-de-alquimia.png",
+    "../apprentice/arena-master-v1.png"
+  ],
+  "dimensions": [
+    1024,
+    1536
+  ],
+  "transparency": {
+    "mode": "RGBA",
+    "alphaMin": 0,
+    "alphaMax": 255,
+    "fullyTransparentPixels": 1040111,
+    "cornerAlpha": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "subjectBoundsAlphaGt20": [
+      132,
+      161,
+      893,
+      1375
+    ]
+  },
+  "preparation": "Deterministic LANCZOS resize 1024x1536 -> 860x1290, positioned [73,123] on transparent 1024x1536 canvas for >=10% safe margins. No painted changes. Source preserved.",
+  "crop": "none",
+  "pivotNormalized": [
+    0.5,
+    0.894
+  ],
+  "variants": [],
+  "sourceEditable": "Raster alpha master; no layers or rig",
+  "textAlternative": {
+    "es": "Guardian de las Brasas, mago de pelo blanco corto y capa roja, cuero oscuro, guantes y farol de brasas.",
+    "en": "Ember Keeper, a short white-haired mage in a red mantle and dark leather, wearing gloves and carrying an ember lantern."
+  },
+  "review": "Inspected original and prepared image. Warm mature Black man with broad shoulders, protective expression, cropped white hair, copper/red mantle and charcoal smith leather. Gloves, feet, lantern and staff complete, readable silhouette distinct from other mages. Staff longer than prompt requested; retained as coherent full-body prop with no impact on rules. Rich painterly Teatro coherence. Integration and actual miniature readability remain to be verified.",
+  "originalGenerationPath": "/Users/enricarandes/.codex/generated_images/01a13af8-fd53-7331-8146-bb20ec42fa6b/exec-0a93a925-7fa2-4eb2-a054-8f43c34df6fb.png",
+  "sha256": "c85e291a7663cbafc95b294d7ababcbcfa0628069f82d3397832955c97ab4e96"
+}

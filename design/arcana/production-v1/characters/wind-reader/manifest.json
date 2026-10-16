@@ -1,0 +1,58 @@
+{
+  "id": "character-wind-reader",
+  "identityId": "wind-reader",
+  "name": {
+    "es": "Lector del Viento",
+    "en": "Wind Reader"
+  },
+  "direction": "teatro-de-alquimia",
+  "version": "1",
+  "state": "reviewed-standalone-not-integrated",
+  "tool": "built-in imagegen",
+  "source": "master-v1.png",
+  "preparedAsset": "arena-master-v1.png",
+  "prompts": [
+    "prompt-v1.md"
+  ],
+  "references": [
+    "../../../concepts-2026-10-14/teatro-de-alquimia.png",
+    "../apprentice/arena-master-v1.png"
+  ],
+  "dimensions": [
+    1024,
+    1536
+  ],
+  "transparency": {
+    "mode": "RGBA",
+    "alphaMin": 0,
+    "alphaMax": 255,
+    "fullyTransparentPixels": 1034753,
+    "cornerAlpha": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "subjectBoundsAlphaGt20": [
+      104,
+      159,
+      919,
+      1377
+    ]
+  },
+  "preparation": "Deterministic LANCZOS resize 1024x1536 -> 891x1336, positioned [57,94] on transparent 1024x1536 canvas for >=10% safe margins. No painted changes. Source preserved.",
+  "crop": "none",
+  "pivotNormalized": [
+    0.5,
+    0.897
+  ],
+  "variants": [],
+  "sourceEditable": "Raster alpha master; no layers or rig",
+  "textAlternative": {
+    "es": "Lector del Viento, viajero de pelo castaño ondulado, capa verde y bufanda ocre, con veleta de bronce y varita.",
+    "en": "Wind Reader, a wavy brown-haired traveler in a green mantle and ochre scarf, with a bronze weather vane and wand."
+  },
+  "review": "Inspected original and prepared image. Weathered smiling olive face, shoulder-length wavy brown hair, slim tall traveler with ivory/forest/ochre costume. Lifted scarf, bronze abstract weather vane and reed wand distinguish from forge/fire silhouettes. Complete hands/boots/props, no letters on instrument. Teatro painterly coherence. Integration and actual miniature readability remain to be verified.",
+  "originalGenerationPath": "/Users/enricarandes/.codex/generated_images/01a13af8-fd53-7331-8146-bb20ec42fa6b/exec-7763efc8-e8bc-4f51-ab6d-e9b28c163d2d.png",
+  "sha256": "18ff1bfe386d8095336848df408959a7fda078fb56e9dccb40892dcbc5e1cfa1"
+}

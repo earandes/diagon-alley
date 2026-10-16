@@ -1,0 +1,71 @@
+[WebServer] (node:45207) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:45239) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] WebSocket server error: Port 24678 is already in use
+[WebServer] (node:45267) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:45296) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] WebSocket server error: Port 24678 is already in use
+
+Running 16 tests using 1 worker
+
+(node:45318) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 [chromium-redesign] › tests/browser-trial/game-redesign.spec.ts:181:1 › A57 starts in Diagon Alley with language confined to settings and no conventional forms (2.4s)
+  ✓   2 [chromium-redesign] › tests/browser-trial/game-redesign.spec.ts:215:1 › A57 swaps world and language over a saved expedition without rewriting authority state (5.0s)
+  ✘   3 [chromium-redesign] › tests/browser-trial/game-redesign.spec.ts:248:3 › A57 tastes are discovered by committed use, not ownership, and survive swap/reload es (1.0m)
+(node:45935) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   4 [chromium-redesign] › tests/browser-trial/game-redesign.spec.ts:366:5 › A57 chocolate frog reveal is cosmetic, skippable and durable es reduced=false (3.4s)
+  ✓   5 [chromium-redesign] › tests/browser-trial/game-redesign.spec.ts:366:5 › A57 chocolate frog reveal is cosmetic, skippable and durable es reduced=true (2.0s)
+  ✘   6 [chromium-redesign] › tests/browser-trial/game-redesign.spec.ts:248:3 › A57 tastes are discovered by committed use, not ownership, and survive swap/reload en (56.5s)
+
+
+  1) [chromium-redesign] › tests/browser-trial/game-redesign.spec.ts:248:3 › A57 tastes are discovered by committed use, not ownership, and survive swap/reload es 
+
+    Test timeout of 60000ms exceeded.
+
+    Error: locator.click: Test timeout of 60000ms exceeded.
+    Call log:
+      - waiting for getByRole('button', { name: 'Álbum de Cromos', exact: true })
+
+
+      320 |     };
+      321 |
+    > 322 |     await button('Volver al mapa', 'Back to map').click();
+          |                                                   ^
+      323 |     await button('Álbum de Cromos', 'Card Album').click();
+      324 |     await expect(page.locator('.album > article')).toHaveCount(4);
+      325 |     await expect(page.locator('.album-filter-drawer')).not.toHaveAttribute('open', '');
+        at /Users/enricarandes/work/diagon-alley/tests/browser-trial/game-redesign.spec.ts:322:51
+
+    Error Context: test-results-game-redesign/game-redesign-A57-tastes-a-3e086--and-survive-swap-reload-es-chromium-redesign/error-context.md
+
+  2) [chromium-redesign] › tests/browser-trial/game-redesign.spec.ts:248:3 › A57 tastes are discovered by committed use, not ownership, and survive swap/reload en 
+
+    Test was interrupted.
+
+    Error: locator.click: Test ended.
+    Call log:
+      - waiting for getByRole('button', { name: 'Card Album', exact: true })
+
+
+      320 |     };
+      321 |
+    > 322 |     await button('Volver al mapa', 'Back to map').click();
+          |                                                   ^
+      323 |     await button('Álbum de Cromos', 'Card Album').click();
+      324 |     await expect(page.locator('.album > article')).toHaveCount(4);
+      325 |     await expect(page.locator('.album-filter-drawer')).not.toHaveAttribute('open', '');
+        at /Users/enricarandes/work/diagon-alley/tests/browser-trial/game-redesign.spec.ts:322:51
+
+    Error Context: test-results-game-redesign/game-redesign-A57-tastes-a-694cf--and-survive-swap-reload-en-chromium-redesign/error-context.md
+
+  1 failed
+    [chromium-redesign] › tests/browser-trial/game-redesign.spec.ts:248:3 › A57 tastes are discovered by committed use, not ownership, and survive swap/reload es 
+  1 interrupted
+    [chromium-redesign] › tests/browser-trial/game-redesign.spec.ts:248:3 › A57 tastes are discovered by committed use, not ownership, and survive swap/reload en 
+  10 did not run
+  4 passed (2.3m)

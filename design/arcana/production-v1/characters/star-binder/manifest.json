@@ -1,0 +1,52 @@
+{
+  "id": "character-star-binder",
+  "identityId": "star-binder",
+  "direction": "teatro-de-alquimia",
+  "version": "1",
+  "state": "reviewed-standalone-not-integrated",
+  "tool": "built-in imagegen",
+  "source": "master-v1.png",
+  "preparedAsset": "arena-master-v1.png",
+  "prompts": [
+    "prompt-v1.md"
+  ],
+  "references": [
+    "../rune-weaver/arena-master-v1.png"
+  ],
+  "dimensions": [
+    1024,
+    1536
+  ],
+  "transparency": {
+    "mode": "RGBA",
+    "alphaMin": 0,
+    "alphaMax": 255,
+    "fullyTransparentPixels": 1096617,
+    "cornerAlpha": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "subjectBoundsAlphaGt20": [
+      203,
+      205,
+      852,
+      1327
+    ]
+  },
+  "preparation": "Deterministic LANCZOS resize1024x1536->819x1229,position102,154 on transparent1024x1536canvas for10%safe margins. Source preserved.",
+  "crop": "none",
+  "pivotNormalized": [
+    0.5,
+    0.864
+  ],
+  "variants": [],
+  "sourceEditable": "Raster alpha master; no layers or rig",
+  "textAlternative": {
+    "es": "Enlazadora de Estrellas, maga de trenza oscura larga, túnica índigo y verde azulado, cinturón ámbar, aro de estrellas y bastón.",
+    "en": "Star Binder, a mage with a long dark braid, indigo and teal robe, amber belt, star ring and wooden staff."
+  },
+  "review": "Inspected whitecomposite: warmSouthAsianadultface,longdistinctbraid, indigo/tealclothandamberstars, delicatebrasscordring, groundedhumansilhouette. Naturalhandsfullfeet/noletters. Realalpha confirmed. Localizednameverified. Actualthumbnail/mobileintegration pending.",
+  "sha256": "085d449bd13f635b04fece31826ba35f615ef4775f751dfe7435b4a5aeb4e57f"
+}

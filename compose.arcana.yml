@@ -1,0 +1,32 @@
+name: arcana-local
+services:
+  postgres:
+    image: postgres:16.9@sha256:ddfe3e8713e3ee5b8f286082cb12512488dfbf3f5a1ecb0b74a42e6055af0a5f
+    environment:
+      POSTGRES_DB: arcana_dev
+      POSTGRES_USER: arcana_dev
+      POSTGRES_PASSWORD: arcana-local-development
+    ports:
+      - '127.0.0.1:55432:5432'
+    volumes:
+      - arcana-postgres:/var/lib/postgresql/data
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U arcana_dev -d arcana_dev']
+      interval: 2s
+      timeout: 2s
+      retries: 15
+  redis:
+    image: redis:7-alpine@sha256:bb186d083732f669da90be8b0f975a37812b15e913465bb14d845db72a4e3e08
+    ports:
+      - '127.0.0.1:56379:6379'
+    command: ['redis-server', '--appendonly', 'yes']
+    volumes:
+      - arcana-redis:/data
+    healthcheck:
+      test: ['CMD', 'redis-cli', 'ping']
+      interval: 2s
+      timeout: 2s
+      retries: 15
+volumes:
+  arcana-postgres:
+  arcana-redis:

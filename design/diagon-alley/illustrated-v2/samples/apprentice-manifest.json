@@ -1,0 +1,24 @@
+{
+  "id": "apprentice",
+  "name": "Harry Potter",
+  "master": "design/diagon-alley/illustrated-v2/samples/apprentice.png",
+  "sha256": "ed2b3510589e2f4e6e6aa642dd3254499e60c0418052ab4c23585cb191c08ed1",
+  "seed": 58101,
+  "promptFile": "design/diagon-alley/illustrated-v2/prompts/apprentice.txt",
+  "model": "mlx-community/flux2-klein-4b-4bit",
+  "modelRevision": "860e87183ceb29e39627c0612ebd66d8ea66e68c",
+  "steps": 4,
+  "guidance": 1.0,
+  "width": 768,
+  "height": 1024,
+  "generationSeconds": 36.07,
+  "loadSeconds": 0.73,
+  "tool": {
+    "mflux": "0.22.0",
+    "mlx": "0.32.4"
+  },
+  "cashCost": 0,
+  "generationMode": "offline local Metal text-to-image",
+  "gpuPeakMemoryBytes": 9420242608,
+  "status": "sample awaiting coordinator visual review"
+}

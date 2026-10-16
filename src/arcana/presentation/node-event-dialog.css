@@ -1,0 +1,201 @@
+/* A60: the event is a small illustrated stage, with the next action named explicitly. */
+.game-shell dialog.notice.node-event-dialog {
+  position: fixed;
+  width: min(520px, calc(100vw - 28px));
+  max-height: calc(100dvh - 36px);
+  box-sizing: border-box;
+  overflow: auto;
+  padding: 30px clamp(20px, 5vw, 42px) 24px;
+  color: #f5e8c9;
+  border: 1px solid #d1b477;
+  border-radius: 22px 22px 12px 12px;
+  background: radial-gradient(ellipse at 50% 12%, #394137 0, #172b30 42%, #101e2b 80%);
+  box-shadow:
+    inset 0 0 0 5px #101c26,
+    inset 0 0 0 6px #7f754b,
+    0 28px 90px #000b;
+  text-align: center;
+  isolation: isolate;
+  animation: a60-event-arrive 200ms ease-out both;
+}
+.game-shell .node-event-dialog::backdrop {
+  background: #050c17b8;
+  backdrop-filter: blur(3px);
+}
+.game-shell .node-event-dialog[data-event-kind='chest'] {
+  background: radial-gradient(ellipse at 50% 20%, #51402c, #232728 52%, #101e2b 82%);
+}
+.game-shell .node-event-dialog[data-event-kind='boss'] {
+  background: radial-gradient(ellipse at 50% 20%, #463343, #262530 52%, #101e2b 82%);
+}
+.game-shell .node-event-dialog > h3 {
+  margin: 6px 30px 18px;
+  font-size: clamp(1.4rem, 3vw, 1.85rem);
+  line-height: 1.15;
+  color: #f2d99f;
+}
+.game-shell .node-event-dialog > .node-confirmation-art {
+  display: block;
+  width: 108px;
+  height: 108px;
+  object-fit: contain;
+  margin: 4px auto 14px;
+  padding: 10px;
+  border: 0;
+  border-radius: 0;
+  background: none;
+  filter: drop-shadow(0 6px 14px #0009);
+  animation: a60-event-object 350ms ease-out both;
+}
+.game-shell .node-event-dialog[data-event-kind='pact'] > .node-confirmation-art {
+  width: 48px;
+  height: 48px;
+  margin: 0 auto 8px;
+  padding: 0;
+}
+.game-shell .node-event-dialog > .settings-trigger {
+  position: absolute;
+  top: 16px;
+  right: 15px;
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  padding: 6px;
+  margin: 0;
+  z-index: 3;
+}
+.game-shell .node-event-dialog .node-cancel-action {
+  position: absolute;
+  top: 16px;
+  left: 15px;
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  padding: 0;
+  margin: 0;
+  border: 1px solid #a7966d;
+  border-radius: 50%;
+  background: #101e2b;
+  color: #f1d69d;
+  line-height: 1;
+  font-size: 1.9rem;
+  z-index: 3;
+}
+.game-shell .node-event-dialog .node-confirm-action {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-height: 68px;
+  min-width: min(100%, 240px);
+  max-width: 100%;
+  margin: 20px auto 0;
+  padding: 10px 24px;
+  border: 1px solid #e2c37e;
+  border-radius: 12px;
+  background: linear-gradient(155deg, #31574b, #152f2c);
+  color: #fff0c4;
+  box-shadow:
+    inset 0 0 0 3px #101d26,
+    0 5px 12px #0006;
+  font-family: var(--font-display, Georgia, serif);
+  font-size: 1.05rem;
+}
+.game-shell .node-event-dialog .node-confirm-action img {
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+}
+.game-shell .node-event-dialog > button:focus-visible {
+  outline: 3px solid #b0eddf;
+  outline-offset: 4px;
+}
+.game-shell .node-event-dialog .node-cost {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin: 8px auto 12px;
+}
+.game-shell .node-event-dialog .node-cost img {
+  width: 26px;
+  height: 30px;
+}
+.game-shell .node-event-dialog .node-pact-actions {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 20px;
+}
+.game-shell .node-event-dialog .node-pact-actions > button {
+  display: flex;
+  flex: 1;
+  max-width: 180px;
+  min-height: 70px;
+  gap: 9px;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 10px 16px;
+  background: #153c33;
+  color: #fff0c8;
+  border: 1px solid #d1b477;
+  border-radius: 12px;
+}
+.game-shell .node-event-dialog .node-pact-actions > button img {
+  width: 38px;
+  height: 38px;
+  object-fit: contain;
+}
+.game-shell .node-event-dialog .node-pact-actions > button:disabled {
+  opacity: 0.45;
+}
+.game-shell .node-event-dialog .node-pact-actions > button:last-child {
+  background: #15232d;
+  border-color: #7f806f;
+}
+.game-shell .node-event-dialog .node-pact-actions > button:focus-visible {
+  outline: 3px solid #b0eddf;
+  outline-offset: 4px;
+}
+@keyframes a60-event-arrive {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes a60-event-object {
+  from {
+    opacity: 0;
+    transform: translateY(8px) scale(0.93);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+@media (max-height: 600px) {
+  .game-shell dialog.notice.node-event-dialog {
+    padding-top: 18px;
+    max-height: calc(100dvh - 16px);
+  }
+  .game-shell .node-event-dialog > .node-confirmation-art {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 4px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .game-shell dialog.notice.node-event-dialog,
+  .game-shell .node-event-dialog > .node-confirmation-art {
+    animation: none;
+  }
+}
+.game-shell[data-reduced='true'] dialog.notice.node-event-dialog,
+.game-shell[data-reduced='true'] .node-event-dialog > .node-confirmation-art {
+  animation: none;
+}

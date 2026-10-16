@@ -1,0 +1,24 @@
+{
+  "id": "merlin",
+  "name": "Albus Dumbledore",
+  "master": "design/diagon-alley/illustrated-v2/samples/merlin.png",
+  "sha256": "52852de5b021a57676aa4821a6f70a508a5f08e8a7639ea0204fc8067f2faa1c",
+  "seed": 58103,
+  "promptFile": "design/diagon-alley/illustrated-v2/prompts/merlin.txt",
+  "model": "mlx-community/flux2-klein-4b-4bit",
+  "modelRevision": "860e87183ceb29e39627c0612ebd66d8ea66e68c",
+  "steps": 4,
+  "guidance": 1.0,
+  "width": 768,
+  "height": 1024,
+  "generationSeconds": 32.59,
+  "loadSeconds": 0.73,
+  "tool": {
+    "mflux": "0.22.0",
+    "mlx": "0.32.4"
+  },
+  "cashCost": 0,
+  "generationMode": "offline local Metal text-to-image",
+  "gpuPeakMemoryBytes": 9421781176,
+  "status": "sample awaiting coordinator visual review"
+}

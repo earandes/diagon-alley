@@ -1,0 +1,94 @@
+{
+  "browser": "webkit",
+  "profiles": [
+    {
+      "name": "boss-back-to-closure",
+      "scope": "Isolated real GUI; pointer action through observed visible/settled DOM; includes network and animation, polling overhead, no user study",
+      "inputObserved": true,
+      "inputToVisibleMs": 14,
+      "inputToSettledMs": 432,
+      "frameCount": 30,
+      "maxFrameMs": 20,
+      "p95FrameMs": 18,
+      "longtasks": null,
+      "network": [],
+      "bounds": {
+        "x": 230,
+        "y": 80,
+        "width": 820,
+        "height": 685.546875,
+        "top": 80,
+        "right": 1050,
+        "bottom": 765.546875,
+        "left": 230
+      },
+      "viewport": [
+        1280,
+        900
+      ]
+    },
+    {
+      "name": "explicit-next-preparation",
+      "scope": "Isolated real GUI; pointer action through observed visible/settled DOM; includes network and animation, polling overhead, no user study",
+      "inputObserved": true,
+      "inputToVisibleMs": 16,
+      "inputToSettledMs": 50,
+      "frameCount": 6,
+      "maxFrameMs": 19,
+      "p95FrameMs": 19,
+      "longtasks": null,
+      "network": [],
+      "bounds": {
+        "x": 270,
+        "y": 114.5,
+        "width": 740,
+        "height": 670.984375,
+        "top": 114.5,
+        "right": 1010,
+        "bottom": 785.484375,
+        "left": 270
+      },
+      "viewport": [
+        1280,
+        900
+      ]
+    },
+    {
+      "name": "earned-frog-action-to-result",
+      "scope": "Timestamp before click, includes transaction and existing opening; visible result observed by polling",
+      "resultAtMs": 4389,
+      "settledAtMs": 5686
+    },
+    {
+      "name": "owned-bean-to-context",
+      "scope": "Isolated real GUI; pointer action through observed visible/settled DOM; includes network and animation, polling overhead, no user study",
+      "inputObserved": true,
+      "inputToVisibleMs": 15,
+      "inputToSettledMs": 48,
+      "frameCount": 7,
+      "maxFrameMs": 21,
+      "p95FrameMs": 21,
+      "longtasks": null,
+      "network": [
+        {
+          "path": "/api/state",
+          "durationMs": 17
+        }
+      ],
+      "bounds": {
+        "x": 299,
+        "y": 402.5,
+        "width": 682,
+        "height": 144,
+        "top": 402.5,
+        "right": 981,
+        "bottom": 546.5,
+        "left": 299
+      },
+      "viewport": [
+        1280,
+        900
+      ]
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+
+> coleccion-magica-i1@0.1.0 test:opening
+> playwright test --config playwright.opening.config.ts
+
+[WebServer] (node:13206) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:13229) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:13241) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:13267) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] WebSocket server error: Port 24678 is already in use
+
+Running 16 tests using 1 worker
+
+(node:13268) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 [chromium-opening] › tests/browser-opening/cold-opening.spec.ts:134:3 › A60 cold complete buy and opening es (6.3s)
+  ✓   2 [chromium-opening] › tests/browser-opening/cold-opening.spec.ts:134:3 › A60 cold complete buy and opening en (6.7s)
+  ✓   3 [chromium-opening] › tests/browser-opening/cold-opening.spec.ts:237:5 › A60 skip keeps one committed buy-open receipt es (1.0s)
+  ✓   4 [chromium-opening] › tests/browser-opening/cold-opening.spec.ts:237:5 › A60 reduced keeps one committed buy-open receipt es (755ms)
+  ✓   5 [chromium-opening] › tests/browser-opening/cold-opening.spec.ts:237:5 › A60 fallback keeps one committed buy-open receipt es (4.8s)
+  ✓   6 [chromium-opening] › tests/browser-opening/cold-opening.spec.ts:237:5 › A60 skip keeps one committed buy-open receipt en (1.1s)
+  ✓   7 [chromium-opening] › tests/browser-opening/cold-opening.spec.ts:237:5 › A60 reduced keeps one committed buy-open receipt en (800ms)
+  ✓   8 [chromium-opening] › tests/browser-opening/cold-opening.spec.ts:237:5 › A60 fallback keeps one committed buy-open receipt en (4.8s)
+(node:13355) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   9 [webkit-opening] › tests/browser-opening/cold-opening.spec.ts:134:3 › A60 cold complete buy and opening es (7.4s)
+  ✓  10 [webkit-opening] › tests/browser-opening/cold-opening.spec.ts:134:3 › A60 cold complete buy and opening en (7.4s)
+  ✓  11 [webkit-opening] › tests/browser-opening/cold-opening.spec.ts:237:5 › A60 skip keeps one committed buy-open receipt es (1.3s)
+  ✓  12 [webkit-opening] › tests/browser-opening/cold-opening.spec.ts:237:5 › A60 reduced keeps one committed buy-open receipt es (901ms)
+  ✓  13 [webkit-opening] › tests/browser-opening/cold-opening.spec.ts:237:5 › A60 fallback keeps one committed buy-open receipt es (6.1s)
+  ✓  14 [webkit-opening] › tests/browser-opening/cold-opening.spec.ts:237:5 › A60 skip keeps one committed buy-open receipt en (1.4s)
+  ✓  15 [webkit-opening] › tests/browser-opening/cold-opening.spec.ts:237:5 › A60 reduced keeps one committed buy-open receipt en (1.1s)
+  ✓  16 [webkit-opening] › tests/browser-opening/cold-opening.spec.ts:237:5 › A60 fallback keeps one committed buy-open receipt en (6.2s)
+
+  16 passed (1.0m)

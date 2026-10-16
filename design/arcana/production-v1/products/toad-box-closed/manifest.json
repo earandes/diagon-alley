@@ -1,0 +1,53 @@
+{
+  "id": "toad-box-closed",
+  "identity": "cocoa-toad",
+  "function": "Closed cocoa-toad box product sprite and opening initial state",
+  "version": "1",
+  "status": "illustration-reviewed-runtime-framing-pending",
+  "path": "original-v1.png",
+  "author": "OpenAI integrated imagegen",
+  "tool": "image_gen.imagegen built-in",
+  "prompt": "prompt-v1.md",
+  "reference": "design/arcana/concepts-2026-10-14/teatro-de-alquimia.png",
+  "provenance": "new original raster illustration using selected style reference",
+  "sourceAvailable": "original-v1.png; prompt-v1.md",
+  "editableLayers": false,
+  "rig": false,
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "requestedDimensions": [
+    1024,
+    1024
+  ],
+  "crop": "full source preserved",
+  "pivot": [
+    0.5,
+    0.75
+  ],
+  "variants": [],
+  "transparency": {
+    "realAlpha": true,
+    "mode": "RGBA",
+    "range": [
+      0,
+      255
+    ],
+    "fullyTransparentPixels": 749606,
+    "totalPixels": 1572516
+  },
+  "alt": {
+    "es": "Caja cerrada de Sapo de Cacao, marrón con hojas doradas, cinta verde y emblema de sapo.",
+    "en": "Closed Cocoa Toad box, brown with gold leaves, a green ribbon and a toad emblem."
+  },
+  "review": {
+    "visual": "Inspected source. One closed rectangular shallow box; warm cocoa painterly texture, gold botanical ornament, original toad crest and green ribbon. No baked text, logos, scene or UI. Clean legible main silhouette.",
+    "limitations": [
+      "Source output is 1254 square rather than requested 1024.",
+      "Main subject occupies approximately 91% of source width rather than requested 80%; renderer needs inset framing.",
+      "Very-low-alpha pixels extend beyond the visible body, so do not use alpha>0 bounding box as automatic crop.",
+      "Closed image is a single flattened raster; lid/base/interior continuity requires separately generated matching pieces."
+    ]
+  }
+}

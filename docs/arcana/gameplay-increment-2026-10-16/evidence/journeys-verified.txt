@@ -1,0 +1,44 @@
+
+> coleccion-magica-i1@0.1.0 test:e2e
+> playwright test --config playwright.trial.config.ts
+
+[WebServer] (node:59215) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:59240) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:59600) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:59636) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] WebSocket server error: Port 24678 is already in use
+[WebServer] (node:59671) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:59694) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] WebSocket server error: Port 24678 is already in use
+[WebServer] (node:59706) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:59730) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] WebSocket server error: Port 24678 is already in use
+
+Running 76 tests using 1 worker
+
+(node:59734) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 [chromium] › tests/browser-trial/asset-interface.spec.ts:5:3 › A54 illustrated controls, preview and reduced motion es (715ms)
+  ✓   2 [chromium] › tests/browser-trial/asset-interface.spec.ts:5:3 › A54 illustrated controls, preview and reduced motion en (712ms)
+  ✓   3 [chromium] › tests/browser-trial/asset-interface.spec.ts:46:1 › A54 motion preference updates already mounted choices and missing art retains actions (629ms)
+  ✓   4 [chromium] › tests/browser-trial/commerce.spec.ts:7:3 › forge, equip and spend a boss key atomically in es (10.1s)
+  ✓   5 [chromium] › tests/browser-trial/commerce.spec.ts:7:3 › forge, equip and spend a boss key atomically in en (7.2s)
+  ✓   6 [chromium] › tests/browser-trial/game-feel.spec.ts:9:5 › A52 confirmed feedback and orientation es reduced=false (2.8s)
+  ✓   7 [chromium] › tests/browser-trial/game-feel.spec.ts:9:5 › A52 confirmed feedback and orientation es reduced=true (1.9s)
+  ✓   8 [chromium] › tests/browser-trial/game-feel.spec.ts:9:5 › A52 confirmed feedback and orientation en reduced=false (3.4s)
+  ✓   9 [chromium] › tests/browser-trial/game-feel.spec.ts:9:5 › A52 confirmed feedback and orientation en reduced=true (2.5s)
+  ✓  10 [chromium] › tests/browser-trial/hud-results.spec.ts:6:3 › authority HUD and boss result survives reload in es (8.4s)
+  ✓  11 [chromium] › tests/browser-trial/hud-results.spec.ts:6:3 › authority HUD and boss result survives reload in en (7.9s)
+  ✓  12 [chromium] › tests/browser-trial/journey.spec.ts:6:3 › local ARCANA journey and reload in es (8.9s)
+  ✓  13 [chromium] › tests/browser-trial/journey.spec.ts:6:3 › local ARCANA journey and reload in en (8.5s)
+  ✓  14 [chromium] › tests/browser-trial/region-map.spec.ts:7:3 › A55 illustrated region and inspectable team es (2.0s)
+  ✓  15 [chromium] › tests/browser-trial/region-map.spec.ts:7:3 › A55 illustrated region and inspectable team en (1.8s)
+  ✓  16 [chromium] › tests/browser-trial/replay.spec.ts:25:1 › keeps the first available map node above the fixed navigation after starting (657ms)

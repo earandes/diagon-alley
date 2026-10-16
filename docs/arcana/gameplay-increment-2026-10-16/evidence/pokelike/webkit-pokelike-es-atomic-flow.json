@@ -1,0 +1,42 @@
+{
+  "price": 10,
+  "beansPrice": 5,
+  "writes": [
+    "/api/toads/buy-open",
+    "/api/purchases"
+  ],
+  "beforeRevision": 1,
+  "afterRevision": 3,
+  "openingReceipt": {
+    "id": "31cd42d1-98d6-4859-ae5f-5ad3430ca26e",
+    "kind": "buy-open-toad",
+    "isNew": true,
+    "copyId": "31cd42d1-98d6-4859-ae5f-5ad3430ca26e:copy",
+    "unitId": "31cd42d1-98d6-4859-ae5f-5ad3430ca26e:0",
+    "wizard": {
+      "id": "veil-walker",
+      "rarity": "arcane-legendary",
+      "stars": 5,
+      "name": {
+        "es": "Caminante del Velo",
+        "en": "Veil Walker"
+      },
+      "context": {
+        "es": "Identidad de ensayo ARCANA; retrato provisional.",
+        "en": "ARCANA trial identity; provisional portrait."
+      },
+      "stats": {
+        "maxHp": 80,
+        "maxMana": 40,
+        "power": 11,
+        "speed": 7
+      }
+    },
+    "request": {
+      "priceVersion": 1,
+      "tableVersion": 2,
+      "catalogVersion": 2
+    },
+    "spentCrowns": 10
+  }
+}

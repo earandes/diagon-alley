@@ -1,0 +1,56 @@
+{
+  "id": "character-apprentice",
+  "identityId": "apprentice",
+  "direction": "teatro-de-alquimia",
+  "version": "1",
+  "state": "reviewed-standalone-not-integrated",
+  "tool": "built-in imagegen",
+  "source": "master-v2.png",
+  "initialGeneration": "master-v1.png",
+  "preparedAsset": "arena-master-v1.png",
+  "prompts": [
+    "prompt-v1.md",
+    "prompt-v2.md"
+  ],
+  "reference": "../../../concepts-2026-10-14/teatro-de-alquimia.png",
+  "dimensions": [
+    1024,
+    1536
+  ],
+  "transparency": {
+    "mode": "RGBA",
+    "alphaMin": 0,
+    "alphaMax": 255,
+    "fullyTransparentPixels": 1066228,
+    "cornerAlpha": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "subjectBoundsAlphaGt20": [
+      118,
+      163,
+      917,
+      1380
+    ]
+  },
+  "preparation": "Deterministic LANCZOS resize 1024x1536 -> 921x1382; centered on original-size transparent canvas at [51,77] to guarantee >=10% safe subject margins. Original generations preserved. No painted edits.",
+  "crop": "none",
+  "pivotNormalized": [
+    0.5,
+    0.9
+  ],
+  "variants": [],
+  "sourceEditable": "Raster master with alpha; no rig or editable layers",
+  "textAlternative": {
+    "es": "Aprendiz de alquimia pelirrojo con capa verde, varita y bolsa de frascos de laton.",
+    "en": "Auburn-haired alchemy apprentice in a green mantle, carrying a wand and a satchel of brass flasks."
+  },
+  "review": "Warm expressive face and natural hands; complete feet and wand; coherent emerald/cream/brass theatrical illustration. No typography, frame, marks or background in visible alpha. Same generated identity through framing revision. Integration and small-size readability remain to be verified.",
+  "sha256": "a566536e1ede23fa98d63c24f3bf2ea2cf9134078c730e6eb9a542048e0ee95c",
+  "originalGenerationPaths": [
+    "/Users/enricarandes/.codex/generated_images/01a13af8-fd53-7331-8146-bb20ec42fa6b/exec-658a8502-4c4a-443d-8c43-39ad5979aa71.png",
+    "/Users/enricarandes/.codex/generated_images/01a13af8-fd53-7331-8146-bb20ec42fa6b/exec-acd03199-789e-4114-b4fa-34b5498cc3c5.png"
+  ]
+}

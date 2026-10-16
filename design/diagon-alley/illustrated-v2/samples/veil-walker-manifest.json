@@ -1,0 +1,24 @@
+{
+  "id": "veil-walker",
+  "name": "Lord Voldemort",
+  "master": "design/diagon-alley/illustrated-v2/samples/veil-walker.png",
+  "sha256": "b2aa693965a8341a24da128ce3a9356f683f0cbdb44562e0b1693c087d96e0c0",
+  "seed": 58129,
+  "promptFile": "design/diagon-alley/illustrated-v2/prompts/veil-walker.txt",
+  "model": "mlx-community/flux2-klein-4b-4bit",
+  "modelRevision": "860e87183ceb29e39627c0612ebd66d8ea66e68c",
+  "steps": 4,
+  "guidance": 1.0,
+  "width": 768,
+  "height": 1024,
+  "generationSeconds": 33.03,
+  "loadSeconds": 0.74,
+  "tool": {
+    "mflux": "0.22.0",
+    "mlx": "0.32.4"
+  },
+  "cashCost": 0,
+  "generationMode": "offline local Metal text-to-image",
+  "gpuPeakMemoryBytes": 9421779596,
+  "status": "sample awaiting coordinator visual review"
+}

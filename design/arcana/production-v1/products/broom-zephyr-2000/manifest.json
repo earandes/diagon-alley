@@ -1,0 +1,60 @@
+{
+  "id": "broom-zephyr-2000",
+  "identity": "zephyr-2000",
+  "function": "Existing Zephyr2000 vault equipment reward illustration",
+  "version": "1",
+  "status": "illustration-reviewed-runtime-framing-pending",
+  "path": "original-v1.png",
+  "author": "OpenAI integrated imagegen",
+  "tool": "image_gen.imagegen built-in",
+  "prompt": "prompt-v1.md",
+  "references": [
+    "../broom-cadet-zephyr/original-v1.png"
+  ],
+  "provenance": "Original refinedcollectiblebroomillustration",
+  "sourceAvailable": "original-v1.png; prompt-v1.md",
+  "editableLayers": false,
+  "rig": false,
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "requestedDimensions": [
+    1024,
+    1024
+  ],
+  "crop": "full source preserved",
+  "pivot": [
+    0.65,
+    0.35
+  ],
+  "variants": [],
+  "transparency": {
+    "realAlpha": true,
+    "mode": "RGBA",
+    "range": [
+      0,
+      255
+    ],
+    "fullyTransparentPixels": 1356654,
+    "totalPixels": 1572516,
+    "bodyBoundingBoxAlpha16": [
+      30,
+      29,
+      1231,
+      1228
+    ]
+  },
+  "alt": {
+    "es": "Escoba Céfiro 2000 de madera oscura pulida, empuñadura verde y cobre, y cerdas doradas.",
+    "en": "Zephyr2000 broom with polished dark wood, a green and copper grip, and gold bristles."
+  },
+  "review": {
+    "visual": "Inspected original darkpolishedshaft green/copperwrappedhandle goldenlongbristlefan andbronzeleafclasp. Clearlymorefinishedthanplaincadet, no numbers/text/rider/filmreplica.",
+    "limitations": [
+      "Output1254square not1024requested.",
+      "Extentsverynear edges (~23–30px), toolignored10%margins. Allendscomplete but rendererinsetting required.",
+      "Singleequipmentappearance, noanimatedflight orstats encoded."
+    ]
+  }
+}

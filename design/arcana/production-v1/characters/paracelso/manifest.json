@@ -1,0 +1,54 @@
+{
+  "id": "character-paracelso",
+  "identityId": "paracelso",
+  "direction": "teatro-de-alquimia",
+  "version": "1",
+  "state": "reviewed-standalone-not-integrated",
+  "tool": "built-in imagegen",
+  "source": "master-v2.png",
+  "preparedAsset": "arena-master-v1.png",
+  "prompts": [
+    "prompt-v1.md",
+    "prompt-v2.md"
+  ],
+  "references": [
+    "../apprentice/arena-master-v1.png",
+    "../flamel/arena-master-v1.png"
+  ],
+  "dimensions": [
+    1024,
+    1536
+  ],
+  "transparency": {
+    "mode": "RGBA",
+    "alphaMin": 0,
+    "alphaMax": 255,
+    "fullyTransparentPixels": 1082497,
+    "cornerAlpha": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "subjectBoundsAlphaGt20": [
+      176,
+      161,
+      873,
+      1370
+    ]
+  },
+  "preparation": "Original RGBA contains hidden RGB color backdrop, but alpha0 outside figure. Targeted transparency refinement preserved. Deterministic LANCZOS resize1024x1536->819x1229, position102,154 on transparent1024x1536canvas guarantees >=10%safe frame. No repainting.",
+  "crop": "none",
+  "pivotNormalized": [
+    0.5,
+    0.892
+  ],
+  "variants": [],
+  "sourceEditable": "Raster alpha master; no layers or rig",
+  "textAlternative": {
+    "es": "Paracelso, médico mago de barba oscura corta, gorro burdeos, abrigo verde azulado, libro abierto y mortero de latón.",
+    "en": "Paracelso, a physician mage with a short dark beard, burgundy cap, teal coat, open book and brass mortar."
+  },
+  "review": "Face distinct from Merlin/Flamel; fullfeetandnaturalhands, bookandmortar. No lettering/franchise. Real alpha checked; composited inspection confirms cutout. Integration/thumbnail readability pending.",
+  "sha256": "76952f9a91cd7e7f90058cce2a5ae614353f3f729c3b807f50f618bbccaa0065"
+}

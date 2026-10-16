@@ -1,0 +1,37 @@
+{
+  "id": "scene-vault",
+  "identity": "obsidian-vaults",
+  "function": "Vault backdrop with separate loot and confirmed-receipt effects",
+  "version": 1,
+  "status": "visually-reviewed-source-awaiting-integration",
+  "author": "OpenAI built-in imagegen",
+  "tool": "image_gen.imagegen",
+  "prompt": "prompt-v1.md",
+  "references": [
+    "design/arcana/concepts-2026-10-14/teatro-de-alquimia.png",
+    "design/arcana/production-v1/scenes/confectionery/original-v1.png",
+    "design/arcana/production-v1/scenes/workshop/original-v1.png"
+  ],
+  "original": "original-v1.png",
+  "availableSource": "Flattened raster PNG, no editable layers or rig",
+  "dimensions": {
+    "width": 1536,
+    "height": 1024
+  },
+  "crop": "Full image; empty central obsidian bench safe for mobile",
+  "pivot": {
+    "x": 0.5,
+    "y": 0.5
+  },
+  "variants": [],
+  "transparency": false,
+  "alt": {
+    "es": "Bóveda de piedra oscura ilustrada, con puerta lateral dorada, faroles cálidos y banco central vacío.",
+    "en": "Illustrated dark stone vault with a gold-trimmed side door, warm lanterns and an empty central bench."
+  },
+  "review": {
+    "date": "2026-10-14",
+    "observed": "No lettering/UI/people/foreground loot. Gold keyhole side door, obsidian bench and botanical stonework distinguish vault and match selected palette. Center remains dark and unobstructed.",
+    "limits": "Responsive crop and DOM loot contrast remain integration QA. Flattened source, no separate animated door layers."
+  }
+}

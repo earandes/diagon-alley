@@ -1,0 +1,62 @@
+{
+  "id": "toad-box-lid",
+  "identity": "cocoa-toad",
+  "function": "Movable decorated top lid for illustrated opening animation",
+  "version": "1",
+  "status": "illustration-reviewed-composite-alignment-pending",
+  "path": "original-v1.png",
+  "author": "OpenAI integrated imagegen",
+  "tool": "image_gen.imagegen built-in",
+  "prompt": "prompt-v1.md",
+  "references": [
+    "../toad-box-closed/original-v1.png"
+  ],
+  "provenance": "Generated edit isolating the decorated lid identity from closed-box source",
+  "sourceAvailable": "original-v1.png; prompt-v1.md",
+  "editableLayers": false,
+  "rig": false,
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "crop": "full source preserved",
+  "pivot": {
+    "normalized": [
+      0.5,
+      0.82
+    ],
+    "purpose": "intended bottom-edge hinge for screen-space lift; actual compositor pivot must be checked",
+    "status": "proposed-not-verified"
+  },
+  "variants": [],
+  "transparency": {
+    "realAlpha": true,
+    "mode": "RGBA",
+    "range": [
+      0,
+      255
+    ],
+    "fullyTransparentPixels": 917703,
+    "totalPixels": 1572516,
+    "bodyBoundingBoxAlpha16": [
+      46,
+      282,
+      1223,
+      1056
+    ]
+  },
+  "alt": {
+    "es": "Tapa decorada de la caja de Sapo de Cacao, con sapo dorado, hojas y cinta verde.",
+    "en": "Decorated Cocoa Toad box lid with a gold toad, leaves and a green ribbon."
+  },
+  "review": {
+    "visual": "Inspected detached lid: single decorated thin box top with edge skirt; original toad identity, gold foliage and green ribbon. No lower box base, no interior, no text.",
+    "limitations": [
+      "Generator did not maintain requested x160..1130 y244..780 co-location; visible lid bbox alpha≥16=[46,282,1223,1056].",
+      "Lid angle and botanical details are similar but not identical to source; this is not pixel-perfect extraction.",
+      "Visible edge skirt is thicker than requested; evaluate base/lid overlap during actual animation.",
+      "Low-alpha speckles remain beyond the main silhouette; use declared framing rather than alpha>0 automatic crop.",
+      "This is a flattened sprite and has no reverse-side or editable painting layers."
+    ]
+  }
+}

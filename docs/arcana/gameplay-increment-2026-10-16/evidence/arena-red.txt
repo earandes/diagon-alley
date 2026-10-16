@@ -1,0 +1,267 @@
+[WebServer] (node:32551) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:32577) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 3 tests using 1 worker
+
+(node:32579) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  1 [chromium] › tests/browser-arcana/arena-a63.spec.ts:5:3 › A63 simultaneous 3–5 actors, no spoiler and inspector in es (375ms)
+(node:32592) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  2 [chromium] › tests/browser-arcana/arena-a63.spec.ts:5:3 › A63 simultaneous 3–5 actors, no spoiler and inspector in en (931ms)
+(node:32604) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  3 [chromium] › tests/browser-arcana/arena-a63.spec.ts:37:1 › A63 replay controls, reduced, missing renderer, assets and enlarged text preserve record (7.3s)
+
+
+  1) [chromium] › tests/browser-arcana/arena-a63.spec.ts:5:3 › A63 simultaneous 3–5 actors, no spoiler and inspector in es 
+
+    Error: expect(received).not.toMatch(expected)
+
+    Expected pattern: not /Victoria|Derrota|Empate|Victory|Defeat|Draw/
+    Received string:      "Arena de Combate
+    
+    Resultado guardado: Empate. La animación reproduce el registro; no cambia la vida ni los premios guardados.
+    
+    Volver al mapa
+    
+    Ronda 0 · Eventos 0 de 406
+    
+    Pausa
+    Auto
+    2x
+    Omitir reproducción
+    Tu Equipo
+    
+    Sin bonificaciones de equipo registradas en este momento.
+    
+    Aprendiz de Alquimia
+    Unidad 1
+    Afinidad: Alquimia
+    
+    Nivel 1
+    
+    PV 1000 / 1000 · PM 100
+    
+    Varita +2 · ×1,2
+    Escoba +3 iniciativa
+    Merlín
+    Unidad 2
+    Afinidad: Alquimia
+    
+    Nivel 1
+    
+    PV 1000 / 1000 · PM 100
+    
+    Varita +2 · ×1,2
+    Escoba +3 iniciativa
+    Morgana Le Fay
+    Unidad 3
+    Afinidad: Alquimia
+    
+    Nivel 1
+    
+    PV 1000 / 1000 · PM 100
+    
+    Varita +2 · ×1,2
+    Escoba +3 iniciativa
+    Rival
+    
+    Sin bonificaciones de equipo registradas en este momento.
+    
+    Circe
+    Unidad 1
+    Afinidad: Alquimia
+    
+    Nivel 1
+    
+    PV 1000 / 1000 · PM 100
+    
+    Varita +2 · ×1,2
+    Escoba +3 iniciativa
+    Guardián de las Brasas
+    Unidad 2
+    Afinidad: Alquimia
+    
+    Nivel 1
+    
+    PV 1000 / 1000 · PM 100
+    
+    Varita +2 · ×1,2
+    Escoba +3 iniciativa
+    Vidente de la Bruma
+    Unidad 3
+    Afinidad: Alquimia
+    
+    Nivel 1
+    
+    PV 1000 / 1000 · PM 100
+    
+    Varita +2 · ×1,2
+    Escoba +3 iniciativa
+    Registro del combate"
+
+       9 |       await page.getByRole('button', { name: language === 'es' ? 'Pausa' : 'Pause', exact: true }).click();
+      10 |       const original = await page.evaluate(() => (window as unknown as { __arenaFixtureRecord: string }).__arenaFixtureRecord);
+    > 11 |       expect(await page.locator('.battle-panel').innerText()).not.toMatch(/Victoria|Derrota|Empate|Victory|Defeat|Draw/);
+         |                                                                   ^
+      12 |       expect(await page.locator('.battle-panel').ariaSnapshot()).not.toMatch(/Victoria|Derrota|Empate|Victory|Defeat|Draw/);
+      13 |       for (const viewport of [{width:1280,height:900},{width:390,height:844},{width:865,height:1079}]) {
+      14 |         await page.setViewportSize(viewport);
+        at /Users/enricarandes/work/diagon-alley/tests/browser-arcana/arena-a63.spec.ts:11:67
+
+    Error Context: docs/arcana/gameplay-increment-2026-10-16/evidence/arena-results/arena-a63-A63-simultaneous-4267c-spoiler-and-inspector-in-es-chromium/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    docs/arcana/gameplay-increment-2026-10-16/evidence/arena-results/arena-a63-A63-simultaneous-4267c-spoiler-and-inspector-in-es-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace docs/arcana/gameplay-increment-2026-10-16/evidence/arena-results/arena-a63-A63-simultaneous-4267c-spoiler-and-inspector-in-es-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) [chromium] › tests/browser-arcana/arena-a63.spec.ts:5:3 › A63 simultaneous 3–5 actors, no spoiler and inspector in en 
+
+    Error: expect(received).not.toMatch(expected)
+
+    Expected pattern: not /Victoria|Derrota|Empate|Victory|Defeat|Draw/
+    Received string:      "Combat Arena
+    
+    Saved result: Draw. The animation replays the record; it does not change saved health or rewards.
+    
+    Back to map
+    
+    Round 0 · Events 0 of 406
+    
+    Pause
+    Auto
+    2x
+    Skip playback
+    Your Team
+    
+    No team bonuses recorded at this point.
+    
+    Alchemy Apprentice
+    Unit 1
+    Affinity: Alchemy
+    
+    Level 1
+    
+    HP 1,000 / 1,000 · MP 100
+    
+    Wand +2 · ×1.2
+    Broom +3 initiative
+    Merlin
+    Unit 2
+    Affinity: Alchemy
+    
+    Level 1
+    
+    HP 1,000 / 1,000 · MP 100
+    
+    Wand +2 · ×1.2
+    Broom +3 initiative
+    Morgana Le Fay
+    Unit 3
+    Affinity: Alchemy
+    
+    Level 1
+    
+    HP 1,000 / 1,000 · MP 100
+    
+    Wand +2 · ×1.2
+    Broom +3 initiative
+    Opponent
+    
+    No team bonuses recorded at this point.
+    
+    Circe
+    Unit 1
+    Affinity: Alchemy
+    
+    Level 1
+    
+    HP 1,000 / 1,000 · MP 100
+    
+    Wand +2 · ×1.2
+    Broom +3 initiative
+    Ember Keeper
+    Unit 2
+    Affinity: Alchemy
+    
+    Level 1
+    
+    HP 1,000 / 1,000 · MP 100
+    
+    Wand +2 · ×1.2
+    Broom +3 initiative
+    Mist Seer
+    Unit 3
+    Affinity: Alchemy
+    
+    Level 1
+    
+    HP 1,000 / 1,000 · MP 100
+    
+    Wand +2 · ×1.2
+    Broom +3 initiative
+    Battle record"
+
+       9 |       await page.getByRole('button', { name: language === 'es' ? 'Pausa' : 'Pause', exact: true }).click();
+      10 |       const original = await page.evaluate(() => (window as unknown as { __arenaFixtureRecord: string }).__arenaFixtureRecord);
+    > 11 |       expect(await page.locator('.battle-panel').innerText()).not.toMatch(/Victoria|Derrota|Empate|Victory|Defeat|Draw/);
+         |                                                                   ^
+      12 |       expect(await page.locator('.battle-panel').ariaSnapshot()).not.toMatch(/Victoria|Derrota|Empate|Victory|Defeat|Draw/);
+      13 |       for (const viewport of [{width:1280,height:900},{width:390,height:844},{width:865,height:1079}]) {
+      14 |         await page.setViewportSize(viewport);
+        at /Users/enricarandes/work/diagon-alley/tests/browser-arcana/arena-a63.spec.ts:11:67
+
+    Error Context: docs/arcana/gameplay-increment-2026-10-16/evidence/arena-results/arena-a63-A63-simultaneous-1704b-spoiler-and-inspector-in-en-chromium/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    docs/arcana/gameplay-increment-2026-10-16/evidence/arena-results/arena-a63-A63-simultaneous-1704b-spoiler-and-inspector-in-en-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace docs/arcana/gameplay-increment-2026-10-16/evidence/arena-results/arena-a63-A63-simultaneous-1704b-spoiler-and-inspector-in-en-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  3) [chromium] › tests/browser-arcana/arena-a63.spec.ts:37:1 › A63 replay controls, reduced, missing renderer, assets and enlarged text preserve record 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: locator('[data-arena-outcome]')
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" locator('[data-arena-outcome]') with timeout 5000ms
+      - waiting for locator('[data-arena-outcome]')
+
+
+      50 |   expect(await page.locator('.pedestal').evaluateAll(nodes=>nodes.every(node=>node.scrollHeight<=node.clientHeight+1))).toBe(true);
+      51 |   await page.goto('/tests/arcana-arena-a63-harness.html?reduced');
+    > 52 |   await expect(page.locator('[data-arena-outcome]')).toBeVisible();
+         |                                                      ^
+      53 |   await page.route('**/*pixi-scenes*',route=>route.abort());
+      54 |   await page.route('**/*.webp',route=>route.abort());
+      55 |   await page.goto('/tests/arcana-arena-a63-harness.html?fallback');
+        at /Users/enricarandes/work/diagon-alley/tests/browser-arcana/arena-a63.spec.ts:52:54
+
+    Error Context: docs/arcana/gameplay-increment-2026-10-16/evidence/arena-results/arena-a63-A63-replay-contr-0e085-larged-text-preserve-record-chromium/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    docs/arcana/gameplay-increment-2026-10-16/evidence/arena-results/arena-a63-A63-replay-contr-0e085-larged-text-preserve-record-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace docs/arcana/gameplay-increment-2026-10-16/evidence/arena-results/arena-a63-A63-replay-contr-0e085-larged-text-preserve-record-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  3 failed
+    [chromium] › tests/browser-arcana/arena-a63.spec.ts:5:3 › A63 simultaneous 3–5 actors, no spoiler and inspector in es 
+    [chromium] › tests/browser-arcana/arena-a63.spec.ts:5:3 › A63 simultaneous 3–5 actors, no spoiler and inspector in en 
+    [chromium] › tests/browser-arcana/arena-a63.spec.ts:37:1 › A63 replay controls, reduced, missing renderer, assets and enlarged text preserve record 

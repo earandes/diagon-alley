@@ -1,0 +1,83 @@
+/* Reward controls are physical destinations. The receipt remains the only authority. */
+.game-shell .reveal[data-opening-state='result'] {
+  --reward-accent: #dbc78e;
+}
+.game-shell .reveal[data-rarity='unusual'] {
+  --reward-accent: #a5d9c9;
+}
+.game-shell .reveal[data-rarity='epic'] {
+  --reward-accent: #c9a4ed;
+}
+.game-shell .reveal[data-rarity='arcane-legendary'] {
+  --reward-accent: #f9d680;
+}
+.game-shell .reveal[data-opening-state='result'] .opening-frame {
+  filter: drop-shadow(0 0 10px color-mix(in srgb, var(--reward-accent) 25%, transparent));
+}
+.game-shell .reveal .reveal-actions {
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  gap: clamp(24px, 6vw, 72px);
+  margin: 16px auto 0;
+  padding: 0 16px 16px;
+}
+.game-shell .reveal-actions > button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  gap: 5px;
+  padding: 0 8px 8px;
+  max-width: 160px;
+  min-width: 92px;
+  min-height: 96px;
+  margin: 0;
+  border: 0;
+  background: none;
+  color: #fff0d0;
+  font-size: 0.8rem;
+  line-height: 1.3;
+  text-align: center;
+}
+.game-shell .reveal-actions > button:hover:not(:disabled) {
+  background: none;
+  color: var(--reward-accent);
+}
+.game-shell .reveal-actions > button img {
+  width: 66px;
+  height: 62px;
+  object-fit: contain;
+  filter: drop-shadow(0 5px 5px #050a15);
+}
+.game-shell .reveal-actions > button:hover:not(:disabled) img {
+  transform: translateY(-3px);
+}
+.game-shell .reveal-actions > button:focus-visible {
+  outline: 2px solid #b7edee;
+  outline-offset: 5px;
+}
+.game-shell .reveal .reveal-discovery {
+  margin-bottom: 0;
+  color: var(--reward-accent, #e0bf7c);
+}
+@media (max-height: 700px) {
+  .game-shell .reveal-actions {
+    margin-top: 8px;
+  }
+  .game-shell .reveal-actions > button {
+    min-height: 72px;
+  }
+  .game-shell .reveal-actions > button img {
+    width: 50px;
+    height: 48px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .game-shell .reveal-actions > button:hover:not(:disabled) img {
+    transform: none;
+  }
+}
+.game-shell[data-reduced='true'] .reveal-actions > button:hover:not(:disabled) img {
+  transform: none;
+}

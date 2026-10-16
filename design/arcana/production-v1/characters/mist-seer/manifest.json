@@ -1,0 +1,53 @@
+{
+  "id": "character-mist-seer",
+  "identityId": "mist-seer",
+  "direction": "teatro-de-alquimia",
+  "version": "1",
+  "state": "reviewed-standalone-not-integrated",
+  "tool": "built-in imagegen",
+  "source": "master-v1.png",
+  "preparedAsset": "arena-master-v1.png",
+  "prompts": [
+    "prompt-v1.md"
+  ],
+  "references": [
+    "../../../concepts-2026-10-14/teatro-de-alquimia.png",
+    "../morgana/arena-master-v1.png"
+  ],
+  "dimensions": [
+    1024,
+    1536
+  ],
+  "transparency": {
+    "mode": "RGBA",
+    "alphaMin": 0,
+    "alphaMax": 255,
+    "fullyTransparentPixels": 1110893,
+    "cornerAlpha": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "subjectBoundsAlphaGt20": [
+      236,
+      184,
+      864,
+      1357
+    ]
+  },
+  "preparation": "Deterministic LANCZOS resize1024x1536->819x1229,position102,154 on transparent1024x1536canvas for10%safe margins. Source unchanged.",
+  "crop": "none",
+  "pivotNormalized": [
+    0.5,
+    0.883
+  ],
+  "variants": [],
+  "sourceEditable": "Raster alpha master; no layers or rig",
+  "textAlternative": {
+    "es": "Vidente de la Bruma, anciana de cabello plateado recogido, capa gris azulada, túnica verde y bastón con jade.",
+    "en": "Mist Seer, an elderly woman with silver hair in a bun, a blue-grey cloak, green robe and jade-tipped staff."
+  },
+  "review": "Inspected white composite: recognizably elderly EastAsianface, fullbody/hands/feet, dignified warm expression, silverblue cloak visually distinct. Staff is more ornate than requested simple reed, but coherent botanical identity. Minimal mist curl by tip, no background. Real alpha confirmed. Actual thumbnail/mobile integration pending.",
+  "sha256": "33712093d40938be774b5a07e5fce99efdc503bb7a68e40369b8573b064339bd"
+}

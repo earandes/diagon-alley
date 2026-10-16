@@ -1,0 +1,24 @@
+{
+  "id": "circe",
+  "name": "Hermione Granger",
+  "master": "design/diagon-alley/illustrated-v2/samples/circe.png",
+  "sha256": "1ec6c5499d3ef3424aa7d540e6820789e53389acd59dcba170dc8f106edc74e4",
+  "seed": 58102,
+  "promptFile": "design/diagon-alley/illustrated-v2/prompts/circe.txt",
+  "model": "mlx-community/flux2-klein-4b-4bit",
+  "modelRevision": "860e87183ceb29e39627c0612ebd66d8ea66e68c",
+  "steps": 4,
+  "guidance": 1.0,
+  "width": 768,
+  "height": 1024,
+  "generationSeconds": 32.6,
+  "loadSeconds": 0.73,
+  "tool": {
+    "mflux": "0.22.0",
+    "mlx": "0.32.4"
+  },
+  "cashCost": 0,
+  "generationMode": "offline local Metal text-to-image",
+  "gpuPeakMemoryBytes": 9421781176,
+  "status": "sample awaiting coordinator visual review"
+}

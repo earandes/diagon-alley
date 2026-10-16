@@ -1,0 +1,11 @@
+
+Running 4 tests using 1 worker
+
+(node:33282) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  1 [chromium-a63] › tests/browser-trial/gameplay-increment-a63.spec.ts:17:1 › A63 repeated boss keeps previous stock separate from the new reward (12.8s)
+  ✓  2 [chromium-a63] › tests/browser-trial/gameplay-increment-a63.spec.ts:41:1 › A63 earned frog recovers lost response and reload during reveal without another charge (5.9s)
+  ✓  3 [chromium-a63] › tests/browser-trial/gameplay-increment-a63.spec.ts:71:3 › A63 closing journey uses earned loot then starts deliberately es (11.6s)
+  ✓  4 [chromium-a63] › tests/browser-trial/gameplay-increment-a63.spec.ts:71:3 › A63 closing journey uses earned loot then starts deliberately en (12.9s)
+
+  4 passed (43.6s)

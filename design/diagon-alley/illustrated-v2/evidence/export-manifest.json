@@ -1,0 +1,708 @@
+{
+  "characters": [
+    {
+      "id": "apprentice",
+      "original": "design/diagon-alley/illustrated-v2/samples/apprentice.png",
+      "master": "design/diagon-alley/illustrated-v2/masters/apprentice.png",
+      "sourceCrop": "unchanged",
+      "masterSize": [
+        768,
+        1024
+      ],
+      "transform": "Recorded crop and aspect-preserving fit, no stretching; original retained.",
+      "retouch": "retouches/apprentice-scar.svg",
+      "faceCrop": [
+        133,
+        87,
+        616,
+        690
+      ],
+      "mask": "masks/apprentice-alpha.png",
+      "roleFit": "Portrait: proportional center-top cover, crop lower torso only. Figure: proportional contain with transparent side padding, complete source silhouette. Thumbnail: recorded facial crop.",
+      "segmentation": "rembg2.0.85 / U2net / CPUExecutionProvider / alpha_matting",
+      "seconds": 2.06,
+      "cashCost": 0
+    },
+    {
+      "id": "merlin",
+      "original": "design/diagon-alley/illustrated-v2/samples/merlin.png",
+      "master": "design/diagon-alley/illustrated-v2/masters/merlin.png",
+      "sourceCrop": "unchanged",
+      "masterSize": [
+        768,
+        1024
+      ],
+      "transform": "Recorded crop and aspect-preserving fit, no stretching; original retained.",
+      "retouch": null,
+      "faceCrop": [
+        116,
+        127,
+        636,
+        777
+      ],
+      "mask": "masks/merlin-alpha.png",
+      "roleFit": "Portrait: proportional center-top cover, crop lower torso only. Figure: proportional contain with transparent side padding, complete source silhouette. Thumbnail: recorded facial crop.",
+      "segmentation": "rembg2.0.85 / U2net / CPUExecutionProvider / alpha_matting",
+      "seconds": 2.19,
+      "cashCost": 0
+    },
+    {
+      "id": "morgana",
+      "original": "design/diagon-alley/illustrated-v2/samples/morgana.png",
+      "master": "design/diagon-alley/illustrated-v2/masters/morgana.png",
+      "sourceCrop": "unchanged",
+      "masterSize": [
+        768,
+        1024
+      ],
+      "transform": "Recorded crop and aspect-preserving fit, no stretching; original retained.",
+      "retouch": null,
+      "faceCrop": [
+        135,
+        184,
+        650,
+        828
+      ],
+      "mask": "masks/morgana-alpha.png",
+      "roleFit": "Portrait: proportional center-top cover, crop lower torso only. Figure: proportional contain with transparent side padding, complete source silhouette. Thumbnail: recorded facial crop.",
+      "segmentation": "rembg2.0.85 / U2net / CPUExecutionProvider / alpha_matting",
+      "seconds": 1.96,
+      "cashCost": 0
+    },
+    {
+      "id": "flamel",
+      "original": "design/diagon-alley/illustrated-v2/samples/flamel.png",
+      "master": "design/diagon-alley/illustrated-v2/masters/flamel.png",
+      "sourceCrop": "unchanged",
+      "masterSize": [
+        768,
+        1024
+      ],
+      "transform": "Recorded crop and aspect-preserving fit, no stretching; original retained.",
+      "retouch": null,
+      "faceCrop": [
+        130,
+        90,
+        650,
+        740
+      ],
+      "mask": "masks/flamel-alpha.png",
+      "roleFit": "Portrait: proportional center-top cover, crop lower torso only. Figure: proportional contain with transparent side padding, complete source silhouette. Thumbnail: recorded facial crop.",
+      "segmentation": "rembg2.0.85 / U2net / CPUExecutionProvider / alpha_matting",
+      "seconds": 1.91,
+      "cashCost": 0
+    },
+    {
+      "id": "paracelso",
+      "original": "design/diagon-alley/illustrated-v2/samples/paracelso.png",
+      "master": "design/diagon-alley/illustrated-v2/masters/paracelso.png",
+      "sourceCrop": "unchanged",
+      "masterSize": [
+        768,
+        1024
+      ],
+      "transform": "Recorded crop and aspect-preserving fit, no stretching; original retained.",
+      "retouch": null,
+      "faceCrop": [
+        130,
+        90,
+        650,
+        740
+      ],
+      "mask": "masks/paracelso-alpha.png",
+      "roleFit": "Portrait: proportional center-top cover, crop lower torso only. Figure: proportional contain with transparent side padding, complete source silhouette. Thumbnail: recorded facial crop.",
+      "segmentation": "rembg2.0.85 / U2net / CPUExecutionProvider / alpha_matting",
+      "seconds": 1.83,
+      "cashCost": 0
+    },
+    {
+      "id": "circe",
+      "original": "design/diagon-alley/illustrated-v2/samples/circe.png",
+      "master": "design/diagon-alley/illustrated-v2/masters/circe.png",
+      "sourceCrop": [
+        40,
+        38,
+        728,
+        988
+      ],
+      "masterSize": [
+        768,
+        1024
+      ],
+      "transform": "Recorded crop and aspect-preserving fit, no stretching; original retained.",
+      "retouch": null,
+      "faceCrop": [
+        120,
+        62,
+        652,
+        727
+      ],
+      "mask": "masks/circe-alpha.png",
+      "roleFit": "Portrait: proportional center-top cover, crop lower torso only. Figure: proportional contain with transparent side padding, complete source silhouette. Thumbnail: recorded facial crop.",
+      "segmentation": "rembg2.0.85 / U2net / CPUExecutionProvider / alpha_matting",
+      "seconds": 1.93,
+      "cashCost": 0
+    },
+    {
+      "id": "ember-keeper",
+      "original": "design/diagon-alley/illustrated-v2/samples/ember-keeper.png",
+      "master": "design/diagon-alley/illustrated-v2/masters/ember-keeper.png",
+      "sourceCrop": "unchanged",
+      "masterSize": [
+        768,
+        1024
+      ],
+      "transform": "Recorded crop and aspect-preserving fit, no stretching; original retained.",
+      "retouch": null,
+      "faceCrop": [
+        130,
+        90,
+        650,
+        740
+      ],
+      "mask": "masks/ember-keeper-alpha.png",
+      "roleFit": "Portrait: proportional center-top cover, crop lower torso only. Figure: proportional contain with transparent side padding, complete source silhouette. Thumbnail: recorded facial crop.",
+      "segmentation": "rembg2.0.85 / U2net / CPUExecutionProvider / alpha_matting",
+      "seconds": 1.9,
+      "cashCost": 0
+    },
+    {
+      "id": "mist-seer",
+      "original": "design/diagon-alley/illustrated-v2/samples/mist-seer.png",
+      "master": "design/diagon-alley/illustrated-v2/masters/mist-seer.png",
+      "sourceCrop": "unchanged",
+      "masterSize": [
+        768,
+        1024
+      ],
+      "transform": "Recorded crop and aspect-preserving fit, no stretching; original retained.",
+      "retouch": null,
+      "faceCrop": [
+        130,
+        90,
+        650,
+        740
+      ],
+      "mask": "masks/mist-seer-alpha.png",
+      "roleFit": "Portrait: proportional center-top cover, crop lower torso only. Figure: proportional contain with transparent side padding, complete source silhouette. Thumbnail: recorded facial crop.",
+      "segmentation": "rembg2.0.85 / U2net / CPUExecutionProvider / alpha_matting",
+      "seconds": 1.89,
+      "cashCost": 0
+    },
+    {
+      "id": "rune-weaver",
+      "original": "design/diagon-alley/illustrated-v2/samples/rune-weaver.png",
+      "master": "design/diagon-alley/illustrated-v2/masters/rune-weaver.png",
+      "sourceCrop": "unchanged",
+      "masterSize": [
+        768,
+        1024
+      ],
+      "transform": "Recorded crop and aspect-preserving fit, no stretching; original retained.",
+      "retouch": null,
+      "faceCrop": [
+        130,
+        90,
+        650,
+        740
+      ],
+      "mask": "masks/rune-weaver-alpha.png",
+      "roleFit": "Portrait: proportional center-top cover, crop lower torso only. Figure: proportional contain with transparent side padding, complete source silhouette. Thumbnail: recorded facial crop.",
+      "segmentation": "rembg2.0.85 / U2net / CPUExecutionProvider / alpha_matting",
+      "seconds": 1.86,
+      "cashCost": 0
+    },
+    {
+      "id": "copper-sage",
+      "original": "design/diagon-alley/illustrated-v2/samples/copper-sage.png",
+      "master": "design/diagon-alley/illustrated-v2/masters/copper-sage.png",
+      "sourceCrop": "unchanged",
+      "masterSize": [
+        768,
+        1024
+      ],
+      "transform": "Recorded crop and aspect-preserving fit, no stretching; original retained.",
+      "retouch": null,
+      "faceCrop": [
+        130,
+        90,
+        650,
+        740
+      ],
+      "mask": "masks/copper-sage-alpha.png",
+      "roleFit": "Portrait: proportional center-top cover, crop lower torso only. Figure: proportional contain with transparent side padding, complete source silhouette. Thumbnail: recorded facial crop.",
+      "segmentation": "rembg2.0.85 / U2net / CPUExecutionProvider / alpha_matting",
+      "seconds": 1.87,
+      "cashCost": 0
+    },
+    {
+      "id": "moon-herbalist",
+      "original": "design/diagon-alley/illustrated-v2/samples/moon-herbalist.png",
+      "master": "design/diagon-alley/illustrated-v2/masters/moon-herbalist.png",
+      "sourceCrop": "unchanged",
+      "masterSize": [
+        768,
+        1024
+      ],
+      "transform": "Recorded crop and aspect-preserving fit, no stretching; original retained.",
+      "retouch": null,
+      "faceCrop": [
+        128,
+        138,
+        656,
+        798
+      ],
+      "mask": "masks/moon-herbalist-alpha.png",
+      "roleFit": "Portrait: proportional center-top cover, crop lower torso only. Figure: proportional contain with transparent side padding, complete source silhouette. Thumbnail: recorded facial crop.",
+      "segmentation": "rembg2.0.85 / U2net / CPUExecutionProvider / alpha_matting",
+      "seconds": 1.93,
+      "cashCost": 0
+    },
+    {
+      "id": "ash-wanderer",
+      "original": "design/diagon-alley/illustrated-v2/samples/ash-wanderer.png",
+      "master": "design/diagon-alley/illustrated-v2/masters/ash-wanderer.png",
+      "sourceCrop": "unchanged",
+      "masterSize": [
+        768,
+        1024
+      ],
+      "transform": "Recorded crop and aspect-preserving fit, no stretching; original retained.",
+      "retouch": null,
+      "faceCrop": [
+        130,
+        90,
+        650,
+        740
+      ],
+      "mask": "masks/ash-wanderer-alpha.png",
+      "roleFit": "Portrait: proportional center-top cover, crop lower torso only. Figure: proportional contain with transparent side padding, complete source silhouette. Thumbnail: recorded facial crop.",
+      "segmentation": "rembg2.0.85 / U2net / CPUExecutionProvider / alpha_matting",
+      "seconds": 1.88,
+      "cashCost": 0
+    },
+    {
+      "id": "shadow-scribe",
+      "original": "design/diagon-alley/illustrated-v2/samples/shadow-scribe.png",
+      "master": "design/diagon-alley/illustrated-v2/masters/shadow-scribe.png",
+      "sourceCrop": "unchanged",
+      "masterSize": [
+        768,
+        1024
+      ],
+      "transform": "Recorded crop and aspect-preserving fit, no stretching; original retained.",
+      "retouch": null,
+      "faceCrop": [
+        130,
+        90,
+        650,
+        740
+      ],
+      "mask": "masks/shadow-scribe-alpha.png",
+      "roleFit": "Portrait: proportional center-top cover, crop lower torso only. Figure: proportional contain with transparent side padding, complete source silhouette. Thumbnail: recorded facial crop.",
+      "segmentation": "rembg2.0.85 / U2net / CPUExecutionProvider / alpha_matting",
+      "seconds": 1.9,
+      "cashCost": 0
+    },
+    {
+      "id": "storm-caller",
+      "original": "design/diagon-alley/illustrated-v2/samples/storm-caller_2.png",
+      "master": "design/diagon-alley/illustrated-v2/masters/storm-caller.png",
+      "sourceCrop": "unchanged",
+      "masterSize": [
+        768,
+        1024
+      ],
+      "transform": "Recorded crop and aspect-preserving fit, no stretching; original retained.",
+      "retouch": null,
+      "faceCrop": [
+        130,
+        90,
+        650,
+        740
+      ],
+      "mask": "masks/storm-caller-alpha.png",
+      "roleFit": "Portrait: proportional center-top cover, crop lower torso only. Figure: proportional contain with transparent side padding, complete source silhouette. Thumbnail: recorded facial crop.",
+      "segmentation": "rembg2.0.85 / U2net / CPUExecutionProvider / alpha_matting",
+      "seconds": 1.95,
+      "cashCost": 0
+    },
+    {
+      "id": "dew-alchemist",
+      "original": "design/diagon-alley/illustrated-v2/samples/dew-alchemist.png",
+      "master": "design/diagon-alley/illustrated-v2/masters/dew-alchemist.png",
+      "sourceCrop": "unchanged",
+      "masterSize": [
+        768,
+        1024
+      ],
+      "transform": "Recorded crop and aspect-preserving fit, no stretching; original retained.",
+      "retouch": null,
+      "faceCrop": [
+        130,
+        90,
+        650,
+        740
+      ],
+      "mask": "masks/dew-alchemist-alpha.png",
+      "roleFit": "Portrait: proportional center-top cover, crop lower torso only. Figure: proportional contain with transparent side padding, complete source silhouette. Thumbnail: recorded facial crop.",
+      "segmentation": "rembg2.0.85 / U2net / CPUExecutionProvider / alpha_matting",
+      "seconds": 1.93,
+      "cashCost": 0
+    },
+    {
+      "id": "dawn-oracle",
+      "original": "design/diagon-alley/illustrated-v2/samples/dawn-oracle.png",
+      "master": "design/diagon-alley/illustrated-v2/masters/dawn-oracle.png",
+      "sourceCrop": "unchanged",
+      "masterSize": [
+        768,
+        1024
+      ],
+      "transform": "Recorded crop and aspect-preserving fit, no stretching; original retained.",
+      "retouch": null,
+      "faceCrop": [
+        122,
+        60,
+        652,
+        722
+      ],
+      "mask": "masks/dawn-oracle-alpha.png",
+      "roleFit": "Portrait: proportional center-top cover, crop lower torso only. Figure: proportional contain with transparent side padding, complete source silhouette. Thumbnail: recorded facial crop.",
+      "segmentation": "rembg2.0.85 / U2net / CPUExecutionProvider / alpha_matting",
+      "seconds": 2.06,
+      "cashCost": 0
+    },
+    {
+      "id": "crystal-watch",
+      "original": "design/diagon-alley/illustrated-v2/samples/crystal-watch.png",
+      "master": "design/diagon-alley/illustrated-v2/masters/crystal-watch.png",
+      "sourceCrop": "unchanged",
+      "masterSize": [
+        768,
+        1024
+      ],
+      "transform": "Recorded crop and aspect-preserving fit, no stretching; original retained.",
+      "retouch": null,
+      "faceCrop": [
+        130,
+        55,
+        650,
+        705
+      ],
+      "mask": "masks/crystal-watch-alpha.png",
+      "roleFit": "Portrait: proportional center-top cover, crop lower torso only. Figure: proportional contain with transparent side padding, complete source silhouette. Thumbnail: recorded facial crop.",
+      "segmentation": "rembg2.0.85 / U2net / CPUExecutionProvider / alpha_matting",
+      "seconds": 1.98,
+      "cashCost": 0
+    },
+    {
+      "id": "night-forger",
+      "original": "design/diagon-alley/illustrated-v2/samples/night-forger_1.png",
+      "master": "design/diagon-alley/illustrated-v2/masters/night-forger.png",
+      "sourceCrop": "unchanged",
+      "masterSize": [
+        768,
+        1024
+      ],
+      "transform": "Recorded crop and aspect-preserving fit, no stretching; original retained.",
+      "retouch": null,
+      "faceCrop": [
+        102,
+        64,
+        666,
+        769
+      ],
+      "mask": "masks/night-forger-alpha.png",
+      "roleFit": "Portrait: proportional center-top cover, crop lower torso only. Figure: proportional contain with transparent side padding, complete source silhouette. Thumbnail: recorded facial crop.",
+      "segmentation": "rembg2.0.85 / U2net / CPUExecutionProvider / alpha_matting",
+      "seconds": 1.85,
+      "cashCost": 0
+    },
+    {
+      "id": "moss-guardian",
+      "original": "design/diagon-alley/illustrated-v2/samples/moss-guardian.png",
+      "master": "design/diagon-alley/illustrated-v2/masters/moss-guardian.png",
+      "sourceCrop": "unchanged",
+      "masterSize": [
+        768,
+        1024
+      ],
+      "transform": "Recorded crop and aspect-preserving fit, no stretching; original retained.",
+      "retouch": null,
+      "faceCrop": [
+        130,
+        90,
+        650,
+        740
+      ],
+      "mask": "masks/moss-guardian-alpha.png",
+      "roleFit": "Portrait: proportional center-top cover, crop lower torso only. Figure: proportional contain with transparent side padding, complete source silhouette. Thumbnail: recorded facial crop.",
+      "segmentation": "rembg2.0.85 / U2net / CPUExecutionProvider / alpha_matting",
+      "seconds": 1.92,
+      "cashCost": 0
+    },
+    {
+      "id": "comet-scholar",
+      "original": "design/diagon-alley/illustrated-v2/samples/comet-scholar.png",
+      "master": "design/diagon-alley/illustrated-v2/masters/comet-scholar.png",
+      "sourceCrop": "unchanged",
+      "masterSize": [
+        768,
+        1024
+      ],
+      "transform": "Recorded crop and aspect-preserving fit, no stretching; original retained.",
+      "retouch": null,
+      "faceCrop": [
+        130,
+        90,
+        650,
+        740
+      ],
+      "mask": "masks/comet-scholar-alpha.png",
+      "roleFit": "Portrait: proportional center-top cover, crop lower torso only. Figure: proportional contain with transparent side padding, complete source silhouette. Thumbnail: recorded facial crop.",
+      "segmentation": "rembg2.0.85 / U2net / CPUExecutionProvider / alpha_matting",
+      "seconds": 1.83,
+      "cashCost": 0
+    },
+    {
+      "id": "cinder-dancer",
+      "original": "design/diagon-alley/illustrated-v2/samples/cinder-dancer.png",
+      "master": "design/diagon-alley/illustrated-v2/masters/cinder-dancer.png",
+      "sourceCrop": "unchanged",
+      "masterSize": [
+        768,
+        1024
+      ],
+      "transform": "Recorded crop and aspect-preserving fit, no stretching; original retained.",
+      "retouch": null,
+      "faceCrop": [
+        130,
+        90,
+        650,
+        740
+      ],
+      "mask": "masks/cinder-dancer-alpha.png",
+      "roleFit": "Portrait: proportional center-top cover, crop lower torso only. Figure: proportional contain with transparent side padding, complete source silhouette. Thumbnail: recorded facial crop.",
+      "segmentation": "rembg2.0.85 / U2net / CPUExecutionProvider / alpha_matting",
+      "seconds": 1.95,
+      "cashCost": 0
+    },
+    {
+      "id": "wind-reader",
+      "original": "design/diagon-alley/illustrated-v2/samples/wind-reader.png",
+      "master": "design/diagon-alley/illustrated-v2/masters/wind-reader.png",
+      "sourceCrop": "unchanged",
+      "masterSize": [
+        768,
+        1024
+      ],
+      "transform": "Recorded crop and aspect-preserving fit, no stretching; original retained.",
+      "retouch": null,
+      "faceCrop": [
+        130,
+        90,
+        650,
+        740
+      ],
+      "mask": "masks/wind-reader-alpha.png",
+      "roleFit": "Portrait: proportional center-top cover, crop lower torso only. Figure: proportional contain with transparent side padding, complete source silhouette. Thumbnail: recorded facial crop.",
+      "segmentation": "rembg2.0.85 / U2net / CPUExecutionProvider / alpha_matting",
+      "seconds": 1.9,
+      "cashCost": 0
+    },
+    {
+      "id": "star-binder",
+      "original": "design/diagon-alley/illustrated-v2/samples/star-binder.png",
+      "master": "design/diagon-alley/illustrated-v2/masters/star-binder.png",
+      "sourceCrop": "unchanged",
+      "masterSize": [
+        768,
+        1024
+      ],
+      "transform": "Recorded crop and aspect-preserving fit, no stretching; original retained.",
+      "retouch": null,
+      "faceCrop": [
+        130,
+        90,
+        650,
+        740
+      ],
+      "mask": "masks/star-binder-alpha.png",
+      "roleFit": "Portrait: proportional center-top cover, crop lower torso only. Figure: proportional contain with transparent side padding, complete source silhouette. Thumbnail: recorded facial crop.",
+      "segmentation": "rembg2.0.85 / U2net / CPUExecutionProvider / alpha_matting",
+      "seconds": 1.9,
+      "cashCost": 0
+    },
+    {
+      "id": "root-speaker",
+      "original": "design/diagon-alley/illustrated-v2/samples/root-speaker_2.png",
+      "master": "design/diagon-alley/illustrated-v2/masters/root-speaker.png",
+      "sourceCrop": "unchanged",
+      "masterSize": [
+        768,
+        1024
+      ],
+      "transform": "Recorded crop and aspect-preserving fit, no stretching; original retained.",
+      "retouch": null,
+      "faceCrop": [
+        132,
+        83,
+        654,
+        735
+      ],
+      "mask": "masks/root-speaker-alpha.png",
+      "roleFit": "Portrait: proportional center-top cover, crop lower torso only. Figure: proportional contain with transparent side padding, complete source silhouette. Thumbnail: recorded facial crop.",
+      "segmentation": "rembg2.0.85 / U2net / CPUExecutionProvider / alpha_matting",
+      "seconds": 1.93,
+      "cashCost": 0
+    },
+    {
+      "id": "obsidian-seer",
+      "original": "design/diagon-alley/illustrated-v2/samples/obsidian-seer.png",
+      "master": "design/diagon-alley/illustrated-v2/masters/obsidian-seer.png",
+      "sourceCrop": [
+        12,
+        12,
+        756,
+        1008
+      ],
+      "masterSize": [
+        768,
+        1024
+      ],
+      "transform": "Recorded crop and aspect-preserving fit, no stretching; original retained.",
+      "retouch": null,
+      "faceCrop": [
+        130,
+        90,
+        650,
+        740
+      ],
+      "mask": "masks/obsidian-seer-alpha.png",
+      "roleFit": "Portrait: proportional center-top cover, crop lower torso only. Figure: proportional contain with transparent side padding, complete source silhouette. Thumbnail: recorded facial crop.",
+      "segmentation": "rembg2.0.85 / U2net / CPUExecutionProvider / alpha_matting",
+      "seconds": 1.94,
+      "cashCost": 0
+    },
+    {
+      "id": "silver-sentinel",
+      "original": "design/diagon-alley/illustrated-v2/samples/silver-sentinel.png",
+      "master": "design/diagon-alley/illustrated-v2/masters/silver-sentinel.png",
+      "sourceCrop": "unchanged",
+      "masterSize": [
+        768,
+        1024
+      ],
+      "transform": "Recorded crop and aspect-preserving fit, no stretching; original retained.",
+      "retouch": null,
+      "faceCrop": [
+        133,
+        69,
+        655,
+        721
+      ],
+      "mask": "masks/silver-sentinel-alpha.png",
+      "roleFit": "Portrait: proportional center-top cover, crop lower torso only. Figure: proportional contain with transparent side padding, complete source silhouette. Thumbnail: recorded facial crop.",
+      "segmentation": "rembg2.0.85 / U2net / CPUExecutionProvider / alpha_matting",
+      "seconds": 1.84,
+      "cashCost": 0
+    },
+    {
+      "id": "sun-priestess",
+      "original": "design/diagon-alley/illustrated-v2/samples/sun-priestess.png",
+      "master": "design/diagon-alley/illustrated-v2/masters/sun-priestess.png",
+      "sourceCrop": "unchanged",
+      "masterSize": [
+        768,
+        1024
+      ],
+      "transform": "Recorded crop and aspect-preserving fit, no stretching; original retained.",
+      "retouch": null,
+      "faceCrop": [
+        105,
+        71,
+        665,
+        771
+      ],
+      "mask": "masks/sun-priestess-alpha.png",
+      "roleFit": "Portrait: proportional center-top cover, crop lower torso only. Figure: proportional contain with transparent side padding, complete source silhouette. Thumbnail: recorded facial crop.",
+      "segmentation": "rembg2.0.85 / U2net / CPUExecutionProvider / alpha_matting",
+      "seconds": 1.93,
+      "cashCost": 0
+    },
+    {
+      "id": "echo-mage",
+      "original": "design/diagon-alley/illustrated-v2/samples/echo-mage.png",
+      "master": "design/diagon-alley/illustrated-v2/masters/echo-mage.png",
+      "sourceCrop": "unchanged",
+      "masterSize": [
+        768,
+        1024
+      ],
+      "transform": "Recorded crop and aspect-preserving fit, no stretching; original retained.",
+      "retouch": null,
+      "faceCrop": [
+        130,
+        90,
+        650,
+        740
+      ],
+      "mask": "masks/echo-mage-alpha.png",
+      "roleFit": "Portrait: proportional center-top cover, crop lower torso only. Figure: proportional contain with transparent side padding, complete source silhouette. Thumbnail: recorded facial crop.",
+      "segmentation": "rembg2.0.85 / U2net / CPUExecutionProvider / alpha_matting",
+      "seconds": 1.92,
+      "cashCost": 0
+    },
+    {
+      "id": "veil-walker",
+      "original": "design/diagon-alley/illustrated-v2/samples/veil-walker_1.png",
+      "master": "design/diagon-alley/illustrated-v2/masters/veil-walker.png",
+      "sourceCrop": "unchanged",
+      "masterSize": [
+        768,
+        1024
+      ],
+      "transform": "Recorded crop and aspect-preserving fit, no stretching; original retained.",
+      "retouch": null,
+      "faceCrop": [
+        136,
+        48,
+        654,
+        696
+      ],
+      "mask": "masks/veil-walker-alpha.png",
+      "roleFit": "Portrait: proportional center-top cover, crop lower torso only. Figure: proportional contain with transparent side padding, complete source silhouette. Thumbnail: recorded facial crop.",
+      "segmentation": "rembg2.0.85 / U2net / CPUExecutionProvider / alpha_matting",
+      "seconds": 1.87,
+      "cashCost": 0
+    },
+    {
+      "id": "aurora-sage",
+      "original": "design/diagon-alley/illustrated-v2/samples/aurora-sage.png",
+      "master": "design/diagon-alley/illustrated-v2/masters/aurora-sage.png",
+      "sourceCrop": "unchanged",
+      "masterSize": [
+        768,
+        1024
+      ],
+      "transform": "Recorded crop and aspect-preserving fit, no stretching; original retained.",
+      "retouch": null,
+      "faceCrop": [
+        130,
+        90,
+        650,
+        740
+      ],
+      "mask": "masks/aurora-sage-alpha.png",
+      "roleFit": "Portrait: proportional center-top cover, crop lower torso only. Figure: proportional contain with transparent side padding, complete source silhouette. Thumbnail: recorded facial crop.",
+      "segmentation": "rembg2.0.85 / U2net / CPUExecutionProvider / alpha_matting",
+      "seconds": 1.92,
+      "cashCost": 0
+    }
+  ],
+  "providers": [
+    "CPUExecutionProvider"
+  ],
+  "visualReview": "First three samples accepted by integrator; production portraits require individual source/mask/crop review."
+}

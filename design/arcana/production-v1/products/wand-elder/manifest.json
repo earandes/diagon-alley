@@ -1,0 +1,60 @@
+{
+  "id": "wand-elder",
+  "identity": "elder",
+  "function": "Elder wood equipment illustration; current core metadata separately localized",
+  "version": "1",
+  "status": "illustration-reviewed-runtime-framing-pending",
+  "path": "original-v1.png",
+  "author": "OpenAI integrated imagegen",
+  "tool": "image_gen.imagegen built-in",
+  "prompt": "prompt-v1.md",
+  "references": [
+    "../wand-willow/original-v1.png"
+  ],
+  "provenance": "Original darkelderwoodwandfolkloreillustration",
+  "sourceAvailable": "original-v1.png; prompt-v1.md",
+  "editableLayers": false,
+  "rig": false,
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "requestedDimensions": [
+    1024,
+    1024
+  ],
+  "crop": "full source preserved",
+  "pivot": [
+    0.16,
+    0.9
+  ],
+  "variants": [],
+  "transparency": {
+    "realAlpha": true,
+    "mode": "RGBA",
+    "range": [
+      0,
+      255
+    ],
+    "fullyTransparentPixels": 1439529,
+    "totalPixels": 1572516,
+    "bodyBoundingBoxAlpha16": [
+      99,
+      42,
+      1205,
+      1209
+    ]
+  },
+  "alt": {
+    "es": "Varita de saúco de madera envejecida oscura, con espinas y bayas de bronce en la empuñadura.",
+    "en": "Dark aged elderwood wand with bronze thorns and berries on its grip."
+  },
+  "review": {
+    "visual": "Inspected full natural irregular gnarled shaft with cracks and woodyknots; bronze thorn/elderberrygrip distinct frombirch/willow. No regularsevenknobs/franchisereplica, no bakedcore/text/person/scene.",
+    "limitations": [
+      "Output1254square rather thanrequested1024.",
+      "10%margins notpreservedbytool; top42/right49/bottom45 pixels. Endscomplete but rendererinsetneeded.",
+      "Singlewoodappearance doesnotencodecore/stats; keepDOMcontentauthoritative."
+    ]
+  }
+}

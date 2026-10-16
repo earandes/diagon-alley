@@ -1,0 +1,58 @@
+{
+  "id": "character-comet-scholar",
+  "identityId": "comet-scholar",
+  "name": {
+    "es": "Erudita del Cometa",
+    "en": "Comet Scholar"
+  },
+  "direction": "teatro-de-alquimia",
+  "version": "1",
+  "state": "reviewed-standalone-not-integrated",
+  "tool": "built-in imagegen",
+  "source": "master-v1.png",
+  "preparedAsset": "arena-master-v1.png",
+  "prompts": [
+    "prompt-v1.md"
+  ],
+  "references": [
+    "../../../concepts-2026-10-14/teatro-de-alquimia.png",
+    "../apprentice/arena-master-v1.png"
+  ],
+  "dimensions": [
+    1024,
+    1536
+  ],
+  "transparency": {
+    "mode": "RGBA",
+    "alphaMin": 0,
+    "alphaMax": 255,
+    "fullyTransparentPixels": 1138096,
+    "cornerAlpha": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "subjectBoundsAlphaGt20": [
+      149,
+      163,
+      874,
+      1373
+    ]
+  },
+  "preparation": "Deterministic LANCZOS resize 1024x1536 -> 901x1352, positioned [59,84] on transparent 1024x1536 canvas for >=10% safe margins. No painted changes. Source preserved.",
+  "crop": "none",
+  "pivotNormalized": [
+    0.5,
+    0.895
+  ],
+  "variants": [],
+  "sourceEditable": "Raster alpha master; no layers or rig",
+  "textAlternative": {
+    "es": "Erudita del Cometa, exploradora de cabello negro corto, abrigo verde azulado y broche de cometa, con pergamino y catalejo.",
+    "en": "Comet Scholar, a short black-haired explorer in a dark teal coat with a comet pin, holding a scroll and spyglass."
+  },
+  "review": "Inspected original and prepared image. Young adult East Asian woman, straight shoulder hair and short fringe, bright curious face and teal/cream scholarly travel clothing. Comet pin, blank closed scroll and small brass spyglass distinguish identity. Whole hands/feet and no lettering/numbers on props. Teatro painterly coherence. Integration and actual miniature readability remain to be verified.",
+  "originalGenerationPath": "/Users/enricarandes/.codex/generated_images/01a13af8-fd53-7331-8146-bb20ec42fa6b/exec-d7a5cda9-a45d-4e7d-9bdb-c44eeb93a430.png",
+  "sha256": "6d2a159628825f61bf8dfccf760a01a04f81fd094208f5af03262ce3a430feef"
+}

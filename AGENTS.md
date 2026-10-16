@@ -1,6 +1,20 @@
 # Instrucciones del proyecto Colección Mágica
 
+> **15 octubre2026 — A59:**16anotaciones de Enric autorizan entrada/escena continua, preparación explícita de copias antes de ruta y equipo fuera del álbum, callejón con fachadas/interiores, libros consultables, atlas y celebración por rareza. Conservar kit real/IDs/reglas/economía/partidas y es/en/swap, no selector gratuito de personajes. [Contrato](docs/arcana/annotations-2026-10-15/CONTRACT.md), [informe](docs/arcana/annotations-2026-10-15/REPORT.md).
+
+> **15 octubre2026 — A58:** continuar con personajes Harry Potter de acabado ilustrado coherente y corregir el tirón al abrir ranas. Pipeline de producción local gratuito, muestra en contexto antes del lote y rendimiento medido sin desplazar la espera. Mantener A57, autoridad, es/en, swap y no publicación. [Contrato](docs/arcana/illustrated-assets-2026-10-15/CONTRACT.md).
+
+> **15 octubre2026 — A57 vigente:** Enric autoriza rediseño completo con Diagon Alley/Harry Potter principal y ARCANA intercambiable, goal/loop y subagentes; idiomas únicamente en Ajustes. Esta instrucción sustituye las exclusiones temáticas de A29 en presentación, sin cambiar IDs, economía, snapshots o reglas. Conservar coste cero, es/en, persistencia y sin publicación. [Contrato](docs/arcana/diagon-game-redesign-2026-10-15/CONTRACT.md).
+
+> **11 octubre 2026 — Instrucción vigente de Enric: ARCANA.** El mensaje actual y Word ARCANA, registrados en `docs/PRD.md` y A29/A30, sustituyen las reglas de producto incompatibles que se conservan abajo como antecedentes: universo comercial/tienda, catálogo/bienvenida anterior, tres rarezas, ausencia de barra inferior y exclusión de energía. ARCANA exige folclore, mapa ramificado, combate automático, Coronas/Esencia, Cromodex y cuatro rarezas. Conservar Word históricos, es/en, atomicidad/idempotencia, accesibilidad, separación de evidencia, cambios ajenos y principios de ingeniería. No confundir el código anterior todavía activo con una implementación ARCANA. No publicar arte/nombres anteriores en el artefacto nuevo.
+
+> **14 octubre 2026 — A54:** Enric exige ARCANA casi sin texto por defecto y con interacción mediante assets/animaciones, sin formularios convencionales. Conservar nombres/costes/errores breves, ayuda a demanda y semántica/foco/localización accesibles. Contrato y evidencia en `docs/arcana/asset-interface-2026-10-14/`. No alterar reglas/economía/persistencia para esta revisión.
+
+> **15 octubre2026 — A55:** mapa con fondo ilustrado regional y equipo compacto; datos de personaje por hover/foco/toque. Dirección futura incremental por regiones con paisaje, habitantes y complejidad propios; una sola región jugable ahora. Mantener separación entre apariencia de región y campaña/progreso autoritativos. Roadmap en `docs/arcana/REGIONS-ROADMAP.md`.
+
 ## Fuentes y estado
+
+Para ARCANA, la ampliación A32 requiere PixiJS v8, GSAP, PostgreSQL y Redis; React/Vite y Node/TypeScript/Fastify se utilizan entre alternativas explícitas. Conservar las fronteras del núcleo. La restricción histórica contra infraestructura anticipada no excluye esta infraestructura ahora solicitada. Pausa/Auto/2x y estrellas 1–5 deben reflejar la instrucción actual; correspondencia con rarezas pendientes. Pirámide de pruebas y evidencia deben distinguir fixtures, adaptadores con doubles y servicios PostgreSQL/Redis reales.
 
 Lee `docs/PRD.md` completo y `docs/DECISIONS.md` antes de proponer cambios de producto o implementar un recorrido. El PRD procede de `docs/PRD_Coleccion_Magica.docx`, versión 0.5 del 8 de octubre de 2026. Conserva ese Word como referencia original sin modificarlo salvo petición explícita.
 

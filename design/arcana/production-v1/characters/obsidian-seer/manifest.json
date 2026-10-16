@@ -1,0 +1,58 @@
+{
+  "id": "character-obsidian-seer",
+  "identityId": "obsidian-seer",
+  "name": {
+    "es": "Vidente de Obsidiana",
+    "en": "Obsidian Seer"
+  },
+  "direction": "teatro-de-alquimia",
+  "version": "1",
+  "state": "reviewed-standalone-not-integrated",
+  "tool": "built-in imagegen",
+  "source": "master-v1.png",
+  "preparedAsset": "arena-master-v1.png",
+  "prompts": [
+    "prompt-v1.md"
+  ],
+  "references": [
+    "../../../concepts-2026-10-14/teatro-de-alquimia.png",
+    "../apprentice/arena-master-v1.png"
+  ],
+  "dimensions": [
+    1024,
+    1536
+  ],
+  "transparency": {
+    "mode": "RGBA",
+    "alphaMin": 0,
+    "alphaMax": 255,
+    "fullyTransparentPixels": 1045753,
+    "cornerAlpha": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "subjectBoundsAlphaGt20": [
+      165,
+      157,
+      860,
+      1380
+    ]
+  },
+  "preparation": "Deterministic LANCZOS resize 1024x1536 -> 901x1352, positioned [40,89] on transparent 1024x1536 canvas for >=10% safe margins. No painted changes. Source preserved.",
+  "crop": "none",
+  "pivotNormalized": [
+    0.5,
+    0.898
+  ],
+  "variants": [],
+  "sourceEditable": "Raster alpha master; no layers or rig",
+  "textAlternative": {
+    "es": "Vidente de Obsidiana, maga de rizos cortos con mecha gris, tunica ciruela y negra, esfera oscura y baston de obsidiana.",
+    "en": "Obsidian Seer, a short-coiled-haired mage with a gray streak, plum and black robes, a dark orb and obsidian staff."
+  },
+  "review": "Inspected original and prepared image. Adult Black woman with angular proud serious face and short natural coils/gray streak, tall graceful stance. Deep plum/obsidian robe, brass leaf clasp and small dark orb/copper holder distinguish from braided Storm Caller. Complete natural hands, boots and staff, no large glow. Teatro painterly coherence. Integration and actual miniature readability remain to be verified.",
+  "originalGenerationPath": "/Users/enricarandes/.codex/generated_images/01a13af8-fd53-7331-8146-bb20ec42fa6b/exec-683fdd4c-7b94-4b4f-a0d3-c2decdf31ffa.png",
+  "sha256": "6fe46d6d6ffd052993306d36ee4185cbaa990ec4f4bf33f5073f64daa14dea5d"
+}

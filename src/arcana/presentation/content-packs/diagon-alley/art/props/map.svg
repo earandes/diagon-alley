@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><defs>
+<linearGradient id="gold" x2=".8" y2="1"><stop stop-color="#fff1ae"/><stop offset=".3" stop-color="#e9be64"/><stop offset=".7" stop-color="#986023"/><stop offset="1" stop-color="#f0ce7b"/></linearGradient>
+<linearGradient id="plum" x2=".75" y2="1"><stop stop-color="#6d3778"/><stop offset=".5" stop-color="#392047"/><stop offset="1" stop-color="#1b1428"/></linearGradient>
+<linearGradient id="paper" x2=".7" y2="1"><stop stop-color="#faecc7"/><stop offset=".6" stop-color="#d8b67b"/><stop offset="1" stop-color="#94734e"/></linearGradient>
+<radialGradient id="glow"><stop stop-color="#fff8c1" stop-opacity=".9"/><stop offset=".25" stop-color="#e5b2ff" stop-opacity=".4"/><stop offset="1" stop-color="#a663db" stop-opacity="0"/></radialGradient>
+<filter id="shadow" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="12" stdDeviation="10" flood-opacity=".5"/></filter>
+</defs><g filter="url(#shadow)" transform="rotate(-7 256 256)">
+<path d="M67 103 194 72 324 109 448 75 448 395 326 431 195 395 67 428Z" fill="url(#paper)" stroke="#754f2d" stroke-width="9"/>
+<path d="M194 76V393M326 112V427" fill="none" stroke="#956e45" stroke-width="3" opacity=".7"/>
+<path d="M106 341Q124 239 191 251T280 227 397 141M109 199 192 216 262 173 375 215M259 175 272 351 386 355" fill="none" stroke="#8d6742" stroke-width="26" opacity=".36"/>
+<path d="M106 341Q124 239 191 251T280 227 397 141" fill="none" stroke="#665038" stroke-width="4" stroke-dasharray="4 11"/>
+<g fill="#8c6446" stroke="#5e422f" stroke-width="3">
+<path d="m106 157 19-25 20 28v43h-39zM157 297l16-21 22 19v39h-38zM298 142l17-24 23 27v39h-40zM347 273l20-29 24 27v51h-44z"/>
+</g><g fill="#f4d682"><path d="M118 166h14v23h-14zM310 153h15v22h-15zM362 280h14v23h-14z"/></g>
+<circle cx="107" cy="341" r="14" fill="#913e41" stroke="#edc77a" stroke-width="4"/>
+<circle cx="280" cy="227" r="14" fill="#913e41" stroke="#edc77a" stroke-width="4"/>
+<polygon points="399.0,111.0 403.8,133.2 426.0,138.0 403.8,142.8 399.0,165.0 394.2,142.8 372.0,138.0 394.2,133.2" fill="url(#gold)"/></g><g transform="translate(344 345)"><circle r="62" fill="url(#plum)" stroke="url(#gold)" stroke-width="8"/><polygon points="0.0,-45.0 4.3,-10.4 31.8,-31.8 10.4,-4.3 45.0,0.0 10.4,4.3 31.8,31.8 4.3,10.4 0.0,45.0 -4.3,10.4 -31.8,31.8 -10.4,4.3 -45.0,0.0 -10.4,-4.3 -31.8,-31.8 -4.3,-10.4" fill="url(#gold)"/><circle r="12" fill="#f5d783"/></g></svg>

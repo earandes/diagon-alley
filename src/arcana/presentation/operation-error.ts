@@ -1,0 +1,25 @@
+import type { MessageKey } from './translations';
+const messages: Readonly<Record<string, MessageKey>> = {
+  INSUFFICIENT_ESSENCE: 'errorEssence',
+  INSUFFICIENT_CROWNS: 'errorCrowns',
+  INSUFFICIENT_KEYS: 'errorKeys',
+  INVALID_FORMATION: 'errorFormation',
+  UNIT_UNAVAILABLE: 'errorUnit',
+  EQUIPMENT_UNAVAILABLE: 'errorUnit',
+  STALE_PRICE: 'errorVersion',
+  STALE_TABLE: 'errorVersion',
+  STALE_CAMPAIGN: 'errorVersion',
+  STALE_WORKSHOP: 'errorVersion',
+  STALE_GRAPH: 'errorVersion',
+  STALE_GAME: 'errorVersion',
+  CLIENT_STORAGE: 'errorClientStorage',
+  UNKNOWN_COMMIT: 'errorUncertain',
+  NETWORK_ERROR: 'errorUncertain',
+  STORAGE: 'errorUncertain',
+  OPERATION_PENDING: 'errorPending',
+  OPERATION_CONFLICT: 'errorPending',
+  PLAYER_MISMATCH: 'errorSession',
+  UNAUTHORIZED: 'errorSession',
+  INVALID_SESSION: 'errorSession',
+};
+export const operationErrorKey = (code: string): MessageKey => messages[code] ?? 'errorReview';

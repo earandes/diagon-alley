@@ -6,6 +6,27 @@ __pycache__/
 node_modules/
 dist/
 test-results/
+test-results-arcana/
+test-results-arcana-journey/
+test-results-arcana-pwa/
 playwright-report/
 
 .playwright-cli/
+
+test-results-game-redesign/
+
+test-results-opening/
+
+test-results-art/
+
+test-results-experience/
+
+# A60 isolated browser evidence outputs
+test-results-pokelike/
+test-results-commerce-a60/
+
+# A63 isolated runners; selected evidence is retained under docs/arcana/.
+test-results-gameplay-a63*/
+test-results-profile-a63/
+test-results-preparation-a63/
+test-results-actions-a63/

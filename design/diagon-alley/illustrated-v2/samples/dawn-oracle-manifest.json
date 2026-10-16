@@ -1,0 +1,24 @@
+{
+  "id": "dawn-oracle",
+  "name": "Sybill Trelawney",
+  "master": "design/diagon-alley/illustrated-v2/samples/dawn-oracle.png",
+  "sha256": "c752b9fcf05297c8ca60c71221223f504a4c5f04a6737640b6c7ec10dd74e77e",
+  "seed": 58116,
+  "promptFile": "design/diagon-alley/illustrated-v2/prompts/dawn-oracle.txt",
+  "model": "mlx-community/flux2-klein-4b-4bit",
+  "modelRevision": "860e87183ceb29e39627c0612ebd66d8ea66e68c",
+  "steps": 4,
+  "guidance": 1.0,
+  "width": 768,
+  "height": 1024,
+  "generationSeconds": 33.64,
+  "loadSeconds": 0.74,
+  "tool": {
+    "mflux": "0.22.0",
+    "mlx": "0.32.4"
+  },
+  "cashCost": 0,
+  "generationMode": "offline local Metal text-to-image",
+  "gpuPeakMemoryBytes": 9421779488,
+  "status": "sample awaiting coordinator visual review"
+}

@@ -1,0 +1,58 @@
+{
+  "id": "character-storm-caller",
+  "identityId": "storm-caller",
+  "name": {
+    "es": "Invocadora de Tormentas",
+    "en": "Storm Caller"
+  },
+  "direction": "teatro-de-alquimia",
+  "version": "1",
+  "state": "reviewed-standalone-not-integrated",
+  "tool": "built-in imagegen",
+  "source": "master-v1.png",
+  "preparedAsset": "arena-master-v1.png",
+  "prompts": [
+    "prompt-v1.md"
+  ],
+  "references": [
+    "../../../concepts-2026-10-14/teatro-de-alquimia.png",
+    "../apprentice/arena-master-v1.png"
+  ],
+  "dimensions": [
+    1024,
+    1536
+  ],
+  "transparency": {
+    "mode": "RGBA",
+    "alphaMin": 0,
+    "alphaMax": 255,
+    "fullyTransparentPixels": 1030455,
+    "cornerAlpha": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "subjectBoundsAlphaGt20": [
+      123,
+      157,
+      900,
+      1379
+    ]
+  },
+  "preparation": "Deterministic LANCZOS resize 1024x1536 -> 860x1290, positioned [80,130] on transparent 1024x1536 canvas for >=10% safe margins. No painted changes. Source preserved.",
+  "crop": "none",
+  "pivotNormalized": [
+    0.5,
+    0.898
+  ],
+  "variants": [],
+  "sourceEditable": "Raster alpha master; no layers or rig",
+  "textAlternative": {
+    "es": "Invocadora de Tormentas, maga de trenzas largas y capa azul gris con nubes doradas, baston espiral y vara de bronce.",
+    "en": "Storm Caller, a long-braided mage in a blue-gray cloak with gold clouds, carrying a spiral staff and bronze rod."
+  },
+  "review": "Inspected original and prepared image. Tall athletic adult Black woman, proud expressive face and neat braids, blue-gray/ivory/gold storm-cloud costume distinct from other women. Natural complete hands/boots/staff/rod. Tiny energy spark confined to bronze rod, no large background effect. Teatro painterly coherence. Integration and actual miniature readability remain to be verified.",
+  "originalGenerationPath": "/Users/enricarandes/.codex/generated_images/01a13af8-fd53-7331-8146-bb20ec42fa6b/exec-4693d7cf-0530-4e16-94bc-0d39a426a7db.png",
+  "sha256": "e6d8ed874ee1992503301d4af7083a5e80cc2ba7857e1599944b07aed4eb6adb"
+}

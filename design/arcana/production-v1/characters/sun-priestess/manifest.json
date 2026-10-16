@@ -1,0 +1,52 @@
+{
+  "id": "character-sun-priestess",
+  "identityId": "sun-priestess",
+  "direction": "teatro-de-alquimia",
+  "version": "1",
+  "state": "reviewed-standalone-not-integrated",
+  "tool": "built-in imagegen",
+  "source": "master-v1.png",
+  "preparedAsset": "arena-master-v1.png",
+  "prompts": [
+    "prompt-v1.md"
+  ],
+  "references": [
+    "../dawn-oracle/arena-master-v1.png"
+  ],
+  "dimensions": [
+    1024,
+    1536
+  ],
+  "transparency": {
+    "mode": "RGBA",
+    "alphaMin": 0,
+    "alphaMax": 255,
+    "fullyTransparentPixels": 1070407,
+    "cornerAlpha": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "subjectBoundsAlphaGt20": [
+      190,
+      174,
+      847,
+      1359
+    ]
+  },
+  "preparation": "Deterministic LANCZOS resize1024x1536->819x1229,position102,154 on transparent1024x1536canvas for10%safe margins. Source preserved.",
+  "crop": "none",
+  "pivotNormalized": [
+    0.5,
+    0.885
+  ],
+  "variants": [],
+  "sourceEditable": "Raster alpha master; no layers or rig",
+  "textAlternative": {
+    "es": "Sacerdotisa Solar, maga de moño alto oscuro, manto ocre dorado con verde, broche solar, espejo de bronce y bastón.",
+    "en": "Sun Priestess, a mage with a high dark bun, a golden ochre and green mantle, sun clasp, bronze mirror and staff."
+  },
+  "review": "Inspected whitecomposite: recognizablestrongmatureBlackwomanface, coiledhighbun, dignifiedfullyclothedbody, warmochreforestrobes, solarstaffanddisc. ClearlydifferentfromwhitebraidroseDawnOracle. Fullhandsfeet/noletters. Realalpha confirmed. Nameverified. Actualthumbnail/mobileintegration pending.",
+  "sha256": "83d6145c32cd8ecc39cd3a0714a79480275046514495ab65680b0f651929b1d2"
+}

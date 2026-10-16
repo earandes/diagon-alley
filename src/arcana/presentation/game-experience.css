@@ -1,0 +1,444 @@
+/* A59: one continuous world, with chrome anchored above the play surface. */
+.game-shell {
+  --game-header: 68px;
+  --game-dock: 88px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: var(--game-header) auto;
+  background: none;
+}
+.game-shell > .game-header {
+  grid-area: 1 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: var(--game-header);
+  min-height: 0;
+  padding: 0 clamp(12px, 2vw, 32px);
+  background: linear-gradient(#080f1be6, #080f1b55);
+  z-index: 4;
+}
+.game-shell > .game-header h1 {
+  max-width: 230px;
+  font-size: clamp(0.8rem, 1.7vw, 1.05rem);
+  letter-spacing: 0.12em;
+}
+.game-shell > .hud {
+  grid-area: 1 / 1;
+  align-self: center;
+  justify-self: center;
+  z-index: 5;
+  margin: 0;
+  max-width: calc(100% - 370px);
+  height: 44px;
+  min-height: 44px;
+  border-radius: 22px;
+  padding: 4px 16px;
+  gap: 14px;
+  box-shadow: 0 4px 14px #0004;
+}
+.game-shell .game-world-backdrop {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-image:
+    linear-gradient(#070e1b66, #070e1b10 28%, #070e1b22 70%, #070e1b99), var(--scene-url);
+}
+.game-shell > main {
+  grid-row: 2;
+  width: 100%;
+  min-width: 0;
+  background: none;
+}
+.game-shell > .welcome {
+  border: 0;
+  border-radius: 0;
+  background: none;
+  min-height: calc(100dvh - var(--game-header));
+  padding: 14dvh 20px 11dvh;
+  justify-content: end;
+  gap: 24px;
+  text-align: center;
+}
+.game-shell[data-view='welcome'] {
+  height: 100dvh;
+  padding: 0;
+  grid-template-rows: var(--game-header) minmax(0, 1fr);
+}
+.game-shell .welcome h2 {
+  font-size: clamp(2.2rem, 6.3vw, 4.8rem);
+  font-weight: 500;
+  max-width: 900px;
+  margin: 0;
+  line-height: 1.15;
+  text-shadow:
+    0 4px 5px #000,
+    0 0 35px #080f1b;
+}
+.game-shell .portal-enter {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  min-height: 76px;
+  min-width: 200px;
+  padding: 6px 32px 6px 12px;
+  background: linear-gradient(135deg, #38291be6, #0b1a2aec);
+  border: 2px solid #dbb76d;
+  border-radius: 45px 9px 45px 9px;
+  box-shadow:
+    inset 0 0 0 4px #0a1220,
+    0 10px 30px #050a16bb;
+}
+.game-shell .portal-enter img {
+  width: 68px;
+  height: 68px;
+}
+.game-shell .portal-enter:hover:not(:disabled) {
+  background: linear-gradient(135deg, #4d3925f2, #172b3bec);
+  transform: translateY(-2px);
+}
+.game-shell .portal-enter:active:not(:disabled) {
+  transform: scale(0.98);
+}
+.scene-atmosphere {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  overflow: hidden;
+  contain: strict;
+}
+.scene-atmosphere > i {
+  display: block;
+  position: absolute;
+  pointer-events: none;
+}
+.scene-lamplight {
+  top: 15%;
+  width: min(280px, 35vw);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(#f8c57722, #e2a64209 40%, transparent 68%);
+  animation: lantern-breathe 6s ease-in-out infinite alternate;
+}
+.scene-lamplight-left {
+  left: -3%;
+}
+.scene-lamplight-right {
+  right: 2%;
+  top: 40%;
+  animation-delay: -3s;
+}
+.scene-mist {
+  bottom: -8%;
+  left: -12%;
+  width: 125%;
+  height: 22%;
+  background: radial-gradient(ellipse, #d7d6c00a, transparent 65%);
+  animation: alley-mist 18s ease-in-out infinite alternate;
+}
+.scene-mote {
+  bottom: 0;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: #f5d798;
+  opacity: 0;
+  animation: alley-mote 14s linear infinite;
+}
+.scene-atmosphere[data-running='false'] * {
+  animation-play-state: paused;
+}
+@keyframes lantern-breathe {
+  from {
+    opacity: 0.5;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes alley-mist {
+  from {
+    transform: translateX(-2%);
+    opacity: 0.3;
+  }
+  to {
+    transform: translateX(3%);
+    opacity: 0.8;
+  }
+}
+@keyframes alley-mote {
+  0% {
+    transform: translate(0, 0);
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.65;
+  }
+  85% {
+    opacity: 0.35;
+  }
+  100% {
+    transform: translate(24px, -75dvh);
+    opacity: 0;
+  }
+}
+/* Header, HUD and route now share the fixed scene; the map never paints another crop. */
+.game-shell.arcana-map-view {
+  grid-template-rows: var(--game-header) minmax(0, 1fr) var(--game-dock);
+}
+.game-shell.arcana-map-view > main {
+  grid-row: 2;
+  min-height: 0;
+}
+.game-shell.arcana-map-view > nav {
+  grid-row: 3;
+  height: var(--game-dock);
+  min-height: 0;
+}
+.game-shell.arcana-map-view .region-map-art,
+.game-shell.arcana-map-view .region-map-shade {
+  display: none;
+}
+.game-shell.arcana-map-view .expedition-heading {
+  top: 8px;
+  left: 18px;
+}
+.game-shell.arcana-map-view .expedition-heading h2 {
+  font-size: 0.95rem;
+  text-shadow: 0 2px 4px #000;
+}
+.game-shell.arcana-map-view .expedition-panel[data-map-phase='entry'] {
+  overflow: auto;
+}
+.game-shell.arcana-map-view .expedition-panel[data-map-phase='entry'] .expedition-heading {
+  position: relative;
+  top: auto;
+  left: auto;
+  right: auto;
+  transform: none;
+  margin: 0;
+  padding: 12px 24px;
+  min-height: 52px;
+}
+.game-shell.arcana-map-view .preparation-entry {
+  display: block;
+  background: none;
+  height: auto;
+  min-height: calc(100% - 52px);
+  padding: 0 16px 24px;
+  overflow: visible;
+}
+.game-shell .preparation-entry .expedition-preparation {
+  margin: 0 auto;
+}
+.game-shell .team-compact .team-prepare {
+  width: 48px;
+  min-width: 44px;
+  height: 52px;
+  padding: 5px;
+  margin: 0 0 0 8px;
+  border-left: 1px solid #bfa35d77;
+  align-self: center;
+}
+.game-shell .team-prepare img {
+  width: 38px;
+  height: 42px;
+  object-fit: contain;
+}
+.game-shell .team-prepare:not(:has(img)) .visually-hidden {
+  position: static;
+  width: auto;
+  height: auto;
+  clip-path: none;
+  font-size: 0.65rem;
+}
+.preparation-dialog {
+  width: min(1000px, calc(100vw - 24px));
+  max-width: none;
+  max-height: calc(100dvh - 24px);
+  padding: 0;
+  border: 0;
+  border-radius: 24px;
+  color: #fff0d0;
+  background: #101c2a;
+  overflow: auto;
+}
+.preparation-dialog::backdrop {
+  background: #060c19cf;
+}
+.preparation-dialog > .settings-trigger {
+  position: absolute;
+  top: 14px;
+  right: 60px;
+  z-index: 2;
+}
+.preparation-dialog .expedition-preparation > header {
+  padding-right: 50px;
+  background: none;
+}
+.preparation-dialog > [role='alert'] {
+  padding: 12px 24px;
+  margin: 0;
+  background: #482d31;
+}
+.game-shell .expedition-preparation > header {
+  background: none;
+  padding: 0;
+}
+.game-shell .preparation-dialog .expedition-preparation > header {
+  position: static;
+  padding-right: 100px;
+}
+.preparation-dialog .preparation-back {
+  position: absolute;
+  z-index: 3;
+  top: 14px;
+  right: 12px;
+}
+.game-shell > main:focus:not(:focus-visible) {
+  outline: none;
+}
+.game-shell:has(dialog[open]) .scene-atmosphere * {
+  animation-play-state: paused;
+}
+.game-shell .discovery-folio > h3 {
+  padding-inline: 30px;
+}
+@media (max-width: 580px) {
+  .game-shell .preparation-dialog .expedition-preparation > header {
+    padding: 48px 0 0;
+  }
+}
+.game-shell .map-node .node-icon {
+  filter: drop-shadow(0 3px 3px #000b);
+}
+.game-shell .map-node button .node-asset::after {
+  border-radius: 18px;
+}
+.game-shell .map-node button[data-node-state='available'] {
+  border-radius: 18px;
+}
+@media (max-width: 760px) {
+  .game-shell {
+    --game-header: 50px;
+    --game-dock: 78px;
+    grid-template-rows: var(--game-header) 44px auto;
+  }
+  .game-shell > .game-header {
+    grid-row: 1;
+    padding: 0 12px;
+  }
+  .game-shell > .game-header h1 {
+    max-width: calc(100% - 64px);
+    font-size: 0.85rem;
+  }
+  .game-shell > .hud {
+    grid-row: 2;
+    max-width: calc(100% - 20px);
+    height: 40px;
+    min-height: 40px;
+    padding: 3px 14px;
+    gap: 12px;
+    font-size: 0.8rem;
+  }
+  .game-shell > .hud .currency-icon,
+  .game-shell .key-balance img {
+    width: 26px;
+    height: 26px;
+  }
+  .game-shell .energy-status meter {
+    width: 42px;
+  }
+  .game-shell > main {
+    grid-row: 3;
+    padding: 12px;
+  }
+  .game-shell[data-view='welcome'] > main {
+    grid-row: 2;
+  }
+  .game-shell .welcome h2 {
+    font-size: clamp(2.2rem, 8.5vw, 3.7rem);
+  }
+  .game-shell.arcana-map-view {
+    grid-template-rows: var(--game-header) 44px minmax(0, 1fr) var(--game-dock);
+  }
+  .game-shell.arcana-map-view > main {
+    grid-row: 3;
+  }
+  .game-shell.arcana-map-view > nav {
+    grid-row: 4;
+  }
+  .game-shell.arcana-map-view .expedition-heading h2 {
+    font-size: 0.8rem;
+  }
+  .game-shell .preparation-entry {
+    padding: 0 8px 16px;
+  }
+}
+@media (max-width: 360px) {
+  .game-shell > .hud {
+    gap: 7px;
+    padding: 3px 10px;
+  }
+  .game-shell .energy-status meter {
+    width: 26px;
+  }
+  .game-shell .hud .energy-status {
+    gap: 0;
+  }
+}
+@media (max-height: 520px) and (orientation: landscape) {
+  .game-shell.arcana-map-view {
+    --game-header: 48px;
+    --game-dock: 54px;
+    grid-template-rows: 48px minmax(0, 1fr) 54px;
+  }
+  .game-shell.arcana-map-view > .hud {
+    grid-area: 1 / 1;
+    height: 36px;
+    min-height: 36px;
+    max-width: calc(100% - 290px);
+  }
+  .game-shell.arcana-map-view > main {
+    grid-row: 2;
+  }
+  .game-shell.arcana-map-view > nav {
+    grid-row: 3;
+  }
+  .game-shell > .game-header h1 {
+    font-size: 0.7rem;
+    max-width: 155px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .scene-atmosphere {
+    display: none;
+  }
+  .game-shell .portal-enter {
+    transition: none;
+    transform: none;
+  }
+}
+.game-shell[data-reduced='true'] .scene-atmosphere {
+  display: none;
+}
+.game-shell[data-reduced='true'] .portal-enter {
+  transform: none;
+}
+/* A60: preparation has one material case, shared by its content and top controls. */
+.game-shell dialog.preparation-dialog {
+  width: min(740px, calc(100vw - 24px));
+  max-width: calc(100vw - 24px);
+  padding: 0;
+  border: 0;
+  border-radius: 20px;
+  background: #0e1d29;
+}
+.game-shell .preparation-dialog .expedition-preparation {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+}

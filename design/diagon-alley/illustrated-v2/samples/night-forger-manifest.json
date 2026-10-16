@@ -1,0 +1,24 @@
+{
+  "id": "night-forger",
+  "name": "Rubeus Hagrid",
+  "master": "design/diagon-alley/illustrated-v2/samples/night-forger.png",
+  "sha256": "5f666478b2bd1228b0380a7c56e7a3c493e88581244d65b6bff7cc9082a42eae",
+  "seed": 58118,
+  "promptFile": "design/diagon-alley/illustrated-v2/prompts/night-forger.txt",
+  "model": "mlx-community/flux2-klein-4b-4bit",
+  "modelRevision": "860e87183ceb29e39627c0612ebd66d8ea66e68c",
+  "steps": 4,
+  "guidance": 1.0,
+  "width": 768,
+  "height": 1024,
+  "generationSeconds": 33.58,
+  "loadSeconds": 0.74,
+  "tool": {
+    "mflux": "0.22.0",
+    "mlx": "0.32.4"
+  },
+  "cashCost": 0,
+  "generationMode": "offline local Metal text-to-image",
+  "gpuPeakMemoryBytes": 9421779596,
+  "status": "sample awaiting coordinator visual review"
+}

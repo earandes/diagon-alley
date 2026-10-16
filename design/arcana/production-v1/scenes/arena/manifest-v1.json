@@ -1,0 +1,37 @@
+{
+  "id": "scene-arena",
+  "identity": "arena",
+  "function": "Duel stage backdrop with separate fighters/effects/DOM",
+  "version": 1,
+  "status": "visually-reviewed-source-awaiting-integration",
+  "author": "OpenAI built-in imagegen",
+  "tool": "image_gen.imagegen",
+  "prompt": "prompt-v1.md",
+  "references": [
+    "design/arcana/concepts-2026-10-14/teatro-de-alquimia.png",
+    "design/arcana/production-v1/scenes/confectionery/original-v1.png",
+    "design/arcana/production-v1/scenes/passage/original-v1.png"
+  ],
+  "original": "original-v1.png",
+  "availableSource": "Flattened raster PNG, no editable layers or rig",
+  "dimensions": {
+    "width": 1536,
+    "height": 1024
+  },
+  "crop": "Full image; wide floor safe for central mobile crop",
+  "pivot": {
+    "x": 0.5,
+    "y": 0.5
+  },
+  "variants": [],
+  "transparency": false,
+  "alt": {
+    "es": "Patio de duelo ilustrado al anochecer, con suelo de piedra vacío, arcos, enredaderas y faroles cálidos.",
+    "en": "Illustrated twilight dueling courtyard with an empty stone floor, arches, vines and warm lanterns."
+  },
+  "review": {
+    "date": "2026-10-14",
+    "observed": "No text/UI/fighters/projectiles. Wide open cobblestone floor fills lower half with low-contrast center. Side lanterns and botanical arches share selected visual language.",
+    "limits": "Team placement, responsive crop and DOM text contrast remain integration QA. Moon upper middle subdued; no controls painted into backdrop."
+  }
+}

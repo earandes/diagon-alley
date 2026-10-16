@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "status": "provisional",
+  "author": "Codex for ARCANA",
+  "tool": "Original procedural geometry; Node.js PNG encoding/zlib",
+  "references": [
+    "ARCANA interface colors, no copied illustration"
+  ],
+  "editableSource": "tools/arcana/pwa-build.ts",
+  "resources": [
+    {
+      "id": "arcana-pwa-icon-192",
+      "path": "dist/arcana-192.png",
+      "dimensions": "192x192",
+      "view": "PWA launcher icon",
+      "crop": "none",
+      "pivot": "center",
+      "alt": "ARCANA app icon; no functional text embedded",
+      "finalNeeded": "Original brand emblem reviewed in context"
+    },
+    {
+      "id": "arcana-pwa-icon-512",
+      "path": "dist/arcana-512.png",
+      "dimensions": "512x512",
+      "view": "PWA launcher icon",
+      "crop": "none",
+      "pivot": "center",
+      "alt": "ARCANA app icon; no functional text embedded",
+      "finalNeeded": "Original brand emblem reviewed in context"
+    }
+  ],
+  "transformations": "Opaque RGB rasterization of own circle/diamond geometry, centered within maskable safe area; two resolutions generated at build",
+  "permission": "Original coded composition; no external art or model call",
+  "replacementCriterion": "Reviewed original emblem, 192/512 real dimensions, safe mask area and same app behavior"
+}

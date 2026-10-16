@@ -1,0 +1,61 @@
+{
+  "id": "loot-chest",
+  "identity": "loot-chest",
+  "function": "Decorative existing confirmed chest/vault reward presentation; actual items shown from receipt",
+  "version": "1",
+  "status": "illustration-reviewed-runtime-framing-pending",
+  "path": "original-v1.png",
+  "author": "OpenAI integrated imagegen",
+  "tool": "image_gen.imagegen built-in",
+  "prompt": "prompt-v1.md",
+  "references": [
+    "../toad-box-base/original-v1.png"
+  ],
+  "provenance": "Original open obsidian-darkwood decorativelootchest illustration",
+  "sourceAvailable": "original-v1.png; prompt-v1.md",
+  "editableLayers": false,
+  "rig": false,
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "requestedDimensions": [
+    1024,
+    1024
+  ],
+  "crop": "full source preserved",
+  "pivot": [
+    0.5,
+    0.98
+  ],
+  "variants": [],
+  "transparency": {
+    "realAlpha": true,
+    "mode": "RGBA",
+    "range": [
+      0,
+      255
+    ],
+    "fullyTransparentPixels": 593032,
+    "totalPixels": 1572516,
+    "bodyBoundingBoxAlpha16": [
+      87,
+      31,
+      1228,
+      1238
+    ]
+  },
+  "alt": {
+    "es": "Cofre abierto de madera oscura y bandas doradas, con tela verde y algunas monedas sin inscripción.",
+    "en": "Open dark wood chest with gold bands, green cloth and a few unmarked coins."
+  },
+  "review": {
+    "visual": "Inspected originalopened darkwoodchest goldleafhardware creamlining greencloth andfewplainroundcoins. No unknownobjects, key, text/UI/scene. CoherentTeatrohandpainted containerfamily.",
+    "limitations": [
+      "Output1254square not1024requested.",
+      "Verysmallsafemarginright26/bottom16/top31pixels; rendererinsetrequired.",
+      "Coinsaredecorativeillustration andmustnotserveasamountorrolleditemevidence. ActualreceiptDOM authoritative.",
+      "Single flattenedopenchest raster; lidnotindependentmovablelayer and no rig."
+    ]
+  }
+}

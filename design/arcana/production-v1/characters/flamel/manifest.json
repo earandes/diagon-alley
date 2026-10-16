@@ -1,0 +1,54 @@
+{
+  "id": "character-flamel",
+  "identityId": "flamel",
+  "direction": "teatro-de-alquimia",
+  "version": "1",
+  "state": "reviewed-standalone-not-integrated",
+  "tool": "built-in imagegen",
+  "source": "master-v1.png",
+  "preparedAsset": "arena-master-v1.png",
+  "prompts": [
+    "prompt-v1.md"
+  ],
+  "references": [
+    "../../../concepts-2026-10-14/teatro-de-alquimia.png",
+    "../apprentice/arena-master-v1.png"
+  ],
+  "dimensions": [
+    1024,
+    1536
+  ],
+  "transparency": {
+    "mode": "RGBA",
+    "alphaMin": 0,
+    "alphaMax": 255,
+    "fullyTransparentPixels": 1085483,
+    "cornerAlpha": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "subjectBoundsAlphaGt20": [
+      189,
+      160,
+      836,
+      1376
+    ]
+  },
+  "preparation": "Deterministic LANCZOS resize 1024x1536 -> 870x1305, positioned [77,110] on transparent 1024x1536 canvas for >=10% safe margins. No painted changes. Source preserved.",
+  "crop": "none",
+  "pivotNormalized": [
+    0.5,
+    0.896
+  ],
+  "variants": [],
+  "sourceEditable": "Raster alpha master; no layers or rig",
+  "textAlternative": {
+    "es": "Flamel, alquimista calvo con gafas redondas, abrigo burdeos y ambar, frasco de laton y libro cerrado.",
+    "en": "Flamel, a balding alchemist with round spectacles, a burgundy and amber coat, a brass flask and closed book."
+  },
+  "review": "Inspected original and prepared image. Warm elderly clever face, round spectacles, salt-and-pepper stubble; burly practical proportions and burgundy/amber coat clearly distinguish from Merlin. Natural hands, complete feet, brass flask, blank book cover. Teatro painterly coherence. Integration and actual thumbnail readability remain to be verified.",
+  "originalGenerationPath": "/Users/enricarandes/.codex/generated_images/01a13af8-fd53-7331-8146-bb20ec42fa6b/exec-f08fbcfb-bcac-4b0a-9229-8d0f5c598f3a.png",
+  "sha256": "0929ae95023e4dfc0ea95ff2970db3587d37f07ccb5dfcdc6448bb28dcb0b26b"
+}

@@ -1,0 +1,380 @@
+
+> coleccion-magica-i1@0.1.0 test:e2e
+> playwright test --config playwright.trial.config.ts
+
+[WebServer] (node:41688) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:41745) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:41780) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:41810) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 76 tests using 1 worker
+
+(node:41824) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 [chromium] › tests/browser-trial/asset-interface.spec.ts:5:3 › A54 illustrated controls, preview and reduced motion es (826ms)
+  ✓   2 [chromium] › tests/browser-trial/asset-interface.spec.ts:5:3 › A54 illustrated controls, preview and reduced motion en (862ms)
+  ✓   3 [chromium] › tests/browser-trial/asset-interface.spec.ts:46:1 › A54 motion preference updates already mounted choices and missing art retains actions (1.1s)
+  ✘   4 [chromium] › tests/browser-trial/commerce.spec.ts:7:3 › forge, equip and spend a boss key atomically in es (31.4s)
+(node:42275) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘   5 [chromium] › tests/browser-trial/commerce.spec.ts:7:3 › forge, equip and spend a boss key atomically in en (31.2s)
+(node:42612) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   6 [chromium] › tests/browser-trial/game-feel.spec.ts:9:5 › A52 confirmed feedback and orientation es reduced=false (3.8s)
+  ✓   7 [chromium] › tests/browser-trial/game-feel.spec.ts:9:5 › A52 confirmed feedback and orientation es reduced=true (2.4s)
+  ✓   8 [chromium] › tests/browser-trial/game-feel.spec.ts:9:5 › A52 confirmed feedback and orientation en reduced=false (3.5s)
+  ✓   9 [chromium] › tests/browser-trial/game-feel.spec.ts:9:5 › A52 confirmed feedback and orientation en reduced=true (2.6s)
+  ✘  10 [chromium] › tests/browser-trial/hud-results.spec.ts:6:3 › authority HUD and boss result survives reload in es (30.7s)
+(node:42762) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  11 [chromium] › tests/browser-trial/hud-results.spec.ts:6:3 › authority HUD and boss result survives reload in en (30.4s)
+(node:42900) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  12 [chromium] › tests/browser-trial/journey.spec.ts:6:3 › local ARCANA journey and reload in es (15.1s)
+(node:43059) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  13 [chromium] › tests/browser-trial/journey.spec.ts:6:3 › local ARCANA journey and reload in en (9.6s)
+  ✓  14 [chromium] › tests/browser-trial/region-map.spec.ts:7:3 › A55 illustrated region and inspectable team es (3.3s)
+  ✓  15 [chromium] › tests/browser-trial/region-map.spec.ts:7:3 › A55 illustrated region and inspectable team en (3.2s)
+  ✓  16 [chromium] › tests/browser-trial/replay.spec.ts:25:1 › keeps the first available map node above the fixed navigation after starting (764ms)
+  ✓  17 [chromium] › tests/browser-trial/replay.spec.ts:36:1 › pause, Auto, 2x, language and skip only replay the committed log (4.9s)
+  ✓  18 [chromium] › tests/browser-trial/replay.spec.ts:63:1 › branching map and equivalent list keep identical accessible actions with WebGL absent (1.5s)
+  ✓  19 [chromium] › tests/browser-trial/replay.spec.ts:97:1 › measures real WebGL rendering and responsive layout, without attributing emulation to a phone (11.0s)
+  ✓  20 [chromium] › tests/browser-trial/replay.spec.ts:152:1 › skipping a GSAP reveal and changing language preserves the confirmed card without another POST (980ms)
+  ✓  21 [chromium] › tests/browser-trial/replay.spec.ts:173:1 › falls back to the static confirmed result after a WebGL context loss event without another operation (2.7s)
+  ✓  22 [chromium] › tests/browser-trial/replay.spec.ts:195:1 › keeps the card static and confirmed when the lazy GSAP asset is missing (866ms)
+  ✓  23 [chromium] › tests/browser-trial/team-beans.spec.ts:8:3 › Album discovery, preparation equipment and bean confirmation in es (6.0s)
+  ✓  24 [chromium] › tests/browser-trial/team-beans.spec.ts:8:3 › Album discovery, preparation equipment and bean confirmation in en (5.7s)
+  ✘  25 [chromium] › tests/browser-trial/visual-polish.spec.ts:9:1 › confirmed opening finishes, language does not replay it, and reload retains its real reward (6.2s)
+
+
+  1) [chromium] › tests/browser-trial/commerce.spec.ts:7:3 › forge, equip and spend a boss key atomically in es 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.click: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for getByRole('button', { name: 'Bazar', exact: true })
+
+
+      68 |       page.getByRole('heading', { name: en ? 'Combat Arena' : 'Arena de Combate', exact: true }),
+      69 |     ).toBeVisible();
+    > 70 |     await button('Bazar', 'Bazaar').click();
+         |                                     ^
+      71 |     await button('Bóvedas de Obsidiana', 'Obsidian Vaults').click();
+      72 |     const boss = await read();
+      73 |     expect(boss.inventory.goldKeys).toBe(1);
+        at /Users/enricarandes/work/diagon-alley/tests/browser-trial/commerce.spec.ts:70:37
+
+    Error Context: test-results-arcana-journey/commerce-forge-equip-and-spend-a-boss-key-atomically-in-es-chromium/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results-arcana-journey/commerce-forge-equip-and-spend-a-boss-key-atomically-in-es-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results-arcana-journey/commerce-forge-equip-and-spend-a-boss-key-atomically-in-es-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) [chromium] › tests/browser-trial/commerce.spec.ts:7:3 › forge, equip and spend a boss key atomically in en 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.click: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for getByRole('button', { name: 'Bazaar', exact: true })
+
+
+      68 |       page.getByRole('heading', { name: en ? 'Combat Arena' : 'Arena de Combate', exact: true }),
+      69 |     ).toBeVisible();
+    > 70 |     await button('Bazar', 'Bazaar').click();
+         |                                     ^
+      71 |     await button('Bóvedas de Obsidiana', 'Obsidian Vaults').click();
+      72 |     const boss = await read();
+      73 |     expect(boss.inventory.goldKeys).toBe(1);
+        at /Users/enricarandes/work/diagon-alley/tests/browser-trial/commerce.spec.ts:70:37
+
+    Error Context: test-results-arcana-journey/commerce-forge-equip-and-spend-a-boss-key-atomically-in-en-chromium/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results-arcana-journey/commerce-forge-equip-and-spend-a-boss-key-atomically-in-en-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results-arcana-journey/commerce-forge-equip-and-spend-a-boss-key-atomically-in-en-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  3) [chromium] › tests/browser-trial/hud-results.spec.ts:6:3 › authority HUD and boss result survives reload in es 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.click: Test timeout of 30000ms exceeded.
+    Browser logs:
+
+    <launching> /Users/enricarandes/Library/Caches/ms-playwright/chromium_headless_shell-1248/chrome-headless-shell-mac-arm64/chrome-headless-shell --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-edgeupdater --disable-extensions --disable-features=AvoidUnnecessaryBeforeUnloadCheckSync,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,BlockOriginHeaderModificationOnRedirect,Translate,AutoDeElevate,OptimizationHints,NetworkTimeServiceQuerying,AimEnabled,msForceBrowserSignIn,msEdgeUpdateLaunchServicesPreferredVersion --enable-features=CDPScreenshotNewSurface --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --disable-updater-scheduler --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --disable-infobars --disable-search-engine-choice-screen --disable-sync --enable-unsafe-swiftshader --headless --hide-scrollbars --mute-audio --blink-settings=primaryHoverType=2,availableHoverTypes=2,primaryPointerType=4,availablePointerTypes=4 --no-sandbox --user-data-dir=/var/folders/dk/8yh6f1md5gg6kfv98m1kpddm0000gn/T/playwright_chromiumdev_profile-1Myo6H --remote-debugging-pipe --no-startup-window
+    <launched> pid=42613
+    [pid=42613][err] [1016/014813.333665:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+    [pid=42613][err] [1016/014813.381384:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+    [pid=42613][err] [1016/014813.402527:INFO:CONSOLE:935] "[vite] connecting...", source: http://127.0.0.1:5370/@vite/client (935)
+    [pid=42613][err] [1016/014813.424921:INFO:CONSOLE:1048] "[vite] connected.", source: http://127.0.0.1:5370/@vite/client (1048)
+    [pid=42613][err] [1016/014813.614969:INFO:CONSOLE:15805] "%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold", source: http://127.0.0.1:5370/node_modules/.vite/deps/react-dom_client.js?v=14995402 (15805)
+    [pid=42613][err] [1016/014814.193820:ERROR:gpu/command_buffer/service/gl_utils.cc:431] [.WebGL-0x12403825000]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+    [pid=42613][err] [1016/014814.480049:INFO:CONSOLE:0] "[.WebGL-0x12403825000]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels", source: http://127.0.0.1:5370/#/map (0)
+    [pid=42613][err] [1016/014814.502074:ERROR:gpu/command_buffer/service/gl_utils.cc:431] [.WebGL-0x12403825000]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+    [pid=42613][err] [1016/014814.504063:INFO:CONSOLE:0] "[.WebGL-0x12403825000]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels", source: http://127.0.0.1:5370/#/map (0)
+    [pid=42613][err] [1016/014814.784628:ERROR:gpu/command_buffer/service/gl_utils.cc:431] [.WebGL-0x12403825000]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels
+    [pid=42613][err] [1016/014814.786292:INFO:CONSOLE:0] "[.WebGL-0x12403825000]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels", source: http://127.0.0.1:5370/#/map (0)
+    [pid=42613][err] [1016/014814.826711:ERROR:gpu/command_buffer/service/gl_utils.cc:431] [.WebGL-0x12403825000]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels (this message will no longer repeat)
+    [pid=42613][err] [1016/014814.829458:INFO:CONSOLE:0] "[.WebGL-0x12403825000]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels (this message will no longer repeat)", source: http://127.0.0.1:5370/#/map (0)
+    [pid=42613][err] [1016/014816.809184:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+    [pid=42613][err] [1016/014816.819394:INFO:CONSOLE:935] "[vite] connecting...", source: http://127.0.0.1:5370/@vite/client (935)
+    [pid=42613][err] [1016/014816.840523:INFO:CONSOLE:1048] "[vite] connected.", source: http://127.0.0.1:5370/@vite/client (1048)
+    [pid=42613][err] [1016/014816.966886:INFO:CONSOLE:15805] "%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold", source: http://127.0.0.1:5370/node_modules/.vite/deps/react-dom_client.js?v=14995402 (15805)
+    [pid=42613][err] [1016/014817.080731:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+    [pid=42613][err] [1016/014817.121010:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+    [pid=42613][err] [1016/014817.142131:INFO:CONSOLE:935] "[vite] connecting...", source: http://127.0.0.1:5370/@vite/client (935)
+    [pid=42613][err] [1016/014817.160377:INFO:CONSOLE:1048] "[vite] connected.", source: http://127.0.0.1:5370/@vite/client (1048)
+    [pid=42613][err] [1016/014817.297769:INFO:CONSOLE:15805] "%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold", source: http://127.0.0.1:5370/node_modules/.vite/deps/react-dom_client.js?v=14995402 (15805)
+    [pid=42613][err] [1016/014819.284607:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+    [pid=42613][err] [1016/014819.294082:INFO:CONSOLE:935] "[vite] connecting...", source: http://127.0.0.1:5370/@vite/client (935)
+    [pid=42613][err] [1016/014819.317985:INFO:CONSOLE:1048] "[vite] connected.", source: http://127.0.0.1:5370/@vite/client (1048)
+    [pid=42613][err] [1016/014819.442404:INFO:CONSOLE:15805] "%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold", source: http://127.0.0.1:5370/node_modules/.vite/deps/react-dom_client.js?v=14995402 (15805)
+    [pid=42613][err] [1016/014819.527504:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+    [pid=42613][err] [1016/014819.568318:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+    [pid=42613][err] [1016/014819.589389:INFO:CONSOLE:935] "[vite] connecting...", source: http://127.0.0.1:5370/@vite/client (935)
+    [pid=42613][err] [1016/014819.609661:INFO:CONSOLE:1048] "[vite] connected.", source: http://127.0.0.1:5370/@vite/client (1048)
+    [pid=42613][err] [1016/014819.757502:INFO:CONSOLE:15805] "%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold", source: http://127.0.0.1:5370/node_modules/.vite/deps/react-dom_client.js?v=14995402 (15805)
+    [pid=42613][err] [1016/014822.833025:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+    [pid=42613][err] [1016/014822.842435:INFO:CONSOLE:935] "[vite] connecting...", source: http://127.0.0.1:5370/@vite/client (935)
+    [pid=42613][err] [1016/014822.864049:INFO:CONSOLE:1048] "[vite] connected.", source: http://127.0.0.1:5370/@vite/client (1048)
+    [pid=42613][err] [1016/014822.984482:INFO:CONSOLE:15805] "%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold", source: http://127.0.0.1:5370/node_modules/.vite/deps/react-dom_client.js?v=14995402 (15805)
+    [pid=42613][err] [1016/014823.063207:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+    [pid=42613][err] [1016/014823.122125:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+    [pid=42613][err] [1016/014823.142787:INFO:CONSOLE:935] "[vite] connecting...", source: http://127.0.0.1:5370/@vite/client (935)
+    [pid=42613][err] [1016/014823.162423:INFO:CONSOLE:1048] "[vite] connected.", source: http://127.0.0.1:5370/@vite/client (1048)
+    [pid=42613][err] [1016/014823.324491:INFO:CONSOLE:15805] "%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold", source: http://127.0.0.1:5370/node_modules/.vite/deps/react-dom_client.js?v=14995402 (15805)
+    [pid=42613][err] [1016/014825.451634:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+    [pid=42613][err] [1016/014825.459555:INFO:CONSOLE:935] "[vite] connecting...", source: http://127.0.0.1:5370/@vite/client (935)
+    [pid=42613][err] [1016/014825.480770:INFO:CONSOLE:1048] "[vite] connected.", source: http://127.0.0.1:5370/@vite/client (1048)
+    [pid=42613][err] [1016/014825.582552:INFO:CONSOLE:15805] "%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold", source: http://127.0.0.1:5370/node_modules/.vite/deps/react-dom_client.js?v=14995402 (15805)
+    [pid=42613][err] [1016/014825.649505:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+    [pid=42613][err] [1016/014825.684303:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+    [pid=42613][err] [1016/014825.706584:INFO:CONSOLE:935] "[vite] connecting...", source: http://127.0.0.1:5370/@vite/client (935)
+    [pid=42613][err] [1016/014825.727763:INFO:CONSOLE:1048] "[vite] connected.", source: http://127.0.0.1:5370/@vite/client (1048)
+    [pid=42613][err] [1016/014825.882034:INFO:CONSOLE:15805] "%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold", source: http://127.0.0.1:5370/node_modules/.vite/deps/react-dom_client.js?v=14995402 (15805)
+    [pid=42613][err] [1016/014828.598457:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+    [pid=42613][err] [1016/014828.677781:INFO:CONSOLE:935] "[vite] connecting...", source: http://127.0.0.1:5370/@vite/client (935)
+    [pid=42613][err] [1016/014828.735853:INFO:CONSOLE:1048] "[vite] connected.", source: http://127.0.0.1:5370/@vite/client (1048)
+    [pid=42613][err] [1016/014828.760724:INFO:CONSOLE:15805] "%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold", source: http://127.0.0.1:5370/node_modules/.vite/deps/react-dom_client.js?v=14995402 (15805)
+    [pid=42613][err] [1016/014835.162734:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+    [pid=42613][err] [1016/014835.175236:INFO:CONSOLE:935] "[vite] connecting...", source: http://127.0.0.1:5370/@vite/client (935)
+    [pid=42613][err] [1016/014835.198909:INFO:CONSOLE:1048] "[vite] connected.", source: http://127.0.0.1:5370/@vite/client (1048)
+    [pid=42613][err] [1016/014835.318537:INFO:CONSOLE:15805] "%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold", source: http://127.0.0.1:5370/node_modules/.vite/deps/react-dom_client.js?v=14995402 (15805)
+    [pid=42613][err] [1016/014835.777800:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+    [pid=42613][err] [1016/014835.853525:INFO:CONSOLE:935] "[vite] connecting...", source: http://127.0.0.1:5370/@vite/client (935)
+    [pid=42613][err] [1016/014835.999081:INFO:CONSOLE:1048] "[vite] connected.", source: http://127.0.0.1:5370/@vite/client (1048)
+    [pid=42613][err] [1016/014836.181162:INFO:CONSOLE:15805] "%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold", source: http://127.0.0.1:5370/node_modules/.vite/deps/react-dom_client.js?v=14995402 (15805)
+    [pid=42613][err] [1016/014851.363997:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+    [pid=42613][err] [1016/014851.452179:INFO:CONSOLE:935] "[vite] connecting...", source: http://127.0.0.1:5370/@vite/client (935)
+    [pid=42613][err] [1016/014851.508375:INFO:CONSOLE:1048] "[vite] connected.", source: http://127.0.0.1:5370/@vite/client (1048)
+    [pid=42613][err] [1016/014851.551609:INFO:CONSOLE:15805] "%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold", source: http://127.0.0.1:5370/node_modules/.vite/deps/react-dom_client.js?v=14995402 (15805)
+    [pid=42613] <gracefully close start>
+    Call log:
+      - waiting for locator('.receipt-disclosure > summary')
+        - locator resolved to <summary aria-label="Resultado de nodo confirmado">…</summary>
+      - attempting click action
+        2 × waiting for element to be visible, enabled and stable
+          - element is not visible
+        - retrying click action
+        - waiting 20ms
+        2 × waiting for element to be visible, enabled and stable
+          - element is not visible
+        - retrying click action
+          - waiting 100ms
+        4 × waiting for element to be visible, enabled and stable
+          - element is not visible
+        - retrying click action
+          - waiting 500ms
+        2 × waiting for element to be visible, enabled and stable
+        - element was detached from the DOM, retrying
+          - locator resolved to <summary aria-label="Resultado de nodo confirmado">…</summary>
+        - attempting click action
+          - waiting for element to be visible, enabled and stable
+          - element is not visible
+        - retrying click action
+          - waiting for element to be visible, enabled and stable
+          - element is not visible
+        - retrying click action
+          - waiting 20ms
+          - waiting for element to be visible, enabled and stable
+          - element is not visible
+        - retrying click action
+          - waiting 100ms
+          - waiting for element to be visible, enabled and stable
+          - element is not visible
+        - retrying click action
+          - waiting 100ms
+        28 × waiting for element to be visible, enabled and stable
+           - element is not visible
+         - retrying click action
+           - waiting 500ms
+        - waiting for element to be visible, enabled and stable
+      - element was detached from the DOM, retrying
+        - locator resolved to <summary aria-label="Resultado de nodo confirmado">…</summary>
+      - attempting click action
+        2 × waiting for element to be visible, enabled and stable
+          - element is not visible
+        - retrying click action
+        - waiting 20ms
+        2 × waiting for element to be visible, enabled and stable
+          - element is not visible
+        - retrying click action
+          - waiting 100ms
+        8 × waiting for element to be visible, enabled and stable
+          - element is not visible
+        - retrying click action
+          - waiting 500ms
+        - waiting for element to be visible, enabled and stable
+
+
+      116 |     ).toBeVisible();
+      117 |     await button('Volver al mapa', 'Back to map').click();
+    > 118 |     await page.locator('.receipt-disclosure > summary').click();
+          |                                                         ^
+      119 |     const result = page.getByRole('region', {
+      120 |       name: en ? 'Confirmed node result' : 'Resultado de nodo confirmado',
+      121 |       exact: true,
+        at /Users/enricarandes/work/diagon-alley/tests/browser-trial/hud-results.spec.ts:118:57
+
+    Error Context: test-results-arcana-journey/hud-results-authority-HUD--82584-esult-survives-reload-in-es-chromium/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results-arcana-journey/hud-results-authority-HUD--82584-esult-survives-reload-in-es-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results-arcana-journey/hud-results-authority-HUD--82584-esult-survives-reload-in-es-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  4) [chromium] › tests/browser-trial/hud-results.spec.ts:6:3 › authority HUD and boss result survives reload in en 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.click: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for locator('[data-pact-action="recruit"]')
+        - locator resolved to <button type="button" aria-label="Recruit" data-pact-action="recruit" class="node-pact-action node-pact-primary">…</button>
+      - attempting click action
+        2 × waiting for element to be visible, enabled and stable
+          - element is not stable
+        - retrying click action
+        - waiting 20ms
+        - waiting for element to be visible, enabled and stable
+      - element was detached from the DOM, retrying
+
+
+       at route-helpers.ts:17
+
+      15 |   if (await directRecruit.count()) {
+      16 |     await expect(directRecruit).toBeEnabled();
+    > 17 |     await directRecruit.click();
+         |                         ^
+      18 |   } else {
+      19 |     const confirm = page.locator('.node-confirm-action');
+      20 |     const pass = page.locator('[data-preparation="pact"] [data-visual-value="pass"]');
+        at confirmEvent (/Users/enricarandes/work/diagon-alley/tests/browser-trial/route-helpers.ts:17:25)
+        at /Users/enricarandes/work/diagon-alley/tests/browser-trial/hud-results.spec.ts:65:7
+
+    Error Context: test-results-arcana-journey/hud-results-authority-HUD--35a58-esult-survives-reload-in-en-chromium/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results-arcana-journey/hud-results-authority-HUD--35a58-esult-survives-reload-in-en-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results-arcana-journey/hud-results-authority-HUD--35a58-esult-survives-reload-in-en-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  5) [chromium] › tests/browser-trial/journey.spec.ts:6:3 › local ARCANA journey and reload in es ──
+
+    Error: expect(locator).toHaveAttribute(expected) failed
+
+    Locator: locator('[data-opening-state]')
+    Expected: "result"
+    Timeout: 10000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toHaveAttribute" locator('[data-opening-state]') with timeout 10000ms
+      - waiting for locator('[data-opening-state]')
+        7 × locator resolved to <dialog open="" class="reveal" data-rarity="epic" data-reveal-magic="still" data-opening-state="playing" aria-label="Cromo confirmado">…</dialog>
+          - unexpected value "playing"
+
+
+      100 |       }),
+      101 |     ).toBeVisible();
+    > 102 |     await expect(page.locator('[data-opening-state]')).toHaveAttribute(
+          |                                                        ^
+      103 |       'data-opening-state',
+      104 |       'result',
+      105 |       { timeout: 10_000 },
+        at /Users/enricarandes/work/diagon-alley/tests/browser-trial/journey.spec.ts:102:56
+
+    Error Context: test-results-arcana-journey/journey-local-ARCANA-journey-and-reload-in-es-chromium/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results-arcana-journey/journey-local-ARCANA-journey-and-reload-in-es-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results-arcana-journey/journey-local-ARCANA-journey-and-reload-in-es-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  6) [chromium] › tests/browser-trial/visual-polish.spec.ts:9:1 › confirmed opening finishes, language does not replay it, and reload retains its real reward 
+
+    Test was interrupted.
+
+    Error: locator.click: Test ended.
+    Call log:
+      - waiting for locator('dialog.game-settings[open]').getByRole('button', { name: 'Español', exact: true })
+        - locator resolved to <button aria-pressed="false">…</button>
+      - attempting click action
+        - waiting for element to be visible, enabled and stable
+
+
+       at game-fixture.ts:53
+
+      51 |   await settings
+      52 |     .getByRole('button', { name: language === 'es' ? 'Español' : 'English', exact: true })
+    > 53 |     .click();
+         |      ^
+      54 |   await expect(page.locator('html')).toHaveAttribute('lang', language);
+      55 |   await settings
+      56 |     .getByRole('button', { name: language === 'es' ? 'Cerrar' : 'Close', exact: true })
+        at changeLanguage (/Users/enricarandes/work/diagon-alley/tests/browser-trial/game-fixture.ts:53:6)
+        at /Users/enricarandes/work/diagon-alley/tests/browser-trial/visual-polish.spec.ts:31:3
+
+    Error Context: test-results-arcana-journey/visual-polish-confirmed-op-a6dd7-oad-retains-its-real-reward-chromium/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results-arcana-journey/visual-polish-confirmed-op-a6dd7-oad-retains-its-real-reward-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results-arcana-journey/visual-polish-confirmed-op-a6dd7-oad-retains-its-real-reward-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  5 failed
+    [chromium] › tests/browser-trial/commerce.spec.ts:7:3 › forge, equip and spend a boss key atomically in es 
+    [chromium] › tests/browser-trial/commerce.spec.ts:7:3 › forge, equip and spend a boss key atomically in en 
+    [chromium] › tests/browser-trial/hud-results.spec.ts:6:3 › authority HUD and boss result survives reload in es 
+    [chromium] › tests/browser-trial/hud-results.spec.ts:6:3 › authority HUD and boss result survives reload in en 
+    [chromium] › tests/browser-trial/journey.spec.ts:6:3 › local ARCANA journey and reload in es ───
+  1 interrupted
+    [chromium] › tests/browser-trial/visual-polish.spec.ts:9:1 › confirmed opening finishes, language does not replay it, and reload retains its real reward 
+  51 did not run
+  19 passed (3.7m)

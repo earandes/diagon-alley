@@ -1,0 +1,52 @@
+{
+  "id": "character-root-speaker",
+  "identityId": "root-speaker",
+  "direction": "teatro-de-alquimia",
+  "version": "1",
+  "state": "reviewed-standalone-not-integrated",
+  "tool": "built-in imagegen",
+  "source": "master-v1.png",
+  "preparedAsset": "arena-master-v1.png",
+  "prompts": [
+    "prompt-v1.md"
+  ],
+  "references": [
+    "../mist-seer/arena-master-v1.png"
+  ],
+  "dimensions": [
+    1024,
+    1536
+  ],
+  "transparency": {
+    "mode": "RGBA",
+    "alphaMin": 0,
+    "alphaMax": 255,
+    "fullyTransparentPixels": 1080922,
+    "cornerAlpha": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "subjectBoundsAlphaGt20": [
+      202,
+      156,
+      846,
+      1339
+    ]
+  },
+  "preparation": "Deterministic LANCZOS resize1024x1536->819x1229,position102,154 on transparent1024x1536canvas for10%safe margins. Source preserved.",
+  "crop": "none",
+  "pivotNormalized": [
+    0.5,
+    0.872
+  ],
+  "variants": [],
+  "sourceEditable": "Raster alpha master; no layers or rig",
+  "textAlternative": {
+    "es": "Orador de las Raíces, anciano de cabello gris recogido, capas verde salvia y marrón, broche de raíz y bastón tallado.",
+    "en": "Root Speaker, an elder with tied grey hair, sage and brown layers, a root brooch and carved wooden staff."
+  },
+  "review": "Inspected whitecomposite: dignifiedwrinkledwarmface,stronggroundedstance, simplewoodbeads/herbpouches/rootbrooch, sagebrowncloth androotstaff coherent. Fullhandsfeet/noletters. Realalpha confirmed. Nameverified. Actualthumbnail/mobileintegration pending.",
+  "sha256": "2c01a58fc8b632eb38c29b55569e290ff39812bc158587bbed571ac1605c3dec"
+}

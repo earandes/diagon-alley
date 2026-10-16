@@ -1,0 +1,93 @@
+# Diagon Alley / ARCANA · Callejón de maravillas
+
+A60 ·15 octubre2026. [Recorridos, recursos y animación vigente](docs/arcana/pokelike-2026-10-15/REPORT.md). Dirección de producto actual: Harry Potter / Diagon Alley principal, ARCANA intercambiable desde Ajustes. [Contrato](docs/arcana/annotations-2026-10-15/CONTRACT.md). [Diseño anterior conservado](docs/arcana/diagon-game-redesign-2026-10-15/DESIGN-before-A57.md). Interacción revisada desde16anotaciones en el [informe A59](docs/arcana/annotations-2026-10-15/REPORT.md). Personajes y apertura del [informe A58](docs/arcana/illustrated-assets-2026-10-15/REPORT.md); antecedente de rediseño en el [informe A57](docs/arcana/diagon-game-redesign-2026-10-15/REPORT.md); sin publicación o aceptación humana de retención.
+
+## Mundo y composición
+
+Un callejón ilustrado ocupa la superficie del juego. El HUD de monedas/energía/llaves y los objetos de navegación acompañan el escenario. Inicio como entrada, mapa como tablero, tienda como mostrador, álbum como colección material, taller como mesa y bóveda como cerradura/recompensa. Una sola región jugable. El progreso de las regiones futuras se presenta honestamente a demanda.
+
+Tres estudios comparados en [design/diagon-alley](design/diagon-alley/README.md): Callejón de maravillas, Atlas del merodeador y Maravilla del dulcero. Selección de ingeniería/dirección dentro de la delegación actual de Enric: primero, con el protagonismo del producto reservado al mostrador. No son tres pruebas de usuarios o capturas del juego.
+
+| Token | Diagon Alley | ARCANA |
+|---|---|---|
+| Fondo | #101b2c | #0d211f |
+| Superficie de lectura | #172539 | #17322d |
+| Tinta | #fff0d0 | #f3e7cb |
+| Oro | #e0b75d | #d8b86f |
+| Papel / tinta | #ead7ac / #392619 | #ead9b5 / #332a1d |
+| Foco | #a7e8ed | #8be2d0 |
+| Rival | #3a2132 | #40272a |
+
+Fuente runtime de color: cada `content-packs/*/pack.json`. Cinzel variable local para títulos/marca, Georgia de fallback; system-ui funcional y cifras tabulares. Archivo oficial Google Fonts/Cinzel con SIL OFL conservada en presentation/fonts. No fuentes o IA de terceros en runtime.
+
+Capas: escenario y viñeta, ruta/render Pixi, objetos interactivos DOM, HUD/navegación, preparación con foco protegido, apertura modal y Ajustes en top layer. Objetos de navegación44px o más; el destino activo combina posición/marco/contraste y nombre. Mapa completo sin scroll ordinario; ayuda/lista equivalente, álbum y acceso con texto ampliado pueden desplazarse. El tamaño del contenido se adapta, no se oculta overflow para simular cumplimiento.
+
+## Texto y acciones
+
+Texto breve por defecto: nombres, cantidades, coste y estados críticos. Ayuda, reglas, stats y probabilidades a demanda. Idioma exclusivamente en Ajustes, también cuando se abre desde una preparación o revelación modal. Ningún textbox/checkbox/select en el recorrido. Los objetos siguen siendo botones semánticos con nombre es/en, foco y operación por teclado/toque; el drag no es requisito.
+
+El Callejón presenta tres fachadas pintadas tocables hacia Dulcería/Ollivanders/Gringotts y vuelta al exterior. En móvil, la calle admite desplazamiento horizontal nativo, foco/Tab y puerta vecina visible. ARCANA conserva su presentación equivalente. La tienda permite seleccionar sin gasto y muestra una acción principal según producto/stock. Rana sin stock: Comprar y abrir con precio explícito en un ticket; una única transacción confirma compra, consumo y copia antes de animar. Rana poseída: Abrir1, sin coste extra y sin compra competidora. Grageas: compra al precio vigente; con stock la acción principal es Preparar equipo, la compra adicional queda secundaria. Su información se consulta junto al frasco; los sabores permanecen en el álbum. Las probabilidades y botines se consultan en libros; la bóveda utiliza puerta/cerradura/llave y confirmación real. No se consume al visitar o animar. El coste no se oculta por hacer la interfaz más visual. El álbum muestra cuatro cartas por página con descubiertos primero, filtros en cajón a demanda y navegación que no modifica inventario. Distingue identidades y copias; no añade trueque. El álbum solo consulta y descubre; configuración de copias/varitas/escobas pasa a preparación. Antes de iniciar el mapa hay puestos vacíos y elección local explícita de copias disponibles. El kit guardado no se sustituye por personajes gratuitos. Confirmar inicia la run; durante la ruta, preparación a demanda con propios/temporales separados y PV/PM guardados de miembros/reservas. Equipar es una orden persistente independiente; cerrar un borrador no revierte equipo ya confirmado. Los temporales conservan emblema y ayuda distintos a las copias propias. Los resultados se anuncian una sola vez por operación confirmada. La confirmación de compra/equipo aparece como objeto/cifra/sello compacto; detalle textual al desplegar, sin banner de párrafo por defecto.
+
+## Assets y calidad actual
+
+Paquete Diagon:165 roles,126 propios y39 compartidos explícitamente desde ARCANA; algunos roles son alias de una misma fuente. [Manifest y fuentes](design/diagon-alley/illustrated-v2/README.md). Caja pentagonal con modelo Blender editable y piezas alineadas768×768; rana raster alpha, props/fondos y efectos conservados.
+
+Treinta personajes pintados nuevos sustituyen a la familia vectorial A57. Luz ámbar lateral, sombras ciruela/índigo, textura de papel/pincel y volumen en piel, telas y metales. Edades, proporciones, peinados y accesorios diferenciados. Noventa WebP por función: retrato512×640 con fondo pintado, figura342×428 alpha con ajuste proporcional y margen, miniatura96×120 centrada en rostro. No se utiliza la figura encogida como miniatura ni se estira el maestro. Sombreros, coronillas y barbas se revisan en los archivos finales y en cartas reales.
+
+Maestros PNG, prompts/seeds, revisión fija del modelo, variantes aceptadas/rechazadas, máscaras y crops se conservan. La cicatriz de Harry tiene retoque SVG editable. Las escenas siguen siendo raster planos y los personajes no tienen rig; la caja sí posee piezas geométricas independientes. Seis nuevos objetos regionales SVG conservan simplificación para leer a44px: varitas/caldero/baúl/carta-retrato/invitación/máscara. Tres fachadas nuevas430×574 suman132.282bytes; fuentes/prompts/crops/licencias registrados en design/diagon-alley/annotations-a59. Un único fondo continuo une header/HUD/mapa; se retira el segundo recorte de paisaje del mapa. [Inventario secundario](design/diagon-alley/illustrated-v2/SECONDARY-ASSETS.md). Las fuentes vectoriales A57 quedan históricas, sin selección para personajes del paquete actual. Producción local gratuita, sin IA en runtime. Inspección de acabado del integrador y revisor técnico; la preferencia estética del propietario no se inventa.
+
+La ausencia de un asset conserva nombre/acción; un fallo de URL no oculta la imagen diferente al hacer swap. Fuentes editables y manifests están fuera de la autoridad económica. No se genera arte durante aperturas.
+
+## Movimiento
+
+| Evento | Coreografía | Final / cancelación |
+|---|---|---|
+| Pulsación/selección | Respuesta breve120–200ms; elemento vuelve a reposo | Selección local no escribe; reducir movimiento elimina traslación/escala |
+| Navegación | Objeto activo elevado5px con nombre/contraste | Sin entrada idéntica en cada pantalla; posición estática en reducido |
+| Apertura confirmada | ~3.7s: caja anticipa, sello sale, tapa abre, rana salta/aterriza/escapa, dorso emerge/gira y aparece cromo | Omitir/reducido/error GSAP deja resultado estático; cerrar/Escape no altera entrega |
+| Magia de apertura |24 chispas Canvas2D durante3.2s, dos sprites de brillo pintados una vez; trayectorias visuales deterministas | rAF para al acabar/ocultarse/reducir/desmontar; no azar económico ni sonido |
+| Descubrimiento nuevo | Cuatro recetas de rareza: foil/hoja/estrella/sol, crema-oro/verdiazul/amatista/oro,8/14/20/28partículas y halo proporcional;≤1800ms postreceipt | No se repite por idioma/swap; omisión/reducido sin partículas o celebración diferida |
+| Ambiente | Dos halos, bruma y seis motas con CSS transform/opacity; sin loop JS o vídeo | No se monta en reducido; pausa al ocultar documento o abrir modal |
+| Combate | Reproducción del BattleLog real con proyectiles/impactos y controles compactos | Pausa/2x/Auto/omitir mantienen resultado y frame; ningún daño calculado en renderer |
+| Recibo de equipo/compra | Motion mini/WAAPI breve postconfirmación | Cancela al cambiar receipt, reducir movimiento o desmontar |
+| Consulta de aliado | Ficha estática por hover/foco/toque | Escape/toque fuera devuelve foco; sin animación/ticker de lectura |
+
+Los diálogos apilados consumen Escape únicamente en el superior y devuelven el foco a su origen: cerrar Ajustes conserva la preparación o revelación que estaba debajo. La apertura protege foco con diálogo nativo; sus imágenes/canvas no interceptan clics. La omisión no consume otra rana. GSAP controla piezas; Canvas2D controla chispas de apertura; Pixi mapa/arena; Motion controla feedback DOM. Nunca dos librerías sobre la misma propiedad. El efecto no arranca otro contexto WebGL/filtro ni precalienta al comprar. El encuadre de retrato Diagon conserva margen superior bajo el marco para sombreros. No audio añadido, shake global o flashes. Preferencia propia y sistema prevalecen sobre efectos.
+
+## Progreso y siguiente objetivo
+
+Ruta, recursos, propiedad, jefe/llave y recetas siguen en autoridad. El archivador de viaje enlaza exploración, colección y bóveda con el siguiente destino existente; no fabrica regiones desbloqueadas. El mostrador muestra saldo/precio/unidades antes de gastar.
+
+La colección de sabores deriva de activaciones propias válidas en receipts de combate, asociadas a Grageas realmente consumidas. Cuatro sabores actuales: menta, pimienta, tierra y jabón. Compra o asignación sin activación no descubre, una derrota confirmada sí conserva el sabor probado. Recarga/replay/swap recuperan el registro desde la misma fuente sin migración, regalos o segunda autoridad. Nuevos sabores/efectos/pesos son contenido futuro por decidir, no se fingen slots ya jugables.
+
+El deseo de continuar es hipótesis: próxima sesión humana debe observar comprensión del origen temporal/propio, ruta/preparación, utilidad de copias y motivo para descubrir otra carta/sabor. No confundir pruebas automáticas, mocks o preferencias del propietario con retención observada.
+
+## Swap y garantías
+
+`setContentPack` cambia únicamente preferencia local y binding de presentación; no API, recarga o nueva operación. Mismos IDs/snapshots/versiones/monedas/equipo. Etiquetas HP no afirman que se haya migrado el inventario a otro catálogo. Cambiar de pack reconstruye renderer visual con el frame actual, conservando BattleReplay. Preferencia bloqueada sigue funcionando en sesión.
+
+PWA toma nombre/iconos del default del build; el swap no renombra una instalación previa del sistema. El build dual autorizado contiene ambas presentaciones y no pasa por artefacto exclusivamente ARCANA. Scanner estricto ARCANA sigue disponible; ambos modos excluyen firmas del prototipo histórico I1.
+
+Aceptación WCAG2.2AA, móvil físico/lector y atractivo final pendientes de sus pruebas. [Contrato/evidencia vigente](docs/arcana/annotations-2026-10-15/CONTRACT.md). Separar unitarios, SQL/Redis reales, navegador técnico independiente, capturas/composiciones y observación humana.
+
+## Incremento A60 · Decisiones cortas y objetos legibles
+
+[Análisis del referente](docs/arcana/pokelike-2026-10-15/POKELIKE-ANALYSIS.md). El inicio es un marcador no interactivo con retrato del líder, fuera del grafo autoritativo; el primer pacto sigue siendo un evento real. Seis medallones opacos con silueta propia, relieve, marco y contraste separan cada acción del paisaje. Ruta alcanzable y visitas combinan enlaces, estado y símbolo; no dependen solo del color. La pulsación de próximo destino termina en1,8s; reducido deja el marco estático.
+
+Pacto con plaza: Reclutar o Pasar ejecuta directamente la opción explícita, respetando sus restricciones; reemplazo con equipo completo mantiene elección/confirmación. Los otros eventos tienen acciones nombradas (Abrir cofre/Iniciar duelo/etc.), botín visible y cierre independiente. Si el contenido público antiguo no trae planes de nodo, se conserva la confirmación compatible. El cierre no consume.
+
+Preparación: cinco puestos y cromos centrados, propios/temporales con borde y reloj; PV/PM por hover/foco y ficha/equipo con medallón de información. Inspector nativo, Escape y foco vuelven al origen. No panel lateral de estadísticas permanente. La caja exterior se ajusta al mismo ancho del contenido, máximo740px. Equipar sigue siendo una escritura explícita independiente; una consulta no escribe.
+
+La revelación sustituye el portal suelto por un grabado SVG propio detrás de la carta:4/8/12/16rayos por rareza, corona en legendario, paletas crema/oro, esmeralda, violeta y oro. La celebración8/14/20/28partículas permanece dentro del escenario de apertura. Grabado≤1,4s, sello de rango600ms y estrellas650ms con desfase160ms; sin loops posteriores. Conserva chispas Canvas2D y coreografía GSAP~3,7s. Omitir/reducido ofrece resultado estático; idioma/swap no repiten magia. No contextos WebGL, filtros, audio o assets nuevos en runtime.
+
+Los vectores RevealTheatre/ShopExit y superficies CSS son fuentes editables propias; no se importan recursos de PokéLike. Procedencia y límites en el informe A60. Hipótesis de duplicados/XP/costes están documentadas sin aplicarse; no se presenta una bolsa inexistente ni una gragea comprada como sabor descubierto.
+
+## Incremento A63 · Cerrar, comprender y preparar
+
+Cierre propio con resultado y objetos ganados, destino principal por stock real y nueva formación explícita. La escena de cierre sustituye0/5; no elimina el receipt. «Tu recorrido» conserva compañeros/procedencia y registro. Tras usar llave/rana, la orientación se recalcula sin volver a conceder premios.
+
+Arena con dos bandos simultáneos de3–5 figuras/PV, ordinales, actor/objetivo y delta local; PM, afinidad y gear a consulta. Barra Pausa/Auto/2x/Omitir, libro, salida explícita y wallet consultable con saldo actual. Dock fuera de arena. Resultado neutral hasta final/omisión, aunque el commit económico ya ocurrió. Figuras se ajustan a geometría DOM medida; no se ocultan participantes. Texto ampliado/inspectores pueden desplazarse.
+
+Preparación agrupa puestos ocupados, retratos propios/temporales y objetos. Tarro único→portador, borrar/mover por el mismo gesto; barra de confirmación adherida al desplegar grageas. Sinergias y comparadores de equipo usan reglas compartidas y condición registrada. La tienda orienta a preparación real, sin elegir ramas automáticamente. Equipo guardado y borrador de grageas tienen consecuencias y mensajes distintos.
+
+Movimiento: llegada de botín340ms ease-out Y8px; selección140ms Y≤2px; delta300ms Y5px. Reducido estático, sin loops nuevos, shake/flashes o audio. Apertura existente sin rehacer; resultado guardado antes de todo efecto. [Guion completo](docs/arcana/gameplay-increment-2026-10-16/MOTION.md), [interacciones](docs/arcana/gameplay-increment-2026-10-16/INTERACTIONS.md), [capturas](docs/arcana/gameplay-increment-2026-10-16/GALLERY.md). Arte y licencias previos conservados, sin nuevos assets pagados. Comprensión/diversión siguen hipótesis hasta sesión humana.

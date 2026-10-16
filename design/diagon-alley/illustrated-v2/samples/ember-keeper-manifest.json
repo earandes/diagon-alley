@@ -1,0 +1,24 @@
+{
+  "id": "ember-keeper",
+  "name": "Ron Weasley",
+  "master": "design/diagon-alley/illustrated-v2/samples/ember-keeper.png",
+  "sha256": "95754f0910801ebb89da6ec5b51ee72668113d92cddf623a23cfad0d5af07a60",
+  "seed": 58107,
+  "promptFile": "design/diagon-alley/illustrated-v2/prompts/ember-keeper.txt",
+  "model": "mlx-community/flux2-klein-4b-4bit",
+  "modelRevision": "860e87183ceb29e39627c0612ebd66d8ea66e68c",
+  "steps": 4,
+  "guidance": 1.0,
+  "width": 768,
+  "height": 1024,
+  "generationSeconds": 31.27,
+  "loadSeconds": 0.74,
+  "tool": {
+    "mflux": "0.22.0",
+    "mlx": "0.32.4"
+  },
+  "cashCost": 0,
+  "generationMode": "offline local Metal text-to-image",
+  "gpuPeakMemoryBytes": 9421779128,
+  "status": "sample awaiting coordinator visual review"
+}

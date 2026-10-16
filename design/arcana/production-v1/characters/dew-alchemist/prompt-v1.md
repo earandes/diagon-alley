@@ -1,0 +1,8 @@
+Use case: illustration-story.
+Asset type: ARCANA original Dew Alchemist identityId dew-alchemist (Alquimista del Rocío), single full-body alpha master.
+Reference1 selected Teatro de alquimia concept painted style only; Reference2 apprentice matching technique only, not identity/costume. Warm realistic hand-painted theatrical gouache, fine fabric, amber/copper details and lifelike expressive human faces.
+Subject: young adult man around twenty-eight, light olive freckled skin, short curly blond hair, fresh gentle intelligent face, clean shaven. Distinct from auburn apprentice, Copper Sage and herbalist. Tailored mint/sage-green alchemist coat with copper seams and small botanical brooch over a pale cream vest and shirt, practical deep olive trousers, brown leather shoes. He gently holds a small round clear glass flask of pale dew in BOTH natural hands at waist/chest, realistic fingers and glass refraction. Simple wooden wand tucked safely into belt, no tall staff. No extra herb bundle or book.
+Pose: broad frontal three-quarter fullbody stance, relaxed welcoming gentle expression, believable anatomy, clear compact silhouette. Both complete feet, hands, flask, hair and coat visible.
+Composition nominal1024x1536portrait, one figure with all props entirely in central80%, transparent empty >=10% safety margins all four edges, no cropping.
+Color/material: mint/sage, pale cream, copper seams, subtle warm amber highlights, translucent dew flask readable, finely painted theatrical realism matching reference.
+True transparent alpha output; no background, no floor, no castshadow plate, no halo/glow behind figure. No text, lettering, numbers, UI, card, frame, logo, watermark, franchise/film likeness, collage or sheet. One standalone illustration.

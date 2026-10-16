@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><defs>
+<linearGradient id="gold" x2=".8" y2="1"><stop stop-color="#fff1ae"/><stop offset=".3" stop-color="#e9be64"/><stop offset=".7" stop-color="#986023"/><stop offset="1" stop-color="#f0ce7b"/></linearGradient>
+<linearGradient id="plum" x2=".75" y2="1"><stop stop-color="#6d3778"/><stop offset=".5" stop-color="#392047"/><stop offset="1" stop-color="#1b1428"/></linearGradient>
+<linearGradient id="paper" x2=".7" y2="1"><stop stop-color="#faecc7"/><stop offset=".6" stop-color="#d8b67b"/><stop offset="1" stop-color="#94734e"/></linearGradient>
+<radialGradient id="glow"><stop stop-color="#fff8c1" stop-opacity=".9"/><stop offset=".25" stop-color="#e5b2ff" stop-opacity=".4"/><stop offset="1" stop-color="#a663db" stop-opacity="0"/></radialGradient>
+<filter id="shadow" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="12" stdDeviation="10" flood-opacity=".5"/></filter>
+</defs><g filter="url(#shadow)"><path d="m209 65 95 1 12 52 39 23 50-14 47 83-38 35v46l38 34-48 82-50-13-39 24-12 50h-95l-13-51-39-23-50 13-47-82 38-35v-45l-38-34 48-83 49 13 39-23Z" fill="url(#gold)" stroke="#704322" stroke-width="9"/>
+<circle cx="256" cy="267" r="116" fill="url(#plum)" stroke="#eacb8e" stroke-width="8"/>
+<circle cx="256" cy="267" r="74" fill="#171829" stroke="#b58b4f" stroke-width="5"/>
+<polygon points="256.0,210.0 261.5,253.8 296.3,226.7 269.2,261.5 313.0,267.0 269.2,272.5 296.3,307.3 261.5,280.2 256.0,324.0 250.5,280.2 215.7,307.3 242.8,272.5 199.0,267.0 242.8,261.5 215.7,226.7 250.5,253.8" fill="url(#gold)"/><circle cx="256" cy="267" r="17" fill="#362039" stroke="#f1cf87" stroke-width="4"/></g></svg>

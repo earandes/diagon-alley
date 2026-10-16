@@ -1,0 +1,24 @@
+{
+  "id": "flamel",
+  "name": "Nicolas Flamel",
+  "master": "design/diagon-alley/illustrated-v2/samples/flamel.png",
+  "sha256": "8ab3994ae55f0fcd48764ad0677cec1021d1b55480d2a1b0bee81a78f1d086a2",
+  "seed": 58105,
+  "promptFile": "design/diagon-alley/illustrated-v2/prompts/flamel.txt",
+  "model": "mlx-community/flux2-klein-4b-4bit",
+  "modelRevision": "860e87183ceb29e39627c0612ebd66d8ea66e68c",
+  "steps": 4,
+  "guidance": 1.0,
+  "width": 768,
+  "height": 1024,
+  "generationSeconds": 30.8,
+  "loadSeconds": 0.74,
+  "tool": {
+    "mflux": "0.22.0",
+    "mlx": "0.32.4"
+  },
+  "cashCost": 0,
+  "generationMode": "offline local Metal text-to-image",
+  "gpuPeakMemoryBytes": 9421779128,
+  "status": "sample awaiting coordinator visual review"
+}

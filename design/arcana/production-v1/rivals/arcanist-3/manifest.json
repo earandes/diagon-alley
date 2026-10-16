@@ -1,0 +1,59 @@
+{
+  "id": "rival-arcanist-3",
+  "appearanceId": "arcanist-3",
+  "serverWizardId": "rival",
+  "name": {
+    "es": "Rival ARCANA",
+    "en": "ARCANA rival"
+  },
+  "direction": "teatro-de-alquimia",
+  "version": "1",
+  "state": "reviewed-standalone-not-integrated",
+  "tool": "built-in imagegen",
+  "source": "master-v1.png",
+  "preparedAsset": "arena-master-v1.png",
+  "prompts": [
+    "prompt-v1.md"
+  ],
+  "references": [
+    "../../../concepts-2026-10-14/teatro-de-alquimia.png",
+    "../../characters/apprentice/arena-master-v1.png"
+  ],
+  "dimensions": [
+    1024,
+    1536
+  ],
+  "transparency": {
+    "mode": "RGBA",
+    "alphaMin": 0,
+    "alphaMax": 255,
+    "fullyTransparentPixels": 1084095,
+    "cornerAlpha": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "subjectBoundsAlphaGt20": [
+      158,
+      157,
+      866,
+      1378
+    ]
+  },
+  "preparation": "Deterministic LANCZOS resize 1024x1536 -> 870x1305, positioned [45,110] on transparent 1024x1536 canvas for >=10% safe margins. No painted changes. Source preserved.",
+  "crop": "none",
+  "pivotNormalized": [
+    0.5,
+    0.898
+  ],
+  "variants": [],
+  "sourceEditable": "Raster alpha master; no layers or rig",
+  "textAlternative": {
+    "es": "Rival ARCANA mayor de rizos grises y barba corta, abrigo ocre y verde, libro cerrado y baston curvo.",
+    "en": "Older ARCANA rival with gray curls and short beard, an ochre and green coat, closed book and curved staff."
+  },
+  "review": "Inspected original and prepared image. Older stocky South Asian man, copper-brown round watchful face, curly gray hair/short gray beard, calm competitive expression. Ochre/dark brown/green costume, closed plain book and curved wood staff distinct from arcanist-1 and female rival. Full natural hands/feet/props, no text. Same Teatro player-art quality. Appearance only on serverWizardId rival, no catalog identity/stat/reward changes. Integration and actual miniature readability remain to be verified.",
+  "originalGenerationPath": "/Users/enricarandes/.codex/generated_images/01a13af8-fd53-7331-8146-bb20ec42fa6b/exec-a08fe3c0-e822-4b45-85db-36b60ffae151.png",
+  "sha256": "2629e69a8b053de26c2e198592e433bcc0bfc2eb2444644785d20a81d5cf0fa8"
+}

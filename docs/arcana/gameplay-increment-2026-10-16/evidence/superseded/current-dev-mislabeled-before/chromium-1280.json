@@ -1,0 +1,23 @@
+{
+  "phase": "before",
+  "browser": "chromium",
+  "scope": "Real isolated GUI 3vs3 combat, starts before action; no user or physical device",
+  "frames": 447,
+  "meanFps": 55.79758085639546,
+  "p95ms": 16.800000000000182,
+  "maxFrameMs": 233.39999999999964,
+  "longtasks": [
+    218,
+    200
+  ],
+  "clickAtMs": 268.5,
+  "sampleWindowMs": 8013.5,
+  "viewport": {
+    "width": 1280,
+    "height": 900
+  },
+  "document": {
+    "width": 1280,
+    "height": 900
+  }
+}

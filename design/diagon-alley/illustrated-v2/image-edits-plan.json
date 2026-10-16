@@ -1,0 +1,43 @@
+{
+  "model": "mlx-community/flux2-klein-4b-4bit",
+  "revision": "860e87183ceb29e39627c0612ebd66d8ea66e68c",
+  "width": 768,
+  "height": 1024,
+  "steps": 4,
+  "guidance": 1.0,
+  "samples": {
+    "storm-caller": {
+      "name": "Nymphadora Tonks",
+      "seed": 582001,
+      "prompt": "Repaint the pink-haired adult woman from image1 in the rich realistic gouache painting style of image2. Keep the woman from image1, her short pink hair, mischievous smile, purple coat and burgundy scarf. Change her face and hair rendering to finely blended painterly tones and subtle convincing natural anatomy like image2. Replace harsh flat colour boundaries with carefully layered oil-glaze brushwork, soft light and finely painted strands. Match the warm amber highlights, dark plum plain backdrop, paper grain and realistic cloth texture of image2. Do not copy the young girl identity or brown hair from image2. The subject remains the young adult pink-haired woman from image1. Original sophisticated painted wizard character portrait, full image without writing, borders or signature.",
+      "imagePaths": [
+        "design/diagon-alley/illustrated-v2/rejected/storm-caller-second.png",
+        "design/diagon-alley/illustrated-v2/masters/circe.png"
+      ]
+    },
+    "night-forger": {
+      "name": "Rubeus Hagrid",
+      "seed": 582002,
+      "prompt": "Transform this man into a truly enormous gentle half-giant: make his head and shoulders much broader, his hair long wild and tangled down over both shoulders, and his beard immense and very long down over his entire chest, twice as long and twice as thick. Remove the scarf so that the long beard flows freely down the front of his worn brown moleskin coat. Preserve his kind expression, broad nose, brown eyes, painterly gouache texture, amber side light and dark plum plain background. The unmistakable impression should be Rubeus Hagrid the giant-sized guardian, not an ordinary bearded gentleman. Keep complete hair inside the image, chest-up, no writing or frame.",
+      "imagePaths": [
+        "design/diagon-alley/illustrated-v2/rejected/night-forger-second.png"
+      ]
+    },
+    "root-speaker": {
+      "name": "Alastor Moody",
+      "seed": 582003,
+      "prompt": "Move the round magical blue eyepiece DOWN from his forehead to his actual left EYE SOCKET, the eye on the RIGHT SIDE OF THE IMAGE. Cover and replace that ordinary eye with the large round blue glass eye and brass rim. Remove the lens and its leather strap entirely from his forehead, so the forehead above the eyebrows is just bare wrinkled scarred skin. There must be exactly TWO eyes at normal eye level: one dark normal eye and one blue magical replacement eye. The magical eye is in an eye socket, never above the eyebrows. Keep the rest of the face, grey hair, olive coat, pose, dark plum background, brushwork and warm painterly light unchanged. Full painted portrait, no writing or frame.",
+      "imagePaths": [
+        "design/diagon-alley/illustrated-v2/rejected/root-speaker-second.png"
+      ]
+    },
+    "veil-walker": {
+      "name": "Lord Voldemort",
+      "seed": 582004,
+      "prompt": "Remove the projecting human NOSE from this dark wizard. His face must have NO NOSE BRIDGE AND NO NOSE TIP. Replace the nose with a flat smooth serpentine area carrying only two narrow vertical SLIT NOSTRILS flush with the face, like Lord Voldemort from the books. Preserve his thin red eyes, bald ivory head, sunken cheeks, cold expression, dark green-black robes, dark plum plain background and sophisticated painterly light. Keep the face gaunt and inhuman, with a completely flattened snake-like nose, no raised human nose whatsoever. Keep the rest of the painting unchanged. No writing, no frame.",
+      "imagePaths": [
+        "design/diagon-alley/illustrated-v2/rejected/veil-walker-second.png"
+      ]
+    }
+  }
+}

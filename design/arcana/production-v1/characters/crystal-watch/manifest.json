@@ -1,0 +1,52 @@
+{
+  "id": "character-crystal-watch",
+  "identityId": "crystal-watch",
+  "direction": "teatro-de-alquimia",
+  "version": "1",
+  "state": "reviewed-standalone-not-integrated",
+  "tool": "built-in imagegen",
+  "source": "master-v1.png",
+  "preparedAsset": "arena-master-v1.png",
+  "prompts": [
+    "prompt-v1.md"
+  ],
+  "references": [
+    "../paracelso/arena-master-v1.png"
+  ],
+  "dimensions": [
+    1024,
+    1536
+  ],
+  "transparency": {
+    "mode": "RGBA",
+    "alphaMin": 0,
+    "alphaMax": 255,
+    "fullyTransparentPixels": 1166368,
+    "cornerAlpha": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "subjectBoundsAlphaGt20": [
+      250,
+      186,
+      872,
+      1358
+    ]
+  },
+  "preparation": "Deterministic LANCZOS resize1024x1536->819x1229,position102,154 on transparent1024x1536canvas for10%safe margins. Source preserved.",
+  "crop": "none",
+  "pivotNormalized": [
+    0.5,
+    0.884
+  ],
+  "variants": [],
+  "sourceEditable": "Raster alpha master; no layers or rig",
+  "textAlternative": {
+    "es": "Vigía del Cristal, guardián de cabello negro recogido, armadura gris y ropa turquesa, broche plateado y bastón de cristal.",
+    "en": "Crystal Watcher, a guardian with tied black hair, grey armor and turquoise cloth, a silver brooch and crystal staff."
+  },
+  "review": "Inspected whitecomposite: broadgentleadultEastAsianface exposed, sturdyguardianpose, topknot, palegrayarmor/turquoise distinctsilhouette, clearfacetedstaff. Completefeetnaturalhands/noletters. Realalpha confirmed. Englishcurrentname Crystal Watcher verified. Actualthumbnail/mobileintegration pending.",
+  "sha256": "acea7e7b6ef9fd0d7cbbc428946e67512365b85787a7684b46bc82874aa454c8"
+}

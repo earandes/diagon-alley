@@ -1,0 +1,13 @@
+{
+  "version": "4.5.9",
+  "series": "4.5 LTS; pinned, not claimed to be the newest patch",
+  "platform": "macOS-arm64",
+  "download": "https://download.blender.org/release/Blender4.5/blender-4.5.9-macos-arm64.dmg",
+  "sha256": "e3a3d7aac381fb4e4d05197f99cd8899484d7e8bc4497c134066e6733f372238",
+  "checksum_source": "https://download.blender.org/release/Blender4.5/blender-4.5.9.sha256",
+  "runtime_directory": ".tools/blender",
+  "configuration_directory": ".tools/blender-user",
+  "license_source": "https://www.blender.org/about/license/",
+  "cash_cost": 0,
+  "scope": "local asset authoring/render/export; not application stack or authentication"
+}

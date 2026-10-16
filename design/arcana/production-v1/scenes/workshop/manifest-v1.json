@@ -1,0 +1,36 @@
+{
+  "id": "scene-workshop",
+  "identity": "wand-workshop",
+  "function": "Workshop backdrop with independent gear and receipt effects",
+  "version": 1,
+  "status": "visually-reviewed-source-awaiting-integration",
+  "author": "OpenAI built-in imagegen",
+  "tool": "image_gen.imagegen",
+  "prompt": "prompt-v1.md",
+  "references": [
+    "design/arcana/concepts-2026-10-14/teatro-de-alquimia.png",
+    "design/arcana/production-v1/scenes/confectionery/original-v1.png"
+  ],
+  "original": "original-v1.png",
+  "availableSource": "Flattened raster PNG, no editable layers or rig",
+  "dimensions": {
+    "width": 1536,
+    "height": 1024
+  },
+  "crop": "Full image; central empty wood counter safe for mobile",
+  "pivot": {
+    "x": 0.5,
+    "y": 0.5
+  },
+  "variants": [],
+  "transparency": false,
+  "alt": {
+    "es": "Taller de varitas ilustrado, con maderas, herramientas en los laterales, una pequeña fragua y mostrador vacío.",
+    "en": "Illustrated wand workshop with wood bundles, tools at the sides, a small forge and an empty counter."
+  },
+  "review": {
+    "date": "2026-10-14",
+    "observed": "No text/UI/people/foreground gear. Wood artisan materials and restrained forge distinguish workshop; empty center counter and moss-green shadows match selected identity.",
+    "limits": "Actual responsive crop and overlay contrast remain integration QA. Source raster lacks editable layers."
+  }
+}

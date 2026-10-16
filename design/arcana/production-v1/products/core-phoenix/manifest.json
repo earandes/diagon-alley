@@ -1,0 +1,60 @@
+{
+  "id": "core-phoenix",
+  "identity": "phoenix",
+  "function": "Illustrated phoenix core choice; current effects and labels separately localized",
+  "version": "1",
+  "status": "illustration-reviewed-runtime-framing-pending",
+  "path": "original-v1.png",
+  "author": "OpenAI integrated imagegen",
+  "tool": "image_gen.imagegen built-in",
+  "prompt": "prompt-v1.md",
+  "references": [
+    "../core-dragon/original-v1.png"
+  ],
+  "provenance": "Original fiery feather ingredient illustration",
+  "sourceAvailable": "original-v1.png; prompt-v1.md",
+  "editableLayers": false,
+  "rig": false,
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "requestedDimensions": [
+    1024,
+    1024
+  ],
+  "crop": "full source preserved",
+  "pivot": [
+    0.35,
+    0.92
+  ],
+  "variants": [],
+  "transparency": {
+    "realAlpha": true,
+    "mode": "RGBA",
+    "range": [
+      0,
+      255
+    ],
+    "fullyTransparentPixels": 1213185,
+    "totalPixels": 1572516,
+    "bodyBoundingBoxAlpha16": [
+      375,
+      52,
+      987,
+      1169
+    ]
+  },
+  "alt": {
+    "es": "Núcleo de fénix: pluma naranja y dorada con barbas rizadas y soporte de cobre.",
+    "en": "Phoenix core: orange and gold feather with curled barbs and a copper holder."
+  },
+  "review": {
+    "visual": "Inspected one complete gold/orange fiery feather with delicate curledbarbs and botanicallyengravedcopperquillholder. Originalingredientfamily coherentwithdragon, no bird/text/UI/flamebackground.",
+    "limitations": [
+      "Output1254square not1024requested.",
+      "Height~89% ratherthan80%, top52bottom85 margins needrenderer insetting.",
+      "Fierycolors suggestmagicwithoutanimatedfire or livecreature; this is oneflattenedraster pose."
+    ]
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "id": "character-shadow-scribe",
+  "identityId": "shadow-scribe",
+  "direction": "teatro-de-alquimia",
+  "version": "1",
+  "state": "reviewed-standalone-not-integrated",
+  "tool": "built-in imagegen",
+  "source": "master-v1.png",
+  "preparedAsset": "arena-master-v1.png",
+  "prompts": [
+    "prompt-v1.md"
+  ],
+  "references": [
+    "../paracelso/arena-master-v1.png"
+  ],
+  "dimensions": [
+    1024,
+    1536
+  ],
+  "transparency": {
+    "mode": "RGBA",
+    "alphaMin": 0,
+    "alphaMax": 255,
+    "fullyTransparentPixels": 1185001,
+    "cornerAlpha": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "subjectBoundsAlphaGt20": [
+      255,
+      176,
+      848,
+      1351
+    ]
+  },
+  "preparation": "Deterministic LANCZOS resize1024x1536->819x1229,position102,154 on transparent1024x1536canvas for10%safe margins. Source preserved.",
+  "crop": "none",
+  "pivotNormalized": [
+    0.5,
+    0.88
+  ],
+  "variants": [],
+  "sourceEditable": "Raster alpha master; no layers or rig",
+  "textAlternative": {
+    "es": "Escriba de las Sombras, mago de cabello negro recogido y perilla, abrigo ciruela oscuro, pluma de latón y diario cerrado.",
+    "en": "Shadow Scribe, a mage with tied black hair and a goatee, a dark plum coat, brass quill and closed journal."
+  },
+  "review": "Inspected whitecomposite: thoughtful angularface, slimscholarlyfigure, completefeetandnaturalhands, brassquill/book/amberinkbottle, visuallydistinctfromashwanderer byplumcoatandimplements. Nolettering. Realalpha confirmed. Current localizednameverified. Actualthumbnail/mobileintegration pending.",
+  "sha256": "cd1e3064646837c149992996a8e005f9e53fbcae81f85f011e335bc35bfbd712"
+}

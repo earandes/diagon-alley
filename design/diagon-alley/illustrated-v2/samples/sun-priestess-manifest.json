@@ -1,0 +1,24 @@
+{
+  "id": "sun-priestess",
+  "name": "Fleur Delacour",
+  "master": "design/diagon-alley/illustrated-v2/samples/sun-priestess.png",
+  "sha256": "e3432036a347cb36d69de8b7ba264ff94d9a5de791142e97a7758380bf702c78",
+  "seed": 58127,
+  "promptFile": "design/diagon-alley/illustrated-v2/prompts/sun-priestess.txt",
+  "model": "mlx-community/flux2-klein-4b-4bit",
+  "modelRevision": "860e87183ceb29e39627c0612ebd66d8ea66e68c",
+  "steps": 4,
+  "guidance": 1.0,
+  "width": 768,
+  "height": 1024,
+  "generationSeconds": 33.01,
+  "loadSeconds": 0.74,
+  "tool": {
+    "mflux": "0.22.0",
+    "mlx": "0.32.4"
+  },
+  "cashCost": 0,
+  "generationMode": "offline local Metal text-to-image",
+  "gpuPeakMemoryBytes": 9421779596,
+  "status": "sample awaiting coordinator visual review"
+}

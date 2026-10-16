@@ -1,0 +1,42 @@
+{
+  "version": 2,
+  "status": "provisional",
+  "author": "Codex for ARCANA",
+  "tool": "Original DOM/CSS and PixiJS Graphics; GSAP transitions",
+  "references": ["User PRD", "User reference composition only; no copied pixels"],
+  "resources": [
+    {
+      "id": "trial-rune-mark",
+      "view": "welcome/card reveal",
+      "editableSource": "src/arcana/presentation/App.tsx",
+      "dimensions": "responsive system glyph",
+      "crop": "none",
+      "pivot": "center",
+      "alt": "Decorative; aria-hidden",
+      "finalNeeded": "Original layered emblem/card art reviewed in context"
+    },
+    {
+      "id": "trial-paper-panels",
+      "view": "route/cards/arena",
+      "editableSource": "src/arcana/presentation/styles.css",
+      "dimensions": "responsive DOM",
+      "crop": "none",
+      "pivot": "none",
+      "alt": "Functional text in DOM",
+      "finalNeeded": "Original parchment/node/pedestal assets and Pixi scene"
+    },
+    {
+      "id": "trial-pixi-scenes",
+      "view": "branching map and arena",
+      "editableSource": "src/arcana/presentation/scenes/pixi-scenes.ts",
+      "dimensions": "responsive Canvas, DPI capped at 2",
+      "crop": "none",
+      "pivot": "node/peana center",
+      "alt": "Decorative canvas; equivalent DOM labels/actions and battle record",
+      "finalNeeded": "Original portraits and layered scene art reviewed in context; geometric study remains provisional"
+    }
+  ],
+  "transformations": "CSS layout, gradients and responsive sizing; no raster from reference",
+  "permission": "Original layout/code; system fonts/glyphs; no claim for final art permissions",
+  "replacementCriterion": "Reviewed original art, legal source/manifest, reduced motion and text-independent actions; rules/state unchanged"
+}

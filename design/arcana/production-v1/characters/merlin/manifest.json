@@ -1,0 +1,54 @@
+{
+  "id": "character-merlin",
+  "identityId": "merlin",
+  "direction": "teatro-de-alquimia",
+  "version": "1",
+  "state": "reviewed-standalone-not-integrated",
+  "tool": "built-in imagegen",
+  "source": "master-v1.png",
+  "preparedAsset": "arena-master-v1.png",
+  "prompts": [
+    "prompt-v1.md"
+  ],
+  "references": [
+    "../../../concepts-2026-10-14/teatro-de-alquimia.png",
+    "../apprentice/arena-master-v1.png"
+  ],
+  "dimensions": [
+    1024,
+    1536
+  ],
+  "transparency": {
+    "mode": "RGBA",
+    "alphaMin": 0,
+    "alphaMax": 255,
+    "fullyTransparentPixels": 986730,
+    "cornerAlpha": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "subjectBoundsAlphaGt20": [
+      109,
+      165,
+      914,
+      1371
+    ]
+  },
+  "preparation": "Deterministic LANCZOS resize 1024x1536 -> 921x1382; positioned at [35,79] on transparent 1024x1536 canvas to give >=10% subject safety margins. No painted changes. Source preserved.",
+  "crop": "none",
+  "pivotNormalized": [
+    0.5,
+    0.89
+  ],
+  "variants": [],
+  "sourceEditable": "Raster alpha master; no layers or rig",
+  "textAlternative": {
+    "es": "Merlin, mago de cabello y barba blancos, capa verde bordada, broche de bellota, libro y baston de madera.",
+    "en": "Merlin, a white-haired and white-bearded wizard wearing an embroidered green cloak and acorn clasp, carrying a book and wooden staff."
+  },
+  "review": "Inspected generated and prepared artwork. Elder warm-faced identity consistent with selected concept, natural hands, complete feet and staff, legible book with no letters. Emerald/gold/cream theatrical paint matches apprentice. Integration and actual miniature readability remain to be verified.",
+  "originalGenerationPath": "/Users/enricarandes/.codex/generated_images/01a13af8-fd53-7331-8146-bb20ec42fa6b/exec-8f857fe5-9318-4f3f-a871-a4bc0118a6f4.png",
+  "sha256": "cf9256f0a55cbaa39b5af87a458dc44a2f9665fb31c79ac8ebcdf407cbf7e668"
+}

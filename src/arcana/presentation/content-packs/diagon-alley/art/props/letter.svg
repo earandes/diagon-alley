@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><defs>
+<linearGradient id="gold" x2=".8" y2="1"><stop stop-color="#fff1ae"/><stop offset=".3" stop-color="#e9be64"/><stop offset=".7" stop-color="#986023"/><stop offset="1" stop-color="#f0ce7b"/></linearGradient>
+<linearGradient id="plum" x2=".75" y2="1"><stop stop-color="#6d3778"/><stop offset=".5" stop-color="#392047"/><stop offset="1" stop-color="#1b1428"/></linearGradient>
+<linearGradient id="paper" x2=".7" y2="1"><stop stop-color="#faecc7"/><stop offset=".6" stop-color="#d8b67b"/><stop offset="1" stop-color="#94734e"/></linearGradient>
+<radialGradient id="glow"><stop stop-color="#fff8c1" stop-opacity=".9"/><stop offset=".25" stop-color="#e5b2ff" stop-opacity=".4"/><stop offset="1" stop-color="#a663db" stop-opacity="0"/></radialGradient>
+<filter id="shadow" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="12" stdDeviation="10" flood-opacity=".5"/></filter>
+</defs><g filter="url(#shadow)"><path d="M82 140 252 52 431 139V414H82Z" fill="#9b6b39" stroke="url(#gold)" stroke-width="8"/>
+<path d="M112 96h285v260H112Z" fill="url(#paper)" stroke="#c39859" stroke-width="7"/>
+<path d="M83 165 256 290 431 165V415H83Z" fill="url(#paper)" stroke="#9d713d" stroke-width="6"/>
+<path d="m86 411 142-135m198 135L286 276" fill="none" stroke="#b78d54" stroke-width="5"/>
+<circle cx="256" cy="293" r="47" fill="#71394e" stroke="url(#gold)" stroke-width="5"/>
+<polygon points="256.0,264.0 258.8,286.3 276.5,272.5 262.7,290.2 285.0,293.0 262.7,295.8 276.5,313.5 258.8,299.7 256.0,322.0 253.2,299.7 235.5,313.5 249.3,295.8 227.0,293.0 249.3,290.2 235.5,272.5 253.2,286.3" fill="url(#gold)"/></g></svg>

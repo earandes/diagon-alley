@@ -1,0 +1,194 @@
+[WebServer] (node:37151) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:37177) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 18 tests using 1 worker
+
+(node:37178) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 [chromium] › tests/browser-arcana/arena-a63.spec.ts:7:3 › A63 simultaneous 3–5 actors, no spoiler and inspector in es (8.1s)
+  ✓   2 [chromium] › tests/browser-arcana/arena-a63.spec.ts:7:3 › A63 simultaneous 3–5 actors, no spoiler and inspector in en (7.1s)
+  ✓   3 [chromium] › tests/browser-arcana/arena-a63.spec.ts:147:1 › A63 replay controls, reduced, missing renderer, assets and enlarged text preserve record (9.4s)
+  ✘   4 [chromium] › tests/browser-arcana/arena-passives.spec.ts:4:3 › recorded passives and team identity in es (6.4s)
+(node:37350) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘   5 [chromium] › tests/browser-arcana/arena-passives.spec.ts:4:3 › recorded passives and team identity in en (6.3s)
+(node:37406) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   6 [chromium] › tests/browser-arcana/arena-passives.spec.ts:69:1 › invalid recorded activation shows recovery instead of crashing the application (412ms)
+  ✓   7 [chromium] › tests/browser-arcana/arena-passives.spec.ts:82:1 › Shadows I benefits neutral allies and uses singular contributor text in both languages (1.2s)
+  ✘   8 [chromium] › tests/browser-arcana/contrast.spec.ts:3:1 › checks arena text against its actual rendered background and the replay focus indicator (1.2s)
+(node:37429) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   9 [chromium] › tests/browser-arcana/arena-load.spec.ts:2:1 › five-unit arena text grows at 200 percent without clipping functional labels (737ms)
+(node:37439) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  10 [webkit] › tests/browser-arcana/arena-a63.spec.ts:7:3 › A63 simultaneous 3–5 actors, no spoiler and inspector in es (3.5s)
+  ✓  11 [webkit] › tests/browser-arcana/arena-a63.spec.ts:7:3 › A63 simultaneous 3–5 actors, no spoiler and inspector in en (3.3s)
+  ✓  12 [webkit] › tests/browser-arcana/arena-a63.spec.ts:147:1 › A63 replay controls, reduced, missing renderer, assets and enlarged text preserve record (8.2s)
+  ✘  13 [webkit] › tests/browser-arcana/arena-passives.spec.ts:4:3 › recorded passives and team identity in es (5.8s)
+(node:37611) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  14 [webkit] › tests/browser-arcana/arena-passives.spec.ts:4:3 › recorded passives and team identity in en (6.1s)
+(node:37666) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  15 [webkit] › tests/browser-arcana/arena-passives.spec.ts:69:1 › invalid recorded activation shows recovery instead of crashing the application (707ms)
+  ✓  16 [webkit] › tests/browser-arcana/arena-passives.spec.ts:82:1 › Shadows I benefits neutral allies and uses singular contributor text in both languages (989ms)
+  ✓  17 [webkit] › tests/browser-arcana/contrast.spec.ts:3:1 › checks arena text against its actual rendered background and the replay focus indicator (1.0s)
+(node:37699) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  18 [webkit] › tests/browser-arcana/arena-load.spec.ts:2:1 › five-unit arena text grows at 200 percent without clipping functional labels (693ms)
+
+
+  1) [chromium] › tests/browser-arcana/arena-passives.spec.ts:4:3 › recorded passives and team identity in es 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: true
+    Received: false
+
+    Call Log:
+    - Timeout 5000ms exceeded while waiting on the predicate
+
+      60 |     await expect
+      61 |       .poll(() => page.evaluate(() => document.documentElement.scrollWidth <= innerWidth))
+    > 62 |       .toBe(true);
+         |        ^
+      63 |     expect(
+      64 |       await page
+      65 |         .locator('.pedestal')
+        at /Users/enricarandes/work/diagon-alley/tests/browser-arcana/arena-passives.spec.ts:62:8
+
+    Error Context: docs/arcana/gameplay-increment-2026-10-16/evidence/arena-results/arena-passives-recorded-passives-and-team-identity-in-es-chromium/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    docs/arcana/gameplay-increment-2026-10-16/evidence/arena-results/arena-passives-recorded-passives-and-team-identity-in-es-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace docs/arcana/gameplay-increment-2026-10-16/evidence/arena-results/arena-passives-recorded-passives-and-team-identity-in-es-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) [chromium] › tests/browser-arcana/arena-passives.spec.ts:4:3 › recorded passives and team identity in en 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: true
+    Received: false
+
+    Call Log:
+    - Timeout 5000ms exceeded while waiting on the predicate
+
+      60 |     await expect
+      61 |       .poll(() => page.evaluate(() => document.documentElement.scrollWidth <= innerWidth))
+    > 62 |       .toBe(true);
+         |        ^
+      63 |     expect(
+      64 |       await page
+      65 |         .locator('.pedestal')
+        at /Users/enricarandes/work/diagon-alley/tests/browser-arcana/arena-passives.spec.ts:62:8
+
+    Error Context: docs/arcana/gameplay-increment-2026-10-16/evidence/arena-results/arena-passives-recorded-passives-and-team-identity-in-en-chromium/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    docs/arcana/gameplay-increment-2026-10-16/evidence/arena-results/arena-passives-recorded-passives-and-team-identity-in-en-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace docs/arcana/gameplay-increment-2026-10-16/evidence/arena-results/arena-passives-recorded-passives-and-team-identity-in-en-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  3) [chromium] › tests/browser-arcana/contrast.spec.ts:3:1 › checks arena text against its actual rendered background and the replay focus indicator 
+
+    Error: 4
+
+    expect(received).toBeGreaterThanOrEqual(expected)
+
+    Expected: >= 4.5
+    Received:    3.7657206823888685
+
+      87 |   });
+      88 |   for (const result of report)
+    > 89 |     expect(result.minimumRatio, String(result.text)).toBeGreaterThanOrEqual(4.5);
+         |                                                      ^
+      90 |   const control = page.getByRole('button', { name: 'Volver al mapa', exact: true });
+      91 |   await page.keyboard.press('Tab');
+      92 |   await control.focus();
+        at /Users/enricarandes/work/diagon-alley/tests/browser-arcana/contrast.spec.ts:89:54
+
+    Error Context: docs/arcana/gameplay-increment-2026-10-16/evidence/arena-results/contrast-checks-arena-text-7c259--the-replay-focus-indicator-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    docs/arcana/gameplay-increment-2026-10-16/evidence/arena-results/contrast-checks-arena-text-7c259--the-replay-focus-indicator-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace docs/arcana/gameplay-increment-2026-10-16/evidence/arena-results/contrast-checks-arena-text-7c259--the-replay-focus-indicator-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  4) [webkit] › tests/browser-arcana/arena-passives.spec.ts:4:3 › recorded passives and team identity in es 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: true
+    Received: false
+
+    Call Log:
+    - Timeout 5000ms exceeded while waiting on the predicate
+
+      60 |     await expect
+      61 |       .poll(() => page.evaluate(() => document.documentElement.scrollWidth <= innerWidth))
+    > 62 |       .toBe(true);
+         |        ^
+      63 |     expect(
+      64 |       await page
+      65 |         .locator('.pedestal')
+        at /Users/enricarandes/work/diagon-alley/tests/browser-arcana/arena-passives.spec.ts:62:8
+
+    Error Context: docs/arcana/gameplay-increment-2026-10-16/evidence/arena-results/arena-passives-recorded-passives-and-team-identity-in-es-webkit/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    docs/arcana/gameplay-increment-2026-10-16/evidence/arena-results/arena-passives-recorded-passives-and-team-identity-in-es-webkit/trace.zip
+    Usage:
+
+        npx playwright show-trace docs/arcana/gameplay-increment-2026-10-16/evidence/arena-results/arena-passives-recorded-passives-and-team-identity-in-es-webkit/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  5) [webkit] › tests/browser-arcana/arena-passives.spec.ts:4:3 › recorded passives and team identity in en 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: true
+    Received: false
+
+    Call Log:
+    - Timeout 5000ms exceeded while waiting on the predicate
+
+      60 |     await expect
+      61 |       .poll(() => page.evaluate(() => document.documentElement.scrollWidth <= innerWidth))
+    > 62 |       .toBe(true);
+         |        ^
+      63 |     expect(
+      64 |       await page
+      65 |         .locator('.pedestal')
+        at /Users/enricarandes/work/diagon-alley/tests/browser-arcana/arena-passives.spec.ts:62:8
+
+    Error Context: docs/arcana/gameplay-increment-2026-10-16/evidence/arena-results/arena-passives-recorded-passives-and-team-identity-in-en-webkit/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    docs/arcana/gameplay-increment-2026-10-16/evidence/arena-results/arena-passives-recorded-passives-and-team-identity-in-en-webkit/trace.zip
+    Usage:
+
+        npx playwright show-trace docs/arcana/gameplay-increment-2026-10-16/evidence/arena-results/arena-passives-recorded-passives-and-team-identity-in-en-webkit/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  5 failed
+    [chromium] › tests/browser-arcana/arena-passives.spec.ts:4:3 › recorded passives and team identity in es 
+    [chromium] › tests/browser-arcana/arena-passives.spec.ts:4:3 › recorded passives and team identity in en 
+    [chromium] › tests/browser-arcana/contrast.spec.ts:3:1 › checks arena text against its actual rendered background and the replay focus indicator 
+    [webkit] › tests/browser-arcana/arena-passives.spec.ts:4:3 › recorded passives and team identity in es 
+    [webkit] › tests/browser-arcana/arena-passives.spec.ts:4:3 › recorded passives and team identity in en 
+  13 passed (1.3m)

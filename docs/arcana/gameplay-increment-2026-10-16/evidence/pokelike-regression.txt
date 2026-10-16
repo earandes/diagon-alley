@@ -1,0 +1,43 @@
+
+> coleccion-magica-i1@0.1.0 test:pokelike
+> playwright test --config playwright.pokelike.config.ts
+
+[WebServer] (node:44839) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:44890) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] WebSocket server error: Port 24678 is already in use
+[WebServer] (node:44907) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:44935) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] WebSocket server error: Port 24678 is already in use
+
+Running 20 tests using 1 worker
+
+(node:44959) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 [chromium-pokelike] › tests/browser-trial/pokelike-experience.spec.ts:121:5 › legacy-content UI fixture es › A60 legacy public-content UI fixture retains a real pact confirmation es (1.9s)
+  ✓   2 [chromium-pokelike] › tests/browser-trial/pokelike-experience.spec.ts:183:3 › A60 compact preparation, genuine origin and event scenes es (3.9s)
+  ✓   3 [chromium-pokelike] › tests/browser-trial/pokelike-experience.spec.ts:289:3 › A60 one explicit frog purchase opens once and beans explain their next action es (7.7s)
+  ✓   4 [chromium-pokelike] › tests/browser-trial/pokelike-experience.spec.ts:372:3 › A60 earned sealed frog opens without a second purchase es (5.6s)
+  ✓   5 [chromium-pokelike] › tests/browser-trial/pokelike-experience.spec.ts:419:3 › A60 reduced-motion purchase has a static confirmed result on a narrow screen es (782ms)
+  ✓   6 [chromium-pokelike] › tests/browser-trial/pokelike-experience.spec.ts:121:5 › legacy-content UI fixture en › A60 legacy public-content UI fixture retains a real pact confirmation en (2.1s)
+  ✓   7 [chromium-pokelike] › tests/browser-trial/pokelike-experience.spec.ts:183:3 › A60 compact preparation, genuine origin and event scenes en (5.1s)
+  ✓   8 [chromium-pokelike] › tests/browser-trial/pokelike-experience.spec.ts:289:3 › A60 one explicit frog purchase opens once and beans explain their next action en (8.8s)
+  ✓   9 [chromium-pokelike] › tests/browser-trial/pokelike-experience.spec.ts:372:3 › A60 earned sealed frog opens without a second purchase en (5.6s)
+  ✓  10 [chromium-pokelike] › tests/browser-trial/pokelike-experience.spec.ts:419:3 › A60 reduced-motion purchase has a static confirmed result on a narrow screen en (817ms)
+(node:45459) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  11 [webkit-pokelike] › tests/browser-trial/pokelike-experience.spec.ts:121:5 › legacy-content UI fixture es › A60 legacy public-content UI fixture retains a real pact confirmation es (1.5s)
+  ✓  12 [webkit-pokelike] › tests/browser-trial/pokelike-experience.spec.ts:183:3 › A60 compact preparation, genuine origin and event scenes es (2.2s)
+  ✓  13 [webkit-pokelike] › tests/browser-trial/pokelike-experience.spec.ts:289:3 › A60 one explicit frog purchase opens once and beans explain their next action es (6.2s)
+  ✓  14 [webkit-pokelike] › tests/browser-trial/pokelike-experience.spec.ts:372:3 › A60 earned sealed frog opens without a second purchase es (3.2s)
+  ✓  15 [webkit-pokelike] › tests/browser-trial/pokelike-experience.spec.ts:419:3 › A60 reduced-motion purchase has a static confirmed result on a narrow screen es (936ms)
+  ✓  16 [webkit-pokelike] › tests/browser-trial/pokelike-experience.spec.ts:121:5 › legacy-content UI fixture en › A60 legacy public-content UI fixture retains a real pact confirmation en (1.5s)
+  ✓  17 [webkit-pokelike] › tests/browser-trial/pokelike-experience.spec.ts:183:3 › A60 compact preparation, genuine origin and event scenes en (2.7s)
+  ✓  18 [webkit-pokelike] › tests/browser-trial/pokelike-experience.spec.ts:289:3 › A60 one explicit frog purchase opens once and beans explain their next action en (7.5s)
+  ✓  19 [webkit-pokelike] › tests/browser-trial/pokelike-experience.spec.ts:372:3 › A60 earned sealed frog opens without a second purchase en (3.7s)
+  ✓  20 [webkit-pokelike] › tests/browser-trial/pokelike-experience.spec.ts:419:3 › A60 reduced-motion purchase has a static confirmed result on a narrow screen en (1.9s)
+
+  20 passed (1.3m)

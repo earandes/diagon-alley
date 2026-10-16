@@ -1,0 +1,26 @@
+[WebServer] (node:16119) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:16143) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:16174) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:16198) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] WebSocket server error: Port 24678 is already in use
+
+Running 8 tests using 1 worker
+
+(node:16201) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  1 [chromium-a63] › tests/browser-trial/gameplay-increment-a63.spec.ts:71:3 › A63 closing journey uses earned loot then starts deliberately es diagon-alley (13.6s)
+  ✓  2 [chromium-a63] › tests/browser-trial/gameplay-increment-a63.spec.ts:71:3 › A63 closing journey uses earned loot then starts deliberately es arcana (8.0s)
+  ✓  3 [chromium-a63] › tests/browser-trial/gameplay-increment-a63.spec.ts:71:3 › A63 closing journey uses earned loot then starts deliberately en diagon-alley (15.5s)
+  ✓  4 [chromium-a63] › tests/browser-trial/gameplay-increment-a63.spec.ts:71:3 › A63 closing journey uses earned loot then starts deliberately en arcana (6.7s)
+(node:82242) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  5 [webkit-a63] › tests/browser-trial/gameplay-increment-a63.spec.ts:71:3 › A63 closing journey uses earned loot then starts deliberately es diagon-alley (11.5s)
+  ✓  6 [webkit-a63] › tests/browser-trial/gameplay-increment-a63.spec.ts:71:3 › A63 closing journey uses earned loot then starts deliberately es arcana (4.5s)
+  ✓  7 [webkit-a63] › tests/browser-trial/gameplay-increment-a63.spec.ts:71:3 › A63 closing journey uses earned loot then starts deliberately en diagon-alley (10.8s)
+  ✓  8 [webkit-a63] › tests/browser-trial/gameplay-increment-a63.spec.ts:71:3 › A63 closing journey uses earned loot then starts deliberately en arcana (4.7s)
+
+  8 passed (1.3m)

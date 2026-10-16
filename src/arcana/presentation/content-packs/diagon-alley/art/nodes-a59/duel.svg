@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><defs>
+ <linearGradient id="brass" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fff0b8"/><stop offset=".25" stop-color="#ac7437"/><stop offset=".52" stop-color="#e1bc6b"/><stop offset=".77" stop-color="#644021"/><stop offset="1" stop-color="#f1d38b"/></linearGradient>
+ <linearGradient id="silver" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#e4e5df"/><stop offset=".33" stop-color="#6c7c82"/><stop offset=".62" stop-color="#adbdba"/><stop offset="1" stop-color="#303b48"/></linearGradient>
+ <linearGradient id="wood" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#b37845"/><stop offset=".3" stop-color="#5f3425"/><stop offset=".6" stop-color="#9c6039"/><stop offset="1" stop-color="#2c1b1c"/></linearGradient>
+ <linearGradient id="paper" x1="0" y1="0" x2=".8" y2="1"><stop stop-color="#fff0c9"/><stop offset=".5" stop-color="#d8bf8b"/><stop offset="1" stop-color="#9c8057"/></linearGradient>
+ <linearGradient id="emerald" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#c3eaba"/><stop offset=".25" stop-color="#72b3a0"/><stop offset=".58" stop-color="#276759"/><stop offset="1" stop-color="#122f30"/></linearGradient>
+ <linearGradient id="copper" x1="0" y1="0" x2=".8" y2="1"><stop stop-color="#f3c48e"/><stop offset=".3" stop-color="#b4744e"/><stop offset=".65" stop-color="#613e35"/><stop offset="1" stop-color="#2e252b"/></linearGradient>
+ <linearGradient id="ink" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#6c7682"/><stop offset=".3" stop-color="#2d3847"/><stop offset=".7" stop-color="#121a29"/><stop offset="1" stop-color="#52606a"/></linearGradient>
+ <radialGradient id="spell"><stop stop-color="#ffffff"/><stop offset=".24" stop-color="#d3f8ff"/><stop offset=".6" stop-color="#60c5df" stop-opacity=".8"/><stop offset="1" stop-color="#60c5df" stop-opacity="0"/></radialGradient>
+ <radialGradient id="aura"><stop stop-color="#d5d49d" stop-opacity=".2"/><stop offset="1" stop-color="#ded096" stop-opacity="0"/></radialGradient>
+ </defs><ellipse cx="126" cy="218" rx="83" ry="12" fill="#0a111b" opacity=".38"/>
+ <path d="M46 202 181 57 191 49 186 66 62 214Z" fill="url(#wood)" stroke="#201b22" stroke-width="5" stroke-linejoin="round"/>
+ <path d="m51 200 16 12m-11-20 17 12m-10-21 16 13m-7-22 15 13" stroke="url(#brass)" stroke-width="5"/>
+ <path d="m75 177 98-106" stroke="#d8b585" stroke-opacity=".62" stroke-width="3"/>
+ <path d="m199 212-135-142-7-18 18 7 139 139Z" fill="url(#silver)" stroke="#17212b" stroke-width="5" stroke-linejoin="round"/>
+ <path d="m191 193 14 13m-8-22 16 13m-8-22 15 13" stroke="#594a42" stroke-width="6"/>
+ <path d="M187 181 85 74" stroke="#f1ecd9" stroke-width="3" opacity=".8"/>
+ <path d="M51 116c26-58 85-76 137-44 41 25 21 67-20 59-27-5-9-34 19-26" fill="none" stroke="#c1e6df" stroke-width="5" stroke-linecap="round"/>
+ <path d="M52 115c33-37 89-43 128-12" fill="none" stroke="#e2bd6e" stroke-width="2"/>
+ <circle cx="128" cy="122" r="43" fill="url(#spell)"/>
+ <path d="m127 95 5 18 20 7-19 5-5 20-6-19-20-5 20-6Z" fill="#f2fcff"/>
+ <path d="m50 79 3 9 9 3-9 3-3 9-3-9-9-3 9-3Zm148 55 2 7 8 3-8 2-2 8-3-8-7-2 7-3Z" fill="#f8dfa1"/>
+ <path d="m101 43 3 8m98 47 8-2m-163 52-8 4" stroke="#c5ded8" stroke-width="3" stroke-linecap="round"/></svg>

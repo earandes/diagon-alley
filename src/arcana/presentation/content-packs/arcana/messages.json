@@ -1,0 +1,1394 @@
+{
+  "offlineNeedsConnection": {
+    "es": "Sin conexión. Conecta para recuperar tu partida y jugar.",
+    "en": "Offline. Connect to recover your game and play."
+  },
+  "offlinePriorReading": {
+    "es": "Sin conexión. Los saldos mostrados son la última lectura confirmada. Conecta para actualizar y continuar.",
+    "en": "Offline. Displayed balances are the last confirmed reading. Connect to refresh and continue."
+  },
+  "encounterRiskHint": {
+    "es": "Este encuentro puede entregar botín, curar o dañar a tu equipo.",
+    "en": "This encounter may grant loot, restore health or harm your team."
+  },
+  "encounterOutcome": {
+    "es": "Resultado del encuentro",
+    "en": "Encounter outcome"
+  },
+  "encounterLoot": {
+    "es": "El hallazgo se ha añadido a tu inventario.",
+    "en": "The discovered loot has been added to your inventory."
+  },
+  "encounterHealing": {
+    "es": "Curación de hasta {value} de los PV máximos.",
+    "en": "Healing up to {value} of maximum HP."
+  },
+  "encounterDamage": {
+    "es": "Daño de hasta {value} de los PV máximos.",
+    "en": "Damage up to {value} of maximum HP."
+  },
+  "encounterVitals": {
+    "es": "Unidad {number}: PV {before} → {after}.",
+    "en": "Unit {number}: HP {before} → {after}."
+  },
+  "encounterDetailsUnrecorded": {
+    "es": "El detalle de este encuentro no se registró. Se conservan sus recompensas y PV guardados.",
+    "en": "Details were not recorded for this encounter. Its saved rewards and health are preserved."
+  },
+  "oneStar": {
+    "es": "{count} estrella",
+    "en": "{count} star"
+  },
+  "manyStars": {
+    "es": "{count} estrellas",
+    "en": "{count} stars"
+  },
+  "starsUnrecorded": {
+    "es": "Estrellas no registradas",
+    "en": "Stars not recorded"
+  },
+  "wandWorkshop": {
+    "es": "Taller de Varitas",
+    "en": "Wand Workshop"
+  },
+  "obsidianVaults": {
+    "es": "Bóvedas de Obsidiana",
+    "en": "Obsidian Vaults"
+  },
+  "bazaarPlaces": {
+    "es": "Lugares del Bazar",
+    "en": "Bazaar places"
+  },
+  "wood": {
+    "es": "Madera",
+    "en": "Wood"
+  },
+  "core": {
+    "es": "Núcleo",
+    "en": "Core"
+  },
+  "workshopHint": {
+    "es": "Elige madera y núcleo. El precio de ensayo procura los materiales y crea una varita nueva; asignarla al equipo es una acción aparte.",
+    "en": "Choose wood and core. The trial price provides the materials and creates a new wand; assigning it to the team is a separate action."
+  },
+  "forgeWandPrice": {
+    "es": "Forjar varita · {value} Coronas",
+    "en": "Forge wand · {value} Crowns"
+  },
+  "notEnoughCrownsForRecipe": {
+    "es": "No tienes suficientes Coronas para esta receta.",
+    "en": "You do not have enough Crowns for this recipe."
+  },
+  "recipeUnavailable": {
+    "es": "Esta combinación no tiene una receta disponible.",
+    "en": "No recipe is available for this combination."
+  },
+  "vaultHint": {
+    "es": "Cada canje utiliza una Llave de Oro y entrega un botín de la tabla visible. Los valores del ensayo son provisionales.",
+    "en": "Each exchange uses one Gold Key and delivers loot from the visible table. Trial values are provisional."
+  },
+  "openVaultPrice": {
+    "es": "Abrir bóveda · 1 Llave de Oro",
+    "en": "Open vault · 1 Gold Key"
+  },
+  "earnBossKey": {
+    "es": "Consigue una Llave de Oro al vencer a un jefe para abrir esta bóveda.",
+    "en": "Earn a Gold Key by defeating a boss to open this vault."
+  },
+  "possibleVaultLoot": {
+    "es": "Botines posibles y probabilidades",
+    "en": "Possible loot and probabilities"
+  },
+  "cocoaToad": {
+    "es": "Sapo de Cacao",
+    "en": "Cocoa Toad"
+  },
+  "chanceBeans": {
+    "es": "Grageas del Azar",
+    "en": "Chance Beans"
+  },
+  "confirmedEquipmentResult": {
+    "es": "Resultado de equipo confirmado",
+    "en": "Confirmed equipment result"
+  },
+  "confirmedWand": {
+    "es": "Varita confirmada",
+    "en": "Confirmed wand"
+  },
+  "confirmedVaultLoot": {
+    "es": "Botín de bóveda confirmado",
+    "en": "Confirmed vault loot"
+  },
+  "equipmentSavedHint": {
+    "es": "Guardado en servidor. El equipo obtenido se puede asignar sin comprarlo otra vez.",
+    "en": "Saved on the server. Obtained equipment can be assigned without buying it again."
+  },
+  "assignInChromodex": {
+    "es": "Asignar en Cromodex",
+    "en": "Assign in Chromodex"
+  },
+  "ownedEquipment": {
+    "es": "Equipo que posees",
+    "en": "Equipment you own"
+  },
+  "equipmentInstance": {
+    "es": "Pieza {number}",
+    "en": "Item {number}"
+  },
+  "equipmentConfirmation": {
+    "es": "Confirmación de equipo",
+    "en": "Equipment confirmation"
+  },
+  "confirmForge": {
+    "es": "Confirmar forja",
+    "en": "Confirm forge"
+  },
+  "confirmExchange": {
+    "es": "Confirmar canje",
+    "en": "Confirm exchange"
+  },
+  "forgeConfirmation": {
+    "es": "Usar {value} Coronas para obtener esta varita. Cancelar conserva tus recursos.",
+    "en": "Use {value} Crowns to obtain this wand. Cancelling keeps your resources."
+  },
+  "vaultConfirmation": {
+    "es": "Usar una Llave de Oro para obtener un botín aleatorio de la tabla visible. Cancelar conserva la llave.",
+    "en": "Use one Gold Key to obtain random loot from the visible table. Cancelling keeps the key."
+  },
+  "workshopChanged": {
+    "es": "La configuración cambió. Cierra, actualiza el estado y revisa el precio antes de confirmar otra vez.",
+    "en": "Configuration changed. Close, refresh state and review the price before confirming again."
+  },
+  "equipmentNeedsRecovery": {
+    "es": "Revisa el estado o recupera esta misma operación antes de gastar de nuevo.",
+    "en": "Review state or recover this same operation before spending again."
+  },
+  "returnToRoute": {
+    "es": "Volver a la ruta",
+    "en": "Return to route"
+  },
+  "nodeConfirmedAnnouncement": {
+    "es": "Nodo {number} resuelto. El resultado está confirmado y guardado.",
+    "en": "Node {number} resolved. The result is confirmed and saved."
+  },
+  "runicEssence": {
+    "es": "Esencia Rúnica",
+    "en": "Runic Essence"
+  },
+  "essenceFull": {
+    "es": "Esencia al máximo.",
+    "en": "Essence is full."
+  },
+  "nextEssenceAt": {
+    "es": "Próximo punto a las {time}.",
+    "en": "Next point at {time}."
+  },
+  "essenceUnavailable": {
+    "es": "No se pudo actualizar la Esencia. Tu resultado confirmado se conserva.",
+    "en": "Essence could not be refreshed. Your confirmed result is preserved."
+  },
+  "updatingEssence": {
+    "es": "Actualizando Esencia…",
+    "en": "Updating Essence…"
+  },
+  "refreshEssence": {
+    "es": "Actualizar Esencia",
+    "en": "Refresh Essence"
+  },
+  "activeSynergies": {
+    "es": "Sinergias activas",
+    "en": "Active synergies"
+  },
+  "noActiveSynergies": {
+    "es": "Ninguna",
+    "en": "None"
+  },
+  "noTeamSelected": {
+    "es": "Elige tus cromos al preparar la expedición.",
+    "en": "Choose your cards when preparing the expedition."
+  },
+  "equippedGear": {
+    "es": "Equipo asignado",
+    "en": "Assigned equipment"
+  },
+  "lastExpeditionTeam": {
+    "es": "Equipo de la última expedición",
+    "en": "Last expedition team"
+  },
+  "confirmedNodeResult": {
+    "es": "Resultado de nodo confirmado",
+    "en": "Confirmed node result"
+  },
+  "nodeResultSaved": {
+    "es": "Resultado guardado en servidor. Consultarlo no consume recursos.",
+    "en": "Result saved on the server. Viewing it does not consume resources."
+  },
+  "crownsReward": {
+    "es": "{count} Coronas obtenidas.",
+    "en": "{count} Crowns obtained."
+  },
+  "goldKeyRewardOne": {
+    "es": "{count} Llave de Oro obtenida.",
+    "en": "{count} Gold Key obtained."
+  },
+  "goldKeyRewardMany": {
+    "es": "{count} Llaves de Oro obtenidas.",
+    "en": "{count} Gold Keys obtained."
+  },
+  "toadRewardOne": {
+    "es": "{count} Sapo de Cacao obtenido.",
+    "en": "{count} Cocoa Toad obtained."
+  },
+  "toadRewardMany": {
+    "es": "{count} Sapos de Cacao obtenidos.",
+    "en": "{count} Cocoa Toads obtained."
+  },
+  "beanRewardOne": {
+    "es": "{count} tarro de Grageas obtenido.",
+    "en": "{count} Bean jar obtained."
+  },
+  "beanRewardMany": {
+    "es": "{count} tarros de Grageas obtenidos.",
+    "en": "{count} Bean jars obtained."
+  },
+  "repeatVictoryReward": {
+    "es": "Victoria repetida: 10% de las Coronas base, sin botín de primera victoria.",
+    "en": "Repeat victory: 10% of base Crowns, without first-victory loot."
+  },
+  "refugeResolved": {
+    "es": "Refugio resuelto: cura del 40% de PV máximos, limitada al máximo de cada unidad.",
+    "en": "Refuge resolved: healing of 40% of maximum HP, capped at each unit’s maximum."
+  },
+  "pactResolved": {
+    "es": "Aliado temporal incorporado a esta expedición. No añade un cromo a la colección.",
+    "en": "A temporary ally joined this expedition. It does not add a card to the collection."
+  },
+  "viewSavedBattle": {
+    "es": "Ver combate guardado",
+    "en": "View saved battle"
+  },
+  "savedTeamVitals": {
+    "es": "Vida y maná guardados del equipo",
+    "en": "Saved team health and mana"
+  },
+  "savedUnitVitals": {
+    "es": "Unidad {number}: PV {hp}/{maxHp} · PM {mana}/{maxMana}",
+    "en": "Unit {number}: HP {hp}/{maxHp} · MP {mana}/{maxMana}"
+  },
+  "errorEssence": {
+    "es": "No hay suficiente Esencia Rúnica. Actualiza la lectura y espera la regeneración antes de confirmar otro duelo.",
+    "en": "There is not enough Runic Essence. Refresh the reading and wait for regeneration before confirming another duel."
+  },
+  "errorCrowns": {
+    "es": "No hay suficientes Coronas Mágicas para esta compra. Actualiza el saldo antes de volver a confirmar.",
+    "en": "There are not enough Magic Crowns for this purchase. Refresh the balance before confirming again."
+  },
+  "errorKeys": {
+    "es": "Necesitas una Llave de Oro obtenida al vencer a un jefe para abrir esta bóveda.",
+    "en": "You need a Gold Key earned by defeating a boss to open this vault."
+  },
+  "errorFormation": {
+    "es": "Un duelo necesita entre tres y cinco aliados válidos. Prepara tu equipo desde el mapa o recluta en un Pacto Mágico.",
+    "en": "A duel needs three to five valid allies. Prepare your team from the map or recruit through a Magic Pact."
+  },
+  "errorUnit": {
+    "es": "La unidad o pieza elegida ya no está disponible. Actualiza el inventario y elige otra antes de confirmar.",
+    "en": "The selected unit or item is no longer available. Refresh your inventory and choose another before confirming."
+  },
+  "errorVersion": {
+    "es": "La configuración o el estado ha cambiado. Actualiza, revisa las condiciones y confirma de nuevo; esta petición no se adapta automáticamente.",
+    "en": "The configuration or state has changed. Refresh, review the conditions and confirm again; this request is not adapted automatically."
+  },
+  "errorClientStorage": {
+    "es": "No se pudo guardar la intención en este navegador. Revisa el almacenamiento y recupera la operación antes de intentar gastar otra vez.",
+    "en": "The operation intent could not be saved in this browser. Check storage and recover the operation before trying to spend again."
+  },
+  "errorUncertain": {
+    "es": "No se pudo confirmar la respuesta del servidor. Recupera la misma operación para comprobar su resultado antes de gastar otra vez.",
+    "en": "The server response could not be confirmed. Recover the same operation to check its result before spending again."
+  },
+  "errorPending": {
+    "es": "Hay una operación pendiente o una petición incompatible. Recupera la operación existente antes de confirmar otra.",
+    "en": "There is a pending operation or an incompatible request. Recover the existing operation before confirming another."
+  },
+  "errorSession": {
+    "es": "La sesión ha cambiado o ha caducado. Sincroniza la sesión antes de continuar; no se atribuyen operaciones a otra cuenta.",
+    "en": "The session has changed or expired. Synchronize the session before continuing; operations are not assigned to another account."
+  },
+  "errorReview": {
+    "es": "El servidor o el navegador no permitió completar la comprobación. Actualiza o recupera la operación antes de volver a gastar.",
+    "en": "The server or browser could not complete the check. Refresh or recover the operation before spending again."
+  },
+  "noSavedBattle": {
+    "es": "Todavía no hay un combate guardado para reproducir. Avanza por el mapa hasta un Duelo Arcano.",
+    "en": "There is no saved battle to replay yet. Advance through the map to an Arcane Duel."
+  },
+  "viewUnlockedLocations": {
+    "es": "Ver localizaciones desbloqueadas",
+    "en": "View unlocked locations"
+  },
+  "bossUnlockSaved": {
+    "es": "Victoria de jefe confirmada. El desbloqueo de la siguiente localización está guardado.",
+    "en": "Boss victory confirmed. The next location unlock is saved."
+  },
+  "unlockedLocations": {
+    "es": "Localizaciones desbloqueadas",
+    "en": "Unlocked locations"
+  },
+  "whisperingForest": {
+    "es": "El Bosque de los Susurros",
+    "en": "The Whispering Forest"
+  },
+  "unlockedLocation": {
+    "es": "Localización desbloqueada",
+    "en": "Unlocked location"
+  },
+  "noUnlockedLocations": {
+    "es": "Aún no has desbloqueado otra localización.",
+    "en": "You have not unlocked another location yet."
+  },
+  "nextCampaignPending": {
+    "es": "El desbloqueo está guardado. La siguiente ruta todavía no está disponible en este ensayo.",
+    "en": "The unlock is saved. The next route is not available in this trial yet."
+  },
+  "rarityFilter": {
+    "es": "Filtro de rareza",
+    "en": "Rarity filter"
+  },
+  "discoveryFilter": {
+    "es": "Filtro de descubrimiento",
+    "en": "Discovery filter"
+  },
+  "allRarities": {
+    "es": "Todas las rarezas",
+    "en": "All rarities"
+  },
+  "allCards": {
+    "es": "Todos los cromos",
+    "en": "All cards"
+  },
+  "discovered": {
+    "es": "Descubierto",
+    "en": "Discovered"
+  },
+  "noMatchingCards": {
+    "es": "Ningún cromo coincide con estos filtros.",
+    "en": "No cards match these filters."
+  },
+  "inspectCopy": {
+    "es": "Inspeccionar copia {number}",
+    "en": "Inspect copy {number}"
+  },
+  "wandForCopy": {
+    "es": "Varita para copia {number}",
+    "en": "Wand for copy {number}"
+  },
+  "broomForCopy": {
+    "es": "Escoba para copia {number}",
+    "en": "Broom for copy {number}"
+  },
+  "unequipped": {
+    "es": "Sin equipar",
+    "en": "Unequipped"
+  },
+  "saveWand": {
+    "es": "Guardar varita",
+    "en": "Save wand"
+  },
+  "saveBroom": {
+    "es": "Guardar escoba",
+    "en": "Save broom"
+  },
+  "equipmentTransferHint": {
+    "es": "Guardar mueve la pieza seleccionada a esta copia; su portador anterior queda sin ella.",
+    "en": "Saving moves the selected item to this copy; its previous bearer loses it."
+  },
+  "currentlyEquippedBy": {
+    "es": "Equipada por {name}",
+    "en": "Equipped by {name}"
+  },
+  "wandDescription": {
+    "es": "Varita de {wood} · {core} · +{bonus} · ×{multiplier}",
+    "en": "{wood} wand · {core} · +{bonus} · ×{multiplier}"
+  },
+  "birch": {
+    "es": "Abedul",
+    "en": "Birch"
+  },
+  "willow": {
+    "es": "Sauce",
+    "en": "Willow"
+  },
+  "elder": {
+    "es": "Saúco",
+    "en": "Elder"
+  },
+  "dragon": {
+    "es": "Dragón",
+    "en": "Dragon"
+  },
+  "phoenix": {
+    "es": "Fénix",
+    "en": "Phoenix"
+  },
+  "wyvern": {
+    "es": "Wyvern",
+    "en": "Wyvern"
+  },
+  "noCore": {
+    "es": "Sin núcleo",
+    "en": "No core"
+  },
+  "cadetZephyr": {
+    "es": "Céfiro Cadete",
+    "en": "Cadet Zephyr"
+  },
+  "zephyr2000": {
+    "es": "Céfiro 2000",
+    "en": "Zephyr 2000"
+  },
+  "windArrow": {
+    "es": "Saeta del Viento",
+    "en": "Wind Arrow"
+  },
+  "beanChallenge": {
+    "es": "El Desafío de la Gragea",
+    "en": "The Bean Challenge"
+  },
+  "beanAssignmentHint": {
+    "es": "Opcional: cada tarro se consume al confirmar el duelo. El sabor se sortea en servidor; cancelar conserva los tarros.",
+    "en": "Optional: each jar is consumed when the duel is confirmed. The server draws the flavour; cancelling keeps the jars."
+  },
+  "noBeansAvailable": {
+    "es": "No tienes Grageas disponibles. Puedes combatir sin ellas o comprarlas en el Bazar.",
+    "en": "You have no available Beans. You can fight without them or buy them in the Bazaar."
+  },
+  "beanForUnit": {
+    "es": "Gragea para {name} · unidad {number}",
+    "en": "Bean for {name} · unit {number}"
+  },
+  "noBean": {
+    "es": "Sin Gragea",
+    "en": "No Bean"
+  },
+  "beanJar": {
+    "es": "Tarro {number}",
+    "en": "Jar {number}"
+  },
+  "beanEffects": {
+    "es": "Efectos y probabilidades",
+    "en": "Effects and probabilities"
+  },
+  "mintEffect": {
+    "es": "Cura inmediatamente un 25% de PV máximos.",
+    "en": "Immediately heals 25% of maximum HP."
+  },
+  "pepperEffect": {
+    "es": "+30% de daño en el primer turno.",
+    "en": "+30% damage on the first turn."
+  },
+  "earthEffect": {
+    "es": "−15% de iniciativa durante dos turnos.",
+    "en": "−15% initiative for two turns."
+  },
+  "soapEffect": {
+    "es": "El primer hechizo falla.",
+    "en": "The first spell misses."
+  },
+  "skipToContent": {
+    "es": "Saltar al contenido",
+    "en": "Skip to content"
+  },
+  "close": {
+    "es": "Cerrar",
+    "en": "Close"
+  },
+  "graphicsUnavailable": {
+    "es": "Visualización gráfica no disponible. Todas las acciones y resultados siguen accesibles.",
+    "en": "Graphics are unavailable. All actions and results remain accessible."
+  },
+  "viewMap": {
+    "es": "Ver mapa ramificado",
+    "en": "View branching map"
+  },
+  "viewNodeList": {
+    "es": "Ver lista de nodos",
+    "en": "View node list"
+  },
+  "pause": {
+    "es": "Pausa",
+    "en": "Pause"
+  },
+  "skipPlayback": {
+    "es": "Omitir reproducción",
+    "en": "Skip playback"
+  },
+  "skipReveal": {
+    "es": "Omitir animación",
+    "en": "Skip animation"
+  },
+  "reduceMotion": {
+    "es": "Reducir movimiento",
+    "en": "Reduce motion"
+  },
+  "neutral": {
+    "es": "Neutral",
+    "en": "Neutral"
+  },
+  "alchemy": {
+    "es": "Alquimia",
+    "en": "Alchemy"
+  },
+  "fire": {
+    "es": "Fuego",
+    "en": "Fire"
+  },
+  "shadows": {
+    "es": "Sombras",
+    "en": "Shadows"
+  },
+  "mintBean": {
+    "es": "Menta Dulce",
+    "en": "Sweet Mint"
+  },
+  "pepperBean": {
+    "es": "Pimienta Volcánica",
+    "en": "Volcanic Pepper"
+  },
+  "earthBean": {
+    "es": "Tierra Podrida",
+    "en": "Rotten Earth"
+  },
+  "soapBean": {
+    "es": "Jabón Rancio",
+    "en": "Rancid Soap"
+  },
+  "savedReplayUnavailable": {
+    "es": "El registro guardado no puede reproducirse. Vuelve al mapa y actualiza la lectura del servidor. Esta vista no genera otro combate ni cambia el resultado guardado.",
+    "en": "The saved record cannot be replayed. Return to the map and refresh the server reading. This view does not generate another battle or change the saved result."
+  },
+  "combatantLabel": {
+    "es": "{side} · Unidad {position} · {name}",
+    "en": "{side} · Unit {position} · {name}"
+  },
+  "combatUnitPosition": {
+    "es": "Unidad {position}",
+    "en": "Unit {position}"
+  },
+  "unknownCombatant": {
+    "es": "Unidad sin identidad registrada",
+    "en": "Unit identity was not recorded"
+  },
+  "unitAffinity": {
+    "es": "Afinidad: {affinity}",
+    "en": "Affinity: {affinity}"
+  },
+  "recordedBean": {
+    "es": "Gragea registrada: {bean}",
+    "en": "Recorded bean: {bean}"
+  },
+  "alchemyPassive": {
+    "es": "Alquimia {tier} · +{value} PV/turno",
+    "en": "Alchemy {tier} · +{value} HP/turn"
+  },
+  "firePassive": {
+    "es": "Fuego {tier} · Quemadura {value} PV/turno del objetivo",
+    "en": "Fire {tier} · Burn {value} HP/target turn"
+  },
+  "shadowsPassive": {
+    "es": "Sombras {tier} · +{value} iniciativa",
+    "en": "Shadows {tier} · +{value} initiative"
+  },
+  "noRecordedPassives": {
+    "es": "Sin bonificaciones de equipo registradas en este momento.",
+    "en": "No team bonuses recorded at this point."
+  },
+  "covenContributionOne": {
+    "es": "{bonus} · {count} integrante",
+    "en": "{bonus} · {count} contributor"
+  },
+  "covenContributionMany": {
+    "es": "{bonus} · {count} integrantes",
+    "en": "{bonus} · {count} contributors"
+  },
+  "teamSynergyEventOne": {
+    "es": "{side}: sinergia {affinity} ({count} integrante).",
+    "en": "{side}: {affinity} synergy ({count} contributor)."
+  },
+  "teamSynergyEvent": {
+    "es": "{side}: sinergia {affinity} ({count} integrantes).",
+    "en": "{side}: {affinity} synergy ({count} contributors)."
+  },
+  "battleStarts": {
+    "es": "Comienza el duelo.",
+    "en": "The duel begins."
+  },
+  "synergyEvent": {
+    "es": "Sinergia: {affinity} · {count}.",
+    "en": "Synergy: {affinity} · {count}."
+  },
+  "beanEvent": {
+    "es": "{name} activa {bean}.",
+    "en": "{name} activates {bean}."
+  },
+  "turnEvent": {
+    "es": "Turno de {name}, iniciativa {initiative}.",
+    "en": "Turn for {name}, initiative {initiative}."
+  },
+  "noManaEvent": {
+    "es": "{name} no tiene PM suficientes.",
+    "en": "{name} has insufficient MP."
+  },
+  "healEvent": {
+    "es": "{name} recupera {value} PV.",
+    "en": "{name} recovers {value} HP."
+  },
+  "burnEvent": {
+    "es": "{name} recibe {value} de daño por fuego.",
+    "en": "{name} takes {value} fire damage."
+  },
+  "missEvent": {
+    "es": "El hechizo de {name} hacia {target} falla.",
+    "en": "The spell from {name} towards {target} misses."
+  },
+  "spellEvent": {
+    "es": "{name} inflige {value} a {target}.",
+    "en": "{name} deals {value} to {target}."
+  },
+  "replayProgress": {
+    "es": "Ronda {round} · Eventos {current} de {total}",
+    "en": "Round {round} · Events {current} of {total}"
+  },
+  "unitLevel": {
+    "es": "Nivel {level}",
+    "en": "Level {level}"
+  },
+  "healthOf": {
+    "es": "Vida de {name}",
+    "en": "Health of {name}"
+  },
+  "wandBonus": {
+    "es": "Varita +{value} · ×{multiplier}",
+    "en": "Wand +{value} · ×{multiplier}"
+  },
+  "broomBonus": {
+    "es": "Escoba +{value} iniciativa",
+    "en": "Broom +{value} initiative"
+  },
+  "battleRecord": {
+    "es": "Registro del combate",
+    "en": "Battle record"
+  },
+  "map": {
+    "es": "Mapa",
+    "en": "Map"
+  },
+  "common": {
+    "es": "Común",
+    "en": "Common"
+  },
+  "unusual": {
+    "es": "Inusual",
+    "en": "Unusual"
+  },
+  "epic": {
+    "es": "Épico",
+    "en": "Epic"
+  },
+  "arcaneLegendary": {
+    "es": "Arcano Legendario",
+    "en": "Arcane Legendary"
+  },
+  "arcaneDuel": {
+    "es": "Duelo Arcano",
+    "en": "Arcane Duel"
+  },
+  "alchemyRefuge": {
+    "es": "Refugio Alquímico",
+    "en": "Alchemy Refuge"
+  },
+  "lootChest": {
+    "es": "Cofre de Botín",
+    "en": "Loot Chest"
+  },
+  "magicPact": {
+    "es": "Pacto Mágico",
+    "en": "Magic Pact"
+  },
+  "chanceEncounter": {
+    "es": "Encuentro del Azar",
+    "en": "Chance Encounter"
+  },
+  "zoneBoss": {
+    "es": "Jefe de Zona",
+    "en": "Zone Boss"
+  },
+  "theHiddenBoulevard": {
+    "es": "El Bulevar Oculto",
+    "en": "The Hidden Boulevard"
+  },
+  "localTrialProvisionalBalanceAndArtSavedOn": {
+    "es": "Ensayo local · Balance en evaluación · Guardado en servidor local",
+    "en": "Local trial · Balance under evaluation · Saved on local server"
+  },
+  "chooseYourNextMystery": {
+    "es": "Elige tu próximo misterio",
+    "en": "Choose your next mystery"
+  },
+  "anApprenticeAWandAndAPathTo": {
+    "es": "Un aprendiz, una varita y un camino por descubrir. Explora, reúne tu aquelarre y completa la Cromodex.",
+    "en": "An apprentice, a wand and a path to discover. Explore, assemble your coven and complete the Chromodex."
+  },
+  "theTrialSessionStaysInThisBrowserFor": {
+    "es": "La sesión de ensayo se conserva en este navegador durante siete días. Sin recuperación por cuenta ni sincronización entre dispositivos.",
+    "en": "The trial session stays in this browser for seven days. Account recovery and cross-device sync are unavailable."
+  },
+  "startLocalTrial": {
+    "es": "Comenzar ensayo local",
+    "en": "Start local trial"
+  },
+  "theTrialCouldNotStartCheckThatThe": {
+    "es": "No se pudo iniciar el ensayo. Comprueba que el servidor local está disponible y vuelve a intentarlo.",
+    "en": "The trial could not start. Check that the local server is available and try again."
+  },
+  "crowns": {
+    "es": "Coronas",
+    "en": "Crowns"
+  },
+  "essence": {
+    "es": "Esencia",
+    "en": "Essence"
+  },
+  "goldKeys": {
+    "es": "Llaves de Oro",
+    "en": "Gold Keys"
+  },
+  "yourTeam": {
+    "es": "Tu Equipo",
+    "en": "Your Team"
+  },
+  "temporaryAlly": {
+    "es": "Aliado temporal",
+    "en": "Temporary ally"
+  },
+  "hP": {
+    "es": "PV",
+    "en": "HP"
+  },
+  "theOperationNeedsReviewNoNewRewardHas": {
+    "es": "La operación requiere revisión. No se ha anunciado una recompensa nueva.",
+    "en": "The operation needs review. No new reward has been announced."
+  },
+  "recoverOperation": {
+    "es": "Recuperar operación",
+    "en": "Recover operation"
+  },
+  "refreshState": {
+    "es": "Actualizar estado",
+    "en": "Refresh state"
+  },
+  "recoveringTheOperationWaitBeforeSpendingAgain": {
+    "es": "Recuperando la operación. Espera antes de gastar de nuevo.",
+    "en": "Recovering the operation. Wait before spending again."
+  },
+  "synchronizingState": {
+    "es": "Sincronizando estado…",
+    "en": "Synchronizing state…"
+  },
+  "confirmedCard": {
+    "es": "Cromo confirmado",
+    "en": "Confirmed card"
+  },
+  "newDiscovery": {
+    "es": "Nuevo descubrimiento",
+    "en": "New discovery"
+  },
+  "newCopy": {
+    "es": "Nueva copia",
+    "en": "New copy"
+  },
+  "theCrookedPassage": {
+    "es": "El Pasaje Torcido",
+    "en": "The Crooked Passage"
+  },
+  "theExpedition": {
+    "es": "La expedición",
+    "en": "The expedition"
+  },
+  "pactsCanExpandYourTeamTemporarilyEachDuel": {
+    "es": "Los pactos pueden ampliar temporalmente tu equipo. Cada duelo necesita tres unidades y consume 5 de Esencia.",
+    "en": "Pacts can expand your team temporarily. Each duel requires three units and uses 5 Essence."
+  },
+  "startExpedition": {
+    "es": "Iniciar expedición",
+    "en": "Start expedition"
+  },
+  "visited": {
+    "es": "Visitado",
+    "en": "Visited"
+  },
+  "available": {
+    "es": "Disponible",
+    "en": "Available"
+  },
+  "locked": {
+    "es": "Bloqueado",
+    "en": "Locked"
+  },
+  "nodeConfirmation": {
+    "es": "Confirmación de nodo",
+    "en": "Node confirmation"
+  },
+  "uses5EssenceAutomaticCombatWithYourCurrent": {
+    "es": "Consume 5 Esencia. Combate automático con el equipo actual.",
+    "en": "Uses 5 Essence. Automatic combat with your current team."
+  },
+  "resolveThisEventWithYourCurrentTeam": {
+    "es": "Resolver este evento con el equipo actual.",
+    "en": "Resolve this event with your current team."
+  },
+  "confirmNode": {
+    "es": "Confirmar nodo",
+    "en": "Confirm node"
+  },
+  "cancel": {
+    "es": "Cancelar",
+    "en": "Cancel"
+  },
+  "bazaar": {
+    "es": "Bazar",
+    "en": "Bazaar"
+  },
+  "theEnchantedConfectionery": {
+    "es": "La Confitería Encantada",
+    "en": "The Enchanted Confectionery"
+  },
+  "buyCocoaToad": {
+    "es": "Comprar Sapo de Cacao · {value} Coronas",
+    "en": "Buy Cocoa Toad · {value} Crowns"
+  },
+  "buyChanceBeans": {
+    "es": "Comprar Grageas del Azar · {value} Coronas",
+    "en": "Buy Chance Beans · {value} Crowns"
+  },
+  "openACocoaToad": {
+    "es": "Abrir un Sapo de Cacao",
+    "en": "Open a Cocoa Toad"
+  },
+  "cardProbabilities": {
+    "es": "Probabilidades por cromo",
+    "en": "Card probabilities"
+  },
+  "chromodex": {
+    "es": "Cromodex",
+    "en": "Chromodex"
+  },
+  "undiscoveredCard": {
+    "es": "Cromo por descubrir",
+    "en": "Undiscovered card"
+  },
+  "mP": {
+    "es": "PM",
+    "en": "MP"
+  },
+  "power": {
+    "es": "Poder",
+    "en": "Power"
+  },
+  "speed": {
+    "es": "Velocidad",
+    "en": "Speed"
+  },
+  "removeFromTeam": {
+    "es": "Retirar del equipo",
+    "en": "Remove from team"
+  },
+  "addToTeam": {
+    "es": "Añadir al equipo",
+    "en": "Add to team"
+  },
+  "combatArena": {
+    "es": "Arena de Combate",
+    "en": "Combat Arena"
+  },
+  "opponent": {
+    "es": "Rival",
+    "en": "Opponent"
+  },
+  "arcaneRival": {
+    "es": "Rival arcano",
+    "en": "Arcane rival"
+  },
+  "victory": {
+    "es": "Victoria",
+    "en": "Victory"
+  },
+  "defeat": {
+    "es": "Derrota",
+    "en": "Defeat"
+  },
+  "draw": {
+    "es": "Empate",
+    "en": "Draw"
+  },
+  "backToMap": {
+    "es": "Volver al mapa",
+    "en": "Back to map"
+  },
+  "missions": {
+    "es": "Misiones",
+    "en": "Missions"
+  },
+  "defeatTheCrookedPassageBossToUnlockThe": {
+    "es": "Vence al jefe del Pasaje Torcido para desbloquear el Bosque de los Susurros.",
+    "en": "Defeat the Crooked Passage boss to unlock the Whispering Forest."
+  },
+  "visitedNodes": {
+    "es": "Nodos visitados",
+    "en": "Visited nodes"
+  },
+  "mainNavigation": {
+    "es": "Navegación principal",
+    "en": "Main navigation"
+  },
+  "savedCopy": {
+    "es": "{count} copia guardada",
+    "en": "{count} saved copy"
+  },
+  "savedCopies": {
+    "es": "{count} copias guardadas",
+    "en": "{count} saved copies"
+  },
+  "spanishLanguage": {
+    "es": "Español",
+    "en": "Español"
+  },
+  "englishLanguage": {
+    "es": "English",
+    "en": "English"
+  },
+  "autoPlayback": {
+    "es": "Auto",
+    "en": "Auto"
+  },
+  "viewInChromodex": {
+    "es": "Ver en Cromodex",
+    "en": "View in Chromodex"
+  },
+  "continuePlaying": {
+    "es": "Continuar",
+    "en": "Continue"
+  },
+  "toadStockOne": {
+    "es": "{count} Sapo disponible",
+    "en": "{count} Toad available"
+  },
+  "toadStockMany": {
+    "es": "{count} Sapos disponibles",
+    "en": "{count} Toads available"
+  },
+  "beanStockOne": {
+    "es": "{count} tarro disponible",
+    "en": "{count} jar available"
+  },
+  "beanStockMany": {
+    "es": "{count} tarros disponibles",
+    "en": "{count} jars available"
+  },
+  "beansShopHint": {
+    "es": "Asigna un tarro a una unidad antes de confirmar un duelo. El sabor se resuelve al empezar el combate; el tarro no se abre en la tienda.",
+    "en": "Assign a jar to a unit before confirming a duel. Its flavour resolves when the battle starts; the jar is not opened in the shop."
+  },
+  "formationHint": {
+    "es": "Empieza por los dos Pactos Mágicos para reunir tres unidades. Esos aliados son temporales; los cromos de Sapos permanecen en tu colección.",
+    "en": "Start with the two Magic Pacts to assemble three units. Those allies are temporary; Toad cards remain in your collection."
+  },
+  "bossObjectiveComplete": {
+    "es": "Objetivo completado: has vencido al jefe del Pasaje Torcido.",
+    "en": "Objective completed: you defeated the Crooked Passage boss."
+  },
+  "goldKeyCountOne": {
+    "es": "{count} Llave de Oro",
+    "en": "{count} Gold Key"
+  },
+  "goldKeyCountMany": {
+    "es": "{count} Llaves de Oro",
+    "en": "{count} Gold Keys"
+  },
+  "savedBattleNotice": {
+    "es": "Resultado guardado: {result}. La animación reproduce el registro; no cambia la vida ni los premios guardados.",
+    "en": "Saved result: {result}. The animation replays the record; it does not change saved health or rewards."
+  },
+  "confectioneryShort": {
+    "es": "Confitería",
+    "en": "Sweets"
+  },
+  "workshopShort": {
+    "es": "Taller",
+    "en": "Workshop"
+  },
+  "vaultShort": {
+    "es": "Bóvedas",
+    "en": "Vaults"
+  },
+  "doubleSpeed": {
+    "es": "2x",
+    "en": "2x"
+  },
+  "defeatedUnit": {
+    "es": "Fuera de combate",
+    "en": "Defeated"
+  },
+  "esShortLabel": {
+    "es": "ES",
+    "en": "ES"
+  },
+  "enShortLabel": {
+    "es": "EN",
+    "en": "EN"
+  },
+  "localSessionOptions": {
+    "es": "Opciones del ensayo local",
+    "en": "Local trial options"
+  },
+  "nextObjective": {
+    "es": "Siguiente objetivo",
+    "en": "Next objective"
+  },
+  "guideBeginTitle": {
+    "es": "Reúne tu primer aquelarre",
+    "en": "Gather your first coven"
+  },
+  "guideBeginBody": {
+    "es": "Inicia la expedición. Los dos primeros Pactos te permiten reunir tres unidades antes del duelo.",
+    "en": "Start the expedition. The first two Pacts let you gather three units before the duel."
+  },
+  "guideRecruitTitle": {
+    "es": "Un aliado más en el camino",
+    "en": "Another ally along the path"
+  },
+  "guideRecruitBody": {
+    "es": "Tu equipo tiene {count} unidades. Elige un Pacto disponible para sumar un aliado temporal; el duelo exige de tres a cinco.",
+    "en": "Your team has {count} units. Choose an available Pact to add a temporary ally; a duel requires three to five."
+  },
+  "guidePrepareTitle": {
+    "es": "Prepara tu formación",
+    "en": "Prepare your formation"
+  },
+  "guidePrepareBody": {
+    "es": "Tu equipo tiene {count} aliados y no hay un Pacto disponible aquí. Prepara tus copias propias desde el mapa antes de combatir.",
+    "en": "Your team has {count} allies and no Pact is available here. Prepare your owned copies from the map before fighting."
+  },
+  "guideChooseTitle": {
+    "es": "Elige tu siguiente paso",
+    "en": "Choose your next step"
+  },
+  "guideChooseBody": {
+    "es": "Elige entre los nodos disponibles. Revisa los PV y el equipo antes de un duelo; confirmar consume 5 de Esencia.",
+    "en": "Choose among the available nodes. Check health and equipment before a duel; confirming spends 5 Essence."
+  },
+  "guideWonTitle": {
+    "es": "El Pasaje queda atrás",
+    "en": "The Passage is behind you"
+  },
+  "guideWonBody": {
+    "es": "Has vencido al jefe. Consulta el desbloqueo en Misiones y canjea las llaves que conserves en las Bóvedas. La siguiente ruta aún no está disponible.",
+    "en": "You defeated the boss. View the unlock in Missions and exchange any keys you still hold in the Vaults. The next route is not available yet."
+  },
+  "guideLostTitle": {
+    "es": "Vuelve a preparar tu equipo",
+    "en": "Prepare your team again"
+  },
+  "guideLostBody": {
+    "es": "La expedición ha terminado. Conservas las copias y el botín confirmado; puedes elegir otra formación e iniciar una nueva ruta.",
+    "en": "The expedition has ended. You keep your copies and confirmed loot; choose another formation and start a new route."
+  },
+  "guideDrawTitle": {
+    "es": "La expedición ha terminado",
+    "en": "The expedition has ended"
+  },
+  "guideDrawBody": {
+    "es": "El combate acabó en empate. Revisa tu formación y comienza otra expedición; la colección se conserva.",
+    "en": "The battle ended in a draw. Review your formation and start another expedition; your collection is preserved."
+  },
+  "routeStages": {
+    "es": "Etapas recorridas: {count} de {total}",
+    "en": "Stages visited: {count} of {total}"
+  },
+  "ownedTeamMember": {
+    "es": "Copia propia",
+    "en": "Owned copy"
+  },
+  "temporaryTeamMember": {
+    "es": "Aliado temporal",
+    "en": "Temporary ally"
+  },
+  "nodeCombatCost": {
+    "es": "Combate · 5 Esencia",
+    "en": "Combat · 5 Essence"
+  },
+  "nodeRefugeHint": {
+    "es": "Recupera 40 % PV",
+    "en": "Restores 40% health"
+  },
+  "nodePactHint": {
+    "es": "Aliado temporal",
+    "en": "Temporary ally"
+  },
+  "nodeChestHint": {
+    "es": "Botín de la ruta",
+    "en": "Route loot"
+  },
+  "nodeChanceHint": {
+    "es": "Botín, cura o daño",
+    "en": "Loot, healing or harm"
+  },
+  "collectionDiscoveryCount": {
+    "es": "Identidades descubiertas: {count} de {total}",
+    "en": "Identities discovered: {count} of {total}"
+  },
+  "collectionProgress": {
+    "es": "Progreso de descubrimientos",
+    "en": "Discovery progress"
+  },
+  "collectionCopiesQuestion": {
+    "es": "¿Para qué sirven las copias?",
+    "en": "What are copies for?"
+  },
+  "collectionCopiesHelp": {
+    "es": "Cada copia propia puede ocupar un puesto del equipo y llevar equipo distinto. Durante una expedición, quitarla y volver a añadirla conserva sus PV y PM. No hay canje de duplicados en este ensayo.",
+    "en": "Each owned copy can take a team slot and carry different equipment. During an expedition, removing and adding it again preserves its health and mana. This trial has no duplicate exchange."
+  },
+  "cardCopyCount": {
+    "es": "Copias: {count}",
+    "en": "Copies: {count}"
+  },
+  "cardInTeam": {
+    "es": "En tu equipo",
+    "en": "In your team"
+  },
+  "toadPurchaseSaved": {
+    "es": "Compra guardada: {count} Sapo de Cacao · −{spent} Coronas. Ya puedes abrirlo.",
+    "en": "Purchase saved: {count} Cocoa Toad · −{spent} Crowns. You can open it now."
+  },
+  "beansPurchaseSaved": {
+    "es": "Compra guardada: {count} tarro de Grageas · −{spent} Coronas. Asígnalo antes de un duelo.",
+    "en": "Purchase saved: {count} jar of Chance Beans · −{spent} Crowns. Assign it before a duel."
+  },
+  "teamSelectionSaved": {
+    "es": "Formación guardada. Tu equipo ya refleja la selección.",
+    "en": "Formation saved. Your team now reflects your selection."
+  },
+  "equipmentSelectionSaved": {
+    "es": "Equipo guardado en la copia seleccionada.",
+    "en": "Equipment saved on the selected copy."
+  },
+  "nodeDecision": {
+    "es": "Elige",
+    "en": "Choose"
+  },
+  "nodeOpponents": {
+    "es": "Rivales",
+    "en": "Opponents"
+  },
+  "nodeLootPreview": {
+    "es": "Botín si ganas; entrega fija en cofres",
+    "en": "Loot on victory; fixed contents in chests"
+  },
+  "nodeHeal": {
+    "es": "Vida",
+    "en": "Health"
+  },
+  "nodeFocus": {
+    "es": "Maná",
+    "en": "Mana"
+  },
+  "nodeRecoveryPreview": {
+    "es": "Recuperación prevista",
+    "en": "Recovery preview"
+  },
+  "nodeRecruit": {
+    "es": "Reclutar",
+    "en": "Recruit"
+  },
+  "nodePass": {
+    "es": "Pasar",
+    "en": "Pass"
+  },
+  "nodeRisk": {
+    "es": "Arriesgar",
+    "en": "Take a risk"
+  },
+  "nodeReplaceTemporary": {
+    "es": "Reemplazar temporal",
+    "en": "Replace temporary ally"
+  },
+  "nodeOutcomeHelp": {
+    "es": "Posibles resultados",
+    "en": "Possible outcomes"
+  },
+  "nodePassed": {
+    "es": "Has seguido tu camino.",
+    "en": "You continued on your way."
+  },
+  "nodeFocusResolved": {
+    "es": "Maná recuperado; las copias propias se conservan.",
+    "en": "Mana restored; owned copies are preserved."
+  },
+  "nodeLootAmounts": {
+    "es": "{crowns} Coronas, {keys} llaves, {toads} sapos, {beans} grageas.",
+    "en": "{crowns} Crowns, {keys} keys, {toads} toads, {beans} beans."
+  },
+  "nodeBeanPreparation": {
+    "es": "Preparar Grageas. Reserva: {count}.",
+    "en": "Prepare beans. Stock: {count}."
+  },
+  "gameSettings": {
+    "es": "Ajustes",
+    "en": "Settings"
+  },
+  "gameLanguage": {
+    "es": "Idioma",
+    "en": "Language"
+  },
+  "gameWorld": {
+    "es": "Mundo",
+    "en": "World"
+  },
+  "gameAboutSave": {
+    "es": "Tu partida",
+    "en": "Your save"
+  },
+  "gameWorldSwapHint": {
+    "es": "Cambiar de mundo conserva tu equipo, tus objetos y tu progreso.",
+    "en": "Changing worlds keeps your team, items and progress."
+  },
+  "gameEnterWorld": {
+    "es": "Entrar",
+    "en": "Enter"
+  },
+  "gameChooseSweet": {
+    "es": "Elige un dulce",
+    "en": "Choose a sweet"
+  },
+  "gameSweetStock": {
+    "es": "{count} unidades guardadas",
+    "en": "{count} saved units"
+  },
+  "gameBreakSeal": {
+    "es": "Romper el sello",
+    "en": "Break the seal"
+  },
+  "gameBuySweet": {
+    "es": "Comprar · {value}",
+    "en": "Buy · {value}"
+  },
+  "gameEarnCoinsOnMap": {
+    "es": "Consigue monedas en la ruta.",
+    "en": "Earn coins on the route."
+  },
+  "gameFlavours": {
+    "es": "Sabores descubiertos",
+    "en": "Discovered flavours"
+  },
+  "gameFlavourProgress": {
+    "es": "{count} de {total} sabores descubiertos",
+    "en": "{count} of {total} flavours discovered"
+  },
+  "gameFlavourMint": {
+    "es": "Menta",
+    "en": "Mint"
+  },
+  "gameFlavourPepper": {
+    "es": "Pimienta",
+    "en": "Pepper"
+  },
+  "gameFlavourEarth": {
+    "es": "Tierra",
+    "en": "Earth"
+  },
+  "gameFlavourSoap": {
+    "es": "Jabón",
+    "en": "Soap"
+  },
+  "gameKnownFlavour": {
+    "es": "{name} · descubierto",
+    "en": "{name} · discovered"
+  },
+  "gameUnknownFlavour": {
+    "es": "{name} · por descubrir",
+    "en": "{name} · undiscovered"
+  },
+  "gameTasteToDiscover": {
+    "es": "Un sabor por descubrir",
+    "en": "A flavour to discover"
+  },
+  "gameFlavourHelpTitle": {
+    "es": "¿Cómo descubrirlos?",
+    "en": "How to discover them?"
+  },
+  "gameFlavourHelp": {
+    "es": "Asigna un tarro antes del duelo. Cuando una gragea se activa, su sabor queda en tu colección. Hay cuatro sabores en este ensayo.",
+    "en": "Assign a jar before a duel. When a bean activates, its flavour joins your collection. This trial has four flavours."
+  },
+  "gameExplore": {
+    "es": "Explora",
+    "en": "Explore"
+  },
+  "gameCollect": {
+    "es": "Colecciona",
+    "en": "Collect"
+  },
+  "gameBossChallenge": {
+    "es": "Desafía al jefe",
+    "en": "Challenge the boss"
+  },
+  "gameOpenVault": {
+    "es": "Abre la bóveda",
+    "en": "Open the vault"
+  },
+  "gameFindYourNextWizard": {
+    "es": "Descubre otro mago",
+    "en": "Discover another wizard"
+  },
+  "gameContinueAdventure": {
+    "es": "Seguir explorando",
+    "en": "Keep exploring"
+  },
+  "gameUnwrap": {
+    "es": "La sorpresa ya es tuya",
+    "en": "The surprise is yours"
+  },
+  "gameOpeningHint": {
+    "es": "Sello · salto · descubrimiento",
+    "en": "Seal · leap · discovery"
+  },
+  "gameBackToCounter": {
+    "es": "Volver al mostrador",
+    "en": "Back to the counter"
+  },
+  "gameSavedDiscovery": {
+    "es": "Guardado en tu colección",
+    "en": "Saved to your collection"
+  },
+  "gameArtworkStatus": {
+    "es": "Arte provisional · balance en evaluación",
+    "en": "Provisional artwork · balance under evaluation"
+  },
+  "gameAlbumFilters": {
+    "es": "Filtrar cromos",
+    "en": "Filter cards"
+  },
+  "gameAlbumPages": {
+    "es": "Páginas del álbum",
+    "en": "Album pages"
+  },
+  "gamePreviousPage": {
+    "es": "Página anterior",
+    "en": "Previous page"
+  },
+  "gameNextPage": {
+    "es": "Página siguiente",
+    "en": "Next page"
+  }
+}

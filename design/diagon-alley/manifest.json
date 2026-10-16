@@ -1,0 +1,613 @@
+{
+  "version": 1,
+  "date": "2026-10-15",
+  "cashCost": 0,
+  "direction": "Callejón de maravillas — violet velvet, amber windows, gold foil, tactile paper",
+  "sourcePolicy": "Reuse existing private concept art; local authoring and Blender; no new imagegen calls.",
+  "license": "Authored code/SVG under repository terms. Historical AI concept rasters retain their original provenance. Franchise distribution permission is unresolved.",
+  "functionalText": "None embedded. Localized names, costs and errors remain DOM.",
+  "rigging": "Box is real separate geometry in blend. Frog is a flat raster cutout, no articulation.",
+  "assets": [
+    {
+      "id": "scene.boulevard",
+      "path": "art/scene/diagon-alley.webp",
+      "width": 1536,
+      "height": 1024,
+      "alpha": false,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "alt": {
+        "es": "Callejón Diagón ilustrado al anochecer",
+        "en": "Illustrated Diagon Alley at dusk"
+      },
+      "bytes": 445688,
+      "sha256": "dcbaf64e13d92fdc993b50075d2dd6da1c12fc9b3a9943b5ce757df21675e468",
+      "source": "design/assets/preparation-v1/callejon-background-v1.png",
+      "tool": "Local Python/Pillow encode or authored SVG",
+      "permission": "Private project use. Franchise distribution permission unresolved.",
+      "status": "local-production-private-prototype",
+      "version": 1
+    },
+    {
+      "id": "scene.confectionery",
+      "path": "art/scene/sweetshop.webp",
+      "width": 1280,
+      "height": 854,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "alt": {
+        "es": "Mostrador de dulces y frascos iluminados",
+        "en": "Illuminated sweet counter and jars"
+      },
+      "bytes": 144968,
+      "sha256": "de8c5137e5ffac5482b7b6355da5d0d63d82b4a984f1c9655f408d9acd3e9aeb",
+      "source": "src/arcana/presentation/content-packs/arcana/art/scene/confectionery.webp",
+      "tool": "Local Python/Pillow encode or authored SVG",
+      "permission": "Private project use. Franchise distribution permission unresolved.",
+      "status": "local-production-private-prototype",
+      "version": 1
+    },
+    {
+      "id": "toad.box",
+      "path": "art/frog/closed.webp",
+      "width": 768,
+      "height": 640,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.85
+      ],
+      "alt": {
+        "es": "Caja pentagonal de rana de chocolate",
+        "en": "Pentagonal Chocolate Frog box"
+      },
+      "bytes": 97060,
+      "sha256": "8d2e3e3b2aeead4e4c1321e6e7289344f22938f46dfcb65f9afb1af081f4aa20",
+      "source": "design/assets/preparation-v1/frog-box-closed-v1.png",
+      "tool": "Local Python/Pillow encode or authored SVG",
+      "permission": "Private project use. Franchise distribution permission unresolved.",
+      "status": "local-production-private-prototype",
+      "version": 1
+    },
+    {
+      "id": "toad.subject",
+      "path": "art/frog/chocolate-frog.webp",
+      "width": 1024,
+      "height": 683,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.85
+      ],
+      "alt": {
+        "es": "Rana de chocolate",
+        "en": "Chocolate Frog"
+      },
+      "bytes": 109080,
+      "sha256": "bad34512408aa4c6b7459183f35bef4222783b78f62bfd785caa85b631ec390c",
+      "source": "design/assets/preparation-v1/chocolate-frog-v1.png",
+      "tool": "Local Python/Pillow encode or authored SVG",
+      "permission": "Private project use. Franchise distribution permission unresolved.",
+      "status": "local-production-private-prototype",
+      "version": 1
+    },
+    {
+      "id": "beans.jar",
+      "path": "art/props/beans-jar.webp",
+      "width": 512,
+      "height": 512,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "alt": {
+        "es": "Tarro de grageas de todos los sabores",
+        "en": "Every Flavour Beans jar"
+      },
+      "bytes": 61450,
+      "sha256": "00929d3c66f10e14ef0ed7014bcfcc7e39c3cc391a6a762ed4f80d2ac94f93bc",
+      "source": "src/arcana/presentation/content-packs/arcana/art/beans/jar.webp",
+      "tool": "Local Python/Pillow encode or authored SVG",
+      "permission": "Private project use. Franchise distribution permission unresolved.",
+      "status": "local-production-private-prototype",
+      "version": 1
+    },
+    {
+      "id": "character.dumbledore.historical",
+      "path": "art/character/dumbledore-historical.webp",
+      "width": 311,
+      "height": 414,
+      "alpha": false,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "alt": {
+        "es": "Ilustración histórica de Albus Dumbledore",
+        "en": "Historical Albus Dumbledore illustration"
+      },
+      "bytes": 48890,
+      "sha256": "e7c8354b6dadca5c1480cffc4cde82ca32c7be05ed46f92c0cb0210e8e5c7bcb",
+      "source": "design/concepts/weasley-flow-v1/03-wizard-card-revealed-es.png",
+      "tool": "Local Python/Pillow encode or authored SVG",
+      "permission": "Private project use. Franchise distribution permission unresolved.",
+      "status": "local-production-private-prototype",
+      "version": 1,
+      "crop": [
+        278,
+        459,
+        589,
+        873
+      ]
+    },
+    {
+      "id": "ui.map",
+      "path": "art/props/map.svg",
+      "width": 512,
+      "height": 512,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "alt": {
+        "es": "Explorar el mapa",
+        "en": "Explore map"
+      },
+      "bytes": 2484,
+      "sha256": "8a283c5d8400b7ac295bfcc55b19e38b546cc938a799f17160400e12af5947e8",
+      "source": "tools/visual/diagon-art-kit.py",
+      "tool": "Local Python/Pillow encode or authored SVG",
+      "permission": "Private project use. Franchise distribution permission unresolved.",
+      "status": "local-production-private-prototype",
+      "version": 1
+    },
+    {
+      "id": "ui.collection",
+      "path": "art/props/album.svg",
+      "width": 512,
+      "height": 512,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "alt": {
+        "es": "Álbum de cromos de magos",
+        "en": "Wizard card album"
+      },
+      "bytes": 2128,
+      "sha256": "85605fd4d18d390328b9857941512491b5573b9e3301faf9905f81f90257536e",
+      "source": "tools/visual/diagon-art-kit.py",
+      "tool": "Local Python/Pillow encode or authored SVG",
+      "permission": "Private project use. Franchise distribution permission unresolved.",
+      "status": "local-production-private-prototype",
+      "version": 1
+    },
+    {
+      "id": "ui.team",
+      "path": "art/props/team.svg",
+      "width": 512,
+      "height": 512,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "alt": {
+        "es": "Preparar equipo",
+        "en": "Prepare party"
+      },
+      "bytes": 1902,
+      "sha256": "7aad8be85e90f6353bfb23ca7957b3ad4001e8a86d57c8a6ea8f618d65d2fd27",
+      "source": "tools/visual/diagon-art-kit.py",
+      "tool": "Local Python/Pillow encode or authored SVG",
+      "permission": "Private project use. Franchise distribution permission unresolved.",
+      "status": "local-production-private-prototype",
+      "version": 1
+    },
+    {
+      "id": "ui.market",
+      "path": "art/props/sweetshop.svg",
+      "width": 512,
+      "height": 512,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "alt": {
+        "es": "Dulcería",
+        "en": "Sweetshop"
+      },
+      "bytes": 1834,
+      "sha256": "82773b7f15c026be7f85bd2e8aaa389896bc5079db918466a438793fac87b868",
+      "source": "tools/visual/diagon-art-kit.py",
+      "tool": "Local Python/Pillow encode or authored SVG",
+      "permission": "Private project use. Franchise distribution permission unresolved.",
+      "status": "local-production-private-prototype",
+      "version": 1
+    },
+    {
+      "id": "ui.settings",
+      "path": "art/props/settings.svg",
+      "width": 512,
+      "height": 512,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "alt": {
+        "es": "Ajustes",
+        "en": "Settings"
+      },
+      "bytes": 1712,
+      "sha256": "28a1309cf0597680ec3d133e8a57119194fe0b9cd86f542eb5603e605f132cf2",
+      "source": "tools/visual/diagon-art-kit.py",
+      "tool": "Local Python/Pillow encode or authored SVG",
+      "permission": "Private project use. Franchise distribution permission unresolved.",
+      "status": "local-production-private-prototype",
+      "version": 1
+    },
+    {
+      "id": "ui.missions",
+      "path": "art/props/letter.svg",
+      "width": 512,
+      "height": 512,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "alt": {
+        "es": "Encargos y regiones",
+        "en": "Quests and regions"
+      },
+      "bytes": 1707,
+      "sha256": "892f87183c4da820b89ccdfc158ddf349a6e126a2e936a5ece29b57bf3e3bb39",
+      "source": "tools/visual/diagon-art-kit.py",
+      "tool": "Local Python/Pillow encode or authored SVG",
+      "permission": "Private project use. Franchise distribution permission unresolved.",
+      "status": "local-production-private-prototype",
+      "version": 1
+    },
+    {
+      "id": "prop.lantern",
+      "path": "art/props/lantern.svg",
+      "width": 512,
+      "height": 512,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.07
+      ],
+      "alt": {
+        "es": "Farol del Callejón",
+        "en": "Alley lantern"
+      },
+      "bytes": 1613,
+      "sha256": "1c7a4a191be396d1a9b5e253f91eff476bd48d8abf798c846ed730ae8b8aeaba",
+      "source": "tools/visual/diagon-art-kit.py",
+      "tool": "Local Python/Pillow encode or authored SVG",
+      "permission": "Private project use. Franchise distribution permission unresolved.",
+      "status": "local-production-private-prototype",
+      "version": 1
+    },
+    {
+      "id": "beans.packet",
+      "path": "art/props/beans-packet.svg",
+      "width": 512,
+      "height": 512,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.9
+      ],
+      "alt": {
+        "es": "Bolsa de grageas de todos los sabores",
+        "en": "Every Flavour Beans packet"
+      },
+      "bytes": 1888,
+      "sha256": "acb3ba4b1faec9c63de244a980c816fb6257869d4384cf12c46b88c794f5cbb8",
+      "source": "tools/visual/diagon-art-kit.py",
+      "tool": "Local Python/Pillow encode or authored SVG",
+      "permission": "Private project use. Franchise distribution permission unresolved.",
+      "status": "local-production-private-prototype",
+      "version": 1
+    },
+    {
+      "id": "fx.sparkles",
+      "path": "art/fx/sparkles.svg",
+      "width": 512,
+      "height": 512,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "alt": {
+        "es": "Destellos dorados decorativos",
+        "en": "Decorative golden sparkles"
+      },
+      "bytes": 5085,
+      "sha256": "7c9e9a8b54543e9bf80d5ce8010b9f55716628bec67be1c67fc4d122f4d7cbf9",
+      "source": "tools/visual/diagon-art-kit.py",
+      "tool": "Local Python/Pillow encode or authored SVG",
+      "permission": "Private project use. Franchise distribution permission unresolved.",
+      "status": "local-production-private-prototype",
+      "version": 1
+    },
+    {
+      "id": "fx.halo",
+      "path": "art/fx/halo.svg",
+      "width": 512,
+      "height": 512,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "alt": {
+        "es": "Halo mágico decorativo",
+        "en": "Decorative magical halo"
+      },
+      "bytes": 1047,
+      "sha256": "6e85a99f604082516ec0fd71bb61e73a8bb0a7c0347662501e75c91a17f2ce4c",
+      "source": "tools/visual/diagon-art-kit.py",
+      "tool": "Local Python/Pillow encode or authored SVG",
+      "permission": "Private project use. Franchise distribution permission unresolved.",
+      "status": "local-production-private-prototype",
+      "version": 1
+    },
+    {
+      "id": "fx.ring",
+      "path": "art/fx/ring.svg",
+      "width": 512,
+      "height": 512,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "alt": {
+        "es": "Anillo mágico decorativo",
+        "en": "Decorative magical ring"
+      },
+      "bytes": 2254,
+      "sha256": "3ef9d1236e6610a60ed3db8d7feda46e4180dfdda33a5a88accf4ca02ea4aa06",
+      "source": "tools/visual/diagon-art-kit.py",
+      "tool": "Local Python/Pillow encode or authored SVG",
+      "permission": "Private project use. Franchise distribution permission unresolved.",
+      "status": "local-production-private-prototype",
+      "version": 1
+    },
+    {
+      "id": "fx.shadow",
+      "path": "art/fx/shadow.svg",
+      "width": 512,
+      "height": 512,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.65
+      ],
+      "alt": {
+        "es": "Sombra decorativa de rana",
+        "en": "Decorative frog shadow"
+      },
+      "bytes": 1217,
+      "sha256": "a42a273ac2b5d7527f00b1b0453b7cfa3eb5b65fc96df1bcdbca74e701e5f792",
+      "source": "tools/visual/diagon-art-kit.py",
+      "tool": "Local Python/Pillow encode or authored SVG",
+      "permission": "Private project use. Franchise distribution permission unresolved.",
+      "status": "local-production-private-prototype",
+      "version": 1
+    },
+    {
+      "id": "fx.spell-trail",
+      "path": "art/fx/spell-trail.svg",
+      "width": 512,
+      "height": 512,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "alt": {
+        "es": "Estela de hechizo decorativa",
+        "en": "Decorative spell trail"
+      },
+      "bytes": 1348,
+      "sha256": "1bbb85d6e540ba3ae5719abdc8b7d74d8abff2727f8d39207d07943b4efef342",
+      "source": "tools/visual/diagon-art-kit.py",
+      "tool": "Local Python/Pillow encode or authored SVG",
+      "permission": "Private project use. Franchise distribution permission unresolved.",
+      "status": "local-production-private-prototype",
+      "version": 1
+    },
+    {
+      "id": "card.back",
+      "path": "art/card/back.svg",
+      "width": 512,
+      "height": 640,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "alt": {
+        "es": "Reverso de cromo mágico",
+        "en": "Wizard card back"
+      },
+      "bytes": 3337,
+      "sha256": "e4b9adb8124537b1287e7eea0404b89754254e6e364f137597988bc7f76c18ed",
+      "source": "tools/visual/diagon-art-kit.py",
+      "tool": "Local Python/Pillow encode or authored SVG",
+      "permission": "Private project use. Franchise distribution permission unresolved.",
+      "status": "local-production-private-prototype",
+      "version": 1
+    },
+    {
+      "id": "card.frame",
+      "path": "art/card/frame.svg",
+      "width": 512,
+      "height": 640,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "alt": {
+        "es": "Marco de cromo mágico",
+        "en": "Wizard card frame"
+      },
+      "bytes": 2177,
+      "sha256": "5e82f75f29de422c3df805df5f50e2b6c613a6af996c8092a861512dbbd6b423",
+      "source": "tools/visual/diagon-art-kit.py",
+      "tool": "Local Python/Pillow encode or authored SVG",
+      "permission": "Private project use. Franchise distribution permission unresolved.",
+      "status": "local-production-private-prototype",
+      "version": 1
+    },
+    {
+      "id": "toad.box",
+      "path": "art/frog/model-closed.webp",
+      "width": 768,
+      "height": 768,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.72
+      ],
+      "alt": {
+        "es": "Pieza pentagonal de rana: closed",
+        "en": "Pentagonal frog box part: closed"
+      },
+      "bytes": 33366,
+      "sha256": "80852f8aaa7fc78b7f07ba5a18a74261cb1aa123ad9f8a9e42f6243c4b7231bd",
+      "source": "design/diagon-alley/sources/frog-box/closed.png",
+      "tool": "Local Python/Pillow encode or authored SVG",
+      "permission": "Private project use. Franchise distribution permission unresolved.",
+      "status": "local-production-private-prototype",
+      "version": 1
+    },
+    {
+      "id": "toad.base",
+      "path": "art/frog/base.webp",
+      "width": 768,
+      "height": 768,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.72
+      ],
+      "alt": {
+        "es": "Pieza pentagonal de rana: base",
+        "en": "Pentagonal frog box part: base"
+      },
+      "bytes": 21918,
+      "sha256": "b8845522f023620414f967e1c7f527268262986acef112643e0987e58e202ecf",
+      "source": "design/diagon-alley/sources/frog-box/base.png",
+      "tool": "Local Python/Pillow encode or authored SVG",
+      "permission": "Private project use. Franchise distribution permission unresolved.",
+      "status": "local-production-private-prototype",
+      "version": 1
+    },
+    {
+      "id": "toad.lid",
+      "path": "art/frog/lid.webp",
+      "width": 768,
+      "height": 768,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.49
+      ],
+      "alt": {
+        "es": "Pieza pentagonal de rana: lid",
+        "en": "Pentagonal frog box part: lid"
+      },
+      "bytes": 26906,
+      "sha256": "4a3a7715577864424ac5c105c14d9fb3bd7d89185ee3e429059d56306f008e90",
+      "source": "design/diagon-alley/sources/frog-box/lid.png",
+      "tool": "Local Python/Pillow encode or authored SVG",
+      "permission": "Private project use. Franchise distribution permission unresolved.",
+      "status": "local-production-private-prototype",
+      "version": 1
+    },
+    {
+      "id": "toad.interior",
+      "path": "art/frog/interior.webp",
+      "width": 768,
+      "height": 768,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.72
+      ],
+      "alt": {
+        "es": "Pieza pentagonal de rana: interior",
+        "en": "Pentagonal frog box part: interior"
+      },
+      "bytes": 10456,
+      "sha256": "39d7571efc313f529f3c632d8774b78ac3d61dda4bc037bcd9ccf49971306590",
+      "source": "design/diagon-alley/sources/frog-box/interior.png",
+      "tool": "Local Python/Pillow encode or authored SVG",
+      "permission": "Private project use. Franchise distribution permission unresolved.",
+      "status": "local-production-private-prototype",
+      "version": 1
+    },
+    {
+      "id": "toad.seal",
+      "path": "art/frog/seal.webp",
+      "width": 768,
+      "height": 768,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.72
+      ],
+      "alt": {
+        "es": "Pieza pentagonal de rana: seal",
+        "en": "Pentagonal frog box part: seal"
+      },
+      "bytes": 3522,
+      "sha256": "e8c240eea84d0fa67cb15f4a43ffbad43eefefcf4cdf7e1c9d470c40fddaa303",
+      "source": "design/diagon-alley/sources/frog-box/seal.png",
+      "tool": "Local Python/Pillow encode or authored SVG",
+      "permission": "Private project use. Franchise distribution permission unresolved.",
+      "status": "local-production-private-prototype",
+      "version": 1
+    },
+    {
+      "id": "currency.crowns",
+      "path": "art/currency/galleon.svg",
+      "width": 256,
+      "height": 256,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "alt": {
+        "es": "Galeones",
+        "en": "Galleons"
+      },
+      "bytes": 2045,
+      "sha256": "c303904791de48d83da4972f2aaedf2ea23104d7a57d53ca630ed7e564e016df",
+      "source": "tools/visual/diagon-galleon.py",
+      "tool": "Locally authored editable SVG",
+      "permission": "Private project use; franchise distribution permission unresolved.",
+      "status": "local-production-private-prototype",
+      "version": 1,
+      "motif": "Original embossed winged creature; no functional text, external art or traced logo."
+    }
+  ]
+}

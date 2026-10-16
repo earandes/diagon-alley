@@ -1,0 +1,58 @@
+{
+  "id": "character-silver-sentinel",
+  "identityId": "silver-sentinel",
+  "name": {
+    "es": "Centinela de Plata",
+    "en": "Silver Sentinel"
+  },
+  "direction": "teatro-de-alquimia",
+  "version": "1",
+  "state": "reviewed-standalone-not-integrated",
+  "tool": "built-in imagegen",
+  "source": "master-v1.png",
+  "preparedAsset": "arena-master-v1.png",
+  "prompts": [
+    "prompt-v1.md"
+  ],
+  "references": [
+    "../../../concepts-2026-10-14/teatro-de-alquimia.png",
+    "../apprentice/arena-master-v1.png"
+  ],
+  "dimensions": [
+    1024,
+    1536
+  ],
+  "transparency": {
+    "mode": "RGBA",
+    "alphaMin": 0,
+    "alphaMax": 255,
+    "fullyTransparentPixels": 1038483,
+    "cornerAlpha": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "subjectBoundsAlphaGt20": [
+      151,
+      157,
+      871,
+      1380
+    ]
+  },
+  "preparation": "Deterministic LANCZOS resize 1024x1536 -> 870x1305, positioned [43,127] on transparent 1024x1536 canvas for >=10% safe margins. No painted changes. Source preserved.",
+  "crop": "none",
+  "pivotNormalized": [
+    0.5,
+    0.898
+  ],
+  "variants": [],
+  "sourceEditable": "Raster alpha master; no layers or rig",
+  "textAlternative": {
+    "es": "Centinela de Plata, guardian de pelo plateado y barba corta, capa verde y gris claro, baston y escudo de hojas.",
+    "en": "Silver Sentinel, a silver-haired short-bearded guardian in a green and pale-gray mantle, with staff and leaf buckler."
+  },
+  "review": "Inspected original and prepared image. Warm watchful olive-brown mature male, shoulder-length silver hair and short neat beard, visible human face. Forest/steel-gray light guard costume, silver staff and abstract leaf buckler distinguish from Merlin and Night Forger. Whole feet, natural staff hand and shield grip, no text/crest references. Teatro painterly coherence. Integration and actual miniature readability remain to be verified.",
+  "originalGenerationPath": "/Users/enricarandes/.codex/generated_images/01a13af8-fd53-7331-8146-bb20ec42fa6b/exec-76ab14be-26dd-4d20-ae48-39d5bc8c519f.png",
+  "sha256": "177ac0118516b999b1a25a6a9a9d3050f95812060c315dacf3b66fc270c4de9f"
+}

@@ -1,0 +1,49 @@
+/* A63: close one journey before offering an explicit new formation. */
+.game-shell.arcana-map-view .expedition-panel[data-map-phase='closed'] {
+  overflow: auto;
+  padding: 12px clamp(12px, 3vw, 40px) 24px;
+}
+.game-shell .expedition-closure { width: min(100%, 820px); margin: auto; color: var(--pack-ink); }
+.game-shell .closure-stage {
+  text-align: center; position: relative; padding: clamp(16px, 3vh, 32px) clamp(14px, 3vw, 40px);
+  border: 1px solid #d7b56b88; border-radius: 22px;
+  background: radial-gradient(ellipse at 50% 36%, #a17a3228, transparent 64%), linear-gradient(#101d2bed, #101d2bdd);
+  box-shadow: 0 20px 60px #0005;
+}
+.game-shell .closure-hero { height: clamp(64px, 11vh, 116px); width: auto; object-fit: contain; }
+.game-shell .closure-stage h2 { font-size: clamp(1.35rem, 3.2vw, 2rem); margin: 4px 0; }
+.game-shell .closure-stage h2:focus { outline: none; }
+.game-shell .closure-region { margin: 4px 0 12px; color: #e6d5ae; }
+.game-shell .closure-spoils { display: flex; justify-content: center; align-items: end; gap: clamp(20px, 4vw, 56px); min-height: 96px; margin: 12px 0 24px; }
+.game-shell .closure-spoils > span { display: flex; flex-direction: column; align-items: center; gap: 6px; }
+.game-shell .closure-spoils img { width: 56px; height: 56px; object-fit: contain; filter: drop-shadow(0 3px 8px #0006); }
+.game-shell .closure-spoils .closure-key img { width: 104px; height: 104px; transform: rotate(-12deg); }
+.game-shell .closure-spoils strong { color: var(--pack-gold); font-size: 1.25rem; font-variant-numeric: tabular-nums; }
+.game-shell .closure-actions { display: grid; gap: 8px; max-width: 460px; margin: auto; }
+.game-shell .closure-actions button { display: flex; align-items: center; gap: 12px; width: 100%; min-height: 58px; border: 1px solid transparent; border-radius: 12px; text-align: left; padding: 10px 16px; background: none; }
+.game-shell .closure-actions button > span:first-of-type { flex: 1; }
+.game-shell .closure-actions img { width: 44px; height: 44px; object-fit: contain; }
+.game-shell .closure-actions small { display: block; color: #dac9a4; font-size: .78rem; font-weight: normal; margin-top: 3px; }
+.game-shell .closure-actions .closure-primary { background: #173d36; border: 2px solid var(--pack-gold); font-size: 1.05rem; box-shadow: 0 5px 18px #0004; }
+.game-shell .closure-actions .closure-secondary { min-height: 48px; padding-top: 5px; padding-bottom: 5px; }
+.game-shell .closure-actions .closure-secondary img { width: 34px; height: 34px; }
+.game-shell .closure-actions button:hover:not(:disabled) { border-color: var(--pack-gold); background: #1f3e3bcc; }
+.game-shell .closure-history { margin: 12px auto 0; padding: 0 12px 14px; max-width: 650px; background: #102030df; border-radius: 14px; }
+.game-shell .closure-history > summary { min-height: 48px; display: flex; align-items: center; justify-content: center; gap: 10px; }
+.game-shell .closure-history > summary img { width: 30px; height: 30px; object-fit: contain; }
+.game-shell .closure-companions { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
+.game-shell .closure-companions > span { position: relative; display: grid; justify-items: center; width: 90px; font-size: .8rem; text-align: center; }
+.game-shell .closure-companions img { width: 44px; height: 55px; object-fit: contain; }
+.game-shell .closure-companions img.closure-source { position: absolute; right: 12px; top: 37px; width: 20px; height: 20px; }
+.game-shell.arcana-map-view .closure-history .node-result { position: static; width: 100%; max-height: none; margin-top: 16px; }
+.game-shell .closure-history .receipt-disclosure { position: static; max-width: none; }
+.game-shell .closure-history .receipt-disclosure > summary { min-height: 44px; }
+.game-shell[data-reduced='false'] .closure-spoils { animation: closure-arrive 340ms ease-out both; }
+@keyframes closure-arrive { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+@media (max-height: 750px), (max-width: 500px) {
+  .game-shell .closure-stage { padding: 16px 14px; }
+  .game-shell .closure-hero { height: 64px; }
+  .game-shell .closure-spoils { margin: 10px 0 14px; min-height: 80px; }
+  .game-shell .closure-spoils .closure-key img { width: 76px; height: 76px; }
+}
+@media (prefers-reduced-motion: reduce) { .game-shell .closure-spoils { animation: none !important; } }

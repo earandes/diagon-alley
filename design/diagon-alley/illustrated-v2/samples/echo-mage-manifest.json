@@ -1,0 +1,24 @@
+{
+  "id": "echo-mage",
+  "name": "Draco Malfoy",
+  "master": "design/diagon-alley/illustrated-v2/samples/echo-mage.png",
+  "sha256": "d19b13f5286d058db5fe9cf0a6b1100a6a9dea2ea5d364d6e62d4210bf441d42",
+  "seed": 58128,
+  "promptFile": "design/diagon-alley/illustrated-v2/prompts/echo-mage.txt",
+  "model": "mlx-community/flux2-klein-4b-4bit",
+  "modelRevision": "860e87183ceb29e39627c0612ebd66d8ea66e68c",
+  "steps": 4,
+  "guidance": 1.0,
+  "width": 768,
+  "height": 1024,
+  "generationSeconds": 31.27,
+  "loadSeconds": 0.74,
+  "tool": {
+    "mflux": "0.22.0",
+    "mlx": "0.32.4"
+  },
+  "cashCost": 0,
+  "generationMode": "offline local Metal text-to-image",
+  "gpuPeakMemoryBytes": 9421779596,
+  "status": "sample awaiting coordinator visual review"
+}

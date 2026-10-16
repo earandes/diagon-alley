@@ -1,0 +1,24 @@
+{
+  "id": "aurora-sage",
+  "name": "Newt Scamander",
+  "master": "design/diagon-alley/illustrated-v2/samples/aurora-sage.png",
+  "sha256": "d70d52d0e579755625bf0f593b4d91030206153173564ecdab4c3f269f8175b0",
+  "seed": 58130,
+  "promptFile": "design/diagon-alley/illustrated-v2/prompts/aurora-sage.txt",
+  "model": "mlx-community/flux2-klein-4b-4bit",
+  "modelRevision": "860e87183ceb29e39627c0612ebd66d8ea66e68c",
+  "steps": 4,
+  "guidance": 1.0,
+  "width": 768,
+  "height": 1024,
+  "generationSeconds": 29.37,
+  "loadSeconds": 0.74,
+  "tool": {
+    "mflux": "0.22.0",
+    "mlx": "0.32.4"
+  },
+  "cashCost": 0,
+  "generationMode": "offline local Metal text-to-image",
+  "gpuPeakMemoryBytes": 9421779596,
+  "status": "sample awaiting coordinator visual review"
+}

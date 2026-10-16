@@ -1,0 +1,60 @@
+{
+  "id": "wand-willow",
+  "identity": "willow",
+  "function": "Willow wood equipment illustration; core remains separate existing metadata",
+  "version": "1",
+  "status": "illustration-reviewed-runtime-framing-pending",
+  "path": "original-v1.png",
+  "author": "OpenAI integrated imagegen",
+  "tool": "image_gen.imagegen built-in",
+  "prompt": "prompt-v1.md",
+  "references": [
+    "../wand-birch/original-v1.png"
+  ],
+  "provenance": "Original willowwandillustrationusing family style reference",
+  "sourceAvailable": "original-v1.png; prompt-v1.md",
+  "editableLayers": false,
+  "rig": false,
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "requestedDimensions": [
+    1024,
+    1024
+  ],
+  "crop": "full source preserved",
+  "pivot": [
+    0.17,
+    0.89
+  ],
+  "variants": [],
+  "transparency": {
+    "realAlpha": true,
+    "mode": "RGBA",
+    "range": [
+      0,
+      255
+    ],
+    "fullyTransparentPixels": 1450392,
+    "totalPixels": 1572516,
+    "bodyBoundingBoxAlpha16": [
+      112,
+      65,
+      1209,
+      1200
+    ]
+  },
+  "alt": {
+    "es": "Varita de sauce de madera oscura retorcida, con hojas de latón en la empuñadura.",
+    "en": "Dark twisted willow wand with brass leaves on its grip."
+  },
+  "review": {
+    "visual": "Inspected complete original darkgreenbrown willowshaft, twistedgrain and palegoldbotanicalgrip. Clearlydistinctfrom ivorywhitebirch. No text/core/hand/scene.",
+    "limitations": [
+      "Tooloutput1254square not1024requested.",
+      "Margins improved versusbirch but stillbelowrequested10%, top65/right45/bottom54pixels; renderer insetneeded.",
+      "Singlewoodassetsharedbythreeexistingcorevariants, nativeDOMmustdistinguishcore."
+    ]
+  }
+}

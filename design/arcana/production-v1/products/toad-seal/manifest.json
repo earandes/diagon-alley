@@ -1,0 +1,62 @@
+{
+  "id": "toad-seal",
+  "identity": "cocoa-toad",
+  "function": "Detachable wax seal overlay for opening before lid motion",
+  "version": "1",
+  "status": "illustration-reviewed-runtime-framing-pending",
+  "path": "original-v1.png",
+  "author": "OpenAI integrated imagegen",
+  "tool": "image_gen.imagegen built-in",
+  "prompt": "prompt-v1.md",
+  "references": [
+    "../toad-box-closed/original-v1.png"
+  ],
+  "provenance": "New isolated wax seal illustration matching original toad crest identity",
+  "sourceAvailable": "original-v1.png; prompt-v1.md",
+  "editableLayers": false,
+  "rig": false,
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "requestedDimensions": [
+    1024,
+    1024
+  ],
+  "crop": "full source preserved",
+  "pivot": [
+    0.5,
+    0.5
+  ],
+  "variants": [],
+  "transparency": {
+    "realAlpha": true,
+    "mode": "RGBA",
+    "range": [
+      0,
+      255
+    ],
+    "fullyTransparentPixels": 613228,
+    "totalPixels": 1572516,
+    "bodyBoundingBoxAlpha16": [
+      66,
+      56,
+      1200,
+      1197
+    ]
+  },
+  "alt": {
+    "es": "Sello de cera dorada con un sapo y hojas en relieve.",
+    "en": "Gold wax seal embossed with a toad and leaves."
+  },
+  "review": {
+    "visual": "Inspected standalone gold wax medallion. Matching original toad crest and botanical wreath; readable silhouette and soft irregular wax rim. No ribbon, packaging, text or scene.",
+    "limitations": [
+      "Tool output1254square rather than1024requested.",
+      "Visible width~90%, needs renderer inset for10%margin.",
+      "View is nearfrontal rather than exactlidplane; overlay transform must be checked in context.",
+      "Verylowalpha fringe extends beyond mainseal; avoid alpha>0 crop.",
+      "One intact raster seal only; no independently generated broken wax fragments."
+    ]
+  }
+}

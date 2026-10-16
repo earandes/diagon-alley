@@ -1,0 +1,8 @@
+Use case: illustration-story.
+Asset type: ARCANA standalone full-body character master with transparent alpha.
+Reference 1: selected Teatro de alquimia image, match realistic hand-painted theatrical storybook/gouache, warm amber highlights, tactile fine textiles and brass objects. Reference 2: apprentice full-body figure style only, not his identity or costume.
+Subject: an original folklore Nicolas Flamel alchemist, elderly tan-skinned man, balding with sparse salt-and-pepper hair around temples, round brass spectacles, salt-and-pepper stubble, warm clever rounded face, shorter stocky sturdy body. Distinct from the white-bearded Merlin and young apprentice. Burgundy practical alchemist coat with amber lining over cream shirt, leather belt and boots; worn brass flask held in one natural hand, other arm cradles closed plain dark brown book without letters, diagrams or symbols. Calm slightly amused intelligent expression.
+Pose: full-body broad frontal three-quarter stance, stable feet, natural hands, clear silhouette. Include complete head, flask, book, both hands and both feet.
+Canvas/composition: nominal1024x1536portrait, exactly one figure contained in central80% with transparent empty >=10% safe margin on all four sides. No cropping.
+Medium/light: warm realistic painted gouache, burgundy and amber with rich brown leather and softly lit brass, clear face and believable anatomy.
+True transparent alpha background; no floor, no backdrop glow, no cast-shadow plate. No lettering, words, typography, logo, watermark, UI, frame, collage or sheet. No franchise/film likeness. One standalone finished original character.

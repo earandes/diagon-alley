@@ -1,0 +1,58 @@
+{
+  "id": "toad-box-base",
+  "identity": "cocoa-toad",
+  "function": "Empty open base and interior used under animated lid and cocoa-toad layer",
+  "version": "1",
+  "status": "illustration-reviewed-composite-alignment-pending",
+  "path": "original-v1.png",
+  "author": "OpenAI integrated imagegen",
+  "tool": "image_gen.imagegen built-in",
+  "prompt": "prompt-v1.md",
+  "references": [
+    "../toad-box-closed/original-v1.png",
+    "design/arcana/concepts-2026-10-14/teatro-de-alquimia.png"
+  ],
+  "provenance": "Generated object edit based on closed box source",
+  "sourceAvailable": "original-v1.png; prompt-v1.md",
+  "editableLayers": false,
+  "rig": false,
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "crop": "full source preserved",
+  "pivot": [
+    0.5,
+    0.75
+  ],
+  "variants": [],
+  "transparency": {
+    "realAlpha": true,
+    "mode": "RGBA",
+    "range": [
+      0,
+      255
+    ],
+    "fullyTransparentPixels": 744296,
+    "totalPixels": 1572516,
+    "bodyBoundingBoxAlpha16": [
+      48,
+      264,
+      1226,
+      1183
+    ]
+  },
+  "alt": {
+    "es": "Base abierta de la caja de Sapo de Cacao con interior vacío de papel crema y decoración dorada.",
+    "en": "Open Cocoa Toad box base with an empty cream paper interior and gold decoration."
+  },
+  "review": {
+    "visual": "Inspected source. Empty visible well, no lid, no subject, no text. Matching cocoa textured base, green front ribbon strip and botanical gold decoration. Similar three-quarter top-down perspective and large size.",
+    "limitations": [
+      "Generator preserved general design and camera but did not preserve pixel-exact footprint: alpha≥16 box changed from closed [53,244,1210,1134] to [48,264,1226,1183].",
+      "Some side and interior perspective detail is newly illustrated; validate lid/base composite in context before calling opening final.",
+      "Low-alpha speckles extend outside main silhouette; do not use alpha>0 automatic crop.",
+      "This source is a flattened base+interior raster, not independent front-wall/back-wall layers."
+    ]
+  }
+}

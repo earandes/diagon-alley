@@ -1,0 +1,67 @@
+{
+  "id": "bean-jar",
+  "identity": "bean-jar",
+  "function": "Closed Grageas del Azar jar for purchase and pre-combat assignment; no independent opening",
+  "version": "1",
+  "status": "illustration-reviewed-runtime-framing-pending",
+  "path": "original-v1.png",
+  "author": "OpenAI integrated imagegen",
+  "tool": "image_gen.imagegen built-in",
+  "prompt": "prompt-v1.md",
+  "references": [
+    "../toad-box-closed/original-v1.png"
+  ],
+  "provenance": "Original glass jar illustration using selected confectionery art styling",
+  "sourceAvailable": "original-v1.png; prompt-v1.md",
+  "editableLayers": false,
+  "rig": false,
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "requestedDimensions": [
+    1024,
+    1024
+  ],
+  "crop": "full source preserved",
+  "pivot": [
+    0.5,
+    0.94
+  ],
+  "variants": [],
+  "flavorColors": {
+    "mint": "green",
+    "pepper": "rust-red",
+    "earth": "cocoa-brown",
+    "soap": "warm-ivory"
+  },
+  "transparency": {
+    "realAlpha": true,
+    "mode": "RGBA",
+    "range": [
+      0,
+      255
+    ],
+    "fullyTransparentPixels": 824165,
+    "totalPixels": 1572516,
+    "bodyBoundingBoxAlpha16": [
+      165,
+      62,
+      1090,
+      1185
+    ]
+  },
+  "alt": {
+    "es": "Tarro de cristal con tapa dorada y grageas verdes, rojas, marrones y marfil.",
+    "en": "Glass jar with a gold lid and green, red, brown and ivory beans."
+  },
+  "review": {
+    "visual": "Inspected single complete clear rounded glass jar, brass botanical cap, readable kidney-shaped candy beans limited to four prescribed colors. Rich painterly glass highlights, original no text/label/scene. Glass transparency depicted by material and visible interior; external background is real alpha.",
+    "limitations": [
+      "Tool output1254square rather than1024requested.",
+      "Jar takes~90%height rather than80%requested; renderer needsinset for10%margin.",
+      "Verylowalpha fringe extends outside mainjar; avoidalpha>0autocrop.",
+      "This image does not define gameplay flavors/effects and contains no independently movable jar lid."
+    ]
+  }
+}

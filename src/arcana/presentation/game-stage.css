@@ -1,0 +1,1319 @@
+/* A57: the world is the surface; HTML remains the semantic interaction layer. */
+@font-face {
+  font-family: Cinzel;
+  src: url('./fonts/cinzel-latin-variable.ttf') format('truetype');
+  font-weight: 400 900;
+  font-display: swap;
+}
+.game-shell {
+  --game-shadow: #050b16;
+  --game-header: 56px;
+  --game-dock: 90px;
+  width: 100%;
+  max-width: none;
+  min-height: 100dvh;
+  isolation: isolate;
+  padding-bottom: calc(var(--game-dock) + env(safe-area-inset-bottom));
+  background: none;
+}
+.game-world-backdrop {
+  position: fixed;
+  z-index: -2;
+  inset: 0;
+  background-image:
+    linear-gradient(180deg, #070e1b55, #070e1b11 35%, #070e1b44 70%, #070e1bdd), var(--scene-url);
+  background-size: cover;
+  background-position: center;
+  pointer-events: none;
+}
+.game-shell h1,
+.game-shell h2,
+.game-shell h3 {
+  font-family: Cinzel, Georgia, serif;
+  text-wrap: balance;
+}
+.game-shell .game-header {
+  position: relative;
+  height: var(--game-header);
+  min-height: var(--game-header);
+  padding: 0 clamp(12px, 3vw, 48px);
+  border: 0;
+  background: linear-gradient(#080e1ce6, #080e1b44);
+  gap: 12px;
+}
+.game-shell .game-header h1 {
+  display: block;
+  font-size: clamp(0.85rem, 2vw, 1.15rem);
+  letter-spacing: 0.16em;
+  font-weight: 500;
+  color: var(--pack-gold);
+  margin: 0;
+  text-shadow: 0 2px 4px var(--game-shadow);
+}
+.game-shell .game-object,
+.game-shell > nav button {
+  border: 0;
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
+  color: var(--pack-ink);
+}
+.game-shell .game-object:hover:not(:disabled),
+.game-shell > nav button:hover:not(:disabled) {
+  background: none;
+}
+.game-shell .settings-trigger {
+  width: 48px;
+  height: 48px;
+  padding: 4px;
+  margin: 0;
+  flex: 0 0 48px;
+}
+.settings-trigger img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 3px 3px #060918aa);
+}
+.game-shell > .hud {
+  max-width: 650px;
+  width: max-content;
+  max-width: calc(100% - 24px);
+  height: 48px;
+  min-height: 48px;
+  margin: 0 auto;
+  padding: 0 18px;
+  gap: 20px;
+  border: 1px solid #c4a25c55;
+  border-radius: 4px 4px 22px 22px;
+  background: #0d1729ef;
+  box-shadow: 0 5px 16px #03091866;
+  font-size: 0.85rem;
+}
+.game-shell > .hud .currency-icon,
+.game-shell .key-balance img {
+  width: 30px;
+  height: 30px;
+}
+.game-shell .energy-status {
+  gap: 5px;
+}
+.game-shell .energy-status button {
+  border: 0;
+  padding: 0;
+  width: 24px;
+  min-height: 30px;
+  margin: 0;
+  background: none;
+}
+.game-shell .energy-status button img {
+  width: 22px;
+  height: 26px;
+}
+.game-shell .energy-status meter {
+  width: 64px;
+}
+.game-shell > main {
+  padding: 24px clamp(14px, 3vw, 48px);
+  max-width: 1320px;
+  margin: auto;
+}
+.game-shell main > section {
+  background: none;
+  border: 0;
+  box-shadow: none;
+  padding: 0;
+  margin: 0 auto 24px;
+}
+.game-shell main > section > h2 {
+  text-align: center;
+  font-size: clamp(1.25rem, 3vw, 2rem);
+  text-shadow: 0 3px 6px #050c1c;
+}
+.game-shell > nav {
+  position: fixed;
+  z-index: 18;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(520px, 100%);
+  max-width: none;
+  height: calc(var(--game-dock) + env(safe-area-inset-bottom));
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  gap: 12px;
+  border: 0;
+  padding: 0 12px env(safe-area-inset-bottom);
+  background: linear-gradient(transparent, #081020ee 45%);
+}
+.game-shell > nav button {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 110px;
+  min-height: 82px;
+  margin: 0;
+  padding: 0 2px 6px;
+  transition: transform 160ms ease-out;
+}
+.game-shell > nav button img {
+  width: 65px;
+  height: 62px;
+  object-fit: contain;
+  filter: drop-shadow(0 5px 4px #030612cc);
+}
+.game-shell > nav button span {
+  font-size: 0.65rem;
+  text-shadow: 0 2px 3px #000;
+  line-height: 1.2;
+}
+.game-shell > nav button[aria-current] {
+  color: #ffe1a0;
+  background: none;
+  transform: translateY(-5px);
+}
+.game-shell > nav button[aria-current] img {
+  filter: drop-shadow(0 3px 7px #c8974877);
+}
+.game-shell > nav button:hover:not(:disabled) {
+  transform: translateY(-5px);
+}
+.game-shell.arcana-map-view {
+  height: 100dvh;
+  min-height: 0;
+  grid-template-rows: var(--game-header) 48px minmax(0, 1fr) var(--game-dock);
+  padding: 0;
+}
+.game-shell.arcana-map-view > main {
+  width: 100%;
+  max-width: none;
+  padding: 0;
+  margin: 0;
+}
+.game-shell.arcana-map-view > nav {
+  position: relative;
+  left: auto;
+  transform: none;
+  margin: auto;
+  width: min(520px, 100%);
+  height: var(--game-dock);
+}
+.game-shell.arcana-map-view .expedition-heading {
+  top: 4px;
+  left: 24px;
+}
+.game-shell.arcana-map-view .expedition-heading h2 {
+  font-size: clamp(0.8rem, 2vw, 1.2rem);
+  letter-spacing: 0.06em;
+}
+.game-shell.arcana-map-view .map-scroll {
+  background: none;
+}
+.game-shell.arcana-map-view .branch-map {
+  background: none;
+}
+.game-shell.arcana-map-view .region-map-art {
+  opacity: 0.8;
+}
+.game-shell.arcana-map-view .region-map-shade {
+  background: linear-gradient(180deg, #08102199, #08102122 25%, #08102122 70%, #08102188);
+}
+.game-shell.arcana-map-view .team-compact {
+  background: #0c1528e6;
+  border: 1px solid #b18c4c66;
+  padding: 6px 12px;
+  bottom: 12px;
+  border-radius: 4px 16px 4px 16px;
+}
+.game-shell.arcana-map-view .team-compact .team-token {
+  width: 52px;
+  height: 67px;
+}
+.game-shell.arcana-map-view .team-token .team-portrait {
+  width: 48px;
+  height: 56px;
+}
+.game-shell.arcana-map-view .node-result {
+  bottom: 18px;
+}
+.game-shell.arcana-map-view .receipt-disclosure > summary {
+  background: #101b30ee;
+  border: 1px solid #b18c4c66;
+}
+.game-shell.arcana-map-view .receipt-objects {
+  display: flex;
+}
+.game-shell.arcana-map-view .receipt-objects img {
+  width: 26px;
+  height: 26px;
+}
+.game-shell.arcana-map-view .receipt-body {
+  background: #101b30fc;
+}
+.game-shell .node-confirmation-art {
+  filter: drop-shadow(0 6px 9px #040817);
+}
+.game-shell dialog.notice {
+  background: var(--pack-surface);
+  border-color: var(--pack-gold);
+}
+.game-shell dialog > .settings-trigger {
+  float: right;
+}
+.game-shell .notice > h3 {
+  text-align: center;
+}
+.game-shell .welcome {
+  min-height: calc(100dvh - var(--game-header) - 72px);
+  max-width: none;
+  margin: 0;
+  padding: min(14dvh, 100px) 20px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: end;
+}
+.game-shell .welcome h2 {
+  font-size: clamp(2rem, 6vw, 4.5rem);
+  max-width: 800px;
+  margin: 12px 0;
+  text-shadow: 0 5px 20px #040b17;
+}
+.game-shell .welcome-portrait {
+  display: none;
+}
+.game-shell .welcome-objects {
+  margin: 0;
+  height: 88px;
+}
+.game-shell .welcome-objects img {
+  width: 75px;
+  height: 75px;
+}
+.game-shell .portal-enter {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: Cinzel, Georgia, serif;
+  font-size: 1.2rem;
+  padding: 0;
+  text-shadow: 0 2px 5px #050b16;
+}
+.game-shell .portal-enter img {
+  width: 90px;
+  height: 90px;
+  filter: drop-shadow(0 8px 12px #040b17);
+}
+.game-settings {
+  width: min(460px, calc(100vw - 24px));
+  max-height: calc(100dvh - 32px);
+  padding: 24px;
+  color: var(--pack-ink);
+  background: var(--pack-surface);
+  border: 1px solid var(--pack-gold);
+  border-radius: 6px;
+  overflow: auto;
+  box-shadow: 0 24px 80px #020510bb;
+}
+.game-settings::backdrop {
+  background: #050c19b8;
+}
+.game-settings .settings-close {
+  float: right;
+  padding: 0;
+  width: 44px;
+  height: 44px;
+}
+.settings-close img {
+  width: 40px;
+  height: 40px;
+}
+.game-settings h2 {
+  font-size: 1.5rem;
+}
+.settings-choices {
+  border: 0;
+  padding: 12px 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.settings-choices legend {
+  color: var(--pack-gold);
+  font-size: 0.85rem;
+}
+.settings-choices button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  background: none;
+}
+.settings-choices button[aria-pressed='true'] {
+  background: #d3aa6022;
+  border-color: var(--pack-gold);
+}
+.settings-choices button img,
+.settings-motion img {
+  width: 26px;
+  height: 26px;
+  object-fit: contain;
+}
+.settings-motion {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 12px 0;
+}
+.settings-help {
+  font-size: 0.8rem;
+  margin-top: 16px;
+}
+.game-shell .bazaar-tabs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  background: none;
+  margin: 0 0 8px;
+  gap: 12px;
+}
+.game-shell .bazaar-tabs button {
+  display: grid;
+  justify-items: center;
+  border: 0;
+  background: none;
+  box-shadow: none;
+  font-size: 0.7rem;
+  padding: 0;
+}
+.game-shell .bazaar-tabs button img {
+  width: 58px;
+  height: 58px;
+  object-fit: contain;
+}
+.game-shell .bazaar-tabs button[aria-pressed='true'] {
+  color: var(--pack-gold);
+  background: #0d1628aa;
+}
+.sweetshop-scene {
+  max-width: 850px;
+  text-align: center;
+}
+.sweetshop-scene h2 {
+  margin: 12px 0 0;
+  font-size: clamp(1.25rem, 3vw, 2rem);
+}
+.sweetshop-display {
+  display: flex;
+  align-items: end;
+  justify-content: center;
+  min-height: min(39dvh, 340px);
+  gap: clamp(12px, 5vw, 80px);
+}
+.game-shell .sweetshop-object {
+  position: relative;
+  padding: 0;
+  width: min(38vw, 280px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+}
+.sweetshop-object > img:first-child {
+  width: 100%;
+  height: clamp(140px, 28dvh, 280px);
+  object-fit: contain;
+  filter: drop-shadow(0 16px 14px #030816bb);
+  transition: transform 180ms ease-out;
+}
+.sweetshop-object[aria-pressed='true'] > img:first-child {
+  transform: translateY(-12px) scale(1.05);
+}
+.sweetshop-object .sweet-label {
+  font-family: Cinzel, Georgia, serif;
+  font-size: clamp(0.75rem, 1.5vw, 1rem);
+  text-shadow: 0 2px 3px #030816;
+}
+.sweetshop-object .object-price {
+  position: static;
+  margin: 6px 0;
+  background: #0b1427ed;
+  border: 1px solid #bca26066;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 1rem;
+}
+.sweetshop-object .object-price img {
+  width: 26px;
+  height: 26px;
+}
+.sweetshop-object .object-selected {
+  position: absolute;
+  top: 14px;
+  right: 4px;
+  width: 40px;
+  height: 40px;
+}
+.counter-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  min-height: 70px;
+  margin: 12px auto;
+}
+.sweet-stock {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  font-variant-numeric: tabular-nums;
+}
+.sweet-stock img {
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+}
+.game-shell button.counter-buy,
+.game-shell button.open-frog-action {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 6px 16px;
+  background: #101a30e8;
+  color: var(--pack-ink);
+  border: 1px solid #c2a062aa;
+  border-radius: 4px;
+}
+.game-shell .counter-buy:hover:not(:disabled),
+.game-shell .open-frog-action:hover:not(:disabled) {
+  background: #25344b;
+  color: var(--pack-ink);
+  border-color: var(--pack-gold);
+}
+.counter-buy img {
+  width: 32px;
+  height: 32px;
+}
+.open-frog-action img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+}
+.open-frog-action {
+  font-family: Cinzel, Georgia, serif;
+}
+.sweetshop-odds,
+.short-hint {
+  font-size: 0.8rem;
+}
+.sweetshop-odds {
+  width: min(100%, 420px);
+  margin: 18px auto 0;
+  background: #0d1829dd;
+  padding: 10px;
+  border-radius: 4px;
+}
+.sweetshop-odds:not([open]) {
+  background: none;
+  padding: 4px;
+}
+.flavour-cabinet {
+  max-width: 420px;
+  margin: 18px auto;
+  padding: 12px 18px;
+  background: #0c1729e6;
+  border: 1px solid #9e824955;
+  border-radius: 8px 8px 24px 24px;
+}
+.flavour-cabinet-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.flavour-cabinet-title > img {
+  width: 32px;
+  height: 38px;
+  object-fit: contain;
+}
+.flavour-cabinet-title h3 {
+  flex: 1;
+  font-size: 0.85rem;
+  margin: 0;
+  text-align: left;
+}
+.flavour-cabinet-title > span {
+  color: var(--pack-gold);
+  font-size: 0.85rem;
+}
+.flavour-tray {
+  display: flex;
+  justify-content: space-around;
+  gap: 8px;
+  padding: 8px 0;
+}
+.game-shell .flavour-specimen {
+  position: relative;
+  padding: 4px;
+  width: 60px;
+  height: 72px;
+  margin: 0;
+}
+.flavour-specimen > img:first-child {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.flavour-specimen[data-discovered='false'] > img:first-child {
+  filter: brightness(0.12) sepia(0.3);
+  opacity: 0.65;
+}
+.flavour-specimen .specimen-status {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 18px;
+  height: 22px;
+  object-fit: contain;
+}
+.flavour-caption,
+.flavour-help {
+  font-size: 0.75rem;
+  text-align: center;
+  margin: 6px 0;
+}
+.flavour-help p {
+  text-align: left;
+}
+.game-shell .journey-cabinet {
+  text-align: center;
+  max-width: 850px;
+}
+.journey-objects {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  gap: clamp(10px, 4vw, 40px);
+  margin: 22px 0;
+}
+.game-shell .journey-object {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: min(26vw, 190px);
+  padding: 0;
+  margin: 0;
+}
+.journey-object > img {
+  width: 100%;
+  height: clamp(90px, 20dvh, 180px);
+  object-fit: contain;
+  filter: drop-shadow(0 10px 10px #050b18bb);
+}
+.journey-object span {
+  font-family: Cinzel, Georgia, serif;
+  font-size: 1.3rem;
+  color: var(--pack-gold);
+}
+.journey-object small {
+  font-size: 0.7rem;
+}
+.journey-next {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #10192be6;
+}
+.journey-next img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+}
+.journey-help {
+  font-size: 0.8rem;
+  background: #10192be6;
+  padding: 12px;
+  margin: 14px auto;
+  max-width: 460px;
+  text-align: left;
+}
+.journey-help:not([open]) {
+  background: none;
+  text-align: center;
+}
+.game-shell .collection-panel {
+  max-width: 1100px;
+}
+.game-shell .collection-progress {
+  justify-content: center;
+  text-align: center;
+  font-size: 0.8rem;
+}
+.game-shell .collection-help,
+.collection-copy-count {
+  text-align: center;
+  font-size: 0.75rem;
+  margin: 8px auto;
+}
+.game-shell .album-filters {
+  margin: 20px auto 12px;
+  justify-content: center;
+}
+.game-shell .album {
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 14px;
+  padding: 18px;
+  background: #0c1626d9;
+  border-radius: 6px;
+}
+.game-shell .album .card {
+  position: relative;
+  border: 0;
+  border-radius: 0;
+  padding: 10px;
+  background: none;
+  box-shadow: none;
+}
+.game-shell .album .card-portrait {
+  width: 100%;
+  height: 190px;
+  object-fit: contain;
+  filter: drop-shadow(0 6px 5px #030714aa);
+  margin: 0 auto;
+}
+.game-shell .album .card h3 {
+  font-size: 0.8rem;
+  margin: 8px 0 4px;
+}
+.game-shell .album .rarity-badge,
+.game-shell .album .star-rating {
+  justify-content: center;
+  font-size: 0.7rem;
+}
+.game-shell .card-ownership,
+.game-shell .card-team-state {
+  font-size: 0.7rem;
+  margin: 5px 0;
+}
+.game-shell .copy-inspector {
+  font-size: 0.75rem;
+  text-align: left;
+}
+.game-shell .copy-inspector[open] {
+  position: relative;
+  z-index: 2;
+  background: #101c30;
+  padding: 12px;
+  border: 1px solid var(--pack-border);
+  min-width: min(280px, 100%);
+}
+.game-shell .copy-inspector > summary {
+  justify-content: center;
+  font-size: 0.7rem;
+}
+.game-shell .copy-inspector > summary > img {
+  width: 26px;
+  height: 32px;
+}
+.game-shell .commerce-panel {
+  max-width: 850px;
+  text-align: center;
+}
+.game-shell .forge-materials {
+  justify-content: center;
+  gap: 28px;
+}
+.game-shell .forge-materials .visual-choices {
+  background: #101a2dcc;
+  padding: 12px;
+}
+.game-shell .commerce-panel .recipe-name {
+  font-size: 0.8rem;
+}
+.game-shell .vault-key-art {
+  width: min(40vw, 230px);
+  height: 200px;
+  object-fit: contain;
+  filter: drop-shadow(0 12px 14px #030817);
+}
+.game-shell .arena-board {
+  background: none;
+}
+.game-shell .pedestal {
+  background: #0b1525bb;
+  border: 1px solid #d5b66833;
+}
+.game-shell .reveal {
+  position: fixed;
+  z-index: 30;
+  inset: 0;
+  width: 100vw;
+  height: 100dvh;
+  max-width: none;
+  max-height: none;
+  margin: 0;
+  padding: 24px 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: auto;
+  border: 0;
+  border-radius: 0;
+  background: radial-gradient(ellipse at 50% 45%, #422650ef, #0b1327fc 65%);
+}
+.game-shell .reveal-heading {
+  font-size: clamp(0.75rem, 2vw, 1rem);
+  letter-spacing: 0.14em;
+  color: var(--pack-gold);
+  margin: 0;
+}
+.game-shell .opening-stage {
+  width: min(100%, 580px);
+  height: min(58dvh, 520px);
+  min-height: 220px;
+  margin: 0;
+  position: relative;
+  perspective: 1100px;
+  pointer-events: none;
+  overflow: hidden;
+}
+.game-shell .opening-piece {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  inset: 0;
+}
+.game-shell .opening-piece img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.game-shell .opening-seal {
+  z-index: 4;
+  top: 0;
+  left: 0;
+}
+.game-shell .opening-closed {
+  z-index: 3;
+}
+.game-shell .opening-lid {
+  z-index: 2;
+}
+.game-shell .opening-base {
+  z-index: 1;
+}
+.game-shell .opening-subject {
+  z-index: 6;
+  width: 52%;
+  height: 48%;
+  left: 24%;
+  top: 28%;
+}
+.game-shell .opening-subject img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.game-shell .opening-ring {
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+.game-shell .opening-ring img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.game-shell .opening-card,
+.game-shell .opening-card-back {
+  position: absolute;
+  z-index: 8;
+  inset: 6% 23%;
+  width: 54%;
+  height: 88%;
+  margin: 0;
+  transform-style: preserve-3d;
+}
+.game-shell .opening-card-back {
+  opacity: 0;
+}
+.game-shell .opening-card-back img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.game-shell .opening-card .opening-portrait {
+  position: absolute;
+  inset: 8% 9% 13%;
+  width: 82%;
+  height: 79%;
+  object-fit: cover;
+  object-position: center 20%;
+}
+.game-shell[data-content-pack='diagon-alley'] .opening-card .opening-portrait {
+  /* The painted portraits preserve headwear at the top of their source crop. */
+  inset: 10% 9% 13%;
+  height: 77%;
+  object-position: center top;
+}
+.game-shell .opening-card .opening-frame {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+}
+.game-shell .opening-finished .opening-card {
+  opacity: 1;
+  transform: none;
+}
+.game-shell .opening-finished .opening-piece,
+.game-shell .opening-finished .opening-subject,
+.game-shell .opening-finished .opening-card-back {
+  display: none;
+}
+.game-shell .opening-finished .opening-ring {
+  opacity: 0.22;
+  transform: scale(1.3);
+}
+.game-shell .holographic-card {
+  background: none;
+  border: 0;
+  padding: 0;
+  margin: 8px 0;
+}
+.game-shell .holographic-card[hidden] {
+  display: none;
+}
+.game-shell .holographic-card h3 {
+  margin: 0 0 6px;
+  font-size: clamp(1.1rem, 3vw, 1.75rem);
+}
+.game-shell .holographic-card .rarity-badge {
+  justify-content: center;
+}
+.game-shell .reveal-discovery {
+  color: var(--pack-gold);
+  font-size: 0.8rem;
+  margin: 6px 0;
+}
+.game-shell .reveal-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.game-shell .reveal-collect {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #e0bf7c;
+  color: #172032;
+}
+.reveal-collect img {
+  width: 38px;
+  height: 38px;
+}
+.game-shell .reveal-continue {
+  background: transparent;
+  font-size: 0.8rem;
+}
+.frog-magic {
+  position: absolute;
+  inset: 0;
+  z-index: 7;
+  pointer-events: none;
+}
+.frog-magic canvas {
+  width: 100%;
+  height: 100%;
+}
+.game-shell [hidden] {
+  display: none !important;
+}
+.game-shell[data-reduced='true'] > nav button,
+.game-shell[data-reduced='true'] .sweetshop-object > img:first-child {
+  transform: none;
+  transition: none;
+}
+@media (max-width: 600px) {
+  .game-shell {
+    --game-header: 48px;
+    --game-dock: 76px;
+  }
+  .game-shell > .hud {
+    gap: 8px;
+    padding: 0 10px;
+    font-size: 0.75rem;
+    height: 42px;
+    min-height: 42px;
+  }
+  .game-shell.arcana-map-view {
+    grid-template-rows: var(--game-header) 42px minmax(0, 1fr) var(--game-dock);
+  }
+  .game-shell > main {
+    padding: 16px 12px;
+  }
+  .game-shell > nav {
+    gap: 8px;
+  }
+  .game-shell > nav button {
+    height: 70px;
+    min-height: 70px;
+  }
+  .game-shell > nav button img {
+    width: 52px;
+    height: 49px;
+  }
+  .game-shell > nav button span {
+    font-size: 0.6rem;
+  }
+  .game-shell.arcana-map-view .team-compact {
+    padding: 3px 6px;
+    gap: 3px;
+    left: 8px;
+    bottom: 8px;
+  }
+  .game-shell.arcana-map-view .team-compact .team-token {
+    width: 40px;
+    height: 54px;
+  }
+  .game-shell.arcana-map-view .team-token .team-portrait {
+    width: 38px;
+    height: 46px;
+  }
+  .game-shell.arcana-map-view .receipt-objects {
+    display: none;
+  }
+  .game-shell .sweetshop-scene h2 {
+    font-size: 1.1rem;
+  }
+  .sweetshop-display {
+    min-height: 200px;
+    gap: 18px;
+  }
+  .sweetshop-object > img:first-child {
+    height: 180px;
+  }
+  .game-shell .sweetshop-object {
+    width: 43vw;
+  }
+  .game-shell .album {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    padding: 10px;
+    gap: 8px;
+  }
+  .game-shell .album .card-portrait {
+    height: 165px;
+  }
+  .game-shell .reveal {
+    padding: 12px;
+  }
+  .game-shell .opening-stage {
+    height: 48dvh;
+  }
+}
+@media (max-height: 520px) and (orientation: landscape) {
+  .game-shell {
+    --game-header: 48px;
+    --game-dock: 54px;
+  }
+  .game-shell.arcana-map-view {
+    grid-template-rows: var(--game-header) 36px minmax(0, 1fr) 54px;
+  }
+  .game-shell > .hud {
+    height: 36px;
+    min-height: 36px;
+  }
+  .game-shell > nav button {
+    height: 50px;
+    min-height: 50px;
+    flex-direction: row;
+    gap: 5px;
+  }
+  .game-shell > nav button img {
+    width: 40px;
+    height: 40px;
+  }
+  .game-shell .reveal {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-content: center;
+    justify-items: center;
+  }
+  .game-shell .opening-stage {
+    grid-column: 1;
+    grid-row: 1 / span 5;
+    height: 85dvh;
+    min-height: 0;
+  }
+  .game-shell .opening-ring {
+    inset: 10%;
+  }
+  .game-shell .reveal-actions,
+  .game-shell .reveal-heading,
+  .game-shell .holographic-card,
+  .game-shell .reveal-discovery {
+    grid-column: 2;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .game-shell > nav button,
+  .game-shell .sweetshop-object > img:first-child {
+    transition: none;
+    transform: none;
+  }
+}
+.game-shell .reveal::backdrop {
+  background: #070e1bf2;
+}
+.game-shell .reveal > .settings-trigger {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  z-index: 10;
+}
+.game-shell .reveal > button,
+.game-shell .reveal-actions {
+  position: relative;
+  z-index: 10;
+}
+.game-shell .album > *,
+.game-shell .album-filters > *,
+.game-shell .copy-inspector {
+  min-width: 0;
+}
+.game-shell .collection-panel {
+  overflow-wrap: anywhere;
+}
+.game-shell .visual-choice-tray {
+  max-width: 100%;
+  flex-wrap: wrap;
+}
+.game-shell .visual-choices {
+  min-width: 0;
+  max-width: 100%;
+}
+.game-shell .card .visual-choice {
+  max-width: 100%;
+}
+.game-shell::before {
+  content: none;
+}
+.game-shell > .connection-note {
+  position: fixed;
+  z-index: 22;
+  top: 54px;
+  left: 12px;
+  right: 12px;
+  margin: 0 auto;
+  max-width: 600px;
+  padding: 8px 12px;
+  background: #172539;
+  border: 1px solid var(--pack-gold);
+}
+.game-shell .card.locked .rarity-badge {
+  opacity: 0.5;
+}
+.game-shell .card .copy-inspector > summary > span {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+}
+.game-shell .album .rarity-badge > span {
+  font-size: 0.65rem;
+}
+.game-shell > nav button[aria-current='page'],
+.game-shell > nav button[aria-current='page']:hover:not(:disabled) {
+  color: var(--pack-ink);
+  background: var(--pack-background);
+  border-radius: 4px 4px 16px 16px;
+}
+.journey-locations {
+  list-style: none;
+  padding: 0;
+}
+.journey-locations li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 8px 0;
+}
+.journey-locations img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
+/* Image failure keeps the same semantic action visibly usable. */
+.game-shell .settings-trigger:not(:has(img)),
+.game-shell .settings-close:not(:has(img)) {
+  width: auto;
+  min-width: 44px;
+  padding: 8px;
+}
+.game-shell .settings-trigger:not(:has(img)) > .visually-hidden,
+.game-shell .settings-close:not(:has(img)) > .visually-hidden,
+.game-shell .node-confirm-action:not(:has(img)) > .visually-hidden,
+.game-shell .node-cancel-action:not(:has(img)) > .visually-hidden {
+  position: static;
+  width: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  clip-path: none;
+  white-space: normal;
+}
+/* Opening layers share one centred card box; no inherited frame translation. */
+.game-shell .opening-stage {
+  display: grid;
+  place-items: center;
+}
+.game-shell .opening-card,
+.game-shell .opening-card-back {
+  position: relative;
+  grid-area: 1 / 1;
+  inset: auto;
+  width: min(64%, 300px);
+  height: auto;
+  aspect-ratio: 4 / 5;
+  margin: 0;
+}
+.game-shell .opening-card .opening-frame {
+  transform: none;
+}
+.game-shell .album-filter-drawer {
+  max-width: 650px;
+  margin: 10px auto;
+}
+.game-shell .album-filter-drawer > summary {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.75rem;
+  width: fit-content;
+  margin: auto;
+  background: #0c1729dd;
+  padding: 2px 10px;
+}
+.album-filter-drawer > summary img {
+  width: 30px;
+  height: 32px;
+  object-fit: contain;
+}
+.game-shell .album-filter-drawer[open] {
+  background: #0c1729f5;
+  padding: 10px;
+  border: 1px solid var(--pack-border);
+}
+.game-shell .album {
+  max-width: 850px;
+  margin: auto;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+.album-page-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+  margin-top: 10px;
+  font-variant-numeric: tabular-nums;
+  font-size: 0.8rem;
+}
+.game-shell .album-page-controls button {
+  padding: 0;
+  width: 44px;
+  height: 44px;
+  margin: 0;
+}
+.album-page-controls button img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+.album-page-controls button:first-child img {
+  transform: rotate(180deg);
+}
+@media (max-width: 600px) {
+  .game-shell .album {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+.game-shell .album-page-controls button:not(:has(img)) {
+  width: auto;
+  min-width: 44px;
+  padding: 6px;
+}
+.game-shell .album-page-controls button:not(:has(img)) > .visually-hidden {
+  position: static;
+  width: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  clip-path: none;
+  white-space: normal;
+}
+.game-shell .operation-feedback {
+  position: fixed;
+  z-index: 20;
+  top: 112px;
+  right: 12px;
+  left: auto;
+  width: max-content;
+  max-width: min(320px, calc(100vw - 24px));
+  background: #0d192bef;
+  padding: 4px 8px;
+  border: 1px solid #b8944a88;
+  border-radius: 4px;
+  margin: 0;
+}
+.operation-receipt > summary {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: none;
+  border: 0;
+  padding: 0;
+  min-height: 36px;
+  list-style: none;
+}
+.operation-receipt > summary img {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+}
+.operation-receipt > summary > img:last-child {
+  width: 20px;
+  height: 20px;
+}
+.feedback-cost {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  font-size: 0.75rem;
+}
+.feedback-cost img {
+  width: 22px;
+  height: 22px;
+}
+.operation-receipt > p {
+  max-width: 260px;
+  font-size: 0.8rem;
+  margin: 8px 0;
+}
+@media (max-width: 600px) {
+  .game-shell .operation-feedback {
+    top: 96px;
+  }
+}

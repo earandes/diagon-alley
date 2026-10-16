@@ -1,0 +1,919 @@
+/* A59: a travelling card case. Shared by preparation and read-only discovery folios. */
+.game-shell .expedition-preparation {
+  width: min(100%, 980px);
+  margin: 0 auto;
+  padding: clamp(14px, 3vw, 28px);
+  border: 1px solid #cda75c80;
+  border-radius: 24px 24px 12px 12px;
+  background: radial-gradient(ellipse at 50% 0, #73563a52, transparent 60%), #101c2af2;
+  box-shadow:
+    inset 0 0 0 5px #07121c80,
+    0 16px 45px #04091080;
+  color: var(--pack-ink);
+  overflow-wrap: anywhere;
+}
+.expedition-preparation > header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  padding: 0;
+  border: 0;
+}
+.expedition-preparation h2 {
+  margin: 4px 0 18px;
+  font-size: clamp(1.3rem, 3vw, 1.9rem);
+}
+.game-shell .preparation-back {
+  width: 44px;
+  height: 44px;
+  padding: 5px;
+  flex: 0 0 44px;
+}
+.preparation-back img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  transform: rotate(180deg);
+}
+.preparation-formation {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  gap: clamp(5px, 2vw, 14px);
+}
+.preparation-position {
+  width: clamp(44px, 10vw, 70px);
+  height: clamp(58px, 12vw, 86px);
+  border: 1px solid #cda75c55;
+  border-radius: 12px 12px 24px 24px;
+  background: #080f1b9c;
+  position: relative;
+}
+.preparation-position[data-filled='true'] {
+  border-color: var(--pack-gold);
+  box-shadow: 0 3px 16px #e0b75d20;
+}
+.game-shell .preparation-position > button {
+  width: 100%;
+  height: 100%;
+  padding: 3px;
+  position: relative;
+  margin: 0;
+}
+.preparation-position img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.preparation-position button > span {
+  position: absolute;
+  bottom: 0;
+  right: 4px;
+  font-size: 0.65rem;
+}
+.preparation-empty {
+  display: grid;
+  place-items: center;
+  height: 100%;
+  opacity: 0.4;
+  font:
+    1.2rem Georgia,
+    serif;
+}
+.preparation-capacity,
+.preparation-temporary-hint {
+  text-align: center;
+  font-size: 0.75rem;
+  margin: 8px 0;
+}
+.preparation-temporary {
+  border: 1px dashed #86d8d5;
+  background: #2c5a5d42;
+}
+.preparation-temporary .preparation-temporary-seal {
+  position: absolute;
+  right: -5px;
+  bottom: -5px;
+  width: 26px;
+  height: 26px;
+}
+.preparation-workspace {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  gap: 22px;
+  margin-top: 16px;
+}
+.preparation-roster h3 {
+  font-size: 0.9rem;
+  margin: 8px 0 12px;
+}
+.preparation-cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+}
+.game-shell .expedition-preparation .preparation-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  min-width: 0;
+  padding: 6px 4px 8px;
+  border: 1px solid #cda75c30;
+  border-radius: 7px;
+  position: relative;
+  background: #050d1775;
+  margin: 0;
+}
+.preparation-card > img:first-child {
+  width: 100%;
+  height: clamp(84px, 16vw, 130px);
+  object-fit: contain;
+  filter: drop-shadow(0 3px 5px #0008);
+}
+.preparation-card > span {
+  font-size: 0.72rem;
+  line-height: 1.25;
+  margin-top: 5px;
+}
+.preparation-card > small {
+  font-size: 0.6rem;
+  opacity: 0.75;
+  margin-top: 4px;
+}
+.game-shell .preparation-card[aria-pressed='true'] {
+  background: #70532945;
+  border-color: var(--pack-gold);
+  box-shadow: inset 0 0 10px #d3ae4020;
+}
+.preparation-card .preparation-selection-seal,
+.preparation-gear-tray .preparation-selection-seal {
+  position: absolute;
+  right: 1px;
+  top: 1px;
+  width: 24px;
+  height: 24px;
+}
+.preparation-inspection {
+  min-width: 0;
+  padding: 8px 12px;
+  border-left: 1px solid #cda75c35;
+}
+.preparation-character {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  align-items: center;
+  gap: 10px;
+}
+.preparation-character > img {
+  width: 80px;
+  height: 108px;
+  object-fit: contain;
+}
+.preparation-character h3 {
+  font-size: 1rem;
+}
+.preparation-stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 5px;
+  padding: 9px 0;
+  border-block: 1px solid #cda75c30;
+}
+.preparation-stat-label {
+  display: block;
+  font-size: 0.6rem;
+  opacity: 0.65;
+  margin-top: 5px;
+}
+.preparation-gear-owner {
+  display: block;
+  font-size: 0.6rem;
+  margin-top: 5px;
+  color: var(--pack-gold);
+}
+.preparation-stats div {
+  text-align: center;
+}
+.preparation-stats dt {
+  font-size: 0.6rem;
+  opacity: 0.75;
+}
+.preparation-stats dd {
+  margin: 3px 0 0;
+  font-size: 0.9rem;
+  color: var(--pack-gold);
+}
+.preparation-gear-slots {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+.game-shell .preparation-gear-slot {
+  padding: 5px;
+  min-width: 0;
+  background: #080f1955;
+  border-bottom: 1px solid #cda75c40;
+}
+.preparation-gear-slot > img {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+}
+.preparation-gear-slot > span {
+  display: block;
+  font-size: 0.65rem;
+  line-height: 1.35;
+}
+.preparation-gear-tray {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 12px 0 0;
+}
+.game-shell .preparation-gear-tray > button {
+  flex: 1 1 85px;
+  max-width: 120px;
+  padding: 8px;
+  position: relative;
+  border: 1px solid #cda75c40;
+  border-radius: 6px;
+}
+.preparation-gear-tray > button > img:first-child {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+}
+.preparation-gear-tray span {
+  display: block;
+  font-size: 0.6rem;
+  line-height: 1.3;
+}
+.preparation-awaiting {
+  height: 100%;
+  min-height: 160px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0.7;
+}
+.preparation-awaiting img {
+  width: 62px;
+  height: 62px;
+  object-fit: contain;
+}
+.preparation-awaiting p {
+  font-size: 0.8rem;
+  text-align: center;
+}
+.expedition-preparation > footer {
+  margin-top: 16px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  justify-content: space-between;
+}
+.expedition-preparation > footer > p {
+  font-size: 0.73rem;
+  line-height: 1.5;
+  max-width: 330px;
+  margin: 0;
+}
+.game-shell .expedition-preparation .preparation-confirm {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  border: 1px solid var(--pack-gold);
+  background: linear-gradient(110deg, #41331c, #163337);
+  border-radius: 6px 18px 6px 18px;
+  padding: 6px 16px;
+  min-height: 52px;
+}
+.preparation-confirm img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+.preparation-confirm span {
+  font-size: 0.8rem;
+}
+.preparation-pages {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 8px;
+}
+.game-shell .preparation-pages button {
+  padding: 5px;
+}
+.preparation-pages img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
+.preparation-pages button:first-child img {
+  transform: rotate(180deg);
+}
+.preparation-pages span {
+  font-size: 0.7rem;
+}
+
+/* Read-only folios sit in the top layer and retain an opaque, readable fallback. */
+.game-shell .discovery-folio {
+  box-sizing: border-box;
+  width: min(92vw, 620px);
+  max-height: min(90dvh, 850px);
+  padding: clamp(18px, 4vw, 32px);
+  border: 1px solid var(--pack-gold);
+  border-radius: 10px 28px 10px 28px;
+  color: var(--pack-ink);
+  background: radial-gradient(ellipse at top, #64523b66, transparent 65%), #101d2a;
+  box-shadow:
+    inset 0 0 0 5px #080e1c70,
+    0 18px 80px #000a;
+}
+.discovery-folio::backdrop {
+  background: #030914bf;
+}
+.discovery-folio h3 {
+  text-align: center;
+  margin: 8px 0 18px;
+  font-size: 1.3rem;
+}
+.game-shell .folio-close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 44px;
+  height: 44px;
+  padding: 6px;
+}
+.folio-close img {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+}
+.game-shell .flavour-recipe-trigger {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  margin: 8px auto 0;
+  padding: 3px 10px;
+  border: 0;
+  background: transparent;
+}
+.flavour-recipe-trigger img {
+  width: 38px;
+  height: 38px;
+  object-fit: contain;
+}
+.flavour-recipe-trigger span {
+  font-size: 0.7rem;
+}
+.flavour-recipe-steps {
+  list-style: none;
+  padding: 0;
+  margin: 18px 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+.flavour-recipe-steps li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 8px;
+  position: relative;
+}
+.flavour-recipe-steps img {
+  width: clamp(54px, 12vw, 90px);
+  height: clamp(54px, 12vw, 90px);
+  object-fit: contain;
+}
+.flavour-recipe-steps span {
+  font-size: 0.75rem;
+  line-height: 1.4;
+}
+.flavour-recipe-steps li + li::before {
+  content: '›';
+  color: var(--pack-gold);
+  position: absolute;
+  left: -9px;
+  top: 20%;
+}
+.flavour-recipe-note {
+  font-size: 0.8rem;
+  line-height: 1.6;
+  text-align: center;
+}
+.game-shell .album-card-inspect {
+  width: 100%;
+  padding: 0;
+  display: block;
+  background: transparent;
+  border: 0;
+  margin: 0;
+}
+.album-card-inspect .card-portrait {
+  transition: transform 0.2s ease;
+}
+.album-card-inspect:hover .card-portrait,
+.album-card-inspect:focus-visible .card-portrait {
+  transform: translateY(-4px);
+}
+.album-folio-portrait {
+  display: block;
+  width: min(60%, 235px);
+  max-height: 36dvh;
+  object-fit: contain;
+  margin: 0 auto;
+}
+.album-card-folio .rarity-badge,
+.album-card-folio .star-rating {
+  justify-content: center;
+}
+.album-card-folio > p {
+  text-align: center;
+  font-size: 0.8rem;
+  line-height: 1.6;
+}
+.album-card-folio .album-copy-tokens {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+}
+.album-copy-tokens li {
+  padding: 5px 9px;
+  border-radius: 50%;
+  border: 1px solid var(--pack-gold);
+  font-size: 0.75rem;
+}
+.album-readonly-note {
+  font-size: 0.7rem;
+  opacity: 0.85;
+}
+.game-shell .album-prepare-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: center;
+  margin: 10px auto 0;
+  padding: 5px 12px;
+  background: transparent;
+  border: 0;
+}
+.album-prepare-link img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+.album-prepare-link span {
+  font-size: 0.7rem;
+}
+.journey-atlas {
+  width: min(100%, 620px);
+  margin: 24px auto 0;
+}
+.journey-atlas > h3 {
+  font-size: 1rem;
+  text-align: center;
+}
+.journey-atlas-spread {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  padding: 10px;
+  border: 1px solid #a77d4890;
+  border-radius: 12px;
+  background: linear-gradient(
+    90deg,
+    #3b2d27 48.5%,
+    #17151a 49.7%,
+    #b08a52 50%,
+    #17151a 50.3%,
+    #3b2d27 51.5%
+  );
+  box-shadow:
+    0 9px 20px #03091580,
+    inset 0 0 0 3px #be935a20;
+}
+.game-shell .journey-atlas-page {
+  padding: 12px;
+  min-width: 0;
+  position: relative;
+  border: 1px solid #d3b16877;
+  border-radius: 4px 18px 18px 4px;
+  background: #131e2dcc;
+  text-align: center;
+  overflow: hidden;
+}
+.journey-atlas-page > img:first-child {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 4px 10px 10px 4px;
+  opacity: 0.85;
+}
+.journey-atlas-page > span,
+.journey-atlas-page > small {
+  display: block;
+  margin-top: 7px;
+}
+.journey-atlas-page > span {
+  font-size: 0.85rem;
+  color: var(--pack-gold);
+}
+.journey-atlas-page > small {
+  font-size: 0.65rem;
+  line-height: 1.4;
+}
+.journey-atlas-page[data-future='true'] > img:first-child {
+  object-fit: contain;
+  padding: 16px;
+  box-sizing: border-box;
+  opacity: 0.65;
+  background: #283d3440;
+}
+.game-shell .journey-cabinet .journey-next {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 8px 20px 8px 10px;
+  min-height: 68px;
+  border: 1px solid #d5b16b;
+  border-radius: 8px 24px 8px 24px;
+  background: linear-gradient(110deg, #3b2a20ed, #102937f2);
+  font-size: 0.85rem;
+}
+.game-shell .journey-cabinet .journey-next img {
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+}
+@media (max-width: 580px) {
+  .game-shell .expedition-preparation {
+    padding: 14px;
+  }
+  .preparation-workspace {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 10px;
+  }
+  .preparation-cards {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .preparation-inspection {
+    border-left: 0;
+    border-top: 1px solid #cda75c35;
+    padding: 10px 0 0;
+  }
+  .preparation-inspection:has(.preparation-awaiting) {
+    display: none;
+  }
+  .preparation-character {
+    grid-template-columns: 58px 1fr;
+  }
+  .preparation-character > img {
+    width: 58px;
+    height: 72px;
+  }
+  .preparation-stats {
+    margin: 6px 0;
+  }
+  .preparation-gear-slot > img {
+    width: 44px;
+    height: 44px;
+  }
+  .expedition-preparation > footer {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .expedition-preparation > footer > p {
+    text-align: center;
+    font-size: 0.68rem;
+  }
+  .game-shell .expedition-preparation .preparation-confirm {
+    width: 100%;
+  }
+  .journey-atlas-page > img:first-child {
+    height: 90px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .album-card-inspect .card-portrait {
+    transition: none;
+  }
+}
+.game-shell[data-reduced='true'] .album-card-inspect .card-portrait {
+  transition: none;
+  transform: none;
+}
+
+/* A60: cards first; condition and equipment live in an explicitly opened card case. */
+.game-shell .expedition-preparation {
+  width: min(100%, 740px);
+}
+.expedition-preparation .preparation-workspace {
+  display: block;
+  margin-top: 8px;
+}
+.expedition-preparation .preparation-formation {
+  gap: clamp(6px, 2vw, 12px);
+}
+.expedition-preparation .preparation-position {
+  width: clamp(44px, 9vw, 58px);
+  height: clamp(58px, 11vw, 72px);
+}
+.preparation-legend {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  min-height: 44px;
+  position: relative;
+}
+.preparation-legend .preparation-capacity {
+  margin: 0;
+  color: var(--pack-gold);
+  font-variant-numeric: tabular-nums;
+  font-size: 0.85rem;
+}
+.preparation-origin {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.65rem;
+  color: #b6e4dd;
+}
+.preparation-origin img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+.preparation-help {
+  position: relative;
+}
+.preparation-help > summary {
+  display: grid;
+  place-items: center;
+  list-style: none;
+  width: 44px;
+  height: 44px;
+  cursor: pointer;
+  color: var(--pack-gold);
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+.preparation-help > summary::-webkit-details-marker {
+  display: none;
+}
+.preparation-help > summary > span {
+  display: grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  border: 1px solid currentColor;
+  border-radius: 50%;
+  font:
+    1rem Georgia,
+    serif;
+}
+.preparation-help > div {
+  position: absolute;
+  top: 42px;
+  right: -40px;
+  width: min(280px, 76vw);
+  z-index: 8;
+  padding: 12px 16px;
+  border: 1px solid #bfa46a;
+  border-radius: 6px 16px;
+  background: #122233;
+  box-shadow: 0 8px 30px #0009;
+  text-align: left;
+}
+.preparation-help p {
+  font-size: 0.8rem;
+  line-height: 1.45;
+  margin: 4px 0 10px;
+}
+.expedition-preparation .preparation-roster h3 {
+  text-align: center;
+  margin: 4px 0 12px;
+  font-size: 0.9rem;
+  font-weight: normal;
+}
+.expedition-preparation .preparation-cards {
+  max-width: 590px;
+  margin-inline: auto;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(8px, 2vw, 16px);
+}
+.preparation-card-entry {
+  position: relative;
+  min-width: 0;
+}
+.expedition-preparation .preparation-cards[data-count='1'] {
+  grid-template-columns: minmax(0, 1fr);
+  max-width: 180px;
+}
+.expedition-preparation .preparation-cards[data-count='2'] {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  max-width: 376px;
+}
+.game-shell .expedition-preparation .preparation-card {
+  width: 100%;
+  height: 100%;
+  padding: 10px 4px 12px;
+  border-radius: 12px 12px 20px 20px;
+  background: radial-gradient(ellipse at center, #4b455049, #07121ca8);
+  transition:
+    border-color 120ms ease,
+    background-color 120ms ease;
+}
+.expedition-preparation .preparation-card > img:first-child {
+  height: clamp(100px, 21vw, 165px);
+  width: 100%;
+}
+.expedition-preparation .preparation-card > span {
+  display: block;
+  font-size: clamp(0.68rem, 1.6vw, 0.85rem);
+  padding: 0 3px;
+}
+.expedition-preparation .preparation-card .preparation-selection-seal {
+  right: auto;
+  left: 3px;
+  top: 5px;
+  width: 27px;
+  height: 27px;
+  animation: preparation-seal-in 180ms ease-out both;
+}
+@keyframes preparation-seal-in {
+  from {
+    opacity: 0;
+    transform: scale(0.72) rotate(-12deg);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) rotate(0);
+  }
+}
+.game-shell .preparation-inspect-trigger {
+  display: grid;
+  place-items: center;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 44px;
+  height: 44px;
+  padding: 8px;
+  border: none;
+  border-radius: 0 10px 0 20px;
+  background: #071321bd;
+  color: #e7cf95;
+  margin: 0;
+}
+.preparation-inspect-trigger svg {
+  width: 27px;
+  height: 27px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+}
+.preparation-peek {
+  display: none;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: calc(100% + 6px);
+  width: max-content;
+  max-width: min(240px, 70vw);
+  padding: 9px 12px;
+  border: 1px solid #bda467;
+  border-radius: 8px;
+  background: #0d1c2a;
+  box-shadow: 0 4px 20px #0008;
+  z-index: 6;
+  pointer-events: none;
+  text-align: center;
+}
+.preparation-peek strong,
+.preparation-peek span {
+  display: block;
+  font-size: 0.7rem;
+}
+.preparation-peek strong {
+  color: var(--pack-gold);
+  margin-bottom: 4px;
+}
+.preparation-card:focus-visible + .preparation-peek {
+  display: block;
+}
+@media (hover: hover) {
+  .preparation-card:hover + .preparation-peek {
+    display: block;
+  }
+}
+.game-shell .expedition-preparation .preparation-inspection {
+  position: fixed;
+  inset: 0;
+  box-sizing: border-box;
+  width: min(450px, calc(100vw - 28px));
+  max-height: calc(100dvh - 32px);
+  padding: 24px;
+  margin: auto;
+  border: 1px solid var(--pack-gold);
+  border-radius: 16px 32px 16px 32px;
+  background: radial-gradient(ellipse at 50% 0, #4d414350, transparent 75%), #101f2f;
+  color: var(--pack-ink);
+  overflow: auto;
+  box-shadow:
+    inset 0 0 0 5px #07121b70,
+    0 18px 70px #000b;
+}
+.preparation-inspection::backdrop {
+  background: #030810ba;
+}
+.game-shell .preparation-inspection-close {
+  position: absolute;
+  top: 7px;
+  right: 7px;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border: none;
+  background: transparent;
+  color: var(--pack-gold);
+  padding: 0;
+  margin: 0;
+  font:
+    2rem Georgia,
+    serif;
+}
+.preparation-inspection .preparation-character {
+  padding-right: 18px;
+  grid-template-columns: 80px minmax(0, 1fr);
+}
+.preparation-inspection .preparation-character > img {
+  width: 80px;
+  height: 108px;
+}
+.preparation-inspection .preparation-character h3 {
+  font-size: 1.1rem;
+}
+.preparation-inspection .preparation-stats {
+  margin: 12px 0 18px;
+}
+.preparation-inspection .preparation-stats dt {
+  font-size: 0.7rem;
+}
+.preparation-inspection .preparation-stats dd {
+  font-size: 0.95rem;
+}
+.expedition-preparation > footer {
+  justify-content: center;
+  margin-top: 18px;
+}
+.game-shell .expedition-preparation .preparation-confirm {
+  min-width: min(100%, 240px);
+}
+@media (prefers-reduced-motion: reduce) {
+  .game-shell .expedition-preparation .preparation-card {
+    transition: none;
+  }
+  .expedition-preparation .preparation-selection-seal {
+    animation: none;
+  }
+}
+.game-shell[data-reduced='true'] .expedition-preparation .preparation-selection-seal {
+  animation: none;
+}
+.game-shell[data-reduced='true'] .expedition-preparation .preparation-card {
+  transition: none;
+}
+@media (max-width: 420px) {
+  .expedition-preparation .preparation-cards {
+    gap: 7px;
+  }
+  .game-shell .expedition-preparation .preparation-card {
+    padding-top: 14px;
+  }
+  .expedition-preparation .preparation-card > img:first-child {
+    height: 115px;
+  }
+  .game-shell .expedition-preparation .preparation-inspection {
+    padding: 20px 16px;
+  }
+}

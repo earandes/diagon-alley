@@ -1,0 +1,185 @@
+/* A60: ornament belongs to the card's stage, not a viewport-sized confetti overlay. */
+.game-shell .reveal {
+  --reveal-ink: #d4bd87;
+  --reveal-light: #604b24;
+  background: radial-gradient(
+    ellipse at 50% 43%,
+    color-mix(in srgb, var(--reveal-light) 48%, #0b1724),
+    #09121ffb 72%
+  );
+}
+.game-shell .reveal[data-rarity='unusual'] {
+  --reveal-ink: #9ee0c8;
+  --reveal-light: #244a40;
+}
+.game-shell .reveal[data-rarity='epic'] {
+  --reveal-ink: #d2a9f1;
+  --reveal-light: #573467;
+}
+.game-shell .reveal[data-rarity='arcane-legendary'] {
+  --reveal-ink: #ffe098;
+  --reveal-light: #785820;
+}
+.game-shell .reveal .opening-ring {
+  inset: 13% 20%;
+  border-radius: 50%;
+  background: radial-gradient(ellipse, #e1c07818, transparent 64%);
+  border: 1px solid #b9a36e33;
+}
+.game-shell .reveal .opening-ring > img {
+  display: none;
+}
+.opening-theatre {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  opacity: 0;
+  color: var(--reveal-ink);
+  pointer-events: none;
+  contain: paint;
+}
+.theatre-aura {
+  position: absolute;
+  inset: 8% 10%;
+  background: radial-gradient(
+    ellipse,
+    color-mix(in srgb, var(--reveal-ink) 17%, transparent),
+    transparent 66%
+  );
+}
+.theatre-engraving {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.62;
+}
+.game-shell .opening-finished .opening-theatre {
+  opacity: 1;
+}
+.opening-theatre[data-theatre-rank='0'] .theatre-orbits {
+  opacity: 0.18;
+}
+.opening-theatre[data-theatre-rank='0'] .theatre-rays {
+  opacity: 0.35;
+}
+.theatre-crown {
+  fill: #e4bc5f15;
+}
+.game-shell .reveal .opening-finished .opening-ring {
+  opacity: 0;
+  visibility: hidden;
+}
+.game-shell .reveal[data-reveal-magic='cast'] .theatre-orbits {
+  transform-origin: 50% 50%;
+  animation: a60-orbit-settle 1400ms ease-out both;
+}
+.game-shell .reveal[data-reveal-magic='cast'] .theatre-rays {
+  transform-origin: 50% 50%;
+  animation: a60-starlight 1200ms ease-out both;
+}
+.game-shell .reveal[data-reveal-magic='cast'] .theatre-crown {
+  animation: a60-crown 1300ms ease-out both;
+}
+.game-shell .reveal[data-reveal-magic='cast'] .holographic-card .rarity-badge {
+  animation: a60-rank-stamp 600ms cubic-bezier(0.18, 0.8, 0.3, 1.12) both;
+}
+.game-shell .reveal[data-reveal-magic='cast'] .holographic-card .card-stars {
+  animation: a60-rank-stamp 650ms 160ms ease-out both;
+}
+.game-shell .reveal .holographic-card .rarity-badge {
+  width: fit-content;
+  min-width: 145px;
+  padding: 7px 18px;
+  gap: 10px;
+  margin: 8px auto;
+  border: 1px solid color-mix(in srgb, var(--reveal-ink) 60%, transparent);
+  border-radius: 30px;
+  background: #0a1728;
+  color: var(--reveal-ink);
+  font-family: var(--font-display, Georgia, serif);
+  font-size: 1.1rem;
+}
+.game-shell .reveal .holographic-card .rarity-icon {
+  width: 34px;
+  height: 34px;
+  object-fit: contain;
+}
+.game-shell .reveal .holographic-card .card-stars {
+  margin: 5px 0 0;
+  color: var(--reveal-ink);
+}
+.game-shell .reveal .holographic-card .card-stars > span:first-child {
+  font-size: 1.4rem;
+  letter-spacing: 0.16em;
+}
+.game-shell .reveal .celebration.celebration-a59 {
+  display: none;
+}
+.game-shell .reveal .opening-theatre .celebration.celebration-a59 {
+  display: block;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+}
+.game-shell .reveal .opening-theatre .celebration-a59-halo {
+  display: none;
+}
+@keyframes a60-orbit-settle {
+  from {
+    opacity: 0;
+    transform: rotate(-12deg) scale(0.78);
+  }
+  35% {
+    opacity: 0.85;
+  }
+  to {
+    opacity: 0.62;
+    transform: rotate(0) scale(1);
+  }
+}
+@keyframes a60-starlight {
+  from {
+    opacity: 0;
+    transform: scale(0.65);
+  }
+  25% {
+    opacity: 1;
+  }
+  to {
+    opacity: 0.7;
+    transform: scale(1);
+  }
+}
+@keyframes a60-crown {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  45% {
+    opacity: 1;
+  }
+  to {
+    opacity: 0.8;
+    transform: translateY(0);
+  }
+}
+@keyframes a60-rank-stamp {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .game-shell .reveal[data-reveal-magic] * {
+    animation: none !important;
+  }
+}
+.game-shell[data-reduced='true'] .reveal[data-reveal-magic] * {
+  animation: none !important;
+}

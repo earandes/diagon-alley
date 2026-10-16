@@ -1,0 +1,2102 @@
+{
+  "node.duel": {
+    "path": "art/icons/node-duel.svg",
+    "width": 256,
+    "height": 256,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "alt": {
+      "es": "Duelo",
+      "en": "Duel"
+    }
+  },
+  "node.refuge": {
+    "path": "art/icons/node-refuge.svg",
+    "width": 256,
+    "height": 256,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "alt": {
+      "es": "Refugio",
+      "en": "Refuge"
+    }
+  },
+  "node.chest": {
+    "path": "art/icons/node-chest.svg",
+    "width": 256,
+    "height": 256,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "alt": {
+      "es": "Cofre",
+      "en": "Chest"
+    }
+  },
+  "node.pact": {
+    "path": "art/icons/node-pact.svg",
+    "width": 256,
+    "height": 256,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "alt": {
+      "es": "Pacto",
+      "en": "Pact"
+    }
+  },
+  "node.encounter": {
+    "path": "art/icons/node-encounter.svg",
+    "width": 256,
+    "height": 256,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "alt": {
+      "es": "Encuentro",
+      "en": "Encounter"
+    }
+  },
+  "node.boss": {
+    "path": "art/icons/node-boss.svg",
+    "width": 256,
+    "height": 256,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "alt": {
+      "es": "Jefe",
+      "en": "Boss"
+    }
+  },
+  "currency.crowns": {
+    "path": "art/icons/currency-crowns.svg",
+    "width": 256,
+    "height": 256,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "alt": {
+      "es": "Coronas",
+      "en": "Crowns"
+    }
+  },
+  "currency.essence": {
+    "path": "art/icons/currency-essence.svg",
+    "width": 256,
+    "height": 256,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "alt": {
+      "es": "Esencia",
+      "en": "Essence"
+    }
+  },
+  "character.apprentice.figure": {
+    "path": "art/character/apprentice/figure.webp",
+    "width": 342,
+    "height": 512,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.9
+    ],
+    "alt": {
+      "es": "Figura de Aprendiz de Alquimia",
+      "en": "Figure of Alchemy Apprentice"
+    }
+  },
+  "character.apprentice.portrait": {
+    "path": "art/character/apprentice/portrait.webp",
+    "width": 512,
+    "height": 640,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.9
+    ],
+    "alt": {
+      "es": "Retrato de Aprendiz de Alquimia",
+      "en": "Portrait of Alchemy Apprentice"
+    }
+  },
+  "character.apprentice.thumbnail": {
+    "path": "art/character/apprentice/thumbnail.webp",
+    "width": 96,
+    "height": 120,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.9
+    ],
+    "alt": {
+      "es": "Aprendiz de Alquimia",
+      "en": "Alchemy Apprentice"
+    }
+  },
+  "character.ash-wanderer.figure": {
+    "path": "art/character/ash-wanderer/figure.webp",
+    "width": 342,
+    "height": 512,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.9
+    ],
+    "alt": {
+      "es": "Figura de Caminante de Ceniza",
+      "en": "Figure of Ash Wanderer"
+    }
+  },
+  "character.ash-wanderer.portrait": {
+    "path": "art/character/ash-wanderer/portrait.webp",
+    "width": 512,
+    "height": 640,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.9
+    ],
+    "alt": {
+      "es": "Retrato de Caminante de Ceniza",
+      "en": "Portrait of Ash Wanderer"
+    }
+  },
+  "character.ash-wanderer.thumbnail": {
+    "path": "art/character/ash-wanderer/thumbnail.webp",
+    "width": 96,
+    "height": 120,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.9
+    ],
+    "alt": {
+      "es": "Caminante de Ceniza",
+      "en": "Ash Wanderer"
+    }
+  },
+  "character.aurora-sage.figure": {
+    "path": "art/character/aurora-sage/figure.webp",
+    "width": 342,
+    "height": 512,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.9
+    ],
+    "alt": {
+      "es": "Figura de Sabia de la Aurora",
+      "en": "Figure of Aurora Sage"
+    }
+  },
+  "character.aurora-sage.portrait": {
+    "path": "art/character/aurora-sage/portrait.webp",
+    "width": 512,
+    "height": 640,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.9
+    ],
+    "alt": {
+      "es": "Retrato de Sabia de la Aurora",
+      "en": "Portrait of Aurora Sage"
+    }
+  },
+  "character.aurora-sage.thumbnail": {
+    "path": "art/character/aurora-sage/thumbnail.webp",
+    "width": 96,
+    "height": 120,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.9
+    ],
+    "alt": {
+      "es": "Sabia de la Aurora",
+      "en": "Aurora Sage"
+    }
+  },
+  "character.cinder-dancer.figure": {
+    "path": "art/character/cinder-dancer/figure.webp",
+    "width": 342,
+    "height": 512,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.9
+    ],
+    "alt": {
+      "es": "Figura de Danzante de las Ascuas",
+      "en": "Figure of Cinder Dancer"
+    }
+  },
+  "character.cinder-dancer.portrait": {
+    "path": "art/character/cinder-dancer/portrait.webp",
+    "width": 512,
+    "height": 640,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.9
+    ],
+    "alt": {
+      "es": "Retrato de Danzante de las Ascuas",
+      "en": "Portrait of Cinder Dancer"
+    }
+  },
+  "character.cinder-dancer.thumbnail": {
+    "path": "art/character/cinder-dancer/thumbnail.webp",
+    "width": 96,
+    "height": 120,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.9
+    ],
+    "alt": {
+      "es": "Danzante de las Ascuas",
+      "en": "Cinder Dancer"
+    }
+  },
+  "character.circe.figure": {
+    "path": "art/character/circe/figure.webp",
+    "width": 342,
+    "height": 512,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.9
+    ],
+    "alt": {
+      "es": "Figura de Circe",
+      "en": "Figure of Circe"
+    }
+  },
+  "character.circe.portrait": {
+    "path": "art/character/circe/portrait.webp",
+    "width": 512,
+    "height": 640,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.9
+    ],
+    "alt": {
+      "es": "Retrato de Circe",
+      "en": "Portrait of Circe"
+    }
+  },
+  "character.circe.thumbnail": {
+    "path": "art/character/circe/thumbnail.webp",
+    "width": 96,
+    "height": 120,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.9
+    ],
+    "alt": {
+      "es": "Circe",
+      "en": "Circe"
+    }
+  },
+  "character.comet-scholar.figure": {
+    "path": "art/character/comet-scholar/figure.webp",
+    "width": 342,
+    "height": 512,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.9
+    ],
+    "alt": {
+      "es": "Figura de Erudita del Cometa",
+      "en": "Figure of Comet Scholar"
+    }
+  },
+  "character.comet-scholar.portrait": {
+    "path": "art/character/comet-scholar/portrait.webp",
+    "width": 512,
+    "height": 640,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.9
+    ],
+    "alt": {
+      "es": "Retrato de Erudita del Cometa",
+      "en": "Portrait of Comet Scholar"
+    }
+  },
+  "character.comet-scholar.thumbnail": {
+    "path": "art/character/comet-scholar/thumbnail.webp",
+    "width": 96,
+    "height": 120,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.9
+    ],
+    "alt": {
+      "es": "Erudita del Cometa",
+      "en": "Comet Scholar"
+    }
+  },
+  "character.copper-sage.figure": {
+    "path": "art/character/copper-sage/figure.webp",
+    "width": 342,
+    "height": 512,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.9
+    ],
+    "alt": {
+      "es": "Figura de Sabio del Cobre",
+      "en": "Figure of Copper Sage"
+    }
+  },
+  "character.copper-sage.portrait": {
+    "path": "art/character/copper-sage/portrait.webp",
+    "width": 512,
+    "height": 640,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.9
+    ],
+    "alt": {
+      "es": "Retrato de Sabio del Cobre",
+      "en": "Portrait of Copper Sage"
+    }
+  },
+  "character.copper-sage.thumbnail": {
+    "path": "art/character/copper-sage/thumbnail.webp",
+    "width": 96,
+    "height": 120,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.9
+    ],
+    "alt": {
+      "es": "Sabio del Cobre",
+      "en": "Copper Sage"
+    }
+  },
+  "character.crystal-watch.figure": {
+    "path": "art/character/crystal-watch/figure.webp",
+    "width": 342,
+    "height": 512,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.9
+    ],
+    "alt": {
+      "es": "Figura de Vigía del Cristal",
+      "en": "Figure of Crystal Watcher"
+    }
+  },
+  "character.crystal-watch.portrait": {
+    "path": "art/character/crystal-watch/portrait.webp",
+    "width": 512,
+    "height": 640,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.9
+    ],
+    "alt": {
+      "es": "Retrato de Vigía del Cristal",
+      "en": "Portrait of Crystal Watcher"
+    }
+  },
+  "character.crystal-watch.thumbnail": {
+    "path": "art/character/crystal-watch/thumbnail.webp",
+    "width": 96,
+    "height": 120,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.9
+    ],
+    "alt": {
+      "es": "Vigía del Cristal",
+      "en": "Crystal Watcher"
+    }
+  },
+  "character.dawn-oracle.figure": {
+    "path": "art/character/dawn-oracle/figure.webp",
+    "width": 342,
+    "height": 512,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.9
+    ],
+    "alt": {
+      "es": "Figura de Oráculo del Alba",
+      "en": "Figure of Dawn Oracle"
+    }
+  },
+  "character.dawn-oracle.portrait": {
+    "path": "art/character/dawn-oracle/portrait.webp",
+    "width": 512,
+    "height": 640,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.9
+    ],
+    "alt": {
+      "es": "Retrato de Oráculo del Alba",
+      "en": "Portrait of Dawn Oracle"
+    }
+  },
+  "character.dawn-oracle.thumbnail": {
+    "path": "art/character/dawn-oracle/thumbnail.webp",
+    "width": 96,
+    "height": 120,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.9
+    ],
+    "alt": {
+      "es": "Oráculo del Alba",
+      "en": "Dawn Oracle"
+    }
+  },
+  "character.dew-alchemist.figure": {
+    "path": "art/character/dew-alchemist/figure.webp",
+    "width": 342,
+    "height": 512,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.9
+    ],
+    "alt": {
+      "es": "Figura de Alquimista del Rocío",
+      "en": "Figure of Dew Alchemist"
+    }
+  },
+  "character.dew-alchemist.portrait": {
+    "path": "art/character/dew-alchemist/portrait.webp",
+    "width": 512,
+    "height": 640,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.9
+    ],
+    "alt": {
+      "es": "Retrato de Alquimista del Rocío",
+      "en": "Portrait of Dew Alchemist"
+    }
+  },
+  "character.dew-alchemist.thumbnail": {
+    "path": "art/character/dew-alchemist/thumbnail.webp",
+    "width": 96,
+    "height": 120,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.9
+    ],
+    "alt": {
+      "es": "Alquimista del Rocío",
+      "en": "Dew Alchemist"
+    }
+  },
+  "character.echo-mage.figure": {
+    "path": "art/character/echo-mage/figure.webp",
+    "width": 342,
+    "height": 512,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.9
+    ],
+    "alt": {
+      "es": "Figura de Mago del Eco",
+      "en": "Figure of Echo Mage"
+    }
+  },
+  "character.echo-mage.portrait": {
+    "path": "art/character/echo-mage/portrait.webp",
+    "width": 512,
+    "height": 640,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.9
+    ],
+    "alt": {
+      "es": "Retrato de Mago del Eco",
+      "en": "Portrait of Echo Mage"
+    }
+  },
+  "character.echo-mage.thumbnail": {
+    "path": "art/character/echo-mage/thumbnail.webp",
+    "width": 96,
+    "height": 120,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.9
+    ],
+    "alt": {
+      "es": "Mago del Eco",
+      "en": "Echo Mage"
+    }
+  },
+  "character.ember-keeper.figure": {
+    "path": "art/character/ember-keeper/figure.webp",
+    "width": 342,
+    "height": 512,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.9
+    ],
+    "alt": {
+      "es": "Figura de Guardián de las Brasas",
+      "en": "Figure of Ember Keeper"
+    }
+  },
+  "character.ember-keeper.portrait": {
+    "path": "art/character/ember-keeper/portrait.webp",
+    "width": 512,
+    "height": 640,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.9
+    ],
+    "alt": {
+      "es": "Retrato de Guardián de las Brasas",
+      "en": "Portrait of Ember Keeper"
+    }
+  },
+  "character.ember-keeper.thumbnail": {
+    "path": "art/character/ember-keeper/thumbnail.webp",
+    "width": 96,
+    "height": 120,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.9
+    ],
+    "alt": {
+      "es": "Guardián de las Brasas",
+      "en": "Ember Keeper"
+    }
+  },
+  "character.flamel.figure": {
+    "path": "art/character/flamel/figure.webp",
+    "width": 342,
+    "height": 512,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.9
+    ],
+    "alt": {
+      "es": "Figura de Nicolás Flamel",
+      "en": "Figure of Nicolas Flamel"
+    }
+  },
+  "character.flamel.portrait": {
+    "path": "art/character/flamel/portrait.webp",
+    "width": 512,
+    "height": 640,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.9
+    ],
+    "alt": {
+      "es": "Retrato de Nicolás Flamel",
+      "en": "Portrait of Nicolas Flamel"
+    }
+  },
+  "character.flamel.thumbnail": {
+    "path": "art/character/flamel/thumbnail.webp",
+    "width": 96,
+    "height": 120,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.9
+    ],
+    "alt": {
+      "es": "Nicolás Flamel",
+      "en": "Nicolas Flamel"
+    }
+  },
+  "character.merlin.figure": {
+    "path": "art/character/merlin/figure.webp",
+    "width": 342,
+    "height": 512,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.9
+    ],
+    "alt": {
+      "es": "Figura de Merlín",
+      "en": "Figure of Merlin"
+    }
+  },
+  "character.merlin.portrait": {
+    "path": "art/character/merlin/portrait.webp",
+    "width": 512,
+    "height": 640,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.9
+    ],
+    "alt": {
+      "es": "Retrato de Merlín",
+      "en": "Portrait of Merlin"
+    }
+  },
+  "character.merlin.thumbnail": {
+    "path": "art/character/merlin/thumbnail.webp",
+    "width": 96,
+    "height": 120,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.9
+    ],
+    "alt": {
+      "es": "Merlín",
+      "en": "Merlin"
+    }
+  },
+  "character.mist-seer.figure": {
+    "path": "art/character/mist-seer/figure.webp",
+    "width": 342,
+    "height": 512,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.9
+    ],
+    "alt": {
+      "es": "Figura de Vidente de la Bruma",
+      "en": "Figure of Mist Seer"
+    }
+  },
+  "character.mist-seer.portrait": {
+    "path": "art/character/mist-seer/portrait.webp",
+    "width": 512,
+    "height": 640,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.9
+    ],
+    "alt": {
+      "es": "Retrato de Vidente de la Bruma",
+      "en": "Portrait of Mist Seer"
+    }
+  },
+  "character.mist-seer.thumbnail": {
+    "path": "art/character/mist-seer/thumbnail.webp",
+    "width": 96,
+    "height": 120,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.9
+    ],
+    "alt": {
+      "es": "Vidente de la Bruma",
+      "en": "Mist Seer"
+    }
+  },
+  "character.moon-herbalist.figure": {
+    "path": "art/character/moon-herbalist/figure.webp",
+    "width": 342,
+    "height": 512,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.9
+    ],
+    "alt": {
+      "es": "Figura de Herborista Lunar",
+      "en": "Figure of Moon Herbalist"
+    }
+  },
+  "character.moon-herbalist.portrait": {
+    "path": "art/character/moon-herbalist/portrait.webp",
+    "width": 512,
+    "height": 640,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.9
+    ],
+    "alt": {
+      "es": "Retrato de Herborista Lunar",
+      "en": "Portrait of Moon Herbalist"
+    }
+  },
+  "character.moon-herbalist.thumbnail": {
+    "path": "art/character/moon-herbalist/thumbnail.webp",
+    "width": 96,
+    "height": 120,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.9
+    ],
+    "alt": {
+      "es": "Herborista Lunar",
+      "en": "Moon Herbalist"
+    }
+  },
+  "character.morgana.figure": {
+    "path": "art/character/morgana/figure.webp",
+    "width": 342,
+    "height": 512,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.9
+    ],
+    "alt": {
+      "es": "Figura de Morgana Le Fay",
+      "en": "Figure of Morgana Le Fay"
+    }
+  },
+  "character.morgana.portrait": {
+    "path": "art/character/morgana/portrait.webp",
+    "width": 512,
+    "height": 640,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.9
+    ],
+    "alt": {
+      "es": "Retrato de Morgana Le Fay",
+      "en": "Portrait of Morgana Le Fay"
+    }
+  },
+  "character.morgana.thumbnail": {
+    "path": "art/character/morgana/thumbnail.webp",
+    "width": 96,
+    "height": 120,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.9
+    ],
+    "alt": {
+      "es": "Morgana Le Fay",
+      "en": "Morgana Le Fay"
+    }
+  },
+  "character.moss-guardian.figure": {
+    "path": "art/character/moss-guardian/figure.webp",
+    "width": 342,
+    "height": 512,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.9
+    ],
+    "alt": {
+      "es": "Figura de Guardiana del Musgo",
+      "en": "Figure of Moss Guardian"
+    }
+  },
+  "character.moss-guardian.portrait": {
+    "path": "art/character/moss-guardian/portrait.webp",
+    "width": 512,
+    "height": 640,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.9
+    ],
+    "alt": {
+      "es": "Retrato de Guardiana del Musgo",
+      "en": "Portrait of Moss Guardian"
+    }
+  },
+  "character.moss-guardian.thumbnail": {
+    "path": "art/character/moss-guardian/thumbnail.webp",
+    "width": 96,
+    "height": 120,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.9
+    ],
+    "alt": {
+      "es": "Guardiana del Musgo",
+      "en": "Moss Guardian"
+    }
+  },
+  "character.night-forger.figure": {
+    "path": "art/character/night-forger/figure.webp",
+    "width": 342,
+    "height": 512,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.9
+    ],
+    "alt": {
+      "es": "Figura de Forjador Nocturno",
+      "en": "Figure of Night Forger"
+    }
+  },
+  "character.night-forger.portrait": {
+    "path": "art/character/night-forger/portrait.webp",
+    "width": 512,
+    "height": 640,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.9
+    ],
+    "alt": {
+      "es": "Retrato de Forjador Nocturno",
+      "en": "Portrait of Night Forger"
+    }
+  },
+  "character.night-forger.thumbnail": {
+    "path": "art/character/night-forger/thumbnail.webp",
+    "width": 96,
+    "height": 120,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.9
+    ],
+    "alt": {
+      "es": "Forjador Nocturno",
+      "en": "Night Forger"
+    }
+  },
+  "character.obsidian-seer.figure": {
+    "path": "art/character/obsidian-seer/figure.webp",
+    "width": 342,
+    "height": 512,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.9
+    ],
+    "alt": {
+      "es": "Figura de Vidente de Obsidiana",
+      "en": "Figure of Obsidian Seer"
+    }
+  },
+  "character.obsidian-seer.portrait": {
+    "path": "art/character/obsidian-seer/portrait.webp",
+    "width": 512,
+    "height": 640,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.9
+    ],
+    "alt": {
+      "es": "Retrato de Vidente de Obsidiana",
+      "en": "Portrait of Obsidian Seer"
+    }
+  },
+  "character.obsidian-seer.thumbnail": {
+    "path": "art/character/obsidian-seer/thumbnail.webp",
+    "width": 96,
+    "height": 120,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.9
+    ],
+    "alt": {
+      "es": "Vidente de Obsidiana",
+      "en": "Obsidian Seer"
+    }
+  },
+  "character.paracelso.figure": {
+    "path": "art/character/paracelso/figure.webp",
+    "width": 342,
+    "height": 512,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.9
+    ],
+    "alt": {
+      "es": "Figura de Paracelso",
+      "en": "Figure of Paracelsus"
+    }
+  },
+  "character.paracelso.portrait": {
+    "path": "art/character/paracelso/portrait.webp",
+    "width": 512,
+    "height": 640,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.9
+    ],
+    "alt": {
+      "es": "Retrato de Paracelso",
+      "en": "Portrait of Paracelsus"
+    }
+  },
+  "character.paracelso.thumbnail": {
+    "path": "art/character/paracelso/thumbnail.webp",
+    "width": 96,
+    "height": 120,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.9
+    ],
+    "alt": {
+      "es": "Paracelso",
+      "en": "Paracelsus"
+    }
+  },
+  "character.root-speaker.figure": {
+    "path": "art/character/root-speaker/figure.webp",
+    "width": 342,
+    "height": 512,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.9
+    ],
+    "alt": {
+      "es": "Figura de Orador de las Raíces",
+      "en": "Figure of Root Speaker"
+    }
+  },
+  "character.root-speaker.portrait": {
+    "path": "art/character/root-speaker/portrait.webp",
+    "width": 512,
+    "height": 640,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.9
+    ],
+    "alt": {
+      "es": "Retrato de Orador de las Raíces",
+      "en": "Portrait of Root Speaker"
+    }
+  },
+  "character.root-speaker.thumbnail": {
+    "path": "art/character/root-speaker/thumbnail.webp",
+    "width": 96,
+    "height": 120,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.9
+    ],
+    "alt": {
+      "es": "Orador de las Raíces",
+      "en": "Root Speaker"
+    }
+  },
+  "character.rune-weaver.figure": {
+    "path": "art/character/rune-weaver/figure.webp",
+    "width": 342,
+    "height": 512,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.9
+    ],
+    "alt": {
+      "es": "Figura de Tejedora de Runas",
+      "en": "Figure of Rune Weaver"
+    }
+  },
+  "character.rune-weaver.portrait": {
+    "path": "art/character/rune-weaver/portrait.webp",
+    "width": 512,
+    "height": 640,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.9
+    ],
+    "alt": {
+      "es": "Retrato de Tejedora de Runas",
+      "en": "Portrait of Rune Weaver"
+    }
+  },
+  "character.rune-weaver.thumbnail": {
+    "path": "art/character/rune-weaver/thumbnail.webp",
+    "width": 96,
+    "height": 120,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.9
+    ],
+    "alt": {
+      "es": "Tejedora de Runas",
+      "en": "Rune Weaver"
+    }
+  },
+  "character.shadow-scribe.figure": {
+    "path": "art/character/shadow-scribe/figure.webp",
+    "width": 342,
+    "height": 512,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.9
+    ],
+    "alt": {
+      "es": "Figura de Escriba de las Sombras",
+      "en": "Figure of Shadow Scribe"
+    }
+  },
+  "character.shadow-scribe.portrait": {
+    "path": "art/character/shadow-scribe/portrait.webp",
+    "width": 512,
+    "height": 640,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.9
+    ],
+    "alt": {
+      "es": "Retrato de Escriba de las Sombras",
+      "en": "Portrait of Shadow Scribe"
+    }
+  },
+  "character.shadow-scribe.thumbnail": {
+    "path": "art/character/shadow-scribe/thumbnail.webp",
+    "width": 96,
+    "height": 120,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.9
+    ],
+    "alt": {
+      "es": "Escriba de las Sombras",
+      "en": "Shadow Scribe"
+    }
+  },
+  "character.silver-sentinel.figure": {
+    "path": "art/character/silver-sentinel/figure.webp",
+    "width": 342,
+    "height": 512,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.9
+    ],
+    "alt": {
+      "es": "Figura de Centinela de Plata",
+      "en": "Figure of Silver Sentinel"
+    }
+  },
+  "character.silver-sentinel.portrait": {
+    "path": "art/character/silver-sentinel/portrait.webp",
+    "width": 512,
+    "height": 640,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.9
+    ],
+    "alt": {
+      "es": "Retrato de Centinela de Plata",
+      "en": "Portrait of Silver Sentinel"
+    }
+  },
+  "character.silver-sentinel.thumbnail": {
+    "path": "art/character/silver-sentinel/thumbnail.webp",
+    "width": 96,
+    "height": 120,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.9
+    ],
+    "alt": {
+      "es": "Centinela de Plata",
+      "en": "Silver Sentinel"
+    }
+  },
+  "character.star-binder.figure": {
+    "path": "art/character/star-binder/figure.webp",
+    "width": 342,
+    "height": 512,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.9
+    ],
+    "alt": {
+      "es": "Figura de Enlazadora de Estrellas",
+      "en": "Figure of Star Binder"
+    }
+  },
+  "character.star-binder.portrait": {
+    "path": "art/character/star-binder/portrait.webp",
+    "width": 512,
+    "height": 640,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.9
+    ],
+    "alt": {
+      "es": "Retrato de Enlazadora de Estrellas",
+      "en": "Portrait of Star Binder"
+    }
+  },
+  "character.star-binder.thumbnail": {
+    "path": "art/character/star-binder/thumbnail.webp",
+    "width": 96,
+    "height": 120,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.9
+    ],
+    "alt": {
+      "es": "Enlazadora de Estrellas",
+      "en": "Star Binder"
+    }
+  },
+  "character.storm-caller.figure": {
+    "path": "art/character/storm-caller/figure.webp",
+    "width": 342,
+    "height": 512,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.9
+    ],
+    "alt": {
+      "es": "Figura de Invocadora de Tormentas",
+      "en": "Figure of Storm Caller"
+    }
+  },
+  "character.storm-caller.portrait": {
+    "path": "art/character/storm-caller/portrait.webp",
+    "width": 512,
+    "height": 640,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.9
+    ],
+    "alt": {
+      "es": "Retrato de Invocadora de Tormentas",
+      "en": "Portrait of Storm Caller"
+    }
+  },
+  "character.storm-caller.thumbnail": {
+    "path": "art/character/storm-caller/thumbnail.webp",
+    "width": 96,
+    "height": 120,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.9
+    ],
+    "alt": {
+      "es": "Invocadora de Tormentas",
+      "en": "Storm Caller"
+    }
+  },
+  "character.sun-priestess.figure": {
+    "path": "art/character/sun-priestess/figure.webp",
+    "width": 342,
+    "height": 512,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.9
+    ],
+    "alt": {
+      "es": "Figura de Sacerdotisa Solar",
+      "en": "Figure of Sun Priestess"
+    }
+  },
+  "character.sun-priestess.portrait": {
+    "path": "art/character/sun-priestess/portrait.webp",
+    "width": 512,
+    "height": 640,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.9
+    ],
+    "alt": {
+      "es": "Retrato de Sacerdotisa Solar",
+      "en": "Portrait of Sun Priestess"
+    }
+  },
+  "character.sun-priestess.thumbnail": {
+    "path": "art/character/sun-priestess/thumbnail.webp",
+    "width": 96,
+    "height": 120,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.9
+    ],
+    "alt": {
+      "es": "Sacerdotisa Solar",
+      "en": "Sun Priestess"
+    }
+  },
+  "character.veil-walker.figure": {
+    "path": "art/character/veil-walker/figure.webp",
+    "width": 342,
+    "height": 512,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.9
+    ],
+    "alt": {
+      "es": "Figura de Caminante del Velo",
+      "en": "Figure of Veil Walker"
+    }
+  },
+  "character.veil-walker.portrait": {
+    "path": "art/character/veil-walker/portrait.webp",
+    "width": 512,
+    "height": 640,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.9
+    ],
+    "alt": {
+      "es": "Retrato de Caminante del Velo",
+      "en": "Portrait of Veil Walker"
+    }
+  },
+  "character.veil-walker.thumbnail": {
+    "path": "art/character/veil-walker/thumbnail.webp",
+    "width": 96,
+    "height": 120,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.9
+    ],
+    "alt": {
+      "es": "Caminante del Velo",
+      "en": "Veil Walker"
+    }
+  },
+  "character.wind-reader.figure": {
+    "path": "art/character/wind-reader/figure.webp",
+    "width": 342,
+    "height": 512,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.9
+    ],
+    "alt": {
+      "es": "Figura de Lector del Viento",
+      "en": "Figure of Wind Reader"
+    }
+  },
+  "character.wind-reader.portrait": {
+    "path": "art/character/wind-reader/portrait.webp",
+    "width": 512,
+    "height": 640,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.9
+    ],
+    "alt": {
+      "es": "Retrato de Lector del Viento",
+      "en": "Portrait of Wind Reader"
+    }
+  },
+  "character.wind-reader.thumbnail": {
+    "path": "art/character/wind-reader/thumbnail.webp",
+    "width": 96,
+    "height": 120,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.9
+    ],
+    "alt": {
+      "es": "Lector del Viento",
+      "en": "Wind Reader"
+    }
+  },
+  "rival.arcanist-1.figure": {
+    "path": "art/rival/arcanist-1/figure.webp",
+    "width": 342,
+    "height": 512,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.9
+    ],
+    "alt": {
+      "es": "Figura de rival ARCANA",
+      "en": "ARCANA rival figure"
+    }
+  },
+  "rival.arcanist-2.figure": {
+    "path": "art/rival/arcanist-2/figure.webp",
+    "width": 342,
+    "height": 512,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.9
+    ],
+    "alt": {
+      "es": "Figura de rival ARCANA",
+      "en": "ARCANA rival figure"
+    }
+  },
+  "rival.arcanist-3.figure": {
+    "path": "art/rival/arcanist-3/figure.webp",
+    "width": 342,
+    "height": 512,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.9
+    ],
+    "alt": {
+      "es": "Figura de rival ARCANA",
+      "en": "ARCANA rival figure"
+    }
+  },
+  "rival.boss.figure": {
+    "path": "art/rival/boss/figure.webp",
+    "width": 342,
+    "height": 512,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.9
+    ],
+    "alt": {
+      "es": "Figura de rival ARCANA",
+      "en": "ARCANA rival figure"
+    }
+  },
+  "scene.arena": {
+    "path": "art/scene/arena.webp",
+    "width": 1280,
+    "height": 854,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.9
+    ],
+    "alt": {
+      "es": "Escenario arena",
+      "en": "arena scenery"
+    }
+  },
+  "scene.boulevard": {
+    "path": "art/scene/boulevard.webp",
+    "width": 1280,
+    "height": 854,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.9
+    ],
+    "alt": {
+      "es": "Escenario boulevard",
+      "en": "boulevard scenery"
+    }
+  },
+  "scene.confectionery": {
+    "path": "art/scene/confectionery.webp",
+    "width": 1280,
+    "height": 854,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.9
+    ],
+    "alt": {
+      "es": "Escenario confectionery",
+      "en": "confectionery scenery"
+    }
+  },
+  "scene.passage": {
+    "path": "art/scene/passage.webp",
+    "width": 1280,
+    "height": 854,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.9
+    ],
+    "alt": {
+      "es": "Escenario passage",
+      "en": "passage scenery"
+    }
+  },
+  "scene.vault": {
+    "path": "art/scene/vault.webp",
+    "width": 1280,
+    "height": 854,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.9
+    ],
+    "alt": {
+      "es": "Escenario vault",
+      "en": "vault scenery"
+    }
+  },
+  "scene.workshop": {
+    "path": "art/scene/workshop.webp",
+    "width": 1280,
+    "height": 854,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.9
+    ],
+    "alt": {
+      "es": "Escenario workshop",
+      "en": "workshop scenery"
+    }
+  },
+  "product.bean-earth": {
+    "path": "art/product/bean-earth.webp",
+    "width": 640,
+    "height": 640,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.9
+    ],
+    "alt": {
+      "es": "Ilustración bean-earth",
+      "en": "bean-earth illustration"
+    }
+  },
+  "beans.jar": {
+    "path": "art/beans/jar.webp",
+    "width": 640,
+    "height": 640,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.9
+    ],
+    "alt": {
+      "es": "Ilustración bean-jar",
+      "en": "bean-jar illustration"
+    }
+  },
+  "product.bean-mint": {
+    "path": "art/product/bean-mint.webp",
+    "width": 640,
+    "height": 640,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.9
+    ],
+    "alt": {
+      "es": "Ilustración bean-mint",
+      "en": "bean-mint illustration"
+    }
+  },
+  "product.bean-pepper": {
+    "path": "art/product/bean-pepper.webp",
+    "width": 640,
+    "height": 640,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.9
+    ],
+    "alt": {
+      "es": "Ilustración bean-pepper",
+      "en": "bean-pepper illustration"
+    }
+  },
+  "product.bean-soap": {
+    "path": "art/product/bean-soap.webp",
+    "width": 640,
+    "height": 640,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.9
+    ],
+    "alt": {
+      "es": "Ilustración bean-soap",
+      "en": "bean-soap illustration"
+    }
+  },
+  "product.broom-cadet-zephyr": {
+    "path": "art/product/broom-cadet-zephyr.webp",
+    "width": 640,
+    "height": 640,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.9
+    ],
+    "alt": {
+      "es": "Ilustración broom-cadet-zephyr",
+      "en": "broom-cadet-zephyr illustration"
+    }
+  },
+  "product.broom-wind-arrow": {
+    "path": "art/product/broom-wind-arrow.webp",
+    "width": 640,
+    "height": 640,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.9
+    ],
+    "alt": {
+      "es": "Ilustración broom-wind-arrow",
+      "en": "broom-wind-arrow illustration"
+    }
+  },
+  "product.broom-zephyr-2000": {
+    "path": "art/product/broom-zephyr-2000.webp",
+    "width": 640,
+    "height": 640,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.9
+    ],
+    "alt": {
+      "es": "Ilustración broom-zephyr-2000",
+      "en": "broom-zephyr-2000 illustration"
+    }
+  },
+  "card.back": {
+    "path": "art/card/back.webp",
+    "width": 512,
+    "height": 640,
+    "alpha": false,
+    "pivot": [
+      0.5,
+      0.9
+    ],
+    "alt": {
+      "es": "Ilustración card-back",
+      "en": "card-back illustration"
+    }
+  },
+  "card.frame": {
+    "path": "art/card/frame.webp",
+    "width": 512,
+    "height": 640,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.9
+    ],
+    "alt": {
+      "es": "Ilustración card-frame",
+      "en": "card-frame illustration"
+    }
+  },
+  "toad.subject": {
+    "path": "art/toad/subject.webp",
+    "width": 640,
+    "height": 640,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.9
+    ],
+    "alt": {
+      "es": "Ilustración cocoa-toad-subject",
+      "en": "cocoa-toad-subject illustration"
+    }
+  },
+  "product.core-dragon": {
+    "path": "art/product/core-dragon.webp",
+    "width": 640,
+    "height": 640,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.9
+    ],
+    "alt": {
+      "es": "Ilustración core-dragon",
+      "en": "core-dragon illustration"
+    }
+  },
+  "product.core-phoenix": {
+    "path": "art/product/core-phoenix.webp",
+    "width": 640,
+    "height": 640,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.9
+    ],
+    "alt": {
+      "es": "Ilustración core-phoenix",
+      "en": "core-phoenix illustration"
+    }
+  },
+  "product.core-wyvern": {
+    "path": "art/product/core-wyvern.webp",
+    "width": 640,
+    "height": 640,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.9
+    ],
+    "alt": {
+      "es": "Ilustración core-wyvern",
+      "en": "core-wyvern illustration"
+    }
+  },
+  "product.gold-key": {
+    "path": "art/product/gold-key.webp",
+    "width": 640,
+    "height": 640,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.9
+    ],
+    "alt": {
+      "es": "Ilustración gold-key",
+      "en": "gold-key illustration"
+    }
+  },
+  "product.loot-chest": {
+    "path": "art/product/loot-chest.webp",
+    "width": 640,
+    "height": 640,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.9
+    ],
+    "alt": {
+      "es": "Ilustración loot-chest",
+      "en": "loot-chest illustration"
+    }
+  },
+  "toad.base": {
+    "path": "art/toad/base.webp",
+    "width": 640,
+    "height": 640,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.9
+    ],
+    "alt": {
+      "es": "Ilustración toad-box-base",
+      "en": "toad-box-base illustration"
+    }
+  },
+  "toad.box": {
+    "path": "art/toad/box.webp",
+    "width": 640,
+    "height": 640,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.9
+    ],
+    "alt": {
+      "es": "Ilustración toad-box-closed",
+      "en": "toad-box-closed illustration"
+    }
+  },
+  "toad.lid": {
+    "path": "art/toad/lid.webp",
+    "width": 640,
+    "height": 640,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.9
+    ],
+    "alt": {
+      "es": "Ilustración toad-box-lid",
+      "en": "toad-box-lid illustration"
+    }
+  },
+  "pwa.icon.192": {
+    "path": "art/pwa/icon/192.png",
+    "width": 192,
+    "height": 192,
+    "alpha": false,
+    "pivot": [
+      0.5,
+      0.9
+    ],
+    "alt": {
+      "es": "Icono ARCANA",
+      "en": "ARCANA icon"
+    }
+  },
+  "pwa.icon.512": {
+    "path": "art/pwa/icon/512.png",
+    "width": 512,
+    "height": 512,
+    "alpha": false,
+    "pivot": [
+      0.5,
+      0.9
+    ],
+    "alt": {
+      "es": "Icono ARCANA",
+      "en": "ARCANA icon"
+    }
+  },
+  "toad.seal": {
+    "path": "art/toad/seal.webp",
+    "width": 640,
+    "height": 640,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.9
+    ],
+    "alt": {
+      "es": "Ilustración toad-seal",
+      "en": "toad-seal illustration"
+    }
+  },
+  "product.wand-birch": {
+    "path": "art/product/wand-birch.webp",
+    "width": 640,
+    "height": 640,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.9
+    ],
+    "alt": {
+      "es": "Ilustración wand-birch",
+      "en": "wand-birch illustration"
+    }
+  },
+  "product.wand-elder": {
+    "path": "art/product/wand-elder.webp",
+    "width": 640,
+    "height": 640,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.9
+    ],
+    "alt": {
+      "es": "Ilustración wand-elder",
+      "en": "wand-elder illustration"
+    }
+  },
+  "product.wand-willow": {
+    "path": "art/product/wand-willow.webp",
+    "width": 640,
+    "height": 640,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.9
+    ],
+    "alt": {
+      "es": "Ilustración wand-willow",
+      "en": "wand-willow illustration"
+    }
+  },
+  "rarity.common": {
+    "path": "art/rarity/common.svg",
+    "width": 32,
+    "height": 32,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "alt": {
+      "es": "Emblema de rareza Común",
+      "en": "Common rarity emblem"
+    }
+  },
+  "rarity.unusual": {
+    "path": "art/rarity/unusual.svg",
+    "width": 32,
+    "height": 32,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "alt": {
+      "es": "Emblema de rareza Inusual",
+      "en": "Unusual rarity emblem"
+    }
+  },
+  "rarity.epic": {
+    "path": "art/rarity/epic.svg",
+    "width": 32,
+    "height": 32,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "alt": {
+      "es": "Emblema de rareza Épico",
+      "en": "Epic rarity emblem"
+    }
+  },
+  "rarity.arcane-legendary": {
+    "path": "art/rarity/arcane-legendary.svg",
+    "width": 32,
+    "height": 32,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "alt": {
+      "es": "Emblema de rareza Arcano Legendario",
+      "en": "Arcane Legendary rarity emblem"
+    }
+  },
+  "ui.seal": {
+    "path": "art/ui/seal.svg",
+    "width": 256,
+    "height": 256,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "alt": {
+      "es": "Seleccionado",
+      "en": "Selected"
+    }
+  },
+  "ui.clear": {
+    "path": "art/ui/clear.svg",
+    "width": 256,
+    "height": 256,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "alt": {
+      "es": "Sin objeto",
+      "en": "No item"
+    }
+  },
+  "ui.map": {
+    "path": "art/ui/map.svg",
+    "width": 256,
+    "height": 256,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "alt": {
+      "es": "Mapa",
+      "en": "Map"
+    }
+  },
+  "ui.collection": {
+    "path": "art/ui/collection.svg",
+    "width": 256,
+    "height": 256,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "alt": {
+      "es": "Cromodex",
+      "en": "Chromodex"
+    }
+  },
+  "ui.shop": {
+    "path": "art/ui/shop.svg",
+    "width": 256,
+    "height": 256,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "alt": {
+      "es": "Bazar",
+      "en": "Bazaar"
+    }
+  },
+  "ui.missions": {
+    "path": "art/ui/missions.svg",
+    "width": 256,
+    "height": 256,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "alt": {
+      "es": "Misiones",
+      "en": "Missions"
+    }
+  },
+  "ui.temporary": {
+    "path": "art/ui/temporary.svg",
+    "width": 256,
+    "height": 256,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "alt": {
+      "es": "Aliado temporal",
+      "en": "Temporary ally"
+    }
+  },
+  "ui.owned": {
+    "path": "art/ui/owned.svg",
+    "width": 256,
+    "height": 256,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "alt": {
+      "es": "Copia propia",
+      "en": "Owned copy"
+    }
+  },
+  "ui.motion": {
+    "path": "art/ui/motion.svg",
+    "width": 256,
+    "height": 256,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "alt": {
+      "es": "Movimiento reducido",
+      "en": "Reduced motion"
+    }
+  },
+  "ui.frame": {
+    "path": "art/ui/frame.svg",
+    "width": 320,
+    "height": 96,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "alt": {
+      "es": "Marco de latón",
+      "en": "Brass frame"
+    }
+  },
+  "ui.health": {
+    "path": "art/icons/ui-health.svg",
+    "width": 256,
+    "height": 256,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "alt": {
+      "es": "Recuperar vida",
+      "en": "Restore health"
+    }
+  },
+  "ui.pass": {
+    "path": "art/icons/ui-pass.svg",
+    "width": 256,
+    "height": 256,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "alt": {
+      "es": "Pasar",
+      "en": "Pass"
+    }
+  },
+  "ui.settings": {
+    "path": "art/ui/motion.svg",
+    "width": 256,
+    "height": 256,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "alt": {
+      "es": "Ajustes",
+      "en": "Settings"
+    }
+  }
+}

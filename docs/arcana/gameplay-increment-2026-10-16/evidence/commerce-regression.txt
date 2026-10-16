@@ -1,0 +1,37 @@
+
+> coleccion-magica-i1@0.1.0 test:commerce
+> playwright test --config playwright.commerce-a60.config.ts
+
+[WebServer] (node:42192) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:42235) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 20 tests using 1 worker
+
+(node:42265) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 [chromium-experience] › tests/browser-trial/commerce-a60.spec.ts:30:3 › A60 clear next action, consultation and atomic frog es (3.0s)
+  ✓   2 [chromium-experience] › tests/browser-trial/commerce-a60.spec.ts:113:3 › A60 owned frog opens without repurchase and recovery es (1.7s)
+  ✓   3 [chromium-experience] › tests/browser-trial/commerce-a60.spec.ts:150:3 › A60 committed buy-open survives a lost HTTP response es (1.4s)
+  ✓   4 [chromium-experience] › tests/browser-trial/commerce-a60.spec.ts:30:3 › A60 clear next action, consultation and atomic frog en (2.9s)
+  ✓   5 [chromium-experience] › tests/browser-trial/commerce-a60.spec.ts:113:3 › A60 owned frog opens without repurchase and recovery en (1.9s)
+  ✓   6 [chromium-experience] › tests/browser-trial/commerce-a60.spec.ts:150:3 › A60 committed buy-open survives a lost HTTP response en (1.2s)
+  ✓   7 [chromium-experience] › tests/browser-trial/shop-journey.spec.ts:27:3 › A59 shop places and illustrated consultations preserve state in es (1.8s)
+  ✓   8 [chromium-experience] › tests/browser-trial/shop-journey.spec.ts:88:3 › A60 counter uses exact catalogue prices and one explicit next action in es (2.0s)
+  ✓   9 [chromium-experience] › tests/browser-trial/shop-journey.spec.ts:27:3 › A59 shop places and illustrated consultations preserve state in en (2.0s)
+  ✓  10 [chromium-experience] › tests/browser-trial/shop-journey.spec.ts:88:3 › A60 counter uses exact catalogue prices and one explicit next action in en (2.1s)
+(node:42491) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  11 [webkit-experience] › tests/browser-trial/commerce-a60.spec.ts:30:3 › A60 clear next action, consultation and atomic frog es (2.7s)
+  ✓  12 [webkit-experience] › tests/browser-trial/commerce-a60.spec.ts:113:3 › A60 owned frog opens without repurchase and recovery es (2.1s)
+  ✓  13 [webkit-experience] › tests/browser-trial/commerce-a60.spec.ts:150:3 › A60 committed buy-open survives a lost HTTP response es (1.6s)
+  ✓  14 [webkit-experience] › tests/browser-trial/commerce-a60.spec.ts:30:3 › A60 clear next action, consultation and atomic frog en (2.9s)
+  ✓  15 [webkit-experience] › tests/browser-trial/commerce-a60.spec.ts:113:3 › A60 owned frog opens without repurchase and recovery en (2.0s)
+  ✓  16 [webkit-experience] › tests/browser-trial/commerce-a60.spec.ts:150:3 › A60 committed buy-open survives a lost HTTP response en (1.6s)
+  ✓  17 [webkit-experience] › tests/browser-trial/shop-journey.spec.ts:27:3 › A59 shop places and illustrated consultations preserve state in es (2.5s)
+  ✓  18 [webkit-experience] › tests/browser-trial/shop-journey.spec.ts:88:3 › A60 counter uses exact catalogue prices and one explicit next action in es (2.5s)
+  ✓  19 [webkit-experience] › tests/browser-trial/shop-journey.spec.ts:27:3 › A59 shop places and illustrated consultations preserve state in en (2.7s)
+  ✓  20 [webkit-experience] › tests/browser-trial/shop-journey.spec.ts:88:3 › A60 counter uses exact catalogue prices and one explicit next action in en (2.7s)
+
+  20 passed (48.5s)

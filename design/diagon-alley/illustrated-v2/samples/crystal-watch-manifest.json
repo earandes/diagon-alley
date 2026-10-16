@@ -1,0 +1,24 @@
+{
+  "id": "crystal-watch",
+  "name": "Filius Flitwick",
+  "master": "design/diagon-alley/illustrated-v2/samples/crystal-watch.png",
+  "sha256": "9b3e439214bdfedbed8472571df76a543fcb4b1243f8be2c1baf66f4c20bbf16",
+  "seed": 58117,
+  "promptFile": "design/diagon-alley/illustrated-v2/prompts/crystal-watch.txt",
+  "model": "mlx-community/flux2-klein-4b-4bit",
+  "modelRevision": "860e87183ceb29e39627c0612ebd66d8ea66e68c",
+  "steps": 4,
+  "guidance": 1.0,
+  "width": 768,
+  "height": 1024,
+  "generationSeconds": 32.6,
+  "loadSeconds": 0.74,
+  "tool": {
+    "mflux": "0.22.0",
+    "mlx": "0.32.4"
+  },
+  "cashCost": 0,
+  "generationMode": "offline local Metal text-to-image",
+  "gpuPeakMemoryBytes": 9421779488,
+  "status": "sample awaiting coordinator visual review"
+}

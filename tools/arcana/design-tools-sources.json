@@ -1,0 +1,119 @@
+[
+  {
+    "repository": "impeccable",
+    "revision": "2f98774f86bc05563876643db37e6c37c322850f",
+    "source": "cursor-plugin/skills/impeccable",
+    "installed": ".agents/skills/arcana-impeccable",
+    "url": "https://github.com/pbakaus/impeccable",
+    "license": "Apache-2.0"
+  },
+  {
+    "repository": "taste",
+    "revision": "f624f37a8c650b9cc550253104925efe4c8de246",
+    "source": "skills/redesign-skill",
+    "installed": ".agents/skills/arcana-redesign-skill",
+    "url": "https://github.com/Leonxlnx/taste-skill",
+    "license": "MIT"
+  },
+  {
+    "repository": "gamedev",
+    "revision": "0a70cfc64672d512c5b5b6006b5dcb5cf90dbdbd",
+    "source": "skills/disciplines/game-feel",
+    "installed": ".agents/skills/arcana-game-feel",
+    "url": "https://github.com/gamedev-skills/awesome-gamedev-agent-skills",
+    "license": "Apache-2.0"
+  },
+  {
+    "repository": "gamedev",
+    "revision": "0a70cfc64672d512c5b5b6006b5dcb5cf90dbdbd",
+    "source": "skills/disciplines/game-ui-ux",
+    "installed": ".agents/skills/arcana-game-ui-ux",
+    "url": "https://github.com/gamedev-skills/awesome-gamedev-agent-skills",
+    "license": "Apache-2.0"
+  },
+  {
+    "repository": "gamedev",
+    "revision": "0a70cfc64672d512c5b5b6006b5dcb5cf90dbdbd",
+    "source": "skills/web-engines/pixijs-rendering",
+    "installed": ".agents/skills/arcana-pixijs-rendering",
+    "url": "https://github.com/gamedev-skills/awesome-gamedev-agent-skills",
+    "license": "Apache-2.0"
+  },
+  {
+    "repository": "gamedev",
+    "revision": "0a70cfc64672d512c5b5b6006b5dcb5cf90dbdbd",
+    "source": "skills/genres/rpg",
+    "installed": ".agents/skills/arcana-rpg",
+    "url": "https://github.com/gamedev-skills/awesome-gamedev-agent-skills",
+    "license": "Apache-2.0"
+  },
+  {
+    "repository": "game-design",
+    "revision": "f7dfc00131c0a228538595d7006de4621449ec2c",
+    "source": "game-design-workshop",
+    "installed": ".agents/skills/arcana-game-design-workshop",
+    "url": "https://github.com/Wilson520403/game-design-skills",
+    "license": "MIT"
+  },
+  {
+    "repository": "agency",
+    "url": "https://github.com/msitarzewski/agency-agents",
+    "revision": "bd956db032d907387e6b9ddebff3e18f1de8c679",
+    "source": "game-development/{game-designer,economy-designer}.md",
+    "installed": "tools/arcana/design-guides",
+    "license": "MIT"
+  },
+  {
+    "repository": "motion",
+    "url": "https://github.com/motiondivision/motion",
+    "version": "14.2.0",
+    "license": "MIT",
+    "installed": "package.json/package-lock.json"
+  },
+  {
+    "repository": "playwright-cli",
+    "url": "https://github.com/microsoft/playwright-cli",
+    "version": "0.1.22",
+    "license": "Apache-2.0",
+    "installed": "package.json/package-lock.json"
+  },
+  {
+    "repository": "pixi-filters",
+    "url": "https://github.com/pixijs/filters",
+    "version": "6.1.5",
+    "license": "MIT",
+    "installed": "removed in A58; historical A57 dependency",
+    "use": "A57 GlowFilter decoration replaced by finite native Canvas2D glow sprites after measured cold-opening stall; no remaining runtime import"
+  },
+  {
+    "repository": "cinzel",
+    "url": "https://github.com/google/fonts/tree/main/ofl/cinzel",
+    "license": "SIL Open Font License1.1",
+    "installed": "src/arcana/presentation/fonts/",
+    "use": "self-hosted display font; CINZEL-OFL.txt retained"
+  },
+  {
+    "repository": "mflux",
+    "url": "https://github.com/mflux-community/mflux",
+    "version": "0.22.0",
+    "license": "MIT",
+    "installed": ".tools/diagon-illustration/venv",
+    "use": "A58 offline local illustration authoring; not bundled or invoked in game"
+  },
+  {
+    "repository": "flux2-klein-4b-4bit",
+    "url": "https://huggingface.co/mlx-community/flux2-klein-4b-4bit",
+    "revision": "860e87183ceb29e39627c0612ebd66d8ea66e68c",
+    "license": "Apache-2.0",
+    "installed": ".tools/diagon-illustration/",
+    "use": "A58 quantized public weights for offline Metal image generation; underlying FLUX.2 klein4B license retained"
+  },
+  {
+    "repository": "rembg",
+    "url": "https://github.com/danielgatis/rembg",
+    "version": "2.0.85",
+    "license": "MIT",
+    "installed": ".tools/diagon-illustration/venv",
+    "use": "A58 local CPU segmentation with U2net (Apache-2.0); masks and licenses retained in illustrated-v2"
+  }
+]

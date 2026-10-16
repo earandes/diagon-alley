@@ -1,0 +1,12 @@
+{
+  "model": "U2net",
+  "source": "https://github.com/danielgatis/rembg/releases/download/v0.0.0/u2net.onnx",
+  "bytes": 175997641,
+  "sha256": "8d10d2f3bb75ae3b6d527c77944fc5e7dcd94b29809d47a739a7a728a912b491",
+  "officialExpectedMd5": "60024c5c889badc19c04ad937298a77b",
+  "matchesMd5": true,
+  "softwareLicense": "MIT",
+  "modelLicense": "Apache-2.0",
+  "inferenceProvider": "CPUExecutionProvider",
+  "installationScope": ".tools/diagon-illustration/models/segmentation"
+}

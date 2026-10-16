@@ -1,0 +1,33 @@
+{
+  "result": "pass",
+  "asset": {
+    "id": "currency.crowns",
+    "path": "art/currency/galleon.svg",
+    "width": 256,
+    "height": 256,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "alt": {
+      "es": "Galeones",
+      "en": "Galleons"
+    },
+    "bytes": 2045,
+    "sha256": "c303904791de48d83da4972f2aaedf2ea23104d7a57d53ca630ed7e564e016df",
+    "source": "tools/visual/diagon-galleon.py",
+    "tool": "Locally authored editable SVG",
+    "permission": "Private project use; franchise distribution permission unresolved.",
+    "status": "local-production-private-prototype",
+    "version": 1,
+    "motif": "Original embossed winged creature; no functional text, external art or traced logo."
+  },
+  "checks": [
+    "XML parsed",
+    "No embedded functional text",
+    "Presentation-only currency.crowns mapping",
+    "ARCANA art untouched"
+  ],
+  "limits": "No new browser capture or game test; root owns integration QA."
+}

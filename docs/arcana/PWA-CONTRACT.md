@@ -1,0 +1,13 @@
+# PWA y conexión — A45, contrato previo
+
+12 octubre 2026. Estado inicial: build sin manifest/service worker; Vite dev conecta autoridad, preview solo archivos estáticos. Acción: visitar build conectado, luego perder red/recargar y reconectar. Resultado: interfaz abre offline con mensaje es/en; comandos que requieren autoridad deshabilitados. Sin inventario local nuevo, cola offline o créditos de reloj de cliente. Conexión recupera estado/operación mediante controller existente y misma key.
+
+Incluye manifest ARCANA (standalone, start_url/scope local, colores), iconos originales procedurales PNG 192/512, service worker compilado/tipado separado del núcleo. Precarga únicamente índice y archivos estáticos del build, lista exacta generada/hash de contenido. API, métodos distintos de GET, orígenes externos y URLs no declaradas pasan a red sin caché. Navegación de raíz usa red y fallback shell cacheado; assets versionados usan caché. No caché runtime indiscriminada. Activación elimina solo caches propias; no skipWaiting/reload forzado en una operación. Worker ausente/fallido mantiene app online normal.
+
+UI distingue interfaz offline de lectura previa en memoria. Tras recargar sin red no se inventan saldos: mensaje de conexión, sin comenzar/comprar/combatir. Idioma/movimiento y metadata de intención ya existente pueden persistir; saldos/copies/tokens no se añaden a IndexedDB/CacheStorage. Intento confirmado online cuya respuesta se perdió sigue recuperable; no aceptar una acción nueva offline.
+
+KISS: sin Workbox/dependencias nuevas, push, background sync, cuentas productivas o despliegue. `preview:arcana` opt-in sirve el build con la misma autoridad local; no presentarlo como servidor productivo. Runtime SSR de Vite solo para launcher local, no browser bundle. Comprobación TS de worker con lib WebWorker separada de DOM.
+
+Aceptación TDD: builder emite manifest/icons válidos/hash sensible a contenido y ninguna API en lista; worker real compilado precarga, bypass API/POST/externos, fallback y cleanup limitado; build/browser Chromium/WebKit es/en prueban worker/cache reales, offline/reload/reconexión con SQL intacto, sin RPC económico desde controles offline. Worker bloqueado conserva recorrido online. No atribuir instalación Android/iOS real a pruebas headless. Presupuesto total assets y scanner legal vigentes.
+
+Fuentes técnicas consultadas: [MDN service workers](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API/Using_Service_Workers), [manifest/installabilidad](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Guides/Making_PWAs_installable). Son API/plataforma, no nuevas reglas de producto.

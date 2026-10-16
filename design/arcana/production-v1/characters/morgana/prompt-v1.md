@@ -1,0 +1,8 @@
+Use case: illustration-story.
+Asset type: ARCANA game original Morgana le Fay folklore queen-mage standalone full-body cutout.
+Image 1 is the selected Teatro de alquimia art-direction reference: warm realistic hand-painted theatrical gouache, tactile cloth, brass ornament and expressive lifelike faces. Image 2 is the apprentice style reference only; do not copy his identity, pose or outfit.
+Subject: adult woman queen-mage Morgana, about forty, warm medium-brown skin, angular intelligent face, dark expressive eyes and long raven-black braids. Dignified composed powerful presence, not sexualized. Emerald and copper embroidered mantle over a high-neck long plum dress, bronze crescent clasp, simple leather boots. One natural hand holds a tall thornwood staff with small copper leaf fittings, the other cradles a closed dark leather spellbook with no lettering. Original folklore interpretation, no franchise or film likeness.
+Pose: broad frontal three-quarter stance, open clear silhouette, calm intent expression, realistic proportion and anatomy. Entire head, long braids, mantle, hands, book, feet and staff visible.
+Composition: exactly one whole character, portrait canvas nominal1024x1536, subject contained strictly in central80%, with genuinely transparent empty safe margins >=10% all sides. Entire staff must fit inside those borders.
+Lighting/style: warm amber light, deep emerald and plum with copper accents, natural rich fabric folds and fine brush texture, match references' polished illustrated realism.
+Output: real alpha transparency, no background, no floor, no cast shadow plate, no colored halo/backdrop. No words, text, lettering, logo, frame, watermark or UI. One standalone illustration, not collage or character sheet.

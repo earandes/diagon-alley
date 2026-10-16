@@ -1,0 +1,13 @@
+
+Running 4 tests using 1 worker
+
+(node:32854) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  1 [chromium] › tests/browser-trial/arena-profile-a63.spec.ts:8:2 › arena profile 1280 (9.5s)
+  ✓  2 [chromium] › tests/browser-trial/arena-profile-a63.spec.ts:8:2 › arena profile 390 (10.1s)
+(node:32902) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  3 [webkit] › tests/browser-trial/arena-profile-a63.spec.ts:8:2 › arena profile 1280 (9.8s)
+  ✓  4 [webkit] › tests/browser-trial/arena-profile-a63.spec.ts:8:2 › arena profile 390 (10.4s)
+
+  4 passed (40.5s)

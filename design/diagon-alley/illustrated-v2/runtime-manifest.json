@@ -1,0 +1,1633 @@
+{
+  "assets": [
+    {
+      "id": "character.apprentice.portrait",
+      "width": 512,
+      "height": 640,
+      "alpha": false,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Harry Potter",
+        "en": "Illustration of Harry Potter"
+      },
+      "path": "art/character-illustrated-v2/apprentice/portrait.webp",
+      "source": "design/diagon-alley/illustrated-v2/exports/character/apprentice/portrait.webp",
+      "sha256": "5d34a76b92111a3c8f74077341f2bd3c390a3b38df57537381b2b4390eadc95d",
+      "bytes": 81394
+    },
+    {
+      "id": "character.apprentice.figure",
+      "width": 342,
+      "height": 428,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Harry Potter",
+        "en": "Illustration of Harry Potter"
+      },
+      "path": "art/character-illustrated-v2/apprentice/figure.webp",
+      "source": "design/diagon-alley/illustrated-v2/exports/character/apprentice/figure.webp",
+      "sha256": "3f53b2082d1600421467a9087b9e6ca842763812d4ded5433b22a009b8221287",
+      "bytes": 30776
+    },
+    {
+      "id": "character.apprentice.thumbnail",
+      "width": 96,
+      "height": 120,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Harry Potter",
+        "en": "Illustration of Harry Potter"
+      },
+      "path": "art/character-illustrated-v2/apprentice/thumbnail.webp",
+      "source": "design/diagon-alley/illustrated-v2/exports/character/apprentice/thumbnail.webp",
+      "sha256": "f8e0be0557ef17262371dd3b86f3f846f3287aa047b1e2d03f88195512e1975f",
+      "bytes": 5834
+    },
+    {
+      "id": "character.circe.portrait",
+      "width": 512,
+      "height": 640,
+      "alpha": false,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Hermione Granger",
+        "en": "Illustration of Hermione Granger"
+      },
+      "path": "art/character-illustrated-v2/circe/portrait.webp",
+      "source": "design/diagon-alley/illustrated-v2/exports/character/circe/portrait.webp",
+      "sha256": "78a3915768d5d15cdc3a795197511ef4c28425923493ed2558295509dffa9391",
+      "bytes": 87634
+    },
+    {
+      "id": "character.circe.figure",
+      "width": 342,
+      "height": 428,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Hermione Granger",
+        "en": "Illustration of Hermione Granger"
+      },
+      "path": "art/character-illustrated-v2/circe/figure.webp",
+      "source": "design/diagon-alley/illustrated-v2/exports/character/circe/figure.webp",
+      "sha256": "5f778b2b6caf2a906c96562c3062a7c3d7698010df46be47c852ea4f016fb504",
+      "bytes": 38468
+    },
+    {
+      "id": "character.circe.thumbnail",
+      "width": 96,
+      "height": 120,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Hermione Granger",
+        "en": "Illustration of Hermione Granger"
+      },
+      "path": "art/character-illustrated-v2/circe/thumbnail.webp",
+      "source": "design/diagon-alley/illustrated-v2/exports/character/circe/thumbnail.webp",
+      "sha256": "62cb1129840b83eee058ab56e019312bafa0c6c284352f173724d13fbf0a0bc7",
+      "bytes": 5786
+    },
+    {
+      "id": "character.merlin.portrait",
+      "width": 512,
+      "height": 640,
+      "alpha": false,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Albus Dumbledore",
+        "en": "Illustration of Albus Dumbledore"
+      },
+      "path": "art/character-illustrated-v2/merlin/portrait.webp",
+      "source": "design/diagon-alley/illustrated-v2/exports/character/merlin/portrait.webp",
+      "sha256": "475b4dd5f5a91d80859a1df0debe0c5f624b7f9d78039e78dd965bbd2220fe2c",
+      "bytes": 96570
+    },
+    {
+      "id": "character.merlin.figure",
+      "width": 342,
+      "height": 428,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Albus Dumbledore",
+        "en": "Illustration of Albus Dumbledore"
+      },
+      "path": "art/character-illustrated-v2/merlin/figure.webp",
+      "source": "design/diagon-alley/illustrated-v2/exports/character/merlin/figure.webp",
+      "sha256": "76cbc78bdf7add511b70a4670f564fffb2e75bd5c181507fde0dc44c51f06397",
+      "bytes": 39482
+    },
+    {
+      "id": "character.merlin.thumbnail",
+      "width": 96,
+      "height": 120,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Albus Dumbledore",
+        "en": "Illustration of Albus Dumbledore"
+      },
+      "path": "art/character-illustrated-v2/merlin/thumbnail.webp",
+      "source": "design/diagon-alley/illustrated-v2/exports/character/merlin/thumbnail.webp",
+      "sha256": "35aa8fb3b22facbc7234ca1c19bde4c5a0774f65d950daaceefe36dd816e2237",
+      "bytes": 5978
+    },
+    {
+      "id": "character.morgana.portrait",
+      "width": 512,
+      "height": 640,
+      "alpha": false,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Minerva McGonagall",
+        "en": "Illustration of Minerva McGonagall"
+      },
+      "path": "art/character-illustrated-v2/morgana/portrait.webp",
+      "source": "design/diagon-alley/illustrated-v2/exports/character/morgana/portrait.webp",
+      "sha256": "57c28ac6cf8e81adc0a025f2dc53b496b0a4204b8abf2220714fafa5c73cee48",
+      "bytes": 37466
+    },
+    {
+      "id": "character.morgana.figure",
+      "width": 342,
+      "height": 428,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Minerva McGonagall",
+        "en": "Illustration of Minerva McGonagall"
+      },
+      "path": "art/character-illustrated-v2/morgana/figure.webp",
+      "source": "design/diagon-alley/illustrated-v2/exports/character/morgana/figure.webp",
+      "sha256": "52eb3b6645622f2e89ca37eb119f013a74e60ef8b9b7e656dc736ea6b001ef1e",
+      "bytes": 27072
+    },
+    {
+      "id": "character.morgana.thumbnail",
+      "width": 96,
+      "height": 120,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Minerva McGonagall",
+        "en": "Illustration of Minerva McGonagall"
+      },
+      "path": "art/character-illustrated-v2/morgana/thumbnail.webp",
+      "source": "design/diagon-alley/illustrated-v2/exports/character/morgana/thumbnail.webp",
+      "sha256": "5010e35744dca1cd696d038454102b84a2ec948fd5750b149800d9c2ac76c30b",
+      "bytes": 5182
+    },
+    {
+      "id": "character.flamel.portrait",
+      "width": 512,
+      "height": 640,
+      "alpha": false,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Nicolás Flamel",
+        "en": "Illustration of Nicolas Flamel"
+      },
+      "path": "art/character-illustrated-v2/flamel/portrait.webp",
+      "source": "design/diagon-alley/illustrated-v2/exports/character/flamel/portrait.webp",
+      "sha256": "ec519172a7579287543ba19a860a922617b8ce8a3c6604e41bc8336e3126984e",
+      "bytes": 57438
+    },
+    {
+      "id": "character.flamel.figure",
+      "width": 342,
+      "height": 428,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Nicolás Flamel",
+        "en": "Illustration of Nicolas Flamel"
+      },
+      "path": "art/character-illustrated-v2/flamel/figure.webp",
+      "source": "design/diagon-alley/illustrated-v2/exports/character/flamel/figure.webp",
+      "sha256": "9dfe84d69a0c48904c6f784ba34f50f3898ea75f7b558ad13bc688c8405fbece",
+      "bytes": 35432
+    },
+    {
+      "id": "character.flamel.thumbnail",
+      "width": 96,
+      "height": 120,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Nicolás Flamel",
+        "en": "Illustration of Nicolas Flamel"
+      },
+      "path": "art/character-illustrated-v2/flamel/thumbnail.webp",
+      "source": "design/diagon-alley/illustrated-v2/exports/character/flamel/thumbnail.webp",
+      "sha256": "e7a6aeac1e7849f498a4aa331f42c5a155bf2bf634ccb0ad894338f33246a711",
+      "bytes": 5954
+    },
+    {
+      "id": "character.paracelso.portrait",
+      "width": 512,
+      "height": 640,
+      "alpha": false,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Severus Snape",
+        "en": "Illustration of Severus Snape"
+      },
+      "path": "art/character-illustrated-v2/paracelso/portrait.webp",
+      "source": "design/diagon-alley/illustrated-v2/exports/character/paracelso/portrait.webp",
+      "sha256": "bd72b8758310c7c3f176f68013af9deaca94865b979e24c70887ef630b16d20f",
+      "bytes": 25808
+    },
+    {
+      "id": "character.paracelso.figure",
+      "width": 342,
+      "height": 428,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Severus Snape",
+        "en": "Illustration of Severus Snape"
+      },
+      "path": "art/character-illustrated-v2/paracelso/figure.webp",
+      "source": "design/diagon-alley/illustrated-v2/exports/character/paracelso/figure.webp",
+      "sha256": "c7a9f7a9de0909158d62651d7307b812944cecd268bcbedf49b874e62084c791",
+      "bytes": 18308
+    },
+    {
+      "id": "character.paracelso.thumbnail",
+      "width": 96,
+      "height": 120,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Severus Snape",
+        "en": "Illustration of Severus Snape"
+      },
+      "path": "art/character-illustrated-v2/paracelso/thumbnail.webp",
+      "source": "design/diagon-alley/illustrated-v2/exports/character/paracelso/thumbnail.webp",
+      "sha256": "4267b7f7afa0dd0baa6a7cbf4ddd13bf208da50d3368e2de0d548cc29208530c",
+      "bytes": 3962
+    },
+    {
+      "id": "character.ember-keeper.portrait",
+      "width": 512,
+      "height": 640,
+      "alpha": false,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Ron Weasley",
+        "en": "Illustration of Ron Weasley"
+      },
+      "path": "art/character-illustrated-v2/ember-keeper/portrait.webp",
+      "source": "design/diagon-alley/illustrated-v2/exports/character/ember-keeper/portrait.webp",
+      "sha256": "838047453a36414eab5afb37c8553223e1621b7d4079d0b8cdd46f78969d3000",
+      "bytes": 39894
+    },
+    {
+      "id": "character.ember-keeper.figure",
+      "width": 342,
+      "height": 428,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Ron Weasley",
+        "en": "Illustration of Ron Weasley"
+      },
+      "path": "art/character-illustrated-v2/ember-keeper/figure.webp",
+      "source": "design/diagon-alley/illustrated-v2/exports/character/ember-keeper/figure.webp",
+      "sha256": "af93cbd555a2322d624abfa12e9253f26fd295b93d6735cb3b2fed6a4d6d2dc7",
+      "bytes": 26914
+    },
+    {
+      "id": "character.ember-keeper.thumbnail",
+      "width": 96,
+      "height": 120,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Ron Weasley",
+        "en": "Illustration of Ron Weasley"
+      },
+      "path": "art/character-illustrated-v2/ember-keeper/thumbnail.webp",
+      "source": "design/diagon-alley/illustrated-v2/exports/character/ember-keeper/thumbnail.webp",
+      "sha256": "1b85d5211cbd4c2bee0fc33aad2279fb203644e2d3e1c2f78be1a8f9ecacf70b",
+      "bytes": 5128
+    },
+    {
+      "id": "character.mist-seer.portrait",
+      "width": 512,
+      "height": 640,
+      "alpha": false,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Luna Lovegood",
+        "en": "Illustration of Luna Lovegood"
+      },
+      "path": "art/character-illustrated-v2/mist-seer/portrait.webp",
+      "source": "design/diagon-alley/illustrated-v2/exports/character/mist-seer/portrait.webp",
+      "sha256": "e22649b4fe5b13629dbfef649e0be0f1ad5acd0a1f01de82bf3f095647af20e3",
+      "bytes": 50578
+    },
+    {
+      "id": "character.mist-seer.figure",
+      "width": 342,
+      "height": 428,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Luna Lovegood",
+        "en": "Illustration of Luna Lovegood"
+      },
+      "path": "art/character-illustrated-v2/mist-seer/figure.webp",
+      "source": "design/diagon-alley/illustrated-v2/exports/character/mist-seer/figure.webp",
+      "sha256": "2f33c5ceb2cacca75db86f06ab9d9cb5f71e520fd08386d577ab54345bbf2cb0",
+      "bytes": 29556
+    },
+    {
+      "id": "character.mist-seer.thumbnail",
+      "width": 96,
+      "height": 120,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Luna Lovegood",
+        "en": "Illustration of Luna Lovegood"
+      },
+      "path": "art/character-illustrated-v2/mist-seer/thumbnail.webp",
+      "source": "design/diagon-alley/illustrated-v2/exports/character/mist-seer/thumbnail.webp",
+      "sha256": "bc6422fc34182626acce0c27d3eefa6fa438e9534fca8ea4e08c43a7674bb2e0",
+      "bytes": 6222
+    },
+    {
+      "id": "character.rune-weaver.portrait",
+      "width": 512,
+      "height": 640,
+      "alpha": false,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Ginny Weasley",
+        "en": "Illustration of Ginny Weasley"
+      },
+      "path": "art/character-illustrated-v2/rune-weaver/portrait.webp",
+      "source": "design/diagon-alley/illustrated-v2/exports/character/rune-weaver/portrait.webp",
+      "sha256": "98a35c2a0bc530c76c23e270cb4471c37e23dc742c564ff4acaa3389294af063",
+      "bytes": 41082
+    },
+    {
+      "id": "character.rune-weaver.figure",
+      "width": 342,
+      "height": 428,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Ginny Weasley",
+        "en": "Illustration of Ginny Weasley"
+      },
+      "path": "art/character-illustrated-v2/rune-weaver/figure.webp",
+      "source": "design/diagon-alley/illustrated-v2/exports/character/rune-weaver/figure.webp",
+      "sha256": "744c6e60f30e3c03d9d4f8f41a1534b5ed0173f8494d3963733c38f51ffdb5be",
+      "bytes": 26344
+    },
+    {
+      "id": "character.rune-weaver.thumbnail",
+      "width": 96,
+      "height": 120,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Ginny Weasley",
+        "en": "Illustration of Ginny Weasley"
+      },
+      "path": "art/character-illustrated-v2/rune-weaver/thumbnail.webp",
+      "source": "design/diagon-alley/illustrated-v2/exports/character/rune-weaver/thumbnail.webp",
+      "sha256": "e7ecd1660735ac9d218b18d7a0f2bf264186635ffe96dd8f6da53356e80f5c46",
+      "bytes": 5408
+    },
+    {
+      "id": "character.copper-sage.portrait",
+      "width": 512,
+      "height": 640,
+      "alpha": false,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Arthur Weasley",
+        "en": "Illustration of Arthur Weasley"
+      },
+      "path": "art/character-illustrated-v2/copper-sage/portrait.webp",
+      "source": "design/diagon-alley/illustrated-v2/exports/character/copper-sage/portrait.webp",
+      "sha256": "07162250f67473c4d5291af5a2c05319437c1a5989038f4e9c6a515d094550cf",
+      "bytes": 57664
+    },
+    {
+      "id": "character.copper-sage.figure",
+      "width": 342,
+      "height": 428,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Arthur Weasley",
+        "en": "Illustration of Arthur Weasley"
+      },
+      "path": "art/character-illustrated-v2/copper-sage/figure.webp",
+      "source": "design/diagon-alley/illustrated-v2/exports/character/copper-sage/figure.webp",
+      "sha256": "8af55e2ff6596428c1624a0f4624d2ce6a43dbd675842841b7722437520f145d",
+      "bytes": 33266
+    },
+    {
+      "id": "character.copper-sage.thumbnail",
+      "width": 96,
+      "height": 120,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Arthur Weasley",
+        "en": "Illustration of Arthur Weasley"
+      },
+      "path": "art/character-illustrated-v2/copper-sage/thumbnail.webp",
+      "source": "design/diagon-alley/illustrated-v2/exports/character/copper-sage/thumbnail.webp",
+      "sha256": "bf48360f73027eed138d9716bb22b99abb8875a2d9cbe85b1952b75436ced4f0",
+      "bytes": 5236
+    },
+    {
+      "id": "character.moon-herbalist.portrait",
+      "width": 512,
+      "height": 640,
+      "alpha": false,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Pomona Sprout",
+        "en": "Illustration of Pomona Sprout"
+      },
+      "path": "art/character-illustrated-v2/moon-herbalist/portrait.webp",
+      "source": "design/diagon-alley/illustrated-v2/exports/character/moon-herbalist/portrait.webp",
+      "sha256": "1b52c7097c7b61d921f217b7fcd229f746f79cc174b76a031430c4b22be141b2",
+      "bytes": 47544
+    },
+    {
+      "id": "character.moon-herbalist.figure",
+      "width": 342,
+      "height": 428,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Pomona Sprout",
+        "en": "Illustration of Pomona Sprout"
+      },
+      "path": "art/character-illustrated-v2/moon-herbalist/figure.webp",
+      "source": "design/diagon-alley/illustrated-v2/exports/character/moon-herbalist/figure.webp",
+      "sha256": "1d09f6089f862d4363415c01ec390fc01a1abe8c5dd0d731a34286b31726bc77",
+      "bytes": 31086
+    },
+    {
+      "id": "character.moon-herbalist.thumbnail",
+      "width": 96,
+      "height": 120,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Pomona Sprout",
+        "en": "Illustration of Pomona Sprout"
+      },
+      "path": "art/character-illustrated-v2/moon-herbalist/thumbnail.webp",
+      "source": "design/diagon-alley/illustrated-v2/exports/character/moon-herbalist/thumbnail.webp",
+      "sha256": "96dd3353a178ba03ab47d9ca1b17c1dcce68a753bedf2a77defe5bc1abc3bc91",
+      "bytes": 5376
+    },
+    {
+      "id": "character.ash-wanderer.portrait",
+      "width": 512,
+      "height": 640,
+      "alpha": false,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Remus Lupin",
+        "en": "Illustration of Remus Lupin"
+      },
+      "path": "art/character-illustrated-v2/ash-wanderer/portrait.webp",
+      "source": "design/diagon-alley/illustrated-v2/exports/character/ash-wanderer/portrait.webp",
+      "sha256": "06db45a1201449a601add4f488467c09db30d1304932ff2dfdde6dc08efe4b18",
+      "bytes": 45750
+    },
+    {
+      "id": "character.ash-wanderer.figure",
+      "width": 342,
+      "height": 428,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Remus Lupin",
+        "en": "Illustration of Remus Lupin"
+      },
+      "path": "art/character-illustrated-v2/ash-wanderer/figure.webp",
+      "source": "design/diagon-alley/illustrated-v2/exports/character/ash-wanderer/figure.webp",
+      "sha256": "0bf4d2e17ac738c21283d33c8b7cc9986a8411f52d1509f4a20330683c37a311",
+      "bytes": 30428
+    },
+    {
+      "id": "character.ash-wanderer.thumbnail",
+      "width": 96,
+      "height": 120,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Remus Lupin",
+        "en": "Illustration of Remus Lupin"
+      },
+      "path": "art/character-illustrated-v2/ash-wanderer/thumbnail.webp",
+      "source": "design/diagon-alley/illustrated-v2/exports/character/ash-wanderer/thumbnail.webp",
+      "sha256": "6fe944ae858288920d6306b5762c9bb41de8d2a866ce8647903cb87e6fa9d4d4",
+      "bytes": 4830
+    },
+    {
+      "id": "character.shadow-scribe.portrait",
+      "width": 512,
+      "height": 640,
+      "alpha": false,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Sirius Black",
+        "en": "Illustration of Sirius Black"
+      },
+      "path": "art/character-illustrated-v2/shadow-scribe/portrait.webp",
+      "source": "design/diagon-alley/illustrated-v2/exports/character/shadow-scribe/portrait.webp",
+      "sha256": "6134e91a1f9cbb0108d988cd9c84952046c24ba78d52a5b4d367f29dbb3d04f5",
+      "bytes": 41570
+    },
+    {
+      "id": "character.shadow-scribe.figure",
+      "width": 342,
+      "height": 428,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Sirius Black",
+        "en": "Illustration of Sirius Black"
+      },
+      "path": "art/character-illustrated-v2/shadow-scribe/figure.webp",
+      "source": "design/diagon-alley/illustrated-v2/exports/character/shadow-scribe/figure.webp",
+      "sha256": "2f726633a123492430d92291d6d4a349379e16872d77a46bc721fc41c54afbca",
+      "bytes": 26646
+    },
+    {
+      "id": "character.shadow-scribe.thumbnail",
+      "width": 96,
+      "height": 120,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Sirius Black",
+        "en": "Illustration of Sirius Black"
+      },
+      "path": "art/character-illustrated-v2/shadow-scribe/thumbnail.webp",
+      "source": "design/diagon-alley/illustrated-v2/exports/character/shadow-scribe/thumbnail.webp",
+      "sha256": "6a0bb280862b1d955818fd23adbbc2b16ab311f88d0c09745100fcf60aa6592e",
+      "bytes": 4750
+    },
+    {
+      "id": "character.storm-caller.portrait",
+      "width": 512,
+      "height": 640,
+      "alpha": false,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Nymphadora Tonks",
+        "en": "Illustration of Nymphadora Tonks"
+      },
+      "path": "art/character-illustrated-v2/storm-caller/portrait.webp",
+      "source": "design/diagon-alley/illustrated-v2/exports/character/storm-caller/portrait.webp",
+      "sha256": "6b76ac5d4ce219bfb7179942c9dbab9bac4c8bd651f94679f176fff9310f0e7f",
+      "bytes": 57468
+    },
+    {
+      "id": "character.storm-caller.figure",
+      "width": 342,
+      "height": 428,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Nymphadora Tonks",
+        "en": "Illustration of Nymphadora Tonks"
+      },
+      "path": "art/character-illustrated-v2/storm-caller/figure.webp",
+      "source": "design/diagon-alley/illustrated-v2/exports/character/storm-caller/figure.webp",
+      "sha256": "87bac364cbf4f5260f7f2539b4031dbb74fa394b2c7d1da1953e147b3c8b7e3a",
+      "bytes": 29888
+    },
+    {
+      "id": "character.storm-caller.thumbnail",
+      "width": 96,
+      "height": 120,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Nymphadora Tonks",
+        "en": "Illustration of Nymphadora Tonks"
+      },
+      "path": "art/character-illustrated-v2/storm-caller/thumbnail.webp",
+      "source": "design/diagon-alley/illustrated-v2/exports/character/storm-caller/thumbnail.webp",
+      "sha256": "4a1e1e6453fb9a2ea6956320bb5d2fa6a917de88c30a70007ab48e2ddfdfd654",
+      "bytes": 5942
+    },
+    {
+      "id": "character.dew-alchemist.portrait",
+      "width": 512,
+      "height": 640,
+      "alpha": false,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Neville Longbottom",
+        "en": "Illustration of Neville Longbottom"
+      },
+      "path": "art/character-illustrated-v2/dew-alchemist/portrait.webp",
+      "source": "design/diagon-alley/illustrated-v2/exports/character/dew-alchemist/portrait.webp",
+      "sha256": "b65fdc1972212776e1db7c9a569463a12b3c678f88fb8806c2eaf64fac63de63",
+      "bytes": 39736
+    },
+    {
+      "id": "character.dew-alchemist.figure",
+      "width": 342,
+      "height": 428,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Neville Longbottom",
+        "en": "Illustration of Neville Longbottom"
+      },
+      "path": "art/character-illustrated-v2/dew-alchemist/figure.webp",
+      "source": "design/diagon-alley/illustrated-v2/exports/character/dew-alchemist/figure.webp",
+      "sha256": "a3edcc2f84043aa4a845f70794b282d587c32b57a1de5292d2aa3d151140fd68",
+      "bytes": 25944
+    },
+    {
+      "id": "character.dew-alchemist.thumbnail",
+      "width": 96,
+      "height": 120,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Neville Longbottom",
+        "en": "Illustration of Neville Longbottom"
+      },
+      "path": "art/character-illustrated-v2/dew-alchemist/thumbnail.webp",
+      "source": "design/diagon-alley/illustrated-v2/exports/character/dew-alchemist/thumbnail.webp",
+      "sha256": "31a29ab1e0e2c6a4f4f7fd143d5de17bc1115e39e488b651f7416a487555ffa2",
+      "bytes": 5056
+    },
+    {
+      "id": "character.dawn-oracle.portrait",
+      "width": 512,
+      "height": 640,
+      "alpha": false,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Sybill Trelawney",
+        "en": "Illustration of Sybill Trelawney"
+      },
+      "path": "art/character-illustrated-v2/dawn-oracle/portrait.webp",
+      "source": "design/diagon-alley/illustrated-v2/exports/character/dawn-oracle/portrait.webp",
+      "sha256": "ffcb18ce9a423882a96489e13bfcc266688fd1b02a99817041821cf83ce16eba",
+      "bytes": 62256
+    },
+    {
+      "id": "character.dawn-oracle.figure",
+      "width": 342,
+      "height": 428,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Sybill Trelawney",
+        "en": "Illustration of Sybill Trelawney"
+      },
+      "path": "art/character-illustrated-v2/dawn-oracle/figure.webp",
+      "source": "design/diagon-alley/illustrated-v2/exports/character/dawn-oracle/figure.webp",
+      "sha256": "052aebcdf96c0a240c64d1c0a9460508f128ab2884067f9b408015acd23ed04d",
+      "bytes": 37208
+    },
+    {
+      "id": "character.dawn-oracle.thumbnail",
+      "width": 96,
+      "height": 120,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Sybill Trelawney",
+        "en": "Illustration of Sybill Trelawney"
+      },
+      "path": "art/character-illustrated-v2/dawn-oracle/thumbnail.webp",
+      "source": "design/diagon-alley/illustrated-v2/exports/character/dawn-oracle/thumbnail.webp",
+      "sha256": "62a128522bae57c5a0281dbeafd9ea2c6db3412aedc4a92e4af6964903ddb46a",
+      "bytes": 6050
+    },
+    {
+      "id": "character.crystal-watch.portrait",
+      "width": 512,
+      "height": 640,
+      "alpha": false,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Filius Flitwick",
+        "en": "Illustration of Filius Flitwick"
+      },
+      "path": "art/character-illustrated-v2/crystal-watch/portrait.webp",
+      "source": "design/diagon-alley/illustrated-v2/exports/character/crystal-watch/portrait.webp",
+      "sha256": "9cb223082c7bf4ae91e1d520dff09c60a8f10ce9802c83d193697dcc245c3cf3",
+      "bytes": 33232
+    },
+    {
+      "id": "character.crystal-watch.figure",
+      "width": 342,
+      "height": 428,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Filius Flitwick",
+        "en": "Illustration of Filius Flitwick"
+      },
+      "path": "art/character-illustrated-v2/crystal-watch/figure.webp",
+      "source": "design/diagon-alley/illustrated-v2/exports/character/crystal-watch/figure.webp",
+      "sha256": "88687c47d58efdf46649a93d93a22817fefc9566a946693c28dad13fb6915bee",
+      "bytes": 23390
+    },
+    {
+      "id": "character.crystal-watch.thumbnail",
+      "width": 96,
+      "height": 120,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Filius Flitwick",
+        "en": "Illustration of Filius Flitwick"
+      },
+      "path": "art/character-illustrated-v2/crystal-watch/thumbnail.webp",
+      "source": "design/diagon-alley/illustrated-v2/exports/character/crystal-watch/thumbnail.webp",
+      "sha256": "2d168c40d2f7ad6f9168f1590e87b1833612742027ad548b54642dd6cd0e08ec",
+      "bytes": 5016
+    },
+    {
+      "id": "character.night-forger.portrait",
+      "width": 512,
+      "height": 640,
+      "alpha": false,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Rubeus Hagrid",
+        "en": "Illustration of Rubeus Hagrid"
+      },
+      "path": "art/character-illustrated-v2/night-forger/portrait.webp",
+      "source": "design/diagon-alley/illustrated-v2/exports/character/night-forger/portrait.webp",
+      "sha256": "7db6f1824b03f122d6a998207062d4db3a2c2da4042d63a0f9126d46a8ff7e39",
+      "bytes": 47494
+    },
+    {
+      "id": "character.night-forger.figure",
+      "width": 342,
+      "height": 428,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Rubeus Hagrid",
+        "en": "Illustration of Rubeus Hagrid"
+      },
+      "path": "art/character-illustrated-v2/night-forger/figure.webp",
+      "source": "design/diagon-alley/illustrated-v2/exports/character/night-forger/figure.webp",
+      "sha256": "7917a159c26564ed7513dcc106714e3de106807562603fa016d924c3b28da1e1",
+      "bytes": 30470
+    },
+    {
+      "id": "character.night-forger.thumbnail",
+      "width": 96,
+      "height": 120,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Rubeus Hagrid",
+        "en": "Illustration of Rubeus Hagrid"
+      },
+      "path": "art/character-illustrated-v2/night-forger/thumbnail.webp",
+      "source": "design/diagon-alley/illustrated-v2/exports/character/night-forger/thumbnail.webp",
+      "sha256": "77349a57c1b6d1128cc61612043af12107b7c8f377ea1cde5db46a014e94ba74",
+      "bytes": 4428
+    },
+    {
+      "id": "character.moss-guardian.portrait",
+      "width": 512,
+      "height": 640,
+      "alpha": false,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Molly Weasley",
+        "en": "Illustration of Molly Weasley"
+      },
+      "path": "art/character-illustrated-v2/moss-guardian/portrait.webp",
+      "source": "design/diagon-alley/illustrated-v2/exports/character/moss-guardian/portrait.webp",
+      "sha256": "40f0024fa2be2fe7c74cc0773c7194a5a286f35b910af18fed05a38b7e421483",
+      "bytes": 40590
+    },
+    {
+      "id": "character.moss-guardian.figure",
+      "width": 342,
+      "height": 428,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Molly Weasley",
+        "en": "Illustration of Molly Weasley"
+      },
+      "path": "art/character-illustrated-v2/moss-guardian/figure.webp",
+      "source": "design/diagon-alley/illustrated-v2/exports/character/moss-guardian/figure.webp",
+      "sha256": "27396a9f42e9c72a3fcce2af897986930c84b042073111294a7bb41b935d2eb8",
+      "bytes": 27692
+    },
+    {
+      "id": "character.moss-guardian.thumbnail",
+      "width": 96,
+      "height": 120,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Molly Weasley",
+        "en": "Illustration of Molly Weasley"
+      },
+      "path": "art/character-illustrated-v2/moss-guardian/thumbnail.webp",
+      "source": "design/diagon-alley/illustrated-v2/exports/character/moss-guardian/thumbnail.webp",
+      "sha256": "51765e38d357b4be4b0eee0f36d673acf15ec4a4dbf309354a3147da36fe0cdd",
+      "bytes": 4612
+    },
+    {
+      "id": "character.comet-scholar.portrait",
+      "width": 512,
+      "height": 640,
+      "alpha": false,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Cho Chang",
+        "en": "Illustration of Cho Chang"
+      },
+      "path": "art/character-illustrated-v2/comet-scholar/portrait.webp",
+      "source": "design/diagon-alley/illustrated-v2/exports/character/comet-scholar/portrait.webp",
+      "sha256": "85d39d99687e7ee19b3484999832d11da3251ac97c282ee99bbf85ce1a7efa4d",
+      "bytes": 33362
+    },
+    {
+      "id": "character.comet-scholar.figure",
+      "width": 342,
+      "height": 428,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Cho Chang",
+        "en": "Illustration of Cho Chang"
+      },
+      "path": "art/character-illustrated-v2/comet-scholar/figure.webp",
+      "source": "design/diagon-alley/illustrated-v2/exports/character/comet-scholar/figure.webp",
+      "sha256": "afa59895b80288d3103e069e44c592dfd3f276493b6a00f41692f9064b089748",
+      "bytes": 23108
+    },
+    {
+      "id": "character.comet-scholar.thumbnail",
+      "width": 96,
+      "height": 120,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Cho Chang",
+        "en": "Illustration of Cho Chang"
+      },
+      "path": "art/character-illustrated-v2/comet-scholar/thumbnail.webp",
+      "source": "design/diagon-alley/illustrated-v2/exports/character/comet-scholar/thumbnail.webp",
+      "sha256": "0a3318a1c7811e844059c6cfd45c6c0cf747fd9f4a1eccbfc9b20d4f0f3e60ca",
+      "bytes": 4814
+    },
+    {
+      "id": "character.cinder-dancer.portrait",
+      "width": 512,
+      "height": 640,
+      "alpha": false,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Fred Weasley",
+        "en": "Illustration of Fred Weasley"
+      },
+      "path": "art/character-illustrated-v2/cinder-dancer/portrait.webp",
+      "source": "design/diagon-alley/illustrated-v2/exports/character/cinder-dancer/portrait.webp",
+      "sha256": "3e138538acba2cb59c2f1a6ba3d51ad668bd9cca272c00b27daa89d0bd94d654",
+      "bytes": 38166
+    },
+    {
+      "id": "character.cinder-dancer.figure",
+      "width": 342,
+      "height": 428,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Fred Weasley",
+        "en": "Illustration of Fred Weasley"
+      },
+      "path": "art/character-illustrated-v2/cinder-dancer/figure.webp",
+      "source": "design/diagon-alley/illustrated-v2/exports/character/cinder-dancer/figure.webp",
+      "sha256": "260ee52cbec3fb756dd4f0fa64b7141999296d89f468de96745f38212769a385",
+      "bytes": 26916
+    },
+    {
+      "id": "character.cinder-dancer.thumbnail",
+      "width": 96,
+      "height": 120,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Fred Weasley",
+        "en": "Illustration of Fred Weasley"
+      },
+      "path": "art/character-illustrated-v2/cinder-dancer/thumbnail.webp",
+      "source": "design/diagon-alley/illustrated-v2/exports/character/cinder-dancer/thumbnail.webp",
+      "sha256": "70c82e889f9e70cd89d42cbdf4a782ec9d976f07cf8413986df69f24eec2bc62",
+      "bytes": 5230
+    },
+    {
+      "id": "character.wind-reader.portrait",
+      "width": 512,
+      "height": 640,
+      "alpha": false,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de George Weasley",
+        "en": "Illustration of George Weasley"
+      },
+      "path": "art/character-illustrated-v2/wind-reader/portrait.webp",
+      "source": "design/diagon-alley/illustrated-v2/exports/character/wind-reader/portrait.webp",
+      "sha256": "3d9b35f98b9857b65187a2d843cf68fefa0b49046f074543f95def0def2046a4",
+      "bytes": 45382
+    },
+    {
+      "id": "character.wind-reader.figure",
+      "width": 342,
+      "height": 428,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de George Weasley",
+        "en": "Illustration of George Weasley"
+      },
+      "path": "art/character-illustrated-v2/wind-reader/figure.webp",
+      "source": "design/diagon-alley/illustrated-v2/exports/character/wind-reader/figure.webp",
+      "sha256": "07abd8089bed439e2f43a0b518ad26fe9d89a3cf087d1d40f71eb55a9954d8bc",
+      "bytes": 27402
+    },
+    {
+      "id": "character.wind-reader.thumbnail",
+      "width": 96,
+      "height": 120,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de George Weasley",
+        "en": "Illustration of George Weasley"
+      },
+      "path": "art/character-illustrated-v2/wind-reader/thumbnail.webp",
+      "source": "design/diagon-alley/illustrated-v2/exports/character/wind-reader/thumbnail.webp",
+      "sha256": "e679ea0f2587d3e806602fff45f789667983d9ebfa016a4caf8351018578b50f",
+      "bytes": 4990
+    },
+    {
+      "id": "character.star-binder.portrait",
+      "width": 512,
+      "height": 640,
+      "alpha": false,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Cedric Diggory",
+        "en": "Illustration of Cedric Diggory"
+      },
+      "path": "art/character-illustrated-v2/star-binder/portrait.webp",
+      "source": "design/diagon-alley/illustrated-v2/exports/character/star-binder/portrait.webp",
+      "sha256": "4beb75d9b6538879845c787e570e10a3c9f3b8667a8836166b78a833a3cb55c6",
+      "bytes": 38152
+    },
+    {
+      "id": "character.star-binder.figure",
+      "width": 342,
+      "height": 428,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Cedric Diggory",
+        "en": "Illustration of Cedric Diggory"
+      },
+      "path": "art/character-illustrated-v2/star-binder/figure.webp",
+      "source": "design/diagon-alley/illustrated-v2/exports/character/star-binder/figure.webp",
+      "sha256": "63146f914d05518630e7a0a246d0881072155c4191a6cd204f174d1dcd1778e1",
+      "bytes": 25338
+    },
+    {
+      "id": "character.star-binder.thumbnail",
+      "width": 96,
+      "height": 120,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Cedric Diggory",
+        "en": "Illustration of Cedric Diggory"
+      },
+      "path": "art/character-illustrated-v2/star-binder/thumbnail.webp",
+      "source": "design/diagon-alley/illustrated-v2/exports/character/star-binder/thumbnail.webp",
+      "sha256": "58e90fd1c4a7effdf66c013b79d0d5de908981deaa65867b19f4439cafa089de",
+      "bytes": 5056
+    },
+    {
+      "id": "character.root-speaker.portrait",
+      "width": 512,
+      "height": 640,
+      "alpha": false,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Alastor Moody",
+        "en": "Illustration of Alastor Moody"
+      },
+      "path": "art/character-illustrated-v2/root-speaker/portrait.webp",
+      "source": "design/diagon-alley/illustrated-v2/exports/character/root-speaker/portrait.webp",
+      "sha256": "54d868609b64503251c65719f541331a7e1012dc510a69ec8d393031a449f80c",
+      "bytes": 50816
+    },
+    {
+      "id": "character.root-speaker.figure",
+      "width": 342,
+      "height": 428,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Alastor Moody",
+        "en": "Illustration of Alastor Moody"
+      },
+      "path": "art/character-illustrated-v2/root-speaker/figure.webp",
+      "source": "design/diagon-alley/illustrated-v2/exports/character/root-speaker/figure.webp",
+      "sha256": "926992dc4ab759d0433d1422a7905bc95b29b1e27ef4c9ca8c004191bcbb917f",
+      "bytes": 33468
+    },
+    {
+      "id": "character.root-speaker.thumbnail",
+      "width": 96,
+      "height": 120,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Alastor Moody",
+        "en": "Illustration of Alastor Moody"
+      },
+      "path": "art/character-illustrated-v2/root-speaker/thumbnail.webp",
+      "source": "design/diagon-alley/illustrated-v2/exports/character/root-speaker/thumbnail.webp",
+      "sha256": "aea3069782d81290f3425e5096cb84f90acf0790a30bb0bea5a7f533a17b6dc3",
+      "bytes": 5856
+    },
+    {
+      "id": "character.obsidian-seer.portrait",
+      "width": 512,
+      "height": 640,
+      "alpha": false,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Bellatrix Lestrange",
+        "en": "Illustration of Bellatrix Lestrange"
+      },
+      "path": "art/character-illustrated-v2/obsidian-seer/portrait.webp",
+      "source": "design/diagon-alley/illustrated-v2/exports/character/obsidian-seer/portrait.webp",
+      "sha256": "4d3189ba8741eeb78e064d59d694d81b77f476b5935efdffbca0678eb355f7e2",
+      "bytes": 47364
+    },
+    {
+      "id": "character.obsidian-seer.figure",
+      "width": 342,
+      "height": 428,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Bellatrix Lestrange",
+        "en": "Illustration of Bellatrix Lestrange"
+      },
+      "path": "art/character-illustrated-v2/obsidian-seer/figure.webp",
+      "source": "design/diagon-alley/illustrated-v2/exports/character/obsidian-seer/figure.webp",
+      "sha256": "091065da6c6ab275cb005c446813505971555c279fb8dae0c8f85cf97c408e0a",
+      "bytes": 31048
+    },
+    {
+      "id": "character.obsidian-seer.thumbnail",
+      "width": 96,
+      "height": 120,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Bellatrix Lestrange",
+        "en": "Illustration of Bellatrix Lestrange"
+      },
+      "path": "art/character-illustrated-v2/obsidian-seer/thumbnail.webp",
+      "source": "design/diagon-alley/illustrated-v2/exports/character/obsidian-seer/thumbnail.webp",
+      "sha256": "afe06ab7357e52632e1d12c747038aada1681fbbf35e590bdfead8f2f04d855a",
+      "bytes": 4776
+    },
+    {
+      "id": "character.silver-sentinel.portrait",
+      "width": 512,
+      "height": 640,
+      "alpha": false,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Kingsley Shacklebolt",
+        "en": "Illustration of Kingsley Shacklebolt"
+      },
+      "path": "art/character-illustrated-v2/silver-sentinel/portrait.webp",
+      "source": "design/diagon-alley/illustrated-v2/exports/character/silver-sentinel/portrait.webp",
+      "sha256": "0b97986d26e4a3ffd7f1e9d08d222b69616f21661b67af9b327b1d98bde85714",
+      "bytes": 42740
+    },
+    {
+      "id": "character.silver-sentinel.figure",
+      "width": 342,
+      "height": 428,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Kingsley Shacklebolt",
+        "en": "Illustration of Kingsley Shacklebolt"
+      },
+      "path": "art/character-illustrated-v2/silver-sentinel/figure.webp",
+      "source": "design/diagon-alley/illustrated-v2/exports/character/silver-sentinel/figure.webp",
+      "sha256": "67220cd1d3de8adad7df90bfeac655150ef82860fc1a9ff33689f120ee0d0f44",
+      "bytes": 26010
+    },
+    {
+      "id": "character.silver-sentinel.thumbnail",
+      "width": 96,
+      "height": 120,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Kingsley Shacklebolt",
+        "en": "Illustration of Kingsley Shacklebolt"
+      },
+      "path": "art/character-illustrated-v2/silver-sentinel/thumbnail.webp",
+      "source": "design/diagon-alley/illustrated-v2/exports/character/silver-sentinel/thumbnail.webp",
+      "sha256": "cbcd1a34f3c2fb5de0cba4fa6408b2fa615d7d457d4e736cc082bdb7797e13b7",
+      "bytes": 4506
+    },
+    {
+      "id": "character.sun-priestess.portrait",
+      "width": 512,
+      "height": 640,
+      "alpha": false,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Fleur Delacour",
+        "en": "Illustration of Fleur Delacour"
+      },
+      "path": "art/character-illustrated-v2/sun-priestess/portrait.webp",
+      "source": "design/diagon-alley/illustrated-v2/exports/character/sun-priestess/portrait.webp",
+      "sha256": "6360d8eb4c67d18835b2f6518c7ffe829046ea99b81be460b2975b99fee5f1c0",
+      "bytes": 32858
+    },
+    {
+      "id": "character.sun-priestess.figure",
+      "width": 342,
+      "height": 428,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Fleur Delacour",
+        "en": "Illustration of Fleur Delacour"
+      },
+      "path": "art/character-illustrated-v2/sun-priestess/figure.webp",
+      "source": "design/diagon-alley/illustrated-v2/exports/character/sun-priestess/figure.webp",
+      "sha256": "2d43f7c9e6e3748e6c4202604ffb3f8c76174d1b0de2df11129e7ded2b1b30e8",
+      "bytes": 24986
+    },
+    {
+      "id": "character.sun-priestess.thumbnail",
+      "width": 96,
+      "height": 120,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Fleur Delacour",
+        "en": "Illustration of Fleur Delacour"
+      },
+      "path": "art/character-illustrated-v2/sun-priestess/thumbnail.webp",
+      "source": "design/diagon-alley/illustrated-v2/exports/character/sun-priestess/thumbnail.webp",
+      "sha256": "517ac97baf3e28fdba295f2f923e0ed64874ab60d40b10675e3e2d8344ae4083",
+      "bytes": 5266
+    },
+    {
+      "id": "character.echo-mage.portrait",
+      "width": 512,
+      "height": 640,
+      "alpha": false,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Draco Malfoy",
+        "en": "Illustration of Draco Malfoy"
+      },
+      "path": "art/character-illustrated-v2/echo-mage/portrait.webp",
+      "source": "design/diagon-alley/illustrated-v2/exports/character/echo-mage/portrait.webp",
+      "sha256": "67db1cd68114dd7e5eaa616e21840c3296a2b9efa619b4a235998fbf41887b02",
+      "bytes": 40378
+    },
+    {
+      "id": "character.echo-mage.figure",
+      "width": 342,
+      "height": 428,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Draco Malfoy",
+        "en": "Illustration of Draco Malfoy"
+      },
+      "path": "art/character-illustrated-v2/echo-mage/figure.webp",
+      "source": "design/diagon-alley/illustrated-v2/exports/character/echo-mage/figure.webp",
+      "sha256": "65951c01779d0bb67fa03680a0288a8b53278978c07265a0270ce4bc3f7a7d15",
+      "bytes": 25332
+    },
+    {
+      "id": "character.echo-mage.thumbnail",
+      "width": 96,
+      "height": 120,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Draco Malfoy",
+        "en": "Illustration of Draco Malfoy"
+      },
+      "path": "art/character-illustrated-v2/echo-mage/thumbnail.webp",
+      "source": "design/diagon-alley/illustrated-v2/exports/character/echo-mage/thumbnail.webp",
+      "sha256": "47be6bea3c9f2be4fe0c11b60ca6dedcf6f344b9df60ca1569046b10746c89bf",
+      "bytes": 5126
+    },
+    {
+      "id": "character.veil-walker.portrait",
+      "width": 512,
+      "height": 640,
+      "alpha": false,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Lord Voldemort",
+        "en": "Illustration of Lord Voldemort"
+      },
+      "path": "art/character-illustrated-v2/veil-walker/portrait.webp",
+      "source": "design/diagon-alley/illustrated-v2/exports/character/veil-walker/portrait.webp",
+      "sha256": "8fe1d85fd57507004d0d9891ef1456306f3b6ed57d96076d2e3bda1fdae96f97",
+      "bytes": 28006
+    },
+    {
+      "id": "character.veil-walker.figure",
+      "width": 342,
+      "height": 428,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Lord Voldemort",
+        "en": "Illustration of Lord Voldemort"
+      },
+      "path": "art/character-illustrated-v2/veil-walker/figure.webp",
+      "source": "design/diagon-alley/illustrated-v2/exports/character/veil-walker/figure.webp",
+      "sha256": "614f838221d00b1532370eb129601bde1c71de7008958224ed7f267c24ab1a73",
+      "bytes": 22044
+    },
+    {
+      "id": "character.veil-walker.thumbnail",
+      "width": 96,
+      "height": 120,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Lord Voldemort",
+        "en": "Illustration of Lord Voldemort"
+      },
+      "path": "art/character-illustrated-v2/veil-walker/thumbnail.webp",
+      "source": "design/diagon-alley/illustrated-v2/exports/character/veil-walker/thumbnail.webp",
+      "sha256": "a318035484001e76b5c105f1408ac8414e3dd94752be506ba9ed050867831b6c",
+      "bytes": 5190
+    },
+    {
+      "id": "character.aurora-sage.portrait",
+      "width": 512,
+      "height": 640,
+      "alpha": false,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Newt Scamander",
+        "en": "Illustration of Newt Scamander"
+      },
+      "path": "art/character-illustrated-v2/aurora-sage/portrait.webp",
+      "source": "design/diagon-alley/illustrated-v2/exports/character/aurora-sage/portrait.webp",
+      "sha256": "2aa8255b627323cd653eb1cc97b025337cdfbfaabef97ee34c2740e52d75f4ed",
+      "bytes": 52996
+    },
+    {
+      "id": "character.aurora-sage.figure",
+      "width": 342,
+      "height": 428,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Newt Scamander",
+        "en": "Illustration of Newt Scamander"
+      },
+      "path": "art/character-illustrated-v2/aurora-sage/figure.webp",
+      "source": "design/diagon-alley/illustrated-v2/exports/character/aurora-sage/figure.webp",
+      "sha256": "99b08c5df89c43fcd0965316f400810452760eff3c06d74cdfd28a19e4058a39",
+      "bytes": 29992
+    },
+    {
+      "id": "character.aurora-sage.thumbnail",
+      "width": 96,
+      "height": 120,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.95
+      ],
+      "alt": {
+        "es": "Ilustración de Newt Scamander",
+        "en": "Illustration of Newt Scamander"
+      },
+      "path": "art/character-illustrated-v2/aurora-sage/thumbnail.webp",
+      "source": "design/diagon-alley/illustrated-v2/exports/character/aurora-sage/thumbnail.webp",
+      "sha256": "a16c074f0b8bfd0d59b2ed5c4029091cc5d60a184176c78beeb4bab9d74128da",
+      "bytes": 4962
+    }
+  ],
+  "aliases": {
+    "arcanist-1": "echo-mage",
+    "arcanist-2": "paracelso",
+    "arcanist-3": "obsidian-seer",
+    "boss": "veil-walker"
+  },
+  "characters": 30,
+  "runtimeBytes": 2461924,
+  "authorityChanges": false
+}

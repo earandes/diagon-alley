@@ -1,0 +1,52 @@
+{
+  "id": "character-ash-wanderer",
+  "identityId": "ash-wanderer",
+  "direction": "teatro-de-alquimia",
+  "version": "1",
+  "state": "reviewed-standalone-not-integrated",
+  "tool": "built-in imagegen",
+  "source": "master-v1.png",
+  "preparedAsset": "arena-master-v1.png",
+  "prompts": [
+    "prompt-v1.md"
+  ],
+  "references": [
+    "../paracelso/arena-master-v1.png"
+  ],
+  "dimensions": [
+    1024,
+    1536
+  ],
+  "transparency": {
+    "mode": "RGBA",
+    "alphaMin": 0,
+    "alphaMax": 255,
+    "fullyTransparentPixels": 1140884,
+    "cornerAlpha": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "subjectBoundsAlphaGt20": [
+      211,
+      207,
+      858,
+      1327
+    ]
+  },
+  "preparation": "Deterministic LANCZOS resize1024x1536->819x1229,position102,154 on transparent1024x1536canvas for10%safe margins. Source preserved.",
+  "crop": "none",
+  "pivotNormalized": [
+    0.5,
+    0.864
+  ],
+  "variants": [],
+  "sourceEditable": "Raster alpha master; no layers or rig",
+  "textAlternative": {
+    "es": "Caminante de Ceniza, viajero de cabello oscuro recogido, capa gris con ribete rojizo, mochila enrollada y bastón de madera carbonizada.",
+    "en": "Ash Wanderer, a traveler with tied dark hair, a grey cloak with rust trim, rolled pack and charred wooden staff."
+  },
+  "review": "Inspected whitecomposite: youngadultEastAsianface, longslimbody, completefeetandnaturalhands, charredstaff, rolledpack, subduedashrust travel silhouette distinct from scholarlymages. Realalpha confirmed. Names verified in currentpack; currentcontext has no explicit gender constraints. Actualthumbnail/mobileintegration pending.",
+  "sha256": "4e32eddacb711cc38738c8d216bb6e5c2a956c898142e63fd428e7e0c5cf5343"
+}

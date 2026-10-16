@@ -1,0 +1,24 @@
+{
+  "id": "wind-reader",
+  "name": "George Weasley",
+  "master": "design/diagon-alley/illustrated-v2/samples/wind-reader.png",
+  "sha256": "00754b8101b1b0f5bb46672d041683d3af71dd8e282b81d740e6235369535b22",
+  "seed": 58122,
+  "promptFile": "design/diagon-alley/illustrated-v2/prompts/wind-reader.txt",
+  "model": "mlx-community/flux2-klein-4b-4bit",
+  "modelRevision": "860e87183ceb29e39627c0612ebd66d8ea66e68c",
+  "steps": 4,
+  "guidance": 1.0,
+  "width": 768,
+  "height": 1024,
+  "generationSeconds": 29.75,
+  "loadSeconds": 0.74,
+  "tool": {
+    "mflux": "0.22.0",
+    "mlx": "0.32.4"
+  },
+  "cashCost": 0,
+  "generationMode": "offline local Metal text-to-image",
+  "gpuPeakMemoryBytes": 9421779596,
+  "status": "sample awaiting coordinator visual review"
+}

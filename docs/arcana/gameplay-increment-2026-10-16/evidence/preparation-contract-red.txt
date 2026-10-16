@@ -1,0 +1,25 @@
+
+ RUN  v5.0.3 /Users/enricarandes/work/diagon-alley
+
+ ❯ tests/domain/arcana/preparation-contract-a63.test.ts (0 test)
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/domain/arcana/preparation-contract-a63.test.ts [ tests/domain/arcana/preparation-contract-a63.test.ts ]
+Error: Cannot find module '../../../src/arcana/domain/combat/equipment-effects' imported from /Users/enricarandes/work/diagon-alley/tests/domain/arcana/preparation-contract-a63.test.ts
+ ❯ tests/domain/arcana/preparation-contract-a63.test.ts:4:1
+      2| import { projectPublicContent, publicContentSnapshot } from '../../../…
+      3| import { trialConfiguration } from '../../../src/arcana/infrastructure…
+      4| import { equipmentSpellPower, equipmentInitiative } from '../../../src…
+       | ^
+      5|
+      6| it('publishes the existing affinity map immutably without authority ca…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  no tests
+   Start at  01:31:39
+   Duration  150ms (worker 97%, environment 3%)
+

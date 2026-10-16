@@ -1,0 +1,74 @@
+{
+  "id": "card-frame",
+  "identity": "card-frame",
+  "function": "Shared illustrated portrait frame overlay; rarity and stars remain DOM",
+  "version": "1",
+  "status": "illustration-reviewed-runtime-composite-pending",
+  "path": "original-v1.png",
+  "author": "OpenAI integrated imagegen",
+  "tool": "image_gen.imagegen built-in",
+  "prompt": "prompt-v1.md",
+  "references": [
+    "design/arcana/concepts-2026-10-14/teatro-de-alquimia.png"
+  ],
+  "provenance": "Original isolated botanical card-frame illustration",
+  "sourceAvailable": "original-v1.png; prompt-v1.md",
+  "editableLayers": false,
+  "rig": false,
+  "dimensions": [
+    1122,
+    1402
+  ],
+  "requestedAspect": "4:5",
+  "crop": "full source preserved",
+  "pivot": [
+    0.5,
+    0.5
+  ],
+  "variants": [],
+  "transparency": {
+    "required": true,
+    "realAlpha": true,
+    "mode": "RGBA",
+    "range": [
+      0,
+      255
+    ],
+    "centerPixelAlpha": 0,
+    "central50PercentAlphaRange": [
+      0,
+      1
+    ],
+    "fullyTransparentPixels": 1102116,
+    "totalPixels": 1573044,
+    "bodyBoundingBoxAlpha16": [
+      29,
+      22,
+      1093,
+      1363
+    ]
+  },
+  "portraitWindow": {
+    "normalizedApprox": [
+      0.115,
+      0.096,
+      0.885,
+      0.89
+    ],
+    "status": "visual-estimate; inspect actual composite"
+  },
+  "alt": {
+    "es": "Marco botánico dorado con hojas verdes y bellotas, con ventana central transparente.",
+    "en": "Gold botanical frame with green leaves and acorns, with a transparent central window."
+  },
+  "review": {
+    "visual": "Inspected standalone upright frame; full translucent outer space and transparent center. Warm gilt/copper trim and forestgreenleaf/acorn detailing. No names, stars, ranks, text orportrait. Centerpixelalpha0 verified.",
+    "limitations": [
+      "Extremelylowalpha1 pixels occur inside large central region; maxcenteralpha1/255, not a fullyfilledwindow. Centralwindow is effectivelytransparent but source notallpixelsalpha0.",
+      "Outer margin smaller than requested5%; renderer mayneedinset.",
+      "Output1122x1402 near4:5aspect rather than exactnominalsize.",
+      "Sharedframe notfourindividualraritypaintings; nativeDOMtrimsandlabels mustexpresscurrentrarities.",
+      "Portraitwindowbounds are estimate, verify layout and roundedinnercorners in actual UI."
+    ]
+  }
+}

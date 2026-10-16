@@ -1,4 +1,4 @@
-name: Comprobar I1
+name: Comprobar ARCANA
 on:
   push:
     branches: [main]
@@ -9,6 +9,23 @@ jobs:
   check:
     runs-on: ubuntu-latest
     timeout-minutes: 10
+    services:
+      postgres:
+        image: postgres:16.9@sha256:ddfe3e8713e3ee5b8f286082cb12512488dfbf3f5a1ecb0b74a42e6055af0a5f
+        env:
+          POSTGRES_DB: arcana_dev
+          POSTGRES_USER: arcana_dev
+          POSTGRES_PASSWORD: arcana-local-development
+        ports: ['55432:5432']
+        options: >-
+          --health-cmd "pg_isready -U arcana_dev -d arcana_dev"
+          --health-interval 2s --health-timeout 2s --health-retries 15
+      redis:
+        image: redis:7-alpine@sha256:bb186d083732f669da90be8b0f975a37812b15e913465bb14d845db72a4e3e08
+        ports: ['56379:6379']
+        options: >-
+          --health-cmd "redis-cli ping"
+          --health-interval 2s --health-timeout 2s --health-retries 15
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -19,6 +36,9 @@ jobs:
       - run: npm run typecheck
       - run: npm run validate:content
       - run: npm test
+      - run: npm run test:integration
       - run: npm run build
+      - run: npm run verify:arcana:build
       - run: npx playwright install --with-deps chromium
       - run: npm run test:e2e -- --project chromium
+      - run: npm run test:pwa -- --project chromium

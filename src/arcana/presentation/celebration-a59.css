@@ -1,0 +1,131 @@
+/* A59: local transient layers. No canvas, animated filter, layout tween or input interception. */
+.celebration.celebration-a59 {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: min(100%, 390px);
+  overflow: hidden;
+  pointer-events: none;
+  contain: paint;
+  z-index: 6;
+}
+.reveal .celebration.celebration-a59 {
+  inset: 14% 0 auto;
+  height: 62%;
+  min-height: 180px;
+}
+.arena-stage .celebration.celebration-a59 {
+  inset: 9% 20% auto;
+  width: 60%;
+  height: 230px;
+}
+.commerce-result .celebration.celebration-a59 {
+  inset: 5% 0 auto;
+  height: 230px;
+}
+.celebration-a59-halo {
+  position: absolute;
+  inset: 6% 16%;
+  border-radius: 50%;
+  background: radial-gradient(ellipse, transparent 39%, var(--burst-color) 40%, transparent 43%);
+  opacity: 0;
+  animation: a59-reward-halo var(--burst-duration) cubic-bezier(0.18, 0.7, 0.2, 1) both;
+}
+.celebration-a59-particle {
+  position: absolute;
+  top: var(--particle-y);
+  left: var(--particle-x);
+  width: var(--particle-size);
+  height: calc(var(--particle-size) * 1.8);
+  background: var(--burst-color);
+  opacity: 0;
+  animation: a59-reward-particle var(--particle-duration) cubic-bezier(0.18, 0.7, 0.2, 1)
+    var(--particle-delay) both;
+}
+.celebration-a59-particle:nth-child(3n) {
+  background: var(--burst-accent);
+}
+[data-celebration-shape='foil'] .celebration-a59-particle {
+  border-radius: 1px;
+}
+[data-celebration-shape='leaf'] .celebration-a59-particle {
+  border-radius: 80% 0 80% 0;
+}
+[data-celebration-shape='star'] .celebration-a59-particle {
+  height: var(--particle-size);
+  clip-path: polygon(50% 0, 62% 36%, 100% 50%, 62% 64%, 50% 100%, 38% 64%, 0 50%, 38% 36%);
+}
+[data-celebration-shape='sun'] .celebration-a59-particle {
+  height: var(--particle-size);
+  clip-path: polygon(
+    50% 0,
+    60% 27%,
+    86% 14%,
+    73% 40%,
+    100% 50%,
+    73% 60%,
+    86% 86%,
+    60% 73%,
+    50% 100%,
+    40% 73%,
+    14% 86%,
+    27% 60%,
+    0 50%,
+    27% 40%,
+    14% 14%,
+    40% 27%
+  );
+}
+[data-celebration-rarity='common'] .celebration-a59-halo {
+  display: none;
+}
+[data-celebration-rarity='unusual'] .celebration-a59-halo {
+  inset: 12% 22%;
+}
+[data-celebration-rarity='arcane-legendary'] .celebration-a59-halo {
+  background: radial-gradient(
+    ellipse,
+    #fff2c221 0,
+    transparent 38%,
+    var(--burst-color) 40%,
+    transparent 42%
+  );
+}
+@keyframes a59-reward-particle {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 12px, 0) rotate(0);
+  }
+  14% {
+    opacity: 0.95;
+  }
+  80% {
+    opacity: 0.65;
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(var(--particle-drift), 100px, 0) rotate(var(--particle-spin));
+  }
+}
+@keyframes a59-reward-halo {
+  0% {
+    opacity: 0;
+    transform: scale(0.78);
+  }
+  28% {
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.08);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .celebration.celebration-a59 {
+    display: none;
+  }
+  .celebration-a59-particle,
+  .celebration-a59-halo {
+    animation: none;
+  }
+}

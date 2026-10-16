@@ -1,0 +1,61 @@
+{
+  "id": "bean-soap",
+  "identity": "soap",
+  "function": "Current Rancid Soap flavor illustration; localized name and effects separate DOM",
+  "version": "1",
+  "status": "illustration-reviewed-runtime-framing-pending",
+  "path": "original-v1.png",
+  "author": "OpenAI integrated imagegen",
+  "tool": "image_gen.imagegen built-in",
+  "prompt": "prompt-v1.md",
+  "references": [
+    "../bean-earth/original-v1.png"
+  ],
+  "provenance": "Original ivory creamglossy kidneycandyillustration",
+  "sourceAvailable": "original-v1.png; prompt-v1.md",
+  "editableLayers": false,
+  "rig": false,
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "requestedDimensions": [
+    1024,
+    1024
+  ],
+  "crop": "full source preserved",
+  "pivot": [
+    0.5,
+    0.5
+  ],
+  "variants": [],
+  "transparency": {
+    "realAlpha": true,
+    "mode": "RGBA",
+    "range": [
+      0,
+      255
+    ],
+    "fullyTransparentPixels": 991437,
+    "totalPixels": 1572516,
+    "bodyBoundingBoxAlpha16": [
+      128,
+      224,
+      1150,
+      1068
+    ]
+  },
+  "alt": {
+    "es": "Gragea de Jabón Rancio marfil con vetas grises y pequeñas burbujas decorativas.",
+    "en": "Ivory Rancid Soap bean with gray marbling and small decorative bubbles."
+  },
+  "review": {
+    "visual": "Inspected onecreamivory kidneycandy faintgraymarbling goldbotanicalmark andattachedsmallbubbleaccent. Clearlydistinct currentfourcolorfamily, no bubblebackground/text/jar/UI/newflavors.",
+    "limitations": [
+      "Output1254square not1024requested.",
+      "Subject~81.5%width not65%, right104px needsinsetfor10%margin.",
+      "Goldmotif inheritedroot/leafshape fromearthreference; ivorycolor/bubbleaccent plusDOMname distinguishsoap, nevercoloralone.",
+      "Staticeffectillustrationdoesnotadd independentopening/collection."
+    ]
+  }
+}

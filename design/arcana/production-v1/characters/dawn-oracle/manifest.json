@@ -1,0 +1,52 @@
+{
+  "id": "character-dawn-oracle",
+  "identityId": "dawn-oracle",
+  "direction": "teatro-de-alquimia",
+  "version": "1",
+  "state": "reviewed-standalone-not-integrated",
+  "tool": "built-in imagegen",
+  "source": "master-v1.png",
+  "preparedAsset": "arena-master-v1.png",
+  "prompts": [
+    "prompt-v1.md"
+  ],
+  "references": [
+    "../mist-seer/arena-master-v1.png"
+  ],
+  "dimensions": [
+    1024,
+    1536
+  ],
+  "transparency": {
+    "mode": "RGBA",
+    "alphaMin": 0,
+    "alphaMax": 255,
+    "fullyTransparentPixels": 1143134,
+    "cornerAlpha": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "subjectBoundsAlphaGt20": [
+      216,
+      232,
+      839,
+      1315
+    ]
+  },
+  "preparation": "Deterministic LANCZOS resize1024x1536->819x1229,position102,154 on transparent1024x1536canvas for10%safe margins. Source preserved.",
+  "crop": "none",
+  "pivotNormalized": [
+    0.5,
+    0.856
+  ],
+  "variants": [],
+  "sourceEditable": "Raster alpha master; no layers or rig",
+  "textAlternative": {
+    "es": "Oráculo del Alba, mujer de cabello blanco trenzado, manto crema y rosa, broche del sol, disco de bronce y bastón claro.",
+    "en": "Dawn Oracle, a woman with braided white hair, a cream and rose mantle, sun clasp, bronze disc and pale staff."
+  },
+  "review": "Inspected whitecomposite: warm olderface, longwhitebraid, creamrose solarcloak and disc distinguish from bluegreyMistSeer. Staff moreornate than requested butcoherent, subtleamberfinialwithoutglow. Completefeetnaturalhands/noletters. Realalpha confirmed. Currentname neutral/context hasnoexplicitgender. Actualthumbnail/mobileintegration pending.",
+  "sha256": "7b92bd97feac2e649c84c27453cfadbefd2ecf3ee8028979ec1060027c29e97c"
+}

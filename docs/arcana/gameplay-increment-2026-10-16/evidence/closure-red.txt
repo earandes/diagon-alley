@@ -1,0 +1,24 @@
+
+ RUN  v5.0.3 /Users/enricarandes/work/diagon-alley
+
+ ❯ tests/domain/arcana/expedition-closure-a63.test.ts (0 test)
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/domain/arcana/expedition-closure-a63.test.ts [ tests/domain/arcana/expedition-closure-a63.test.ts ]
+Error: Cannot find module '../../../src/arcana/application/client/expedition-closure' imported from /Users/enricarandes/work/diagon-alley/tests/domain/arcana/expedition-closure-a63.test.ts
+ ❯ tests/domain/arcana/expedition-closure-a63.test.ts:2:1
+      1| import { describe, expect, it } from 'vitest';
+      2| import { expeditionClosure } from '../../../src/arcana/application/cli…
+       | ^
+      3| import type { GameState } from '../../../src/arcana/application/game';
+      4| import type { NodeReceipt } from '../../../src/arcana/application/run-…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  no tests
+   Start at  01:21:18
+   Duration  84ms (worker 97%, environment 3%)
+

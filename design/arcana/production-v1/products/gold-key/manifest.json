@@ -1,0 +1,60 @@
+{
+  "id": "gold-key",
+  "identity": "gold-key",
+  "function": "Existing gold key inventory/receipt and vault consumption illustration",
+  "version": "1",
+  "status": "illustration-reviewed-runtime-framing-pending",
+  "path": "original-v1.png",
+  "author": "OpenAI integrated imagegen",
+  "tool": "image_gen.imagegen built-in",
+  "prompt": "prompt-v1.md",
+  "references": [
+    "../core-dragon/original-v1.png"
+  ],
+  "provenance": "Original antiquegold botanicalacornkeyillustration",
+  "sourceAvailable": "original-v1.png; prompt-v1.md",
+  "editableLayers": false,
+  "rig": false,
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "requestedDimensions": [
+    1024,
+    1024
+  ],
+  "crop": "full source preserved",
+  "pivot": [
+    0.5,
+    0.5
+  ],
+  "variants": [],
+  "transparency": {
+    "realAlpha": true,
+    "mode": "RGBA",
+    "range": [
+      0,
+      255
+    ],
+    "fullyTransparentPixels": 1216812,
+    "totalPixels": 1572516,
+    "bodyBoundingBoxAlpha16": [
+      109,
+      102,
+      1158,
+      1163
+    ]
+  },
+  "alt": {
+    "es": "Llave dorada antigua con bellota y hojas en la cabeza y tres dientes.",
+    "en": "Antique gold key with an acorn and leaves on its bow and three teeth."
+  },
+  "review": {
+    "visual": "Inspected full heavygoldkey originalacornbotanicalbow and threeclearlyvisibleplainteeth. Warmantiquebrassgouache no text/logo/UI/lock/chain.",
+    "limitations": [
+      "Output1254square not1024requested.",
+      "Margins~91–109pixelsbelow10%target; rendererinsetrequired.",
+      "Artrepresents existinggoldkey only, doesnotimplyduplicateexchange ornewcurrency."
+    ]
+  }
+}

@@ -1,0 +1,19 @@
+[WebServer] (node:34212) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:34238) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 6 tests using 1 worker
+
+(node:34239) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  1 [chromium] › tests/browser-arcana/arena-a63.spec.ts:7:3 › A63 simultaneous 3–5 actors, no spoiler and inspector in es (4.0s)
+  ✓  2 [chromium] › tests/browser-arcana/arena-a63.spec.ts:7:3 › A63 simultaneous 3–5 actors, no spoiler and inspector in en (3.8s)
+  ✓  3 [chromium] › tests/browser-arcana/arena-a63.spec.ts:146:1 › A63 replay controls, reduced, missing renderer, assets and enlarged text preserve record (8.0s)
+(node:34357) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  4 [webkit] › tests/browser-arcana/arena-a63.spec.ts:7:3 › A63 simultaneous 3–5 actors, no spoiler and inspector in es (4.7s)
+  ✓  5 [webkit] › tests/browser-arcana/arena-a63.spec.ts:7:3 › A63 simultaneous 3–5 actors, no spoiler and inspector in en (4.2s)
+  ✓  6 [webkit] › tests/browser-arcana/arena-a63.spec.ts:146:1 › A63 replay controls, reduced, missing renderer, assets and enlarged text preserve record (7.5s)
+
+  6 passed (33.6s)

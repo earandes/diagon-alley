@@ -1,0 +1,24 @@
+{
+  "id": "morgana",
+  "name": "Minerva McGonagall",
+  "master": "design/diagon-alley/illustrated-v2/samples/morgana.png",
+  "sha256": "6dd74ef750dfc0404fb6a874d6a34859f96800789aa33ceb2ea96675ccd6b2e3",
+  "seed": 58104,
+  "promptFile": "design/diagon-alley/illustrated-v2/prompts/morgana.txt",
+  "model": "mlx-community/flux2-klein-4b-4bit",
+  "modelRevision": "860e87183ceb29e39627c0612ebd66d8ea66e68c",
+  "steps": 4,
+  "guidance": 1.0,
+  "width": 768,
+  "height": 1024,
+  "generationSeconds": 33.15,
+  "loadSeconds": 0.74,
+  "tool": {
+    "mflux": "0.22.0",
+    "mlx": "0.32.4"
+  },
+  "cashCost": 0,
+  "generationMode": "offline local Metal text-to-image",
+  "gpuPeakMemoryBytes": 9420224176,
+  "status": "sample awaiting coordinator visual review"
+}

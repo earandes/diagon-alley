@@ -1,0 +1,63 @@
+{
+  "id": "character-dew-alchemist",
+  "identityId": "dew-alchemist",
+  "name": {
+    "es": "Alquimista del Rocío",
+    "en": "Dew Alchemist"
+  },
+  "direction": "teatro-de-alquimia",
+  "version": "1",
+  "state": "reviewed-standalone-not-integrated",
+  "tool": "built-in imagegen",
+  "source": "master-v2.png",
+  "initialGeneration": "master-v1.png",
+  "preparedAsset": "arena-master-v1.png",
+  "prompts": [
+    "prompt-v1.md",
+    "prompt-v2.md"
+  ],
+  "references": [
+    "../../../concepts-2026-10-14/teatro-de-alquimia.png",
+    "../apprentice/arena-master-v1.png"
+  ],
+  "dimensions": [
+    1024,
+    1536
+  ],
+  "transparency": {
+    "mode": "RGBA",
+    "alphaMin": 0,
+    "alphaMax": 255,
+    "fullyTransparentPixels": 1140807,
+    "cornerAlpha": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "subjectBoundsAlphaGt20": [
+      150,
+      162,
+      875,
+      1373
+    ]
+  },
+  "preparation": "Deterministic LANCZOS resize 1024x1536 -> 850x1275, positioned [75,138] on transparent 1024x1536 canvas for >=10% safe margins. No painted changes. Sources preserved.",
+  "crop": "none",
+  "pivotNormalized": [
+    0.5,
+    0.895
+  ],
+  "variants": [],
+  "sourceEditable": "Raster alpha master; no layers or rig",
+  "textAlternative": {
+    "es": "Alquimista del Rocío, mago rubio con abrigo salvia claro y chaleco crema, sosteniendo un frasco de rocío.",
+    "en": "Dew Alchemist, a blond mage in a pale sage coat and cream vest, holding a round dew flask."
+  },
+  "review": "Inspected initial, edited and prepared image. Initial face too close to apprentice/dark coat; targeted edit gives narrower mature face and light sage/mint outer coat. Blond hair, round glass dew flask held in both hands, wand at belt and pale palette distinguish from apprentice. Complete feet and natural hands. Teatro painterly coherence. Integration and actual miniature readability remain to be verified.",
+  "originalGenerationPaths": [
+    "/Users/enricarandes/.codex/generated_images/01a13af8-fd53-7331-8146-bb20ec42fa6b/exec-38cffcfc-1617-4d74-b92c-02c6b5976f54.png",
+    "/Users/enricarandes/.codex/generated_images/01a13af8-fd53-7331-8146-bb20ec42fa6b/exec-97392fa6-ad69-4f19-a84f-078c2f9e9283.png"
+  ],
+  "sha256": "5060a9264529c602130d19da1687a10d3f7812cd490ad4ff54e74f925e4e08cf"
+}

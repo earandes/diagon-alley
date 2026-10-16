@@ -1,0 +1,29 @@
+# A60 · Mapa y preparación de nodo
+
+15 octubre 2026. Contrato previo a la edición, limitado a presentación; comentarios 6–9 de Enric y contrato A60.
+
+Estado inicial: seis iconos A59 sobre el fondo detallado compiten con fachadas/lámparas. El nodo de fila cero es un evento Pacto real, no el personaje de salida. Los visitados ya están deshabilitados; no se eliminará ese primer evento ni se interpretará como un reclutamiento regalado.
+
+Cambio previsto: cada tipo conserva su ilustración, pero adquiere un medallón oscuro de material/color propio, contorno y señal de estado separada. Ruta disponible más legible mediante halo y marca direccional, con pulso de entrada finito (2 ciclos) y estático en movimiento reducido. El mapa completo conserva sus coordenadas adaptativas y su grafo autoritativo. Una marca de Inicio con retrato del líder, fuera del grafo y sin control interactivo, distingue salida y primer evento. La lista accesible continúa ofreciendo los mismos nodos y estados.
+
+La preparación de nodo tendrá objetos/retrato centrales, recompensas agrupadas y elecciones compactas; el coordinador integra el dialog y la única confirmación final. Solo se seleccionan opciones ya existentes. Pacto explica visualmente temporal mediante reloj y una línea breve; Cofre previsualiza contenido confirmado por la acción final. No hay gasto ni entrega al mostrar o escoger opciones. Errores/cancelación conservan comportamiento.
+
+Persistencia: ningún archivo de dominio, aplicación o infraestructura cambia. Sin precios, pesos, semillas, copias, grafos o partidas nuevos. Recurso ausente conserva símbolo, nombre accesible y acciones. ES/EN con nombres/costes a demanda; sin texto funcional dentro de imágenes.
+
+Aceptación previa: seis materiales y siluetas legibles; objetivos ≥44 px; Inicio no es un botón y no elimina el primer Pacto; todos los eventos conservan IDs; visitados no invitan a ejecutar; teclado y lista equivalentes; mapa sin scroll a 390/911/1280 y orientación corta; reducido sin pulso/entrada. Pruebas SSR focales y revisión real en navegador aislado posterior, sin presentar automatización como sesión con usuarios. No usar puerto 5194, servicios de pago o nuevos paquetes.
+
+## Implementación del bloque
+
+`MapPanel.tsx`/`map-a60.css`: seis fondos opacos y bordes de forma/color distintos, ilustración al 91% del medallón; disponibles con doble borde oro y flecha, visitados con borde discontinuo/sello, bloqueados sin halo. El pulso de entrada dura 1,8 s (dos ciclos) y se suprime por preferencia propia/sistema. Solo las aristas alcanzables ganan contorno oscuro y puntos oro estáticos. Origen HTML/SVG puramente visual, retrato del primer miembro propio o líder temporal existente, sin ID de evento ni handler; los dieciséis eventos reales permanecen intactos. La lista conserva los mismos controles/IDs.
+
+`NodePreparation.tsx`/`node-a60.css`: API intacta, `data-event-kind` nuevo; CSS actúa dentro de `node-event-dialog` que integra el coordinador. Retrato del aliado con reloj, alternativas compactas y sello de selección, cantidades en peanas para loot y oponentes/reparación agrupados. Ningún comando nuevo al previsualizar/seleccionar.
+
+Comprobación focal: `npx --no-install vitest run tests/domain/arcana/map-presentation-a60.test.ts tests/domain/arcana/map-layout.test.ts tests/domain/arcana/node-options.test.ts`: 8/8 correctos (4 SSR nuevos + 4 preexistentes). El SSR sustituye exclusivamente el renderer Canvas cliente por un doble, por tanto comprueba semántica/IDs/disabled/inmutabilidad; no píxeles Pixi, rendimiento o interacciones reales. Primer intento SSR falló por `Missing getServerSnapshot` en renderer existente; corregido el harness, sin atribuir ese fallo a un RED de comportamiento previo. Logs conservados en `qa/map-*.txt`. Comprobación visual real pendiente al registrar esta nota.
+
+## Pacto con una acción e inspección real
+
+Se amplía `NodePreparation` con `onResolve?: (options: NodeOptions) => void`. Con menos de cinco miembros, Reclutar/Pasar son acciones explícitas y llaman al resolver una vez; Pasar sigue deshabilitado con menos de tres aliados. Con cinco miembros se conserva selección de reemplazo/confirmación; sin prop, el caller conserva el flujo de selección anterior. Cuatro SSR nuevos comprueban ambas ramas ES/EN, bloqueo y ausencia de comandos al renderizar. No se presentan como pruebas de clic.
+
+Inspección técnica en DEV propio 5276, namespace `a60-map-qa-5276`, contextos nuevos aislados Chromium/WebKit y ES/EN: 20 perfiles (911×1079,1280×900,390×844,320×568,844×390) y 32 capturas finales en `map-review/`. Mapa completo sin scroll, nodos ≥44 px y dentro del área, seis materiales diferenciados, Inicio no interactivo/sin solapamientos. Teclado abre el evento, Escape cancela y devuelve foco. Reducido elimina el pulso. Recarga/cancelación conservan exactamente estado autoritativo.
+
+En los cuatro contextos, un clic Reclutar produce exactamente un POST `/api/nodes/advance`, añade un temporal, mantiene copias e inventario y deja el primer Pacto visitado/deshabilitado. Cofre se previsualiza y cancela sin mutar. Script reproducible `tools/arcana/a60-map-review.mjs`, log `qa/map-browser-second.txt` y mediciones `map-review/profiles.json`. La primera serie `map-review-initial/` se conserva como evidencia intermedia; una captura del diálogo se tomó antes de terminar entrada/decodificación y mostró texto Cancelar por un fallback CSS heredado. El coordinador corrigió ese fallback; la segunda serie espera imágenes y finaliza animaciones para capturar el estado de reposo. No son 56 diseños distintos ni prueba con usuarios. No se midieron FPS en este bloque. Browser/contextos cerrados y servidor propio detenido; puerto/partida 5194 intactos. Integración A60 completa y medición final serial corresponden al coordinador.

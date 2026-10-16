@@ -1,0 +1,30 @@
+{
+  "model": "mlx-community/flux2-klein-4b-4bit",
+  "revision": "860e87183ceb29e39627c0612ebd66d8ea66e68c",
+  "mode": "text-to-image-first-samples",
+  "width": 768,
+  "height": 1024,
+  "steps": 4,
+  "guidance": 1.0,
+  "referenceInspection": [
+    "src/arcana/presentation/content-packs/diagon-alley/art/scene/diagon-alley.webp",
+    "src/arcana/presentation/content-packs/diagon-alley/art/scene/sweetshop.webp"
+  ],
+  "samples": {
+    "apprentice": {
+      "name": "Harry Potter",
+      "seed": 58101,
+      "prompt": "Painterly editorial gouache and delicate oil-glaze illustration on warm textured cotton paper for a beautifully crafted wizard trading card game. Three-quarter chest-up portrait, character centered from top of head to lower ribs, natural realistic facial anatomy and carefully painted hair, tactile woven clothing, hand painted depth and volume, warm amber window light from upper left, muted indigo shadow, a restrained palette of mahogany, midnight violet, old gold and parchment ivory. Mature illustrated storybook art, visible fine brushwork and rich material detail. Plain unmarked dark muted plum studio backdrop, no architecture. Complete head with comfortable margin on all sides. This is an original book-inspired character interpretation, not a photograph, not an actor likeness, not a movie still, not a flat vector cartoon. No border, no lettering, no writing, no logos, no watermark. Hands outside the lower crop. Harry Potter, a thirteen-year-old British boy with a slim youthful face, slightly unruly jet-black hair that falls naturally in separate locks, bright green eyes behind delicate small round black wire glasses and a subtle lightning-shaped scar on his forehead. He wears a white cotton school shirt, burgundy and antique-gold striped tie and scarf under a well-worn charcoal school robe. Curious determined expression, head turned slightly toward the right, shoulders at a three-quarter angle. Teenage proportions and recognizably young facial structure, quiet hopeful warmth."
+    },
+    "circe": {
+      "name": "Hermione Granger",
+      "seed": 58102,
+      "prompt": "Painterly editorial gouache and delicate oil-glaze illustration on warm textured cotton paper for a beautifully crafted wizard trading card game. Three-quarter chest-up portrait, character centered from top of head to lower ribs, natural realistic facial anatomy and carefully painted hair, tactile woven clothing, hand painted depth and volume, warm amber window light from upper left, muted indigo shadow, a restrained palette of mahogany, midnight violet, old gold and parchment ivory. Mature illustrated storybook art, visible fine brushwork and rich material detail. Plain unmarked dark muted plum studio backdrop, no architecture. Complete head with comfortable margin on all sides. This is an original book-inspired character interpretation, not a photograph, not an actor likeness, not a movie still, not a flat vector cartoon. No border, no lettering, no writing, no logos, no watermark. Hands outside the lower crop. Hermione Granger, a thirteen-year-old British girl with a distinctive thoughtful oval face, soft hazel-brown eyes, a slightly wider youthful smile and exceptionally voluminous chestnut-brown wavy hair with loose flyaways around her cheeks and shoulders. She wears a white school shirt, burgundy and antique-gold striped tie, thick knitted cardigan and charcoal school robe. A closed worn burgundy book is tucked under one arm at the lower edge without showing fingers. Keen intelligent expression, shoulders turned slightly to the left. Young teenage appearance, clearly different face from Harry, not a boy and not an adult woman."
+    },
+    "merlin": {
+      "name": "Albus Dumbledore",
+      "seed": 58103,
+      "prompt": "Painterly editorial gouache and delicate oil-glaze illustration on warm textured cotton paper for a beautifully crafted wizard trading card game. Three-quarter chest-up portrait, character centered from top of head to lower ribs, natural realistic facial anatomy and carefully painted hair, tactile woven clothing, hand painted depth and volume, warm amber window light from upper left, muted indigo shadow, a restrained palette of mahogany, midnight violet, old gold and parchment ivory. Mature illustrated storybook art, visible fine brushwork and rich material detail. Plain unmarked dark muted plum studio backdrop, no architecture. Complete head with comfortable margin on all sides. This is an original book-inspired character interpretation, not a photograph, not an actor likeness, not a movie still, not a flat vector cartoon. No border, no lettering, no writing, no logos, no watermark. Hands outside the lower crop. Albus Dumbledore, a very elderly wizard with a long slender face, naturally weathered cheeks, finely drawn wrinkles, a prominent crooked nose, kind bright blue eyes behind delicate half-moon spectacles, flowing silver-white hair and an exceptionally long elegant white beard. A tall softly bent midnight-violet wizard hat with restrained embroidered gold stars, rich violet velvet robes with intricate antique-gold embroidery. Gentle knowing smile and quiet dignity, three-quarter view turned slightly right. Clearly eighty-plus years old, long narrow elderly facial structure, no resemblance to the two young students."
+    }
+  }
+}

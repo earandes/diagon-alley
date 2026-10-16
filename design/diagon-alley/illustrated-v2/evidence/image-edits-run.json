@@ -1,0 +1,47 @@
+{
+  "edits": [
+    {
+      "id": "storm-caller",
+      "master": "design/diagon-alley/illustrated-v2/samples/storm-caller_2.png",
+      "sha256": "cac046266a65c76e1d427ae5b60ba536c0a64a9a4185e9f50de705dfba0cf24d",
+      "metadataPath": "design/diagon-alley/illustrated-v2/samples/storm-caller_2.metadata.json",
+      "seed": 582001,
+      "generationSeconds": 109.89,
+      "gpuPeakMemoryBytes": 9490853040,
+      "references": [
+        "/Users/enricarandes/work/diagon-alley/design/diagon-alley/illustrated-v2/rejected/storm-caller-second.png",
+        "/Users/enricarandes/work/diagon-alley/design/diagon-alley/illustrated-v2/masters/circe.png"
+      ],
+      "cashCost": 0
+    },
+    {
+      "id": "night-forger",
+      "master": "design/diagon-alley/illustrated-v2/samples/night-forger_2.png",
+      "sha256": "ea2b3d0bee846b872c03509167ee86e64920258fb33c9af1f27a4899bc25e00c",
+      "metadataPath": "design/diagon-alley/illustrated-v2/samples/night-forger_2.metadata.json",
+      "seed": 582002,
+      "generationSeconds": 77.08,
+      "gpuPeakMemoryBytes": 9490853040,
+      "references": [
+        "/Users/enricarandes/work/diagon-alley/design/diagon-alley/illustrated-v2/rejected/night-forger-second.png"
+      ],
+      "cashCost": 0
+    },
+    {
+      "id": "root-speaker",
+      "master": "design/diagon-alley/illustrated-v2/samples/root-speaker_2.png",
+      "sha256": "93344d66609cea5f1364737735b12284385ea83caf0f169aa9aa63042e010896",
+      "metadataPath": "design/diagon-alley/illustrated-v2/samples/root-speaker_2.metadata.json",
+      "seed": 582003,
+      "generationSeconds": 75.16,
+      "gpuPeakMemoryBytes": 9490853040,
+      "references": [
+        "/Users/enricarandes/work/diagon-alley/design/diagon-alley/illustrated-v2/rejected/root-speaker-second.png"
+      ],
+      "cashCost": 0
+    }
+  ],
+  "interrupted": "veil-walker edit intentionally stopped before completing; accepted text variant already exists.",
+  "trackingCorrection": "Actual suffixed PNGs and native metadata verified by SHA; no nominal output assumed.",
+  "cashCost": 0
+}

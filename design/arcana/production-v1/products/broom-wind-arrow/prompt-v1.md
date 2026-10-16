@@ -1,0 +1,7 @@
+Use case: illustration-story
+Asset type: original WIND ARROW broom equipment sprite for ARCANA.
+Image1 STYLEreferenceonly: selectedTeatro richwarmgouache, diagonalbroom family. Newbroommustbe visiblydifferentfrom thickgoldfanZephyr2000 andplainCadet.
+Subject: ONE gracefullycurved lightwillowwoodbroom. Narrowlithe palehoneywoodshaft curvinggentlyatupperhandle, slender cream-and-forestgreen wovenhandlewrap. Lowerend a narrowLONGfeatherlike tapered fan ofwarmcopperbristles, streamlined anddelicate, boundbyoriginal brassWING-shapedclasp. Finelypainted elongatedcopperfiberlines. Lightweightairyappearance, clearlydifferentfromdarkstraightshaft/thickbrightgoldbristlefan of reference.
+Composition: fullbroom diagonal lowerleftnarrowbristles to upperrightcurvedhandle,1024nominalsquare transparentcanvas. Safecentered with10%margins everyedge andcompleteoutline/tip. No externalcastshadow or flighttrails.
+Style: originalTeatro theatricalstorybook handpaintedgouache, dimensionalpalegrain wovenwrap andwarmmetalleafwingcraftsmanship, warmupperleftamberlight. Notphotoreal3D orflatgeometry.
+Avoid: film/franchise replicadesigns, embeddedwordsnumbersnamestextlogosstatswatermark, riderhandspeople, scene/box/UI/extraobjects. Existingmodelnameeffect remainsseparateDOM. Deliveronespriteonly.

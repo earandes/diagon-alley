@@ -1,0 +1,194 @@
+
+Running 16 tests using 1 worker
+
+(node:43698) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 [chromium-a63] › tests/browser-trial/gameplay-increment-a63.spec.ts:17:1 › A63 repeated boss keeps previous stock separate from the new reward (11.5s)
+  ✓   2 [chromium-a63] › tests/browser-trial/gameplay-increment-a63.spec.ts:41:1 › A63 earned frog recovers lost response and reload during reveal without another charge (5.2s)
+  ✓   3 [chromium-a63] › tests/browser-trial/gameplay-increment-a63.spec.ts:71:3 › A63 closing journey uses earned loot then starts deliberately es diagon-alley (12.4s)
+  ✓   4 [chromium-a63] › tests/browser-trial/gameplay-increment-a63.spec.ts:71:3 › A63 closing journey uses earned loot then starts deliberately es arcana (5.8s)
+  ✓   5 [chromium-a63] › tests/browser-trial/gameplay-increment-a63.spec.ts:71:3 › A63 closing journey uses earned loot then starts deliberately en diagon-alley (12.3s)
+  ✓   6 [chromium-a63] › tests/browser-trial/gameplay-increment-a63.spec.ts:71:3 › A63 closing journey uses earned loot then starts deliberately en arcana (6.4s)
+  ✓   7 [chromium-a63] › tests/browser-trial/gameplay-increment-a63.spec.ts:145:3 › A63 two tabs dismiss a node resolved elsewhere without another operation es (2.2s)
+  ✓   8 [chromium-a63] › tests/browser-trial/gameplay-increment-a63.spec.ts:145:3 › A63 two tabs dismiss a node resolved elsewhere without another operation en (2.5s)
+(node:44218) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   9 [webkit-a63] › tests/browser-trial/gameplay-increment-a63.spec.ts:17:1 › A63 repeated boss keeps previous stock separate from the new reward (8.6s)
+  ✘  10 [webkit-a63] › tests/browser-trial/gameplay-increment-a63.spec.ts:41:1 › A63 earned frog recovers lost response and reload during reveal without another charge (9.8s)
+(node:44337) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  11 [webkit-a63] › tests/browser-trial/gameplay-increment-a63.spec.ts:71:3 › A63 closing journey uses earned loot then starts deliberately es diagon-alley (10.9s)
+  ✓  12 [webkit-a63] › tests/browser-trial/gameplay-increment-a63.spec.ts:71:3 › A63 closing journey uses earned loot then starts deliberately es arcana (4.6s)
+  ✓  13 [webkit-a63] › tests/browser-trial/gameplay-increment-a63.spec.ts:71:3 › A63 closing journey uses earned loot then starts deliberately en diagon-alley (11.5s)
+  ✘  14 [webkit-a63] › tests/browser-trial/gameplay-increment-a63.spec.ts:71:3 › A63 closing journey uses earned loot then starts deliberately en arcana (6.2s)
+(node:44612) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  15 [webkit-a63] › tests/browser-trial/gameplay-increment-a63.spec.ts:145:3 › A63 two tabs dismiss a node resolved elsewhere without another operation es (5.8s)
+(node:44685) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  16 [webkit-a63] › tests/browser-trial/gameplay-increment-a63.spec.ts:145:3 › A63 two tabs dismiss a node resolved elsewhere without another operation en (5.9s)
+
+
+  1) [webkit-a63] › tests/browser-trial/gameplay-increment-a63.spec.ts:41:1 › A63 earned frog recovers lost response and reload during reveal without another charge 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByRole('button', { name: 'Recuperar operación', exact: true })
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" getByRole('button', { name: 'Recuperar operación', exact: true }) with timeout 5000ms
+      - waiting for getByRole('button', { name: 'Recuperar operación', exact: true })
+
+
+      53 |   });
+      54 |   await page.locator('[data-closure-action="frog"]').click();
+    > 55 |   await expect(page.getByRole('button', { name: 'Recuperar operación', exact: true })).toBeVisible();
+         |                                                                                        ^
+      56 |   await expect(page.locator('.reveal')).toHaveCount(0);
+      57 |   const committed = await readGame(page);
+      58 |   expect(committed.copies).toHaveLength(before.copies.length + 1);
+        at /Users/enricarandes/work/diagon-alley/tests/browser-trial/gameplay-increment-a63.spec.ts:55:88
+
+    attachment #1: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results-gameplay-a63/gameplay-increment-a63-A63-bf105-veal-without-another-charge-webkit-a63/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results-gameplay-a63/gameplay-increment-a63-A63-bf105-veal-without-another-charge-webkit-a63/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results-gameplay-a63/gameplay-increment-a63-A63-bf105-veal-without-another-charge-webkit-a63/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results-gameplay-a63/gameplay-increment-a63-A63-bf105-veal-without-another-charge-webkit-a63/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) [webkit-a63] › tests/browser-trial/gameplay-increment-a63.spec.ts:71:3 › A63 closing journey uses earned loot then starts deliberately en arcana 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: locator('[data-expedition-preparation="new"]')
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" locator('[data-expedition-preparation="new"]') with timeout 5000ms
+      - waiting for locator('[data-expedition-preparation="new"]')
+
+
+       at game-fixture.ts:25
+
+      23 | export async function startExpedition(page: Page, language: 'es' | 'en' = 'es') {
+      24 |   const preparation = page.locator('[data-expedition-preparation="new"]');
+    > 25 |   await expect(preparation).toBeVisible();
+         |                             ^
+      26 |   const first = preparation.locator('.preparation-card').first();
+      27 |   await expect(first).toBeVisible();
+      28 |   if ((await first.getAttribute('aria-pressed')) !== 'true') await first.click();
+        at startExpedition (/Users/enricarandes/work/diagon-alley/tests/browser-trial/game-fixture.ts:25:29)
+        at /Users/enricarandes/work/diagon-alley/tests/browser-trial/gameplay-increment-a63.spec.ts:79:11
+
+    attachment #1: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results-gameplay-a63/gameplay-increment-a63-A63-94688-arts-deliberately-en-arcana-webkit-a63/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results-gameplay-a63/gameplay-increment-a63-A63-94688-arts-deliberately-en-arcana-webkit-a63/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results-gameplay-a63/gameplay-increment-a63-A63-94688-arts-deliberately-en-arcana-webkit-a63/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results-gameplay-a63/gameplay-increment-a63-A63-94688-arts-deliberately-en-arcana-webkit-a63/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  3) [webkit-a63] › tests/browser-trial/gameplay-increment-a63.spec.ts:145:3 › A63 two tabs dismiss a node resolved elsewhere without another operation es 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: locator('[data-expedition-preparation="new"]')
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" locator('[data-expedition-preparation="new"]') with timeout 5000ms
+      - waiting for locator('[data-expedition-preparation="new"]')
+
+
+       at game-fixture.ts:25
+
+      23 | export async function startExpedition(page: Page, language: 'es' | 'en' = 'es') {
+      24 |   const preparation = page.locator('[data-expedition-preparation="new"]');
+    > 25 |   await expect(preparation).toBeVisible();
+         |                             ^
+      26 |   const first = preparation.locator('.preparation-card').first();
+      27 |   await expect(first).toBeVisible();
+      28 |   if ((await first.getAttribute('aria-pressed')) !== 'true') await first.click();
+        at startExpedition (/Users/enricarandes/work/diagon-alley/tests/browser-trial/game-fixture.ts:25:29)
+        at /Users/enricarandes/work/diagon-alley/tests/browser-trial/gameplay-increment-a63.spec.ts:151:11
+
+    attachment #1: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results-gameplay-a63/gameplay-increment-a63-A63-25ebf-ithout-another-operation-es-webkit-a63/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results-gameplay-a63/gameplay-increment-a63-A63-25ebf-ithout-another-operation-es-webkit-a63/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results-gameplay-a63/gameplay-increment-a63-A63-25ebf-ithout-another-operation-es-webkit-a63/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results-gameplay-a63/gameplay-increment-a63-A63-25ebf-ithout-another-operation-es-webkit-a63/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  4) [webkit-a63] › tests/browser-trial/gameplay-increment-a63.spec.ts:145:3 › A63 two tabs dismiss a node resolved elsewhere without another operation en 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: locator('[data-expedition-preparation="new"]')
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" locator('[data-expedition-preparation="new"]') with timeout 5000ms
+      - waiting for locator('[data-expedition-preparation="new"]')
+
+
+       at game-fixture.ts:25
+
+      23 | export async function startExpedition(page: Page, language: 'es' | 'en' = 'es') {
+      24 |   const preparation = page.locator('[data-expedition-preparation="new"]');
+    > 25 |   await expect(preparation).toBeVisible();
+         |                             ^
+      26 |   const first = preparation.locator('.preparation-card').first();
+      27 |   await expect(first).toBeVisible();
+      28 |   if ((await first.getAttribute('aria-pressed')) !== 'true') await first.click();
+        at startExpedition (/Users/enricarandes/work/diagon-alley/tests/browser-trial/game-fixture.ts:25:29)
+        at /Users/enricarandes/work/diagon-alley/tests/browser-trial/gameplay-increment-a63.spec.ts:151:11
+
+    attachment #1: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results-gameplay-a63/gameplay-increment-a63-A63-9da3b-ithout-another-operation-en-webkit-a63/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results-gameplay-a63/gameplay-increment-a63-A63-9da3b-ithout-another-operation-en-webkit-a63/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results-gameplay-a63/gameplay-increment-a63-A63-9da3b-ithout-another-operation-en-webkit-a63/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results-gameplay-a63/gameplay-increment-a63-A63-9da3b-ithout-another-operation-en-webkit-a63/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  4 failed
+    [webkit-a63] › tests/browser-trial/gameplay-increment-a63.spec.ts:41:1 › A63 earned frog recovers lost response and reload during reveal without another charge 
+    [webkit-a63] › tests/browser-trial/gameplay-increment-a63.spec.ts:71:3 › A63 closing journey uses earned loot then starts deliberately en arcana 
+    [webkit-a63] › tests/browser-trial/gameplay-increment-a63.spec.ts:145:3 › A63 two tabs dismiss a node resolved elsewhere without another operation es 
+    [webkit-a63] › tests/browser-trial/gameplay-increment-a63.spec.ts:145:3 › A63 two tabs dismiss a node resolved elsewhere without another operation en 
+  12 passed (2.1m)

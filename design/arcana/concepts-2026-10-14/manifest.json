@@ -1,0 +1,71 @@
+{
+  "version": 1,
+  "date": "2026-10-14",
+  "selection": {
+    "id": "teatro",
+    "visibleOrder": 1,
+    "selectedBy": "Enric",
+    "date": "2026-10-14",
+    "evidence": "en ese caso escojamos la opcion 1",
+    "presentationRequirement": "Content, illustrations, moving pieces and animation parameters must remain replaceable independently of game rules."
+  },
+  "concepts": [
+    {
+      "id": "teatro",
+      "name": "Teatro de alquimia",
+      "visibleOrder": 1,
+      "status": "selected-direction-not-final-assets",
+      "path": "design/arcana/concepts-2026-10-14/teatro-de-alquimia.png",
+      "width": 853,
+      "height": 1844,
+      "sha256": "07ef9e505801b1e51c1dbe27496a359deb82bdba81a7e964d9d7c3ddfa2953df",
+      "tool": "imagegen integrated",
+      "prompt": "design/arcana/concepts-2026-10-14/teatro-prompt.md",
+      "references": [
+        "docs/arcana/auditoria-2026-10-14/capturas/05-confiteria-es.png",
+        "docs/arcana/auditoria-2026-10-14/capturas/07-cromo-confirmado-es.png"
+      ],
+      "note": "Static image concept; UI text will be DOM in implementation; no layered paint or rig delivered",
+      "sampleIdentity": "merlin",
+      "sampleOutcome": "illustration sample, not drawn reward"
+    },
+    {
+      "id": "grabados",
+      "name": "Gabinete de grabados",
+      "visibleOrder": 2,
+      "status": "alternative-not-selected",
+      "path": "design/arcana/concepts-2026-10-14/gabinete-de-grabados.png",
+      "width": 853,
+      "height": 1844,
+      "sha256": "a2d97de6fef733ee788c91be65372d2b0ae9d8d24dcfc7f421f55799c64930b0",
+      "tool": "imagegen integrated",
+      "prompt": "design/arcana/concepts-2026-10-14/grabados-prompt.md",
+      "references": [
+        "docs/arcana/auditoria-2026-10-14/capturas/05-confiteria-es.png",
+        "docs/arcana/auditoria-2026-10-14/capturas/07-cromo-confirmado-es.png"
+      ],
+      "note": "Static image concept; UI text will be DOM in implementation; no layered paint or rig delivered",
+      "sampleIdentity": "merlin",
+      "sampleOutcome": "illustration sample, not drawn reward"
+    },
+    {
+      "id": "luz",
+      "name": "Luz del Bulevar",
+      "visibleOrder": 3,
+      "status": "alternative-not-selected",
+      "path": "design/arcana/concepts-2026-10-14/luz-del-bulevar.png",
+      "width": 853,
+      "height": 1844,
+      "sha256": "ece47bf33897668ff45be80851315b7312c6b7f9087ddcb92f581695d7e88e4b",
+      "tool": "imagegen integrated",
+      "prompt": "design/arcana/concepts-2026-10-14/luz-prompt.md",
+      "references": [
+        "docs/arcana/auditoria-2026-10-14/capturas/05-confiteria-es.png",
+        "docs/arcana/auditoria-2026-10-14/capturas/07-cromo-confirmado-es.png"
+      ],
+      "note": "Static image concept; UI text will be DOM in implementation; no layered paint or rig delivered",
+      "sampleIdentity": "merlin",
+      "sampleOutcome": "illustration sample, not drawn reward"
+    }
+  ]
+}

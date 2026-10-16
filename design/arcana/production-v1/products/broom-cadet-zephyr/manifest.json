@@ -1,0 +1,60 @@
+{
+  "id": "broom-cadet-zephyr",
+  "identity": "cadet-zephyr",
+  "function": "Existing Cadet Zephyr initial equipment illustration",
+  "version": "1",
+  "status": "illustration-reviewed-runtime-framing-pending",
+  "path": "original-v1.png",
+  "author": "OpenAI integrated imagegen",
+  "tool": "image_gen.imagegen built-in",
+  "prompt": "prompt-v1.md",
+  "references": [
+    "../wand-birch/original-v1.png"
+  ],
+  "provenance": "Original simplepracticebroomillustration",
+  "sourceAvailable": "original-v1.png; prompt-v1.md",
+  "editableLayers": false,
+  "rig": false,
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "requestedDimensions": [
+    1024,
+    1024
+  ],
+  "crop": "full source preserved",
+  "pivot": [
+    0.6,
+    0.4
+  ],
+  "variants": [],
+  "transparency": {
+    "realAlpha": true,
+    "mode": "RGBA",
+    "range": [
+      0,
+      255
+    ],
+    "fullyTransparentPixels": 1389595,
+    "totalPixels": 1572516,
+    "bodyBoundingBoxAlpha16": [
+      54,
+      50,
+      1202,
+      1214
+    ]
+  },
+  "alt": {
+    "es": "Escoba Céfiro Cadete de madera sencilla y cerdas marrones, unidas con cordón verde y una hoja de latón.",
+    "en": "Cadet Zephyr broom with a plain wooden shaft and brown bristles, bound with green cord and a brass leaf."
+  },
+  "review": {
+    "visual": "Inspected complete originalpracticebroom with plainwoodshaft modestgreenbinding brassleaf andnaturalcocoabristles. No franchisereplica/rider/text/UI; clearinitialequipmentappearance.",
+    "limitations": [
+      "Output1254square not1024requested.",
+      "10%marginsnotpreserved; fullobjectbuttop50right52bottom40left54pixels, rendererinsetneeded.",
+      "Staticequipmentbitmap, no rider/flightanimationrig."
+    ]
+  }
+}

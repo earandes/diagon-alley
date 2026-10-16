@@ -1,0 +1,12 @@
+{
+  "date": "2026-10-16",
+  "base": "a88d923ee6dd0caaeaf55107411fd65ac1419bd4",
+  "npmCi": true,
+  "build": true,
+  "unitTests": 395,
+  "integrationPostgresRedisTests": 40,
+  "artifactVerification": true,
+  "a63CompiledBrowserTests": 16,
+  "ci": "GitHub Actions: verify the run whose headSha matches the published main commit",
+  "deploy": false
+}

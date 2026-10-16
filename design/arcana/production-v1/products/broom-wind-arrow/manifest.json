@@ -1,0 +1,61 @@
+{
+  "id": "broom-wind-arrow",
+  "identity": "wind-arrow",
+  "function": "Existing Wind Arrow broom equipment illustration",
+  "version": "1",
+  "status": "illustration-reviewed-runtime-framing-pending",
+  "path": "original-v1.png",
+  "author": "OpenAI integrated imagegen",
+  "tool": "image_gen.imagegen built-in",
+  "prompt": "prompt-v1.md",
+  "references": [
+    "../broom-zephyr-2000/original-v1.png"
+  ],
+  "provenance": "Original graceful pale willowbroom illustration",
+  "sourceAvailable": "original-v1.png; prompt-v1.md",
+  "editableLayers": false,
+  "rig": false,
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "requestedDimensions": [
+    1024,
+    1024
+  ],
+  "crop": "full source preserved",
+  "pivot": [
+    0.64,
+    0.36
+  ],
+  "variants": [],
+  "transparency": {
+    "realAlpha": true,
+    "mode": "RGBA",
+    "range": [
+      0,
+      255
+    ],
+    "fullyTransparentPixels": 1365432,
+    "totalPixels": 1572516,
+    "bodyBoundingBoxAlpha16": [
+      48,
+      33,
+      1222,
+      1222
+    ]
+  },
+  "alt": {
+    "es": "Escoba Saeta del Viento de madera clara curvada, empuñadura crema y verde y cerdas cobrizas alargadas.",
+    "en": "Wind Arrow broom with curved pale wood, a cream and green grip and elongated copper-colored bristles."
+  },
+  "review": {
+    "visual": "Inspected curvedpalehoneywillowshaft creamgreenwrappedgrip and flowingcopperbristlefan, leafwinglikebrassbinding. VisuallydistinctfromdarkZephyr2000 andsimpleCadet. No text/rider/filmreplica.",
+    "limitations": [
+      "Output1254square not1024requested.",
+      "10%marginsignoredbygenerator; objectcomplete butbounds33..48pixelsfromedges requireinset.",
+      "Decorativeclasp readsasleafwinglike ratherthanliteralfeatherwing; no gameplaychange.",
+      "Singleflattenedequipmentbitmap."
+    ]
+  }
+}

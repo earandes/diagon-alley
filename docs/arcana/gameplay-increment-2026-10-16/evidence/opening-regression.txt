@@ -1,0 +1,54 @@
+
+> coleccion-magica-i1@0.1.0 test:opening
+> playwright test --config playwright.opening.config.ts
+
+[WebServer] (node:43758) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:43783) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] WebSocket server error: Port 24678 is already in use
+[WebServer] (node:43822) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:43847) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] WebSocket server error: Port 24678 is already in use
+
+Running 16 tests using 1 worker
+
+(node:43891) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘   1 [chromium-opening] › tests/browser-opening/cold-opening.spec.ts:134:3 › A60 cold complete buy and opening es (3.4s)
+
+
+  1) [chromium-opening] › tests/browser-opening/cold-opening.spec.ts:134:3 › A60 cold complete buy and opening es 
+
+    Test was interrupted.
+
+    Error: expect(locator).toHaveAttribute(expected) failed
+
+    Locator:  locator('dialog.reveal')
+    Expected: "result"
+    Received: "playing"
+
+    Call log:
+      - Expect "toHaveAttribute" locator('dialog.reveal') with timeout 10000ms
+      - waiting for locator('dialog.reveal')
+        9 × locator resolved to <dialog open="" class="reveal" data-reveal-magic="still" data-opening-state="playing" aria-label="Cromo confirmado" data-rarity="arcane-legendary">…</dialog>
+          - unexpected value "playing"
+      - Test ended.
+
+
+      156 |     await page.waitForTimeout(250);
+      157 |     expect(Number(await magic.getAttribute('data-render-count'))).toBeGreaterThan(firstDraws);
+    > 158 |     await expect(page.locator('dialog.reveal')).toHaveAttribute('data-opening-state', 'result', {
+          |                                                 ^
+      159 |       timeout: 10_000,
+      160 |     });
+      161 |     await mark(page, 'result');
+        at /Users/enricarandes/work/diagon-alley/tests/browser-opening/cold-opening.spec.ts:158:49
+
+    Error Context: test-results-opening/cold-opening-A60-cold-complete-buy-and-opening-es-chromium-opening/error-context.md
+
+  1 interrupted
+    [chromium-opening] › tests/browser-opening/cold-opening.spec.ts:134:3 › A60 cold complete buy and opening es 
+  15 did not run

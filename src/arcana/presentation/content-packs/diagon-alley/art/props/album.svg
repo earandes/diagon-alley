@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><defs>
+<linearGradient id="gold" x2=".8" y2="1"><stop stop-color="#fff1ae"/><stop offset=".3" stop-color="#e9be64"/><stop offset=".7" stop-color="#986023"/><stop offset="1" stop-color="#f0ce7b"/></linearGradient>
+<linearGradient id="plum" x2=".75" y2="1"><stop stop-color="#6d3778"/><stop offset=".5" stop-color="#392047"/><stop offset="1" stop-color="#1b1428"/></linearGradient>
+<linearGradient id="paper" x2=".7" y2="1"><stop stop-color="#faecc7"/><stop offset=".6" stop-color="#d8b67b"/><stop offset="1" stop-color="#94734e"/></linearGradient>
+<radialGradient id="glow"><stop stop-color="#fff8c1" stop-opacity=".9"/><stop offset=".25" stop-color="#e5b2ff" stop-opacity=".4"/><stop offset="1" stop-color="#a663db" stop-opacity="0"/></radialGradient>
+<filter id="shadow" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="12" stdDeviation="10" flood-opacity=".5"/></filter>
+</defs><g filter="url(#shadow)"><path d="M91 89Q166 64 255 106 348 65 425 88V400Q346 378 256 421 168 378 91 401Z" fill="#38203c" stroke="url(#gold)" stroke-width="11"/>
+<path d="M106 104Q173 86 248 121V399Q176 368 106 383ZM264 121Q341 85 409 105V383Q337 369 264 400Z" fill="url(#paper)" stroke="#ad8750" stroke-width="3"/>
+<path d="M255 110V413" stroke="#6c462c" stroke-width="10"/>
+<g fill="url(#plum)" stroke="url(#gold)" stroke-width="4"><rect x="129" y="144" width="91" height="120" rx="8"/><rect x="288" y="144" width="91" height="120" rx="8"/><rect x="129" y="283" width="91" height="66" rx="6"/><rect x="288" y="283" width="91" height="66" rx="6"/></g>
+<circle cx="175" cy="184" r="20" fill="#bd8d61"/><path d="M146 247q0-53 29-51 29 0 29 51" fill="#d1b98a"/>
+<path d="m334 159 27 52h-54z" fill="#baa0cc"/><path d="M310 245q3-47 25-45 22-2 25 45" fill="#baa0cc"/>
+<polygon points="174.0,294.0 177.9,312.1 196.0,316.0 177.9,319.9 174.0,338.0 170.1,319.9 152.0,316.0 170.1,312.1" fill="url(#gold)"/><polygon points="333.0,294.0 336.9,312.1 355.0,316.0 336.9,319.9 333.0,338.0 329.1,319.9 311.0,316.0 329.1,312.1" fill="url(#gold)"/></g></svg>

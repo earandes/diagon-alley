@@ -1,0 +1,7 @@
+Use case: illustration-story.
+Asset type: ONE original ARCANA crystal-watch (Vigía del Cristal/Crystal Watcher), isolated fullbody arena master, approximately1024x1536portrait, genuinelytransparentRGBA.
+Inputimage: Paracelso styleONLY for rich originalhandpainted2DTeatrocraft/materialsandhumananatomy. Do notcopyface,hat,robe,book,mortarorpose.
+Subject: AdultEastAsianmale guardianmage, broad warmclean-shavenface, gentlewatchfuleyes, smoothblackhairina tidy topknot, strongsturdybody. Palegraylightarmoroveraturquoiseclothrobe, a shortmutedgrayturquoisecape, modestsilvercrystalbroochatcollar. Notfacelessknight, faceuncovered. Holdsaslenderdarkwoodstaff toppedwitha singleclearfacetedquartzcrystalinonehand; otherhandrestsrelaxedonthebelt. Simplegrayleatherboots. Balancedsteadfastguardianpose, distinctclearfacialidentityandshortcapearmorsilhouette. Restrainedbotanicalsilvertrim,no excessive plateorhelmet.
+Composition: Exactlyoneisolatedstandingfullbodythreequartertowardviewerleft, entiretopknot/staff/hands/cloth/feetwithinframe,10%blanktransparentmarginallsides. Noenvironment,floor,shadow,glowhalo,particlesorbackdrop.
+Style: Richoriginal2Dtheatricalstorybookgouache, believablehandpaintedanatomy, tactilecloth/wood/silver/quartz, palegray/turquoisemutedforestaccents warmfaceillumination consistentTeatro; notphotographyor3Drender.
+Constraints: realRGBAtransparencyoutsidesubject,nocheckerboardpainted,text,letters,numbers,logos,watermark,UI,cardframeorhealthbar. Nofranchisecharacter,actorlikeness,filmpropsorsymbols. Noextrafigures,limbs,croppedhandsorfeet.

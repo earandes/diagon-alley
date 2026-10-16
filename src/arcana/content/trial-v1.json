@@ -1,0 +1,1162 @@
+{
+  "version": 3,
+  "status": "trial",
+  "catalog": {
+    "version": 2,
+    "wizards": [
+      {
+        "id": "apprentice",
+        "name": {
+          "es": "Aprendiz de Alquimia",
+          "en": "Alchemy Apprentice"
+        },
+        "context": {
+          "es": "Identidad de ensayo ARCANA; retrato provisional.",
+          "en": "ARCANA trial identity; provisional portrait."
+        },
+        "rarity": "common",
+        "stats": {
+          "maxHp": 100,
+          "maxMana": 40,
+          "power": 10,
+          "speed": 6
+        },
+        "stars": 1
+      },
+      {
+        "id": "merlin",
+        "name": {
+          "es": "Merlín",
+          "en": "Merlin"
+        },
+        "context": {
+          "es": "Identidad de ensayo ARCANA; retrato provisional.",
+          "en": "ARCANA trial identity; provisional portrait."
+        },
+        "rarity": "common",
+        "stats": {
+          "maxHp": 85,
+          "maxMana": 40,
+          "power": 11,
+          "speed": 7
+        },
+        "stars": 1
+      },
+      {
+        "id": "morgana",
+        "name": {
+          "es": "Morgana Le Fay",
+          "en": "Morgana Le Fay"
+        },
+        "context": {
+          "es": "Identidad de ensayo ARCANA; retrato provisional.",
+          "en": "ARCANA trial identity; provisional portrait."
+        },
+        "rarity": "common",
+        "stats": {
+          "maxHp": 90,
+          "maxMana": 40,
+          "power": 12,
+          "speed": 8
+        },
+        "stars": 1
+      },
+      {
+        "id": "flamel",
+        "name": {
+          "es": "Nicolás Flamel",
+          "en": "Nicolas Flamel"
+        },
+        "context": {
+          "es": "Identidad de ensayo ARCANA; retrato provisional.",
+          "en": "ARCANA trial identity; provisional portrait."
+        },
+        "rarity": "common",
+        "stats": {
+          "maxHp": 95,
+          "maxMana": 40,
+          "power": 10,
+          "speed": 6
+        },
+        "stars": 1
+      },
+      {
+        "id": "paracelso",
+        "name": {
+          "es": "Paracelso",
+          "en": "Paracelsus"
+        },
+        "context": {
+          "es": "Identidad de ensayo ARCANA; retrato provisional.",
+          "en": "ARCANA trial identity; provisional portrait."
+        },
+        "rarity": "common",
+        "stats": {
+          "maxHp": 80,
+          "maxMana": 40,
+          "power": 11,
+          "speed": 7
+        },
+        "stars": 1
+      },
+      {
+        "id": "circe",
+        "name": {
+          "es": "Circe",
+          "en": "Circe"
+        },
+        "context": {
+          "es": "Identidad de ensayo ARCANA; retrato provisional.",
+          "en": "ARCANA trial identity; provisional portrait."
+        },
+        "rarity": "common",
+        "stats": {
+          "maxHp": 85,
+          "maxMana": 40,
+          "power": 12,
+          "speed": 8
+        },
+        "stars": 1
+      },
+      {
+        "id": "ember-keeper",
+        "name": {
+          "es": "Guardián de las Brasas",
+          "en": "Ember Keeper"
+        },
+        "context": {
+          "es": "Identidad de ensayo ARCANA; retrato provisional.",
+          "en": "ARCANA trial identity; provisional portrait."
+        },
+        "rarity": "common",
+        "stats": {
+          "maxHp": 90,
+          "maxMana": 40,
+          "power": 10,
+          "speed": 6
+        },
+        "stars": 1
+      },
+      {
+        "id": "mist-seer",
+        "name": {
+          "es": "Vidente de la Bruma",
+          "en": "Mist Seer"
+        },
+        "context": {
+          "es": "Identidad de ensayo ARCANA; retrato provisional.",
+          "en": "ARCANA trial identity; provisional portrait."
+        },
+        "rarity": "common",
+        "stats": {
+          "maxHp": 95,
+          "maxMana": 40,
+          "power": 11,
+          "speed": 7
+        },
+        "stars": 1
+      },
+      {
+        "id": "rune-weaver",
+        "name": {
+          "es": "Tejedora de Runas",
+          "en": "Rune Weaver"
+        },
+        "context": {
+          "es": "Identidad de ensayo ARCANA; retrato provisional.",
+          "en": "ARCANA trial identity; provisional portrait."
+        },
+        "rarity": "unusual",
+        "stats": {
+          "maxHp": 80,
+          "maxMana": 40,
+          "power": 12,
+          "speed": 8
+        },
+        "stars": 2
+      },
+      {
+        "id": "copper-sage",
+        "name": {
+          "es": "Sabio del Cobre",
+          "en": "Copper Sage"
+        },
+        "context": {
+          "es": "Identidad de ensayo ARCANA; retrato provisional.",
+          "en": "ARCANA trial identity; provisional portrait."
+        },
+        "rarity": "unusual",
+        "stats": {
+          "maxHp": 85,
+          "maxMana": 40,
+          "power": 10,
+          "speed": 6
+        },
+        "stars": 2
+      },
+      {
+        "id": "moon-herbalist",
+        "name": {
+          "es": "Herborista Lunar",
+          "en": "Moon Herbalist"
+        },
+        "context": {
+          "es": "Identidad de ensayo ARCANA; retrato provisional.",
+          "en": "ARCANA trial identity; provisional portrait."
+        },
+        "rarity": "unusual",
+        "stats": {
+          "maxHp": 90,
+          "maxMana": 40,
+          "power": 11,
+          "speed": 7
+        },
+        "stars": 2
+      },
+      {
+        "id": "ash-wanderer",
+        "name": {
+          "es": "Caminante de Ceniza",
+          "en": "Ash Wanderer"
+        },
+        "context": {
+          "es": "Identidad de ensayo ARCANA; retrato provisional.",
+          "en": "ARCANA trial identity; provisional portrait."
+        },
+        "rarity": "unusual",
+        "stats": {
+          "maxHp": 95,
+          "maxMana": 40,
+          "power": 12,
+          "speed": 8
+        },
+        "stars": 2
+      },
+      {
+        "id": "shadow-scribe",
+        "name": {
+          "es": "Escriba de las Sombras",
+          "en": "Shadow Scribe"
+        },
+        "context": {
+          "es": "Identidad de ensayo ARCANA; retrato provisional.",
+          "en": "ARCANA trial identity; provisional portrait."
+        },
+        "rarity": "unusual",
+        "stats": {
+          "maxHp": 80,
+          "maxMana": 40,
+          "power": 10,
+          "speed": 6
+        },
+        "stars": 2
+      },
+      {
+        "id": "storm-caller",
+        "name": {
+          "es": "Invocadora de Tormentas",
+          "en": "Storm Caller"
+        },
+        "context": {
+          "es": "Identidad de ensayo ARCANA; retrato provisional.",
+          "en": "ARCANA trial identity; provisional portrait."
+        },
+        "rarity": "unusual",
+        "stats": {
+          "maxHp": 85,
+          "maxMana": 40,
+          "power": 11,
+          "speed": 7
+        },
+        "stars": 2
+      },
+      {
+        "id": "dew-alchemist",
+        "name": {
+          "es": "Alquimista del Rocío",
+          "en": "Dew Alchemist"
+        },
+        "context": {
+          "es": "Identidad de ensayo ARCANA; retrato provisional.",
+          "en": "ARCANA trial identity; provisional portrait."
+        },
+        "rarity": "unusual",
+        "stats": {
+          "maxHp": 90,
+          "maxMana": 40,
+          "power": 12,
+          "speed": 8
+        },
+        "stars": 2
+      },
+      {
+        "id": "dawn-oracle",
+        "name": {
+          "es": "Oráculo del Alba",
+          "en": "Dawn Oracle"
+        },
+        "context": {
+          "es": "Identidad de ensayo ARCANA; retrato provisional.",
+          "en": "ARCANA trial identity; provisional portrait."
+        },
+        "rarity": "unusual",
+        "stats": {
+          "maxHp": 95,
+          "maxMana": 40,
+          "power": 10,
+          "speed": 6
+        },
+        "stars": 2
+      },
+      {
+        "id": "crystal-watch",
+        "name": {
+          "es": "Vigía del Cristal",
+          "en": "Crystal Watcher"
+        },
+        "context": {
+          "es": "Identidad de ensayo ARCANA; retrato provisional.",
+          "en": "ARCANA trial identity; provisional portrait."
+        },
+        "rarity": "epic",
+        "stats": {
+          "maxHp": 80,
+          "maxMana": 40,
+          "power": 11,
+          "speed": 7
+        },
+        "stars": 3
+      },
+      {
+        "id": "night-forger",
+        "name": {
+          "es": "Forjador Nocturno",
+          "en": "Night Forger"
+        },
+        "context": {
+          "es": "Identidad de ensayo ARCANA; retrato provisional.",
+          "en": "ARCANA trial identity; provisional portrait."
+        },
+        "rarity": "epic",
+        "stats": {
+          "maxHp": 85,
+          "maxMana": 40,
+          "power": 12,
+          "speed": 8
+        },
+        "stars": 4
+      },
+      {
+        "id": "moss-guardian",
+        "name": {
+          "es": "Guardiana del Musgo",
+          "en": "Moss Guardian"
+        },
+        "context": {
+          "es": "Identidad de ensayo ARCANA; retrato provisional.",
+          "en": "ARCANA trial identity; provisional portrait."
+        },
+        "rarity": "epic",
+        "stats": {
+          "maxHp": 90,
+          "maxMana": 40,
+          "power": 10,
+          "speed": 6
+        },
+        "stars": 3
+      },
+      {
+        "id": "comet-scholar",
+        "name": {
+          "es": "Erudita del Cometa",
+          "en": "Comet Scholar"
+        },
+        "context": {
+          "es": "Identidad de ensayo ARCANA; retrato provisional.",
+          "en": "ARCANA trial identity; provisional portrait."
+        },
+        "rarity": "epic",
+        "stats": {
+          "maxHp": 95,
+          "maxMana": 40,
+          "power": 11,
+          "speed": 7
+        },
+        "stars": 4
+      },
+      {
+        "id": "cinder-dancer",
+        "name": {
+          "es": "Danzante de las Ascuas",
+          "en": "Cinder Dancer"
+        },
+        "context": {
+          "es": "Identidad de ensayo ARCANA; retrato provisional.",
+          "en": "ARCANA trial identity; provisional portrait."
+        },
+        "rarity": "epic",
+        "stats": {
+          "maxHp": 80,
+          "maxMana": 40,
+          "power": 12,
+          "speed": 8
+        },
+        "stars": 3
+      },
+      {
+        "id": "wind-reader",
+        "name": {
+          "es": "Lector del Viento",
+          "en": "Wind Reader"
+        },
+        "context": {
+          "es": "Identidad de ensayo ARCANA; retrato provisional.",
+          "en": "ARCANA trial identity; provisional portrait."
+        },
+        "rarity": "epic",
+        "stats": {
+          "maxHp": 85,
+          "maxMana": 40,
+          "power": 10,
+          "speed": 6
+        },
+        "stars": 4
+      },
+      {
+        "id": "star-binder",
+        "name": {
+          "es": "Enlazadora de Estrellas",
+          "en": "Star Binder"
+        },
+        "context": {
+          "es": "Identidad de ensayo ARCANA; retrato provisional.",
+          "en": "ARCANA trial identity; provisional portrait."
+        },
+        "rarity": "epic",
+        "stats": {
+          "maxHp": 90,
+          "maxMana": 40,
+          "power": 11,
+          "speed": 7
+        },
+        "stars": 3
+      },
+      {
+        "id": "root-speaker",
+        "name": {
+          "es": "Orador de las Raíces",
+          "en": "Root Speaker"
+        },
+        "context": {
+          "es": "Identidad de ensayo ARCANA; retrato provisional.",
+          "en": "ARCANA trial identity; provisional portrait."
+        },
+        "rarity": "epic",
+        "stats": {
+          "maxHp": 95,
+          "maxMana": 40,
+          "power": 12,
+          "speed": 8
+        },
+        "stars": 4
+      },
+      {
+        "id": "obsidian-seer",
+        "name": {
+          "es": "Vidente de Obsidiana",
+          "en": "Obsidian Seer"
+        },
+        "context": {
+          "es": "Identidad de ensayo ARCANA; retrato provisional.",
+          "en": "ARCANA trial identity; provisional portrait."
+        },
+        "rarity": "arcane-legendary",
+        "stats": {
+          "maxHp": 80,
+          "maxMana": 40,
+          "power": 10,
+          "speed": 6
+        },
+        "stars": 5
+      },
+      {
+        "id": "silver-sentinel",
+        "name": {
+          "es": "Centinela de Plata",
+          "en": "Silver Sentinel"
+        },
+        "context": {
+          "es": "Identidad de ensayo ARCANA; retrato provisional.",
+          "en": "ARCANA trial identity; provisional portrait."
+        },
+        "rarity": "arcane-legendary",
+        "stats": {
+          "maxHp": 85,
+          "maxMana": 40,
+          "power": 11,
+          "speed": 7
+        },
+        "stars": 5
+      },
+      {
+        "id": "sun-priestess",
+        "name": {
+          "es": "Sacerdotisa Solar",
+          "en": "Sun Priestess"
+        },
+        "context": {
+          "es": "Identidad de ensayo ARCANA; retrato provisional.",
+          "en": "ARCANA trial identity; provisional portrait."
+        },
+        "rarity": "arcane-legendary",
+        "stats": {
+          "maxHp": 90,
+          "maxMana": 40,
+          "power": 12,
+          "speed": 8
+        },
+        "stars": 5
+      },
+      {
+        "id": "echo-mage",
+        "name": {
+          "es": "Mago del Eco",
+          "en": "Echo Mage"
+        },
+        "context": {
+          "es": "Identidad de ensayo ARCANA; retrato provisional.",
+          "en": "ARCANA trial identity; provisional portrait."
+        },
+        "rarity": "arcane-legendary",
+        "stats": {
+          "maxHp": 95,
+          "maxMana": 40,
+          "power": 10,
+          "speed": 6
+        },
+        "stars": 5
+      },
+      {
+        "id": "veil-walker",
+        "name": {
+          "es": "Caminante del Velo",
+          "en": "Veil Walker"
+        },
+        "context": {
+          "es": "Identidad de ensayo ARCANA; retrato provisional.",
+          "en": "ARCANA trial identity; provisional portrait."
+        },
+        "rarity": "arcane-legendary",
+        "stats": {
+          "maxHp": 80,
+          "maxMana": 40,
+          "power": 11,
+          "speed": 7
+        },
+        "stars": 5
+      },
+      {
+        "id": "aurora-sage",
+        "name": {
+          "es": "Sabia de la Aurora",
+          "en": "Aurora Sage"
+        },
+        "context": {
+          "es": "Identidad de ensayo ARCANA; retrato provisional.",
+          "en": "ARCANA trial identity; provisional portrait."
+        },
+        "rarity": "arcane-legendary",
+        "stats": {
+          "maxHp": 85,
+          "maxMana": 40,
+          "power": 12,
+          "speed": 8
+        },
+        "stars": 5
+      }
+    ]
+  },
+  "toadTable": {
+    "version": 2,
+    "catalogVersion": 2,
+    "entries": [
+      {
+        "wizardId": "merlin",
+        "weight": 1
+      },
+      {
+        "wizardId": "morgana",
+        "weight": 1
+      },
+      {
+        "wizardId": "flamel",
+        "weight": 1
+      },
+      {
+        "wizardId": "paracelso",
+        "weight": 1
+      },
+      {
+        "wizardId": "circe",
+        "weight": 1
+      },
+      {
+        "wizardId": "ember-keeper",
+        "weight": 1
+      },
+      {
+        "wizardId": "mist-seer",
+        "weight": 1
+      },
+      {
+        "wizardId": "rune-weaver",
+        "weight": 1
+      },
+      {
+        "wizardId": "copper-sage",
+        "weight": 1
+      },
+      {
+        "wizardId": "moon-herbalist",
+        "weight": 1
+      },
+      {
+        "wizardId": "ash-wanderer",
+        "weight": 1
+      },
+      {
+        "wizardId": "shadow-scribe",
+        "weight": 1
+      },
+      {
+        "wizardId": "storm-caller",
+        "weight": 1
+      },
+      {
+        "wizardId": "dew-alchemist",
+        "weight": 1
+      },
+      {
+        "wizardId": "dawn-oracle",
+        "weight": 1
+      },
+      {
+        "wizardId": "crystal-watch",
+        "weight": 1
+      },
+      {
+        "wizardId": "night-forger",
+        "weight": 1
+      },
+      {
+        "wizardId": "moss-guardian",
+        "weight": 1
+      },
+      {
+        "wizardId": "comet-scholar",
+        "weight": 1
+      },
+      {
+        "wizardId": "cinder-dancer",
+        "weight": 1
+      },
+      {
+        "wizardId": "wind-reader",
+        "weight": 1
+      },
+      {
+        "wizardId": "star-binder",
+        "weight": 1
+      },
+      {
+        "wizardId": "root-speaker",
+        "weight": 1
+      },
+      {
+        "wizardId": "obsidian-seer",
+        "weight": 1
+      },
+      {
+        "wizardId": "silver-sentinel",
+        "weight": 1
+      },
+      {
+        "wizardId": "sun-priestess",
+        "weight": 1
+      },
+      {
+        "wizardId": "echo-mage",
+        "weight": 1
+      },
+      {
+        "wizardId": "veil-walker",
+        "weight": 1
+      },
+      {
+        "wizardId": "aurora-sage",
+        "weight": 1
+      }
+    ]
+  },
+  "shop": {
+    "version": 1,
+    "products": [
+      {
+        "kind": "cacao-toad",
+        "crowns": 10
+      },
+      {
+        "kind": "random-beans",
+        "crowns": 5
+      }
+    ]
+  },
+  "apprenticeId": "apprentice",
+  "affinities": {
+    "apprentice": "alchemy",
+    "merlin": "alchemy",
+    "morgana": "shadows",
+    "flamel": "alchemy",
+    "paracelso": "alchemy",
+    "circe": "fire",
+    "ember-keeper": "fire",
+    "mist-seer": "shadows",
+    "rune-weaver": "alchemy",
+    "copper-sage": "fire",
+    "moon-herbalist": "shadows",
+    "ash-wanderer": "alchemy",
+    "shadow-scribe": "fire",
+    "storm-caller": "shadows",
+    "dew-alchemist": "alchemy",
+    "dawn-oracle": "fire",
+    "crystal-watch": "shadows",
+    "night-forger": "alchemy",
+    "moss-guardian": "fire",
+    "comet-scholar": "shadows",
+    "cinder-dancer": "alchemy",
+    "wind-reader": "fire",
+    "star-binder": "shadows",
+    "root-speaker": "alchemy",
+    "obsidian-seer": "fire",
+    "silver-sentinel": "shadows",
+    "sun-priestess": "alchemy",
+    "echo-mage": "fire",
+    "veil-walker": "shadows",
+    "aurora-sage": "alchemy"
+  },
+  "campaign": {
+    "version": 1,
+    "zoneId": "pasaje",
+    "nextZoneId": "bosque",
+    "graph": {
+      "version": 1,
+      "nodes": [
+        {
+          "id": "pasaje:0:0",
+          "row": 0,
+          "column": 0,
+          "kind": "pact",
+          "next": [
+            "pasaje:1:0",
+            "pasaje:1:1"
+          ]
+        },
+        {
+          "id": "pasaje:1:0",
+          "row": 1,
+          "column": 0,
+          "kind": "pact",
+          "next": [
+            "pasaje:2:0",
+            "pasaje:2:1",
+            "pasaje:2:2"
+          ]
+        },
+        {
+          "id": "pasaje:1:1",
+          "row": 1,
+          "column": 1,
+          "kind": "chest",
+          "next": [
+            "pasaje:2:0",
+            "pasaje:2:1",
+            "pasaje:2:2"
+          ]
+        },
+        {
+          "id": "pasaje:2:0",
+          "row": 2,
+          "column": 0,
+          "kind": "duel",
+          "next": [
+            "pasaje:3:0",
+            "pasaje:3:1",
+            "pasaje:3:2"
+          ]
+        },
+        {
+          "id": "pasaje:2:1",
+          "row": 2,
+          "column": 1,
+          "kind": "refuge",
+          "next": [
+            "pasaje:3:0",
+            "pasaje:3:1",
+            "pasaje:3:2"
+          ]
+        },
+        {
+          "id": "pasaje:2:2",
+          "row": 2,
+          "column": 2,
+          "kind": "encounter",
+          "next": [
+            "pasaje:3:0",
+            "pasaje:3:1",
+            "pasaje:3:2"
+          ]
+        },
+        {
+          "id": "pasaje:3:0",
+          "row": 3,
+          "column": 0,
+          "kind": "chest",
+          "next": [
+            "pasaje:4:0",
+            "pasaje:4:1",
+            "pasaje:4:2"
+          ]
+        },
+        {
+          "id": "pasaje:3:1",
+          "row": 3,
+          "column": 1,
+          "kind": "duel",
+          "next": [
+            "pasaje:4:0",
+            "pasaje:4:1",
+            "pasaje:4:2"
+          ]
+        },
+        {
+          "id": "pasaje:3:2",
+          "row": 3,
+          "column": 2,
+          "kind": "pact",
+          "next": [
+            "pasaje:4:0",
+            "pasaje:4:1",
+            "pasaje:4:2"
+          ]
+        },
+        {
+          "id": "pasaje:4:0",
+          "row": 4,
+          "column": 0,
+          "kind": "refuge",
+          "next": [
+            "pasaje:5:0",
+            "pasaje:5:1",
+            "pasaje:5:2"
+          ]
+        },
+        {
+          "id": "pasaje:4:1",
+          "row": 4,
+          "column": 1,
+          "kind": "encounter",
+          "next": [
+            "pasaje:5:0",
+            "pasaje:5:1",
+            "pasaje:5:2"
+          ]
+        },
+        {
+          "id": "pasaje:4:2",
+          "row": 4,
+          "column": 2,
+          "kind": "duel",
+          "next": [
+            "pasaje:5:0",
+            "pasaje:5:1",
+            "pasaje:5:2"
+          ]
+        },
+        {
+          "id": "pasaje:5:0",
+          "row": 5,
+          "column": 0,
+          "kind": "duel",
+          "next": [
+            "pasaje:6:0"
+          ]
+        },
+        {
+          "id": "pasaje:5:1",
+          "row": 5,
+          "column": 1,
+          "kind": "chest",
+          "next": [
+            "pasaje:6:0"
+          ]
+        },
+        {
+          "id": "pasaje:5:2",
+          "row": 5,
+          "column": 2,
+          "kind": "refuge",
+          "next": [
+            "pasaje:6:0"
+          ]
+        },
+        {
+          "id": "pasaje:6:0",
+          "row": 6,
+          "column": 0,
+          "kind": "boss",
+          "next": []
+        }
+      ]
+    },
+    "rounding": "floor",
+    "combatRules": {
+      "version": 1,
+      "maxRounds": 60,
+      "spellManaCost": 1,
+      "fireBurnDamage": 2,
+      "alchemyHealing": 3,
+      "shadowInitiative": 2,
+      "beans": {
+        "version": 1,
+        "entries": [
+          {
+            "flavour": "mint",
+            "weight": 1
+          },
+          {
+            "flavour": "pepper",
+            "weight": 1
+          },
+          {
+            "flavour": "earth",
+            "weight": 1
+          },
+          {
+            "flavour": "soap",
+            "weight": 1
+          }
+        ]
+      }
+    }
+  },
+  "encounters": [
+    {
+      "weight": 1,
+      "effect": {
+        "kind": "reward",
+        "reward": {
+          "crowns": 10,
+          "goldKeys": 0,
+          "products": []
+        }
+      },
+      "narrative": {
+        "version": 1,
+        "text": {
+          "es": "Una polilla de bronce te guía hasta una hornacina. Entre piedras sueltas encuentras una pequeña bolsa de Coronas.",
+          "en": "A bronze moth guides you to a niche. Among loose stones you find a small pouch of Crowns."
+        }
+      }
+    },
+    {
+      "weight": 1,
+      "effect": {
+        "kind": "heal",
+        "fraction": 0.1
+      },
+      "narrative": {
+        "version": 1,
+        "text": {
+          "es": "Bajo el puente brota un manantial luminoso. Su agua despeja el cansancio de tu aquelarre.",
+          "en": "A luminous spring rises beneath the bridge. Its water eases your coven’s weariness."
+        }
+      }
+    },
+    {
+      "weight": 1,
+      "effect": {
+        "kind": "damage",
+        "fraction": 0.1
+      },
+      "narrative": {
+        "version": 1,
+        "text": {
+          "es": "Una raíz despierta al rozar tu sombra. Sus espinas alcanzan al equipo antes de volver a dormirse.",
+          "en": "A root awakens when it touches your shadow. Its thorns strike the team before it falls asleep again."
+        }
+      }
+    }
+  ],
+  "duelReward": {
+    "crowns": 20,
+    "goldKeys": 0,
+    "products": [
+      "random-beans"
+    ]
+  },
+  "bossReward": {
+    "crowns": 50,
+    "goldKeys": 1,
+    "products": [
+      "cacao-toad"
+    ]
+  },
+  "chestReward": {
+    "crowns": 10,
+    "goldKeys": 0,
+    "products": [
+      "random-beans"
+    ]
+  },
+  "enemy": {
+    "hp": 25,
+    "mana": 30,
+    "power": 3,
+    "speed": 3
+  },
+  "bossEnemy": {
+    "hp": 80,
+    "mana": 40,
+    "power": 6,
+    "speed": 5
+  },
+  "recruit": {
+    "wizardId": "rune-weaver",
+    "hp": 90,
+    "mana": 40,
+    "power": 10,
+    "speed": 7
+  },
+  "commerce": {
+    "forge": {
+      "version": 1,
+      "recipes": [
+        {
+          "id": "birch-dragon",
+          "crowns": 15,
+          "wood": "birch",
+          "core": "dragon",
+          "powerBonus": 2,
+          "multiplier": 1.2
+        },
+        {
+          "id": "birch-phoenix",
+          "crowns": 15,
+          "wood": "birch",
+          "core": "phoenix",
+          "powerBonus": 2,
+          "multiplier": 1.15
+        },
+        {
+          "id": "birch-wyvern",
+          "crowns": 15,
+          "wood": "birch",
+          "core": "wyvern",
+          "powerBonus": 2,
+          "multiplier": 1.1
+        },
+        {
+          "id": "willow-dragon",
+          "crowns": 20,
+          "wood": "willow",
+          "core": "dragon",
+          "powerBonus": 3,
+          "multiplier": 1.2
+        },
+        {
+          "id": "willow-phoenix",
+          "crowns": 20,
+          "wood": "willow",
+          "core": "phoenix",
+          "powerBonus": 3,
+          "multiplier": 1.15
+        },
+        {
+          "id": "willow-wyvern",
+          "crowns": 20,
+          "wood": "willow",
+          "core": "wyvern",
+          "powerBonus": 3,
+          "multiplier": 1.1
+        },
+        {
+          "id": "elder-dragon",
+          "crowns": 25,
+          "wood": "elder",
+          "core": "dragon",
+          "powerBonus": 4,
+          "multiplier": 1.2
+        },
+        {
+          "id": "elder-phoenix",
+          "crowns": 25,
+          "wood": "elder",
+          "core": "phoenix",
+          "powerBonus": 4,
+          "multiplier": 1.15
+        },
+        {
+          "id": "elder-wyvern",
+          "crowns": 25,
+          "wood": "elder",
+          "core": "wyvern",
+          "powerBonus": 4,
+          "multiplier": 1.1
+        }
+      ]
+    },
+    "vault": {
+      "version": 1,
+      "entries": [
+        {
+          "id": "arcane-wand",
+          "weight": 1,
+          "loot": {
+            "crowns": 50,
+            "products": [
+              "cacao-toad",
+              "cacao-toad"
+            ],
+            "equipment": [
+              {
+                "kind": "wand",
+                "wood": "elder",
+                "core": "dragon",
+                "powerBonus": 4,
+                "multiplier": 1.3
+              }
+            ]
+          }
+        },
+        {
+          "id": "air-joust",
+          "weight": 1,
+          "loot": {
+            "crowns": 75,
+            "products": [
+              "random-beans",
+              "random-beans"
+            ],
+            "equipment": [
+              {
+                "kind": "broom",
+                "model": "zephyr-2000",
+                "initiative": 8
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

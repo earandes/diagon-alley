@@ -1,0 +1,58 @@
+{
+  "id": "character-moon-herbalist",
+  "identityId": "moon-herbalist",
+  "name": {
+    "es": "Herborista Lunar",
+    "en": "Moon Herbalist"
+  },
+  "direction": "teatro-de-alquimia",
+  "version": "1",
+  "state": "reviewed-standalone-not-integrated",
+  "tool": "built-in imagegen",
+  "source": "master-v1.png",
+  "preparedAsset": "arena-master-v1.png",
+  "prompts": [
+    "prompt-v1.md"
+  ],
+  "references": [
+    "../../../concepts-2026-10-14/teatro-de-alquimia.png",
+    "../apprentice/arena-master-v1.png"
+  ],
+  "dimensions": [
+    1024,
+    1536
+  ],
+  "transparency": {
+    "mode": "RGBA",
+    "alphaMin": 0,
+    "alphaMax": 255,
+    "fullyTransparentPixels": 1016635,
+    "cornerAlpha": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "subjectBoundsAlphaGt20": [
+      149,
+      159,
+      876,
+      1378
+    ]
+  },
+  "preparation": "Deterministic LANCZOS resize 1024x1536 -> 860x1290, positioned [69,136] on transparent 1024x1536 canvas for >=10% safe margins. No painted changes. Source preserved.",
+  "crop": "none",
+  "pivotNormalized": [
+    0.5,
+    0.897
+  ],
+  "variants": [],
+  "sourceEditable": "Raster alpha master; no layers or rig",
+  "textAlternative": {
+    "es": "Herborista Lunar, sanadora con capucha clara, capa verde y crema, broche lunar y un ramo de hierbas.",
+    "en": "Moon Herbalist, a healer in a pale hood and green and cream cloak, with a moon clasp and herb bundle."
+  },
+  "review": "Inspected original and prepared image. Soft calm adult healer with curly black hair, light brown skin, pale hood, moss/cream/silver costume and herb satchel. Moon clasp and silver botanicals distinguish from Morgana and Circe. Natural complete hands/boots/herb bundle/staff. Teatro coherence. Staff longer than prompt request, preserved as consistent healer prop. Integration and actual miniature readability remain to be verified.",
+  "originalGenerationPath": "/Users/enricarandes/.codex/generated_images/01a13af8-fd53-7331-8146-bb20ec42fa6b/exec-ae2d194b-d9f2-4c18-abed-3359a45ef603.png",
+  "sha256": "d35882ad92d111ca4ed8d92050d8882af70a246fd0a57264d7715c10af1dec72"
+}

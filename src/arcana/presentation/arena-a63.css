@@ -1,0 +1,471 @@
+/* A63: the stage scales its actors; native HTML owns reading and interaction. */
+.game-shell[data-view='battle'] {
+  padding-bottom: 0;
+  grid-template-rows: var(--game-header) minmax(0, 1fr);
+}
+.game-shell[data-view='battle'] > nav {
+  display: none;
+}
+.game-shell[data-view='battle'] > main {
+  width: 100%;
+  grid-row: 2;
+  padding: 8px 12px;
+}
+.game-shell[data-view='battle'] .battle-wallet {
+  grid-area: 1 / 1;
+  align-self: center;
+  justify-self: center;
+  margin: 0;
+  width: fit-content;
+  max-width: calc(100% - 24px);
+  position: relative;
+  z-index: 4;
+}
+.game-shell[data-view='battle'] .battle-wallet > summary {
+  min-height: 44px;
+  padding: 10px 18px;
+  border: 1px solid var(--pack-border, #8f7950);
+  border-radius: 0 0 16px 16px;
+  background: #0e1829;
+  font-size: 0.8125rem;
+  cursor: pointer;
+}
+.game-shell[data-view='battle'] .battle-wallet .hud {
+  max-width: 100%;
+  border-radius: 12px;
+}
+.game-shell[data-view='battle'] .battle-wallet[open] {
+  width: min(100% - 24px, 650px);
+}
+.game-shell[data-view='battle'] .battle-wallet[open] + main .arena-a63 {
+  height: auto;
+}
+.game-shell[data-view='battle'] main > .battle-panel.arena-a63 {
+  width: 100%;
+  max-width: 1080px;
+  height: calc(100dvh - var(--game-header, 56px) - 16px);
+  min-height: 34rem;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 0;
+  margin: 0 auto;
+  color: var(--pack-ink, #fff0d0);
+}
+.arena-a63 .arena-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  min-height: 44px;
+}
+.arena-a63 .arena-heading h2 {
+  margin: 0;
+  font-size: clamp(0.9rem, 2.5vw, 1.3rem);
+}
+.arena-a63 .arena-heading .arena-exit {
+  flex: 0 0 44px;
+  min-width: 44px;
+  min-height: 44px;
+  margin: 0;
+  border-radius: 50%;
+  padding: 0;
+  font-size: 1.6rem;
+  background: #0c1728;
+}
+.arena-a63 .arena-round {
+  font-size: 0.8125rem;
+  white-space: nowrap;
+}
+.arena-a63 .arena-playback-tools {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+}
+.arena-a63 .replay-controls {
+  display: flex;
+  gap: 2px;
+  padding: 2px;
+  border: 1px solid var(--pack-border, #8f7950);
+  border-radius: 14px;
+  background: #0c1728ef;
+}
+.arena-a63 .replay-controls button {
+  margin: 0;
+  min-height: 44px;
+  min-width: 46px;
+  padding: 8px;
+  border: 0;
+  border-radius: 10px;
+  background: transparent;
+  font-size: 0.8125rem;
+}
+.arena-a63 .replay-controls button[aria-pressed='true'] {
+  color: #17202a;
+  background: var(--pack-gold, #d8b86f);
+}
+.arena-a63 .arena-record-trigger {
+  width: 48px;
+  height: 48px;
+  min-width: 48px;
+  padding: 3px;
+  margin: 0;
+  border: 0;
+  background: #0c1728cc;
+  border-radius: 50%;
+}
+.arena-a63 .arena-record-trigger img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.arena-a63 .arena-stage {
+  flex: 1 1 0;
+  height: 0;
+  min-height: calc(var(--arena-count) * 5.5rem + 3rem);
+  overflow: visible;
+  border: 0;
+  background: linear-gradient(90deg, #07111b33, transparent 28%, transparent 72%, #07111b33);
+}
+.arena-a63 .arena-columns {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(32px, 12vw, 140px);
+  height: 100%;
+  min-height: inherit;
+  padding: 0;
+}
+.arena-a63 .arena-team {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+.arena-a63 .arena-team h3 {
+  margin: 0;
+  font-size: 0.8125rem;
+  min-height: 22px;
+  color: var(--pack-ink, #fff0d0);
+  text-shadow: 0 2px 4px #000;
+}
+.arena-a63 .arena-fighters {
+  display: grid;
+  grid-template-rows: repeat(var(--arena-side-count), minmax(min-content, 1fr));
+  flex: 1;
+  gap: 4px;
+}
+.arena-a63 .arena-columns .pedestal {
+  position: relative;
+  display: block;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  border-radius: 12px;
+  min-height: 0;
+  background: transparent;
+  color: #fff0d0;
+}
+.arena-a63 .arena-columns > div:last-child .pedestal {
+  background: transparent;
+}
+.arena-a63 .arena-inspect {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 0;
+  height: 100%;
+  margin: 0;
+  padding: 0 3px;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  background: transparent;
+  color: inherit;
+}
+.arena-a63 .arena-inspect:hover {
+  background: #0c172855;
+}
+.arena-a63 .pedestal[data-acting='true'] .arena-inspect {
+  border-color: var(--pack-gold, #d8b86f);
+  background: #0c172866;
+}
+.arena-a63 .pedestal[data-target='true'] .arena-inspect {
+  border-color: var(--pack-rival-accent, #ce8680);
+  border-style: dashed;
+}
+.arena-a63 .arena-figure-space {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: clamp(50px, calc((100dvh - 415px) / var(--arena-count) - 35px), 150px);
+}
+.arena-a63 .arena-portrait {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  max-width: none;
+  margin: 0;
+}
+.arena-a63 .arena-inspect > strong {
+  display: block;
+  max-width: 100%;
+  font-size: 0.8125rem;
+  line-height: 1.25;
+  padding: 2px 6px;
+  border-radius: 5px;
+  background: #0c1728;
+  color: #fff0d0;
+}
+.arena-a63 .arena-position {
+  display: inline;
+  color: #e0b75d;
+  font-size: 0.75rem;
+}
+.arena-a63 .arena-health {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  width: min(100%, 160px);
+  min-height: 18px;
+  background: #0c1728;
+  padding: 1px 4px;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  color: #fff0d0;
+}
+.arena-a63 .arena-health meter {
+  width: 100%;
+  min-width: 0;
+  height: 10px;
+}
+.arena-a63 .arena-health > span {
+  min-width: 2ch;
+  font-variant-numeric: tabular-nums;
+}
+.arena-a63 .pedestal[data-fallen='true'] .arena-portrait {
+  opacity: 0.35;
+}
+.arena-a63 .arena-fallen-mark {
+  position: absolute;
+  inset: auto 0 3px;
+  font-size: 1.4rem;
+  color: #fff0d0;
+  text-shadow: 0 2px 4px #000;
+}
+.arena-a63 .arena-delta {
+  position: absolute;
+  z-index: 3;
+  right: 0;
+  top: 35%;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #fff0d0;
+  background: #40272a;
+  border-radius: 5px;
+  padding: 2px 5px;
+  animation: arena-delta-a63 300ms ease-out both;
+}
+.arena-a63 .arena-delta[data-delta-kind='heal'] {
+  background: #173c32;
+}
+.arena-a63 .arena-stage[data-reduced='true'] .arena-delta {
+  animation: none;
+}
+.arena-a63 .synergies {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  flex-wrap: wrap;
+  margin: 0;
+  min-height: 20px;
+  font-size: 0.7rem;
+  text-align: center;
+}
+.arena-a63 .synergies span {
+  background: #0c1728;
+  padding: 1px 5px;
+  border-radius: 6px;
+}
+.arena-a63 .arena-caption {
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  background: #0c1728e6;
+  padding: 4px 8px;
+  border-radius: 10px;
+  text-align: center;
+}
+.arena-a63 .arena-caption p {
+  margin: 0;
+  font-size: 0.75rem;
+  line-height: 1.35;
+}
+.arena-a63 .arena-caption button {
+  margin: 0;
+  min-height: 44px;
+}
+.arena-a63 .arena-caption > strong {
+  font-family: Cinzel, Georgia, serif;
+  font-size: 1.125rem;
+}
+.arena-a63 .arena-inspector {
+  width: min(440px, calc(100vw - 24px));
+  max-height: calc(100dvh - 24px);
+  overflow: auto;
+  background: #132238;
+  color: var(--pack-ink, #fff0d0);
+  padding: 24px;
+  border: 1px solid var(--pack-gold, #d8b86f);
+  border-radius: 18px;
+}
+.arena-a63 .arena-inspector-close {
+  display: block;
+  position: sticky;
+  top: 0;
+  margin-left: auto;
+  width: 44px;
+  min-height: 44px;
+  border-radius: 50%;
+  font-size: 1.4rem;
+}
+.arena-a63 .arena-inspector-portrait {
+  display: block;
+  width: 120px;
+  height: 150px;
+  object-fit: contain;
+  margin: -32px auto 0;
+}
+.arena-a63 .arena-inspector h2 {
+  font-size: 1.25rem;
+  text-align: center;
+}
+.arena-a63 .arena-inspector p {
+  font-size: 0.875rem;
+}
+.arena-a63 .scene-fallback {
+  position: absolute;
+  inset: 0 20% auto;
+  z-index: 3;
+  font-size: 0.65rem;
+  background: #0c1728;
+  text-align: center;
+}
+@keyframes arena-delta-a63 {
+  from {
+    opacity: 0.5;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .arena-a63 .arena-delta {
+    animation: none;
+  }
+}
+@media (max-width: 450px) {
+  .arena-a63 .arena-heading h2 {
+    font-size: 0.8125rem;
+  }
+  .arena-a63 .arena-round {
+    font-size: 0.75rem;
+  }
+}
+
+.game-shell[data-view='battle'] .battle-wallet > summary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  padding: 7px;
+  border-radius: 50%;
+  list-style: none;
+}
+.game-shell[data-view='battle'] .battle-wallet > summary::-webkit-details-marker {
+  display: none;
+}
+.game-shell[data-view='battle'] .battle-wallet > summary img {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+}
+.game-shell[data-view='battle'] .battle-wallet .hud {
+  position: absolute;
+  top: calc(100% + 5px);
+  left: 50%;
+  transform: translateX(-50%);
+  width: max-content;
+  max-width: calc(100vw - 24px);
+  background: #0c1728;
+}
+.game-shell[data-view='battle'] .battle-wallet[open] {
+  width: fit-content;
+}
+.game-shell[data-view='battle'] .battle-wallet[open] + main .arena-a63 {
+  height: calc(100dvh - var(--game-header, 56px) - 16px);
+}
+.game-shell[data-view='battle'] .game-header h1 {
+  max-width: calc(50% - 42px);
+}
+.arena-a63 .arena-heading,
+.arena-a63 .arena-playback-tools,
+.arena-a63 .arena-caption {
+  flex-shrink: 0;
+}
+
+.arena-a63 .arena-health > span {
+  flex: 0 0 auto;
+  white-space: nowrap;
+}
+.arena-a63 .arena-position {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  display: grid;
+  place-items: center;
+  min-width: 18px;
+  height: 18px;
+  border: 1px solid var(--pack-border, #8f7950);
+  border-radius: 50%;
+  background: #0c1728;
+  line-height: 1;
+}
+/* Keep HTML labels and effects above the decorative renderer, including ordinal badges. */
+.arena-a63 .arena-columns {
+  z-index: 3;
+}
+.arena-a63 .arena-caption {
+  flex-wrap: wrap;
+}
+.arena-a63 .arena-caption button {
+  max-width: 100%;
+  min-width: 0;
+}
+.arena-a63 .arena-heading {
+  flex-wrap: wrap;
+}
+.arena-a63 .arena-heading h2 {
+  min-width: 0;
+  flex: 1;
+}
+.arena-a63 .arena-playback-tools {
+  flex-wrap: wrap;
+}
+.arena-a63 .replay-controls {
+  max-width: 100%;
+}
+.arena-a63 .arena-inspect:hover,
+.arena-a63 .pedestal[data-acting='true'] .arena-inspect {
+  background: transparent;
+}
+.arena-a63 .arena-position {
+  min-width: 2em;
+  height: 2em;
+}

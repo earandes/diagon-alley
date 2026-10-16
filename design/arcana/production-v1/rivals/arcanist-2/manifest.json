@@ -1,0 +1,57 @@
+{
+  "id": "rival-arcanist-2",
+  "identityId": "rival",
+  "appearanceId": "arcanist-2",
+  "label": {
+    "es": "Rival ARCANA",
+    "en": "ARCANA Rival"
+  },
+  "direction": "teatro-de-alquimia",
+  "version": "1",
+  "state": "reviewed-standalone-not-integrated",
+  "tool": "built-in imagegen",
+  "source": "master-v1.png",
+  "preparedAsset": "arena-master-v1.png",
+  "prompts": [
+    "prompt-v1.md"
+  ],
+  "references": [
+    "../../characters/crystal-watch/arena-master-v1.png"
+  ],
+  "dimensions": [
+    1024,
+    1536
+  ],
+  "transparency": {
+    "mode": "RGBA",
+    "alphaMin": 0,
+    "alphaMax": 255,
+    "fullyTransparentPixels": 1137216,
+    "cornerAlpha": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "subjectBoundsAlphaGt20": [
+      217,
+      200,
+      886,
+      1345
+    ]
+  },
+  "preparation": "Deterministic LANCZOS resize1024x1536->819x1229,position102,154 on transparent1024x1536canvas for10%safe margins. Source preserved.",
+  "crop": "none",
+  "pivotNormalized": [
+    0.5,
+    0.876
+  ],
+  "variants": [],
+  "sourceEditable": "Raster alpha master; no layers or rig",
+  "textAlternative": {
+    "es": "Rival ARCANA de cabello corto rizado oscuro, capa gris salvia con cuello cobrizo y bastón de cristal ámbar.",
+    "en": "ARCANA rival with short dark curls, a sage grey cloak with copper collar and an amber crystal staff."
+  },
+  "review": "Inspected whitecomposite: sternhumanfreckledadultface, shortcurlysilhouette, sagegrayrustcloak andamberstaff distinguishrival. Naturalhandscompletefeet/noletters. Realalpha confirmed. Pureappearance for existingrival wizardId, no newcatalogidentity/rules/stats. Actualarena/mobileintegration pending.",
+  "sha256": "50da0df5938ab34c49cc2f99ecd00df81c9a44de490524dcd9de5ddf2284075f"
+}

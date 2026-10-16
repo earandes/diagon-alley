@@ -1,0 +1,100 @@
+ M .agents/skills/README.md
+ M .github/workflows/checks.yml
+ M .gitignore
+ M AGENTS.md
+ M README.md
+ M docs/DECISIONS.md
+ M docs/PRD.md
+ M index.html
+ M package-lock.json
+ M package.json
+ M src/main.tsx
+ M tsconfig.json
+ M vite.config.ts
+?? .agents/skills/arcana-game-design-workshop/
+?? .agents/skills/arcana-game-feel/
+?? .agents/skills/arcana-game-ui-ux/
+?? .agents/skills/arcana-impeccable/
+?? .agents/skills/arcana-pixijs-rendering/
+?? .agents/skills/arcana-redesign-skill/
+?? .agents/skills/arcana-rpg/
+?? .agents/skills/local-magic-art/
+?? .impeccable/
+?? DESIGN.md
+?? PRODUCT.md
+?? compose.arcana.yml
+?? design-qa.md
+?? design/arcana/
+?? design/assets/preparation-v1/box-prompt.md
+?? design/assets/preparation-v1/frog-box-closed-v1.png
+?? design/assets/preparation-v1/manifest-v1.json
+?? design/assets/preparation-v1/motion-study-v1.html
+?? design/assets/preparation-v1/welcome-mobile-en.jpg
+?? design/assets/preparation-v1/welcome-mobile-es.jpg
+?? design/assets/preparation-v1/welcome-preview-es.jpg
+?? design/concepts/i1/
+?? design/concepts/welcome-mobile-v1/
+?? design/diagon-alley/
+?? design/preparation/
+?? design/production/
+?? docs/I1_PROMPT.md
+?? docs/I1_UNCERTAINTIES_PROMPT.md
+?? docs/arcana/
+?? docs/disruptive-i1-v5/
+?? docs/preparacion-i1/ASSETS_AND_ACCESS.md
+?? docs/preparacion-i1/IMMERSIVE_SCENE.md
+?? docs/preparacion-i1/SYNTHESIS.md
+?? docs/preparacion-i1/ZERO_COST_PIPELINE.md
+?? docs/preparacion-i1/arte-ilustraciones.md
+?? docs/preparacion-i1/producto-ux.md
+?? docs/preparacion-i1/revision-qa.md
+?? docs/preparacion-i1/stack-dominio.md
+?? docs/redesign-i1-v4/
+?? playwright.arcana.config.ts
+?? playwright.art.config.ts
+?? playwright.commerce-a60.config.ts
+?? playwright.experience.config.ts
+?? playwright.game-redesign.config.ts
+?? playwright.opening.config.ts
+?? playwright.pokelike.config.ts
+?? playwright.pwa.config.ts
+?? playwright.trial.config.ts
+?? src/arcana/
+?? tests/arcana-arena-harness.html
+?? tests/arcana-art-harness.html
+?? tests/arcana-client-harness.html
+?? tests/browser-arcana/
+?? tests/browser-art/
+?? tests/browser-opening/
+?? tests/browser-pwa/
+?? tests/browser-trial/
+?? tests/domain/arcana/
+?? tests/integration/
+?? tests/support/
+?? tools/arcana/
+?? tools/visual/blender.lock.json
+?? tools/visual/blender.sh
+?? tools/visual/create_reveal_sample.py
+?? tools/visual/create_scene_sample.py
+?? tools/visual/diagon-a59-storefronts.py
+?? tools/visual/diagon-art-kit.py
+?? tools/visual/diagon-capture-studies.mjs
+?? tools/visual/diagon-compositions.py
+?? tools/visual/diagon-encode-portraits.py
+?? tools/visual/diagon-frog-box.py
+?? tools/visual/diagon-galleon.py
+?? tools/visual/diagon-mlx-contact.py
+?? tools/visual/diagon-mlx-edit.py
+?? tools/visual/diagon-mlx-export.py
+?? tools/visual/diagon-mlx-generate.py
+?? tools/visual/diagon-mlx-install.py
+?? tools/visual/diagon-mlx-validate.py
+?? tools/visual/diagon-mlx.sh
+?? tools/visual/diagon-portraits.py
+?? tools/visual/diagon-render-portraits.mjs
+?? tools/visual/diagon-validate-art.py
+?? tools/visual/install-illustrated-pack.py
+?? tools/visual/install_blender.py
+?? tools/visual/render_preview.py
+?? tsconfig.worker.json
+?? vitest.integration.config.ts

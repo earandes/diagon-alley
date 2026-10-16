@@ -1,0 +1,60 @@
+{
+  "id": "core-wyvern",
+  "identity": "wyvern",
+  "function": "Illustrated current wyvern core choice, labels and mechanics separate DOM",
+  "version": "1",
+  "status": "illustration-reviewed-runtime-framing-pending",
+  "path": "original-v1.png",
+  "author": "OpenAI integrated imagegen",
+  "tool": "image_gen.imagegen built-in",
+  "prompt": "prompt-v1.md",
+  "references": [
+    "../core-dragon/original-v1.png"
+  ],
+  "provenance": "Original emerald folded membrane and scale charm illustration",
+  "sourceAvailable": "original-v1.png; prompt-v1.md",
+  "editableLayers": false,
+  "rig": false,
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "requestedDimensions": [
+    1024,
+    1024
+  ],
+  "crop": "full source preserved",
+  "pivot": [
+    0.46,
+    0.92
+  ],
+  "variants": [],
+  "transparency": {
+    "realAlpha": true,
+    "mode": "RGBA",
+    "range": [
+      0,
+      255
+    ],
+    "fullyTransparentPixels": 1259766,
+    "totalPixels": 1572516,
+    "bodyBoundingBoxAlpha16": [
+      427,
+      78,
+      939,
+      1152
+    ]
+  },
+  "alt": {
+    "es": "Núcleo de guiverno: membrana verde plegada con escamas y soporte de hojas de bronce.",
+    "en": "Wyvern core: folded green scaled membrane with a bronze leaf holder."
+  },
+  "review": {
+    "visual": "Inspected small emerald folded leathery scalecharm with wingveinridges and bronzeleafclasp. No creaturebody and visuallydistinct from amberdragoncrystal/orangephoenixfeather. No text/UI/glowcloud.",
+    "limitations": [
+      "Output1254square notrequested1024.",
+      "Height~86% needsrenderer insetto10%margin.",
+      "Visualingredient depictiondoesnotcreateinventoryidentity orchangeexistingcoreeffects."
+    ]
+  }
+}

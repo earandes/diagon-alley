@@ -1,0 +1,57 @@
+{
+  "id": "rival-boss",
+  "identityId": "rival",
+  "appearanceId": "boss",
+  "label": {
+    "es": "Jefe ARCANA",
+    "en": "ARCANA Boss"
+  },
+  "direction": "teatro-de-alquimia",
+  "version": "1",
+  "state": "reviewed-standalone-not-integrated",
+  "tool": "built-in imagegen",
+  "source": "master-v1.png",
+  "preparedAsset": "arena-master-v1.png",
+  "prompts": [
+    "prompt-v1.md"
+  ],
+  "references": [
+    "../../characters/morgana/arena-master-v1.png"
+  ],
+  "dimensions": [
+    1024,
+    1536
+  ],
+  "transparency": {
+    "mode": "RGBA",
+    "alphaMin": 0,
+    "alphaMax": 255,
+    "fullyTransparentPixels": 1060171,
+    "cornerAlpha": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "subjectBoundsAlphaGt20": [
+      185,
+      172,
+      854,
+      1363
+    ]
+  },
+  "preparation": "Deterministic LANCZOS resize1024x1536->819x1229,position102,154 on transparent1024x1536canvas for10%safe margins. Source preserved.",
+  "crop": "none",
+  "pivotNormalized": [
+    0.5,
+    0.887
+  ],
+  "variants": [],
+  "sourceEditable": "Raster alpha master; no layers or rig",
+  "textAlternative": {
+    "es": "Jefe ARCANA, maga veterana de trenza plateada y negra, corona de hojas de bronce, manto oscuro y bastón con jade.",
+    "en": "ARCANA boss, a veteran mage with a silver and black braid, bronze leaf crown, dark mantle and jade staff."
+  },
+  "review": "Inspected whitecomposite: oldercommandinghumanface, silverblackbraid, imposingdarkforestheavyrobe, originalbronzeleafcrownsandjadestaff. Naturalhandsfullfeet/noletters. Realalpha confirmed. Pureappearance for centerunit ofexistingboss encounter/rival wizardId, no newcatalogidentity/rules/stats. Actualarena/mobileintegration pending.",
+  "sha256": "2e94e4e23e92199a45e15289b45d5e7fcacd074803cf653f873a833204fde384"
+}

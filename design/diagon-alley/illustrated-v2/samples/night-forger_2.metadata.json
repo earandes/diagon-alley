@@ -1,0 +1,30 @@
+{
+    "mflux_version": "0.22.0",
+    "model": "black-forest-labs/FLUX.2-klein-4B",
+    "model_path": null,
+    "base_model": null,
+    "seed": 582002,
+    "steps": 4,
+    "guidance": 1.0,
+    "height": 1024,
+    "width": 768,
+    "precision": "mlx.core.bfloat16",
+    "quantize": 4,
+    "generation_time_seconds": 65.45,
+    "created_at": "2026-10-15T13:22:52.286031",
+    "lora_paths": null,
+    "lora_scales": null,
+    "image_path": "/Users/enricarandes/work/diagon-alley/design/diagon-alley/illustrated-v2/rejected/night-forger-second.png",
+    "image_paths": [
+        "/Users/enricarandes/work/diagon-alley/design/diagon-alley/illustrated-v2/rejected/night-forger-second.png"
+    ],
+    "image_strength": null,
+    "controlnet_image_path": null,
+    "controlnet_strength": null,
+    "masked_image_path": null,
+    "depth_image_path": null,
+    "redux_image_paths": null,
+    "redux_image_strengths": null,
+    "prompt": "Transform this man into a truly enormous gentle half-giant: make his head and shoulders much broader, his hair long wild and tangled down over both shoulders, and his beard immense and very long down over his entire chest, twice as long and twice as thick. Remove the scarf so that the long beard flows freely down the front of his worn brown moleskin coat. Preserve his kind expression, broad nose, brown eyes, painterly gouache texture, amber side light and dark plum plain background. The unmistakable impression should be Rubeus Hagrid the giant-sized guardian, not an ordinary bearded gentleman. Keep complete hair inside the image, chest-up, no writing or frame.",
+    "negative_prompt": null
+}

@@ -1,0 +1,33 @@
+EDIT_MODEL_READY
+EDIT_START storm-caller
+  0%|          | 0/4 [00:00<?, ?it/s] 25%|██▌       | 1/4 [00:28<01:24, 28.24s/it] 50%|█████     | 2/4 [00:51<00:50, 25.35s/it] 75%|███████▌  | 3/4 [01:14<00:24, 24.32s/it]100%|██████████| 4/4 [01:38<00:00, 24.09s/it]100%|██████████| 4/4 [01:38<00:00, 24.60s/it]
+EDIT_COMPLETE storm-caller 109.89 9490853040
+EDIT_START night-forger
+  0%|          | 0/4 [00:00<?, ?it/s] 25%|██▌       | 1/4 [00:22<01:08, 22.72s/it] 50%|█████     | 2/4 [00:36<00:35, 17.72s/it] 75%|███████▌  | 3/4 [00:51<00:16, 16.16s/it]100%|██████████| 4/4 [01:05<00:00, 15.39s/it]100%|██████████| 4/4 [01:05<00:00, 16.36s/it]
+EDIT_COMPLETE night-forger 77.08 9490853040
+EDIT_START root-speaker
+  0%|          | 0/4 [00:00<?, ?it/s] 25%|██▌       | 1/4 [00:18<00:54, 18.32s/it] 50%|█████     | 2/4 [00:32<00:31, 15.87s/it] 75%|███████▌  | 3/4 [00:46<00:15, 15.07s/it]100%|██████████| 4/4 [01:00<00:00, 14.72s/it]100%|██████████| 4/4 [01:00<00:00, 15.19s/it]
+EDIT_COMPLETE root-speaker 75.16 9490853040
+EDIT_START veil-walker
+  0%|          | 0/4 [00:00<?, ?it/s]  0%|          | 0/4 [00:18<?, ?it/s]
+Traceback (most recent call last):
+  File "/Users/enricarandes/work/diagon-alley/.tools/diagon-illustration/venv/lib/python3.13/site-packages/mflux/models/flux2/variants/edit/flux2_klein_edit.py", line 176, in generate_image
+    mx.eval(latents)
+    ~~~~~~~^^^^^^^^^
+KeyboardInterrupt
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/enricarandes/work/diagon-alley/tools/visual/diagon-mlx-edit.py", line 27, in <module>
+    if output.exists():
+          ^^^^^^^^^^^^^
+        raise FileExistsError('Edit attempt already exists: '+str(output))
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    image=model.generate_image(seed=sample['seed'],prompt=sample['prompt'],
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/enricarandes/work/diagon-alley/.tools/diagon-illustration/venv/lib/python3.13/site-packages/mflux/models/flux2/variants/edit/flux2_klein_edit.py", line 179, in generate_image
+    raise StopImageGenerationException(
+        f"Stopping image generation at step {t + 1}/{config.num_inference_steps}"
+    )
+mflux.utils.exceptions.StopImageGenerationException: Stopping image generation at step 1/4

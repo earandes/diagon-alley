@@ -1,0 +1,61 @@
+{
+  "id": "bean-mint",
+  "identity": "mint",
+  "function": "Current mint flavor visual for combat confirmed outcome and jar explanation",
+  "version": "1",
+  "status": "illustration-reviewed-runtime-framing-pending",
+  "path": "original-v1.png",
+  "author": "OpenAI integrated imagegen",
+  "tool": "image_gen.imagegen built-in",
+  "prompt": "prompt-v1.md",
+  "references": [
+    "../bean-jar/original-v1.png"
+  ],
+  "provenance": "Original mintgreen kidney candybeanillustration",
+  "sourceAvailable": "original-v1.png; prompt-v1.md",
+  "editableLayers": false,
+  "rig": false,
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "requestedDimensions": [
+    1024,
+    1024
+  ],
+  "crop": "full source preserved",
+  "pivot": [
+    0.5,
+    0.5
+  ],
+  "variants": [],
+  "transparency": {
+    "realAlpha": true,
+    "mode": "RGBA",
+    "range": [
+      0,
+      255
+    ],
+    "fullyTransparentPixels": 1066730,
+    "totalPixels": 1572516,
+    "bodyBoundingBoxAlpha16": [
+      183,
+      282,
+      1157,
+      1023
+    ]
+  },
+  "alt": {
+    "es": "Gragea verde de menta, brillante y con una hoja decorativa.",
+    "en": "Glossy green mint bean with a decorative leaf."
+  },
+  "review": {
+    "visual": "Inspected one mintgreen kidneyshapedcandy with smallattachedmintleaf andgoldbotanicalmark. Correctfamily no jar/UI/text/extra flavors.",
+    "limitations": [
+      "Output1254square ratherthan1024requested.",
+      "Subjecttakes~78%width not~65%, attachedleafrightedge97px needsinsetfor10%.",
+      "Flavoridentification also requires DOMname/effect; colornotalone.",
+      "Doesnotadd independentopening orflavorcollection."
+    ]
+  }
+}

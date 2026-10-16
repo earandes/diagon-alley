@@ -1,0 +1,58 @@
+{
+  "id": "character-night-forger",
+  "identityId": "night-forger",
+  "name": {
+    "es": "Forjador Nocturno",
+    "en": "Night Forger"
+  },
+  "direction": "teatro-de-alquimia",
+  "version": "1",
+  "state": "reviewed-standalone-not-integrated",
+  "tool": "built-in imagegen",
+  "source": "master-v1.png",
+  "preparedAsset": "arena-master-v1.png",
+  "prompts": [
+    "prompt-v1.md"
+  ],
+  "references": [
+    "../../../concepts-2026-10-14/teatro-de-alquimia.png",
+    "../apprentice/arena-master-v1.png"
+  ],
+  "dimensions": [
+    1024,
+    1536
+  ],
+  "transparency": {
+    "mode": "RGBA",
+    "alphaMin": 0,
+    "alphaMax": 255,
+    "fullyTransparentPixels": 1136765,
+    "cornerAlpha": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "subjectBoundsAlphaGt20": [
+      212,
+      158,
+      813,
+      1379
+    ]
+  },
+  "preparation": "Deterministic LANCZOS resize 1024x1536 -> 891x1336, positioned [54,96] on transparent 1024x1536 canvas for >=10% safe margins. No painted changes. Source preserved.",
+  "crop": "none",
+  "pivotNormalized": [
+    0.5,
+    0.898
+  ],
+  "variants": [],
+  "sourceEditable": "Raster alpha master; no layers or rig",
+  "textAlternative": {
+    "es": "Forjador Nocturno, artesano de barba corta con abrigo azul oscuro, delantal de cuero cobrizo, guantes y martillo.",
+    "en": "Night Forger, a short-bearded artisan in a dark navy coat and copper leather apron, with gloves and a hammer."
+  },
+  "review": "Inspected original and prepared image. Strong adult tan man with square face, dark beard and shaved gray sides, broad working build. Navy/copper apron/gloves/iron hammer distinguish from other wizards. Whole feet and natural gloved hands, wand at belt, no faceless armor or letters. Teatro painted coherence. Integration and actual miniature readability remain to be verified.",
+  "originalGenerationPath": "/Users/enricarandes/.codex/generated_images/01a13af8-fd53-7331-8146-bb20ec42fa6b/exec-7ea695bf-6d9f-4901-8265-26714ac468b6.png",
+  "sha256": "5926545ec3f2dc7e0a7e56238bec5436088aa78ae625597e21aeae865a24a291"
+}

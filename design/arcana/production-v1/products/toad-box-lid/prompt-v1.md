@@ -1,0 +1,8 @@
+Use case: precise-object-edit
+Asset type: individual LID game sprite for layered illustrated box opening animation.
+EDIT TARGET reference: the closed cocoa-toad gift box. Preserve its decorated TOP LID exactly in identity, palette, camera and shape; remove the entire box BASE beneath it, leaving ONLY the top rectangular shallow lid.
+Single detached thin cocoa-brown paperboard lid, gold botanical engraved leaves and fine border, central gold original toad crest against a circular forest-green patch, centered forest-green vertical ribbon. It lies in the same sloping slightly top-down three-quarter plane as source, NOT stood upright, NOT a front-on square panel. Visible small edge thickness only.
+Square logical canvas 1254×1254; keep panel approximately occupying x160..1130 y244..780, top back edge slopes a little downward from left to right, front bottom edge matching source lid plane. Centered lateral position but with the source's larger transparent lower margin where removed base used to sit. Keep camera matching closed original and sufficiently large detail.
+Only lid, no full box/base, no interior, chocolates, scene, tabletop, card or surrounding objects. Background genuinely transparent alpha, no external cast shadow, no extra detached pieces. NO writing, words, letters, numbers, watermark or logos.
+Style: same rich original theatrical painted storybook gouache, cocoa texture, antique gold foliage and forest green ribbon, beautifully illustrated and crisp at mobile size.
+Deliver the single useful movable lid sprite, not a whole packaging replacement or multi-view sheet. This layer will lift at the bottom/back hinge using animation, so all visible edges must remain complete and its ornament coherent.

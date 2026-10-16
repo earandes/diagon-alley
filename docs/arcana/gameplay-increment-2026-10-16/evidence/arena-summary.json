@@ -1,0 +1,108 @@
+{
+  "boundary": "Presentation and dedicated UI tests only; no domain/config/economic changes",
+  "sourceFiles": [
+    "src/arcana/presentation/BattlePanel.tsx",
+    "src/arcana/presentation/arena-a63.css",
+    "src/arcana/presentation/arena-messages.ts",
+    "src/arcana/presentation/scenes/pixi-scenes.ts"
+  ],
+  "testFiles": [
+    "tests/browser-arcana/arena-passives.spec.ts",
+    "tests/browser-arcana/arena-a63.spec.ts",
+    "tests/browser-arcana/arena-a63-harness.tsx",
+    "tests/arcana-arena-a63-harness.html"
+  ],
+  "unchangedRegressionsExecuted": [
+    "tests/browser-arcana/arena-load.spec.ts (functional case, sustained profile excluded)",
+    "tests/browser-arcana/contrast.spec.ts"
+  ],
+  "checks": {
+    "arcana": {
+      "cases": 18,
+      "passed": 18,
+      "log": "arena-regression-verified-arcana.txt"
+    },
+    "diagon-alley": {
+      "cases": 18,
+      "passed": 18,
+      "log": "arena-regression-final-diagon.txt"
+    },
+    "typecheck": {
+      "exit": 0,
+      "log": "arena-types-verified.txt"
+    },
+    "red": {
+      "cases": 3,
+      "failed": 3,
+      "log": "arena-red.txt"
+    }
+  },
+  "matrix": {
+    "languages": [
+      "es",
+      "en"
+    ],
+    "packs": [
+      "arcana",
+      "diagon-alley"
+    ],
+    "engines": [
+      "chromium",
+      "webkit"
+    ],
+    "formations": [
+      "3x3",
+      "5x3",
+      "5x5"
+    ],
+    "viewports": [
+      "1280x900",
+      "390x844",
+      "865x1079"
+    ],
+    "geometryChecks": 72,
+    "finalCaptureDirectories": [
+      "arena-captures-arcana/chromium",
+      "arena-captures-arcana/webkit",
+      "arena-captures-diagon-alley/chromium",
+      "arena-captures-diagon-alley/webkit"
+    ]
+  },
+  "additionalProbe": {
+    "fixture": true,
+    "observations": "arena-moments/observations.json",
+    "video": "arena-moments/fixture-five-per-side.webm",
+    "captures": [
+      "arena-moments/01-five-per-side.png",
+      "arena-moments/02-event-delta.png",
+      "arena-moments/03-inspector.png",
+      "arena-moments/04-outcome.png"
+    ],
+    "checks": [
+      "record unchanged after playback/skip/language",
+      "inspector pauses Auto and does not resume on Escape",
+      "final announcement retains its original language while visible result changes language"
+    ]
+  },
+  "implemented": [
+    "Outcome absent from rendered DOM and accessibility before replay end; neutral saved notice",
+    "Single playback control band and separate record dialog",
+    "Native paused unit inspector with focus return",
+    "Figures and pedestals scale from measured semantic layout; no actors hidden",
+    "PV, actor/target borders and signed event delta visible",
+    "Wallet visual styles and hidden dock only in battle; true economic HUD owned by App",
+    "Fallback/reduced reach committed result; no rule computation in renderer"
+  ],
+  "motion": {
+    "entry": "existing pack timing retained; disabled for reduced",
+    "delta": "300ms ease-out opacity/translateY 5px; static for reduced and readable when paused",
+    "renderer": "existing finite projectile/impact, paused/final ticker stop retained",
+    "newAudio": false
+  },
+  "limits": [
+    "Rendering fixtures are not authority or player tests",
+    "Root owns real PostgreSQL/Redis flow, compiled App comparison and performance measurements",
+    "No physical-device, spoken-screen-reader or human-fun claim",
+    "90-plus PNGs in scratch evidence include intermediate iterations; final matrix is the 72 files in engine subdirectories"
+  ]
+}

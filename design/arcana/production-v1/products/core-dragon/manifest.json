@@ -1,0 +1,60 @@
+{
+  "id": "core-dragon",
+  "identity": "dragon",
+  "function": "Illustrated current dragon core choice; mechanics stay separate content",
+  "version": "1",
+  "status": "illustration-reviewed-runtime-framing-pending",
+  "path": "original-v1.png",
+  "author": "OpenAI integrated imagegen",
+  "tool": "image_gen.imagegen built-in",
+  "prompt": "prompt-v1.md",
+  "references": [
+    "../wand-elder/original-v1.png"
+  ],
+  "provenance": "Original amber dragon-scale crystal ingredient illustration",
+  "sourceAvailable": "original-v1.png; prompt-v1.md",
+  "editableLayers": false,
+  "rig": false,
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "requestedDimensions": [
+    1024,
+    1024
+  ],
+  "crop": "full source preserved",
+  "pivot": [
+    0.5,
+    0.92
+  ],
+  "variants": [],
+  "transparency": {
+    "realAlpha": true,
+    "mode": "RGBA",
+    "range": [
+      0,
+      255
+    ],
+    "fullyTransparentPixels": 1258790,
+    "totalPixels": 1572516,
+    "bodyBoundingBoxAlpha16": [
+      400,
+      78,
+      892,
+      1153
+    ]
+  },
+  "alt": {
+    "es": "Núcleo de dragón: fragmento de cristal ámbar con textura de escamas y soporte de hojas de bronce.",
+    "en": "Dragon core: amber crystal shard with a scale texture and a bronze leaf holder."
+  },
+  "review": {
+    "visual": "Inspected upright facetedamber shard with boldscaleinternaltexture and bronzeleafclasp. Original warmgouache ingredient, no livecreature/text/UI/stats.",
+    "limitations": [
+      "Output1254square not1024requested.",
+      "Height~86%, needsinsetfortop78/bottom101marginsto10%.",
+      "Ingredientart is representational; doesnotchange currentcorecontract/effects."
+    ]
+  }
+}

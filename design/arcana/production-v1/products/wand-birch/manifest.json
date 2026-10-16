@@ -1,0 +1,60 @@
+{
+  "id": "wand-birch",
+  "identity": "birch",
+  "function": "Birch wood equipment illustration; existing core identity remains separate content",
+  "version": "1",
+  "status": "illustration-reviewed-runtime-framing-pending",
+  "path": "original-v1.png",
+  "author": "OpenAI integrated imagegen",
+  "tool": "image_gen.imagegen built-in",
+  "prompt": "prompt-v1.md",
+  "references": [
+    "../toad-box-closed/original-v1.png"
+  ],
+  "provenance": "Original birchwandfolklore illustration",
+  "sourceAvailable": "original-v1.png; prompt-v1.md",
+  "editableLayers": false,
+  "rig": false,
+  "dimensions": [
+    1254,
+    1254
+  ],
+  "requestedDimensions": [
+    1024,
+    1024
+  ],
+  "crop": "full source preserved",
+  "pivot": [
+    0.15,
+    0.89
+  ],
+  "variants": [],
+  "transparency": {
+    "realAlpha": true,
+    "mode": "RGBA",
+    "range": [
+      0,
+      255
+    ],
+    "fullyTransparentPixels": 1441926,
+    "totalPixels": 1572516,
+    "bodyBoundingBoxAlpha16": [
+      76,
+      35,
+      1237,
+      1219
+    ]
+  },
+  "alt": {
+    "es": "Varita de abedul de corteza blanca y bandas oscuras, con hojas de latón en la empuñadura.",
+    "en": "White-barked birch wand with dark bands and brass leaves on its grip."
+  },
+  "review": {
+    "visual": "Inspected full taperedwand diagonal lowerleftgrip to upperrighttip. Recognizable birchbark and carved botanicalgrip with gold/greenleafornament, originalfolklore design, no text/hand/scene.",
+    "limitations": [
+      "Output1254square notrequested1024.",
+      "Toprighttip approachescorner closely (17pixelsright/35pixelstop), needsrenderer insets toprovide10%margin.",
+      "Singlewoodappearance shared by threeexistingcore variants; noyields/stats/corestatus bakedart."
+    ]
+  }
+}

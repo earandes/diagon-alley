@@ -1,0 +1,90 @@
+{
+  "version": 1,
+  "runtimeMapping": "awaiting root review; no files installed",
+  "roles": [
+    {
+      "id": "shopfront.confectionery",
+      "sourceExport": "design/diagon-alley/annotations-a59/storefronts/exports/confectionery--seed-591201--attempt-1--borderless.webp",
+      "sourceSha256": "dd61e200a832ab000a24170ff088761499443f0773dab6bc556c7c732261fa39",
+      "bytes": 45772,
+      "runtimeState": "planned target, not installed or mapped",
+      "plannedRuntimePath": "art/storefronts-a59/confectionery.webp",
+      "width": 430,
+      "height": 574,
+      "alpha": false,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "alt": {
+        "es": "Dulcería del Callejón",
+        "en": "Alley Sweet Shop"
+      },
+      "labelArea": {
+        "coordinateSpace": "normalized export bounds; after sourceCrop and430x574 fit",
+        "left": 0.12,
+        "top": 0.205,
+        "width": 0.76,
+        "height": 0.07,
+        "ink": "#f1d8a4",
+        "textEmbeddedInRuntimeImage": false
+      }
+    },
+    {
+      "id": "shopfront.workshop",
+      "sourceExport": "design/diagon-alley/annotations-a59/storefronts/exports/workshop--seed-591202--attempt-1--borderless.webp",
+      "sourceSha256": "7c353f4740910a36546a7c7619573b0a58306ba61c00d9a7e152ef7d57830e69",
+      "bytes": 42744,
+      "runtimeState": "planned target, not installed or mapped",
+      "plannedRuntimePath": "art/storefronts-a59/workshop.webp",
+      "width": 430,
+      "height": 574,
+      "alpha": false,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "alt": {
+        "es": "Ollivanders",
+        "en": "Ollivanders"
+      },
+      "labelArea": {
+        "coordinateSpace": "normalized export bounds; after sourceCrop and430x574 fit",
+        "left": 0.12,
+        "top": 0.168,
+        "width": 0.76,
+        "height": 0.066,
+        "ink": "#e9d9ac",
+        "textEmbeddedInRuntimeImage": false
+      }
+    },
+    {
+      "id": "shopfront.vault",
+      "sourceExport": "design/diagon-alley/annotations-a59/storefronts/exports/vault--seed-591203--attempt-1--borderless.webp",
+      "sourceSha256": "3071739f95f36e9342ae7731723c01b8348696409542a7c05946be7fa68c5b04",
+      "bytes": 43766,
+      "runtimeState": "planned target, not installed or mapped",
+      "plannedRuntimePath": "art/storefronts-a59/vault.webp",
+      "width": 430,
+      "height": 574,
+      "alpha": false,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "alt": {
+        "es": "Gringotts",
+        "en": "Gringotts"
+      },
+      "labelArea": {
+        "coordinateSpace": "normalized export bounds; after sourceCrop and430x574 fit",
+        "left": 0.28,
+        "top": 0.383,
+        "width": 0.44,
+        "height": 0.032,
+        "ink": "#493722",
+        "textEmbeddedInRuntimeImage": false
+      }
+    }
+  ]
+}

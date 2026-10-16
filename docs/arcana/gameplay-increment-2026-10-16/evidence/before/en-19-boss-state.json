@@ -1,0 +1,3995 @@
+{
+  "schemaVersion": 1,
+  "playerId": "trial-c4745df3-371d-40e0-b073-95b2640f9c50",
+  "revision": 11,
+  "inventory": {
+    "crowns": 115,
+    "goldKeys": 1,
+    "essence": {
+      "points": 40,
+      "cursor": 1792106357489
+    },
+    "products": [
+      {
+        "id": "65b27bc0-005e-4c2c-a5ce-dc76dbe23e93:0",
+        "kind": "random-beans",
+        "status": "consumed",
+        "operationId": "59fb8419-2b29-48cd-8669-e43b9340e1b1"
+      },
+      {
+        "id": "9183e0c0-f545-4a5d-9fe0-3adf3a4bbe1f:0",
+        "kind": "cacao-toad",
+        "status": "consumed",
+        "operationId": "9183e0c0-f545-4a5d-9fe0-3adf3a4bbe1f"
+      },
+      {
+        "id": "d9dc7c02-6975-4ed5-a3f7-9b61565871d8:loot:0",
+        "kind": "random-beans",
+        "status": "available"
+      },
+      {
+        "id": "59fb8419-2b29-48cd-8669-e43b9340e1b1:loot:0",
+        "kind": "random-beans",
+        "status": "available"
+      },
+      {
+        "id": "a9302da7-2c9c-4186-be1f-fe652712707f:loot:0",
+        "kind": "cacao-toad",
+        "status": "available"
+      }
+    ],
+    "equipment": [
+      {
+        "id": "starter:wand",
+        "version": 1,
+        "kind": "wand",
+        "wood": "birch",
+        "core": null,
+        "powerBonus": 2,
+        "multiplier": 1
+      },
+      {
+        "id": "starter:broom",
+        "version": 1,
+        "kind": "broom",
+        "model": "cadet-zephyr",
+        "initiative": 3
+      }
+    ]
+  },
+  "team": {
+    "copyIds": [
+      "starter:apprentice"
+    ],
+    "loadouts": [
+      {
+        "copyId": "starter:apprentice",
+        "wandId": "starter:wand",
+        "broomId": "starter:broom"
+      }
+    ]
+  },
+  "exploration": {
+    "run": {
+      "id": "9acfae0e-b83d-4906-9791-d72e2ccd4505",
+      "graph": {
+        "version": 1,
+        "nodes": [
+          {
+            "id": "pasaje:0:0",
+            "row": 0,
+            "kind": "pact",
+            "next": [
+              "pasaje:1:0",
+              "pasaje:1:1"
+            ],
+            "column": 0
+          },
+          {
+            "id": "pasaje:1:0",
+            "row": 1,
+            "kind": "pact",
+            "next": [
+              "pasaje:3:2",
+              "pasaje:2:2",
+              "pasaje:4:1"
+            ],
+            "column": 0
+          },
+          {
+            "id": "pasaje:1:1",
+            "row": 1,
+            "kind": "chest",
+            "next": [
+              "pasaje:3:2"
+            ],
+            "column": 1
+          },
+          {
+            "id": "pasaje:3:2",
+            "row": 2,
+            "kind": "pact",
+            "next": [
+              "pasaje:2:1"
+            ],
+            "column": 0
+          },
+          {
+            "id": "pasaje:2:2",
+            "row": 2,
+            "kind": "encounter",
+            "next": [
+              "pasaje:3:0",
+              "pasaje:4:0"
+            ],
+            "column": 1
+          },
+          {
+            "id": "pasaje:4:1",
+            "row": 2,
+            "kind": "encounter",
+            "next": [
+              "pasaje:4:0",
+              "pasaje:3:0"
+            ],
+            "column": 2
+          },
+          {
+            "id": "pasaje:2:1",
+            "row": 3,
+            "kind": "refuge",
+            "next": [
+              "pasaje:5:1"
+            ],
+            "column": 0
+          },
+          {
+            "id": "pasaje:3:0",
+            "row": 3,
+            "kind": "chest",
+            "next": [
+              "pasaje:5:0",
+              "pasaje:5:1"
+            ],
+            "column": 1
+          },
+          {
+            "id": "pasaje:4:0",
+            "row": 3,
+            "kind": "refuge",
+            "next": [
+              "pasaje:5:2",
+              "pasaje:5:0"
+            ],
+            "column": 2
+          },
+          {
+            "id": "pasaje:5:1",
+            "row": 4,
+            "kind": "chest",
+            "next": [
+              "pasaje:3:1"
+            ],
+            "column": 0
+          },
+          {
+            "id": "pasaje:5:0",
+            "row": 4,
+            "kind": "duel",
+            "next": [
+              "pasaje:2:0"
+            ],
+            "column": 1
+          },
+          {
+            "id": "pasaje:5:2",
+            "row": 4,
+            "kind": "refuge",
+            "next": [
+              "pasaje:4:2",
+              "pasaje:3:1"
+            ],
+            "column": 2
+          },
+          {
+            "id": "pasaje:3:1",
+            "row": 5,
+            "kind": "duel",
+            "next": [
+              "pasaje:6:0"
+            ],
+            "column": 0
+          },
+          {
+            "id": "pasaje:2:0",
+            "row": 5,
+            "kind": "duel",
+            "next": [
+              "pasaje:6:0"
+            ],
+            "column": 1
+          },
+          {
+            "id": "pasaje:4:2",
+            "row": 5,
+            "kind": "duel",
+            "next": [
+              "pasaje:6:0"
+            ],
+            "column": 2
+          },
+          {
+            "id": "pasaje:6:0",
+            "row": 6,
+            "kind": "boss",
+            "next": [],
+            "column": 0
+          }
+        ]
+      },
+      "status": "won",
+      "zoneId": "pasaje",
+      "members": [
+        {
+          "source": "owned",
+          "unit": {
+            "id": "starter:apprentice",
+            "wizardId": "apprentice",
+            "level": 1,
+            "affinity": "alchemy",
+            "hp": 61,
+            "maxHp": 100,
+            "mana": 31,
+            "maxMana": 40,
+            "power": 10,
+            "speed": 6,
+            "wandPowerBonus": 2,
+            "wandMultiplier": 1,
+            "broomInitiative": 3
+          }
+        },
+        {
+          "source": "temporary",
+          "unit": {
+            "id": "pasaje:0:0:recruit",
+            "wizardId": "rune-weaver",
+            "level": 1,
+            "affinity": "alchemy",
+            "hp": 90,
+            "maxHp": 90,
+            "mana": 32,
+            "maxMana": 40,
+            "power": 10,
+            "speed": 7,
+            "wandPowerBonus": 0,
+            "wandMultiplier": 1,
+            "broomInitiative": 0
+          }
+        },
+        {
+          "source": "temporary",
+          "unit": {
+            "id": "pasaje:1:0:recruit",
+            "wizardId": "rune-weaver",
+            "level": 1,
+            "affinity": "alchemy",
+            "hp": 90,
+            "maxHp": 90,
+            "mana": 32,
+            "maxMana": 40,
+            "power": 10,
+            "speed": 7,
+            "wandPowerBonus": 0,
+            "wandMultiplier": 1,
+            "broomInitiative": 0
+          }
+        },
+        {
+          "source": "temporary",
+          "unit": {
+            "id": "pasaje:3:2:recruit",
+            "wizardId": "rune-weaver",
+            "level": 1,
+            "affinity": "alchemy",
+            "hp": 90,
+            "maxHp": 90,
+            "mana": 32,
+            "maxMana": 40,
+            "power": 10,
+            "speed": 7,
+            "wandPowerBonus": 0,
+            "wandMultiplier": 1,
+            "broomInitiative": 0
+          }
+        }
+      ],
+      "visited": [
+        "pasaje:0:0",
+        "pasaje:1:0",
+        "pasaje:3:2",
+        "pasaje:2:1",
+        "pasaje:5:1",
+        "pasaje:3:1",
+        "pasaje:6:0"
+      ],
+      "reserves": [],
+      "graphVersion": 1,
+      "campaignVersion": 1,
+      "routeGeneration": {
+        "seed": 3690348138,
+        "version": 1
+      }
+    },
+    "victories": [
+      {
+        "levelId": "pasaje:3:1",
+        "version": 1
+      },
+      {
+        "levelId": "pasaje:6:0",
+        "version": 1
+      }
+    ],
+    "unlockedZones": [
+      "pasaje",
+      "bosque"
+    ]
+  },
+  "copies": [
+    {
+      "copyId": "starter:apprentice",
+      "wizard": {
+        "id": "apprentice",
+        "rarity": "common",
+        "stars": 1,
+        "name": {
+          "es": "Aprendiz de Alquimia",
+          "en": "Alchemy Apprentice"
+        },
+        "context": {
+          "es": "Identidad de ensayo ARCANA; retrato provisional.",
+          "en": "ARCANA trial identity; provisional portrait."
+        },
+        "stats": {
+          "maxHp": 100,
+          "maxMana": 40,
+          "power": 10,
+          "speed": 6
+        }
+      },
+      "catalogVersion": 2,
+      "sourceId": "starter-kit",
+      "origin": "starter"
+    },
+    {
+      "copyId": "9183e0c0-f545-4a5d-9fe0-3adf3a4bbe1f:copy",
+      "wizard": {
+        "id": "merlin",
+        "rarity": "common",
+        "stars": 1,
+        "name": {
+          "es": "Merlín",
+          "en": "Merlin"
+        },
+        "context": {
+          "es": "Identidad de ensayo ARCANA; retrato provisional.",
+          "en": "ARCANA trial identity; provisional portrait."
+        },
+        "stats": {
+          "maxHp": 85,
+          "maxMana": 40,
+          "power": 11,
+          "speed": 7
+        }
+      },
+      "catalogVersion": 2,
+      "sourceId": "9183e0c0-f545-4a5d-9fe0-3adf3a4bbe1f",
+      "origin": "toad"
+    }
+  ],
+  "receipts": [
+    {
+      "id": "starter-kit",
+      "kind": "starter-kit",
+      "copyId": "starter:apprentice",
+      "wizard": {
+        "id": "apprentice",
+        "rarity": "common",
+        "stars": 1,
+        "name": {
+          "es": "Aprendiz de Alquimia",
+          "en": "Alchemy Apprentice"
+        },
+        "context": {
+          "es": "Identidad de ensayo ARCANA; retrato provisional.",
+          "en": "ARCANA trial identity; provisional portrait."
+        },
+        "stats": {
+          "maxHp": 100,
+          "maxMana": 40,
+          "power": 10,
+          "speed": 6
+        }
+      },
+      "equipmentIds": [
+        "starter:wand",
+        "starter:broom"
+      ],
+      "catalogVersion": 2
+    },
+    {
+      "id": "9acfae0e-b83d-4906-9791-d72e2ccd4505",
+      "run": {
+        "id": "9acfae0e-b83d-4906-9791-d72e2ccd4505",
+        "graph": {
+          "version": 1,
+          "nodes": [
+            {
+              "id": "pasaje:0:0",
+              "row": 0,
+              "kind": "pact",
+              "next": [
+                "pasaje:1:0",
+                "pasaje:1:1"
+              ],
+              "column": 0
+            },
+            {
+              "id": "pasaje:1:0",
+              "row": 1,
+              "kind": "pact",
+              "next": [
+                "pasaje:3:2",
+                "pasaje:2:2",
+                "pasaje:4:1"
+              ],
+              "column": 0
+            },
+            {
+              "id": "pasaje:1:1",
+              "row": 1,
+              "kind": "chest",
+              "next": [
+                "pasaje:3:2"
+              ],
+              "column": 1
+            },
+            {
+              "id": "pasaje:3:2",
+              "row": 2,
+              "kind": "pact",
+              "next": [
+                "pasaje:2:1"
+              ],
+              "column": 0
+            },
+            {
+              "id": "pasaje:2:2",
+              "row": 2,
+              "kind": "encounter",
+              "next": [
+                "pasaje:3:0",
+                "pasaje:4:0"
+              ],
+              "column": 1
+            },
+            {
+              "id": "pasaje:4:1",
+              "row": 2,
+              "kind": "encounter",
+              "next": [
+                "pasaje:4:0",
+                "pasaje:3:0"
+              ],
+              "column": 2
+            },
+            {
+              "id": "pasaje:2:1",
+              "row": 3,
+              "kind": "refuge",
+              "next": [
+                "pasaje:5:1"
+              ],
+              "column": 0
+            },
+            {
+              "id": "pasaje:3:0",
+              "row": 3,
+              "kind": "chest",
+              "next": [
+                "pasaje:5:0",
+                "pasaje:5:1"
+              ],
+              "column": 1
+            },
+            {
+              "id": "pasaje:4:0",
+              "row": 3,
+              "kind": "refuge",
+              "next": [
+                "pasaje:5:2",
+                "pasaje:5:0"
+              ],
+              "column": 2
+            },
+            {
+              "id": "pasaje:5:1",
+              "row": 4,
+              "kind": "chest",
+              "next": [
+                "pasaje:3:1"
+              ],
+              "column": 0
+            },
+            {
+              "id": "pasaje:5:0",
+              "row": 4,
+              "kind": "duel",
+              "next": [
+                "pasaje:2:0"
+              ],
+              "column": 1
+            },
+            {
+              "id": "pasaje:5:2",
+              "row": 4,
+              "kind": "refuge",
+              "next": [
+                "pasaje:4:2",
+                "pasaje:3:1"
+              ],
+              "column": 2
+            },
+            {
+              "id": "pasaje:3:1",
+              "row": 5,
+              "kind": "duel",
+              "next": [
+                "pasaje:6:0"
+              ],
+              "column": 0
+            },
+            {
+              "id": "pasaje:2:0",
+              "row": 5,
+              "kind": "duel",
+              "next": [
+                "pasaje:6:0"
+              ],
+              "column": 1
+            },
+            {
+              "id": "pasaje:4:2",
+              "row": 5,
+              "kind": "duel",
+              "next": [
+                "pasaje:6:0"
+              ],
+              "column": 2
+            },
+            {
+              "id": "pasaje:6:0",
+              "row": 6,
+              "kind": "boss",
+              "next": [],
+              "column": 0
+            }
+          ]
+        },
+        "status": "active",
+        "zoneId": "pasaje",
+        "members": [
+          {
+            "source": "owned",
+            "unit": {
+              "id": "starter:apprentice",
+              "wizardId": "apprentice",
+              "level": 1,
+              "affinity": "alchemy",
+              "hp": 100,
+              "maxHp": 100,
+              "mana": 40,
+              "maxMana": 40,
+              "power": 10,
+              "speed": 6,
+              "wandPowerBonus": 2,
+              "wandMultiplier": 1,
+              "broomInitiative": 3
+            }
+          }
+        ],
+        "visited": [],
+        "reserves": [],
+        "graphVersion": 1,
+        "campaignVersion": 1,
+        "routeGeneration": {
+          "seed": 3690348138,
+          "version": 1
+        }
+      },
+      "kind": "start-run",
+      "request": {
+        "zoneId": "pasaje",
+        "copyIds": [
+          "starter:apprentice"
+        ],
+        "campaignVersion": 1
+      }
+    },
+    {
+      "id": "65b27bc0-005e-4c2c-a5ce-dc76dbe23e93",
+      "kind": "purchase",
+      "request": {
+        "product": "random-beans",
+        "quantity": 1,
+        "priceVersion": 1
+      },
+      "unitIds": [
+        "65b27bc0-005e-4c2c-a5ce-dc76dbe23e93:0"
+      ],
+      "spentCrowns": 5
+    },
+    {
+      "id": "9183e0c0-f545-4a5d-9fe0-3adf3a4bbe1f",
+      "kind": "buy-open-toad",
+      "isNew": true,
+      "copyId": "9183e0c0-f545-4a5d-9fe0-3adf3a4bbe1f:copy",
+      "unitId": "9183e0c0-f545-4a5d-9fe0-3adf3a4bbe1f:0",
+      "wizard": {
+        "id": "merlin",
+        "rarity": "common",
+        "stars": 1,
+        "name": {
+          "es": "Merlín",
+          "en": "Merlin"
+        },
+        "context": {
+          "es": "Identidad de ensayo ARCANA; retrato provisional.",
+          "en": "ARCANA trial identity; provisional portrait."
+        },
+        "stats": {
+          "maxHp": 85,
+          "maxMana": 40,
+          "power": 11,
+          "speed": 7
+        }
+      },
+      "request": {
+        "priceVersion": 1,
+        "tableVersion": 2,
+        "catalogVersion": 2
+      },
+      "spentCrowns": 10
+    },
+    {
+      "id": "0fc47f63-20c1-474e-9e1d-1d9c543372e1",
+      "run": {
+        "id": "9acfae0e-b83d-4906-9791-d72e2ccd4505",
+        "graph": {
+          "version": 1,
+          "nodes": [
+            {
+              "id": "pasaje:0:0",
+              "row": 0,
+              "kind": "pact",
+              "next": [
+                "pasaje:1:0",
+                "pasaje:1:1"
+              ],
+              "column": 0
+            },
+            {
+              "id": "pasaje:1:0",
+              "row": 1,
+              "kind": "pact",
+              "next": [
+                "pasaje:3:2",
+                "pasaje:2:2",
+                "pasaje:4:1"
+              ],
+              "column": 0
+            },
+            {
+              "id": "pasaje:1:1",
+              "row": 1,
+              "kind": "chest",
+              "next": [
+                "pasaje:3:2"
+              ],
+              "column": 1
+            },
+            {
+              "id": "pasaje:3:2",
+              "row": 2,
+              "kind": "pact",
+              "next": [
+                "pasaje:2:1"
+              ],
+              "column": 0
+            },
+            {
+              "id": "pasaje:2:2",
+              "row": 2,
+              "kind": "encounter",
+              "next": [
+                "pasaje:3:0",
+                "pasaje:4:0"
+              ],
+              "column": 1
+            },
+            {
+              "id": "pasaje:4:1",
+              "row": 2,
+              "kind": "encounter",
+              "next": [
+                "pasaje:4:0",
+                "pasaje:3:0"
+              ],
+              "column": 2
+            },
+            {
+              "id": "pasaje:2:1",
+              "row": 3,
+              "kind": "refuge",
+              "next": [
+                "pasaje:5:1"
+              ],
+              "column": 0
+            },
+            {
+              "id": "pasaje:3:0",
+              "row": 3,
+              "kind": "chest",
+              "next": [
+                "pasaje:5:0",
+                "pasaje:5:1"
+              ],
+              "column": 1
+            },
+            {
+              "id": "pasaje:4:0",
+              "row": 3,
+              "kind": "refuge",
+              "next": [
+                "pasaje:5:2",
+                "pasaje:5:0"
+              ],
+              "column": 2
+            },
+            {
+              "id": "pasaje:5:1",
+              "row": 4,
+              "kind": "chest",
+              "next": [
+                "pasaje:3:1"
+              ],
+              "column": 0
+            },
+            {
+              "id": "pasaje:5:0",
+              "row": 4,
+              "kind": "duel",
+              "next": [
+                "pasaje:2:0"
+              ],
+              "column": 1
+            },
+            {
+              "id": "pasaje:5:2",
+              "row": 4,
+              "kind": "refuge",
+              "next": [
+                "pasaje:4:2",
+                "pasaje:3:1"
+              ],
+              "column": 2
+            },
+            {
+              "id": "pasaje:3:1",
+              "row": 5,
+              "kind": "duel",
+              "next": [
+                "pasaje:6:0"
+              ],
+              "column": 0
+            },
+            {
+              "id": "pasaje:2:0",
+              "row": 5,
+              "kind": "duel",
+              "next": [
+                "pasaje:6:0"
+              ],
+              "column": 1
+            },
+            {
+              "id": "pasaje:4:2",
+              "row": 5,
+              "kind": "duel",
+              "next": [
+                "pasaje:6:0"
+              ],
+              "column": 2
+            },
+            {
+              "id": "pasaje:6:0",
+              "row": 6,
+              "kind": "boss",
+              "next": [],
+              "column": 0
+            }
+          ]
+        },
+        "status": "active",
+        "zoneId": "pasaje",
+        "members": [
+          {
+            "source": "owned",
+            "unit": {
+              "id": "starter:apprentice",
+              "wizardId": "apprentice",
+              "level": 1,
+              "affinity": "alchemy",
+              "hp": 100,
+              "maxHp": 100,
+              "mana": 40,
+              "maxMana": 40,
+              "power": 10,
+              "speed": 6,
+              "wandPowerBonus": 2,
+              "wandMultiplier": 1,
+              "broomInitiative": 3
+            }
+          },
+          {
+            "source": "temporary",
+            "unit": {
+              "id": "pasaje:0:0:recruit",
+              "wizardId": "rune-weaver",
+              "level": 1,
+              "affinity": "alchemy",
+              "hp": 90,
+              "maxHp": 90,
+              "mana": 40,
+              "maxMana": 40,
+              "power": 10,
+              "speed": 7,
+              "wandPowerBonus": 0,
+              "wandMultiplier": 1,
+              "broomInitiative": 0
+            }
+          }
+        ],
+        "visited": [
+          "pasaje:0:0"
+        ],
+        "reserves": [],
+        "graphVersion": 1,
+        "campaignVersion": 1,
+        "routeGeneration": {
+          "seed": 3690348138,
+          "version": 1
+        }
+      },
+      "kind": "advance-node",
+      "battle": null,
+      "reward": {
+        "crowns": 0,
+        "goldKeys": 0,
+        "products": []
+      },
+      "request": {
+        "runId": "9acfae0e-b83d-4906-9791-d72e2ccd4505",
+        "nodeId": "pasaje:0:0",
+        "pactAction": "recruit",
+        "assignments": [],
+        "campaignVersion": 1
+      },
+      "encounter": null,
+      "firstVictory": null
+    },
+    {
+      "id": "751d60f2-c963-4b9a-bd57-5aaaf53a3a71",
+      "run": {
+        "id": "9acfae0e-b83d-4906-9791-d72e2ccd4505",
+        "graph": {
+          "version": 1,
+          "nodes": [
+            {
+              "id": "pasaje:0:0",
+              "row": 0,
+              "kind": "pact",
+              "next": [
+                "pasaje:1:0",
+                "pasaje:1:1"
+              ],
+              "column": 0
+            },
+            {
+              "id": "pasaje:1:0",
+              "row": 1,
+              "kind": "pact",
+              "next": [
+                "pasaje:3:2",
+                "pasaje:2:2",
+                "pasaje:4:1"
+              ],
+              "column": 0
+            },
+            {
+              "id": "pasaje:1:1",
+              "row": 1,
+              "kind": "chest",
+              "next": [
+                "pasaje:3:2"
+              ],
+              "column": 1
+            },
+            {
+              "id": "pasaje:3:2",
+              "row": 2,
+              "kind": "pact",
+              "next": [
+                "pasaje:2:1"
+              ],
+              "column": 0
+            },
+            {
+              "id": "pasaje:2:2",
+              "row": 2,
+              "kind": "encounter",
+              "next": [
+                "pasaje:3:0",
+                "pasaje:4:0"
+              ],
+              "column": 1
+            },
+            {
+              "id": "pasaje:4:1",
+              "row": 2,
+              "kind": "encounter",
+              "next": [
+                "pasaje:4:0",
+                "pasaje:3:0"
+              ],
+              "column": 2
+            },
+            {
+              "id": "pasaje:2:1",
+              "row": 3,
+              "kind": "refuge",
+              "next": [
+                "pasaje:5:1"
+              ],
+              "column": 0
+            },
+            {
+              "id": "pasaje:3:0",
+              "row": 3,
+              "kind": "chest",
+              "next": [
+                "pasaje:5:0",
+                "pasaje:5:1"
+              ],
+              "column": 1
+            },
+            {
+              "id": "pasaje:4:0",
+              "row": 3,
+              "kind": "refuge",
+              "next": [
+                "pasaje:5:2",
+                "pasaje:5:0"
+              ],
+              "column": 2
+            },
+            {
+              "id": "pasaje:5:1",
+              "row": 4,
+              "kind": "chest",
+              "next": [
+                "pasaje:3:1"
+              ],
+              "column": 0
+            },
+            {
+              "id": "pasaje:5:0",
+              "row": 4,
+              "kind": "duel",
+              "next": [
+                "pasaje:2:0"
+              ],
+              "column": 1
+            },
+            {
+              "id": "pasaje:5:2",
+              "row": 4,
+              "kind": "refuge",
+              "next": [
+                "pasaje:4:2",
+                "pasaje:3:1"
+              ],
+              "column": 2
+            },
+            {
+              "id": "pasaje:3:1",
+              "row": 5,
+              "kind": "duel",
+              "next": [
+                "pasaje:6:0"
+              ],
+              "column": 0
+            },
+            {
+              "id": "pasaje:2:0",
+              "row": 5,
+              "kind": "duel",
+              "next": [
+                "pasaje:6:0"
+              ],
+              "column": 1
+            },
+            {
+              "id": "pasaje:4:2",
+              "row": 5,
+              "kind": "duel",
+              "next": [
+                "pasaje:6:0"
+              ],
+              "column": 2
+            },
+            {
+              "id": "pasaje:6:0",
+              "row": 6,
+              "kind": "boss",
+              "next": [],
+              "column": 0
+            }
+          ]
+        },
+        "status": "active",
+        "zoneId": "pasaje",
+        "members": [
+          {
+            "source": "owned",
+            "unit": {
+              "id": "starter:apprentice",
+              "wizardId": "apprentice",
+              "level": 1,
+              "affinity": "alchemy",
+              "hp": 100,
+              "maxHp": 100,
+              "mana": 40,
+              "maxMana": 40,
+              "power": 10,
+              "speed": 6,
+              "wandPowerBonus": 2,
+              "wandMultiplier": 1,
+              "broomInitiative": 3
+            }
+          },
+          {
+            "source": "temporary",
+            "unit": {
+              "id": "pasaje:0:0:recruit",
+              "wizardId": "rune-weaver",
+              "level": 1,
+              "affinity": "alchemy",
+              "hp": 90,
+              "maxHp": 90,
+              "mana": 40,
+              "maxMana": 40,
+              "power": 10,
+              "speed": 7,
+              "wandPowerBonus": 0,
+              "wandMultiplier": 1,
+              "broomInitiative": 0
+            }
+          },
+          {
+            "source": "temporary",
+            "unit": {
+              "id": "pasaje:1:0:recruit",
+              "wizardId": "rune-weaver",
+              "level": 1,
+              "affinity": "alchemy",
+              "hp": 90,
+              "maxHp": 90,
+              "mana": 40,
+              "maxMana": 40,
+              "power": 10,
+              "speed": 7,
+              "wandPowerBonus": 0,
+              "wandMultiplier": 1,
+              "broomInitiative": 0
+            }
+          }
+        ],
+        "visited": [
+          "pasaje:0:0",
+          "pasaje:1:0"
+        ],
+        "reserves": [],
+        "graphVersion": 1,
+        "campaignVersion": 1,
+        "routeGeneration": {
+          "seed": 3690348138,
+          "version": 1
+        }
+      },
+      "kind": "advance-node",
+      "battle": null,
+      "reward": {
+        "crowns": 0,
+        "goldKeys": 0,
+        "products": []
+      },
+      "request": {
+        "runId": "9acfae0e-b83d-4906-9791-d72e2ccd4505",
+        "nodeId": "pasaje:1:0",
+        "pactAction": "recruit",
+        "assignments": [],
+        "campaignVersion": 1
+      },
+      "encounter": null,
+      "firstVictory": null
+    },
+    {
+      "id": "941b87d6-9cd2-46d9-9c88-b7cf329a9957",
+      "run": {
+        "id": "9acfae0e-b83d-4906-9791-d72e2ccd4505",
+        "graph": {
+          "version": 1,
+          "nodes": [
+            {
+              "id": "pasaje:0:0",
+              "row": 0,
+              "kind": "pact",
+              "next": [
+                "pasaje:1:0",
+                "pasaje:1:1"
+              ],
+              "column": 0
+            },
+            {
+              "id": "pasaje:1:0",
+              "row": 1,
+              "kind": "pact",
+              "next": [
+                "pasaje:3:2",
+                "pasaje:2:2",
+                "pasaje:4:1"
+              ],
+              "column": 0
+            },
+            {
+              "id": "pasaje:1:1",
+              "row": 1,
+              "kind": "chest",
+              "next": [
+                "pasaje:3:2"
+              ],
+              "column": 1
+            },
+            {
+              "id": "pasaje:3:2",
+              "row": 2,
+              "kind": "pact",
+              "next": [
+                "pasaje:2:1"
+              ],
+              "column": 0
+            },
+            {
+              "id": "pasaje:2:2",
+              "row": 2,
+              "kind": "encounter",
+              "next": [
+                "pasaje:3:0",
+                "pasaje:4:0"
+              ],
+              "column": 1
+            },
+            {
+              "id": "pasaje:4:1",
+              "row": 2,
+              "kind": "encounter",
+              "next": [
+                "pasaje:4:0",
+                "pasaje:3:0"
+              ],
+              "column": 2
+            },
+            {
+              "id": "pasaje:2:1",
+              "row": 3,
+              "kind": "refuge",
+              "next": [
+                "pasaje:5:1"
+              ],
+              "column": 0
+            },
+            {
+              "id": "pasaje:3:0",
+              "row": 3,
+              "kind": "chest",
+              "next": [
+                "pasaje:5:0",
+                "pasaje:5:1"
+              ],
+              "column": 1
+            },
+            {
+              "id": "pasaje:4:0",
+              "row": 3,
+              "kind": "refuge",
+              "next": [
+                "pasaje:5:2",
+                "pasaje:5:0"
+              ],
+              "column": 2
+            },
+            {
+              "id": "pasaje:5:1",
+              "row": 4,
+              "kind": "chest",
+              "next": [
+                "pasaje:3:1"
+              ],
+              "column": 0
+            },
+            {
+              "id": "pasaje:5:0",
+              "row": 4,
+              "kind": "duel",
+              "next": [
+                "pasaje:2:0"
+              ],
+              "column": 1
+            },
+            {
+              "id": "pasaje:5:2",
+              "row": 4,
+              "kind": "refuge",
+              "next": [
+                "pasaje:4:2",
+                "pasaje:3:1"
+              ],
+              "column": 2
+            },
+            {
+              "id": "pasaje:3:1",
+              "row": 5,
+              "kind": "duel",
+              "next": [
+                "pasaje:6:0"
+              ],
+              "column": 0
+            },
+            {
+              "id": "pasaje:2:0",
+              "row": 5,
+              "kind": "duel",
+              "next": [
+                "pasaje:6:0"
+              ],
+              "column": 1
+            },
+            {
+              "id": "pasaje:4:2",
+              "row": 5,
+              "kind": "duel",
+              "next": [
+                "pasaje:6:0"
+              ],
+              "column": 2
+            },
+            {
+              "id": "pasaje:6:0",
+              "row": 6,
+              "kind": "boss",
+              "next": [],
+              "column": 0
+            }
+          ]
+        },
+        "status": "active",
+        "zoneId": "pasaje",
+        "members": [
+          {
+            "source": "owned",
+            "unit": {
+              "id": "starter:apprentice",
+              "wizardId": "apprentice",
+              "level": 1,
+              "affinity": "alchemy",
+              "hp": 100,
+              "maxHp": 100,
+              "mana": 40,
+              "maxMana": 40,
+              "power": 10,
+              "speed": 6,
+              "wandPowerBonus": 2,
+              "wandMultiplier": 1,
+              "broomInitiative": 3
+            }
+          },
+          {
+            "source": "temporary",
+            "unit": {
+              "id": "pasaje:0:0:recruit",
+              "wizardId": "rune-weaver",
+              "level": 1,
+              "affinity": "alchemy",
+              "hp": 90,
+              "maxHp": 90,
+              "mana": 40,
+              "maxMana": 40,
+              "power": 10,
+              "speed": 7,
+              "wandPowerBonus": 0,
+              "wandMultiplier": 1,
+              "broomInitiative": 0
+            }
+          },
+          {
+            "source": "temporary",
+            "unit": {
+              "id": "pasaje:1:0:recruit",
+              "wizardId": "rune-weaver",
+              "level": 1,
+              "affinity": "alchemy",
+              "hp": 90,
+              "maxHp": 90,
+              "mana": 40,
+              "maxMana": 40,
+              "power": 10,
+              "speed": 7,
+              "wandPowerBonus": 0,
+              "wandMultiplier": 1,
+              "broomInitiative": 0
+            }
+          },
+          {
+            "source": "temporary",
+            "unit": {
+              "id": "pasaje:3:2:recruit",
+              "wizardId": "rune-weaver",
+              "level": 1,
+              "affinity": "alchemy",
+              "hp": 90,
+              "maxHp": 90,
+              "mana": 40,
+              "maxMana": 40,
+              "power": 10,
+              "speed": 7,
+              "wandPowerBonus": 0,
+              "wandMultiplier": 1,
+              "broomInitiative": 0
+            }
+          }
+        ],
+        "visited": [
+          "pasaje:0:0",
+          "pasaje:1:0",
+          "pasaje:3:2"
+        ],
+        "reserves": [],
+        "graphVersion": 1,
+        "campaignVersion": 1,
+        "routeGeneration": {
+          "seed": 3690348138,
+          "version": 1
+        }
+      },
+      "kind": "advance-node",
+      "battle": null,
+      "reward": {
+        "crowns": 0,
+        "goldKeys": 0,
+        "products": []
+      },
+      "request": {
+        "runId": "9acfae0e-b83d-4906-9791-d72e2ccd4505",
+        "nodeId": "pasaje:3:2",
+        "pactAction": "recruit",
+        "assignments": [],
+        "campaignVersion": 1
+      },
+      "encounter": null,
+      "firstVictory": null
+    },
+    {
+      "id": "7730f466-e859-4eaa-9d30-642072a2134b",
+      "run": {
+        "id": "9acfae0e-b83d-4906-9791-d72e2ccd4505",
+        "graph": {
+          "version": 1,
+          "nodes": [
+            {
+              "id": "pasaje:0:0",
+              "row": 0,
+              "kind": "pact",
+              "next": [
+                "pasaje:1:0",
+                "pasaje:1:1"
+              ],
+              "column": 0
+            },
+            {
+              "id": "pasaje:1:0",
+              "row": 1,
+              "kind": "pact",
+              "next": [
+                "pasaje:3:2",
+                "pasaje:2:2",
+                "pasaje:4:1"
+              ],
+              "column": 0
+            },
+            {
+              "id": "pasaje:1:1",
+              "row": 1,
+              "kind": "chest",
+              "next": [
+                "pasaje:3:2"
+              ],
+              "column": 1
+            },
+            {
+              "id": "pasaje:3:2",
+              "row": 2,
+              "kind": "pact",
+              "next": [
+                "pasaje:2:1"
+              ],
+              "column": 0
+            },
+            {
+              "id": "pasaje:2:2",
+              "row": 2,
+              "kind": "encounter",
+              "next": [
+                "pasaje:3:0",
+                "pasaje:4:0"
+              ],
+              "column": 1
+            },
+            {
+              "id": "pasaje:4:1",
+              "row": 2,
+              "kind": "encounter",
+              "next": [
+                "pasaje:4:0",
+                "pasaje:3:0"
+              ],
+              "column": 2
+            },
+            {
+              "id": "pasaje:2:1",
+              "row": 3,
+              "kind": "refuge",
+              "next": [
+                "pasaje:5:1"
+              ],
+              "column": 0
+            },
+            {
+              "id": "pasaje:3:0",
+              "row": 3,
+              "kind": "chest",
+              "next": [
+                "pasaje:5:0",
+                "pasaje:5:1"
+              ],
+              "column": 1
+            },
+            {
+              "id": "pasaje:4:0",
+              "row": 3,
+              "kind": "refuge",
+              "next": [
+                "pasaje:5:2",
+                "pasaje:5:0"
+              ],
+              "column": 2
+            },
+            {
+              "id": "pasaje:5:1",
+              "row": 4,
+              "kind": "chest",
+              "next": [
+                "pasaje:3:1"
+              ],
+              "column": 0
+            },
+            {
+              "id": "pasaje:5:0",
+              "row": 4,
+              "kind": "duel",
+              "next": [
+                "pasaje:2:0"
+              ],
+              "column": 1
+            },
+            {
+              "id": "pasaje:5:2",
+              "row": 4,
+              "kind": "refuge",
+              "next": [
+                "pasaje:4:2",
+                "pasaje:3:1"
+              ],
+              "column": 2
+            },
+            {
+              "id": "pasaje:3:1",
+              "row": 5,
+              "kind": "duel",
+              "next": [
+                "pasaje:6:0"
+              ],
+              "column": 0
+            },
+            {
+              "id": "pasaje:2:0",
+              "row": 5,
+              "kind": "duel",
+              "next": [
+                "pasaje:6:0"
+              ],
+              "column": 1
+            },
+            {
+              "id": "pasaje:4:2",
+              "row": 5,
+              "kind": "duel",
+              "next": [
+                "pasaje:6:0"
+              ],
+              "column": 2
+            },
+            {
+              "id": "pasaje:6:0",
+              "row": 6,
+              "kind": "boss",
+              "next": [],
+              "column": 0
+            }
+          ]
+        },
+        "status": "active",
+        "zoneId": "pasaje",
+        "members": [
+          {
+            "source": "owned",
+            "unit": {
+              "id": "starter:apprentice",
+              "wizardId": "apprentice",
+              "level": 1,
+              "affinity": "alchemy",
+              "hp": 100,
+              "maxHp": 100,
+              "mana": 40,
+              "maxMana": 40,
+              "power": 10,
+              "speed": 6,
+              "wandPowerBonus": 2,
+              "wandMultiplier": 1,
+              "broomInitiative": 3
+            }
+          },
+          {
+            "source": "temporary",
+            "unit": {
+              "id": "pasaje:0:0:recruit",
+              "wizardId": "rune-weaver",
+              "level": 1,
+              "affinity": "alchemy",
+              "hp": 90,
+              "maxHp": 90,
+              "mana": 40,
+              "maxMana": 40,
+              "power": 10,
+              "speed": 7,
+              "wandPowerBonus": 0,
+              "wandMultiplier": 1,
+              "broomInitiative": 0
+            }
+          },
+          {
+            "source": "temporary",
+            "unit": {
+              "id": "pasaje:1:0:recruit",
+              "wizardId": "rune-weaver",
+              "level": 1,
+              "affinity": "alchemy",
+              "hp": 90,
+              "maxHp": 90,
+              "mana": 40,
+              "maxMana": 40,
+              "power": 10,
+              "speed": 7,
+              "wandPowerBonus": 0,
+              "wandMultiplier": 1,
+              "broomInitiative": 0
+            }
+          },
+          {
+            "source": "temporary",
+            "unit": {
+              "id": "pasaje:3:2:recruit",
+              "wizardId": "rune-weaver",
+              "level": 1,
+              "affinity": "alchemy",
+              "hp": 90,
+              "maxHp": 90,
+              "mana": 40,
+              "maxMana": 40,
+              "power": 10,
+              "speed": 7,
+              "wandPowerBonus": 0,
+              "wandMultiplier": 1,
+              "broomInitiative": 0
+            }
+          }
+        ],
+        "visited": [
+          "pasaje:0:0",
+          "pasaje:1:0",
+          "pasaje:3:2",
+          "pasaje:2:1"
+        ],
+        "reserves": [],
+        "graphVersion": 1,
+        "campaignVersion": 1,
+        "routeGeneration": {
+          "seed": 3690348138,
+          "version": 1
+        }
+      },
+      "kind": "advance-node",
+      "battle": null,
+      "reward": {
+        "crowns": 0,
+        "goldKeys": 0,
+        "products": []
+      },
+      "request": {
+        "runId": "9acfae0e-b83d-4906-9791-d72e2ccd4505",
+        "nodeId": "pasaje:2:1",
+        "assignments": [],
+        "refugeAction": "heal",
+        "campaignVersion": 1
+      },
+      "encounter": null,
+      "firstVictory": null
+    },
+    {
+      "id": "d9dc7c02-6975-4ed5-a3f7-9b61565871d8",
+      "run": {
+        "id": "9acfae0e-b83d-4906-9791-d72e2ccd4505",
+        "graph": {
+          "version": 1,
+          "nodes": [
+            {
+              "id": "pasaje:0:0",
+              "row": 0,
+              "kind": "pact",
+              "next": [
+                "pasaje:1:0",
+                "pasaje:1:1"
+              ],
+              "column": 0
+            },
+            {
+              "id": "pasaje:1:0",
+              "row": 1,
+              "kind": "pact",
+              "next": [
+                "pasaje:3:2",
+                "pasaje:2:2",
+                "pasaje:4:1"
+              ],
+              "column": 0
+            },
+            {
+              "id": "pasaje:1:1",
+              "row": 1,
+              "kind": "chest",
+              "next": [
+                "pasaje:3:2"
+              ],
+              "column": 1
+            },
+            {
+              "id": "pasaje:3:2",
+              "row": 2,
+              "kind": "pact",
+              "next": [
+                "pasaje:2:1"
+              ],
+              "column": 0
+            },
+            {
+              "id": "pasaje:2:2",
+              "row": 2,
+              "kind": "encounter",
+              "next": [
+                "pasaje:3:0",
+                "pasaje:4:0"
+              ],
+              "column": 1
+            },
+            {
+              "id": "pasaje:4:1",
+              "row": 2,
+              "kind": "encounter",
+              "next": [
+                "pasaje:4:0",
+                "pasaje:3:0"
+              ],
+              "column": 2
+            },
+            {
+              "id": "pasaje:2:1",
+              "row": 3,
+              "kind": "refuge",
+              "next": [
+                "pasaje:5:1"
+              ],
+              "column": 0
+            },
+            {
+              "id": "pasaje:3:0",
+              "row": 3,
+              "kind": "chest",
+              "next": [
+                "pasaje:5:0",
+                "pasaje:5:1"
+              ],
+              "column": 1
+            },
+            {
+              "id": "pasaje:4:0",
+              "row": 3,
+              "kind": "refuge",
+              "next": [
+                "pasaje:5:2",
+                "pasaje:5:0"
+              ],
+              "column": 2
+            },
+            {
+              "id": "pasaje:5:1",
+              "row": 4,
+              "kind": "chest",
+              "next": [
+                "pasaje:3:1"
+              ],
+              "column": 0
+            },
+            {
+              "id": "pasaje:5:0",
+              "row": 4,
+              "kind": "duel",
+              "next": [
+                "pasaje:2:0"
+              ],
+              "column": 1
+            },
+            {
+              "id": "pasaje:5:2",
+              "row": 4,
+              "kind": "refuge",
+              "next": [
+                "pasaje:4:2",
+                "pasaje:3:1"
+              ],
+              "column": 2
+            },
+            {
+              "id": "pasaje:3:1",
+              "row": 5,
+              "kind": "duel",
+              "next": [
+                "pasaje:6:0"
+              ],
+              "column": 0
+            },
+            {
+              "id": "pasaje:2:0",
+              "row": 5,
+              "kind": "duel",
+              "next": [
+                "pasaje:6:0"
+              ],
+              "column": 1
+            },
+            {
+              "id": "pasaje:4:2",
+              "row": 5,
+              "kind": "duel",
+              "next": [
+                "pasaje:6:0"
+              ],
+              "column": 2
+            },
+            {
+              "id": "pasaje:6:0",
+              "row": 6,
+              "kind": "boss",
+              "next": [],
+              "column": 0
+            }
+          ]
+        },
+        "status": "active",
+        "zoneId": "pasaje",
+        "members": [
+          {
+            "source": "owned",
+            "unit": {
+              "id": "starter:apprentice",
+              "wizardId": "apprentice",
+              "level": 1,
+              "affinity": "alchemy",
+              "hp": 100,
+              "maxHp": 100,
+              "mana": 40,
+              "maxMana": 40,
+              "power": 10,
+              "speed": 6,
+              "wandPowerBonus": 2,
+              "wandMultiplier": 1,
+              "broomInitiative": 3
+            }
+          },
+          {
+            "source": "temporary",
+            "unit": {
+              "id": "pasaje:0:0:recruit",
+              "wizardId": "rune-weaver",
+              "level": 1,
+              "affinity": "alchemy",
+              "hp": 90,
+              "maxHp": 90,
+              "mana": 40,
+              "maxMana": 40,
+              "power": 10,
+              "speed": 7,
+              "wandPowerBonus": 0,
+              "wandMultiplier": 1,
+              "broomInitiative": 0
+            }
+          },
+          {
+            "source": "temporary",
+            "unit": {
+              "id": "pasaje:1:0:recruit",
+              "wizardId": "rune-weaver",
+              "level": 1,
+              "affinity": "alchemy",
+              "hp": 90,
+              "maxHp": 90,
+              "mana": 40,
+              "maxMana": 40,
+              "power": 10,
+              "speed": 7,
+              "wandPowerBonus": 0,
+              "wandMultiplier": 1,
+              "broomInitiative": 0
+            }
+          },
+          {
+            "source": "temporary",
+            "unit": {
+              "id": "pasaje:3:2:recruit",
+              "wizardId": "rune-weaver",
+              "level": 1,
+              "affinity": "alchemy",
+              "hp": 90,
+              "maxHp": 90,
+              "mana": 40,
+              "maxMana": 40,
+              "power": 10,
+              "speed": 7,
+              "wandPowerBonus": 0,
+              "wandMultiplier": 1,
+              "broomInitiative": 0
+            }
+          }
+        ],
+        "visited": [
+          "pasaje:0:0",
+          "pasaje:1:0",
+          "pasaje:3:2",
+          "pasaje:2:1",
+          "pasaje:5:1"
+        ],
+        "reserves": [],
+        "graphVersion": 1,
+        "campaignVersion": 1,
+        "routeGeneration": {
+          "seed": 3690348138,
+          "version": 1
+        }
+      },
+      "kind": "advance-node",
+      "battle": null,
+      "reward": {
+        "crowns": 10,
+        "goldKeys": 0,
+        "products": [
+          "random-beans"
+        ]
+      },
+      "request": {
+        "runId": "9acfae0e-b83d-4906-9791-d72e2ccd4505",
+        "nodeId": "pasaje:5:1",
+        "assignments": [],
+        "campaignVersion": 1
+      },
+      "encounter": null,
+      "firstVictory": null
+    },
+    {
+      "id": "59fb8419-2b29-48cd-8669-e43b9340e1b1",
+      "run": {
+        "id": "9acfae0e-b83d-4906-9791-d72e2ccd4505",
+        "graph": {
+          "version": 1,
+          "nodes": [
+            {
+              "id": "pasaje:0:0",
+              "row": 0,
+              "kind": "pact",
+              "next": [
+                "pasaje:1:0",
+                "pasaje:1:1"
+              ],
+              "column": 0
+            },
+            {
+              "id": "pasaje:1:0",
+              "row": 1,
+              "kind": "pact",
+              "next": [
+                "pasaje:3:2",
+                "pasaje:2:2",
+                "pasaje:4:1"
+              ],
+              "column": 0
+            },
+            {
+              "id": "pasaje:1:1",
+              "row": 1,
+              "kind": "chest",
+              "next": [
+                "pasaje:3:2"
+              ],
+              "column": 1
+            },
+            {
+              "id": "pasaje:3:2",
+              "row": 2,
+              "kind": "pact",
+              "next": [
+                "pasaje:2:1"
+              ],
+              "column": 0
+            },
+            {
+              "id": "pasaje:2:2",
+              "row": 2,
+              "kind": "encounter",
+              "next": [
+                "pasaje:3:0",
+                "pasaje:4:0"
+              ],
+              "column": 1
+            },
+            {
+              "id": "pasaje:4:1",
+              "row": 2,
+              "kind": "encounter",
+              "next": [
+                "pasaje:4:0",
+                "pasaje:3:0"
+              ],
+              "column": 2
+            },
+            {
+              "id": "pasaje:2:1",
+              "row": 3,
+              "kind": "refuge",
+              "next": [
+                "pasaje:5:1"
+              ],
+              "column": 0
+            },
+            {
+              "id": "pasaje:3:0",
+              "row": 3,
+              "kind": "chest",
+              "next": [
+                "pasaje:5:0",
+                "pasaje:5:1"
+              ],
+              "column": 1
+            },
+            {
+              "id": "pasaje:4:0",
+              "row": 3,
+              "kind": "refuge",
+              "next": [
+                "pasaje:5:2",
+                "pasaje:5:0"
+              ],
+              "column": 2
+            },
+            {
+              "id": "pasaje:5:1",
+              "row": 4,
+              "kind": "chest",
+              "next": [
+                "pasaje:3:1"
+              ],
+              "column": 0
+            },
+            {
+              "id": "pasaje:5:0",
+              "row": 4,
+              "kind": "duel",
+              "next": [
+                "pasaje:2:0"
+              ],
+              "column": 1
+            },
+            {
+              "id": "pasaje:5:2",
+              "row": 4,
+              "kind": "refuge",
+              "next": [
+                "pasaje:4:2",
+                "pasaje:3:1"
+              ],
+              "column": 2
+            },
+            {
+              "id": "pasaje:3:1",
+              "row": 5,
+              "kind": "duel",
+              "next": [
+                "pasaje:6:0"
+              ],
+              "column": 0
+            },
+            {
+              "id": "pasaje:2:0",
+              "row": 5,
+              "kind": "duel",
+              "next": [
+                "pasaje:6:0"
+              ],
+              "column": 1
+            },
+            {
+              "id": "pasaje:4:2",
+              "row": 5,
+              "kind": "duel",
+              "next": [
+                "pasaje:6:0"
+              ],
+              "column": 2
+            },
+            {
+              "id": "pasaje:6:0",
+              "row": 6,
+              "kind": "boss",
+              "next": [],
+              "column": 0
+            }
+          ]
+        },
+        "status": "active",
+        "zoneId": "pasaje",
+        "members": [
+          {
+            "source": "owned",
+            "unit": {
+              "id": "starter:apprentice",
+              "wizardId": "apprentice",
+              "level": 1,
+              "affinity": "alchemy",
+              "hp": 97,
+              "maxHp": 100,
+              "mana": 37,
+              "maxMana": 40,
+              "power": 10,
+              "speed": 6,
+              "wandPowerBonus": 2,
+              "wandMultiplier": 1,
+              "broomInitiative": 3
+            }
+          },
+          {
+            "source": "temporary",
+            "unit": {
+              "id": "pasaje:0:0:recruit",
+              "wizardId": "rune-weaver",
+              "level": 1,
+              "affinity": "alchemy",
+              "hp": 90,
+              "maxHp": 90,
+              "mana": 38,
+              "maxMana": 40,
+              "power": 10,
+              "speed": 7,
+              "wandPowerBonus": 0,
+              "wandMultiplier": 1,
+              "broomInitiative": 0
+            }
+          },
+          {
+            "source": "temporary",
+            "unit": {
+              "id": "pasaje:1:0:recruit",
+              "wizardId": "rune-weaver",
+              "level": 1,
+              "affinity": "alchemy",
+              "hp": 90,
+              "maxHp": 90,
+              "mana": 38,
+              "maxMana": 40,
+              "power": 10,
+              "speed": 7,
+              "wandPowerBonus": 0,
+              "wandMultiplier": 1,
+              "broomInitiative": 0
+            }
+          },
+          {
+            "source": "temporary",
+            "unit": {
+              "id": "pasaje:3:2:recruit",
+              "wizardId": "rune-weaver",
+              "level": 1,
+              "affinity": "alchemy",
+              "hp": 90,
+              "maxHp": 90,
+              "mana": 38,
+              "maxMana": 40,
+              "power": 10,
+              "speed": 7,
+              "wandPowerBonus": 0,
+              "wandMultiplier": 1,
+              "broomInitiative": 0
+            }
+          }
+        ],
+        "visited": [
+          "pasaje:0:0",
+          "pasaje:1:0",
+          "pasaje:3:2",
+          "pasaje:2:1",
+          "pasaje:5:1",
+          "pasaje:3:1"
+        ],
+        "reserves": [],
+        "graphVersion": 1,
+        "campaignVersion": 1,
+        "routeGeneration": {
+          "seed": 3690348138,
+          "version": 1
+        }
+      },
+      "kind": "advance-node",
+      "battle": {
+        "id": "59fb8419-2b29-48cd-8669-e43b9340e1b1:battle",
+        "input": {
+          "id": "59fb8419-2b29-48cd-8669-e43b9340e1b1:battle",
+          "seed": 32195889,
+          "player": [
+            {
+              "id": "starter:apprentice",
+              "wizardId": "apprentice",
+              "level": 1,
+              "affinity": "alchemy",
+              "hp": 100,
+              "maxHp": 100,
+              "mana": 40,
+              "maxMana": 40,
+              "power": 10,
+              "speed": 6,
+              "wandPowerBonus": 2,
+              "wandMultiplier": 1,
+              "broomInitiative": 3,
+              "beanUnitId": "65b27bc0-005e-4c2c-a5ce-dc76dbe23e93:0"
+            },
+            {
+              "id": "pasaje:0:0:recruit",
+              "wizardId": "rune-weaver",
+              "level": 1,
+              "affinity": "alchemy",
+              "hp": 90,
+              "maxHp": 90,
+              "mana": 40,
+              "maxMana": 40,
+              "power": 10,
+              "speed": 7,
+              "wandPowerBonus": 0,
+              "wandMultiplier": 1,
+              "broomInitiative": 0
+            },
+            {
+              "id": "pasaje:1:0:recruit",
+              "wizardId": "rune-weaver",
+              "level": 1,
+              "affinity": "alchemy",
+              "hp": 90,
+              "maxHp": 90,
+              "mana": 40,
+              "maxMana": 40,
+              "power": 10,
+              "speed": 7,
+              "wandPowerBonus": 0,
+              "wandMultiplier": 1,
+              "broomInitiative": 0
+            },
+            {
+              "id": "pasaje:3:2:recruit",
+              "wizardId": "rune-weaver",
+              "level": 1,
+              "affinity": "alchemy",
+              "hp": 90,
+              "maxHp": 90,
+              "mana": 40,
+              "maxMana": 40,
+              "power": 10,
+              "speed": 7,
+              "wandPowerBonus": 0,
+              "wandMultiplier": 1,
+              "broomInitiative": 0
+            }
+          ],
+          "rival": [
+            {
+              "id": "pasaje:3:1:rival:0",
+              "wizardId": "rival",
+              "level": 1,
+              "affinity": "neutral",
+              "hp": 25,
+              "maxHp": 25,
+              "mana": 30,
+              "maxMana": 30,
+              "power": 3,
+              "speed": 3,
+              "wandPowerBonus": 0,
+              "wandMultiplier": 1,
+              "broomInitiative": 0
+            },
+            {
+              "id": "pasaje:3:1:rival:1",
+              "wizardId": "rival",
+              "level": 1,
+              "affinity": "neutral",
+              "hp": 25,
+              "maxHp": 25,
+              "mana": 30,
+              "maxMana": 30,
+              "power": 3,
+              "speed": 3,
+              "wandPowerBonus": 0,
+              "wandMultiplier": 1,
+              "broomInitiative": 0
+            },
+            {
+              "id": "pasaje:3:1:rival:2",
+              "wizardId": "rival",
+              "level": 1,
+              "affinity": "neutral",
+              "hp": 25,
+              "maxHp": 25,
+              "mana": 30,
+              "maxMana": 30,
+              "power": 3,
+              "speed": 3,
+              "wandPowerBonus": 0,
+              "wandMultiplier": 1,
+              "broomInitiative": 0
+            }
+          ],
+          "rules": {
+            "version": 1,
+            "maxRounds": 60,
+            "spellManaCost": 1,
+            "fireBurnDamage": 2,
+            "alchemyHealing": 3,
+            "shadowInitiative": 2,
+            "beans": {
+              "version": 1,
+              "entries": [
+                {
+                  "weight": 1,
+                  "flavour": "mint"
+                },
+                {
+                  "weight": 1,
+                  "flavour": "pepper"
+                },
+                {
+                  "weight": 1,
+                  "flavour": "earth"
+                },
+                {
+                  "weight": 1,
+                  "flavour": "soap"
+                }
+              ]
+            }
+          }
+        },
+        "rival": [
+          {
+            "id": "pasaje:3:1:rival:0",
+            "wizardId": "rival",
+            "level": 1,
+            "affinity": "neutral",
+            "hp": 0,
+            "maxHp": 25,
+            "mana": 30,
+            "maxMana": 30,
+            "power": 3,
+            "speed": 3,
+            "wandPowerBonus": 0,
+            "wandMultiplier": 1,
+            "broomInitiative": 0,
+            "effect": null
+          },
+          {
+            "id": "pasaje:3:1:rival:1",
+            "wizardId": "rival",
+            "level": 1,
+            "affinity": "neutral",
+            "hp": 0,
+            "maxHp": 25,
+            "mana": 29,
+            "maxMana": 30,
+            "power": 3,
+            "speed": 3,
+            "wandPowerBonus": 0,
+            "wandMultiplier": 1,
+            "broomInitiative": 0,
+            "effect": null
+          },
+          {
+            "id": "pasaje:3:1:rival:2",
+            "wizardId": "rival",
+            "level": 1,
+            "affinity": "neutral",
+            "hp": 0,
+            "maxHp": 25,
+            "mana": 28,
+            "maxMana": 30,
+            "power": 3,
+            "speed": 3,
+            "wandPowerBonus": 0,
+            "wandMultiplier": 1,
+            "broomInitiative": 0,
+            "effect": null
+          }
+        ],
+        "events": [
+          {
+            "kind": "combat-started",
+            "seed": 32195889,
+            "round": 0,
+            "sequence": 0
+          },
+          {
+            "kind": "synergy-activated",
+            "team": "player",
+            "round": 0,
+            "members": 4,
+            "affinity": "alchemy",
+            "sequence": 1
+          },
+          {
+            "hp": 100,
+            "kind": "bean-activated",
+            "round": 0,
+            "unitId": "65b27bc0-005e-4c2c-a5ce-dc76dbe23e93:0",
+            "actorId": "starter:apprentice",
+            "flavour": "mint",
+            "sequence": 2
+          },
+          {
+            "kind": "turn-started",
+            "team": "player",
+            "round": 1,
+            "actorId": "starter:apprentice",
+            "sequence": 3,
+            "initiative": 9
+          },
+          {
+            "kind": "spell-cast",
+            "mana": 39,
+            "round": 1,
+            "damage": 12,
+            "missed": false,
+            "actorId": "starter:apprentice",
+            "sequence": 4,
+            "targetHp": 13,
+            "targetId": "pasaje:3:1:rival:0"
+          },
+          {
+            "kind": "turn-started",
+            "team": "player",
+            "round": 1,
+            "actorId": "pasaje:0:0:recruit",
+            "sequence": 5,
+            "initiative": 7
+          },
+          {
+            "kind": "spell-cast",
+            "mana": 39,
+            "round": 1,
+            "damage": 10,
+            "missed": false,
+            "actorId": "pasaje:0:0:recruit",
+            "sequence": 6,
+            "targetHp": 3,
+            "targetId": "pasaje:3:1:rival:0"
+          },
+          {
+            "kind": "turn-started",
+            "team": "player",
+            "round": 1,
+            "actorId": "pasaje:1:0:recruit",
+            "sequence": 7,
+            "initiative": 7
+          },
+          {
+            "kind": "spell-cast",
+            "mana": 39,
+            "round": 1,
+            "damage": 3,
+            "missed": false,
+            "actorId": "pasaje:1:0:recruit",
+            "sequence": 8,
+            "targetHp": 0,
+            "targetId": "pasaje:3:1:rival:0"
+          },
+          {
+            "kind": "turn-started",
+            "team": "player",
+            "round": 1,
+            "actorId": "pasaje:3:2:recruit",
+            "sequence": 9,
+            "initiative": 7
+          },
+          {
+            "kind": "spell-cast",
+            "mana": 39,
+            "round": 1,
+            "damage": 10,
+            "missed": false,
+            "actorId": "pasaje:3:2:recruit",
+            "sequence": 10,
+            "targetHp": 15,
+            "targetId": "pasaje:3:1:rival:1"
+          },
+          {
+            "kind": "turn-started",
+            "team": "rival",
+            "round": 1,
+            "actorId": "pasaje:3:1:rival:1",
+            "sequence": 11,
+            "initiative": 3
+          },
+          {
+            "kind": "spell-cast",
+            "mana": 29,
+            "round": 1,
+            "damage": 3,
+            "missed": false,
+            "actorId": "pasaje:3:1:rival:1",
+            "sequence": 12,
+            "targetHp": 97,
+            "targetId": "starter:apprentice"
+          },
+          {
+            "kind": "turn-started",
+            "team": "rival",
+            "round": 1,
+            "actorId": "pasaje:3:1:rival:2",
+            "sequence": 13,
+            "initiative": 3
+          },
+          {
+            "kind": "spell-cast",
+            "mana": 29,
+            "round": 1,
+            "damage": 3,
+            "missed": false,
+            "actorId": "pasaje:3:1:rival:2",
+            "sequence": 14,
+            "targetHp": 94,
+            "targetId": "starter:apprentice"
+          },
+          {
+            "kind": "turn-started",
+            "team": "player",
+            "round": 2,
+            "actorId": "starter:apprentice",
+            "sequence": 15,
+            "initiative": 9
+          },
+          {
+            "hp": 97,
+            "kind": "healed",
+            "round": 2,
+            "amount": 3,
+            "source": "alchemy",
+            "actorId": "starter:apprentice",
+            "sequence": 16
+          },
+          {
+            "kind": "spell-cast",
+            "mana": 38,
+            "round": 2,
+            "damage": 12,
+            "missed": false,
+            "actorId": "starter:apprentice",
+            "sequence": 17,
+            "targetHp": 3,
+            "targetId": "pasaje:3:1:rival:1"
+          },
+          {
+            "kind": "turn-started",
+            "team": "player",
+            "round": 2,
+            "actorId": "pasaje:0:0:recruit",
+            "sequence": 18,
+            "initiative": 7
+          },
+          {
+            "kind": "spell-cast",
+            "mana": 38,
+            "round": 2,
+            "damage": 3,
+            "missed": false,
+            "actorId": "pasaje:0:0:recruit",
+            "sequence": 19,
+            "targetHp": 0,
+            "targetId": "pasaje:3:1:rival:1"
+          },
+          {
+            "kind": "turn-started",
+            "team": "player",
+            "round": 2,
+            "actorId": "pasaje:1:0:recruit",
+            "sequence": 20,
+            "initiative": 7
+          },
+          {
+            "kind": "spell-cast",
+            "mana": 38,
+            "round": 2,
+            "damage": 10,
+            "missed": false,
+            "actorId": "pasaje:1:0:recruit",
+            "sequence": 21,
+            "targetHp": 15,
+            "targetId": "pasaje:3:1:rival:2"
+          },
+          {
+            "kind": "turn-started",
+            "team": "player",
+            "round": 2,
+            "actorId": "pasaje:3:2:recruit",
+            "sequence": 22,
+            "initiative": 7
+          },
+          {
+            "kind": "spell-cast",
+            "mana": 38,
+            "round": 2,
+            "damage": 10,
+            "missed": false,
+            "actorId": "pasaje:3:2:recruit",
+            "sequence": 23,
+            "targetHp": 5,
+            "targetId": "pasaje:3:1:rival:2"
+          },
+          {
+            "kind": "turn-started",
+            "team": "rival",
+            "round": 2,
+            "actorId": "pasaje:3:1:rival:2",
+            "sequence": 24,
+            "initiative": 3
+          },
+          {
+            "kind": "spell-cast",
+            "mana": 28,
+            "round": 2,
+            "damage": 3,
+            "missed": false,
+            "actorId": "pasaje:3:1:rival:2",
+            "sequence": 25,
+            "targetHp": 94,
+            "targetId": "starter:apprentice"
+          },
+          {
+            "kind": "turn-started",
+            "team": "player",
+            "round": 3,
+            "actorId": "starter:apprentice",
+            "sequence": 26,
+            "initiative": 9
+          },
+          {
+            "hp": 97,
+            "kind": "healed",
+            "round": 3,
+            "amount": 3,
+            "source": "alchemy",
+            "actorId": "starter:apprentice",
+            "sequence": 27
+          },
+          {
+            "kind": "spell-cast",
+            "mana": 37,
+            "round": 3,
+            "damage": 5,
+            "missed": false,
+            "actorId": "starter:apprentice",
+            "sequence": 28,
+            "targetHp": 0,
+            "targetId": "pasaje:3:1:rival:2"
+          },
+          {
+            "kind": "combat-finished",
+            "round": 3,
+            "rounds": 3,
+            "outcome": "player",
+            "sequence": 29
+          }
+        ],
+        "player": [
+          {
+            "id": "starter:apprentice",
+            "wizardId": "apprentice",
+            "level": 1,
+            "affinity": "alchemy",
+            "hp": 97,
+            "maxHp": 100,
+            "mana": 37,
+            "maxMana": 40,
+            "power": 10,
+            "speed": 6,
+            "wandPowerBonus": 2,
+            "wandMultiplier": 1,
+            "broomInitiative": 3,
+            "beanUnitId": "65b27bc0-005e-4c2c-a5ce-dc76dbe23e93:0",
+            "effect": {
+              "flavour": "mint",
+              "turnsRemaining": 0,
+              "firstSpellPending": false
+            }
+          },
+          {
+            "id": "pasaje:0:0:recruit",
+            "wizardId": "rune-weaver",
+            "level": 1,
+            "affinity": "alchemy",
+            "hp": 90,
+            "maxHp": 90,
+            "mana": 38,
+            "maxMana": 40,
+            "power": 10,
+            "speed": 7,
+            "wandPowerBonus": 0,
+            "wandMultiplier": 1,
+            "broomInitiative": 0,
+            "effect": null
+          },
+          {
+            "id": "pasaje:1:0:recruit",
+            "wizardId": "rune-weaver",
+            "level": 1,
+            "affinity": "alchemy",
+            "hp": 90,
+            "maxHp": 90,
+            "mana": 38,
+            "maxMana": 40,
+            "power": 10,
+            "speed": 7,
+            "wandPowerBonus": 0,
+            "wandMultiplier": 1,
+            "broomInitiative": 0,
+            "effect": null
+          },
+          {
+            "id": "pasaje:3:2:recruit",
+            "wizardId": "rune-weaver",
+            "level": 1,
+            "affinity": "alchemy",
+            "hp": 90,
+            "maxHp": 90,
+            "mana": 38,
+            "maxMana": 40,
+            "power": 10,
+            "speed": 7,
+            "wandPowerBonus": 0,
+            "wandMultiplier": 1,
+            "broomInitiative": 0,
+            "effect": null
+          }
+        ],
+        "rounds": 3,
+        "outcome": "player",
+        "engineVersion": 1
+      },
+      "reward": {
+        "crowns": 20,
+        "goldKeys": 0,
+        "products": [
+          "random-beans"
+        ]
+      },
+      "request": {
+        "runId": "9acfae0e-b83d-4906-9791-d72e2ccd4505",
+        "nodeId": "pasaje:3:1",
+        "assignments": [
+          {
+            "beanId": "65b27bc0-005e-4c2c-a5ce-dc76dbe23e93:0",
+            "unitId": "starter:apprentice"
+          }
+        ],
+        "campaignVersion": 1
+      },
+      "encounter": null,
+      "firstVictory": true
+    },
+    {
+      "id": "a9302da7-2c9c-4186-be1f-fe652712707f",
+      "run": {
+        "id": "9acfae0e-b83d-4906-9791-d72e2ccd4505",
+        "graph": {
+          "version": 1,
+          "nodes": [
+            {
+              "id": "pasaje:0:0",
+              "row": 0,
+              "kind": "pact",
+              "next": [
+                "pasaje:1:0",
+                "pasaje:1:1"
+              ],
+              "column": 0
+            },
+            {
+              "id": "pasaje:1:0",
+              "row": 1,
+              "kind": "pact",
+              "next": [
+                "pasaje:3:2",
+                "pasaje:2:2",
+                "pasaje:4:1"
+              ],
+              "column": 0
+            },
+            {
+              "id": "pasaje:1:1",
+              "row": 1,
+              "kind": "chest",
+              "next": [
+                "pasaje:3:2"
+              ],
+              "column": 1
+            },
+            {
+              "id": "pasaje:3:2",
+              "row": 2,
+              "kind": "pact",
+              "next": [
+                "pasaje:2:1"
+              ],
+              "column": 0
+            },
+            {
+              "id": "pasaje:2:2",
+              "row": 2,
+              "kind": "encounter",
+              "next": [
+                "pasaje:3:0",
+                "pasaje:4:0"
+              ],
+              "column": 1
+            },
+            {
+              "id": "pasaje:4:1",
+              "row": 2,
+              "kind": "encounter",
+              "next": [
+                "pasaje:4:0",
+                "pasaje:3:0"
+              ],
+              "column": 2
+            },
+            {
+              "id": "pasaje:2:1",
+              "row": 3,
+              "kind": "refuge",
+              "next": [
+                "pasaje:5:1"
+              ],
+              "column": 0
+            },
+            {
+              "id": "pasaje:3:0",
+              "row": 3,
+              "kind": "chest",
+              "next": [
+                "pasaje:5:0",
+                "pasaje:5:1"
+              ],
+              "column": 1
+            },
+            {
+              "id": "pasaje:4:0",
+              "row": 3,
+              "kind": "refuge",
+              "next": [
+                "pasaje:5:2",
+                "pasaje:5:0"
+              ],
+              "column": 2
+            },
+            {
+              "id": "pasaje:5:1",
+              "row": 4,
+              "kind": "chest",
+              "next": [
+                "pasaje:3:1"
+              ],
+              "column": 0
+            },
+            {
+              "id": "pasaje:5:0",
+              "row": 4,
+              "kind": "duel",
+              "next": [
+                "pasaje:2:0"
+              ],
+              "column": 1
+            },
+            {
+              "id": "pasaje:5:2",
+              "row": 4,
+              "kind": "refuge",
+              "next": [
+                "pasaje:4:2",
+                "pasaje:3:1"
+              ],
+              "column": 2
+            },
+            {
+              "id": "pasaje:3:1",
+              "row": 5,
+              "kind": "duel",
+              "next": [
+                "pasaje:6:0"
+              ],
+              "column": 0
+            },
+            {
+              "id": "pasaje:2:0",
+              "row": 5,
+              "kind": "duel",
+              "next": [
+                "pasaje:6:0"
+              ],
+              "column": 1
+            },
+            {
+              "id": "pasaje:4:2",
+              "row": 5,
+              "kind": "duel",
+              "next": [
+                "pasaje:6:0"
+              ],
+              "column": 2
+            },
+            {
+              "id": "pasaje:6:0",
+              "row": 6,
+              "kind": "boss",
+              "next": [],
+              "column": 0
+            }
+          ]
+        },
+        "status": "won",
+        "zoneId": "pasaje",
+        "members": [
+          {
+            "source": "owned",
+            "unit": {
+              "id": "starter:apprentice",
+              "wizardId": "apprentice",
+              "level": 1,
+              "affinity": "alchemy",
+              "hp": 61,
+              "maxHp": 100,
+              "mana": 31,
+              "maxMana": 40,
+              "power": 10,
+              "speed": 6,
+              "wandPowerBonus": 2,
+              "wandMultiplier": 1,
+              "broomInitiative": 3
+            }
+          },
+          {
+            "source": "temporary",
+            "unit": {
+              "id": "pasaje:0:0:recruit",
+              "wizardId": "rune-weaver",
+              "level": 1,
+              "affinity": "alchemy",
+              "hp": 90,
+              "maxHp": 90,
+              "mana": 32,
+              "maxMana": 40,
+              "power": 10,
+              "speed": 7,
+              "wandPowerBonus": 0,
+              "wandMultiplier": 1,
+              "broomInitiative": 0
+            }
+          },
+          {
+            "source": "temporary",
+            "unit": {
+              "id": "pasaje:1:0:recruit",
+              "wizardId": "rune-weaver",
+              "level": 1,
+              "affinity": "alchemy",
+              "hp": 90,
+              "maxHp": 90,
+              "mana": 32,
+              "maxMana": 40,
+              "power": 10,
+              "speed": 7,
+              "wandPowerBonus": 0,
+              "wandMultiplier": 1,
+              "broomInitiative": 0
+            }
+          },
+          {
+            "source": "temporary",
+            "unit": {
+              "id": "pasaje:3:2:recruit",
+              "wizardId": "rune-weaver",
+              "level": 1,
+              "affinity": "alchemy",
+              "hp": 90,
+              "maxHp": 90,
+              "mana": 32,
+              "maxMana": 40,
+              "power": 10,
+              "speed": 7,
+              "wandPowerBonus": 0,
+              "wandMultiplier": 1,
+              "broomInitiative": 0
+            }
+          }
+        ],
+        "visited": [
+          "pasaje:0:0",
+          "pasaje:1:0",
+          "pasaje:3:2",
+          "pasaje:2:1",
+          "pasaje:5:1",
+          "pasaje:3:1",
+          "pasaje:6:0"
+        ],
+        "reserves": [],
+        "graphVersion": 1,
+        "campaignVersion": 1,
+        "routeGeneration": {
+          "seed": 3690348138,
+          "version": 1
+        }
+      },
+      "kind": "advance-node",
+      "battle": {
+        "id": "a9302da7-2c9c-4186-be1f-fe652712707f:battle",
+        "input": {
+          "id": "a9302da7-2c9c-4186-be1f-fe652712707f:battle",
+          "seed": 3176890792,
+          "player": [
+            {
+              "id": "starter:apprentice",
+              "wizardId": "apprentice",
+              "level": 1,
+              "affinity": "alchemy",
+              "hp": 97,
+              "maxHp": 100,
+              "mana": 37,
+              "maxMana": 40,
+              "power": 10,
+              "speed": 6,
+              "wandPowerBonus": 2,
+              "wandMultiplier": 1,
+              "broomInitiative": 3
+            },
+            {
+              "id": "pasaje:0:0:recruit",
+              "wizardId": "rune-weaver",
+              "level": 1,
+              "affinity": "alchemy",
+              "hp": 90,
+              "maxHp": 90,
+              "mana": 38,
+              "maxMana": 40,
+              "power": 10,
+              "speed": 7,
+              "wandPowerBonus": 0,
+              "wandMultiplier": 1,
+              "broomInitiative": 0
+            },
+            {
+              "id": "pasaje:1:0:recruit",
+              "wizardId": "rune-weaver",
+              "level": 1,
+              "affinity": "alchemy",
+              "hp": 90,
+              "maxHp": 90,
+              "mana": 38,
+              "maxMana": 40,
+              "power": 10,
+              "speed": 7,
+              "wandPowerBonus": 0,
+              "wandMultiplier": 1,
+              "broomInitiative": 0
+            },
+            {
+              "id": "pasaje:3:2:recruit",
+              "wizardId": "rune-weaver",
+              "level": 1,
+              "affinity": "alchemy",
+              "hp": 90,
+              "maxHp": 90,
+              "mana": 38,
+              "maxMana": 40,
+              "power": 10,
+              "speed": 7,
+              "wandPowerBonus": 0,
+              "wandMultiplier": 1,
+              "broomInitiative": 0
+            }
+          ],
+          "rival": [
+            {
+              "id": "pasaje:6:0:rival:0",
+              "wizardId": "rival",
+              "level": 1,
+              "affinity": "neutral",
+              "hp": 80,
+              "maxHp": 80,
+              "mana": 40,
+              "maxMana": 40,
+              "power": 6,
+              "speed": 5,
+              "wandPowerBonus": 0,
+              "wandMultiplier": 1,
+              "broomInitiative": 0
+            },
+            {
+              "id": "pasaje:6:0:rival:1",
+              "wizardId": "rival",
+              "level": 1,
+              "affinity": "neutral",
+              "hp": 80,
+              "maxHp": 80,
+              "mana": 40,
+              "maxMana": 40,
+              "power": 6,
+              "speed": 5,
+              "wandPowerBonus": 0,
+              "wandMultiplier": 1,
+              "broomInitiative": 0
+            },
+            {
+              "id": "pasaje:6:0:rival:2",
+              "wizardId": "rival",
+              "level": 1,
+              "affinity": "neutral",
+              "hp": 80,
+              "maxHp": 80,
+              "mana": 40,
+              "maxMana": 40,
+              "power": 6,
+              "speed": 5,
+              "wandPowerBonus": 0,
+              "wandMultiplier": 1,
+              "broomInitiative": 0
+            }
+          ],
+          "rules": {
+            "version": 1,
+            "maxRounds": 60,
+            "spellManaCost": 1,
+            "fireBurnDamage": 2,
+            "alchemyHealing": 3,
+            "shadowInitiative": 2,
+            "beans": {
+              "version": 1,
+              "entries": [
+                {
+                  "weight": 1,
+                  "flavour": "mint"
+                },
+                {
+                  "weight": 1,
+                  "flavour": "pepper"
+                },
+                {
+                  "weight": 1,
+                  "flavour": "earth"
+                },
+                {
+                  "weight": 1,
+                  "flavour": "soap"
+                }
+              ]
+            }
+          }
+        },
+        "rival": [
+          {
+            "id": "pasaje:6:0:rival:0",
+            "wizardId": "rival",
+            "level": 1,
+            "affinity": "neutral",
+            "hp": 0,
+            "maxHp": 80,
+            "mana": 39,
+            "maxMana": 40,
+            "power": 6,
+            "speed": 5,
+            "wandPowerBonus": 0,
+            "wandMultiplier": 1,
+            "broomInitiative": 0,
+            "effect": null
+          },
+          {
+            "id": "pasaje:6:0:rival:1",
+            "wizardId": "rival",
+            "level": 1,
+            "affinity": "neutral",
+            "hp": 0,
+            "maxHp": 80,
+            "mana": 37,
+            "maxMana": 40,
+            "power": 6,
+            "speed": 5,
+            "wandPowerBonus": 0,
+            "wandMultiplier": 1,
+            "broomInitiative": 0,
+            "effect": null
+          },
+          {
+            "id": "pasaje:6:0:rival:2",
+            "wizardId": "rival",
+            "level": 1,
+            "affinity": "neutral",
+            "hp": 0,
+            "maxHp": 80,
+            "mana": 35,
+            "maxMana": 40,
+            "power": 6,
+            "speed": 5,
+            "wandPowerBonus": 0,
+            "wandMultiplier": 1,
+            "broomInitiative": 0,
+            "effect": null
+          }
+        ],
+        "events": [
+          {
+            "kind": "combat-started",
+            "seed": 3176890792,
+            "round": 0,
+            "sequence": 0
+          },
+          {
+            "kind": "synergy-activated",
+            "team": "player",
+            "round": 0,
+            "members": 4,
+            "affinity": "alchemy",
+            "sequence": 1
+          },
+          {
+            "kind": "turn-started",
+            "team": "player",
+            "round": 1,
+            "actorId": "starter:apprentice",
+            "sequence": 2,
+            "initiative": 9
+          },
+          {
+            "hp": 100,
+            "kind": "healed",
+            "round": 1,
+            "amount": 3,
+            "source": "alchemy",
+            "actorId": "starter:apprentice",
+            "sequence": 3
+          },
+          {
+            "kind": "spell-cast",
+            "mana": 36,
+            "round": 1,
+            "damage": 12,
+            "missed": false,
+            "actorId": "starter:apprentice",
+            "sequence": 4,
+            "targetHp": 68,
+            "targetId": "pasaje:6:0:rival:0"
+          },
+          {
+            "kind": "turn-started",
+            "team": "player",
+            "round": 1,
+            "actorId": "pasaje:0:0:recruit",
+            "sequence": 5,
+            "initiative": 7
+          },
+          {
+            "kind": "spell-cast",
+            "mana": 37,
+            "round": 1,
+            "damage": 10,
+            "missed": false,
+            "actorId": "pasaje:0:0:recruit",
+            "sequence": 6,
+            "targetHp": 58,
+            "targetId": "pasaje:6:0:rival:0"
+          },
+          {
+            "kind": "turn-started",
+            "team": "player",
+            "round": 1,
+            "actorId": "pasaje:1:0:recruit",
+            "sequence": 7,
+            "initiative": 7
+          },
+          {
+            "kind": "spell-cast",
+            "mana": 37,
+            "round": 1,
+            "damage": 10,
+            "missed": false,
+            "actorId": "pasaje:1:0:recruit",
+            "sequence": 8,
+            "targetHp": 48,
+            "targetId": "pasaje:6:0:rival:0"
+          },
+          {
+            "kind": "turn-started",
+            "team": "player",
+            "round": 1,
+            "actorId": "pasaje:3:2:recruit",
+            "sequence": 9,
+            "initiative": 7
+          },
+          {
+            "kind": "spell-cast",
+            "mana": 37,
+            "round": 1,
+            "damage": 10,
+            "missed": false,
+            "actorId": "pasaje:3:2:recruit",
+            "sequence": 10,
+            "targetHp": 38,
+            "targetId": "pasaje:6:0:rival:0"
+          },
+          {
+            "kind": "turn-started",
+            "team": "rival",
+            "round": 1,
+            "actorId": "pasaje:6:0:rival:0",
+            "sequence": 11,
+            "initiative": 5
+          },
+          {
+            "kind": "spell-cast",
+            "mana": 39,
+            "round": 1,
+            "damage": 6,
+            "missed": false,
+            "actorId": "pasaje:6:0:rival:0",
+            "sequence": 12,
+            "targetHp": 94,
+            "targetId": "starter:apprentice"
+          },
+          {
+            "kind": "turn-started",
+            "team": "rival",
+            "round": 1,
+            "actorId": "pasaje:6:0:rival:1",
+            "sequence": 13,
+            "initiative": 5
+          },
+          {
+            "kind": "spell-cast",
+            "mana": 39,
+            "round": 1,
+            "damage": 6,
+            "missed": false,
+            "actorId": "pasaje:6:0:rival:1",
+            "sequence": 14,
+            "targetHp": 88,
+            "targetId": "starter:apprentice"
+          },
+          {
+            "kind": "turn-started",
+            "team": "rival",
+            "round": 1,
+            "actorId": "pasaje:6:0:rival:2",
+            "sequence": 15,
+            "initiative": 5
+          },
+          {
+            "kind": "spell-cast",
+            "mana": 39,
+            "round": 1,
+            "damage": 6,
+            "missed": false,
+            "actorId": "pasaje:6:0:rival:2",
+            "sequence": 16,
+            "targetHp": 82,
+            "targetId": "starter:apprentice"
+          },
+          {
+            "kind": "turn-started",
+            "team": "player",
+            "round": 2,
+            "actorId": "starter:apprentice",
+            "sequence": 17,
+            "initiative": 9
+          },
+          {
+            "hp": 85,
+            "kind": "healed",
+            "round": 2,
+            "amount": 3,
+            "source": "alchemy",
+            "actorId": "starter:apprentice",
+            "sequence": 18
+          },
+          {
+            "kind": "spell-cast",
+            "mana": 35,
+            "round": 2,
+            "damage": 12,
+            "missed": false,
+            "actorId": "starter:apprentice",
+            "sequence": 19,
+            "targetHp": 26,
+            "targetId": "pasaje:6:0:rival:0"
+          },
+          {
+            "kind": "turn-started",
+            "team": "player",
+            "round": 2,
+            "actorId": "pasaje:0:0:recruit",
+            "sequence": 20,
+            "initiative": 7
+          },
+          {
+            "kind": "spell-cast",
+            "mana": 36,
+            "round": 2,
+            "damage": 10,
+            "missed": false,
+            "actorId": "pasaje:0:0:recruit",
+            "sequence": 21,
+            "targetHp": 16,
+            "targetId": "pasaje:6:0:rival:0"
+          },
+          {
+            "kind": "turn-started",
+            "team": "player",
+            "round": 2,
+            "actorId": "pasaje:1:0:recruit",
+            "sequence": 22,
+            "initiative": 7
+          },
+          {
+            "kind": "spell-cast",
+            "mana": 36,
+            "round": 2,
+            "damage": 10,
+            "missed": false,
+            "actorId": "pasaje:1:0:recruit",
+            "sequence": 23,
+            "targetHp": 6,
+            "targetId": "pasaje:6:0:rival:0"
+          },
+          {
+            "kind": "turn-started",
+            "team": "player",
+            "round": 2,
+            "actorId": "pasaje:3:2:recruit",
+            "sequence": 24,
+            "initiative": 7
+          },
+          {
+            "kind": "spell-cast",
+            "mana": 36,
+            "round": 2,
+            "damage": 6,
+            "missed": false,
+            "actorId": "pasaje:3:2:recruit",
+            "sequence": 25,
+            "targetHp": 0,
+            "targetId": "pasaje:6:0:rival:0"
+          },
+          {
+            "kind": "turn-started",
+            "team": "rival",
+            "round": 2,
+            "actorId": "pasaje:6:0:rival:1",
+            "sequence": 26,
+            "initiative": 5
+          },
+          {
+            "kind": "spell-cast",
+            "mana": 38,
+            "round": 2,
+            "damage": 6,
+            "missed": false,
+            "actorId": "pasaje:6:0:rival:1",
+            "sequence": 27,
+            "targetHp": 79,
+            "targetId": "starter:apprentice"
+          },
+          {
+            "kind": "turn-started",
+            "team": "rival",
+            "round": 2,
+            "actorId": "pasaje:6:0:rival:2",
+            "sequence": 28,
+            "initiative": 5
+          },
+          {
+            "kind": "spell-cast",
+            "mana": 38,
+            "round": 2,
+            "damage": 6,
+            "missed": false,
+            "actorId": "pasaje:6:0:rival:2",
+            "sequence": 29,
+            "targetHp": 73,
+            "targetId": "starter:apprentice"
+          },
+          {
+            "kind": "turn-started",
+            "team": "player",
+            "round": 3,
+            "actorId": "starter:apprentice",
+            "sequence": 30,
+            "initiative": 9
+          },
+          {
+            "hp": 76,
+            "kind": "healed",
+            "round": 3,
+            "amount": 3,
+            "source": "alchemy",
+            "actorId": "starter:apprentice",
+            "sequence": 31
+          },
+          {
+            "kind": "spell-cast",
+            "mana": 34,
+            "round": 3,
+            "damage": 12,
+            "missed": false,
+            "actorId": "starter:apprentice",
+            "sequence": 32,
+            "targetHp": 68,
+            "targetId": "pasaje:6:0:rival:1"
+          },
+          {
+            "kind": "turn-started",
+            "team": "player",
+            "round": 3,
+            "actorId": "pasaje:0:0:recruit",
+            "sequence": 33,
+            "initiative": 7
+          },
+          {
+            "kind": "spell-cast",
+            "mana": 35,
+            "round": 3,
+            "damage": 10,
+            "missed": false,
+            "actorId": "pasaje:0:0:recruit",
+            "sequence": 34,
+            "targetHp": 58,
+            "targetId": "pasaje:6:0:rival:1"
+          },
+          {
+            "kind": "turn-started",
+            "team": "player",
+            "round": 3,
+            "actorId": "pasaje:1:0:recruit",
+            "sequence": 35,
+            "initiative": 7
+          },
+          {
+            "kind": "spell-cast",
+            "mana": 35,
+            "round": 3,
+            "damage": 10,
+            "missed": false,
+            "actorId": "pasaje:1:0:recruit",
+            "sequence": 36,
+            "targetHp": 48,
+            "targetId": "pasaje:6:0:rival:1"
+          },
+          {
+            "kind": "turn-started",
+            "team": "player",
+            "round": 3,
+            "actorId": "pasaje:3:2:recruit",
+            "sequence": 37,
+            "initiative": 7
+          },
+          {
+            "kind": "spell-cast",
+            "mana": 35,
+            "round": 3,
+            "damage": 10,
+            "missed": false,
+            "actorId": "pasaje:3:2:recruit",
+            "sequence": 38,
+            "targetHp": 38,
+            "targetId": "pasaje:6:0:rival:1"
+          },
+          {
+            "kind": "turn-started",
+            "team": "rival",
+            "round": 3,
+            "actorId": "pasaje:6:0:rival:1",
+            "sequence": 39,
+            "initiative": 5
+          },
+          {
+            "kind": "spell-cast",
+            "mana": 37,
+            "round": 3,
+            "damage": 6,
+            "missed": false,
+            "actorId": "pasaje:6:0:rival:1",
+            "sequence": 40,
+            "targetHp": 70,
+            "targetId": "starter:apprentice"
+          },
+          {
+            "kind": "turn-started",
+            "team": "rival",
+            "round": 3,
+            "actorId": "pasaje:6:0:rival:2",
+            "sequence": 41,
+            "initiative": 5
+          },
+          {
+            "kind": "spell-cast",
+            "mana": 37,
+            "round": 3,
+            "damage": 6,
+            "missed": false,
+            "actorId": "pasaje:6:0:rival:2",
+            "sequence": 42,
+            "targetHp": 64,
+            "targetId": "starter:apprentice"
+          },
+          {
+            "kind": "turn-started",
+            "team": "player",
+            "round": 4,
+            "actorId": "starter:apprentice",
+            "sequence": 43,
+            "initiative": 9
+          },
+          {
+            "hp": 67,
+            "kind": "healed",
+            "round": 4,
+            "amount": 3,
+            "source": "alchemy",
+            "actorId": "starter:apprentice",
+            "sequence": 44
+          },
+          {
+            "kind": "spell-cast",
+            "mana": 33,
+            "round": 4,
+            "damage": 12,
+            "missed": false,
+            "actorId": "starter:apprentice",
+            "sequence": 45,
+            "targetHp": 26,
+            "targetId": "pasaje:6:0:rival:1"
+          },
+          {
+            "kind": "turn-started",
+            "team": "player",
+            "round": 4,
+            "actorId": "pasaje:0:0:recruit",
+            "sequence": 46,
+            "initiative": 7
+          },
+          {
+            "kind": "spell-cast",
+            "mana": 34,
+            "round": 4,
+            "damage": 10,
+            "missed": false,
+            "actorId": "pasaje:0:0:recruit",
+            "sequence": 47,
+            "targetHp": 16,
+            "targetId": "pasaje:6:0:rival:1"
+          },
+          {
+            "kind": "turn-started",
+            "team": "player",
+            "round": 4,
+            "actorId": "pasaje:1:0:recruit",
+            "sequence": 48,
+            "initiative": 7
+          },
+          {
+            "kind": "spell-cast",
+            "mana": 34,
+            "round": 4,
+            "damage": 10,
+            "missed": false,
+            "actorId": "pasaje:1:0:recruit",
+            "sequence": 49,
+            "targetHp": 6,
+            "targetId": "pasaje:6:0:rival:1"
+          },
+          {
+            "kind": "turn-started",
+            "team": "player",
+            "round": 4,
+            "actorId": "pasaje:3:2:recruit",
+            "sequence": 50,
+            "initiative": 7
+          },
+          {
+            "kind": "spell-cast",
+            "mana": 34,
+            "round": 4,
+            "damage": 6,
+            "missed": false,
+            "actorId": "pasaje:3:2:recruit",
+            "sequence": 51,
+            "targetHp": 0,
+            "targetId": "pasaje:6:0:rival:1"
+          },
+          {
+            "kind": "turn-started",
+            "team": "rival",
+            "round": 4,
+            "actorId": "pasaje:6:0:rival:2",
+            "sequence": 52,
+            "initiative": 5
+          },
+          {
+            "kind": "spell-cast",
+            "mana": 36,
+            "round": 4,
+            "damage": 6,
+            "missed": false,
+            "actorId": "pasaje:6:0:rival:2",
+            "sequence": 53,
+            "targetHp": 61,
+            "targetId": "starter:apprentice"
+          },
+          {
+            "kind": "turn-started",
+            "team": "player",
+            "round": 5,
+            "actorId": "starter:apprentice",
+            "sequence": 54,
+            "initiative": 9
+          },
+          {
+            "hp": 64,
+            "kind": "healed",
+            "round": 5,
+            "amount": 3,
+            "source": "alchemy",
+            "actorId": "starter:apprentice",
+            "sequence": 55
+          },
+          {
+            "kind": "spell-cast",
+            "mana": 32,
+            "round": 5,
+            "damage": 12,
+            "missed": false,
+            "actorId": "starter:apprentice",
+            "sequence": 56,
+            "targetHp": 68,
+            "targetId": "pasaje:6:0:rival:2"
+          },
+          {
+            "kind": "turn-started",
+            "team": "player",
+            "round": 5,
+            "actorId": "pasaje:0:0:recruit",
+            "sequence": 57,
+            "initiative": 7
+          },
+          {
+            "kind": "spell-cast",
+            "mana": 33,
+            "round": 5,
+            "damage": 10,
+            "missed": false,
+            "actorId": "pasaje:0:0:recruit",
+            "sequence": 58,
+            "targetHp": 58,
+            "targetId": "pasaje:6:0:rival:2"
+          },
+          {
+            "kind": "turn-started",
+            "team": "player",
+            "round": 5,
+            "actorId": "pasaje:1:0:recruit",
+            "sequence": 59,
+            "initiative": 7
+          },
+          {
+            "kind": "spell-cast",
+            "mana": 33,
+            "round": 5,
+            "damage": 10,
+            "missed": false,
+            "actorId": "pasaje:1:0:recruit",
+            "sequence": 60,
+            "targetHp": 48,
+            "targetId": "pasaje:6:0:rival:2"
+          },
+          {
+            "kind": "turn-started",
+            "team": "player",
+            "round": 5,
+            "actorId": "pasaje:3:2:recruit",
+            "sequence": 61,
+            "initiative": 7
+          },
+          {
+            "kind": "spell-cast",
+            "mana": 33,
+            "round": 5,
+            "damage": 10,
+            "missed": false,
+            "actorId": "pasaje:3:2:recruit",
+            "sequence": 62,
+            "targetHp": 38,
+            "targetId": "pasaje:6:0:rival:2"
+          },
+          {
+            "kind": "turn-started",
+            "team": "rival",
+            "round": 5,
+            "actorId": "pasaje:6:0:rival:2",
+            "sequence": 63,
+            "initiative": 5
+          },
+          {
+            "kind": "spell-cast",
+            "mana": 35,
+            "round": 5,
+            "damage": 6,
+            "missed": false,
+            "actorId": "pasaje:6:0:rival:2",
+            "sequence": 64,
+            "targetHp": 58,
+            "targetId": "starter:apprentice"
+          },
+          {
+            "kind": "turn-started",
+            "team": "player",
+            "round": 6,
+            "actorId": "starter:apprentice",
+            "sequence": 65,
+            "initiative": 9
+          },
+          {
+            "hp": 61,
+            "kind": "healed",
+            "round": 6,
+            "amount": 3,
+            "source": "alchemy",
+            "actorId": "starter:apprentice",
+            "sequence": 66
+          },
+          {
+            "kind": "spell-cast",
+            "mana": 31,
+            "round": 6,
+            "damage": 12,
+            "missed": false,
+            "actorId": "starter:apprentice",
+            "sequence": 67,
+            "targetHp": 26,
+            "targetId": "pasaje:6:0:rival:2"
+          },
+          {
+            "kind": "turn-started",
+            "team": "player",
+            "round": 6,
+            "actorId": "pasaje:0:0:recruit",
+            "sequence": 68,
+            "initiative": 7
+          },
+          {
+            "kind": "spell-cast",
+            "mana": 32,
+            "round": 6,
+            "damage": 10,
+            "missed": false,
+            "actorId": "pasaje:0:0:recruit",
+            "sequence": 69,
+            "targetHp": 16,
+            "targetId": "pasaje:6:0:rival:2"
+          },
+          {
+            "kind": "turn-started",
+            "team": "player",
+            "round": 6,
+            "actorId": "pasaje:1:0:recruit",
+            "sequence": 70,
+            "initiative": 7
+          },
+          {
+            "kind": "spell-cast",
+            "mana": 32,
+            "round": 6,
+            "damage": 10,
+            "missed": false,
+            "actorId": "pasaje:1:0:recruit",
+            "sequence": 71,
+            "targetHp": 6,
+            "targetId": "pasaje:6:0:rival:2"
+          },
+          {
+            "kind": "turn-started",
+            "team": "player",
+            "round": 6,
+            "actorId": "pasaje:3:2:recruit",
+            "sequence": 72,
+            "initiative": 7
+          },
+          {
+            "kind": "spell-cast",
+            "mana": 32,
+            "round": 6,
+            "damage": 6,
+            "missed": false,
+            "actorId": "pasaje:3:2:recruit",
+            "sequence": 73,
+            "targetHp": 0,
+            "targetId": "pasaje:6:0:rival:2"
+          },
+          {
+            "kind": "combat-finished",
+            "round": 6,
+            "rounds": 6,
+            "outcome": "player",
+            "sequence": 74
+          }
+        ],
+        "player": [
+          {
+            "id": "starter:apprentice",
+            "wizardId": "apprentice",
+            "level": 1,
+            "affinity": "alchemy",
+            "hp": 61,
+            "maxHp": 100,
+            "mana": 31,
+            "maxMana": 40,
+            "power": 10,
+            "speed": 6,
+            "wandPowerBonus": 2,
+            "wandMultiplier": 1,
+            "broomInitiative": 3,
+            "effect": null
+          },
+          {
+            "id": "pasaje:0:0:recruit",
+            "wizardId": "rune-weaver",
+            "level": 1,
+            "affinity": "alchemy",
+            "hp": 90,
+            "maxHp": 90,
+            "mana": 32,
+            "maxMana": 40,
+            "power": 10,
+            "speed": 7,
+            "wandPowerBonus": 0,
+            "wandMultiplier": 1,
+            "broomInitiative": 0,
+            "effect": null
+          },
+          {
+            "id": "pasaje:1:0:recruit",
+            "wizardId": "rune-weaver",
+            "level": 1,
+            "affinity": "alchemy",
+            "hp": 90,
+            "maxHp": 90,
+            "mana": 32,
+            "maxMana": 40,
+            "power": 10,
+            "speed": 7,
+            "wandPowerBonus": 0,
+            "wandMultiplier": 1,
+            "broomInitiative": 0,
+            "effect": null
+          },
+          {
+            "id": "pasaje:3:2:recruit",
+            "wizardId": "rune-weaver",
+            "level": 1,
+            "affinity": "alchemy",
+            "hp": 90,
+            "maxHp": 90,
+            "mana": 32,
+            "maxMana": 40,
+            "power": 10,
+            "speed": 7,
+            "wandPowerBonus": 0,
+            "wandMultiplier": 1,
+            "broomInitiative": 0,
+            "effect": null
+          }
+        ],
+        "rounds": 6,
+        "outcome": "player",
+        "engineVersion": 1
+      },
+      "reward": {
+        "crowns": 50,
+        "goldKeys": 1,
+        "products": [
+          "cacao-toad"
+        ]
+      },
+      "request": {
+        "runId": "9acfae0e-b83d-4906-9791-d72e2ccd4505",
+        "nodeId": "pasaje:6:0",
+        "assignments": [],
+        "campaignVersion": 1
+      },
+      "encounter": null,
+      "firstVictory": true
+    }
+  ]
+}

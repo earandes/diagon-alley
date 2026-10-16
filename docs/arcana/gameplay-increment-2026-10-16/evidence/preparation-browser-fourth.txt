@@ -1,0 +1,38 @@
+[WebServer] (node:38940) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:38966) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 1 test using 1 worker
+
+(node:38972) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  1 [chromium] › docs/arcana/gameplay-increment-2026-10-16/evidence/preparation.spec.ts:7:2 › contextual beans complete journey es (1.4m)
+
+
+  1) [chromium] › docs/arcana/gameplay-increment-2026-10-16/evidence/preparation.spec.ts:7:2 › contextual beans complete journey es 
+
+    Test was interrupted.
+
+    Error: locator.click: Test ended.
+    Call log:
+      - waiting for getByRole('button', { name: 'Álbum de Cromos', exact: true })
+        - waiting for "http://127.0.0.1:5364/" navigation to finish...
+        - navigated to "http://127.0.0.1:5364/#/battle"
+
+
+      61 |   const after = await readGame(page); expect(after.inventory.products.find((p) => p.id === bean.id)!.status).toBe('consumed');
+      62 |   expect(after.inventory.essence.points).toBe(before.inventory.essence.points - 5);
+    > 63 |   const receipt = after.receipts.findLast((r) => r.kind === 'advance-node' && r.battle)!;
+         |                                            ^
+      64 |   expect(receipt.kind === 'advance-node' && receipt.request.assignments).toEqual([{ unitId: two.unit.id, beanId: bean.id }]);
+      65 |   await page.reload(); expect(await readGame(page)).toEqual(after);
+      66 |   await b('Álbum de Cromos', 'Card Album').click(); await expect(page.locator('.flavour-cabinet')).toBeVisible(); await shot('flavour');
+        at /Users/enricarandes/work/diagon-alley/docs/arcana/gameplay-increment-2026-10-16/evidence/preparation.spec.ts:63:44
+
+    Error: ENOENT: no such file or directory, unlink '/Users/enricarandes/work/diagon-alley/docs/arcana/gameplay-increment-2026-10-16/evidence/preparation-results/.playwright-artifacts-0/a1fa2fa9db2664c18b29600d3fc730a7.zip'
+
+    Error Context: docs/arcana/gameplay-increment-2026-10-16/evidence/preparation-results/preparation-contextual-beans-complete-journey-es-chromium/error-context.md
+
+  1 interrupted
+    [chromium] › docs/arcana/gameplay-increment-2026-10-16/evidence/preparation.spec.ts:7:2 › contextual beans complete journey es 
