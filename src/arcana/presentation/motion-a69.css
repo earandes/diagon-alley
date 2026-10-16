@@ -136,3 +136,34 @@
 .battle-panel[data-replay-playing='false'] .arena-delta {
   animation-play-state: paused;
 }
+
+/* Keep impact labels readable at 2x, then clear them without an extra JS timer. */
+.battle-panel.arena-a63 .arena-delta {
+  animation: a69-delta-read 520ms ease-out both;
+}
+.battle-panel.arena-a63[data-replay-playing='false'] .arena-delta {
+  animation-play-state: paused;
+}
+@keyframes a69-delta-read {
+  0% {
+    opacity: 0.5;
+    transform: translateY(5px);
+  }
+  18%,
+  75% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+}
+.battle-panel.arena-a63 .arena-stage[data-reduced='true'] .arena-delta {
+  animation: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .battle-panel.arena-a63 .arena-delta {
+    animation: none;
+  }
+}
