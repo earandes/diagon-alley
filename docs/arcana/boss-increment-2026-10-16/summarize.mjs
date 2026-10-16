@@ -23,6 +23,28 @@ const percentiles = (values) => {
   const p = (q) => sorted[Math.floor((sorted.length - 1) * q)];
   return { samples: sorted.length, p50: p(0.5), p95: p(0.95), max: sorted.at(-1) };
 };
+const imageLoad = (window) => {
+  if (!window?.decodes || !window?.imageResources) return null;
+  const network = window.imageResources;
+  const decoded = window.decodes.map((entry) => {
+    const resource = network
+      .filter((r) => r.image === entry.image && r.responseEnd <= entry.end)
+      .sort((a, b) => b.responseEnd - a.responseEnd)[0];
+    return {
+      ...entry,
+      promiseSpanMs: entry.end - entry.start,
+      postResponseWaitMs: resource ? Math.max(0, entry.end - resource.responseEnd) : null,
+    };
+  });
+  return {
+    observedThroughMs: window.atMs,
+    networkResources: network.length,
+    resourceDurationMs: percentiles(network.map((entry) => entry.duration)),
+    decodePromiseSpansMs: percentiles(decoded.map((entry) => entry.promiseSpanMs)),
+    postResponseWaitMs: percentiles(decoded.map((entry) => entry.postResponseWaitMs)),
+    decoded,
+  };
+};
 const output = {
   records: records.length,
   sourceShas: [...new Set(records.map((r) => r.data.sha).filter(Boolean))],
@@ -73,6 +95,7 @@ const output = {
       actualPaints: data.actualPaints,
       cycles: data.cycles,
       ownTextureBytes: range(data.resources.map((r) => Number(r.textureBytes))),
+      imageLoad: imageLoad(data.warm),
       startup: {
         elapsedUpperBoundMs: data.startup?.elapsed,
         rafIntervalsMs: percentiles(data.startup?.samples ?? []),
@@ -84,6 +107,7 @@ const output = {
     'Presentation fixtures use prolonged player stats, not campaign balance; setup also resolves their log.',
     'New document is not an OS/driver cache reset. rAF intervals are not GPU timings.',
     'Resource counters cover owned textures only, not total GPU memory or a global leak proof.',
+    'Image resource and decode promise spans overlap; post-response wait also includes scheduling, not decoder CPU time.',
     'Do not pool percentiles from separate windows or claim causal improvement against different A69 fixtures.',
   ],
 };

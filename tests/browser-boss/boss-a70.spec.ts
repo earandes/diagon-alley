@@ -462,6 +462,40 @@ test('A70 selected warm sample and bounded serial lifetimes (one project)', asyn
   await page.addInitScript(() => {
     const samples: number[] = [];
     const tasks: number[] = [];
+    const decodes: {
+      image: string;
+      start: number;
+      end: number;
+      width: number;
+      height: number;
+      failed: boolean;
+    }[] = [];
+    const originalDecode = HTMLImageElement.prototype.decode;
+    const imageName = (url: string) =>
+      url.startsWith('data:') ? 'inline-image' : new URL(url, location.href).pathname;
+    // Observe the original promise without delaying fetch, decode or scene rendering.
+    HTMLImageElement.prototype.decode = function () {
+      const start = performance.now();
+      const image = imageName(this.currentSrc || this.src);
+      const record = (failed: boolean) => {
+        if (decodes.length < 128)
+          decodes.push({
+            image,
+            start,
+            end: performance.now(),
+            width: this.naturalWidth,
+            height: this.naturalHeight,
+            failed,
+          });
+      };
+      return originalDecode.call(this).then(
+        () => record(false),
+        (error: unknown) => {
+          record(true);
+          throw error;
+        },
+      );
+    };
     let previous = 0;
     let running = true;
     let raf = 0;
@@ -487,11 +521,32 @@ test('A70 selected warm sample and bounded serial lifetimes (one project)', asyn
           tasks.length = 0;
           previous = 0;
         },
-        read: () => ({ samples: [...samples], tasks: supported ? [...tasks] : null }),
+        read: () => ({
+          atMs: performance.now(),
+          samples: [...samples],
+          tasks: supported ? [...tasks] : null,
+          decodes: decodes.map((entry) => ({ ...entry })),
+          imageResources: performance
+            .getEntriesByType('resource')
+            .filter((entry) => (entry as PerformanceResourceTiming).initiatorType === 'img')
+            .slice(0, 128)
+            .map((entry) => {
+              const resource = entry as PerformanceResourceTiming;
+              return {
+                image: imageName(resource.name),
+                start: resource.startTime,
+                responseEnd: resource.responseEnd,
+                duration: resource.duration,
+                transferSize: resource.transferSize,
+                decodedBodySize: resource.decodedBodySize,
+              };
+            }),
+        }),
         stop: () => {
           running = false;
           cancelAnimationFrame(raf);
           observer?.disconnect();
+          HTMLImageElement.prototype.decode = originalDecode;
         },
       },
     });
@@ -509,6 +564,8 @@ test('A70 selected warm sample and bounded serial lifetimes (one project)', asyn
   const draws = Number(await scene.getAttribute('data-render-count'));
   await page.waitForTimeout(10000);
   const warm = await page.evaluate(() => window.__a70Perf.read());
+  expect(startup.imageResources.length).toBeGreaterThan(0);
+  expect(warm.decodes.some((entry: { failed: boolean }) => !entry.failed)).toBe(true);
   const actualPaints = Number(await scene.getAttribute('data-render-count')) - draws;
   expect(actualPaints).toBeGreaterThan(0);
   const resources: object[] = [];
@@ -547,6 +604,7 @@ test('A70 selected warm sample and bounded serial lifetimes (one project)', asyn
       'No authoritative network latency in fixture',
       'Different composition from A69 baseline; no causal before-after claim',
       'Own texture counters, not GPU memory or heap proof',
+      'decode() promise spans may overlap fetch; post-response spans include scheduling and are not decoder CPU timings',
     ],
     targetsNotMeasuredGuarantees: { p95FrameMs: 20, extraBossTexturesBytes: 2097152, skipMs: 100 },
   });
@@ -556,7 +614,27 @@ declare global {
   interface Window {
     __a70Perf: {
       reset: () => void;
-      read: () => { samples: number[]; tasks: number[] | null };
+      read: () => {
+        atMs: number;
+        samples: number[];
+        tasks: number[] | null;
+        decodes: {
+          image: string;
+          start: number;
+          end: number;
+          width: number;
+          height: number;
+          failed: boolean;
+        }[];
+        imageResources: {
+          image: string;
+          start: number;
+          responseEnd: number;
+          duration: number;
+          transferSize: number;
+          decodedBodySize: number;
+        }[];
+      };
       stop: () => void;
     };
   }
