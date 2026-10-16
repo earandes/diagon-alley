@@ -147,6 +147,19 @@ for (const language of ['es', 'en'] as const)
       const prelude = page.locator('[data-boss-prelude]');
       await expect(prelude).toHaveAttribute('data-boss-leader', leader.id);
       await expect(prelude).toHaveAttribute('data-boss-roster-size', String(plan.opponents.length));
+      // Initial consultation must expose preparation, not place it under the sticky fight footer.
+      // Visibility alone does not detect an overlapping sibling or auto-scroll on click.
+      const consultation = page.locator('.node-event-dialog');
+      expect(await consultation.evaluate((element) => element.scrollTop)).toBe(0);
+      const footerBox = await page.locator('.node-combat-actions').boundingBox();
+      for (const control of [
+        page.locator('.node-team-prepare'),
+        page.locator('.node-bean-preparation > summary'),
+      ]) {
+        await expect(control).toBeInViewport({ ratio: 1 });
+        const box = await control.boundingBox();
+        expect(box!.y + box!.height).toBeLessThanOrEqual(footerBox!.y);
+      }
       expect(
         await prelude
           .locator('[data-boss-opponent]')

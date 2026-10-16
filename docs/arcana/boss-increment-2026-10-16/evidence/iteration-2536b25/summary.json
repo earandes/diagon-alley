@@ -1,0 +1,108 @@
+{
+  "records": 67,
+  "sourceShas": [
+    "96a56ac322d0d67a6d8184a056d1b8fc6fd56816"
+  ],
+  "authority": {
+    "chromium": {
+      "cases": 12,
+      "actionToDomUsableUpperBoundMs": {
+        "samples": 12,
+        "min": 453,
+        "max": 970
+      },
+      "actionToFiguresReadyUpperBoundMs": {
+        "samples": 12,
+        "min": 455,
+        "max": 1010
+      }
+    },
+    "webkit": {
+      "cases": 12,
+      "actionToDomUsableUpperBoundMs": {
+        "samples": 12,
+        "min": 685,
+        "max": 3121
+      },
+      "actionToFiguresReadyUpperBoundMs": {
+        "samples": 12,
+        "min": 692,
+        "max": 3124
+      }
+    }
+  },
+  "presentation": {
+    "chromium": {
+      "cases": 9,
+      "navigationToReadyUpperBoundMs": {
+        "samples": 9,
+        "min": 464.1000000000349,
+        "max": 747
+      },
+      "ownTextureBytes": {
+        "samples": 9,
+        "min": 4206980,
+        "max": 7008644
+      }
+    },
+    "webkit": {
+      "cases": 9,
+      "navigationToReadyUpperBoundMs": {
+        "samples": 9,
+        "min": 454,
+        "max": 1455
+      },
+      "ownTextureBytes": {
+        "samples": 9,
+        "min": 4206980,
+        "max": 7008644
+      }
+    }
+  },
+  "warmWindows": [
+    {
+      "file": "chromium-1280-boss-a70-performance-lifetimes.json",
+      "engine": "chromium",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "windowMs": 10000,
+      "rafIntervalsMs": {
+        "samples": 576,
+        "p50": 16.699999999999818,
+        "p95": 16.800000000000182,
+        "max": 33.400000000000546
+      },
+      "longTasksMs": [],
+      "actualPaints": 550,
+      "cycles": 8,
+      "ownTextureBytes": {
+        "samples": 8,
+        "min": 5938752,
+        "max": 5938752
+      },
+      "startup": {
+        "elapsedUpperBoundMs": 662.8000000000175,
+        "rafIntervalsMs": {
+          "samples": 12,
+          "p50": 16.700000000000045,
+          "p95": 100,
+          "max": 233.29999999999995
+        },
+        "longTasksMs": [
+          52,
+          87,
+          179
+        ]
+      }
+    }
+  ],
+  "limitations": [
+    "Authority action bounds include Playwright waits, API commit/state polling and UI assertions; they are not human timings.",
+    "Presentation fixtures use prolonged player stats, not campaign balance; setup also resolves their log.",
+    "New document is not an OS/driver cache reset. rAF intervals are not GPU timings.",
+    "Resource counters cover owned textures only, not total GPU memory or a global leak proof.",
+    "Do not pool percentiles from separate windows or claim causal improvement against different A69 fixtures."
+  ]
+}

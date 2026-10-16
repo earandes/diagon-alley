@@ -1,4 +1,20 @@
 /* A70: identity is read from the saved roster; this scene never starts a battle. */
+.game-shell dialog.notice.node-event-dialog:has(.boss-prelude) {
+  padding-top: 18px;
+}
+.game-shell .node-event-dialog:has(.boss-prelude) > .node-confirmation-art {
+  position: absolute;
+  top: 16px;
+  left: 18px;
+  width: 44px;
+  height: 44px;
+  margin: 0;
+  padding: 0;
+}
+.game-shell .node-event-dialog:has(.boss-prelude) > h3 {
+  margin: 10px 44px 12px;
+  font-size: clamp(1.2rem, 3vw, 1.5rem);
+}
 .boss-prelude {
   width: 100%;
   color: var(--pack-ink);
@@ -30,13 +46,13 @@
   margin-top: 8px;
   font-size: 0.8rem;
 }
-.node-preparation .boss-roster {
+.game-shell .node-preparation .boss-roster {
   display: flex;
   justify-content: center;
   gap: 8px;
   margin: 10px 0;
 }
-.node-preparation .boss-roster > div {
+.game-shell .node-preparation .boss-roster > div {
   display: grid;
   justify-items: center;
   gap: 4px;
@@ -44,7 +60,7 @@
   max-width: 94px;
   min-width: 0;
 }
-.node-preparation .boss-roster > div > img {
+.game-shell .node-preparation .boss-roster > div > img {
   width: min(100%, 40px);
   height: 50px;
   object-fit: cover;
@@ -118,7 +134,7 @@
   .boss-prelude-hero > img {
     height: 110px;
   }
-  .node-preparation .boss-roster {
+  .game-shell .node-preparation .boss-roster {
     gap: 4px;
   }
   .boss-roster small {

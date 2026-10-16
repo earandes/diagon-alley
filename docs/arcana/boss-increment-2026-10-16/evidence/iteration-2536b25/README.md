@@ -1,0 +1,3 @@
+# Tercera ejecución A70
+
+Candidato `2536b25`, CI38974420825. El paso A70 terminó correctamente (55 casos y cinco omisiones intencionadas; duración 8m48s). Los 24 recorridos autoritativos y los fallos forzados produjeron evidencia. La inspección de la preparación detectó acceso de equipo parcialmente tapado por el footer: todavía no se aprueba el diseño. Se cancela la ejecución antes de repetir todas las regresiones, se compacta la cabecera y se refuerza la comprobación geométrica inicial de equipo/grageas sin auto-scroll ni solapamiento. No se utiliza el éxito parcial para declarar el candidato siguiente validado.
