@@ -347,6 +347,9 @@ test('A69 CardReveal actual: four ranks, new/repeat, skip, reduced, language/pac
   await expect(page.locator('[data-effect="frog-magic"]')).toHaveCount(0);
   await page.goto(`${fixture}?kind=opening&rarity=common&instance=hidden`);
   await expect(page.locator('.reveal')).toHaveAttribute('data-opening-state', 'playing');
+  await expect
+    .poll(() => page.locator('.opening-subject').evaluate((el) => getComputedStyle(el).transform))
+    .not.toBe('none');
   await page.evaluate(() => {
     Object.defineProperty(document, 'hidden', { configurable: true, get: () => true });
     document.dispatchEvent(new Event('visibilitychange'));
@@ -406,7 +409,7 @@ test('A69 selected visual evidence and 30 serial scene teardown cycles (one Linu
         { intervals: [10, 15, 20] },
       )
       .toBe(true);
-    await pause(page).click();
+    await pause(page).evaluate((el: HTMLButtonElement) => el.click());
     await page.screenshot({ path: resolve(root, 'selected-arena-anticipation.png') });
     await auto(page).click();
     await expect
@@ -414,7 +417,7 @@ test('A69 selected visual evidence and 30 serial scene teardown cycles (one Linu
         intervals: [15, 20, 25],
       })
       .toBe('impact');
-    await pause(page).click();
+    await pause(page).evaluate((el: HTMLButtonElement) => el.click());
     await page.screenshot({ path: resolve(root, 'selected-arena-contact.png') });
     await skip(page).click();
     await expect(page.locator('[data-arena-outcome]')).toBeVisible();

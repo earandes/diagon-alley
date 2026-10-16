@@ -14,6 +14,7 @@ import { text, type MessageKey } from './translations';
 import { arenaText } from './arena-messages';
 import './arena-a63.css';
 import { useBattlePlayback } from './motion/useBattlePlayback';
+import { battleVisualChanges } from './motion/battle-deltas';
 const affinities = {
   neutral: 'neutral',
   alchemy: 'alchemy',
@@ -249,8 +250,13 @@ function BattlePlayback({
   const outcomeLabel = frame.outcome
     ? t(frame.outcome === 'player' ? 'victory' : frame.outcome === 'rival' ? 'defeat' : 'draw')
     : null;
+  const changes = useMemo(
+    () => battleVisualChanges(combat.events, cursor),
+    [combat.events, cursor],
+  );
   const deltaFor = (id: string): string | null => {
-    const event = frame.event;
+    if (reduced || cursor >= total) return null;
+    const event = changes.get(id);
     if (event?.kind === 'spell-cast' && event.targetId === id)
       return event.missed ? '↷' : `−${format.format(event.damage)}`;
     if (event?.kind === 'healed' && event.actorId === id) return `+${format.format(event.amount)}`;
@@ -398,7 +404,7 @@ function BattlePlayback({
                           />
                           {delta && (
                             <span
-                              key={frame.event?.sequence}
+                              key={changes.get(unit.id)?.sequence}
                               className="arena-delta"
                               data-delta-kind={delta.startsWith('+') ? 'heal' : 'damage'}
                               aria-hidden="true"
