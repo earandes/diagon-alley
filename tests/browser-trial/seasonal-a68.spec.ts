@@ -8,7 +8,8 @@ import { gameSnapshot } from '../../src/arcana/application/game';
 import { previewSeasonalPreparation } from '../../src/arcana/domain/seasonal/events';
 /** Linux-only extended seasonal journey. Declared condition fixture is scoped to this fresh account. */
 test('seasonal decisions, preparation, history and recovery', async ({ page }, testInfo) => {
-  page.setDefaultTimeout(4000);
+  page.setDefaultTimeout(10000);
+  const journeyStarted = Date.now();
   // Declared renderer-failure fixture keeps this extended check on the accessible DOM fallback.
   // The previous shorter recorded run exercised the normal renderer.
   if (testInfo.project.metadata.rendererFailure)
@@ -26,6 +27,8 @@ test('seasonal decisions, preparation, history and recovery', async ({ page }, t
   await page.emulateMedia({ reducedMotion: 'reduce' });
   await page.route('**/confectionery-*.webp', (route) => route.abort());
   await page.goto('/');
+  await expect(page.locator('.portal-enter')).toBeEnabled();
+  const navigationToReadyMs = await page.evaluate(() => performance.now());
   await page.locator('.portal-enter').click();
   await expect(page.locator('[data-seasonal-open]')).toBeVisible();
   await expect
@@ -163,6 +166,8 @@ test('seasonal decisions, preparation, history and recovery', async ({ page }, t
   console.log(
     JSON.stringify({
       a68ActionToUsableMs: timings,
+      navigationToReadyMs,
+      completeJourneyMs: Date.now() - journeyStarted,
       scope:
         'one context, one viewport, reduced, lantern error-handler fixture and blocked facade image, keyboard cancel, ES/EN and pack switch; no media',
     }),

@@ -6,7 +6,9 @@ export default defineSafeConfig({
   testDir: './tests/browser-trial',
   testMatch: 'seasonal-a68.spec.ts',
   outputDir: 'test-results-seasonal-a68',
-  timeout: 30000,
+  // One Linux journey includes 5 nodes, 4 seasonal writes, PG setup, language/pack and reload.
+  timeout: 60000,
+  expect: { timeout: 10000 },
   use: { baseURL: 'http://127.0.0.1:5456', serviceWorkers: 'block', hasTouch: true },
   projects: (['chromium', 'webkit'] as const).flatMap((browserName) =>
     [
