@@ -1,0 +1,170 @@
+{
+  "id": "a71-circe-diagon-alley",
+  "version": 1,
+  "identityId": "circe",
+  "pack": "diagon-alley",
+  "source": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/circe/figure.webp",
+  "sourceSha256": "5f778b2b6caf2a906c96562c3062a7c3d7698010df46be47c852ea4f016fb504",
+  "frame": [
+    384,
+    512
+  ],
+  "production": "CPU Pillow: hand-authored cut-paper masks, local cloned clothing restoration, registered upper-body crop. No inference or articulated skeleton.",
+  "editableScript": "tools/visual/export-boss-a71.py",
+  "sourceCoordinates": {
+    "source": "art/character-illustrated-v2/circe/figure.webp",
+    "crop": [
+      0,
+      0,
+      342,
+      428
+    ],
+    "scale": 0.98,
+    "offset": [
+      24,
+      48
+    ],
+    "arm": [
+      [
+        259,
+        222
+      ],
+      [
+        284,
+        249
+      ],
+      [
+        315,
+        296
+      ],
+      [
+        333,
+        350
+      ],
+      [
+        341,
+        428
+      ],
+      [
+        156,
+        428
+      ],
+      [
+        176,
+        382
+      ],
+      [
+        207,
+        312
+      ],
+      [
+        242,
+        326
+      ],
+      [
+        254,
+        288
+      ]
+    ],
+    "restore": [
+      [
+        246,
+        218
+      ],
+      [
+        264,
+        262
+      ],
+      [
+        267,
+        428
+      ],
+      [
+        145,
+        428
+      ],
+      [
+        158,
+        326
+      ],
+      [
+        205,
+        291
+      ]
+    ],
+    "clone": [
+      112,
+      218,
+      174,
+      428
+    ],
+    "armPivot": [
+      271,
+      250
+    ],
+    "origin": [
+      216,
+      337
+    ],
+    "swing": -11
+  },
+  "armPivot": [
+    289.58,
+    293.0
+  ],
+  "origin": [
+    235.68,
+    378.26
+  ],
+  "pivot": [
+    0.5,
+    0.9
+  ],
+  "baseline": 467,
+  "license": "Derivative of existing project A58 / ARCANA v1 sources. No additional distribution rights. Script/masks authored for this project.",
+  "fallback": "actor-rest then unchanged character figure; failed layers never block replay/actions.",
+  "files": [
+    {
+      "id": "actor-base",
+      "runtime": "src/arcana/presentation/content-packs/diagon-alley/art/boss-a71/actor-base.webp",
+      "editable": "design/diagon-alley/boss-a71/actor-base.png",
+      "dimensions": [
+        384,
+        512
+      ],
+      "bytes": 47960,
+      "rgbaBytes": 786432,
+      "sha256": "481b38814dad676a9113ab4fa0ba906a959319efdefa9d6b2215d1057c73e349",
+      "encoding": "WebP quality95, method6, alpha lossless; editable PNG lossless"
+    },
+    {
+      "id": "actor-arm",
+      "runtime": "src/arcana/presentation/content-packs/diagon-alley/art/boss-a71/actor-arm.webp",
+      "editable": "design/diagon-alley/boss-a71/actor-arm.png",
+      "dimensions": [
+        384,
+        512
+      ],
+      "bytes": 10374,
+      "rgbaBytes": 786432,
+      "sha256": "5406874e0f9c7b3a778eb76ee0ac7313e4177008a3d013fd0a303e1fb9871c43",
+      "encoding": "WebP quality95, method6, alpha lossless; editable PNG lossless"
+    },
+    {
+      "id": "actor-rest",
+      "runtime": "src/arcana/presentation/content-packs/diagon-alley/art/boss-a71/actor-rest.webp",
+      "editable": "design/diagon-alley/boss-a71/actor-rest.png",
+      "dimensions": [
+        384,
+        512
+      ],
+      "bytes": 49910,
+      "rgbaBytes": 786432,
+      "sha256": "59800be40f599f60cbfc81676bef7070664911f75d01178bcb1e747ef9eb4f75",
+      "encoding": "WebP quality95, method6, alpha lossless; editable PNG lossless"
+    }
+  ],
+  "totalRuntimeBytes": 108244,
+  "runtimeLayerRgbaBytes": 1572864,
+  "preview": "Selected CPU composites, not game screenshot or animation proof."
+}

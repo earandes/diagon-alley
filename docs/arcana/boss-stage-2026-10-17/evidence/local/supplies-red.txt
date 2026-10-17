@@ -1,0 +1,23 @@
+RUN  v5.0.3 /Users/enricarandes/work/diagon-alley
+
+ ❯ tests/domain/arcana/boss-supplies-a71.test.ts (0 test)
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/domain/arcana/boss-supplies-a71.test.ts [ tests/domain/arcana/boss-supplies-a71.test.ts ]
+Error: Cannot find module '../../../src/arcana/presentation/BossSupplies' imported from /Users/enricarandes/work/diagon-alley/tests/domain/arcana/boss-supplies-a71.test.ts
+ ❯ tests/domain/arcana/boss-supplies-a71.test.ts:4:1
+      2| import { createElement } from 'react';
+      3| import { renderToStaticMarkup } from 'react-dom/server';
+      4| import { BossSupplies } from '../../../src/arcana/presentation/BossSup…
+       | ^
+      5| import { runInitial, campaignFixture } from './support/run-fixtures';
+      6| import { trialConfiguration } from '../../../src/arcana/infrastructure…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  no tests
+   Start at  02:09:41
+   Duration  80ms (worker 96%, environment 4%)

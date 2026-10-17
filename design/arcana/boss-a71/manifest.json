@@ -1,0 +1,166 @@
+{
+  "id": "a71-circe-arcana",
+  "version": 1,
+  "identityId": "circe",
+  "pack": "arcana",
+  "source": "src/arcana/presentation/content-packs/arcana/art/character/circe/figure.webp",
+  "sourceSha256": "90a61dcffaa1d7f079f3cb366d24c816c3ba461e3da8328a4d65dcfef14771ba",
+  "frame": [
+    384,
+    512
+  ],
+  "production": "CPU Pillow: hand-authored cut-paper masks, local cloned clothing restoration, registered upper-body crop. No inference or articulated skeleton.",
+  "editableScript": "tools/visual/export-boss-a71.py",
+  "sourceCoordinates": {
+    "source": "art/character/circe/figure.webp",
+    "crop": [
+      80,
+      65,
+      290,
+      279
+    ],
+    "scale": 1.8,
+    "offset": [
+      3,
+      60
+    ],
+    "arm": [
+      [
+        208,
+        194
+      ],
+      [
+        221,
+        180
+      ],
+      [
+        239,
+        171
+      ],
+      [
+        242,
+        149
+      ],
+      [
+        277,
+        135
+      ],
+      [
+        286,
+        155
+      ],
+      [
+        266,
+        182
+      ],
+      [
+        240,
+        189
+      ],
+      [
+        224,
+        209
+      ],
+      [
+        212,
+        208
+      ]
+    ],
+    "restore": [
+      [
+        205,
+        185
+      ],
+      [
+        228,
+        183
+      ],
+      [
+        237,
+        198
+      ],
+      [
+        218,
+        213
+      ],
+      [
+        205,
+        210
+      ]
+    ],
+    "clone": [
+      184,
+      164,
+      210,
+      211
+    ],
+    "armPivot": [
+      214,
+      199
+    ],
+    "origin": [
+      255,
+      158
+    ],
+    "swing": -13
+  },
+  "armPivot": [
+    244.20000000000002,
+    301.20000000000005
+  ],
+  "origin": [
+    318.0,
+    227.4
+  ],
+  "pivot": [
+    0.5,
+    0.9
+  ],
+  "baseline": 445,
+  "license": "Derivative of existing project A58 / ARCANA v1 sources. No additional distribution rights. Script/masks authored for this project.",
+  "fallback": "actor-rest then unchanged character figure; failed layers never block replay/actions.",
+  "files": [
+    {
+      "id": "actor-base",
+      "runtime": "src/arcana/presentation/content-packs/arcana/art/boss-a71/actor-base.webp",
+      "editable": "design/arcana/boss-a71/actor-base.png",
+      "dimensions": [
+        384,
+        512
+      ],
+      "bytes": 73220,
+      "rgbaBytes": 786432,
+      "sha256": "c3799b08ec70eeea74ec36fd57452bbbabf456c225b8d7e2008fe6fe0cd7f03c",
+      "encoding": "WebP quality95, method6, alpha lossless; editable PNG lossless"
+    },
+    {
+      "id": "actor-arm",
+      "runtime": "src/arcana/presentation/content-packs/arcana/art/boss-a71/actor-arm.webp",
+      "editable": "design/arcana/boss-a71/actor-arm.png",
+      "dimensions": [
+        384,
+        512
+      ],
+      "bytes": 10868,
+      "rgbaBytes": 786432,
+      "sha256": "03a9137343736346cb99b7c1cef1976ccc5f8919eb8de3bf8f233a7247add2d2",
+      "encoding": "WebP quality95, method6, alpha lossless; editable PNG lossless"
+    },
+    {
+      "id": "actor-rest",
+      "runtime": "src/arcana/presentation/content-packs/arcana/art/boss-a71/actor-rest.webp",
+      "editable": "design/arcana/boss-a71/actor-rest.png",
+      "dimensions": [
+        384,
+        512
+      ],
+      "bytes": 76952,
+      "rgbaBytes": 786432,
+      "sha256": "871411e6d94044f882aad49e9bac9ba8bb76c30aea8b4be47e22651999cc2a3a",
+      "encoding": "WebP quality95, method6, alpha lossless; editable PNG lossless"
+    }
+  ],
+  "totalRuntimeBytes": 161040,
+  "runtimeLayerRgbaBytes": 1572864,
+  "preview": "Selected CPU composites, not game screenshot or animation proof."
+}

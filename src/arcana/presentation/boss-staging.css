@@ -1,0 +1,333 @@
+/* A71: confrontation staging. DOM owns controls; illustration never owns game state. */
+.game-shell dialog.notice.node-event-dialog.boss-staging {
+  width: min(960px, calc(100vw - 24px));
+  max-width: none;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 10px 28px;
+  padding: 18px 28px 22px;
+  background:
+    radial-gradient(ellipse at 72% 25%, #54413555, transparent 58%),
+    linear-gradient(160deg, #152831f5, #0b1622fa 70%);
+  border: 1px solid var(--pack-border);
+  border-radius: 12px 12px 32px 32px;
+  box-shadow: 0 24px 60px #0009;
+  max-height: calc(100dvh - 24px);
+}
+.game-shell dialog.notice.node-event-dialog.boss-staging[open] {
+  display: grid;
+}
+.game-shell .boss-staging > h3 {
+  grid-column: 1 / -1;
+  margin: 0 48px 2px;
+  font-size: clamp(1.05rem, 2.5vw, 1.4rem);
+}
+.game-shell .boss-staging > .node-confirmation-art {
+  display: none;
+}
+.boss-opponent-stage {
+  grid-column: 2;
+  grid-row: 2;
+  min-width: 0;
+}
+.boss-player-preparation {
+  grid-column: 1;
+  grid-row: 2;
+  min-width: 0;
+  align-self: end;
+}
+.boss-staging > [role='alert'],
+.boss-staging > .node-event-actions {
+  grid-column: 1 / -1;
+}
+.game-shell .boss-staging > .node-event-actions.node-combat-actions {
+  margin: 6px 0 -8px;
+  bottom: -22px;
+  padding: 12px 0 4px;
+  background: linear-gradient(transparent, #0b1622 22%);
+  box-shadow: none;
+}
+.game-shell .boss-staging > .node-combat-actions .node-confirm-action {
+  flex: 0 1 300px;
+  min-height: 64px;
+  border-radius: 36px 12px;
+  padding: 8px 20px;
+}
+.boss-challenge-cost {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-variant-numeric: tabular-nums;
+}
+.game-shell .boss-staging .boss-challenge-cost > img {
+  width: 24px;
+  height: 28px;
+  object-fit: contain;
+}
+.boss-party-stage {
+  text-align: center;
+  color: var(--pack-ink);
+}
+.boss-party-stage h4 {
+  margin: 12px 0 14px;
+  font: normal clamp(1rem, 2vw, 1.25rem) var(--font-heading, Georgia, serif);
+  color: var(--pack-gold);
+}
+.boss-party-members {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  gap: 6px;
+  flex-wrap: wrap;
+  padding: 6px 0 10px;
+  border-bottom: 1px solid var(--pack-border);
+}
+.game-shell .boss-party-member {
+  flex: 0 1 calc(20% - 6px);
+  width: 68px;
+  min-width: 54px;
+  max-width: 90px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  min-height: 44px;
+  padding: 0 2px 6px;
+  margin: 0;
+  background: none;
+  border: 0;
+  border-radius: 8px;
+  box-shadow: none;
+  color: var(--pack-ink);
+}
+.boss-party-portrait {
+  display: grid;
+  grid-template-columns: 1fr 20px;
+  grid-template-rows: 1fr 22px;
+  width: 100%;
+}
+.boss-party-portrait > img:first-child {
+  grid-area: 1 / 1 / 3 / 3;
+  width: 100%;
+  height: clamp(70px, 10vw, 112px);
+  object-fit: contain;
+  object-position: bottom;
+  border-radius: 44% 44% 4px 4px;
+}
+.boss-party-position {
+  grid-area: 2 / 1;
+  align-self: end;
+  justify-self: start;
+  min-width: 20px;
+  border-radius: 50%;
+  background: #0b1622;
+  font-size: 0.7rem;
+  color: var(--pack-gold);
+  z-index: 1;
+}
+.boss-party-portrait > .boss-party-origin {
+  grid-area: 2 / 2;
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+  z-index: 1;
+}
+.boss-party-name {
+  font-size: 0.72rem;
+  line-height: 1.2;
+  overflow-wrap: anywhere;
+}
+.boss-party-condition {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.68rem;
+  line-height: 1.4;
+  font-variant-numeric: tabular-nums;
+}
+.boss-party-condition strong {
+  font-weight: normal;
+  color: var(--pack-gold);
+}
+.boss-party-objects {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  min-height: 26px;
+}
+.boss-party-objects > span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.boss-party-objects img {
+  width: 22px;
+  height: 26px;
+  object-fit: contain;
+}
+.boss-party-member[data-boss-party-condition='fallen'] .boss-party-portrait > img:first-child {
+  filter: saturate(0.35);
+}
+.game-shell .boss-party-stage .boss-party-prepare {
+  background: none;
+  border: 0;
+  box-shadow: none;
+  margin: 6px auto 2px;
+  flex-direction: column;
+  min-height: 64px;
+  padding: 2px 12px;
+}
+.game-shell .boss-party-stage .boss-party-prepare > img {
+  width: 48px;
+  height: 44px;
+}
+.boss-party-stage .preparation-synergies {
+  margin: 0;
+  border: 0;
+  background: none;
+  font-size: 0.8rem;
+}
+.boss-party-stage .preparation-synergies > summary {
+  min-height: 44px;
+  padding: 4px;
+  background: none;
+  border: 0;
+}
+.boss-party-stage .preparation-synergies > summary > img {
+  width: 24px;
+  height: 28px;
+}
+.boss-staging .node-bean-preparation {
+  border: 0;
+  background: none;
+  margin: 2px 0;
+}
+.boss-staging .node-bean-preparation > summary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  border: 0;
+  background: none;
+  min-height: 72px;
+  padding: 2px;
+}
+.boss-staging .node-bean-preparation > summary > img {
+  width: 48px;
+  height: 58px;
+  object-fit: contain;
+}
+.boss-staging .node-bean-preparation[open] {
+  grid-column: 1 / -1;
+}
+.boss-staging .node-bean-preparation .contextual-beans {
+  text-align: left;
+}
+.boss-staging .boss-supply-caption {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  font-size: 0.85rem;
+}
+.boss-staging .boss-supply-caption strong {
+  font-variant-numeric: tabular-nums;
+}
+.boss-staging .boss-supply-caption small {
+  flex-basis: 100%;
+  font-size: 0.75rem;
+}
+.game-shell .boss-staging .boss-opponent-stage .event-loot {
+  margin: 8px 0 0;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.game-shell .boss-staging .boss-opponent-stage .event-loot > .event-loot-piece {
+  flex-direction: row;
+  align-items: center;
+  min-width: 0;
+  min-height: 40px;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
+}
+.game-shell .boss-staging .boss-opponent-stage .event-loot-piece img {
+  width: 30px;
+  height: 34px;
+}
+.game-shell .boss-staging .boss-opponent-stage .event-loot-piece strong {
+  font-size: 0.95rem;
+}
+.boss-staging :is(button, summary):focus-visible {
+  outline: 3px solid var(--pack-focus, #a7e8ed);
+  outline-offset: 4px;
+}
+.boss-staging .boss-party-member:not(:disabled):hover {
+  background: #cda75c14;
+}
+@media (max-width: 620px) {
+  .game-shell dialog.notice.node-event-dialog.boss-staging {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 4px;
+    padding: 14px 16px 20px;
+    border-radius: 12px 12px 24px 24px;
+  }
+  .boss-opponent-stage {
+    grid-column: 1;
+    grid-row: 2;
+  }
+  .boss-player-preparation {
+    grid-column: 1;
+    grid-row: 3;
+  }
+  .boss-party-stage h4 {
+    margin: 5px 0;
+    font-size: 0.95rem;
+  }
+  .boss-party-members {
+    padding: 0 0 5px;
+    gap: 3px;
+  }
+  .game-shell .boss-party-member {
+    flex-basis: calc(20% - 3px);
+    min-width: 48px;
+    max-width: 76px;
+    gap: 2px;
+    padding-bottom: 2px;
+  }
+  .boss-party-portrait > img:first-child {
+    height: 72px;
+  }
+  .game-shell .boss-party-stage .boss-party-prepare {
+    min-height: 44px;
+    flex-direction: row;
+  }
+  .game-shell .boss-party-stage .boss-party-prepare > img {
+    width: 32px;
+    height: 34px;
+  }
+  .boss-party-stage .preparation-synergies > summary {
+    min-height: 44px;
+  }
+  .boss-staging .node-bean-preparation > summary {
+    min-height: 52px;
+  }
+  .boss-staging .node-bean-preparation > summary > img {
+    width: 36px;
+    height: 46px;
+  }
+  .game-shell .boss-staging > .node-event-actions.node-combat-actions {
+    margin-top: 0;
+    bottom: -20px;
+    padding-top: 6px;
+  }
+  .game-shell .boss-staging > .node-combat-actions .node-confirm-action {
+    min-height: 52px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .boss-staging * {
+    scroll-behavior: auto;
+  }
+}

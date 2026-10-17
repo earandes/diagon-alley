@@ -8,7 +8,7 @@ import type { ReplayFrame } from '../../application/client/battle-replay';
 import type { BattleEvent } from '../../domain/combat/engine';
 import type { ReplayClock } from '../motion/replay-clock';
 import { bossArt } from '../boss-art';
-import { bossPropPose } from '../motion/boss-motion';
+import { bossActorPose, bossPropPose } from '../motion/boss-motion';
 import { selectedContentPackId } from '../content-packs/active';
 export interface ArenaPosition {
   readonly id: string;
@@ -73,6 +73,7 @@ export async function createPixiScene(host: HTMLElement, data: SceneData) {
   >();
   // Only the current boss sample loads these cropped pieces. No extra ticker/context.
   const bossPieces = new Map<string, Sprite[]>();
+  const bossArms = new Map<string, Sprite>();
   const propArt =
     data.kind === 'arena' && data.boss
       ? bossArt(selectedContentPackId(), data.boss.wizardId)
@@ -206,45 +207,95 @@ export async function createPixiScene(host: HTMLElement, data: SceneData) {
               pose.sx = figure.scale.x;
               pose.sy = figure.scale.y;
               if (current.boss?.id === unit.id && propArt) {
-                for (const layer of propArt.layers) {
-                  const key = `a70:${layer.url}`;
-                  if (textures.has(key) || loading.has(key)) continue;
-                  loading.add(key);
-                  const image = new Image();
-                  image.src = layer.url;
-                  void image
-                    .decode()
-                    .then(() => {
-                      if (destroyed) return;
-                      textures.set(key, Texture.from(image));
-                      host.dataset.textureCount = String(textures.size);
-                      host.dataset.textureBytes = String(
-                        [...textures.values()].reduce((n, t) => n + t.width * t.height * 4, 0),
+                const actor = propArt.actor;
+                if (actor) {
+                  for (const url of [actor.baseUrl, actor.armUrl]) {
+                    const key = `a71:${url}`;
+                    if (textures.has(key) || loading.has(key)) continue;
+                    loading.add(key);
+                    const image = new Image();
+                    image.src = url;
+                    void image
+                      .decode()
+                      .then(() => {
+                        if (destroyed) return;
+                        textures.set(key, Texture.from(image));
+                        host.dataset.textureCount = String(textures.size);
+                        host.dataset.textureBytes = String(
+                          [...textures.values()].reduce((n, t) => n + t.width * t.height * 4, 0),
+                        );
+                        dirty = true;
+                        paint();
+                      })
+                      .catch(() => {
+                        /* Static full actor remains intact. */
+                      });
+                  }
+                  const baseTexture = textures.get(`a71:${actor.baseUrl}`);
+                  const armTexture = textures.get(`a71:${actor.armUrl}`);
+                  if (baseTexture && armTexture) {
+                    figure.texture = baseTexture;
+                    if (!bossArms.has(unit.id)) {
+                      const arm = new Sprite(armTexture);
+                      arm.anchor.set(...actor.armPivot);
+                      arm.position.set(
+                        (actor.armPivot[0] - figure.anchor.x) * baseTexture.width,
+                        (actor.armPivot[1] - figure.anchor.y) * baseTexture.height,
                       );
-                      dirty = true;
-                      paint();
-                    })
-                    .catch(() => {
-                      /* The original painted object remains intact. */
+                      const waist = new Graphics()
+                        .rect(
+                          -figure.anchor.x * baseTexture.width,
+                          -figure.anchor.y * baseTexture.height,
+                          baseTexture.width,
+                          actor.baseline * baseTexture.height,
+                        )
+                        .fill(0xffffff);
+                      figure.addChild(arm, waist);
+                      arm.mask = waist;
+                      bossArms.set(unit.id, arm);
+                    }
+                  }
+                } else {
+                  for (const layer of propArt.layers) {
+                    const key = `a70:${layer.url}`;
+                    if (textures.has(key) || loading.has(key)) continue;
+                    loading.add(key);
+                    const image = new Image();
+                    image.src = layer.url;
+                    void image
+                      .decode()
+                      .then(() => {
+                        if (destroyed) return;
+                        textures.set(key, Texture.from(image));
+                        host.dataset.textureCount = String(textures.size);
+                        host.dataset.textureBytes = String(
+                          [...textures.values()].reduce((n, t) => n + t.width * t.height * 4, 0),
+                        );
+                        dirty = true;
+                        paint();
+                      })
+                      .catch(() => {
+                        /* The original painted object remains intact. */
+                      });
+                  }
+                  if (
+                    !bossPieces.has(unit.id) &&
+                    propArt.layers.every((layer) => textures.has(`a70:${layer.url}`))
+                  ) {
+                    const pieces = propArt.layers.map((layer) => {
+                      const piece = new Sprite(textures.get(`a70:${layer.url}`)!);
+                      piece.anchor.set(...layer.pivot);
+                      piece.position.set(
+                        (layer.rect[0] + layer.rect[2] * layer.pivot[0] - figure.anchor.x) *
+                          texture.width,
+                        (layer.rect[1] + layer.rect[3] * layer.pivot[1] - figure.anchor.y) *
+                          texture.height,
+                      );
+                      figure!.addChild(piece);
+                      return piece;
                     });
-                }
-                if (
-                  !bossPieces.has(unit.id) &&
-                  propArt.layers.every((layer) => textures.has(`a70:${layer.url}`))
-                ) {
-                  const pieces = propArt.layers.map((layer) => {
-                    const piece = new Sprite(textures.get(`a70:${layer.url}`)!);
-                    piece.anchor.set(...layer.pivot);
-                    piece.position.set(
-                      (layer.rect[0] + layer.rect[2] * layer.pivot[0] - figure.anchor.x) *
-                        texture.width,
-                      (layer.rect[1] + layer.rect[3] * layer.pivot[1] - figure.anchor.y) *
-                        texture.height,
-                    );
-                    figure!.addChild(piece);
-                    return piece;
-                  });
-                  bossPieces.set(unit.id, pieces);
+                    bossPieces.set(unit.id, pieces);
+                  }
                 }
               }
             }
@@ -259,17 +310,19 @@ export async function createPixiScene(host: HTMLElement, data: SceneData) {
       );
       for (const [id, figure] of figures) {
         const pose = poses.get(id)!;
-        const entry = current.clock
-          ? current.clock.snapshot().cursor === 0
-            ? current.clock.snapshot().progress
-            : 1
-          : current.playing
-            ? Math.min(
-                (performance.now() - pose.entered) /
-                  Math.max(1, activePack.animations.arena.entryMs),
-                1,
-              )
-            : 1;
+        const entry = current.reduced
+          ? 1
+          : current.clock
+            ? current.clock.snapshot().cursor === 0
+              ? current.clock.snapshot().progress
+              : 1
+            : current.playing
+              ? Math.min(
+                  (performance.now() - pose.entered) /
+                    Math.max(1, activePack.animations.arena.entryMs),
+                  1,
+                )
+              : 1;
         const hit =
           current.next?.kind === 'spell-cast' &&
           !current.next.missed &&
@@ -279,9 +332,12 @@ export async function createPixiScene(host: HTMLElement, data: SceneData) {
           Math.min(elapsed / activePack.animations.arena.eventMs, 1);
         const actor = current.next?.kind === 'spell-cast' && current.next.actorId === id;
         const direction = pose.x < viewWidth / 2 ? 1 : -1;
-        const anticipation = actor && progress < 0.18 ? Math.sin((progress / 0.18) * Math.PI) : 0;
+        const anticipation =
+          !current.reduced && actor && progress < 0.18 ? Math.sin((progress / 0.18) * Math.PI) : 0;
         const contact =
-          hit && progress >= 0.78 ? Math.sin(((progress - 0.78) / 0.22) * Math.PI) : 0;
+          !current.reduced && hit && progress >= 0.78
+            ? Math.sin(((progress - 0.78) / 0.22) * Math.PI)
+            : 0;
         figure.position.set(
           pose.x - direction * anticipation * 3 - direction * contact * 6,
           pose.y + 8 * (1 - entry),
@@ -296,41 +352,68 @@ export async function createPixiScene(host: HTMLElement, data: SceneData) {
         figure.rotation =
           (pose.alive ? 0 : 0.12) + -direction * (anticipation * 0.025 + contact * 0.035);
         if (current.boss?.id === id) {
-          const sample = bossPropPose(current.next, progress, id, pose.alive, !!current.reduced);
-          figure.y += sample.fall * 6;
-          figure.rotation += sample.fall * 0.08;
-          const pieces = bossPieces.get(id);
-          host.dataset.bossPropReady = String(!!pieces);
-          host.dataset.bossPropUnit = id;
-          host.dataset.bossPropPose = sample.phase;
-          const activity = sample.activity;
-          pieces?.forEach((piece, index) => {
-            const layer = propArt!.layers[index];
-            piece.alpha = activity;
-            piece.rotation = 0;
-            piece.scale.set(1, 1);
-            if (layer.motion === 'book-cover') {
-              piece.rotation = activity * -0.035;
-              piece.scale.x = 1 - activity * 0.06;
-              piece.alpha = Math.min(activity * 6, 1);
-            } else if (layer.motion === 'book-pages') {
-              piece.rotation = activity * 0.025;
-              piece.scale.x = 1 + activity * 0.04;
-            } else if (layer.motion === 'bowl-contents') {
-              piece.scale.set(1 - activity * 0.1, 1 + activity * 0.08);
-            }
-          });
-          host.dataset.bossPropAngle = String(
-            pieces?.find((_, index) => propArt!.layers[index].motion === 'book-cover')?.rotation ??
-              0,
-          );
-          host.dataset.bossPropActivity = String(activity);
-          host.dataset.bossPropLayers = String(pieces?.length ?? 0);
-          const movingPiece = pieces?.find((_, index) =>
-            ['book-cover', 'bowl-contents'].includes(propArt!.layers[index].motion),
-          );
-          host.dataset.bossPropScaleX = String(movingPiece?.scale.x ?? 1);
-          host.dataset.bossPropScaleY = String(movingPiece?.scale.y ?? 1);
+          const actor = propArt?.actor;
+          const arm = bossArms.get(id);
+          if (actor && arm) {
+            const sample = bossActorPose(current.next, progress, id, pose.alive, !!current.reduced);
+            arm.rotation = sample.arm * actor.armAngle;
+            // Limited sleeve compression accompanies the joint gesture; never body resizing.
+            arm.scale.set(1 - sample.activity * 0.02, 1 + sample.activity * 0.02);
+            figure.x -= direction * sample.recoil * 3;
+            figure.y += sample.fall * 6;
+            figure.rotation += sample.fall * 0.08;
+            host.dataset.bossActorReady = 'true';
+            host.dataset.bossActorPose = sample.phase;
+            host.dataset.bossActorArmAngle = String(arm.rotation);
+            host.dataset.bossActorLayers = '2';
+            // Existing observation hooks now report the actual painted arm/prop Sprite.
+            host.dataset.bossPropReady = 'true';
+            host.dataset.bossPropUnit = id;
+            host.dataset.bossPropPose = sample.phase;
+            host.dataset.bossPropAngle = String(arm.rotation);
+            host.dataset.bossPropActivity = String(sample.activity);
+            host.dataset.bossPropLayers = '2';
+            host.dataset.bossPropScaleX = String(arm.scale.x);
+            host.dataset.bossPropScaleY = String(arm.scale.y);
+          } else {
+            host.dataset.bossActorReady = 'false';
+            host.dataset.bossActorLayers = '0';
+            const sample = bossPropPose(current.next, progress, id, pose.alive, !!current.reduced);
+            figure.y += sample.fall * 6;
+            figure.rotation += sample.fall * 0.08;
+            const pieces = bossPieces.get(id);
+            host.dataset.bossPropReady = String(!!pieces);
+            host.dataset.bossPropUnit = id;
+            host.dataset.bossPropPose = sample.phase;
+            const activity = sample.activity;
+            pieces?.forEach((piece, index) => {
+              const layer = propArt!.layers[index];
+              piece.alpha = activity;
+              piece.rotation = 0;
+              piece.scale.set(1, 1);
+              if (layer.motion === 'book-cover') {
+                piece.rotation = activity * -0.035;
+                piece.scale.x = 1 - activity * 0.06;
+                piece.alpha = Math.min(activity * 6, 1);
+              } else if (layer.motion === 'book-pages') {
+                piece.rotation = activity * 0.025;
+                piece.scale.x = 1 + activity * 0.04;
+              } else if (layer.motion === 'bowl-contents') {
+                piece.scale.set(1 - activity * 0.1, 1 + activity * 0.08);
+              }
+            });
+            host.dataset.bossPropAngle = String(
+              pieces?.find((_, index) => propArt!.layers[index].motion === 'book-cover')
+                ?.rotation ?? 0,
+            );
+            host.dataset.bossPropActivity = String(activity);
+            host.dataset.bossPropLayers = String(pieces?.length ?? 0);
+            const movingPiece = pieces?.find((_, index) =>
+              ['book-cover', 'bowl-contents'].includes(propArt!.layers[index].motion),
+            );
+            host.dataset.bossPropScaleX = String(movingPiece?.scale.x ?? 1);
+            host.dataset.bossPropScaleY = String(movingPiece?.scale.y ?? 1);
+          }
         }
       }
     }
@@ -340,6 +423,8 @@ export async function createPixiScene(host: HTMLElement, data: SceneData) {
       if (event?.kind === 'spell-cast') {
         const baseFrom = positions.get(event.actorId)!,
           leader = figures.get(event.actorId),
+          actorArm = bossArms.get(event.actorId),
+          actorOrigin = propArt?.actor,
           source =
             current.boss?.id === event.actorId && bossPieces.has(event.actorId) ? propArt : null,
           dx =
@@ -352,12 +437,17 @@ export async function createPixiScene(host: HTMLElement, data: SceneData) {
               : 0,
           rotation = leader?.rotation ?? 0,
           from =
-            source && leader
-              ? {
-                  x: leader.x + dx * Math.cos(rotation) - dy * Math.sin(rotation),
-                  y: leader.y + dx * Math.sin(rotation) + dy * Math.cos(rotation),
-                }
-              : baseFrom,
+            actorArm && actorOrigin && current.boss?.id === event.actorId
+              ? actorArm.toGlobal({
+                  x: (actorOrigin.origin[0] - actorOrigin.armPivot[0]) * actorOrigin.frameSize[0],
+                  y: (actorOrigin.origin[1] - actorOrigin.armPivot[1]) * actorOrigin.frameSize[1],
+                })
+              : source && leader
+                ? {
+                    x: leader.x + dx * Math.cos(rotation) - dy * Math.sin(rotation),
+                    y: leader.y + dx * Math.sin(rotation) + dy * Math.cos(rotation),
+                  }
+                : baseFrom,
           to = positions.get(event.targetId)!,
           p =
             current.clock?.snapshot().progress ??
@@ -372,7 +462,7 @@ export async function createPixiScene(host: HTMLElement, data: SceneData) {
               (event.missed ? flight * 42 : 0),
           };
         if (p >= 0.18 && p < 0.78) {
-          if (source) {
+          if (source || (actorArm && current.boss?.id === event.actorId)) {
             sparks.ellipse(from.x, from.y, 10 + Math.sin(flight * Math.PI) * 5, 4).stroke({
               color: paletteColor('gold'),
               width: 1.5,
@@ -475,6 +565,7 @@ export async function createPixiScene(host: HTMLElement, data: SceneData) {
       textures.clear();
       figures.clear();
       bossPieces.clear();
+      bossArms.clear();
       host.dataset.destroyed = 'true';
       host.dataset.activeTicking = 'false';
       host.dataset.textureCount = '0';
@@ -482,6 +573,8 @@ export async function createPixiScene(host: HTMLElement, data: SceneData) {
       host.dataset.visibleFigures = '0';
       host.dataset.bossPropReady = 'false';
       host.dataset.bossPropLayers = '0';
+      host.dataset.bossActorReady = 'false';
+      host.dataset.bossActorLayers = '0';
     },
   };
 }

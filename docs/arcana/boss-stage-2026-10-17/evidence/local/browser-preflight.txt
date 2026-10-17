@@ -1,0 +1,5 @@
+
+> coleccion-magica-i1@0.1.0 test:browser:check
+> node tools/verification/run-local-browser-smoke.mjs --check
+
+{"allowed":true,"reasons":[],"load":1.6533203125,"cores":11,"windowServerRssMb":33.015625,"windowServerCpu":0,"scope":"1 Chromium, 1 test, sin vídeo/trazas/capturas, límite total60s; no reproduce carga"}

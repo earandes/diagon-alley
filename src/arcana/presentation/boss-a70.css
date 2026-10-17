@@ -1,94 +1,126 @@
-/* A70: identity is read from the saved roster; this scene never starts a battle. */
-.game-shell dialog.notice.node-event-dialog:has(.boss-prelude) {
-  padding-top: 18px;
-}
-.game-shell .node-event-dialog:has(.boss-prelude) > .node-confirmation-art {
-  position: absolute;
-  top: 16px;
-  left: 18px;
-  width: 44px;
-  height: 44px;
-  margin: 0;
-  padding: 0;
-}
-.game-shell .node-event-dialog:has(.boss-prelude) > h3 {
-  margin: 10px 44px 12px;
-  font-size: clamp(1.2rem, 3vw, 1.5rem);
-}
+/* A71 keeps the frozen A70 roster but stages it as characters around their leader. */
 .boss-prelude {
   width: 100%;
   color: var(--pack-ink);
 }
 .boss-prelude-hero {
   display: grid;
-  grid-template-columns: minmax(72px, 26%) minmax(0, 1fr);
-  align-items: center;
-  gap: 16px;
-  text-align: left;
-  padding: 0 12px;
-  border-bottom: 1px solid var(--pack-border);
+  justify-items: center;
+  gap: 4px;
+  text-align: center;
 }
-.boss-prelude-hero > img {
-  width: 100%;
-  height: clamp(110px, 15vh, 136px);
-  object-fit: contain;
-  object-position: bottom center;
-}
-.boss-prelude h4 {
-  font-family: var(--font-heading, Georgia, serif);
-  font-weight: normal;
-  font-size: clamp(1.15rem, 3.5vw, 1.7rem);
+.boss-prelude-identity h4 {
+  font: normal clamp(1.25rem, 2.4vw, 1.8rem) var(--font-heading, Georgia, serif);
   color: var(--pack-gold);
-  margin: 0 0 8px;
+  margin: 4px 0 6px;
+  overflow-wrap: anywhere;
 }
 .boss-roster-count {
   display: block;
-  margin-top: 8px;
-  font-size: 0.8rem;
+  font-size: 0.75rem;
+  margin-top: 4px;
 }
-.game-shell .node-preparation .boss-roster {
+.boss-roster-scene {
   display: flex;
   justify-content: center;
-  gap: 8px;
-  margin: 10px 0;
+  align-items: end;
+  width: 100%;
+  min-height: 250px;
+  gap: 0;
 }
-.game-shell .node-preparation .boss-roster > div {
+.boss-roster-scene > div {
   display: grid;
+  align-items: end;
   justify-items: center;
-  gap: 4px;
-  flex: 1;
-  max-width: 94px;
   min-width: 0;
 }
-.game-shell .node-preparation .boss-roster > div > img {
-  width: min(100%, 40px);
-  height: 50px;
-  object-fit: cover;
-  border: 1px solid var(--pack-border);
-  border-radius: 6px;
+.boss-roster-scene img {
+  display: block;
+  object-fit: contain;
+  object-position: bottom;
+  width: 100%;
 }
-.boss-roster small {
-  font-size: 0.7rem;
-  overflow-wrap: anywhere;
+.boss-roster-leader {
+  flex: 1.6 1 0;
+  z-index: 1;
+  align-self: stretch;
+}
+.boss-roster-leader > img {
+  height: 250px;
+  align-self: end;
+  filter: drop-shadow(0 12px 8px #0005);
+}
+.boss-roster-companion {
+  flex: 0.65 1 0;
+  max-width: 90px;
+  padding-bottom: 16px;
+}
+.boss-roster-companion > img {
+  height: 135px;
+  filter: drop-shadow(0 8px 5px #0005);
+}
+.boss-companion-name {
+  display: flex;
+  flex-direction: column;
   text-align: center;
+  gap: 2px;
+  font-size: 0.65rem;
 }
-.boss-roster .tactical-affinity {
-  font-size: 0.7rem;
+.boss-companion-name small {
+  font-size: inherit;
+  overflow-wrap: anywhere;
+}
+.boss-companion-name .tactical-affinity {
+  font-size: inherit;
+}
+.boss-opponent-details {
+  text-align: center;
+  margin: 2px 0;
 }
 .boss-opponent-details > summary {
-  min-height: 44px;
-  align-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 52px;
   cursor: pointer;
   color: var(--pack-gold);
+  list-style: none;
+  border: 0;
+  background: none;
+}
+.boss-opponent-details > summary::-webkit-details-marker {
+  display: none;
+}
+.boss-opponent-details > summary > img {
+  width: 40px;
+  height: 48px;
+  object-fit: contain;
+}
+.boss-opponent-details > summary > span {
+  font-size: 0.85rem;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.boss-opponent-details[open] > summary {
+  margin-bottom: 12px;
 }
 .boss-opponent-stats {
   display: grid;
-  gap: 8px;
-  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 14px;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
   text-align: left;
+  padding: 12px;
+  background: #0b1622;
+  border-radius: 6px;
+}
+.boss-opponent-stats section > .tactical-affinity {
+  display: block;
+  font-size: 0.75rem;
+  margin-top: 4px;
 }
 .boss-opponent-stats dl {
-  margin: 8px 0;
+  margin: 8px 0 0;
 }
 .boss-opponent-stats dl > div {
   display: flex;
@@ -105,9 +137,10 @@
   justify-content: center;
   gap: 12px;
   font-size: 0.8rem;
+  margin: 12px 0;
 }
 .boss-prelude .preparation-synergies {
-  margin: 0 auto 8px;
+  margin: 8px auto;
 }
 .boss-prelude .preparation-synergies > summary {
   min-height: 44px;
@@ -119,37 +152,36 @@
   border-width: 2px;
   color: var(--pack-gold);
 }
-.arena-a63 [data-boss-unit='true'] .arena-figure-space::after {
-  content: '';
-  position: absolute;
-  inset: 6% 12% 0;
-  border-inline: 1px solid #d8b86f88;
-  border-radius: 44% 44% 0 0;
-  pointer-events: none;
-}
-@media (max-width: 500px) {
-  .boss-prelude-hero {
-    gap: 8px;
+@media (max-width: 620px) {
+  .boss-prelude-identity h4 {
+    font-size: 1.2rem;
+    margin: 2px 0 4px;
   }
-  .boss-prelude-hero > img {
-    height: 110px;
+  .boss-prelude-identity .tactical-affinity {
+    font-size: 0.75rem;
   }
-  .game-shell .node-preparation .boss-roster {
-    gap: 4px;
+  .boss-roster-count {
+    font-size: 0.68rem;
+    margin-top: 2px;
   }
-  .boss-roster small {
-    font-size: 0.65rem;
+  .boss-roster-scene {
+    min-height: 160px;
   }
-}
-
-.boss-prelude-hero > div {
-  min-width: 0;
-}
-.boss-prelude-hero .boss-roster {
-  justify-content: flex-start;
-  gap: 4px;
-  margin: 8px 0;
-}
-.boss-prelude-hero .boss-roster > div {
-  max-width: 76px;
+  .boss-roster-leader > img {
+    height: 160px;
+  }
+  .boss-roster-companion {
+    max-width: 64px;
+    padding-bottom: 10px;
+  }
+  .boss-roster-companion > img {
+    height: 94px;
+  }
+  .boss-opponent-details > summary {
+    min-height: 44px;
+  }
+  .boss-opponent-details > summary > img {
+    width: 30px;
+    height: 36px;
+  }
 }

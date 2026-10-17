@@ -24,7 +24,11 @@ export function bossPresentation(
       : Math.min(activePack.arenaAppearances.bossPosition, opponents.length - 1);
   const unit = opponents[index];
   const figure =
-    nominalIndex >= 0 ? `character.${unit.wizardId}.figure` : activePack.arenaAppearances.boss;
+    nominalIndex >= 0
+      ? unit.wizardId === 'circe'
+        ? 'boss.circe.figure'
+        : `character.${unit.wizardId}.figure`
+      : activePack.arenaAppearances.boss;
   return Object.freeze({
     unit,
     index,

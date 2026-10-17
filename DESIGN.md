@@ -1,5 +1,7 @@
 # Diagon Alley / ARCANA · Callejón de maravillas
 
+A71 ·17octubre2026, dirección autorizada en implementación: **antesala de duelo**. Rival a la derecha/arriba, equipo propio en primer término, libro/tarro y desafío con coste asociado. El lenguaje de objetos sustituye filas de configuración conservando controles nativos y preparación explícita. Actor circe/Hermione-Circe con encuadre medio y brazo/objeto pintados por capas, sin declarar rig anatómico. [Contrato](docs/arcana/boss-stage-2026-10-17/CONTRACT.md). Validación integrada/visual todavía pendiente; no aceptación humana o dispositivo físico atribuidos.
+
 A60 ·15 octubre2026. [Recorridos, recursos y animación vigente](docs/arcana/pokelike-2026-10-15/REPORT.md). Dirección de producto actual: Harry Potter / Diagon Alley principal, ARCANA intercambiable desde Ajustes. [Contrato](docs/arcana/annotations-2026-10-15/CONTRACT.md). [Diseño anterior conservado](docs/arcana/diagon-game-redesign-2026-10-15/DESIGN-before-A57.md). Interacción revisada desde16anotaciones en el [informe A59](docs/arcana/annotations-2026-10-15/REPORT.md). Personajes y apertura del [informe A58](docs/arcana/illustrated-assets-2026-10-15/REPORT.md); antecedente de rediseño en el [informe A57](docs/arcana/diagon-game-redesign-2026-10-15/REPORT.md); sin publicación o aceptación humana de retención.
 
 ## Mundo y composición

@@ -22,7 +22,7 @@ const messages = {
     none: 'No active synergy',
   },
 };
-/** A consultation of the frozen roster, never a second start/confirmation screen. */
+/** The roster is frozen by the server; the book is consultation, never a second confirmation. */
 export function BossPrelude({
   opponents,
   rules,
@@ -51,48 +51,61 @@ export function BossPrelude({
       data-boss-roster-size={opponents.length}
       aria-label={leader.name}
     >
-      <div
-        className="boss-prelude-hero"
-        data-boss-opponent={leader.unit.id}
-        data-boss-opponent-index={leader.index}
-      >
-        <Artwork asset={leader.figure} language={language} decorative eager />
-        <div>
+      <div className="boss-prelude-hero">
+        <header className="boss-prelude-identity">
           <h4>{leader.name}</h4>
           <AffinityLabel affinity={leader.unit.affinity} language={language} />
           <span className="boss-roster-count">
             {opponents.length} · {t.roster}
           </span>
-          <div className="event-opponents boss-roster" aria-label={t.roster}>
-            {opponents.map((unit, index) =>
-              index === leader.index ? null : (
-                <div key={unit.id} data-boss-opponent={unit.id} data-boss-opponent-index={index}>
-                  <Artwork
-                    asset={
-                      unit.wizardId === 'rival'
-                        ? activePack.arenaAppearances.rivals[
-                            index % activePack.arenaAppearances.rivals.length
-                          ]
-                        : `character.${unit.wizardId}.portrait`
-                    }
-                    language={language}
-                    decorative
-                    eager
-                  />
+        </header>
+        <div className="boss-roster-scene" aria-label={t.roster}>
+          {opponents.map((unit, index) => (
+            <div
+              key={unit.id}
+              data-boss-opponent={unit.id}
+              data-boss-opponent-index={index}
+              className={index === leader.index ? 'boss-roster-leader' : 'boss-roster-companion'}
+            >
+              <Artwork
+                asset={
+                  index === leader.index
+                    ? leader.figure
+                    : unit.wizardId === 'rival'
+                      ? activePack.arenaAppearances.rivals[
+                          index % activePack.arenaAppearances.rivals.length
+                        ]
+                      : `character.${unit.wizardId}.figure`
+                }
+                fallbackAsset={
+                  index === leader.index && leader.unit.wizardId === 'circe'
+                    ? 'character.circe.figure'
+                    : undefined
+                }
+                language={language}
+                decorative
+                eager
+              />
+              {index !== leader.index && (
+                <span className="boss-companion-name">
                   <small>{name(unit, index)}</small>
                   <AffinityLabel affinity={unit.affinity} language={language} />
-                </div>
-              ),
-            )}
-          </div>
+                </span>
+              )}
+            </div>
+          ))}
         </div>
       </div>
-      <details className="boss-opponent-details">
-        <summary>{t.details}</summary>
+      <details className="boss-opponent-details" data-boss-inspection-book>
+        <summary>
+          <Artwork asset="ui.collection" language={language} decorative eager />
+          <span>{t.details}</span>
+        </summary>
         <div className="boss-opponent-stats">
           {opponents.map((unit, index) => (
             <section key={unit.id}>
               <strong>{name(unit, index)}</strong>
+              <AffinityLabel affinity={unit.affinity} language={language} />
               <dl>
                 {(
                   [
@@ -111,26 +124,26 @@ export function BossPrelude({
             </section>
           ))}
         </div>
+        {rules ? (
+          <PreparationSynergies
+            members={opponents.map((unit) => ({ source: 'temporary', unit }))}
+            rules={rules}
+            language={language}
+          />
+        ) : (
+          <div className="boss-synergy-summary" aria-label={t.active}>
+            {synergies.length ? (
+              synergies.map((s) => (
+                <span key={s.affinity} data-boss-active-synergy={s.affinity}>
+                  <AffinityLabel affinity={s.affinity} language={language} /> {s.threshold}
+                </span>
+              ))
+            ) : (
+              <small>{t.none}</small>
+            )}
+          </div>
+        )}
       </details>
-      {rules ? (
-        <PreparationSynergies
-          members={opponents.map((unit) => ({ source: 'temporary', unit }))}
-          rules={rules}
-          language={language}
-        />
-      ) : (
-        <div className="boss-synergy-summary" aria-label={t.active}>
-          {synergies.length ? (
-            synergies.map((s) => (
-              <span key={s.affinity} data-boss-active-synergy={s.affinity}>
-                <AffinityLabel affinity={s.affinity} language={language} /> {s.threshold}
-              </span>
-            ))
-          ) : (
-            <small>{t.none}</small>
-          )}
-        </div>
-      )}
     </section>
   );
 }

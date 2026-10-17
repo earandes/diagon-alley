@@ -67,8 +67,14 @@ export function NodePreparation({
     />
   );
   return (
-    <div className="node-preparation" data-preparation={plan.kind} data-event-kind={plan.kind}>
-      {plan.kind === 'boss' && <BossPrelude opponents={plan.opponents} rules={rules} language={language} />}
+    <div
+      className={`node-preparation${plan.kind === 'boss' ? ' boss-opponent-stage' : ''}`}
+      data-preparation={plan.kind}
+      data-event-kind={plan.kind}
+    >
+      {plan.kind === 'boss' && (
+        <BossPrelude opponents={plan.opponents} rules={rules} language={language} />
+      )}
       {plan.kind === 'duel' && (
         <>
           {plan.threat && <ThreatHelp threat={plan.threat} language={language} />}

@@ -42,6 +42,9 @@ import { text, type MessageKey } from './translations';
 import { useEffect, useState, useSyncExternalStore, useRef } from 'react';
 import { CollectionPanel } from './CollectionPanel';
 import { BeanAssignments } from './BeanAssignments';
+import { BossPartyStage } from './BossPartyStage';
+import { BossSupplies } from './BossSupplies';
+import './boss-staging.css';
 import type { BeanAssignment, NodeOptions } from '../application/run-contracts';
 import { MapPanel } from './MapPanel';
 import { BattlePanel } from './BattlePanel';
@@ -608,15 +611,17 @@ export function App() {
                     ref={dialog}
                     onCancel={() => setSelected(null)}
                     aria-label={t('nodeConfirmation')}
-                    className="notice node-event-dialog"
+                    className={`notice node-event-dialog${selectedNode?.kind === 'boss' ? ' boss-staging' : ''}`}
                     data-event-kind={selectedNode?.kind}
                   >
-                    <Artwork
-                      asset={`node.${run.graph.nodes.find((n) => n.id === selected)!.kind}`}
-                      language={language}
-                      className="node-confirmation-art"
-                      decorative
-                    />
+                    {selectedNode?.kind !== 'boss' && (
+                      <Artwork
+                        asset={`node.${run.graph.nodes.find((n) => n.id === selected)!.kind}`}
+                        language={language}
+                        className="node-confirmation-art"
+                        decorative
+                      />
+                    )}
                     <GameSettings
                       language={language}
                       onLanguage={setLanguage}
@@ -624,7 +629,9 @@ export function App() {
                       ownReduced={motion.own}
                       onReduced={motion.change}
                     />
-                    <h3>{label(run.graph.nodes.find((n) => n.id === selected)!.kind)}</h3>
+                    <h3 className={selectedNode?.kind === 'boss' ? 'visually-hidden' : undefined}>
+                      {label(run.graph.nodes.find((n) => n.id === selected)!.kind)}
+                    </h3>
                     <p className="visually-hidden">
                       {['duel', 'boss'].includes(
                         run.graph.nodes.find((n) => n.id === selected)!.kind,
@@ -632,9 +639,7 @@ export function App() {
                         ? t('uses5EssenceAutomaticCombatWithYourCurrent')
                         : t('resolveThisEventWithYourCurrentTeam')}
                     </p>
-                    {['duel', 'boss'].includes(
-                      run.graph.nodes.find((n) => n.id === selected)!.kind,
-                    ) && (
+                    {selectedNode?.kind === 'duel' && (
                       <div
                         className="node-cost"
                         aria-label={t('uses5EssenceAutomaticCombatWithYourCurrent')}
@@ -659,7 +664,30 @@ export function App() {
                         onResolve={directPact ? resolveNode : undefined}
                       />
                     )}
+                    {content && selectedNode?.kind === 'boss' && (
+                      <div className="boss-player-preparation">
+                        <BossPartyStage
+                          run={run}
+                          game={game}
+                          assignments={assignments}
+                          language={language}
+                          ready={ready}
+                          rules={run.campaignSnapshot?.combatRules ?? content.combatRules}
+                          onPrepare={(origin) => openPreparation('formation', origin)}
+                        />
+                        <BossSupplies
+                          run={run}
+                          game={game}
+                          content={content}
+                          language={language}
+                          ready={ready}
+                          assignments={assignments}
+                          onChange={setAssignments}
+                        />
+                      </div>
+                    )}
                     {content &&
+                      selectedNode?.kind !== 'boss' &&
                       ['duel', 'boss'].includes(
                         run.graph.nodes.find((n) => n.id === selected)!.kind,
                       ) && (
@@ -744,6 +772,9 @@ export function App() {
                               : nodeActionLabel(language, selectedNode!.kind)
                           }
                           className="node-confirm-action"
+                          aria-describedby={
+                            selectedNode?.kind === 'boss' ? 'boss-challenge-cost' : undefined
+                          }
                           autoFocus
                           disabled={
                             !ready ||
@@ -782,6 +813,16 @@ export function App() {
                                 )
                               : nodeActionLabel(language, selectedNode!.kind)}
                           </span>
+                          {selectedNode?.kind === 'boss' && (
+                            <span
+                              id="boss-challenge-cost"
+                              className="boss-challenge-cost"
+                              aria-label={t('uses5EssenceAutomaticCombatWithYourCurrent')}
+                            >
+                              <Artwork asset="currency.essence" language={language} decorative />
+                              <strong>5</strong>
+                            </span>
+                          )}
                         </button>
                       )}
                       {state.pending && (

@@ -188,12 +188,34 @@
   background: #0c172855;
 }
 .arena-a63 .pedestal[data-acting='true'] .arena-inspect {
-  border-color: var(--pack-gold, #d8b86f);
-  background: #0c172866;
+  border-color: transparent;
 }
 .arena-a63 .pedestal[data-target='true'] .arena-inspect {
+  border-color: transparent;
+}
+/* The confirmed actor/target are located at their feet, not boxed into UI cells.
+   Native keyboard focus remains a separate, visible control outline. */
+.arena-a63 .pedestal[data-acting='true'] .arena-figure-space::after,
+.arena-a63 .pedestal[data-target='true'] .arena-figure-space::after {
+  content: '';
+  position: absolute;
+  pointer-events: none;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(80%, 120px);
+  height: 16px;
+  border-radius: 50%;
+  border: 2px solid var(--pack-gold, #d8b86f);
+}
+.arena-a63 .pedestal[data-target='true'] .arena-figure-space::after {
   border-color: var(--pack-rival-accent, #ce8680);
   border-style: dashed;
+}
+.arena-a63 .pedestal[data-acting='true'] .arena-inspect > strong {
+  text-decoration: underline;
+  text-decoration-color: var(--pack-gold, #d8b86f);
+  text-underline-offset: 3px;
 }
 .arena-a63 .arena-figure-space {
   display: block;

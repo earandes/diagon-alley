@@ -7,16 +7,25 @@ export function Artwork({
   className = '',
   decorative = false,
   eager = false,
+  fallbackAsset,
 }: {
   asset: string;
   language: Language;
   className?: string;
   decorative?: boolean;
   eager?: boolean;
+  fallbackAsset?: string;
 }) {
-  const image = visualAsset(asset);
-  const [failedUrl, setFailedUrl] = useState<string | null>(null);
-  if (!image || failedUrl === image.url) return null;
+  const primary = visualAsset(asset);
+  const fallback = fallbackAsset ? visualAsset(fallbackAsset) : null;
+  const [failedUrls, setFailedUrls] = useState<readonly string[]>([]);
+  const image =
+    primary && !failedUrls.includes(primary.url)
+      ? primary
+      : fallback && !failedUrls.includes(fallback.url)
+        ? fallback
+        : null;
+  if (!image) return null;
   return (
     <img
       src={image.url}
@@ -27,8 +36,10 @@ export function Artwork({
       className={className}
       loading={eager ? 'eager' : 'lazy'}
       decoding="async"
-      onError={() => setFailedUrl(image.url)}
-      data-art={asset}
+      onError={() =>
+        setFailedUrls((urls) => (urls.includes(image.url) ? urls : [...urls, image.url]))
+      }
+      data-art={image === primary ? asset : fallbackAsset}
     />
   );
 }

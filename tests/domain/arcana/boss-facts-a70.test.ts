@@ -226,7 +226,7 @@ for (const pack of ['diagon-alley', 'arcana'] as const)
       );
       expect(html).toContain('data-closure-boss="circe"');
       expect(html).toContain(pack === 'diagon-alley' ? 'Hermione Granger' : 'Circe');
-      expect(html).toContain('data-art="character.circe.figure"');
+      expect(html).toContain('data-art="boss.circe.figure"');
       expect(html).not.toContain('data-art="rival.boss.figure"');
       expect(html).toContain('data-boss-fact="bean"');
       expect(html.indexOf('closure-spoils')).toBeLessThan(html.indexOf('data-boss-facts'));

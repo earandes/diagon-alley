@@ -7,6 +7,13 @@ export default defineConfig({
   build: {
     outDir: 'test-results/boss-a70-build',
     emptyOutDir: true,
-    rollupOptions: { input: fileURLToPath(new URL('./boss-a70.html', import.meta.url)) },
+    rollupOptions: {
+      input: {
+        battle: fileURLToPath(new URL('./boss-a70.html', import.meta.url)),
+        preparation: fileURLToPath(
+          new URL('../browser-boss-style/boss-style-a71.html', import.meta.url),
+        ),
+      },
+    },
   },
 });

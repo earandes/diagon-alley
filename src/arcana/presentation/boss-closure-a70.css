@@ -17,10 +17,49 @@
   min-width: 0;
   max-width: 100%;
   padding: 4px 10px;
-  border: 1px solid #d7b56b44;
-  border-radius: 10px;
-  background: #162a32a6;
+  border: 0;
+  border-bottom: 1px solid #d7b56b44;
+  background: transparent;
   text-align: left;
+}
+
+/* A71: the treasure remains the decision; confirmed facts live in the journey book. */
+.game-shell .expedition-closure[data-closure-boss] .closure-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: start;
+  gap: 12px 20px;
+}
+.game-shell .expedition-closure[data-closure-boss] .closure-actions button {
+  flex-direction: column;
+  width: auto;
+  flex: 1 1 120px;
+  max-width: 200px;
+  padding: 8px;
+  text-align: center;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+}
+.game-shell .expedition-closure[data-closure-boss] .closure-actions .closure-primary {
+  flex-basis: 100%;
+  max-width: 100%;
+  font-size: 1.05rem;
+}
+.game-shell .expedition-closure[data-closure-boss] .closure-actions .closure-primary img {
+  width: 76px;
+  height: 76px;
+}
+.game-shell .expedition-closure[data-closure-boss] .closure-actions button > span:last-child {
+  display: none;
+}
+.game-shell .expedition-closure[data-closure-boss] .closure-actions button:hover:not(:disabled) {
+  background: #1f3e3b88;
+}
+.game-shell .expedition-closure[data-closure-boss] .closure-actions button:focus-visible {
+  outline: 3px solid var(--pack-focus, #a7e8ed);
+  outline-offset: 3px;
 }
 .game-shell .boss-battle-fact > summary {
   display: flex;

@@ -2,10 +2,18 @@ import { randomUUID } from 'node:crypto';
 import { defineSafeConfig } from './tools/verification/playwright-safety';
 
 const namespace = `a70-boss-${randomUUID()}`;
+// A71 runs in this existing CI step, under the same guard/lock and one worker.
+// Keep new selected evidence separate from the historical A70 PNG baseline.
+process.env.A71_FIXTURE_URL = 'http://127.0.0.1:5471';
+process.env.A71_EVIDENCE_ROOT = 'docs/arcana/boss-increment-2026-10-16/evidence/linux/a71';
+if (process.env.ARCANA_CAPTURE_A70 === '1') {
+  process.env.ARCANA_CAPTURE_A71 = '1';
+  process.env.ARCANA_CAPTURE_A70 = '0';
+}
 /** Linux only: the shared guard enforces lock, one worker, no retries or recording. */
 export default defineSafeConfig({
-  testDir: './tests/browser-boss',
-  testMatch: 'boss-a70.spec.ts',
+  testDir: './tests',
+  testMatch: [/browser-boss\/boss-a70\.spec\.ts$/, /browser-boss-style\/boss-style-a71\.spec\.ts$/],
   outputDir: 'test-results/boss-a70',
   timeout: 180000,
   maxFailures: 1,

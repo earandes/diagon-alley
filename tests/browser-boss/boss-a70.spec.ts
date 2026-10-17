@@ -688,9 +688,9 @@ test('A70 missing overlay alone preserves original boss art and usable replay', 
   page,
 }) => {
   let failedOverlayImages = 0;
-  // Vite emits the >4kB cover as assets/book-cover-HASH.webp. Other small pieces
-  // may be inlined, so block this specific real layer, never base character art.
-  await page.route(/\/assets\/book-cover-[^/]+\.webp/, async (route) => {
+  // A71 replaces the A70 cropped cover with a painted arm/prop layer.
+  // Block the active layer, never the complete static fallback character.
+  await page.route(/\/assets\/actor-arm-[^/]+\.webp/, async (route) => {
     failedOverlayImages++;
     await route.abort();
   });

@@ -17,11 +17,37 @@ export interface BossArt {
   /** Confirmed projectile's visual origin within the figure; never target logic. */
   readonly origin: readonly [number, number];
   readonly layers: readonly BossArtLayer[];
+  readonly actor?: BossActorArt;
+}
+
+/** Painted cut-paper limb sample; no character skeleton or economic identity. */
+export interface BossActorArt {
+  readonly baseUrl: string;
+  readonly armUrl: string;
+  readonly staticUrl: string;
+  readonly frameSize: readonly [number, number];
+  readonly armPivot: readonly [number, number];
+  readonly origin: readonly [number, number];
+  readonly armAngle: number;
+  readonly baseline: number;
 }
 
 const book: BossArt = {
   figureSize: [342, 428],
   origin: [211 / 342, 321 / 428],
+  actor: {
+    baseUrl: new URL('./content-packs/diagon-alley/art/boss-a71/actor-base.webp', import.meta.url)
+      .href,
+    armUrl: new URL('./content-packs/diagon-alley/art/boss-a71/actor-arm.webp', import.meta.url)
+      .href,
+    staticUrl: new URL('./content-packs/diagon-alley/art/boss-a71/actor-rest.webp', import.meta.url)
+      .href,
+    frameSize: [384, 512],
+    armPivot: [289.58 / 384, 293 / 512],
+    origin: [235.68 / 384, 378.26 / 512],
+    armAngle: (11 * Math.PI) / 180,
+    baseline: 467 / 512,
+  },
   layers: [
     {
       id: 'book-pages',
@@ -48,6 +74,16 @@ const book: BossArt = {
 const bowl: BossArt = {
   figureSize: [342, 512],
   origin: [255 / 342, 160 / 512],
+  actor: {
+    baseUrl: new URL('./content-packs/arcana/art/boss-a71/actor-base.webp', import.meta.url).href,
+    armUrl: new URL('./content-packs/arcana/art/boss-a71/actor-arm.webp', import.meta.url).href,
+    staticUrl: new URL('./content-packs/arcana/art/boss-a71/actor-rest.webp', import.meta.url).href,
+    frameSize: [384, 512],
+    armPivot: [244.2 / 384, 301.2 / 512],
+    origin: [318 / 384, 227.4 / 512],
+    armAngle: (13 * Math.PI) / 180,
+    baseline: 445 / 512,
+  },
   layers: [
     {
       id: 'bowl-contents',

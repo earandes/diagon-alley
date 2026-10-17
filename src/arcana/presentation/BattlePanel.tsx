@@ -159,11 +159,13 @@ function BattlePlayback({
     side: 'player' | 'rival',
     index: number,
   ) =>
-    unit.wizardId === 'rival' && side === 'rival'
-      ? legacyBoss && index === activePack.arenaAppearances.bossPosition
-        ? activePack.arenaAppearances.boss
-        : activePack.arenaAppearances.rivals[index % activePack.arenaAppearances.rivals.length]
-      : `character.${unit.wizardId}.figure`;
+    side === 'rival' && unit.id === boss?.unit.id
+      ? boss.figure
+      : unit.wizardId === 'rival' && side === 'rival'
+        ? legacyBoss && index === activePack.arenaAppearances.bossPosition
+          ? activePack.arenaAppearances.boss
+          : activePack.arenaAppearances.rivals[index % activePack.arenaAppearances.rivals.length]
+        : `character.${unit.wizardId}.figure`;
   const appearances = Object.fromEntries(
     (['player', 'rival'] as const).flatMap((side) =>
       combat.input[side].map((u, index) => [u.id, figureKey(u, side, index)]),
@@ -413,6 +415,11 @@ function BattlePlayback({
                         <span className="arena-figure-space">
                           <Artwork
                             asset={appearances[unit.id]}
+                            fallbackAsset={
+                              unit.id === boss?.unit.id && unit.wizardId !== 'rival'
+                                ? `character.${unit.wizardId}.figure`
+                                : undefined
+                            }
                             language={language}
                             className="arena-portrait"
                             decorative

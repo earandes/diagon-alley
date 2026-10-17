@@ -81,6 +81,9 @@ export function ExpeditionClosure({
       <div className="closure-stage">
         <Artwork
           asset={adversary?.figure ?? 'ui.map'}
+          fallbackAsset={
+            adversary?.unit.wizardId === 'circe' ? 'character.circe.figure' : undefined
+          }
           language={language}
           className="closure-hero"
           decorative
@@ -158,13 +161,13 @@ export function ExpeditionClosure({
             </button>
           ))}
         </div>
-        {bossBattle && <BossBattleFacts combat={bossBattle} language={language} />}
       </div>
       <details className="closure-history">
         <summary>
           <Artwork asset="ui.map" language={language} decorative />
           <span>{t('details')}</span>
         </summary>
+        {bossBattle && <BossBattleFacts combat={bossBattle} language={language} />}
         <p>{t('kept')}</p>
         <div className="closure-companions" aria-label={t('companions')}>
           {run.members.map((member) => (
