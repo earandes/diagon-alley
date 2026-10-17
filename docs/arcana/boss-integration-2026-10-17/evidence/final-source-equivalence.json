@@ -1,0 +1,65 @@
+{
+  "ci": 39021060226,
+  "headSha": "15b1a99aa24863b7d00773c0f95c80ab8bebb625",
+  "previousMain": "f5d3a891d5f5a6c1a69a28b46b8c96de8ead82b8",
+  "referenceA71": "ffb909467ae6ff1ca5ecaa5a2cad379c1c69ca89",
+  "runtime": {
+    "src": {
+      "a71": "0655265b3a1f4ce3edbf61bf10c16787de23f7d1",
+      "main": "0655265b3a1f4ce3edbf61bf10c16787de23f7d1",
+      "equal": true
+    },
+    "design": {
+      "a71": "81c22e1bf46fe70fc5de187f872de9e440c0c563",
+      "main": "81c22e1bf46fe70fc5de187f872de9e440c0c563",
+      "equal": true
+    },
+    "tools": {
+      "a71": "a3f12b17955f8e7fca8e6fbeb4d0ced4f30999af",
+      "main": "a3f12b17955f8e7fca8e6fbeb4d0ced4f30999af",
+      "equal": true
+    },
+    ".github": {
+      "a71": "ab183b22bc9cc66543283ec866567eceea8825d1",
+      "main": "ab183b22bc9cc66543283ec866567eceea8825d1",
+      "equal": true
+    },
+    "package.json": {
+      "a71": "7624c06b3bf5c620b39cb74042a7a0a3467f0823",
+      "main": "7624c06b3bf5c620b39cb74042a7a0a3467f0823",
+      "equal": true
+    },
+    "package-lock.json": {
+      "a71": "f8d0c9d8aab1a5931825ecd76ccc979dea21862c",
+      "main": "f8d0c9d8aab1a5931825ecd76ccc979dea21862c",
+      "equal": true
+    }
+  },
+  "protected": {
+    "src/arcana/domain": {
+      "previousMain": "003d8b765c81cad36d8d4f5a684980bb4fe29a8f",
+      "main": "003d8b765c81cad36d8d4f5a684980bb4fe29a8f",
+      "equal": true
+    },
+    "src/arcana/application": {
+      "previousMain": "b5e6064308902e2b7dd29de2cb50ed0d2ad3422c",
+      "main": "b5e6064308902e2b7dd29de2cb50ed0d2ad3422c",
+      "equal": true
+    },
+    "src/arcana/infrastructure": {
+      "previousMain": "423309d5fd20bf1d23b6b5095143837c48132ec2",
+      "main": "423309d5fd20bf1d23b6b5095143837c48132ec2",
+      "equal": true
+    },
+    "src/arcana/content": {
+      "previousMain": "15f6920de0d1c26481c1efe4f38f89ab8eadbb4b",
+      "main": "15f6920de0d1c26481c1efe4f38f89ab8eadbb4b",
+      "equal": true
+    },
+    "AGENTS.md": {
+      "previousMain": "1232f36c1e7840e04c5d414ecb70e7752e16d485",
+      "main": "1232f36c1e7840e04c5d414ecb70e7752e16d485",
+      "equal": true
+    }
+  }
+}

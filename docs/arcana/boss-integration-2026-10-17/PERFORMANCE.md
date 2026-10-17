@@ -20,4 +20,12 @@ Fixture declarada seed70 Maestría5×5, estadísticas propias prolongadas para o
 
 Pausa/omisión/desmontaje y contadores propios verificados por la batería; no prueban ausencia global de fugas. Promesa decode incluye red/scheduling, rAF no mideGPU y dimensionesRGBA no son memoria residente. Los picos de arranque siguen abiertos.
 
-La regresión genéricaA69 y las referenciasA67 están todavía pendientes de terminar en estaCI. No sustituir su resultado por la muestra favorable del jefe. Objetivo genérico anterior20ms incumplido en A71, documentado sin causa aislada. Se registrará el resultado actual al terminar.
+## Candidato final15b1a99 · CI39021060226 correcta
+
+[Resumen final](evidence/final-boss-summary.json), [JSONcrudo](evidence/final-boss-performance.json). Jefe5×5:570intervalos/546paints cálidos, P95/máximo16,8/33,4ms,0LongTasks cálidas. Arranque712,7ms como límite superior, máximo233,3ms y3LongTasks/máximo172ms; promesa decode acumulada204,9ms. Omisión89ms, texturaspropias7.628.832B, teardown propio0. Mismos límites metodológicos que antes.
+
+24journeysfinalesA71: ChromiumDOM606–965ms/figuras610–967ms; WebKitDOM593–1305ms/figuras598–1308ms. No se sustituyen los límites mayores de intentos anteriores ni se declara causalidad entre ellos.
+
+GenéricoA69 P95: de99ef3 **33,4ms**,8155efc **16,8ms**,15b1a99 **33,4ms**; tres JSON originales conservados (`generic-warm-attempt-1/attempt-2/final.json`). Mismo runtime, variabilidad de entorno/scheduling no aislada. La muestra final vuelve a incumplir objetivo20ms; no se declara resuelto ni se escoge solo el intento favorable. Final510intervalos/482paints;0LongTasks cálidas. No se confunden métricas de ventana del jefe con genérico.
+
+ReferenciasA67 baseline/current terminaron correctamente; JSON originales `final-a67-baseline.json` y `final-a67-current.json`, procedencia artifacta67-validation-evidence deCI39021060226. Son otrafixture y medidas deacciones, no duración humana o benchmark del jefe.

@@ -22,8 +22,8 @@ No nuevo estado persistido. Recuperación/reload/fallback/skip siguen contratos 
 
 1. Completado: fuentes, PR/SHA/evidencia, revisión visual/código y falloCI.
 2. Completado: reproducción determinista y corrección mínima si procede; tipos/build/unitarios/PGRedis.
-3. En curso: candidato único de integración sobre main que contenga A70/A71; CI Linux serial con guard/lock/watchdog originales, sin reintentos. Reutilizar evidencia anterior con objetos equivalentes y registrar los resultados nuevos.
-4. En curso: integrar sin force-push, verificar main remoto/ancestría/CI y documentación final.
+3. Completado: candidato único de integración sobre main que contenga A70/A71; CI Linux serial con guard/lock/watchdog originales, sin reintentos. Reutilizar evidencia anterior con objetos equivalentes y registrar los resultados nuevos.
+4. Completado: integrar sin force-push, verificar main remoto/ancestría/CI y documentación final.
 
 CI puede usar consolidación equivalente para no integrar un candidato intermedio con un fallo conocido ni duplicar matrices. Las garantías gráficas extensas se ejecutan solo en Linux. No navegador en el Mac. Humana/lector hablado/dispositivo físico pendientes; límites de rendimiento genérico/arranque conservados explícitos.
 
@@ -44,3 +44,7 @@ Cambio mínimo previsto: esperar estado no-playing/no-ticking y asentamiento DOM
 ## Finding de selector de foco antes de corregir
 
 CI39018704725 sobre8155efc: jefe/Halloween/A69 correctos. Regresión general55correctos/1fallido: ruta WebKit abrió EncuentroA67, test buscaba solo Pacto o confirmación habilitada, mientras App enfoca [data-encounter-choice] correctamente. Snapshot conserva diálogo y dos elecciones. Se cancela resto propio después de preservar error; no se cuenta comoCIcompleta. Cambio mínimo: añadir la elección de encuentro al selector esperado, conservando toBeFocused, Cancelar y retorno al nodo; reforzar consulta/cancelación con igualdad de estado económico. No cambio de App, foco productivo, reglas o renderer.
+
+## Cierre técnico
+
+CI39021060226 correcta enmain15b1a99:555unitarios,78PGRedis y263navegador correctos/15omisionesdeliberadas; todos los pasos terminados. Se conservan intentos cancelados con fallos de tests y sus correcciones acotadas. Main contiene PR3/PR4 sin force-push o dobleaplicación. Actualización documental final conserva src/tests/config/assets ensayados mediante certificado; comprobarSHAremoto al subir. No despliegue. Observaciónhumana/física y límites de rendimiento explícitos no se cuentan como resueltos.

@@ -1,0 +1,272 @@
+{
+  "testedMain": "15b1a99aa24863b7d00773c0f95c80ab8bebb625",
+  "ci": 39021060226,
+  "result": "success",
+  "comparison": "index before final documentation-only commit; docs DESIGN README excluded",
+  "objects": [
+    {
+      "path": ".agents",
+      "testedObject": "b671a5f481bcfd7f19f754e55b8784d9e771de39",
+      "indexObject": "b671a5f481bcfd7f19f754e55b8784d9e771de39",
+      "equal": true
+    },
+    {
+      "path": ".github",
+      "testedObject": "ab183b22bc9cc66543283ec866567eceea8825d1",
+      "indexObject": "ab183b22bc9cc66543283ec866567eceea8825d1",
+      "equal": true
+    },
+    {
+      "path": ".gitignore",
+      "testedObject": "4a20ce68e717c40bb4598760fd3d423f71fce9be",
+      "indexObject": "4a20ce68e717c40bb4598760fd3d423f71fce9be",
+      "equal": true
+    },
+    {
+      "path": ".prettierrc.json",
+      "testedObject": "4926aa83b2cdd01a15887dab4dc9d05a7e91c22c",
+      "indexObject": "4926aa83b2cdd01a15887dab4dc9d05a7e91c22c",
+      "equal": true
+    },
+    {
+      "path": "AGENTS.md",
+      "testedObject": "1232f36c1e7840e04c5d414ecb70e7752e16d485",
+      "indexObject": "1232f36c1e7840e04c5d414ecb70e7752e16d485",
+      "equal": true
+    },
+    {
+      "path": "PRODUCT.md",
+      "testedObject": "a0492cd8964c540e15eda53009243c27c5dc8f2f",
+      "indexObject": "a0492cd8964c540e15eda53009243c27c5dc8f2f",
+      "equal": true
+    },
+    {
+      "path": "compose.arcana.yml",
+      "testedObject": "d8ea8231b4c534a83b63de85fb7054de92f7bb39",
+      "indexObject": "d8ea8231b4c534a83b63de85fb7054de92f7bb39",
+      "equal": true
+    },
+    {
+      "path": "design",
+      "testedObject": "81c22e1bf46fe70fc5de187f872de9e440c0c563",
+      "indexObject": "81c22e1bf46fe70fc5de187f872de9e440c0c563",
+      "equal": true
+    },
+    {
+      "path": "index.html",
+      "testedObject": "299ef645d7bcd410946076abeae2f2a1f6ed1adc",
+      "indexObject": "299ef645d7bcd410946076abeae2f2a1f6ed1adc",
+      "equal": true
+    },
+    {
+      "path": "package-lock.json",
+      "testedObject": "f8d0c9d8aab1a5931825ecd76ccc979dea21862c",
+      "indexObject": "f8d0c9d8aab1a5931825ecd76ccc979dea21862c",
+      "equal": true
+    },
+    {
+      "path": "package.json",
+      "testedObject": "7624c06b3bf5c620b39cb74042a7a0a3467f0823",
+      "indexObject": "7624c06b3bf5c620b39cb74042a7a0a3467f0823",
+      "equal": true
+    },
+    {
+      "path": "playwright.actions-a63.config.ts",
+      "testedObject": "fc1bea975c8874fffaf23ea851338c773089cb06",
+      "indexObject": "fc1bea975c8874fffaf23ea851338c773089cb06",
+      "equal": true
+    },
+    {
+      "path": "playwright.adverse-a65.config.ts",
+      "testedObject": "50f8ac5ad67f1dbc73a937f543181c80d27535c4",
+      "indexObject": "50f8ac5ad67f1dbc73a937f543181c80d27535c4",
+      "equal": true
+    },
+    {
+      "path": "playwright.arcana.config.ts",
+      "testedObject": "d636c2f3277fdfc5b96d91e829e03237ae38a93a",
+      "indexObject": "d636c2f3277fdfc5b96d91e829e03237ae38a93a",
+      "equal": true
+    },
+    {
+      "path": "playwright.art.config.ts",
+      "testedObject": "60b35d4ffa5994c0394a84b3b0e21173b492d2d8",
+      "indexObject": "60b35d4ffa5994c0394a84b3b0e21173b492d2d8",
+      "equal": true
+    },
+    {
+      "path": "playwright.boss-a70.config.ts",
+      "testedObject": "6209d40edf19eb2f9cb6d17dcbaf59f2caebb8c4",
+      "indexObject": "6209d40edf19eb2f9cb6d17dcbaf59f2caebb8c4",
+      "equal": true
+    },
+    {
+      "path": "playwright.boss-style-a71.config.ts",
+      "testedObject": "ed36e621c67d7619d65a6ca973fa743cf0599328",
+      "indexObject": "ed36e621c67d7619d65a6ca973fa743cf0599328",
+      "equal": true
+    },
+    {
+      "path": "playwright.commerce-a60.config.ts",
+      "testedObject": "40b241f68cce72048f02530f373e8d91fb457c1d",
+      "indexObject": "40b241f68cce72048f02530f373e8d91fb457c1d",
+      "equal": true
+    },
+    {
+      "path": "playwright.config.ts",
+      "testedObject": "d416f6e834add0b02a6b9d7dbcb3f96b2f50d2af",
+      "indexObject": "d416f6e834add0b02a6b9d7dbcb3f96b2f50d2af",
+      "equal": true
+    },
+    {
+      "path": "playwright.experience.config.ts",
+      "testedObject": "61c2e17c69ca0fa13a4f2d4881d10003f9362f78",
+      "indexObject": "61c2e17c69ca0fa13a4f2d4881d10003f9362f78",
+      "equal": true
+    },
+    {
+      "path": "playwright.game-redesign.config.ts",
+      "testedObject": "9fcd26158ef5d6f1bb28c119a0f45e463e22d010",
+      "indexObject": "9fcd26158ef5d6f1bb28c119a0f45e463e22d010",
+      "equal": true
+    },
+    {
+      "path": "playwright.gameplay-a63.config.ts",
+      "testedObject": "cd53055bb4bbcfddb6a73725e3c73f472c610caf",
+      "indexObject": "cd53055bb4bbcfddb6a73725e3c73f472c610caf",
+      "equal": true
+    },
+    {
+      "path": "playwright.header-pact-a66.config.ts",
+      "testedObject": "742143c010133868a9be6e40739a7556dcef73ab",
+      "indexObject": "742143c010133868a9be6e40739a7556dcef73ab",
+      "equal": true
+    },
+    {
+      "path": "playwright.intentions-a65.config.ts",
+      "testedObject": "874bbbb5d0a63d249fd5e68c34a8cc234452be03",
+      "indexObject": "874bbbb5d0a63d249fd5e68c34a8cc234452be03",
+      "equal": true
+    },
+    {
+      "path": "playwright.local-smoke.config.ts",
+      "testedObject": "324b278f236cff7cbbd455c90795db6be6d08af7",
+      "indexObject": "324b278f236cff7cbbd455c90795db6be6d08af7",
+      "equal": true
+    },
+    {
+      "path": "playwright.motion-a69.config.ts",
+      "testedObject": "16577400200c8ce4e9502acf2191c40891850b9d",
+      "indexObject": "16577400200c8ce4e9502acf2191c40891850b9d",
+      "equal": true
+    },
+    {
+      "path": "playwright.opening.config.ts",
+      "testedObject": "4f1e36b05fc804aa50fe09231c1bd87bf245f590",
+      "indexObject": "4f1e36b05fc804aa50fe09231c1bd87bf245f590",
+      "equal": true
+    },
+    {
+      "path": "playwright.performance-a67.config.ts",
+      "testedObject": "3fcad6dfd4cfb5aef71eae93b96c8ee6b75be243",
+      "indexObject": "3fcad6dfd4cfb5aef71eae93b96c8ee6b75be243",
+      "equal": true
+    },
+    {
+      "path": "playwright.pokelike.config.ts",
+      "testedObject": "42b6efd9872da6d6a5c24a386ded5931d0684ca0",
+      "indexObject": "42b6efd9872da6d6a5c24a386ded5931d0684ca0",
+      "equal": true
+    },
+    {
+      "path": "playwright.preparation-a63.config.ts",
+      "testedObject": "afdc7620b615fa73c603580eb0ba9c33eb7475fe",
+      "indexObject": "afdc7620b615fa73c603580eb0ba9c33eb7475fe",
+      "equal": true
+    },
+    {
+      "path": "playwright.profile-a63.config.ts",
+      "testedObject": "f949a732bc7cf76ca76239a2fa33f6acd9b0a361",
+      "indexObject": "f949a732bc7cf76ca76239a2fa33f6acd9b0a361",
+      "equal": true
+    },
+    {
+      "path": "playwright.progression-a67.config.ts",
+      "testedObject": "1ef7583b1770ec9002e96acf102d785f6b7635aa",
+      "indexObject": "1ef7583b1770ec9002e96acf102d785f6b7635aa",
+      "equal": true
+    },
+    {
+      "path": "playwright.pwa.config.ts",
+      "testedObject": "90d9bb2dd5fff706fbe412a696fd3407d28d2c52",
+      "indexObject": "90d9bb2dd5fff706fbe412a696fd3407d28d2c52",
+      "equal": true
+    },
+    {
+      "path": "playwright.seasonal-a68.config.ts",
+      "testedObject": "7b5340e97cce4389f37a6315fe0b7ef075b25c6d",
+      "indexObject": "7b5340e97cce4389f37a6315fe0b7ef075b25c6d",
+      "equal": true
+    },
+    {
+      "path": "playwright.tactics-a65.config.ts",
+      "testedObject": "eebfa95392542bee0b5600ebe25e6f68b6174e71",
+      "indexObject": "eebfa95392542bee0b5600ebe25e6f68b6174e71",
+      "equal": true
+    },
+    {
+      "path": "playwright.trial.config.ts",
+      "testedObject": "cfc015993bed6e533570f56d49b5d7f5e8bfd7ee",
+      "indexObject": "cfc015993bed6e533570f56d49b5d7f5e8bfd7ee",
+      "equal": true
+    },
+    {
+      "path": "public",
+      "testedObject": "c753d774b0376039471d909e9266ffd49e740039",
+      "indexObject": "c753d774b0376039471d909e9266ffd49e740039",
+      "equal": true
+    },
+    {
+      "path": "src",
+      "testedObject": "0655265b3a1f4ce3edbf61bf10c16787de23f7d1",
+      "indexObject": "0655265b3a1f4ce3edbf61bf10c16787de23f7d1",
+      "equal": true
+    },
+    {
+      "path": "tests",
+      "testedObject": "5e30a141914be8cd29e44ce6fa04ff564e4276e4",
+      "indexObject": "5e30a141914be8cd29e44ce6fa04ff564e4276e4",
+      "equal": true
+    },
+    {
+      "path": "tools",
+      "testedObject": "a3f12b17955f8e7fca8e6fbeb4d0ced4f30999af",
+      "indexObject": "a3f12b17955f8e7fca8e6fbeb4d0ced4f30999af",
+      "equal": true
+    },
+    {
+      "path": "tsconfig.json",
+      "testedObject": "eec6aa0842ae8c71f301150de6046c0a3d9d59e8",
+      "indexObject": "eec6aa0842ae8c71f301150de6046c0a3d9d59e8",
+      "equal": true
+    },
+    {
+      "path": "tsconfig.worker.json",
+      "testedObject": "9eee2b43095e3ba8824d4f3b022a56d10288e364",
+      "indexObject": "9eee2b43095e3ba8824d4f3b022a56d10288e364",
+      "equal": true
+    },
+    {
+      "path": "vite.config.ts",
+      "testedObject": "27a5976a4effe7498d8fcef4aa5d55e893dff9ab",
+      "indexObject": "27a5976a4effe7498d8fcef4aa5d55e893dff9ab",
+      "equal": true
+    },
+    {
+      "path": "vitest.integration.config.ts",
+      "testedObject": "b79213b14ba96fa2cc4aa33866d35200c1d4e578",
+      "indexObject": "b79213b14ba96fa2cc4aa33866d35200c1d4e578",
+      "equal": true
+    }
+  ]
+}

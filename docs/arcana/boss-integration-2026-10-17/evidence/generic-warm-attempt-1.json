@@ -1,0 +1,39 @@
+{
+  "fixture": true,
+  "engine": "chromium",
+  "viewport": {
+    "width": 1280,
+    "height": 900
+  },
+  "media": "off",
+  "newDocument": true,
+  "networkCacheReset": false,
+  "sha": "de99ef3d4ac79d131f79829db1746ce703a3a541",
+  "frameMs": {
+    "samples": 513,
+    "p50": 16.699999999999818,
+    "p95": 33.399999999999636,
+    "max": 33.5
+  },
+  "longTasks": [],
+  "renderer": [
+    {
+      "renderer": "webgl",
+      "activeTicking": "true",
+      "artReady": "true",
+      "visibleFigures": "6",
+      "renderCount": "496",
+      "textureCount": "6",
+      "textureBytes": "3513024"
+    }
+  ],
+  "budgetTargetsNotProof": {
+    "p95FrameMs": 20,
+    "maximumFrameMs": 50,
+    "skipUsableMs": 100
+  },
+  "windowMs": 10000,
+  "warmDraws": 486,
+  "startupIncluded": false,
+  "scope": "Separate warm fixture window; startup is retained in cold action records"
+}
