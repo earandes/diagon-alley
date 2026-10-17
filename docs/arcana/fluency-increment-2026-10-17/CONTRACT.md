@@ -17,9 +17,9 @@ Hipótesis a contrastar: creación del contexto/importación frente a primer upl
 ## Plan vivo y aceptación
 
 1. Leer fuentes/skills/contratos y registrar estado inicial: hecho.
-2. Instrumentación acotada y referencia ejecutable: pendiente.
-3. Medición Linux, causas y presupuesto de arranque: pendiente.
-4. Correcciones mínimas con pruebas relevantes: pendiente.
+2. Instrumentación acotada y referencia ejecutable: completadas en fase Linux39026178568, conjunto global cancelado tras guardar artifact.
+3. Medición Linux, causas y presupuesto de arranque: primera referencia y decisiones enDIAGNOSIS.
+4. Correcciones mínimas con pruebas relevantes: invalidaciones agrupadas/geometría retenida implementadas;560unitarios y78PGRedis correctos; comparación gráfica pendiente.
 5. Comparación equivalente y recorrido completo, inspección seleccionada: pendiente.
 6. Tipos/build/unitarios/PGRedis y regresiones afectadas: pendiente.
 7. Integrar candidato validado, verificar main/CI, documentar límites: pendiente.

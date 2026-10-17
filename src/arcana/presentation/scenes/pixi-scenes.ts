@@ -1,3 +1,5 @@
+import { sameSceneGeometry } from './scene-geometry';
+import { FrameInvalidation } from './frame-invalidation';
 import { sceneStart, sceneEnd } from './scene-diagnostics';
 import { Application, Graphics, Sprite, Texture } from 'pixi.js';
 import { visualAsset } from '../content-packs/art';
@@ -173,7 +175,7 @@ export async function createPixiScene(host: HTMLElement, data: SceneData) {
                     [...textures.values()].reduce((n, t) => n + t.width * t.height * 4, 0),
                   );
                   dirty = true;
-                  paint();
+                  requestPaint();
                 })
                 .catch(() => {
                   /* Equivalent DOM artwork/text remains available. */
@@ -232,7 +234,7 @@ export async function createPixiScene(host: HTMLElement, data: SceneData) {
                           [...textures.values()].reduce((n, t) => n + t.width * t.height * 4, 0),
                         );
                         dirty = true;
-                        paint();
+                        requestPaint();
                       })
                       .catch(() => {
                         /* Static full actor remains intact. */
@@ -279,7 +281,7 @@ export async function createPixiScene(host: HTMLElement, data: SceneData) {
                           [...textures.values()].reduce((n, t) => n + t.width * t.height * 4, 0),
                         );
                         dirty = true;
-                        paint();
+                        requestPaint();
                       })
                       .catch(() => {
                         /* The original painted object remains intact. */
@@ -523,6 +525,10 @@ export async function createPixiScene(host: HTMLElement, data: SceneData) {
     sceneEnd('paint', paintStarted);
     host.dataset.renderCount = String(++renders);
   };
+  const redraw = new FrameInvalidation(requestAnimationFrame, cancelAnimationFrame, paint);
+  const requestPaint = () => {
+    if (!destroyed && !document.hidden && !app.ticker.started) redraw.request();
+  };
   app.ticker.add((ticker) => {
     if (current.kind === 'arena' && current.playing) {
       if (!current.clock) elapsed += ticker.deltaMS * current.speed;
@@ -530,36 +536,39 @@ export async function createPixiScene(host: HTMLElement, data: SceneData) {
     }
   });
   const update = (next: SceneData) => {
+    dirty ||= !sameSceneGeometry(current, next);
     current = next;
-    dirty = true;
     const nextStamp = next.kind === 'arena' ? next.frame.cursor : -1;
     if (nextStamp !== stamp) {
       stamp = nextStamp;
       elapsed = 0;
     }
     const ticking = next.kind === 'arena' && next.playing && !document.hidden;
-    if (ticking) app.start();
-    else app.stop();
+    if (ticking) {
+      redraw.cancelPending();
+      app.start();
+    } else app.stop();
     host.dataset.activeTicking = String(ticking);
     // An active ticker paints the next frame. React phase updates only invalidate
     // geometry; painting immediately as well needlessly submits a second frame.
-    if (!ticking) paint();
+    if (!ticking) redraw.flush();
   };
   const observer = new ResizeObserver(([entry]) => {
     viewWidth = entry.contentRect.width;
     viewHeight = entry.contentRect.height;
-    paint();
+    requestPaint();
   });
   observer.observe(host);
   const visibility = () => {
     if (destroyed) return;
     if (document.hidden) {
+      redraw.cancelPending();
       app.stop();
       host.dataset.activeTicking = 'false';
     } else {
       if (current.kind === 'arena' && current.playing) app.start();
       host.dataset.activeTicking = String(current.kind === 'arena' && current.playing);
-      paint();
+      requestPaint();
     }
   };
   document.addEventListener('visibilitychange', visibility);
@@ -568,6 +577,7 @@ export async function createPixiScene(host: HTMLElement, data: SceneData) {
     update,
     destroy: () => {
       destroyed = true;
+      redraw.cancelPending();
       observer.disconnect();
       document.removeEventListener('visibilitychange', visibility);
       app.stop();
