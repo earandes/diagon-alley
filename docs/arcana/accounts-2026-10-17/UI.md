@@ -2,7 +2,7 @@
 
 ## Diseño elegido
 
-Se compararon dos composiciones con arte existente: tres portales equivalentes de acceso, o una entrada de cuenta compacta delante del Callejón conservando el portal invitado. Se elige la segunda: Crear cuenta como acción de cuenta principal, Iniciar sesión con contraste secundario y Jugar como invitado en el portal ilustrado existente. No se cambia el nombre accesible histórico del portal para conservar las regresiones. La ayuda breve comunica el límite del invitado, sin prometer recuperación sin sesión.
+Se compararon dos composiciones con arte existente: tres portales equivalentes de acceso, o una entrada de cuenta compacta delante del Callejón conservando el portal invitado. Se elige la segunda: Crear cuenta como acción de cuenta principal, Iniciar sesión con contraste secundario y Jugar como invitado en el portal ilustrado existente. El nombre accesible del portal coincide con Jugar como invitado/Play as guest, también visible; las pruebas activas se actualizan y la muestra histórica de apertura admite ambos nombres explícitamente. La ayuda breve comunica el límite del invitado, sin prometer recuperación sin sesión.
 
 En Ajustes hay un único acceso: Guardar mi partida para invitado, Mi cuenta para cuenta conocida y Acceder a mi cuenta sin partida. La identidad conocida aparece aquí, fuera del HUD económico. Un fallo de consulta de identidad se muestra como indisponibilidad; nunca se convierte en invitado por defecto.
 
@@ -24,3 +24,11 @@ La carta modal reutiliza ui.missions y ui.pass, colores/contraste de lectura y l
 `npm run typecheck`: primera pasada detenida por incompatibilidad de tipo del gateway en identidad (archivo del coordinador); ninguna incompatibilidad UI en esa ejecución. Una segunda pasada de `npm run typecheck` terminó correctamente tras integrar las correcciones del coordinador. La validación final y CI corresponden al coordinador.
 
 No se abrió navegador ni se ejecutaron servicios, matrices gráficas, perfiles o capturas desde este subagente. La inspección Linux seleccionada, teclado/foco,texto ampliado y ambos packs siguen siendo responsabilidad de la batería coordinada, sin atribuirlas a este render estático.
+
+## Correcciones tras la primera muestra
+
+La primera CI A76 (39068985629,34b22de) avanzó hasta crear/verificar cuenta y detuvo el recorrido por fixture que leía `content.table` en vez de `toadTable`. Se tipa PublicContent para evitar repetir el error. No se cuenta la ejecución como superada. Se conserva la evidencia seleccionada de ese candidato por separado de la inspección final.
+
+Petición de acceso limitada a15s con AbortController, sin reintento automático. Error de almacenamiento o transporte durante cambio de sesión se trata como respuesta incierta. Reset incierto orienta a probar nueva contraseña o solicitar otro código, sin reutilizar silenciosamente el anterior. El propietario de la respuesta de login se exige al cargar la partida; una cookie cambiada por otra pestaña no autoriza cargar cualquier jugador. La reautenticación con prueba de la misma cuenta puede recuperar su propietario aunque otra pestaña haya cambiado la cookie.
+
+Los mensajes de registro explican explícitamente el buzón privado del ensayo; no prometen entrega por Internet. Ajustes solo ofrece Guardar mi partida cuando la sesión es invitada válida; una sesión anónima/indisponible ofrece acceso.

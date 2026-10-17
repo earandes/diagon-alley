@@ -2,7 +2,7 @@ import { changeLanguage } from './game-fixture';
 import { test, expect } from './game-fixture';
 async function enter(page: import('@playwright/test').Page) {
   await page.goto('/');
-  await page.getByRole('button', { name: 'Comenzar ensayo local', exact: true }).click();
+  await page.getByRole('button', { name: 'Jugar como invitado', exact: true }).click();
   await page.getByRole('button', { name: 'Bazar', exact: true }).click();
   await page.locator('[data-shop="confectionery"]').click();
 }

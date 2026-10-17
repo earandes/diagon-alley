@@ -3,6 +3,7 @@ import { mkdir, readdir, readFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
 import { test, expect, type Page } from '@playwright/test';
 import type { GameState } from '../../src/arcana/application/game';
+import type { PublicContent } from '../../src/arcana/application/public-content';
 import { changeLanguage, startExpedition } from '../browser-trial/game-fixture';
 
 type Language = 'es' | 'en';
@@ -128,7 +129,7 @@ async function signIn(page: Page, email: string, language: Language, value = pas
 
 async function purchaseFrogFixture(page: Page) {
   const before = await readGame(page);
-  const content = await (await page.request.get('/api/content')).json();
+  const content = (await (await page.request.get('/api/content')).json()) as PublicContent;
   const response = await page.request.post('/api/toads/buy-open', {
     headers: { Origin: new URL(page.url()).origin },
     data: {
@@ -137,7 +138,7 @@ async function purchaseFrogFixture(page: Page) {
       request: {
         priceVersion: content.shop.version,
         catalogVersion: content.catalog.version,
-        tableVersion: content.table.version,
+        tableVersion: content.toadTable.version,
       },
     },
   });

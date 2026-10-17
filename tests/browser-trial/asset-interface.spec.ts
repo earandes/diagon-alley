@@ -10,7 +10,7 @@ for (const language of ['es', 'en'] as const) {
     await page.emulateMedia({ reducedMotion: 'reduce' });
     await page.goto('/');
     if (en) await changeLanguage(page, 'en');
-    await button('Comenzar ensayo local', 'Start local trial').click();
+    await button('Jugar como invitado', 'Play as guest').click();
     await expect(page.locator('input, select, textarea')).toHaveCount(0);
     await button('Bazar', 'Bazaar').click();
     await button('Taller de Varitas', 'Wand Workshop').click();
@@ -49,7 +49,7 @@ test('A54 motion preference updates already mounted choices and missing art reta
   await page.emulateMedia({ reducedMotion: 'no-preference' });
   await page.route('**/*.{webp,svg}', (route) => route.abort());
   await page.goto('/');
-  await page.getByRole('button', { name: 'Comenzar ensayo local', exact: true }).click();
+  await page.getByRole('button', { name: 'Jugar como invitado', exact: true }).click();
   await page.getByRole('button', { name: 'Bazar', exact: true }).click();
   await page.getByRole('button', { name: 'Taller de Varitas', exact: true }).click();
   await page.getByRole('button', { name: 'Ajustes', exact: true }).click();

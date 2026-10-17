@@ -52,7 +52,12 @@ export function registerIdentityRoutes(
   const owner = (body: Owner, actual: string | null, target?: string) => {
     if (body.expectedPlayerId !== undefined && !validDomainId(body.expectedPlayerId))
       throw new IdentityError('INVALID_CREDENTIALS');
-    if (actual && body.expectedPlayerId && actual !== body.expectedPlayerId)
+    if (
+      actual &&
+      body.expectedPlayerId &&
+      actual !== body.expectedPlayerId &&
+      target !== body.expectedPlayerId
+    )
       throw new Error('PLAYER_MISMATCH');
     if (
       target &&
@@ -161,7 +166,6 @@ export function registerIdentityRoutes(
     async (request, reply) => {
       const body = request.body as { email: string; password: string } & Owner;
       const session = await current(request);
-      owner(body, session.playerId);
       const account = await identity.login(body);
       owner(body, session.playerId, account.playerId);
       return grant(account, session.token, reply);

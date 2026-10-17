@@ -12,7 +12,7 @@ for (const language of ['es', 'en'] as const) {
     if (language === 'en') await changeLanguage(page, 'en');
     await page
       .getByRole('button', {
-        name: language === 'es' ? 'Comenzar ensayo local' : 'Start local trial',
+        name: language === 'es' ? 'Jugar como invitado' : 'Play as guest',
         exact: true,
       })
       .click();
@@ -180,7 +180,7 @@ for (const language of ['es', 'en'] as const) {
         page.getByRole('button', { name: language === 'es' ? es : en, exact: true });
       await page.goto('/');
       if (language === 'en') await changeLanguage(page, 'en');
-      await button('Comenzar ensayo local', 'Start local trial').click();
+      await button('Jugar como invitado', 'Play as guest').click();
       await startExpedition(page, language);
       const id = await reachNode(page, kind, language),
         before = await readGame(page);
@@ -226,7 +226,7 @@ for (const language of ['es', 'en'] as const)
     if (language === 'en') await changeLanguage(page, 'en');
     await page
       .getByRole('button', {
-        name: language === 'es' ? 'Comenzar ensayo local' : 'Start local trial',
+        name: language === 'es' ? 'Jugar como invitado' : 'Play as guest',
         exact: true,
       })
       .click();

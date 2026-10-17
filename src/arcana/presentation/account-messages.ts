@@ -26,12 +26,12 @@ const messages = {
   verify: { es: 'Verificar y guardar', en: 'Verify and save' },
   verifyTitle: { es: 'Verifica tu correo', en: 'Verify your email' },
   registerHelp: {
-    es: 'Te enviaremos un código para verificar el correo y elegir una contraseña. Tu partida actual se conserva.',
-    en: 'We will email a token to verify your address and choose a password. Your current game is preserved.',
+    es: 'Verifica tu correo con el código y elige una contraseña. En este ensayo, el código se entrega a un buzón local privado. Tu partida actual se conserva.',
+    en: 'Verify your email with the token and choose a password. In this trial, the token is delivered to a private local mailbox. Your current game is preserved.',
   },
   mailSent: {
-    es: 'Si la solicitud es válida, recibirás un correo con el código y su caducidad. Revisa también la carpeta de correo no deseado.',
-    en: 'If the request is valid, you will receive an email with a token and its expiry. Check your spam folder too.',
+    es: 'Si la solicitud es válida, el código y su caducidad están en el buzón privado del ensayo. No se envía correo por Internet.',
+    en: 'If the request is valid, the token and expiry are in the trial’s private mailbox. No email is sent over the Internet.',
   },
   haveCode: { es: 'Tengo el código', en: 'I have the token' },
   forgot: { es: 'Olvidé mi contraseña', en: 'Forgot password' },
@@ -41,6 +41,10 @@ const messages = {
   resetDone: {
     es: 'Contraseña actualizada. Inicia sesión para recuperar tu partida.',
     en: 'Password updated. Sign in to recover your game.',
+  },
+  resetUncertain: {
+    es: 'No se pudo confirmar la respuesta. Prueba a entrar con la nueva contraseña; si no funciona, solicita otro código de recuperación.',
+    en: 'The response could not be confirmed. Try signing in with the new password; if it does not work, request another recovery token.',
   },
   linked: {
     es: 'Tu colección y avance están vinculados a esta cuenta.',

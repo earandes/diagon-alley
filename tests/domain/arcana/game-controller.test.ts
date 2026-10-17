@@ -136,6 +136,34 @@ describe('ARCANA recoverable client orchestration', () => {
     await controller.finishIdentityChange('authenticated', false);
     expect(controller.getSnapshot().game?.playerId).toBe('player');
   });
+  it('keeps an uncertain identity change blocked until the session is checked', async () => {
+    const { controller, gateway } = fixture();
+    await controller.load();
+    const before = controller.getSnapshot().game;
+    expect(await controller.beginIdentityChange(false)).toBe(true);
+    await controller.finishIdentityChange('uncertain', false);
+    expect(controller.getSnapshot()).toMatchObject({
+      status: 'error',
+      error: 'INVALID_SESSION',
+      game: before,
+    });
+    await controller.perform(action);
+    expect(gateway.purchase).not.toHaveBeenCalled();
+    await controller.load();
+    expect(controller.getSnapshot().status).toBe('ready');
+  });
+  it('loads only the exact player authenticated even when an explicit switch was allowed', async () => {
+    const { controller } = fixture();
+    await controller.load();
+    const before = controller.getSnapshot().game;
+    expect(await controller.beginIdentityChange(false)).toBe(true);
+    await controller.finishIdentityChange('authenticated', false, 'other-authenticated-player');
+    expect(controller.getSnapshot()).toMatchObject({
+      status: 'error',
+      error: 'PLAYER_MISMATCH',
+      game: before,
+    });
+  });
   it('A75 entry preflight finds another tab intent before allowing a new session', async () => {
     const { controller, gateway, operations } = fixture();
     await controller.load();

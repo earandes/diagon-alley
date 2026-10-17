@@ -14,7 +14,7 @@ for (const language of ['es', 'en'] as const) {
     const read = async () => (await (await page.request.get('/api/state')).json()).state;
     await page.goto('/');
     if (en) await changeLanguage(page, 'en');
-    await button('Comenzar ensayo local', 'Start local trial').click();
+    await button('Jugar como invitado', 'Play as guest').click();
     await button('Cromodex', 'Chromodex').click();
     await openAlbumFilters(page);
     await page

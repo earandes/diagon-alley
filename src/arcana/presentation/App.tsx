@@ -483,7 +483,11 @@ export function App() {
                 <span>
                   {accountText(
                     language,
-                    accountSession?.kind === 'account' ? 'account' : game ? 'save' : 'access',
+                    accountSession?.kind === 'account'
+                      ? 'account'
+                      : accountSession?.kind === 'guest'
+                        ? 'save'
+                        : 'access',
                   )}
                 </span>
               </button>
@@ -525,7 +529,7 @@ export function App() {
           </div>
           <button
             className="portal-enter game-object"
-            aria-label={t('startLocalTrial')}
+            aria-label={accountText(language, 'guest')}
             disabled={!online || state.status === 'loading' || entry.pending}
             onClick={() => void entry.enter()}
           >
@@ -1065,8 +1069,8 @@ export function App() {
           connected={online}
           onClose={() => setAccountMode(null)}
           beforeIdentityChange={controller.beginIdentityChange}
-          finishIdentityChange={async (outcome, samePlayerOnly) => {
-            await controller.finishIdentityChange(outcome, samePlayerOnly);
+          finishIdentityChange={async (outcome, samePlayerOnly, expectedPlayerId) => {
+            await controller.finishIdentityChange(outcome, samePlayerOnly, expectedPlayerId);
             if (outcome === 'authenticated' && controller.getSnapshot().error)
               throw new AccountRequestError(controller.getSnapshot().error ?? 'AUTH_UNAVAILABLE');
             if (outcome === 'authenticated' || outcome === 'signed-out') {

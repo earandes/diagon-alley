@@ -90,13 +90,21 @@ export class GameController {
   finishIdentityChange = async (
     outcome: 'cancel' | 'authenticated' | 'signed-out' | 'uncertain',
     samePlayerOnly: boolean,
+    expectedPlayerId?: string,
   ): Promise<void> => {
-    if (!this.identityChange) return;
+    if (!this.identityChange) {
+      if (outcome === 'uncertain' && !this.busy)
+        this.update({
+          status: this.snapshot.pending ? 'recovery-required' : 'error',
+          error: 'INVALID_SESSION',
+        });
+      return;
+    }
     const previous = this.identityChange;
     this.identityChange = null;
     this.busy = false;
     if (outcome === 'authenticated') {
-      await this.load({ allowPlayerChange: !samePlayerOnly });
+      await this.load({ allowPlayerChange: !samePlayerOnly, expectedPlayerId });
     } else if (outcome === 'uncertain') {
       this.update({
         status: previous.pending ? 'recovery-required' : 'error',
@@ -132,7 +140,9 @@ export class GameController {
       this.busy = false;
     }
   };
-  load = async (options: { readonly allowPlayerChange?: boolean } = {}): Promise<void> => {
+  load = async (
+    options: { readonly allowPlayerChange?: boolean; readonly expectedPlayerId?: string } = {},
+  ): Promise<void> => {
     if (this.busy) return;
     if (options.allowPlayerChange && this.snapshot.pending) {
       this.update({ status: 'recovery-required', error: 'OPERATION_PENDING' });
@@ -145,6 +155,8 @@ export class GameController {
     try {
       const envelope = playerStatusSnapshot(await this.gateway.state()),
         game = gameSnapshot(envelope.state);
+      if (options.expectedPlayerId && game.playerId !== options.expectedPlayerId)
+        throw new ArcanaClientError('PLAYER_MISMATCH', 409);
       if (previousPlayer && game.playerId !== previousPlayer && !options.allowPlayerChange)
         throw new ArcanaClientError('PLAYER_MISMATCH', 409);
       const pending = this.snapshot.pending ?? (await this.operations.read(game.playerId));

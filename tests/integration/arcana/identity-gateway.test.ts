@@ -145,6 +145,27 @@ const register = async (guest?: string) => {
   };
 };
 describe('A76 identity gateway with PostgreSQL, Redis and private delivered files', () => {
+  it('requires the missing guest session before mailing any binding challenge', async () => {
+    const before = (await readdir(directory)).length;
+    const response = await post('auth/register', {
+      email: 'lost-guest@example.test',
+      expectedPlayerId: 'lost-guest',
+    });
+    expect(response.statusCode).toBe(400);
+    expect(response.json().error.code).toBe('GUEST_SESSION_REQUIRED');
+    expect((await readdir(directory)).length).toBe(before);
+  });
+  it('reauthenticates the proven owner when another tab has changed the cookie', async () => {
+    const account = await register();
+    const otherCookie = cookieOf(await post('trial/session', {}));
+    const response = await post(
+      'auth/login',
+      { email: account.email, password, expectedPlayerId: account.playerId },
+      otherCookie,
+    );
+    expect(response.statusCode).toBe(200);
+    expect(response.json().playerId).toBe(account.playerId);
+  });
   it('verifies once, rotates session and restores exact same collection in a new context', async () => {
     const account = await register();
     expect((await get('auth/session', account.cookie)).json()).toMatchObject({

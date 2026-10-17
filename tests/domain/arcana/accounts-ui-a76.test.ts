@@ -19,8 +19,29 @@ const props = {
   finishIdentityChange: async () => {},
   onSession: () => {},
 };
-afterEach(() => vi.unstubAllGlobals());
+afterEach(() => {
+  vi.unstubAllGlobals();
+  vi.useRealTimers();
+});
 describe('A76 account surfaces and transport', () => {
+  it('bounds a retained authentication request without retrying or assuming it was rejected', async () => {
+    vi.useFakeTimers();
+    const fetcher = vi.fn(
+      (_url: string, options: RequestInit) =>
+        new Promise<Response>((_resolve, reject) => {
+          options.signal?.addEventListener('abort', () =>
+            reject(new DOMException('Aborted', 'AbortError')),
+          );
+        }),
+    );
+    vi.stubGlobal('fetch', fetcher);
+    const pending = expect(
+      accountRequest('login', { email: 'fixture@example.invalid' }),
+    ).rejects.toMatchObject({ code: 'NETWORK_ERROR' });
+    await vi.advanceTimersByTimeAsync(15000);
+    await pending;
+    expect(fetcher).toHaveBeenCalledTimes(1);
+  });
   it('registration requests email verification before collecting a password, in ES/EN', () => {
     for (const language of ['es', 'en'] as const) {
       const html = renderToStaticMarkup(createElement(AccountAccess, { ...props, language }));
@@ -28,7 +49,7 @@ describe('A76 account surfaces and transport', () => {
       expect(html).toContain('type="email"');
       expect(html).toContain('autoComplete="email"');
       expect(html).not.toContain('type="password"');
-      expect(html).toContain(language === 'es' ? 'elegir una contraseña' : 'choose a password');
+      expect(html).toContain(language === 'es' ? 'buzón local privado' : 'private local mailbox');
     }
   });
   it('login retains conventional credentials and explains a deliberate game switch', () => {

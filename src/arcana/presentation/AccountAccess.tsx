@@ -18,23 +18,28 @@ export class AccountRequestError extends Error {
 }
 /** No tokens or passwords are persisted by this transport. */
 export async function accountRequest<T>(path: string, body?: Record<string, unknown>): Promise<T> {
-  let response: Response;
+  const abort = new AbortController();
+  const timer = setTimeout(() => abort.abort(), 15000);
   try {
-    response = await fetch(`/api/auth/${path}`, {
+    const response = await fetch(`/api/auth/${path}`, {
       method: body ? 'POST' : 'GET',
       credentials: 'same-origin',
       cache: 'no-store',
+      signal: abort.signal,
       ...(body
         ? { headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) }
         : {}),
     });
-  } catch {
+    const value = await response.json().catch(() => null);
+    if (!response.ok) throw new AccountRequestError(value?.error?.code ?? 'AUTH_UNAVAILABLE');
+    if (!value || typeof value !== 'object') throw new AccountRequestError('AUTH_UNAVAILABLE');
+    return value as T;
+  } catch (error) {
+    if (error instanceof AccountRequestError) throw error;
     throw new AccountRequestError('NETWORK_ERROR');
+  } finally {
+    clearTimeout(timer);
   }
-  const value = await response.json().catch(() => null);
-  if (!response.ok) throw new AccountRequestError(value?.error?.code ?? 'AUTH_UNAVAILABLE');
-  if (!value || typeof value !== 'object') throw new AccountRequestError('AUTH_UNAVAILABLE');
-  return value as T;
 }
 export async function readAccountSession(): Promise<AccountSession> {
   const value = await accountRequest<AccountSession>('session');
@@ -70,6 +75,7 @@ export function AccountAccess({
   finishIdentityChange: (
     outcome: 'cancel' | 'authenticated' | 'signed-out' | 'uncertain',
     samePlayerOnly: boolean,
+    expectedPlayerId?: string,
   ) => Promise<void>;
   onSession: (session: AccountSession) => void;
   onAccessReset?: () => Promise<void>;
@@ -81,7 +87,7 @@ export function AccountAccess({
     [showPassword, setShowPassword] = useState(false),
     [busy, setBusy] = useState(false),
     [error, setError] = useState<string | null>(null),
-    [notice, setNotice] = useState<'mailSent' | 'resetDone' | null>(null),
+    [notice, setNotice] = useState<'mailSent' | 'resetDone' | 'resetUncertain' | null>(null),
     [allowSwitch, setAllowSwitch] = useState(false),
     [uncertain, setUncertain] = useState<'authenticated' | 'signed-out' | null>(null);
   const dialog = useRef<HTMLDialogElement>(null),
@@ -139,18 +145,29 @@ export function AccountAccess({
       throw new AccountRequestError('OPERATION_PENDING');
     let outcome: 'cancel' | 'authenticated' | 'signed-out' | 'uncertain' = 'cancel';
     try {
-      await accountRequest(path, {
+      const confirmation = await accountRequest<{ playerId?: string }>(path, {
         ...fields,
         ...(playerId ? { expectedPlayerId: playerId } : {}),
         allowPlayerChange: !samePlayerOnly,
       });
+      if (path !== 'logout' && typeof confirmation.playerId !== 'string')
+        throw new AccountRequestError('AUTH_UNAVAILABLE');
       outcome = path === 'logout' ? 'signed-out' : 'authenticated';
-      await finishIdentityChange(outcome, restricted);
+      await finishIdentityChange(outcome, restricted, confirmation.playerId);
       outcome = 'cancel';
-      onSession(await readAccountSession());
+      const current = await readAccountSession();
+      if (path !== 'logout' && current.playerId !== confirmation.playerId) {
+        outcome = 'uncertain';
+        setUncertain('authenticated');
+        throw new AccountRequestError('PLAYER_MISMATCH');
+      }
+      onSession(current);
       onClose();
     } catch (reason) {
-      if (reason instanceof AccountRequestError && reason.code === 'NETWORK_ERROR') {
+      if (
+        reason instanceof AccountRequestError &&
+        ['NETWORK_ERROR', 'STORAGE', 'AUTH_UNAVAILABLE'].includes(reason.code)
+      ) {
         setUncertain(path === 'logout' ? 'signed-out' : 'authenticated');
         outcome = 'uncertain';
       }
@@ -184,7 +201,22 @@ export function AccountAccess({
         await accountRequest('request-reset', { email });
         setNotice('mailSent');
       } else if (step === 'reset') {
-        await accountRequest('reset', { token, password });
+        try {
+          await accountRequest('reset', { token, password });
+        } catch (reason) {
+          if (
+            reason instanceof AccountRequestError &&
+            ['NETWORK_ERROR', 'STORAGE', 'AUTH_UNAVAILABLE'].includes(reason.code)
+          ) {
+            setStep('login');
+            setToken('');
+            setPassword('');
+            setNotice('resetUncertain');
+            await onAccessReset?.();
+            return;
+          }
+          throw reason;
+        }
         await onAccessReset?.();
         setPassword('');
         setToken('');
