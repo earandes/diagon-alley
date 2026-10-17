@@ -13,3 +13,7 @@ Cabecera50px, encabezado61px, controles50px, stage605px. En5×5 las peanas propi
 Elegida **B**, acotada a ancho<=620px y formaciones con cinco integrantes en algúnbando. Tres porbando y escritorio conservan la composición previa. La muestra debe mejorar huella visible/mediana en390 sin reducir fuentes, ocultar unidades o invadirPV. Si falla el encaje, corregir la causa enlayout, no relajar el test. Ampliación puede requerir scroll accesible.
 
 Orden autorizado cumplido: medirLinux→comparar→elegir→editar→medir/inspeccionar. Resultado posterior y límites se completarán tras CI; el diseño no declara aún una mejora ejecutada.
+
+## Corrección tras medida del candidato645eed6
+
+CI39056045787 conserva un fallo real de layout en5×3/390: `height:100%` de la figura dentro de un grid anidado aportaba mínimos intrínsecos y expandía las peanas a206,5px, hasta1251,5px de fondo. No se relaja la aceptación ni se ocultan actores. Se elimina ese ciclo: el botón distribuye mediante flex, figura con base explícita50/65px y `height:0` más crecimiento al espacio restante; etiquetas/PV no encogen. El grid exterior sigue respetando mínimos de texto para permitir scroll accesible al ampliarlo. Se conserva crudo y error en evidence/attempt-2; pendiente volver a medir este cambio, no declarado correcto por inspección.

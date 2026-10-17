@@ -528,22 +528,25 @@
     grid-template-rows: repeat(var(--arena-side-count), minmax(min-content, 1fr));
   }
   .arena-a63:has(.arena-fighters > .pedestal:nth-child(5)) .arena-inspect {
-    display: grid;
-    grid-template-rows: minmax(50px, 1fr) auto auto;
-    justify-items: center;
-    align-items: end;
-    align-content: stretch;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
   }
   .arena-a63:has(.arena-fighters > .pedestal:nth-child(5)) .arena-figure-space {
-    height: 100%;
+    flex: 1 1 50px;
+    height: 0;
     max-height: 150px;
     min-height: 50px;
-    align-self: end;
   }
   .arena-a63:has(.arena-fighters > .pedestal:nth-child(5))
     .pedestal[data-boss-actor='true']
     .arena-figure-space {
+    flex-basis: 65px;
     min-height: 65px;
     max-height: 195px;
+  }
+  .arena-a63:has(.arena-fighters > .pedestal:nth-child(5)) .arena-inspect > strong,
+  .arena-a63:has(.arena-fighters > .pedestal:nth-child(5)) .arena-health {
+    flex-shrink: 0;
   }
 }
