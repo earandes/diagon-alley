@@ -1,0 +1,30 @@
+{
+  "fixture": true,
+  "engine": "chromium",
+  "viewport": {
+    "width": 390,
+    "height": 844
+  },
+  "media": "off",
+  "newDocument": true,
+  "networkCacheReset": false,
+  "sha": "ffb909467ae6ff1ca5ecaa5a2cad379c1c69ca89",
+  "frameMs": {
+    "samples": 175,
+    "p50": 16.699999999999818,
+    "p95": 16.799999999999727,
+    "max": 16.80000000000001
+  },
+  "longTasks": [],
+  "renderer": [],
+  "budgetTargetsNotProof": {
+    "p95FrameMs": 20,
+    "maximumFrameMs": 50,
+    "skipUsableMs": 100
+  },
+  "isNew": true,
+  "resultUsableMs": 2830.5,
+  "documentBootToReadyMs": 42,
+  "freshContextFirstNavigation": false,
+  "action": "Explicit fixture presentation, includes image/decode/animation; no network authority command in this declared fixture"
+}

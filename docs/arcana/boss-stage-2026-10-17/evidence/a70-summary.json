@@ -1,0 +1,265 @@
+{
+  "records": 67,
+  "sourceShas": [
+    "ffb909467ae6ff1ca5ecaa5a2cad379c1c69ca89"
+  ],
+  "authority": {
+    "chromium": {
+      "cases": 12,
+      "actionToDomUsableUpperBoundMs": {
+        "samples": 12,
+        "min": 537,
+        "max": 929
+      },
+      "actionToFiguresReadyUpperBoundMs": {
+        "samples": 12,
+        "min": 539,
+        "max": 932
+      }
+    },
+    "webkit": {
+      "cases": 12,
+      "actionToDomUsableUpperBoundMs": {
+        "samples": 12,
+        "min": 535,
+        "max": 1900
+      },
+      "actionToFiguresReadyUpperBoundMs": {
+        "samples": 12,
+        "min": 537,
+        "max": 3727
+      }
+    }
+  },
+  "presentation": {
+    "chromium": {
+      "cases": 9,
+      "navigationToReadyUpperBoundMs": {
+        "samples": 9,
+        "min": 418.6000000000349,
+        "max": 847
+      },
+      "ownTextureBytes": {
+        "samples": 9,
+        "min": 5861376,
+        "max": 8663040
+      }
+    },
+    "webkit": {
+      "cases": 9,
+      "navigationToReadyUpperBoundMs": {
+        "samples": 9,
+        "min": 578,
+        "max": 2820
+      },
+      "ownTextureBytes": {
+        "samples": 9,
+        "min": 5861376,
+        "max": 8663040
+      }
+    }
+  },
+  "warmWindows": [
+    {
+      "file": "chromium-1280-boss-a70-performance-lifetimes.json",
+      "engine": "chromium",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "windowMs": 10000,
+      "rafIntervalsMs": {
+        "samples": 591,
+        "p50": 16.699999999999818,
+        "p95": 16.799999999999272,
+        "max": 33.400000000000546
+      },
+      "longTasksMs": [],
+      "actualPaints": 567,
+      "cycles": 8,
+      "ownTextureBytes": {
+        "samples": 8,
+        "min": 7628832,
+        "max": 7628832
+      },
+      "imageLoad": {
+        "observedThroughMs": 10723.699999999953,
+        "networkResources": 12,
+        "resourceDurationMs": {
+          "samples": 12,
+          "p50": 23.899999999965075,
+          "p95": 31,
+          "max": 31.399999999965075
+        },
+        "decodePromiseSpansMs": {
+          "samples": 12,
+          "p50": 117.70000000001164,
+          "p95": 220.20000000001164,
+          "max": 222.70000000001164
+        },
+        "postResponseWaitMs": {
+          "samples": 12,
+          "p50": 117.70000000001164,
+          "p95": 209.79999999998836,
+          "max": 212.20000000001164
+        },
+        "decoded": [
+          {
+            "image": "/assets/figure-Bi1B5vMt.webp",
+            "start": 247.79999999998836,
+            "end": 332.29999999998836,
+            "width": 342,
+            "height": 428,
+            "failed": false,
+            "promiseSpanMs": 84.5,
+            "postResponseWaitMs": 84.5,
+            "resourceEndedBeforeDecodeCall": true
+          },
+          {
+            "image": "/assets/figure-J0bPvLkg.webp",
+            "start": 247.89999999996508,
+            "end": 342.79999999998836,
+            "width": 342,
+            "height": 428,
+            "failed": false,
+            "promiseSpanMs": 94.90000000002328,
+            "postResponseWaitMs": 94.90000000002328,
+            "resourceEndedBeforeDecodeCall": true
+          },
+          {
+            "image": "/assets/figure-VlQJ4Mnx.webp",
+            "start": 248,
+            "end": 349.3999999999651,
+            "width": 342,
+            "height": 428,
+            "failed": false,
+            "promiseSpanMs": 101.39999999996508,
+            "postResponseWaitMs": 101.39999999996508,
+            "resourceEndedBeforeDecodeCall": true
+          },
+          {
+            "image": "/assets/figure-xazZc3VG.webp",
+            "start": 248.09999999997672,
+            "end": 354.5,
+            "width": 342,
+            "height": 428,
+            "failed": false,
+            "promiseSpanMs": 106.40000000002328,
+            "postResponseWaitMs": 106.40000000002328,
+            "resourceEndedBeforeDecodeCall": true
+          },
+          {
+            "image": "/assets/figure-CPGOgPTU.webp",
+            "start": 248.19999999995343,
+            "end": 361.3999999999651,
+            "width": 342,
+            "height": 428,
+            "failed": false,
+            "promiseSpanMs": 113.20000000001164,
+            "postResponseWaitMs": 113.20000000001164,
+            "resourceEndedBeforeDecodeCall": true
+          },
+          {
+            "image": "/assets/actor-rest-7g5tgbSw.webp",
+            "start": 248.29999999998836,
+            "end": 366,
+            "width": 384,
+            "height": 512,
+            "failed": false,
+            "promiseSpanMs": 117.70000000001164,
+            "postResponseWaitMs": 117.70000000001164,
+            "resourceEndedBeforeDecodeCall": true
+          },
+          {
+            "image": "/assets/figure-Dw0yVnEW.webp",
+            "start": 248.29999999998836,
+            "end": 373.3999999999651,
+            "width": 342,
+            "height": 428,
+            "failed": false,
+            "promiseSpanMs": 125.09999999997672,
+            "postResponseWaitMs": 125.09999999997672,
+            "resourceEndedBeforeDecodeCall": true
+          },
+          {
+            "image": "/assets/figure-DBVYYcEI.webp",
+            "start": 248.39999999996508,
+            "end": 380.0999999999767,
+            "width": 342,
+            "height": 428,
+            "failed": false,
+            "promiseSpanMs": 131.70000000001164,
+            "postResponseWaitMs": 131.70000000001164,
+            "resourceEndedBeforeDecodeCall": true
+          },
+          {
+            "image": "/assets/figure-DtaykeOT.webp",
+            "start": 248.39999999996508,
+            "end": 386.29999999998836,
+            "width": 342,
+            "height": 428,
+            "failed": false,
+            "promiseSpanMs": 137.90000000002328,
+            "postResponseWaitMs": 137.90000000002328,
+            "resourceEndedBeforeDecodeCall": true
+          },
+          {
+            "image": "/assets/figure-CVKs9iP6.webp",
+            "start": 248.5,
+            "end": 392.5,
+            "width": 342,
+            "height": 428,
+            "failed": false,
+            "promiseSpanMs": 144,
+            "postResponseWaitMs": 144,
+            "resourceEndedBeforeDecodeCall": true
+          },
+          {
+            "image": "/assets/actor-base-BucrUjVm.webp",
+            "start": 366.3999999999651,
+            "end": 586.5999999999767,
+            "width": 384,
+            "height": 512,
+            "failed": false,
+            "promiseSpanMs": 220.20000000001164,
+            "postResponseWaitMs": 209.79999999998836,
+            "resourceEndedBeforeDecodeCall": false
+          },
+          {
+            "image": "/assets/actor-arm-C0XPz76j.webp",
+            "start": 366.3999999999651,
+            "end": 589.0999999999767,
+            "width": 384,
+            "height": 512,
+            "failed": false,
+            "promiseSpanMs": 222.70000000001164,
+            "postResponseWaitMs": 212.20000000001164,
+            "resourceEndedBeforeDecodeCall": false
+          }
+        ]
+      },
+      "startup": {
+        "elapsedUpperBoundMs": 699,
+        "rafIntervalsMs": {
+          "samples": 9,
+          "p50": 33.30000000000001,
+          "p95": 116.60000000000002,
+          "max": 249.99999999999994
+        },
+        "longTasksMs": [
+          85,
+          186,
+          88
+        ]
+      }
+    }
+  ],
+  "limitations": [
+    "Authority action bounds include Playwright waits, API commit/state polling and UI assertions; they are not human timings.",
+    "Presentation fixtures use prolonged player stats, not campaign balance; setup also resolves their log.",
+    "New document is not an OS/driver cache reset. rAF intervals are not GPU timings.",
+    "Resource counters cover owned textures only, not total GPU memory or a global leak proof.",
+    "Image resource and decode promise spans overlap; post-response wait also includes scheduling, not decoder CPU time.",
+    "Do not pool percentiles from separate windows or claim causal improvement against different A69 fixtures."
+  ]
+}

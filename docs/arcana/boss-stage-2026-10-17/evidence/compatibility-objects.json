@@ -1,0 +1,54 @@
+{
+  "base": "dffd6aed21c4d52764b07b6d36e95ed6c4cd9802",
+  "candidate": "445d6f42018f0dc29c75650eef626d06cb3304ce",
+  "objects": [
+    {
+      "path": "src/arcana/domain",
+      "baseObject": "003d8b765c81cad36d8d4f5a684980bb4fe29a8f",
+      "candidateObject": "003d8b765c81cad36d8d4f5a684980bb4fe29a8f",
+      "unchanged": true
+    },
+    {
+      "path": "src/arcana/application",
+      "baseObject": "b5e6064308902e2b7dd29de2cb50ed0d2ad3422c",
+      "candidateObject": "b5e6064308902e2b7dd29de2cb50ed0d2ad3422c",
+      "unchanged": true
+    },
+    {
+      "path": "src/arcana/infrastructure",
+      "baseObject": "423309d5fd20bf1d23b6b5095143837c48132ec2",
+      "candidateObject": "423309d5fd20bf1d23b6b5095143837c48132ec2",
+      "unchanged": true
+    },
+    {
+      "path": "src/arcana/content",
+      "baseObject": "15f6920de0d1c26481c1efe4f38f89ab8eadbb4b",
+      "candidateObject": "15f6920de0d1c26481c1efe4f38f89ab8eadbb4b",
+      "unchanged": true
+    },
+    {
+      "path": "package.json",
+      "baseObject": "7624c06b3bf5c620b39cb74042a7a0a3467f0823",
+      "candidateObject": "7624c06b3bf5c620b39cb74042a7a0a3467f0823",
+      "unchanged": true
+    },
+    {
+      "path": "package-lock.json",
+      "baseObject": "f8d0c9d8aab1a5931825ecd76ccc979dea21862c",
+      "candidateObject": "f8d0c9d8aab1a5931825ecd76ccc979dea21862c",
+      "unchanged": true
+    },
+    {
+      "path": ".github/workflows/checks.yml",
+      "baseObject": "0986b97768e8991280adbf0d433c822703df1d3f",
+      "candidateObject": "0986b97768e8991280adbf0d433c822703df1d3f",
+      "unchanged": true
+    },
+    {
+      "path": "tools/verification/playwright-safety.ts",
+      "baseObject": "75aea02ee14329e8d9d2d4b1334ee57879c30422",
+      "candidateObject": "75aea02ee14329e8d9d2d4b1334ee57879c30422",
+      "unchanged": true
+    }
+  ]
+}

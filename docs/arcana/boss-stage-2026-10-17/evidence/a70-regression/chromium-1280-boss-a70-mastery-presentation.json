@@ -1,0 +1,38 @@
+{
+  "sha": "ffb909467ae6ff1ca5ecaa5a2cad379c1c69ca89",
+  "engine": "chromium",
+  "viewport": {
+    "width": 1280,
+    "height": 900
+  },
+  "physicalDevice": false,
+  "fixture": true,
+  "playerStatsProlonged": true,
+  "bossRulesFromCurrentProfile": true,
+  "navigationToReadyMs": 713.3999999999651,
+  "coldOsCacheNotReset": true,
+  "resources": {
+    "renderer": "webgl",
+    "activeTicking": "false",
+    "artReady": "true",
+    "visibleFigures": "10",
+    "renderCount": "28",
+    "textureCount": "12",
+    "textureBytes": "8663040",
+    "bossActorReady": "true",
+    "bossActorLayers": "2",
+    "bossPropReady": "true",
+    "bossPropUnit": "pasaje:6:0:rival:0",
+    "bossPropPose": "fallen",
+    "bossPropAngle": "0",
+    "bossPropActivity": "0",
+    "bossPropLayers": "2",
+    "bossPropScaleX": "1",
+    "bossPropScaleY": "1",
+    "bossActorPose": "fallen",
+    "bossActorArmAngle": "0"
+  },
+  "battleUnchanged": true,
+  "teardownCountersZero": true,
+  "limitation": "Own resource counters, not GPU process memory or human evidence"
+}

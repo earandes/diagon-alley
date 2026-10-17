@@ -1,0 +1,399 @@
+{
+  "baseline": {
+    "sha": "024e88dd21fbb6274a3756133d80043f49014f81",
+    "startup": {
+      "sampleCount": 14,
+      "documentToReadUpperBoundMs": 683.9,
+      "p95RafMs": 100,
+      "maxRafMs": 233.3,
+      "longTaskCount": 3,
+      "maxLongTaskMs": 172,
+      "cumulativeMaxDecodePromiseMs": 200.7,
+      "cumulativeMaxDecodeRGBABytes": 585504
+    },
+    "warm": {
+      "sampleCount": 593,
+      "documentToReadUpperBoundMs": 10740.5,
+      "p95RafMs": 16.8,
+      "maxRafMs": 33.4,
+      "longTaskCount": 0,
+      "maxLongTaskMs": null,
+      "cumulativeMaxDecodePromiseMs": 200.7,
+      "cumulativeMaxDecodeRGBABytes": 585504
+    },
+    "actualPaints": 568
+  },
+  "current": {
+    "sha": "ffb909467ae6ff1ca5ecaa5a2cad379c1c69ca89",
+    "startup": {
+      "sampleCount": 14,
+      "documentToReadUpperBoundMs": 719.4,
+      "p95RafMs": 100,
+      "maxRafMs": 233.3,
+      "longTaskCount": 3,
+      "maxLongTaskMs": 175,
+      "cumulativeMaxDecodePromiseMs": 207.8,
+      "cumulativeMaxDecodeRGBABytes": 786432
+    },
+    "warm": {
+      "sampleCount": 593,
+      "documentToReadUpperBoundMs": 10763.1,
+      "p95RafMs": 16.8,
+      "maxRafMs": 33.4,
+      "longTaskCount": 0,
+      "maxLongTaskMs": null,
+      "cumulativeMaxDecodePromiseMs": 207.8,
+      "cumulativeMaxDecodeRGBABytes": 786432
+    },
+    "actualPaints": 571,
+    "warmWindowMs": 10000,
+    "skipToOutcomeUpperBoundMs": 86,
+    "resources": {
+      "renderer": "webgl",
+      "activeTicking": "false",
+      "artReady": "true",
+      "visibleFigures": "10",
+      "renderCount": "596",
+      "textureCount": "12",
+      "textureBytes": "7628832",
+      "bossActorReady": "true",
+      "bossActorLayers": "2",
+      "bossPropReady": "true",
+      "bossPropUnit": "pasaje:6:0:rival:0",
+      "bossPropPose": "fallen",
+      "bossPropAngle": "0",
+      "bossPropActivity": "0",
+      "bossPropLayers": "2",
+      "bossPropScaleX": "1",
+      "bossPropScaleY": "1",
+      "bossActorPose": "fallen",
+      "bossActorArmAngle": "0"
+    },
+    "teardownCountersZero": true
+  },
+  "journeys": [
+    {
+      "file": "chromium-1280-boss-a70-en-arcana-real-journey.json",
+      "sha": "ffb909467ae6ff1ca5ecaa5a2cad379c1c69ca89",
+      "engine": "chromium",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "actionToDomUsableUpperBoundMs": 757,
+      "actionToFiguresReadyUpperBoundMs": 798,
+      "queryCancelNoSpend": true,
+      "confirmedReceiptImmutable": true
+    },
+    {
+      "file": "chromium-1280-boss-a70-en-diagon-alley-real-journey.json",
+      "sha": "ffb909467ae6ff1ca5ecaa5a2cad379c1c69ca89",
+      "engine": "chromium",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "actionToDomUsableUpperBoundMs": 762,
+      "actionToFiguresReadyUpperBoundMs": 782,
+      "queryCancelNoSpend": true,
+      "confirmedReceiptImmutable": true
+    },
+    {
+      "file": "chromium-1280-boss-a70-es-arcana-real-journey.json",
+      "sha": "ffb909467ae6ff1ca5ecaa5a2cad379c1c69ca89",
+      "engine": "chromium",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "actionToDomUsableUpperBoundMs": 845,
+      "actionToFiguresReadyUpperBoundMs": 867,
+      "queryCancelNoSpend": true,
+      "confirmedReceiptImmutable": true
+    },
+    {
+      "file": "chromium-1280-boss-a70-es-diagon-alley-real-journey.json",
+      "sha": "ffb909467ae6ff1ca5ecaa5a2cad379c1c69ca89",
+      "engine": "chromium",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "actionToDomUsableUpperBoundMs": 749,
+      "actionToFiguresReadyUpperBoundMs": 751,
+      "queryCancelNoSpend": true,
+      "confirmedReceiptImmutable": true
+    },
+    {
+      "file": "chromium-390-boss-a70-en-arcana-real-journey.json",
+      "sha": "ffb909467ae6ff1ca5ecaa5a2cad379c1c69ca89",
+      "engine": "chromium",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "actionToDomUsableUpperBoundMs": 590,
+      "actionToFiguresReadyUpperBoundMs": 592,
+      "queryCancelNoSpend": true,
+      "confirmedReceiptImmutable": true
+    },
+    {
+      "file": "chromium-390-boss-a70-en-diagon-alley-real-journey.json",
+      "sha": "ffb909467ae6ff1ca5ecaa5a2cad379c1c69ca89",
+      "engine": "chromium",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "actionToDomUsableUpperBoundMs": 634,
+      "actionToFiguresReadyUpperBoundMs": 636,
+      "queryCancelNoSpend": true,
+      "confirmedReceiptImmutable": true
+    },
+    {
+      "file": "chromium-390-boss-a70-es-arcana-real-journey.json",
+      "sha": "ffb909467ae6ff1ca5ecaa5a2cad379c1c69ca89",
+      "engine": "chromium",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "actionToDomUsableUpperBoundMs": 617,
+      "actionToFiguresReadyUpperBoundMs": 625,
+      "queryCancelNoSpend": true,
+      "confirmedReceiptImmutable": true
+    },
+    {
+      "file": "chromium-390-boss-a70-es-diagon-alley-real-journey.json",
+      "sha": "ffb909467ae6ff1ca5ecaa5a2cad379c1c69ca89",
+      "engine": "chromium",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "actionToDomUsableUpperBoundMs": 593,
+      "actionToFiguresReadyUpperBoundMs": 595,
+      "queryCancelNoSpend": true,
+      "confirmedReceiptImmutable": true
+    },
+    {
+      "file": "chromium-865-boss-a70-en-arcana-real-journey.json",
+      "sha": "ffb909467ae6ff1ca5ecaa5a2cad379c1c69ca89",
+      "engine": "chromium",
+      "viewport": {
+        "width": 865,
+        "height": 1079
+      },
+      "actionToDomUsableUpperBoundMs": 783,
+      "actionToFiguresReadyUpperBoundMs": 785,
+      "queryCancelNoSpend": true,
+      "confirmedReceiptImmutable": true
+    },
+    {
+      "file": "chromium-865-boss-a70-en-diagon-alley-real-journey.json",
+      "sha": "ffb909467ae6ff1ca5ecaa5a2cad379c1c69ca89",
+      "engine": "chromium",
+      "viewport": {
+        "width": 865,
+        "height": 1079
+      },
+      "actionToDomUsableUpperBoundMs": 807,
+      "actionToFiguresReadyUpperBoundMs": 838,
+      "queryCancelNoSpend": true,
+      "confirmedReceiptImmutable": true
+    },
+    {
+      "file": "chromium-865-boss-a70-es-arcana-real-journey.json",
+      "sha": "ffb909467ae6ff1ca5ecaa5a2cad379c1c69ca89",
+      "engine": "chromium",
+      "viewport": {
+        "width": 865,
+        "height": 1079
+      },
+      "actionToDomUsableUpperBoundMs": 783,
+      "actionToFiguresReadyUpperBoundMs": 785,
+      "queryCancelNoSpend": true,
+      "confirmedReceiptImmutable": true
+    },
+    {
+      "file": "chromium-865-boss-a70-es-diagon-alley-real-journey.json",
+      "sha": "ffb909467ae6ff1ca5ecaa5a2cad379c1c69ca89",
+      "engine": "chromium",
+      "viewport": {
+        "width": 865,
+        "height": 1079
+      },
+      "actionToDomUsableUpperBoundMs": 792,
+      "actionToFiguresReadyUpperBoundMs": 843,
+      "queryCancelNoSpend": true,
+      "confirmedReceiptImmutable": true
+    },
+    {
+      "file": "webkit-1280-boss-a70-en-arcana-real-journey.json",
+      "sha": "ffb909467ae6ff1ca5ecaa5a2cad379c1c69ca89",
+      "engine": "webkit",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "actionToDomUsableUpperBoundMs": 961,
+      "actionToFiguresReadyUpperBoundMs": 965,
+      "queryCancelNoSpend": true,
+      "confirmedReceiptImmutable": true
+    },
+    {
+      "file": "webkit-1280-boss-a70-en-diagon-alley-real-journey.json",
+      "sha": "ffb909467ae6ff1ca5ecaa5a2cad379c1c69ca89",
+      "engine": "webkit",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "actionToDomUsableUpperBoundMs": 928,
+      "actionToFiguresReadyUpperBoundMs": 1052,
+      "queryCancelNoSpend": true,
+      "confirmedReceiptImmutable": true
+    },
+    {
+      "file": "webkit-1280-boss-a70-es-arcana-real-journey.json",
+      "sha": "ffb909467ae6ff1ca5ecaa5a2cad379c1c69ca89",
+      "engine": "webkit",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "actionToDomUsableUpperBoundMs": 924,
+      "actionToFiguresReadyUpperBoundMs": 927,
+      "queryCancelNoSpend": true,
+      "confirmedReceiptImmutable": true
+    },
+    {
+      "file": "webkit-1280-boss-a70-es-diagon-alley-real-journey.json",
+      "sha": "ffb909467ae6ff1ca5ecaa5a2cad379c1c69ca89",
+      "engine": "webkit",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "actionToDomUsableUpperBoundMs": 934,
+      "actionToFiguresReadyUpperBoundMs": 937,
+      "queryCancelNoSpend": true,
+      "confirmedReceiptImmutable": true
+    },
+    {
+      "file": "webkit-390-boss-a70-en-arcana-real-journey.json",
+      "sha": "ffb909467ae6ff1ca5ecaa5a2cad379c1c69ca89",
+      "engine": "webkit",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "actionToDomUsableUpperBoundMs": 560,
+      "actionToFiguresReadyUpperBoundMs": 565,
+      "queryCancelNoSpend": true,
+      "confirmedReceiptImmutable": true
+    },
+    {
+      "file": "webkit-390-boss-a70-en-diagon-alley-real-journey.json",
+      "sha": "ffb909467ae6ff1ca5ecaa5a2cad379c1c69ca89",
+      "engine": "webkit",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "actionToDomUsableUpperBoundMs": 630,
+      "actionToFiguresReadyUpperBoundMs": 634,
+      "queryCancelNoSpend": true,
+      "confirmedReceiptImmutable": true
+    },
+    {
+      "file": "webkit-390-boss-a70-es-arcana-real-journey.json",
+      "sha": "ffb909467ae6ff1ca5ecaa5a2cad379c1c69ca89",
+      "engine": "webkit",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "actionToDomUsableUpperBoundMs": 584,
+      "actionToFiguresReadyUpperBoundMs": 586,
+      "queryCancelNoSpend": true,
+      "confirmedReceiptImmutable": true
+    },
+    {
+      "file": "webkit-390-boss-a70-es-diagon-alley-real-journey.json",
+      "sha": "ffb909467ae6ff1ca5ecaa5a2cad379c1c69ca89",
+      "engine": "webkit",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "actionToDomUsableUpperBoundMs": 639,
+      "actionToFiguresReadyUpperBoundMs": 641,
+      "queryCancelNoSpend": true,
+      "confirmedReceiptImmutable": true
+    },
+    {
+      "file": "webkit-865-boss-a70-en-arcana-real-journey.json",
+      "sha": "ffb909467ae6ff1ca5ecaa5a2cad379c1c69ca89",
+      "engine": "webkit",
+      "viewport": {
+        "width": 865,
+        "height": 1079
+      },
+      "actionToDomUsableUpperBoundMs": 684,
+      "actionToFiguresReadyUpperBoundMs": 771,
+      "queryCancelNoSpend": true,
+      "confirmedReceiptImmutable": true
+    },
+    {
+      "file": "webkit-865-boss-a70-en-diagon-alley-real-journey.json",
+      "sha": "ffb909467ae6ff1ca5ecaa5a2cad379c1c69ca89",
+      "engine": "webkit",
+      "viewport": {
+        "width": 865,
+        "height": 1079
+      },
+      "actionToDomUsableUpperBoundMs": 918,
+      "actionToFiguresReadyUpperBoundMs": 920,
+      "queryCancelNoSpend": true,
+      "confirmedReceiptImmutable": true
+    },
+    {
+      "file": "webkit-865-boss-a70-es-arcana-real-journey.json",
+      "sha": "ffb909467ae6ff1ca5ecaa5a2cad379c1c69ca89",
+      "engine": "webkit",
+      "viewport": {
+        "width": 865,
+        "height": 1079
+      },
+      "actionToDomUsableUpperBoundMs": 856,
+      "actionToFiguresReadyUpperBoundMs": 860,
+      "queryCancelNoSpend": true,
+      "confirmedReceiptImmutable": true
+    },
+    {
+      "file": "webkit-865-boss-a70-es-diagon-alley-real-journey.json",
+      "sha": "ffb909467ae6ff1ca5ecaa5a2cad379c1c69ca89",
+      "engine": "webkit",
+      "viewport": {
+        "width": 865,
+        "height": 1079
+      },
+      "actionToDomUsableUpperBoundMs": 704,
+      "actionToFiguresReadyUpperBoundMs": 715,
+      "queryCancelNoSpend": true,
+      "confirmedReceiptImmutable": true
+    }
+  ],
+  "limits": [
+    "Single serial sample per renderer, not a performance distribution",
+    "Same seed70 mastery 5x5 fixture; player stats extended for playback",
+    "OS caches and runner scheduling are not controlled",
+    "rAF intervals are not GPU timings",
+    "Decode promise includes network and scheduling",
+    "Own counters do not prove absence of global leaks",
+    "Decode observations are cumulative; warm decode maximum is not new decode work",
+    "Quantiles use sorted[floor((n-1)*q)], matching historical A70 summary",
+    "Authority journey timings include network and assertion polling; fixtures do not"
+  ]
+}

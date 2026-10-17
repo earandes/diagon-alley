@@ -48,6 +48,6 @@ npx --no-install tsc --noEmit
 
 Exportación final repetida: seis SHA256 runtime idénticos. Pillow comprueba384×512/RGBA/un fotograma/alpha transparente y hashes coincidentes con manifiesto. Pruebas12/12 correctas en tres archivos; TypeScript correcto al ejecutar tras integración del actor. No se abrió un navegador ni se ejecutó ninguna batería gráfica desde este agente. Build, matriz visual, fallos simulados, renderer y persistencia integrada pertenecen a la validación coordinada, no se declaran aprobados aquí.
 
-## Aceptación en contexto pendiente
+## Muestra integrada y revisión acotada
 
-Inspeccionar el brazo/hombro y el relleno ampliados, reposo sin duplicación y sin salto al sustituir DOM por Pixi, peso facial/objeto a tamaño real y peana/corte de busto. Verificar fases/pausa/swap/reducido/fallo de pieza y desmontaje con el runner Linux protegido. Los PNG `selected-composites.png` son composición CPU, no evidencia de juego ni de temporización.
+CI38988996115,445d6f4/mergeffb9094: batería del jefe correcta, con fases/pausa/swap/reducido/fallo de pieza y desmontaje. Coordinación inspeccionó seis PNG Linux seleccionados, incluidos los dos lanzamientos≥0,14rad a escala3×3: objeto/rostro separados y sin duplicación o costura obvia en esas poses. El perfil5×5 pasa geometría de figuras/nombres/PV y número de actores; no se finge una captura5×5. [Galería y límites](GALLERY.md). Los PNG `selected-composites.png` siguen siendo composiciones CPU, no evidencia del juego o temporización. La fluidez percibida, personalidad y lectura humana del gesto no quedan aprobadas por tests o imágenes.

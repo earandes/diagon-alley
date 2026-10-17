@@ -1,0 +1,30 @@
+{
+  "fixture": true,
+  "engine": "webkit",
+  "viewport": {
+    "width": 390,
+    "height": 844
+  },
+  "media": "off",
+  "newDocument": true,
+  "networkCacheReset": false,
+  "sha": "ffb909467ae6ff1ca5ecaa5a2cad379c1c69ca89",
+  "frameMs": {
+    "samples": 212,
+    "p50": 16,
+    "p95": 20,
+    "max": 51
+  },
+  "longTasks": null,
+  "renderer": [],
+  "budgetTargetsNotProof": {
+    "p95FrameMs": 20,
+    "maximumFrameMs": 50,
+    "skipUsableMs": 100
+  },
+  "isNew": true,
+  "resultUsableMs": 3419,
+  "documentBootToReadyMs": 85,
+  "freshContextFirstNavigation": false,
+  "action": "Explicit fixture presentation, includes image/decode/animation; no network authority command in this declared fixture"
+}

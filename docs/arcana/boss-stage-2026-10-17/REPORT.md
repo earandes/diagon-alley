@@ -1,27 +1,33 @@
 # A71 · Antesala y actor del jefe
 
-17 octubre 2026. **Implementado; validación Linux e inspección visual integrada pendientes al registrar. Goal activo.** Rama `feature/boss-stage-a71`, dependiente de A70. No main, despliegue o publicación autorizados.
+17 octubre2026. **Implementado y comprobado técnicamente.** [CI38988996115 correcta](https://github.com/earandes/diagon-alley/actions/runs/38988996115), código `445d6f4`, merge ensayado `ffb9094`. [PR4](https://github.com/earandes/diagon-alley/pull/4) en `feature/boss-stage-a71`, apilada sobre A70/PR3. Sin integración en main, despliegue o publicación.
 
-## Experiencia implementada
+## Qué cambia al jugar
 
-La consulta presenta rival y acompañantes ilustrados, equipo propio en primer término, libro de rivales/sinergias y tarro con stock separado de asignación. Los retratos abren preparación existente con retorno de foco. Una confirmación conserva gasto y recuperación. Actor circe/Hermione-Circe con encuadre medio y articulación limitada de brazo/objeto sobre el reloj compartido; no rig anatómico. Marcadores de actor/objetivo localizados en pies; cierre mantiene botín primero y hechos en libro de recorrido.
+Mapa→antesala→preparación existente→confirmación explícita→combate guardado→desenlace→botín utilizable. El recorrido está conectado a los comandos existentes; no es una muestra independiente.
 
-Dominio/servidor/contenido económico/partidas intactos. El renderer consume BattleLog confirmado. No nuevos costes/premios/ataques/fases/audio/relojes/dependencias. Otras identidades de jefe siguen existiendo y conservan su contenido.
+La consulta enfrenta al rival protagonista y sus acompañantes con el equipo propio en primer término. Los retratos muestran condición, procedencia y objetos por instancia, y abren la preparación existente sin escribir. Un libro concentra rivales/sinergias; el tarro muestra stock×N separado del borrador. Preparar y Sinergias comparten fila móvil, con detalle abierto a ancho completo. Vacíos no se presentan como casillas pendientes. Desafiar es la única confirmación y conserva coste5, estado pendiente/error y cancelación.
 
-## Diseño y recursos
+Hermione/Circe comparten encuadre medio y una muestra de brazo/objeto pintados por capas. El gesto recoge, extiende y devuelve libro/cuenco al reposo; contacto y caída derivan del evento confirmado. No es un rig corporal ni se rehace la colección. El mismo reloj gobierna DOM y Pixi; pausa,2x, inspector, cambio de pack, omisión y reducido conservan log/resultado. Fallar una pieza conserva el compuesto estático; fallar el renderer mantiene controles, PV y registroDOM.
 
-- [Contrato previo y plan vivo](CONTRACT.md).
-- [Interacciones, fronteras y sesión humana propuesta](INTERACTIONS.md).
-- [Assets, fuentes, compresión y procedencia](ACTOR-ASSETS.md).
-- [Coreografía y límites de articulación](ACTOR-MOTION.md).
-- [QA: comandos, evidencia y límites](QA.md).
+La selección de actor/objetivo se localiza junto a la figura, en lugar de enmarcar toda la celda. La formación densa5×5 redistribuye espacio sin ocultar unidades; figura, nombre yPV se comprueban dentro de su puesto/viewport. El cierre conserva resultado/recompensas confirmadas y acciones de uso del botín primero, con hechos del combate en el libro histórico. No se añade otra operación o celebración al consultar historia.
 
-Se descartó gabinete de estantes frente a antesala enfrentada. Primera máscara/encuadre ARCANA rechazados por costura y cara pequeña; muestra corregida inspeccionada por CPU antes de integrar. Seis WebP runtime269.284B conjuntos, fuentes PNG/máscaras/script editables. Solo una muestra por presentación, colección original intacta. El resultado no se declara arte definitivo ni aceptación de jugadores.
+## Decisiones, recursos y evidencia
 
-## Estado técnico
+- [Contrato previo y plan cerrado](CONTRACT.md), [interacciones y sesión humana propuesta](INTERACTIONS.md).
+- [Galería comparada](GALLERY.md): seis PNG seleccionados Linux, revisados a escala mostrada. Juicio experto acotado, no observación de jugadores.
+- [Assets y fuentes editables](ACTOR-ASSETS.md), [coreografía](ACTOR-MOTION.md). Dos alternativas de composición comparadas; elegido enfrentamiento frente a gabinete de estantes. Primera máscara/encuadre ARCANA descartados por costura/cara pequeña antes de integrar.
+- Seis WebP runtime384×512,269.284B conjuntos; fuentes PNG/máscaras/script/manifiestos reproducibles por CPU local. Solo una muestra por pack, sin servicios con créditos o dependencias nuevas. Arte no declarado definitivo por pasar tests.
+- [QA y cobertura](QA.md), [rendimiento y límites](PERFORMANCE.md), [compatibilidad](COMPATIBILITY.md), [archivos modificados](FILES.txt).
 
-Tipos/build/packs/scanner y554unitarios correctos localmente. TDD relevante registrado; CI serial preparada con autoridad real y fixtures declaradas. El preflight local permitido pasó sin abrir navegador. No se ejecutaron gráficos locales, WebKit, perfiles, grabaciones o capturas en el Mac.
+## Validación y límites
 
-**Pendiente:** ejecutar CI Linux sobre SHA exacto, inspeccionar seis PNG seleccionados, corregir defectos y completar medidas/reportes. La configuración escrita no se cuenta como una ejecución correcta. Goal no completado en este punto.
+Tipos, build, validación de packs/contenido y scanner correctos.554unitarios,77pruebas con PostgreSQL/Redis reales y263casos de navegador correctos;15omisiones intencionales de muestreo. Incluye ES/EN, ambos packs, tres tamaños, teclado/toque emulado/foco, texto200% acotado,1–5integrantes/temporales/duplicados/caídos, consulta/cancelación/recarga, import/arte/renderer fallidos, reducido y regresiones de cierre/arena/preparación/tienda/colección/Pactos/intenciones/Halloween/PWA. La cobertura por fixture, cuenta real y simulación de fallo se detalla sin equipararlas. Los intentos anteriores fallidos y sus correcciones se conservan.
 
-Observación humana, personalidad percibida, comprensión, lector hablado y dispositivo físico siguen pendientes independientes de la entrega técnica. Ninguna simulación o prueba automática se presenta como diversión validada.
+Dominio, aplicación, servidor, contenido económico, dependencias, workflow y guard tienen los mismos objetos Git que A70. No hay migraciones, nuevos premios, precios, reglas, fases, audio, relojes o sorteos. Se preservan partidas/snapshots y autoridad. Consultar/cancelar no consume; replay no modifica el BattleLog. Las garantías de concurrencia y respuesta perdida se verifican mediante contratos compartidos, sin inventar una nueva carrera específica de dos pestañas ante el jefe.
+
+Todos los gráficos se ejecutaron enCI Linux, en serie y sin reintentos. En elMac solo producción/inspecciónCPU, código, pruebas no gráficas y preflight sin navegador; no capturas del escritorio, WebKit, perfiles o grabaciones. No se tocaron sesiones/procesos ajenos ni la partida habitual.
+
+Muestra cálida del jefe: P95rAF16,8ms en10s, objetivo de ensayo cumplido en esa muestra. Persisten picos de arranque233,3ms y la muestra genéricaA69 sigue en33,4ms P95 frente a objetivo20ms, como en A70. No se presentan como resueltos ni se atribuyen causalmente sin aislarlos. Texturas propias estimadas suben1.690.080B; no es memoriaGPU/proceso medida. La actualización final de evidencia conserva los objetos de runtime ensayados; [certificado](evidence/runtime-equivalence.json).
+
+Pendientes: percepción de encuentro, lectura del gesto, personalidad, comprensión, lector hablado y dispositivo físico. Sesión humana breve propuesta enINTERACTIONS, sin explicar la solución. Tests e imágenes no acreditan diversión ni aceptación artística definitiva.

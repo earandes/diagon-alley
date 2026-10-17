@@ -1,0 +1,28 @@
+check	Run npm run validate:content	2026-10-17T01:01:33.2930206Z  Test Files  1 passed (1)
+check	Run npm run validate:content	2026-10-17T01:01:33.2931188Z       Tests  6 passed (6)
+check	Run npm test	2026-10-17T01:01:44.8549724Z  Test Files  78 passed (78)
+check	Run npm test	2026-10-17T01:01:44.8553774Z       Tests  554 passed (554)
+check	Run npm run test:integration	2026-10-17T01:02:00.4808028Z  Test Files  13 passed (13)
+check	Run npm run test:integration	2026-10-17T01:02:00.4809159Z       Tests  77 passed (77)
+check	Run npm run verify:arcana:build	2026-10-17T01:02:12.0628645Z diagon-alley build content scan passed; total distributed bytes: 14983901. Historical I1 excluded. Private thematic dual build; ARCANA-only distribution not certified.
+check	Run ARCANA_CAPTURE_A70=1 npx playwright test --config playwright.boss-a70.config.ts	2026-10-17T01:19:25.7514502Z   10 skipped
+check	Run ARCANA_CAPTURE_A70=1 npx playwright test --config playwright.boss-a70.config.ts	2026-10-17T01:19:25.7515125Z   98 passed (16.4m)
+check	Run actions/upload-artifact@v4	2026-10-17T01:19:26.7796982Z Uploaded bytes 8388608
+check	Run actions/upload-artifact@v4	2026-10-17T01:19:26.8500894Z Uploaded bytes 11482150
+check	Run actions/upload-artifact@v4	2026-10-17T01:19:27.1021143Z Artifact a70-boss-evidence has been successfully uploaded! Final size is 11482150 bytes. Artifact ID is 12084892159
+check	Run npx playwright test --config playwright.seasonal-a68.config.ts	2026-10-17T01:21:55.0878972Z   12 passed (2.5m)
+check	Run ARCANA_CAPTURE_A69=1 npx playwright test --config playwright.motion-a69.config.ts	2026-10-17T01:29:06.1450768Z   5 skipped
+check	Run ARCANA_CAPTURE_A69=1 npx playwright test --config playwright.motion-a69.config.ts	2026-10-17T01:29:06.1451539Z   19 passed (7.2m)
+check	Run actions/upload-artifact@v4	2026-10-17T01:29:07.1383416Z Uploaded bytes 5319263
+check	Run actions/upload-artifact@v4	2026-10-17T01:29:07.3570194Z Artifact a69-motion-and-seasonal-evidence has been successfully uploaded! Final size is 5319263 bytes. Artifact ID is 12085590445
+check	Run ARCANA_TRIAL_COMPILED=1 npm run test:e2e -- --project chromium --project webkit --reporter=line,github	2026-10-17T01:35:11.0597951Z   56 passed (6.0m)
+check	Run ARCANA_TRIAL_COMPILED=1 npm run test:e2e -- --project chromium --project webkit --reporter=line,github	2026-10-17T01:35:11.0621637Z ##[notice]  56 passed (6.0m)
+check	Run npx playwright test --config playwright.progression-a67.config.ts --project chromium-a67 --project webkit-a67	2026-10-17T01:38:29.0420659Z   20 passed (3.3m)
+check	Run npx playwright test --config playwright.gameplay-a63.config.ts	2026-10-17T01:43:02.7602784Z   16 passed (4.5m)
+check	Run npx playwright test --config playwright.header-pact-a66.config.ts	2026-10-17T01:46:17.8632617Z   20 passed (3.2m)
+check	Run npx playwright test --config playwright.intentions-a65.config.ts	2026-10-17T01:48:53.3166362Z   8 passed (2.6m)
+check	Run npm run test:pwa -- --project chromium --project webkit	2026-10-17T01:49:16.1286070Z   12 passed (22.1s)
+check	Run A67_PERFORMANCE_VARIANT=baseline npx playwright test --config playwright.performance-a67.config.ts	2026-10-17T01:49:36.9512042Z   1 passed (8.4s)
+check	Run A67_PERFORMANCE_VARIANT=current npx playwright test --config playwright.performance-a67.config.ts	2026-10-17T01:49:46.3041308Z   1 passed (8.6s)
+check	Run actions/upload-artifact@v4	2026-10-17T01:49:46.8257083Z Uploaded bytes 1821
+check	Run actions/upload-artifact@v4	2026-10-17T01:49:47.0664860Z Artifact a67-validation-evidence has been successfully uploaded! Final size is 1821 bytes. Artifact ID is 12086090797

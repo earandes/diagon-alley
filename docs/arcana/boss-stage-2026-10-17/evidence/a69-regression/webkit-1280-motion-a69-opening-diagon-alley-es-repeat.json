@@ -1,0 +1,26 @@
+{
+  "fixture": true,
+  "engine": "webkit",
+  "viewport": {
+    "width": 1280,
+    "height": 900
+  },
+  "media": "off",
+  "newDocument": true,
+  "networkCacheReset": false,
+  "sha": "ffb909467ae6ff1ca5ecaa5a2cad379c1c69ca89",
+  "frameMs": {
+    "samples": 6,
+    "p50": 56,
+    "p95": 77,
+    "max": 77
+  },
+  "longTasks": null,
+  "renderer": [],
+  "budgetTargetsNotProof": {
+    "p95FrameMs": 20,
+    "maximumFrameMs": 50,
+    "skipUsableMs": 100
+  },
+  "isNew": false
+}

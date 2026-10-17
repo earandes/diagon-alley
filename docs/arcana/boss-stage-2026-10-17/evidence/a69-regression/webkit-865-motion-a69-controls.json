@@ -1,0 +1,36 @@
+{
+  "fixture": true,
+  "engine": "webkit",
+  "viewport": {
+    "width": 865,
+    "height": 1079
+  },
+  "media": "off",
+  "newDocument": true,
+  "networkCacheReset": false,
+  "sha": "ffb909467ae6ff1ca5ecaa5a2cad379c1c69ca89",
+  "frameMs": {
+    "samples": 91,
+    "p50": 16,
+    "p95": 84,
+    "max": 166
+  },
+  "longTasks": null,
+  "renderer": [
+    {
+      "renderer": "webgl",
+      "activeTicking": "false",
+      "artReady": "true",
+      "visibleFigures": "10",
+      "renderCount": "34",
+      "textureCount": "10",
+      "textureBytes": "7004160"
+    }
+  ],
+  "budgetTargetsNotProof": {
+    "p95FrameMs": 20,
+    "maximumFrameMs": 50,
+    "skipUsableMs": 100
+  },
+  "fixtureStateUnchanged": true
+}
