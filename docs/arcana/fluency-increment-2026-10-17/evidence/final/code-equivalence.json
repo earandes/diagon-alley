@@ -7,5 +7,13 @@
   "nonDocumentalObjects": 1862,
   "fingerprintSha256": "7c900d6fb5812ba9689ebc73f03eea4a0e489e10d97e74b4aa79eca400c00025",
   "protectedTreesUnchangedFromBase": true,
-  "status": "Proven for tested candidate and current HEAD before final documentation; recheck after commit and remote main push."
+  "status": "CI success and ff-only integration verified. This record closure only changes documentation; same fingerprint required after final push.",
+  "integratedCommitVerifiedOnRemote": "da542f33ed7aea77f55b3b3dc9dab4c74b9c158c",
+  "pr": {
+    "number": 5,
+    "state": "MERGED",
+    "mergeCommit": "da542f33ed7aea77f55b3b3dc9dab4c74b9c158c",
+    "mergedAt": "2026-10-17T14:37:57Z"
+  },
+  "verifiedAtUTC": "2026-10-17T14:38:54.921136+00:00"
 }

@@ -72,3 +72,5 @@ Omisiones: perfilesA70deusoúnico yduplicadosA73fuera delproyecto medido; ciclo3
 Los checks/summaries/pasos yCIJSONestán enevidence/final. Datos deA69mantienen ventanas cortas desfavorables yA67latencias noarena que no mejoraron todas. Advertenciachunk>500kB sigue vigente; no se inventa eliminación. No hubo navegadores locales, despliegue, publicación o uso de cuenta habitual.
 
 El commit posterior de documentación/evidencia no ejecutará otra batería: se demuestra igualdad de todos los objetos no documentales con el merge probado. No se atribuye estaCI a unSHAque no la ejecutó.
+
+Integración verificada enmain da542f3, PR5MERGED. LaCIcorrecta corresponde almerge8541ee2c/head eb5ce91; da542f3 añade documentación/evidencia con igualdad de1862objetos no documentales. El cierre posterior deeste registro conserva esa igualdad. ÚltimoSHAremoto yestadoCIse comprueban de nuevo en la entrega. No se afirma que estos commits documentales hayan ejecutado la batería.

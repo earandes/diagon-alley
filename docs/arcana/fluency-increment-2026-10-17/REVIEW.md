@@ -19,3 +19,5 @@ Revisión de lectura deotroagente sobre REPORT/PERFORMANCE/VALIDATION ycrudos15/
 ## Gate de integración
 
 CIglobal39038639396 terminó success sobremerge8541ee2c/headeb5ce91. Fuente/base/SHAcomprobados; no hay conflictos o cambios remotos sobrebase4be. La actualización final de evidencias solo podrá cambiar documentación; comprobar objetos ejecutables contra merge8541ee2c antes de pushmain.
+
+Integraciónff-only ypush verificados enmain da542f3; PR5MERGED. El cierre documental no cambia objetos de aplicación/pruebas/configuración, yse vuelve a verificar tras commit/push final. Sin nueva batería atribuida alSHA documental.

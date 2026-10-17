@@ -1,6 +1,6 @@
 # A73 · Fluidez de la expedición
 
-Estado: implementado y validado. Runtime ca9cc86; CI completa39038639396 correcta sobre merge8541ee2c/headeb5ce91. Integración a main en el cierre de entrega. Los diagnósticos parciales cancelados mantienen su estado real.
+Estado: implementado, validado e integrado. Runtime ca9cc86; CI completa39038639396 correcta sobre merge8541ee2c/headeb5ce91. Integrado en main mediante da542f3; cierre documental posterior sin cambios ejecutables. Los diagnósticos parciales cancelados mantienen su estado real.
 
 ## Qué cambia
 

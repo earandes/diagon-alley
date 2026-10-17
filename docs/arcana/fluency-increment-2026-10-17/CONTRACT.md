@@ -19,10 +19,10 @@ Hipótesis a contrastar: creación del contexto/importación frente a primer upl
 1. Leer fuentes/skills/contratos y registrar estado inicial: hecho.
 2. Instrumentación acotada y referencia ejecutable: completadas en fase Linux39026178568, conjunto global cancelado tras guardar artifact.
 3. Medición Linux, causas y presupuesto de arranque: primera referencia y decisiones enDIAGNOSIS.
-4. Correcciones mínimas con pruebas relevantes: invalidaciones agrupadas/geometría retenida implementadas;560unitarios y78PGRedis correctos; comparación gráfica pendiente.
-5. Comparación equivalente y recorrido completo, inspección seleccionada: pendiente.
-6. Tipos/build/unitarios/PGRedis y regresiones afectadas: pendiente.
-7. Integrar candidato validado, verificar main/CI, documentar límites: pendiente.
+4. Correcciones mínimas con pruebas relevantes: invalidaciones agrupadas/geometría retenida implementadas;562unitarios y78PGRedis correctos; comparación gráfica final completada (PERFORMANCE).
+5. Comparación equivalente y recorrido completo, inspección seleccionada: completados;16diagnósticos yfase integrada enCI39038639396.
+6. Tipos/build/unitarios/PGRedis y regresiones afectadas: completados, CI39038639396success.
+7. Integrar candidato validado, verificar main/CI, documentar límites: completado enmain da542f3, PR5MERGED; cierre documental yverificación final sin cambios ejecutables.
 
 Objetivo sostenido: P95rAF≤20ms en ventanas declaradas10s; tres muestras genéricas y tres de jefe, sin elegir solo la favorable. Presupuesto de arranque se elegirá tras medir. Se distinguen click→operación guardada→DOM utilizable→arte listo→coreografía; no se desplaza la espera a otra pantalla. Sin caché ilimitada ni contenido oculto.
 
@@ -74,3 +74,7 @@ Paso6en curso: CI39038639396, candidatoeb5ce91enphasefull, matriz original más4
 ### Cierre técnico de validación
 
 Paso6completado: CI39038639396success, merge8541ee2c,268gráficos correctos/40skip,562unitarios y78PGRedisreales. PresupuestosA73declarados cumplidos; ventanas cortasA69ycasos noarena desfavorables conservados. Galería ycrudos actuales revisados. Paso7: commit documental, comparación de objetos, integraciónff-only/push yverificaciónSHAremoto/PR/CI; su registro está enINTEGRATION. No se marca goal completo antes de esas verificaciones.
+
+### Integración verificada
+
+Mainremoto contiene da542f33ed7aea77f55b3b3dc9dab4c74b9c158c; PR5MERGED, CIcompleta39038639396success en8541ee2c. Todos los objetos no documentales coinciden con el merge probado. El cierre deeste registro solo es documental, con nueva comprobaciónSHAremoto antes de marcar goal completo. Humanos/físicos pendientes sin bloquear entrega técnica; sin despliegue/publicación.
