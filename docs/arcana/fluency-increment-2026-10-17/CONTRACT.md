@@ -56,3 +56,7 @@ El sostenido genérico sigue incumpliendo20ms en los ensayos desfavorables. El p
 El candidato mínimo0c cumple los presupuestos declarados en las tres muestras de este runner (detalleDIAGNOSIS), conservando una pareja genérica de arranque desfavorable. Ensayo11 sobred03c93c aísla el uso inmediato de imágenes resueltas; se exige≤20ms en cada ventana actual después de guardar todos los datos. El baseline0c mantiene las otras correcciones, sin atlas. No se repite el lote de arte.
 
 La configuración final vuelve a `full` y separa explícitamente A/B mediante ARCANA_A73_DIAGNOSTIC=1 para Linux. No reduce ni cambia la matriz original, guard, worker, retries, timeout o watchdog. La matriz funcional conserva los cuatro recorridos A73 y todas las regresiones A70/A71; no duplica el A/B ya comprobado del mismo código. Pendientes ensayo11, matriz global, integración y verificación.
+
+### Plan vigente tras ensayo12
+
+Candidato83d4e48 cumple en este runner los presupuestos; añade un presupuesto de dos admisiones de fuentes por paint, no un límiteGPU. Coste de34–96msfrente al envío simultáneo medido y aceptado como compromiso de ensayo para evitar picos167–183ms. Los actoresDOM permanecen visibles y ninguna operación espera texturas. Último contraste contra referencia iniciald13 todavía pendiente; después restaurarphasefull, ejecutar matriz/regresiones, revisar e integrar. Goal activo.

@@ -75,3 +75,13 @@ node docs/arcana/fluency-increment-2026-10-17/ab-report.mjs docs/arcana/fluency-
 Se conservan `raw.json.gz`, `summary.json`, fixtures, script de referencia y condiciones de compilación. No ejecutar la investigación gráfica en Mac: corresponde al guard de CI Linux, en serie y sin reintentos automáticos.
 
 Presupuestos de ensayo: P95 rAF sostenido≤20 ms; arte listo genérico≤400 ms/jefe≤550 ms; máximo rAF de arranque≤100 ms. Son objetivos, no garantías físicas. El9cumple los sostenidos declarados; aún falta comprobar que el **candidato mínimo0c0547c**, sin atlas, conserva la mejora frente a d13 y supera la matriz funcional/visual pertinente. El arranque genérico sigue superando400 ms. No se declara validación final, integración en main, rendimiento de móvil físico, percepción humana de fluidez, diversión o retención.
+
+## Actualización: ensayos10–12 y candidato elegido
+
+Los resultados completos están en ab-10/11/12. El10 compara candidato mínimo0c con d13: genérico319–392→278–348ms y jefe418–442→346–367ms, maxrAFactual50ms; una pareja genérica empeora. Ambos son rápidos en sostenido,16,7–16,8ms.
+
+El11 usa0c como referencia y d03 como candidato inmediato: genérico450–507→409–433ms; jefe493–523→469–512ms, con una pareja desfavorable. Picos actuales117–133/167–183ms: falla el presupuesto. Un remontaje genérico de la referencia vuelve a33,3ms; se conserva, aunque los actuales pasan20ms.
+
+El12 compara d03 con83d4e48 (dos admisiones por paint): todos los sostenidos16,7–16,8ms; genérico320–336/jefe367–369ms y máximos≈67ms. Frente al envío de golpe el tiempo total aumenta34–96ms(G)/47–50ms(J), mientras el máximoJ100→67ms en las tres parejas. El envío sin límite no se acepta por ser rápido en ese runner: falló severamente en11. No son tiemposGPU ni un dispositivo físico.
+
+El13 volverá a d13 sin cambiar runtime83; después la batería completa. Main/goal pendientes, sin atribuir resultados que aún no existen. El objetivo de400ms no se acredita retroactivamente a los ensayos5/9/11 que lo incumplieron.
