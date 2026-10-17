@@ -1,6 +1,8 @@
 import { test, expect } from '@playwright/test';
 import { mkdir, writeFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
+import { readFileSync } from 'node:fs';
+import { createHash } from 'node:crypto';
 declare global {
   interface Window {
     __a75Perf: {
@@ -13,6 +15,8 @@ declare global {
   }
 }
 const evidence = resolve('docs/arcana/experience-fixes-2026-10-17/evidence/linux');
+const focus =
+  JSON.parse(readFileSync('tools/verification/a75-phase.json', 'utf8')).phase === 'webkit';
 const percentile = (numbers: number[], p: number) =>
   [...numbers].sort((a, b) => a - b)[Math.max(0, Math.ceil(numbers.length * p) - 1)];
 
@@ -20,9 +24,10 @@ test('A75 paired mobile sustained replay and lifecycle preserve confirmed log', 
   browser,
 }) => {
   test.skip(
-    test.info().project.name !== 'chromium-390-a75',
-    'Three fixed AB/BA/AB pairs in one Linux Chromium mobile-emulation project, not a universal device benchmark.',
+    test.info().project.name !== `${focus ? 'webkit' : 'chromium'}-390-a75`,
+    'Three fixed AB/BA/AB pairs in one explicit Linux engine/mobile project, not a universal device benchmark.',
   );
+  const engine = test.info().project.use.browserName ?? 'chromium';
   test.setTimeout(240000);
   const results = [];
   for (const [pair, order] of [
@@ -122,6 +127,15 @@ test('A75 paired mobile sustained replay and lifecycle preserve confirmed log', 
       const steady = metrics.frames.filter(
         (f) => f.at >= metrics.ready! + 500 && f.at < metrics.ready! + 10500,
       );
+      await mkdir(evidence, { recursive: true });
+      await writeFile(
+        resolve(evidence, `paired-${engine}-last-sample.json`),
+        JSON.stringify(
+          { sha: process.env.GITHUB_SHA, engine, pair, variant, metrics, steady },
+          null,
+          2,
+        ),
+      );
       expect(steady.length).toBeGreaterThan(150);
       const scene = page.locator('.scene-canvas'),
         panel = page.locator('.battle-panel');
@@ -161,6 +175,7 @@ test('A75 paired mobile sustained replay and lifecycle preserve confirmed log', 
       results.push({
         pair,
         variant,
+        battleHash: createHash('sha256').update(source.battle).digest('hex'),
         moduleReadyAt,
         actionToReadyFrameMs: metrics.ready! - metrics.start!,
         navigationToReadyFrameMs: metrics.ready,
@@ -182,13 +197,14 @@ test('A75 paired mobile sustained replay and lifecycle preserve confirmed log', 
     }
   await mkdir(evidence, { recursive: true });
   await writeFile(
-    resolve(evidence, 'paired-mobile-performance.json'),
+    resolve(evidence, focus ? 'paired-webkit-performance.json' : 'paired-mobile-performance.json'),
     JSON.stringify(
       {
         sha: process.env.GITHUB_SHA,
         baseline: '937a0a1f00bdbca7009a80cd99b7b4b450f652f0',
         fixture: true,
         physicalDevice: false,
+        engine,
         profile:
           '390x844 / ES Diagon / declared mastery5x5 / AB-BA-AB / fresh isolated browser contexts; application module evaluated before explicit fixture mount. rAF is not GPU time.',
         results,
@@ -199,5 +215,6 @@ test('A75 paired mobile sustained replay and lifecycle preserve confirmed log', 
   );
   const before = results.filter((r) => r.variant === 'baseline').map((r) => r.sustained.p95),
     after = results.filter((r) => r.variant === 'current').map((r) => r.sustained.p95);
+  expect(new Set(results.map((result) => result.battleHash)).size).toBe(1);
   expect(percentile(after, 0.5)).toBeLessThanOrEqual(Math.max(20, percentile(before, 0.5) + 1));
 });

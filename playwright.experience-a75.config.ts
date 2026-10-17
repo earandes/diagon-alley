@@ -1,13 +1,19 @@
 import { randomUUID } from 'node:crypto';
 import { readFileSync } from 'node:fs';
 import { defineSafeConfig } from './tools/verification/playwright-safety';
-const baseline =
-  JSON.parse(readFileSync(new URL('./tools/verification/a75-phase.json', import.meta.url), 'utf8'))
-    .phase === 'baseline';
+const phase = JSON.parse(
+  readFileSync(new URL('./tools/verification/a75-phase.json', import.meta.url), 'utf8'),
+).phase as string;
+const baseline = phase === 'baseline';
+const focusedWebkit = phase === 'webkit';
 /** One shared lock/worker/watchdog; graphical execution remains Linux-only. */
 export default defineSafeConfig({
   testDir: './tests/browser-experience-fixes',
-  testMatch: baseline ? /arena-a75\.spec\.ts$/ : /.*-a75\.spec\.ts$/,
+  testMatch: baseline
+    ? /arena-a75\.spec\.ts$/
+    : focusedWebkit
+      ? /arena-performance-a75\.spec\.ts$/
+      : /.*-a75\.spec\.ts$/,
   outputDir: 'test-results/experience-a75',
   timeout: 150000,
   maxFailures: 1,
@@ -20,22 +26,26 @@ export default defineSafeConfig({
     actionTimeout: 12000,
     navigationTimeout: 30000,
   },
-  projects: (baseline ? (['chromium'] as const) : (['chromium', 'webkit'] as const)).flatMap(
-    (browserName) =>
-      (baseline
-        ? [{ width: 390, height: 844 }]
-        : [
-            { width: 390, height: 844 },
-            { width: 1280, height: 900 },
-            { width: 865, height: 1079 },
-          ]
-      ).map((viewport) => ({
-        name: `${browserName}-${viewport.width}-a75`,
-        use: { browserName, viewport },
-      })),
+  projects: (baseline
+    ? (['chromium'] as const)
+    : focusedWebkit
+      ? (['webkit'] as const)
+      : (['chromium', 'webkit'] as const)
+  ).flatMap((browserName) =>
+    (baseline || focusedWebkit
+      ? [{ width: 390, height: 844 }]
+      : [
+          { width: 390, height: 844 },
+          { width: 1280, height: 900 },
+          { width: 865, height: 1079 },
+        ]
+    ).map((viewport) => ({
+      name: `${browserName}-${viewport.width}-a75`,
+      use: { browserName, viewport },
+    })),
   ),
   webServer: [
-    ...(!baseline
+    ...(!baseline && !focusedWebkit
       ? [
           {
             env: { ARCANA_TRIAL_NAMESPACE: `a75-${randomUUID()}` },

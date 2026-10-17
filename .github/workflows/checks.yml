@@ -49,7 +49,7 @@ jobs:
       - run: npm run verify:arcana:build
       - run: npx playwright install --with-deps chromium webkit
       - id: a75phase
-        run: node -e "const p=require('./tools/verification/a75-phase.json').phase;if(!['baseline','full'].includes(p))throw Error('Invalid A75 phase');require('fs').appendFileSync(process.env.GITHUB_OUTPUT,'phase='+p+'\\n')"
+        run: node -e "const p=require('./tools/verification/a75-phase.json').phase;if(!['baseline','full','webkit'].includes(p))throw Error('Invalid A75 phase');require('fs').appendFileSync(process.env.GITHUB_OUTPUT,'phase='+p+'\\n')"
       - if: ${{ !cancelled() && steps.build.outcome == 'success' }}
         run: ARCANA_CAPTURE_A75=1 npx playwright test --config playwright.experience-a75.config.ts
       - uses: actions/upload-artifact@v4
@@ -61,7 +61,7 @@ jobs:
             test-results/experience-a75/**/error-context.md
             test-results/experience-a75/results.json
           if-no-files-found: ignore
-      - if: ${{ !cancelled() && steps.build.outcome == 'success' && steps.a75phase.outputs.phase != 'baseline' }}
+      - if: ${{ !cancelled() && steps.build.outcome == 'success' && steps.a75phase.outputs.phase == 'full' }}
         run: ARCANA_CAPTURE_A70=1 npx playwright test --config playwright.boss-a70.config.ts
       - uses: actions/upload-artifact@v4
         if: always()
@@ -71,9 +71,9 @@ jobs:
             docs/arcana/boss-increment-2026-10-16/evidence/linux/**
             test-results/boss-a70/**/error-context.md
           if-no-files-found: ignore
-      - if: ${{ !cancelled() && steps.build.outcome == 'success' && steps.a75phase.outputs.phase != 'baseline' }}
+      - if: ${{ !cancelled() && steps.build.outcome == 'success' && steps.a75phase.outputs.phase == 'full' }}
         run: npx playwright test --config playwright.seasonal-a68.config.ts
-      - if: ${{ !cancelled() && steps.build.outcome == 'success' && steps.a75phase.outputs.phase != 'baseline' }}
+      - if: ${{ !cancelled() && steps.build.outcome == 'success' && steps.a75phase.outputs.phase == 'full' }}
         # Explicit selected Linux evidence: four images in one Chromium project,
         # never screenshots of the full pack/language/viewport matrix.
         run: ARCANA_CAPTURE_A69=1 npx playwright test --config playwright.motion-a69.config.ts
@@ -86,24 +86,24 @@ jobs:
             test-results/motion-a69/**/error-context.md
             test-results-seasonal-a68/**/error-context.md
           if-no-files-found: ignore
-      - if: ${{ !cancelled() && steps.build.outcome == 'success' && steps.a75phase.outputs.phase != 'baseline' }}
+      - if: ${{ !cancelled() && steps.build.outcome == 'success' && steps.a75phase.outputs.phase == 'full' }}
         run: ARCANA_TRIAL_COMPILED=1 npm run test:e2e -- --project chromium --project webkit --reporter=line,github
-      - if: ${{ !cancelled() && steps.build.outcome == 'success' && steps.a75phase.outputs.phase != 'baseline' }}
+      - if: ${{ !cancelled() && steps.build.outcome == 'success' && steps.a75phase.outputs.phase == 'full' }}
         run: npx playwright test --config playwright.progression-a67.config.ts --project chromium-a67 --project webkit-a67
-      - if: ${{ !cancelled() && steps.build.outcome == 'success' && steps.a75phase.outputs.phase != 'baseline' }}
+      - if: ${{ !cancelled() && steps.build.outcome == 'success' && steps.a75phase.outputs.phase == 'full' }}
         run: npx playwright test --config playwright.gameplay-a63.config.ts
-      - if: ${{ !cancelled() && steps.build.outcome == 'success' && steps.a75phase.outputs.phase != 'baseline' }}
+      - if: ${{ !cancelled() && steps.build.outcome == 'success' && steps.a75phase.outputs.phase == 'full' }}
         run: npx playwright test --config playwright.header-pact-a66.config.ts
-      - if: ${{ !cancelled() && steps.build.outcome == 'success' && steps.a75phase.outputs.phase != 'baseline' }}
+      - if: ${{ !cancelled() && steps.build.outcome == 'success' && steps.a75phase.outputs.phase == 'full' }}
         run: npx playwright test --config playwright.intentions-a65.config.ts
-      - if: ${{ !cancelled() && steps.build.outcome == 'success' && steps.a75phase.outputs.phase != 'baseline' }}
+      - if: ${{ !cancelled() && steps.build.outcome == 'success' && steps.a75phase.outputs.phase == 'full' }}
         run: npm run test:pwa -- --project chromium --project webkit
       - id: reference
-        if: ${{ !cancelled() && steps.build.outcome == 'success' && steps.a75phase.outputs.phase != 'baseline' }}
+        if: ${{ !cancelled() && steps.build.outcome == 'success' && steps.a75phase.outputs.phase == 'full' }}
         run: node tools/verification/build-a66-reference.mjs
-      - if: ${{ !cancelled() && steps.reference.outcome == 'success' && steps.a75phase.outputs.phase != 'baseline' }}
+      - if: ${{ !cancelled() && steps.reference.outcome == 'success' && steps.a75phase.outputs.phase == 'full' }}
         run: A67_PERFORMANCE_VARIANT=baseline npx playwright test --config playwright.performance-a67.config.ts
-      - if: ${{ !cancelled() && steps.build.outcome == 'success' && steps.a75phase.outputs.phase != 'baseline' }}
+      - if: ${{ !cancelled() && steps.build.outcome == 'success' && steps.a75phase.outputs.phase == 'full' }}
         run: A67_PERFORMANCE_VARIANT=current npx playwright test --config playwright.performance-a67.config.ts
       - uses: actions/upload-artifact@v4
         if: always()

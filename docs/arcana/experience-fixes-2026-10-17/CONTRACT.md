@@ -28,3 +28,17 @@ Conservar snapshots/run antiguas, first-rights, inventario, equipo, BattleLog y 
 Matriz y aceptación detalladas en A74/FINDINGS y FIX-PLAN. Registrar RED/GREEN, comandos, versiones/SHA/omisiones y límites. Objetivo técnico no sustituye observación humana/lector/dispositivo físico. Se distinguirá vigente→contrastado/reproducido→implementado→probado→pendiente en la entrega.
 
 Estado inicial: once findings vigentes por inspección del mismo baseline; los nuevos casos gráficos todavía no se han ejecutado. Plan activo, no entrega completa.
+
+## Seguimiento del plan
+
+- [x] Fuentes/baseline/contrato y contraste de los once findings.
+- [x] Entrada/recuperación/reglas efectivas/inspector integrados y casos pertinentes.
+- [x] Instancias/filtros/tarro, stock0/1/varios y cancelación/recuperación.
+- [x] Medida previa Linux, dos alternativas y corrección de encuadre móvil con evidencia.
+- [x] Ruta/lista/fallback/preferencia reducida integrados.
+- [x] A75 completa:113pasadas/175omisiones previstas/0fallos enCI39059090478, head889886d/merge8d38776 con árbol idéntico.
+- [x] Regresión completaA70/A71/A73 yHalloween del mismo candidato.
+- [ ] Resto de regresiones del job (A69/general/progresión/preparación/cabecera/intenciones/PWA/perfiles) y estado global definitivo.
+- [ ] Documentación final, equivalencia del commit documental, revisión del diff y verificación de rama/remoto/PR sin main.
+
+El goal sigue activo; marcarlo completo solo tras resolver las comprobaciones técnicas pendientes. Humanos/físico quedan identificados en HUMAN-CHECK, sin convertirse en evidencia realizada.
