@@ -1,6 +1,6 @@
 # A76 · Plan de comprobación
 
-Estado inicial: plan y pruebas por implementar; ninguna ejecución nueva acreditada por este documento. El coordinador registra comandos, SHA y resultados en QA/REPORT al ejecutar. Referencia: `CONTRACT.md` y baseline A75 `ff23f580d9d3989abc9918d7b5bc8328d9e83b62`.
+Documento conservado como plan previo de comprobación. Las pruebas se implementaron y sus ejecuciones reales, candidatas y límites constan en QA/REPORT; este plan no se utiliza como sustituto de resultados. Referencia: `CONTRACT.md` y baseline A75 `ff23f580d9d3989abc9918d7b5bc8328d9e83b62`.
 
 ## Fronteras y seguridad del anfitrión
 

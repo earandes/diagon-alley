@@ -1,6 +1,6 @@
 # Diagon Alley / ARCANA · Callejón de maravillas
 
-A76 · Cuentas recuperables: bienvenida con crear cuenta y entrada existente, invitado en jerarquía secundaria y límite de acceso visible. Una carta de acceso compacta, con campos nativos y etiquetas reales para credenciales, es la excepción autorizada a la ausencia de formularios del recorrido táctico. Ajustes contiene un único acceso contextual para guardar invitado o gestionar cuenta; no otro HUD. Correo y errores permanecen fuera del arte; sin assets, efectos o dependencias nuevos. [Diseño y seguimiento](docs/arcana/accounts-2026-10-17/UI.md). Implementación en rama, inspección Linux y aceptación humana diferenciadas.
+A76 · Cuentas recuperables: bienvenida con crear cuenta y entrada existente, invitado en jerarquía secundaria y límite de acceso visible. Una carta de acceso compacta, con campos nativos y etiquetas reales para credenciales, es la excepción autorizada a la ausencia de formularios del recorrido táctico. Ajustes contiene un único acceso contextual para guardar invitado o gestionar cuenta; no otro HUD. Correo y errores permanecen fuera del arte; sin assets, efectos o dependencias nuevos. [Diseño y seguimiento](docs/arcana/accounts-2026-10-17/UI.md). Implementado en rama, formularios/foco/reflujo validados enLinux y tres capturas seleccionadas inspeccionadas. Aceptación humana y dispositivo físico pendientes; detalle porSHA enQA. No integrado enmain.
 
 ## A75 · Claridad de acción y continuidad
 

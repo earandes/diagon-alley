@@ -18,8 +18,8 @@ Registro/verificación/entrada; invitado→obtener datos→vincular sin cambio; 
 
 ## Plan vivo
 1. Fuentes, contrato, método y baseline: completado.
-2. Autoridad de identidad y persistencia: implementada; revisión concurrente y pruebas de integración en curso.
-3. Bienvenida/Ajustes y recuperación segura: implementada; tipos y pruebas estáticas correctos, gráfica Linux pendiente.
-4. Copia/restauración y servicios: copia/restauración aislada correcta; 96 integraciones PostgreSQL/Redis correctas.
-5. Build correcto; CI Linux serial, inspección seleccionada y correcciones: siguiente etapa.
-6. Documentación, revisión de diff y entrega de rama/PR sin main.
+2. Autoridad e identidad: implementadas y revisadas; integración real con concurrencia, rollback y revocación correcta.
+3. Bienvenida/Ajustes y recuperación:30casos gráficos A76 correctos enCI39070225878; inspección de tres PNG realizada.
+4. Copia/restauración y reinicio de servicios aislados correctos;98integraciones PostgreSQL/Redis en candidato final.
+5. Tipos/build/618unit/98integración/backup y389casos navegador correctos enCI39070225878 hastaA66; cancelado por55min durante intenciones. ColaCI39074119331 SUCCESS sobre88eaa44 con fase tail existente, sin ampliar límites; todas las comprobaciones técnicas de este ensayo resueltas en las dos tandas.
+6. Documentación, revisión de diff y entrega de rama/PR7 sin main; fasefull restaurada al cerrar y equivalencia de fuentes contra3f6 comprobada. Humano/físico/correo externo siguen pendientes fuera de este ensayo.

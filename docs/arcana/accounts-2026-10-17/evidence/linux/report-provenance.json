@@ -1,0 +1,60 @@
+{
+  "source": "GitHub Actions39070225878 artifact a76-account-evidence: test-results/accounts-a76/results.json",
+  "sourceSHA256": "e80c5685c0b381884fb0e3d426b062a813ca5e0a273a8437fd2aaf4da9e56482",
+  "transformation": "Removed repeated Playwright gitDiff metadata only. Results, durations, errors, config, gitCommit and stats unchanged; original artifact retained in CI.",
+  "removed": [
+    {
+      "path": ".config.metadata.gitDiff",
+      "characters": 100000
+    },
+    {
+      "path": ".config.projects[0].metadata.gitDiff",
+      "characters": 100000
+    },
+    {
+      "path": ".config.projects[1].metadata.gitDiff",
+      "characters": 100000
+    },
+    {
+      "path": ".config.projects[2].metadata.gitDiff",
+      "characters": 100000
+    },
+    {
+      "path": ".config.projects[3].metadata.gitDiff",
+      "characters": 100000
+    },
+    {
+      "path": ".config.projects[4].metadata.gitDiff",
+      "characters": 100000
+    },
+    {
+      "path": ".config.projects[5].metadata.gitDiff",
+      "characters": 100000
+    },
+    {
+      "path": ".config.filteredProjects[0].metadata.gitDiff",
+      "characters": 100000
+    },
+    {
+      "path": ".config.filteredProjects[1].metadata.gitDiff",
+      "characters": 100000
+    },
+    {
+      "path": ".config.filteredProjects[2].metadata.gitDiff",
+      "characters": 100000
+    },
+    {
+      "path": ".config.filteredProjects[3].metadata.gitDiff",
+      "characters": 100000
+    },
+    {
+      "path": ".config.filteredProjects[4].metadata.gitDiff",
+      "characters": 100000
+    },
+    {
+      "path": ".config.filteredProjects[5].metadata.gitDiff",
+      "characters": 100000
+    }
+  ],
+  "outputSHA256": "5d8827cad73530530fd65e9b8afafe5c134a9764a9bf0b7d33dac9fb666424b0"
+}

@@ -2,7 +2,7 @@
 
 ## Diseño elegido
 
-Se compararon dos composiciones con arte existente: tres portales equivalentes de acceso, o una entrada de cuenta compacta delante del Callejón conservando el portal invitado. Se elige la segunda: Crear cuenta como acción de cuenta principal, Iniciar sesión con contraste secundario y Jugar como invitado en el portal ilustrado existente. El nombre accesible del portal coincide con Jugar como invitado/Play as guest, también visible; las pruebas activas se actualizan y la muestra histórica de apertura admite ambos nombres explícitamente. La ayuda breve comunica el límite del invitado, sin prometer recuperación sin sesión.
+Se compararon conceptualmente dos composiciones con arte existente (sin prototipos alternativos renderizados ni prueba humana): tres portales equivalentes de acceso, o una entrada de cuenta compacta delante del Callejón conservando el portal invitado. Se elige la segunda: Crear cuenta como acción de cuenta principal, Iniciar sesión con contraste secundario y Jugar como invitado en el portal ilustrado existente. El nombre accesible del portal coincide con Jugar como invitado/Play as guest, también visible; las pruebas activas se actualizan y la muestra histórica de apertura admite ambos nombres explícitamente. La ayuda breve comunica el límite del invitado, sin prometer recuperación sin sesión.
 
 En Ajustes hay un único acceso: Guardar mi partida para invitado, Mi cuenta para cuenta conocida y Acceder a mi cuenta sin partida. La identidad conocida aparece aquí, fuera del HUD económico. Un fallo de consulta de identidad se muestra como indisponibilidad; nunca se convierte en invitado por defecto.
 
@@ -32,3 +32,7 @@ La primera CI A76 (39068985629,34b22de) avanzó hasta crear/verificar cuenta y d
 Petición de acceso limitada a15s con AbortController, sin reintento automático. Error de almacenamiento o transporte durante cambio de sesión se trata como respuesta incierta. Reset incierto orienta a probar nueva contraseña o solicitar otro código, sin reutilizar silenciosamente el anterior. El propietario de la respuesta de login se exige al cargar la partida; una cookie cambiada por otra pestaña no autoriza cargar cualquier jugador. La reautenticación con prueba de la misma cuenta puede recuperar su propietario aunque otra pestaña haya cambiado la cookie.
 
 Los mensajes de registro explican explícitamente el buzón privado del ensayo; no prometen entrega por Internet. Ajustes solo ofrece Guardar mi partida cuando la sesión es invitada válida; una sesión anónima/indisponible ofrece acceso.
+
+## Cierre coordinado
+
+La validación posterior sí se ejecutó en Linux: A76 pasó30casos previstos, ES/EN y ambos packs, en los tres tamaños indicados, sin browser local. Tres capturas seleccionadas inspeccionadas enGALLERY. Comandos, candidatos, interrupción por55min y continuación correcta enQA; el apartado del subagente anterior conserva su cobertura limitada original. No se afirma observación humana.

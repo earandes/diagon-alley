@@ -1,0 +1,55 @@
+{
+  "run": 39070225878,
+  "url": "https://github.com/earandes/diagon-alley/actions/runs/39070225878",
+  "head": "3f6e1223d7b9ada6cae55f50f7b2627f2c35100b",
+  "checkout": "bc8c166ab38132c7c0e8e471a7206973c25dd151",
+  "tree": "c755d7debc31728151af02629b2c08c024a20cb6",
+  "conclusion": "cancelled",
+  "officialAnnotation": "The job has exceeded the maximum execution time of 55m0s",
+  "counts": {
+    "unitPassed": 618,
+    "postgresRedisPassed": 98,
+    "a76": {
+      "passed": 30,
+      "skipped": 30
+    },
+    "a75": {
+      "passed": 113,
+      "skipped": 175
+    },
+    "bossA70A71A73": {
+      "passed": 103,
+      "skipped": 35
+    },
+    "seasonalA68": {
+      "passed": 12
+    },
+    "motionA69": {
+      "passed": 19,
+      "skipped": 5
+    },
+    "e2e": {
+      "passed": 56
+    },
+    "progressionA67": {
+      "passed": 20
+    },
+    "gameplayA63": {
+      "passed": 16
+    },
+    "headerPactsA66": {
+      "passed": 20
+    }
+  },
+  "interrupted": "intentionsA65; 8cases began but no completed suite summary",
+  "notExecuted": [
+    "PWA",
+    "A66 reference build",
+    "A67 baseline performance",
+    "A67 current performance"
+  ],
+  "graphicalTotalPassed": 389,
+  "graphicalIntentionalSkips": 245,
+  "localBrowserOpened": false,
+  "source": "Completed GitHub job log and official annotation, queried by coordinator QA agent; raw log retained locally outside Git."
+}

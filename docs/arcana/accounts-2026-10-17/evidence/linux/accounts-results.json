@@ -1,0 +1,3586 @@
+{
+  "config": {
+    "argv": [
+      "/opt/hostedtoolcache/node/24.21.0/x64/bin/node",
+      "/home/runner/work/diagon-alley/diagon-alley/node_modules/.bin/playwright",
+      "test",
+      "--config",
+      "playwright.accounts-a76.config.ts"
+    ],
+    "configFile": "/home/runner/work/diagon-alley/diagon-alley/playwright.accounts-a76.config.ts",
+    "rootDir": "/home/runner/work/diagon-alley/diagon-alley/tests/browser-accounts",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": "/home/runner/work/diagon-alley/diagon-alley/tools/verification/playwright-suite-lock.ts",
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 1,
+    "metadata": {
+      "ci": {
+        "commitHref": "https://github.com/earandes/diagon-alley/commit/bc8c166ab38132c7c0e8e471a7206973c25dd151",
+        "commitHash": "bc8c166ab38132c7c0e8e471a7206973c25dd151",
+        "prHref": "https://github.com/earandes/diagon-alley/pull/7",
+        "prTitle": "A76: cuentas recuperables y vinculación segura de invitado",
+        "prBaseHash": "ff23f580d9d3989abc9918d7b5bc8328d9e83b62",
+        "buildHref": "https://github.com/earandes/diagon-alley/actions/runs/39070225878"
+      },
+      "gitCommit": {
+        "shortHash": "bc8c166",
+        "hash": "bc8c166ab38132c7c0e8e471a7206973c25dd151",
+        "subject": "Merge 3f6e1223d7b9ada6cae55f50f7b2627f2c35100b into ff23f580d9d3989abc9918d7b5bc8328d9e83b62",
+        "body": "Merge 3f6e1223d7b9ada6cae55f50f7b2627f2c35100b into ff23f580d9d3989abc9918d7b5bc8328d9e83b62\n",
+        "author": {
+          "name": "Enric Arandes",
+          "email": "enric.arandes@code.seat",
+          "time": 1792271772000
+        },
+        "committer": {
+          "name": "GitHub",
+          "email": "noreply@github.com",
+          "time": 1792271772000
+        },
+        "branch": "HEAD"
+      },
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/home/runner/work/diagon-alley/diagon-alley/test-results/accounts-a76",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "ci": {
+            "commitHref": "https://github.com/earandes/diagon-alley/commit/bc8c166ab38132c7c0e8e471a7206973c25dd151",
+            "commitHash": "bc8c166ab38132c7c0e8e471a7206973c25dd151",
+            "prHref": "https://github.com/earandes/diagon-alley/pull/7",
+            "prTitle": "A76: cuentas recuperables y vinculación segura de invitado",
+            "prBaseHash": "ff23f580d9d3989abc9918d7b5bc8328d9e83b62",
+            "buildHref": "https://github.com/earandes/diagon-alley/actions/runs/39070225878"
+          },
+          "gitCommit": {
+            "shortHash": "bc8c166",
+            "hash": "bc8c166ab38132c7c0e8e471a7206973c25dd151",
+            "subject": "Merge 3f6e1223d7b9ada6cae55f50f7b2627f2c35100b into ff23f580d9d3989abc9918d7b5bc8328d9e83b62",
+            "body": "Merge 3f6e1223d7b9ada6cae55f50f7b2627f2c35100b into ff23f580d9d3989abc9918d7b5bc8328d9e83b62\n",
+            "author": {
+              "name": "Enric Arandes",
+              "email": "enric.arandes@code.seat",
+              "time": 1792271772000
+            },
+            "committer": {
+              "name": "GitHub",
+              "email": "noreply@github.com",
+              "time": 1792271772000
+            },
+            "branch": "HEAD"
+          },
+          "actualWorkers": 1
+        },
+        "id": "chromium-390-a76",
+        "name": "chromium-390-a76",
+        "testDir": "/home/runner/work/diagon-alley/diagon-alley/tests/browser-accounts",
+        "testIgnore": [],
+        "testMatch": [
+          "/accounts-a76\\.spec\\.ts$/"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "/home/runner/work/diagon-alley/diagon-alley/test-results/accounts-a76",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "ci": {
+            "commitHref": "https://github.com/earandes/diagon-alley/commit/bc8c166ab38132c7c0e8e471a7206973c25dd151",
+            "commitHash": "bc8c166ab38132c7c0e8e471a7206973c25dd151",
+            "prHref": "https://github.com/earandes/diagon-alley/pull/7",
+            "prTitle": "A76: cuentas recuperables y vinculación segura de invitado",
+            "prBaseHash": "ff23f580d9d3989abc9918d7b5bc8328d9e83b62",
+            "buildHref": "https://github.com/earandes/diagon-alley/actions/runs/39070225878"
+          },
+          "gitCommit": {
+            "shortHash": "bc8c166",
+            "hash": "bc8c166ab38132c7c0e8e471a7206973c25dd151",
+            "subject": "Merge 3f6e1223d7b9ada6cae55f50f7b2627f2c35100b into ff23f580d9d3989abc9918d7b5bc8328d9e83b62",
+            "body": "Merge 3f6e1223d7b9ada6cae55f50f7b2627f2c35100b into ff23f580d9d3989abc9918d7b5bc8328d9e83b62\n",
+            "author": {
+              "name": "Enric Arandes",
+              "email": "enric.arandes@code.seat",
+              "time": 1792271772000
+            },
+            "committer": {
+              "name": "GitHub",
+              "email": "noreply@github.com",
+              "time": 1792271772000
+            },
+            "branch": "HEAD"
+          },
+          "actualWorkers": 1
+        },
+        "id": "chromium-1280-a76",
+        "name": "chromium-1280-a76",
+        "testDir": "/home/runner/work/diagon-alley/diagon-alley/tests/browser-accounts",
+        "testIgnore": [],
+        "testMatch": [
+          "/accounts-a76\\.spec\\.ts$/"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "/home/runner/work/diagon-alley/diagon-alley/test-results/accounts-a76",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "ci": {
+            "commitHref": "https://github.com/earandes/diagon-alley/commit/bc8c166ab38132c7c0e8e471a7206973c25dd151",
+            "commitHash": "bc8c166ab38132c7c0e8e471a7206973c25dd151",
+            "prHref": "https://github.com/earandes/diagon-alley/pull/7",
+            "prTitle": "A76: cuentas recuperables y vinculación segura de invitado",
+            "prBaseHash": "ff23f580d9d3989abc9918d7b5bc8328d9e83b62",
+            "buildHref": "https://github.com/earandes/diagon-alley/actions/runs/39070225878"
+          },
+          "gitCommit": {
+            "shortHash": "bc8c166",
+            "hash": "bc8c166ab38132c7c0e8e471a7206973c25dd151",
+            "subject": "Merge 3f6e1223d7b9ada6cae55f50f7b2627f2c35100b into ff23f580d9d3989abc9918d7b5bc8328d9e83b62",
+            "body": "Merge 3f6e1223d7b9ada6cae55f50f7b2627f2c35100b into ff23f580d9d3989abc9918d7b5bc8328d9e83b62\n",
+            "author": {
+              "name": "Enric Arandes",
+              "email": "enric.arandes@code.seat",
+              "time": 1792271772000
+            },
+            "committer": {
+              "name": "GitHub",
+              "email": "noreply@github.com",
+              "time": 1792271772000
+            },
+            "branch": "HEAD"
+          },
+          "actualWorkers": 1
+        },
+        "id": "chromium-865-a76",
+        "name": "chromium-865-a76",
+        "testDir": "/home/runner/work/diagon-alley/diagon-alley/tests/browser-accounts",
+        "testIgnore": [],
+        "testMatch": [
+          "/accounts-a76\\.spec\\.ts$/"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "/home/runner/work/diagon-alley/diagon-alley/test-results/accounts-a76",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "ci": {
+            "commitHref": "https://github.com/earandes/diagon-alley/commit/bc8c166ab38132c7c0e8e471a7206973c25dd151",
+            "commitHash": "bc8c166ab38132c7c0e8e471a7206973c25dd151",
+            "prHref": "https://github.com/earandes/diagon-alley/pull/7",
+            "prTitle": "A76: cuentas recuperables y vinculación segura de invitado",
+            "prBaseHash": "ff23f580d9d3989abc9918d7b5bc8328d9e83b62",
+            "buildHref": "https://github.com/earandes/diagon-alley/actions/runs/39070225878"
+          },
+          "gitCommit": {
+            "shortHash": "bc8c166",
+            "hash": "bc8c166ab38132c7c0e8e471a7206973c25dd151",
+            "subject": "Merge 3f6e1223d7b9ada6cae55f50f7b2627f2c35100b into ff23f580d9d3989abc9918d7b5bc8328d9e83b62",
+            "body": "Merge 3f6e1223d7b9ada6cae55f50f7b2627f2c35100b into ff23f580d9d3989abc9918d7b5bc8328d9e83b62\n",
+            "author": {
+              "name": "Enric Arandes",
+              "email": "enric.arandes@code.seat",
+              "time": 1792271772000
+            },
+            "committer": {
+              "name": "GitHub",
+              "email": "noreply@github.com",
+              "time": 1792271772000
+            },
+            "branch": "HEAD"
+          },
+          "actualWorkers": 1
+        },
+        "id": "webkit-390-a76",
+        "name": "webkit-390-a76",
+        "testDir": "/home/runner/work/diagon-alley/diagon-alley/tests/browser-accounts",
+        "testIgnore": [],
+        "testMatch": [
+          "/accounts-a76\\.spec\\.ts$/"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "/home/runner/work/diagon-alley/diagon-alley/test-results/accounts-a76",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "ci": {
+            "commitHref": "https://github.com/earandes/diagon-alley/commit/bc8c166ab38132c7c0e8e471a7206973c25dd151",
+            "commitHash": "bc8c166ab38132c7c0e8e471a7206973c25dd151",
+            "prHref": "https://github.com/earandes/diagon-alley/pull/7",
+            "prTitle": "A76: cuentas recuperables y vinculación segura de invitado",
+            "prBaseHash": "ff23f580d9d3989abc9918d7b5bc8328d9e83b62",
+            "buildHref": "https://github.com/earandes/diagon-alley/actions/runs/39070225878"
+          },
+          "gitCommit": {
+            "shortHash": "bc8c166",
+            "hash": "bc8c166ab38132c7c0e8e471a7206973c25dd151",
+            "subject": "Merge 3f6e1223d7b9ada6cae55f50f7b2627f2c35100b into ff23f580d9d3989abc9918d7b5bc8328d9e83b62",
+            "body": "Merge 3f6e1223d7b9ada6cae55f50f7b2627f2c35100b into ff23f580d9d3989abc9918d7b5bc8328d9e83b62\n",
+            "author": {
+              "name": "Enric Arandes",
+              "email": "enric.arandes@code.seat",
+              "time": 1792271772000
+            },
+            "committer": {
+              "name": "GitHub",
+              "email": "noreply@github.com",
+              "time": 1792271772000
+            },
+            "branch": "HEAD"
+          },
+          "actualWorkers": 1
+        },
+        "id": "webkit-1280-a76",
+        "name": "webkit-1280-a76",
+        "testDir": "/home/runner/work/diagon-alley/diagon-alley/tests/browser-accounts",
+        "testIgnore": [],
+        "testMatch": [
+          "/accounts-a76\\.spec\\.ts$/"
+        ],
+        "timeout": 90000
+      },
+      {
+        "outputDir": "/home/runner/work/diagon-alley/diagon-alley/test-results/accounts-a76",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "ci": {
+            "commitHref": "https://github.com/earandes/diagon-alley/commit/bc8c166ab38132c7c0e8e471a7206973c25dd151",
+            "commitHash": "bc8c166ab38132c7c0e8e471a7206973c25dd151",
+            "prHref": "https://github.com/earandes/diagon-alley/pull/7",
+            "prTitle": "A76: cuentas recuperables y vinculación segura de invitado",
+            "prBaseHash": "ff23f580d9d3989abc9918d7b5bc8328d9e83b62",
+            "buildHref": "https://github.com/earandes/diagon-alley/actions/runs/39070225878"
+          },
+          "gitCommit": {
+            "shortHash": "bc8c166",
+            "hash": "bc8c166ab38132c7c0e8e471a7206973c25dd151",
+            "subject": "Merge 3f6e1223d7b9ada6cae55f50f7b2627f2c35100b into ff23f580d9d3989abc9918d7b5bc8328d9e83b62",
+            "body": "Merge 3f6e1223d7b9ada6cae55f50f7b2627f2c35100b into ff23f580d9d3989abc9918d7b5bc8328d9e83b62\n",
+            "author": {
+              "name": "Enric Arandes",
+              "email": "enric.arandes@code.seat",
+              "time": 1792271772000
+            },
+            "committer": {
+              "name": "GitHub",
+              "email": "noreply@github.com",
+              "time": 1792271772000
+            },
+            "branch": "HEAD"
+          },
+          "actualWorkers": 1
+        },
+        "id": "webkit-865-a76",
+        "name": "webkit-865-a76",
+        "testDir": "/home/runner/work/diagon-alley/diagon-alley/tests/browser-accounts",
+        "testIgnore": [],
+        "testMatch": [
+          "/accounts-a76\\.spec\\.ts$/"
+        ],
+        "timeout": 90000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "/home/runner/work/diagon-alley/diagon-alley/test-results/accounts-a76",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "ci": {
+            "commitHref": "https://github.com/earandes/diagon-alley/commit/bc8c166ab38132c7c0e8e471a7206973c25dd151",
+            "commitHash": "bc8c166ab38132c7c0e8e471a7206973c25dd151",
+            "prHref": "https://github.com/earandes/diagon-alley/pull/7",
+            "prTitle": "A76: cuentas recuperables y vinculación segura de invitado",
+            "prBaseHash": "ff23f580d9d3989abc9918d7b5bc8328d9e83b62",
+            "buildHref": "https://github.com/earandes/diagon-alley/actions/runs/39070225878"
+          },
+          "gitCommit": {
+            "shortHash": "bc8c166",
+            "hash": "bc8c166ab38132c7c0e8e471a7206973c25dd151",
+            "subject": "Merge 3f6e1223d7b9ada6cae55f50f7b2627f2c35100b into ff23f580d9d3989abc9918d7b5bc8328d9e83b62",
+            "body": "Merge 3f6e1223d7b9ada6cae55f50f7b2627f2c35100b into ff23f580d9d3989abc9918d7b5bc8328d9e83b62\n",
+            "author": {
+              "name": "Enric Arandes",
+              "email": "enric.arandes@code.seat",
+              "time": 1792271772000
+            },
+            "committer": {
+              "name": "GitHub",
+              "email": "noreply@github.com",
+              "time": 1792271772000
+            },
+            "branch": "HEAD"
+          },
+          "actualWorkers": 1
+        },
+        "name": "chromium-390-a76",
+        "testDir": "/home/runner/work/diagon-alley/diagon-alley/tests/browser-accounts",
+        "snapshotDir": "/home/runner/work/diagon-alley/diagon-alley/tests/browser-accounts",
+        "testIgnore": [],
+        "testMatch": {},
+        "timeout": 90000,
+        "use": {
+          "baseURL": "http://127.0.0.1:5530",
+          "serviceWorkers": "block",
+          "hasTouch": true,
+          "actionTimeout": 12000,
+          "navigationTimeout": 30000,
+          "video": "off",
+          "trace": "off",
+          "screenshot": "off",
+          "browserName": "chromium",
+          "viewport": {
+            "width": 390,
+            "height": 844
+          }
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "chromium-390-a76"
+      },
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "/home/runner/work/diagon-alley/diagon-alley/test-results/accounts-a76",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "ci": {
+            "commitHref": "https://github.com/earandes/diagon-alley/commit/bc8c166ab38132c7c0e8e471a7206973c25dd151",
+            "commitHash": "bc8c166ab38132c7c0e8e471a7206973c25dd151",
+            "prHref": "https://github.com/earandes/diagon-alley/pull/7",
+            "prTitle": "A76: cuentas recuperables y vinculación segura de invitado",
+            "prBaseHash": "ff23f580d9d3989abc9918d7b5bc8328d9e83b62",
+            "buildHref": "https://github.com/earandes/diagon-alley/actions/runs/39070225878"
+          },
+          "gitCommit": {
+            "shortHash": "bc8c166",
+            "hash": "bc8c166ab38132c7c0e8e471a7206973c25dd151",
+            "subject": "Merge 3f6e1223d7b9ada6cae55f50f7b2627f2c35100b into ff23f580d9d3989abc9918d7b5bc8328d9e83b62",
+            "body": "Merge 3f6e1223d7b9ada6cae55f50f7b2627f2c35100b into ff23f580d9d3989abc9918d7b5bc8328d9e83b62\n",
+            "author": {
+              "name": "Enric Arandes",
+              "email": "enric.arandes@code.seat",
+              "time": 1792271772000
+            },
+            "committer": {
+              "name": "GitHub",
+              "email": "noreply@github.com",
+              "time": 1792271772000
+            },
+            "branch": "HEAD"
+          },
+          "actualWorkers": 1
+        },
+        "name": "chromium-1280-a76",
+        "testDir": "/home/runner/work/diagon-alley/diagon-alley/tests/browser-accounts",
+        "snapshotDir": "/home/runner/work/diagon-alley/diagon-alley/tests/browser-accounts",
+        "testIgnore": [],
+        "testMatch": {},
+        "timeout": 90000,
+        "use": {
+          "baseURL": "http://127.0.0.1:5530",
+          "serviceWorkers": "block",
+          "hasTouch": true,
+          "actionTimeout": 12000,
+          "navigationTimeout": 30000,
+          "video": "off",
+          "trace": "off",
+          "screenshot": "off",
+          "browserName": "chromium",
+          "viewport": {
+            "width": 1280,
+            "height": 900
+          }
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "chromium-1280-a76"
+      },
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "/home/runner/work/diagon-alley/diagon-alley/test-results/accounts-a76",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "ci": {
+            "commitHref": "https://github.com/earandes/diagon-alley/commit/bc8c166ab38132c7c0e8e471a7206973c25dd151",
+            "commitHash": "bc8c166ab38132c7c0e8e471a7206973c25dd151",
+            "prHref": "https://github.com/earandes/diagon-alley/pull/7",
+            "prTitle": "A76: cuentas recuperables y vinculación segura de invitado",
+            "prBaseHash": "ff23f580d9d3989abc9918d7b5bc8328d9e83b62",
+            "buildHref": "https://github.com/earandes/diagon-alley/actions/runs/39070225878"
+          },
+          "gitCommit": {
+            "shortHash": "bc8c166",
+            "hash": "bc8c166ab38132c7c0e8e471a7206973c25dd151",
+            "subject": "Merge 3f6e1223d7b9ada6cae55f50f7b2627f2c35100b into ff23f580d9d3989abc9918d7b5bc8328d9e83b62",
+            "body": "Merge 3f6e1223d7b9ada6cae55f50f7b2627f2c35100b into ff23f580d9d3989abc9918d7b5bc8328d9e83b62\n",
+            "author": {
+              "name": "Enric Arandes",
+              "email": "enric.arandes@code.seat",
+              "time": 1792271772000
+            },
+            "committer": {
+              "name": "GitHub",
+              "email": "noreply@github.com",
+              "time": 1792271772000
+            },
+            "branch": "HEAD"
+          },
+          "actualWorkers": 1
+        },
+        "name": "chromium-865-a76",
+        "testDir": "/home/runner/work/diagon-alley/diagon-alley/tests/browser-accounts",
+        "snapshotDir": "/home/runner/work/diagon-alley/diagon-alley/tests/browser-accounts",
+        "testIgnore": [],
+        "testMatch": {},
+        "timeout": 90000,
+        "use": {
+          "baseURL": "http://127.0.0.1:5530",
+          "serviceWorkers": "block",
+          "hasTouch": true,
+          "actionTimeout": 12000,
+          "navigationTimeout": 30000,
+          "video": "off",
+          "trace": "off",
+          "screenshot": "off",
+          "browserName": "chromium",
+          "viewport": {
+            "width": 865,
+            "height": 1079
+          }
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "chromium-865-a76"
+      },
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "/home/runner/work/diagon-alley/diagon-alley/test-results/accounts-a76",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "ci": {
+            "commitHref": "https://github.com/earandes/diagon-alley/commit/bc8c166ab38132c7c0e8e471a7206973c25dd151",
+            "commitHash": "bc8c166ab38132c7c0e8e471a7206973c25dd151",
+            "prHref": "https://github.com/earandes/diagon-alley/pull/7",
+            "prTitle": "A76: cuentas recuperables y vinculación segura de invitado",
+            "prBaseHash": "ff23f580d9d3989abc9918d7b5bc8328d9e83b62",
+            "buildHref": "https://github.com/earandes/diagon-alley/actions/runs/39070225878"
+          },
+          "gitCommit": {
+            "shortHash": "bc8c166",
+            "hash": "bc8c166ab38132c7c0e8e471a7206973c25dd151",
+            "subject": "Merge 3f6e1223d7b9ada6cae55f50f7b2627f2c35100b into ff23f580d9d3989abc9918d7b5bc8328d9e83b62",
+            "body": "Merge 3f6e1223d7b9ada6cae55f50f7b2627f2c35100b into ff23f580d9d3989abc9918d7b5bc8328d9e83b62\n",
+            "author": {
+              "name": "Enric Arandes",
+              "email": "enric.arandes@code.seat",
+              "time": 1792271772000
+            },
+            "committer": {
+              "name": "GitHub",
+              "email": "noreply@github.com",
+              "time": 1792271772000
+            },
+            "branch": "HEAD"
+          },
+          "actualWorkers": 1
+        },
+        "name": "webkit-390-a76",
+        "testDir": "/home/runner/work/diagon-alley/diagon-alley/tests/browser-accounts",
+        "snapshotDir": "/home/runner/work/diagon-alley/diagon-alley/tests/browser-accounts",
+        "testIgnore": [],
+        "testMatch": {},
+        "timeout": 90000,
+        "use": {
+          "baseURL": "http://127.0.0.1:5530",
+          "serviceWorkers": "block",
+          "hasTouch": true,
+          "actionTimeout": 12000,
+          "navigationTimeout": 30000,
+          "video": "off",
+          "trace": "off",
+          "screenshot": "off",
+          "browserName": "webkit",
+          "viewport": {
+            "width": 390,
+            "height": 844
+          }
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "webkit-390-a76"
+      },
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "/home/runner/work/diagon-alley/diagon-alley/test-results/accounts-a76",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "ci": {
+            "commitHref": "https://github.com/earandes/diagon-alley/commit/bc8c166ab38132c7c0e8e471a7206973c25dd151",
+            "commitHash": "bc8c166ab38132c7c0e8e471a7206973c25dd151",
+            "prHref": "https://github.com/earandes/diagon-alley/pull/7",
+            "prTitle": "A76: cuentas recuperables y vinculación segura de invitado",
+            "prBaseHash": "ff23f580d9d3989abc9918d7b5bc8328d9e83b62",
+            "buildHref": "https://github.com/earandes/diagon-alley/actions/runs/39070225878"
+          },
+          "gitCommit": {
+            "shortHash": "bc8c166",
+            "hash": "bc8c166ab38132c7c0e8e471a7206973c25dd151",
+            "subject": "Merge 3f6e1223d7b9ada6cae55f50f7b2627f2c35100b into ff23f580d9d3989abc9918d7b5bc8328d9e83b62",
+            "body": "Merge 3f6e1223d7b9ada6cae55f50f7b2627f2c35100b into ff23f580d9d3989abc9918d7b5bc8328d9e83b62\n",
+            "author": {
+              "name": "Enric Arandes",
+              "email": "enric.arandes@code.seat",
+              "time": 1792271772000
+            },
+            "committer": {
+              "name": "GitHub",
+              "email": "noreply@github.com",
+              "time": 1792271772000
+            },
+            "branch": "HEAD"
+          },
+          "actualWorkers": 1
+        },
+        "name": "webkit-1280-a76",
+        "testDir": "/home/runner/work/diagon-alley/diagon-alley/tests/browser-accounts",
+        "snapshotDir": "/home/runner/work/diagon-alley/diagon-alley/tests/browser-accounts",
+        "testIgnore": [],
+        "testMatch": {},
+        "timeout": 90000,
+        "use": {
+          "baseURL": "http://127.0.0.1:5530",
+          "serviceWorkers": "block",
+          "hasTouch": true,
+          "actionTimeout": 12000,
+          "navigationTimeout": 30000,
+          "video": "off",
+          "trace": "off",
+          "screenshot": "off",
+          "browserName": "webkit",
+          "viewport": {
+            "width": 1280,
+            "height": 900
+          }
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "webkit-1280-a76"
+      },
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "/home/runner/work/diagon-alley/diagon-alley/test-results/accounts-a76",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "ci": {
+            "commitHref": "https://github.com/earandes/diagon-alley/commit/bc8c166ab38132c7c0e8e471a7206973c25dd151",
+            "commitHash": "bc8c166ab38132c7c0e8e471a7206973c25dd151",
+            "prHref": "https://github.com/earandes/diagon-alley/pull/7",
+            "prTitle": "A76: cuentas recuperables y vinculación segura de invitado",
+            "prBaseHash": "ff23f580d9d3989abc9918d7b5bc8328d9e83b62",
+            "buildHref": "https://github.com/earandes/diagon-alley/actions/runs/39070225878"
+          },
+          "gitCommit": {
+            "shortHash": "bc8c166",
+            "hash": "bc8c166ab38132c7c0e8e471a7206973c25dd151",
+            "subject": "Merge 3f6e1223d7b9ada6cae55f50f7b2627f2c35100b into ff23f580d9d3989abc9918d7b5bc8328d9e83b62",
+            "body": "Merge 3f6e1223d7b9ada6cae55f50f7b2627f2c35100b into ff23f580d9d3989abc9918d7b5bc8328d9e83b62\n",
+            "author": {
+              "name": "Enric Arandes",
+              "email": "enric.arandes@code.seat",
+              "time": 1792271772000
+            },
+            "committer": {
+              "name": "GitHub",
+              "email": "noreply@github.com",
+              "time": 1792271772000
+            },
+            "branch": "HEAD"
+          },
+          "actualWorkers": 1
+        },
+        "name": "webkit-865-a76",
+        "testDir": "/home/runner/work/diagon-alley/diagon-alley/tests/browser-accounts",
+        "snapshotDir": "/home/runner/work/diagon-alley/diagon-alley/tests/browser-accounts",
+        "testIgnore": [],
+        "testMatch": {},
+        "timeout": 90000,
+        "use": {
+          "baseURL": "http://127.0.0.1:5530",
+          "serviceWorkers": "block",
+          "hasTouch": true,
+          "actionTimeout": 12000,
+          "navigationTimeout": 30000,
+          "video": "off",
+          "trace": "off",
+          "screenshot": "off",
+          "browserName": "webkit",
+          "viewport": {
+            "width": 865,
+            "height": 1079
+          }
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "webkit-865-a76"
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "test-results/accounts-a76/results.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.64.0",
+    "workers": 1,
+    "webServer": {
+      "env": {
+        "ARCANA_TRIAL_NAMESPACE": "a76-4ce8c658-432e-407f-aeb5-7149a2cfbb17"
+      },
+      "command": "npx --no-install vite preview --host 127.0.0.1 --port 5530 --strictPort --mode arcana",
+      "url": "http://127.0.0.1:5530/",
+      "reuseExistingServer": false,
+      "timeout": 120000
+    }
+  },
+  "suites": [
+    {
+      "title": "accounts-a76.spec.ts",
+      "file": "accounts-a76.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "A76 first activation excludes double registration through retained response",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium-390-a76",
+              "projectName": "chromium-390-a76",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 491,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T21:18:52.326Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "f3f0dc5989a251010890-f20b5ada252588a66fe3",
+          "file": "accounts-a76.spec.ts",
+          "line": 152,
+          "column": 1
+        },
+        {
+          "title": "A76 missing illustration preserves account labels, actions and keyboard return",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium-390-a76",
+              "projectName": "chromium-390-a76",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 294,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T21:18:53.052Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "f3f0dc5989a251010890-cb4a041d459ff3e216da",
+          "file": "accounts-a76.spec.ts",
+          "line": 191,
+          "column": 1
+        },
+        {
+          "title": "A76 es diagon-alley entry forms, focus, cancellation and enlarged text",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [
+                {
+                  "type": "coverage",
+                  "description": "chromium/390/es/diagon-alley/reduced/reflow200"
+                }
+              ],
+              "expectedStatus": "passed",
+              "projectId": "chromium-390-a76",
+              "projectName": "chromium-390-a76",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 659,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T21:18:53.359Z",
+                  "annotations": [
+                    {
+                      "type": "coverage",
+                      "description": "chromium/390/es/diagon-alley/reduced/reflow200"
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "f3f0dc5989a251010890-a5f6b42b103388456a87",
+          "file": "accounts-a76.spec.ts",
+          "line": 211,
+          "column": 5
+        },
+        {
+          "title": "A76 es diagon-alley real account, guest binding, cross-context login and recovery",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium-390-a76",
+              "projectName": "chromium-390-a76",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 10439,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T21:18:54.032Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "f3f0dc5989a251010890-4ed0f143f208099e81a6",
+          "file": "accounts-a76.spec.ts",
+          "line": 287,
+          "column": 5
+        },
+        {
+          "title": "A76 en diagon-alley entry forms, focus, cancellation and enlarged text",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [
+                {
+                  "type": "coverage",
+                  "description": "chromium/390/en/diagon-alley/reduced/reflow200"
+                }
+              ],
+              "expectedStatus": "passed",
+              "projectId": "chromium-390-a76",
+              "projectName": "chromium-390-a76",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 579,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T21:19:04.487Z",
+                  "annotations": [
+                    {
+                      "type": "coverage",
+                      "description": "chromium/390/en/diagon-alley/reduced/reflow200"
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "f3f0dc5989a251010890-00fbba978c64da46c1fb",
+          "file": "accounts-a76.spec.ts",
+          "line": 211,
+          "column": 5
+        },
+        {
+          "title": "A76 en diagon-alley real account, guest binding, cross-context login and recovery",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium-390-a76",
+              "projectName": "chromium-390-a76",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 10517,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T21:19:05.078Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "f3f0dc5989a251010890-175250ba8ff9b120e98e",
+          "file": "accounts-a76.spec.ts",
+          "line": 287,
+          "column": 5
+        },
+        {
+          "title": "A76 es arcana entry forms, focus, cancellation and enlarged text",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [
+                {
+                  "type": "coverage",
+                  "description": "chromium/390/es/arcana/reduced/reflow200"
+                }
+              ],
+              "expectedStatus": "passed",
+              "projectId": "chromium-390-a76",
+              "projectName": "chromium-390-a76",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 472,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T21:19:15.606Z",
+                  "annotations": [
+                    {
+                      "type": "coverage",
+                      "description": "chromium/390/es/arcana/reduced/reflow200"
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "f3f0dc5989a251010890-667451f2832a7606f709",
+          "file": "accounts-a76.spec.ts",
+          "line": 211,
+          "column": 5
+        },
+        {
+          "title": "A76 es arcana real account, guest binding, cross-context login and recovery",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium-390-a76",
+              "projectName": "chromium-390-a76",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 10200,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T21:19:16.091Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "f3f0dc5989a251010890-0227fde4fcadd8069c80",
+          "file": "accounts-a76.spec.ts",
+          "line": 287,
+          "column": 5
+        },
+        {
+          "title": "A76 en arcana entry forms, focus, cancellation and enlarged text",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [
+                {
+                  "type": "coverage",
+                  "description": "chromium/390/en/arcana/reduced/reflow200"
+                }
+              ],
+              "expectedStatus": "passed",
+              "projectId": "chromium-390-a76",
+              "projectName": "chromium-390-a76",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 604,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T21:19:26.305Z",
+                  "annotations": [
+                    {
+                      "type": "coverage",
+                      "description": "chromium/390/en/arcana/reduced/reflow200"
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "f3f0dc5989a251010890-9fec8ec22f9ea42ef846",
+          "file": "accounts-a76.spec.ts",
+          "line": 211,
+          "column": 5
+        },
+        {
+          "title": "A76 en arcana real account, guest binding, cross-context login and recovery",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium-390-a76",
+              "projectName": "chromium-390-a76",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 10245,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T21:19:26.918Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "f3f0dc5989a251010890-d916a46dfa316546ca72",
+          "file": "accounts-a76.spec.ts",
+          "line": 287,
+          "column": 5
+        },
+        {
+          "title": "A76 first activation excludes double registration through retained response",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [
+                {
+                  "type": "skip",
+                  "description": "One bounded transport case.",
+                  "location": {
+                    "file": "/home/runner/work/diagon-alley/diagon-alley/tests/browser-accounts/accounts-a76.spec.ts",
+                    "line": 157,
+                    "column": 8
+                  }
+                }
+              ],
+              "expectedStatus": "skipped",
+              "projectId": "chromium-1280-a76",
+              "projectName": "chromium-1280-a76",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "skipped",
+                  "duration": 74,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T21:19:37.661Z",
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "One bounded transport case.",
+                      "location": {
+                        "file": "/home/runner/work/diagon-alley/diagon-alley/tests/browser-accounts/accounts-a76.spec.ts",
+                        "line": 157,
+                        "column": 8
+                      }
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "skipped"
+            }
+          ],
+          "id": "f3f0dc5989a251010890-adc2e9205e3514a52d22",
+          "file": "accounts-a76.spec.ts",
+          "line": 152,
+          "column": 1
+        },
+        {
+          "title": "A76 missing illustration preserves account labels, actions and keyboard return",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [
+                {
+                  "type": "skip",
+                  "description": "One bounded missing-art case.",
+                  "location": {
+                    "file": "/home/runner/work/diagon-alley/diagon-alley/tests/browser-accounts/accounts-a76.spec.ts",
+                    "line": 196,
+                    "column": 8
+                  }
+                }
+              ],
+              "expectedStatus": "skipped",
+              "projectId": "chromium-1280-a76",
+              "projectName": "chromium-1280-a76",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "skipped",
+                  "duration": 51,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T21:19:37.828Z",
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "One bounded missing-art case.",
+                      "location": {
+                        "file": "/home/runner/work/diagon-alley/diagon-alley/tests/browser-accounts/accounts-a76.spec.ts",
+                        "line": 196,
+                        "column": 8
+                      }
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "skipped"
+            }
+          ],
+          "id": "f3f0dc5989a251010890-eb70557cadd0b5022e37",
+          "file": "accounts-a76.spec.ts",
+          "line": 191,
+          "column": 1
+        },
+        {
+          "title": "A76 es diagon-alley entry forms, focus, cancellation and enlarged text",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [
+                {
+                  "type": "coverage",
+                  "description": "chromium/1280/es/diagon-alley/reduced/reflow200"
+                }
+              ],
+              "expectedStatus": "passed",
+              "projectId": "chromium-1280-a76",
+              "projectName": "chromium-1280-a76",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 626,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T21:19:37.899Z",
+                  "annotations": [
+                    {
+                      "type": "coverage",
+                      "description": "chromium/1280/es/diagon-alley/reduced/reflow200"
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "f3f0dc5989a251010890-1a8089d26a1476d3b539",
+          "file": "accounts-a76.spec.ts",
+          "line": 211,
+          "column": 5
+        },
+        {
+          "title": "A76 es diagon-alley real account, guest binding, cross-context login and recovery",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [
+                {
+                  "type": "skip",
+                  "description": "Authority journeys are sampled once per language/pack; forms have the full serial matrix.",
+                  "location": {
+                    "file": "/home/runner/work/diagon-alley/diagon-alley/tests/browser-accounts/accounts-a76.spec.ts",
+                    "line": 294,
+                    "column": 12
+                  }
+                }
+              ],
+              "expectedStatus": "skipped",
+              "projectId": "chromium-1280-a76",
+              "projectName": "chromium-1280-a76",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "skipped",
+                  "duration": 36,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T21:19:38.541Z",
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Authority journeys are sampled once per language/pack; forms have the full serial matrix.",
+                      "location": {
+                        "file": "/home/runner/work/diagon-alley/diagon-alley/tests/browser-accounts/accounts-a76.spec.ts",
+                        "line": 294,
+                        "column": 12
+                      }
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "skipped"
+            }
+          ],
+          "id": "f3f0dc5989a251010890-71ac1f6808e6122930a1",
+          "file": "accounts-a76.spec.ts",
+          "line": 287,
+          "column": 5
+        },
+        {
+          "title": "A76 en diagon-alley entry forms, focus, cancellation and enlarged text",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [
+                {
+                  "type": "coverage",
+                  "description": "chromium/1280/en/diagon-alley/reduced/reflow200"
+                }
+              ],
+              "expectedStatus": "passed",
+              "projectId": "chromium-1280-a76",
+              "projectName": "chromium-1280-a76",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 652,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T21:19:38.590Z",
+                  "annotations": [
+                    {
+                      "type": "coverage",
+                      "description": "chromium/1280/en/diagon-alley/reduced/reflow200"
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "f3f0dc5989a251010890-908e433e9ae3bb6fea4e",
+          "file": "accounts-a76.spec.ts",
+          "line": 211,
+          "column": 5
+        },
+        {
+          "title": "A76 en diagon-alley real account, guest binding, cross-context login and recovery",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [
+                {
+                  "type": "skip",
+                  "description": "Authority journeys are sampled once per language/pack; forms have the full serial matrix.",
+                  "location": {
+                    "file": "/home/runner/work/diagon-alley/diagon-alley/tests/browser-accounts/accounts-a76.spec.ts",
+                    "line": 294,
+                    "column": 12
+                  }
+                }
+              ],
+              "expectedStatus": "skipped",
+              "projectId": "chromium-1280-a76",
+              "projectName": "chromium-1280-a76",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "skipped",
+                  "duration": 49,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T21:19:39.266Z",
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Authority journeys are sampled once per language/pack; forms have the full serial matrix.",
+                      "location": {
+                        "file": "/home/runner/work/diagon-alley/diagon-alley/tests/browser-accounts/accounts-a76.spec.ts",
+                        "line": 294,
+                        "column": 12
+                      }
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "skipped"
+            }
+          ],
+          "id": "f3f0dc5989a251010890-2f54136c4a31e3fe7077",
+          "file": "accounts-a76.spec.ts",
+          "line": 287,
+          "column": 5
+        },
+        {
+          "title": "A76 es arcana entry forms, focus, cancellation and enlarged text",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [
+                {
+                  "type": "coverage",
+                  "description": "chromium/1280/es/arcana/reduced/reflow200"
+                }
+              ],
+              "expectedStatus": "passed",
+              "projectId": "chromium-1280-a76",
+              "projectName": "chromium-1280-a76",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 472,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T21:19:39.328Z",
+                  "annotations": [
+                    {
+                      "type": "coverage",
+                      "description": "chromium/1280/es/arcana/reduced/reflow200"
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "f3f0dc5989a251010890-06d7924c90dc4d055a76",
+          "file": "accounts-a76.spec.ts",
+          "line": 211,
+          "column": 5
+        },
+        {
+          "title": "A76 es arcana real account, guest binding, cross-context login and recovery",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [
+                {
+                  "type": "skip",
+                  "description": "Authority journeys are sampled once per language/pack; forms have the full serial matrix.",
+                  "location": {
+                    "file": "/home/runner/work/diagon-alley/diagon-alley/tests/browser-accounts/accounts-a76.spec.ts",
+                    "line": 294,
+                    "column": 12
+                  }
+                }
+              ],
+              "expectedStatus": "skipped",
+              "projectId": "chromium-1280-a76",
+              "projectName": "chromium-1280-a76",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "skipped",
+                  "duration": 40,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T21:19:39.812Z",
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Authority journeys are sampled once per language/pack; forms have the full serial matrix.",
+                      "location": {
+                        "file": "/home/runner/work/diagon-alley/diagon-alley/tests/browser-accounts/accounts-a76.spec.ts",
+                        "line": 294,
+                        "column": 12
+                      }
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "skipped"
+            }
+          ],
+          "id": "f3f0dc5989a251010890-0b20c85fff2347e2c612",
+          "file": "accounts-a76.spec.ts",
+          "line": 287,
+          "column": 5
+        },
+        {
+          "title": "A76 en arcana entry forms, focus, cancellation and enlarged text",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [
+                {
+                  "type": "coverage",
+                  "description": "chromium/1280/en/arcana/reduced/reflow200"
+                }
+              ],
+              "expectedStatus": "passed",
+              "projectId": "chromium-1280-a76",
+              "projectName": "chromium-1280-a76",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 642,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T21:19:39.878Z",
+                  "annotations": [
+                    {
+                      "type": "coverage",
+                      "description": "chromium/1280/en/arcana/reduced/reflow200"
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "f3f0dc5989a251010890-a687ecd2003904c1290a",
+          "file": "accounts-a76.spec.ts",
+          "line": 211,
+          "column": 5
+        },
+        {
+          "title": "A76 en arcana real account, guest binding, cross-context login and recovery",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [
+                {
+                  "type": "skip",
+                  "description": "Authority journeys are sampled once per language/pack; forms have the full serial matrix.",
+                  "location": {
+                    "file": "/home/runner/work/diagon-alley/diagon-alley/tests/browser-accounts/accounts-a76.spec.ts",
+                    "line": 294,
+                    "column": 12
+                  }
+                }
+              ],
+              "expectedStatus": "skipped",
+              "projectId": "chromium-1280-a76",
+              "projectName": "chromium-1280-a76",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "skipped",
+                  "duration": 38,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T21:19:40.532Z",
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Authority journeys are sampled once per language/pack; forms have the full serial matrix.",
+                      "location": {
+                        "file": "/home/runner/work/diagon-alley/diagon-alley/tests/browser-accounts/accounts-a76.spec.ts",
+                        "line": 294,
+                        "column": 12
+                      }
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "skipped"
+            }
+          ],
+          "id": "f3f0dc5989a251010890-e1985ef5381797d101b1",
+          "file": "accounts-a76.spec.ts",
+          "line": 287,
+          "column": 5
+        },
+        {
+          "title": "A76 first activation excludes double registration through retained response",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [
+                {
+                  "type": "skip",
+                  "description": "One bounded transport case.",
+                  "location": {
+                    "file": "/home/runner/work/diagon-alley/diagon-alley/tests/browser-accounts/accounts-a76.spec.ts",
+                    "line": 157,
+                    "column": 8
+                  }
+                }
+              ],
+              "expectedStatus": "skipped",
+              "projectId": "chromium-865-a76",
+              "projectName": "chromium-865-a76",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "skipped",
+                  "duration": 71,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T21:19:41.054Z",
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "One bounded transport case.",
+                      "location": {
+                        "file": "/home/runner/work/diagon-alley/diagon-alley/tests/browser-accounts/accounts-a76.spec.ts",
+                        "line": 157,
+                        "column": 8
+                      }
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "skipped"
+            }
+          ],
+          "id": "f3f0dc5989a251010890-2397c33b489472addac7",
+          "file": "accounts-a76.spec.ts",
+          "line": 152,
+          "column": 1
+        },
+        {
+          "title": "A76 missing illustration preserves account labels, actions and keyboard return",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [
+                {
+                  "type": "skip",
+                  "description": "One bounded missing-art case.",
+                  "location": {
+                    "file": "/home/runner/work/diagon-alley/diagon-alley/tests/browser-accounts/accounts-a76.spec.ts",
+                    "line": 196,
+                    "column": 8
+                  }
+                }
+              ],
+              "expectedStatus": "skipped",
+              "projectId": "chromium-865-a76",
+              "projectName": "chromium-865-a76",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "skipped",
+                  "duration": 40,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T21:19:41.214Z",
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "One bounded missing-art case.",
+                      "location": {
+                        "file": "/home/runner/work/diagon-alley/diagon-alley/tests/browser-accounts/accounts-a76.spec.ts",
+                        "line": 196,
+                        "column": 8
+                      }
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "skipped"
+            }
+          ],
+          "id": "f3f0dc5989a251010890-66639436ae81efd436f2",
+          "file": "accounts-a76.spec.ts",
+          "line": 191,
+          "column": 1
+        },
+        {
+          "title": "A76 es diagon-alley entry forms, focus, cancellation and enlarged text",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [
+                {
+                  "type": "coverage",
+                  "description": "chromium/865/es/diagon-alley/reduced/reflow200"
+                }
+              ],
+              "expectedStatus": "passed",
+              "projectId": "chromium-865-a76",
+              "projectName": "chromium-865-a76",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 573,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T21:19:41.272Z",
+                  "annotations": [
+                    {
+                      "type": "coverage",
+                      "description": "chromium/865/es/diagon-alley/reduced/reflow200"
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "f3f0dc5989a251010890-ca9704546c0625d93423",
+          "file": "accounts-a76.spec.ts",
+          "line": 211,
+          "column": 5
+        },
+        {
+          "title": "A76 es diagon-alley real account, guest binding, cross-context login and recovery",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [
+                {
+                  "type": "skip",
+                  "description": "Authority journeys are sampled once per language/pack; forms have the full serial matrix.",
+                  "location": {
+                    "file": "/home/runner/work/diagon-alley/diagon-alley/tests/browser-accounts/accounts-a76.spec.ts",
+                    "line": 294,
+                    "column": 12
+                  }
+                }
+              ],
+              "expectedStatus": "skipped",
+              "projectId": "chromium-865-a76",
+              "projectName": "chromium-865-a76",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "skipped",
+                  "duration": 39,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T21:19:41.857Z",
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Authority journeys are sampled once per language/pack; forms have the full serial matrix.",
+                      "location": {
+                        "file": "/home/runner/work/diagon-alley/diagon-alley/tests/browser-accounts/accounts-a76.spec.ts",
+                        "line": 294,
+                        "column": 12
+                      }
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "skipped"
+            }
+          ],
+          "id": "f3f0dc5989a251010890-75ca492da97d16d76374",
+          "file": "accounts-a76.spec.ts",
+          "line": 287,
+          "column": 5
+        },
+        {
+          "title": "A76 en diagon-alley entry forms, focus, cancellation and enlarged text",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [
+                {
+                  "type": "coverage",
+                  "description": "chromium/865/en/diagon-alley/reduced/reflow200"
+                }
+              ],
+              "expectedStatus": "passed",
+              "projectId": "chromium-865-a76",
+              "projectName": "chromium-865-a76",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 632,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T21:19:41.909Z",
+                  "annotations": [
+                    {
+                      "type": "coverage",
+                      "description": "chromium/865/en/diagon-alley/reduced/reflow200"
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "f3f0dc5989a251010890-6c1b035ed4ba49d0fcd7",
+          "file": "accounts-a76.spec.ts",
+          "line": 211,
+          "column": 5
+        },
+        {
+          "title": "A76 en diagon-alley real account, guest binding, cross-context login and recovery",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [
+                {
+                  "type": "skip",
+                  "description": "Authority journeys are sampled once per language/pack; forms have the full serial matrix.",
+                  "location": {
+                    "file": "/home/runner/work/diagon-alley/diagon-alley/tests/browser-accounts/accounts-a76.spec.ts",
+                    "line": 294,
+                    "column": 12
+                  }
+                }
+              ],
+              "expectedStatus": "skipped",
+              "projectId": "chromium-865-a76",
+              "projectName": "chromium-865-a76",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "skipped",
+                  "duration": 47,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T21:19:42.564Z",
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Authority journeys are sampled once per language/pack; forms have the full serial matrix.",
+                      "location": {
+                        "file": "/home/runner/work/diagon-alley/diagon-alley/tests/browser-accounts/accounts-a76.spec.ts",
+                        "line": 294,
+                        "column": 12
+                      }
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "skipped"
+            }
+          ],
+          "id": "f3f0dc5989a251010890-5d97e46bc47f038afdf8",
+          "file": "accounts-a76.spec.ts",
+          "line": 287,
+          "column": 5
+        },
+        {
+          "title": "A76 es arcana entry forms, focus, cancellation and enlarged text",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [
+                {
+                  "type": "coverage",
+                  "description": "chromium/865/es/arcana/reduced/reflow200"
+                }
+              ],
+              "expectedStatus": "passed",
+              "projectId": "chromium-865-a76",
+              "projectName": "chromium-865-a76",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 508,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T21:19:42.623Z",
+                  "annotations": [
+                    {
+                      "type": "coverage",
+                      "description": "chromium/865/es/arcana/reduced/reflow200"
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "f3f0dc5989a251010890-e58c8c375ec0d68fb62e",
+          "file": "accounts-a76.spec.ts",
+          "line": 211,
+          "column": 5
+        },
+        {
+          "title": "A76 es arcana real account, guest binding, cross-context login and recovery",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [
+                {
+                  "type": "skip",
+                  "description": "Authority journeys are sampled once per language/pack; forms have the full serial matrix.",
+                  "location": {
+                    "file": "/home/runner/work/diagon-alley/diagon-alley/tests/browser-accounts/accounts-a76.spec.ts",
+                    "line": 294,
+                    "column": 12
+                  }
+                }
+              ],
+              "expectedStatus": "skipped",
+              "projectId": "chromium-865-a76",
+              "projectName": "chromium-865-a76",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "skipped",
+                  "duration": 36,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T21:19:43.142Z",
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Authority journeys are sampled once per language/pack; forms have the full serial matrix.",
+                      "location": {
+                        "file": "/home/runner/work/diagon-alley/diagon-alley/tests/browser-accounts/accounts-a76.spec.ts",
+                        "line": 294,
+                        "column": 12
+                      }
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "skipped"
+            }
+          ],
+          "id": "f3f0dc5989a251010890-a01304edfb4ee307a973",
+          "file": "accounts-a76.spec.ts",
+          "line": 287,
+          "column": 5
+        },
+        {
+          "title": "A76 en arcana entry forms, focus, cancellation and enlarged text",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [
+                {
+                  "type": "coverage",
+                  "description": "chromium/865/en/arcana/reduced/reflow200"
+                }
+              ],
+              "expectedStatus": "passed",
+              "projectId": "chromium-865-a76",
+              "projectName": "chromium-865-a76",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 599,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T21:19:43.205Z",
+                  "annotations": [
+                    {
+                      "type": "coverage",
+                      "description": "chromium/865/en/arcana/reduced/reflow200"
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "f3f0dc5989a251010890-f34c0d1502b2d2fd84c3",
+          "file": "accounts-a76.spec.ts",
+          "line": 211,
+          "column": 5
+        },
+        {
+          "title": "A76 en arcana real account, guest binding, cross-context login and recovery",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [
+                {
+                  "type": "skip",
+                  "description": "Authority journeys are sampled once per language/pack; forms have the full serial matrix.",
+                  "location": {
+                    "file": "/home/runner/work/diagon-alley/diagon-alley/tests/browser-accounts/accounts-a76.spec.ts",
+                    "line": 294,
+                    "column": 12
+                  }
+                }
+              ],
+              "expectedStatus": "skipped",
+              "projectId": "chromium-865-a76",
+              "projectName": "chromium-865-a76",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "skipped",
+                  "duration": 41,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T21:19:43.816Z",
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Authority journeys are sampled once per language/pack; forms have the full serial matrix.",
+                      "location": {
+                        "file": "/home/runner/work/diagon-alley/diagon-alley/tests/browser-accounts/accounts-a76.spec.ts",
+                        "line": 294,
+                        "column": 12
+                      }
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "skipped"
+            }
+          ],
+          "id": "f3f0dc5989a251010890-ef91ed9e32a99b28d020",
+          "file": "accounts-a76.spec.ts",
+          "line": 287,
+          "column": 5
+        },
+        {
+          "title": "A76 first activation excludes double registration through retained response",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [
+                {
+                  "type": "skip",
+                  "description": "One bounded transport case.",
+                  "location": {
+                    "file": "/home/runner/work/diagon-alley/diagon-alley/tests/browser-accounts/accounts-a76.spec.ts",
+                    "line": 157,
+                    "column": 8
+                  }
+                }
+              ],
+              "expectedStatus": "skipped",
+              "projectId": "webkit-390-a76",
+              "projectName": "webkit-390-a76",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "skipped",
+                  "duration": 680,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T21:19:44.337Z",
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "One bounded transport case.",
+                      "location": {
+                        "file": "/home/runner/work/diagon-alley/diagon-alley/tests/browser-accounts/accounts-a76.spec.ts",
+                        "line": 157,
+                        "column": 8
+                      }
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "skipped"
+            }
+          ],
+          "id": "f3f0dc5989a251010890-c5d051368e626edf49d9",
+          "file": "accounts-a76.spec.ts",
+          "line": 152,
+          "column": 1
+        },
+        {
+          "title": "A76 missing illustration preserves account labels, actions and keyboard return",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [
+                {
+                  "type": "skip",
+                  "description": "One bounded missing-art case.",
+                  "location": {
+                    "file": "/home/runner/work/diagon-alley/diagon-alley/tests/browser-accounts/accounts-a76.spec.ts",
+                    "line": 196,
+                    "column": 8
+                  }
+                }
+              ],
+              "expectedStatus": "skipped",
+              "projectId": "webkit-390-a76",
+              "projectName": "webkit-390-a76",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "skipped",
+                  "duration": 211,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T21:19:45.615Z",
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "One bounded missing-art case.",
+                      "location": {
+                        "file": "/home/runner/work/diagon-alley/diagon-alley/tests/browser-accounts/accounts-a76.spec.ts",
+                        "line": 196,
+                        "column": 8
+                      }
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "skipped"
+            }
+          ],
+          "id": "f3f0dc5989a251010890-9b9856cf4d1a3aac7343",
+          "file": "accounts-a76.spec.ts",
+          "line": 191,
+          "column": 1
+        },
+        {
+          "title": "A76 es diagon-alley entry forms, focus, cancellation and enlarged text",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [
+                {
+                  "type": "coverage",
+                  "description": "webkit/390/es/diagon-alley/reduced/reflow200"
+                }
+              ],
+              "expectedStatus": "passed",
+              "projectId": "webkit-390-a76",
+              "projectName": "webkit-390-a76",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 7197,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T21:19:45.847Z",
+                  "annotations": [
+                    {
+                      "type": "coverage",
+                      "description": "webkit/390/es/diagon-alley/reduced/reflow200"
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "f3f0dc5989a251010890-e089a603f68003dff648",
+          "file": "accounts-a76.spec.ts",
+          "line": 211,
+          "column": 5
+        },
+        {
+          "title": "A76 es diagon-alley real account, guest binding, cross-context login and recovery",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [
+                {
+                  "type": "skip",
+                  "description": "Authority journeys are sampled once per language/pack; forms have the full serial matrix.",
+                  "location": {
+                    "file": "/home/runner/work/diagon-alley/diagon-alley/tests/browser-accounts/accounts-a76.spec.ts",
+                    "line": 294,
+                    "column": 12
+                  }
+                }
+              ],
+              "expectedStatus": "skipped",
+              "projectId": "webkit-390-a76",
+              "projectName": "webkit-390-a76",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "skipped",
+                  "duration": 241,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T21:19:53.061Z",
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Authority journeys are sampled once per language/pack; forms have the full serial matrix.",
+                      "location": {
+                        "file": "/home/runner/work/diagon-alley/diagon-alley/tests/browser-accounts/accounts-a76.spec.ts",
+                        "line": 294,
+                        "column": 12
+                      }
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "skipped"
+            }
+          ],
+          "id": "f3f0dc5989a251010890-7e7838ceecfb4e8eaeed",
+          "file": "accounts-a76.spec.ts",
+          "line": 287,
+          "column": 5
+        },
+        {
+          "title": "A76 en diagon-alley entry forms, focus, cancellation and enlarged text",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [
+                {
+                  "type": "coverage",
+                  "description": "webkit/390/en/diagon-alley/reduced/reflow200"
+                }
+              ],
+              "expectedStatus": "passed",
+              "projectId": "webkit-390-a76",
+              "projectName": "webkit-390-a76",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2895,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T21:19:53.316Z",
+                  "annotations": [
+                    {
+                      "type": "coverage",
+                      "description": "webkit/390/en/diagon-alley/reduced/reflow200"
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "f3f0dc5989a251010890-b0ef3eece1f93333fab1",
+          "file": "accounts-a76.spec.ts",
+          "line": 211,
+          "column": 5
+        },
+        {
+          "title": "A76 en diagon-alley real account, guest binding, cross-context login and recovery",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [
+                {
+                  "type": "skip",
+                  "description": "Authority journeys are sampled once per language/pack; forms have the full serial matrix.",
+                  "location": {
+                    "file": "/home/runner/work/diagon-alley/diagon-alley/tests/browser-accounts/accounts-a76.spec.ts",
+                    "line": 294,
+                    "column": 12
+                  }
+                }
+              ],
+              "expectedStatus": "skipped",
+              "projectId": "webkit-390-a76",
+              "projectName": "webkit-390-a76",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "skipped",
+                  "duration": 261,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T21:19:56.235Z",
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Authority journeys are sampled once per language/pack; forms have the full serial matrix.",
+                      "location": {
+                        "file": "/home/runner/work/diagon-alley/diagon-alley/tests/browser-accounts/accounts-a76.spec.ts",
+                        "line": 294,
+                        "column": 12
+                      }
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "skipped"
+            }
+          ],
+          "id": "f3f0dc5989a251010890-1b39befb6bdf403bba23",
+          "file": "accounts-a76.spec.ts",
+          "line": 287,
+          "column": 5
+        },
+        {
+          "title": "A76 es arcana entry forms, focus, cancellation and enlarged text",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [
+                {
+                  "type": "coverage",
+                  "description": "webkit/390/es/arcana/reduced/reflow200"
+                }
+              ],
+              "expectedStatus": "passed",
+              "projectId": "webkit-390-a76",
+              "projectName": "webkit-390-a76",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1006,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T21:19:56.511Z",
+                  "annotations": [
+                    {
+                      "type": "coverage",
+                      "description": "webkit/390/es/arcana/reduced/reflow200"
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "f3f0dc5989a251010890-01dde337f037880ec7b6",
+          "file": "accounts-a76.spec.ts",
+          "line": 211,
+          "column": 5
+        },
+        {
+          "title": "A76 es arcana real account, guest binding, cross-context login and recovery",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [
+                {
+                  "type": "skip",
+                  "description": "Authority journeys are sampled once per language/pack; forms have the full serial matrix.",
+                  "location": {
+                    "file": "/home/runner/work/diagon-alley/diagon-alley/tests/browser-accounts/accounts-a76.spec.ts",
+                    "line": 294,
+                    "column": 12
+                  }
+                }
+              ],
+              "expectedStatus": "skipped",
+              "projectId": "webkit-390-a76",
+              "projectName": "webkit-390-a76",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "skipped",
+                  "duration": 227,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T21:19:57.533Z",
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Authority journeys are sampled once per language/pack; forms have the full serial matrix.",
+                      "location": {
+                        "file": "/home/runner/work/diagon-alley/diagon-alley/tests/browser-accounts/accounts-a76.spec.ts",
+                        "line": 294,
+                        "column": 12
+                      }
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "skipped"
+            }
+          ],
+          "id": "f3f0dc5989a251010890-52fec375f9b976d9d8bc",
+          "file": "accounts-a76.spec.ts",
+          "line": 287,
+          "column": 5
+        },
+        {
+          "title": "A76 en arcana entry forms, focus, cancellation and enlarged text",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [
+                {
+                  "type": "coverage",
+                  "description": "webkit/390/en/arcana/reduced/reflow200"
+                }
+              ],
+              "expectedStatus": "passed",
+              "projectId": "webkit-390-a76",
+              "projectName": "webkit-390-a76",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1260,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T21:19:57.791Z",
+                  "annotations": [
+                    {
+                      "type": "coverage",
+                      "description": "webkit/390/en/arcana/reduced/reflow200"
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "f3f0dc5989a251010890-098f08fb9fbeaff698fc",
+          "file": "accounts-a76.spec.ts",
+          "line": 211,
+          "column": 5
+        },
+        {
+          "title": "A76 en arcana real account, guest binding, cross-context login and recovery",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [
+                {
+                  "type": "skip",
+                  "description": "Authority journeys are sampled once per language/pack; forms have the full serial matrix.",
+                  "location": {
+                    "file": "/home/runner/work/diagon-alley/diagon-alley/tests/browser-accounts/accounts-a76.spec.ts",
+                    "line": 294,
+                    "column": 12
+                  }
+                }
+              ],
+              "expectedStatus": "skipped",
+              "projectId": "webkit-390-a76",
+              "projectName": "webkit-390-a76",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "skipped",
+                  "duration": 205,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T21:19:59.067Z",
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Authority journeys are sampled once per language/pack; forms have the full serial matrix.",
+                      "location": {
+                        "file": "/home/runner/work/diagon-alley/diagon-alley/tests/browser-accounts/accounts-a76.spec.ts",
+                        "line": 294,
+                        "column": 12
+                      }
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "skipped"
+            }
+          ],
+          "id": "f3f0dc5989a251010890-92e53ec1d2f8d05488d0",
+          "file": "accounts-a76.spec.ts",
+          "line": 287,
+          "column": 5
+        },
+        {
+          "title": "A76 first activation excludes double registration through retained response",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [
+                {
+                  "type": "skip",
+                  "description": "One bounded transport case.",
+                  "location": {
+                    "file": "/home/runner/work/diagon-alley/diagon-alley/tests/browser-accounts/accounts-a76.spec.ts",
+                    "line": 157,
+                    "column": 8
+                  }
+                }
+              ],
+              "expectedStatus": "skipped",
+              "projectId": "webkit-1280-a76",
+              "projectName": "webkit-1280-a76",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 0,
+                  "status": "skipped",
+                  "duration": 217,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T21:19:59.784Z",
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "One bounded transport case.",
+                      "location": {
+                        "file": "/home/runner/work/diagon-alley/diagon-alley/tests/browser-accounts/accounts-a76.spec.ts",
+                        "line": 157,
+                        "column": 8
+                      }
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "skipped"
+            }
+          ],
+          "id": "f3f0dc5989a251010890-a7e8c642e30eba5f46dc",
+          "file": "accounts-a76.spec.ts",
+          "line": 152,
+          "column": 1
+        },
+        {
+          "title": "A76 missing illustration preserves account labels, actions and keyboard return",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [
+                {
+                  "type": "skip",
+                  "description": "One bounded missing-art case.",
+                  "location": {
+                    "file": "/home/runner/work/diagon-alley/diagon-alley/tests/browser-accounts/accounts-a76.spec.ts",
+                    "line": 196,
+                    "column": 8
+                  }
+                }
+              ],
+              "expectedStatus": "skipped",
+              "projectId": "webkit-1280-a76",
+              "projectName": "webkit-1280-a76",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 0,
+                  "status": "skipped",
+                  "duration": 216,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T21:20:00.107Z",
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "One bounded missing-art case.",
+                      "location": {
+                        "file": "/home/runner/work/diagon-alley/diagon-alley/tests/browser-accounts/accounts-a76.spec.ts",
+                        "line": 196,
+                        "column": 8
+                      }
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "skipped"
+            }
+          ],
+          "id": "f3f0dc5989a251010890-2d7a684d5f5b62c9a193",
+          "file": "accounts-a76.spec.ts",
+          "line": 191,
+          "column": 1
+        },
+        {
+          "title": "A76 es diagon-alley entry forms, focus, cancellation and enlarged text",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [
+                {
+                  "type": "coverage",
+                  "description": "webkit/1280/es/diagon-alley/reduced/reflow200"
+                }
+              ],
+              "expectedStatus": "passed",
+              "projectId": "webkit-1280-a76",
+              "projectName": "webkit-1280-a76",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 995,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T21:20:00.343Z",
+                  "annotations": [
+                    {
+                      "type": "coverage",
+                      "description": "webkit/1280/es/diagon-alley/reduced/reflow200"
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "f3f0dc5989a251010890-83cf72a943b89e61417e",
+          "file": "accounts-a76.spec.ts",
+          "line": 211,
+          "column": 5
+        },
+        {
+          "title": "A76 es diagon-alley real account, guest binding, cross-context login and recovery",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [
+                {
+                  "type": "skip",
+                  "description": "Authority journeys are sampled once per language/pack; forms have the full serial matrix.",
+                  "location": {
+                    "file": "/home/runner/work/diagon-alley/diagon-alley/tests/browser-accounts/accounts-a76.spec.ts",
+                    "line": 294,
+                    "column": 12
+                  }
+                }
+              ],
+              "expectedStatus": "skipped",
+              "projectId": "webkit-1280-a76",
+              "projectName": "webkit-1280-a76",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 0,
+                  "status": "skipped",
+                  "duration": 213,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T21:20:01.363Z",
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Authority journeys are sampled once per language/pack; forms have the full serial matrix.",
+                      "location": {
+                        "file": "/home/runner/work/diagon-alley/diagon-alley/tests/browser-accounts/accounts-a76.spec.ts",
+                        "line": 294,
+                        "column": 12
+                      }
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "skipped"
+            }
+          ],
+          "id": "f3f0dc5989a251010890-0d62b40e9b256a712f73",
+          "file": "accounts-a76.spec.ts",
+          "line": 287,
+          "column": 5
+        },
+        {
+          "title": "A76 en diagon-alley entry forms, focus, cancellation and enlarged text",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [
+                {
+                  "type": "coverage",
+                  "description": "webkit/1280/en/diagon-alley/reduced/reflow200"
+                }
+              ],
+              "expectedStatus": "passed",
+              "projectId": "webkit-1280-a76",
+              "projectName": "webkit-1280-a76",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1531,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T21:20:01.592Z",
+                  "annotations": [
+                    {
+                      "type": "coverage",
+                      "description": "webkit/1280/en/diagon-alley/reduced/reflow200"
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "f3f0dc5989a251010890-dbba10eb232f20337a0e",
+          "file": "accounts-a76.spec.ts",
+          "line": 211,
+          "column": 5
+        },
+        {
+          "title": "A76 en diagon-alley real account, guest binding, cross-context login and recovery",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [
+                {
+                  "type": "skip",
+                  "description": "Authority journeys are sampled once per language/pack; forms have the full serial matrix.",
+                  "location": {
+                    "file": "/home/runner/work/diagon-alley/diagon-alley/tests/browser-accounts/accounts-a76.spec.ts",
+                    "line": 294,
+                    "column": 12
+                  }
+                }
+              ],
+              "expectedStatus": "skipped",
+              "projectId": "webkit-1280-a76",
+              "projectName": "webkit-1280-a76",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 0,
+                  "status": "skipped",
+                  "duration": 222,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T21:20:03.158Z",
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Authority journeys are sampled once per language/pack; forms have the full serial matrix.",
+                      "location": {
+                        "file": "/home/runner/work/diagon-alley/diagon-alley/tests/browser-accounts/accounts-a76.spec.ts",
+                        "line": 294,
+                        "column": 12
+                      }
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "skipped"
+            }
+          ],
+          "id": "f3f0dc5989a251010890-3692ecd6c0eca8a6d4f7",
+          "file": "accounts-a76.spec.ts",
+          "line": 287,
+          "column": 5
+        },
+        {
+          "title": "A76 es arcana entry forms, focus, cancellation and enlarged text",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [
+                {
+                  "type": "coverage",
+                  "description": "webkit/1280/es/arcana/reduced/reflow200"
+                }
+              ],
+              "expectedStatus": "passed",
+              "projectId": "webkit-1280-a76",
+              "projectName": "webkit-1280-a76",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1112,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T21:20:03.392Z",
+                  "annotations": [
+                    {
+                      "type": "coverage",
+                      "description": "webkit/1280/es/arcana/reduced/reflow200"
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "f3f0dc5989a251010890-852bdb6b439f16498d38",
+          "file": "accounts-a76.spec.ts",
+          "line": 211,
+          "column": 5
+        },
+        {
+          "title": "A76 es arcana real account, guest binding, cross-context login and recovery",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [
+                {
+                  "type": "skip",
+                  "description": "Authority journeys are sampled once per language/pack; forms have the full serial matrix.",
+                  "location": {
+                    "file": "/home/runner/work/diagon-alley/diagon-alley/tests/browser-accounts/accounts-a76.spec.ts",
+                    "line": 294,
+                    "column": 12
+                  }
+                }
+              ],
+              "expectedStatus": "skipped",
+              "projectId": "webkit-1280-a76",
+              "projectName": "webkit-1280-a76",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 0,
+                  "status": "skipped",
+                  "duration": 219,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T21:20:04.521Z",
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Authority journeys are sampled once per language/pack; forms have the full serial matrix.",
+                      "location": {
+                        "file": "/home/runner/work/diagon-alley/diagon-alley/tests/browser-accounts/accounts-a76.spec.ts",
+                        "line": 294,
+                        "column": 12
+                      }
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "skipped"
+            }
+          ],
+          "id": "f3f0dc5989a251010890-026a4abf870e654f9b12",
+          "file": "accounts-a76.spec.ts",
+          "line": 287,
+          "column": 5
+        },
+        {
+          "title": "A76 en arcana entry forms, focus, cancellation and enlarged text",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [
+                {
+                  "type": "coverage",
+                  "description": "webkit/1280/en/arcana/reduced/reflow200"
+                }
+              ],
+              "expectedStatus": "passed",
+              "projectId": "webkit-1280-a76",
+              "projectName": "webkit-1280-a76",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1506,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T21:20:04.752Z",
+                  "annotations": [
+                    {
+                      "type": "coverage",
+                      "description": "webkit/1280/en/arcana/reduced/reflow200"
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "f3f0dc5989a251010890-f849165f22d4e497fc78",
+          "file": "accounts-a76.spec.ts",
+          "line": 211,
+          "column": 5
+        },
+        {
+          "title": "A76 en arcana real account, guest binding, cross-context login and recovery",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [
+                {
+                  "type": "skip",
+                  "description": "Authority journeys are sampled once per language/pack; forms have the full serial matrix.",
+                  "location": {
+                    "file": "/home/runner/work/diagon-alley/diagon-alley/tests/browser-accounts/accounts-a76.spec.ts",
+                    "line": 294,
+                    "column": 12
+                  }
+                }
+              ],
+              "expectedStatus": "skipped",
+              "projectId": "webkit-1280-a76",
+              "projectName": "webkit-1280-a76",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 0,
+                  "status": "skipped",
+                  "duration": 231,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T21:20:06.273Z",
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Authority journeys are sampled once per language/pack; forms have the full serial matrix.",
+                      "location": {
+                        "file": "/home/runner/work/diagon-alley/diagon-alley/tests/browser-accounts/accounts-a76.spec.ts",
+                        "line": 294,
+                        "column": 12
+                      }
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "skipped"
+            }
+          ],
+          "id": "f3f0dc5989a251010890-a4c81620c4bdcce583d8",
+          "file": "accounts-a76.spec.ts",
+          "line": 287,
+          "column": 5
+        },
+        {
+          "title": "A76 first activation excludes double registration through retained response",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [
+                {
+                  "type": "skip",
+                  "description": "One bounded transport case.",
+                  "location": {
+                    "file": "/home/runner/work/diagon-alley/diagon-alley/tests/browser-accounts/accounts-a76.spec.ts",
+                    "line": 157,
+                    "column": 8
+                  }
+                }
+              ],
+              "expectedStatus": "skipped",
+              "projectId": "webkit-865-a76",
+              "projectName": "webkit-865-a76",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 0,
+                  "status": "skipped",
+                  "duration": 240,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T21:20:07.005Z",
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "One bounded transport case.",
+                      "location": {
+                        "file": "/home/runner/work/diagon-alley/diagon-alley/tests/browser-accounts/accounts-a76.spec.ts",
+                        "line": 157,
+                        "column": 8
+                      }
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "skipped"
+            }
+          ],
+          "id": "f3f0dc5989a251010890-17068d0eb54861151806",
+          "file": "accounts-a76.spec.ts",
+          "line": 152,
+          "column": 1
+        },
+        {
+          "title": "A76 missing illustration preserves account labels, actions and keyboard return",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [
+                {
+                  "type": "skip",
+                  "description": "One bounded missing-art case.",
+                  "location": {
+                    "file": "/home/runner/work/diagon-alley/diagon-alley/tests/browser-accounts/accounts-a76.spec.ts",
+                    "line": 196,
+                    "column": 8
+                  }
+                }
+              ],
+              "expectedStatus": "skipped",
+              "projectId": "webkit-865-a76",
+              "projectName": "webkit-865-a76",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 0,
+                  "status": "skipped",
+                  "duration": 217,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T21:20:07.354Z",
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "One bounded missing-art case.",
+                      "location": {
+                        "file": "/home/runner/work/diagon-alley/diagon-alley/tests/browser-accounts/accounts-a76.spec.ts",
+                        "line": 196,
+                        "column": 8
+                      }
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "skipped"
+            }
+          ],
+          "id": "f3f0dc5989a251010890-5eefca688fcf7137c16e",
+          "file": "accounts-a76.spec.ts",
+          "line": 191,
+          "column": 1
+        },
+        {
+          "title": "A76 es diagon-alley entry forms, focus, cancellation and enlarged text",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [
+                {
+                  "type": "coverage",
+                  "description": "webkit/865/es/diagon-alley/reduced/reflow200"
+                }
+              ],
+              "expectedStatus": "passed",
+              "projectId": "webkit-865-a76",
+              "projectName": "webkit-865-a76",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1063,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T21:20:07.592Z",
+                  "annotations": [
+                    {
+                      "type": "coverage",
+                      "description": "webkit/865/es/diagon-alley/reduced/reflow200"
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "f3f0dc5989a251010890-aa2eacead9703318400d",
+          "file": "accounts-a76.spec.ts",
+          "line": 211,
+          "column": 5
+        },
+        {
+          "title": "A76 es diagon-alley real account, guest binding, cross-context login and recovery",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [
+                {
+                  "type": "skip",
+                  "description": "Authority journeys are sampled once per language/pack; forms have the full serial matrix.",
+                  "location": {
+                    "file": "/home/runner/work/diagon-alley/diagon-alley/tests/browser-accounts/accounts-a76.spec.ts",
+                    "line": 294,
+                    "column": 12
+                  }
+                }
+              ],
+              "expectedStatus": "skipped",
+              "projectId": "webkit-865-a76",
+              "projectName": "webkit-865-a76",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 0,
+                  "status": "skipped",
+                  "duration": 223,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T21:20:08.674Z",
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Authority journeys are sampled once per language/pack; forms have the full serial matrix.",
+                      "location": {
+                        "file": "/home/runner/work/diagon-alley/diagon-alley/tests/browser-accounts/accounts-a76.spec.ts",
+                        "line": 294,
+                        "column": 12
+                      }
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "skipped"
+            }
+          ],
+          "id": "f3f0dc5989a251010890-85533ae96f82d12ef08c",
+          "file": "accounts-a76.spec.ts",
+          "line": 287,
+          "column": 5
+        },
+        {
+          "title": "A76 en diagon-alley entry forms, focus, cancellation and enlarged text",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [
+                {
+                  "type": "coverage",
+                  "description": "webkit/865/en/diagon-alley/reduced/reflow200"
+                }
+              ],
+              "expectedStatus": "passed",
+              "projectId": "webkit-865-a76",
+              "projectName": "webkit-865-a76",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1551,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T21:20:08.912Z",
+                  "annotations": [
+                    {
+                      "type": "coverage",
+                      "description": "webkit/865/en/diagon-alley/reduced/reflow200"
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "f3f0dc5989a251010890-fbf456631c06ccd41026",
+          "file": "accounts-a76.spec.ts",
+          "line": 211,
+          "column": 5
+        },
+        {
+          "title": "A76 en diagon-alley real account, guest binding, cross-context login and recovery",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [
+                {
+                  "type": "skip",
+                  "description": "Authority journeys are sampled once per language/pack; forms have the full serial matrix.",
+                  "location": {
+                    "file": "/home/runner/work/diagon-alley/diagon-alley/tests/browser-accounts/accounts-a76.spec.ts",
+                    "line": 294,
+                    "column": 12
+                  }
+                }
+              ],
+              "expectedStatus": "skipped",
+              "projectId": "webkit-865-a76",
+              "projectName": "webkit-865-a76",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 0,
+                  "status": "skipped",
+                  "duration": 213,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T21:20:10.476Z",
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Authority journeys are sampled once per language/pack; forms have the full serial matrix.",
+                      "location": {
+                        "file": "/home/runner/work/diagon-alley/diagon-alley/tests/browser-accounts/accounts-a76.spec.ts",
+                        "line": 294,
+                        "column": 12
+                      }
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "skipped"
+            }
+          ],
+          "id": "f3f0dc5989a251010890-7c51ef28feb5663b2ce3",
+          "file": "accounts-a76.spec.ts",
+          "line": 287,
+          "column": 5
+        },
+        {
+          "title": "A76 es arcana entry forms, focus, cancellation and enlarged text",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [
+                {
+                  "type": "coverage",
+                  "description": "webkit/865/es/arcana/reduced/reflow200"
+                }
+              ],
+              "expectedStatus": "passed",
+              "projectId": "webkit-865-a76",
+              "projectName": "webkit-865-a76",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 980,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T21:20:10.714Z",
+                  "annotations": [
+                    {
+                      "type": "coverage",
+                      "description": "webkit/865/es/arcana/reduced/reflow200"
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "f3f0dc5989a251010890-8a94dfd2ed35c04f4787",
+          "file": "accounts-a76.spec.ts",
+          "line": 211,
+          "column": 5
+        },
+        {
+          "title": "A76 es arcana real account, guest binding, cross-context login and recovery",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [
+                {
+                  "type": "skip",
+                  "description": "Authority journeys are sampled once per language/pack; forms have the full serial matrix.",
+                  "location": {
+                    "file": "/home/runner/work/diagon-alley/diagon-alley/tests/browser-accounts/accounts-a76.spec.ts",
+                    "line": 294,
+                    "column": 12
+                  }
+                }
+              ],
+              "expectedStatus": "skipped",
+              "projectId": "webkit-865-a76",
+              "projectName": "webkit-865-a76",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 0,
+                  "status": "skipped",
+                  "duration": 204,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T21:20:11.708Z",
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Authority journeys are sampled once per language/pack; forms have the full serial matrix.",
+                      "location": {
+                        "file": "/home/runner/work/diagon-alley/diagon-alley/tests/browser-accounts/accounts-a76.spec.ts",
+                        "line": 294,
+                        "column": 12
+                      }
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "skipped"
+            }
+          ],
+          "id": "f3f0dc5989a251010890-67169a6f7ccdcb01103e",
+          "file": "accounts-a76.spec.ts",
+          "line": 287,
+          "column": 5
+        },
+        {
+          "title": "A76 en arcana entry forms, focus, cancellation and enlarged text",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [
+                {
+                  "type": "coverage",
+                  "description": "webkit/865/en/arcana/reduced/reflow200"
+                }
+              ],
+              "expectedStatus": "passed",
+              "projectId": "webkit-865-a76",
+              "projectName": "webkit-865-a76",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1394,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T21:20:11.925Z",
+                  "annotations": [
+                    {
+                      "type": "coverage",
+                      "description": "webkit/865/en/arcana/reduced/reflow200"
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "f3f0dc5989a251010890-d67a30bdf36d75d4b512",
+          "file": "accounts-a76.spec.ts",
+          "line": 211,
+          "column": 5
+        },
+        {
+          "title": "A76 en arcana real account, guest binding, cross-context login and recovery",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [
+                {
+                  "type": "skip",
+                  "description": "Authority journeys are sampled once per language/pack; forms have the full serial matrix.",
+                  "location": {
+                    "file": "/home/runner/work/diagon-alley/diagon-alley/tests/browser-accounts/accounts-a76.spec.ts",
+                    "line": 294,
+                    "column": 12
+                  }
+                }
+              ],
+              "expectedStatus": "skipped",
+              "projectId": "webkit-865-a76",
+              "projectName": "webkit-865-a76",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 0,
+                  "status": "skipped",
+                  "duration": 211,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-17T21:20:13.336Z",
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Authority journeys are sampled once per language/pack; forms have the full serial matrix.",
+                      "location": {
+                        "file": "/home/runner/work/diagon-alley/diagon-alley/tests/browser-accounts/accounts-a76.spec.ts",
+                        "line": 294,
+                        "column": 12
+                      }
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "skipped"
+            }
+          ],
+          "id": "f3f0dc5989a251010890-268acd5a58f678d783e0",
+          "file": "accounts-a76.spec.ts",
+          "line": 287,
+          "column": 5
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-17T21:18:48.863Z",
+    "duration": 84808.607,
+    "expected": 30,
+    "skipped": 30,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}
