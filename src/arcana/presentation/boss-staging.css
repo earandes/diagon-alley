@@ -293,6 +293,26 @@
     grid-column: 1;
     grid-row: 2;
   }
+  /* Two consultation objects share a shelf rather than stacking another row
+     above the jar. Keep the expanded synergy text in the full-width flow. */
+  .boss-party-stage {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 8px;
+    align-items: center;
+  }
+  .boss-party-stage > h4,
+  .boss-party-stage > .boss-party-members,
+  .boss-party-stage > .preparation-synergies[open] {
+    grid-column: 1 / -1;
+  }
+  .boss-party-stage > .preparation-synergies {
+    min-width: 0;
+  }
+  .boss-party-stage > .preparation-synergies > summary {
+    flex-wrap: wrap;
+    overflow-wrap: anywhere;
+  }
   .boss-staging > [role='alert'] {
     grid-row: 3;
   }
@@ -320,10 +340,17 @@
   .game-shell .boss-party-stage .boss-party-prepare {
     min-height: 44px;
     flex-direction: row;
+    min-width: 0;
+    max-width: 100%;
+  }
+  .game-shell .boss-party-stage .boss-party-prepare > span {
+    min-width: 0;
+    overflow-wrap: anywhere;
   }
   .game-shell .boss-party-stage .boss-party-prepare > img {
     width: 32px;
     height: 34px;
+    flex-shrink: 0;
   }
   .boss-party-stage .preparation-synergies > summary {
     min-height: 44px;

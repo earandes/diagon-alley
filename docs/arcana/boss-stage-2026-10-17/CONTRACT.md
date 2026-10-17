@@ -39,7 +39,7 @@ No gráficos locales salvo excepción original `test:browser:local` cuando proce
 ## Plan vivo y responsabilidades
 
 1. Completado: fuentes/contrato/aceptación y dos composiciones.
-2. En curso: TDD focalizado, antesala y muestra CPU; root integra App/grageas/arena/cierre; agente staging dueño BossPrelude/BossPartyStage/CSS específicos; agente actor dueño boss-art/motion/Pixi/fuentes. Muestras CPU inspeccionadas: primera Circe rechazada por escala facial/costura; segunda recorta bastón/faldón intencionadamente y mejora objeto. Integración permitida como muestra, no arte final/humana.
-3. Pendiente: tipos/build/tests, integración y revisión estática del arte; ningún agente inicia baterías gráficas.
-4. Pendiente: PR/CI Linux serial, evidencia seleccionada, inspección y correcciones.
+2. Implementado: TDD focalizado, antesala y muestra CPU; root integra App/grageas/arena/cierre; agente staging dueño BossPrelude/BossPartyStage/CSS específicos; agente actor dueño boss-art/motion/Pixi/fuentes. Muestras CPU inspeccionadas: primera Circe rechazada por escala facial/costura; segunda recorta bastón/faldón intencionadamente y mejora objeto. Integración permitida como muestra, no arte final/humana.
+3. Comprobado localmente sin navegador: tipos/build/packs/scanner y554unitarios correctos, seis assets269.284B con fuentes/máscaras/hashes reproducibles. Preflight permitido sin abrir navegador. Ningún agente inicia baterías gráficas.
+4. En curso: PR4 apilada sobre A70. CI detectó y se corrigieron colocación automática del footer, separación de autoridades de ensayo para respetar cuota30/IP/h y solapamiento móvil del tarro con footer. Se conservan fallos y correcciones en QA/attempts1–3; no se cuenta ninguna ejecución cancelada como validación completa. Workflow intacto, adaptador A70+A71 serial con mismas protecciones. Último ajuste agrupa dos objetos de consulta en una fila móvil, sin reducir información o targets. Próxima CI y segunda inspección integrada pendientes.
 5. Pendiente: documentación/compatibilidad/performance/resultados y entrega sin main.
