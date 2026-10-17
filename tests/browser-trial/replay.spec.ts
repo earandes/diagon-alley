@@ -89,16 +89,18 @@ test('branching map and equivalent list keep identical accessible actions with W
   await page.getByRole('button', { name: 'Ver lista de nodos', exact: true }).click();
   const next = page.locator('[data-node]:not(:disabled)').first();
   await expect(next).toBeEnabled();
+  const beforeConsultation = await economic(page);
   await next.click();
   await expect(
     page
       .locator(
-        '[data-pact-candidate]:not(:disabled), [data-pact-choice]:not(:disabled), .node-confirm-action:not(:disabled), [data-pact-action="recruit"]',
+        '[data-encounter-choice]:not(:disabled), [data-pact-candidate]:not(:disabled), [data-pact-choice]:not(:disabled), .node-confirm-action:not(:disabled), [data-pact-action="recruit"]',
       )
       .first(),
   ).toBeFocused();
   await page.getByRole('button', { name: 'Cancelar', exact: true }).click();
   await expect(next).toBeFocused();
+  expect(await economic(page)).toEqual(beforeConsultation);
 });
 test('measures real WebGL rendering and responsive layout, without attributing emulation to a phone', async ({
   page,

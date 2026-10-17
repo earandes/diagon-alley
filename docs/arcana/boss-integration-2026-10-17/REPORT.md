@@ -41,3 +41,7 @@ Main de99ef3 contiene A70/A71; PR3/PR4 reconocidas comoMERGED. CI39016752481: ti
 Código de reloj/React y prueba contrastados: setVisible liquida intervalo visible y publica React de forma diferida; el test tomaba inmediatamente un atributo anterior. Se espera ahora no-playing/no-ticking y dos frames de asentamiento existentes, después se exige cursor, progreso y paints constantes durante los300ms originales. No tolerancia a avances ocultos ni cambio de renderer. Caracterización pura del cruce al ocultar pasa7/7; no se afirma RED nuevo de producción. Tipos correctos, nuevaCI necesaria.
 
 Las seis imágenes y43JSON actuales de la faseA70/A71 correcta quedan en [galería main](GALLERY.md) con SHA/procedencia; el fallo posteriorA69 no invalida ni convierte en aprobación global esa fase. [Métricas actuales](PERFORMANCE.md).
+
+## Segunda CI y selector de consulta
+
+CI39018704725 sobre8155efc:555unitarios/78PGRedis/tipos/build correctos; A70/A71 yHalloween correctos, A69 completo correcto incluida ocultación sincronizada. General55correctos/1fallido: selector de foco de prueba excluía [data-encounter-choice], aunque la ruta real abrió Encuentro y App lo enfoca. [Error](evidence/main-map-focus-failure.md). Se añade ese control legítimo al selector y se mantiene la exigencia de foco/retorno; consulta y cancelación comparan además estado económico completo del helper. Sin cambio de producto o debilitamiento de aserción. Se cancela resto propio tras recoger evidencia; nuevaCI pendiente. Metadata de ambos intentos preservada en evidence/ci-attempt-*.json.
