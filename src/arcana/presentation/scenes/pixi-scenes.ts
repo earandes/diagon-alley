@@ -42,23 +42,32 @@ export type SceneData =
 export async function createPixiScene(host: HTMLElement, data: SceneData) {
   // Decode only this scene's artwork, concurrently with renderer initialization.
   // The promises are scene-owned; no global cache or work in the previous view.
-  const images = new Map<string, Promise<HTMLImageElement | null>>();
+  type PreparedImage = {
+    ready: HTMLImageElement | null;
+    promise: Promise<HTMLImageElement | null>;
+  };
+  const images = new Map<string, PreparedImage>();
   const prepareImage = (key: string, url: string) => {
-    let pending = images.get(key);
-    if (!pending) {
+    let prepared = images.get(key);
+    if (!prepared) {
       const image = new Image();
       image.src = url;
       const started = sceneStart();
-      pending = image.decode().then(
-        () => {
-          sceneEnd('figure-decode', started);
-          return image;
-        },
-        () => null,
-      );
-      images.set(key, pending);
+      const record: PreparedImage = {
+        ready: null,
+        promise: image.decode().then(
+          () => {
+            record.ready = image;
+            sceneEnd('figure-decode', started);
+            return image;
+          },
+          () => null,
+        ),
+      };
+      images.set(key, record);
+      prepared = record;
     }
-    return pending;
+    return prepared.promise;
   };
   const propArt =
     data.kind === 'arena' && data.boss
@@ -134,6 +143,39 @@ export async function createPixiScene(host: HTMLElement, data: SceneData) {
     renders = 0;
   let viewWidth = host.clientWidth,
     viewHeight = host.clientHeight;
+  const installTexture = (key: string, image: HTMLImageElement) => {
+    if (destroyed || textures.has(key)) return;
+    textures.set(key, Texture.from(image));
+    host.dataset.textureCount = String(textures.size);
+    host.dataset.textureBytes = String(
+      [...textures.values()].reduce((n, t) => n + t.width * t.height * 4, 0),
+    );
+    dirty = true;
+  };
+  const loadTexture = (key: string, url: string) => {
+    if (textures.has(key) || loading.has(key)) return;
+    loading.add(key);
+    const ready = images.get(key)?.ready;
+    if (ready) {
+      // Decoder work already finished during init: use it in this geometry pass.
+      // A conversion failure must retain the same DOM/full-actor fallback.
+      try {
+        installTexture(key, ready);
+      } catch {
+        /* Artwork fallback remains. */
+      }
+    } else {
+      void prepareImage(key, url)
+        .then((image) => {
+          if (destroyed || !image) return;
+          installTexture(key, image);
+          requestPaint();
+        })
+        .catch(() => {
+          /* Artwork fallback remains. */
+        });
+    }
+  };
   const paint = () => {
     if (destroyed || document.hidden) return;
     // React commits the log frame after the clock advances. Never mix the new
@@ -199,23 +241,7 @@ export async function createPixiScene(host: HTMLElement, data: SceneData) {
               .stroke({ color, width: 1 });
             const assetKey = current.appearances?.[unit.id] ?? `character.${unit.wizardId}.figure`;
             const asset = visualAsset(assetKey);
-            if (asset && !textures.has(assetKey) && !loading.has(assetKey)) {
-              loading.add(assetKey);
-              void prepareImage(assetKey, asset.url)
-                .then((image) => {
-                  if (destroyed || !image) return;
-                  textures.set(assetKey, Texture.from(image));
-                  host.dataset.textureCount = String(textures.size);
-                  host.dataset.textureBytes = String(
-                    [...textures.values()].reduce((n, t) => n + t.width * t.height * 4, 0),
-                  );
-                  dirty = true;
-                  requestPaint();
-                })
-                .catch(() => {
-                  /* Equivalent DOM artwork/text remains available. */
-                });
-            }
+            if (asset) loadTexture(assetKey, asset.url);
             const texture = textures.get(assetKey);
             if (texture) {
               let figure = figures.get(unit.id);
@@ -255,22 +281,7 @@ export async function createPixiScene(host: HTMLElement, data: SceneData) {
                 if (actor) {
                   for (const url of [actor.baseUrl, actor.armUrl]) {
                     const key = `a71:${url}`;
-                    if (textures.has(key) || loading.has(key)) continue;
-                    loading.add(key);
-                    void prepareImage(key, url)
-                      .then((image) => {
-                        if (destroyed || !image) return;
-                        textures.set(key, Texture.from(image));
-                        host.dataset.textureCount = String(textures.size);
-                        host.dataset.textureBytes = String(
-                          [...textures.values()].reduce((n, t) => n + t.width * t.height * 4, 0),
-                        );
-                        dirty = true;
-                        requestPaint();
-                      })
-                      .catch(() => {
-                        /* Static full actor remains intact. */
-                      });
+                    loadTexture(key, url);
                   }
                   const baseTexture = textures.get(`a71:${actor.baseUrl}`);
                   const armTexture = textures.get(`a71:${actor.armUrl}`);
@@ -299,22 +310,7 @@ export async function createPixiScene(host: HTMLElement, data: SceneData) {
                 } else {
                   for (const layer of propArt.layers) {
                     const key = `a70:${layer.url}`;
-                    if (textures.has(key) || loading.has(key)) continue;
-                    loading.add(key);
-                    void prepareImage(key, layer.url)
-                      .then((image) => {
-                        if (destroyed || !image) return;
-                        textures.set(key, Texture.from(image));
-                        host.dataset.textureCount = String(textures.size);
-                        host.dataset.textureBytes = String(
-                          [...textures.values()].reduce((n, t) => n + t.width * t.height * 4, 0),
-                        );
-                        dirty = true;
-                        requestPaint();
-                      })
-                      .catch(() => {
-                        /* The original painted object remains intact. */
-                      });
+                    loadTexture(key, layer.url);
                   }
                   if (
                     !bossPieces.has(unit.id) &&

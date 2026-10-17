@@ -2,9 +2,9 @@
 
 ## Estado de esta lectura
 
-**Goal activo; integración y validación final pendientes.** Hay reducción reproducible de trabajo gráfico redundante y de arranque frente a la referencia, pero no una solución universal al P95 rAF histórico de 33,4 ms. El objetivo genérico de arte listo ≤400 ms tampoco se cumple en todas las muestras: la última variante medida conserva una de **422,0 ms**. No se sustituye ese extremo por su mediana favorable.
+**Goal activo; integración y validación final pendientes.** El ensayo 9 aísla por primera vez una mejora del genérico de P95 rAF≈33,3→16,7 ms en las tres parejas y en remontajes, limitando el batch de figuras a ocho samplers. Ese resultado es de una variante que todavía incluye bandas; no se atribuye automáticamente al candidato mínimo posterior. El objetivo genérico de arte listo ≤400 ms sigue incumplido: hubo una muestra de **422,0 ms** en el ensayo 5 y el candidato del 9 da **454,3–471,5 ms**. No se sustituyen esos extremos por medianas favorables.
 
-Este documento resume `evidence/ab-1` a `ab-5`. La CI **39032033053**, candidato `eadded8` frente a referencia `14a7f1d`, ensaya omitir la importación automática de extensiones de Pixi; está **en curso en este corte y sin resultado atribuido aquí**. No se considera una optimización validada.
+Este documento resume `evidence/ab-1` a `ab-9`. El candidato mínimo **`0c0547c`** retira autoextensiones, mipmaps, certificados alfa y bandas: conserva agrupación, geometría retenida, decode paralelo, ticker bajo demanda y cap8 del batch. Su comparación 10 vuelve a d13; **todavía no se atribuye ningún resultado a esa nueva ejecución**.
 
 ## Protocolo y referencias
 
@@ -12,7 +12,7 @@ Linux, Chromium 1280×900, renderer declarado ANGLE/SwiftShader, un worker y mue
 
 Cada variante usa documento/contexto nuevo; las cachés del sistema, proceso y shaders no se purgan. El genérico incorpora además una ventana tras remontar en el mismo documento. Ese remontaje no equivale a un contexto nuevo. Se conservan todos los pares, extremos y muestras sin mejora. Los rangos siguientes son los tres valores observados, no intervalos de confianza.
 
-La referencia fija se comprueba en `tools/verification/build-a73-reference.mjs` de cada commit: ensayos 1–3 usan **`d13c0d9`** (runtime A72 más instrumentación); 4–5 usan **`a5a3b3b`** (agrupación, geometría retenida y decode paralelo ya aplicados). El SHA superior de cada JSON es el merge de CI, no el SHA de la referencia embebida. No se confunden esas identidades.
+La referencia fija se comprueba en `tools/verification/build-a73-reference.mjs` de cada commit: 1–3 usan **d13** (runtime A72 más instrumentación); 4–5, **a5** (arranque ya optimizado); 6–7, **14a7** (ticker bajo demanda); 8, **fa41664** (trim rectangular); 9, **78267f5** (bandas). El SHA superior de cada JSON es el merge de CI, no el SHA de su referencia embebida. La instrumentación se mantiene igual en ambas variantes de cada A/B; sus ampliaciones entre ensayos impiden tratarlos como una sola serie homogénea.
 
 ## Todos los ensayos
 
@@ -25,10 +25,14 @@ En la tabla, G=genérico y J=jefe; tiempos en ms. Cada flecha compara referencia
 | 3 / 39030494297 | d13 → a5a3b3b | Correcciones sin mipmaps y decode pertinente en paralelo con init. | 539,2–620,5 → 456,5–501,3 | 684,8–737,5 → 489,4–493,6 | 33,4 → 33,4 | 16,8 → 16,8 |
 | 4 / 39030942928 | a5 → ffba1b8 | Mipmaps como única variable gráfica. Rechazados. | 463,9–532,5 → 478,5–495,4 | 501,3–655,7 → 492,0–521,8 | 33,4 → 33,4 | 33,2–33,3 → 33,3 |
 | 5 / 39031399760 | a5 → 14a7f1d | Ticker detenido en eventos sin movimiento Canvas; ReplayClock continúa. | 414,0–458,9 → 393,1–422,0 | 470,9–499,5 → 483,3–514,9 | 16,7–16,8 → 16,7 | 16,7 → 16,7 |
+| 6 / 39032033053 | 14a7 → eadded8 | Omisión de autoextensiones; retirada al no mejorar el recorrido consistentemente. | 470,2–543,8 → 472,0–481,9 | 502,0–600,4 → 573,7–578,9 | 33,4 → 33,4 | 16,8 → 16,8 |
+| 7 / 39032748032 | 14a7 → fa41664 | Trim rectangular; no reduce imágenes. | 479,0–521,2 → 464,0–493,2 | 479,0–591,0 → 465,2–570,0 | 33,3–33,4 → 33,3 | 16,8 → 16,8 |
+| 8 / 39033526883 | fa41664 → 78267f5 | Bandas sobre la misma fuente; más geometría y cambio de interpolación. | 467,8–551,3 → 470,7–488,2 | 565,8–591,5 → 594,0–629,0 | 33,3–33,4 → 33,3 | 16,8 → 16,7–16,8 |
+| 9 / 39034276488 | 78267f5 → e5aa2af | Cap8 por renderer para batching; Graphics conserva su shader separado. | 464,8–564,3 → 454,3–471,5 | 473,1–588,7 → 495,1–532,4 | 33,3–33,4 → 16,7 | 16,8 → 16,7 |
 
-Los remontajes genéricos permanecen en P95≈33,4 ms en ensayos 1, 3 y 4; en 2 y 5 están en 16,7–16,8 ms en ambas variantes. No demuestran que remontar cause ni resuelva el caso desfavorable. En el ensayo 4 también empeora el jefe en referencia y candidato. La variación entre runners impide atribuir una causa única a Pixi, GPU, React o decodificación.
+Los remontajes genéricos permanecen en P95≈33,3–33,4 ms en 1, 3, 4, 6, 7 y 8; en 2 y 5 están en 16,7–16,8 ms en ambas variantes. En el 9 pasan de **33,3→16,8 ms**. No demuestran que remontar cause el caso desfavorable. En el ensayo 4 también empeora el jefe en referencia y candidato. La variación entre runners impide atribuir una causa universal a Pixi, GPU, React o decodificación.
 
-Los cinco jobs se cancelaron deliberadamente después de conservar su fase diagnóstica y artifacts; **no son cinco baterías completas superadas**. Los estados y SHA disponibles están en los `ci.json` correspondientes y en `DIAGNOSIS.md`.
+Los nueve jobs se cancelaron deliberadamente después de conservar su fase diagnóstica y artifacts; **no son nueve baterías completas superadas**. Los estados y SHA disponibles están en los `ci.json` correspondientes y en `DIAGNOSIS.md`.
 
 ## Mejoras y costes demostrados
 
@@ -42,6 +46,14 @@ Ese ahorro no garantiza menor latencia en toda pantalla: en el ensayo 5 la media
 
 **Mipmaps descartados.** El ensayo 2 era favorable para ambas variantes y no aislaba esa opción. El 4 la separa sobre a5 y no muestra mejora sostenida ni de arranque consistente. Se retira el cambio: añadir niveles puede incrementar los texels aproximadamente un tercio y trabajo de preparación sin beneficio acreditado aquí. El contador `textureBytes` estima solo nivel0 y no representa ese coste completo ni memoria residente.
 
+**Otras alternativas retiradas.** En el 6, una inicialización menor no mejora consistentemente el total; la mediana de arte listo del jefe empeora **502,9→576,3 ms**. En el 7, el trim mejora algunos tiempos pero no el P95 objetivo. El 8 tampoco resuelve20 ms y empeora la mediana del jefe **573,2→603,8 ms**. La comparación registrada de dos imágenes pausadas encuentra **21.305 píxeles RGB distintos, máximo25 por canal**, dentro de las figuras; no acredita identidad de píxeles ni movimiento. Se retiran del candidato mínimo los helpers/metadata de trim y bandas: su complejidad y precisión distinta no se justifican al encontrar una intervención más sencilla. No se han producido ni reducido imágenes nuevas.
+
+**Batching: resultado acotado positivo.** En el 9 se modifica una sola variable frente a78267f5: `renderer.limits.maxBatchableTextures=min(8,límite)` antes del primer draw. Los tres pares genéricos mejoran el P95 y el remontaje también; siguen visibles6figuras genéricas y10 del jefe. El GLSL observado pasa de **32/32→32/8 samplers**: Graphics permanece32 porque se construye durante init; el shader del batch de figuras usa8. El dato no describe un cap global de shaders. Pixi divide los lotes al superar8texturas, no omite unidades.
+
+Los paints cálidos genéricos suben **379–450→503–504** y `drawElements` **804–959→1069–1075**: en este caso son consecuencia de producir más frames dentro de10s, no una reducción de trabajo por ventana. El efecto de esa opción es distinto del ahorro de ticker del ensayo5. El máximo rAF de arranque genérico baja **100,0–133,3→83,3–83,4 ms**; jefe **100,0–116,8→83,3–100,0 ms**. No mejora toda pareja de arranque: en la tercera, genérico empeora464,8→471,5 ms y jefe473,1→532,4 ms, aunque las medianas mejoran490,1→455,7 y557,7→508,8 ms. Se conservan ambos casos desfavorables.
+
+Se registran GLSL y las primeras16llamadas nativas de compile/link/draw/consultas, sin `finish`, readback ni GPU queries. La primera consulta `getProgramParameter` observada23,1→5,9 ms es tiempo de pared alrededor de esa llamada; puede incluir espera del driver y no demuestra CPU pura de compilación ni explica por sí sola el sostenido. El A/B aporta evidencia para el batch en esas condiciones, no una atribución general a toda GPU.
+
 ## Qué significan las medidas
 
 - **rAF:** intervalo observado entre callbacks del navegador. Es sensible a scheduling, composición y entorno; no mide tiempo GPU ni identifica por sí solo el culpable.
@@ -50,16 +62,16 @@ Ese ahorro no garantiza menor latencia en toda pantalla: en el ensayo 5 la media
 - **Arte listo / DOM:** cotas superiores observadas mediante polling y automatización. En journeys autoritativos se separan clic real, respuesta HTTP y resultado utilizable; los GET de comprobación y la espera del runner pueden ampliar las cotas. `art-ready` no acredita por sí solo comprensión, acceso a todas las acciones o calidad artística.
 - **Texturas y limpieza:** dimensiones RGBA y contadores propios describen recursos propios conocidos. Cero al desmontar no demuestra ausencia de fugas globales, ni un `decode()` en curso es prueba de retención indefinida.
 
-La referencia A73 inicial tuvo seis P95 de 16,7–16,8 ms; por eso no bastaba para reproducir el fallo histórico. Los A/B posteriores sí conservan ventanas de 33,4 ms. Tampoco se compara causalmente ese protocolo con el A69 histórico: este puede capturar fases y remontar antes de su ventana, y usa otra instrumentación. Las comparaciones decisivas son dentro de cada A/B con el mismo harness.
+La referencia A73 inicial tuvo seis P95 de 16,7–16,8 ms; por eso no bastaba para reproducir el fallo histórico. Los A/B posteriores sí conservan ventanas de33,4 ms y el9 las mejora dentro del mismo job. No se compara causalmente ese protocolo con el A69 histórico: este puede capturar fases y remontar antes de su ventana, y usa otra instrumentación. Las comparaciones decisivas son dentro de cada A/B con el mismo harness; no se unen las mejores cifras de runs distintos para fabricar un resultado final.
 
 ## Reproducción y límites restantes
 
 Sin abrir navegador, el resumen se reconstruye desde los crudos comprimidos:
 
 ```sh
-node docs/arcana/fluency-increment-2026-10-17/ab-report.mjs docs/arcana/fluency-increment-2026-10-17/evidence/ab-5/raw.json.gz
+node docs/arcana/fluency-increment-2026-10-17/ab-report.mjs docs/arcana/fluency-increment-2026-10-17/evidence/ab-9/raw.json.gz
 ```
 
 Se conservan `raw.json.gz`, `summary.json`, fixtures, script de referencia y condiciones de compilación. No ejecutar la investigación gráfica en Mac: corresponde al guard de CI Linux, en serie y sin reintentos automáticos.
 
-Presupuestos de ensayo: P95 rAF sostenido≤20 ms; arte listo genérico≤400 ms/jefe≤550 ms; máximo rAF de arranque≤100 ms. Son objetivos, no garantías físicas. Quedan sin cerrar el caso sostenido desfavorable, el extremo genérico de 422 ms, la nueva comparación de extensiones y la matriz final del candidato que se seleccione. Este documento no acredita integración en main, rendimiento de móvil físico, percepción humana de fluidez, diversión o retención.
+Presupuestos de ensayo: P95 rAF sostenido≤20 ms; arte listo genérico≤400 ms/jefe≤550 ms; máximo rAF de arranque≤100 ms. Son objetivos, no garantías físicas. El9cumple los sostenidos declarados; aún falta comprobar que el **candidato mínimo0c0547c**, sin atlas, conserva la mejora frente a d13 y supera la matriz funcional/visual pertinente. El arranque genérico sigue superando400 ms. No se declara validación final, integración en main, rendimiento de móvil físico, percepción humana de fluidez, diversión o retención.

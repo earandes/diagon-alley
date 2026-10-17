@@ -23,3 +23,15 @@ No se reclama ausencia global de fugas. Los contadores solo describen recursos p
 - Linux: matriz completa y comparación del candidato corregido pendientes al redactar; resultados finales se registran en VALIDATION y REPORT.
 - Revisión independiente de código: sin otro defecto demostrable tras corregir el receptor nativo. La carga durante pausa temprana está cubierta por A69; carga durante ocultación y resize durante pausa no tienen una comprobación específica nueva.
 - Humana, lector audible y dispositivo físico no realizados.
+
+## Candidato mínimo posterior a los ensayos
+
+La pequeña Map de imágenes pertenece únicamente a una escena: conserva promesas mientras init y decode se solapan, y se vacía al fallar/desmontar. No sobrevive al cambio de paquete ni genera una textura GPU tras destroyed. No es un pool de contextos ni caché entre pantallas.
+
+El límite8 pertenece al renderer recién creado y se aplica antes de su primer draw. No modifica un ajuste global, el catálogo ni la cantidad de actores. Las máscaras/Graphics conservan su shader; lotes adicionales son un coste posible comprobado en Linux. El DefaultShader de Pixi tiene caché de módulo: todos los consumidores Application del juego pasan por el mismo límite; no se introduce una segunda política incompatible.
+
+Se retiraron atlas/certificados alfa y sus adaptadores activos. No cambia un solo bitmap ni fuente editable. Mapas, figuras y máscaras mantienen las mismas geometrías ilustradas originales.
+
+El ticker estático no sustituye el reloj: update representa una vez cada acuse; spell-cast/healed/burn-tick y entrada mantienen frames. Ocultar/desmontar cancela callbacks propios. La carga y el resize durante pausa conservan invalidación única; no se reclama cobertura visual de cada combinación hasta registrar la matriz final.
+
+El ensayo de uso inmediato de imágenes resueltas preserva el catch de Texture.from también en el camino síncrono; una textura fallida conserva el fallback sin reintentar continuamente. loading/textures y destroyed garantizan instalación única y ausencia de alta tardía después de desmontar. Su aceptación dinámica todavía está pendiente; tipos no acredita conversión/visualizaciónGPU.

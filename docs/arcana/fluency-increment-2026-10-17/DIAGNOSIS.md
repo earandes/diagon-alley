@@ -115,3 +115,19 @@ Inicio genérico465–564→454–472ms; jefe473–589→495–532ms, con una pa
 Fase de diagnóstico correcta; resto cancelado deliberadamente tras recuperar artifact. No es CIglobal correcta. Se conserva el objetivo400msgenérico incumplido y la variabilidad de arranque. Crudos ab-9.
 
 Candidato mínimo siguiente: se retiran certificados alfa, franjas y sus helpers/tests/generador activos. Esas intervenciones no resolvieron el objetivo y alteraron precisión RGB; no compensan su complejidad una vez encontrado el límite de batching. Se conservan evidencia e historia. Comparación final vuelve a referencia iniciald13, con idénticas entradasVite/instrumentación; tres parejas, secuencia acotada sin reintentos. Si el sostenido vuelve a fallar, no se integra por la muestra9 favorable.
+
+## Espera evitable tras init · hipótesis concreta siguiente
+
+En ab-9 genérico/candidato, todos los decodes ya terminaron antes de la primera geometría: pareja0 termina211,9–258,4ms, geometría260,8ms; parejas1/2 también terminan antes de init. El cargador vuelve a encadenar .then sobre esas promesas; textures sigue vacío durante ese paint y solo se rellena en la microtarea posterior. Eso demuestra una oportunidad de uso inmediato, no permite atribuirle automáticamente los80ms entre paints: LongTask y paint no cubren el mismo intervalo.
+
+Cambio mínimo en ensayo: un registro por imagen de escena conserva el resultado resuelto, que la promesa ya retenía. loadTexture lo instala síncronamente si está disponible; si sigue pendiente, conserva callback/invalidación. No await de todo el conjunto, carga en pantalla anterior, nuevo recursoGPU o segunda caché global. Guardas contra destroyed/duplicación y catch por recurso mantienen fallback aunque falle Texture.from. Se unifican los tres cargadores idénticos para mantener esas garantías.
+
+Coste/renuncia: el primer paint puede concentrar uploads; se comparará arranque completo, máximos y paints, no solo inicialización. Aún no es mejora medida. Presupuestos400/550ms y≤100msdearranque siguen siendo de ensayo, no se rebajan para aceptar el cambio.
+
+## Décimo A/B ·39034798097 ·candidato mínimo frente a inicio
+
+Referenciad13 frente a0c0547c (sin alfa/atlas). Este runner fue favorable para ambas variantes: sostenidos16,7–16,8ms, remontajes16,7–16,8. No se usa ese hecho como causalidad del sostenido; ab-9 aisló el cap en el runner desfavorable. Arranque genérico319–392→278–348ms (una pareja319→348 empeora), jefe418–442→346–367ms (tres parejas mejoran). Máximo rAF de arranque genérico83–117→50ms, jefe117–133→50ms. Los presupuestos de ensayo se cumplen en estas tres muestras, no como garantía universal.
+
+No modifica ilustraciones, resolución ni composiciones. Dos PNG seleccionados tras medir conservados enab-10; no son evidencia de movimiento. Fase de diagnóstico pasada; resto cancelado deliberadamente, no CIglobal.
+
+Siguiente comparación (última hipótesis de arranque prevista): referencia0c0547c frente al uso inmediato de imagen ya decodificada. Aislará esa variable; si no reduce trabajo/arranque de forma convincente o agrava picos, se retirará. Tres parejas, sin reintentos ni nueva matriz exploratoria.

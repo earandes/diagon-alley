@@ -28,6 +28,11 @@ test('A73 bounded startup and sustained reference: generic and boss, three seria
   );
   test.setTimeout(260000);
   const records: object[] = [];
+  const currentSustained: { label: string; p95: number }[] = [];
+  const p95 = (values: number[]) => {
+    const ordered = values.sort((a, b) => a - b);
+    return ordered[Math.floor((ordered.length - 1) * 0.95)] ?? Infinity;
+  };
   for (let pair = 0; pair < 3; pair++)
     for (const kind of ['generic', 'boss'])
       for (const variant of pair % 2 ? ['current', 'baseline'] : ['baseline', 'current']) {
@@ -169,6 +174,11 @@ test('A73 bounded startup and sustained reference: generic and boss, three seria
           data: structuredClone(window.__a73),
           scene: { ...document.querySelector<HTMLElement>('.scene-canvas')!.dataset },
         }));
+        if (variant === 'current')
+          currentSustained.push({
+            label: `${kind}/${pair}/new-context`,
+            p95: p95(warm.data.frames.filter((f) => f.at >= warmStart).map((f) => f.ms)),
+          });
         let remount: object | null = null;
         if (kind === 'generic') {
           await page.locator('[data-qa-unmount]').evaluate((el: HTMLButtonElement) => el.click());
@@ -186,6 +196,11 @@ test('A73 bounded startup and sustained reference: generic and boss, three seria
             data: structuredClone(window.__a73),
             scene: { ...document.querySelector<HTMLElement>('.scene-canvas')!.dataset },
           }));
+          if (variant === 'current')
+            currentSustained.push({
+              label: `${kind}/${pair}/remount`,
+              p95: p95(ended.data.frames.filter((f) => f.at >= started.at).map((f) => f.ms)),
+            });
           remount = { started, ended };
         }
         await page.getByRole('button', { name: 'Pausa', exact: true }).click();
@@ -227,4 +242,6 @@ test('A73 bounded startup and sustained reference: generic and boss, three seria
       2,
     ),
   );
+  // Persist every pair, including failures, before checking the declared budget.
+  for (const sample of currentSustained) expect(sample.p95, sample.label).toBeLessThanOrEqual(20);
 });
