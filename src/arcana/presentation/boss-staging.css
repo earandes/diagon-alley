@@ -26,18 +26,24 @@
 }
 .boss-opponent-stage {
   grid-column: 2;
-  grid-row: 2;
+  grid-row: 1;
   min-width: 0;
 }
 .boss-player-preparation {
   grid-column: 1;
-  grid-row: 2;
+  grid-row: 1;
   min-width: 0;
   align-self: end;
 }
 .boss-staging > [role='alert'],
 .boss-staging > .node-event-actions {
   grid-column: 1 / -1;
+}
+.boss-staging > [role='alert'] {
+  grid-row: 2;
+}
+.boss-staging > .node-event-actions {
+  grid-row: 3;
 }
 .game-shell .boss-staging > .node-event-actions.node-combat-actions {
   margin: 6px 0 -8px;
@@ -275,11 +281,17 @@
   }
   .boss-opponent-stage {
     grid-column: 1;
-    grid-row: 2;
+    grid-row: 1;
   }
   .boss-player-preparation {
     grid-column: 1;
+    grid-row: 2;
+  }
+  .boss-staging > [role='alert'] {
     grid-row: 3;
+  }
+  .boss-staging > .node-event-actions {
+    grid-row: 4;
   }
   .boss-party-stage h4 {
     margin: 5px 0;
