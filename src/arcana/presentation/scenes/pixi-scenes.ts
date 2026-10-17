@@ -1,3 +1,4 @@
+import { SceneFigureAtlas } from './scene-figure';
 import { sceneTexture } from './scene-texture';
 import { sceneNeedsContinuousFrames } from './scene-motion';
 import { sameSceneGeometry } from './scene-geometry';
@@ -108,6 +109,7 @@ export async function createPixiScene(host: HTMLElement, data: SceneData) {
   const ink = new Graphics(),
     sparks = new Graphics();
   app.stage.addChild(ink);
+  const atlas = new SceneFigureAtlas();
   const textures = new Map<string, Texture>(),
     figures = new Map<string, Sprite>(),
     loading = new Set<string>();
@@ -228,8 +230,10 @@ export async function createPixiScene(host: HTMLElement, data: SceneData) {
                   sy: 1,
                 });
               }
+              if (current.boss?.id !== unit.id)
+                atlas.configure(figure, texture, figureHeight * app.renderer.resolution >= 96);
               const pivot = asset?.pivot ?? [0.5, 0.9];
-              figure.anchor.set(pivot[0], pivot[1]);
+              atlas.anchor(figure, pivot[0], pivot[1]);
               figure.position.set(
                 x + ((pivot[0] - 0.5) * figureHeight * texture.width) / texture.height,
                 y + (pivot[1] - 0.5) * figureHeight,
@@ -614,6 +618,7 @@ export async function createPixiScene(host: HTMLElement, data: SceneData) {
       document.removeEventListener('visibilitychange', visibility);
       app.stop();
       app.destroy({ removeView: true, releaseGlobalResources: false }, { children: true });
+      atlas.destroy();
       for (const texture of textures.values()) texture.destroy(true);
       textures.clear();
       figures.clear();

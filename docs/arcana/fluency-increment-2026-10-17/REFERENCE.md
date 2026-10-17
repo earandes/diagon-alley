@@ -40,3 +40,5 @@ node docs/arcana/fluency-increment-2026-10-17/ab-report.mjs RUTA/diagnostic-refe
 ```
 
 Los crudos A/B se guardan con gzip sin pérdida para reducir peso de revisión. `ab-report.mjs` admite JSON o JSON.gz; conserva todos los registros, incluidos extremos/desfavorables.
+
+Los crudos iniciales reference/current también se conservan como JSON.gz. Los scripts summarize/compare admiten ese formato; la comparación regenerada es idéntica a comparison.json. Desde el ensayo de franjas hay dos PNG seleccionados explícitamente en Linux tras terminar las ventanas de medida y pausar; la instrumentación comprueba errores de página. No hay medios durante las ventanas, vídeo o trazas.

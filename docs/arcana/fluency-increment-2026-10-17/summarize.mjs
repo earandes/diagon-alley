@@ -1,4 +1,5 @@
 import { readFileSync } from 'node:fs';
+import { gunzipSync } from 'node:zlib';
 const files = process.argv.slice(2);
 if (!files.length) throw Error('Pass one or more diagnostic-reference.json files');
 const q = values => {
@@ -6,7 +7,7 @@ const q = values => {
   return { n: values.length, p50: ordered[Math.floor((ordered.length-1)*.5)] ?? null, p95: ordered[Math.floor((ordered.length-1)*.95)] ?? null, max: ordered.at(-1) ?? null, sum: values.reduce((a,b) => a+b,0) };
 };
 for (const file of files) {
-  const report = JSON.parse(readFileSync(file));
+  const report = JSON.parse(file.endsWith('.gz') ? gunzipSync(readFileSync(file)) : readFileSync(file));
   console.log(JSON.stringify({ file, sha: report.sha, records: report.records.map(r => {
     const metric = (name, from=0, to=Infinity) => q(r.warm.data.metrics.filter(m=>m.name===name && m.start>=from && m.start<to).map(m=>m.duration));
     return { kind:r.kind, pair:r.pair, gpu:r.startup.data.gpu, startupUsableUpperMs:r.startup.at,

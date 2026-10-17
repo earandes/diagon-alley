@@ -1,6 +1,14 @@
 import { Rectangle, Texture } from 'pixi.js';
 import { packAssetUrls } from '../content-packs/active';
 import metadata from './scene-alpha.json';
+export interface AlphaFrame {
+  width: number;
+  height: number;
+  frame: readonly number[];
+  bands?: readonly (readonly number[])[];
+}
+const certificates = new WeakMap<Texture, AlphaFrame>();
+export const alphaCertificate = (texture: Texture) => certificates.get(texture);
 // URL metadata only: no image fetch or global GPU texture cache.
 const urls = packAssetUrls();
 const frames = new Map(
@@ -14,14 +22,7 @@ const frames = new Map(
 export function sceneTexture(image: HTMLImageElement, url: string): Texture {
   return applySceneAlphaFrame(Texture.from(image), frames.get(new URL(url, import.meta.url).href));
 }
-export function applySceneAlphaFrame(
-  texture: Texture,
-  frame?: {
-    width: number;
-    height: number;
-    frame: readonly number[];
-  },
-): Texture {
+export function applySceneAlphaFrame(texture: Texture, frame?: AlphaFrame): Texture {
   if (!frame || frame.width !== texture.width || frame.height !== texture.height) return texture;
   const [x, y, width, height] = frame.frame;
   if (
@@ -43,5 +44,6 @@ export function applySceneAlphaFrame(
   });
   // Transfer the scene-owned source; remove the unused full-frame cache wrapper.
   texture.destroy(false);
+  certificates.set(trimmed, frame);
   return trimmed;
 }

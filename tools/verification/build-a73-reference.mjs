@@ -3,7 +3,7 @@ import { mkdirSync, mkdtempSync, symlinkSync, writeFileSync, rmSync, readFileSyn
 import { resolve } from 'node:path';
 if (process.platform !== 'linux') throw Error('Referencia gráfica A73 exclusivamente en CI Linux.');
 const root = process.cwd();
-const baseline = '14a7f1da13acef60d8a6d3470b0bdb7aea4a74c1';
+const baseline = 'fa41664ae9c2592db17db65086eb47fe382c0199';
 mkdirSync(resolve('test-results'), { recursive: true });
 const target = mkdtempSync(resolve('test-results/a73-reference-source-'));
 const run = (cmd, args, cwd = root) => {

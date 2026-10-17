@@ -35,6 +35,8 @@ test('A73 bounded startup and sustained reference: generic and boss, three seria
           serviceWorkers: 'block',
         });
         const page = await context.newPage();
+        const errors: string[] = [];
+        page.on('pageerror', (error) => errors.push(String(error)));
         await page.addInitScript(() => {
           const p = (window.__a73 = {
             frames: [],
@@ -171,8 +173,16 @@ test('A73 bounded startup and sustained reference: generic and boss, three seria
         const paused = await scene.getAttribute('data-render-count');
         await page.waitForTimeout(150);
         expect(await scene.getAttribute('data-render-count')).toBe(paused);
+        if (pair === 0 && kind === 'generic' && process.env.ARCANA_CAPTURE_A71 === '1') {
+          await mkdir(root, { recursive: true });
+          await page.screenshot({
+            path: resolve(root, `${variant}-alpha-sample.png`),
+            animations: 'disabled',
+          });
+        }
         await page.getByRole('button', { name: 'Omitir reproducción', exact: true }).click();
         await expect(page.locator('[data-arena-outcome]')).toBeVisible();
+        expect(errors).toEqual([]);
         records.push({ kind, pair, variant, startup, warmStart, warm, remount });
         await context.close();
       }

@@ -1,7 +1,8 @@
 import { readFileSync } from 'node:fs';
 const [beforeFile, afterFile] = process.argv.slice(2);
 if (!beforeFile || !afterFile) throw Error('Pass reference and candidate diagnostic JSON');
-const read = f => JSON.parse(readFileSync(f));
+import { gunzipSync } from 'node:zlib';
+const read = f => JSON.parse(f.endsWith('.gz') ? gunzipSync(readFileSync(f)) : readFileSync(f));
 const before = read(beforeFile), after = read(afterFile);
 const percentile = (v,q=.95) => [...v].sort((a,b)=>a-b)[Math.floor((v.length-1)*q)] ?? null;
 function sample(r) {
