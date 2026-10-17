@@ -1,4 +1,6 @@
 import { selectedA75 } from './selected-evidence';
+import { mkdir, writeFile } from 'node:fs/promises';
+import { resolve } from 'node:path';
 import {
   test,
   expect,
@@ -84,8 +86,10 @@ for (const pack of ['diagon-alley', 'arcana'])
       await page.locator('.portal-enter').click();
       await startExpedition(page, language);
       const toggle = page.locator('.map-view-toggle');
+      await expect(toggle.locator('img')).toHaveAttribute('data-art', 'ui.missions');
       const missions = await toggle.locator('img').getAttribute('src');
       await toggle.click();
+      await expect(toggle.locator('img')).toHaveAttribute('data-art', 'ui.map');
       const map = await toggle.locator('img').getAttribute('src');
       for (const source of [missions, map]) {
         expect(source).toBeTruthy();
@@ -93,7 +97,30 @@ for (const pack of ['diagon-alley', 'arcana'])
       }
       const before = await read(page);
       await page.reload();
-      await expect(toggle.locator('img')).toHaveCount(0);
+      await expect(toggle).toBeVisible();
+      try {
+        await expect(toggle.locator('img')).toHaveCount(0);
+      } finally {
+        const debug = await toggle.evaluate((e) => ({
+          html: e.outerHTML,
+          fallback: (() => {
+            const s = e.querySelector('.map-view-fallback')!;
+            const c = getComputedStyle(s);
+            const r = s.getBoundingClientRect();
+            return {
+              display: c.display,
+              visibility: c.visibility,
+              opacity: c.opacity,
+              width: r.width,
+              height: r.height,
+            };
+          })(),
+        }));
+        await test.info().attach('icon-fallback-state', {
+          body: JSON.stringify({ pack, language, missions, map, debug }, null, 2),
+          contentType: 'application/json',
+        });
+      }
       await expect(toggle.locator('.map-view-fallback')).toBeVisible();
       await expect(toggle).toHaveText(language === 'es' ? 'Ver lista de nodos' : 'View node list');
       await toggle.focus();
