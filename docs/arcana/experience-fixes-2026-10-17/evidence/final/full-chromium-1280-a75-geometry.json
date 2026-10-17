@@ -1,0 +1,4690 @@
+{
+  "sha": "8d38776e1997564601abbe5011387388a848a7bc",
+  "phase": "full",
+  "fixture": true,
+  "physicalDevice": false,
+  "alphaMethod": "Alpha>8 source bounding box projected to renderer figure height; not a GPU pixel/memory measurement.",
+  "samples": [
+    {
+      "pack": "diagon-alley",
+      "language": "es",
+      "shape": {
+        "player": 3,
+        "challenge": "discovery",
+        "rival": 3
+      },
+      "actionToPausedReadyWallMs": 644,
+      "geometry": {
+        "viewport": {
+          "width": 1280,
+          "height": 900
+        },
+        "header": {
+          "x": 0,
+          "y": 0,
+          "width": 1280,
+          "height": 68,
+          "bottom": 68,
+          "right": 1280
+        },
+        "heading": {
+          "x": 100,
+          "y": 76,
+          "width": 1080,
+          "height": 69,
+          "bottom": 145,
+          "right": 1180
+        },
+        "tools": {
+          "x": 100,
+          "y": 151,
+          "width": 1080,
+          "height": 50,
+          "bottom": 201,
+          "right": 1180
+        },
+        "stage": {
+          "x": 100,
+          "y": 207,
+          "width": 1080,
+          "height": 635,
+          "bottom": 842,
+          "right": 1180
+        },
+        "caption": {
+          "x": 100,
+          "y": 848,
+          "width": 1080,
+          "height": 44,
+          "bottom": 892,
+          "right": 1180
+        },
+        "scroll": {
+          "width": 1280,
+          "height": 900
+        },
+        "rows": [
+          {
+            "id": "a70-player-0",
+            "boss": false,
+            "pedestal": {
+              "x": 100,
+              "y": 229,
+              "width": 470,
+              "height": 204.90625,
+              "bottom": 433.90625,
+              "right": 570
+            },
+            "figure": {
+              "x": 104,
+              "y": 249,
+              "width": 462,
+              "height": 126.65625,
+              "bottom": 375.65625,
+              "right": 566
+            },
+            "name": {
+              "x": 283.203125,
+              "y": 375.65625,
+              "width": 103.59375,
+              "height": 20.25,
+              "bottom": 395.90625,
+              "right": 386.796875
+            },
+            "health": {
+              "x": 255,
+              "y": 395.90625,
+              "width": 160,
+              "height": 18,
+              "bottom": 413.90625,
+              "right": 415
+            },
+            "alphaSourceFootprint": {
+              "width": 93.80848422897195,
+              "height": 120.14588200934578,
+              "ratio": 0.9485981308411215
+            }
+          },
+          {
+            "id": "a70-player-1",
+            "boss": false,
+            "pedestal": {
+              "x": 100,
+              "y": 437.90625,
+              "width": 470,
+              "height": 204.90625,
+              "bottom": 642.8125,
+              "right": 570
+            },
+            "figure": {
+              "x": 104,
+              "y": 457.90625,
+              "width": 462,
+              "height": 126.65625,
+              "bottom": 584.5625,
+              "right": 566
+            },
+            "name": {
+              "x": 261.5,
+              "y": 584.5625,
+              "width": 146.984375,
+              "height": 20.25,
+              "bottom": 604.8125,
+              "right": 408.484375
+            },
+            "health": {
+              "x": 255,
+              "y": 604.8125,
+              "width": 160,
+              "height": 18,
+              "bottom": 622.8125,
+              "right": 415
+            },
+            "alphaSourceFootprint": {
+              "width": 94.9921875,
+              "height": 123.6969918224299,
+              "ratio": 0.9766355140186916
+            }
+          },
+          {
+            "id": "a70-player-2",
+            "boss": false,
+            "pedestal": {
+              "x": 100,
+              "y": 646.8125,
+              "width": 470,
+              "height": 204.90625,
+              "bottom": 851.71875,
+              "right": 570
+            },
+            "figure": {
+              "x": 104,
+              "y": 666.8125,
+              "width": 462,
+              "height": 126.65625,
+              "bottom": 793.46875,
+              "right": 566
+            },
+            "name": {
+              "x": 254.53125,
+              "y": 793.46875,
+              "width": 160.921875,
+              "height": 20.25,
+              "bottom": 813.71875,
+              "right": 415.453125
+            },
+            "health": {
+              "x": 255,
+              "y": 813.71875,
+              "width": 160,
+              "height": 18,
+              "bottom": 831.71875,
+              "right": 415
+            },
+            "alphaSourceFootprint": {
+              "width": 87.29811623831775,
+              "height": 123.10514018691588,
+              "ratio": 0.9719626168224299
+            }
+          },
+          {
+            "id": "pasaje:6:0:rival:0",
+            "boss": true,
+            "pedestal": {
+              "x": 710,
+              "y": 229,
+              "width": 470,
+              "height": 204.90625,
+              "bottom": 433.90625,
+              "right": 1180
+            },
+            "figure": {
+              "x": 714,
+              "y": 230,
+              "width": 462,
+              "height": 164.65625,
+              "bottom": 394.65625,
+              "right": 1176
+            },
+            "name": {
+              "x": 871.359375,
+              "y": 394.65625,
+              "width": 147.28125,
+              "height": 20.25,
+              "bottom": 414.90625,
+              "right": 1018.640625
+            },
+            "health": {
+              "x": 865,
+              "y": 414.90625,
+              "width": 160,
+              "height": 18,
+              "bottom": 432.90625,
+              "right": 1025
+            },
+            "alphaSourceFootprint": {
+              "width": 98.08624267578125,
+              "height": 134.74798583984375,
+              "ratio": 0.818359375
+            }
+          },
+          {
+            "id": "pasaje:6:0:rival:1",
+            "boss": false,
+            "pedestal": {
+              "x": 710,
+              "y": 437.90625,
+              "width": 470,
+              "height": 204.90625,
+              "bottom": 642.8125,
+              "right": 1180
+            },
+            "figure": {
+              "x": 714,
+              "y": 457.90625,
+              "width": 462,
+              "height": 126.65625,
+              "bottom": 584.5625,
+              "right": 1176
+            },
+            "name": {
+              "x": 892.28125,
+              "y": 584.5625,
+              "width": 105.421875,
+              "height": 20.25,
+              "bottom": 604.8125,
+              "right": 997.703125
+            },
+            "health": {
+              "x": 865,
+              "y": 604.8125,
+              "width": 160,
+              "height": 18,
+              "bottom": 622.8125,
+              "right": 1025
+            },
+            "alphaSourceFootprint": {
+              "width": 89.96144859813083,
+              "height": 121.62551109813083,
+              "ratio": 0.9602803738317757
+            }
+          },
+          {
+            "id": "pasaje:6:0:rival:2",
+            "boss": false,
+            "pedestal": {
+              "x": 710,
+              "y": 646.8125,
+              "width": 470,
+              "height": 204.90625,
+              "bottom": 851.71875,
+              "right": 1180
+            },
+            "figure": {
+              "x": 714,
+              "y": 666.8125,
+              "width": 462,
+              "height": 126.65625,
+              "bottom": 793.46875,
+              "right": 1176
+            },
+            "name": {
+              "x": 892.28125,
+              "y": 793.46875,
+              "width": 105.421875,
+              "height": 20.25,
+              "bottom": 813.71875,
+              "right": 997.703125
+            },
+            "health": {
+              "x": 865,
+              "y": 813.71875,
+              "width": 160,
+              "height": 18,
+              "bottom": 831.71875,
+              "right": 1025
+            },
+            "alphaSourceFootprint": {
+              "width": 94.9921875,
+              "height": 124.28884345794391,
+              "ratio": 0.9813084112149533
+            }
+          }
+        ]
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "language": "es",
+      "shape": {
+        "player": 5,
+        "challenge": "discovery",
+        "rival": 3
+      },
+      "actionToPausedReadyWallMs": 462,
+      "geometry": {
+        "viewport": {
+          "width": 1280,
+          "height": 900
+        },
+        "header": {
+          "x": 0,
+          "y": 0,
+          "width": 1280,
+          "height": 68,
+          "bottom": 68,
+          "right": 1280
+        },
+        "heading": {
+          "x": 100,
+          "y": 76,
+          "width": 1080,
+          "height": 69,
+          "bottom": 145,
+          "right": 1180
+        },
+        "tools": {
+          "x": 100,
+          "y": 151,
+          "width": 1080,
+          "height": 50,
+          "bottom": 201,
+          "right": 1180
+        },
+        "stage": {
+          "x": 100,
+          "y": 207,
+          "width": 1080,
+          "height": 635,
+          "bottom": 842,
+          "right": 1180
+        },
+        "caption": {
+          "x": 100,
+          "y": 848,
+          "width": 1080,
+          "height": 44,
+          "bottom": 892,
+          "right": 1180
+        },
+        "scroll": {
+          "width": 1280,
+          "height": 900
+        },
+        "rows": [
+          {
+            "id": "a70-player-0",
+            "boss": false,
+            "pedestal": {
+              "x": 100,
+              "y": 229,
+              "width": 470,
+              "height": 115.390625,
+              "bottom": 344.390625,
+              "right": 570
+            },
+            "figure": {
+              "x": 104,
+              "y": 236.5625,
+              "width": 462,
+              "height": 62,
+              "bottom": 298.5625,
+              "right": 566
+            },
+            "name": {
+              "x": 283.203125,
+              "y": 298.5625,
+              "width": 103.59375,
+              "height": 20.25,
+              "bottom": 318.8125,
+              "right": 386.796875
+            },
+            "health": {
+              "x": 255,
+              "y": 318.8125,
+              "width": 160,
+              "height": 18,
+              "bottom": 336.8125,
+              "right": 415
+            },
+            "alphaSourceFootprint": {
+              "width": 45.92056074766355,
+              "height": 58.813084112149525,
+              "ratio": 0.9485981308411215
+            }
+          },
+          {
+            "id": "a70-player-1",
+            "boss": false,
+            "pedestal": {
+              "x": 100,
+              "y": 348.390625,
+              "width": 470,
+              "height": 115.40625,
+              "bottom": 463.796875,
+              "right": 570
+            },
+            "figure": {
+              "x": 104,
+              "y": 355.96875,
+              "width": 462,
+              "height": 62,
+              "bottom": 417.96875,
+              "right": 566
+            },
+            "name": {
+              "x": 261.5,
+              "y": 417.96875,
+              "width": 146.984375,
+              "height": 20.25,
+              "bottom": 438.21875,
+              "right": 408.484375
+            },
+            "health": {
+              "x": 255,
+              "y": 438.21875,
+              "width": 160,
+              "height": 18,
+              "bottom": 456.21875,
+              "right": 415
+            },
+            "alphaSourceFootprint": {
+              "width": 46.49999999999999,
+              "height": 60.55140186915887,
+              "ratio": 0.9766355140186916
+            }
+          },
+          {
+            "id": "a70-player-2",
+            "boss": false,
+            "pedestal": {
+              "x": 100,
+              "y": 467.796875,
+              "width": 470,
+              "height": 115.390625,
+              "bottom": 583.1875,
+              "right": 570
+            },
+            "figure": {
+              "x": 104,
+              "y": 475.359375,
+              "width": 462,
+              "height": 62,
+              "bottom": 537.359375,
+              "right": 566
+            },
+            "name": {
+              "x": 254.53125,
+              "y": 537.359375,
+              "width": 160.921875,
+              "height": 20.25,
+              "bottom": 557.609375,
+              "right": 415.453125
+            },
+            "health": {
+              "x": 255,
+              "y": 557.609375,
+              "width": 160,
+              "height": 18,
+              "bottom": 575.609375,
+              "right": 415
+            },
+            "alphaSourceFootprint": {
+              "width": 42.73364485981308,
+              "height": 60.26168224299065,
+              "ratio": 0.9719626168224299
+            }
+          },
+          {
+            "id": "a70-player-3",
+            "boss": false,
+            "pedestal": {
+              "x": 100,
+              "y": 587.1875,
+              "width": 470,
+              "height": 115.40625,
+              "bottom": 702.59375,
+              "right": 570
+            },
+            "figure": {
+              "x": 104,
+              "y": 594.765625,
+              "width": 462,
+              "height": 62,
+              "bottom": 656.765625,
+              "right": 566
+            },
+            "name": {
+              "x": 275.796875,
+              "y": 656.765625,
+              "width": 118.40625,
+              "height": 20.25,
+              "bottom": 677.015625,
+              "right": 394.203125
+            },
+            "health": {
+              "x": 255,
+              "y": 677.015625,
+              "width": 160,
+              "height": 18,
+              "bottom": 695.015625,
+              "right": 415
+            },
+            "alphaSourceFootprint": {
+              "width": 46.49999999999999,
+              "height": 59.247663551401864,
+              "ratio": 0.955607476635514
+            }
+          },
+          {
+            "id": "a70-player-4",
+            "boss": false,
+            "pedestal": {
+              "x": 100,
+              "y": 706.59375,
+              "width": 470,
+              "height": 115.40625,
+              "bottom": 822,
+              "right": 570
+            },
+            "figure": {
+              "x": 104,
+              "y": 714.171875,
+              "width": 462,
+              "height": 62,
+              "bottom": 776.171875,
+              "right": 566
+            },
+            "name": {
+              "x": 274.53125,
+              "y": 776.171875,
+              "width": 120.921875,
+              "height": 20.25,
+              "bottom": 796.421875,
+              "right": 395.453125
+            },
+            "health": {
+              "x": 255,
+              "y": 796.421875,
+              "width": 160,
+              "height": 18,
+              "bottom": 814.421875,
+              "right": 415
+            },
+            "alphaSourceFootprint": {
+              "width": 44.03738317757009,
+              "height": 59.53738317757009,
+              "ratio": 0.9602803738317757
+            }
+          },
+          {
+            "id": "pasaje:6:0:rival:0",
+            "boss": true,
+            "pedestal": {
+              "x": 710,
+              "y": 229,
+              "width": 470,
+              "height": 195,
+              "bottom": 424,
+              "right": 1180
+            },
+            "figure": {
+              "x": 714,
+              "y": 267.078125,
+              "width": 462,
+              "height": 80.59375,
+              "bottom": 347.671875,
+              "right": 1176
+            },
+            "name": {
+              "x": 871.359375,
+              "y": 347.671875,
+              "width": 147.28125,
+              "height": 20.25,
+              "bottom": 367.921875,
+              "right": 1018.640625
+            },
+            "health": {
+              "x": 865,
+              "y": 367.921875,
+              "width": 160,
+              "height": 18,
+              "bottom": 385.921875,
+              "right": 1025
+            },
+            "alphaSourceFootprint": {
+              "width": 48.00994873046875,
+              "height": 65.95465087890625,
+              "ratio": 0.818359375
+            }
+          },
+          {
+            "id": "pasaje:6:0:rival:1",
+            "boss": false,
+            "pedestal": {
+              "x": 710,
+              "y": 428,
+              "width": 470,
+              "height": 195,
+              "bottom": 623,
+              "right": 1180
+            },
+            "figure": {
+              "x": 714,
+              "y": 475.375,
+              "width": 462,
+              "height": 62,
+              "bottom": 537.375,
+              "right": 1176
+            },
+            "name": {
+              "x": 892.28125,
+              "y": 537.375,
+              "width": 105.421875,
+              "height": 20.25,
+              "bottom": 557.625,
+              "right": 997.703125
+            },
+            "health": {
+              "x": 865,
+              "y": 557.625,
+              "width": 160,
+              "height": 18,
+              "bottom": 575.625,
+              "right": 1025
+            },
+            "alphaSourceFootprint": {
+              "width": 44.03738317757009,
+              "height": 59.53738317757009,
+              "ratio": 0.9602803738317757
+            }
+          },
+          {
+            "id": "pasaje:6:0:rival:2",
+            "boss": false,
+            "pedestal": {
+              "x": 710,
+              "y": 627,
+              "width": 470,
+              "height": 195,
+              "bottom": 822,
+              "right": 1180
+            },
+            "figure": {
+              "x": 714,
+              "y": 674.375,
+              "width": 462,
+              "height": 62,
+              "bottom": 736.375,
+              "right": 1176
+            },
+            "name": {
+              "x": 892.28125,
+              "y": 736.375,
+              "width": 105.421875,
+              "height": 20.25,
+              "bottom": 756.625,
+              "right": 997.703125
+            },
+            "health": {
+              "x": 865,
+              "y": 756.625,
+              "width": 160,
+              "height": 18,
+              "bottom": 774.625,
+              "right": 1025
+            },
+            "alphaSourceFootprint": {
+              "width": 46.49999999999999,
+              "height": 60.8411214953271,
+              "ratio": 0.9813084112149533
+            }
+          }
+        ]
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "language": "es",
+      "shape": {
+        "player": 5,
+        "challenge": "mastery",
+        "rival": 5
+      },
+      "actionToPausedReadyWallMs": 493,
+      "geometry": {
+        "viewport": {
+          "width": 1280,
+          "height": 900
+        },
+        "header": {
+          "x": 0,
+          "y": 0,
+          "width": 1280,
+          "height": 68,
+          "bottom": 68,
+          "right": 1280
+        },
+        "heading": {
+          "x": 100,
+          "y": 76,
+          "width": 1080,
+          "height": 69,
+          "bottom": 145,
+          "right": 1180
+        },
+        "tools": {
+          "x": 100,
+          "y": 151,
+          "width": 1080,
+          "height": 50,
+          "bottom": 201,
+          "right": 1180
+        },
+        "stage": {
+          "x": 100,
+          "y": 207,
+          "width": 1080,
+          "height": 635,
+          "bottom": 842,
+          "right": 1180
+        },
+        "caption": {
+          "x": 100,
+          "y": 848,
+          "width": 1080,
+          "height": 44,
+          "bottom": 892,
+          "right": 1180
+        },
+        "scroll": {
+          "width": 1280,
+          "height": 900
+        },
+        "rows": [
+          {
+            "id": "a70-player-0",
+            "boss": false,
+            "pedestal": {
+              "x": 100,
+              "y": 229,
+              "width": 470,
+              "height": 115.390625,
+              "bottom": 344.390625,
+              "right": 570
+            },
+            "figure": {
+              "x": 104,
+              "y": 236.5625,
+              "width": 462,
+              "height": 62,
+              "bottom": 298.5625,
+              "right": 566
+            },
+            "name": {
+              "x": 283.203125,
+              "y": 298.5625,
+              "width": 103.59375,
+              "height": 20.25,
+              "bottom": 318.8125,
+              "right": 386.796875
+            },
+            "health": {
+              "x": 255,
+              "y": 318.8125,
+              "width": 160,
+              "height": 18,
+              "bottom": 336.8125,
+              "right": 415
+            },
+            "alphaSourceFootprint": {
+              "width": 45.92056074766355,
+              "height": 58.813084112149525,
+              "ratio": 0.9485981308411215
+            }
+          },
+          {
+            "id": "a70-player-1",
+            "boss": false,
+            "pedestal": {
+              "x": 100,
+              "y": 348.390625,
+              "width": 470,
+              "height": 115.40625,
+              "bottom": 463.796875,
+              "right": 570
+            },
+            "figure": {
+              "x": 104,
+              "y": 355.96875,
+              "width": 462,
+              "height": 62,
+              "bottom": 417.96875,
+              "right": 566
+            },
+            "name": {
+              "x": 261.5,
+              "y": 417.96875,
+              "width": 146.984375,
+              "height": 20.25,
+              "bottom": 438.21875,
+              "right": 408.484375
+            },
+            "health": {
+              "x": 255,
+              "y": 438.21875,
+              "width": 160,
+              "height": 18,
+              "bottom": 456.21875,
+              "right": 415
+            },
+            "alphaSourceFootprint": {
+              "width": 46.49999999999999,
+              "height": 60.55140186915887,
+              "ratio": 0.9766355140186916
+            }
+          },
+          {
+            "id": "a70-player-2",
+            "boss": false,
+            "pedestal": {
+              "x": 100,
+              "y": 467.796875,
+              "width": 470,
+              "height": 115.390625,
+              "bottom": 583.1875,
+              "right": 570
+            },
+            "figure": {
+              "x": 104,
+              "y": 475.359375,
+              "width": 462,
+              "height": 62,
+              "bottom": 537.359375,
+              "right": 566
+            },
+            "name": {
+              "x": 254.53125,
+              "y": 537.359375,
+              "width": 160.921875,
+              "height": 20.25,
+              "bottom": 557.609375,
+              "right": 415.453125
+            },
+            "health": {
+              "x": 255,
+              "y": 557.609375,
+              "width": 160,
+              "height": 18,
+              "bottom": 575.609375,
+              "right": 415
+            },
+            "alphaSourceFootprint": {
+              "width": 42.73364485981308,
+              "height": 60.26168224299065,
+              "ratio": 0.9719626168224299
+            }
+          },
+          {
+            "id": "a70-player-3",
+            "boss": false,
+            "pedestal": {
+              "x": 100,
+              "y": 587.1875,
+              "width": 470,
+              "height": 115.40625,
+              "bottom": 702.59375,
+              "right": 570
+            },
+            "figure": {
+              "x": 104,
+              "y": 594.765625,
+              "width": 462,
+              "height": 62,
+              "bottom": 656.765625,
+              "right": 566
+            },
+            "name": {
+              "x": 275.796875,
+              "y": 656.765625,
+              "width": 118.40625,
+              "height": 20.25,
+              "bottom": 677.015625,
+              "right": 394.203125
+            },
+            "health": {
+              "x": 255,
+              "y": 677.015625,
+              "width": 160,
+              "height": 18,
+              "bottom": 695.015625,
+              "right": 415
+            },
+            "alphaSourceFootprint": {
+              "width": 46.49999999999999,
+              "height": 59.247663551401864,
+              "ratio": 0.955607476635514
+            }
+          },
+          {
+            "id": "a70-player-4",
+            "boss": false,
+            "pedestal": {
+              "x": 100,
+              "y": 706.59375,
+              "width": 470,
+              "height": 115.40625,
+              "bottom": 822,
+              "right": 570
+            },
+            "figure": {
+              "x": 104,
+              "y": 714.171875,
+              "width": 462,
+              "height": 62,
+              "bottom": 776.171875,
+              "right": 566
+            },
+            "name": {
+              "x": 274.53125,
+              "y": 776.171875,
+              "width": 120.921875,
+              "height": 20.25,
+              "bottom": 796.421875,
+              "right": 395.453125
+            },
+            "health": {
+              "x": 255,
+              "y": 796.421875,
+              "width": 160,
+              "height": 18,
+              "bottom": 814.421875,
+              "right": 415
+            },
+            "alphaSourceFootprint": {
+              "width": 44.03738317757009,
+              "height": 59.53738317757009,
+              "ratio": 0.9602803738317757
+            }
+          },
+          {
+            "id": "pasaje:6:0:rival:0",
+            "boss": true,
+            "pedestal": {
+              "x": 710,
+              "y": 229,
+              "width": 470,
+              "height": 132.421875,
+              "bottom": 361.421875,
+              "right": 1180
+            },
+            "figure": {
+              "x": 714,
+              "y": 238.0625,
+              "width": 462,
+              "height": 76.03125,
+              "bottom": 314.09375,
+              "right": 1176
+            },
+            "name": {
+              "x": 871.359375,
+              "y": 314.09375,
+              "width": 147.28125,
+              "height": 20.25,
+              "bottom": 334.34375,
+              "right": 1018.640625
+            },
+            "health": {
+              "x": 865,
+              "y": 334.34375,
+              "width": 160,
+              "height": 18,
+              "bottom": 352.34375,
+              "right": 1025
+            },
+            "alphaSourceFootprint": {
+              "width": 45.29205322265625,
+              "height": 62.22088623046875,
+              "ratio": 0.818359375
+            }
+          },
+          {
+            "id": "pasaje:6:0:rival:1",
+            "boss": false,
+            "pedestal": {
+              "x": 710,
+              "y": 365.421875,
+              "width": 470,
+              "height": 111.140625,
+              "bottom": 476.5625,
+              "right": 1180
+            },
+            "figure": {
+              "x": 714,
+              "y": 372.625,
+              "width": 462,
+              "height": 58.484375,
+              "bottom": 431.109375,
+              "right": 1176
+            },
+            "name": {
+              "x": 892.15625,
+              "y": 431.109375,
+              "width": 105.6875,
+              "height": 20.25,
+              "bottom": 451.359375,
+              "right": 997.84375
+            },
+            "health": {
+              "x": 865,
+              "y": 451.359375,
+              "width": 160,
+              "height": 18,
+              "bottom": 469.359375,
+              "right": 1025
+            },
+            "alphaSourceFootprint": {
+              "width": 42.63346962616823,
+              "height": 55.751460280373834,
+              "ratio": 0.9532710280373832
+            }
+          },
+          {
+            "id": "pasaje:6:0:rival:2",
+            "boss": false,
+            "pedestal": {
+              "x": 710,
+              "y": 480.5625,
+              "width": 470,
+              "height": 111.15625,
+              "bottom": 591.71875,
+              "right": 1180
+            },
+            "figure": {
+              "x": 714,
+              "y": 487.765625,
+              "width": 462,
+              "height": 58.484375,
+              "bottom": 546.25,
+              "right": 1176
+            },
+            "name": {
+              "x": 882.453125,
+              "y": 546.25,
+              "width": 125.09375,
+              "height": 20.25,
+              "bottom": 566.5,
+              "right": 1007.546875
+            },
+            "health": {
+              "x": 865,
+              "y": 566.5,
+              "width": 160,
+              "height": 18,
+              "bottom": 584.5,
+              "right": 1025
+            },
+            "alphaSourceFootprint": {
+              "width": 43.86328125,
+              "height": 55.2048773364486,
+              "ratio": 0.9439252336448598
+            }
+          },
+          {
+            "id": "pasaje:6:0:rival:3",
+            "boss": false,
+            "pedestal": {
+              "x": 710,
+              "y": 595.71875,
+              "width": 470,
+              "height": 111.140625,
+              "bottom": 706.859375,
+              "right": 1180
+            },
+            "figure": {
+              "x": 714,
+              "y": 602.921875,
+              "width": 462,
+              "height": 58.484375,
+              "bottom": 661.40625,
+              "right": 1176
+            },
+            "name": {
+              "x": 869.046875,
+              "y": 661.40625,
+              "width": 151.890625,
+              "height": 20.25,
+              "bottom": 681.65625,
+              "right": 1020.9375
+            },
+            "health": {
+              "x": 865,
+              "y": 681.65625,
+              "width": 160,
+              "height": 18,
+              "bottom": 699.65625,
+              "right": 1025
+            },
+            "alphaSourceFootprint": {
+              "width": 43.31669830607477,
+              "height": 56.16139748831776,
+              "ratio": 0.9602803738317757
+            }
+          },
+          {
+            "id": "pasaje:6:0:rival:4",
+            "boss": false,
+            "pedestal": {
+              "x": 710,
+              "y": 710.859375,
+              "width": 470,
+              "height": 111.140625,
+              "bottom": 822,
+              "right": 1180
+            },
+            "figure": {
+              "x": 714,
+              "y": 718.0625,
+              "width": 462,
+              "height": 58.484375,
+              "bottom": 776.546875,
+              "right": 1176
+            },
+            "name": {
+              "x": 883.453125,
+              "y": 776.546875,
+              "width": 123.078125,
+              "height": 20.25,
+              "bottom": 796.796875,
+              "right": 1006.53125
+            },
+            "health": {
+              "x": 865,
+              "y": 796.796875,
+              "width": 160,
+              "height": 18,
+              "bottom": 814.796875,
+              "right": 1025
+            },
+            "alphaSourceFootprint": {
+              "width": 38.80738901869159,
+              "height": 53.70177424065421,
+              "ratio": 0.9182242990654206
+            }
+          }
+        ]
+      }
+    },
+    {
+      "pack": "arcana",
+      "language": "es",
+      "shape": {
+        "player": 3,
+        "challenge": "discovery",
+        "rival": 3
+      },
+      "actionToPausedReadyWallMs": 463,
+      "geometry": {
+        "viewport": {
+          "width": 1280,
+          "height": 900
+        },
+        "header": {
+          "x": 0,
+          "y": 0,
+          "width": 1280,
+          "height": 68,
+          "bottom": 68,
+          "right": 1280
+        },
+        "heading": {
+          "x": 100,
+          "y": 76,
+          "width": 1080,
+          "height": 69,
+          "bottom": 145,
+          "right": 1180
+        },
+        "tools": {
+          "x": 100,
+          "y": 151,
+          "width": 1080,
+          "height": 50,
+          "bottom": 201,
+          "right": 1180
+        },
+        "stage": {
+          "x": 100,
+          "y": 207,
+          "width": 1080,
+          "height": 635,
+          "bottom": 842,
+          "right": 1180
+        },
+        "caption": {
+          "x": 100,
+          "y": 848,
+          "width": 1080,
+          "height": 44,
+          "bottom": 892,
+          "right": 1180
+        },
+        "scroll": {
+          "width": 1280,
+          "height": 900
+        },
+        "rows": [
+          {
+            "id": "a70-player-0",
+            "boss": false,
+            "pedestal": {
+              "x": 100,
+              "y": 229,
+              "width": 470,
+              "height": 204.90625,
+              "bottom": 433.90625,
+              "right": 570
+            },
+            "figure": {
+              "x": 104,
+              "y": 249,
+              "width": 462,
+              "height": 126.65625,
+              "bottom": 375.65625,
+              "right": 566
+            },
+            "name": {
+              "x": 250.65625,
+              "y": 375.65625,
+              "width": 168.671875,
+              "height": 20.25,
+              "bottom": 395.90625,
+              "right": 419.328125
+            },
+            "health": {
+              "x": 255,
+              "y": 395.90625,
+              "width": 160,
+              "height": 18,
+              "bottom": 413.90625,
+              "right": 415
+            },
+            "alphaSourceFootprint": {
+              "width": 66.04925537109375,
+              "height": 100.4344482421875,
+              "ratio": 0.79296875
+            }
+          },
+          {
+            "id": "a70-player-1",
+            "boss": false,
+            "pedestal": {
+              "x": 100,
+              "y": 437.90625,
+              "width": 470,
+              "height": 204.90625,
+              "bottom": 642.8125,
+              "right": 570
+            },
+            "figure": {
+              "x": 104,
+              "y": 457.90625,
+              "width": 462,
+              "height": 126.65625,
+              "bottom": 584.5625,
+              "right": 566
+            },
+            "name": {
+              "x": 305.828125,
+              "y": 584.5625,
+              "width": 58.34375,
+              "height": 20.25,
+              "bottom": 604.8125,
+              "right": 364.171875
+            },
+            "health": {
+              "x": 255,
+              "y": 604.8125,
+              "width": 160,
+              "height": 18,
+              "bottom": 622.8125,
+              "right": 415
+            },
+            "alphaSourceFootprint": {
+              "width": 66.54400634765625,
+              "height": 99.4449462890625,
+              "ratio": 0.78515625
+            }
+          },
+          {
+            "id": "a70-player-2",
+            "boss": false,
+            "pedestal": {
+              "x": 100,
+              "y": 646.8125,
+              "width": 470,
+              "height": 204.90625,
+              "bottom": 851.71875,
+              "right": 570
+            },
+            "figure": {
+              "x": 104,
+              "y": 666.8125,
+              "width": 462,
+              "height": 126.65625,
+              "bottom": 793.46875,
+              "right": 566
+            },
+            "name": {
+              "x": 271.234375,
+              "y": 793.46875,
+              "width": 127.515625,
+              "height": 20.25,
+              "bottom": 813.71875,
+              "right": 398.75
+            },
+            "health": {
+              "x": 255,
+              "y": 813.71875,
+              "width": 160,
+              "height": 18,
+              "bottom": 831.71875,
+              "right": 415
+            },
+            "alphaSourceFootprint": {
+              "width": 61.34912109375,
+              "height": 100.68182373046875,
+              "ratio": 0.794921875
+            }
+          },
+          {
+            "id": "pasaje:6:0:rival:0",
+            "boss": true,
+            "pedestal": {
+              "x": 710,
+              "y": 229,
+              "width": 470,
+              "height": 204.90625,
+              "bottom": 433.90625,
+              "right": 1180
+            },
+            "figure": {
+              "x": 714,
+              "y": 230,
+              "width": 462,
+              "height": 164.65625,
+              "bottom": 394.65625,
+              "right": 1176
+            },
+            "name": {
+              "x": 920.53125,
+              "y": 394.65625,
+              "width": 48.9375,
+              "height": 20.25,
+              "bottom": 414.90625,
+              "right": 969.46875
+            },
+            "health": {
+              "x": 865,
+              "y": 414.90625,
+              "width": 160,
+              "height": 18,
+              "bottom": 432.90625,
+              "right": 1025
+            },
+            "alphaSourceFootprint": {
+              "width": 116.09552001953125,
+              "height": 123.81378173828125,
+              "ratio": 0.751953125
+            }
+          },
+          {
+            "id": "pasaje:6:0:rival:1",
+            "boss": false,
+            "pedestal": {
+              "x": 710,
+              "y": 437.90625,
+              "width": 470,
+              "height": 204.90625,
+              "bottom": 642.8125,
+              "right": 1180
+            },
+            "figure": {
+              "x": 714,
+              "y": 457.90625,
+              "width": 462,
+              "height": 126.65625,
+              "bottom": 584.5625,
+              "right": 1176
+            },
+            "name": {
+              "x": 893.71875,
+              "y": 584.5625,
+              "width": 102.546875,
+              "height": 20.25,
+              "bottom": 604.8125,
+              "right": 996.265625
+            },
+            "health": {
+              "x": 865,
+              "y": 604.8125,
+              "width": 160,
+              "height": 18,
+              "bottom": 622.8125,
+              "right": 1025
+            },
+            "alphaSourceFootprint": {
+              "width": 55.16473388671875,
+              "height": 94.74481201171875,
+              "ratio": 0.748046875
+            }
+          },
+          {
+            "id": "pasaje:6:0:rival:2",
+            "boss": false,
+            "pedestal": {
+              "x": 710,
+              "y": 646.8125,
+              "width": 470,
+              "height": 204.90625,
+              "bottom": 851.71875,
+              "right": 1180
+            },
+            "figure": {
+              "x": 714,
+              "y": 666.8125,
+              "width": 462,
+              "height": 126.65625,
+              "bottom": 793.46875,
+              "right": 1176
+            },
+            "name": {
+              "x": 893.71875,
+              "y": 793.46875,
+              "width": 102.546875,
+              "height": 20.25,
+              "bottom": 813.71875,
+              "right": 996.265625
+            },
+            "health": {
+              "x": 865,
+              "y": 813.71875,
+              "width": 160,
+              "height": 18,
+              "bottom": 831.71875,
+              "right": 1025
+            },
+            "alphaSourceFootprint": {
+              "width": 58.62799072265625,
+              "height": 100.92919921875,
+              "ratio": 0.796875
+            }
+          }
+        ]
+      }
+    },
+    {
+      "pack": "arcana",
+      "language": "es",
+      "shape": {
+        "player": 5,
+        "challenge": "discovery",
+        "rival": 3
+      },
+      "actionToPausedReadyWallMs": 474,
+      "geometry": {
+        "viewport": {
+          "width": 1280,
+          "height": 900
+        },
+        "header": {
+          "x": 0,
+          "y": 0,
+          "width": 1280,
+          "height": 68,
+          "bottom": 68,
+          "right": 1280
+        },
+        "heading": {
+          "x": 100,
+          "y": 76,
+          "width": 1080,
+          "height": 69,
+          "bottom": 145,
+          "right": 1180
+        },
+        "tools": {
+          "x": 100,
+          "y": 151,
+          "width": 1080,
+          "height": 50,
+          "bottom": 201,
+          "right": 1180
+        },
+        "stage": {
+          "x": 100,
+          "y": 207,
+          "width": 1080,
+          "height": 635,
+          "bottom": 842,
+          "right": 1180
+        },
+        "caption": {
+          "x": 100,
+          "y": 848,
+          "width": 1080,
+          "height": 44,
+          "bottom": 892,
+          "right": 1180
+        },
+        "scroll": {
+          "width": 1280,
+          "height": 900
+        },
+        "rows": [
+          {
+            "id": "a70-player-0",
+            "boss": false,
+            "pedestal": {
+              "x": 100,
+              "y": 229,
+              "width": 470,
+              "height": 115.390625,
+              "bottom": 344.390625,
+              "right": 570
+            },
+            "figure": {
+              "x": 104,
+              "y": 236.5625,
+              "width": 462,
+              "height": 62,
+              "bottom": 298.5625,
+              "right": 566
+            },
+            "name": {
+              "x": 250.65625,
+              "y": 298.5625,
+              "width": 168.671875,
+              "height": 20.25,
+              "bottom": 318.8125,
+              "right": 419.328125
+            },
+            "health": {
+              "x": 255,
+              "y": 318.8125,
+              "width": 160,
+              "height": 18,
+              "bottom": 336.8125,
+              "right": 415
+            },
+            "alphaSourceFootprint": {
+              "width": 32.33203125,
+              "height": 49.1640625,
+              "ratio": 0.79296875
+            }
+          },
+          {
+            "id": "a70-player-1",
+            "boss": false,
+            "pedestal": {
+              "x": 100,
+              "y": 348.390625,
+              "width": 470,
+              "height": 115.40625,
+              "bottom": 463.796875,
+              "right": 570
+            },
+            "figure": {
+              "x": 104,
+              "y": 355.96875,
+              "width": 462,
+              "height": 62,
+              "bottom": 417.96875,
+              "right": 566
+            },
+            "name": {
+              "x": 305.828125,
+              "y": 417.96875,
+              "width": 58.34375,
+              "height": 20.25,
+              "bottom": 438.21875,
+              "right": 364.171875
+            },
+            "health": {
+              "x": 255,
+              "y": 438.21875,
+              "width": 160,
+              "height": 18,
+              "bottom": 456.21875,
+              "right": 415
+            },
+            "alphaSourceFootprint": {
+              "width": 32.57421875,
+              "height": 48.6796875,
+              "ratio": 0.78515625
+            }
+          },
+          {
+            "id": "a70-player-2",
+            "boss": false,
+            "pedestal": {
+              "x": 100,
+              "y": 467.796875,
+              "width": 470,
+              "height": 115.390625,
+              "bottom": 583.1875,
+              "right": 570
+            },
+            "figure": {
+              "x": 104,
+              "y": 475.359375,
+              "width": 462,
+              "height": 62,
+              "bottom": 537.359375,
+              "right": 566
+            },
+            "name": {
+              "x": 271.234375,
+              "y": 537.359375,
+              "width": 127.515625,
+              "height": 20.25,
+              "bottom": 557.609375,
+              "right": 398.75
+            },
+            "health": {
+              "x": 255,
+              "y": 557.609375,
+              "width": 160,
+              "height": 18,
+              "bottom": 575.609375,
+              "right": 415
+            },
+            "alphaSourceFootprint": {
+              "width": 30.03125,
+              "height": 49.28515625,
+              "ratio": 0.794921875
+            }
+          },
+          {
+            "id": "a70-player-3",
+            "boss": false,
+            "pedestal": {
+              "x": 100,
+              "y": 587.1875,
+              "width": 470,
+              "height": 115.40625,
+              "bottom": 702.59375,
+              "right": 570
+            },
+            "figure": {
+              "x": 104,
+              "y": 594.765625,
+              "width": 462,
+              "height": 62,
+              "bottom": 656.765625,
+              "right": 566
+            },
+            "name": {
+              "x": 275.796875,
+              "y": 656.765625,
+              "width": 118.40625,
+              "height": 20.25,
+              "bottom": 677.015625,
+              "right": 394.203125
+            },
+            "health": {
+              "x": 255,
+              "y": 677.015625,
+              "width": 160,
+              "height": 18,
+              "bottom": 695.015625,
+              "right": 415
+            },
+            "alphaSourceFootprint": {
+              "width": 26.27734375,
+              "height": 49.1640625,
+              "ratio": 0.79296875
+            }
+          },
+          {
+            "id": "a70-player-4",
+            "boss": false,
+            "pedestal": {
+              "x": 100,
+              "y": 706.59375,
+              "width": 470,
+              "height": 115.40625,
+              "bottom": 822,
+              "right": 570
+            },
+            "figure": {
+              "x": 104,
+              "y": 714.171875,
+              "width": 462,
+              "height": 62,
+              "bottom": 776.171875,
+              "right": 566
+            },
+            "name": {
+              "x": 293.59375,
+              "y": 776.171875,
+              "width": 82.796875,
+              "height": 20.25,
+              "bottom": 796.421875,
+              "right": 376.390625
+            },
+            "health": {
+              "x": 255,
+              "y": 796.421875,
+              "width": 160,
+              "height": 18,
+              "bottom": 814.421875,
+              "right": 415
+            },
+            "alphaSourceFootprint": {
+              "width": 28.21484375,
+              "height": 48.921875,
+              "ratio": 0.7890625
+            }
+          },
+          {
+            "id": "pasaje:6:0:rival:0",
+            "boss": true,
+            "pedestal": {
+              "x": 710,
+              "y": 229,
+              "width": 470,
+              "height": 195,
+              "bottom": 424,
+              "right": 1180
+            },
+            "figure": {
+              "x": 714,
+              "y": 267.078125,
+              "width": 462,
+              "height": 80.59375,
+              "bottom": 347.671875,
+              "right": 1176
+            },
+            "name": {
+              "x": 920.53125,
+              "y": 347.671875,
+              "width": 48.9375,
+              "height": 20.25,
+              "bottom": 367.921875,
+              "right": 969.46875
+            },
+            "health": {
+              "x": 865,
+              "y": 367.921875,
+              "width": 160,
+              "height": 18,
+              "bottom": 385.921875,
+              "right": 1025
+            },
+            "alphaSourceFootprint": {
+              "width": 56.82489013671875,
+              "height": 60.60272216796875,
+              "ratio": 0.751953125
+            }
+          },
+          {
+            "id": "pasaje:6:0:rival:1",
+            "boss": false,
+            "pedestal": {
+              "x": 710,
+              "y": 428,
+              "width": 470,
+              "height": 195,
+              "bottom": 623,
+              "right": 1180
+            },
+            "figure": {
+              "x": 714,
+              "y": 475.375,
+              "width": 462,
+              "height": 62,
+              "bottom": 537.375,
+              "right": 1176
+            },
+            "name": {
+              "x": 893.71875,
+              "y": 537.375,
+              "width": 102.546875,
+              "height": 20.25,
+              "bottom": 557.625,
+              "right": 996.265625
+            },
+            "health": {
+              "x": 865,
+              "y": 557.625,
+              "width": 160,
+              "height": 18,
+              "bottom": 575.625,
+              "right": 1025
+            },
+            "alphaSourceFootprint": {
+              "width": 27.00390625,
+              "height": 46.37890625,
+              "ratio": 0.748046875
+            }
+          },
+          {
+            "id": "pasaje:6:0:rival:2",
+            "boss": false,
+            "pedestal": {
+              "x": 710,
+              "y": 627,
+              "width": 470,
+              "height": 195,
+              "bottom": 822,
+              "right": 1180
+            },
+            "figure": {
+              "x": 714,
+              "y": 674.375,
+              "width": 462,
+              "height": 62,
+              "bottom": 736.375,
+              "right": 1176
+            },
+            "name": {
+              "x": 893.71875,
+              "y": 736.375,
+              "width": 102.546875,
+              "height": 20.25,
+              "bottom": 756.625,
+              "right": 996.265625
+            },
+            "health": {
+              "x": 865,
+              "y": 756.625,
+              "width": 160,
+              "height": 18,
+              "bottom": 774.625,
+              "right": 1025
+            },
+            "alphaSourceFootprint": {
+              "width": 28.69921875,
+              "height": 49.40625,
+              "ratio": 0.796875
+            }
+          }
+        ]
+      }
+    },
+    {
+      "pack": "arcana",
+      "language": "es",
+      "shape": {
+        "player": 5,
+        "challenge": "mastery",
+        "rival": 5
+      },
+      "actionToPausedReadyWallMs": 577,
+      "geometry": {
+        "viewport": {
+          "width": 1280,
+          "height": 900
+        },
+        "header": {
+          "x": 0,
+          "y": 0,
+          "width": 1280,
+          "height": 68,
+          "bottom": 68,
+          "right": 1280
+        },
+        "heading": {
+          "x": 100,
+          "y": 76,
+          "width": 1080,
+          "height": 69,
+          "bottom": 145,
+          "right": 1180
+        },
+        "tools": {
+          "x": 100,
+          "y": 151,
+          "width": 1080,
+          "height": 50,
+          "bottom": 201,
+          "right": 1180
+        },
+        "stage": {
+          "x": 100,
+          "y": 207,
+          "width": 1080,
+          "height": 635,
+          "bottom": 842,
+          "right": 1180
+        },
+        "caption": {
+          "x": 100,
+          "y": 848,
+          "width": 1080,
+          "height": 44,
+          "bottom": 892,
+          "right": 1180
+        },
+        "scroll": {
+          "width": 1280,
+          "height": 900
+        },
+        "rows": [
+          {
+            "id": "a70-player-0",
+            "boss": false,
+            "pedestal": {
+              "x": 100,
+              "y": 229,
+              "width": 470,
+              "height": 115.390625,
+              "bottom": 344.390625,
+              "right": 570
+            },
+            "figure": {
+              "x": 104,
+              "y": 236.5625,
+              "width": 462,
+              "height": 62,
+              "bottom": 298.5625,
+              "right": 566
+            },
+            "name": {
+              "x": 250.65625,
+              "y": 298.5625,
+              "width": 168.671875,
+              "height": 20.25,
+              "bottom": 318.8125,
+              "right": 419.328125
+            },
+            "health": {
+              "x": 255,
+              "y": 318.8125,
+              "width": 160,
+              "height": 18,
+              "bottom": 336.8125,
+              "right": 415
+            },
+            "alphaSourceFootprint": {
+              "width": 32.33203125,
+              "height": 49.1640625,
+              "ratio": 0.79296875
+            }
+          },
+          {
+            "id": "a70-player-1",
+            "boss": false,
+            "pedestal": {
+              "x": 100,
+              "y": 348.390625,
+              "width": 470,
+              "height": 115.40625,
+              "bottom": 463.796875,
+              "right": 570
+            },
+            "figure": {
+              "x": 104,
+              "y": 355.96875,
+              "width": 462,
+              "height": 62,
+              "bottom": 417.96875,
+              "right": 566
+            },
+            "name": {
+              "x": 305.828125,
+              "y": 417.96875,
+              "width": 58.34375,
+              "height": 20.25,
+              "bottom": 438.21875,
+              "right": 364.171875
+            },
+            "health": {
+              "x": 255,
+              "y": 438.21875,
+              "width": 160,
+              "height": 18,
+              "bottom": 456.21875,
+              "right": 415
+            },
+            "alphaSourceFootprint": {
+              "width": 32.57421875,
+              "height": 48.6796875,
+              "ratio": 0.78515625
+            }
+          },
+          {
+            "id": "a70-player-2",
+            "boss": false,
+            "pedestal": {
+              "x": 100,
+              "y": 467.796875,
+              "width": 470,
+              "height": 115.390625,
+              "bottom": 583.1875,
+              "right": 570
+            },
+            "figure": {
+              "x": 104,
+              "y": 475.359375,
+              "width": 462,
+              "height": 62,
+              "bottom": 537.359375,
+              "right": 566
+            },
+            "name": {
+              "x": 271.234375,
+              "y": 537.359375,
+              "width": 127.515625,
+              "height": 20.25,
+              "bottom": 557.609375,
+              "right": 398.75
+            },
+            "health": {
+              "x": 255,
+              "y": 557.609375,
+              "width": 160,
+              "height": 18,
+              "bottom": 575.609375,
+              "right": 415
+            },
+            "alphaSourceFootprint": {
+              "width": 30.03125,
+              "height": 49.28515625,
+              "ratio": 0.794921875
+            }
+          },
+          {
+            "id": "a70-player-3",
+            "boss": false,
+            "pedestal": {
+              "x": 100,
+              "y": 587.1875,
+              "width": 470,
+              "height": 115.40625,
+              "bottom": 702.59375,
+              "right": 570
+            },
+            "figure": {
+              "x": 104,
+              "y": 594.765625,
+              "width": 462,
+              "height": 62,
+              "bottom": 656.765625,
+              "right": 566
+            },
+            "name": {
+              "x": 275.796875,
+              "y": 656.765625,
+              "width": 118.40625,
+              "height": 20.25,
+              "bottom": 677.015625,
+              "right": 394.203125
+            },
+            "health": {
+              "x": 255,
+              "y": 677.015625,
+              "width": 160,
+              "height": 18,
+              "bottom": 695.015625,
+              "right": 415
+            },
+            "alphaSourceFootprint": {
+              "width": 26.27734375,
+              "height": 49.1640625,
+              "ratio": 0.79296875
+            }
+          },
+          {
+            "id": "a70-player-4",
+            "boss": false,
+            "pedestal": {
+              "x": 100,
+              "y": 706.59375,
+              "width": 470,
+              "height": 115.40625,
+              "bottom": 822,
+              "right": 570
+            },
+            "figure": {
+              "x": 104,
+              "y": 714.171875,
+              "width": 462,
+              "height": 62,
+              "bottom": 776.171875,
+              "right": 566
+            },
+            "name": {
+              "x": 293.59375,
+              "y": 776.171875,
+              "width": 82.796875,
+              "height": 20.25,
+              "bottom": 796.421875,
+              "right": 376.390625
+            },
+            "health": {
+              "x": 255,
+              "y": 796.421875,
+              "width": 160,
+              "height": 18,
+              "bottom": 814.421875,
+              "right": 415
+            },
+            "alphaSourceFootprint": {
+              "width": 28.21484375,
+              "height": 48.921875,
+              "ratio": 0.7890625
+            }
+          },
+          {
+            "id": "pasaje:6:0:rival:0",
+            "boss": true,
+            "pedestal": {
+              "x": 710,
+              "y": 229,
+              "width": 470,
+              "height": 132.421875,
+              "bottom": 361.421875,
+              "right": 1180
+            },
+            "figure": {
+              "x": 714,
+              "y": 238.0625,
+              "width": 462,
+              "height": 76.03125,
+              "bottom": 314.09375,
+              "right": 1176
+            },
+            "name": {
+              "x": 920.53125,
+              "y": 314.09375,
+              "width": 48.9375,
+              "height": 20.25,
+              "bottom": 334.34375,
+              "right": 969.46875
+            },
+            "health": {
+              "x": 865,
+              "y": 334.34375,
+              "width": 160,
+              "height": 18,
+              "bottom": 352.34375,
+              "right": 1025
+            },
+            "alphaSourceFootprint": {
+              "width": 53.60797119140625,
+              "height": 57.17193603515625,
+              "ratio": 0.751953125
+            }
+          },
+          {
+            "id": "pasaje:6:0:rival:1",
+            "boss": false,
+            "pedestal": {
+              "x": 710,
+              "y": 365.421875,
+              "width": 470,
+              "height": 111.140625,
+              "bottom": 476.5625,
+              "right": 1180
+            },
+            "figure": {
+              "x": 714,
+              "y": 372.625,
+              "width": 462,
+              "height": 58.484375,
+              "bottom": 431.109375,
+              "right": 1176
+            },
+            "name": {
+              "x": 854.546875,
+              "y": 431.109375,
+              "width": 180.90625,
+              "height": 20.25,
+              "bottom": 451.359375,
+              "right": 1035.453125
+            },
+            "health": {
+              "x": 865,
+              "y": 451.359375,
+              "width": 160,
+              "height": 18,
+              "bottom": 469.359375,
+              "right": 1025
+            },
+            "alphaSourceFootprint": {
+              "width": 29.127960205078125,
+              "height": 46.37628173828125,
+              "ratio": 0.79296875
+            }
+          },
+          {
+            "id": "pasaje:6:0:rival:2",
+            "boss": false,
+            "pedestal": {
+              "x": 710,
+              "y": 480.5625,
+              "width": 470,
+              "height": 111.15625,
+              "bottom": 591.71875,
+              "right": 1180
+            },
+            "figure": {
+              "x": 714,
+              "y": 487.765625,
+              "width": 462,
+              "height": 58.484375,
+              "bottom": 546.25,
+              "right": 1176
+            },
+            "name": {
+              "x": 881.265625,
+              "y": 546.25,
+              "width": 127.46875,
+              "height": 20.25,
+              "bottom": 566.5,
+              "right": 1008.734375
+            },
+            "health": {
+              "x": 865,
+              "y": 566.5,
+              "width": 160,
+              "height": 18,
+              "bottom": 584.5,
+              "right": 1025
+            },
+            "alphaSourceFootprint": {
+              "width": 29.127960205078125,
+              "height": 46.604736328125,
+              "ratio": 0.796875
+            }
+          },
+          {
+            "id": "pasaje:6:0:rival:3",
+            "boss": false,
+            "pedestal": {
+              "x": 710,
+              "y": 595.71875,
+              "width": 470,
+              "height": 111.140625,
+              "bottom": 706.859375,
+              "right": 1180
+            },
+            "figure": {
+              "x": 714,
+              "y": 602.921875,
+              "width": 462,
+              "height": 58.484375,
+              "bottom": 661.40625,
+              "right": 1176
+            },
+            "name": {
+              "x": 846.296875,
+              "y": 661.40625,
+              "width": 197.40625,
+              "height": 20.25,
+              "bottom": 681.65625,
+              "right": 1043.703125
+            },
+            "health": {
+              "x": 865,
+              "y": 681.65625,
+              "width": 160,
+              "height": 18,
+              "bottom": 699.65625,
+              "right": 1025
+            },
+            "alphaSourceFootprint": {
+              "width": 29.584869384765625,
+              "height": 46.604736328125,
+              "ratio": 0.796875
+            }
+          },
+          {
+            "id": "pasaje:6:0:rival:4",
+            "boss": false,
+            "pedestal": {
+              "x": 710,
+              "y": 710.859375,
+              "width": 470,
+              "height": 111.140625,
+              "bottom": 822,
+              "right": 1180
+            },
+            "figure": {
+              "x": 714,
+              "y": 718.0625,
+              "width": 462,
+              "height": 58.484375,
+              "bottom": 776.546875,
+              "right": 1176
+            },
+            "name": {
+              "x": 864.234375,
+              "y": 776.546875,
+              "width": 161.53125,
+              "height": 20.25,
+              "bottom": 796.796875,
+              "right": 1025.765625
+            },
+            "health": {
+              "x": 865,
+              "y": 796.796875,
+              "width": 160,
+              "height": 18,
+              "bottom": 814.796875,
+              "right": 1025
+            },
+            "alphaSourceFootprint": {
+              "width": 23.98773193359375,
+              "height": 44.777099609375,
+              "ratio": 0.765625
+            }
+          }
+        ]
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "language": "en",
+      "shape": {
+        "player": 3,
+        "challenge": "discovery",
+        "rival": 3
+      },
+      "actionToPausedReadyWallMs": 483,
+      "geometry": {
+        "viewport": {
+          "width": 1280,
+          "height": 900
+        },
+        "header": {
+          "x": 0,
+          "y": 0,
+          "width": 1280,
+          "height": 68,
+          "bottom": 68,
+          "right": 1280
+        },
+        "heading": {
+          "x": 100,
+          "y": 76,
+          "width": 1080,
+          "height": 69,
+          "bottom": 145,
+          "right": 1180
+        },
+        "tools": {
+          "x": 100,
+          "y": 151,
+          "width": 1080,
+          "height": 50,
+          "bottom": 201,
+          "right": 1180
+        },
+        "stage": {
+          "x": 100,
+          "y": 207,
+          "width": 1080,
+          "height": 635,
+          "bottom": 842,
+          "right": 1180
+        },
+        "caption": {
+          "x": 100,
+          "y": 848,
+          "width": 1080,
+          "height": 44,
+          "bottom": 892,
+          "right": 1180
+        },
+        "scroll": {
+          "width": 1280,
+          "height": 900
+        },
+        "rows": [
+          {
+            "id": "a70-player-0",
+            "boss": false,
+            "pedestal": {
+              "x": 100,
+              "y": 229,
+              "width": 470,
+              "height": 204.90625,
+              "bottom": 433.90625,
+              "right": 570
+            },
+            "figure": {
+              "x": 104,
+              "y": 249,
+              "width": 462,
+              "height": 126.65625,
+              "bottom": 375.65625,
+              "right": 566
+            },
+            "name": {
+              "x": 283.203125,
+              "y": 375.65625,
+              "width": 103.59375,
+              "height": 20.25,
+              "bottom": 395.90625,
+              "right": 386.796875
+            },
+            "health": {
+              "x": 255,
+              "y": 395.90625,
+              "width": 160,
+              "height": 18,
+              "bottom": 413.90625,
+              "right": 415
+            },
+            "alphaSourceFootprint": {
+              "width": 93.80848422897195,
+              "height": 120.14588200934578,
+              "ratio": 0.9485981308411215
+            }
+          },
+          {
+            "id": "a70-player-1",
+            "boss": false,
+            "pedestal": {
+              "x": 100,
+              "y": 437.90625,
+              "width": 470,
+              "height": 204.90625,
+              "bottom": 642.8125,
+              "right": 570
+            },
+            "figure": {
+              "x": 104,
+              "y": 457.90625,
+              "width": 462,
+              "height": 126.65625,
+              "bottom": 584.5625,
+              "right": 566
+            },
+            "name": {
+              "x": 261.5,
+              "y": 584.5625,
+              "width": 146.984375,
+              "height": 20.25,
+              "bottom": 604.8125,
+              "right": 408.484375
+            },
+            "health": {
+              "x": 255,
+              "y": 604.8125,
+              "width": 160,
+              "height": 18,
+              "bottom": 622.8125,
+              "right": 415
+            },
+            "alphaSourceFootprint": {
+              "width": 94.9921875,
+              "height": 123.6969918224299,
+              "ratio": 0.9766355140186916
+            }
+          },
+          {
+            "id": "a70-player-2",
+            "boss": false,
+            "pedestal": {
+              "x": 100,
+              "y": 646.8125,
+              "width": 470,
+              "height": 204.90625,
+              "bottom": 851.71875,
+              "right": 570
+            },
+            "figure": {
+              "x": 104,
+              "y": 666.8125,
+              "width": 462,
+              "height": 126.65625,
+              "bottom": 793.46875,
+              "right": 566
+            },
+            "name": {
+              "x": 254.53125,
+              "y": 793.46875,
+              "width": 160.921875,
+              "height": 20.25,
+              "bottom": 813.71875,
+              "right": 415.453125
+            },
+            "health": {
+              "x": 255,
+              "y": 813.71875,
+              "width": 160,
+              "height": 18,
+              "bottom": 831.71875,
+              "right": 415
+            },
+            "alphaSourceFootprint": {
+              "width": 87.29811623831775,
+              "height": 123.10514018691588,
+              "ratio": 0.9719626168224299
+            }
+          },
+          {
+            "id": "pasaje:6:0:rival:0",
+            "boss": true,
+            "pedestal": {
+              "x": 710,
+              "y": 229,
+              "width": 470,
+              "height": 204.90625,
+              "bottom": 433.90625,
+              "right": 1180
+            },
+            "figure": {
+              "x": 714,
+              "y": 230,
+              "width": 462,
+              "height": 164.65625,
+              "bottom": 394.65625,
+              "right": 1176
+            },
+            "name": {
+              "x": 871.359375,
+              "y": 394.65625,
+              "width": 147.28125,
+              "height": 20.25,
+              "bottom": 414.90625,
+              "right": 1018.640625
+            },
+            "health": {
+              "x": 865,
+              "y": 414.90625,
+              "width": 160,
+              "height": 18,
+              "bottom": 432.90625,
+              "right": 1025
+            },
+            "alphaSourceFootprint": {
+              "width": 98.08624267578125,
+              "height": 134.74798583984375,
+              "ratio": 0.818359375
+            }
+          },
+          {
+            "id": "pasaje:6:0:rival:1",
+            "boss": false,
+            "pedestal": {
+              "x": 710,
+              "y": 437.90625,
+              "width": 470,
+              "height": 204.90625,
+              "bottom": 642.8125,
+              "right": 1180
+            },
+            "figure": {
+              "x": 714,
+              "y": 457.90625,
+              "width": 462,
+              "height": 126.65625,
+              "bottom": 584.5625,
+              "right": 1176
+            },
+            "name": {
+              "x": 895.015625,
+              "y": 584.5625,
+              "width": 99.953125,
+              "height": 20.25,
+              "bottom": 604.8125,
+              "right": 994.96875
+            },
+            "health": {
+              "x": 865,
+              "y": 604.8125,
+              "width": 160,
+              "height": 18,
+              "bottom": 622.8125,
+              "right": 1025
+            },
+            "alphaSourceFootprint": {
+              "width": 89.96144859813083,
+              "height": 121.62551109813083,
+              "ratio": 0.9602803738317757
+            }
+          },
+          {
+            "id": "pasaje:6:0:rival:2",
+            "boss": false,
+            "pedestal": {
+              "x": 710,
+              "y": 646.8125,
+              "width": 470,
+              "height": 204.90625,
+              "bottom": 851.71875,
+              "right": 1180
+            },
+            "figure": {
+              "x": 714,
+              "y": 666.8125,
+              "width": 462,
+              "height": 126.65625,
+              "bottom": 793.46875,
+              "right": 1176
+            },
+            "name": {
+              "x": 895.015625,
+              "y": 793.46875,
+              "width": 99.953125,
+              "height": 20.25,
+              "bottom": 813.71875,
+              "right": 994.96875
+            },
+            "health": {
+              "x": 865,
+              "y": 813.71875,
+              "width": 160,
+              "height": 18,
+              "bottom": 831.71875,
+              "right": 1025
+            },
+            "alphaSourceFootprint": {
+              "width": 94.9921875,
+              "height": 124.28884345794391,
+              "ratio": 0.9813084112149533
+            }
+          }
+        ]
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "language": "en",
+      "shape": {
+        "player": 5,
+        "challenge": "discovery",
+        "rival": 3
+      },
+      "actionToPausedReadyWallMs": 451,
+      "geometry": {
+        "viewport": {
+          "width": 1280,
+          "height": 900
+        },
+        "header": {
+          "x": 0,
+          "y": 0,
+          "width": 1280,
+          "height": 68,
+          "bottom": 68,
+          "right": 1280
+        },
+        "heading": {
+          "x": 100,
+          "y": 76,
+          "width": 1080,
+          "height": 69,
+          "bottom": 145,
+          "right": 1180
+        },
+        "tools": {
+          "x": 100,
+          "y": 151,
+          "width": 1080,
+          "height": 50,
+          "bottom": 201,
+          "right": 1180
+        },
+        "stage": {
+          "x": 100,
+          "y": 207,
+          "width": 1080,
+          "height": 635,
+          "bottom": 842,
+          "right": 1180
+        },
+        "caption": {
+          "x": 100,
+          "y": 848,
+          "width": 1080,
+          "height": 44,
+          "bottom": 892,
+          "right": 1180
+        },
+        "scroll": {
+          "width": 1280,
+          "height": 900
+        },
+        "rows": [
+          {
+            "id": "a70-player-0",
+            "boss": false,
+            "pedestal": {
+              "x": 100,
+              "y": 229,
+              "width": 470,
+              "height": 115.390625,
+              "bottom": 344.390625,
+              "right": 570
+            },
+            "figure": {
+              "x": 104,
+              "y": 236.5625,
+              "width": 462,
+              "height": 62,
+              "bottom": 298.5625,
+              "right": 566
+            },
+            "name": {
+              "x": 283.203125,
+              "y": 298.5625,
+              "width": 103.59375,
+              "height": 20.25,
+              "bottom": 318.8125,
+              "right": 386.796875
+            },
+            "health": {
+              "x": 255,
+              "y": 318.8125,
+              "width": 160,
+              "height": 18,
+              "bottom": 336.8125,
+              "right": 415
+            },
+            "alphaSourceFootprint": {
+              "width": 45.92056074766355,
+              "height": 58.813084112149525,
+              "ratio": 0.9485981308411215
+            }
+          },
+          {
+            "id": "a70-player-1",
+            "boss": false,
+            "pedestal": {
+              "x": 100,
+              "y": 348.390625,
+              "width": 470,
+              "height": 115.40625,
+              "bottom": 463.796875,
+              "right": 570
+            },
+            "figure": {
+              "x": 104,
+              "y": 355.96875,
+              "width": 462,
+              "height": 62,
+              "bottom": 417.96875,
+              "right": 566
+            },
+            "name": {
+              "x": 261.5,
+              "y": 417.96875,
+              "width": 146.984375,
+              "height": 20.25,
+              "bottom": 438.21875,
+              "right": 408.484375
+            },
+            "health": {
+              "x": 255,
+              "y": 438.21875,
+              "width": 160,
+              "height": 18,
+              "bottom": 456.21875,
+              "right": 415
+            },
+            "alphaSourceFootprint": {
+              "width": 46.49999999999999,
+              "height": 60.55140186915887,
+              "ratio": 0.9766355140186916
+            }
+          },
+          {
+            "id": "a70-player-2",
+            "boss": false,
+            "pedestal": {
+              "x": 100,
+              "y": 467.796875,
+              "width": 470,
+              "height": 115.390625,
+              "bottom": 583.1875,
+              "right": 570
+            },
+            "figure": {
+              "x": 104,
+              "y": 475.359375,
+              "width": 462,
+              "height": 62,
+              "bottom": 537.359375,
+              "right": 566
+            },
+            "name": {
+              "x": 254.53125,
+              "y": 537.359375,
+              "width": 160.921875,
+              "height": 20.25,
+              "bottom": 557.609375,
+              "right": 415.453125
+            },
+            "health": {
+              "x": 255,
+              "y": 557.609375,
+              "width": 160,
+              "height": 18,
+              "bottom": 575.609375,
+              "right": 415
+            },
+            "alphaSourceFootprint": {
+              "width": 42.73364485981308,
+              "height": 60.26168224299065,
+              "ratio": 0.9719626168224299
+            }
+          },
+          {
+            "id": "a70-player-3",
+            "boss": false,
+            "pedestal": {
+              "x": 100,
+              "y": 587.1875,
+              "width": 470,
+              "height": 115.40625,
+              "bottom": 702.59375,
+              "right": 570
+            },
+            "figure": {
+              "x": 104,
+              "y": 594.765625,
+              "width": 462,
+              "height": 62,
+              "bottom": 656.765625,
+              "right": 566
+            },
+            "name": {
+              "x": 275.796875,
+              "y": 656.765625,
+              "width": 118.40625,
+              "height": 20.25,
+              "bottom": 677.015625,
+              "right": 394.203125
+            },
+            "health": {
+              "x": 255,
+              "y": 677.015625,
+              "width": 160,
+              "height": 18,
+              "bottom": 695.015625,
+              "right": 415
+            },
+            "alphaSourceFootprint": {
+              "width": 46.49999999999999,
+              "height": 59.247663551401864,
+              "ratio": 0.955607476635514
+            }
+          },
+          {
+            "id": "a70-player-4",
+            "boss": false,
+            "pedestal": {
+              "x": 100,
+              "y": 706.59375,
+              "width": 470,
+              "height": 115.40625,
+              "bottom": 822,
+              "right": 570
+            },
+            "figure": {
+              "x": 104,
+              "y": 714.171875,
+              "width": 462,
+              "height": 62,
+              "bottom": 776.171875,
+              "right": 566
+            },
+            "name": {
+              "x": 274.53125,
+              "y": 776.171875,
+              "width": 120.921875,
+              "height": 20.25,
+              "bottom": 796.421875,
+              "right": 395.453125
+            },
+            "health": {
+              "x": 255,
+              "y": 796.421875,
+              "width": 160,
+              "height": 18,
+              "bottom": 814.421875,
+              "right": 415
+            },
+            "alphaSourceFootprint": {
+              "width": 44.03738317757009,
+              "height": 59.53738317757009,
+              "ratio": 0.9602803738317757
+            }
+          },
+          {
+            "id": "pasaje:6:0:rival:0",
+            "boss": true,
+            "pedestal": {
+              "x": 710,
+              "y": 229,
+              "width": 470,
+              "height": 195,
+              "bottom": 424,
+              "right": 1180
+            },
+            "figure": {
+              "x": 714,
+              "y": 267.078125,
+              "width": 462,
+              "height": 80.59375,
+              "bottom": 347.671875,
+              "right": 1176
+            },
+            "name": {
+              "x": 871.359375,
+              "y": 347.671875,
+              "width": 147.28125,
+              "height": 20.25,
+              "bottom": 367.921875,
+              "right": 1018.640625
+            },
+            "health": {
+              "x": 865,
+              "y": 367.921875,
+              "width": 160,
+              "height": 18,
+              "bottom": 385.921875,
+              "right": 1025
+            },
+            "alphaSourceFootprint": {
+              "width": 48.00994873046875,
+              "height": 65.95465087890625,
+              "ratio": 0.818359375
+            }
+          },
+          {
+            "id": "pasaje:6:0:rival:1",
+            "boss": false,
+            "pedestal": {
+              "x": 710,
+              "y": 428,
+              "width": 470,
+              "height": 195,
+              "bottom": 623,
+              "right": 1180
+            },
+            "figure": {
+              "x": 714,
+              "y": 475.375,
+              "width": 462,
+              "height": 62,
+              "bottom": 537.375,
+              "right": 1176
+            },
+            "name": {
+              "x": 895.015625,
+              "y": 537.375,
+              "width": 99.953125,
+              "height": 20.25,
+              "bottom": 557.625,
+              "right": 994.96875
+            },
+            "health": {
+              "x": 865,
+              "y": 557.625,
+              "width": 160,
+              "height": 18,
+              "bottom": 575.625,
+              "right": 1025
+            },
+            "alphaSourceFootprint": {
+              "width": 44.03738317757009,
+              "height": 59.53738317757009,
+              "ratio": 0.9602803738317757
+            }
+          },
+          {
+            "id": "pasaje:6:0:rival:2",
+            "boss": false,
+            "pedestal": {
+              "x": 710,
+              "y": 627,
+              "width": 470,
+              "height": 195,
+              "bottom": 822,
+              "right": 1180
+            },
+            "figure": {
+              "x": 714,
+              "y": 674.375,
+              "width": 462,
+              "height": 62,
+              "bottom": 736.375,
+              "right": 1176
+            },
+            "name": {
+              "x": 895.015625,
+              "y": 736.375,
+              "width": 99.953125,
+              "height": 20.25,
+              "bottom": 756.625,
+              "right": 994.96875
+            },
+            "health": {
+              "x": 865,
+              "y": 756.625,
+              "width": 160,
+              "height": 18,
+              "bottom": 774.625,
+              "right": 1025
+            },
+            "alphaSourceFootprint": {
+              "width": 46.49999999999999,
+              "height": 60.8411214953271,
+              "ratio": 0.9813084112149533
+            }
+          }
+        ]
+      }
+    },
+    {
+      "pack": "diagon-alley",
+      "language": "en",
+      "shape": {
+        "player": 5,
+        "challenge": "mastery",
+        "rival": 5
+      },
+      "actionToPausedReadyWallMs": 536,
+      "geometry": {
+        "viewport": {
+          "width": 1280,
+          "height": 900
+        },
+        "header": {
+          "x": 0,
+          "y": 0,
+          "width": 1280,
+          "height": 68,
+          "bottom": 68,
+          "right": 1280
+        },
+        "heading": {
+          "x": 100,
+          "y": 76,
+          "width": 1080,
+          "height": 69,
+          "bottom": 145,
+          "right": 1180
+        },
+        "tools": {
+          "x": 100,
+          "y": 151,
+          "width": 1080,
+          "height": 50,
+          "bottom": 201,
+          "right": 1180
+        },
+        "stage": {
+          "x": 100,
+          "y": 207,
+          "width": 1080,
+          "height": 635,
+          "bottom": 842,
+          "right": 1180
+        },
+        "caption": {
+          "x": 100,
+          "y": 848,
+          "width": 1080,
+          "height": 44,
+          "bottom": 892,
+          "right": 1180
+        },
+        "scroll": {
+          "width": 1280,
+          "height": 900
+        },
+        "rows": [
+          {
+            "id": "a70-player-0",
+            "boss": false,
+            "pedestal": {
+              "x": 100,
+              "y": 229,
+              "width": 470,
+              "height": 115.390625,
+              "bottom": 344.390625,
+              "right": 570
+            },
+            "figure": {
+              "x": 104,
+              "y": 236.5625,
+              "width": 462,
+              "height": 62,
+              "bottom": 298.5625,
+              "right": 566
+            },
+            "name": {
+              "x": 283.203125,
+              "y": 298.5625,
+              "width": 103.59375,
+              "height": 20.25,
+              "bottom": 318.8125,
+              "right": 386.796875
+            },
+            "health": {
+              "x": 255,
+              "y": 318.8125,
+              "width": 160,
+              "height": 18,
+              "bottom": 336.8125,
+              "right": 415
+            },
+            "alphaSourceFootprint": {
+              "width": 45.92056074766355,
+              "height": 58.813084112149525,
+              "ratio": 0.9485981308411215
+            }
+          },
+          {
+            "id": "a70-player-1",
+            "boss": false,
+            "pedestal": {
+              "x": 100,
+              "y": 348.390625,
+              "width": 470,
+              "height": 115.40625,
+              "bottom": 463.796875,
+              "right": 570
+            },
+            "figure": {
+              "x": 104,
+              "y": 355.96875,
+              "width": 462,
+              "height": 62,
+              "bottom": 417.96875,
+              "right": 566
+            },
+            "name": {
+              "x": 261.5,
+              "y": 417.96875,
+              "width": 146.984375,
+              "height": 20.25,
+              "bottom": 438.21875,
+              "right": 408.484375
+            },
+            "health": {
+              "x": 255,
+              "y": 438.21875,
+              "width": 160,
+              "height": 18,
+              "bottom": 456.21875,
+              "right": 415
+            },
+            "alphaSourceFootprint": {
+              "width": 46.49999999999999,
+              "height": 60.55140186915887,
+              "ratio": 0.9766355140186916
+            }
+          },
+          {
+            "id": "a70-player-2",
+            "boss": false,
+            "pedestal": {
+              "x": 100,
+              "y": 467.796875,
+              "width": 470,
+              "height": 115.390625,
+              "bottom": 583.1875,
+              "right": 570
+            },
+            "figure": {
+              "x": 104,
+              "y": 475.359375,
+              "width": 462,
+              "height": 62,
+              "bottom": 537.359375,
+              "right": 566
+            },
+            "name": {
+              "x": 254.53125,
+              "y": 537.359375,
+              "width": 160.921875,
+              "height": 20.25,
+              "bottom": 557.609375,
+              "right": 415.453125
+            },
+            "health": {
+              "x": 255,
+              "y": 557.609375,
+              "width": 160,
+              "height": 18,
+              "bottom": 575.609375,
+              "right": 415
+            },
+            "alphaSourceFootprint": {
+              "width": 42.73364485981308,
+              "height": 60.26168224299065,
+              "ratio": 0.9719626168224299
+            }
+          },
+          {
+            "id": "a70-player-3",
+            "boss": false,
+            "pedestal": {
+              "x": 100,
+              "y": 587.1875,
+              "width": 470,
+              "height": 115.40625,
+              "bottom": 702.59375,
+              "right": 570
+            },
+            "figure": {
+              "x": 104,
+              "y": 594.765625,
+              "width": 462,
+              "height": 62,
+              "bottom": 656.765625,
+              "right": 566
+            },
+            "name": {
+              "x": 275.796875,
+              "y": 656.765625,
+              "width": 118.40625,
+              "height": 20.25,
+              "bottom": 677.015625,
+              "right": 394.203125
+            },
+            "health": {
+              "x": 255,
+              "y": 677.015625,
+              "width": 160,
+              "height": 18,
+              "bottom": 695.015625,
+              "right": 415
+            },
+            "alphaSourceFootprint": {
+              "width": 46.49999999999999,
+              "height": 59.247663551401864,
+              "ratio": 0.955607476635514
+            }
+          },
+          {
+            "id": "a70-player-4",
+            "boss": false,
+            "pedestal": {
+              "x": 100,
+              "y": 706.59375,
+              "width": 470,
+              "height": 115.40625,
+              "bottom": 822,
+              "right": 570
+            },
+            "figure": {
+              "x": 104,
+              "y": 714.171875,
+              "width": 462,
+              "height": 62,
+              "bottom": 776.171875,
+              "right": 566
+            },
+            "name": {
+              "x": 274.53125,
+              "y": 776.171875,
+              "width": 120.921875,
+              "height": 20.25,
+              "bottom": 796.421875,
+              "right": 395.453125
+            },
+            "health": {
+              "x": 255,
+              "y": 796.421875,
+              "width": 160,
+              "height": 18,
+              "bottom": 814.421875,
+              "right": 415
+            },
+            "alphaSourceFootprint": {
+              "width": 44.03738317757009,
+              "height": 59.53738317757009,
+              "ratio": 0.9602803738317757
+            }
+          },
+          {
+            "id": "pasaje:6:0:rival:0",
+            "boss": true,
+            "pedestal": {
+              "x": 710,
+              "y": 229,
+              "width": 470,
+              "height": 132.421875,
+              "bottom": 361.421875,
+              "right": 1180
+            },
+            "figure": {
+              "x": 714,
+              "y": 238.0625,
+              "width": 462,
+              "height": 76.03125,
+              "bottom": 314.09375,
+              "right": 1176
+            },
+            "name": {
+              "x": 871.359375,
+              "y": 314.09375,
+              "width": 147.28125,
+              "height": 20.25,
+              "bottom": 334.34375,
+              "right": 1018.640625
+            },
+            "health": {
+              "x": 865,
+              "y": 334.34375,
+              "width": 160,
+              "height": 18,
+              "bottom": 352.34375,
+              "right": 1025
+            },
+            "alphaSourceFootprint": {
+              "width": 45.29205322265625,
+              "height": 62.22088623046875,
+              "ratio": 0.818359375
+            }
+          },
+          {
+            "id": "pasaje:6:0:rival:1",
+            "boss": false,
+            "pedestal": {
+              "x": 710,
+              "y": 365.421875,
+              "width": 470,
+              "height": 111.140625,
+              "bottom": 476.5625,
+              "right": 1180
+            },
+            "figure": {
+              "x": 714,
+              "y": 372.625,
+              "width": 462,
+              "height": 58.484375,
+              "bottom": 431.109375,
+              "right": 1176
+            },
+            "name": {
+              "x": 892.15625,
+              "y": 431.109375,
+              "width": 105.6875,
+              "height": 20.25,
+              "bottom": 451.359375,
+              "right": 997.84375
+            },
+            "health": {
+              "x": 865,
+              "y": 451.359375,
+              "width": 160,
+              "height": 18,
+              "bottom": 469.359375,
+              "right": 1025
+            },
+            "alphaSourceFootprint": {
+              "width": 42.63346962616823,
+              "height": 55.751460280373834,
+              "ratio": 0.9532710280373832
+            }
+          },
+          {
+            "id": "pasaje:6:0:rival:2",
+            "boss": false,
+            "pedestal": {
+              "x": 710,
+              "y": 480.5625,
+              "width": 470,
+              "height": 111.15625,
+              "bottom": 591.71875,
+              "right": 1180
+            },
+            "figure": {
+              "x": 714,
+              "y": 487.765625,
+              "width": 462,
+              "height": 58.484375,
+              "bottom": 546.25,
+              "right": 1176
+            },
+            "name": {
+              "x": 882.453125,
+              "y": 546.25,
+              "width": 125.09375,
+              "height": 20.25,
+              "bottom": 566.5,
+              "right": 1007.546875
+            },
+            "health": {
+              "x": 865,
+              "y": 566.5,
+              "width": 160,
+              "height": 18,
+              "bottom": 584.5,
+              "right": 1025
+            },
+            "alphaSourceFootprint": {
+              "width": 43.86328125,
+              "height": 55.2048773364486,
+              "ratio": 0.9439252336448598
+            }
+          },
+          {
+            "id": "pasaje:6:0:rival:3",
+            "boss": false,
+            "pedestal": {
+              "x": 710,
+              "y": 595.71875,
+              "width": 470,
+              "height": 111.140625,
+              "bottom": 706.859375,
+              "right": 1180
+            },
+            "figure": {
+              "x": 714,
+              "y": 602.921875,
+              "width": 462,
+              "height": 58.484375,
+              "bottom": 661.40625,
+              "right": 1176
+            },
+            "name": {
+              "x": 869.046875,
+              "y": 661.40625,
+              "width": 151.890625,
+              "height": 20.25,
+              "bottom": 681.65625,
+              "right": 1020.9375
+            },
+            "health": {
+              "x": 865,
+              "y": 681.65625,
+              "width": 160,
+              "height": 18,
+              "bottom": 699.65625,
+              "right": 1025
+            },
+            "alphaSourceFootprint": {
+              "width": 43.31669830607477,
+              "height": 56.16139748831776,
+              "ratio": 0.9602803738317757
+            }
+          },
+          {
+            "id": "pasaje:6:0:rival:4",
+            "boss": false,
+            "pedestal": {
+              "x": 710,
+              "y": 710.859375,
+              "width": 470,
+              "height": 111.140625,
+              "bottom": 822,
+              "right": 1180
+            },
+            "figure": {
+              "x": 714,
+              "y": 718.0625,
+              "width": 462,
+              "height": 58.484375,
+              "bottom": 776.546875,
+              "right": 1176
+            },
+            "name": {
+              "x": 883.453125,
+              "y": 776.546875,
+              "width": 123.078125,
+              "height": 20.25,
+              "bottom": 796.796875,
+              "right": 1006.53125
+            },
+            "health": {
+              "x": 865,
+              "y": 796.796875,
+              "width": 160,
+              "height": 18,
+              "bottom": 814.796875,
+              "right": 1025
+            },
+            "alphaSourceFootprint": {
+              "width": 38.80738901869159,
+              "height": 53.70177424065421,
+              "ratio": 0.9182242990654206
+            }
+          }
+        ]
+      }
+    },
+    {
+      "pack": "arcana",
+      "language": "en",
+      "shape": {
+        "player": 3,
+        "challenge": "discovery",
+        "rival": 3
+      },
+      "actionToPausedReadyWallMs": 431,
+      "geometry": {
+        "viewport": {
+          "width": 1280,
+          "height": 900
+        },
+        "header": {
+          "x": 0,
+          "y": 0,
+          "width": 1280,
+          "height": 68,
+          "bottom": 68,
+          "right": 1280
+        },
+        "heading": {
+          "x": 100,
+          "y": 76,
+          "width": 1080,
+          "height": 69,
+          "bottom": 145,
+          "right": 1180
+        },
+        "tools": {
+          "x": 100,
+          "y": 151,
+          "width": 1080,
+          "height": 50,
+          "bottom": 201,
+          "right": 1180
+        },
+        "stage": {
+          "x": 100,
+          "y": 207,
+          "width": 1080,
+          "height": 635,
+          "bottom": 842,
+          "right": 1180
+        },
+        "caption": {
+          "x": 100,
+          "y": 848,
+          "width": 1080,
+          "height": 44,
+          "bottom": 892,
+          "right": 1180
+        },
+        "scroll": {
+          "width": 1280,
+          "height": 900
+        },
+        "rows": [
+          {
+            "id": "a70-player-0",
+            "boss": false,
+            "pedestal": {
+              "x": 100,
+              "y": 229,
+              "width": 470,
+              "height": 204.90625,
+              "bottom": 433.90625,
+              "right": 570
+            },
+            "figure": {
+              "x": 104,
+              "y": 249,
+              "width": 462,
+              "height": 126.65625,
+              "bottom": 375.65625,
+              "right": 566
+            },
+            "name": {
+              "x": 255.390625,
+              "y": 375.65625,
+              "width": 159.203125,
+              "height": 20.25,
+              "bottom": 395.90625,
+              "right": 414.59375
+            },
+            "health": {
+              "x": 255,
+              "y": 395.90625,
+              "width": 160,
+              "height": 18,
+              "bottom": 413.90625,
+              "right": 415
+            },
+            "alphaSourceFootprint": {
+              "width": 66.04925537109375,
+              "height": 100.4344482421875,
+              "ratio": 0.79296875
+            }
+          },
+          {
+            "id": "a70-player-1",
+            "boss": false,
+            "pedestal": {
+              "x": 100,
+              "y": 437.90625,
+              "width": 470,
+              "height": 204.90625,
+              "bottom": 642.8125,
+              "right": 570
+            },
+            "figure": {
+              "x": 104,
+              "y": 457.90625,
+              "width": 462,
+              "height": 126.65625,
+              "bottom": 584.5625,
+              "right": 566
+            },
+            "name": {
+              "x": 305.828125,
+              "y": 584.5625,
+              "width": 58.34375,
+              "height": 20.25,
+              "bottom": 604.8125,
+              "right": 364.171875
+            },
+            "health": {
+              "x": 255,
+              "y": 604.8125,
+              "width": 160,
+              "height": 18,
+              "bottom": 622.8125,
+              "right": 415
+            },
+            "alphaSourceFootprint": {
+              "width": 66.54400634765625,
+              "height": 99.4449462890625,
+              "ratio": 0.78515625
+            }
+          },
+          {
+            "id": "a70-player-2",
+            "boss": false,
+            "pedestal": {
+              "x": 100,
+              "y": 646.8125,
+              "width": 470,
+              "height": 204.90625,
+              "bottom": 851.71875,
+              "right": 570
+            },
+            "figure": {
+              "x": 104,
+              "y": 666.8125,
+              "width": 462,
+              "height": 126.65625,
+              "bottom": 793.46875,
+              "right": 566
+            },
+            "name": {
+              "x": 271.234375,
+              "y": 793.46875,
+              "width": 127.515625,
+              "height": 20.25,
+              "bottom": 813.71875,
+              "right": 398.75
+            },
+            "health": {
+              "x": 255,
+              "y": 813.71875,
+              "width": 160,
+              "height": 18,
+              "bottom": 831.71875,
+              "right": 415
+            },
+            "alphaSourceFootprint": {
+              "width": 61.34912109375,
+              "height": 100.68182373046875,
+              "ratio": 0.794921875
+            }
+          },
+          {
+            "id": "pasaje:6:0:rival:0",
+            "boss": true,
+            "pedestal": {
+              "x": 710,
+              "y": 229,
+              "width": 470,
+              "height": 204.90625,
+              "bottom": 433.90625,
+              "right": 1180
+            },
+            "figure": {
+              "x": 714,
+              "y": 230,
+              "width": 462,
+              "height": 164.65625,
+              "bottom": 394.65625,
+              "right": 1176
+            },
+            "name": {
+              "x": 920.53125,
+              "y": 394.65625,
+              "width": 48.9375,
+              "height": 20.25,
+              "bottom": 414.90625,
+              "right": 969.46875
+            },
+            "health": {
+              "x": 865,
+              "y": 414.90625,
+              "width": 160,
+              "height": 18,
+              "bottom": 432.90625,
+              "right": 1025
+            },
+            "alphaSourceFootprint": {
+              "width": 116.09552001953125,
+              "height": 123.81378173828125,
+              "ratio": 0.751953125
+            }
+          },
+          {
+            "id": "pasaje:6:0:rival:1",
+            "boss": false,
+            "pedestal": {
+              "x": 710,
+              "y": 437.90625,
+              "width": 470,
+              "height": 204.90625,
+              "bottom": 642.8125,
+              "right": 1180
+            },
+            "figure": {
+              "x": 714,
+              "y": 457.90625,
+              "width": 462,
+              "height": 126.65625,
+              "bottom": 584.5625,
+              "right": 1176
+            },
+            "name": {
+              "x": 894.9375,
+              "y": 584.5625,
+              "width": 100.125,
+              "height": 20.25,
+              "bottom": 604.8125,
+              "right": 995.0625
+            },
+            "health": {
+              "x": 865,
+              "y": 604.8125,
+              "width": 160,
+              "height": 18,
+              "bottom": 622.8125,
+              "right": 1025
+            },
+            "alphaSourceFootprint": {
+              "width": 55.16473388671875,
+              "height": 94.74481201171875,
+              "ratio": 0.748046875
+            }
+          },
+          {
+            "id": "pasaje:6:0:rival:2",
+            "boss": false,
+            "pedestal": {
+              "x": 710,
+              "y": 646.8125,
+              "width": 470,
+              "height": 204.90625,
+              "bottom": 851.71875,
+              "right": 1180
+            },
+            "figure": {
+              "x": 714,
+              "y": 666.8125,
+              "width": 462,
+              "height": 126.65625,
+              "bottom": 793.46875,
+              "right": 1176
+            },
+            "name": {
+              "x": 894.9375,
+              "y": 793.46875,
+              "width": 100.125,
+              "height": 20.25,
+              "bottom": 813.71875,
+              "right": 995.0625
+            },
+            "health": {
+              "x": 865,
+              "y": 813.71875,
+              "width": 160,
+              "height": 18,
+              "bottom": 831.71875,
+              "right": 1025
+            },
+            "alphaSourceFootprint": {
+              "width": 58.62799072265625,
+              "height": 100.92919921875,
+              "ratio": 0.796875
+            }
+          }
+        ]
+      }
+    },
+    {
+      "pack": "arcana",
+      "language": "en",
+      "shape": {
+        "player": 5,
+        "challenge": "discovery",
+        "rival": 3
+      },
+      "actionToPausedReadyWallMs": 460,
+      "geometry": {
+        "viewport": {
+          "width": 1280,
+          "height": 900
+        },
+        "header": {
+          "x": 0,
+          "y": 0,
+          "width": 1280,
+          "height": 68,
+          "bottom": 68,
+          "right": 1280
+        },
+        "heading": {
+          "x": 100,
+          "y": 76,
+          "width": 1080,
+          "height": 69,
+          "bottom": 145,
+          "right": 1180
+        },
+        "tools": {
+          "x": 100,
+          "y": 151,
+          "width": 1080,
+          "height": 50,
+          "bottom": 201,
+          "right": 1180
+        },
+        "stage": {
+          "x": 100,
+          "y": 207,
+          "width": 1080,
+          "height": 635,
+          "bottom": 842,
+          "right": 1180
+        },
+        "caption": {
+          "x": 100,
+          "y": 848,
+          "width": 1080,
+          "height": 44,
+          "bottom": 892,
+          "right": 1180
+        },
+        "scroll": {
+          "width": 1280,
+          "height": 900
+        },
+        "rows": [
+          {
+            "id": "a70-player-0",
+            "boss": false,
+            "pedestal": {
+              "x": 100,
+              "y": 229,
+              "width": 470,
+              "height": 115.390625,
+              "bottom": 344.390625,
+              "right": 570
+            },
+            "figure": {
+              "x": 104,
+              "y": 236.5625,
+              "width": 462,
+              "height": 62,
+              "bottom": 298.5625,
+              "right": 566
+            },
+            "name": {
+              "x": 255.390625,
+              "y": 298.5625,
+              "width": 159.203125,
+              "height": 20.25,
+              "bottom": 318.8125,
+              "right": 414.59375
+            },
+            "health": {
+              "x": 255,
+              "y": 318.8125,
+              "width": 160,
+              "height": 18,
+              "bottom": 336.8125,
+              "right": 415
+            },
+            "alphaSourceFootprint": {
+              "width": 32.33203125,
+              "height": 49.1640625,
+              "ratio": 0.79296875
+            }
+          },
+          {
+            "id": "a70-player-1",
+            "boss": false,
+            "pedestal": {
+              "x": 100,
+              "y": 348.390625,
+              "width": 470,
+              "height": 115.40625,
+              "bottom": 463.796875,
+              "right": 570
+            },
+            "figure": {
+              "x": 104,
+              "y": 355.96875,
+              "width": 462,
+              "height": 62,
+              "bottom": 417.96875,
+              "right": 566
+            },
+            "name": {
+              "x": 305.828125,
+              "y": 417.96875,
+              "width": 58.34375,
+              "height": 20.25,
+              "bottom": 438.21875,
+              "right": 364.171875
+            },
+            "health": {
+              "x": 255,
+              "y": 438.21875,
+              "width": 160,
+              "height": 18,
+              "bottom": 456.21875,
+              "right": 415
+            },
+            "alphaSourceFootprint": {
+              "width": 32.57421875,
+              "height": 48.6796875,
+              "ratio": 0.78515625
+            }
+          },
+          {
+            "id": "a70-player-2",
+            "boss": false,
+            "pedestal": {
+              "x": 100,
+              "y": 467.796875,
+              "width": 470,
+              "height": 115.390625,
+              "bottom": 583.1875,
+              "right": 570
+            },
+            "figure": {
+              "x": 104,
+              "y": 475.359375,
+              "width": 462,
+              "height": 62,
+              "bottom": 537.359375,
+              "right": 566
+            },
+            "name": {
+              "x": 271.234375,
+              "y": 537.359375,
+              "width": 127.515625,
+              "height": 20.25,
+              "bottom": 557.609375,
+              "right": 398.75
+            },
+            "health": {
+              "x": 255,
+              "y": 557.609375,
+              "width": 160,
+              "height": 18,
+              "bottom": 575.609375,
+              "right": 415
+            },
+            "alphaSourceFootprint": {
+              "width": 30.03125,
+              "height": 49.28515625,
+              "ratio": 0.794921875
+            }
+          },
+          {
+            "id": "a70-player-3",
+            "boss": false,
+            "pedestal": {
+              "x": 100,
+              "y": 587.1875,
+              "width": 470,
+              "height": 115.40625,
+              "bottom": 702.59375,
+              "right": 570
+            },
+            "figure": {
+              "x": 104,
+              "y": 594.765625,
+              "width": 462,
+              "height": 62,
+              "bottom": 656.765625,
+              "right": 566
+            },
+            "name": {
+              "x": 275.796875,
+              "y": 656.765625,
+              "width": 118.40625,
+              "height": 20.25,
+              "bottom": 677.015625,
+              "right": 394.203125
+            },
+            "health": {
+              "x": 255,
+              "y": 677.015625,
+              "width": 160,
+              "height": 18,
+              "bottom": 695.015625,
+              "right": 415
+            },
+            "alphaSourceFootprint": {
+              "width": 26.27734375,
+              "height": 49.1640625,
+              "ratio": 0.79296875
+            }
+          },
+          {
+            "id": "a70-player-4",
+            "boss": false,
+            "pedestal": {
+              "x": 100,
+              "y": 706.59375,
+              "width": 470,
+              "height": 115.40625,
+              "bottom": 822,
+              "right": 570
+            },
+            "figure": {
+              "x": 104,
+              "y": 714.171875,
+              "width": 462,
+              "height": 62,
+              "bottom": 776.171875,
+              "right": 566
+            },
+            "name": {
+              "x": 289.5625,
+              "y": 776.171875,
+              "width": 90.859375,
+              "height": 20.25,
+              "bottom": 796.421875,
+              "right": 380.421875
+            },
+            "health": {
+              "x": 255,
+              "y": 796.421875,
+              "width": 160,
+              "height": 18,
+              "bottom": 814.421875,
+              "right": 415
+            },
+            "alphaSourceFootprint": {
+              "width": 28.21484375,
+              "height": 48.921875,
+              "ratio": 0.7890625
+            }
+          },
+          {
+            "id": "pasaje:6:0:rival:0",
+            "boss": true,
+            "pedestal": {
+              "x": 710,
+              "y": 229,
+              "width": 470,
+              "height": 195,
+              "bottom": 424,
+              "right": 1180
+            },
+            "figure": {
+              "x": 714,
+              "y": 267.078125,
+              "width": 462,
+              "height": 80.59375,
+              "bottom": 347.671875,
+              "right": 1176
+            },
+            "name": {
+              "x": 920.53125,
+              "y": 347.671875,
+              "width": 48.9375,
+              "height": 20.25,
+              "bottom": 367.921875,
+              "right": 969.46875
+            },
+            "health": {
+              "x": 865,
+              "y": 367.921875,
+              "width": 160,
+              "height": 18,
+              "bottom": 385.921875,
+              "right": 1025
+            },
+            "alphaSourceFootprint": {
+              "width": 56.82489013671875,
+              "height": 60.60272216796875,
+              "ratio": 0.751953125
+            }
+          },
+          {
+            "id": "pasaje:6:0:rival:1",
+            "boss": false,
+            "pedestal": {
+              "x": 710,
+              "y": 428,
+              "width": 470,
+              "height": 195,
+              "bottom": 623,
+              "right": 1180
+            },
+            "figure": {
+              "x": 714,
+              "y": 475.375,
+              "width": 462,
+              "height": 62,
+              "bottom": 537.375,
+              "right": 1176
+            },
+            "name": {
+              "x": 894.9375,
+              "y": 537.375,
+              "width": 100.125,
+              "height": 20.25,
+              "bottom": 557.625,
+              "right": 995.0625
+            },
+            "health": {
+              "x": 865,
+              "y": 557.625,
+              "width": 160,
+              "height": 18,
+              "bottom": 575.625,
+              "right": 1025
+            },
+            "alphaSourceFootprint": {
+              "width": 27.00390625,
+              "height": 46.37890625,
+              "ratio": 0.748046875
+            }
+          },
+          {
+            "id": "pasaje:6:0:rival:2",
+            "boss": false,
+            "pedestal": {
+              "x": 710,
+              "y": 627,
+              "width": 470,
+              "height": 195,
+              "bottom": 822,
+              "right": 1180
+            },
+            "figure": {
+              "x": 714,
+              "y": 674.375,
+              "width": 462,
+              "height": 62,
+              "bottom": 736.375,
+              "right": 1176
+            },
+            "name": {
+              "x": 894.9375,
+              "y": 736.375,
+              "width": 100.125,
+              "height": 20.25,
+              "bottom": 756.625,
+              "right": 995.0625
+            },
+            "health": {
+              "x": 865,
+              "y": 756.625,
+              "width": 160,
+              "height": 18,
+              "bottom": 774.625,
+              "right": 1025
+            },
+            "alphaSourceFootprint": {
+              "width": 28.69921875,
+              "height": 49.40625,
+              "ratio": 0.796875
+            }
+          }
+        ]
+      }
+    },
+    {
+      "pack": "arcana",
+      "language": "en",
+      "shape": {
+        "player": 5,
+        "challenge": "mastery",
+        "rival": 5
+      },
+      "actionToPausedReadyWallMs": 550,
+      "geometry": {
+        "viewport": {
+          "width": 1280,
+          "height": 900
+        },
+        "header": {
+          "x": 0,
+          "y": 0,
+          "width": 1280,
+          "height": 68,
+          "bottom": 68,
+          "right": 1280
+        },
+        "heading": {
+          "x": 100,
+          "y": 76,
+          "width": 1080,
+          "height": 69,
+          "bottom": 145,
+          "right": 1180
+        },
+        "tools": {
+          "x": 100,
+          "y": 151,
+          "width": 1080,
+          "height": 50,
+          "bottom": 201,
+          "right": 1180
+        },
+        "stage": {
+          "x": 100,
+          "y": 207,
+          "width": 1080,
+          "height": 635,
+          "bottom": 842,
+          "right": 1180
+        },
+        "caption": {
+          "x": 100,
+          "y": 848,
+          "width": 1080,
+          "height": 44,
+          "bottom": 892,
+          "right": 1180
+        },
+        "scroll": {
+          "width": 1280,
+          "height": 900
+        },
+        "rows": [
+          {
+            "id": "a70-player-0",
+            "boss": false,
+            "pedestal": {
+              "x": 100,
+              "y": 229,
+              "width": 470,
+              "height": 115.390625,
+              "bottom": 344.390625,
+              "right": 570
+            },
+            "figure": {
+              "x": 104,
+              "y": 236.5625,
+              "width": 462,
+              "height": 62,
+              "bottom": 298.5625,
+              "right": 566
+            },
+            "name": {
+              "x": 255.390625,
+              "y": 298.5625,
+              "width": 159.203125,
+              "height": 20.25,
+              "bottom": 318.8125,
+              "right": 414.59375
+            },
+            "health": {
+              "x": 255,
+              "y": 318.8125,
+              "width": 160,
+              "height": 18,
+              "bottom": 336.8125,
+              "right": 415
+            },
+            "alphaSourceFootprint": {
+              "width": 32.33203125,
+              "height": 49.1640625,
+              "ratio": 0.79296875
+            }
+          },
+          {
+            "id": "a70-player-1",
+            "boss": false,
+            "pedestal": {
+              "x": 100,
+              "y": 348.390625,
+              "width": 470,
+              "height": 115.40625,
+              "bottom": 463.796875,
+              "right": 570
+            },
+            "figure": {
+              "x": 104,
+              "y": 355.96875,
+              "width": 462,
+              "height": 62,
+              "bottom": 417.96875,
+              "right": 566
+            },
+            "name": {
+              "x": 305.828125,
+              "y": 417.96875,
+              "width": 58.34375,
+              "height": 20.25,
+              "bottom": 438.21875,
+              "right": 364.171875
+            },
+            "health": {
+              "x": 255,
+              "y": 438.21875,
+              "width": 160,
+              "height": 18,
+              "bottom": 456.21875,
+              "right": 415
+            },
+            "alphaSourceFootprint": {
+              "width": 32.57421875,
+              "height": 48.6796875,
+              "ratio": 0.78515625
+            }
+          },
+          {
+            "id": "a70-player-2",
+            "boss": false,
+            "pedestal": {
+              "x": 100,
+              "y": 467.796875,
+              "width": 470,
+              "height": 115.390625,
+              "bottom": 583.1875,
+              "right": 570
+            },
+            "figure": {
+              "x": 104,
+              "y": 475.359375,
+              "width": 462,
+              "height": 62,
+              "bottom": 537.359375,
+              "right": 566
+            },
+            "name": {
+              "x": 271.234375,
+              "y": 537.359375,
+              "width": 127.515625,
+              "height": 20.25,
+              "bottom": 557.609375,
+              "right": 398.75
+            },
+            "health": {
+              "x": 255,
+              "y": 557.609375,
+              "width": 160,
+              "height": 18,
+              "bottom": 575.609375,
+              "right": 415
+            },
+            "alphaSourceFootprint": {
+              "width": 30.03125,
+              "height": 49.28515625,
+              "ratio": 0.794921875
+            }
+          },
+          {
+            "id": "a70-player-3",
+            "boss": false,
+            "pedestal": {
+              "x": 100,
+              "y": 587.1875,
+              "width": 470,
+              "height": 115.40625,
+              "bottom": 702.59375,
+              "right": 570
+            },
+            "figure": {
+              "x": 104,
+              "y": 594.765625,
+              "width": 462,
+              "height": 62,
+              "bottom": 656.765625,
+              "right": 566
+            },
+            "name": {
+              "x": 275.796875,
+              "y": 656.765625,
+              "width": 118.40625,
+              "height": 20.25,
+              "bottom": 677.015625,
+              "right": 394.203125
+            },
+            "health": {
+              "x": 255,
+              "y": 677.015625,
+              "width": 160,
+              "height": 18,
+              "bottom": 695.015625,
+              "right": 415
+            },
+            "alphaSourceFootprint": {
+              "width": 26.27734375,
+              "height": 49.1640625,
+              "ratio": 0.79296875
+            }
+          },
+          {
+            "id": "a70-player-4",
+            "boss": false,
+            "pedestal": {
+              "x": 100,
+              "y": 706.59375,
+              "width": 470,
+              "height": 115.40625,
+              "bottom": 822,
+              "right": 570
+            },
+            "figure": {
+              "x": 104,
+              "y": 714.171875,
+              "width": 462,
+              "height": 62,
+              "bottom": 776.171875,
+              "right": 566
+            },
+            "name": {
+              "x": 289.5625,
+              "y": 776.171875,
+              "width": 90.859375,
+              "height": 20.25,
+              "bottom": 796.421875,
+              "right": 380.421875
+            },
+            "health": {
+              "x": 255,
+              "y": 796.421875,
+              "width": 160,
+              "height": 18,
+              "bottom": 814.421875,
+              "right": 415
+            },
+            "alphaSourceFootprint": {
+              "width": 28.21484375,
+              "height": 48.921875,
+              "ratio": 0.7890625
+            }
+          },
+          {
+            "id": "pasaje:6:0:rival:0",
+            "boss": true,
+            "pedestal": {
+              "x": 710,
+              "y": 229,
+              "width": 470,
+              "height": 132.421875,
+              "bottom": 361.421875,
+              "right": 1180
+            },
+            "figure": {
+              "x": 714,
+              "y": 238.0625,
+              "width": 462,
+              "height": 76.03125,
+              "bottom": 314.09375,
+              "right": 1176
+            },
+            "name": {
+              "x": 920.53125,
+              "y": 314.09375,
+              "width": 48.9375,
+              "height": 20.25,
+              "bottom": 334.34375,
+              "right": 969.46875
+            },
+            "health": {
+              "x": 865,
+              "y": 334.34375,
+              "width": 160,
+              "height": 18,
+              "bottom": 352.34375,
+              "right": 1025
+            },
+            "alphaSourceFootprint": {
+              "width": 53.60797119140625,
+              "height": 57.17193603515625,
+              "ratio": 0.751953125
+            }
+          },
+          {
+            "id": "pasaje:6:0:rival:1",
+            "boss": false,
+            "pedestal": {
+              "x": 710,
+              "y": 365.421875,
+              "width": 470,
+              "height": 111.140625,
+              "bottom": 476.5625,
+              "right": 1180
+            },
+            "figure": {
+              "x": 714,
+              "y": 372.625,
+              "width": 462,
+              "height": 58.484375,
+              "bottom": 431.109375,
+              "right": 1176
+            },
+            "name": {
+              "x": 887.25,
+              "y": 431.109375,
+              "width": 115.5,
+              "height": 20.25,
+              "bottom": 451.359375,
+              "right": 1002.75
+            },
+            "health": {
+              "x": 865,
+              "y": 451.359375,
+              "width": 160,
+              "height": 18,
+              "bottom": 469.359375,
+              "right": 1025
+            },
+            "alphaSourceFootprint": {
+              "width": 29.127960205078125,
+              "height": 46.37628173828125,
+              "ratio": 0.79296875
+            }
+          },
+          {
+            "id": "pasaje:6:0:rival:2",
+            "boss": false,
+            "pedestal": {
+              "x": 710,
+              "y": 480.5625,
+              "width": 470,
+              "height": 111.15625,
+              "bottom": 591.71875,
+              "right": 1180
+            },
+            "figure": {
+              "x": 714,
+              "y": 487.765625,
+              "width": 462,
+              "height": 58.484375,
+              "bottom": 546.25,
+              "right": 1176
+            },
+            "name": {
+              "x": 892.4375,
+              "y": 546.25,
+              "width": 105.109375,
+              "height": 20.25,
+              "bottom": 566.5,
+              "right": 997.546875
+            },
+            "health": {
+              "x": 865,
+              "y": 566.5,
+              "width": 160,
+              "height": 18,
+              "bottom": 584.5,
+              "right": 1025
+            },
+            "alphaSourceFootprint": {
+              "width": 29.127960205078125,
+              "height": 46.604736328125,
+              "ratio": 0.796875
+            }
+          },
+          {
+            "id": "pasaje:6:0:rival:3",
+            "boss": false,
+            "pedestal": {
+              "x": 710,
+              "y": 595.71875,
+              "width": 470,
+              "height": 111.140625,
+              "bottom": 706.859375,
+              "right": 1180
+            },
+            "figure": {
+              "x": 714,
+              "y": 602.921875,
+              "width": 462,
+              "height": 58.484375,
+              "bottom": 661.40625,
+              "right": 1176
+            },
+            "name": {
+              "x": 893.265625,
+              "y": 661.40625,
+              "width": 103.453125,
+              "height": 20.25,
+              "bottom": 681.65625,
+              "right": 996.71875
+            },
+            "health": {
+              "x": 865,
+              "y": 681.65625,
+              "width": 160,
+              "height": 18,
+              "bottom": 699.65625,
+              "right": 1025
+            },
+            "alphaSourceFootprint": {
+              "width": 29.584869384765625,
+              "height": 46.604736328125,
+              "ratio": 0.796875
+            }
+          },
+          {
+            "id": "pasaje:6:0:rival:4",
+            "boss": false,
+            "pedestal": {
+              "x": 710,
+              "y": 710.859375,
+              "width": 470,
+              "height": 111.140625,
+              "bottom": 822,
+              "right": 1180
+            },
+            "figure": {
+              "x": 714,
+              "y": 718.0625,
+              "width": 462,
+              "height": 58.484375,
+              "bottom": 776.546875,
+              "right": 1176
+            },
+            "name": {
+              "x": 904.359375,
+              "y": 776.546875,
+              "width": 81.28125,
+              "height": 20.25,
+              "bottom": 796.796875,
+              "right": 985.640625
+            },
+            "health": {
+              "x": 865,
+              "y": 796.796875,
+              "width": 160,
+              "height": 18,
+              "bottom": 814.796875,
+              "right": 1025
+            },
+            "alphaSourceFootprint": {
+              "width": 23.98773193359375,
+              "height": 44.777099609375,
+              "ratio": 0.765625
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "errors": []
+}

@@ -63,12 +63,18 @@ for (const language of ['es', 'en'] as const)
           beforeRejection,
         );
         await page.unroute('**/api/nodes/advance', reject);
-        await page
-          .getByRole('dialog')
-          .getByRole('button', { name: en ? 'Refresh state' : 'Actualizar estado', exact: true })
+        const nodeDialog = page.locator('dialog.node-event-dialog[open]');
+        await nodeDialog
+          .getByRole('button', { name: en ? 'Check again' : 'Volver a consultar', exact: true })
           .click();
-        await expect(page.getByRole('dialog')).toHaveCount(0);
-        await page.locator(`[data-node="${id}"]`).click();
+        // Recovery keeps the same preparation open; a query does not advance or spend.
+        await expect(nodeDialog).toBeVisible();
+        await expect(nodeDialog).toHaveAttribute('data-event-kind', 'boss');
+        await expect(nodeDialog.locator('[data-recovery-notice]')).toHaveCount(0);
+        await expect(nodeDialog.locator('.node-confirm-action')).toBeEnabled();
+        expect((await (await page.request.get('/api/state')).json()).state).toEqual(
+          beforeRejection,
+        );
       }
       await confirmEvent(page, language);
       if (

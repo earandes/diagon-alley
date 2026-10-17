@@ -10,6 +10,32 @@ import { activeSynergies } from '../domain/combat/synergies';
 import type { EquipmentSlot } from '../domain/economy/equipment';
 import type { Run } from '../domain/exploration/run';
 
+/** An active run owns its rules. Legacy runs without a snapshot explicitly retain the live fallback. */
+export function effectivePreparationRules(
+  run: Run | null | undefined,
+  live: CombatRules,
+): CombatRules {
+  return run?.status === 'active' ? (run.campaignSnapshot?.combatRules ?? live) : live;
+}
+
+export interface PreparationFilter {
+  readonly affinity?: Affinity | 'unknown';
+  readonly wizardId?: string;
+}
+/** Filtering never groups away instance identity, equipment, condition or the selection draft. */
+export function filterPreparationCopies(
+  game: GameState,
+  content: PublicContent | undefined,
+  filter: PreparationFilter,
+): readonly OwnedWizard[] {
+  return game.copies.filter(
+    (copy) =>
+      (!filter.wizardId || copy.wizard.id === filter.wizardId) &&
+      (!filter.affinity ||
+        (preparationUnit(game, copy, content).affinity ?? 'unknown') === filter.affinity),
+  );
+}
+
 export type PreparationUnit = Omit<CombatUnitInput, 'affinity'> & {
   readonly affinity: Affinity | null;
 };

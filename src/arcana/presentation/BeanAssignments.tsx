@@ -8,7 +8,11 @@ import type { AdvanceNodeRequest } from '../application/run-contracts';
 import type { Language } from '../domain/collection/wizards';
 import { text } from './translations';
 import { contextualText as c } from './contextual-messages';
-import { assignBean, validBeanAssignments } from './contextual-preparation';
+import {
+  assignBean,
+  validBeanAssignments,
+  effectivePreparationRules,
+} from './contextual-preparation';
 import { PreparationSynergies } from './PreparationSynergies';
 import './contextual-preparation.css';
 type Assignments = AdvanceNodeRequest['assignments'];
@@ -48,7 +52,8 @@ export function BeanAssignments({
     earth: 'earthEffect',
     soap: 'soapEffect',
   } as const;
-  const total = content.combatRules.beans.entries.reduce((n, e) => n + e.weight, 0);
+  const rules = effectivePreparationRules(run, content.combatRules);
+  const total = rules.beans.entries.reduce((n, e) => n + e.weight, 0);
   const percent = new Intl.NumberFormat(language === 'es' ? 'es-ES' : 'en-US', {
     style: 'percent',
     maximumFractionDigits: 2,
@@ -159,11 +164,11 @@ export function BeanAssignments({
           </p>
         </>
       )}
-      <PreparationSynergies members={run.members} rules={content.combatRules} language={language} />
+      <PreparationSynergies members={run.members} rules={rules} language={language} />
       <details className="bean-context-help">
         <summary>{text(language, 'beanEffects')}</summary>
         <p>{c(language, 'consumedOnBattle')}</p>
-        {content.combatRules.beans.entries.map((e) => (
+        {rules.beans.entries.map((e) => (
           <p key={e.flavour}>
             <Artwork
               asset={`product.bean-${e.flavour}`}

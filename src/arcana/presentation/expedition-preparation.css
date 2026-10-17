@@ -937,3 +937,63 @@
   width: 48px;
   height: 48px;
 }
+
+/* A75: optional portrait/affinity index; the five selected positions remain outside filtering. */
+.preparation-filters {
+  margin-block: 8px 14px;
+  color: var(--pack-ink, #f5e7c4);
+}
+.preparation-filters > summary,
+.preparation-identity-filters > summary {
+  cursor: pointer;
+  min-height: 44px;
+  align-content: center;
+  text-underline-offset: 0.2em;
+}
+.preparation-affinity-filters,
+.preparation-identity-filters > div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: flex-start;
+}
+.game-shell .preparation-affinity-filters .game-object,
+.game-shell .preparation-identity-filters .game-object {
+  display: grid;
+  justify-items: center;
+  gap: 3px;
+  min-width: 44px;
+  min-height: 44px;
+  max-width: 112px;
+  padding: 6px;
+  color: inherit;
+  border: 1px solid transparent;
+  background: transparent;
+  overflow-wrap: anywhere;
+}
+.preparation-identity-filters img {
+  width: 44px;
+  height: 54px;
+  object-fit: cover;
+  object-position: top;
+}
+.game-shell .preparation-filters [aria-pressed='true'] {
+  border-color: var(--pack-gold, #d9b86b);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+.preparation-identity-filters {
+  margin-block: 6px;
+}
+.preparation-identity-filters > div {
+  max-height: min(34vh, 280px);
+  overflow-y: auto;
+  padding: 5px;
+}
+.preparation-filter-empty {
+  margin-block: 12px;
+}
+.game-shell .preparation-clear-filter,
+.game-shell .preparation-filter-empty button {
+  min-height: 44px;
+}

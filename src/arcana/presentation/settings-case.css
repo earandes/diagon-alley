@@ -176,3 +176,10 @@ dialog.game-settings.settings-case {
     font-size: 0.8rem;
   }
 }
+/* Preference is independent from the system-enforced effective state. */
+.settings-case .settings-motion-state {
+  margin: -4px 0 20px;
+  color: #e7d3a7;
+  font-size: 0.875rem;
+  line-height: 1.5;
+}

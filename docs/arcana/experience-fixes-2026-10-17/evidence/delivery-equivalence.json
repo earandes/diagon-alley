@@ -1,0 +1,33 @@
+{
+  "testedHead": "6f47559a73db59b20aab6bbe94ee4d8e7f5c39c7",
+  "testedMerge": "4395489c9f888eb230ba6334f01eabf0b099374a",
+  "testedTree": "0d914c647786dfeb5c92eb4a6b06b129a9bc77ea",
+  "passedRun": 39064546905,
+  "unchangedDeliveryObjects": {
+    "src": "43671eb13782f1e9823332293cc6f9137d51b36c",
+    "public": "c753d774b0376039471d909e9266ffd49e740039",
+    "tests": "b2335808d4e5e31780e9180eefa8a3687801d974",
+    "package.json": "7624c06b3bf5c620b39cb74042a7a0a3467f0823",
+    "package-lock.json": "f8d0c9d8aab1a5931825ecd76ccc979dea21862c",
+    ".github/workflows/checks.yml": "c85491eb892c7c00451e80399b1e400872fc2bcc",
+    "playwright.experience-a75.config.ts": "421c61f2d2235d0d2692c29badae26ed195c6baa",
+    "tools/verification/playwright-safety.ts": "75aea02ee14329e8d9d2d4b1334ee57879c30422"
+  },
+  "onlyNonDocumentChange": {
+    "path": "tools/verification/a75-phase.json",
+    "before": "tail",
+    "after": "full",
+    "purpose": "Restore full future CI selection after scoped evidence reuse; no browser guard change or runtime consumer."
+  },
+  "baselineA73SourceEqualsInitialReference": {
+    "from": "8541ee2c",
+    "to": "937a0a1",
+    "paths": [
+      "src",
+      "package.json",
+      "package-lock.json"
+    ],
+    "diffEmpty": true
+  },
+  "deliveryCommit": "The current PR6 head identifies the documentary closing commit; this file intentionally does not invent a self-referential commit SHA. Verify objects against HEAD using git rev-parse and git diff."
+}

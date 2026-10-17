@@ -38,7 +38,7 @@ test('bounded local pact cancellation and Halloween keepsake journey', async ({ 
   await page.keyboard.press('Escape');
   await startExpedition(page, 'es');
   const initial = await readGame(page);
-  await page.locator('.map-node > button:enabled').first().click();
+  await page.locator('.map-node > button[data-node-state="available"]').first().click();
   await expect(page.locator('[data-pact-candidate]')).toHaveCount(2);
   await page.locator('[data-pact-candidate]').first().click();
   await expect(page.locator('.node-confirm-action')).toBeEnabled();

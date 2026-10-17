@@ -87,7 +87,7 @@ test('branching map and equivalent list keep identical accessible actions with W
   ).toBeVisible();
   await page.getByRole('button', { name: 'Volver al mapa', exact: true }).click();
   await page.getByRole('button', { name: 'Ver lista de nodos', exact: true }).click();
-  const next = page.locator('[data-node]:not(:disabled)').first();
+  const next = page.locator('[data-node][data-node-state="available"]').first();
   await expect(next).toBeEnabled();
   const beforeConsultation = await economic(page);
   await next.click();

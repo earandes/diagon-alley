@@ -168,7 +168,7 @@
   flex-wrap: wrap;
   justify-content: center;
   gap: 5px;
-  margin: 18px auto 8px;
+  margin: 8px auto 6px;
 }
 .game-shell .encounter-target {
   display: flex;
@@ -223,8 +223,8 @@
   flex-wrap: wrap;
   justify-content: center;
   gap: 8px 12px;
-  margin-top: 16px;
-  padding-top: 12px;
+  margin-top: 8px;
+  padding-top: 8px;
   border-top: 1px solid #756b4a;
 }
 .game-shell .encounter-preview-unit {
@@ -476,4 +476,49 @@
     min-height: 58px;
     margin-top: 10px;
   }
+}
+
+/* A75: portrait-local position/provenance keep identical instances distinct without prose rows. */
+.game-shell .encounter-target > .encounter-target-origin {
+  font-size: 0.75rem;
+  line-height: 1.2;
+  color: var(--pack-ink, #f5e7c4);
+}
+.game-shell .encounter-target-position {
+  position: absolute;
+  top: -4px;
+  left: -7px;
+  display: grid;
+  place-items: center;
+  width: 20px;
+  height: 20px;
+  border: 1px solid #cbb179;
+  border-radius: 50%;
+  background: #101c26;
+  color: #f5e8c9;
+  font-size: 0.75rem;
+  font-variant-numeric: tabular-nums;
+}
+.game-shell .encounter-target-image .encounter-target-provenance {
+  position: absolute;
+  top: -5px;
+  right: -8px;
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+}
+.encounter-preview-identity {
+  grid-column: 1 / -1;
+  font-size: 0.8rem;
+  line-height: 1.2;
+  font-weight: 400;
+}
+.game-shell .encounter-preview-unit > img {
+  grid-row: 2 / 4;
+}
+.encounter-provenance-key img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  vertical-align: middle;
 }
