@@ -1,3 +1,4 @@
+import { sceneStart, sceneEnd } from './scenes/scene-diagnostics';
 import { Artwork } from './Artwork';
 import { activePack } from './content-packs/active';
 import { Celebration } from './Celebration';
@@ -69,6 +70,8 @@ function BattlePlayback({
   confirmedPresentation = false,
   bossEncounter,
 }: BattlePanelProps & { replay: BattleReplay }) {
+  const renderStarted = sceneStart();
+  useLayoutEffect(() => sceneEnd('react-commit-wall', renderStarted));
   const total = combat.events.length,
     playback = useBattlePlayback(combat.events, activePack.animations.arena.eventMs, reduced),
     { cursor, playing, speed, setPlaying, setSpeed } = playback,

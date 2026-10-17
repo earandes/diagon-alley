@@ -28,3 +28,7 @@ La matriz existente conserva sus casos; A73 añade medición de recorrido sin su
 ## Pendientes humanos y físicos
 
 Sesión breve posterior (no realizada): pedir iniciar unaexpedición, preparar un duelo, consultar un miembro y seguir hasta el jefe; observar si se percibe continuidad o espera sin explicar dónde mirar. Segunda hipótesis: la primera acción y sus consecuencias siguen legibles después de reducir paints. Preguntas neutrales sobre qué ocurrió/cuándo pudo actuar, sin afirmar personalidad, diversión o retención por un benchmark. Dispositivo físico, lector audible, red móvil y comportamiento GPU real pendientes.
+
+## Candidato corregido9ff079c · CI39027727612
+
+FaseA70/A71/A73 correcta; se recupera artifact para comparar. El target de rendimiento **no se cumple**: tres genéricosP95rAF33,3–33,4ms, aunque geometría92–99→0 ypaintsdearranque9–11→3–6. El arranque genérico469–531ms empeora frente345–399ms; jefe468–487ms mejora frente504–522ms. Son runners distintos: no se atribuye automáticamente regresión o mejora causal. Se conserva la comparación desfavorable. Se cancela el resto y no se integra. Siguiente ciclo: A/B en un mismo runner, documento nuevo y remount, para contrastar la variabilidad con condiciones comunes.

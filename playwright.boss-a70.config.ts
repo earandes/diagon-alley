@@ -1,6 +1,10 @@
+import { readFileSync } from 'node:fs';
 import { randomUUID } from 'node:crypto';
 import { defineSafeConfig } from './tools/verification/playwright-safety';
 
+const a73DiagnosticOnly =
+  JSON.parse(readFileSync(new URL('./tools/verification/a73-phase.json', import.meta.url), 'utf8'))
+    .phase === 'diagnostic';
 const namespace = `a70-boss-${randomUUID()}`;
 const styleNamespace = `a71-boss-${randomUUID()}`;
 // A71 runs in this existing CI step, under the same guard/lock and one worker.
@@ -14,11 +18,13 @@ if (process.env.ARCANA_CAPTURE_A70 === '1') {
 /** Linux only: the shared guard enforces lock, one worker, no retries or recording. */
 export default defineSafeConfig({
   testDir: './tests',
-  testMatch: [
-    /browser-boss\/boss-a70\.spec\.ts$/,
-    /browser-boss-style\/boss-style-a71\.spec\.ts$/,
-    /browser-fluency\/.*\.spec\.ts$/,
-  ],
+  testMatch: a73DiagnosticOnly
+    ? [/browser-fluency\/fluency-a73\.spec\.ts$/]
+    : [
+        /browser-boss\/boss-a70\.spec\.ts$/,
+        /browser-boss-style\/boss-style-a71\.spec\.ts$/,
+        /browser-fluency\/.*\.spec\.ts$/,
+      ],
   outputDir: 'test-results/boss-a70',
   timeout: 180000,
   maxFailures: 1,
@@ -30,12 +36,18 @@ export default defineSafeConfig({
     actionTimeout: 10000,
     navigationTimeout: 20000,
   },
-  projects: (['chromium', 'webkit'] as const).flatMap((browserName) =>
-    [
-      { width: 1280, height: 900 },
-      { width: 390, height: 844 },
-      { width: 865, height: 1079 },
-    ].map((viewport) => ({
+  projects: (a73DiagnosticOnly
+    ? (['chromium'] as const)
+    : (['chromium', 'webkit'] as const)
+  ).flatMap((browserName) =>
+    (a73DiagnosticOnly
+      ? [{ width: 1280, height: 900 }]
+      : [
+          { width: 1280, height: 900 },
+          { width: 390, height: 844 },
+          { width: 865, height: 1079 },
+        ]
+    ).map((viewport) => ({
       name: `${browserName}-${viewport.width}-boss-a70`,
       use: { browserName, viewport },
     })),
@@ -61,7 +73,7 @@ export default defineSafeConfig({
     },
     {
       command:
-        'npx --no-install vite build --config tests/browser-boss/vite-boss-a70.config.ts && npx --no-install vite preview --config tests/browser-boss/vite-boss-a70.config.ts --host 127.0.0.1 --port 5471 --strictPort',
+        'npx --no-install vite build --config tests/browser-boss/vite-boss-a70.config.ts && node tools/verification/build-a73-reference.mjs && npx --no-install vite preview --config tests/browser-boss/vite-boss-a70.config.ts --host 127.0.0.1 --port 5471 --strictPort',
       url: 'http://127.0.0.1:5471/tests/browser-boss/boss-a70.html',
       reuseExistingServer: false,
       timeout: 120000,
