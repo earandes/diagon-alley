@@ -50,3 +50,9 @@ Geometría de atlas sobre fuentes intactas, sin nuevas ilustraciones. No es un r
 6. Revisar documentación/diff, comprobar candidato real, integrar con historia conservada y verificar main/CI. Pendiente.
 
 El sostenido genérico sigue incumpliendo20ms en los ensayos desfavorables. El presupuesto de arranque tampoco se da por alcanzado. No se declara completo el goal ni se realiza push a main por una muestra parcial.
+
+### Plan tras comparación10
+
+El candidato mínimo0c cumple los presupuestos declarados en las tres muestras de este runner (detalleDIAGNOSIS), conservando una pareja genérica de arranque desfavorable. Ensayo11 sobred03c93c aísla el uso inmediato de imágenes resueltas; se exige≤20ms en cada ventana actual después de guardar todos los datos. El baseline0c mantiene las otras correcciones, sin atlas. No se repite el lote de arte.
+
+La configuración final vuelve a `full` y separa explícitamente A/B mediante ARCANA_A73_DIAGNOSTIC=1 para Linux. No reduce ni cambia la matriz original, guard, worker, retries, timeout o watchdog. La matriz funcional conserva los cuatro recorridos A73 y todas las regresiones A70/A71; no duplica el A/B ya comprobado del mismo código. Pendientes ensayo11, matriz global, integración y verificación.

@@ -3,6 +3,7 @@ import { randomUUID } from 'node:crypto';
 import { defineSafeConfig } from './tools/verification/playwright-safety';
 
 const a73DiagnosticOnly =
+  process.env.ARCANA_A73_DIAGNOSTIC === '1' ||
   JSON.parse(readFileSync(new URL('./tools/verification/a73-phase.json', import.meta.url), 'utf8'))
     .phase === 'diagnostic';
 const namespace = `a70-boss-${randomUUID()}`;
@@ -23,7 +24,7 @@ export default defineSafeConfig({
     : [
         /browser-boss\/boss-a70\.spec\.ts$/,
         /browser-boss-style\/boss-style-a71\.spec\.ts$/,
-        /browser-fluency\/.*\.spec\.ts$/,
+        /browser-fluency\/expedition-a73\.spec\.ts$/,
       ],
   outputDir: 'test-results/boss-a70',
   timeout: 180000,
@@ -72,8 +73,12 @@ export default defineSafeConfig({
       timeout: 120000,
     },
     {
+      // The matched A/B is an explicit serial diagnostic, not duplicated in the
+      // complete functional matrix. Both still use this guard and lock.
       command:
-        'npx --no-install vite build --config tests/browser-boss/vite-boss-a70.config.ts && node tools/verification/build-a73-reference.mjs && npx --no-install vite preview --config tests/browser-boss/vite-boss-a70.config.ts --host 127.0.0.1 --port 5471 --strictPort',
+        'npx --no-install vite build --config tests/browser-boss/vite-boss-a70.config.ts' +
+        (a73DiagnosticOnly ? ' && node tools/verification/build-a73-reference.mjs' : '') +
+        ' && npx --no-install vite preview --config tests/browser-boss/vite-boss-a70.config.ts --host 127.0.0.1 --port 5471 --strictPort',
       url: 'http://127.0.0.1:5471/tests/browser-boss/boss-a70.html',
       reuseExistingServer: false,
       timeout: 120000,

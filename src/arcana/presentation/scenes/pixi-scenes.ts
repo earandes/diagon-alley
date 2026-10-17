@@ -143,6 +143,8 @@ export async function createPixiScene(host: HTMLElement, data: SceneData) {
     renders = 0;
   let viewWidth = host.clientWidth,
     viewHeight = host.clientHeight;
+  let textureSlots = 2;
+  let deferredTextures = false;
   const installTexture = (key: string, image: HTMLImageElement) => {
     if (destroyed || textures.has(key)) return;
     textures.set(key, Texture.from(image));
@@ -154,9 +156,14 @@ export async function createPixiScene(host: HTMLElement, data: SceneData) {
   };
   const loadTexture = (key: string, url: string) => {
     if (textures.has(key) || loading.has(key)) return;
-    loading.add(key);
     const ready = images.get(key)?.ready;
     if (ready) {
+      if (textureSlots === 0) {
+        deferredTextures = true;
+        return;
+      }
+      textureSlots--;
+      loading.add(key);
       // Decoder work already finished during init: use it in this geometry pass.
       // A conversion failure must retain the same DOM/full-actor fallback.
       try {
@@ -165,10 +172,14 @@ export async function createPixiScene(host: HTMLElement, data: SceneData) {
         /* Artwork fallback remains. */
       }
     } else {
+      loading.add(key);
       void prepareImage(key, url)
         .then((image) => {
           if (destroyed || !image) return;
-          installTexture(key, image);
+          // Decode completion only invalidates; the next geometry pass admits
+          // a bounded number of new sources before submitting the whole scene.
+          loading.delete(key);
+          dirty = true;
           requestPaint();
         })
         .catch(() => {
@@ -187,6 +198,8 @@ export async function createPixiScene(host: HTMLElement, data: SceneData) {
     )
       return;
     const paintStarted = sceneStart();
+    textureSlots = 2;
+    deferredTextures = false;
     const width = viewWidth,
       height = viewHeight;
     if (width < 1 || height < 1) return;
@@ -336,7 +349,7 @@ export async function createPixiScene(host: HTMLElement, data: SceneData) {
           }
         }
       }
-      dirty = false;
+      dirty = deferredTextures;
       sceneEnd('geometry', geometryStarted);
     }
     if (current.kind === 'arena') {
@@ -549,6 +562,7 @@ export async function createPixiScene(host: HTMLElement, data: SceneData) {
     sceneEnd('render-submit', submitStarted);
     sceneEnd('paint', paintStarted);
     host.dataset.renderCount = String(++renders);
+    if (deferredTextures) requestPaint();
   };
   const redraw = new FrameInvalidation(
     (draw) => requestAnimationFrame(draw),

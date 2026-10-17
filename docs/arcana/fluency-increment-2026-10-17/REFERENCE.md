@@ -1,44 +1,51 @@
-# Referencia ejecutable A73
+# A73 · Referencia y reproducción
 
-Commitd13c0d96ed1959ef6edcf61e2486f688484c902f conserva runtime/arteA72 más instrumentación opt-in sin optimización. El código del dominio, contenido, persistencia, reloj y arte es el de4be35f8. Fuente de medición: tests/browser-fluency/fluency-a73.spec.ts yexpedition-a73.spec.ts. Se ejecuta dentro de playwright.boss-a70.config.ts bajo elguard original. No ejecutar enMac.
+Solo Linux bajo guard/bloqueo/watchdog originales, un worker y cero retries. No ejecutar estos recorridos en el Mac. Los servicios/variables PostgreSQL/Redis y versiones de Node/lockfile son los declarados por `.github/workflows/checks.yml`; no se requieren herramientas o servicios nuevos.
 
-En checkout Linux aislado de ese commit, con node24/lockfile y servicios PostgreSQL/Redis propios:
+## Recorrido funcional
+
+La configuración por defecto `playwright.boss-a70.config.ts` ejecuta la matriz A70/A71 y los cuatro recorridos A73 ES/EN×paquete. A73 usa autoridad aislada5472; los 24casos A71 más4A73 quedan dentro de la cuota real30, sin relajar límites. No usa cuenta habitual. Recorre entrada/preparación/mapa/duelo/retorno/jefe/cierre/rana poseída/otra confirmación explícita; conserva tiempos desde clic real, respuestasHTTP, snapshots ylogs.
 
 ```
-npm ci --no-fund --no-audit
 npm run build
-npx playwright install --with-deps chromium webkit
-npx playwright test --config playwright.boss-a70.config.ts --grep A73 --project chromium-1280-boss-a70
+npx playwright test --config playwright.boss-a70.config.ts
 ```
 
-Una batería a la vez; elguard común impide concurrencia. Cero retries y sin vídeo/trazas/capturas automáticas. No cambiar protecciones para acelerar el ensayo. LaCI utiliza su comando completo existente, sin workflows nuevos.
+## A/B acotado, separado de la matriz
 
-Seis documentos/contextos nuevos: genérico3×3 seed69 yjefe5×5 seed70, tres pares alternados, ventana10s después de art-ready. Caché del contexto nueva; sistema, proceso yshader no purgados. No se denomina arranque frío de máquina. Elguion del jefe alarga estadísticas propias exclusivamente enfixture, sin tocarcampaña.
-
-Cada registro conserva intervalosrAF, LongTasks, métricasacotadas de import/init/decode/geometría/paint/render-submit ydatos propios de escena. Medirrender-submit no mide ejecuciónGPU. Elhook opcional no existe en uso ordinario. Los percentiles del resumidor usan sorted[floor((n-1)*q)], también conserva crudos ysumas; no promedia P95para ocultar una ventana desfavorable.
-
-Cuatro journeysautoritatativos ES/EN×pack recorrenentrada→preparación→mapa→duelo→retorno→jefe→cierre→rana poseída→otra run. La semilla de autoridad no se controla desdecliente; snapshots/logs guardados permiten declarar las condiciones. Usa política técnica de ruta existente, sin fingir comportamiento humano. Los tiempos se estampan en clic real, las respuestas HTTP se identifican aparte y las aserciones dan cotassuperiores hastaDOM/arte. Combatelog es inmutable. No se gasta en cuenta habitual.
-
-Resumen sin navegador:
+La variante diagnóstica reutiliza exactamente el mismo guard, lock, worker y servidores. No se ejecutan suites simultáneas. Es una fase explícita, no un modo de saltarse las protecciones del host.
 
 ```
-node docs/arcana/fluency-increment-2026-10-17/summarize.mjs RUTA/diagnostic-reference.json
+ARCANA_A73_DIAGNOSTIC=1 npx playwright test --config playwright.boss-a70.config.ts
 ```
 
-Estado: referencia enCI; resultados todavía pendientes. Las mediciones históricasA72 no se presentan como esta nuevaejecución.
+Para únicamente las dos imágenes seleccionadas después de medir/pausar, añadir `ARCANA_CAPTURE_A71=1` en Linux. No hay vídeo/trazas ni medios durante las ventanas. La matriz completa no repite este A/B cuando ya existe evidencia del mismo código ejecutable: evita duplicar carga y exceder el límite original de CI. `tools/verification/a73-phase.json` debe permanecer en `full` al integrar; el override explícito conserva todas las protecciones.
 
-## Protocolo A/B posterior
+Tres pares por escena, orden AB/BA/AB,12contextos. Genérico3×3 seed69 yjefe5×5 seed70 (estadísticas prolongadas solo enfixture),10s por contexto tras observar art-ready; el genérico añade10s después de remontar. Nuevos contextos no purgan cachéOS/proceso/shaders; no se denomina arranque frío de máquina. El percentil es sorted[floor((n−1)*q)]; no se promedianP95. La prueba escribe todos los datos antes de exigir≤20ms a cada ventana actual, incluidas las desfavorables.
 
-Desde075d58a el ensayo compara ambos builds dentro del mismo job/servidor5471: referencia fija d13 y candidato. Tres pares AB/BA/AB por tipo,12contextos y10s sostenidos por contexto; además10s tras remontar cada genérico. Instrumentación equivalente opcional de React y contadores GL, sin tiempos GPU. El build de referencia archiva código de d13, añade solo el mismo hook React y registra procedencia; b10 iguala también las tres entradas de compilación Vite. Los resultados anteriores con dos entradas se conservan y no se usan como prueba final del presupuesto de arranque.
+El baseline se archiva por SHA en `tools/verification/build-a73-reference.mjs`, con idénticas tres entradasVite, assets y dependencia lockfile; solo recibe el mismo hook opt-in React si no existía. Se sirve en/a73-reference sobre el mismo5471. Se mantiene historia de commits al integrar para que gitarchive pueda reproducirlo en un clon nuevo.
 
-`tools/verification/a73-phase.json` distingue explícitamente diagnóstico acotado y matriz completa. Antes de integración debe estar en `full`; no cambia guard, bloqueo, worker, watchdog ni retries. Los runs cancelados tras extraer un ensayo no son CI global superada.
+| Ensayo | Referencia | Variable principal |
+|---|---|---|
+|1–3|d13c0d9|agrupación/geometría; mipmaps no aislados; decodeparalelo|
+|4–5|a5a3b3b|mipmaps aislados; ticker bajo demanda|
+|6–7|14a7f1d|autoload; trim alfa|
+|8|fa41664|bandas atlas|
+|9|78267f5|límite8 delbatch|
+|10|d13c0d9|candidato mínimo sinatlas|
+|11|0c0547c|uso inmediato de imagen resuelta|
 
-Resumen A/B sin navegador:
+Los dos primeros ensayos no tienen exactamente la misma instrumentación/entradas que los posteriores. Se conservan para explicar decisiones; no forman una única serie homogénea. d13 conserva runtime/arteA72 de4be35f8 más instrumentación yrecorrido, sin optimización. La referencia inicial de seis muestras, anterior al A/B, permanece en evidence/reference.
+
+Cada raw incluye mergeSHAdeCI; su CIJSON conserva headSHA, pasos yconclusión. Runs cancelados tras obtener un diagnóstico no son baterías globales correctas.
+
+## Análisis sin navegador
 
 ```
-node docs/arcana/fluency-increment-2026-10-17/ab-report.mjs RUTA/diagnostic-reference.json
+node docs/arcana/fluency-increment-2026-10-17/ab-report.mjs RUTA/raw.json.gz
+node docs/arcana/fluency-increment-2026-10-17/summarize.mjs RUTA/raw.json.gz
 ```
 
-Los crudos A/B se guardan con gzip sin pérdida para reducir peso de revisión. `ab-report.mjs` admite JSON o JSON.gz; conserva todos los registros, incluidos extremos/desfavorables.
+Los crudos están comprimidos sin pérdida; los scripts admiten JSON/JSON.gz. Los inicialesreference/current ycompare siguen recuperables; la comparación regenerada coincide concomparison.json. La medición de escena está desactivada en uso normal y acotada enfixture. rAF no mideGPU, decodepromise no esCPU pura, render-submit yllamadasnativas son walltime de envío, dimensionesRGBA no sonRAMresidente ycontadores propios no acreditan ausencia global de fugas.
 
-Los crudos iniciales reference/current también se conservan como JSON.gz. Los scripts summarize/compare admiten ese formato; la comparación regenerada es idéntica a comparison.json. Desde el ensayo de franjas hay dos PNG seleccionados explícitamente en Linux tras terminar las ventanas de medida y pausar; la instrumentación comprueba errores de página. No hay medios durante las ventanas, vídeo o trazas.
+Para el recorrido autoritativo completo, `journey-report.mjs CARPETA` agrupa las cuatro cuentas declaradas por paso (cotas desde clic, respuestaResourceTiming, figuras y coreografía). No compara rutas aleatorias o runners distintos como si fueran experimentos causales. La referencia conservada da primeraarenafiguras358–435ms/jefe497–515ms; se contrastará con los valores finales completos, sin inferir una duración humana ni acelerar la apertura de ranas.

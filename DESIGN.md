@@ -1,6 +1,6 @@
 # Diagon Alley / ARCANA · Callejón de maravillas
 
-A73 ·17octubre2026: optimización de presentación sin cambio de composición o coreografía. Las texturas invalidan el siguiente frame compartido; fase/PM/PV no reconstruyen plataformas y figuras si su geometría/condición no cambió. Se conservan todas las unidades, textos, variantes reducidas y fallback. Implementado; comparación gráfica pendiente. [Investigación y límites](docs/arcana/fluency-increment-2026-10-17/DIAGNOSIS.md).
+A73 · 17 octubre 2026: se conserva la escena ilustrada completa, el actor por piezas y toda la información táctica. Las optimizaciones actúan sobre carga, invalidaciones, geometría y lotes; no reducen resolución, figuras o coreografía. Entrada/hechizo/impacto/curación conservan movimiento y reloj compartido; acuses estáticos necesitan un snapshot, sin dibujo continuo. Reducido, pausa y fallback siguen equivalentes. No se adoptan recortes alfa/bandas ni ilustraciones nuevas. Implementado en rama; [comparación y validación integradas pendientes](docs/arcana/fluency-increment-2026-10-17/REPORT.md).
 
 A72 ·17octubre2026: revisión para consolidar A70/A71, sin rehacer diseño/arte. Seis imágenes Linux existentes y código contrastados; no nuevo defecto visual bloqueante demostrado. Integrado en main; CI39021060226 correcta sobre15b1a99, sin cambios de aplicación/arte en esta consolidación. Se conserva antesala/actor por piezas y botín primero, con percepción humana y rendimiento pendientes diferenciados. [Seguimiento](docs/arcana/boss-integration-2026-10-17/REPORT.md).
 

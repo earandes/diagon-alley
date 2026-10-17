@@ -1,0 +1,2117 @@
+{
+  "sha": "fe19e66f37ce8bffc08844a827aa029d790910ac",
+  "records": [
+    {
+      "pair": 0,
+      "kind": "generic",
+      "variant": "baseline",
+      "readyUpperMs": 506.6000000000058,
+      "startup": {
+        "n": 11,
+        "p50": 33.400000000000006,
+        "p95": 83.40000000000003,
+        "max": 100,
+        "sum": 450.09999999999997
+      },
+      "native": {
+        "native-shaderSource": {
+          "n": 5,
+          "p50": 0,
+          "p95": 0,
+          "max": 0,
+          "sum": 0
+        },
+        "native-compileShader": {
+          "n": 5,
+          "p50": 0,
+          "p95": 0,
+          "max": 0,
+          "sum": 0
+        },
+        "native-texImage2D": {
+          "n": 8,
+          "p50": 3,
+          "p95": 5.2000000000116415,
+          "max": 6.099999999976717,
+          "sum": 25.60000000000582
+        },
+        "native-clear": {
+          "n": 16,
+          "p50": 0,
+          "p95": 0,
+          "max": 0,
+          "sum": 0
+        },
+        "native-linkProgram": {
+          "n": 4,
+          "p50": 0,
+          "p95": 0,
+          "max": 0.10000000000582077,
+          "sum": 0.10000000000582077
+        },
+        "native-getProgramParameter": {
+          "n": 8,
+          "p50": 0.20000000001164153,
+          "p95": 7.899999999994179,
+          "max": 14.800000000017462,
+          "sum": 28.200000000040745
+        },
+        "native-bufferData": {
+          "n": 13,
+          "p50": 0,
+          "p95": 0,
+          "max": 0.09999999997671694,
+          "sum": 0.09999999997671694
+        },
+        "native-drawElements": {
+          "n": 16,
+          "p50": 0,
+          "p95": 0,
+          "max": 0.10000000000582077,
+          "sum": 0.10000000000582077
+        },
+        "native-bufferSubData": {
+          "n": 16,
+          "p50": 0,
+          "p95": 0.20000000001164153,
+          "max": 0.8999999999941792,
+          "sum": 1.1000000000058208
+        }
+      },
+      "shaderSamplers": [
+        32,
+        8
+      ],
+      "scene": {
+        "batchHardwareTextures": "32",
+        "batchTextures": "8",
+        "renderer": "webgl",
+        "activeTicking": "true",
+        "artReady": "true",
+        "visibleFigures": "6",
+        "renderCount": "495",
+        "textureCount": "6",
+        "textureBytes": "3513024"
+      },
+      "warm": {
+        "raf": {
+          "n": 581,
+          "p50": 16.699999999999818,
+          "p95": 16.800000000000182,
+          "max": 33.400000000001455,
+          "sum": 9999.499999999984
+        },
+        "metrics": {
+          "paint": {
+            "n": 491,
+            "p50": 0.29999999998835847,
+            "p95": 0.5,
+            "max": 2,
+            "sum": 139.49999999956344
+          },
+          "render-submit": {
+            "n": 491,
+            "p50": 0.20000000001164153,
+            "p95": 0.39999999999417923,
+            "max": 2,
+            "sum": 107.69999999963329
+          },
+          "geometry": {
+            "n": 0,
+            "p50": null,
+            "p95": null,
+            "max": null,
+            "sum": 0
+          },
+          "react-commit-wall": {
+            "n": 105,
+            "p50": 0.6000000000058208,
+            "p95": 1,
+            "max": 2.3000000000174623,
+            "sum": 71.79999999993015
+          }
+        },
+        "gl": {
+          "shaderSource": 0,
+          "compileShader": 0,
+          "texImage2D": 0,
+          "clear": 491,
+          "clear-mask-17664": 491,
+          "linkProgram": 0,
+          "getProgramParameter": 0,
+          "bufferData": 9,
+          "drawElements": 1044,
+          "bufferSubData": 1097
+        }
+      },
+      "remount": {
+        "raf": {
+          "n": 564,
+          "p50": 16.69999999999891,
+          "p95": 33.29999999999927,
+          "max": 50,
+          "sum": 10166.3
+        },
+        "metrics": {
+          "paint": {
+            "n": 474,
+            "p50": 0.20000000001164153,
+            "p95": 0.39999999999417923,
+            "max": 2.7000000000116415,
+            "sum": 115.09999999994761
+          },
+          "render-submit": {
+            "n": 474,
+            "p50": 0.1999999999825377,
+            "p95": 0.3000000000174623,
+            "max": 2.7000000000116415,
+            "sum": 91.89999999967404
+          },
+          "geometry": {
+            "n": 0,
+            "p50": null,
+            "p95": null,
+            "max": null,
+            "sum": 0
+          },
+          "react-commit-wall": {
+            "n": 108,
+            "p50": 0.6000000000058208,
+            "p95": 0.8999999999941792,
+            "max": 2,
+            "sum": 66.49999999988358
+          }
+        },
+        "gl": {
+          "shaderSource": 0,
+          "compileShader": 0,
+          "texImage2D": 0,
+          "clear": 474,
+          "clear-mask-17664": 474,
+          "linkProgram": 0,
+          "getProgramParameter": 0,
+          "bufferData": 7,
+          "drawElements": 1004,
+          "bufferSubData": 1053
+        }
+      }
+    },
+    {
+      "pair": 0,
+      "kind": "generic",
+      "variant": "current",
+      "readyUpperMs": 418.1000000000058,
+      "startup": {
+        "n": 10,
+        "p50": 16.700000000000017,
+        "p95": 33.400000000000006,
+        "max": 133.3,
+        "sum": 350
+      },
+      "native": {
+        "native-shaderSource": {
+          "n": 5,
+          "p50": 0,
+          "p95": 0,
+          "max": 0.10000000000582077,
+          "sum": 0.10000000000582077
+        },
+        "native-compileShader": {
+          "n": 5,
+          "p50": 0,
+          "p95": 0,
+          "max": 0,
+          "sum": 0
+        },
+        "native-texImage2D": {
+          "n": 8,
+          "p50": 2.5,
+          "p95": 4,
+          "max": 4.2999999999883585,
+          "sum": 19.5
+        },
+        "native-clear": {
+          "n": 16,
+          "p50": 0,
+          "p95": 0,
+          "max": 0,
+          "sum": 0
+        },
+        "native-linkProgram": {
+          "n": 4,
+          "p50": 0,
+          "p95": 0,
+          "max": 0,
+          "sum": 0
+        },
+        "native-getProgramParameter": {
+          "n": 8,
+          "p50": 0.20000000001164153,
+          "p95": 0.7000000000116415,
+          "max": 13.89999999999418,
+          "sum": 15.400000000023283
+        },
+        "native-bufferData": {
+          "n": 13,
+          "p50": 0,
+          "p95": 0,
+          "max": 0,
+          "sum": 0
+        },
+        "native-drawElements": {
+          "n": 16,
+          "p50": 0,
+          "p95": 0,
+          "max": 0,
+          "sum": 0
+        },
+        "native-bufferSubData": {
+          "n": 16,
+          "p50": 0,
+          "p95": 0,
+          "max": 0.7999999999883585,
+          "sum": 0.7999999999883585
+        }
+      },
+      "shaderSamplers": [
+        32,
+        8
+      ],
+      "scene": {
+        "batchHardwareTextures": "32",
+        "batchTextures": "8",
+        "renderer": "webgl",
+        "activeTicking": "true",
+        "textureCount": "6",
+        "textureBytes": "3513024",
+        "artReady": "true",
+        "visibleFigures": "6",
+        "renderCount": "511"
+      },
+      "warm": {
+        "raf": {
+          "n": 599,
+          "p50": 16.699999999999818,
+          "p95": 16.700000000000728,
+          "max": 33.399999999999636,
+          "sum": 9999.599999999984
+        },
+        "metrics": {
+          "paint": {
+            "n": 507,
+            "p50": 0.29999999998835847,
+            "p95": 0.5,
+            "max": 1.7999999999883585,
+            "sum": 145.70000000012806
+          },
+          "render-submit": {
+            "n": 507,
+            "p50": 0.20000000001164153,
+            "p95": 0.39999999999417923,
+            "max": 1.7999999999883585,
+            "sum": 110.39999999981956
+          },
+          "geometry": {
+            "n": 0,
+            "p50": null,
+            "p95": null,
+            "max": null,
+            "sum": 0
+          },
+          "react-commit-wall": {
+            "n": 106,
+            "p50": 0.6000000000058208,
+            "p95": 0.9000000000232831,
+            "max": 1.7000000000116415,
+            "sum": 67.40000000002328
+          }
+        },
+        "gl": {
+          "shaderSource": 0,
+          "compileShader": 0,
+          "texImage2D": 0,
+          "clear": 508,
+          "clear-mask-17664": 508,
+          "linkProgram": 0,
+          "getProgramParameter": 0,
+          "bufferData": 9,
+          "drawElements": 1084,
+          "bufferSubData": 1143
+        }
+      },
+      "remount": {
+        "raf": {
+          "n": 604,
+          "p50": 16.69999999999891,
+          "p95": 16.799999999999272,
+          "max": 49.899999999999636,
+          "sum": 10149.500000000002
+        },
+        "metrics": {
+          "paint": {
+            "n": 515,
+            "p50": 0.1999999999825377,
+            "p95": 0.3000000000174623,
+            "max": 1.8000000000174623,
+            "sum": 103.59999999948195
+          },
+          "render-submit": {
+            "n": 515,
+            "p50": 0.10000000000582077,
+            "p95": 0.29999999998835847,
+            "max": 1.8000000000174623,
+            "sum": 77.39999999967404
+          },
+          "geometry": {
+            "n": 0,
+            "p50": null,
+            "p95": null,
+            "max": null,
+            "sum": 0
+          },
+          "react-commit-wall": {
+            "n": 107,
+            "p50": 0.5,
+            "p95": 0.7999999999883585,
+            "max": 0.8999999999941792,
+            "sum": 59.899999999965075
+          }
+        },
+        "gl": {
+          "shaderSource": 0,
+          "compileShader": 0,
+          "texImage2D": 0,
+          "clear": 515,
+          "clear-mask-17664": 515,
+          "linkProgram": 0,
+          "getProgramParameter": 0,
+          "bufferData": 7,
+          "drawElements": 1093,
+          "bufferSubData": 1149
+        }
+      }
+    },
+    {
+      "pair": 0,
+      "kind": "boss",
+      "variant": "baseline",
+      "readyUpperMs": 493.0999999999767,
+      "startup": {
+        "n": 14,
+        "p50": 16.700000000000017,
+        "p95": 83.30000000000001,
+        "max": 83.40000000000003,
+        "sum": 466.6
+      },
+      "native": {
+        "native-shaderSource": {
+          "n": 5,
+          "p50": 0.10000000000582077,
+          "p95": 0.10000000000582077,
+          "max": 0.10000000000582077,
+          "sum": 0.3000000000174623
+        },
+        "native-compileShader": {
+          "n": 5,
+          "p50": 0,
+          "p95": 0,
+          "max": 0,
+          "sum": 0
+        },
+        "native-texImage2D": {
+          "n": 14,
+          "p50": 2.7000000000116415,
+          "p95": 5,
+          "max": 6,
+          "sum": 43.000000000029104
+        },
+        "native-clear": {
+          "n": 16,
+          "p50": 0,
+          "p95": 0.10000000000582077,
+          "max": 0.10000000000582077,
+          "sum": 0.40000000002328306
+        },
+        "native-linkProgram": {
+          "n": 4,
+          "p50": 0,
+          "p95": 0,
+          "max": 0,
+          "sum": 0
+        },
+        "native-getProgramParameter": {
+          "n": 8,
+          "p50": 0.20000000001164153,
+          "p95": 0.5,
+          "max": 0.5999999999767169,
+          "sum": 2.1999999999825377
+        },
+        "native-bufferData": {
+          "n": 14,
+          "p50": 0,
+          "p95": 0,
+          "max": 0.10000000000582077,
+          "sum": 0.10000000000582077
+        },
+        "native-drawElements": {
+          "n": 16,
+          "p50": 0,
+          "p95": 0,
+          "max": 0.10000000000582077,
+          "sum": 0.10000000000582077
+        },
+        "native-bufferSubData": {
+          "n": 16,
+          "p50": 0,
+          "p95": 0.10000000000582077,
+          "max": 1,
+          "sum": 1.2000000000116415
+        }
+      },
+      "shaderSamplers": [
+        32,
+        8
+      ],
+      "scene": {
+        "batchHardwareTextures": "32",
+        "batchTextures": "8",
+        "renderer": "webgl",
+        "activeTicking": "true",
+        "artReady": "true",
+        "visibleFigures": "10",
+        "renderCount": "498",
+        "textureCount": "12",
+        "textureBytes": "7628832",
+        "bossActorReady": "true",
+        "bossActorLayers": "2",
+        "bossPropReady": "true",
+        "bossPropUnit": "pasaje:6:0:rival:0",
+        "bossPropPose": "cast",
+        "bossPropAngle": "0.17785800118464185",
+        "bossPropActivity": "0.9264102564102522",
+        "bossPropLayers": "2",
+        "bossPropScaleX": "0.9814717948717949",
+        "bossPropScaleY": "1.018528205128205",
+        "bossActorPose": "cast",
+        "bossActorArmAngle": "0.17785800118464185"
+      },
+      "warm": {
+        "raf": {
+          "n": 599,
+          "p50": 16.699999999999818,
+          "p95": 16.700000000000728,
+          "max": 33.19999999999891,
+          "sum": 9999.699999999988
+        },
+        "metrics": {
+          "paint": {
+            "n": 494,
+            "p50": 0.3000000000174623,
+            "p95": 0.6000000000058208,
+            "max": 2.8000000000174623,
+            "sum": 175.49999999956344
+          },
+          "render-submit": {
+            "n": 494,
+            "p50": 0.20000000001164153,
+            "p95": 0.40000000002328306,
+            "max": 2.7000000000116415,
+            "sum": 124.19999999957508
+          },
+          "geometry": {
+            "n": 0,
+            "p50": null,
+            "p95": null,
+            "max": null,
+            "sum": 0
+          },
+          "react-commit-wall": {
+            "n": 104,
+            "p50": 0.7000000000116415,
+            "p95": 1.1000000000058208,
+            "max": 2.8999999999941792,
+            "sum": 82.49999999994179
+          }
+        },
+        "gl": {
+          "shaderSource": 0,
+          "compileShader": 0,
+          "texImage2D": 0,
+          "clear": 494,
+          "clear-mask-17664": 494,
+          "linkProgram": 0,
+          "getProgramParameter": 0,
+          "bufferData": 8,
+          "drawElements": 3045,
+          "bufferSubData": 1142
+        }
+      },
+      "remount": null
+    },
+    {
+      "pair": 0,
+      "kind": "boss",
+      "variant": "current",
+      "readyUpperMs": 511.8999999999942,
+      "startup": {
+        "n": 13,
+        "p50": 16.700000000000017,
+        "p95": 50,
+        "max": 166.70000000000005,
+        "sum": 466.59999999999997
+      },
+      "native": {
+        "native-shaderSource": {
+          "n": 5,
+          "p50": 0,
+          "p95": 0,
+          "max": 0,
+          "sum": 0
+        },
+        "native-compileShader": {
+          "n": 5,
+          "p50": 0,
+          "p95": 0,
+          "max": 0,
+          "sum": 0
+        },
+        "native-texImage2D": {
+          "n": 13,
+          "p50": 3.099999999976717,
+          "p95": 4.399999999994179,
+          "max": 5.699999999982538,
+          "sum": 37.39999999993597
+        },
+        "native-clear": {
+          "n": 16,
+          "p50": 0,
+          "p95": 0,
+          "max": 0.10000000000582077,
+          "sum": 0.10000000000582077
+        },
+        "native-linkProgram": {
+          "n": 4,
+          "p50": 0,
+          "p95": 0,
+          "max": 0,
+          "sum": 0
+        },
+        "native-getProgramParameter": {
+          "n": 8,
+          "p50": 0.10000000000582077,
+          "p95": 0.5,
+          "max": 13.800000000017462,
+          "sum": 14.89999999999418
+        },
+        "native-bufferData": {
+          "n": 12,
+          "p50": 0,
+          "p95": 0,
+          "max": 0.10000000000582077,
+          "sum": 0.10000000000582077
+        },
+        "native-drawElements": {
+          "n": 16,
+          "p50": 0,
+          "p95": 0.10000000000582077,
+          "max": 0.10000000000582077,
+          "sum": 0.20000000001164153
+        },
+        "native-bufferSubData": {
+          "n": 16,
+          "p50": 0,
+          "p95": 0,
+          "max": 0,
+          "sum": 0
+        }
+      },
+      "shaderSamplers": [
+        32,
+        8
+      ],
+      "scene": {
+        "batchHardwareTextures": "32",
+        "batchTextures": "8",
+        "renderer": "webgl",
+        "activeTicking": "true",
+        "textureCount": "12",
+        "textureBytes": "7628832",
+        "artReady": "true",
+        "bossActorReady": "true",
+        "bossActorPose": "cast",
+        "bossActorArmAngle": "0.1816361914948873",
+        "bossActorLayers": "2",
+        "bossPropReady": "true",
+        "bossPropUnit": "pasaje:6:0:rival:0",
+        "bossPropPose": "cast",
+        "bossPropAngle": "0.1816361914948873",
+        "bossPropActivity": "0.9460897435897329",
+        "bossPropLayers": "2",
+        "bossPropScaleX": "0.9810782051282053",
+        "bossPropScaleY": "1.0189217948717946",
+        "visibleFigures": "10",
+        "renderCount": "496"
+      },
+      "warm": {
+        "raf": {
+          "n": 601,
+          "p50": 16.699999999999818,
+          "p95": 16.799999999999272,
+          "max": 16.80000000000109,
+          "sum": 10016.199999999977
+        },
+        "metrics": {
+          "paint": {
+            "n": 493,
+            "p50": 0.3000000000174623,
+            "p95": 0.6000000000058208,
+            "max": 3.5,
+            "sum": 171.3000000003085
+          },
+          "render-submit": {
+            "n": 493,
+            "p50": 0.20000000001164153,
+            "p95": 0.5,
+            "max": 3.3000000000174623,
+            "sum": 123.30000000019209
+          },
+          "geometry": {
+            "n": 0,
+            "p50": null,
+            "p95": null,
+            "max": null,
+            "sum": 0
+          },
+          "react-commit-wall": {
+            "n": 105,
+            "p50": 0.7000000000116415,
+            "p95": 1.2000000000116415,
+            "max": 2.7000000000116415,
+            "sum": 82.59999999997672
+          }
+        },
+        "gl": {
+          "shaderSource": 0,
+          "compileShader": 0,
+          "texImage2D": 0,
+          "clear": 494,
+          "clear-mask-17664": 494,
+          "linkProgram": 0,
+          "getProgramParameter": 0,
+          "bufferData": 8,
+          "drawElements": 3046,
+          "bufferSubData": 1144
+        }
+      },
+      "remount": null
+    },
+    {
+      "pair": 1,
+      "kind": "generic",
+      "variant": "current",
+      "readyUpperMs": 408.5,
+      "startup": {
+        "n": 11,
+        "p50": 16.700000000000003,
+        "p95": 50,
+        "max": 116.69999999999999,
+        "sum": 350
+      },
+      "native": {
+        "native-shaderSource": {
+          "n": 5,
+          "p50": 0,
+          "p95": 0,
+          "max": 0.10000000000582077,
+          "sum": 0.10000000000582077
+        },
+        "native-compileShader": {
+          "n": 5,
+          "p50": 0,
+          "p95": 0,
+          "max": 0,
+          "sum": 0
+        },
+        "native-texImage2D": {
+          "n": 8,
+          "p50": 2.5,
+          "p95": 3.900000000023283,
+          "max": 4.2999999999883585,
+          "sum": 19.500000000029104
+        },
+        "native-clear": {
+          "n": 16,
+          "p50": 0,
+          "p95": 0,
+          "max": 0.10000000000582077,
+          "sum": 0.10000000000582077
+        },
+        "native-linkProgram": {
+          "n": 4,
+          "p50": 0,
+          "p95": 0,
+          "max": 0,
+          "sum": 0
+        },
+        "native-getProgramParameter": {
+          "n": 8,
+          "p50": 0.1999999999825377,
+          "p95": 0.5,
+          "max": 15.5,
+          "sum": 16.800000000017462
+        },
+        "native-bufferData": {
+          "n": 13,
+          "p50": 0,
+          "p95": 0,
+          "max": 0.09999999997671694,
+          "sum": 0.09999999997671694
+        },
+        "native-drawElements": {
+          "n": 16,
+          "p50": 0,
+          "p95": 0,
+          "max": 0,
+          "sum": 0
+        },
+        "native-bufferSubData": {
+          "n": 16,
+          "p50": 0,
+          "p95": 0.10000000000582077,
+          "max": 0.7999999999883585,
+          "sum": 0.8999999999941792
+        }
+      },
+      "shaderSamplers": [
+        32,
+        8
+      ],
+      "scene": {
+        "batchHardwareTextures": "32",
+        "batchTextures": "8",
+        "renderer": "webgl",
+        "activeTicking": "true",
+        "textureCount": "6",
+        "textureBytes": "3513024",
+        "artReady": "true",
+        "visibleFigures": "6",
+        "renderCount": "512"
+      },
+      "warm": {
+        "raf": {
+          "n": 597,
+          "p50": 16.699999999999818,
+          "p95": 16.799999999999272,
+          "max": 33.399999999999636,
+          "sum": 10016.299999999987
+        },
+        "metrics": {
+          "paint": {
+            "n": 508,
+            "p50": 0.29999999998835847,
+            "p95": 0.5,
+            "max": 1.6999999999825377,
+            "sum": 140.89999999967404
+          },
+          "render-submit": {
+            "n": 508,
+            "p50": 0.20000000001164153,
+            "p95": 0.39999999999417923,
+            "max": 1.599999999976717,
+            "sum": 105.99999999985448
+          },
+          "geometry": {
+            "n": 0,
+            "p50": null,
+            "p95": null,
+            "max": null,
+            "sum": 0
+          },
+          "react-commit-wall": {
+            "n": 107,
+            "p50": 0.6000000000058208,
+            "p95": 1,
+            "max": 1.5,
+            "sum": 69.5999999998312
+          }
+        },
+        "gl": {
+          "shaderSource": 0,
+          "compileShader": 0,
+          "texImage2D": 0,
+          "clear": 509,
+          "clear-mask-17664": 509,
+          "linkProgram": 0,
+          "getProgramParameter": 0,
+          "bufferData": 9,
+          "drawElements": 1083,
+          "bufferSubData": 1139
+        }
+      },
+      "remount": {
+        "raf": {
+          "n": 601,
+          "p50": 16.69999999999891,
+          "p95": 16.799999999999272,
+          "max": 50,
+          "sum": 10099.6
+        },
+        "metrics": {
+          "paint": {
+            "n": 508,
+            "p50": 0.1999999999825377,
+            "p95": 0.3000000000174623,
+            "max": 2.5,
+            "sum": 101.59999999977299
+          },
+          "render-submit": {
+            "n": 508,
+            "p50": 0.10000000000582077,
+            "p95": 0.29999999998835847,
+            "max": 2.5,
+            "sum": 77.79999999966822
+          },
+          "geometry": {
+            "n": 0,
+            "p50": null,
+            "p95": null,
+            "max": null,
+            "sum": 0
+          },
+          "react-commit-wall": {
+            "n": 105,
+            "p50": 0.5,
+            "p95": 0.7999999999883585,
+            "max": 0.9000000000232831,
+            "sum": 58.19999999998254
+          }
+        },
+        "gl": {
+          "shaderSource": 0,
+          "compileShader": 0,
+          "texImage2D": 0,
+          "clear": 508,
+          "clear-mask-17664": 508,
+          "linkProgram": 0,
+          "getProgramParameter": 0,
+          "bufferData": 7,
+          "drawElements": 1080,
+          "bufferSubData": 1137
+        }
+      }
+    },
+    {
+      "pair": 1,
+      "kind": "generic",
+      "variant": "baseline",
+      "readyUpperMs": 475.3999999999942,
+      "startup": {
+        "n": 14,
+        "p50": 16.69999999999999,
+        "p95": 66.69999999999999,
+        "max": 83.40000000000003,
+        "sum": 416.7
+      },
+      "native": {
+        "native-shaderSource": {
+          "n": 5,
+          "p50": 0,
+          "p95": 0,
+          "max": 0.10000000000582077,
+          "sum": 0.10000000000582077
+        },
+        "native-compileShader": {
+          "n": 5,
+          "p50": 0,
+          "p95": 0,
+          "max": 0,
+          "sum": 0
+        },
+        "native-texImage2D": {
+          "n": 8,
+          "p50": 2.3999999999941792,
+          "p95": 4,
+          "max": 4.400000000023283,
+          "sum": 19.29999999998836
+        },
+        "native-clear": {
+          "n": 16,
+          "p50": 0,
+          "p95": 0.09999999997671694,
+          "max": 0.1000000000349246,
+          "sum": 0.29999999998835847
+        },
+        "native-linkProgram": {
+          "n": 4,
+          "p50": 0,
+          "p95": 0,
+          "max": 0,
+          "sum": 0
+        },
+        "native-getProgramParameter": {
+          "n": 8,
+          "p50": 0.10000000000582077,
+          "p95": 0.6000000000058208,
+          "max": 0.6000000000058208,
+          "sum": 2.1000000000058208
+        },
+        "native-bufferData": {
+          "n": 13,
+          "p50": 0,
+          "p95": 0,
+          "max": 0.09999999997671694,
+          "sum": 0.09999999997671694
+        },
+        "native-drawElements": {
+          "n": 16,
+          "p50": 0,
+          "p95": 0,
+          "max": 0,
+          "sum": 0
+        },
+        "native-bufferSubData": {
+          "n": 16,
+          "p50": 0,
+          "p95": 0.10000000000582077,
+          "max": 0.9000000000232831,
+          "sum": 1.0000000000291038
+        }
+      },
+      "shaderSamplers": [
+        32,
+        8
+      ],
+      "scene": {
+        "batchHardwareTextures": "32",
+        "batchTextures": "8",
+        "renderer": "webgl",
+        "activeTicking": "true",
+        "artReady": "true",
+        "visibleFigures": "6",
+        "renderCount": "510",
+        "textureCount": "6",
+        "textureBytes": "3513024"
+      },
+      "warm": {
+        "raf": {
+          "n": 592,
+          "p50": 16.699999999999818,
+          "p95": 16.799999999999955,
+          "max": 33.400000000000546,
+          "sum": 9999.599999999988
+        },
+        "metrics": {
+          "paint": {
+            "n": 504,
+            "p50": 0.29999999998835847,
+            "p95": 0.5,
+            "max": 2.7000000000116415,
+            "sum": 144.29999999987194
+          },
+          "render-submit": {
+            "n": 504,
+            "p50": 0.20000000001164153,
+            "p95": 0.3999999999650754,
+            "max": 2.6000000000349246,
+            "sum": 109.29999999998836
+          },
+          "geometry": {
+            "n": 0,
+            "p50": null,
+            "p95": null,
+            "max": null,
+            "sum": 0
+          },
+          "react-commit-wall": {
+            "n": 105,
+            "p50": 0.6000000000349246,
+            "p95": 0.9000000000232831,
+            "max": 1.400000000023283,
+            "sum": 67.40000000054715
+          }
+        },
+        "gl": {
+          "shaderSource": 0,
+          "compileShader": 0,
+          "texImage2D": 0,
+          "clear": 505,
+          "clear-mask-17664": 505,
+          "linkProgram": 0,
+          "getProgramParameter": 0,
+          "bufferData": 9,
+          "drawElements": 1074,
+          "bufferSubData": 1129
+        }
+      },
+      "remount": {
+        "raf": {
+          "n": 601,
+          "p50": 16.69999999999891,
+          "p95": 16.799999999999272,
+          "max": 33.400000000001455,
+          "sum": 10133
+        },
+        "metrics": {
+          "paint": {
+            "n": 514,
+            "p50": 0.20000000001164153,
+            "p95": 0.30000000004656613,
+            "max": 2.2000000000116415,
+            "sum": 104.60000000090804
+          },
+          "render-submit": {
+            "n": 514,
+            "p50": 0.1000000000349246,
+            "p95": 0.29999999998835847,
+            "max": 2.2000000000116415,
+            "sum": 77.50000000145519
+          },
+          "geometry": {
+            "n": 0,
+            "p50": null,
+            "p95": null,
+            "max": null,
+            "sum": 0
+          },
+          "react-commit-wall": {
+            "n": 108,
+            "p50": 0.5,
+            "p95": 0.7999999999883585,
+            "max": 1,
+            "sum": 59.39999999990687
+          }
+        },
+        "gl": {
+          "shaderSource": 0,
+          "compileShader": 0,
+          "texImage2D": 0,
+          "clear": 514,
+          "clear-mask-17664": 514,
+          "linkProgram": 0,
+          "getProgramParameter": 0,
+          "bufferData": 7,
+          "drawElements": 1091,
+          "bufferSubData": 1147
+        }
+      }
+    },
+    {
+      "pair": 1,
+      "kind": "boss",
+      "variant": "current",
+      "readyUpperMs": 489.4000000000233,
+      "startup": {
+        "n": 12,
+        "p50": 16.69999999999999,
+        "p95": 50.099999999999994,
+        "max": 183.3,
+        "sum": 433.29999999999995
+      },
+      "native": {
+        "native-shaderSource": {
+          "n": 5,
+          "p50": 0,
+          "p95": 0.09999999997671694,
+          "max": 0.09999999997671694,
+          "sum": 0.19999999995343387
+        },
+        "native-compileShader": {
+          "n": 5,
+          "p50": 0,
+          "p95": 0,
+          "max": 0,
+          "sum": 0
+        },
+        "native-texImage2D": {
+          "n": 13,
+          "p50": 3.199999999953434,
+          "p95": 4,
+          "max": 5.699999999953434,
+          "sum": 37.29999999993015
+        },
+        "native-clear": {
+          "n": 16,
+          "p50": 0,
+          "p95": 0,
+          "max": 0.09999999997671694,
+          "sum": 0.09999999997671694
+        },
+        "native-linkProgram": {
+          "n": 4,
+          "p50": 0,
+          "p95": 0,
+          "max": 0,
+          "sum": 0
+        },
+        "native-getProgramParameter": {
+          "n": 8,
+          "p50": 0.20000000001164153,
+          "p95": 0.5999999999767169,
+          "max": 14.700000000011642,
+          "sum": 16.29999999993015
+        },
+        "native-bufferData": {
+          "n": 12,
+          "p50": 0,
+          "p95": 0.09999999997671694,
+          "max": 0.1000000000349246,
+          "sum": 0.20000000001164153
+        },
+        "native-drawElements": {
+          "n": 16,
+          "p50": 0,
+          "p95": 0,
+          "max": 0.1000000000349246,
+          "sum": 0.1000000000349246
+        },
+        "native-bufferSubData": {
+          "n": 16,
+          "p50": 0,
+          "p95": 0,
+          "max": 0,
+          "sum": 0
+        }
+      },
+      "shaderSamplers": [
+        32,
+        8
+      ],
+      "scene": {
+        "batchHardwareTextures": "32",
+        "batchTextures": "8",
+        "renderer": "webgl",
+        "activeTicking": "true",
+        "textureCount": "12",
+        "textureBytes": "7628832",
+        "artReady": "true",
+        "bossActorReady": "true",
+        "bossActorPose": "cast",
+        "bossActorArmAngle": "0.18115622595058956",
+        "bossActorLayers": "2",
+        "bossPropReady": "true",
+        "bossPropUnit": "pasaje:6:0:rival:0",
+        "bossPropPose": "cast",
+        "bossPropAngle": "0.18115622595058956",
+        "bossPropActivity": "0.9435897435897366",
+        "bossPropLayers": "2",
+        "bossPropScaleX": "0.9811282051282053",
+        "bossPropScaleY": "1.0188717948717947",
+        "visibleFigures": "10",
+        "renderCount": "496"
+      },
+      "warm": {
+        "raf": {
+          "n": 601,
+          "p50": 16.699999999999818,
+          "p95": 16.700000000000728,
+          "max": 16.80000000000109,
+          "sum": 10016.299999999988
+        },
+        "metrics": {
+          "paint": {
+            "n": 493,
+            "p50": 0.29999999998835847,
+            "p95": 0.6000000000349246,
+            "max": 1.7000000000116415,
+            "sum": 174.00000000098953
+          },
+          "render-submit": {
+            "n": 493,
+            "p50": 0.20000000001164153,
+            "p95": 0.5,
+            "max": 1.599999999976717,
+            "sum": 124.6000000005588
+          },
+          "geometry": {
+            "n": 0,
+            "p50": null,
+            "p95": null,
+            "max": null,
+            "sum": 0
+          },
+          "react-commit-wall": {
+            "n": 104,
+            "p50": 0.7000000000116415,
+            "p95": 1.2000000000116415,
+            "max": 1.7000000000116415,
+            "sum": 81.00000000046566
+          }
+        },
+        "gl": {
+          "shaderSource": 0,
+          "compileShader": 0,
+          "texImage2D": 0,
+          "clear": 494,
+          "clear-mask-17664": 494,
+          "linkProgram": 0,
+          "getProgramParameter": 0,
+          "bufferData": 8,
+          "drawElements": 3045,
+          "bufferSubData": 1142
+        }
+      },
+      "remount": null
+    },
+    {
+      "pair": 1,
+      "kind": "boss",
+      "variant": "baseline",
+      "readyUpperMs": 505.3999999999651,
+      "startup": {
+        "n": 12,
+        "p50": 16.800000000000004,
+        "p95": 66.69999999999999,
+        "max": 83.39999999999998,
+        "sum": 450
+      },
+      "native": {
+        "native-shaderSource": {
+          "n": 5,
+          "p50": 0,
+          "p95": 0,
+          "max": 0.1000000000349246,
+          "sum": 0.1000000000349246
+        },
+        "native-compileShader": {
+          "n": 5,
+          "p50": 0,
+          "p95": 0,
+          "max": 0,
+          "sum": 0
+        },
+        "native-texImage2D": {
+          "n": 14,
+          "p50": 2.800000000046566,
+          "p95": 5.199999999953434,
+          "max": 5.900000000023283,
+          "sum": 40.899999999965075
+        },
+        "native-clear": {
+          "n": 16,
+          "p50": 0,
+          "p95": 0,
+          "max": 0.09999999997671694,
+          "sum": 0.09999999997671694
+        },
+        "native-linkProgram": {
+          "n": 4,
+          "p50": 0,
+          "p95": 0,
+          "max": 0,
+          "sum": 0
+        },
+        "native-getProgramParameter": {
+          "n": 8,
+          "p50": 0.1000000000349246,
+          "p95": 0.5999999999767169,
+          "max": 0.5999999999767169,
+          "sum": 1.9999999999417923
+        },
+        "native-bufferData": {
+          "n": 14,
+          "p50": 0,
+          "p95": 0,
+          "max": 0.1000000000349246,
+          "sum": 0.1000000000349246
+        },
+        "native-drawElements": {
+          "n": 16,
+          "p50": 0,
+          "p95": 0,
+          "max": 0.09999999997671694,
+          "sum": 0.09999999997671694
+        },
+        "native-bufferSubData": {
+          "n": 16,
+          "p50": 0,
+          "p95": 0.09999999997671694,
+          "max": 1.099999999976717,
+          "sum": 1.1999999999534339
+        }
+      },
+      "shaderSamplers": [
+        32,
+        8
+      ],
+      "scene": {
+        "batchHardwareTextures": "32",
+        "batchTextures": "8",
+        "renderer": "webgl",
+        "activeTicking": "true",
+        "artReady": "true",
+        "visibleFigures": "10",
+        "renderCount": "498",
+        "textureCount": "12",
+        "textureBytes": "7628832",
+        "bossActorReady": "true",
+        "bossActorLayers": "2",
+        "bossPropReady": "true",
+        "bossPropUnit": "pasaje:6:0:rival:0",
+        "bossPropPose": "cast",
+        "bossPropAngle": "0.18092239658285",
+        "bossPropActivity": "0.9423717948717648",
+        "bossPropLayers": "2",
+        "bossPropScaleX": "0.9811525641025647",
+        "bossPropScaleY": "1.0188474358974353",
+        "bossActorPose": "cast",
+        "bossActorArmAngle": "0.18092239658285"
+      },
+      "warm": {
+        "raf": {
+          "n": 600,
+          "p50": 16.699999999999818,
+          "p95": 16.799999999999727,
+          "max": 33.299999999999955,
+          "sum": 10016.29999999998
+        },
+        "metrics": {
+          "paint": {
+            "n": 494,
+            "p50": 0.29999999998835847,
+            "p95": 0.5999999999767169,
+            "max": 1.7999999999883585,
+            "sum": 174.09999999968568
+          },
+          "render-submit": {
+            "n": 494,
+            "p50": 0.20000000001164153,
+            "p95": 0.40000000002328306,
+            "max": 1.6999999999534339,
+            "sum": 126.00000000034925
+          },
+          "geometry": {
+            "n": 0,
+            "p50": null,
+            "p95": null,
+            "max": null,
+            "sum": 0
+          },
+          "react-commit-wall": {
+            "n": 105,
+            "p50": 0.7000000000116415,
+            "p95": 1.2000000000116415,
+            "max": 1.5,
+            "sum": 80.49999999959255
+          }
+        },
+        "gl": {
+          "shaderSource": 0,
+          "compileShader": 0,
+          "texImage2D": 0,
+          "clear": 494,
+          "clear-mask-17664": 494,
+          "linkProgram": 0,
+          "getProgramParameter": 0,
+          "bufferData": 8,
+          "drawElements": 3047,
+          "bufferSubData": 1146
+        }
+      },
+      "remount": null
+    },
+    {
+      "pair": 2,
+      "kind": "generic",
+      "variant": "baseline",
+      "readyUpperMs": 450.0999999999767,
+      "startup": {
+        "n": 12,
+        "p50": 16.69999999999999,
+        "p95": 66.60000000000002,
+        "max": 83.39999999999998,
+        "sum": 399.9
+      },
+      "native": {
+        "native-shaderSource": {
+          "n": 5,
+          "p50": 0,
+          "p95": 0.1000000000349246,
+          "max": 0.1000000000349246,
+          "sum": 0.2000000000698492
+        },
+        "native-compileShader": {
+          "n": 5,
+          "p50": 0,
+          "p95": 0,
+          "max": 0,
+          "sum": 0
+        },
+        "native-texImage2D": {
+          "n": 8,
+          "p50": 2.599999999976717,
+          "p95": 3.900000000023283,
+          "max": 4.300000000046566,
+          "sum": 19.4000000001397
+        },
+        "native-clear": {
+          "n": 16,
+          "p50": 0,
+          "p95": 0,
+          "max": 0,
+          "sum": 0
+        },
+        "native-linkProgram": {
+          "n": 4,
+          "p50": 0,
+          "p95": 0,
+          "max": 0,
+          "sum": 0
+        },
+        "native-getProgramParameter": {
+          "n": 8,
+          "p50": 0.19999999995343387,
+          "p95": 0.5999999999767169,
+          "max": 0.5999999999767169,
+          "sum": 1.9999999998835847
+        },
+        "native-bufferData": {
+          "n": 13,
+          "p50": 0,
+          "p95": 0,
+          "max": 0.1000000000349246,
+          "sum": 0.1000000000349246
+        },
+        "native-drawElements": {
+          "n": 16,
+          "p50": 0,
+          "p95": 0,
+          "max": 0.09999999997671694,
+          "sum": 0.09999999997671694
+        },
+        "native-bufferSubData": {
+          "n": 16,
+          "p50": 0,
+          "p95": 0.1000000000349246,
+          "max": 0.9000000000232831,
+          "sum": 1.1000000000349246
+        }
+      },
+      "shaderSamplers": [
+        32,
+        8
+      ],
+      "scene": {
+        "batchHardwareTextures": "32",
+        "batchTextures": "8",
+        "renderer": "webgl",
+        "activeTicking": "true",
+        "artReady": "true",
+        "visibleFigures": "6",
+        "renderCount": "513",
+        "textureCount": "6",
+        "textureBytes": "3513024"
+      },
+      "warm": {
+        "raf": {
+          "n": 596,
+          "p50": 16.699999999999818,
+          "p95": 16.799999999999955,
+          "max": 33.5,
+          "sum": 9999.599999999988
+        },
+        "metrics": {
+          "paint": {
+            "n": 507,
+            "p50": 0.29999999998835847,
+            "p95": 0.5,
+            "max": 2.3999999999650754,
+            "sum": 146.10000000015134
+          },
+          "render-submit": {
+            "n": 507,
+            "p50": 0.20000000001164153,
+            "p95": 0.3999999999650754,
+            "max": 2.3999999999650754,
+            "sum": 109.80000000039581
+          },
+          "geometry": {
+            "n": 0,
+            "p50": null,
+            "p95": null,
+            "max": null,
+            "sum": 0
+          },
+          "react-commit-wall": {
+            "n": 105,
+            "p50": 0.6000000000349246,
+            "p95": 1,
+            "max": 1.2999999999883585,
+            "sum": 68.29999999969732
+          }
+        },
+        "gl": {
+          "shaderSource": 0,
+          "compileShader": 0,
+          "texImage2D": 0,
+          "clear": 508,
+          "clear-mask-17664": 508,
+          "linkProgram": 0,
+          "getProgramParameter": 0,
+          "bufferData": 9,
+          "drawElements": 1083,
+          "bufferSubData": 1141
+        }
+      },
+      "remount": {
+        "raf": {
+          "n": 600,
+          "p50": 16.69999999999891,
+          "p95": 16.799999999999272,
+          "max": 50,
+          "sum": 10116.2
+        },
+        "metrics": {
+          "paint": {
+            "n": 514,
+            "p50": 0.20000000001164153,
+            "p95": 0.3999999999650754,
+            "max": 2,
+            "sum": 113.99999999895226
+          },
+          "render-submit": {
+            "n": 514,
+            "p50": 0.19999999995343387,
+            "p95": 0.29999999998835847,
+            "max": 2,
+            "sum": 86.19999999873107
+          },
+          "geometry": {
+            "n": 0,
+            "p50": null,
+            "p95": null,
+            "max": null,
+            "sum": 0
+          },
+          "react-commit-wall": {
+            "n": 107,
+            "p50": 0.5999999999767169,
+            "p95": 0.8999999999650754,
+            "max": 1.400000000023283,
+            "sum": 62.300000000104774
+          }
+        },
+        "gl": {
+          "shaderSource": 0,
+          "compileShader": 0,
+          "texImage2D": 0,
+          "clear": 514,
+          "clear-mask-17664": 514,
+          "linkProgram": 0,
+          "getProgramParameter": 0,
+          "bufferData": 7,
+          "drawElements": 1093,
+          "bufferSubData": 1151
+        }
+      }
+    },
+    {
+      "pair": 2,
+      "kind": "generic",
+      "variant": "current",
+      "readyUpperMs": 433.30000000004657,
+      "startup": {
+        "n": 11,
+        "p50": 16.700000000000017,
+        "p95": 50,
+        "max": 116.79999999999995,
+        "sum": 366.6
+      },
+      "native": {
+        "native-shaderSource": {
+          "n": 5,
+          "p50": 0,
+          "p95": 0.09999999997671694,
+          "max": 0.1000000000349246,
+          "sum": 0.20000000001164153
+        },
+        "native-compileShader": {
+          "n": 5,
+          "p50": 0,
+          "p95": 0,
+          "max": 0.09999999997671694,
+          "sum": 0.09999999997671694
+        },
+        "native-texImage2D": {
+          "n": 8,
+          "p50": 2.7000000000116415,
+          "p95": 4.099999999976717,
+          "max": 4.400000000023283,
+          "sum": 20.099999999976717
+        },
+        "native-clear": {
+          "n": 16,
+          "p50": 0,
+          "p95": 0.09999999997671694,
+          "max": 0.1000000000349246,
+          "sum": 0.29999999998835847
+        },
+        "native-linkProgram": {
+          "n": 4,
+          "p50": 0,
+          "p95": 0,
+          "max": 0,
+          "sum": 0
+        },
+        "native-getProgramParameter": {
+          "n": 8,
+          "p50": 0.09999999997671694,
+          "p95": 0.5,
+          "max": 13.099999999976717,
+          "sum": 14.199999999953434
+        },
+        "native-bufferData": {
+          "n": 13,
+          "p50": 0,
+          "p95": 0,
+          "max": 0.09999999997671694,
+          "sum": 0.09999999997671694
+        },
+        "native-drawElements": {
+          "n": 16,
+          "p50": 0,
+          "p95": 0.1000000000349246,
+          "max": 0.1000000000349246,
+          "sum": 0.2000000000698492
+        },
+        "native-bufferSubData": {
+          "n": 16,
+          "p50": 0,
+          "p95": 0.1000000000349246,
+          "max": 0.8999999999650754,
+          "sum": 1.099999999976717
+        }
+      },
+      "shaderSamplers": [
+        32,
+        8
+      ],
+      "scene": {
+        "batchHardwareTextures": "32",
+        "batchTextures": "8",
+        "renderer": "webgl",
+        "activeTicking": "true",
+        "textureCount": "6",
+        "textureBytes": "3513024",
+        "artReady": "true",
+        "visibleFigures": "6",
+        "renderCount": "512"
+      },
+      "warm": {
+        "raf": {
+          "n": 598,
+          "p50": 16.699999999999818,
+          "p95": 16.799999999999272,
+          "max": 33.40000000000009,
+          "sum": 9999.599999999986
+        },
+        "metrics": {
+          "paint": {
+            "n": 508,
+            "p50": 0.20000000001164153,
+            "p95": 0.5,
+            "max": 3,
+            "sum": 144.40000000048894
+          },
+          "render-submit": {
+            "n": 508,
+            "p50": 0.20000000001164153,
+            "p95": 0.3999999999650754,
+            "max": 2.900000000023283,
+            "sum": 108.20000000024447
+          },
+          "geometry": {
+            "n": 0,
+            "p50": null,
+            "p95": null,
+            "max": null,
+            "sum": 0
+          },
+          "react-commit-wall": {
+            "n": 106,
+            "p50": 0.5999999999767169,
+            "p95": 1,
+            "max": 1.6000000000349246,
+            "sum": 68.9000000001397
+          }
+        },
+        "gl": {
+          "shaderSource": 0,
+          "compileShader": 0,
+          "texImage2D": 0,
+          "clear": 509,
+          "clear-mask-17664": 509,
+          "linkProgram": 0,
+          "getProgramParameter": 0,
+          "bufferData": 9,
+          "drawElements": 1083,
+          "bufferSubData": 1139
+        }
+      },
+      "remount": {
+        "raf": {
+          "n": 602,
+          "p50": 16.69999999999891,
+          "p95": 16.799999999999272,
+          "max": 50,
+          "sum": 10116.300000000001
+        },
+        "metrics": {
+          "paint": {
+            "n": 514,
+            "p50": 0.20000000001164153,
+            "p95": 0.30000000004656613,
+            "max": 1,
+            "sum": 94.10000000084983
+          },
+          "render-submit": {
+            "n": 514,
+            "p50": 0.1000000000349246,
+            "p95": 0.29999999998835847,
+            "max": 0.9000000000232831,
+            "sum": 71.90000000008149
+          },
+          "geometry": {
+            "n": 0,
+            "p50": null,
+            "p95": null,
+            "max": null,
+            "sum": 0
+          },
+          "react-commit-wall": {
+            "n": 108,
+            "p50": 0.5,
+            "p95": 0.7999999999883585,
+            "max": 1.099999999976717,
+            "sum": 61.70000000024447
+          }
+        },
+        "gl": {
+          "shaderSource": 0,
+          "compileShader": 0,
+          "texImage2D": 0,
+          "clear": 514,
+          "clear-mask-17664": 514,
+          "linkProgram": 0,
+          "getProgramParameter": 0,
+          "bufferData": 7,
+          "drawElements": 1091,
+          "bufferSubData": 1147
+        }
+      }
+    },
+    {
+      "pair": 2,
+      "kind": "boss",
+      "variant": "baseline",
+      "readyUpperMs": 522.5999999999767,
+      "startup": {
+        "n": 14,
+        "p50": 16.700000000000017,
+        "p95": 83.30000000000001,
+        "max": 83.4,
+        "sum": 483.20000000000005
+      },
+      "native": {
+        "native-shaderSource": {
+          "n": 5,
+          "p50": 0,
+          "p95": 0,
+          "max": 0,
+          "sum": 0
+        },
+        "native-compileShader": {
+          "n": 5,
+          "p50": 0,
+          "p95": 0,
+          "max": 0,
+          "sum": 0
+        },
+        "native-texImage2D": {
+          "n": 14,
+          "p50": 3,
+          "p95": 5.400000000023283,
+          "max": 5.5,
+          "sum": 42.20000000006985
+        },
+        "native-clear": {
+          "n": 16,
+          "p50": 0,
+          "p95": 0.1000000000349246,
+          "max": 0.1000000000349246,
+          "sum": 0.2000000000698492
+        },
+        "native-linkProgram": {
+          "n": 4,
+          "p50": 0,
+          "p95": 0,
+          "max": 0,
+          "sum": 0
+        },
+        "native-getProgramParameter": {
+          "n": 8,
+          "p50": 0.19999999995343387,
+          "p95": 0.5,
+          "max": 0.5999999999767169,
+          "sum": 1.8999999999068677
+        },
+        "native-bufferData": {
+          "n": 14,
+          "p50": 0,
+          "p95": 0.1000000000349246,
+          "max": 0.1000000000349246,
+          "sum": 0.2000000000698492
+        },
+        "native-drawElements": {
+          "n": 16,
+          "p50": 0,
+          "p95": 0,
+          "max": 0,
+          "sum": 0
+        },
+        "native-bufferSubData": {
+          "n": 16,
+          "p50": 0,
+          "p95": 0.1000000000349246,
+          "max": 1,
+          "sum": 1.2000000000116415
+        }
+      },
+      "shaderSamplers": [
+        32,
+        8
+      ],
+      "scene": {
+        "batchHardwareTextures": "32",
+        "batchTextures": "8",
+        "renderer": "webgl",
+        "activeTicking": "true",
+        "artReady": "true",
+        "visibleFigures": "10",
+        "renderCount": "498",
+        "textureCount": "12",
+        "textureBytes": "7628832",
+        "bossActorReady": "true",
+        "bossActorLayers": "2",
+        "bossPropReady": "true",
+        "bossPropUnit": "pasaje:6:0:rival:0",
+        "bossPropPose": "cast",
+        "bossPropAngle": "0.17726727436089068",
+        "bossPropActivity": "0.9233333333333331",
+        "bossPropLayers": "2",
+        "bossPropScaleX": "0.9815333333333334",
+        "bossPropScaleY": "1.0184666666666666",
+        "bossActorPose": "cast",
+        "bossActorArmAngle": "0.17726727436089068"
+      },
+      "warm": {
+        "raf": {
+          "n": 600,
+          "p50": 16.699999999999818,
+          "p95": 16.799999999999272,
+          "max": 16.80000000000109,
+          "sum": 9999.699999999986
+        },
+        "metrics": {
+          "paint": {
+            "n": 493,
+            "p50": 0.29999999998835847,
+            "p95": 0.7000000000116415,
+            "max": 1.8999999999650754,
+            "sum": 180.20000000001164
+          },
+          "render-submit": {
+            "n": 493,
+            "p50": 0.20000000001164153,
+            "p95": 0.5,
+            "max": 1.6999999999534339,
+            "sum": 128.60000000020955
+          },
+          "geometry": {
+            "n": 0,
+            "p50": null,
+            "p95": null,
+            "max": null,
+            "sum": 0
+          },
+          "react-commit-wall": {
+            "n": 103,
+            "p50": 0.7000000000116415,
+            "p95": 1.1000000000349246,
+            "max": 1.5,
+            "sum": 79.19999999983702
+          }
+        },
+        "gl": {
+          "shaderSource": 0,
+          "compileShader": 0,
+          "texImage2D": 0,
+          "clear": 493,
+          "clear-mask-17664": 493,
+          "linkProgram": 0,
+          "getProgramParameter": 0,
+          "bufferData": 8,
+          "drawElements": 3040,
+          "bufferSubData": 1142
+        }
+      },
+      "remount": null
+    },
+    {
+      "pair": 2,
+      "kind": "boss",
+      "variant": "current",
+      "readyUpperMs": 469.19999999995343,
+      "startup": {
+        "n": 10,
+        "p50": 16.700000000000017,
+        "p95": 50,
+        "max": 166.7,
+        "sum": 416.7
+      },
+      "native": {
+        "native-shaderSource": {
+          "n": 5,
+          "p50": 0,
+          "p95": 0,
+          "max": 0.09999999997671694,
+          "sum": 0.09999999997671694
+        },
+        "native-compileShader": {
+          "n": 5,
+          "p50": 0,
+          "p95": 0,
+          "max": 0,
+          "sum": 0
+        },
+        "native-texImage2D": {
+          "n": 13,
+          "p50": 3.2000000000116415,
+          "p95": 4,
+          "max": 5.7999999999883585,
+          "sum": 37.79999999998836
+        },
+        "native-clear": {
+          "n": 16,
+          "p50": 0,
+          "p95": 0,
+          "max": 0.1000000000349246,
+          "sum": 0.1000000000349246
+        },
+        "native-linkProgram": {
+          "n": 4,
+          "p50": 0,
+          "p95": 0,
+          "max": 0,
+          "sum": 0
+        },
+        "native-getProgramParameter": {
+          "n": 8,
+          "p50": 0.20000000001164153,
+          "p95": 0.5,
+          "max": 13.800000000046566,
+          "sum": 15.300000000104774
+        },
+        "native-bufferData": {
+          "n": 12,
+          "p50": 0,
+          "p95": 0,
+          "max": 0.09999999997671694,
+          "sum": 0.09999999997671694
+        },
+        "native-drawElements": {
+          "n": 16,
+          "p50": 0,
+          "p95": 0,
+          "max": 0,
+          "sum": 0
+        },
+        "native-bufferSubData": {
+          "n": 16,
+          "p50": 0,
+          "p95": 0,
+          "max": 0,
+          "sum": 0
+        }
+      },
+      "shaderSamplers": [
+        32,
+        8
+      ],
+      "scene": {
+        "batchHardwareTextures": "32",
+        "batchTextures": "8",
+        "renderer": "webgl",
+        "activeTicking": "true",
+        "textureCount": "12",
+        "textureBytes": "7628832",
+        "artReady": "true",
+        "bossActorReady": "true",
+        "bossActorPose": "cast",
+        "bossActorArmAngle": "0.18494672306966567",
+        "bossActorLayers": "2",
+        "bossPropReady": "true",
+        "bossPropUnit": "pasaje:6:0:rival:0",
+        "bossPropPose": "cast",
+        "bossPropAngle": "0.18494672306966567",
+        "bossPropActivity": "0.9633333333333328",
+        "bossPropLayers": "2",
+        "bossPropScaleX": "0.9807333333333333",
+        "bossPropScaleY": "1.0192666666666668",
+        "visibleFigures": "10",
+        "renderCount": "489"
+      },
+      "warm": {
+        "raf": {
+          "n": 595,
+          "p50": 16.699999999999818,
+          "p95": 16.700000000000728,
+          "max": 33.400000000001455,
+          "sum": 9999.699999999992
+        },
+        "metrics": {
+          "paint": {
+            "n": 487,
+            "p50": 0.29999999998835847,
+            "p95": 0.5999999999767169,
+            "max": 2.099999999976717,
+            "sum": 166.70000000001164
+          },
+          "render-submit": {
+            "n": 487,
+            "p50": 0.20000000001164153,
+            "p95": 0.5,
+            "max": 2,
+            "sum": 116.70000000018626
+          },
+          "geometry": {
+            "n": 0,
+            "p50": null,
+            "p95": null,
+            "max": null,
+            "sum": 0
+          },
+          "react-commit-wall": {
+            "n": 105,
+            "p50": 0.7000000000116415,
+            "p95": 1.2999999999883585,
+            "max": 3.400000000023283,
+            "sum": 83.50000000023283
+          }
+        },
+        "gl": {
+          "shaderSource": 0,
+          "compileShader": 0,
+          "texImage2D": 0,
+          "clear": 487,
+          "clear-mask-17664": 487,
+          "linkProgram": 0,
+          "getProgramParameter": 0,
+          "bufferData": 8,
+          "drawElements": 3004,
+          "bufferSubData": 1130
+        }
+      },
+      "remount": null
+    }
+  ]
+}

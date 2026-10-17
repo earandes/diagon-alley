@@ -131,3 +131,13 @@ Referenciad13 frente a0c0547c (sin alfa/atlas). Este runner fue favorable para a
 No modifica ilustraciones, resolución ni composiciones. Dos PNG seleccionados tras medir conservados enab-10; no son evidencia de movimiento. Fase de diagnóstico pasada; resto cancelado deliberadamente, no CIglobal.
 
 Siguiente comparación (última hipótesis de arranque prevista): referencia0c0547c frente al uso inmediato de imagen ya decodificada. Aislará esa variable; si no reduce trabajo/arranque de forma convincente o agrava picos, se retirará. Tres parejas, sin reintentos ni nueva matriz exploratoria.
+
+## Undécimo A/B ·39035264888 ·no aceptar concentración de arranque
+
+Baseline0c frente ad03. Todas las ventanas del candidato pasan≤20ms; una ventana baselinegenérico/remount vuelve a33,3ms, conservada. Genérico actual409–433ms frente450–507 (mejora las tres parejas), pero máximos de arranque117–133ms frente83–100. Jefe469–512 frente493–523, con una pareja desfavorable; picos167–183 frente83. El presupuesto de picos falla. No se integra esta variante como solución terminada.
+
+La medición sitúa onceuploads del jefe en el mismo primer paint (render-submit66ms/paint71ms en pareja0), frente a uploads en pinturas separadas antes. No se llama a esa suma tiempoGPU ni se atribuye todo elrAF183ms a ese envío.
+
+Ensayo12: conservar la disponibilidad inmediata pero admitir como máximo dos fuentes nuevas en cada paint. Es un presupuesto de trabajo de arranque, no de unidades visibles ni de texturas totales: los retratosDOM permanecen hasta que hay figuras y todas las fuentes terminan incorporándose. Texturas ya instaladas dibujan normalmente. Las pendientes solo invalidan y pasan por el mismo presupuesto; no temporizadores, cola global, await de todo o carga anterior. Se mide el coste total de los frames adicionales, no solo primer paint. Para el jefe, el punto de arte listo espera también actor por piezas; los registros de ensayos anteriores conservan su data-boss-actor-ready para distinguir el criterio.
+
+Dos fuentes se eligen como ensayo por llamadastexImage2D observadas de2–6ms cada una, dejando margen para composición/shader; no es una garantía de12msCPU o20msGPU. Si empeora el recorrido o no acota los picos, no se adopta por una cifra parcial. Misma batería acotada y guards, tres parejas contra d03, sin reintentos. No se altera ninguna matriz funcional.

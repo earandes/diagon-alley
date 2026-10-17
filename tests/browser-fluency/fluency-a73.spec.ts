@@ -152,6 +152,7 @@ test('A73 bounded startup and sustained reference: generic and boss, three seria
         );
         const scene = page.locator('.scene-canvas');
         await expect(scene).toHaveAttribute('data-art-ready', 'true');
+        if (kind === 'boss') await expect(scene).toHaveAttribute('data-boss-actor-ready', 'true');
         const startup = await page.evaluate(() => ({
           at: performance.now(),
           data: structuredClone(window.__a73),
