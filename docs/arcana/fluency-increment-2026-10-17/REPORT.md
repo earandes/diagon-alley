@@ -1,6 +1,6 @@
 # A73 · Fluidez de la expedición
 
-Estado: runtime final ca9cc86; aceptación diagnóstica y ciclo de vida superados en CI16; matriz global e integración en main pendientes. No se presenta una fase parcial cancelada como CI correcta.
+Estado: implementado y validado. Runtime ca9cc86; CI completa39038639396 correcta sobre merge8541ee2c/headeb5ce91. Integración a main en el cierre de entrega. Los diagnósticos parciales cancelados mantienen su estado real.
 
 ## Qué cambia
 
@@ -32,13 +32,15 @@ Son fixtures Linux/Chromium/SwiftShader declaradas, no una GPU física, duració
 
 ## Validación
 
-El caso nuevo de ciclo de vida pasó enCI39037479383: decode pendiente, ocultación sintética, resize pausado390/865,10figuras/PV, reducido durante gesto, resultado/log/game conservados ysinpageerrors. La captura estática adicional se comprobará en la matriz final; no valida movimiento por sí sola.
+El caso nuevo de ciclo de vida pasó enCI39037479383: decode pendiente, ocultación sintética, resize pausado390/865,10figuras/PV, reducido durante gesto, resultado/log/game conservados ysinpageerrors. La captura estática adicional ylas seis deA71del candidato se inspeccionaron; conservan figuras/nombres/PV/acciones, sin validar movimiento por sí solas.
 
-La matriz completa conserva Chromium/WebKit y1280×900/390×844/865×1079, A70/A71 y regresiones. Cuatro cuentas A73 aisladas comprueban recorrido autoritativo, rana ganada sin recompra y siguiente run explícita. SHA, resultados y recorrido completo finales pendientes.
+La fase completa A70/A71/A73 pasó sobre merge8541ee2c, headeb5ce91, enCI39038639396: Chromium/WebKit y1280×900/390×844/865×1079, ES/EN ypaquetes segúnCOVERAGE. Cuatro cuentas A73 aisladas completan el recorrido autoritativo, rana ganada sin recompra y siguiente run explícita. Primercombateclic→figuras261–277ms, jefe293–372ms; incluye red y carga. No son pares con mismasrutas/runner frente a la referencia. La batería global terminó correctamente; [galería seleccionada](GALLERY.md).
 
 - [Contrato y plan](CONTRACT.md), [diagnóstico y ensayos](DIAGNOSIS.md).
 - [Protocolo reproducible](REFERENCE.md), [mediciones](PERFORMANCE.md).
 - [Validación](VALIDATION.md), [mapa de cobertura](COVERAGE.md).
 - [Compatibilidad](COMPATIBILITY.md), [experimento de assets retirado](ASSET-ADAPTATION.md).
 
-Main no modificado. Sesión humana, dispositivo físico, GPU real, red móvil y lector audible pendientes. No se atribuye comprensión, diversión o retención a estas pruebas.
+Integración y equivalencia en [INTEGRATION](INTEGRATION.md). Sesión humana, dispositivo físico, GPU real, red móvil y lector audible pendientes. No se atribuye comprensión, diversión o retención a estas pruebas.
+
+Validación final: tipos/contenido/build/scanner,562unitarios,78integracionesPG/Redis y268casos gráficos correctos;40omisiones explícitas. Incluye jefe/preparación, Halloween, animación, recorrido general, progresión, cierre/botín, Pacto/cabecera, intenciones, PWA ybenchmark histórico. No es un factorial de todo estado×motor×idioma×paquete. Sin pruebas humanas ni dispositivo físico.

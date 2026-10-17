@@ -1,0 +1,11 @@
+{
+  "testedMerge": "8541ee2c9fbf3844d5df0f433945113fd96bd7c0",
+  "testedHead": "eb5ce91b44e403882ab03036fcd853446b0761f7",
+  "ci": "https://github.com/earandes/diagon-alley/actions/runs/39038639396",
+  "conclusion": "success",
+  "method": "All tracked blob names, modes and hashes excluding docs/ and DESIGN.md compared, not only src; documentation/evidence changes follow without a new full CI claim.",
+  "nonDocumentalObjects": 1862,
+  "fingerprintSha256": "7c900d6fb5812ba9689ebc73f03eea4a0e489e10d97e74b4aa79eca400c00025",
+  "protectedTreesUnchangedFromBase": true,
+  "status": "Proven for tested candidate and current HEAD before final documentation; recheck after commit and remote main push."
+}

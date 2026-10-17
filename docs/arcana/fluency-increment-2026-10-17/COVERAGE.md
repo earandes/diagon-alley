@@ -2,13 +2,13 @@
 
 ## Estado y alcance de esta matriz
 
-Esta es una **revisión estática de pruebas escritas**, con una ejecución de lifecycle acreditada mediante evidencia conservada abajo; no se ejecutó otra prueba para redactarla. El runtime está congelado en `ca9cc86`; el ensayo16 comprueba la instrumentación de disponibilidad del candidato. El candidato final todavía **no tiene una matriz global superada**. Los A/B anteriores conservan su SHA, alcance y cancelaciones en `DIAGNOSIS.md`, `PERFORMANCE.md` y `evidence/`; no sustituyen las regresiones funcionales del candidato seleccionado.
+Esta es una **revisión estática de pruebas escritas**, con una ejecución de lifecycle acreditada mediante evidencia conservada abajo; no se ejecutó otra prueba para redactarla. El runtime está congelado en `ca9cc86`; el ensayo16 comprueba la instrumentación de disponibilidad del candidato. La matriz global **pasó enCI39038639396**, headeb5ce91/merge8541ee2c, con el mismo runtimesrc. Los A/B anteriores conservan su SHA, alcance y cancelaciones en `DIAGNOSIS.md`, `PERFORMANCE.md` y `evidence/`; no sustituyen las regresiones funcionales del candidato seleccionado.
 
 Una prueba existente, una fixture y una ejecución histórica no son equivalentes. Para cerrar cada fila hacen falta el SHA probado, configuración, resultado y artifact/log correspondientes. No se ejecutan comandos ni se añaden pruebas con este documento.
 
 ## Configuraciones que delimitan la cobertura
 
-- **A70/A71:** `playwright.boss-a70.config.ts`, modo completo: Chromium/WebKit ×1280×900,390×844,865×1079; ambos idiomas/paquetes en los journeys parametrizados. El modo diagnóstico actual (`tools/verification/a73-phase.json`) selecciona el perfil y recovery A73 Chromium1280: **no ejecuta esa matriz funcional**.
+- **A70/A71:** `playwright.boss-a70.config.ts`, modo completo: Chromium/WebKit ×1280×900,390×844,865×1079; ambos idiomas/paquetes en los journeys parametrizados. El modo diagnóstico explícito (`ARCANA_A73_DIAGNOSTIC=1`) selecciona el perfil y recovery A73 Chromium1280: **no ejecuta esa matriz funcional**.
 - **A69:** `playwright.motion-a69.config.ts`, mismos dos motores y tres viewports. Usa componentes reales con logs/inputs de presentación declarados, no operaciones económicas de cuenta.
 - **A73:** `tests/browser-fluency/expedition-a73.spec.ts`, `A73 complete authoritative expedition fluency ${language} ${pack}`: cuatro cuentas aisladas, solo Chromium1280. Recorre entrada→equipo→mapa→duelo→mapa→jefe→cierre→rana poseída→otra run explícita, con cotas desde clic y snapshots guardados. Los demás proyectos se omiten expresamente.
 - **A63:** `playwright.gameplay-a63.config.ts`: Chromium/WebKit, journeys autoritativos ES/EN×paquetes; sus capturas seleccionadas redimensionan los tres tamaños. Capturar no comprueba por sí solo todas las condiciones de encaje.
@@ -47,7 +47,7 @@ Prefijo de archivos de navegador de la tabla: `tests/`. Los nombres entre comill
 
 ## Persistencia real: garantías complementarias
 
-Estas pruebas mantienen las garantías que una captura/replay no prueba. Ejecución pertinente: `npm run test:integration`, SHA y resultado del candidato por registrar; su existencia no es evidencia de haberlas ejecutado ahora.
+Estas pruebas mantienen las garantías que una captura/replay no prueba. Ejecución pertinente: `npm run test:integration`,78casos/13archivos correctos enCI39038639396/merge8541ee2c, PostgreSQL/Redis reales. Su existencia por sí sola no era evidencia; el log final sí acredita estaejecución.
 
 | Archivo en `tests/integration/arcana/` | Pruebas concretas y garantía |
 |---|---|
@@ -70,11 +70,13 @@ Después usa Auto, espera el gesto `cast`, activa reducido mediante la prop del 
 
 ## Qué está resuelto y qué falta para la entrega
 
-1. **Matriz del candidato final:** ejecutar el modo funcional completo pertinente sobre el código seleccionado. Los A/B diagnóstico-only no cubren los journeys A70/A71, las regresiones A69/A63/trial, Halloween o PWA por el mero hecho de estar en un workflow que se cancela después del artifact. Conservar por suite SHA probado, resultado y límites.
+1. **Matriz del candidato final:** modo funcional completo ejecutado correctamente sobreeb5ce91/merge8541ee2c; resultados enVALIDATION. Los A/B diagnóstico-only no cubren los journeys A70/A71, las regresiones A69/A63/trial, Halloween o PWA por el mero hecho de estar en un workflow que se cancela después del artifact. Conservar por suite SHA probado, resultado y límites.
 2. **Cambio de reducido durante el replay:** la combinación antes pendiente ya tiene ejecución Chromium en recoveryA73, con gesto existente y prop controlada. El uso del ajuste real dentro de la arena y sus cruces adicionales no quedan acreditados por ese caso.
 3. **Resize pausado y ocultación con carga pendiente:** ejecutados bajo el gate y visibilidad sintética descritos. No se declaran huecos absolutos ni se extrapolan a segundo plano físico o al resto de motores/paquetes.
 4. **Resultados distintos de victoria:** derrota/empate están comprobados por modelos/render estático; falta acreditar sobre el candidato una ejecución gráfica completa de esos desenlaces si se exige como nueva evidencia. La consulta histórica/repetida ya tiene casos concretos arriba.
-5. **Rendimiento y arte:** la matriz funcional no sustituye A/B equivalente, arranque con cuerpo/brazo listos, ventanas sostenidas y crudos desfavorables. Un detector sin errores o una imagen pausada no acredita movimiento correcto. El ensayo16 aún debe comprobar los marcadores diferenciados de submit/frame y polling; este documento no les atribuye un resultado pendiente.
+5. **Rendimiento y arte:** la matriz funcional no sustituye A/B equivalente, arranque con cuerpo/brazo listos, ventanas sostenidas y crudos desfavorables. Un detector sin errores o una imagen pausada no acredita movimiento correcto. El ensayo16 comprobó los marcadores diferenciados y presupuestos (PERFORMANCE), conservando polling y sin declarar tiempoGPU. La matriz funcional correcta corresponde aCI39038639396.
 6. **Fuera de lo acreditado técnicamente:** dispositivo físico, red móvil real, pérdida auténtica de contexto GPU, lector audible, percepción del ritmo, comprensión, diversión y motivos para repetir. La emulación, snapshots y automatización no son observaciones humanas.
 
 No se amplía automáticamente a un factorial de todos los estados×idiomas×packs×motores×tamaños. La entrega debe precisar los casos ejecutados y cualquier hueco material restante; no presentar esta matriz escrita como validación global concluida.
+
+Estado final: lasconfiguraciones invocadas por elworkflow terminaron success, con268correctos y40omisiones explícitas, más562unitarios y78PGRedis. La tabla conserva el alcance concreto yloslímites; no significa ejecutar configtacticsA65niunfactorial universal. Arte/DOM/canvasseleccionados inspeccionados; fases/pausa/log comprobados por pruebas. Humanos/físicos pendientes.

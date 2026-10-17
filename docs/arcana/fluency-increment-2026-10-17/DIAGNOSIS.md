@@ -177,3 +177,9 @@ Ciclo de vida nuevo: correcto, fixture5×5, gate de decode, hidden sintético,39
 Se detecta una limitación del protocolo de latencia antes de optimizar más: las últimas pinturas completas del candidato terminan en361/344/355ms(G) y476/483/473ms(J), pero polling registra440/416/436 y497/582/570ms. No se usa esa deducción como medida exacta de disponibilidad: faltaba una marca en el instante pertinente. El protocolo añade MutationObserver de los mismos flags del renderer, disparado después del turno que envía el dibujo y actor, y retiene su siguiente oportunidadrAF. Conserva también polling y las tresparejas, sin cambio de runtime.
 
 Ensayo16 valida400/550ms sobre esa oportunidad de frame, que es más precisa que la cota de polling y tampoco mide finalizaciónGPU/presentación física. Se mantienen los crudos previos y sus fallos de cota; no se declara que antes cumplieran ni se cambia la pantalla para adelantar un marcador. El presupuesto20ms sostenido y100msmáximo conserva definición. El código de juego queda congelado enca9.
+
+## Decimosexto A/B ·39038198256 ·aceptación precisa
+
+Mismo runtimeca9 y referenciad13. Todos los presupuestos actuales pasan: readyFrameAtG236,5–242,3/J289,2–326,9ms; máximorAF33,4ms yP95≈16,7–16,8ms, incluidosremontajes. Ambas variantes son rápidas en sostenido; no sustituye el contraste desfavorable15. Dos paresG tienen frame-ready≈3–4ms anterior en referencia, mientras polling baja en los seis pares. Se conservan ambosindicadores. El marcador no mideGPU/display físico ni altera el juego. Ciclo de vida correcto; captura estática390seleccionada conserva10figuras/nombres/PV y controles. Fase diagnóstica2correctos; workflow cancelado tras artifact, no batería global.
+
+Candidatoeb5ce91restaura phasefull; CI39038639396 ejecuta matriz completa sin repetir A/B del mismo runtime. Main pendiente. No más cambios de renderer previstos si pasa.

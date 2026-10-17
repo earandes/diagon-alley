@@ -1,10 +1,8 @@
 # A73 · Rendimiento observado · 17 octubre 2026
 
-## Estado de esta lectura
+## Estado actual
 
-**Goal activo; integración y validación final pendientes.** El ensayo 9 aísla por primera vez una mejora del genérico de P95 rAF≈33,3→16,7 ms en las tres parejas y en remontajes, limitando el batch de figuras a ocho samplers. Ese resultado es de una variante que todavía incluye bandas; no se atribuye automáticamente al candidato mínimo posterior. El objetivo genérico de arte listo ≤400 ms sigue incumplido: hubo una muestra de **422,0 ms** en el ensayo 5 y el candidato del 9 da **454,3–471,5 ms**. No se sustituyen esos extremos por medianas favorables.
-
-Este documento resume `evidence/ab-1` a `ab-9`. El candidato mínimo **`0c0547c`** retira autoextensiones, mipmaps, certificados alfa y bandas: conserva agrupación, geometría retenida, decode paralelo, ticker bajo demanda y cap8 del batch. Su comparación 10 vuelve a d13; **todavía no se atribuye ningún resultado a esa nueva ejecución**.
+Runtime congelado en ca9cc86. Diagnóstico, presupuestos y ciclo de vida comprobados; matriz integrada superada sobre eb5ce91/merge8541ee2c (CI39038639396). Integración documentada enINTEGRATION. Los16diagnósticos se cancelaron deliberadamente después de guardar fase/artifact: no son16baterías globales correctas. Los apartados históricos1–9 conservados debajo describen sus candidatos, no el código final.
 
 ## Protocolo y referencias
 
@@ -64,24 +62,85 @@ Se registran GLSL y las primeras16llamadas nativas de compile/link/draw/consulta
 
 La referencia A73 inicial tuvo seis P95 de 16,7–16,8 ms; por eso no bastaba para reproducir el fallo histórico. Los A/B posteriores sí conservan ventanas de33,4 ms y el9 las mejora dentro del mismo job. No se compara causalmente ese protocolo con el A69 histórico: este puede capturar fases y remontar antes de su ventana, y usa otra instrumentación. Las comparaciones decisivas son dentro de cada A/B con el mismo harness; no se unen las mejores cifras de runs distintos para fabricar un resultado final.
 
-## Reproducción y límites restantes
 
-Sin abrir navegador, el resumen se reconstruye desde los crudos comprimidos:
+## Ensayos10–16 y candidato final
+
+Todos conservan tres parejas y los valores desfavorables. Tiemposms; rangos observados, no intervalos de confianza. ArteG/J son cotas históricas de polling, también en16.
+
+| Ensayo/CI | Referencia | Variable | ArteG | P95G | ArteJ | P95J |
+|---|---|---|---|---|---|---|
+|10/39034798097|d13|mínimo sin atlas|318.7–391.9 → 277.9–347.7|16.7–16.8 → 16.7–16.8|417.7–441.9 → 345.7–367.1|16.7–16.8 → 16.7–16.8|
+|11/39035264888|0c054|imagen resuelta inmediata|450.1–506.6 → 408.5–433.3|16.8 → 16.7–16.8|493.1–522.6 → 469.2–511.9|16.7–16.8 → 16.7–16.8|
+|12/39035910193|d03c93c|dos admisiones por paint|239.7–300.7 → 319.6–335.5|16.7–16.8 → 16.7–16.8|318.4–320.8 → 367.1–369.0|16.7–16.8 → 16.7|
+|13/39036393375|d13|presupuesto2 frente al inicio|405.4–483.8 → 411.8–425.6|16.7–16.8 → 16.7–16.8|508.3–547.9 → 529.8–544.1|16.7–16.8 → 16.7–16.8|
+|14/39036894838|83d4|Graphics públicos en batch|367.2–426.9 → 329.9–364.8|16.8 → 16.7–16.8|382.5–397.4 → 338.1–354.5|16.7–16.8 → 16.7–16.8|
+|15/39037479383|d13|runtime final frente al inicio|529.4–675.6 → 416.0–440.4|33.4 → 16.7–16.8|718.5–728.9 → 497.3–581.7|16.8–33.2 → 16.7|
+|16/39038198256|d13|mismo runtime, marcador preciso|349.1–441.8 → 330.1–347.4|16.7–16.8 → 16.7|431.4–448.7 → 342.3–372.0|16.7–16.8 → 16.7|
+
+El10 mejora arranqueJ en las tres parejas; una parejaG empeora. El11, aunque termina antes que su referencia, concentra onceuploads del jefe en el primer paint (envío≈66ms/pintura≈71ms) y produce máximosrAF167–183ms: variante no aceptada. Un remontajeG de referencia vuelve a33,3ms y se conserva.
+
+El12 admite dos fuentes nuevas por paint. Máximos≈67ms, coste+34–96msG/+47–50msJfrente al envío simultáneo: compromiso explícito para acotar picos, no mejora de todas las métricas. Dos admisiones no garantizan dosuploadsGPU: una pieza puede empezar a dibujarse después. Ninguna operación espera texturas. El13 mantiene83 contra originald13: reduce picos117–183→83ms, peroG412–426ms no cumple400; dos parejasG y unaJ empeoran su total. Se conserva el incumplimiento y no se integra esa variante como terminada.
+
+El14 aísla ink/sparks en batch mediante API pública: GLSL usado32/8→8; arranqueG367–427→330–365ms/J383–397→338–355ms y picosG67–100→33–50/J67→33 en todas las parejas. Cambia empaquetado, no paths/colores/orden/máscaras. GraphicsAdaptor puede construir programa32 durante init, aunque no se observó compilado/usado enGL en estas muestras. Coste potencial: empaquetado/buffers de vértices al cambiar sparks. Los crudos conservan esos envíos.
+
+En15, runtimeca9 contra originald13, los tres genéricos y remontajes33,4→16,7–16,8ms; jefe16,8/33,2/16,8→≈16,7ms. PicosG200–233→50–67/J233–250→50–83ms. Todas las parejas mejoran polling total, peroG416–440/J497–582 **no acreditan400/550ms**. Esa limitación se registra antes de cambiar medición; no se ocultan extremos.
+
+## Aceptación16: marca precisa y límites
+
+Sin cambiar runtime, se añade a ambas variantes MutationObserver de los flags de todas las figuras y actor: readySubmitAt después del turno de envío completo; readyFrameAt en su siguiente oportunidadrAF. No mide terminaciónGPU ni presentación física. Se desconecta antes de las ventanas. El polling antiguo sigue en cada crudo.
+
+| Medida16 | Referencia | Runtime final | Objetivo |
+|---|---:|---:|---:|
+| G envío completo |231,7–295,8|226,6–232,1|informativo|
+| G siguiente oportunidadrAF |232,7–296,4|236,5–242,3|≤400|
+| J envío completo |341,8–346,9|283,4–315,1|informativo|
+| J siguiente oportunidadrAF |342,7–347,9|289,2–326,9|≤550|
+| MáximorAFarranqueG |100,0|33,4|≤100|
+| MáximorAFarranqueJ |100,1–116,7|33,4|≤100|
+| P95sostenidoG/J yremontajeG |16,7–16,8|16,7–16,8|≤20|
+
+Los presupuestos pasan en las tres muestras actuales, guardadas antes de evaluar aceptación. Dos parejasG tienen oportunidadrAF≈3–4ms anterior en referencia; no se proclama mejora de cada indicador. PollingG349–442→330–347/J431–449→342–372 mejora las seis parejas. En16 ambas variantes son rápidas en sostenido; no sustituye el contraste desfavorable15. La deducción de última pintura del15 no equivale retrospectivamente a este marcador.
+
+No hay assets nuevos ni reducción de resolución, caché global o precarga en pantalla anterior. Propiedad por escena, liberación al desmontar; pausa/ocultación no mantiene ticker gráfico. La configuración final usa admisión2 y batching público8. Mipmaps/autoload/trim/atlas retirados, con costes y crudos conservados.
+
+## Reproducción
+
+`node docs/arcana/fluency-increment-2026-10-17/ab-report.mjs CARPETA/raw.json.gz` reconstruye cada resumen sin navegador. Los16crudosgzip sin pérdida, estadosCI, snapshots y scripts permanecen en evidence/ab-N (el primerCI figura enDIAGNOSIS). Referencias exactas/condiciones enREFERENCE; resultado integrado enVALIDATION/COVERAGE.
+
+Las herramientas gráficas solo enLinux bajo controles originales, una batería cada vez. Dispositivo físico, red móvil, GPU real y observación humana pendientes. Una captura no valida movimiento; pruebas de poses/cursor no acreditan personalidad, diversión o retención. Los objetivos de ensayo no son garantía universal.
+
+## Recorrido completo del candidato
+
+FaseA70/A71/A73deCI39038639396superada, merge8541ee2c. Cuatro cuentas ES/EN×paquetes, sin fixtures económicas ni cuenta habitual; rutas preparadas mediante helperQA ycombates omitidos explícitamente. Entry103–121ms; primercombateclic→respuestaHTTP69–71ms→figuras261–277ms; jefeHTTP80–87ms→figuras293–372ms. Regreso mapa65–89ms; cierre17–18ms; otra preparación9ms yotra expedición109–129ms. Sinpageerrors, rana propia sin restar monedas, log/economía después deomitir intactos.
+
+Referencia inicial independiente: entrada117–127ms, primerasfiguras358–435ms/jefe497–515ms. No son pares con mismasrutas/resultados/runner: describen recorrido, no ahorrocausalHTTP. Hay extremos desfavorables conservados: entrar enpreparación91–112frente84–102ms, consulta jefe28–64frente39–44ms yretorno trasrana10–26frente10–18ms. No se afirma que todo mejore.
+
+Apertura completa2917–3403ms frente2911–2957referencia: el extremo aumenta. El código de apertura/recetas/paquetes es idéntico; las recetas dependen de rareza/novedad yeljourney no guarda ese recibo como variable de control. No se atribuye una causa ni se presenta esta comparación como regresión causal. No se acelera/traslada la coreografía para conseguir una métrica. LasfixturesA69declaran recetas yson la comprobación específica.
+
+La muestraA71adicional5×5deeste mismo candidato: arranque353ms, máximorAF33,4ms; sostenidoP95≈16,8ms ysinLongTasks en10s; omisión41ms;10figuras y12texturas propias. Contadorespropiosceroaldesmontar, sin afirmar ausencia global defugas. Crudos en evidence/final; las cifras deljourneyson cotas desdeclic incluyendo red/carga, noGPU.
+
+## Contraste con el harness históricoA69
+
+La faseA69del mismo merge8541ee2cpasó sin modificar sus comprobaciones. Conserva72muestras de arena3×3/5×3/5×5, idiomas/paquetes y3viewports. Su ventana incluye navegación/carga, pausa, inspector yomisión ysolo≈26–30rAF: **no es el sostenido10s deA73**. P95deesasventanasChromium16,7–33,4ms/WebKit26–77ms; los picos más altosWebKit89/81/77ms en primerasnavegaciones. ReadinessporpollingChromium148–353ms/WebKit186–392ms. No se anunciaP95≤20universal ni se borra el33,4 delharnesshistórico; se separa arranque de sostenido tal como exige el contrato. Elmaxarranqueobservado queda por debajo100ms, sin inferirGPU.
+
+Los30ciclosserialesA69: contadorespropios6texturas/3.513.024bytesestimadosporciclo, desmontajes correctos, P95rAF16,8ms/max33,5ms de esa secuencia. No es RSS/heap/GPU ni prueba global de ausencia defugas. Crudosactuales enmotion-matrix.json.gz. El objetivo20se acredita solo en ventanas sostenidas declaradasChromiumA73/A71; no se ha medido sostenido10sWebKit con ese mismo perfil.
+
+Fraccionado adicional sin otro navegador: el análisis porfase sobrecrudo15conserva cada pareja yfase temporal delreloj. P95actual deanticipación/vuelo/impacto/asentamiento16,7–16,8ms enambascomposiciones; el genéricoreferencia mantiene≈33,3–33,4también en vuelo/impacto. No se seleccionan solo intervalos deasentamiento para producir la mejora. La etiqueta defase es temporal ypuede abarcar acuses; no es una trazaGPU o tipología exacta decadaevento. Resumen enab-15/phase-summary.json, reproducible desde la raíz del repositorio con el comando no gráfico siguiente:
 
 ```sh
-node docs/arcana/fluency-increment-2026-10-17/ab-report.mjs docs/arcana/fluency-increment-2026-10-17/evidence/ab-9/raw.json.gz
+python3 - <<'PY'
+import gzip,json,collections
+p='docs/arcana/fluency-increment-2026-10-17/evidence/ab-15/raw.json.gz'
+d=json.loads(gzip.decompress(open(p,'rb').read()))
+for r in d['records']:
+    phases=collections.defaultdict(list)
+    for f in r['warm']['data']['frames']:
+        if f['at'] >= r['warmStart']: phases[f.get('phase')].append(f['ms'])
+    q=lambda a: sorted(a)[int((len(a)-1)*.95)]
+    print(r['kind'],r['pair'],r['variant'],{k:(len(v),q(v),max(v)) for k,v in phases.items()})
+PY
 ```
 
-Se conservan `raw.json.gz`, `summary.json`, fixtures, script de referencia y condiciones de compilación. No ejecutar la investigación gráfica en Mac: corresponde al guard de CI Linux, en serie y sin reintentos automáticos.
+## Benchmark no arena heredado
 
-Presupuestos de ensayo: P95 rAF sostenido≤20 ms; arte listo genérico≤400 ms/jefe≤550 ms; máximo rAF de arranque≤100 ms. Son objetivos, no garantías físicas. El9cumple los sostenidos declarados; aún falta comprobar que el **candidato mínimo0c0547c**, sin atlas, conserva la mejora frente a d13 y supera la matriz funcional/visual pertinente. El arranque genérico sigue superando400 ms. No se declara validación final, integración en main, rendimiento de móvil físico, percepción humana de fluidez, diversión o retención.
-
-## Actualización: ensayos10–12 y candidato elegido
-
-Los resultados completos están en ab-10/11/12. El10 compara candidato mínimo0c con d13: genérico319–392→278–348ms y jefe418–442→346–367ms, maxrAFactual50ms; una pareja genérica empeora. Ambos son rápidos en sostenido,16,7–16,8ms.
-
-El11 usa0c como referencia y d03 como candidato inmediato: genérico450–507→409–433ms; jefe493–523→469–512ms, con una pareja desfavorable. Picos actuales117–133/167–183ms: falla el presupuesto. Un remontaje genérico de la referencia vuelve a33,3ms; se conserva, aunque los actuales pasan20ms.
-
-El12 compara d03 con83d4e48 (dos admisiones por paint): todos los sostenidos16,7–16,8ms; genérico320–336/jefe367–369ms y máximos≈67ms. Frente al envío de golpe el tiempo total aumenta34–96ms(G)/47–50ms(J), mientras el máximoJ100→67ms en las tres parejas. El envío sin límite no se acepta por ser rápido en ese runner: falló severamente en11. No son tiemposGPU ni un dispositivo físico.
-
-El13 volverá a d13 sin cambiar runtime83; después la batería completa. Main/goal pendientes, sin atribuir resultados que aún no existen. El objetivo de400ms no se acredita retroactivamente a los ensayos5/9/11 que lo incumplieron.
+A67baseline/current también pasó en la mismaCI; su referencia es la históricaA66, no mainA72 ni un A/B aislado deA73. Pacto primera apertura usable64→89ms, confirmación127→144ms; taller60→54ms/cotización11→10ms. Lossettled de reaperturas dePacto939/936→442/446ms; máximosactuales16,7–50,1ms. Se conservan todos los resultados en historical-a67-*.json, incluidos los desfavorables. La red/ruta ylas distintasversiones no permiten atribuir una causa a esta optimización. No se presenta mejora universal de todos losrecorridos.

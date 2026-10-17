@@ -1,36 +1,74 @@
-# A73 · Validación y límites
+# A73 · Validación, procedencia y límites
 
-## Ejecutado sin gráficos en Mac
+## Estado
 
-- Tipos: correctos.
-- Referencia:555unitarios/78archivos correctos.
-- Candidato:560unitarios/80archivos correctos; incluye3casos de geometría (RED por módulo ausente antes de implementar, GREEN después) y2casos de invalidación agrupada/cancelación. Los dos últimos son pruebas suplementarias, no se inventa un RED retrospectivo.
--78integraciones con PostgreSQL/Redis reales,13archivos: correctas. Se reutilizan los servicios del proyecto, sin detener otros procesos ni alterar la cuenta habitual.
-- Build, validación de ambos paquetes yscanner: correctos. Advertencia histórica de chunk>500kB conservada.
-- Preflight local únicamente (`npm run test:browser:check`): permitido; no se lanzó el smoke ni otro navegador.
+Runtime final ca9cc86. CI39038639396 probó el candidato completo eb5ce91b44e403882ab03036fcd853446b0761f7 en phasefull; **success** sobre merge8541ee2c9fbf3844d5df0f433945113fd96bd7c0. El A/B ya concluido usa el mismo objeto src, sin repetirlo en la matriz. Base4be35f8sin cambios; integración y equivalencia final enINTEGRATION.
 
-Logs en evidence/candidate-* ygeometry-red/green. Estos resultados no sustituyen las matricesLinux ni acreditan móvil físico.
+## No gráfico, Mac
 
-## Referencia Linux
+Se ejecutaron tipos, contenido, build yscanner. Referencia555unitarios/78archivos; candidato actual562/81: tres invariantes de geometría, dos de agrupación/cancelación y dos de movimiento estático. El RED de geometría por módulo ausente y el GREEN están conservados en evidence/geometry-*. No se inventa un RED retrospectivo para pruebas suplementarias.78integraciones PostgreSQL/Redis reales/13archivos correctas, con servicios del proyecto y namespaces propios; cuenta habitual intacta.
 
-CI39026102712 sobre dcceff6: cancelada antes de fasegráfica para añadir el journey completo y corregir la composición declarada5×5. No se cuenta como una batería superada.
+`npm run test:browser:check` realizó solo preflight, sin abrir navegador. No se ejecutó otro comando gráfico, CUA, Chrome, WebKit, perfil, vídeo o captura en este Mac. Las imágenes revisadas se descargaron de Linux. Build conserva la advertencia histórica de chunk>500kB. Los resultados locales no acreditan móvil físico.
 
-CI39026178568 sobre headd13c0d9, merge582bdc57a0e1675b21867b772363fd9ddc01ba3e: tipos/contenido555unitarios/78PGRedis/build/scanner correctos. FaseA70/A71/A73:103correctos y35omisiones explícitas de proyectos duplicados de rendimiento; incluye cuatrojourneys A73 yseisventanas. Cancelación deliberada después del artifact para no repetir regresiones que todavía no probaban la optimización. Laejecución global figura cancelada, no correcta. Procedencia enreference-ci.json yJSONoriginales; imágenes de esa fase no son evidencia del candidato optimizado.
+## Diagnósticos Linux ejecutados
 
-## Candidato y matriz necesaria
+Configuración: `playwright.boss-a70.config.ts` en modo diagnóstico, mismo guard/lock/watchdog/worker1/retries0. Son estudios seriales de hipótesis distintas, no reintentos automáticos. Crudos y estados en evidence/ab-1…ab-16; tabla completa y límites enPERFORMANCE/DIAGNOSIS. Todos se cancelaron deliberadamente tras conservar la fase pertinente: workflow global cancelado, no correcto.
 
-Primer candidato40cc66d enCI39027491504: el primer journey completo terminó con trespageerrors `Illegal invocation`; fallo real del adaptador de callbacks, conservado enfailed-candidate-1/error-context.md. Se canceló el resto. Se corrige pasando cierres explícitos a requestAnimationFrame/cancelAnimationFrame, conservando su receptorWindow. No se relaja la comprobación de errores ni se declara resuelto por una repetición sin cambio. Tipos/build/scanner se repiten después de la corrección.
+- Referencia d13, CI39026178568, merge582bdc57: tipos/contenido555unitarios/78PGRedis/build/scanner y faseA70/A71/A73103correctos35omisiones. Se conservó antes de optimizar; resto cancelado.
+- Primer candidato40cc66d, CI39027491504: trespageerrors `Illegal invocation`. Defecto real de callbacks nativos sin receptor, guardado enfailed-candidate-1; corregido en9ff mediante closuresWindow. No se relajó la comprobación ni se declaró resuelto por repetir sin cambio.
+-9ff, CI39027727612: fase funcional correcta, peroP95genérico33,3–33,4ms yarranque469–531ms. No se integró. El A/B posterior compara dentro del mismo runner.
+- Ensayos1–8: reducciones parciales; varias muestras33ms y regresiones de arranque. Mipmaps/autoload/trim/atlas retirados con evidencia desfavorable preservada.
+-9: cap8aislado mejoró33,3→16,7ms en tres pares y remontajes, aún sin cumplir todos los presupuestos de arranque.
+-10–14: mínimo sinatlas, disponibilidad inmediata, presupuesto2 y Graphicsbatch. Concentrar fuentes11produjo167–183ms: no aceptado. Presupuesto2cuesta tiempo total frente al envío simultáneo, conserva mejor máximo.14aisló beneficio del batch público.
+-15, CI39037479383/headfd929/mergefe2c: runtimefinalca9contraoriginald13; genérico33,4→16,7–16,8ms en tres parejas/remontajes; picos200–250→50–83ms. PollingG416–440/J497–582no demuestra400/550. Ciclo de vida correcto.
+-16, CI39038198256/headc2677/mergef6d9e487: mismo runtime, marcador preciso después de envío completo y siguiente oportunidadrAF, idéntico enambasvariantes.2tests correctos,562unitarios/81archivos,78PGRedis/13,tipos/contenido/build/scanner. Todos los presupuestos actuales pasan: frame-readyG236,5–242,3/J289,2–326,9ms, máximorAF33,4ms,P95≈16,7–16,8. El polling antiguo se conserva, no se cambia el juego para adelantar una marca. No mideGPU/display físico.
 
-Pendiente nueva CI del candidato corregido: ES/EN, ambos paquetes,3viewports, figuras/PV completos, pausa/Auto/2x/inspector/ocultación/omisión, reducido/preferencia, idioma/pack, recarga/historia, arte/import/contexto fallidos, cancelación/foco, log/consumos/premios, preparación/jefe/cierre/tienda/intenciones/Halloween yPWA.
+## Ciclo de vida y visual seleccionada
 
-La matriz existente conserva sus casos; A73 añade medición de recorrido sin sustituirla. Guard, bloqueo entre procesos, watchdog, unworker, ceroretries y ausencia de grabación/trazas automáticas intactos. Capturas solo las seis seleccionadas deA71 bajo opt-inLinux.
+RecoveryA73 pasó en15y16: fixture5×5Chromium, gate controlado de promesa decode, pausa cursor0,390/865, ocultación sintética mientras termina carga sin avanzar/dibujar, retorno con10figuras ybrazo, Auto, reducido durantecast yvuelta sinreinicio, log/gameconfirmados idénticos, cursorfinal737, errores[]. No se extrapola a segundo plano físico o fallo real de driver.
 
-## Pendientes humanos y físicos
+PNG16 genérico1280: seis figuras, nombres/PV, indicadores ycontroles conservados; móvil390jefe: diez figuras/nombres/PV ycontroles presentes, sin unidad oculta para caber. Son capturas estáticas seleccionadas después de medir/pausar, no prueba de movimiento. Nuevas capturas ypaquetes de la matriz final por inspeccionar cuando termine.
 
-Sesión breve posterior (no realizada): pedir iniciar unaexpedición, preparar un duelo, consultar un miembro y seguir hasta el jefe; observar si se percibe continuidad o espera sin explicar dónde mirar. Segunda hipótesis: la primera acción y sus consecuencias siguen legibles después de reducir paints. Preguntas neutrales sobre qué ocurrió/cuándo pudo actuar, sin afirmar personalidad, diversión o retención por un benchmark. Dispositivo físico, lector audible, red móvil y comportamiento GPU real pendientes.
+## Matriz integrada superada
 
-## Candidato corregido9ff079c · CI39027727612
+Comandos reales de `.github/workflows/checks.yml`, sin editarworkflow/timeout/guard:
 
-FaseA70/A71/A73 correcta; se recupera artifact para comparar. El target de rendimiento **no se cumple**: tres genéricosP95rAF33,3–33,4ms, aunque geometría92–99→0 ypaintsdearranque9–11→3–6. El arranque genérico469–531ms empeora frente345–399ms; jefe468–487ms mejora frente504–522ms. Son runners distintos: no se atribuye automáticamente regresión o mejora causal. Se conserva la comparación desfavorable. Se cancela el resto y no se integra. Siguiente ciclo: A/B en un mismo runner, documento nuevo y remount, para contrastar la variabilidad con condiciones comunes.
+1. `npm ci --no-fund --no-audit`; `npm run typecheck`; `npm run validate:content`; `npm test`; `npm run test:integration`; `npm run build`; `npm run verify:arcana:build`.
+2. Instalación de navegadores Linux; `ARCANA_CAPTURE_A70=1 npx playwright test --config playwright.boss-a70.config.ts`: matrizA70/A71Chromium/WebKit×1280/390/865, ES/EN ypaquetes;4journeysA73Chromium1280 yrecoveryacotado.
+3. SeasonalA68; MotionA69; trialgeneral; progressionA67; gameplayA63; header/pactA66; intentionsA65; PWA; referenciaA66yperformanceA67baseline/current. En serie, no suites simultáneas.
 
-39029402120 / merge8f473e3: diagnóstico A/B pasado; resto cancelado expresamente tras conservar evidencia. No es una batería global ni cumple todavía el presupuesto sostenido. Siguiente ensayo controlado: mipmaps, sin cambios en reglas ni actores.
+Resultado completo ySHAregistrados debajo. Los skip explícitos de proyectosduplicadosA73 no equivalen a cobertura de esos motores/viewports. No se afirma que configtacticsA65se ejecutó si no está invocada. Correspondencia concreta de casos ylímites enCOVERAGE.
+
+## Pendiente humano/físico
+
+Sesión breve posterior, no realizada: pedir iniciar expedición, preparar duelo, consultar integrante ycontinuar aljefe. Registrar cuándo cree que puede actuar yqué ocurrió sin dirigir la mirada; comprobar que la menor pintura no pierde consecuencias. Comparar percepción de ritmo/espera sin afirmar diversión/retención por el benchmark. Dispositivo físico, red móvil, GPUreal, pérdida auténtica decontexto ylector audible siguen pendientes.
+
+### Fases completas ya terminadas
+
+CI39038639396, merge8541ee2c, headeb5ce91: faseA70/A71/A73yseasonalA68conclusion success. Se descargóartifacta70 yse inspeccionaron seisPNGnuevosA71másresizeA73; procedencia enGALLERY.115JSONconSHAactual conservados en evidence/final/boss-matrix.json.gz, sin confundir PNGhistóricos de raíz con evidencia actual. CuatrojourneysA73sinpageerrors ylog/recursos preservados; resumen reproducible enjourney-summary.json. Jefe5×5adicionalP95rAF16,8ms/arranque353ms/omisión41ms. Restodelworkflowen curso; no CIglobalcorrecta todavía.
+
+A69también terminó con success: conservación de actores/PV/log, pausa/2x/inspector/ocultación/omisión/fallback, cuatro rarezas/nuevo/repetido/recuperación deapertura y30desmontajesseriales. LosP95cortos incluyen arranque yno cumplen20en toda muestra; valores desfavorables registrados enPERFORMANCE, sin confundirlos con sostenido10s. Continúa trialgeneral.
+
+## Resultado final de CI
+
+[CI39038639396](https://github.com/earandes/diagon-alley/actions/runs/39038639396), **success**,17octubre13:56:42–14:34:36UTC (37min54s). Checkout del log confirma merge8541ee2c, padres4be35f8/eb5ce91. Todos los pasos terminaron correctamente, sin retries o suites simultáneas. Tipos, contenido6casos, build/scanner;562unitarios/81archivos y78integracionesreales/13archivos.
+
+| Suite | Correctos | Omisiones explícitas |
+|---|---:|---:|
+|A70/A71/A73|103|35|
+|HalloweenA68|12|0|
+|MotionA69|19|5|
+|TrialgeneralChromium/WebKit|56|0|
+|ProgresiónA67|20|0|
+|Gameplay/cierreA63|16|0|
+|Cabecera/PactoA66|20|0|
+|IntencionesA65|8|0|
+|PWAChromium/WebKit|12|0|
+|PerformanceA67baseline/current|1+1|0|
+|Totalgráfico|268|40|
+
+Omisiones: perfilesA70deusoúnico yduplicadosA73fuera delproyecto medido; ciclo30solo enunproyecto A69. No se contabilizan como cobertura. Laspruebas internas de cada caso parametrizan múltiplesidiomas/paquetes/tamaños segúnCOVERAGE. No se ejecutó configtacticsA65separada, ni toda posiblecombinación; no se afirma lo contrario.
+
+Los checks/summaries/pasos yCIJSONestán enevidence/final. Datos deA69mantienen ventanas cortas desfavorables yA67latencias noarena que no mejoraron todas. Advertenciachunk>500kB sigue vigente; no se inventa eliminación. No hubo navegadores locales, despliegue, publicación o uso de cuenta habitual.
+
+El commit posterior de documentación/evidencia no ejecutará otra batería: se demuestra igualdad de todos los objetos no documentales con el merge probado. No se atribuye estaCI a unSHAque no la ejecutó.

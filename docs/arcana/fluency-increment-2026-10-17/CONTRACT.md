@@ -64,3 +64,13 @@ Candidato83d4e48 cumple en este runner los presupuestos; añade un presupuesto d
 ### Candidato de aceptación
 
 ca9cc86 supera el contraste aislado de Graphics: todas las parejas mejoran arranque y picos, samplers usados8 ypresupuestos mantenidos. Siguiente fase compara el conjunto contra d13; añade un caso de ciclo de vida para huecos concretos de reducido/resize/carga oculta. No más modificaciones de renderer si esa aceptación y matriz pasan. Goal/main siguen pendientes.
+
+### Plan vigente ·aceptación16 y matriz
+
+Pasos1–5completados en su parte diagnóstica:16ensayos acotados de hipótesis diferentes, fallos/costes conservados, runtimeca9congelado.562unitarios/81archivos y78PGRedis/13archivos, tipos/build/contenido/scanner correctos enCI16. Presupuestos20msP95/100msmáximo/400G550JreadyFrameAt pasan; definición y límites enPERFORMANCE. Artefuente intacto.
+
+Paso6en curso: CI39038639396, candidatoeb5ce91enphasefull, matriz original más4recorridosA73 ycaso de ciclo de vida; sin repetir A/B ya probado. Inspección seleccionadaPNG16hecha, captura estática no acredita movimiento. Paso7pendiente: revisar diff/equivalencia yCI antes de integrar/push/verificar main. Goal activo.
+
+### Cierre técnico de validación
+
+Paso6completado: CI39038639396success, merge8541ee2c,268gráficos correctos/40skip,562unitarios y78PGRedisreales. PresupuestosA73declarados cumplidos; ventanas cortasA69ycasos noarena desfavorables conservados. Galería ycrudos actuales revisados. Paso7: commit documental, comparación de objetos, integraciónff-only/push yverificaciónSHAremoto/PR/CI; su registro está enINTEGRATION. No se marca goal completo antes de esas verificaciones.

@@ -1,0 +1,7 @@
+check	Run npm run validate:content	2026-10-17T13:40:43.1785693Z  Test Files  1 passed (1)
+check	Run npm run validate:content	2026-10-17T13:40:43.1786801Z       Tests  6 passed (6)
+check	Run npm test	2026-10-17T13:40:55.1921732Z  Test Files  81 passed (81)
+check	Run npm test	2026-10-17T13:40:55.1925414Z       Tests  562 passed (562)
+check	Run npm run test:integration	2026-10-17T13:41:10.9856754Z  Test Files  13 passed (13)
+check	Run npm run test:integration	2026-10-17T13:41:10.9858045Z       Tests  78 passed (78)
+check	Run ARCANA_CAPTURE_A70=1 npx playwright test --config playwright.boss-a70.config.ts	2026-10-17T13:45:43.0685006Z   2 passed (3.5m)
