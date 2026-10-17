@@ -100,6 +100,51 @@ for (const language of ['es', 'en'] as const) {
       );
       expect(await source(page)).toBe(before);
     });
+    test(`A75 zero and multiple jars distinguish stock from local draft ${language}/${pack}`, async ({
+      page,
+    }, info) => {
+      test.skip(
+        info.project.use.browserName !== 'chromium' || info.project.use.viewport?.width !== 390,
+        'Bounded component coverage in Chromium 390; the real authority journey covers stock one.',
+      );
+      await page.goto(`${fixture}?view=supplies&empty&lang=${language}&pack=${pack}`);
+      const emptySource = await source(page);
+      const summary = page.locator('.boss-supplies > summary');
+      await expect(summary).toHaveAttribute('data-bean-stock', '0');
+      await expect(summary).toHaveAttribute('data-bean-draft', '0');
+      await summary.click();
+      await expect(page.locator('[data-bean-id]')).toHaveCount(0);
+      await expect(page.locator('[data-bean-unit]')).toHaveCount(0);
+      expect(await source(page)).toBe(emptySource);
+      await page.goto(`${fixture}?view=supplies&lang=${language}&pack=${pack}`);
+      const stockedSource = await source(page);
+      await expect(summary).toHaveAttribute('data-bean-stock', '3');
+      await expect(summary).toHaveAttribute('data-bean-draft', '0');
+      await expect(summary).not.toContainText('/');
+      await summary.click();
+      await page.locator('[data-bean-id="a75-jar-0"]').click();
+      await page.locator('[data-bean-unit="a75-copy-0"]').click();
+      await page.locator('[data-bean-id="a75-jar-1"]').click();
+      await page.locator('[data-bean-unit="a75-pact-copy"]').click();
+      await expect(summary).toHaveAttribute('data-bean-draft', '2');
+      await expect(summary).toHaveAttribute('data-bean-stock', '3');
+      // A recipient has one slot: moving jar 1 onto the owned copy explicitly replaces jar 0.
+      await page.locator('[data-bean-unit="a75-copy-0"]').click();
+      await expect(summary).toHaveAttribute('data-bean-draft', '1');
+      await expect(page.locator('[data-bean-unit="a75-pact-copy"]')).toHaveAttribute(
+        'aria-pressed',
+        'false',
+      );
+      await page.locator('[data-bean-unit="a75-copy-0"]').click();
+      await expect(summary).toHaveAttribute('data-bean-draft', '0');
+      await page.locator('[data-bean-unit="a75-pact-copy"]').click();
+      await expect(summary).toHaveAttribute('data-bean-draft', '1');
+      // QA parent drops the draft, mirroring cancellation; real node cancellation is tested by supplies-a75.
+      await page.getByRole('button', { name: 'QA cancel draft', exact: true }).click();
+      await expect(summary).toHaveAttribute('data-bean-draft', '0');
+      await expect(summary).toHaveAttribute('data-bean-stock', '3');
+      expect(await source(page)).toBe(stockedSource);
+    });
     test(`A75 encounter identical copies have distinct labels and consequences ${language}/${pack}`, async ({
       page,
     }) => {

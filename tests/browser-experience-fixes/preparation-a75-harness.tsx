@@ -10,6 +10,7 @@ import type { BeanAssignment, NodeOptions } from '../../src/arcana/application/r
 import type { Run, RunMember } from '../../src/arcana/domain/exploration/run';
 import type { EncounterOffer } from '../../src/arcana/domain/exploration/encounter-trades';
 import { ExpeditionPreparation } from '../../src/arcana/presentation/ExpeditionPreparation';
+import { BossSupplies } from '../../src/arcana/presentation/BossSupplies';
 import { BeanAssignments } from '../../src/arcana/presentation/BeanAssignments';
 import { EncounterPreparation } from '../../src/arcana/presentation/EncounterPreparation';
 import {
@@ -152,6 +153,9 @@ function Fixture() {
           >
             QA pack
           </button>
+          {params.get('view') === 'supplies' && (
+            <button onClick={() => setAssignments([])}>QA cancel draft</button>
+          )}
         </nav>
       </header>
       <main id="content">
@@ -163,6 +167,16 @@ function Fixture() {
             onChange={setOptions}
             language={language}
             ready
+          />
+        ) : params.get('view') === 'supplies' ? (
+          <BossSupplies
+            run={run}
+            game={game}
+            content={content}
+            language={language}
+            ready
+            assignments={assignments}
+            onChange={setAssignments}
           />
         ) : params.get('view') === 'beans' ? (
           <BeanAssignments

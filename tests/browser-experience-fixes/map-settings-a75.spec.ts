@@ -150,7 +150,9 @@ for (const pack of ['diagon-alley', 'arcana'])
       await failIcon();
       await expect(toggle.locator('img')).toHaveCount(0);
       await expect(toggle.locator('.map-view-fallback')).toBeVisible();
-      await expect(toggle).toHaveText(language === 'es' ? 'Ver mapa' : 'View map');
+      await expect(toggle).toHaveText(
+        language === 'es' ? 'Ver mapa ramificado' : 'View branching map',
+      );
       expect(await read(page)).toEqual(before);
     });
   }
