@@ -80,3 +80,11 @@ Se cumple el criterio preregistrado de medianaP95 sostenida≤max(20ms,referenci
 **No mejora de arranque acreditada.** En WebKit la mediana aislada sube123ms, aunque dos de los tres pares actuales tienen menor espera que su referencia; los rangos se superponen. Esta muestra acotada no atribuye causa, ni demuestra una regresión universal ni autoriza seleccionar solo el par favorable. Las promesas, rAF y ventanas no son tiempo GPU. WebKit no aporta entries longtask en esta sonda: no equivale a cero trabajo largo. Chromium registra tareas de55–65msantes y54–55msactuales cerca del arranque.
 
 Las cifras cortas de A69 que empeoraron en WebKit siguen conservadas arriba y en los crudos históricos; este contraste sostenido responde otra pregunta, no las borra. Se recomienda observar ritmo/primer acceso y dispositivo físico posteriormente, sin ampliar A75 a otra optimización no demostrada.
+
+## Comprobaciones heredadas y tiempos de Encuentro del cierre
+
+CI39064546905/head6f47559, merge4395489: A67 completa20/20, A63/A66/A65/PWA correctas. Ocho consultas/confirmaciones de Encuentro guardan click→receipt utilizable365–1764ms, incluyendo autoridad, red y sondeo del runner; se conserva el extremo1764ms y las condiciones SQLHP/PM50%. No son tiempos humanos ni un contraste causal del margen.
+
+Los dos perfiles heredados A67 pasan1+1;9sondas por variante. Se preservan todos los crudos de `tail-final/regressions/{baseline,current}.json`, también valores desfavorables: primera aperturaPacto86,7→92,4ms, confirmar223→269,3ms y cotizarforja23,9→22,3ms. Esta referencia compila contenidoA66 y no aísla A75; no se atribuyen sus deltas al nuevoCSS. Los nombres «cold/warm» son etiquetas del probe legado, no garantía de caché controlada.
+
+Comparación A75/A73: `git diff 8541ee2c 937a0a1 -- src package.json package-lock.json` está vacío. El runtime de referencia937a0a1 de los pares sostenidos coincide con el deA73; la evidencia corta200muestrasA69 de distintos runners permanece separada. A75 no modifica renderer/clock/texturas ni mueve esperas a otra pantalla. No se promete rendimiento universal, tiempoGPU, ausencia global de fugas o mejora de arranque.

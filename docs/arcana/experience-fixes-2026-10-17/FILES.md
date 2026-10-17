@@ -1,6 +1,6 @@
 # A75 · Archivos del incremento
 
-Diferencia desde937a0a1 más documentación final en preparación. Solo paths de este incremento; archivos no rastreados ajenos se conservan fuera del staging. No listar este inventario como prueba de ejecución. Evidencia raw y PNG en `evidence/` (baseline, intentos conservados y candidato final).
+Diferencia desde937a0a1 más el cierre documental. Solo paths propios y dependencias canónicas A74; otros archivos no rastreados permanecen fuera del staging. Sin borrado de Word, arte previo o partidas. Este inventario no acredita ejecución.
 
 ## Runtime
 
@@ -47,7 +47,9 @@ Diferencia desde937a0a1 más documentación final en preparación. Solo paths de
 - `tests/browser-experience-fixes/vite-experience-a75.config.ts`
 - `tests/browser-trial/asset-interface.spec.ts`
 - `tests/browser-trial/browser-local-smoke-a67.spec.ts`
+- `tests/browser-trial/game-feel.spec.ts`
 - `tests/browser-trial/header-pact-a66.spec.ts`
+- `tests/browser-trial/hud-results.spec.ts`
 - `tests/browser-trial/progression-performance-a67.spec.ts`
 - `tests/browser-trial/replay.spec.ts`
 - `tests/browser-trial/seasonal-a68.spec.ts`
@@ -66,7 +68,7 @@ Diferencia desde937a0a1 más documentación final en preparación. Solo paths de
 - `docs/DECISIONS.md`
 - `docs/PRD.md`
 
-## A74 canónico preexistente incorporado como dependencia
+## A74 canónico preexistente conservado
 
 - `docs/arcana/experience-review-2026-10-17/ASSESSMENT-A.md`
 - `docs/arcana/experience-review-2026-10-17/ASSESSMENT-B.md`
@@ -91,6 +93,7 @@ Diferencia desde937a0a1 más documentación final en preparación. Solo paths de
 - `docs/arcana/experience-fixes-2026-10-17/ASSETS-AND-MOTION.md`
 - `docs/arcana/experience-fixes-2026-10-17/COMPATIBILITY.md`
 - `docs/arcana/experience-fixes-2026-10-17/CONTRACT.md`
+- `docs/arcana/experience-fixes-2026-10-17/DELIVERY.md`
 - `docs/arcana/experience-fixes-2026-10-17/DIFF-REVIEW.md`
 - `docs/arcana/experience-fixes-2026-10-17/FILES.md`
 - `docs/arcana/experience-fixes-2026-10-17/GALLERY.md`
@@ -101,14 +104,18 @@ Diferencia desde937a0a1 más documentación final en preparación. Solo paths de
 - `docs/arcana/experience-fixes-2026-10-17/QA.md`
 - `docs/arcana/experience-fixes-2026-10-17/RECOVERY.md`
 - `docs/arcana/experience-fixes-2026-10-17/REPORT.md`
+- `docs/arcana/experience-fixes-2026-10-17/WEBKIT-CHECK.md`
 - `docs/arcana/experience-fixes-2026-10-17/baseline-ci.json`
 - `docs/arcana/experience-fixes-2026-10-17/build-candidate.log.gz`
 - `docs/arcana/experience-fixes-2026-10-17/build-first-candidate.log.gz`
 - `docs/arcana/experience-fixes-2026-10-17/fixture-build-candidate.log.gz`
+- `docs/arcana/experience-fixes-2026-10-17/local-environment.json`
 - `docs/arcana/experience-fixes-2026-10-17/scan-candidate.log.gz`
 - `docs/arcana/experience-fixes-2026-10-17/typecheck-integration.log.gz`
 - `docs/arcana/experience-fixes-2026-10-17/types-candidate.log.gz`
 - `docs/arcana/experience-fixes-2026-10-17/unit-candidate.log.gz`
 - `docs/arcana/experience-fixes-2026-10-17/unit-integration.log.gz`
 
-Evidencia A75: 65 archivos seleccionados/crudos; fuente, SHA y estado de cada ejecución en QA, GALLERY y los JSON. Sin vídeos, trazas extensas, secretos o assets nuevos. Los diagnósticos comprimidos conservan bytes originales.
+## Evidencia
+
+151 archivos de baseline, intentos, diagnósticos conservados, A75 completa, scope tail y cierre. Véanse QA, GALLERY, PERFORMANCE y los manifiestos de procedencia/equivalencia para distinguir ejecuciones. JSON grandes o logs comprimidos sin alterar bytes; PNG explícitos seleccionados. Sin vídeo, trazas extensas, secretos o recursos artísticos nuevos.

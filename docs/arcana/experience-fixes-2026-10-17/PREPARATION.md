@@ -1,5 +1,7 @@
 # A75 · Preparación, instancias y consulta de reglas
 
+Registro de implementación/preregistro y seguimiento. El resultado técnico definitivo está en QA y en la sección de cierre al final; los planes históricos no se presentan como trabajo todavía pendiente.
+
 17 octubre 2026. F03/F05/F08; integración F04 mediante slot. Cambios de presentación y proyección de solo lectura. Sin reglas, operaciones, inventario ni economía nuevas. No se han abierto navegadores desde este agente.
 
 ## F03 · Fuente efectiva
@@ -92,3 +94,7 @@ Se añadió exclusivamente a la fixture el modo `view=supplies`, que reutiliza `
 ## Ajuste final de margen por evidencia WebKit
 
 CI39063046713: A75 114passed/174skipped y E2E56passed; A67 18passed/2failed, solo WebKit ES/Diagon y EN/ARCANA. Nuevo desbordamiento residual864 frente límite863, antes922–947. Se reducen4pxde margin-top de targets y4pxde preview. No fuente menor, recorte, scrollAllowed ni umbral cambiado. Fase tail comprobará F05 en las seis combinaciones motor/viewport y A67 completa, después A63/A66/A65/PWA/perfiles. Sus JSONgeométricos se archivan por primera vez de forma explícita, sin activar capturas automáticas. La ejecución anterior cancelada conserva crudos en evidence/resume-regression-failure; las pasadas A75/E2E/perfiles se conservan con SHApropio.
+
+## Cierre comprobado
+
+CI39064546905/head6f47559: F05 24/24 y A67 completa20/20.24 rectángulos sin overflow, altura máxima856px;390pxdeviewport produce diálogos772–784px. PV/PM/nombres/costes/confirmación siguen presentes, no cambia el límite ni scrollAllowed. Los rectángulos y procedencia están en evidence/tail-final; el resumen separa viewport fijo y tamaño del diálogo porque el JSON legado sobrescribe esas claves. FixtureA75 de tres unidades idénticas: números1/2/3, procedencia propia/temporal y preview delID elegido; imagen final revisada. No prueba humana ni dispositivo físico.

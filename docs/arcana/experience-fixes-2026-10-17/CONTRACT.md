@@ -39,7 +39,8 @@ Estado inicial: once findings vigentes por inspección del mismo baseline; los n
 - [x] A75 completa:113pasadas/175omisiones previstas/0fallos enCI39059090478, head889886d/merge8d38776 con árbol idéntico.
 - [x] Regresión completaA70/A71/A73 yHalloween del mismo candidato.
 - [x] A69 funcional del mismo candidato.
-- [ ] Corregir/regresar E2E y geometría del EncuentroA67; terminar A63/A66/A65/PWA/perfiles y contraste WebKit preregistrado. Reanudación acotada, no entrega global hasta resolverlo.
-- [ ] Documentación final, equivalencia del commit documental, revisión del diff y verificación de rama/remoto/PR sin main.
+- [x] E2E56/56 y A75 completa114/174 en6d4dbcb; contraste WebKit preregistrado correcto.
+- [x] Encuentro corregido y A67 20/20; A63/A66/A65/PWA/perfiles correctos enCI39064546905/head6f47559.
+- [x] Documentación y equivalencia preparadas, diff propio revisado y rama/PR de validación sin main. El cierre de subida de la rama se coteja en la tarea y PR, sin autorreferenciar el SHA de este documento.
 
-El goal sigue activo; marcarlo completo solo tras resolver las comprobaciones técnicas pendientes. Humanos/físico quedan identificados en HUMAN-CHECK, sin convertirse en evidencia realizada.
+Las comprobaciones técnicas necesarias están resueltas. El coordinador marca el goal completo después de subir/cotejar el cierre documental en la rama autorizada; nunca por una pantalla aislada. Humanos/físico quedan identificados en HUMAN-CHECK, sin convertirse en evidencia realizada.

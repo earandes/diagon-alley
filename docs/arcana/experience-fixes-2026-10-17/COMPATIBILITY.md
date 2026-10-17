@@ -28,4 +28,4 @@ La arena móvil cambia distribución de espacio, no reloj, shaders, texturas, se
 
 ## Evidencia y límites
 
-Unitarios dirigidos/modelos verifican decisiones de cliente/proyección; suites Linux reales deben acreditar UI y servicios en el candidato. Los PNG son composición, los frames/controles y aserciones de cursor son evidencia temporal acotada. No certificación WCAG global, lector hablado, segundo plano físico, pérdida auténticaGPU, diversión o retención. Véase QA y el informe final para resultados reales; esta descripción no sustituye ejecución.
+Unitarios dirigidos/modelos verifican decisiones de cliente/proyección; suites Linux reales acreditan la UI y los servicios con los scopes/SHA registrados en QA. Los PNG son composición, los frames/controles y aserciones de cursor son evidencia temporal acotada. No certificación WCAG global, lector hablado, segundo plano físico, pérdida auténticaGPU, diversión o retención. Véase QA y el informe final para resultados reales; esta descripción no sustituye ejecución.

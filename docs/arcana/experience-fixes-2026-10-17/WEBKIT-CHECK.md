@@ -1,5 +1,7 @@
 # A75 · Contraste WebKit acotado, preregistrado
 
+Registro de implementación/preregistro y seguimiento. El resultado técnico definitivo está en QA y en la sección de cierre al final; los planes históricos no se presentan como trabajo todavía pendiente.
+
 La batería full39059090478/head889886d pasó A75/A70/A71/A73/A68/A69, pero después fallaron E2E y la geometría del Encuentro. Se canceló para corregir esas causas; no hay validación global verde. A69muestra WebKit más lento queA73 también en apertura y escritorio. No atribuimos causa a GPU o al encuadre nuevo por correlación. Se autoriza dentro de la validación solicitada **una sola muestra adicional**, en cola bajo el mismo bloqueo global; sin repetir indiscriminadamente la batería full. La primera ejecución enfocada39062034394 se canceló en cola antes de ejecutar al conocerse las regresiones; no aporta una medida.
 
 Pregunta: ¿el runtime actual tiene una regresión sostenida frente a937a0a1 en WebKit390, con el mismo BattleLog y el mismo runner? Perfil existenteA75, tres pares fijosAB/BA/AB, contextos aislados,500msde asentamiento y10s sostenidos, actor5×5 con HP prolongados declarados. Módulo evaluado antes del clic; no arranque frío universal ni tiempo humano/GPU. Se conserva cada extremo y hash del log; controles de pausa/2x/inspector/ocultación/omisión y estado siguen iguales.240s como límite,0reintentos.
@@ -17,3 +19,7 @@ La fase temporal `resume` conserva la matriz A75 completa (ahora añade el perfi
 ## Ajuste final de margen por evidencia WebKit
 
 CI39063046713: A75 114passed/174skipped y E2E56passed; A67 18passed/2failed, solo WebKit ES/Diagon y EN/ARCANA. Nuevo desbordamiento residual864 frente límite863, antes922–947. Se reducen4pxde margin-top de targets y4pxde preview. No fuente menor, recorte, scrollAllowed ni umbral cambiado. Fase tail comprobará F05 en las seis combinaciones motor/viewport y A67 completa, después A63/A66/A65/PWA/perfiles. Sus JSONgeométricos se archivan por primera vez de forma explícita, sin activar capturas automáticas. La ejecución anterior cancelada conserva crudos en evidence/resume-regression-failure; las pasadas A75/E2E/perfiles se conservan con SHApropio.
+
+## Resultado
+
+El contraste preregistrado sí se ejecutó enCI39063046713:114casosA75correctos. WebKit P95 de referencia18/18/17ms y actual17/18/17ms,606–621intervalos por ventana, mismo hashBattleLog y controles de pausa/inspector/2x/ocultación/omisión correctos. Cumple el criterio previamente escrito, sin reintentar. Se conserva mediana de arranque435→558ms y rangos385–833/388–632, sin mejora atribuida. El job se canceló después porA67, cuyo defecto se corrigió y pasó20/20 enCI39064546905. Fasefull restaurada en la entrega; el código de arena/perfil permanece equivalente al ejecutado.

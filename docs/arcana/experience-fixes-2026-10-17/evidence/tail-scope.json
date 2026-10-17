@@ -1,0 +1,25 @@
+{
+  "referenceRun": 39063046713,
+  "referenceHead": "6d4dbcb5df733641a8b9ce26bf8821c8f8289d05",
+  "candidateHead": "6f47559a73db59b20aab6bbe94ee4d8e7f5c39c7",
+  "onlyRuntimeChange": "src/arcana/presentation/encounter-a67.css",
+  "cssBeforeBlob": "1db6b6eaf04cd280621b8910bc3aef43798141d8",
+  "cssAfterBlob": "1b992c8fb190b133830bd79087b9b78f9a95b0ee",
+  "sharedTestsTree": "b2335808d4e5e31780e9180eefa8a3687801d974",
+  "unchangedRuntimeExceptEncounterCss": true,
+  "reusedPassedChecks": [
+    "A75 full114/174",
+    "E2E56",
+    "Chromium and WebKit AB/BA/AB arena profiles/lifetimes"
+  ],
+  "rerun": [
+    "A75 F05 24 cases",
+    "A67 complete20 cases",
+    "A63",
+    "A66",
+    "A65",
+    "PWA",
+    "A67 performance baseline/current"
+  ],
+  "note": "Only two Encounter margins changed (4px each); no fonts, actors, hit areas, acceptance or controls hidden/relaxed. Source selectors belong to EncounterPreparation only; other runtime objects equal. The reference run remains cancelled after its 2 A67 failures."
+}

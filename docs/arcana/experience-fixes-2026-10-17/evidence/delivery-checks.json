@@ -1,0 +1,31 @@
+{
+  "phase": "full",
+  "parseCheck": true,
+  "typecheck": {
+    "command": "npm run typecheck",
+    "exitCode": 0,
+    "environment": "macOS, no browser started"
+  },
+  "sourceEquivalence": {
+    "testedHead": "6f47559a73db59b20aab6bbe94ee4d8e7f5c39c7",
+    "gitDiffExitCode": 0,
+    "paths": [
+      "src",
+      "public",
+      "tests",
+      "package.json",
+      "package-lock.json",
+      ".github/workflows/checks.yml",
+      "playwright.experience-a75.config.ts",
+      "tools/verification/playwright-safety.ts"
+    ]
+  },
+  "ownDiffCheck": {
+    "command": "git diff --check",
+    "exitCode": 0
+  },
+  "historicalDiffWarnings": [
+    "A74 build.log350 trailing space",
+    "A74 unit-tests.log17 blank EOF; raw originals preserved"
+  ]
+}
