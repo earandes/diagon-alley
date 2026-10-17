@@ -16,6 +16,9 @@
   overflow-wrap: anywhere;
 }
 .boss-prelude-identity {
+  display: grid;
+  justify-items: center;
+  gap: 2px;
   padding-inline: 34px;
   box-sizing: border-box;
   width: 100%;

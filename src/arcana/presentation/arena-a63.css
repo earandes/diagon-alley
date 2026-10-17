@@ -223,6 +223,11 @@
   width: 100%;
   height: clamp(50px, calc((100dvh - 415px) / var(--arena-count) - 35px), 150px);
 }
+/* The authored frame includes transparent joint/gesture margins. Compensate in
+   the measured figure space, so DOM and Pixi agree without scaling over PV. */
+.arena-a63 .pedestal[data-boss-actor='true'] .arena-figure-space {
+  height: clamp(65px, calc(((100dvh - 415px) / var(--arena-count) - 35px) * 1.3), 195px);
+}
 .arena-a63 .arena-portrait {
   width: 100%;
   height: 100%;

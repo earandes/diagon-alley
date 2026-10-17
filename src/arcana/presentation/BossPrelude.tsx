@@ -52,13 +52,13 @@ export function BossPrelude({
       aria-label={leader.name}
     >
       <div className="boss-prelude-hero">
-        <header className="boss-prelude-identity">
+        <div className="boss-prelude-identity">
           <h4>{leader.name}</h4>
           <AffinityLabel affinity={leader.unit.affinity} language={language} />
           <span className="boss-roster-count">
             {opponents.length} · {t.roster}
           </span>
-        </header>
+        </div>
         <div className="boss-roster-scene" aria-label={t.roster}>
           {opponents.map((unit, index) => (
             <div

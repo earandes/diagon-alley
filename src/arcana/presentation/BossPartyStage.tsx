@@ -4,7 +4,7 @@ import type { CombatRules } from '../domain/combat/engine';
 import type { Language } from '../domain/collection/wizards';
 import type { Run } from '../domain/exploration/run';
 import { Artwork } from './Artwork';
-import { themedName } from './content-packs/active';
+import { activePack, themedName } from './content-packs/active';
 import { equipmentName } from './equipment-label';
 import { validBeanAssignments } from './contextual-preparation';
 import { contextualText } from './contextual-messages';
@@ -31,7 +31,12 @@ export function BossPartyStage({
 }) {
   const draft = validBeanAssignments(assignments, run, game);
   return (
-    <section className="boss-party-stage" data-boss-party aria-label={s(language, 'party')}>
+    <section
+      className="boss-party-stage"
+      data-boss-party
+      data-party-pack={activePack.id}
+      aria-label={s(language, 'party')}
+    >
       <h4>{s(language, 'party')}</h4>
       <div className="boss-party-members">
         {run.members.map(({ unit, source }, index) => {

@@ -2,6 +2,7 @@ import { randomUUID } from 'node:crypto';
 import { defineSafeConfig } from './tools/verification/playwright-safety';
 
 const namespace = `a70-boss-${randomUUID()}`;
+const styleNamespace = `a71-boss-${randomUUID()}`;
 // A71 runs in this existing CI step, under the same guard/lock and one worker.
 // Keep new selected evidence separate from the historical A70 PNG baseline.
 process.env.A71_FIXTURE_URL = 'http://127.0.0.1:5471';
@@ -41,6 +42,16 @@ export default defineSafeConfig({
       command:
         'npx --no-install vite preview --host 127.0.0.1 --port 5470 --strictPort --mode arcana',
       url: 'http://127.0.0.1:5470/',
+      reuseExistingServer: false,
+      timeout: 120000,
+    },
+    // Each journey suite creates 24 isolated trial accounts. Separate ephemeral
+    // authorities preserve the real 30/IP/hour entry quota rather than relaxing it.
+    {
+      env: { ARCANA_TRIAL_NAMESPACE: styleNamespace },
+      command:
+        'npx --no-install vite preview --host 127.0.0.1 --port 5472 --strictPort --mode arcana',
+      url: 'http://127.0.0.1:5472/',
       reuseExistingServer: false,
       timeout: 120000,
     },

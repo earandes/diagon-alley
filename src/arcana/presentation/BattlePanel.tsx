@@ -402,6 +402,10 @@ function BattlePlayback({
                       key={unit.id}
                       data-unit={unit.id}
                       data-boss-unit={unit.id === boss?.unit.id || undefined}
+                      data-boss-actor={
+                        (unit.id === boss?.unit.id && boss.figure === 'boss.circe.figure') ||
+                        undefined
+                      }
                       data-acting={acting || undefined}
                       data-target={targeted || undefined}
                       data-fallen={unit.hp === 0 || undefined}

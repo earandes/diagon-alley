@@ -4,6 +4,9 @@ import { resolve } from 'node:path';
 import { changeLanguage, startExpedition } from '../browser-trial/game-fixture';
 import { readGame, reachNode, confirmEvent, expectMapFits } from '../browser-trial/route-helpers';
 
+// The A71 authority has its own ephemeral namespace, with unchanged entry limits.
+test.use({ baseURL: 'http://127.0.0.1:5472' });
+
 const evidence = resolve(
   process.env.A71_EVIDENCE_ROOT ?? 'docs/arcana/boss-stage-2026-10-17/evidence/linux',
 );
@@ -132,6 +135,16 @@ for (const language of ['es', 'en'] as const)
       const party = dialog.locator('[data-boss-party]');
       await expect(prelude).toBeVisible();
       await expect(party).toBeVisible();
+      const settingsBox = await dialog.locator(':scope > .settings-trigger').boundingBox();
+      for (const item of ['.boss-prelude-identity h4', '.boss-roster-count']) {
+        const box = await prelude.locator(item).boundingBox();
+        expect(
+          box!.x + box!.width <= settingsBox!.x ||
+            box!.x >= settingsBox!.x + settingsBox!.width ||
+            box!.y + box!.height <= settingsBox!.y ||
+            box!.y >= settingsBox!.y + settingsBox!.height,
+        ).toBe(true);
+      }
       expect(
         await prelude
           .locator('[data-boss-opponent]')
