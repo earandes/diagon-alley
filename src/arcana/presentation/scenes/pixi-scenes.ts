@@ -169,7 +169,7 @@ export async function createPixiScene(host: HTMLElement, data: SceneData) {
                 .then(() => {
                   sceneEnd('figure-decode', decodeStarted);
                   if (destroyed) return;
-                  textures.set(assetKey, Texture.from(image));
+                  textures.set(assetKey, Texture.from({ resource: image, autoGenerateMipmaps: true, mipmapFilter: 'linear' }));
                   host.dataset.textureCount = String(textures.size);
                   host.dataset.textureBytes = String(
                     [...textures.values()].reduce((n, t) => n + t.width * t.height * 4, 0),
@@ -228,7 +228,7 @@ export async function createPixiScene(host: HTMLElement, data: SceneData) {
                       .decode()
                       .then(() => {
                         if (destroyed) return;
-                        textures.set(key, Texture.from(image));
+                        textures.set(key, Texture.from({ resource: image, autoGenerateMipmaps: true, mipmapFilter: 'linear' }));
                         host.dataset.textureCount = String(textures.size);
                         host.dataset.textureBytes = String(
                           [...textures.values()].reduce((n, t) => n + t.width * t.height * 4, 0),
@@ -275,7 +275,7 @@ export async function createPixiScene(host: HTMLElement, data: SceneData) {
                       .decode()
                       .then(() => {
                         if (destroyed) return;
-                        textures.set(key, Texture.from(image));
+                        textures.set(key, Texture.from({ resource: image, autoGenerateMipmaps: true, mipmapFilter: 'linear' }));
                         host.dataset.textureCount = String(textures.size);
                         host.dataset.textureBytes = String(
                           [...textures.values()].reduce((n, t) => n + t.width * t.height * 4, 0),

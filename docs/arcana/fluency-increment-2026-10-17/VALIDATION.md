@@ -32,3 +32,5 @@ Sesión breve posterior (no realizada): pedir iniciar unaexpedición, preparar u
 ## Candidato corregido9ff079c · CI39027727612
 
 FaseA70/A71/A73 correcta; se recupera artifact para comparar. El target de rendimiento **no se cumple**: tres genéricosP95rAF33,3–33,4ms, aunque geometría92–99→0 ypaintsdearranque9–11→3–6. El arranque genérico469–531ms empeora frente345–399ms; jefe468–487ms mejora frente504–522ms. Son runners distintos: no se atribuye automáticamente regresión o mejora causal. Se conserva la comparación desfavorable. Se cancela el resto y no se integra. Siguiente ciclo: A/B en un mismo runner, documento nuevo y remount, para contrastar la variabilidad con condiciones comunes.
+
+39029402120 / merge8f473e3: diagnóstico A/B pasado; resto cancelado expresamente tras conservar evidencia. No es una batería global ni cumple todavía el presupuesto sostenido. Siguiente ensayo controlado: mipmaps, sin cambios en reglas ni actores.

@@ -46,7 +46,7 @@ writeFileSync(panel, source);
 const config = resolve(target, 'reference-vite.mjs');
 writeFileSync(
   config,
-  `export default ${JSON.stringify({ root: target, base: '/a73-reference/', publicDir: false, build: { outDir: resolve(root, 'test-results/boss-a70-build/a73-reference'), emptyOutDir: true, rollupOptions: { input: { generic: resolve(target, 'tests/browser-motion/motion-a69.html'), boss: resolve(target, 'tests/browser-boss/boss-a70.html') } } } })};`,
+  `export default ${JSON.stringify({ root: target, base: '/a73-reference/', publicDir: false, build: { outDir: resolve(root, 'test-results/boss-a70-build/a73-reference'), emptyOutDir: true, rollupOptions: { input: { battle: resolve(target, 'tests/browser-boss/boss-a70.html'), generic: resolve(target, 'tests/browser-motion/motion-a69.html'), preparation: resolve(target, 'tests/browser-boss-style/boss-style-a71.html') } } } })};`,
 );
 run(
   process.execPath,

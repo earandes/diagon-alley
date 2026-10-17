@@ -53,3 +53,9 @@ Las fases reconstruían plataformas/figuras sin variar geometría → comparar p
 Se descartan por ahora la sustitución de Application, caché de contextos y cambios de exports: init es una fracción pequeña deesta referencia y la ráfaga de paints tiene una corrección menor. La construcción directa documentada sigue siendo alternativa, no implementación.
 
 Presupuestos de ensayo elegidos tras la referencia: P95rAFsostenido≤20ms; navegación→arte genérico≤400ms/jefe≤550ms y máximo rAFdearranque≤100ms como objetivo más exigente que el máximo150ms observado. Son objetivos en lasfixtures declaradas, no garantías físicas. Además se exige una reducción reproducible de paints/reconstrucciones sin empeorar el recorrido; pasar un techo sin diferencia antes/después no se declara mejora.
+
+## A/B mismo runner · 39029402120
+
+Referencia d13 y candidato075d se compilaron y midieron en el mismo job, orden AB/BA/AB, contextos separados. Mediana de arte listo genérico531→471ms, jefe722→484ms. P95 sostenido genérico33,3–33,4ms en ambos, también tras remontar; jefe16,8ms. Los intervalos de paint/commit de React P95 estuvieron entre0,6–1,4ms, sin aislar GPU ni composición. No es suficiente para cumplir20ms. Crudos en evidence/ab-1.
+
+Ensayo siguiente: mipmaps de imágenes minificadas, sin cambiar ilustraciones/resolución/encuadre. Pixi8.22 comprueba soporte NPOT antes de generar niveles. Coste potencial: preparación inicial y hasta aproximadamente un tercio adicional de texels; no equivale a memoria residente. Hipótesis de muestreo, no causa GPU demostrada. El constructor de referencia se ajusta a las mismas tres entradas Vite antes de comparar de nuevo.
