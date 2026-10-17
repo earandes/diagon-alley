@@ -57,7 +57,10 @@ test('A73 bounded startup and sustained reference: generic and boss, three seria
                 p.tasks.push({ start: entry.startTime, duration: entry.duration });
           }).observe({ type: 'longtask', buffered: true });
         const original = HTMLCanvasElement.prototype.getContext;
-        HTMLCanvasElement.prototype.getContext = function (this: HTMLCanvasElement, ...args: Parameters<typeof original>) {
+        HTMLCanvasElement.prototype.getContext = function (
+          this: HTMLCanvasElement,
+          ...args: Parameters<typeof original>
+        ) {
           const result = original.apply(this, args);
           if (String(args[0]).startsWith('webgl') && result) {
             const gl = result as unknown as WebGLRenderingContext;
@@ -76,7 +79,7 @@ test('A73 bounded startup and sustained reference: generic and boss, three seria
       const path =
         kind === 'generic'
           ? '/tests/browser-motion/motion-a69.html?player=3&rival=3'
-          : '/tests/browser-boss/boss-a70.html?challenge=mastery';
+          : '/tests/browser-boss/boss-a70.html?challenge=mastery&player=5';
       await page.goto(`http://127.0.0.1:5471${path}`);
       const scene = page.locator('.scene-canvas');
       await expect(scene).toHaveAttribute('data-art-ready', 'true');
