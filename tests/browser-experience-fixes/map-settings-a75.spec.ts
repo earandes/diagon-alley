@@ -116,6 +116,16 @@ for (const pack of ['diagon-alley', 'arcana'])
             };
           })(),
         }));
+        const evidence = resolve('docs/arcana/experience-fixes-2026-10-17/evidence/linux');
+        await mkdir(evidence, { recursive: true });
+        await writeFile(
+          resolve(evidence, `icon-fallback-${pack}-${language}.json`),
+          JSON.stringify(
+            { sha: process.env.GITHUB_SHA, pack, language, missions, map, debug },
+            null,
+            2,
+          ),
+        );
         await test.info().attach('icon-fallback-state', {
           body: JSON.stringify({ pack, language, missions, map, debug }, null, 2),
           contentType: 'application/json',
