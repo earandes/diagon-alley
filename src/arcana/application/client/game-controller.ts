@@ -68,10 +68,13 @@ export class GameController {
     if (this.busy || this.identityChange) return false;
     this.busy = true;
     try {
-      const playerId = this.snapshot.game?.playerId;
+      const playerId = this.snapshot.game?.playerId ?? this.snapshot.pending?.playerId;
       const pending =
-        this.snapshot.pending ?? (playerId ? await this.operations.read(playerId) : null);
-      if (pending && pending.playerId !== playerId)
+        this.snapshot.pending ??
+        (playerId
+          ? await this.operations.read(playerId)
+          : ((await this.operations.pendingForEntry?.()) ?? null));
+      if (pending && playerId && pending.playerId !== playerId)
         throw new ArcanaClientError('PLAYER_MISMATCH', 409);
       if (pending) {
         this.update({ pending, status: 'recovery-required', error: 'OPERATION_PENDING' });
@@ -122,7 +125,16 @@ export class GameController {
       return false;
     }
     const playerId = this.snapshot.game?.playerId;
-    if (!playerId) return true;
+    if (!playerId) {
+      try {
+        const pending = await this.operations.pendingForEntry?.();
+        if (!pending) return true;
+        this.update({ pending, status: 'recovery-required', error: 'OPERATION_PENDING' });
+      } catch (error) {
+        this.update({ status: 'error', error: code(error) });
+      }
+      return false;
+    }
     this.busy = true;
     try {
       const pending = await this.operations.read(playerId);
@@ -189,8 +201,17 @@ export class GameController {
       )
         this.update({ status: 'ready' });
     } catch (error) {
+      let failure = code(error);
+      if (!this.snapshot.game && !this.snapshot.pending) {
+        try {
+          const pending = await this.operations.pendingForEntry?.();
+          if (pending) this.update({ pending });
+        } catch (storage) {
+          failure = code(storage);
+        }
+      }
       this.update({
-        error: code(error),
+        error: failure,
         status: this.snapshot.pending ? 'recovery-required' : 'error',
       });
     } finally {

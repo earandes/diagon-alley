@@ -530,7 +530,7 @@ export function App() {
           <button
             className="portal-enter game-object"
             aria-label={accountText(language, 'guest')}
-            disabled={!online || state.status === 'loading' || entry.pending}
+            disabled={!online || !!state.pending || state.status === 'loading' || entry.pending}
             onClick={() => void entry.enter()}
           >
             <Artwork asset="ui.map" language={language} decorative />
@@ -538,6 +538,11 @@ export function App() {
               {entry.pending ? recoveryText(language, 'entering') : accountText(language, 'guest')}
             </span>
           </button>
+          {state.pending && (
+            <p role="alert" className="account-guest-hint">
+              {accountText(language, 'pending')}
+            </p>
+          )}
           <p className="account-guest-hint">{accountText(language, 'guestHint')}</p>
           {entry.error && (
             <p role="alert">
@@ -1064,7 +1069,10 @@ export function App() {
           language={language}
           initialMode={accountMode}
           session={accountSession}
-          playerId={game?.playerId}
+          playerId={game?.playerId ?? state.pending?.playerId}
+          ownerForRequest={() =>
+            controller.getSnapshot().game?.playerId ?? controller.getSnapshot().pending?.playerId
+          }
           pending={!!state.pending}
           connected={online}
           onClose={() => setAccountMode(null)}

@@ -56,6 +56,7 @@ export function AccountAccess({
   initialMode,
   session,
   playerId,
+  ownerForRequest,
   pending = false,
   connected,
   onClose,
@@ -68,6 +69,7 @@ export function AccountAccess({
   initialMode: AccountMode;
   session: AccountSession | null;
   playerId?: string;
+  ownerForRequest?: () => string | undefined;
   pending?: boolean;
   connected: boolean;
   onClose: () => void;
@@ -145,9 +147,10 @@ export function AccountAccess({
       throw new AccountRequestError('OPERATION_PENDING');
     let outcome: 'cancel' | 'authenticated' | 'signed-out' | 'uncertain' = 'cancel';
     try {
+      const expectedOwner = ownerForRequest?.() ?? playerId;
       const confirmation = await accountRequest<{ playerId?: string }>(path, {
         ...fields,
-        ...(playerId ? { expectedPlayerId: playerId } : {}),
+        ...(expectedOwner ? { expectedPlayerId: expectedOwner } : {}),
         allowPlayerChange: !samePlayerOnly,
       });
       if (path !== 'logout' && typeof confirmation.playerId !== 'string')
@@ -189,7 +192,9 @@ export function AccountAccess({
         try {
           await accountRequest('register', {
             email,
-            ...(playerId ? { expectedPlayerId: playerId } : {}),
+            ...((ownerForRequest?.() ?? playerId)
+              ? { expectedPlayerId: ownerForRequest?.() ?? playerId }
+              : {}),
             allowPlayerChange: false,
           });
         } finally {

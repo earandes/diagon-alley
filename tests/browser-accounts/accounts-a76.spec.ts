@@ -362,9 +362,14 @@ for (const pack of ['diagon-alley', 'arcana'] as const) {
           await route.abort('failed');
         });
         await page.locator('.shop-purchase-ticket').click();
-        await expect(page.locator('[data-recovery-notice]:visible').first()).toBeVisible();
+        await expect.poll(() => committed?.playerId).toBe(guestProgress.playerId);
+        await expect(page.locator('[data-recovery-notice]:visible').first()).toHaveAttribute(
+          'aria-busy',
+          'false',
+        );
         expect(committed).toBeDefined();
         await page.context().clearCookies();
+        await page.reload();
         await accountFromSettings(page);
         if (!(await dialog(page).locator('form[data-account-action="login"]').count()))
           await dialog(page).getByRole('button', { name: words.login, exact: true }).click();

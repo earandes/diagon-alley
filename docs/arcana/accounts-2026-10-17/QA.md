@@ -4,7 +4,8 @@
 
 - Baseline: ff23f580d9d3989abc9918d7b5bc8328d9e83b62 (A75).
 - Primer candidato:34b22def778f5de3619e62f992d2b745ed0d8f62, PR7 sobre A75. CI39068985629: A76 con3casos correctos,1fallido y56noejecutados/omitidos al detenerse; fallo de fixture `content.table.version`, no se acredita recorrido completo. Ejecución cancelada deliberadamente tras conservar el artefacto para no continuar baterías sobre candidato sustituido.
-- Segundo candidato: correcciones de contrato de fixture, nombres accesibles, timeout, respuestas inciertas y propietario exacto; pendiente SHA/CI.
+- Segundo candidato:a542ef951b51f37cd45f1295cfb4974e972f591d / CI39069503604. A76 volvió a detenerse con3casos correctos/1fallido/56restantes: fixture miraba la visibilidad del aviso Guardando como si ya hubiese ocurrido commit+pérdida de respuesta. Su aserción prematura provocó teardown y Response disposed secundario. Se corrige sincronización por resultado capturado y aria-busy=false, sin retraso fijo ni relajar la aceptación. Se conserva ese intento cancelado.
+- Tercer candidato: prueba adicional de recarga completa después de perder cookie con operación enIndexedDB, exige propietario de metadata antes de cualquier entrada; en preparación paraCI.
 
 ## Local sin navegador
 

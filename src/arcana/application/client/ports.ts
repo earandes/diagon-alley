@@ -58,6 +58,8 @@ export type PendingOperation = {
   };
 }[keyof ActionRequests];
 export interface ClientOperations {
+  /** Transport-only recovery owner when the browser has lost its session and in-memory game. */
+  pendingForEntry?(): Promise<PendingOperation | null>;
   read(playerId: string): Promise<PendingOperation | null>;
   claim(operation: PendingOperation): Promise<void>;
   finish(playerId: string, key: string, outcome: 'confirmed' | 'rejected'): Promise<void>;
