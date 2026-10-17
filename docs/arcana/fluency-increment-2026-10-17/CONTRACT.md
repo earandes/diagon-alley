@@ -35,3 +35,7 @@ Entrega técnica requiere mejora reproducible integrada y garantías conservadas
 ### Actualización del plan · ensayos A/B
 
 Mediciones seriales guardadas: ab-1, ab-2 y ab-3. Coalescer/geometría y decode paralelo reducen trabajo/arranque de forma consistente en parejas. El sostenido genérico permanece33,4ms en runners desfavorables y16,8ms en otro para ambas variantes; causa todavía no aislada. El goal sigue activo. Experimento actual: aislar mipmaps frente a a5, una variable. Preparado después: detener el ticker gráfico durante eventos visualmente estáticos manteniendo reloj/DOM/log y un snapshot al cambiar de evento; aceptación en pruebas y CI pendiente. No se integra un ensayo por haber pasado una muestra favorable.
+
+### Candidato de siluetas
+
+Geometría de atlas sobre fuentes intactas, sin nuevas ilustraciones. No es un recorte destructivo o reducción de calidad; conserva marco lógico/guardas. Contrato técnico y costes en ASSET-ADAPTATION. Ensayo78267f5 en Linux todavía pendiente. La aceptación incluye inspección de dos PNG seleccionados y regresiones antes de considerar integración. La fase de diagnóstico no sustituye la matriz completa.

@@ -11,6 +11,7 @@ declare global {
       metrics: SceneMetric[];
       tasks: { start: number; duration: number }[];
       gpu: string[];
+      shaderSamplers: number[];
       events: string[];
       phase: string;
       gl: Record<string, number>;
@@ -43,6 +44,7 @@ test('A73 bounded startup and sustained reference: generic and boss, three seria
             metrics: [],
             tasks: [],
             gpu: [],
+            shaderSamplers: [],
             events: [],
             phase: 'startup',
             gl: {},
@@ -84,13 +86,35 @@ test('A73 bounded startup and sustained reference: generic and boss, three seria
               'bufferSubData',
               'texImage2D',
               'texSubImage2D',
+              'compileShader',
+              'linkProgram',
+              'getProgramParameter',
+              'shaderSource',
+              'clear',
             ]) {
               const table = prototype as unknown as Record<string, (...args: unknown[]) => unknown>;
               if (!Object.hasOwn(table, method) || typeof table[method] !== 'function') continue;
               const originalCall = table[method];
               table[method] = function (...args: unknown[]) {
                 p.gl[method] = (p.gl[method] ?? 0) + 1;
-                return originalCall.apply(this, args);
+                if (method === 'shaderSource') {
+                  const match = String(args[1]).match(/uniform sampler2D uTextures\[(\d+)\]/);
+                  if (match && p.shaderSamplers.length < 20)
+                    p.shaderSamplers.push(Number(match[1]));
+                }
+                if (method === 'clear') {
+                  const key = `clear-mask-${args[0]}`;
+                  p.gl[key] = (p.gl[key] ?? 0) + 1;
+                }
+                const started = p.gl[method] <= 16 ? performance.now() : null;
+                const result = originalCall.apply(this, args);
+                if (started !== null && p.metrics.length < 6000)
+                  p.metrics.push({
+                    name: `native-${method}`,
+                    start: started,
+                    duration: performance.now() - started,
+                  });
+                return result;
               };
             }
           }

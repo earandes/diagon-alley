@@ -4,7 +4,7 @@ import { sceneNeedsContinuousFrames } from './scene-motion';
 import { sameSceneGeometry } from './scene-geometry';
 import { FrameInvalidation } from './frame-invalidation';
 import { sceneStart, sceneEnd } from './scene-diagnostics';
-import { Application, Graphics, Sprite, Texture } from 'pixi.js';
+import { Application, Graphics, Sprite, Texture, type WebGLRenderer } from 'pixi.js';
 import { visualAsset } from '../content-packs/art';
 import { activePack } from '../content-packs/active';
 const paletteColor = (key: keyof typeof activePack.palette) =>
@@ -102,6 +102,12 @@ export async function createPixiScene(host: HTMLElement, data: SceneData) {
     throw error;
   }
   sceneEnd('renderer-init', initStarted);
+  // This scene explicitly selects WebGL. Bound shader sampler branching rather
+  // than using the driver's entire capacity; Pixi splits batches, never actors.
+  const renderer = app.renderer as WebGLRenderer;
+  host.dataset.batchHardwareTextures = String(renderer.limits.maxBatchableTextures);
+  renderer.limits.maxBatchableTextures = Math.min(8, renderer.limits.maxBatchableTextures);
+  host.dataset.batchTextures = String(renderer.limits.maxBatchableTextures);
   app.canvas.setAttribute('aria-hidden', 'true');
   host.dataset.renderer = 'webgl';
   app.ticker.remove(app.render, app);
