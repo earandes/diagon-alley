@@ -39,6 +39,42 @@ export type SceneData =
       readonly reduced?: boolean;
     };
 export async function createPixiScene(host: HTMLElement, data: SceneData) {
+  // Decode only this scene's artwork, concurrently with renderer initialization.
+  // The promises are scene-owned; no global cache or work in the previous view.
+  const images = new Map<string, Promise<HTMLImageElement | null>>();
+  const prepareImage = (key: string, url: string) => {
+    let pending = images.get(key);
+    if (!pending) {
+      const image = new Image();
+      image.src = url;
+      const started = sceneStart();
+      pending = image.decode().then(
+        () => {
+          sceneEnd('figure-decode', started);
+          return image;
+        },
+        () => null,
+      );
+      images.set(key, pending);
+    }
+    return pending;
+  };
+  const propArt =
+    data.kind === 'arena' && data.boss
+      ? bossArt(selectedContentPackId(), data.boss.wizardId)
+      : null;
+  if (data.kind === 'arena') {
+    for (const unit of [...data.frame.player, ...data.frame.rival]) {
+      const key = data.appearances?.[unit.id] ?? `character.${unit.wizardId}.figure`;
+      const asset = visualAsset(key);
+      if (asset) void prepareImage(key, asset.url);
+    }
+    if (propArt?.actor) {
+      for (const url of [propArt.actor.baseUrl, propArt.actor.armUrl])
+        void prepareImage(`a71:${url}`, url);
+    } else
+      for (const layer of propArt?.layers ?? []) void prepareImage(`a70:${layer.url}`, layer.url);
+  }
   const initStarted = sceneStart();
   const app = new Application();
   try {
@@ -59,6 +95,7 @@ export async function createPixiScene(host: HTMLElement, data: SceneData) {
     } catch {
       /* Failed initialization may not have a renderer. */
     }
+    images.clear();
     throw error;
   }
   sceneEnd('renderer-init', initStarted);
@@ -79,10 +116,6 @@ export async function createPixiScene(host: HTMLElement, data: SceneData) {
   // Only the current boss sample loads these cropped pieces. No extra ticker/context.
   const bossPieces = new Map<string, Sprite[]>();
   const bossArms = new Map<string, Sprite>();
-  const propArt =
-    data.kind === 'arena' && data.boss
-      ? bossArt(selectedContentPackId(), data.boss.wizardId)
-      : null;
   let destroyed = false;
   app.stage.addChild(sparks);
   const positions = new Map<string, { x: number; y: number }>();
@@ -161,15 +194,10 @@ export async function createPixiScene(host: HTMLElement, data: SceneData) {
             const asset = visualAsset(assetKey);
             if (asset && !textures.has(assetKey) && !loading.has(assetKey)) {
               loading.add(assetKey);
-              const image = new Image();
-              image.src = asset.url;
-              const decodeStarted = sceneStart();
-              void image
-                .decode()
-                .then(() => {
-                  sceneEnd('figure-decode', decodeStarted);
-                  if (destroyed) return;
-                  textures.set(assetKey, Texture.from({ resource: image, autoGenerateMipmaps: true, mipmapFilter: 'linear' }));
+              void prepareImage(assetKey, asset.url)
+                .then((image) => {
+                  if (destroyed || !image) return;
+                  textures.set(assetKey, Texture.from(image));
                   host.dataset.textureCount = String(textures.size);
                   host.dataset.textureBytes = String(
                     [...textures.values()].reduce((n, t) => n + t.width * t.height * 4, 0),
@@ -222,13 +250,10 @@ export async function createPixiScene(host: HTMLElement, data: SceneData) {
                     const key = `a71:${url}`;
                     if (textures.has(key) || loading.has(key)) continue;
                     loading.add(key);
-                    const image = new Image();
-                    image.src = url;
-                    void image
-                      .decode()
-                      .then(() => {
-                        if (destroyed) return;
-                        textures.set(key, Texture.from({ resource: image, autoGenerateMipmaps: true, mipmapFilter: 'linear' }));
+                    void prepareImage(key, url)
+                      .then((image) => {
+                        if (destroyed || !image) return;
+                        textures.set(key, Texture.from(image));
                         host.dataset.textureCount = String(textures.size);
                         host.dataset.textureBytes = String(
                           [...textures.values()].reduce((n, t) => n + t.width * t.height * 4, 0),
@@ -269,13 +294,10 @@ export async function createPixiScene(host: HTMLElement, data: SceneData) {
                     const key = `a70:${layer.url}`;
                     if (textures.has(key) || loading.has(key)) continue;
                     loading.add(key);
-                    const image = new Image();
-                    image.src = layer.url;
-                    void image
-                      .decode()
-                      .then(() => {
-                        if (destroyed) return;
-                        textures.set(key, Texture.from({ resource: image, autoGenerateMipmaps: true, mipmapFilter: 'linear' }));
+                    void prepareImage(key, layer.url)
+                      .then((image) => {
+                        if (destroyed || !image) return;
+                        textures.set(key, Texture.from(image));
                         host.dataset.textureCount = String(textures.size);
                         host.dataset.textureBytes = String(
                           [...textures.values()].reduce((n, t) => n + t.width * t.height * 4, 0),
@@ -581,6 +603,7 @@ export async function createPixiScene(host: HTMLElement, data: SceneData) {
     update,
     destroy: () => {
       destroyed = true;
+      images.clear();
       redraw.cancelPending();
       observer.disconnect();
       document.removeEventListener('visibilitychange', visibility);

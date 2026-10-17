@@ -26,3 +26,17 @@ node docs/arcana/fluency-increment-2026-10-17/summarize.mjs RUTA/diagnostic-refe
 ```
 
 Estado: referencia enCI; resultados todavía pendientes. Las mediciones históricasA72 no se presentan como esta nuevaejecución.
+
+## Protocolo A/B posterior
+
+Desde075d58a el ensayo compara ambos builds dentro del mismo job/servidor5471: referencia fija d13 y candidato. Tres pares AB/BA/AB por tipo,12contextos y10s sostenidos por contexto; además10s tras remontar cada genérico. Instrumentación equivalente opcional de React y contadores GL, sin tiempos GPU. El build de referencia archiva código de d13, añade solo el mismo hook React y registra procedencia; b10 iguala también las tres entradas de compilación Vite. Los resultados anteriores con dos entradas se conservan y no se usan como prueba final del presupuesto de arranque.
+
+`tools/verification/a73-phase.json` distingue explícitamente diagnóstico acotado y matriz completa. Antes de integración debe estar en `full`; no cambia guard, bloqueo, worker, watchdog ni retries. Los runs cancelados tras extraer un ensayo no son CI global superada.
+
+Resumen A/B sin navegador:
+
+```
+node docs/arcana/fluency-increment-2026-10-17/ab-report.mjs RUTA/diagnostic-reference.json
+```
+
+Los crudos A/B se guardan con gzip sin pérdida para reducir peso de revisión. `ab-report.mjs` admite JSON o JSON.gz; conserva todos los registros, incluidos extremos/desfavorables.
