@@ -525,7 +525,11 @@ export async function createPixiScene(host: HTMLElement, data: SceneData) {
     sceneEnd('paint', paintStarted);
     host.dataset.renderCount = String(++renders);
   };
-  const redraw = new FrameInvalidation(requestAnimationFrame, cancelAnimationFrame, paint);
+  const redraw = new FrameInvalidation(
+    (draw) => requestAnimationFrame(draw),
+    (id) => cancelAnimationFrame(id),
+    paint,
+  );
   const requestPaint = () => {
     if (!destroyed && !document.hidden && !app.ticker.started) redraw.request();
   };

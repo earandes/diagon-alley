@@ -6,7 +6,7 @@
 > coleccion-magica-i1@0.1.0 validate:skin
 > node tools/arcana/validate-content-pack.mjs --complete
 
-(node:33419) ExperimentalWarning: stripTypeScriptTypes is an experimental feature and might change at any time
+(node:33859) ExperimentalWarning: stripTypeScriptTypes is an experimental feature and might change at any time
 (Use `node --trace-warnings ...` to show where the warning was created)
 Content pack diagon-alley: 348 bilingual UI messages, 30 characters, 166 assets, 3 narratives validated. Art completeness is a separate production/QA check.
 
@@ -331,22 +331,22 @@ dist/assets/diagon-alley-B2GNQH3M.webp              445.68 kB
 dist/assets/512-Bzadbpvu.png                        454.98 kB
 dist/arcana-512.png                                 454.98 kB
 dist/assets/index-BXx45J2_.css                      207.69 kB │ gzip:  39.89 kB
-dist/assets/WebGLRenderer-B4f1DBrg.js                 0.05 kB │ gzip:   0.07 kB
-dist/assets/CanvasRenderer-UIbif8Re.js                0.05 kB │ gzip:   0.07 kB
-dist/assets/WebGPURenderer-BLGXGWv_.js                0.05 kB │ gzip:   0.07 kB
-dist/assets/webworkerAll-bjc2TpzN.js                  0.06 kB │ gzip:   0.07 kB
-dist/assets/getTextureBatchBindGroup-jEWXdEcT.js      0.34 kB │ gzip:   0.26 kB
-dist/assets/canvasUtils-DH9SiMVM.js                   6.01 kB │ gzip:   2.03 kB
-dist/assets/getTexelRangeRects-CY0RjRto.js           11.31 kB │ gzip:   2.96 kB
-dist/assets/init-BdxI5-t2.js                         15.17 kB │ gzip:   4.75 kB
-dist/assets/browserAll-CNc-Bb2C.js                   43.48 kB │ gzip:  11.24 kB
+dist/assets/WebGLRenderer-C4wqMU00.js                 0.05 kB │ gzip:   0.07 kB
+dist/assets/CanvasRenderer-C7GSqtvn.js                0.05 kB │ gzip:   0.07 kB
+dist/assets/WebGPURenderer-zC1jkD7F.js                0.05 kB │ gzip:   0.07 kB
+dist/assets/webworkerAll-DEhkkSVh.js                  0.06 kB │ gzip:   0.07 kB
+dist/assets/getTextureBatchBindGroup-CSNzsXg8.js      0.34 kB │ gzip:   0.26 kB
+dist/assets/canvasUtils-JHS9c2xa.js                   6.01 kB │ gzip:   2.03 kB
+dist/assets/getTexelRangeRects-DJchNvgj.js           11.31 kB │ gzip:   2.96 kB
+dist/assets/init-BLvW-r4A.js                         15.17 kB │ gzip:   4.75 kB
+dist/assets/browserAll-C9wEcGTs.js                   43.48 kB │ gzip:  11.24 kB
 dist/assets/gsap-806FECi5.js                         69.59 kB │ gzip:  27.30 kB
-dist/assets/RenderTargetSystem-C1vMBm_S.js           78.08 kB │ gzip:  22.01 kB
-dist/assets/Geometry-CoOOqlKn.js                    112.31 kB │ gzip:  33.92 kB
-dist/assets/pixi-scenes-DZGied3A.js                 266.06 kB │ gzip:  82.31 kB
-dist/assets/index-BzzVmKTo.js                     1,010.87 kB │ gzip: 314.96 kB
+dist/assets/RenderTargetSystem-BVKeoiND.js           78.08 kB │ gzip:  22.01 kB
+dist/assets/Geometry-BJDq5hhL.js                    112.31 kB │ gzip:  33.92 kB
+dist/assets/pixi-scenes-g9q7_xDN.js                 266.07 kB │ gzip:  82.33 kB
+dist/assets/index-Cy7M9YHc.js                     1,010.87 kB │ gzip: 314.97 kB
 
-✓ built in 256ms
+✓ built in 245ms
 [plugin builtin:vite-reporter] 
 (!) Some chunks are larger than 500 kB after minification. Consider:
 - Using dynamic import() to code-split the application
