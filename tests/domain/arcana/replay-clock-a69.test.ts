@@ -41,6 +41,22 @@ describe('A69 presentation clock over a committed log', () => {
     c.tick(41000);
     expect(c.snapshot().progress).toBeCloseTo(300 / 650);
   });
+  it('settles the final visible boundary once before freezing the hidden frame', () => {
+    const c = new ReplayClock([100, 100, 100]);
+    c.play(0);
+    c.setSpeed(2, 0);
+    c.tick(45);
+    expect(c.snapshot()).toMatchObject({ cursor: 0, progress: 0.9 });
+    c.setVisible(false, 55);
+    const hidden = c.snapshot();
+    expect(hidden.cursor).toBe(1);
+    expect(hidden.progress).toBeCloseTo(0.1);
+    c.tick(30_000);
+    expect(c.snapshot()).toEqual(hidden);
+    c.setVisible(true, 30_000);
+    c.tick(30_010);
+    expect(c.snapshot().progress).toBeCloseTo(0.3);
+  });
   it('skips idempotently and cannot play beyond the stored log', () => {
     const c = new ReplayClock([650, 650]);
     c.play(0);

@@ -280,10 +280,17 @@ test('A69 replay clock: pause, 2x, inspector, hidden, skip and renderer failure 
     Object.defineProperty(document, 'hidden', { configurable: true, get: () => true });
     document.dispatchEvent(new Event('visibilitychange'));
   });
+  // setVisible accounts for the last visible interval before React publishes
+  // the stopped frame. Sample that committed frame, not the pre-hide DOM cursor.
+  await expect(panel).toHaveAttribute('data-replay-playing', 'false');
+  await expect(scene).toHaveAttribute('data-active-ticking', 'false');
+  await settled(page);
   const hiddenCursor = await panel.getAttribute('data-replay-cursor');
+  const hiddenProgress = await panel.getAttribute('data-replay-progress');
   const hiddenRenders = await scene.getAttribute('data-render-count');
   await page.waitForTimeout(300);
   expect(await panel.getAttribute('data-replay-cursor')).toBe(hiddenCursor);
+  expect(await panel.getAttribute('data-replay-progress')).toBe(hiddenProgress);
   expect(await scene.getAttribute('data-render-count')).toBe(hiddenRenders);
   await page.evaluate(() => {
     Object.defineProperty(document, 'hidden', { configurable: true, get: () => false });

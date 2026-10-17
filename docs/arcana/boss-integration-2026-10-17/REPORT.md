@@ -33,3 +33,11 @@ Validación Linux sobre main pendiente. Se consolidan los ancestros A70/A71 sin 
 Picos de arranque y muestra genéricaA69 P95rAF33,4ms frente objetivo20ms siguen abiertos; muestra específica jefe16,8ms no los sustituye. No nueva atribución causal o mediciónGPU. Revisión final no cambia recursos/runtime ni oculta esos resultados. Ver [rendimiento A71](../boss-stage-2026-10-17/PERFORMANCE.md).
 
 Humana, lector hablado y dispositivo físico pendientes. Sesión breve propuesta en A71: preparar y afrontar al jefe, después usar botín y decidir siguiente paso, sin explicar solución. Fixtures/viewport/toque/eventos de pérdidaWebGL no acreditan personas o hardware real. Sin despliegue/publicación.
+
+## Primera CI de main y corrección adicional de prueba
+
+Main de99ef3 contiene A70/A71; PR3/PR4 reconocidas comoMERGED. CI39016752481: tipos/contenido/554unitarios/78PGRedis/build/scanner correctos, A70+A71 98correctos/10omisiones y Halloween12correctos. A69 18correctos/1fallido/5omisiones: ocultación simulada leyó cursor3 antes de publicarse último frame4. [Error original](evidence/main-motion-failure.md). Se canceló el resto tras conservar evidencia, no se presenta comoCIaprobada.
+
+Código de reloj/React y prueba contrastados: setVisible liquida intervalo visible y publica React de forma diferida; el test tomaba inmediatamente un atributo anterior. Se espera ahora no-playing/no-ticking y dos frames de asentamiento existentes, después se exige cursor, progreso y paints constantes durante los300ms originales. No tolerancia a avances ocultos ni cambio de renderer. Caracterización pura del cruce al ocultar pasa7/7; no se afirma RED nuevo de producción. Tipos correctos, nuevaCI necesaria.
+
+Las seis imágenes y43JSON actuales de la faseA70/A71 correcta quedan en [galería main](GALLERY.md) con SHA/procedencia; el fallo posteriorA69 no invalida ni convierte en aprobación global esa fase. [Métricas actuales](PERFORMANCE.md).

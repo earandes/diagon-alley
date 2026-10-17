@@ -347,7 +347,7 @@ dist/assets/pixi-scenes-VkLEoXnd.js                 264.65 kB │ gzip:  81.80 k
 dist/assets/index-UDe06lEC.js                     1,010.66 kB │ gzip: 314.92 kB
 
 ✓ built in 272ms
-[plugin builtin:vite-reporter] 
+[plugin builtin:vite-reporter]
 (!) Some chunks are larger than 500 kB after minification. Consider:
 - Using dynamic import() to code-split the application
 - Use build.rolldownOptions.output.codeSplitting to improve chunking: https://rolldown.rs/reference/OutputOptions.codeSplitting

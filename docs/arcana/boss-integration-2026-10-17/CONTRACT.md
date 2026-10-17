@@ -22,11 +22,21 @@ No nuevo estado persistido. Recuperación/reload/fallback/skip siguen contratos 
 
 1. Completado: fuentes, PR/SHA/evidencia, revisión visual/código y falloCI.
 2. Completado: reproducción determinista y corrección mínima si procede; tipos/build/unitarios/PGRedis.
-3. Pendiente: candidato único de integración sobre main que contenga A70/A71; CI Linux serial con guard/lock/watchdog originales, sin reintentos. Reutilizar evidencia anterior con objetos equivalentes y registrar los resultados nuevos.
-4. Pendiente: integrar sin force-push, verificar main remoto/ancestría/CI y documentación final.
+3. En curso: candidato único de integración sobre main que contenga A70/A71; CI Linux serial con guard/lock/watchdog originales, sin reintentos. Reutilizar evidencia anterior con objetos equivalentes y registrar los resultados nuevos.
+4. En curso: integrar sin force-push, verificar main remoto/ancestría/CI y documentación final.
 
 CI puede usar consolidación equivalente para no integrar un candidato intermedio con un fallo conocido ni duplicar matrices. Las garantías gráficas extensas se ejecutan solo en Linux. No navegador en el Mac. Humana/lector hablado/dispositivo físico pendientes; límites de rendimiento genérico/arranque conservados explícitos.
 
 ## Avance previo a integración
 
 Seed17 reproduce422INVALID_OPERATION en encuentro; seed0 directa. Test corregido con pase explícito, sin cambio de servidor; RED/GREEN archivados.554unitarios/78PGRedis/build/tipos/scanner locales correctos. Estrategia: consolidación por avance directo de A70/A71 a main, con runtime idéntico al mergeffb9094 ya validado y única modificación nueva de test comprobada. Una CI de main serial comprobará el resultado integrado, sin ejecutar una matriz gráfica duplicada previa sobre el mismo runtime.
+
+## Integración y CI en curso
+
+Avance directo remoto main f5d3a89→de99ef3 confirmado, sin force-push o conflictos. GitHub reconoce PR3/PR4 comoMERGED, PR4retargetmain. CI39016752481 de main en curso; tipos/contenido/554unitarios/78PGRedis/build/scanner y batería conjuntaA70/A71 correctos. Halloween correcto. Resto de regresiones pendiente; goal activo. Seis PNG actuales descargados e inspeccionados, evidencia histórica intacta.
+
+## Finding de sincronización A69 antes de corregir
+
+CI39016752481: A70/A71 98correctos y Halloween12correctos; A69 18correctos/1fallido/5omisiones. Se cancela el resto de esta ejecución propia tras conservar artifact, sin contar suite incompleta como aprobada. Error en condición de ocultación simulada: cursor DOM3→4. El reloj liquida tiempo visible en setVisible y publica estado React; el test lee el atributo inmediatamente sin esperar ese commit ni la última actualización del renderer. Esto es compatible con carrera del test, no prueba de que avance oculto.
+
+Cambio mínimo previsto: esperar estado no-playing/no-ticking y asentamiento DOM como ya hace la prueba de pausa; después muestrear cursor/progreso/paints y exigir inmovilidad durante300ms. Mantener asserts y añadir progreso oculto; sin temporizador de tolerancia añadido ni cambio de reloj/renderer. Caracterizar también cruce de frontera al ocultar en prueba pura. CI nueva necesaria por este cambio de prueba; no reintento automático del candidato fallido.
