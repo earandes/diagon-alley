@@ -1,3 +1,4 @@
+import { sceneTexture } from './scene-texture';
 import { sceneNeedsContinuousFrames } from './scene-motion';
 import { sameSceneGeometry } from './scene-geometry';
 import { FrameInvalidation } from './frame-invalidation';
@@ -89,9 +90,6 @@ export async function createPixiScene(host: HTMLElement, data: SceneData) {
       backgroundAlpha: 0,
       autoStart: false,
       preference: ['webgl'],
-      // This decorative canvas has no Pixi interaction/text/filter consumers.
-      // Graphics, textures, masks and app ticker self-register; semantic controls live in DOM.
-      skipExtensionImports: true,
     });
   } catch (error) {
     try {
@@ -201,7 +199,7 @@ export async function createPixiScene(host: HTMLElement, data: SceneData) {
               void prepareImage(assetKey, asset.url)
                 .then((image) => {
                   if (destroyed || !image) return;
-                  textures.set(assetKey, Texture.from(image));
+                  textures.set(assetKey, sceneTexture(image, asset.url));
                   host.dataset.textureCount = String(textures.size);
                   host.dataset.textureBytes = String(
                     [...textures.values()].reduce((n, t) => n + t.width * t.height * 4, 0),
@@ -257,7 +255,7 @@ export async function createPixiScene(host: HTMLElement, data: SceneData) {
                     void prepareImage(key, url)
                       .then((image) => {
                         if (destroyed || !image) return;
-                        textures.set(key, Texture.from(image));
+                        textures.set(key, sceneTexture(image, url));
                         host.dataset.textureCount = String(textures.size);
                         host.dataset.textureBytes = String(
                           [...textures.values()].reduce((n, t) => n + t.width * t.height * 4, 0),
@@ -301,7 +299,7 @@ export async function createPixiScene(host: HTMLElement, data: SceneData) {
                     void prepareImage(key, layer.url)
                       .then((image) => {
                         if (destroyed || !image) return;
-                        textures.set(key, Texture.from(image));
+                        textures.set(key, sceneTexture(image, layer.url));
                         host.dataset.textureCount = String(textures.size);
                         host.dataset.textureBytes = String(
                           [...textures.values()].reduce((n, t) => n + t.width * t.height * 4, 0),

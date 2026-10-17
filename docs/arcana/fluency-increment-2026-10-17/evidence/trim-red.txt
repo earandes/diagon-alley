@@ -1,0 +1,39 @@
+
+ RUN  v5.0.3 /Users/enricarandes/work/diagon-alley
+
+ ❯ tests/domain/arcana/scene-texture-a73.test.ts (3 tests | 2 failed) 6ms
+   × keeps logical framing/pivots while removing only certified transparent margins from UV geometry 2ms
+   × falls back to the full frame when artwork dimensions or metadata are incompatible 0ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/domain/arcana/scene-texture-a73.test.ts > keeps logical framing/pivots while removing only certified transparent margins from UV geometry
+TypeError: applySceneAlphaFrame is not a function
+ ❯ tests/domain/arcana/scene-texture-a73.test.ts:9:2
+      7| it('keeps logical framing/pivots while removing only certified transpa…
+      8|  const texture=new Texture({source:new TextureSource({width:342,height…
+      9|  applySceneAlphaFrame(texture,{width:342,height:428,frame:[11,20,321,4…
+       |  ^
+     10|  expect([texture.width,texture.height]).toEqual([342,428]);
+     11|  expect([texture.orig.x,texture.orig.y]).toEqual([0,0]);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  tests/domain/arcana/scene-texture-a73.test.ts > falls back to the full frame when artwork dimensions or metadata are incompatible
+TypeError: applySceneAlphaFrame is not a function
+ ❯ tests/domain/arcana/scene-texture-a73.test.ts:20:3
+     18|  const texture=new Texture({source:new TextureSource({width:100,height…
+     19|  for(const frame of [undefined,{width:342,height:428,frame:[11,20,321,…
+     20|   applySceneAlphaFrame(texture,frame);
+       |   ^
+     21|   expect(texture.trim).toBeUndefined();expect(texture.frame.width).toB…
+     22|  }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  2 failed | 1 passed (3)
+   Start at  14:28:53
+   Duration  563ms (transform 52%, import 47%, tests 1%)
+
