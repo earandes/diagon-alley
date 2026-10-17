@@ -91,13 +91,24 @@ for (const pack of ['diagon-alley', 'arcana'])
       await toggle.click();
       await expect(toggle.locator('img')).toHaveAttribute('data-art', 'ui.map');
       const map = await toggle.locator('img').getAttribute('src');
-      for (const source of [missions, map]) {
-        expect(source).toBeTruthy();
-        await page.route(new URL(source!, page.url()).href, (route) => route.abort());
-      }
+      expect(missions).toBeTruthy();
+      expect(map).toBeTruthy();
+      // These assets may be inlined data: SVGs; HTTP interception cannot fail them.
+      // Replace only this control's image with a real 404 and let Artwork's native
+      // error handler run. No synthetic success or forced fallback visibility.
+      await page.route('**/a75-missing-icon.svg', (route) =>
+        route.fulfill({ status: 404, body: '' }),
+      );
+      const failIcon = async () => {
+        await expect(toggle.locator('img')).toBeVisible();
+        await toggle.locator('img').evaluate((image) => {
+          image.setAttribute('src', '/a75-missing-icon.svg');
+        });
+      };
       const before = await read(page);
       await page.reload();
       await expect(toggle).toBeVisible();
+      await failIcon();
       try {
         await expect(toggle.locator('img')).toHaveCount(0);
       } finally {
@@ -136,6 +147,7 @@ for (const pack of ['diagon-alley', 'arcana'])
       await toggle.focus();
       await page.keyboard.press('Enter');
       await expect(page.locator('.route-list')).toBeVisible();
+      await failIcon();
       await expect(toggle.locator('img')).toHaveCount(0);
       await expect(toggle.locator('.map-view-fallback')).toBeVisible();
       await expect(toggle).toHaveText(language === 'es' ? 'Ver mapa' : 'View map');
