@@ -171,6 +171,7 @@ for (const language of ['es', 'en'] as const)
         await page.goto('/');
         if (language === 'en') await changeLanguage(page, language);
         await page.locator('.portal-enter').click();
+        await expect(page.locator('[data-expedition-preparation="new"]')).toBeVisible();
         const before = await read(page);
         let dialog = await settings(page);
         const choice = () => dialog.locator('.settings-motion');

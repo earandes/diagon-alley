@@ -42,3 +42,9 @@ Texto ampliado, reflujo320 y falta de arte/renderer mantienen límites diferenci
 - Diffcheck de código correcto. Salida CLI raw comprimida sin cambiar bytes para conservar evidencia y evitar tratar espacios finales del logger como código.
 
 No se ejecutó ningún navegador local, servicios de cuenta, capturas, vídeo o perfil en este Mac. Las pruebas dirigidas de agentes fueron unitarias, con susRED/GREEN detallados en los informes respectivos. No se suman repeticiones a un total de cobertura.
+
+## Diagnóstico previo al candidato siguiente
+
+CI39058010501/head6b9878f supera11casos antes de detenerse en Ajustes: el test consultaba estado inmediatamente tras clic de entrada y obtenía una respuesta sin `state` antes de la cookie. Ahora espera preparación cargada. No se modifica producto ni se interpreta como pérdida de partida. Fuente de error en attempt-7.
+
+Contraste estático adicional de recuperación/consumibles: aviso visible también durante `sending`, por lo que la lectura del commit espera ahora el botón de recuperación habilitado. El starter-kit sí tiene receipt y se verifica entrega única de ese tipo, no una lista vacía ficticia. La ruta de QA puede cruzar tres Pactos/cofres: el test identifica el tarro recién comprado, cuenta stock real y exige consumir exactamente esa unidad una vez; no presupone dos temporales exactos ni que el botín no existe. No cambios de semilla, ruta de campaña, permisos, reglas o cuotas para hacer pasar el test. Cuentas reales siguen siendo≤30 por autoridad; casos0/3 de stock son fixtures sin sesiones.

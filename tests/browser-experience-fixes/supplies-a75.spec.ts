@@ -45,6 +45,12 @@ for (const language of ['es', 'en'] as const) {
         .toBe(1);
       const purchased = await readGame(page);
       expect(purchased.inventory.crowns).toBe(initial.inventory.crowns - 5);
+      const purchasedJar = purchased.inventory.products.find(
+        (product) =>
+          product.kind === 'random-beans' &&
+          !initial.inventory.products.some((prior) => prior.id === product.id),
+      )!;
+      expect(purchasedJar).toBeTruthy();
       expect(flavourCollection(purchased).every((entry) => !entry.discovered)).toBe(true);
       await page
         .locator('nav button')
@@ -54,22 +60,25 @@ for (const language of ['es', 'en'] as const) {
       const duelId = await reachNode(page, 'duel', language);
       const before = await readGame(page);
       expect(
-        before.exploration!.run!.members.filter((member) => member.source === 'temporary'),
-      ).toHaveLength(2);
-      const jar = before.inventory.products.find(
-        (p) => p.kind === 'random-beans' && p.status === 'available',
-      )!;
+        before.exploration!.run!.members.filter((member) => member.source === 'temporary').length,
+      ).toBeGreaterThanOrEqual(2);
+      const stock = before.inventory.products.filter(
+        (product) => product.kind === 'random-beans' && product.status === 'available',
+      ).length;
+      const jar = before.inventory.products.find((product) => product.id === purchasedJar.id)!;
+      expect(jar.status).toBe('available');
       const carrier = before.exploration!.run!.members[0].unit.id;
       const alternate = before.exploration!.run!.members[1].unit.id;
       await page.locator(`[data-node="${duelId}"]`).click();
       const summary = page.locator('.node-event-dialog .boss-supplies > summary');
-      await expect(summary).toHaveAttribute('data-bean-stock', '1');
+      await expect(summary).toHaveAttribute('data-bean-stock', String(stock));
       await expect(summary).toHaveAttribute('data-bean-draft', '0');
       await expect(summary).not.toContainText('/');
       await summary.click();
+      await page.locator(`[data-bean-id="${jar.id}"]`).click();
       await page.locator(`[data-bean-unit="${carrier}"]`).click();
       await expect(summary).toHaveAttribute('data-bean-draft', '1');
-      await expect(summary).toHaveAttribute('data-bean-stock', '1');
+      await expect(summary).toHaveAttribute('data-bean-stock', String(stock));
       await page.locator(`[data-bean-unit="${alternate}"]`).click();
       await expect(page.locator(`[data-bean-unit="${carrier}"]`)).toHaveAttribute(
         'aria-pressed',
@@ -93,7 +102,7 @@ for (const language of ['es', 'en'] as const) {
       expect(await readGame(page)).toEqual(before);
       await page.locator(`[data-node="${duelId}"]`).click();
       await expect(summary).toHaveAttribute('data-bean-draft', '0');
-      await expect(summary).toHaveAttribute('data-bean-stock', '1');
+      await expect(summary).toHaveAttribute('data-bean-stock', String(stock));
       await summary.click();
       await page.locator(`[data-bean-id="${jar.id}"]`).click();
       await page.locator(`[data-bean-unit="${carrier}"]`).click();
@@ -110,6 +119,12 @@ for (const language of ['es', 'en'] as const) {
         });
         await page.locator('.node-confirm-action').click();
         await expect(page.locator('.node-event-dialog [data-recovery-notice]')).toBeVisible();
+        await expect(
+          page.locator('.node-event-dialog').getByRole('button', {
+            name: 'Recuperar operación',
+            exact: true,
+          }),
+        ).toBeEnabled();
         const committed = await readGame(page);
         expect(committed.inventory.products.find((p) => p.id === jar.id)?.status).toBe('consumed');
         await page
@@ -132,6 +147,11 @@ for (const language of ['es', 'en'] as const) {
         status: 'consumed',
         operationId: receipt.id,
       });
+      expect(
+        after.inventory.products.filter(
+          (product) => product.kind === 'random-beans' && product.status === 'available',
+        ),
+      ).toHaveLength(stock - 1);
       expect(after.inventory.essence.points).toBe(before.inventory.essence.points - 5);
       expect(after.receipts.filter((candidate) => candidate.id === receipt.id)).toHaveLength(1);
       const activations = receipt.battle.events.filter(

@@ -58,7 +58,7 @@ for (const language of ['es', 'en'] as const) {
     await expect(page.locator('[data-preparation-inspect]').first()).toBeVisible();
     const game = await read(page);
     expect(game.playerId).toMatch(/^trial-/);
-    expect(game.receipts).toHaveLength(0);
+    expect(game.receipts.map((receipt) => receipt.kind)).toEqual(['starter-kit']);
     expect(posts).toBe(1);
   });
 
@@ -144,14 +144,14 @@ for (const language of ['es', 'en'] as const) {
     await inspector.locator('.preparation-gear-tray button:enabled').first().click();
     const notice = inspector.locator('[data-recovery-notice]');
     await expect(notice).toBeVisible();
-    const confirmed = await read(page);
-    expect(confirmed.receipts.at(-1)?.id).toBe(committedKey);
     await expect(
       notice.getByRole('button', {
         name: language === 'es' ? 'Recuperar operación' : 'Recover operation',
         exact: true,
       }),
     ).toBeEnabled();
+    const confirmed = await read(page);
+    expect(confirmed.receipts.at(-1)?.id).toBe(committedKey);
     const recovery = page.waitForRequest((request) =>
       request.url().endsWith('/api/operations/' + committedKey),
     );
