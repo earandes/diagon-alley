@@ -159,3 +159,11 @@ Runtime83 frente a referenciad13, entradas iguales. P95 sostenido16,7–16,8 en 
 La prioridad de bloqueos mejora de forma reproducible, pero el objetivo de arranque queda activo. Se contrasta la alternativa pública previamente revisada: ink.context.batchMode y sparks.context.batchMode pasan a batch. Son paths acotados de fills/strokes; no cambia tessellación, formas, orden o máscaras. El batch usará el límite8 ya aplicado en lugar del shaderGraphics32, si la librería lo admite en ejecución. Se medirá GLSL real y buffers, no se promete eliminación de toda creación durante init.
 
 Ensayo14 contra83, única variable de renderer. Riesgo/coste: mayor empaquetado de vértices y updates de buffer al reconstruir sparks. Mapa estático también usa el mismo ink: la matriz debe comprobar su entrada, nodos y retornos. No se toca ningún sistema privado, extensión global, shader manual o dependencia. Se retira si no demuestra beneficio suficiente o si hay regresión visual/funcional.
+
+## Decimocuarto A/B ·39036894838 ·formas en batch
+
+Baseline83 frente aca9cc86, única variable batchMode público en ink/sparks. GLSL realmente compilado32/8→8. Genérico367–427→330–365ms yjefe383–397→338–355ms: todas las parejas mejoran. Máximosgenérico67–100→33–50ms yjefe≈67→≈33ms. Sostenidos16,7–16,8ms en ambas variantes, incluidos remontajes; no se proclama una nueva ganancia sostenida porque ambos ya son rápidos. Los envíos/buffers y métricas wall se conservan enraw.
+
+Se adopta la composición en batch para estas formas acotadas; no se reescriben shaders ni cambian sus paths/colores/orden. GraphicsAdaptor puede crear su programa32 en memoria durante init, pero ese programa no se observó compilado/usado porGL en estas muestras. No es una declaración global sobre todos los posibles Graphics futuros.
+
+Último contraste de aceptación: runtimeca9 contra d13, protocolo actual y tres parejas; matriz posterior enfull. La revisión de cobertura además detectó tres combinaciones no acreditadas por los casos existentes: preferencia reducida durante replay, resize pausado y ocultación durante decode pendiente. Se añade un caso Linux/Chromium acotado, fixture5×5 con gate de decode y visibilidad sintética, sin operaciones económicas: muestra cola terminando, actores/PV visibles en390/865, cursor pausado y log/resultado conservados. Su mera escritura no se cuenta como ejecución.

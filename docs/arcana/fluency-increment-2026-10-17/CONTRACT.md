@@ -60,3 +60,7 @@ La configuración final vuelve a `full` y separa explícitamente A/B mediante AR
 ### Plan vigente tras ensayo12
 
 Candidato83d4e48 cumple en este runner los presupuestos; añade un presupuesto de dos admisiones de fuentes por paint, no un límiteGPU. Coste de34–96msfrente al envío simultáneo medido y aceptado como compromiso de ensayo para evitar picos167–183ms. Los actoresDOM permanecen visibles y ninguna operación espera texturas. Último contraste contra referencia iniciald13 todavía pendiente; después restaurarphasefull, ejecutar matriz/regresiones, revisar e integrar. Goal activo.
+
+### Candidato de aceptación
+
+ca9cc86 supera el contraste aislado de Graphics: todas las parejas mejoran arranque y picos, samplers usados8 ypresupuestos mantenidos. Siguiente fase compara el conjunto contra d13; añade un caso de ciclo de vida para huecos concretos de reducido/resize/carga oculta. No más modificaciones de renderer si esa aceptación y matriz pasan. Goal/main siguen pendientes.

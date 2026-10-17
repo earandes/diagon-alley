@@ -20,11 +20,11 @@ if (process.env.ARCANA_CAPTURE_A70 === '1') {
 export default defineSafeConfig({
   testDir: './tests',
   testMatch: a73DiagnosticOnly
-    ? [/browser-fluency\/fluency-a73\.spec\.ts$/]
+    ? [/browser-fluency\/(fluency|recovery)-a73\.spec\.ts$/]
     : [
         /browser-boss\/boss-a70\.spec\.ts$/,
         /browser-boss-style\/boss-style-a71\.spec\.ts$/,
-        /browser-fluency\/expedition-a73\.spec\.ts$/,
+        /browser-fluency\/(expedition|recovery)-a73\.spec\.ts$/,
       ],
   outputDir: 'test-results/boss-a70',
   timeout: 180000,
