@@ -151,3 +151,11 @@ Se elige el presupuesto2 como compromiso de ensayo porque el envío simultáneo 
 Última comparación prevista: mantener runtime83d4e48 y volver a referencia iniciald13, mismas entradas/instrumentación actual, tres parejas. Es necesaria para comprobar el coste total final frente al comienzo, no un reintento automático para borrar resultados desfavorables. Luego matriz funcional completa y regresiones, sin más cambios por ajustes cosméticos.
 
 Alternativa revisada sin ejecutar: forzar batchMode público de Graphics podría evitar usar su shader32; también aumentaría empaquetado/buffers de geometría por frame. No se adopta al cumplir la muestra actual y no haber comparación que justifique ese coste. No se modifica un sistema privado ni se recompilan shaders manualmente.
+
+## Decimotercer A/B ·39036393375 ·comparación contra el inicio
+
+Runtime83 frente a referenciad13, entradas iguales. P95 sostenido16,7–16,8 en ambos en este runner favorable, también remontajes. MáximorAFgenérico117–150→83,3ms yjefe150–183→83,3ms, tres parejas mejoran. Arte listo genérico405–484→412–426ms: dos parejas empeoran; objetivo400ms incumplido. Jefe508–548→530–544ms: una pareja empeora. Se conservan todos los valores; no se anuncia una mejora general de latencia por reducir el pico.
+
+La prioridad de bloqueos mejora de forma reproducible, pero el objetivo de arranque queda activo. Se contrasta la alternativa pública previamente revisada: ink.context.batchMode y sparks.context.batchMode pasan a batch. Son paths acotados de fills/strokes; no cambia tessellación, formas, orden o máscaras. El batch usará el límite8 ya aplicado en lugar del shaderGraphics32, si la librería lo admite en ejecución. Se medirá GLSL real y buffers, no se promete eliminación de toda creación durante init.
+
+Ensayo14 contra83, única variable de renderer. Riesgo/coste: mayor empaquetado de vértices y updates de buffer al reconstruir sparks. Mapa estático también usa el mismo ink: la matriz debe comprobar su entrada, nodos y retornos. No se toca ningún sistema privado, extensión global, shader manual o dependencia. Se retira si no demuestra beneficio suficiente o si hay regresión visual/funcional.

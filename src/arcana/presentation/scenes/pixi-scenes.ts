@@ -121,6 +121,10 @@ export async function createPixiScene(host: HTMLElement, data: SceneData) {
   host.appendChild(app.canvas);
   const ink = new Graphics(),
     sparks = new Graphics();
+  // These bounded paths use only solid fills/strokes. Keep them in the same
+  // capped batch as figures, rather than switching to the hardware-wide shader.
+  ink.context.batchMode = 'batch';
+  sparks.context.batchMode = 'batch';
   app.stage.addChild(ink);
   const textures = new Map<string, Texture>(),
     figures = new Map<string, Sprite>(),
