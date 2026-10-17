@@ -87,6 +87,20 @@ export function EncounterPreparation({
             <p>{t('maximum')}</p>
             <p>{t('exactCost')}</p>
             <p>{t('keepsReserves')}</p>
+            <div className="encounter-provenance-key">
+              {(['owned', 'temporary'] as const).map((source) => (
+                <p key={source}>
+                  <Artwork
+                    asset={source === 'owned' ? 'ui.owned' : 'ui.temporary'}
+                    language={language}
+                    decorative
+                  />
+                  <strong>{t(source === 'owned' ? 'ownedShort' : 'temporaryShort')}</strong>
+                  {' · '}
+                  {contextualText(language, source)}
+                </p>
+              ))}
+            </div>
           </details>
         </div>
       </div>
@@ -193,7 +207,6 @@ export function EncounterPreparation({
               language,
               member.source === 'owned' ? 'owned' : 'temporary',
             );
-            const identity = t('memberIdentity', { position: index + 1, source });
             const selectedUnit = member.unit.id === options.encounterUnitId;
             return (
               <button
@@ -220,6 +233,15 @@ export function EncounterPreparation({
                     eager
                     decorative
                   />
+                  <span className="encounter-target-position" aria-hidden="true">
+                    {index + 1}
+                  </span>
+                  <Artwork
+                    asset={member.source === 'owned' ? 'ui.owned' : 'ui.temporary'}
+                    className="encounter-target-provenance"
+                    language={language}
+                    decorative
+                  />
                   {selectedUnit && (
                     <Artwork
                       asset="ui.seal"
@@ -231,13 +253,8 @@ export function EncounterPreparation({
                   )}
                 </span>
                 <span>{name}</span>
-                <span className="encounter-target-origin">
-                  <Artwork
-                    asset={member.source === 'owned' ? 'ui.owned' : 'ui.temporary'}
-                    language={language}
-                    decorative
-                  />
-                  {identity}
+                <span className="encounter-target-origin" aria-hidden="true">
+                  {t(member.source === 'owned' ? 'ownedShort' : 'temporaryShort')}
                 </span>
                 <small id={`${targetDescription}-${index}`}>
                   {numbers.format(member.unit.hp)} {t('health')}
@@ -279,7 +296,12 @@ export function EncounterPreparation({
                 aria-label={instanceName}
               >
                 <strong className="encounter-preview-identity">
-                  {t('memberIdentity', { position, source })}
+                  <span aria-hidden="true">
+                    {position} · {t(member.source === 'owned' ? 'ownedShort' : 'temporaryShort')}
+                  </span>
+                  <span className="visually-hidden">
+                    {t('memberIdentity', { position, source })}
+                  </span>
                 </strong>
                 <Artwork
                   asset={`character.${member.unit.wizardId}.thumbnail`}

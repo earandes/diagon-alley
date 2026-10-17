@@ -94,18 +94,18 @@ for (const language of ['es', 'en'] as const) {
       await page.unroute('**/api/purchases');
       await page
         .getByRole('button', {
-          name: language === 'es' ? 'Actualizar estado' : 'Refresh state',
+          name: language === 'es' ? 'Volver a consultar' : 'Check again',
           exact: true,
         })
         .click();
-      // Refresh remounts the product display; choose the beans again without spending.
-      await page
-        .getByRole('button', {
-          name: language === 'es' ? 'Grageas del Azar' : 'Chance Beans',
-          exact: true,
-        })
-        .click();
+      // Reconsulting preserves the selected product and clears the rejection without spending.
+      await expect(page.locator('[data-recovery-notice]')).toHaveCount(0);
+      await expect(page.locator('[data-product="random-beans"]')).toHaveAttribute(
+        'aria-pressed',
+        'true',
+      );
       await expect(purchase).toBeEnabled();
+      expect(await state()).toEqual(before);
       await purchase.click();
       await expect(page.locator('.operation-feedback')).toBeVisible();
       const afterPurchase = await state();

@@ -1,6 +1,6 @@
 # A75 · Matriz de aceptación
 
-Estado: A75 correcta en CI 39059090478/head 889886d, merge de ensayo8d38776 (árbol idéntico7a6e66a).113 casos pasados,175 omisiones intencionadas por proyecto,0 fallos/0 reintentos. Regresiones históricas de la misma ejecución todavía en curso; no se declara aquí CI global verde.
+Estado: A75 correcta en CI 39059090478/head 889886d, merge de ensayo8d38776 (árbol idéntico7a6e66a).113 casos pasados,175 omisiones intencionadas por proyecto,0 fallos/0 reintentos. La ejecución se canceló después de12 fallos E2E por selectores antiguos y fallos geométricos reales del Encuentro enA67. No CI global verde. Log/contextos preservados en evidence/full-regression-failure.
 
 | Finding | Comportamiento / prueba pertinente | Fuente de evidencia nueva | Estado comprobado en A75 |
 |---|---|---|---|
@@ -62,3 +62,7 @@ CI 39058565615/head 435a80f supera44 casos A75 antes del primer recorrido de com
 - Acciones de ruta consultadas emiten0 POST y conservan estado real. Preferencias sistema/propia4 combinaciones×ES/EN, recarga/swap y cambio durante replay mantienen estado/log.
 - Concurrencia económica real y respuesta perdida en integración; preflight de intención de otra pestaña y mismatch en controlador. No exclusión distribuida de dos nuevas entradas vírgenes ni autenticación recuperable entre dispositivos.
 - Teclado/foco/toque emulado y reduced comprobados en los casos declarados; lector hablado, dispositivo físico, segundo plano físico y percepción humana pendientes. No certificación WCAG global.
+
+## Correcciones de regresiones antes de reanudar
+
+E2E44passed/12failed: `game-feel`/`hud-results` buscaban antiguo Actualizar estado/Refresh state. Se actualizan al contrato Volver a consultar/Check again y se afirma recuperación sin gasto conservando producto o diálogo, en vez de forzar cierre/reapertura. A67 detectó crecimiento real de selección/preview F05: se compacta posición/origen mediante retrato, badge y etiqueta breve, manteniendo fuente completa accesible/ayuda, todas las cifras y el mismo selector unitId. No se relaja ninguna aserción de ajuste ordinario. Resultado de Linux tras corrección todavía pendiente.

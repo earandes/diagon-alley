@@ -199,12 +199,14 @@ describe('A75 effective preparation and collection navigation', () => {
         }),
       );
       expect(html).toContain(
-        language === 'es' ? 'Puesto 1 · Copia propia' : 'Position 1 · Owned copy',
+        language === 'es' ? 'puesto 1, Copia propia' : 'position 1, Owned copy',
       );
       expect(html).toContain(
         language === 'es' ? 'Puesto 2 · Solo esta expedición' : 'Position 2 · This expedition only',
       );
       expect(html).toContain('data-encounter-preview-unit="pact-copy"');
+      expect(html).toContain(language === 'es' ? '>Propio</span>' : '>Owned</span>');
+      expect(html).toContain(language === 'es' ? '>Temporal</span>' : '>Temporary</span>');
     });
   }
 });

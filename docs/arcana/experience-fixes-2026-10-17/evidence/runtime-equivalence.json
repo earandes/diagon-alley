@@ -1,0 +1,18 @@
+{
+  "fullCandidate": "889886d541dd9418d7d3179f304bcd240b6aa9d0",
+  "focusedCandidate": "0a92b7d389f7f719733c166200a97ab2a1ad9e03",
+  "sameTrackedManifestExceptDocumentationAndFourVerificationPaths": true,
+  "manifestSha256": "2b2632bdd23b6a3488b63f63e8c1dce2d72ca895f63d4a641fd75a6933ef192c",
+  "verificationChanges": [
+    ".github/workflows/checks.yml",
+    "playwright.experience-a75.config.ts",
+    "tests/browser-experience-fixes/arena-performance-a75.spec.ts",
+    "tools/verification/a75-phase.json"
+  ],
+  "otherChanges": [],
+  "srcTrees": [
+    "fa5ea4d287c032b11d6fed6793453a70b09bfb69",
+    "fa5ea4d287c032b11d6fed6793453a70b09bfb69"
+  ],
+  "guardsUnchanged": true
+}

@@ -38,7 +38,8 @@ Estado inicial: once findings vigentes por inspección del mismo baseline; los n
 - [x] Ruta/lista/fallback/preferencia reducida integrados.
 - [x] A75 completa:113pasadas/175omisiones previstas/0fallos enCI39059090478, head889886d/merge8d38776 con árbol idéntico.
 - [x] Regresión completaA70/A71/A73 yHalloween del mismo candidato.
-- [ ] Resto de regresiones del job (A69/general/progresión/preparación/cabecera/intenciones/PWA/perfiles) y estado global definitivo.
+- [x] A69 funcional del mismo candidato.
+- [ ] Corregir/regresar E2E y geometría del EncuentroA67; terminar A63/A66/A65/PWA/perfiles y contraste WebKit preregistrado. Reanudación acotada, no entrega global hasta resolverlo.
 - [ ] Documentación final, equivalencia del commit documental, revisión del diff y verificación de rama/remoto/PR sin main.
 
 El goal sigue activo; marcarlo completo solo tras resolver las comprobaciones técnicas pendientes. Humanos/físico quedan identificados en HUMAN-CHECK, sin convertirse en evidencia realizada.

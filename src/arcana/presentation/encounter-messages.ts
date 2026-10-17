@@ -1,6 +1,8 @@
 import type { Language } from '../domain/collection/wizards';
 
 const messages = {
+  ownedShort: { es: 'Propio', en: 'Owned' },
+  temporaryShort: { es: 'Temporal', en: 'Temporary' },
   memberIdentity: { es: 'Puesto {position} · {source}', en: 'Position {position} · {source}' },
   memberLabel: {
     es: '{name}, puesto {position}, {source}',
