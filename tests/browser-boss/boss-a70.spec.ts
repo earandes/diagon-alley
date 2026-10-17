@@ -54,25 +54,79 @@ async function control(page: Page, name: string) {
 async function fits(page: Page, count: number) {
   await expect(page.locator('.pedestal')).toHaveCount(count);
   await expect
-    .poll(() =>
-      page.locator('.pedestal').evaluateAll((nodes) =>
-        nodes.every((node) => {
-          const r = node.getBoundingClientRect();
-          return (
-            r.left >= -1 && r.top >= -1 && r.right <= innerWidth + 1 && r.bottom <= innerHeight + 1
-          );
-        }),
-      ),
-    )
-    .toBe(true);
-  expect(
-    await page.evaluate(
+    .poll(
       () =>
-        document.documentElement.scrollHeight <= innerHeight + 1 &&
-        document.documentElement.scrollWidth <= innerWidth + 1,
-    ),
-  ).toBe(true);
+        page.locator('.pedestal').evaluateAll((nodes) => {
+          const viewport = { width: innerWidth, height: innerHeight };
+          const offenders: object[] = [];
+          for (const node of nodes) {
+            const pedestal = node.getBoundingClientRect();
+            const unit = node.getAttribute('data-unit');
+            const targets = [
+              { kind: 'pedestal', element: node },
+              { kind: 'figure-space', element: node.querySelector('.arena-figure-space') },
+              { kind: 'name', element: node.querySelector('.arena-inspect > strong') },
+              { kind: 'health', element: node.querySelector('.arena-health') },
+            ];
+            for (const { kind, element } of targets) {
+              if (!element) {
+                offenders.push({
+                  unit,
+                  kind,
+                  violations: ['missing'],
+                  pedestal: pedestal.toJSON(),
+                  viewport,
+                });
+                continue;
+              }
+              const rect = element.getBoundingClientRect();
+              const violations: string[] = [];
+              if (rect.width <= 0 || rect.height <= 0) violations.push('empty');
+              if (
+                rect.left < -1 ||
+                rect.top < -1 ||
+                rect.right > innerWidth + 1 ||
+                rect.bottom > innerHeight + 1
+              )
+                violations.push('outside-viewport');
+              if (
+                kind !== 'pedestal' &&
+                (rect.left < pedestal.left - 1 ||
+                  rect.top < pedestal.top - 1 ||
+                  rect.right > pedestal.right + 1 ||
+                  rect.bottom > pedestal.bottom + 1)
+              )
+                violations.push('outside-pedestal');
+              if (violations.length)
+                offenders.push({
+                  unit,
+                  kind,
+                  violations,
+                  rect: rect.toJSON(),
+                  pedestal: pedestal.toJSON(),
+                  viewport,
+                });
+            }
+          }
+          const root = document.documentElement;
+          if (root.scrollHeight > innerHeight + 1 || root.scrollWidth > innerWidth + 1)
+            offenders.push({
+              kind: 'document',
+              violations: ['page-overflow'],
+              scrollWidth: root.scrollWidth,
+              scrollHeight: root.scrollHeight,
+              viewport,
+            });
+          return offenders;
+        }),
+      {
+        message:
+          'Every actor, figure, name and health display must fit its pedestal and viewport without page scroll',
+      },
+    )
+    .toEqual([]);
 }
+
 async function frozen(page: Page) {
   await page.evaluate(
     () =>
