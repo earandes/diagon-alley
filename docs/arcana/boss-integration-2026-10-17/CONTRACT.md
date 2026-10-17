@@ -1,0 +1,32 @@
+# A72 · Consolidación A70/A71 · 17 octubre 2026
+
+## Autorización y estado inicial
+
+Enric autoriza revisar/corregir/validar, commits e integración/push a main. No despliegue o publicación. Goal explícito activo. Base remota main `f5d3a891d5f5a6c1a69a28b46b8c96de8ead82b8`; PR3 `dffd6ae` sobre main, PR4 `7450285` sobre PR3, ambas abiertas. Árbol tracked limpio; 1972 entradas untracked ajenas conservadas. No limpieza ni staging general.
+
+A71 ya implementa antesala, actor por piezas, foco/selección localizada y cierre. CI38988996115 correcta sobre445d6f4/mergeffb9094; los objetos runtime actuales coinciden. Último check PR4 cancelado por actualización documental. Último check PR3 falla en `trial-gateway.test.ts:177` con422, no una caída gráfica. Inspección muestra petición sin elección para encuentros A67, aunque el generador puede situarlos antes del primer duelo. La atribución se comprobará con rutas deterministas, no se tratará una ejecución verde aleatoria como resolución.
+
+## Recorrido y aceptación
+
+Mapa → rival conocido → equipo/objetos → preparación/cancelación → confirmación coste5 → log guardado/replay → desenlace → botín → otra decisión explícita. Conservar las operaciones, economía, reglas y snapshots existentes. No nuevas ilustraciones o mecánicas.
+
+Revisar las seis capturas A71 existentes y sus componentes, distinguir composición estática de dinámica Linux, y contrastar ES/EN/packs/3tamaños. No defecto artístico nuevo demostrado inicialmente. No repetir implementación por preferencia cosmética.
+
+## Corrección condicionada y recuperación
+
+Si las rutas deterministas reproducen422: adaptar exclusivamente la política del test a decisiones permitidas (pasar encuentro cuando el recorrido no evalúa tratos, reclutar/pasar Pacto según capacidad). Probar antes que falla y después que completa, sin relajar validaciones/expectativas o modificar servidor. Preservar cobertura de tratos en sus pruebas específicas. No recursos de cuenta habitual.
+
+No nuevo estado persistido. Recuperación/reload/fallback/skip siguen contratos A70/A71. Historial/Word intactos.
+
+## Plan vivo
+
+1. Completado: fuentes, PR/SHA/evidencia, revisión visual/código y falloCI.
+2. Completado: reproducción determinista y corrección mínima si procede; tipos/build/unitarios/PGRedis.
+3. Pendiente: candidato único de integración sobre main que contenga A70/A71; CI Linux serial con guard/lock/watchdog originales, sin reintentos. Reutilizar evidencia anterior con objetos equivalentes y registrar los resultados nuevos.
+4. Pendiente: integrar sin force-push, verificar main remoto/ancestría/CI y documentación final.
+
+CI puede usar consolidación equivalente para no integrar un candidato intermedio con un fallo conocido ni duplicar matrices. Las garantías gráficas extensas se ejecutan solo en Linux. No navegador en el Mac. Humana/lector hablado/dispositivo físico pendientes; límites de rendimiento genérico/arranque conservados explícitos.
+
+## Avance previo a integración
+
+Seed17 reproduce422INVALID_OPERATION en encuentro; seed0 directa. Test corregido con pase explícito, sin cambio de servidor; RED/GREEN archivados.554unitarios/78PGRedis/build/tipos/scanner locales correctos. Estrategia: consolidación por avance directo de A70/A71 a main, con runtime idéntico al mergeffb9094 ya validado y única modificación nueva de test comprobada. Una CI de main serial comprobará el resultado integrado, sin ejecutar una matriz gráfica duplicada previa sobre el mismo runtime.

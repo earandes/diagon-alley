@@ -1,0 +1,17 @@
+
+> coleccion-magica-i1@0.1.0 test
+> vitest run
+
+
+ RUN  v5.0.3 /Users/enricarandes/work/diagon-alley
+
+
+ Test Files  78 passed (78)
+      Tests  554 passed (554)
+   Start at  10:14:48
+   Duration  2.25s (transform 50%, import 29%, tests 19%, worker 1%)
+
+  Transform  transforming modules took 7.60s · 50% of tracked time, re-done on every run
+             persist transforms across runs with fsModuleCache: true
+             learn more: https://vitest.dev/guide/improving-performance#caching-between-reruns
+
