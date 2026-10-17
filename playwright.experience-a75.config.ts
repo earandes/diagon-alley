@@ -6,6 +6,7 @@ const phase = JSON.parse(
 ).phase as string;
 const baseline = phase === 'baseline';
 const focusedWebkit = phase === 'webkit';
+const encounterOnly = phase === 'tail';
 /** One shared lock/worker/watchdog; graphical execution remains Linux-only. */
 export default defineSafeConfig({
   testDir: './tests/browser-experience-fixes',
@@ -13,7 +14,10 @@ export default defineSafeConfig({
     ? /arena-a75\.spec\.ts$/
     : focusedWebkit
       ? /arena-performance-a75\.spec\.ts$/
-      : /.*-a75\.spec\.ts$/,
+      : encounterOnly
+        ? /preparation-a75\.spec\.ts$/
+        : /.*-a75\.spec\.ts$/,
+  ...(encounterOnly ? { grep: /encounter identical/ } : {}),
   outputDir: 'test-results/experience-a75',
   timeout: 150000,
   maxFailures: 1,
@@ -45,7 +49,7 @@ export default defineSafeConfig({
     })),
   ),
   webServer: [
-    ...(!baseline && !focusedWebkit
+    ...(!baseline && !focusedWebkit && !encounterOnly
       ? [
           {
             env: { ARCANA_TRIAL_NAMESPACE: `a75-${randomUUID()}` },

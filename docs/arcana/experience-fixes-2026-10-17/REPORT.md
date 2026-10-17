@@ -2,6 +2,8 @@
 
 Implementados F01–F11 en `feature/a75-experience-fixes`, PR6. **A75 pasa en CI 39059090478 sobre head 889886d; regresiones históricas del mismo job todavía pendientes.** No main/despliegue/publicación.113 casos correctos,175 omisiones deliberadas por proyecto,0 fallos/0 reintentos. Merge probado8d38776 y head 889886d comparten árbol7a6e66a4ad74945c59bd2efa8cfe6ba412173f00.
 
+Actualización de validación: CI39063046713/head6d4dbcb pasa A75(114casos/174omisiones) y E2E(56). A67pasa18/20; quedan dos desbordamientos residualesWebKit864frente863. Corrección de márgenes en preparación; entrega técnica/goal todavía abiertos. Evidencia y causas preservadas, sin main.
+
 ## Qué cambia en los recorridos
 
 **Entrada → preparación → equipamiento → recuperación.** La primera activación excluye otras entradas hasta acabar POST+carga.401 conserva jugador, partida, key y receipt; la salida de recuperación continúa disponible al cerrar el inspector. Error o resultado incierto de equipo se comunica dentro del inspector superior. Otra partida requiere entrada explícita, sin intención pendiente y sin migrar recursos; su preparación no hereda selección anterior.

@@ -1,0 +1,2582 @@
+{
+  "referenceHead": "889886d541dd9418d7d3179f304bcd240b6aa9d0",
+  "referenceRun": 39059090478,
+  "candidateHead": "6d4dbcb5df733641a8b9ce26bf8821c8f8289d05",
+  "onlyRuntimeChanges": [
+    {
+      "path": "src/arcana/application/client/game-controller.ts",
+      "beforeBlob": "d0dfb59553c9317ee485c3cf81fc3d5086e912ad",
+      "afterBlob": "2eda8ac979c6695f835d610b649551cc65fee30e"
+    },
+    {
+      "path": "src/arcana/presentation/EncounterPreparation.tsx",
+      "beforeBlob": "1211e7ca12f0fe1938b9bfa33c0f1dce86790e21",
+      "afterBlob": "9fc1275cfd6734f4f5d30a67455e01254ef55e92"
+    },
+    {
+      "path": "src/arcana/presentation/encounter-a67.css",
+      "beforeBlob": "a937cb5ea5cc1ce052fc12987f66113270f1b81c",
+      "afterBlob": "1db6b6eaf04cd280621b8910bc3aef43798141d8"
+    },
+    {
+      "path": "src/arcana/presentation/encounter-messages.ts",
+      "beforeBlob": "faf2f7f1cd0655515e498a02e5663c52dd20f1ce",
+      "afterBlob": "2abb9ac7777271d1da1e8cb125d5424ae49efc17"
+    }
+  ],
+  "unchangedRuntimeObjects": [
+    {
+      "path": "src/arcana/application/authority-ports.ts",
+      "gitBlob": "d5f1a2ac9f6e97c5e814f57cda6a1408b9f52974"
+    },
+    {
+      "path": "src/arcana/application/client/battle-replay.ts",
+      "gitBlob": "6837a4fd2dba17ce778215ad099dd93183dcda94"
+    },
+    {
+      "path": "src/arcana/application/client/errors.ts",
+      "gitBlob": "3d27bc84778ed6b62b5fda3129d296e28ea3cfbf"
+    },
+    {
+      "path": "src/arcana/application/client/expedition-closure.ts",
+      "gitBlob": "c7df6aac854f16a6fa0decc63df1a4a346f03f37"
+    },
+    {
+      "path": "src/arcana/application/client/expedition-intentions.ts",
+      "gitBlob": "59b0d4cc6d88924c5f1fa09dd5e30bd97c65100a"
+    },
+    {
+      "path": "src/arcana/application/client/flavour-collection.ts",
+      "gitBlob": "cd659192e3ceafd147f67451f363ea09c9ba83a5"
+    },
+    {
+      "path": "src/arcana/application/client/ports.ts",
+      "gitBlob": "3736c751111e2f1eeba0c879aefc4ba672640555"
+    },
+    {
+      "path": "src/arcana/application/client/read-models.ts",
+      "gitBlob": "eb8eff69631ba21e4180f0d4e272d5b34f45c944"
+    },
+    {
+      "path": "src/arcana/application/commerce-contracts.ts",
+      "gitBlob": "c91008a8d8d1b11d16330b1b9f33e286fff1aed8"
+    },
+    {
+      "path": "src/arcana/application/commerce-use-cases.ts",
+      "gitBlob": "d0b1930e32a79e29618f38549567097c369cf0d8"
+    },
+    {
+      "path": "src/arcana/application/game.ts",
+      "gitBlob": "37f102c7f27801132b2fc415e176af91eab5cdda"
+    },
+    {
+      "path": "src/arcana/application/node-options.ts",
+      "gitBlob": "156334e3c269307597e7980a85d7382d02fc5cc0"
+    },
+    {
+      "path": "src/arcana/application/player-status.ts",
+      "gitBlob": "1f4625d03f5d2b3ab32b052b321c3019f6f821a6"
+    },
+    {
+      "path": "src/arcana/application/prepare-team.ts",
+      "gitBlob": "87db05a60c15fbea3383c3e82e36e1c7c3831a07"
+    },
+    {
+      "path": "src/arcana/application/public-content.ts",
+      "gitBlob": "37053ce7ea6d9359c8a23f49baf752c2a9ca447b"
+    },
+    {
+      "path": "src/arcana/application/run-contracts.ts",
+      "gitBlob": "7ec47e23410c3148177c6e6b5ce437fa45d1e289"
+    },
+    {
+      "path": "src/arcana/application/run-use-cases.ts",
+      "gitBlob": "621d982458dd4c6f2b569741940f10339a27cecd"
+    },
+    {
+      "path": "src/arcana/application/seasonal-events.ts",
+      "gitBlob": "f5693bbb57eb866b78e8367c33de7daa9d166c61"
+    },
+    {
+      "path": "src/arcana/application/set-intention.ts",
+      "gitBlob": "4b8c6e3b8a3096f3ebd497c21b834ef6eab4060f"
+    },
+    {
+      "path": "src/arcana/application/shop-use-cases.ts",
+      "gitBlob": "32d7af2de2dbca6c0c90384a05190ed8702b1310"
+    },
+    {
+      "path": "src/arcana/application/team-contracts.ts",
+      "gitBlob": "cfd945d72c6d904ba82583f7d8d64fbd58b9f469"
+    },
+    {
+      "path": "src/arcana/application/team-use-cases.ts",
+      "gitBlob": "7ab6e68ef2dee02b2a067aa29891f3c518a4b7fc"
+    },
+    {
+      "path": "src/arcana/content/equipment-v2.json",
+      "gitBlob": "c57c31dba80363a9f50481c2f4d3067f3e227ffd"
+    },
+    {
+      "path": "src/arcana/content/halloween-2026.json",
+      "gitBlob": "74a121506a5ac1b53bbd0670ee5ab07c0b276ecc"
+    },
+    {
+      "path": "src/arcana/content/progression-v2.json",
+      "gitBlob": "525d1490af6a176669360e570ee1ae03e13ba11d"
+    },
+    {
+      "path": "src/arcana/content/tactical-v1.json",
+      "gitBlob": "f0ace40d57592e6bb71b541d16568f4498e166a9"
+    },
+    {
+      "path": "src/arcana/content/trial-v1.json",
+      "gitBlob": "5d8f3af155828e37b04fab52d3410cb524e83543"
+    },
+    {
+      "path": "src/arcana/domain/collection/rarity.ts",
+      "gitBlob": "9613bca35e6a05741cad692d1df16c922ec263db"
+    },
+    {
+      "path": "src/arcana/domain/collection/team.ts",
+      "gitBlob": "cce341883ec4e5f89e6bca32b498935e4df0a87a"
+    },
+    {
+      "path": "src/arcana/domain/collection/wizards.ts",
+      "gitBlob": "0ee8825308f8f9796aa1d23ba113f1b050a19182"
+    },
+    {
+      "path": "src/arcana/domain/combat/beans.ts",
+      "gitBlob": "a69b05b9ad53bd2b012ec2bc43415ff7cacdd2ef"
+    },
+    {
+      "path": "src/arcana/domain/combat/engine.ts",
+      "gitBlob": "156fb9b5650d3b9a8c57b326aef3c943e9567942"
+    },
+    {
+      "path": "src/arcana/domain/combat/equipment-effects.ts",
+      "gitBlob": "b98c159e1f0886fe23bb5b752a20b5262f40a6c2"
+    },
+    {
+      "path": "src/arcana/domain/combat/mana.ts",
+      "gitBlob": "e2f1d7225671bbd01353ccf1b0d20fefc382eba5"
+    },
+    {
+      "path": "src/arcana/domain/combat/random.ts",
+      "gitBlob": "d2dde9a77deb6e36a5092aa82152af5871dfe9f3"
+    },
+    {
+      "path": "src/arcana/domain/combat/record.ts",
+      "gitBlob": "fffeff3332508e7948f628186a991d4d1571a71b"
+    },
+    {
+      "path": "src/arcana/domain/combat/seed.ts",
+      "gitBlob": "d740a5d32949c62215ae3235c21bdcd83bd20316"
+    },
+    {
+      "path": "src/arcana/domain/combat/synergies.ts",
+      "gitBlob": "288aa6c7398edab4f7b8d94e48660939d147fdcf"
+    },
+    {
+      "path": "src/arcana/domain/economy/commerce.ts",
+      "gitBlob": "3dc64885fff1a235793f863520c14633e9b1f098"
+    },
+    {
+      "path": "src/arcana/domain/economy/equipment.ts",
+      "gitBlob": "a616c636f30cb32088967a15ef6586e3e82cf72e"
+    },
+    {
+      "path": "src/arcana/domain/economy/essence.ts",
+      "gitBlob": "de6c61aa0c3380c13c085c2812a585bb010ecc3a"
+    },
+    {
+      "path": "src/arcana/domain/economy/inventory.ts",
+      "gitBlob": "f103dc469dd2ca3fcf3913224ea1d28c389b6d0e"
+    },
+    {
+      "path": "src/arcana/domain/economy/rewards.ts",
+      "gitBlob": "1faf5dcf1cfef6bbf6d9e7ae135a47210357d4d9"
+    },
+    {
+      "path": "src/arcana/domain/errors.ts",
+      "gitBlob": "2a5db59776298ed4bb31f249a02c90ed2d1af63e"
+    },
+    {
+      "path": "src/arcana/domain/exploration/challenges.ts",
+      "gitBlob": "2d97b1ff37f76f34c98c28cef6e4aa38d3356155"
+    },
+    {
+      "path": "src/arcana/domain/exploration/coordinate.ts",
+      "gitBlob": "247b6e428853da8cf94b4dbb554a8de9f1a6625a"
+    },
+    {
+      "path": "src/arcana/domain/exploration/encounter-trades.ts",
+      "gitBlob": "1043fa7c62639b4946140568bd339d07ac5690d4"
+    },
+    {
+      "path": "src/arcana/domain/exploration/encounters.ts",
+      "gitBlob": "d0766d6424a95922cf26d9611aaaac2b227d4eb2"
+    },
+    {
+      "path": "src/arcana/domain/exploration/generate-route.ts",
+      "gitBlob": "a81d0d29329bf4f8a7a1b3b42cbc69211fcda163"
+    },
+    {
+      "path": "src/arcana/domain/exploration/intentions.ts",
+      "gitBlob": "550558055004b17904e417a56726e89243e4b00d"
+    },
+    {
+      "path": "src/arcana/domain/exploration/nodes.ts",
+      "gitBlob": "6773ae71ca2ad3ca488b1fef4fdee639ae276ee0"
+    },
+    {
+      "path": "src/arcana/domain/exploration/randomize-route.ts",
+      "gitBlob": "141505aeab4546f2321a3d3fb6ba42a7d89f9f3c"
+    },
+    {
+      "path": "src/arcana/domain/exploration/route.ts",
+      "gitBlob": "8bb383c63840641337a355f2880d24d2b560b011"
+    },
+    {
+      "path": "src/arcana/domain/exploration/run.ts",
+      "gitBlob": "a87c8edac2904a3737aa414d066c5a2440352a8d"
+    },
+    {
+      "path": "src/arcana/domain/identifiers.ts",
+      "gitBlob": "4fe0c643af8ccfb2735b97c22b8b6448e96b6fa3"
+    },
+    {
+      "path": "src/arcana/domain/seasonal/events.ts",
+      "gitBlob": "1e5502a34b59874ba60e4493f2138945314ffb3d"
+    },
+    {
+      "path": "src/arcana/infrastructure/client/client-operations.ts",
+      "gitBlob": "4659b7ab3d625b566c5ec37ee9e0c2d86b9e8673"
+    },
+    {
+      "path": "src/arcana/infrastructure/content/equipment-content.ts",
+      "gitBlob": "0f89b52d3b4039cd01496898051c26f0405aac0b"
+    },
+    {
+      "path": "src/arcana/infrastructure/content/progression-content.ts",
+      "gitBlob": "e314f15c43a25510d29b16baf8d35086404a38f8"
+    },
+    {
+      "path": "src/arcana/infrastructure/content/seasonal-content.ts",
+      "gitBlob": "26f9d497278164f997db9f4a1108c659eac607cd"
+    },
+    {
+      "path": "src/arcana/infrastructure/content/tactical-content.ts",
+      "gitBlob": "1b2e911fcf3849c2754587f6fca6706afb83f6a2"
+    },
+    {
+      "path": "src/arcana/infrastructure/content/trial-configuration.ts",
+      "gitBlob": "775f0cb49180701b462a94bfa613b3061179e9fe"
+    },
+    {
+      "path": "src/arcana/infrastructure/http/api.ts",
+      "gitBlob": "b1ad472cac07d6a7691eedca4d4af040c8984684"
+    },
+    {
+      "path": "src/arcana/infrastructure/http/client.ts",
+      "gitBlob": "fea63002144bb67531f082911284093735f8ddac"
+    },
+    {
+      "path": "src/arcana/infrastructure/http/composition.ts",
+      "gitBlob": "73047c70fc156078112611ea688cf3cb46c93a00"
+    },
+    {
+      "path": "src/arcana/infrastructure/http/local-runtime.ts",
+      "gitBlob": "3520c12387f524cc48612df919acc8394548388d"
+    },
+    {
+      "path": "src/arcana/infrastructure/http/schemas.ts",
+      "gitBlob": "bc4b7fefe7a85d11080abfa8d4876b3180a89e35"
+    },
+    {
+      "path": "src/arcana/infrastructure/http/trial-gateway.ts",
+      "gitBlob": "56f043fc055b5ac532f54287fd0df9064c9ace61"
+    },
+    {
+      "path": "src/arcana/infrastructure/postgres/game-transactions.ts",
+      "gitBlob": "295e0fca06c3a7fc3be325131615288caed1984c"
+    },
+    {
+      "path": "src/arcana/infrastructure/postgres/schema.sql",
+      "gitBlob": "ae8339f7eb0ad133662496dbec8afc849d38ca78"
+    },
+    {
+      "path": "src/arcana/infrastructure/pwa/register.ts",
+      "gitBlob": "4165dd458f4b94e7d033535520e9e2dc2c2b05a3"
+    },
+    {
+      "path": "src/arcana/infrastructure/pwa/service-worker.ts",
+      "gitBlob": "4fc084bf99f66cc908d083139a5718e304c8dc46"
+    },
+    {
+      "path": "src/arcana/infrastructure/random/crypto-random.ts",
+      "gitBlob": "6e38bc5fca19ac43e2914f85f0dfa3e3705fc868"
+    },
+    {
+      "path": "src/arcana/infrastructure/random/seeded-random.ts",
+      "gitBlob": "c29e620215bc124bd9fa9a9a19ae6a1e612b3cca"
+    },
+    {
+      "path": "src/arcana/infrastructure/redis/authority.ts",
+      "gitBlob": "90887edc756e8e0abb08b0713b9c379aaba32a2a"
+    },
+    {
+      "path": "src/arcana/presentation/App.tsx",
+      "gitBlob": "18a131006ce64c963fab8de1728cc1309998d2b4"
+    },
+    {
+      "path": "src/arcana/presentation/Artwork.tsx",
+      "gitBlob": "e690da39863ab4dd2e3086beafc94e6ace03cbca"
+    },
+    {
+      "path": "src/arcana/presentation/BattlePanel.tsx",
+      "gitBlob": "a3216d605655de8c0dfcebf272829616a27b6eab"
+    },
+    {
+      "path": "src/arcana/presentation/BeanAssignments.tsx",
+      "gitBlob": "7de689932ec1fcae75d657c80e8615dc773815eb"
+    },
+    {
+      "path": "src/arcana/presentation/BossBattleFacts.tsx",
+      "gitBlob": "e40e8a718885469ec218bdd0d55e408036b18ab1"
+    },
+    {
+      "path": "src/arcana/presentation/BossPartyStage.tsx",
+      "gitBlob": "19e340a3b83fc80c0ad06ed61c7615d3ad255826"
+    },
+    {
+      "path": "src/arcana/presentation/BossPrelude.tsx",
+      "gitBlob": "48582866bc6ee42202728adc01e308beebb86151"
+    },
+    {
+      "path": "src/arcana/presentation/BossSupplies.tsx",
+      "gitBlob": "6c9f28fb4276533a5f7849ff5b9d59ca1c040683"
+    },
+    {
+      "path": "src/arcana/presentation/CardReveal.tsx",
+      "gitBlob": "830fb3c6e325c86026fa8ca749bd0a5e7f7f9572"
+    },
+    {
+      "path": "src/arcana/presentation/Celebration.tsx",
+      "gitBlob": "64f1241a37a0ef7a7c0aee36be021941cece13b7"
+    },
+    {
+      "path": "src/arcana/presentation/CollectionPanel.tsx",
+      "gitBlob": "0f6228a2699fa97d3e765b2aa5b9111b15c06b13"
+    },
+    {
+      "path": "src/arcana/presentation/CommercePanel.tsx",
+      "gitBlob": "9cf91eab28148520acbe610a8ef7f03719f1dd74"
+    },
+    {
+      "path": "src/arcana/presentation/EncounterOutcome.tsx",
+      "gitBlob": "9c69adc620fd2a0d7d38caf6d8b82de8beea0272"
+    },
+    {
+      "path": "src/arcana/presentation/EncounterTradeOutcome.tsx",
+      "gitBlob": "a2d634b67f2ad5df0398ac2442e9060ba237b9ad"
+    },
+    {
+      "path": "src/arcana/presentation/EquipmentArt.tsx",
+      "gitBlob": "f3d31278d6d8d23cece636b7d482fbf3fad9b86e"
+    },
+    {
+      "path": "src/arcana/presentation/ExpeditionChallenge.tsx",
+      "gitBlob": "511c61eb3a3bb686eb4c3a306c99ac47134589d6"
+    },
+    {
+      "path": "src/arcana/presentation/ExpeditionClosure.tsx",
+      "gitBlob": "f63d91638ec7f40eed28d10bd387cc578c30eff7"
+    },
+    {
+      "path": "src/arcana/presentation/ExpeditionGuide.tsx",
+      "gitBlob": "38681a3b1efb4e13281263e8320c3e6a7a15f9b4"
+    },
+    {
+      "path": "src/arcana/presentation/ExpeditionIntentions.tsx",
+      "gitBlob": "1dc34ce0cadc3b1a39d730aa7834a8249bd79597"
+    },
+    {
+      "path": "src/arcana/presentation/ExpeditionPreparation.tsx",
+      "gitBlob": "12097ed5e7073cd39a7f71a6a1386b6e9301daca"
+    },
+    {
+      "path": "src/arcana/presentation/FlavourCabinet.tsx",
+      "gitBlob": "da7db33a8e123436f4a11dd2aea35a6c78d107f6"
+    },
+    {
+      "path": "src/arcana/presentation/FrogMagic.tsx",
+      "gitBlob": "af8ed9c5f48879131eb93eb4837d174ff961caab"
+    },
+    {
+      "path": "src/arcana/presentation/GameSettings.tsx",
+      "gitBlob": "a9fa557ca033b3a360879936402cedc8d62ea0f1"
+    },
+    {
+      "path": "src/arcana/presentation/JourneyCabinet.tsx",
+      "gitBlob": "c1e37e09e9163ab206fa6c6c8599ead968c95aea"
+    },
+    {
+      "path": "src/arcana/presentation/MapPanel.tsx",
+      "gitBlob": "ecda010f9c227555c512b1493323416544500031"
+    },
+    {
+      "path": "src/arcana/presentation/NodeAnnouncement.tsx",
+      "gitBlob": "f142039264eb0ec7c0da57b3f4d039e2b230a67b"
+    },
+    {
+      "path": "src/arcana/presentation/NodePreparation.tsx",
+      "gitBlob": "ec6b8628adfad74833cedab1cf685c09c594c780"
+    },
+    {
+      "path": "src/arcana/presentation/NodeResult.tsx",
+      "gitBlob": "49050b0fcf938b07a14be5cec0db5592b97985f5"
+    },
+    {
+      "path": "src/arcana/presentation/OperationFeedback.tsx",
+      "gitBlob": "ed4e96789180274896c1f344997c91355493fffe"
+    },
+    {
+      "path": "src/arcana/presentation/PlayerHud.tsx",
+      "gitBlob": "e111a434a1060ee3f27bb3dd750fdc3c81ffceb4"
+    },
+    {
+      "path": "src/arcana/presentation/PreparationSynergies.tsx",
+      "gitBlob": "dfe3f01dea1d47b2fe761d30c3dd73964239c252"
+    },
+    {
+      "path": "src/arcana/presentation/RarityBadge.tsx",
+      "gitBlob": "229984c09d7612b56314c09fe1123c7821af7e18"
+    },
+    {
+      "path": "src/arcana/presentation/RecoveryNotice.tsx",
+      "gitBlob": "6cb70feafbb9fcb6044da0bc59d5a45b4d114d47"
+    },
+    {
+      "path": "src/arcana/presentation/RevealTheatre.tsx",
+      "gitBlob": "70a93be6b78d2aea4800f100fa0860a8aa6670f1"
+    },
+    {
+      "path": "src/arcana/presentation/RouteInspection.tsx",
+      "gitBlob": "153077c846ece849695acf19badac44d717f1ec3"
+    },
+    {
+      "path": "src/arcana/presentation/SceneAtmosphere.tsx",
+      "gitBlob": "3143e965321980dc20673eb8ecbdb7a5fda4228c"
+    },
+    {
+      "path": "src/arcana/presentation/SeasonalEvent.tsx",
+      "gitBlob": "f02652e6951d1242cc5f69f23a02a015dcf3ed68"
+    },
+    {
+      "path": "src/arcana/presentation/ShopBook.tsx",
+      "gitBlob": "09cd2b3b051c5b99f79081a8899a100ea0d902e4"
+    },
+    {
+      "path": "src/arcana/presentation/ShopHub.tsx",
+      "gitBlob": "bc773a4007468f2155b73abe66088142d9b5a61f"
+    },
+    {
+      "path": "src/arcana/presentation/StarRating.tsx",
+      "gitBlob": "b3d7dbd90be17300f515600d6dfa5173a78a7c72"
+    },
+    {
+      "path": "src/arcana/presentation/SweetshopScene.tsx",
+      "gitBlob": "b1ad4eef2cd5f088115e6bab99b49000eade5227"
+    },
+    {
+      "path": "src/arcana/presentation/TacticalBadge.tsx",
+      "gitBlob": "1f11230ea5b47b72d9526d4d35ca247366467567"
+    },
+    {
+      "path": "src/arcana/presentation/TeamHud.tsx",
+      "gitBlob": "def0b23616ebe76109f33a017fb2a6ff06a0edd4"
+    },
+    {
+      "path": "src/arcana/presentation/VisualChoices.tsx",
+      "gitBlob": "1412b0a97c3e224b8fff0c7baacd64f2aeac6001"
+    },
+    {
+      "path": "src/arcana/presentation/arena-a63.css",
+      "gitBlob": "ee1b6b5ac7d5c4641084c463086f64f4ff48feb3"
+    },
+    {
+      "path": "src/arcana/presentation/arena-messages.ts",
+      "gitBlob": "c26e2ecb8a050fd8c32a6c8f50cb909569fb1835"
+    },
+    {
+      "path": "src/arcana/presentation/art/seasonal-a68/manifest.json",
+      "gitBlob": "1caba7b9349011b38d57ec2850345801294360f2"
+    },
+    {
+      "path": "src/arcana/presentation/art/seasonal-a68/pumpkin-lantern.svg",
+      "gitBlob": "8db325c85d8752afe02b0bd4704ee4df82be5096"
+    },
+    {
+      "path": "src/arcana/presentation/art/tactical-a65/manifest.json",
+      "gitBlob": "0e0cc310e6258daa0d65c3e21f60d21228cff051"
+    },
+    {
+      "path": "src/arcana/presentation/art/tactical-a65/threat-fire.svg",
+      "gitBlob": "1cc7f72f82060a67ee46b5f912a634ab5b5d821d"
+    },
+    {
+      "path": "src/arcana/presentation/art/tactical-a65/threat-vanguard.svg",
+      "gitBlob": "eff5a7f02f3c4431d059674455596d31d096da2e"
+    },
+    {
+      "path": "src/arcana/presentation/boss-a70.css",
+      "gitBlob": "11ac79b70d6f7699f414e755cfde1225c9afa0a4"
+    },
+    {
+      "path": "src/arcana/presentation/boss-art.ts",
+      "gitBlob": "909032f5eeb4fccc9cd12c862d8c75c248f15d80"
+    },
+    {
+      "path": "src/arcana/presentation/boss-closure-a70.css",
+      "gitBlob": "4543897bd19992d405b9c8c8fecf54cfedbf061f"
+    },
+    {
+      "path": "src/arcana/presentation/boss-facts.ts",
+      "gitBlob": "6ca17c6227a0d462fc67413b3161ba7e18ece4ee"
+    },
+    {
+      "path": "src/arcana/presentation/boss-messages.ts",
+      "gitBlob": "b6022ef919ea6206cbb8bd1a14bb5eff04b7b62b"
+    },
+    {
+      "path": "src/arcana/presentation/boss-presentation.ts",
+      "gitBlob": "37dc3175736efce103705f8c3550db01e283465b"
+    },
+    {
+      "path": "src/arcana/presentation/boss-staging-messages.ts",
+      "gitBlob": "2ddffded380eb8f5670aefb2fa9493000a8e17e5"
+    },
+    {
+      "path": "src/arcana/presentation/boss-staging.css",
+      "gitBlob": "db3df025147fd3be409cb7e2043f53201a85a88c"
+    },
+    {
+      "path": "src/arcana/presentation/celebration-a59.css",
+      "gitBlob": "5528693b80d7bc19d0ce09ce86dfc762dbf34880"
+    },
+    {
+      "path": "src/arcana/presentation/celebration-model.ts",
+      "gitBlob": "1e943e57dcc17af62fad730d5cda3bd047b91a42"
+    },
+    {
+      "path": "src/arcana/presentation/closure-messages.ts",
+      "gitBlob": "a767247c1ba97c6fca92c7afac0dbd9da53a529c"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/active.ts",
+      "gitBlob": "8c80a06baae6e85e3142e1442d114f933ed18b34"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/arcana/art/beans/jar.webp",
+      "gitBlob": "f0f4784c4084207157f6153f8cd3aa7092c4a5e5"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/arcana/art/boss-a70/bowl-contents.webp",
+      "gitBlob": "7983c5ba0c23668f507a2e387511ceaf00a4f4d3"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/arcana/art/boss-a70/bowl-rim.webp",
+      "gitBlob": "567026d371ce88a53fa54ddcf1dad11d4d96918c"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/arcana/art/boss-a71/actor-arm.webp",
+      "gitBlob": "10ee1386de399ee788560b0e8ab934ab91583505"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/arcana/art/boss-a71/actor-base.webp",
+      "gitBlob": "070d56e2a1a581bdf597be71103c28b3ae7050a3"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/arcana/art/boss-a71/actor-rest.webp",
+      "gitBlob": "4910bf38b44b1c472860e5d1840c1eda51f4c53c"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/arcana/art/card/back.webp",
+      "gitBlob": "c159fbc5209e835e088acebd9cc23f90acfdb71d"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/arcana/art/card/frame.webp",
+      "gitBlob": "abd234f10fd6c1e077421bd17682332891b7cee6"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/arcana/art/character/apprentice/figure.webp",
+      "gitBlob": "21f466f334d1a47fe6d3b5c38eec5d69d66e203a"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/arcana/art/character/apprentice/portrait.webp",
+      "gitBlob": "94cd2f9f766e438ba699b1a9f6d41376a51c0f8c"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/arcana/art/character/apprentice/thumbnail.webp",
+      "gitBlob": "4cf36e7f105b24961b89a56cf205a79d88f24370"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/arcana/art/character/ash-wanderer/figure.webp",
+      "gitBlob": "a99e9d76e4e51453d11c91528a886ef73c294013"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/arcana/art/character/ash-wanderer/portrait.webp",
+      "gitBlob": "d10b5809d4e0ffefe182a37bc9ff801162a338df"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/arcana/art/character/ash-wanderer/thumbnail.webp",
+      "gitBlob": "e2858d9b4241f86bb2a28165957898c1cb940279"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/arcana/art/character/aurora-sage/figure.webp",
+      "gitBlob": "94ca360d90ce3dfde0f02683c9630eced23d83ac"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/arcana/art/character/aurora-sage/portrait.webp",
+      "gitBlob": "f36e86b507962851924eb97d75f4b736b126e8cb"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/arcana/art/character/aurora-sage/thumbnail.webp",
+      "gitBlob": "b4426d5967638c7c516d163a0228841442b4741e"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/arcana/art/character/cinder-dancer/figure.webp",
+      "gitBlob": "4944dea243e7a0e62a77a954a49e74c0cf44c2c6"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/arcana/art/character/cinder-dancer/portrait.webp",
+      "gitBlob": "1efb89bd73322ade20af9d5fc3e5df864fcd36eb"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/arcana/art/character/cinder-dancer/thumbnail.webp",
+      "gitBlob": "ca947c77c0c68d696250378fa078b32fec21c579"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/arcana/art/character/circe/figure.webp",
+      "gitBlob": "5f9cb77e97022301ae00834cd358cc92b5028dc8"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/arcana/art/character/circe/portrait.webp",
+      "gitBlob": "d8835566fe8f80a1724bea62290bc966cce75625"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/arcana/art/character/circe/thumbnail.webp",
+      "gitBlob": "4b9cba28f6579bffc971a027ec3ad19cbf1b2956"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/arcana/art/character/comet-scholar/figure.webp",
+      "gitBlob": "ad9fea59137e3e8ca0e8090a021091aa3183560b"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/arcana/art/character/comet-scholar/portrait.webp",
+      "gitBlob": "beeae686bf316562836bd5ecbb559494c1f4ff9b"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/arcana/art/character/comet-scholar/thumbnail.webp",
+      "gitBlob": "4c10dbf9082a7bb5e8111c8b5602b3c4d34fba26"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/arcana/art/character/copper-sage/figure.webp",
+      "gitBlob": "e88e24f3531919a6da8e52bddadd1f34799593b6"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/arcana/art/character/copper-sage/portrait.webp",
+      "gitBlob": "a6beedc99517d9496674c2f48961a3297bad240c"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/arcana/art/character/copper-sage/thumbnail.webp",
+      "gitBlob": "41fe4f53bd2f97598b80b79f60c1ba5d794f6bd6"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/arcana/art/character/crystal-watch/figure.webp",
+      "gitBlob": "164a16831eb7523d878b22c13ed205290811ea9e"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/arcana/art/character/crystal-watch/portrait.webp",
+      "gitBlob": "5619ed4646e2280ee1b09cb0ae4ae617565d6eeb"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/arcana/art/character/crystal-watch/thumbnail.webp",
+      "gitBlob": "8aa8616cd96873e53fd92d23f05ea1b6536bc37d"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/arcana/art/character/dawn-oracle/figure.webp",
+      "gitBlob": "faa7f49cf5aeddda9cbd61d7094c5d01b385a2c0"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/arcana/art/character/dawn-oracle/portrait.webp",
+      "gitBlob": "8e230bdf85315a9aa8b6b25fa96e4bb2b64cc965"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/arcana/art/character/dawn-oracle/thumbnail.webp",
+      "gitBlob": "1c1722ae1901543c26a58f1464efb60e265dd23f"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/arcana/art/character/dew-alchemist/figure.webp",
+      "gitBlob": "39de2b5b27144ad59b0d70a2b22ab9c92641a22f"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/arcana/art/character/dew-alchemist/portrait.webp",
+      "gitBlob": "91fa5f27ae3dfeb70a026893f880ab879166c3c9"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/arcana/art/character/dew-alchemist/thumbnail.webp",
+      "gitBlob": "65a0d92fcaaaa0e8f90dccb6447c704cedca863a"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/arcana/art/character/echo-mage/figure.webp",
+      "gitBlob": "d9a1f817cf757db5a1df68e30252d297a0c57194"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/arcana/art/character/echo-mage/portrait.webp",
+      "gitBlob": "3a64e27bb9486990cb2f7f3feb2553dc5e014d65"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/arcana/art/character/echo-mage/thumbnail.webp",
+      "gitBlob": "0a45a1e6ee6317369f7b4c0961f70c1f5addb83d"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/arcana/art/character/ember-keeper/figure.webp",
+      "gitBlob": "b4cb653d231e1ad464fae52c07c178785663eccc"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/arcana/art/character/ember-keeper/portrait.webp",
+      "gitBlob": "155645bd9ec8830342b8b9687f506eba880974cf"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/arcana/art/character/ember-keeper/thumbnail.webp",
+      "gitBlob": "1ef3cbaa03ac1aac70a3c6be6ba0738989771e37"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/arcana/art/character/flamel/figure.webp",
+      "gitBlob": "c97d3d159d2152400f0a659a015bbb892c49ac30"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/arcana/art/character/flamel/portrait.webp",
+      "gitBlob": "7634973f1f2e7c08a3f04558c6420d141ca195ae"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/arcana/art/character/flamel/thumbnail.webp",
+      "gitBlob": "91887215d7f7b2027b802593498f9876a40ca96a"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/arcana/art/character/merlin/figure.webp",
+      "gitBlob": "f0559cb7e80db24588aaf3cd67567f543cdcec2c"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/arcana/art/character/merlin/portrait.webp",
+      "gitBlob": "c8129a10c4f468f35d4c5cb72d7ccda63dbc2ae0"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/arcana/art/character/merlin/thumbnail.webp",
+      "gitBlob": "946ab22548537dd2230d3ff9fed46c38079ed1ef"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/arcana/art/character/mist-seer/figure.webp",
+      "gitBlob": "fb0b44035a3bce80f144e647992a46a30ffab1a4"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/arcana/art/character/mist-seer/portrait.webp",
+      "gitBlob": "4a630f9714fddd427f60d02151fb0630a94210fe"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/arcana/art/character/mist-seer/thumbnail.webp",
+      "gitBlob": "6a116b73fcd06613eb4d956419249e09dcf1b7a6"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/arcana/art/character/moon-herbalist/figure.webp",
+      "gitBlob": "ed4e97eef48c34773b60e4aa1574ba8690f13497"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/arcana/art/character/moon-herbalist/portrait.webp",
+      "gitBlob": "500394737542e527aa800acbd742da98d430527f"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/arcana/art/character/moon-herbalist/thumbnail.webp",
+      "gitBlob": "01ce22ed7decdf69be656fcce872e25f9b9d6d58"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/arcana/art/character/morgana/figure.webp",
+      "gitBlob": "8521027bbda32e8dae530726c22cd5baab7a1059"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/arcana/art/character/morgana/portrait.webp",
+      "gitBlob": "ba56acf71ea64491506774cc83ba7c470a76f137"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/arcana/art/character/morgana/thumbnail.webp",
+      "gitBlob": "bcfc5dc9772ead998081d5fc79755ddae35150a7"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/arcana/art/character/moss-guardian/figure.webp",
+      "gitBlob": "b7852a0b8cfc555fca5ff8b8703ca20aadcc0e7d"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/arcana/art/character/moss-guardian/portrait.webp",
+      "gitBlob": "a726ac2ae2edef191293f7cb5eea2a2906041ed8"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/arcana/art/character/moss-guardian/thumbnail.webp",
+      "gitBlob": "6999518aa15c3ee3eefabc94681f7cb60c482bec"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/arcana/art/character/night-forger/figure.webp",
+      "gitBlob": "d1c8314d4eeb440a85253296bf9f46af10d990f2"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/arcana/art/character/night-forger/portrait.webp",
+      "gitBlob": "59053fedb4bd04ba8c00fd68a9db02d93be934f4"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/arcana/art/character/night-forger/thumbnail.webp",
+      "gitBlob": "84e318cb250ea37419ba72420fcf6cc60a23a9b6"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/arcana/art/character/obsidian-seer/figure.webp",
+      "gitBlob": "721ef410a4757c6afaf58c208c81c330c5bae7aa"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/arcana/art/character/obsidian-seer/portrait.webp",
+      "gitBlob": "ab719943078b788ffab62a4829f256191213fc90"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/arcana/art/character/obsidian-seer/thumbnail.webp",
+      "gitBlob": "21a5d001fcc9d05b0b837b512aa7b0cfc796bbba"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/arcana/art/character/paracelso/figure.webp",
+      "gitBlob": "341df92012601790f13aaf2683bbea1a41568ceb"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/arcana/art/character/paracelso/portrait.webp",
+      "gitBlob": "fcb79d8e418fa52d8fad765ecb9e82af5c99dfd1"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/arcana/art/character/paracelso/thumbnail.webp",
+      "gitBlob": "4224ba7f085f3726439b070178b9c9c1aa4916f9"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/arcana/art/character/root-speaker/figure.webp",
+      "gitBlob": "39cde45fe3db24c7f8ef6cd3963415c466022fb7"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/arcana/art/character/root-speaker/portrait.webp",
+      "gitBlob": "c5615c52a2707c49dfe85625536c67a55ca9cabf"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/arcana/art/character/root-speaker/thumbnail.webp",
+      "gitBlob": "26fc85beea1bc5f473d285b39c60860e06aa7c88"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/arcana/art/character/rune-weaver/figure.webp",
+      "gitBlob": "448406e00ad1793399760f1699d6b8261e8ea7e6"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/arcana/art/character/rune-weaver/portrait.webp",
+      "gitBlob": "4972cb402003257b009ee6ea3ef1c8a7f367e2bc"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/arcana/art/character/rune-weaver/thumbnail.webp",
+      "gitBlob": "9e060ad8220fea3dc8744a893de209ad2d21f70e"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/arcana/art/character/shadow-scribe/figure.webp",
+      "gitBlob": "793ae1f211966533e78c0d9a6319c91ee9858a16"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/arcana/art/character/shadow-scribe/portrait.webp",
+      "gitBlob": "5c439dda3a673e1cc216d8994ca30ba4b6553313"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/arcana/art/character/shadow-scribe/thumbnail.webp",
+      "gitBlob": "2b6bb892efab1d191f8c436a1e6f6ca2f8ad9898"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/arcana/art/character/silver-sentinel/figure.webp",
+      "gitBlob": "aafee2f4572954d6c802e10310fd05d5fc682b4f"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/arcana/art/character/silver-sentinel/portrait.webp",
+      "gitBlob": "9255b68bde6965613566b73aa97822c5e5b746dc"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/arcana/art/character/silver-sentinel/thumbnail.webp",
+      "gitBlob": "9a05aaf77669cea1ae8fafd8a5a78e670945603c"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/arcana/art/character/star-binder/figure.webp",
+      "gitBlob": "4628140331e543e5153d41ef86bbcec1d99a1820"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/arcana/art/character/star-binder/portrait.webp",
+      "gitBlob": "9b32f4347d2b8f29a1173dab7bc3abeba5f75a29"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/arcana/art/character/star-binder/thumbnail.webp",
+      "gitBlob": "c2212fe9e597082aa0309d2f596b2d07450fd33d"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/arcana/art/character/storm-caller/figure.webp",
+      "gitBlob": "3b1a7086ff2b26ccedbbbf10e5a7820551f987da"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/arcana/art/character/storm-caller/portrait.webp",
+      "gitBlob": "9998db347c344fd5f44cdbe563f06f3f74d9d7ef"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/arcana/art/character/storm-caller/thumbnail.webp",
+      "gitBlob": "358e3cb1d6441d8979166e6107db807a3c069451"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/arcana/art/character/sun-priestess/figure.webp",
+      "gitBlob": "91236807d7b90f222e94b0288d8f9bcc7b0bb0f8"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/arcana/art/character/sun-priestess/portrait.webp",
+      "gitBlob": "acb3e34d078f300402805329c79c9a48b0d0e024"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/arcana/art/character/sun-priestess/thumbnail.webp",
+      "gitBlob": "cbc16b4fe4ec02eb47dd92303985934b391f7064"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/arcana/art/character/veil-walker/figure.webp",
+      "gitBlob": "06829f5c92027e1a063848fec66e934c887cfb3e"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/arcana/art/character/veil-walker/portrait.webp",
+      "gitBlob": "4c3b469ae637798118b23e7e550e997a10ce3d43"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/arcana/art/character/veil-walker/thumbnail.webp",
+      "gitBlob": "b683d962d504153b639597d232ddd5e1670e97c2"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/arcana/art/character/wind-reader/figure.webp",
+      "gitBlob": "d1d2aa1456b81955c7a1cb281b2bf4d89494a7e2"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/arcana/art/character/wind-reader/portrait.webp",
+      "gitBlob": "4db79e6a21f6b8e4bfe3736103d0f19d1e30943c"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/arcana/art/character/wind-reader/thumbnail.webp",
+      "gitBlob": "f69912d60d825f4b5d0b911777e1bcaf3970a083"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/arcana/art/icons/A56-SOURCES.md",
+      "gitBlob": "03751a30d6547a3e36289d09a9810ec75351a52a"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/arcana/art/icons/currency-crowns.svg",
+      "gitBlob": "4bddfd657fa9170b4319237375c2eda5505f7373"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/arcana/art/icons/currency-essence.svg",
+      "gitBlob": "62a45b5aea5e4cca4d50bd396a3e741d2ff700ed"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/arcana/art/icons/node-boss.svg",
+      "gitBlob": "2f3d910c72dc3fb79e7addc32352fd4f7b658f1d"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/arcana/art/icons/node-chest.svg",
+      "gitBlob": "a588ec1a5b7beed737500608f04d0cd2e2d5d1f8"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/arcana/art/icons/node-duel.svg",
+      "gitBlob": "65f1fbdcfa061277b495867c4f904aa823b14269"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/arcana/art/icons/node-encounter.svg",
+      "gitBlob": "fc71512a0645d89524f26ee45f20cb4dc402848f"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/arcana/art/icons/node-pact.svg",
+      "gitBlob": "42d8a7a3bbe2c2f37f55117fbdb089f1040b58f6"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/arcana/art/icons/node-refuge.svg",
+      "gitBlob": "2518418c2b2e0bb543b6ff472086bb4e562bb4b1"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/arcana/art/icons/ui-health.svg",
+      "gitBlob": "4f7020fec63b6d4ceb33d340c4053cda082596c5"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/arcana/art/icons/ui-pass.svg",
+      "gitBlob": "bc81de125f7fdb02bbb408d3d9f74301e50c86b2"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/arcana/art/product/bean-earth.webp",
+      "gitBlob": "cda766d28e9891561335801cf72800528c401db1"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/arcana/art/product/bean-mint.webp",
+      "gitBlob": "31da50625c4486e5d56a188bfd0b23b8b688f023"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/arcana/art/product/bean-pepper.webp",
+      "gitBlob": "549a92318541c0ca0bbb56b01f3210c502784cfb"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/arcana/art/product/bean-soap.webp",
+      "gitBlob": "99c23bd147c261a79d8e834fec7dda618fcd7134"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/arcana/art/product/broom-cadet-zephyr.webp",
+      "gitBlob": "5da3ae27ac1874046d7f3817af60cb97c44c6410"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/arcana/art/product/broom-wind-arrow.webp",
+      "gitBlob": "57dd2791c5a94a84c9aeaa6348316618bbaedccf"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/arcana/art/product/broom-zephyr-2000.webp",
+      "gitBlob": "640b8fc9b008e22582e238a11c128d394311a401"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/arcana/art/product/core-dragon.webp",
+      "gitBlob": "b75c4f046172cbebea0a7eb57c62e7457a1229e3"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/arcana/art/product/core-phoenix.webp",
+      "gitBlob": "f2583d537f33c7b21f33e6ee984fb2138a259c5d"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/arcana/art/product/core-wyvern.webp",
+      "gitBlob": "7d207bd9d19bb12c4a326e5d9861778a15507224"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/arcana/art/product/gold-key.webp",
+      "gitBlob": "b8940fd2b955391cc6abc1ab7d4e10e37e61be44"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/arcana/art/product/loot-chest.webp",
+      "gitBlob": "68e215a78dd58c1c9d035a7ed29020a44db7882b"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/arcana/art/product/wand-birch.webp",
+      "gitBlob": "1d49b6aa09c25f57413c97e13d981cdbe5bf3b11"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/arcana/art/product/wand-elder.webp",
+      "gitBlob": "654cbe969fa6b74a94f67885c8bb257c851fcdc8"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/arcana/art/product/wand-willow.webp",
+      "gitBlob": "cbd971964107d2a6f9c7ce6440c4a3705564a984"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/arcana/art/pwa/icon/192.png",
+      "gitBlob": "738e4e78bf51c4aba18e63e59c5d7145b784e884"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/arcana/art/pwa/icon/512.png",
+      "gitBlob": "b14eb7209265bb90f25bfc942b55f5759598034d"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/arcana/art/rarity/arcane-legendary.svg",
+      "gitBlob": "52baa8da96f06322c4ebfb9a17a82bb099cb01f0"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/arcana/art/rarity/common.svg",
+      "gitBlob": "8947b6fbc1846f473a257d73983fce63124d7837"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/arcana/art/rarity/epic.svg",
+      "gitBlob": "620a013dedf67199973b809eee3d6a6b322b10b9"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/arcana/art/rarity/unusual.svg",
+      "gitBlob": "88c49d3aabfebf5d67566f1c55224c07f6feb8dc"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/arcana/art/rival/arcanist-1/figure.webp",
+      "gitBlob": "1386319f1ae0f4c223d5fd97399e47b6a20a1002"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/arcana/art/rival/arcanist-2/figure.webp",
+      "gitBlob": "033b94a9b8088c07e6dd35af7de87fd747fb07cc"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/arcana/art/rival/arcanist-3/figure.webp",
+      "gitBlob": "4c52bdfbc18f7f83f7b43848ce41871708d18c19"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/arcana/art/rival/boss/figure.webp",
+      "gitBlob": "2c911f2b82fbbae0e2403475a3dcf1ff43f9bf5e"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/arcana/art/scene/arena.webp",
+      "gitBlob": "dce4f2d4ed63df4cb5b150e9f221f2da92cd08e6"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/arcana/art/scene/boulevard.webp",
+      "gitBlob": "65c9b78a23bd67f86d47ae8569d0e590d1e6f028"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/arcana/art/scene/confectionery.webp",
+      "gitBlob": "65de9dad7a6b00a07e93695ebb40b607eaa3c4e2"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/arcana/art/scene/passage.webp",
+      "gitBlob": "0eac313c0d5534687d31b3a412beb29baca46ea0"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/arcana/art/scene/vault.webp",
+      "gitBlob": "cb768a0dea64448f549583c2771da6847c4c5732"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/arcana/art/scene/workshop.webp",
+      "gitBlob": "87cdc95a984838877f2d4c79c121c917696cb576"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/arcana/art/toad/base.webp",
+      "gitBlob": "ae4fffc075a452ce5065e318a93c2c06023e7b2c"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/arcana/art/toad/box.webp",
+      "gitBlob": "17071008ba3ac2505d8ab729acd957bd6fdeb95c"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/arcana/art/toad/lid.webp",
+      "gitBlob": "ce6b02c8a037065e753fe57564b0fecb09c6fcf0"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/arcana/art/toad/seal.webp",
+      "gitBlob": "81bdd77b197d7632fb2ba730e2d8de0a36ee94cd"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/arcana/art/toad/subject.webp",
+      "gitBlob": "14e6af78cb3795b1b9093edfd74769d1e4ca8e06"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/arcana/art/ui/clear.svg",
+      "gitBlob": "d635690927f1cf4738d86134fc4035827dbe444a"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/arcana/art/ui/collection.svg",
+      "gitBlob": "ab17513b7cc32a750d6a524879506a50a35e86fc"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/arcana/art/ui/frame.svg",
+      "gitBlob": "22b00bf498ce7dcbfa93473f02c781cc56b1060f"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/arcana/art/ui/map.svg",
+      "gitBlob": "74ae565d1cf657f26450b01ec6d1902453cba03f"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/arcana/art/ui/missions.svg",
+      "gitBlob": "5a0695c1ad73ab95076642a3c55a6ac397e5b520"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/arcana/art/ui/motion.svg",
+      "gitBlob": "22668ff1535a5ae9bc6dae26c3fc213ff3636735"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/arcana/art/ui/owned.svg",
+      "gitBlob": "469cc3e16a4c18cb0b2278806c7941e34fe2b841"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/arcana/art/ui/seal.svg",
+      "gitBlob": "6df48c233654df7191db223fbff0abeaa3f33aaf"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/arcana/art/ui/shop.svg",
+      "gitBlob": "899241eda01c0faee74254da248e2d867df8bc05"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/arcana/art/ui/temporary.svg",
+      "gitBlob": "7adc25a49d9ed33e5fba09cfbc83670d9615315a"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/arcana/assets.json",
+      "gitBlob": "7d9318649cc382cf280badcfdca6289eb1ec7aa9"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/arcana/characters.json",
+      "gitBlob": "84c2d9f54559cfe63e78d7089ab57ae94c608ae3"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/arcana/messages.json",
+      "gitBlob": "d92c56d4d376ae118d88a532cb21a1da7d7b9ba6"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/arcana/narratives.json",
+      "gitBlob": "2f97519b7986968724d6c7eb7af172966bb74320"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/arcana/pack.json",
+      "gitBlob": "db102bdaa78ca6a627199a79caba96027fa6efe8"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/art.ts",
+      "gitBlob": "c4a6cca78b222d1a4c140417c0492733e991232c"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/contract.ts",
+      "gitBlob": "666e1b812f57ae519abe219f9ddb359c9b7cf44b"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/default.json",
+      "gitBlob": "17924207cebc02cc5dad6900ee5dd79e664bcccc"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/README.md",
+      "gitBlob": "1e638dba8b4b97ed815ba62ffb365d312e6d100b"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/boss-a70/book-cover.webp",
+      "gitBlob": "f8a898bf648033e31bd054a1cf01edd05f4d8136"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/boss-a70/book-pages.webp",
+      "gitBlob": "13790df5bed64bd4f6ecd7757a9d2cbd9014060d"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/boss-a71/actor-arm.webp",
+      "gitBlob": "2583f5d17b03879df5b5d75a29b92c214f248363"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/boss-a71/actor-base.webp",
+      "gitBlob": "67aeb392a14c3f6d8c17a635bed2e609ea6d0c59"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/boss-a71/actor-rest.webp",
+      "gitBlob": "428b75aea044db12368ce15ea2f572e522bb1b44"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/card/back.svg",
+      "gitBlob": "120460dd3a661e2687708ab22c9a909412fc5ed4"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/card/frame.svg",
+      "gitBlob": "6087d55ffa580af86a73c081c6a42061b28472ad"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/apprentice/figure.webp",
+      "gitBlob": "b14a8a9ffcf88b500cba217a0f0fa632ef64e70b"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/apprentice/portrait.webp",
+      "gitBlob": "203bc0cf7cafeb2399fe960493b1ae496511ba5e"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/apprentice/thumbnail.webp",
+      "gitBlob": "801310881250fe8faf96ac27f9b58cf50f30d111"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/ash-wanderer/figure.webp",
+      "gitBlob": "9ee5257ebbde700d1759c6afefc8400b1c350a91"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/ash-wanderer/portrait.webp",
+      "gitBlob": "a4a809cedd9843bac26d2943cf13ede8c901f591"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/ash-wanderer/thumbnail.webp",
+      "gitBlob": "e59a3850f5a00d75e429eea2056d8f381c6ed4d4"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/aurora-sage/figure.webp",
+      "gitBlob": "36dcb9d6b3494066492f8545f925313967379ae4"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/aurora-sage/portrait.webp",
+      "gitBlob": "2a7358a25a8cf7ec0c49ef413ab2b9abcb02e151"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/aurora-sage/thumbnail.webp",
+      "gitBlob": "ca44af0063540c62d382d8a43453906edd365cd1"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/cinder-dancer/figure.webp",
+      "gitBlob": "2be4e69c74369697cece202387dc06ec32d273ad"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/cinder-dancer/portrait.webp",
+      "gitBlob": "c144d4c0b6491db33b3104ad1e39fd5202295758"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/cinder-dancer/thumbnail.webp",
+      "gitBlob": "b6dd1edba537caee3400eb84fc442c3f84a5d375"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/circe/figure.webp",
+      "gitBlob": "f118582c99d58fa6553b3b9d11e38cc77a025b42"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/circe/portrait.webp",
+      "gitBlob": "8a9822e8266a5166e6dd80867d6a435fbfc0cceb"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/circe/thumbnail.webp",
+      "gitBlob": "a382f85910abcbda10f637154dc93c9227f6dc84"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/comet-scholar/figure.webp",
+      "gitBlob": "cd9ba83c59b52425211e40bbc1c68d59fa2edb12"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/comet-scholar/portrait.webp",
+      "gitBlob": "c069339c07ba7ffb2bd79fb610792a78951b4bc8"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/comet-scholar/thumbnail.webp",
+      "gitBlob": "507cb65a128b6b5ab3cf15eafd7f20c4fbcbd380"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/copper-sage/figure.webp",
+      "gitBlob": "240ad371ce02ac5aa29342d5a119a2343c62d381"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/copper-sage/portrait.webp",
+      "gitBlob": "2a1130eb80ab40897c6235eaca900d43764e3cde"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/copper-sage/thumbnail.webp",
+      "gitBlob": "99df29a222ff54f0f86c22018f03d1a5f726a29b"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/crystal-watch/figure.webp",
+      "gitBlob": "f3f07b6345a2eb68b6a751d6baab39288bae8435"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/crystal-watch/portrait.webp",
+      "gitBlob": "37ebf7eceb859702fadf6ede1e373d92efc60093"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/crystal-watch/thumbnail.webp",
+      "gitBlob": "9fd9e90acd6de4ca9d5d9ff5e6a8d78a5450a2ec"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/dawn-oracle/figure.webp",
+      "gitBlob": "8448cfbd3cbadf9050a158eb7a3b909bb4239c8a"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/dawn-oracle/portrait.webp",
+      "gitBlob": "a8869d5f96ec6ab94e075c369df2b66409f1d358"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/dawn-oracle/thumbnail.webp",
+      "gitBlob": "4548d2642abb4b5069b914d1e1b97006101f7b56"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/dew-alchemist/figure.webp",
+      "gitBlob": "9c1af70a4b5d0efc6124297afc98eecef79ed451"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/dew-alchemist/portrait.webp",
+      "gitBlob": "961942360c57f741a5715341d0012aaf7de4bb16"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/dew-alchemist/thumbnail.webp",
+      "gitBlob": "c23b6f3dd0db92ca81793a459b694eaa996c708c"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/echo-mage/figure.webp",
+      "gitBlob": "b3919f7b8d2a3522663e7fe91a3bfadfb3ab19ad"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/echo-mage/portrait.webp",
+      "gitBlob": "d87c662e1e9fb60e9a8aa8cc8912871b7075fdbe"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/echo-mage/thumbnail.webp",
+      "gitBlob": "3cc1f1c28af45eb33fc6a040efdf060a22e5b151"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/ember-keeper/figure.webp",
+      "gitBlob": "662518112c45c9e85681fae1875ad093c9da8ca3"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/ember-keeper/portrait.webp",
+      "gitBlob": "bf1751172954eead2f59cdd0d97f8b13537fd115"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/ember-keeper/thumbnail.webp",
+      "gitBlob": "50c6542c6feb10c318ad0234929ba3f81df1aa4c"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/flamel/figure.webp",
+      "gitBlob": "faf8250b1e8b72e598a4689d6731e39f9e7429d3"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/flamel/portrait.webp",
+      "gitBlob": "dd968b772f1d180237fc22fce795aba6190ef913"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/flamel/thumbnail.webp",
+      "gitBlob": "b66c38a8feaf46b22aa87fdf98be7ec1381576f8"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/merlin/figure.webp",
+      "gitBlob": "922a708fb6ea134140ad36244cc15a9b90e4a8f6"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/merlin/portrait.webp",
+      "gitBlob": "36b6b8bb85214eef17925f1cde4d6b36b3b1724a"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/merlin/thumbnail.webp",
+      "gitBlob": "cbad660691f1913e4ad4fc9b03829d89cecbbbb6"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/mist-seer/figure.webp",
+      "gitBlob": "dd0bfb49d76ed93fb496d974d056ef623634d44c"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/mist-seer/portrait.webp",
+      "gitBlob": "38a9f18a049444641e4f9bec84d69f8f7f364035"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/mist-seer/thumbnail.webp",
+      "gitBlob": "0edffc0218e426c67846aa176182fdd335e5ea24"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/moon-herbalist/figure.webp",
+      "gitBlob": "649be0371bcf4eb0af4fd507be5301c51da444f7"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/moon-herbalist/portrait.webp",
+      "gitBlob": "4fda712de20e9dc62c00b2ae14caae7a9f74c089"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/moon-herbalist/thumbnail.webp",
+      "gitBlob": "8f1a7b57a273ddd89f00e68ad6f609cb70ea964d"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/morgana/figure.webp",
+      "gitBlob": "c9d087f337ec06e0b6f7399998d870a8694ea836"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/morgana/portrait.webp",
+      "gitBlob": "5d40c4d1d11ba07eaf58ec1d55bd4272d440902f"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/morgana/thumbnail.webp",
+      "gitBlob": "23dde26af8bb69f0be06773ae2eea2910fca8f82"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/moss-guardian/figure.webp",
+      "gitBlob": "626efed0266a2c826e363b485f18d27ad2a7945a"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/moss-guardian/portrait.webp",
+      "gitBlob": "57905baeb72e51c4bc47aaa38319481d6ef779af"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/moss-guardian/thumbnail.webp",
+      "gitBlob": "2f86d56c84a30a4880638b17a1902bd590264948"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/night-forger/figure.webp",
+      "gitBlob": "3562daaacdf54911c7ccd0808147016afaa5f486"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/night-forger/portrait.webp",
+      "gitBlob": "eee036f4b62fead18c292b93f251be7ad80f9b61"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/night-forger/thumbnail.webp",
+      "gitBlob": "516e3215ed45b28c1beb7bba6d6b5e52c1489515"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/obsidian-seer/figure.webp",
+      "gitBlob": "60befb7dc12ee0b4f4684d6c43d1e48baa77aafc"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/obsidian-seer/portrait.webp",
+      "gitBlob": "5d0931dd41b8e1df5a0c7e06a4c47c822df07e5a"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/obsidian-seer/thumbnail.webp",
+      "gitBlob": "b0f0c5b7f6dc56221681d39a312392d653e2c46b"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/paracelso/figure.webp",
+      "gitBlob": "faad2461e433a738bfcc42946ad8e585808f685c"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/paracelso/portrait.webp",
+      "gitBlob": "aa124cfb20c82ac1f461c6528abe3d80cb54f8a0"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/paracelso/thumbnail.webp",
+      "gitBlob": "ce485f889f65dd0d4b5a201b18f4bf0fddb10df9"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/root-speaker/figure.webp",
+      "gitBlob": "4cb72bcebe48ecf0d1b1159ccb90b814d7446244"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/root-speaker/portrait.webp",
+      "gitBlob": "4d4761aa281710f45a7589c1d00d9106143d2e0c"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/root-speaker/thumbnail.webp",
+      "gitBlob": "b19bdea37dbb91ec794d91320517bf72767975a0"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/rune-weaver/figure.webp",
+      "gitBlob": "bc16fe602ed984622198bc75902ed78410b32537"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/rune-weaver/portrait.webp",
+      "gitBlob": "f3e5234e49cecb51e6a31dc3eed1df9f77dbec27"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/rune-weaver/thumbnail.webp",
+      "gitBlob": "edd42ae985bc0af973f47e555541371bd6383036"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/shadow-scribe/figure.webp",
+      "gitBlob": "055a4a8ac4eceb66e914c5980650bef260042593"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/shadow-scribe/portrait.webp",
+      "gitBlob": "fbec24e4e061e7e484782ef55b7f6ef5811fa707"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/shadow-scribe/thumbnail.webp",
+      "gitBlob": "065d62e7c9c28600e6083f0204280b027b7ee610"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/silver-sentinel/figure.webp",
+      "gitBlob": "4630f3b568477b2af21424269f8ca7e010e4c16d"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/silver-sentinel/portrait.webp",
+      "gitBlob": "f631684d43f47b2dfca19c768ec5acce53f9381f"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/silver-sentinel/thumbnail.webp",
+      "gitBlob": "188ff40c97230240d5d7c8f1100284cca4622b47"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/star-binder/figure.webp",
+      "gitBlob": "153234e7d11f13a56c10f4ec1b7067e30d4d21fb"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/star-binder/portrait.webp",
+      "gitBlob": "4b0d07f59e3d2a3f37bbff3f93b1535ace909f14"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/star-binder/thumbnail.webp",
+      "gitBlob": "96f00eaecee72dd4c1a4712fbb4427540f0e4112"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/storm-caller/figure.webp",
+      "gitBlob": "30ec5114bd14bfe2e17ca75669d01be87ff321ce"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/storm-caller/portrait.webp",
+      "gitBlob": "8f313d4d2e8bdef5bcc4195566db2105775c577e"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/storm-caller/thumbnail.webp",
+      "gitBlob": "5fe17351ea40a9ea4805f3bf8985e6c13efa41c0"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/sun-priestess/figure.webp",
+      "gitBlob": "509e5b119742df97867ec8c6e91bee33ba75069e"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/sun-priestess/portrait.webp",
+      "gitBlob": "4e1792c304f23684abe61d129c8bb4576a280b7f"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/sun-priestess/thumbnail.webp",
+      "gitBlob": "7491efde1dd1eb3a9ae1e732b45f802a31d6b0b4"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/veil-walker/figure.webp",
+      "gitBlob": "dc13d4be87cbd2cb086a2c360135142fa6d4715e"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/veil-walker/portrait.webp",
+      "gitBlob": "24d09dea3f20441d1bdc9b98bee3f2fc36094e9f"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/veil-walker/thumbnail.webp",
+      "gitBlob": "39083e17f730e81ea105cd324fd72ed90b003146"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/wind-reader/figure.webp",
+      "gitBlob": "22d36d9663431b5a20bc9561f1695bec6d9e2492"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/wind-reader/portrait.webp",
+      "gitBlob": "ce6cf88d2d21b22c581c7a38f69d2c62d2cc9606"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character-illustrated-v2/wind-reader/thumbnail.webp",
+      "gitBlob": "466e510d7d7737a2e12136ff13e4c5c31e58becf"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character/apprentice.svg",
+      "gitBlob": "ffdc639ae32be00126c3cf61bd2b1b5fa519ef5e"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character/apprentice/figure.webp",
+      "gitBlob": "be2def5083d21dcc5c22a1c4b664951a754a07a6"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character/apprentice/portrait.webp",
+      "gitBlob": "a344c619c06049b28343383927a7061f12e458fa"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character/apprentice/thumbnail.webp",
+      "gitBlob": "bcea2b82a3ebd045eb91e11a16ee9a604cc0af61"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character/ash-wanderer.svg",
+      "gitBlob": "a1781db90f68945e9d5a20fd9ec05e5bbb6540b0"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character/ash-wanderer/figure.webp",
+      "gitBlob": "44439f1f1cb2e73a72109a6b085ab4c19297648d"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character/ash-wanderer/portrait.webp",
+      "gitBlob": "70ac4dcff4162cc3c77039690a6b8eebaaed1ba2"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character/ash-wanderer/thumbnail.webp",
+      "gitBlob": "6b9e5dd179b574a768718983fbd4bb94039cce3d"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character/aurora-sage.svg",
+      "gitBlob": "911dc79802092614d15f001bb416d17788eba66b"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character/aurora-sage/figure.webp",
+      "gitBlob": "a981a539c55a89f56f776401714a4e7b50975602"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character/aurora-sage/portrait.webp",
+      "gitBlob": "049b10c589f7e726498d44005d6149a3fd19bbdd"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character/aurora-sage/thumbnail.webp",
+      "gitBlob": "1c27e903c98cd36563f2d5979528affc4a7dff53"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character/cinder-dancer.svg",
+      "gitBlob": "cb187b9700dae4c5367600b73c3ae79032fb605a"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character/cinder-dancer/figure.webp",
+      "gitBlob": "f410096a73a8e2592ce0ed3083142d75df203df9"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character/cinder-dancer/portrait.webp",
+      "gitBlob": "f95161442eb414bc93a61696622013989d00f92d"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character/cinder-dancer/thumbnail.webp",
+      "gitBlob": "c13536d5150a964a92d46487912205c7ae6a00ab"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character/circe.svg",
+      "gitBlob": "fe7001b585fa30adb6335e5bb859a9c35d8268f1"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character/circe/figure.webp",
+      "gitBlob": "e6f9e702c0f0ab7d86dc3f49b5aff23221ff98f7"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character/circe/portrait.webp",
+      "gitBlob": "0be37fe3347681a046695d116a94dc9374b0afdd"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character/circe/thumbnail.webp",
+      "gitBlob": "1536d0f29eb035783c36bf0417e329de904dd85a"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character/comet-scholar.svg",
+      "gitBlob": "20c1d0ed04a52c9f7788980b614559260c598e94"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character/comet-scholar/figure.webp",
+      "gitBlob": "3f82501b5897e07b4f405b78d33ab2f3072981a2"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character/comet-scholar/portrait.webp",
+      "gitBlob": "c3dd90c9d335b846f7e03a5fc6b8d7c70b8090f7"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character/comet-scholar/thumbnail.webp",
+      "gitBlob": "52e42a02764d313b0a5c8d2a662f3904a4acb014"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character/copper-sage.svg",
+      "gitBlob": "396e196e4c756e03f2d6a627a1ab9a403b834739"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character/copper-sage/figure.webp",
+      "gitBlob": "49b8635be43812b4d52fb694a5e0ce8f58e41d75"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character/copper-sage/portrait.webp",
+      "gitBlob": "a3f0c9ee9c2a09a78284b69541b430434f02aa65"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character/copper-sage/thumbnail.webp",
+      "gitBlob": "1d8cc01e46c2f2d4af56757ffb3785b65d67d0a8"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character/crystal-watch.svg",
+      "gitBlob": "67818242dea2d8eaef820a3fa08b85aa82c8d35f"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character/crystal-watch/figure.webp",
+      "gitBlob": "1f181073936adc32d7e8b2695664dc0c127870c6"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character/crystal-watch/portrait.webp",
+      "gitBlob": "99c752c76844ea6824c0604af1f643ef48b3e758"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character/crystal-watch/thumbnail.webp",
+      "gitBlob": "36ee4cce72273cf37eb91b3372807ec6b7289269"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character/dawn-oracle.svg",
+      "gitBlob": "05db55f263c522153bdc7886481297adcab65e32"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character/dawn-oracle/figure.webp",
+      "gitBlob": "4257f469b5d46cd795e4bc3c7a8b04ebe3b6293a"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character/dawn-oracle/portrait.webp",
+      "gitBlob": "44507e84b7e0a72bf893cd9343b5ef9fb714aee6"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character/dawn-oracle/thumbnail.webp",
+      "gitBlob": "7c610484b59af267dace190d7772250b92bfb63d"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character/dew-alchemist.svg",
+      "gitBlob": "21bfc453eb7a6ec5e795e5e5279d7423a75180f0"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character/dew-alchemist/figure.webp",
+      "gitBlob": "b919c0059342de0c0532cd89e39e09cc4c1e6fc6"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character/dew-alchemist/portrait.webp",
+      "gitBlob": "5e81bb42b6a2d331978aa982be64833c4112bb8c"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character/dew-alchemist/thumbnail.webp",
+      "gitBlob": "5a5ea3e76d757c6084854d8e978f6346031a2195"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character/dumbledore-historical.webp",
+      "gitBlob": "e2c1bc09e3e745093c4086888b940e6f897ab835"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character/echo-mage.svg",
+      "gitBlob": "6483c4e86f4b17db733136b13be5067313b5823a"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character/echo-mage/figure.webp",
+      "gitBlob": "16a5382f68b02193b3ce9ac0bf1af95c141c4f3d"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character/echo-mage/portrait.webp",
+      "gitBlob": "6d3f9a6916b5bbcd827b935266161c5f9120ed48"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character/echo-mage/thumbnail.webp",
+      "gitBlob": "55c70204e486a6f4292cffa10a457b1c6648cf3c"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character/ember-keeper.svg",
+      "gitBlob": "ff44cef130b0e45196f89ba88a74f73c3b5ff00b"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character/ember-keeper/figure.webp",
+      "gitBlob": "cf359116b5e59906d6c1302aa91bb9bc3a6bddfd"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character/ember-keeper/portrait.webp",
+      "gitBlob": "e6796490d3baa0d685a74add0b8aa0692a0f6f57"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character/ember-keeper/thumbnail.webp",
+      "gitBlob": "33ac333b0a141087dc55a32c70e98fca38fe7dc2"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character/flamel.svg",
+      "gitBlob": "da599b62c5dbd7c476b9045b511b50ae0f0670d5"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character/flamel/figure.webp",
+      "gitBlob": "17651a00fc0cf8f2270e9f0a67d65b9afcb8b80f"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character/flamel/portrait.webp",
+      "gitBlob": "f3c92a8fee2c339c0fd249c6e8f2c0c13f9684d4"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character/flamel/thumbnail.webp",
+      "gitBlob": "4176ee3aa7dc26fa475bfd8ef150248a528c9a8e"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character/merlin.svg",
+      "gitBlob": "c1bcf2b4286a5c0f974a74632ad10b2d030fa173"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character/merlin/figure.webp",
+      "gitBlob": "6965303ee703c83af0771292069f4817e0d87009"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character/merlin/portrait.webp",
+      "gitBlob": "14f74438586a814d1db921c8da1c7c8513de7db1"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character/merlin/thumbnail.webp",
+      "gitBlob": "990d21d8662dcc35b49a039d3274e11098ee80e1"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character/mist-seer.svg",
+      "gitBlob": "468971ce44b6c689d6fcd1eedf79b20124f25f65"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character/mist-seer/figure.webp",
+      "gitBlob": "0e7df7fc89719e1a9c749e0129e84661ff0f59c4"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character/mist-seer/portrait.webp",
+      "gitBlob": "05bc9493334b2f1514dd6f5688e4752a8762530a"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character/mist-seer/thumbnail.webp",
+      "gitBlob": "5398cc2a7d80b92a5443aa683177795b1cb4833c"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character/moon-herbalist.svg",
+      "gitBlob": "74a0fcf4c98d3d063644d59719d175ad59582f32"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character/moon-herbalist/figure.webp",
+      "gitBlob": "b5f6ead5e8fdf457f6291620366126d237eec575"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character/moon-herbalist/portrait.webp",
+      "gitBlob": "acb606d1536cf47ee8a36c50749084ac97290e41"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character/moon-herbalist/thumbnail.webp",
+      "gitBlob": "d887f92e5091cda90b609c76a4f4412b22287a5d"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character/morgana.svg",
+      "gitBlob": "abd6b9070600b42b2dda706bcad2c033b4b32041"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character/morgana/figure.webp",
+      "gitBlob": "6ef3f021ae7c366fdf5f88e6e2f596d07108444b"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character/morgana/portrait.webp",
+      "gitBlob": "dc7bb11572d46e9c449293fbcf7a1c2e994b8625"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character/morgana/thumbnail.webp",
+      "gitBlob": "3e001bf8745b8cc413ea0484ce55179c0ba70492"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character/moss-guardian.svg",
+      "gitBlob": "d9b8c2f0925b1c5979dec9caa6872295ba0973f7"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character/moss-guardian/figure.webp",
+      "gitBlob": "4e129c07687b76766dd8d2fd52338bc7b0257ddf"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character/moss-guardian/portrait.webp",
+      "gitBlob": "e386567eb7f034e2005e3c5576685ab0412976d4"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character/moss-guardian/thumbnail.webp",
+      "gitBlob": "cbbd7d47f8a94da41d6b55417b8836733073e67f"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character/night-forger.svg",
+      "gitBlob": "8618661255e451b286b940271321390ad58282ef"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character/night-forger/figure.webp",
+      "gitBlob": "17011cc992b933fa68963b76764d92665c706272"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character/night-forger/portrait.webp",
+      "gitBlob": "d9fc86d8107a48deb97b659aaf23b894eab6e5c1"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character/night-forger/thumbnail.webp",
+      "gitBlob": "76e47f09a94435cd7ab4bed61d8f5c32ae9c4941"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character/obsidian-seer.svg",
+      "gitBlob": "9e273f70598eaa6e507b060316783562cce88eba"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character/obsidian-seer/figure.webp",
+      "gitBlob": "8098077fd89b6e2ab025c745c908f8061d1bc97c"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character/obsidian-seer/portrait.webp",
+      "gitBlob": "ecab4650a0049e26224522f7a6e3e71ceec17777"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character/obsidian-seer/thumbnail.webp",
+      "gitBlob": "5fdf48d5c22f8e6847ee6466cf275635f7535529"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character/paracelso.svg",
+      "gitBlob": "8d7f533311142c6de5864cd6113c134c75313633"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character/paracelso/figure.webp",
+      "gitBlob": "58b9a095b50fcd5757774ce648e3bf88da7e58be"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character/paracelso/portrait.webp",
+      "gitBlob": "12d8b1ba25dde916d2f2bdb8e93aa86523903e67"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character/paracelso/thumbnail.webp",
+      "gitBlob": "d5c25bce741c5a8327079052bbcda42a2859bc11"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character/root-speaker.svg",
+      "gitBlob": "7d26dcc94557b8e6213b09ba9ec274addb6b2b2a"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character/root-speaker/figure.webp",
+      "gitBlob": "b76a0a43f09c7cd59f4f555ce3e096678c14cd90"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character/root-speaker/portrait.webp",
+      "gitBlob": "848248ede1eff30b1044aeba9c21b532febd6a2a"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character/root-speaker/thumbnail.webp",
+      "gitBlob": "20287b294b2d10ddf004010767385e1ec17473f4"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character/rune-weaver.svg",
+      "gitBlob": "279f055547a76d2e897cc008bbf0a3fe798305bd"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character/rune-weaver/figure.webp",
+      "gitBlob": "3d12ea9754afed2f692b2cb0f931396de2ff2daf"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character/rune-weaver/portrait.webp",
+      "gitBlob": "594db4c40f00d54e81af6c64611a2194467d06d2"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character/rune-weaver/thumbnail.webp",
+      "gitBlob": "08ac20aacfabdd088b92aaf26482031d0ef7f8dc"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character/shadow-scribe.svg",
+      "gitBlob": "b3d27a3ed8cbc086da88072be6b2977d733992e3"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character/shadow-scribe/figure.webp",
+      "gitBlob": "40b9ea92f6168939f1d857d64957cce3672d8684"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character/shadow-scribe/portrait.webp",
+      "gitBlob": "8386620953d7ef864fb1b8162c83f45c1c398475"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character/shadow-scribe/thumbnail.webp",
+      "gitBlob": "2ebaacaf6934175097fc0af18555bd57f2f4b2b9"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character/silver-sentinel.svg",
+      "gitBlob": "ff79a69c9976170a014ae7fd2494d87e956cdd48"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character/silver-sentinel/figure.webp",
+      "gitBlob": "3c5a38746ac32c0373f3254120e458dd715e5248"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character/silver-sentinel/portrait.webp",
+      "gitBlob": "be5d56ca07b9310c1a6e520d464557c840219b63"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character/silver-sentinel/thumbnail.webp",
+      "gitBlob": "91a7a8b99ed1028634626a5ea9aefb4652e69234"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character/star-binder.svg",
+      "gitBlob": "35851ee420d5192e41a730b29bc1f410f0973195"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character/star-binder/figure.webp",
+      "gitBlob": "d1af5aaf76c3b15149be7276fb791197776e3db6"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character/star-binder/portrait.webp",
+      "gitBlob": "2d852acefd4b5601cf260667ff8419bd8e44babe"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character/star-binder/thumbnail.webp",
+      "gitBlob": "af6e9c3645bfab6eda2d974df2ee9cc69f9b9c3e"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character/storm-caller.svg",
+      "gitBlob": "cfaaa6fa0c96fe7aaebab28938f48b555788cc03"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character/storm-caller/figure.webp",
+      "gitBlob": "0456823df58d01996f1dae49d678bae85edb2518"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character/storm-caller/portrait.webp",
+      "gitBlob": "5cf7ed9554c15197dcfe570d504060abde1176ff"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character/storm-caller/thumbnail.webp",
+      "gitBlob": "a781a4c5f14ddd6bffb23eb1ff2cef46f0a4cacc"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character/sun-priestess.svg",
+      "gitBlob": "f435e03a69561bf250983ad385ac74baa4f2f331"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character/sun-priestess/figure.webp",
+      "gitBlob": "4e420b44ebd9a0455c38366e67a57c93d679f86e"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character/sun-priestess/portrait.webp",
+      "gitBlob": "6c04edcd98b3ec17fc6b01aec2dc5590fe77e872"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character/sun-priestess/thumbnail.webp",
+      "gitBlob": "54992b43b92c9dfdc227a314764150d45a41d85c"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character/veil-walker.svg",
+      "gitBlob": "6e555cd57dfcd8cba240225aadea6910b0844576"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character/veil-walker/figure.webp",
+      "gitBlob": "5ffbdf9de40e32f42a121710db39bc2e8c2a0597"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character/veil-walker/portrait.webp",
+      "gitBlob": "73f0cc059ab9aafe787e4eb79eefcec77c5938f1"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character/veil-walker/thumbnail.webp",
+      "gitBlob": "90a5247e3de3fb8034475c63aa74fc3e48544f0f"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character/wind-reader.svg",
+      "gitBlob": "8e9dcfbc3b7b7268c794491888766f6b70559b5f"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character/wind-reader/figure.webp",
+      "gitBlob": "86c25a57e4b1fb840714feb5acee79a1a59883e8"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character/wind-reader/portrait.webp",
+      "gitBlob": "3a9a6773e660cd25acf146541cf2e7029063839a"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/character/wind-reader/thumbnail.webp",
+      "gitBlob": "0471e4a36e0b9c95bf375eeb02fb084d0b1d41d9"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/currency/galleon.svg",
+      "gitBlob": "e27ab1d548959cd44071f23e93457b9b1fdd2efc"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/frog/base.webp",
+      "gitBlob": "b7b204f0d7dfde8e8d7e1228526efe00bf5a33f8"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/frog/chocolate-frog.webp",
+      "gitBlob": "83357f2d9d9e51c3cc3569def817ba763d7a42ef"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/frog/closed.webp",
+      "gitBlob": "32d34fe2d7ca4e86783bb685b38224b7144bad05"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/frog/interior.webp",
+      "gitBlob": "42fa90eb3306cebd636962221b5ea1906cef7d21"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/frog/lid.webp",
+      "gitBlob": "335d6e1e67baa0f8b010fb7fb16fe35641cf13c9"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/frog/model-closed.webp",
+      "gitBlob": "5b846583a34ce36e494e4bdd15acb7be9f186af5"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/frog/seal.webp",
+      "gitBlob": "79a499bf18f48d6a0681380494f560fd147fccf7"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/fx/halo.svg",
+      "gitBlob": "3fb4b2a404ce5504cf72b653a446a82efedf548c"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/fx/ring.svg",
+      "gitBlob": "1c89161af2cbd28b438eeaed068bdd820e86921c"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/fx/shadow.svg",
+      "gitBlob": "a606b6f9284231e5a6738894978c52d1b6ae1fbd"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/fx/sparkles.svg",
+      "gitBlob": "62593d9fdf1959f5178db08a039b62f14c7faaf8"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/fx/spell-trail.svg",
+      "gitBlob": "98fb6f89f2673472397f12b7e5dcb98c70927078"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/nodes-a59/boss.svg",
+      "gitBlob": "7ffa4a1ebf87e823e1df8043ed41a1126eef92f9"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/nodes-a59/chest.svg",
+      "gitBlob": "e9e71a466f6b50aac0248b49c5963d95aa063dee"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/nodes-a59/duel.svg",
+      "gitBlob": "b716016c03349133a1e66f5b29b83ab8de26c142"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/nodes-a59/encounter.svg",
+      "gitBlob": "5050912cd0ea7db4f17517c4cf1e8267730fd354"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/nodes-a59/pact.svg",
+      "gitBlob": "4682f005d51fdfef80d6a056ff95c8aa76e51573"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/nodes-a59/refuge.svg",
+      "gitBlob": "311031160fee390e84d62e231cedeb7fb1d6d4b2"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/props/album.svg",
+      "gitBlob": "b307358f2d14e25c890385931dca50df65098b38"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/props/beans-jar.webp",
+      "gitBlob": "815dfd772f2be63f95424acef257da3cd8216fa4"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/props/beans-packet.svg",
+      "gitBlob": "a857654358f92f010eaeb9b0fb775bf162c5b4a2"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/props/lantern.svg",
+      "gitBlob": "b576ecf6087d9b6b4c22683dc1a965e45bd681e9"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/props/letter.svg",
+      "gitBlob": "47fe4475d2918c16346fde2dd10761129bdd3408"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/props/map.svg",
+      "gitBlob": "b667969d5a8e468ca131ba71ef0ef8d48d45f27c"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/props/settings.svg",
+      "gitBlob": "13da5211aecf93d11863855dec5097bd3e84cce1"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/props/sweetshop.svg",
+      "gitBlob": "75069f1ea5de1309ba4b01d577ca43546ab8a393"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/props/team.svg",
+      "gitBlob": "50026969b7412fd1eddba216b0d810a68889074a"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/scene/diagon-alley.webp",
+      "gitBlob": "851908309b040a0fd20867ee0d2e80f2bad872a0"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/scene/sweetshop.webp",
+      "gitBlob": "e9cd45ca8fc187e0d0606b4504c660b3f2651c0a"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/storefronts-a59/confectionery.webp",
+      "gitBlob": "2ca95cf1dd0537c0c6a4eeb8989ce0755dbe2f85"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/storefronts-a59/vault.webp",
+      "gitBlob": "dddd23a0c55a000d85eb2f2190c5dfedb3897996"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/art/storefronts-a59/workshop.webp",
+      "gitBlob": "973c610cef41b6dcbfb647e05ed80c3d4639bbc9"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/assets.json",
+      "gitBlob": "34b5b2a0a2e52c95145399e5173973990e9c7a0d"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/characters.json",
+      "gitBlob": "56b78e68b256e3b8bd80b6f910320764bdc386f1"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/messages.json",
+      "gitBlob": "aeac22c9376644093b0f6b7a9a0163a51777d628"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/narratives.json",
+      "gitBlob": "f5b5421c9bc5d1a4dc9593bc7236a3b29df9dff0"
+    },
+    {
+      "path": "src/arcana/presentation/content-packs/diagon-alley/pack.json",
+      "gitBlob": "9d64f5e0bbee2f1c69d4c2bebbaacea19247d6c6"
+    },
+    {
+      "path": "src/arcana/presentation/contextual-messages.ts",
+      "gitBlob": "0b8ad428fcd3d2f58b6549fbfa0b4bbb8a96384c"
+    },
+    {
+      "path": "src/arcana/presentation/contextual-preparation.css",
+      "gitBlob": "69361ae829253d27ba5c1cb1f56edf32673411ae"
+    },
+    {
+      "path": "src/arcana/presentation/contextual-preparation.ts",
+      "gitBlob": "9cf7e9be6b787e290b6c6d9f30f444a255047db5"
+    },
+    {
+      "path": "src/arcana/presentation/equipment-label.ts",
+      "gitBlob": "eb84402af53f10710dbab46ad3656ac7fbafb68c"
+    },
+    {
+      "path": "src/arcana/presentation/equipment-specialization.ts",
+      "gitBlob": "abc9c9a8f8400d3f439334023e0da2e56c56e7ad"
+    },
+    {
+      "path": "src/arcana/presentation/expedition-challenge.css",
+      "gitBlob": "0d7ce04c53b97e8652a70df18339fc304b96e49a"
+    },
+    {
+      "path": "src/arcana/presentation/expedition-closure.css",
+      "gitBlob": "c025490cefe15c0158d6fa7ac3fd2cb31636d3ed"
+    },
+    {
+      "path": "src/arcana/presentation/expedition-cue.ts",
+      "gitBlob": "5c37a70c7053c0749fbb3feb11995bdc3e1ab5a1"
+    },
+    {
+      "path": "src/arcana/presentation/expedition-intentions.css",
+      "gitBlob": "458785cd4f9f1e8aba0a304debcf3d5ca6baacdf"
+    },
+    {
+      "path": "src/arcana/presentation/expedition-preparation.css",
+      "gitBlob": "bbc9491ad9e6a129a2e2b1880e3968befebb2dcb"
+    },
+    {
+      "path": "src/arcana/presentation/fonts/CINZEL-OFL.txt",
+      "gitBlob": "afdfd1412be934fe7cc40a5a2c5e06e354c44dcf"
+    },
+    {
+      "path": "src/arcana/presentation/fonts/cinzel-latin-variable.ttf",
+      "gitBlob": "d218a0b9c8879fd5a708872cc0ef357e507b35ca"
+    },
+    {
+      "path": "src/arcana/presentation/game-experience.css",
+      "gitBlob": "d899587358e75566892b8df4b8291de6f45b3b9d"
+    },
+    {
+      "path": "src/arcana/presentation/game-stage.css",
+      "gitBlob": "6f157a6383b2708551fd5b2b00abfb4363db384f"
+    },
+    {
+      "path": "src/arcana/presentation/header-pact.css",
+      "gitBlob": "6b01e4796aba640b6345d5658837decbe341dc99"
+    },
+    {
+      "path": "src/arcana/presentation/intention-messages.ts",
+      "gitBlob": "cbec133330e65e99749574969e38a5fb6eb1b90e"
+    },
+    {
+      "path": "src/arcana/presentation/map-a60.css",
+      "gitBlob": "c7ed866e38f6a1d993e7824c02afcf819a491b78"
+    },
+    {
+      "path": "src/arcana/presentation/map-messages.ts",
+      "gitBlob": "d7731edbb642e744e7de7a45ebdf4f37293a3ae1"
+    },
+    {
+      "path": "src/arcana/presentation/map-settings-a75.css",
+      "gitBlob": "46fb0a2b61ee950ee957a0e08a9803da414b120d"
+    },
+    {
+      "path": "src/arcana/presentation/map-settings-messages.ts",
+      "gitBlob": "8decdefc84a245bd22dab1f7275a39d28634a2a4"
+    },
+    {
+      "path": "src/arcana/presentation/motion-a69.css",
+      "gitBlob": "80c8dfc8cb0efb93a534ed440040d2603b1af8c6"
+    },
+    {
+      "path": "src/arcana/presentation/motion/battle-deltas.ts",
+      "gitBlob": "3ab8bc00e8356ffc221d9ef5567f91fc7a7c5de8"
+    },
+    {
+      "path": "src/arcana/presentation/motion/boss-motion.ts",
+      "gitBlob": "71604825fc317c768dd41315c098b3e152a1079c"
+    },
+    {
+      "path": "src/arcana/presentation/motion/replay-clock.ts",
+      "gitBlob": "49d9ddbe3984a0ab7da4c10f1e18bca2762ed48f"
+    },
+    {
+      "path": "src/arcana/presentation/motion/useBattlePlayback.ts",
+      "gitBlob": "ca96d9d373e0428b48798918133d1e99172a6d3d"
+    },
+    {
+      "path": "src/arcana/presentation/navigation.ts",
+      "gitBlob": "1b8d49015558a3b53691a0c13b993e13843ecb20"
+    },
+    {
+      "path": "src/arcana/presentation/node-a60.css",
+      "gitBlob": "ba3c69cdf876e304a23fd7aa9c2ac2be5e5ba61f"
+    },
+    {
+      "path": "src/arcana/presentation/node-event-dialog.css",
+      "gitBlob": "27ba06707e809088704036955465200c70ead4ba"
+    },
+    {
+      "path": "src/arcana/presentation/node-event-messages.ts",
+      "gitBlob": "a32e6bc3f0aab37772b3717882488d66e943a040"
+    },
+    {
+      "path": "src/arcana/presentation/node-result-motion.ts",
+      "gitBlob": "17b456111b60bf309159dbe7d85598e394ae4d6b"
+    },
+    {
+      "path": "src/arcana/presentation/opening-motion-model.ts",
+      "gitBlob": "d742818b362ae97d8d64d2be119725fb4406af11"
+    },
+    {
+      "path": "src/arcana/presentation/operation-error.ts",
+      "gitBlob": "1159d9a3e715ecef689d319d99fd5aed391841e6"
+    },
+    {
+      "path": "src/arcana/presentation/prep-messages.ts",
+      "gitBlob": "52402e3b1c355176614e924271261c65505fa367"
+    },
+    {
+      "path": "src/arcana/presentation/recovery-messages.ts",
+      "gitBlob": "1f45124fb864a73fcdb9de7b2cd5db4256e4022b"
+    },
+    {
+      "path": "src/arcana/presentation/recovery-notice.css",
+      "gitBlob": "1693328e43b8974afa310ce238fe780bdaafb9ea"
+    },
+    {
+      "path": "src/arcana/presentation/reveal-finale.css",
+      "gitBlob": "e91f3106ced6cba26e52daa9b33a410a56e4f3dd"
+    },
+    {
+      "path": "src/arcana/presentation/reveal-theatre.css",
+      "gitBlob": "6ae7bc41b40d4a1c91976e569dad9d2288cb6b2c"
+    },
+    {
+      "path": "src/arcana/presentation/route-inspection.ts",
+      "gitBlob": "8465573e9fb3a5863978ee252c99a8acac4e6493"
+    },
+    {
+      "path": "src/arcana/presentation/scenes/SceneCanvas.tsx",
+      "gitBlob": "f1f607f034c4bcbadbbae1de9a3cca7517333fa8"
+    },
+    {
+      "path": "src/arcana/presentation/scenes/frame-invalidation.ts",
+      "gitBlob": "36931ff7630808e366c00d420e5c439ef29e6169"
+    },
+    {
+      "path": "src/arcana/presentation/scenes/map-layout.ts",
+      "gitBlob": "225f88b85ec0ee0db31e219178945b92650ddf8e"
+    },
+    {
+      "path": "src/arcana/presentation/scenes/pixi-scenes.ts",
+      "gitBlob": "886c94abc3507be7805efb263d2eb5c1aee22222"
+    },
+    {
+      "path": "src/arcana/presentation/scenes/scene-diagnostics.ts",
+      "gitBlob": "5af4f927ee63068398c5a73c1dfe5cf29091aa76"
+    },
+    {
+      "path": "src/arcana/presentation/scenes/scene-geometry.ts",
+      "gitBlob": "8a16ca74f08860e70442757656c9c8fef5b0ffde"
+    },
+    {
+      "path": "src/arcana/presentation/scenes/scene-motion.ts",
+      "gitBlob": "4f70bf1b79da01aa5be451edc0478178e5cbb7ac"
+    },
+    {
+      "path": "src/arcana/presentation/seasonal-event.css",
+      "gitBlob": "fb3092e4bae5afc41be5ac153f4b6418dcfac3ed"
+    },
+    {
+      "path": "src/arcana/presentation/seasonal-messages.ts",
+      "gitBlob": "5b09285202301336cb083d2ec27c8436cf50e892"
+    },
+    {
+      "path": "src/arcana/presentation/settings-case.css",
+      "gitBlob": "565350a4ee6bd8aa3663939487d93e2ced81c213"
+    },
+    {
+      "path": "src/arcana/presentation/shop-journey.css",
+      "gitBlob": "4da0d7ac792fc4287f2f184d5cff3f24690f2253"
+    },
+    {
+      "path": "src/arcana/presentation/shop-messages.ts",
+      "gitBlob": "86121b2ac1e17636df6210ec77c22aa19e326ed7"
+    },
+    {
+      "path": "src/arcana/presentation/styles.css",
+      "gitBlob": "30d9e257fb60b47b5f8a6af4820076dc1f384f30"
+    },
+    {
+      "path": "src/arcana/presentation/tactical-a65.css",
+      "gitBlob": "ff5f324059dbd8c638d4eb962e64a4f771c6bc4f"
+    },
+    {
+      "path": "src/arcana/presentation/translations.ts",
+      "gitBlob": "a39bc1ff48a8ae506c6ddd2094dedfac4531595e"
+    },
+    {
+      "path": "src/arcana/presentation/trial-entry.ts",
+      "gitBlob": "40ac0a71a4b3b42f599cd916dfac2ebd1a0a898f"
+    },
+    {
+      "path": "src/arcana/presentation/useConfirmedMotion.ts",
+      "gitBlob": "f2ec00215ab797524a1612b523bc7a8f47b73039"
+    },
+    {
+      "path": "src/arcana/presentation/useNavigation.ts",
+      "gitBlob": "7968129347e3176f16a6ddaddd839cb47e3d90b6"
+    },
+    {
+      "path": "src/arcana/presentation/useOnline.ts",
+      "gitBlob": "98f0042dc3ad6da525d56e61ed0cb67e518a72d4"
+    },
+    {
+      "path": "src/arcana/presentation/useReducedMotion.ts",
+      "gitBlob": "f19056bd58726d0230286c284ff01d8d06634b22"
+    },
+    {
+      "path": "src/arcana/presentation/useSelectionMotion.ts",
+      "gitBlob": "3a97d496869d0935160848b44fce9bdd3e725333"
+    },
+    {
+      "path": "src/arcana/presentation/useTrialEntry.ts",
+      "gitBlob": "895152ae5b115d64fce98ebe9d199d4c5abcc95c"
+    },
+    {
+      "path": "src/arcana/presentation/visual-history.ts",
+      "gitBlob": "ba39e49640c716c5b7d0007704324bf3da553efc"
+    },
+    {
+      "path": "src/content/art-manifest.json",
+      "gitBlob": "7b4c2118d011594dc6047f14dbdbd3f58b1ac1f3"
+    },
+    {
+      "path": "src/content/catalog.json",
+      "gitBlob": "c4aa5496b49c0c0a3a23ef2eca800f4205e04416"
+    },
+    {
+      "path": "src/content/configuration.ts",
+      "gitBlob": "aa2af09d2c0e90bb98dfcd8ec2a5e76753f0c43b"
+    },
+    {
+      "path": "src/content/welcome-table.json",
+      "gitBlob": "8a456267af2493037eec190eff5855720579fb16"
+    },
+    {
+      "path": "src/domain/model.ts",
+      "gitBlob": "926d476a39eb57efb24b0086e5a0b366fc6b5df8"
+    },
+    {
+      "path": "src/domain/opening.ts",
+      "gitBlob": "ec1b5f70482be9dbb7ee71403c23d2b53c913aa9"
+    },
+    {
+      "path": "src/domain/validation.ts",
+      "gitBlob": "b5d796a480d93db0d61606d3748a2517a88ecc6b"
+    },
+    {
+      "path": "src/i18n/messages.ts",
+      "gitBlob": "7eb2bd5aaf10ac45912aee1c410277417e58bc8e"
+    },
+    {
+      "path": "src/infrastructure/demo-store.ts",
+      "gitBlob": "0790acb9d65d11fb4ccc374a46ee8486cc294186"
+    },
+    {
+      "path": "src/main.tsx",
+      "gitBlob": "624d183cced1acf4b39046420faf4d1aa99a7e79"
+    },
+    {
+      "path": "src/ui/Album.tsx",
+      "gitBlob": "9343ecc67dcb2c12ada2ec722bc21200683b0971"
+    },
+    {
+      "path": "src/ui/App.tsx",
+      "gitBlob": "27f6d47e428218e86f23c6657dd1cdfa4991adce"
+    },
+    {
+      "path": "src/ui/Art.tsx",
+      "gitBlob": "9d3cb97ff27e1e6ae145a9774ef44ac5a70ae613"
+    },
+    {
+      "path": "src/ui/CardEngravings.tsx",
+      "gitBlob": "0ae9208f3e8722f1dd6fcd407a24005777fbdcc4"
+    },
+    {
+      "path": "src/ui/IdentityDetails.tsx",
+      "gitBlob": "a407036565e79c0f154c29231a45cf3d0bdd00b6"
+    },
+    {
+      "path": "src/ui/Shop.tsx",
+      "gitBlob": "5c27da4c101dfbb6da584aa74e202c7a71c55349"
+    },
+    {
+      "path": "src/ui/VisualArt.tsx",
+      "gitBlob": "4fb6b26e45c8a91bd7ad0e50b2ff2ee64e4386ff"
+    },
+    {
+      "path": "src/ui/styles.css",
+      "gitBlob": "d103c20fa5a71f4f87db519d3f736a6b264e1fdc"
+    },
+    {
+      "path": "src/ui/visual.css",
+      "gitBlob": "6dae37ac6c745b78bf920fc7811ad3ad29e15848"
+    }
+  ],
+  "reuse": "A70/A71/A73 renderer, boss, closure, A68 seasonal, A69 replay/opening code and assets unchanged. Only Encounter presentation/labels plus successful-load stale statusError cleanup differ. A75 plus E2E and A67 validate the changed integration; remaining regressions rerun. The reference run remains globally cancelled/failed, not green."
+}

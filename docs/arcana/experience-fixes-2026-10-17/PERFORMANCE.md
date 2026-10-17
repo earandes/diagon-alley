@@ -65,3 +65,18 @@ La matriz A69 completa pasa funcionalmente, pero **no cumple un objetivo general
 | Apertura WebKit |60|23,0|36,0|21–89|
 
 Son medianas de losP95 de cada caso, no unP95 combinado de todos los frames. Ventanas cortas/no sostenidas: no equivalen al perfil emparejadoA75 de10s. WebKit empeora también en aperturas y escritorio donde el encuadre móvil no aplica: causa sin atribuir; esto no demuestra ni descarta una regresión causal del producto. No se presenta como mejora, se oculta tras reintento o se atribuye aGPU sin medir. Haría falta un contraste WebKit emparejado/acotado para investigar esa cuestión, fuera de las afirmaciones de esta entrega. El JSON comparativo registra fuentes y limitaciones. El recorrido/UI están comprobados; rendimiento universal y dispositivo físico siguen sin acreditarse.
+
+## Reanudación final: contraste preregistrado WebKit y Chromium
+
+CI39063046713, head6d4dbcb, mergecbd771c, árbolidénticod48d45df. A75 pasa114casos/174omisiones deliberadas. Tres paresAB/BA/AB por motor contra937a0a1, ES/Diagon390, fixture5×5 con el mismo hashBattleLog. Ventana10s tras500msde asentamiento, módulo ya evaluado antes de pulsar el inicio de fixture. No es arranque frío de aplicación ni dispositivo físico. Resultados de los seis accesos por motor y última serie rAF íntegra en `evidence/resume-final/paired-*.json[.gz]`; temporalFrames conserva una muestra de1/12 de cada ventana, no todos los frames de las seis series.
+
+| Motor | P95 referencia, tres ventanas | P95 actual, tres ventanas | Activación→frame listo, mediana antes→después | Rangos antes / después |
+|---|---|---|---|---|
+| Chromium |16,8/16,8/16,7ms |16,7/16,7/16,7ms |319→322,1ms |309,9–355,5 /304,8–322,5ms |
+| WebKit |18/18/17ms |17/18/17ms |435→558ms |385–833 /388–632ms |
+
+Se cumple el criterio preregistrado de medianaP95 sostenida≤max(20ms,referencia+1ms). Chromium600intervalos por ventana; WebKit606–621. Máximos rAF WebKit de las ventanas: referencia105/107/51ms, actual23/74/25ms. No se eliminan extremos ni se afirma ausencia de tirones.
+
+**No mejora de arranque acreditada.** En WebKit la mediana aislada sube123ms, aunque dos de los tres pares actuales tienen menor espera que su referencia; los rangos se superponen. Esta muestra acotada no atribuye causa, ni demuestra una regresión universal ni autoriza seleccionar solo el par favorable. Las promesas, rAF y ventanas no son tiempo GPU. WebKit no aporta entries longtask en esta sonda: no equivale a cero trabajo largo. Chromium registra tareas de55–65msantes y54–55msactuales cerca del arranque.
+
+Las cifras cortas de A69 que empeoraron en WebKit siguen conservadas arriba y en los crudos históricos; este contraste sostenido responde otra pregunta, no las borra. Se recomienda observar ritmo/primer acceso y dispositivo físico posteriormente, sin ampliar A75 a otra optimización no demostrada.
