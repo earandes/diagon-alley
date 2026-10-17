@@ -200,6 +200,45 @@ for (const language of ['es', 'en'] as const)
       await expect(dialog.locator('.node-bean-preparation')).toHaveAttribute('open', '');
       expect(await readGame(page)).toEqual(before);
       await jar.tap();
+      // Reuse these real isolated accounts: text enlargement is not a new
+      // screenshot matrix or a command. Details may scroll; controls must remain usable.
+      const enlargedPopupChecked =
+        language === 'es' && test.info().project.use.viewport!.width === 390;
+      if (enlargedPopupChecked) {
+        const priorFontSize = await page.evaluate(() => document.documentElement.style.fontSize);
+        const priorScroll = await dialog.evaluate((element) => element.scrollTop);
+        try {
+          await page.evaluate(() => {
+            document.documentElement.style.fontSize = '200%';
+          });
+          await expect
+            .poll(() =>
+              dialog.evaluate(
+                (element) =>
+                  element.scrollWidth <= element.clientWidth + 1 &&
+                  document.documentElement.scrollWidth <= innerWidth + 1,
+              ),
+            )
+            .toBe(true);
+          for (const control of [book, member, jar, dialog.locator('.node-confirm-action')]) {
+            await control.focus();
+            await control.scrollIntoViewIfNeeded();
+            await expect(control).toBeFocused();
+            await expect(control).toBeInViewport({ ratio: 1 });
+            // Trial performs actionability checks only. It never dispatches the
+            // confirmation click, consumes a unit or advances the saved route.
+            await control.click({ trial: true });
+          }
+          expect(await readGame(page)).toEqual(before);
+        } finally {
+          await page.evaluate((fontSize) => {
+            document.documentElement.style.fontSize = fontSize;
+          }, priorFontSize);
+          await dialog.evaluate((element, top) => {
+            element.scrollTop = top;
+          }, priorScroll);
+        }
+      }
       if (language === 'es' && pack === 'diagon-alley') {
         await capture(page, 'preparation-desktop');
         await capture(page, 'preparation-mobile-diagon', [390]);
@@ -257,6 +296,7 @@ for (const language of ['es', 'en'] as const)
         actionToFiguresReadyUpperBoundMs,
         confirmedReceiptImmutable: true,
         queryCancelNoSpend: true,
+        enlargedPopupChecked,
         pageErrors: errors,
       });
     });
