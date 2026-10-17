@@ -5,7 +5,8 @@
 - Baseline: ff23f580d9d3989abc9918d7b5bc8328d9e83b62 (A75).
 - Primer candidato:34b22def778f5de3619e62f992d2b745ed0d8f62, PR7 sobre A75. CI39068985629: A76 con3casos correctos,1fallido y56noejecutados/omitidos al detenerse; fallo de fixture `content.table.version`, no se acredita recorrido completo. Ejecución cancelada deliberadamente tras conservar el artefacto para no continuar baterías sobre candidato sustituido.
 - Segundo candidato:a542ef951b51f37cd45f1295cfb4974e972f591d / CI39069503604. A76 volvió a detenerse con3casos correctos/1fallido/56restantes: fixture miraba la visibilidad del aviso Guardando como si ya hubiese ocurrido commit+pérdida de respuesta. Su aserción prematura provocó teardown y Response disposed secundario. Se corrige sincronización por resultado capturado y aria-busy=false, sin retraso fijo ni relajar la aceptación. Se conserva ese intento cancelado.
-- Tercer candidato: prueba adicional de recarga completa después de perder cookie con operación enIndexedDB, exige propietario de metadata antes de cualquier entrada; en preparación paraCI.
+- Tercer candidato:3da3f582447a19266f5f8d157c1721978b308073 / CI39069825162. Cinco casos correctos, incluido recorrido completoES con recarga/cookie perdida, y un fallo en recorridoEN: lector del buzón encontró JSON aún incompleto. Resultado parcial, no batería superada. Se publica ahora el archivo mediante rename atómico después de escribir, y una prueba de IO retenido comprueba que un lector concurrente no ve un mensaje parcial. Se canceló el candidato sustituido después de conservar evidencia.
+- Cuarto candidato: publicación atómica del buzón y explicación localizada de sesión invitada ausente; pendiente SHA/CI final.
 
 ## Local sin navegador
 

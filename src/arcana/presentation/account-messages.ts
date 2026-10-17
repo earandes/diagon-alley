@@ -85,6 +85,10 @@ const messages = {
     es: 'No se ha podido verificar el acceso. Revisa tus datos o solicita un nuevo código.',
     en: 'Access could not be verified. Check your details or request a new token.',
   },
+  guestExpired: {
+    es: 'La sesión invitada no está disponible. Para vincularla necesitas su sesión original. Si ya tenías cuenta, inicia sesión.',
+    en: 'The guest session is unavailable. Linking requires its original session. If you already had an account, sign in.',
+  },
   rate: {
     es: 'Demasiados intentos. Espera antes de volver a intentarlo.',
     en: 'Too many attempts. Wait before trying again.',
@@ -112,16 +116,18 @@ export const accountText = (language: Language, key: AccountMessage): string =>
   messages[key][language];
 export function accountError(language: Language, code: string): string {
   const key: AccountMessage =
-    code === 'RATE_LIMITED'
-      ? 'rate'
-      : code === 'PLAYER_MISMATCH' || code === 'ACCOUNT_CONFLICT'
-        ? 'conflict'
-        : code === 'OPERATION_PENDING' || code === 'CLIENT_STORAGE'
-          ? 'blocked'
-          : code === 'NETWORK_ERROR'
-            ? 'uncertain'
-            : code === 'AUTH_UNAVAILABLE' || code === 'INTERNAL_ERROR' || code === 'STORAGE'
-              ? 'unavailable'
-              : 'invalid';
+    code === 'GUEST_SESSION_REQUIRED'
+      ? 'guestExpired'
+      : code === 'RATE_LIMITED'
+        ? 'rate'
+        : code === 'PLAYER_MISMATCH' || code === 'ACCOUNT_CONFLICT'
+          ? 'conflict'
+          : code === 'OPERATION_PENDING' || code === 'CLIENT_STORAGE'
+            ? 'blocked'
+            : code === 'NETWORK_ERROR'
+              ? 'uncertain'
+              : code === 'AUTH_UNAVAILABLE' || code === 'INTERNAL_ERROR' || code === 'STORAGE'
+                ? 'unavailable'
+                : 'invalid';
   return accountText(language, key);
 }

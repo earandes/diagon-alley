@@ -1,4 +1,4 @@
-import { mkdir, writeFile } from 'node:fs/promises';
+import { mkdir, writeFile, rename, rm } from 'node:fs/promises';
 import { resolve } from 'node:path';
 import { randomUUID } from 'node:crypto';
 
@@ -21,10 +21,18 @@ export class LocalIdentityMail implements IdentityMailTransport {
   }
   async send(message: IdentityMail): Promise<void> {
     await mkdir(this.directory, { recursive: true, mode: 0o700 });
-    await writeFile(resolve(this.directory, `${randomUUID()}.json`), JSON.stringify(message), {
-      encoding: 'utf8',
-      mode: 0o600,
-      flag: 'wx',
-    });
+    const id = randomUUID();
+    const temporary = resolve(this.directory, `.${id}.pending`);
+    try {
+      await writeFile(temporary, JSON.stringify(message), {
+        encoding: 'utf8',
+        mode: 0o600,
+        flag: 'wx',
+      });
+      // Readers see a delivered message only after its entire private file is written.
+      await rename(temporary, resolve(this.directory, `${id}.json`));
+    } finally {
+      await rm(temporary, { force: true });
+    }
   }
 }
