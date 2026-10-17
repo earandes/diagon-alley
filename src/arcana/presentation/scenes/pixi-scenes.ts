@@ -1,3 +1,4 @@
+import { sceneStart, sceneEnd } from './scene-diagnostics';
 import { Application, Graphics, Sprite, Texture } from 'pixi.js';
 import { visualAsset } from '../content-packs/art';
 import { activePack } from '../content-packs/active';
@@ -36,6 +37,7 @@ export type SceneData =
       readonly reduced?: boolean;
     };
 export async function createPixiScene(host: HTMLElement, data: SceneData) {
+  const initStarted = sceneStart();
   const app = new Application();
   try {
     await app.init({
@@ -57,6 +59,7 @@ export async function createPixiScene(host: HTMLElement, data: SceneData) {
     }
     throw error;
   }
+  sceneEnd('renderer-init', initStarted);
   app.canvas.setAttribute('aria-hidden', 'true');
   host.dataset.renderer = 'webgl';
   app.ticker.remove(app.render, app);
@@ -99,6 +102,7 @@ export async function createPixiScene(host: HTMLElement, data: SceneData) {
       current.clock.snapshot().cursor !== current.frame.cursor
     )
       return;
+    const paintStarted = sceneStart();
     const width = viewWidth,
       height = viewHeight;
     if (width < 1 || height < 1) return;
@@ -107,6 +111,7 @@ export async function createPixiScene(host: HTMLElement, data: SceneData) {
       dirty = true;
     }
     if (dirty) {
+      const geometryStarted = sceneStart();
       ink.clear();
       if (current.kind === 'map') {
         const sx = width / current.layout.width;
@@ -156,9 +161,11 @@ export async function createPixiScene(host: HTMLElement, data: SceneData) {
               loading.add(assetKey);
               const image = new Image();
               image.src = asset.url;
+              const decodeStarted = sceneStart();
               void image
                 .decode()
                 .then(() => {
+                  sceneEnd('figure-decode', decodeStarted);
                   if (destroyed) return;
                   textures.set(assetKey, Texture.from(image));
                   host.dataset.textureCount = String(textures.size);
@@ -303,6 +310,7 @@ export async function createPixiScene(host: HTMLElement, data: SceneData) {
         }
       }
       dirty = false;
+      sceneEnd('geometry', geometryStarted);
     }
     if (current.kind === 'arena') {
       host.dataset.artReady = String(
@@ -509,7 +517,10 @@ export async function createPixiScene(host: HTMLElement, data: SceneData) {
     );
     if (host.dataset.visibleFigures !== visibleFigures)
       host.dataset.visibleFigures = visibleFigures;
+    const submitStarted = sceneStart();
     app.render();
+    sceneEnd('render-submit', submitStarted);
+    sceneEnd('paint', paintStarted);
     host.dataset.renderCount = String(++renders);
   };
   app.ticker.add((ticker) => {

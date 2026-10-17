@@ -14,7 +14,11 @@ if (process.env.ARCANA_CAPTURE_A70 === '1') {
 /** Linux only: the shared guard enforces lock, one worker, no retries or recording. */
 export default defineSafeConfig({
   testDir: './tests',
-  testMatch: [/browser-boss\/boss-a70\.spec\.ts$/, /browser-boss-style\/boss-style-a71\.spec\.ts$/],
+  testMatch: [
+    /browser-boss\/boss-a70\.spec\.ts$/,
+    /browser-boss-style\/boss-style-a71\.spec\.ts$/,
+    /browser-fluency\/.*\.spec\.ts$/,
+  ],
   outputDir: 'test-results/boss-a70',
   timeout: 180000,
   maxFailures: 1,

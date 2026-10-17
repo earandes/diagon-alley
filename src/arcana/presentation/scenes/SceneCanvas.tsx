@@ -1,3 +1,4 @@
+import { sceneStart, sceneEnd } from './scene-diagnostics';
 import { useEffect, useRef, useState, useSyncExternalStore } from 'react';
 import { selectedContentPackId, subscribeContentPack } from '../content-packs/active';
 import type { SceneData, createPixiScene } from './pixi-scenes';
@@ -38,8 +39,10 @@ export function SceneCanvas({
     };
     node?.addEventListener('webglcontextlost', abandon, true);
     setFailed(false);
+    const importStarted = sceneStart();
     void import('./pixi-scenes')
       .then(async (module) => {
+        sceneEnd('module-import', importStarted);
         if (cancelled || !host.current) return;
         const scene = await module.createPixiScene(host.current!, latest.current);
         if (cancelled || unavailable) {

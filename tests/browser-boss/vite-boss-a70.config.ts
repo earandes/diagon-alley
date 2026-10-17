@@ -10,6 +10,7 @@ export default defineConfig({
     rollupOptions: {
       input: {
         battle: fileURLToPath(new URL('./boss-a70.html', import.meta.url)),
+        generic: fileURLToPath(new URL('../browser-motion/motion-a69.html', import.meta.url)),
         preparation: fileURLToPath(
           new URL('../browser-boss-style/boss-style-a71.html', import.meta.url),
         ),
