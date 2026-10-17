@@ -34,6 +34,10 @@ El baseline se archiva por SHA en `tools/verification/build-a73-reference.mjs`, 
 |9|78267f5|límite8 delbatch|
 |10|d13c0d9|candidato mínimo sinatlas|
 |11|0c0547c|uso inmediato de imagen resuelta|
+|12|d03c93c|dos admisiones por paint|
+|13|d13c0d9|variante acotada contra original|
+|14|83d4e48|formas simples en batch público|
+|15–16|d13c0d9|runtime final;16 incorpora marca precisa|
 
 Los dos primeros ensayos no tienen exactamente la misma instrumentación/entradas que los posteriores. Se conservan para explicar decisiones; no forman una única serie homogénea. d13 conserva runtime/arteA72 de4be35f8 más instrumentación yrecorrido, sin optimización. La referencia inicial de seis muestras, anterior al A/B, permanece en evidence/reference.
 

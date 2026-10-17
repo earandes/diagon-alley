@@ -1,0 +1,8 @@
+check	Run npm run validate:content	2026-10-17T13:50:47.8881098Z [2m Test Files [22m [1m[32m1 passed[39m[22m[90m (1)[39m
+check	Run npm run validate:content	2026-10-17T13:50:47.8881657Z [2m      Tests [22m [1m[32m6 passed[39m[22m[90m (6)[39m
+check	Run npm test	2026-10-17T13:50:55.0270830Z [2m Test Files [22m [1m[32m81 passed[39m[22m[90m (81)[39m
+check	Run npm test	2026-10-17T13:50:55.0272985Z [2m      Tests [22m [1m[32m562 passed[39m[22m[90m (562)[39m
+check	Run npm run test:integration	2026-10-17T13:51:06.8390455Z [2m Test Files [22m [1m[32m13 passed[39m[22m[90m (13)[39m
+check	Run npm run test:integration	2026-10-17T13:51:06.8391055Z [2m      Tests [22m [1m[32m78 passed[39m[22m[90m (78)[39m
+check	Run npm run verify:arcana:build	2026-10-17T13:51:13.7645066Z diagon-alley build content scan passed; total distributed bytes: 14986186. Historical I1 excluded. Private thematic dual build; ARCANA-only distribution not certified.
+check	Run ARCANA_CAPTURE_A70=1 npx playwright test --config playwright.boss-a70.config.ts	2026-10-17T13:55:08.3229807Z   2 passed (3.4m)

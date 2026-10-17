@@ -1,37 +1,44 @@
-# A73 · Fluidez de una expedición
+# A73 · Fluidez de la expedición
 
-Estado: candidato mínimo en comparación Linux; todavía sin integración en main. La evidencia parcial no se presenta como CI global correcta.
+Estado: runtime final ca9cc86; aceptación diagnóstica y ciclo de vida superados en CI16; matriz global e integración en main pendientes. No se presenta una fase parcial cancelada como CI correcta.
 
-## Experiencia conservada
+## Qué cambia
 
-Entrada → preparación explícita → mapa → duelo → mapa → jefe → cierre → uso del botín poseído → otra expedición explícita. No cambia ninguna decisión, regla, coste, premio, composición o operación. Se conservan antesala A71, actor por piezas, reloj A69, ES/EN, paquetes, unidades/PV, controles semánticos, reducido y fallback DOM.
+La misma expedición conserva entrada, preparación, mapa, duelos, jefe, cierre, uso del botín y otra preparación explícita. No se cambia ninguna regla, coste, premio, estadística, composición, snapshot u operación. Arte, resolución, antesala A71, actor por piezas, reloj A69, ES/EN y paquetes permanecen.
 
-## Cambios elegidos
+Se agrupan invalidaciones de imágenes por frame y se conserva geometría estable. El decode pertinente empieza en la misma escena mientras init trabaja; no se precarga la siguiente pantalla. Las imágenes resueltas se aprovechan sin otra microtarea, admitiendo hasta dos fuentes nuevas por paint para acotar concentración. Es un límite de admisión, no una garantía de dos uploadsGPU. Durante carga siguen disponibles retratos, nombres, PV y controlesDOM.
 
-- Las llegadas de imágenes comparten una invalidación por frame; un ticker activo realiza el dibujo sin un segundo envío síncrono.
-- Las fases y variaciones de PV/PM que no alteran geometría no reconstruyen plataformas/puestos. Cambios de arte/orden/posición/tamaño, caída y texturas nuevas sí invalidan.
-- Las imágenes pertinentes se solicitan/decodifican a la entrada de la misma escena mientras se inicializa su renderer. No se precarga trabajo en la pantalla anterior ni se añade caché global.
-- El ticker gráfico se detiene durante acuses estáticos del log. El reloj compartido, los controles y la proyección de estado siguen funcionando; entrada, hechizo, curación y quemadura conservan movimiento.
-- El batch de figuras limita a8 las texturas simultáneas. Pixi divide lotes mayores; ninguna unidad desaparece. Graphics conserva su configuración propia. El GLSL y su coste se observan, no se infieren del atributo de configuración.
+Los lotes admiten ocho texturas, sin eliminar actores: Pixi divide los que lo necesitan. Las formas simples existentes comparten ese batch mediante API pública; en el ensayo14 solo se observó GLSL de ocho samplers, frente32/8 de la variante anterior. Los eventos estáticos dibujan un snapshot sin ticker gráfico continuo; entrada, hechizos, impactos, curación y quemadura conservan frames. El reloj, pausa, Auto,2x, inspector, ocultación y omisión siguen independientes de carga/renderer.
 
-No se producen assets nuevos, se altera resolución ni se cambia renderer/dependencias. Los ensayos de mipmaps, autoload y atlas se retiraron: no justificaron su coste. Las fuentes ilustradas permanecen intactas y la evidencia desfavorable se conserva.
+No se añaden dependencias, cachés globales, audio o assets. Mipmaps, autoload y atlas se retiraron tras contrastarlos; sus resultados desfavorables se conservan.
 
-## Evidencia disponible
+## Mejora medida y límites
 
-En ab-9, tres parejas del mismo runner genérico3×3: P95rAF33,3–33,4→16,7ms; tras remontar33,3→16,8ms. Jefe5×5:16,8→16,7ms. GLSL32/32→32/8samplers. Esta comparación aísla el límite de batching sobre la variante de atlas, no acredita todavía el candidato mínimo sin atlas ni todo dispositivo.
+Ensayo15, referencia originald13 y runtime final en el mismo runner, tres parejas AB/BA/AB, contextos nuevos y10s por escena:
 
-La corrección de arranque por decode paralelo ya mejoró las tres parejas de ab-3: genérico539–620→456–501ms y jefe685–738→489–494ms. Son cotas superiores hasta arte listo en polling; no tiempos GPU ni CPU pura. El objetivo provisional400ms genérico no se da por alcanzado. Variabilidad, extremos y ventanas sin mejora se conservan.
+| Medida | Referencia | Candidato |
+|---|---:|---:|
+| P95rAFgenérico3×3 |33,4ms|16,7–16,8ms|
+| P95rAFgenérico tras remontar |33,4ms|16,7–16,8ms|
+| P95rAFjefe5×5 |16,8/33,2/16,8ms|≈16,7ms|
+| MáximorAFarranquegenérico |200–233ms|50–67ms|
+| MáximorAFarranquejefe |233–250ms|50–83ms|
+| Navegación→artegenérico, cota de polling |529–676ms|416–440ms|
+| Navegación→artejefe, cota de polling |719–729ms|497–582ms|
 
-CI39034798097 compara el candidato mínimo0c0547c frente a referenciad13 con entradas iguales. Resultado pendiente. Después se ejecutarán recorrido completo y regresiones sobre el candidato real antes de integrar.
+Todas las parejas reducen la cota total de espera y los picos; no se desplaza carga a otra pantalla. La cota de polling todavía no acredita400/550ms. El ensayo16 conserva esas cotas y añade una marca precisa tras el envío completo y su siguiente oportunidadrAF, idéntica en ambas variantes. Pasa todos los presupuestos: oportunidadrAF236,5–242,3ms genérico/289,2–326,9ms jefe; máximorAF33,4ms; todos losP95≈16,7–16,8ms. Ese runner fue favorable también para el sostenido de referencia; dos pares genéricos tienen una oportunidadrAF3–4ms anterior en referencia, aunque las cotas de polling actuales bajan en los seis pares. No se afirma mejora de cada indicador ni finalizaciónGPU. La evidencia causal del sostenido procede de9 y15; la nueva marca no borra incumplimientos anteriores.
 
-## Documentos
+Son fixtures Linux/Chromium/SwiftShader declaradas, no una GPU física, duración humana o rendimiento universal. Nuevos contextos no purgan cachésOS/proceso/shaders. rAF no mideGPU; decodepromise yspans nativos son walltime, noCPU pura. Las dimensionesRGBA no equivalen a memoria residente; los contadores propios no demuestran ausencia global de fugas.
 
-- [Contrato y plan](CONTRACT.md).
-- [Diagnóstico, hipótesis y ensayos descartados](DIAGNOSIS.md).
-- [Protocolo ejecutable](REFERENCE.md).
-- [Resultados y límites](PERFORMANCE.md).
-- [Validación](VALIDATION.md).
-- [Compatibilidad y propiedad de recursos](COMPATIBILITY.md).
-- [Ensayo de assets retirado](ASSET-ADAPTATION.md).
+## Validación
 
-Pendientes: comparación final, matriz Linux, inspección visual seleccionada, revisión del diff, integración y verificación de main/CI. Humana, dispositivo físico y lector audible no realizados; un benchmark no demuestra comprensión, diversión o retención.
+El caso nuevo de ciclo de vida pasó enCI39037479383: decode pendiente, ocultación sintética, resize pausado390/865,10figuras/PV, reducido durante gesto, resultado/log/game conservados ysinpageerrors. La captura estática adicional se comprobará en la matriz final; no valida movimiento por sí sola.
+
+La matriz completa conserva Chromium/WebKit y1280×900/390×844/865×1079, A70/A71 y regresiones. Cuatro cuentas A73 aisladas comprueban recorrido autoritativo, rana ganada sin recompra y siguiente run explícita. SHA, resultados y recorrido completo finales pendientes.
+
+- [Contrato y plan](CONTRACT.md), [diagnóstico y ensayos](DIAGNOSIS.md).
+- [Protocolo reproducible](REFERENCE.md), [mediciones](PERFORMANCE.md).
+- [Validación](VALIDATION.md), [mapa de cobertura](COVERAGE.md).
+- [Compatibilidad](COMPATIBILITY.md), [experimento de assets retirado](ASSET-ADAPTATION.md).
+
+Main no modificado. Sesión humana, dispositivo físico, GPU real, red móvil y lector audible pendientes. No se atribuye comprensión, diversión o retención a estas pruebas.

@@ -35,3 +35,9 @@ Se retiraron atlas/certificados alfa y sus adaptadores activos. No cambia un sol
 El ticker estático no sustituye el reloj: update representa una vez cada acuse; spell-cast/healed/burn-tick y entrada mantienen frames. Ocultar/desmontar cancela callbacks propios. La carga y el resize durante pausa conservan invalidación única; no se reclama cobertura visual de cada combinación hasta registrar la matriz final.
 
 El ensayo de uso inmediato de imágenes resueltas preserva el catch de Texture.from también en el camino síncrono; una textura fallida conserva el fallback sin reintentar continuamente. loading/textures y destroyed garantizan instalación única y ausencia de alta tardía después de desmontar. Su aceptación dinámica todavía está pendiente; tipos no acredita conversión/visualizaciónGPU.
+
+## Política final de carga y formas
+
+Dos fuentes listas se admiten por paint, sin await del conjunto ni temporizador. Las restantes mantienen dirty y usan el ticker existente o un único rAF diferido si está pausado. Una promesa pendiente solo invalida; una fallida permanece sin reintento continuo. Hidden conserva trabajo pendiente sin dibujar; visible reanuda; destroy cancela el callback y evita altas tardías. El ensayo15 de ciclo de vida comprobó esas combinaciones enfixtureChromium, visibilidad sintética y390/865, con estado/log yresultado intactos.
+
+Ink/sparks tienen batchMode público. Mantienen exactamente fills/strokes/paths y orden de escena, incluida máscara de brazo independiente; se evita usar el shaderGraphics32 observado antes. El coste de empaquetado/buffers se mide enA/B y la matriz visual debe comprobar ambas presentaciones. No se altera configuración global o API privada.
