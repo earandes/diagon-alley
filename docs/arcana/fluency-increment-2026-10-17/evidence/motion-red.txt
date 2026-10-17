@@ -1,0 +1,24 @@
+
+ RUN  v5.0.3 /Users/enricarandes/work/diagon-alley
+
+ ❯ tests/domain/arcana/scene-motion-a73.test.ts (0 test)
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/domain/arcana/scene-motion-a73.test.ts [ tests/domain/arcana/scene-motion-a73.test.ts ]
+Error: Cannot find module '../../../src/arcana/presentation/scenes/scene-motion' imported from /Users/enricarandes/work/diagon-alley/tests/domain/arcana/scene-motion-a73.test.ts
+ ❯ tests/domain/arcana/scene-motion-a73.test.ts:2:1
+      1| import { expect, it } from 'vitest';
+      2| import { sceneNeedsContinuousFrames } from '../../../src/arcana/presen…
+       | ^
+      3| import type { SceneData } from '../../../src/arcana/presentation/scene…
+      4| import { ReplayClock } from '../../../src/arcana/presentation/motion/r…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  no tests
+   Start at  14:02:55
+   Duration  69ms (worker 96%, environment 4%)
+

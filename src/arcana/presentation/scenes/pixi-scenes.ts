@@ -1,3 +1,4 @@
+import { sceneNeedsContinuousFrames } from './scene-motion';
 import { sameSceneGeometry } from './scene-geometry';
 import { FrameInvalidation } from './frame-invalidation';
 import { sceneStart, sceneEnd } from './scene-diagnostics';
@@ -197,14 +198,7 @@ export async function createPixiScene(host: HTMLElement, data: SceneData) {
               void prepareImage(assetKey, asset.url)
                 .then((image) => {
                   if (destroyed || !image) return;
-                  textures.set(
-                    assetKey,
-                    Texture.from({
-                      resource: image,
-                      autoGenerateMipmaps: true,
-                      mipmapFilter: 'linear',
-                    }),
-                  );
+                  textures.set(assetKey, Texture.from(image));
                   host.dataset.textureCount = String(textures.size);
                   host.dataset.textureBytes = String(
                     [...textures.values()].reduce((n, t) => n + t.width * t.height * 4, 0),
@@ -260,14 +254,7 @@ export async function createPixiScene(host: HTMLElement, data: SceneData) {
                     void prepareImage(key, url)
                       .then((image) => {
                         if (destroyed || !image) return;
-                        textures.set(
-                          key,
-                          Texture.from({
-                            resource: image,
-                            autoGenerateMipmaps: true,
-                            mipmapFilter: 'linear',
-                          }),
-                        );
+                        textures.set(key, Texture.from(image));
                         host.dataset.textureCount = String(textures.size);
                         host.dataset.textureBytes = String(
                           [...textures.values()].reduce((n, t) => n + t.width * t.height * 4, 0),
@@ -311,14 +298,7 @@ export async function createPixiScene(host: HTMLElement, data: SceneData) {
                     void prepareImage(key, layer.url)
                       .then((image) => {
                         if (destroyed || !image) return;
-                        textures.set(
-                          key,
-                          Texture.from({
-                            resource: image,
-                            autoGenerateMipmaps: true,
-                            mipmapFilter: 'linear',
-                          }),
-                        );
+                        textures.set(key, Texture.from(image));
                         host.dataset.textureCount = String(textures.size);
                         host.dataset.textureBytes = String(
                           [...textures.values()].reduce((n, t) => n + t.width * t.height * 4, 0),
@@ -590,7 +570,8 @@ export async function createPixiScene(host: HTMLElement, data: SceneData) {
       stamp = nextStamp;
       elapsed = 0;
     }
-    const ticking = next.kind === 'arena' && next.playing && !document.hidden;
+    const ticking =
+      next.kind === 'arena' && next.playing && !document.hidden && sceneNeedsContinuousFrames(next);
     if (ticking) {
       redraw.cancelPending();
       app.start();
@@ -613,8 +594,10 @@ export async function createPixiScene(host: HTMLElement, data: SceneData) {
       app.stop();
       host.dataset.activeTicking = 'false';
     } else {
-      if (current.kind === 'arena' && current.playing) app.start();
-      host.dataset.activeTicking = String(current.kind === 'arena' && current.playing);
+      const ticking =
+        current.kind === 'arena' && current.playing && sceneNeedsContinuousFrames(current);
+      if (ticking) app.start();
+      host.dataset.activeTicking = String(ticking);
       requestPaint();
     }
   };

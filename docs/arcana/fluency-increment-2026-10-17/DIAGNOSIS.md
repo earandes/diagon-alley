@@ -71,3 +71,9 @@ Siguiente corrección demostrable por dependencia de código: iniciar decode de 
 Decode paralelo: referencia d13 frente a a5. Genérico539–620→456–501ms, jefe685–738→489–494ms; arranque maxrAF183–250→83–117ms. Todas las parejas mejoran, sin mover trabajo a otra vista. Warm genérico33,4ms en ambos, jefe16,8. El objetivo sostenido continúa incumplido. Crudos ab-3, incluidos intervalos desfavorables.
 
 Se acota otro experimento para aislar el muestreo: baseline cambia explícitamente a a5 (optimización de arranque ya aplicada), candidato difiere solo en mipmaps. Tres parejas en mismo runner, sin reintentos; referencia anterior preservada. Se había descartado frente a d13 por no poder atribuir beneficio; ahora se compara una sola variable. Si no se demuestra mejora, no se adopta por el coste de texels. No se interpreta el dato textureBytes, que solo estima nivel0, como memoria de mipmaps ni residente.
+
+## Cuarto A/B ·39030942928 ·mipmaps aislados: rechazo
+
+Baseline a5 y candidato ffba, única variable de render: mipmaps. Genérico P95rAF33,4ms en seis ventanas por variante; jefe33,2–33,3ms en ambas. No mejora consistente de arranque. Se retira definitivamente el ensayo: su coste de texels no se justifica. El entorno también degradó al jefe respecto a runs anteriores, sin atribuir causa única. Crudos ab-4.
+
+Siguiente variante: ticker solo para los eventos que mueven figuras/efectos. La imagen no cambia entre frames de turn-started/synergy/bean/mana; update conserva su dibujo puntual y el reloj independiente continúa. Entrada/hechizo/curación/quemadura conservan todos sus frames y movimientos. Se añaden etiquetas de cursor/fase a la instrumentación idéntica de ambas variantes para comprobar intervalos de acción, sin esconderlos entre pausas visuales. Revisión estática independiente sin defecto demostrable; validación Linux pendiente.

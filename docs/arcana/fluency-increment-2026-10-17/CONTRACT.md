@@ -31,3 +31,7 @@ Recursos implicados: SceneCanvas, pixi-scenes, BattlePanel/reloj, mapa, carga de
 Gráficos exclusivamente Linux bajo guard/lock/watchdog originales, un worker, cero retries, sin vídeo/trazas por defecto. En Mac solo lectura, compilación y pruebas no gráficas; no se usa Chrome/Browser como bypass. Referencia exacta, cachés declaradas, límites superiores de polling y crudos conservados. rAF≠GPU, decode promise≠CPU, dimensionesRGBA≠RAMresidente, counters propios≠ausencia global de fugas.
 
 Entrega técnica requiere mejora reproducible integrada y garantías conservadas. Humana/dispositivo físico quedan pendientes, sin atribuir comprensión/diversión/retención a automatizaciones.
+
+### Actualización del plan · ensayos A/B
+
+Mediciones seriales guardadas: ab-1, ab-2 y ab-3. Coalescer/geometría y decode paralelo reducen trabajo/arranque de forma consistente en parejas. El sostenido genérico permanece33,4ms en runners desfavorables y16,8ms en otro para ambas variantes; causa todavía no aislada. El goal sigue activo. Experimento actual: aislar mipmaps frente a a5, una variable. Preparado después: detener el ticker gráfico durante eventos visualmente estáticos manteniendo reloj/DOM/log y un snapshot al cambiar de evento; aceptación en pruebas y CI pendiente. No se integra un ensayo por haber pasado una muestra favorable.

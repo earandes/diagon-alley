@@ -7,10 +7,11 @@ const root = resolve('docs/arcana/boss-increment-2026-10-16/evidence/linux/a73')
 declare global {
   interface Window {
     __a73: {
-      frames: { at: number; ms: number }[];
+      frames: { at: number; ms: number; cursor?: number; phase?: string }[];
       metrics: SceneMetric[];
       tasks: { start: number; duration: number }[];
       gpu: string[];
+      events: string[];
       phase: string;
       gl: Record<string, number>;
     };
@@ -40,6 +41,7 @@ test('A73 bounded startup and sustained reference: generic and boss, three seria
             metrics: [],
             tasks: [],
             gpu: [],
+            events: [],
             phase: 'startup',
             gl: {},
           } as Window['__a73']);
@@ -47,8 +49,16 @@ test('A73 bounded startup and sustained reference: generic and boss, three seria
             if (p.metrics.length < 6000) p.metrics.push(metric);
           };
           let previous = 0;
+          let panel: HTMLElement | null = null;
           const frame = (at: number) => {
-            if (previous && p.frames.length < 3000) p.frames.push({ at, ms: at - previous });
+            if (!panel?.isConnected) panel = document.querySelector<HTMLElement>('.battle-panel');
+            if (previous && p.frames.length < 3000)
+              p.frames.push({
+                at,
+                ms: at - previous,
+                cursor: Number(panel?.dataset.replayCursor ?? -1),
+                phase: panel?.dataset.replayPhase,
+              });
             previous = at;
             requestAnimationFrame(frame);
           };
@@ -116,7 +126,17 @@ test('A73 bounded startup and sustained reference: generic and boss, three seria
           data: structuredClone(window.__a73),
           scene: { ...document.querySelector<HTMLElement>('.scene-canvas')!.dataset },
         }));
-        const warmStart = await page.evaluate(() => performance.now());
+        const warmStart = await page.evaluate(() => {
+          const fixture = window as unknown as {
+            __a69Fixture?: { battle: string };
+            __a70Fixture?: { battle: string };
+          };
+          const battle = fixture.__a69Fixture?.battle ?? fixture.__a70Fixture!.battle;
+          window.__a73.events = JSON.parse(battle).events.map(
+            (event: { kind: string }) => event.kind,
+          );
+          return performance.now();
+        });
         await page.waitForTimeout(10000);
         const warm = await page.evaluate(() => ({
           at: performance.now(),
