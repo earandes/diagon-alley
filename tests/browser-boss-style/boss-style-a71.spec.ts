@@ -79,7 +79,9 @@ async function castAndPause(page: Page) {
           const host = document.querySelector<HTMLElement>('.scene-canvas');
           if (
             host?.dataset.bossActorPose === 'cast' &&
-            Number(host.dataset.bossActorArmAngle) !== 0
+            // Capture the readable extension, not the first cast frame while
+            // the arm is still collected. Both authored gestures exceed 8°.
+            Math.abs(Number(host.dataset.bossActorArmAngle)) >= 0.14
           ) {
             document
               .querySelector<HTMLButtonElement>('.replay-controls button:first-child')!
