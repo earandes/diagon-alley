@@ -1,6 +1,7 @@
 import { expect, test } from '@playwright/test';
 import { mkdir, writeFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
+const evidence = resolve('docs/arcana/boss-increment-2026-10-16/evidence/linux/a73');
 
 declare global {
   interface Window {
@@ -70,6 +71,14 @@ test('A73 pending decode hidden, paused resize and reduced preference during rep
         await expect(item).toBeInViewport({ ratio: 1 });
     }
     expect(await panel.getAttribute('data-replay-cursor')).toBe(frozen);
+    if (width === 390 && process.platform === 'linux' && process.env.ARCANA_CAPTURE_A71 === '1') {
+      await page.evaluate(
+        () =>
+          new Promise<void>((r) => requestAnimationFrame(() => requestAnimationFrame(() => r()))),
+      );
+      await mkdir(evidence, { recursive: true });
+      await page.screenshot({ path: resolve(evidence, 'selected-paused-resize.png') });
+    }
   }
   await page.getByRole('button', { name: 'Auto', exact: true }).click();
   await expect(scene).toHaveAttribute('data-boss-actor-pose', 'cast', { timeout: 20000 });
@@ -91,10 +100,9 @@ test('A73 pending decode hidden, paused resize and reduced preference during rep
     })),
   ).toEqual(before);
   expect(errors).toEqual([]);
-  const root = resolve('docs/arcana/boss-increment-2026-10-16/evidence/linux/a73');
-  await mkdir(root, { recursive: true });
+  await mkdir(evidence, { recursive: true });
   await writeFile(
-    resolve(root, 'lifecycle.json'),
+    resolve(evidence, 'lifecycle.json'),
     JSON.stringify(
       {
         sha: process.env.GITHUB_SHA,

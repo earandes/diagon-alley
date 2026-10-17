@@ -12,6 +12,8 @@ declare global {
       tasks: { start: number; duration: number }[];
       gpu: string[];
       shaderSamplers: number[];
+      readySubmitAt: number | null;
+      readyFrameAt: number | null;
       events: string[];
       phase: string;
       gl: Record<string, number>;
@@ -29,6 +31,8 @@ test('A73 bounded startup and sustained reference: generic and boss, three seria
   test.setTimeout(260000);
   const records: object[] = [];
   const currentSustained: { label: string; p95: number }[] = [];
+  const currentStartup: { label: string; readyFrame: number; limit: number; maximum: number }[] =
+    [];
   const p95 = (values: number[]) => {
     const ordered = values.sort((a, b) => a - b);
     return ordered[Math.floor((ordered.length - 1) * 0.95)] ?? Infinity;
@@ -43,13 +47,15 @@ test('A73 bounded startup and sustained reference: generic and boss, three seria
         const page = await context.newPage();
         const errors: string[] = [];
         page.on('pageerror', (error) => errors.push(String(error)));
-        await page.addInitScript(() => {
+        await page.addInitScript((boss: boolean) => {
           const p = (window.__a73 = {
             frames: [],
             metrics: [],
             tasks: [],
             gpu: [],
             shaderSamplers: [],
+            readySubmitAt: null,
+            readyFrameAt: null,
             events: [],
             phase: 'startup',
             gl: {},
@@ -57,6 +63,26 @@ test('A73 bounded startup and sustained reference: generic and boss, three seria
           window.__arcanaSceneMetric = (metric) => {
             if (p.metrics.length < 6000) p.metrics.push(metric);
           };
+          // Called after this browser turn's render() returns; preserve the next
+          // frame opportunity separately from assertion polling. Neither is GPU time.
+          const readyObserver = new MutationObserver(() => {
+            const scene = document.querySelector<HTMLElement>('.scene-canvas');
+            if (
+              scene?.dataset.artReady !== 'true' ||
+              (boss && scene.dataset.bossActorReady !== 'true')
+            )
+              return;
+            p.readySubmitAt = performance.now();
+            requestAnimationFrame(() => {
+              p.readyFrameAt = performance.now();
+            });
+            readyObserver.disconnect();
+          });
+          readyObserver.observe(document, {
+            subtree: true,
+            attributes: true,
+            attributeFilter: ['data-art-ready', 'data-boss-actor-ready'],
+          });
           let previous = 0;
           let panel: HTMLElement | null = null;
           const frame = (at: number) => {
@@ -142,7 +168,7 @@ test('A73 bounded startup and sustained reference: generic and boss, three seria
             }
             return result;
           } as typeof original;
-        });
+        }, kind === 'boss');
         const path =
           kind === 'generic'
             ? '/tests/browser-motion/motion-a69.html?player=3&rival=3'
@@ -153,11 +179,19 @@ test('A73 bounded startup and sustained reference: generic and boss, three seria
         const scene = page.locator('.scene-canvas');
         await expect(scene).toHaveAttribute('data-art-ready', 'true');
         if (kind === 'boss') await expect(scene).toHaveAttribute('data-boss-actor-ready', 'true');
+        await page.waitForFunction(() => window.__a73.readyFrameAt !== null);
         const startup = await page.evaluate(() => ({
           at: performance.now(),
           data: structuredClone(window.__a73),
           scene: { ...document.querySelector<HTMLElement>('.scene-canvas')!.dataset },
         }));
+        if (variant === 'current')
+          currentStartup.push({
+            label: `${kind}/${pair}`,
+            readyFrame: startup.data.readyFrameAt ?? Infinity,
+            limit: kind === 'generic' ? 400 : 550,
+            maximum: Math.max(...startup.data.frames.map((f) => f.ms)),
+          });
         const warmStart = await page.evaluate(() => {
           const fixture = window as unknown as {
             __a69Fixture?: { battle: string };
@@ -245,4 +279,8 @@ test('A73 bounded startup and sustained reference: generic and boss, three seria
   );
   // Persist every pair, including failures, before checking the declared budget.
   for (const sample of currentSustained) expect(sample.p95, sample.label).toBeLessThanOrEqual(20);
+  for (const sample of currentStartup) {
+    expect(sample.readyFrame, `${sample.label}/ready-frame`).toBeLessThanOrEqual(sample.limit);
+    expect(sample.maximum, `${sample.label}/startup-rAF`).toBeLessThanOrEqual(100);
+  }
 });

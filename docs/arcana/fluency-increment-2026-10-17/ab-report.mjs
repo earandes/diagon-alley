@@ -14,6 +14,7 @@ const windowSummary = (a,b,start) => ({
 console.log(JSON.stringify({sha:data.sha,records:data.records.map(r=>({
   pair:r.pair,kind:r.kind,variant:r.variant,readyUpperMs:r.startup.at,
   startup:q(r.startup.data.frames.map(f=>f.ms)),
+  readySubmitAt:r.startup.data.readySubmitAt??null, readyFrameAt:r.startup.data.readyFrameAt??null,
   native:Object.fromEntries([...new Set(r.warm.data.metrics.filter(m=>m.name.startsWith('native-')).map(m=>m.name))].map(name=>[name,q(r.warm.data.metrics.filter(m=>m.name===name).map(m=>m.duration))])),
   shaderSamplers:r.warm.data.shaderSamplers??null,
   scene:r.warm.scene,

@@ -167,3 +167,13 @@ Baseline83 frente aca9cc86, única variable batchMode público en ink/sparks. GL
 Se adopta la composición en batch para estas formas acotadas; no se reescriben shaders ni cambian sus paths/colores/orden. GraphicsAdaptor puede crear su programa32 en memoria durante init, pero ese programa no se observó compilado/usado porGL en estas muestras. No es una declaración global sobre todos los posibles Graphics futuros.
 
 Último contraste de aceptación: runtimeca9 contra d13, protocolo actual y tres parejas; matriz posterior enfull. La revisión de cobertura además detectó tres combinaciones no acreditadas por los casos existentes: preferencia reducida durante replay, resize pausado y ocultación durante decode pendiente. Se añade un caso Linux/Chromium acotado, fixture5×5 con gate de decode y visibilidad sintética, sin operaciones económicas: muestra cola terminando, actores/PV visibles en390/865, cursor pausado y log/resultado conservados. Su mera escritura no se cuenta como ejecución.
+
+## Decimoquinto A/B ·39037479383 ·caso desfavorable reproducido
+
+Referenciad13 frente al runtimeca9, mismo job. Genérico P95rAF33,4→16,7–16,8ms en tres parejas yremontajes. Jefe16,8/33,2/16,8→16,7ms. Arranque por pollingG529–676→416–440ms yJ719–729→497–582ms: todas las parejas mejoran. MaxrAFG200–233→50–67ms/J233–250→50–83ms. Los objetivos de20/100ms se cumplen; las cotas de polling no acreditan400/550ms y se conservan explícitamente.
+
+Ciclo de vida nuevo: correcto, fixture5×5, gate de decode, hidden sintético,390/865pausado, cambio reducido durante gesto. Cursor0permanece pausado, final737sin reinicio al desactivar reducido, BattleLog/game idénticos, errores[]. No es GPUloss real ni dispositivo físico.
+
+Se detecta una limitación del protocolo de latencia antes de optimizar más: las últimas pinturas completas del candidato terminan en361/344/355ms(G) y476/483/473ms(J), pero polling registra440/416/436 y497/582/570ms. No se usa esa deducción como medida exacta de disponibilidad: faltaba una marca en el instante pertinente. El protocolo añade MutationObserver de los mismos flags del renderer, disparado después del turno que envía el dibujo y actor, y retiene su siguiente oportunidadrAF. Conserva también polling y las tresparejas, sin cambio de runtime.
+
+Ensayo16 valida400/550ms sobre esa oportunidad de frame, que es más precisa que la cota de polling y tampoco mide finalizaciónGPU/presentación física. Se mantienen los crudos previos y sus fallos de cota; no se declara que antes cumplieran ni se cambia la pantalla para adelantar un marcador. El presupuesto20ms sostenido y100msmáximo conserva definición. El código de juego queda congelado enca9.
