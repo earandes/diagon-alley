@@ -89,6 +89,9 @@ export async function createPixiScene(host: HTMLElement, data: SceneData) {
       backgroundAlpha: 0,
       autoStart: false,
       preference: ['webgl'],
+      // This decorative canvas has no Pixi interaction/text/filter consumers.
+      // Graphics, textures, masks and app ticker self-register; semantic controls live in DOM.
+      skipExtensionImports: true,
     });
   } catch (error) {
     try {
