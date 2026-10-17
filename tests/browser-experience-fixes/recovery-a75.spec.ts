@@ -119,6 +119,7 @@ for (const language of ['es', 'en'] as const) {
       await visibleNotice
         .getByRole('button', { name: 'Entrar en otro ensayo', exact: true })
         .click();
+      await expect(page.locator('[data-recovery-notice]')).toHaveCount(0);
       await expect.poll(async () => (await read(page)).playerId).not.toBe(before.playerId);
       await expect(page.locator('[data-expedition-preparation="new"]')).toBeVisible();
       await expect(page.locator('.preparation-inspection')).toHaveCount(0);

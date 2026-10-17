@@ -173,6 +173,10 @@ for (const language of ['es', 'en'] as const) {
       await expect(page.locator('.battle-panel')).toBeVisible();
       expect(await readGame(page)).toEqual(after);
       expect(advancePosts).toBe(1);
+      // The arena deliberately folds the navigation dock. Return through its
+      // real exit before consulting the discovered flavour in the collection.
+      await page.locator('.arena-exit').click();
+      await expect(page.locator('.branch-map')).toBeVisible();
       await page
         .locator('nav button')
         .filter({ has: page.locator('[data-art="ui.collection"]') })
