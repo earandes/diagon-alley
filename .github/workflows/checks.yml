@@ -59,6 +59,7 @@ jobs:
           path: |
             docs/arcana/experience-fixes-2026-10-17/evidence/linux/**
             test-results/experience-a75/**/error-context.md
+            test-results/experience-a75/results.json
           if-no-files-found: ignore
       - if: ${{ !cancelled() && steps.build.outcome == 'success' && steps.a75phase.outputs.phase != 'baseline' }}
         run: ARCANA_CAPTURE_A70=1 npx playwright test --config playwright.boss-a70.config.ts

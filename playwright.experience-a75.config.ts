@@ -11,6 +11,7 @@ export default defineSafeConfig({
   outputDir: 'test-results/experience-a75',
   timeout: 150000,
   maxFailures: 1,
+  reporter: [['list'], ['json', { outputFile: 'test-results/experience-a75/results.json' }]],
   expect: { timeout: 12000 },
   use: {
     baseURL: 'http://127.0.0.1:5520',
@@ -24,8 +25,8 @@ export default defineSafeConfig({
       (baseline
         ? [{ width: 390, height: 844 }]
         : [
-            { width: 1280, height: 900 },
             { width: 390, height: 844 },
+            { width: 1280, height: 900 },
             { width: 865, height: 1079 },
           ]
       ).map((viewport) => ({

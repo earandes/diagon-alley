@@ -97,6 +97,29 @@ test('A75 arena geometry and source footprint before and after layout', async ({
         await expect(panel).toHaveAttribute('data-replay-playing', 'false');
         await expect(page.locator('.pedestal')).toHaveCount(shape.player + shape.rival);
         const g = await geometry(page);
+        samples.push({
+          pack,
+          language,
+          shape,
+          actionToPausedReadyWallMs: Date.now() - started,
+          geometry: g,
+        });
+        await mkdir(evidence, { recursive: true });
+        await writeFile(
+          resolve(evidence, `${phase}-${test.info().project.name}-geometry.json`),
+          JSON.stringify(
+            {
+              sha: process.env.GITHUB_SHA,
+              phase,
+              fixture: true,
+              physicalDevice: false,
+              samples,
+              errors,
+            },
+            null,
+            2,
+          ),
+        );
         for (const r of g.rows)
           for (const b of [r.pedestal, r.figure, r.name, r.health]) {
             expect(b.x).toBeGreaterThanOrEqual(-1);
@@ -106,13 +129,6 @@ test('A75 arena geometry and source footprint before and after layout', async ({
           }
         expect(g.scroll.width).toBeLessThanOrEqual(g.viewport.width + 1);
         expect(g.scroll.height).toBeLessThanOrEqual(g.viewport.height + 1);
-        samples.push({
-          pack,
-          language,
-          shape,
-          actionToPausedReadyWallMs: Date.now() - started,
-          geometry: g,
-        });
         if (
           process.platform === 'linux' &&
           process.env.ARCANA_CAPTURE_A75 === '1' &&
@@ -145,5 +161,50 @@ test('A75 arena geometry and source footprint before and after layout', async ({
       null,
       2,
     ),
+  );
+});
+
+test('A75 dense arena retains readable actors and inspector with enlarged text at 320', async ({
+  page,
+}) => {
+  test.skip(
+    test.info().project.name !== 'chromium-390-a75',
+    'One explicit reflow check, not physical zoom or device acceptance.',
+  );
+  const measurements = [];
+  for (const pack of ['diagon-alley', 'arcana']) {
+    await page.goto(
+      `http://127.0.0.1:5521/tests/browser-boss/boss-a70.html?challenge=mastery&player=5&lang=en&pack=${pack}`,
+    );
+    await page.getByRole('button', { name: 'Pause', exact: true }).click();
+    const before = await page.evaluate(() => window.__a70Fixture.battle);
+    await page.setViewportSize({ width: 320, height: 844 });
+    await page.evaluate(() => {
+      document.documentElement.style.fontSize = '200%';
+    });
+    await expect(page.locator('.arena-inspect > strong')).toHaveCount(10);
+    for (const name of await page.locator('.arena-inspect > strong').all()) {
+      await expect(name).toBeVisible();
+      await expect(name).toHaveCSS('font-size', '26px');
+    }
+    expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(
+      321,
+    );
+    await page.locator('.arena-inspect').last().click();
+    await expect(page.locator('.arena-inspector[open]')).toBeVisible();
+    await page.keyboard.press('Escape');
+    await expect(page.locator('.arena-inspect').last()).toBeFocused();
+    expect(await page.evaluate(() => window.__a70Fixture.battle)).toBe(before);
+    measurements.push({
+      pack,
+      geometry: await geometry(page),
+      expandedText: true,
+      physicalZoom: false,
+    });
+  }
+  await mkdir(evidence, { recursive: true });
+  await writeFile(
+    resolve(evidence, 'text-reflow.json'),
+    JSON.stringify({ sha: process.env.GITHUB_SHA, fixture: true, measurements }, null, 2),
   );
 });

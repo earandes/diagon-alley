@@ -140,50 +140,56 @@ function Fixture() {
         ) as CSSProperties
       }
     >
-      <nav aria-label="QA fixture controls">
-        <button onClick={() => setLanguage(language === 'es' ? 'en' : 'es')}>QA language</button>
-        <button
-          onClick={() => {
-            const next = pack === 'arcana' ? 'diagon-alley' : 'arcana';
-            setContentPack(next);
-            updatePack(next);
-          }}
-        >
-          QA pack
-        </button>
-      </nav>
-      {params.get('view') === 'encounter' ? (
-        <EncounterPreparation
-          offer={offer}
-          run={run}
-          options={options}
-          onChange={setOptions}
-          language={language}
-          ready
-        />
-      ) : params.get('view') === 'beans' ? (
-        <BeanAssignments
-          run={run}
-          game={game}
-          content={content}
-          language={language}
-          ready
-          assignments={assignments}
-          onChange={setAssignments}
-        />
-      ) : (
-        <ExpeditionPreparation
-          game={game}
-          catalog={content.catalog}
-          content={content}
-          language={language}
-          ready
-          onTeam={({ copyIds }) => setConfirmedTeam(copyIds)}
-          onStart={(ids) => setConfirmedTeam(ids)}
-          onEquip={() => {}}
-        />
-      )}
-      <output data-fixture-confirmed>{confirmedTeam?.join(',') ?? ''}</output>
+      <header className="game-header">
+        <nav aria-label="QA fixture controls">
+          <button onClick={() => setLanguage(language === 'es' ? 'en' : 'es')}>QA language</button>
+          <button
+            onClick={() => {
+              const next = pack === 'arcana' ? 'diagon-alley' : 'arcana';
+              setContentPack(next);
+              updatePack(next);
+            }}
+          >
+            QA pack
+          </button>
+        </nav>
+      </header>
+      <main id="content">
+        {params.get('view') === 'encounter' ? (
+          <EncounterPreparation
+            offer={offer}
+            run={run}
+            options={options}
+            onChange={setOptions}
+            language={language}
+            ready
+          />
+        ) : params.get('view') === 'beans' ? (
+          <BeanAssignments
+            run={run}
+            game={game}
+            content={content}
+            language={language}
+            ready
+            assignments={assignments}
+            onChange={setAssignments}
+          />
+        ) : (
+          <ExpeditionPreparation
+            game={game}
+            catalog={content.catalog}
+            content={content}
+            language={language}
+            ready
+            onTeam={({ copyIds }) => setConfirmedTeam(copyIds)}
+            onStart={(ids) => setConfirmedTeam(ids)}
+            onEquip={() => {}}
+          />
+        )}
+        <output hidden data-fixture-confirmed>
+          {confirmedTeam?.join(',') ?? ''}
+        </output>
+      </main>
     </div>
   );
 }
