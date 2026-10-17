@@ -151,7 +151,13 @@ for (const language of ['es', 'en'] as const) {
         after.inventory.products.filter(
           (product) => product.kind === 'random-beans' && product.status === 'available',
         ),
-      ).toHaveLength(stock - 1);
+      ).toHaveLength(
+        stock - 1 + receipt.reward.products.filter((kind) => kind === 'random-beans').length,
+      );
+      for (const product of before.inventory.products.filter((product) => product.id !== jar.id))
+        expect(after.inventory.products.find((candidate) => candidate.id === product.id)).toEqual(
+          product,
+        );
       expect(after.inventory.essence.points).toBe(before.inventory.essence.points - 5);
       expect(after.receipts.filter((candidate) => candidate.id === receipt.id)).toHaveLength(1);
       const activations = receipt.battle.events.filter(
@@ -176,7 +182,7 @@ for (const language of ['es', 'en'] as const) {
       // The arena deliberately folds the navigation dock. Return through its
       // real exit before consulting the discovered flavour in the collection.
       await page.locator('.arena-exit').click();
-      await expect(page.locator('.branch-map')).toBeVisible();
+      await expect(page.locator('.battle-panel')).toHaveCount(0);
       await page
         .locator('nav button')
         .filter({ has: page.locator('[data-art="ui.collection"]') })
