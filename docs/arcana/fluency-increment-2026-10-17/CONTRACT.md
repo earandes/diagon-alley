@@ -39,3 +39,14 @@ Mediciones seriales guardadas: ab-1, ab-2 y ab-3. Coalescer/geometría y decode 
 ### Candidato de siluetas
 
 Geometría de atlas sobre fuentes intactas, sin nuevas ilustraciones. No es un recorte destructivo o reducción de calidad; conserva marco lógico/guardas. Contrato técnico y costes en ASSET-ADAPTATION. Ensayo78267f5 en Linux todavía pendiente. La aceptación incluye inspección de dos PNG seleccionados y regresiones antes de considerar integración. La fase de diagnóstico no sustituye la matriz completa.
+
+### Plan vigente · aislamiento de shader (ensayo9)
+
+1. Referencia, cuatro recorridos y riesgo funcional de callbacks: comprobados; error Illegal invocation corregido en9ff y comprobado después.
+2. Coalescer, geometría, decode paralelo y ticker estático: implementados y pruebas de dominio/presentación disponibles. Reducen trabajo; la aceptación gráfica final sigue pendiente.
+3. Ocho ensayos A/B seriados conservados. Mipmaps y autoload se retiraron por falta de beneficio. El atlas aún es experimental: no alcanza el objetivo y añade complejidad/interpolación diferente.
+4. Ensayo9 en CI39034276488 sobree5aa2af: capacidad máxima de batching8, referencia78267f5, tres parejas AB/BA/AB. Mide shader real, envío nativo acotado y efectos sobre todos los actores. No integra todavía.
+5. Si se identifica una solución suficiente, retirar experimentos sin valor y repetir comparación del candidato mínimo frente a referencia inicial, además de recorrido/regresiones Linux. No se ejecutan baterías simultáneas.
+6. Revisar documentación/diff, comprobar candidato real, integrar con historia conservada y verificar main/CI. Pendiente.
+
+El sostenido genérico sigue incumpliendo20ms en los ensayos desfavorables. El presupuesto de arranque tampoco se da por alcanzado. No se declara completo el goal ni se realiza push a main por una muestra parcial.

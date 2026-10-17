@@ -1,5 +1,3 @@
-import { SceneFigureAtlas } from './scene-figure';
-import { sceneTexture } from './scene-texture';
 import { sceneNeedsContinuousFrames } from './scene-motion';
 import { sameSceneGeometry } from './scene-geometry';
 import { FrameInvalidation } from './frame-invalidation';
@@ -102,8 +100,8 @@ export async function createPixiScene(host: HTMLElement, data: SceneData) {
     throw error;
   }
   sceneEnd('renderer-init', initStarted);
-  // This scene explicitly selects WebGL. Bound shader sampler branching rather
-  // than using the driver's entire capacity; Pixi splits batches, never actors.
+  // Bound figure-batch shader branching to this scene's needs. Pixi splits
+  // larger batches; every actor remains present. Graphics shaders are separate.
   const renderer = app.renderer as WebGLRenderer;
   host.dataset.batchHardwareTextures = String(renderer.limits.maxBatchableTextures);
   renderer.limits.maxBatchableTextures = Math.min(8, renderer.limits.maxBatchableTextures);
@@ -115,7 +113,6 @@ export async function createPixiScene(host: HTMLElement, data: SceneData) {
   const ink = new Graphics(),
     sparks = new Graphics();
   app.stage.addChild(ink);
-  const atlas = new SceneFigureAtlas();
   const textures = new Map<string, Texture>(),
     figures = new Map<string, Sprite>(),
     loading = new Set<string>();
@@ -207,7 +204,7 @@ export async function createPixiScene(host: HTMLElement, data: SceneData) {
               void prepareImage(assetKey, asset.url)
                 .then((image) => {
                   if (destroyed || !image) return;
-                  textures.set(assetKey, sceneTexture(image, asset.url));
+                  textures.set(assetKey, Texture.from(image));
                   host.dataset.textureCount = String(textures.size);
                   host.dataset.textureBytes = String(
                     [...textures.values()].reduce((n, t) => n + t.width * t.height * 4, 0),
@@ -236,10 +233,8 @@ export async function createPixiScene(host: HTMLElement, data: SceneData) {
                   sy: 1,
                 });
               }
-              if (current.boss?.id !== unit.id)
-                atlas.configure(figure, texture, figureHeight * app.renderer.resolution >= 96);
               const pivot = asset?.pivot ?? [0.5, 0.9];
-              atlas.anchor(figure, pivot[0], pivot[1]);
+              figure.anchor.set(pivot[0], pivot[1]);
               figure.position.set(
                 x + ((pivot[0] - 0.5) * figureHeight * texture.width) / texture.height,
                 y + (pivot[1] - 0.5) * figureHeight,
@@ -265,7 +260,7 @@ export async function createPixiScene(host: HTMLElement, data: SceneData) {
                     void prepareImage(key, url)
                       .then((image) => {
                         if (destroyed || !image) return;
-                        textures.set(key, sceneTexture(image, url));
+                        textures.set(key, Texture.from(image));
                         host.dataset.textureCount = String(textures.size);
                         host.dataset.textureBytes = String(
                           [...textures.values()].reduce((n, t) => n + t.width * t.height * 4, 0),
@@ -309,7 +304,7 @@ export async function createPixiScene(host: HTMLElement, data: SceneData) {
                     void prepareImage(key, layer.url)
                       .then((image) => {
                         if (destroyed || !image) return;
-                        textures.set(key, sceneTexture(image, layer.url));
+                        textures.set(key, Texture.from(image));
                         host.dataset.textureCount = String(textures.size);
                         host.dataset.textureBytes = String(
                           [...textures.values()].reduce((n, t) => n + t.width * t.height * 4, 0),
@@ -624,7 +619,6 @@ export async function createPixiScene(host: HTMLElement, data: SceneData) {
       document.removeEventListener('visibilitychange', visibility);
       app.stop();
       app.destroy({ removeView: true, releaseGlobalResources: false }, { children: true });
-      atlas.destroy();
       for (const texture of textures.values()) texture.destroy(true);
       textures.clear();
       figures.clear();

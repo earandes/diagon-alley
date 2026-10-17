@@ -105,3 +105,13 @@ Baseline fa41664/candidato78267f5. Genérico33,3–33,4→33,3ms, remount igual;
 Se investiga el clear por defecto(COLOR/DEPTH/STENCIL); la escena es2D y no usa profundidad, pero la máscara del jefe sí requiere stencil. No se cambia sin medir su coste.
 
 Hallazgo prioritario de shader: GlLimitsSystem usa el máximo del driver para generar un sampler y una rama por textura en DefaultShader. La escena habitual usa6fuentes+blanco; el catálogo entero no necesita estar en un solo lote. Se prueba cap8 por renderer, nunca por unidades. Pixi divide los lotes que excedan8, conservando fuentes/unidades/PV. API pública maxBatchableTextures, antes del primer draw, no cambio de configuración global o motor. Baseline78267f5; candidato solo cambia ese presupuesto. Se registra el número real de samplers del GLSL, capacidades y spans nativos acotados para confirmar o rechazar el coste; son wall-times de envío, no tiempoGPU. Si resuelve la causa, se reconsiderará la necesidad de la geometría de atlas más compleja.
+
+## Noveno A/B ·39034276488 ·límite de batching
+
+Baseline78267f5 frente ae5aa2af. En el mismo runner, las tres muestras genéricas pasan deP95rAF33,3–33,4 a16,7ms; remontaje33,3 a16,8. Jefe16,8 a16,7 sin empeoramiento sostenido. GLSL observado: referencia32/32samplers y candidato32/8: Graphics conserva32; el batch de figuras utiliza8. Se confirma el ámbito limitado de la intervención, no se proclama un límite global de shaders ni una causa universalGPU.
+
+Inicio genérico465–564→454–472ms; jefe473–589→495–532ms, con una pareja desfavorable. MáximorAFdearranque genérico100–133→83,3–83,4ms; jefe100–117→83–100ms. La primera consulta getProgramParameter observada23,1→5,9ms no se considera costeCPU puro de compilación ni explica por sí sola el sostenido. Las primeras16llamadas nativas de cada método se midieron en ambas variantes, sin finish/readback/GPUquery.
+
+Fase de diagnóstico correcta; resto cancelado deliberadamente tras recuperar artifact. No es CIglobal correcta. Se conserva el objetivo400msgenérico incumplido y la variabilidad de arranque. Crudos ab-9.
+
+Candidato mínimo siguiente: se retiran certificados alfa, franjas y sus helpers/tests/generador activos. Esas intervenciones no resolvieron el objetivo y alteraron precisión RGB; no compensan su complejidad una vez encontrado el límite de batching. Se conservan evidencia e historia. Comparación final vuelve a referencia iniciald13, con idénticas entradasVite/instrumentación; tres parejas, secuencia acotada sin reintentos. Si el sostenido vuelve a fallar, no se integra por la muestra9 favorable.

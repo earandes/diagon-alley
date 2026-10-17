@@ -11,3 +11,7 @@ Consumidores: `scene-texture.ts` aplica frame/trim/orig sin modificar resolució
 Propiedad: caché de frames por escena y fuente; cambios de tamaño alternan banda/frame único sin modificar el personaje. Se destruyen wrappers con destroy(false) y después la fuente una sola vez con el propietario original. Metadata ausente/incompatible conserva imagen completa; arte ausente conserva fallback DOM. No hay trabajo de producción de assets durante una interacción.
 
 Aceptación: ninguna diferencia visible de encuadre, ancla, silueta, color, transparencia, gesto o PV; sin costuras entre bandas a escala real, también durante movimiento; sin reuso de fuente tras desmontaje y sin recurso oculto para aparentar que cabe. Dos PNG seleccionados en Linux se capturan después de medir/pausar, no acreditan una animación o dispositivo físico. Regresiones ES/EN y ambos paquetes todavía pendientes del candidato final.
+
+## Resolución del ensayo
+
+El atlas no se adopta. Tras aislar la mejora en batching (ab-9), se retiran metadata y helpers de las fuentes activas. Las imágenes originales, encuadre y transparencia permanecen intactos. Generador y certificados quedan recuperables en commitsfa41664/78267f5, no como capacidades activas ni recursos finales. La evidencia ab-7/8 y las diferencias RGB se conservan. El incremento final no necesita producir o adaptar assets.
