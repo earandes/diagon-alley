@@ -5,7 +5,10 @@ import {
 import { commerceFixture } from './support/commerce-fixtures';
 import { projectPlayerStatus } from '../../../src/arcana/application/player-status';
 import { describe, expect, it, vi } from 'vitest';
+import { createElement } from 'react';
+import { renderToStaticMarkup } from 'react-dom/server';
 import { GameController } from '../../../src/arcana/application/client/game-controller';
+import { RecoveryNotice } from '../../../src/arcana/presentation/RecoveryNotice';
 import {
   pendingSnapshot,
   type ClientGateway,
@@ -282,6 +285,52 @@ describe('ARCANA recoverable client orchestration', () => {
       status: 'error',
       pending: null,
     });
+  });
+  it('A75 clears a stale session notice only after a successful reload of the same player', async () => {
+    const { controller, gateway, operations } = fixture();
+    await controller.load();
+    await controller.perform(action);
+    const before = controller.getSnapshot();
+    vi.mocked(gateway.state)
+      .mockRejectedValueOnce(new ArcanaClientError('UNAUTHORIZED', 401))
+      .mockRejectedValueOnce(new ArcanaClientError('UNAUTHORIZED', 401));
+    await controller.refreshStatus();
+    await controller.load();
+    expect(controller.getSnapshot()).toMatchObject({
+      game: before.game,
+      receipt: before.receipt,
+      pending: null,
+      status: 'error',
+      error: 'UNAUTHORIZED',
+      statusError: 'UNAUTHORIZED',
+    });
+
+    // The next authority query represents the same session after its cookie is restored.
+    await controller.load();
+    const restored = controller.getSnapshot();
+    expect(restored).toMatchObject({
+      game: before.game,
+      receipt: before.receipt,
+      pending: null,
+      status: 'ready',
+      error: null,
+      statusError: null,
+    });
+    expect(restored.game?.playerId).toBe(before.game?.playerId);
+    expect(operations.pending).toBeNull();
+    expect(operations.lastKey).toBe('buy');
+    expect(gateway.purchase).toHaveBeenCalledTimes(1);
+    for (const language of ['es', 'en'] as const)
+      expect(
+        renderToStaticMarkup(
+          createElement(RecoveryNotice, {
+            state: restored,
+            language,
+            onReload: () => {},
+            onRecover: () => {},
+          }),
+        ),
+      ).toBe('');
   });
 
   it('A68 recovers a committed seasonal participation after lost response without resubmission', async () => {

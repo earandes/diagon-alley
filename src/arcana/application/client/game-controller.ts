@@ -111,6 +111,7 @@ export class GameController {
         game,
         serverTime: envelope.serverTime,
         energy: envelope.energy,
+        statusError: null,
         pending,
         status: pending ? 'recovering' : 'loading',
       });

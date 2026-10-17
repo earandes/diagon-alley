@@ -88,6 +88,7 @@ for (const language of ['es', 'en'] as const) {
     const before = await read(page);
     const inspector = await inspectGear(page);
     // Only this test's isolated session cookie is removed; no production account is touched.
+    const sameOwnerSession = await context.cookies();
     await context.clearCookies();
     let entryPosts = 0;
     page.on('request', (request) => {
@@ -125,6 +126,16 @@ for (const language of ['es', 'en'] as const) {
       await expect(page.locator('.preparation-inspection')).toHaveCount(0);
       await expect(page.locator('.preparation-card[aria-pressed="true"]')).toHaveCount(0);
       await expect(page.locator('[data-preparation-confirm]')).toBeDisabled();
+    } else {
+      // Restoring this isolated owner's original cookie is a test fixture, not a public login path.
+      await context.addCookies(sameOwnerSession);
+      const check = visibleNotice.getByRole('button', { name: 'Check session', exact: true });
+      await expect(check).toBeEnabled();
+      await check.click();
+      await expect(page.locator('[data-recovery-notice]')).toHaveCount(0);
+      expect(await read(page)).toEqual(before);
+      expect(entryPosts).toBe(0);
+      await expect(page.locator('[data-preparation-inspect]').first()).toBeVisible();
     }
   });
 
