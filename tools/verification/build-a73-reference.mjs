@@ -3,7 +3,7 @@ import { mkdirSync, mkdtempSync, symlinkSync, writeFileSync, rmSync, readFileSyn
 import { resolve } from 'node:path';
 if (process.platform !== 'linux') throw Error('Referencia gráfica A73 exclusivamente en CI Linux.');
 const root = process.cwd();
-const baseline = 'd13c0d96ed1959ef6edcf61e2486f688484c902f';
+const baseline = 'a5a3b3b6328daebaecc2e0a08eeb207da4526a4b';
 mkdirSync(resolve('test-results'), { recursive: true });
 const target = mkdtempSync(resolve('test-results/a73-reference-source-'));
 const run = (cmd, args, cwd = root) => {
@@ -35,7 +35,7 @@ const panel = resolve(target, 'src/arcana/presentation/BattlePanel.tsx');
 let source = readFileSync(panel, 'utf8');
 const anchor = '  const total = combat.events.length,';
 if (!source.includes(anchor)) throw Error('Baseline instrumentation anchor changed');
-source =
+if (!source.includes("sceneEnd('react-commit-wall', renderStarted)")) source =
   "import { sceneStart, sceneEnd } from './scenes/scene-diagnostics';\n" +
   source.replace(
     anchor,

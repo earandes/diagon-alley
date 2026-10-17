@@ -197,7 +197,14 @@ export async function createPixiScene(host: HTMLElement, data: SceneData) {
               void prepareImage(assetKey, asset.url)
                 .then((image) => {
                   if (destroyed || !image) return;
-                  textures.set(assetKey, Texture.from(image));
+                  textures.set(
+                    assetKey,
+                    Texture.from({
+                      resource: image,
+                      autoGenerateMipmaps: true,
+                      mipmapFilter: 'linear',
+                    }),
+                  );
                   host.dataset.textureCount = String(textures.size);
                   host.dataset.textureBytes = String(
                     [...textures.values()].reduce((n, t) => n + t.width * t.height * 4, 0),
@@ -253,7 +260,14 @@ export async function createPixiScene(host: HTMLElement, data: SceneData) {
                     void prepareImage(key, url)
                       .then((image) => {
                         if (destroyed || !image) return;
-                        textures.set(key, Texture.from(image));
+                        textures.set(
+                          key,
+                          Texture.from({
+                            resource: image,
+                            autoGenerateMipmaps: true,
+                            mipmapFilter: 'linear',
+                          }),
+                        );
                         host.dataset.textureCount = String(textures.size);
                         host.dataset.textureBytes = String(
                           [...textures.values()].reduce((n, t) => n + t.width * t.height * 4, 0),
@@ -297,7 +311,14 @@ export async function createPixiScene(host: HTMLElement, data: SceneData) {
                     void prepareImage(key, layer.url)
                       .then((image) => {
                         if (destroyed || !image) return;
-                        textures.set(key, Texture.from(image));
+                        textures.set(
+                          key,
+                          Texture.from({
+                            resource: image,
+                            autoGenerateMipmaps: true,
+                            mipmapFilter: 'linear',
+                          }),
+                        );
                         host.dataset.textureCount = String(textures.size);
                         host.dataset.textureBytes = String(
                           [...textures.values()].reduce((n, t) => n + t.width * t.height * 4, 0),
