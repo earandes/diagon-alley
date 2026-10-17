@@ -1,5 +1,9 @@
 # Diagon Alley / ARCANA · Callejón de maravillas
 
+## A75 · Claridad de acción y continuidad
+
+Implementación en rama, validación final pendiente. Recuperación breve en el contexto activo, con una acción pertinente y nueva entrada deliberada; no otra configuración ni éxito optimista. Instancias repiten ordinal/origen como lenguaje de formación. Tarro muestra existencias×N y borrador sin consumir. Afinidad/identidad se buscan con objetos a demanda conservando puestos y equipo. Libro de ruta consulta solo información pública y conexiones; nunca avanza. Foco visible y fallback de mapa/lista; reducido distingue elección propia del sistema. Móvil con cinco unidades reutiliza espacio real de peana para figura/nombre/PV sin reducir fuentes ni esconder actores. [Contrato y validación](docs/arcana/experience-fixes-2026-10-17/REPORT.md). Dirección Teatro de alquimia y recursos A70/A71 conservados.
+
 A73 · 17 octubre 2026: escena ilustrada, actor por piezas, figuras/PV, resolución y coreografía conservados. La fluidez se mejora agrupando carga e invalidaciones, reteniendo geometría, usando lotes públicos8 y deteniendo dibujos de acuses estáticos sin detener replay. Reducido, pausa, omisión y fallback preservados. Sin nuevos assets ni atlas. Validado enCI39038639396/merge8541ee2c e integrado enmain; [evidencia, galería y límites](docs/arcana/fluency-increment-2026-10-17/REPORT.md).
 
 A72 ·17octubre2026: revisión para consolidar A70/A71, sin rehacer diseño/arte. Seis imágenes Linux existentes y código contrastados; no nuevo defecto visual bloqueante demostrado. Integrado en main; CI39021060226 correcta sobre15b1a99, sin cambios de aplicación/arte en esta consolidación. Se conserva antesala/actor por piezas y botín primero, con percepción humana y rendimiento pendientes diferenciados. [Seguimiento](docs/arcana/boss-integration-2026-10-17/REPORT.md).

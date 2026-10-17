@@ -27,7 +27,11 @@ import {
   selectedContentPackId,
 } from './content-packs/active';
 import { useNavigation } from './useNavigation';
-import { operationErrorKey } from './operation-error';
+import { RecoveryNotice } from './RecoveryNotice';
+import { useTrialEntry } from './useTrialEntry';
+import { recoveryText } from './recovery-messages';
+import { ArcanaClientError } from '../application/client/errors';
+import { effectivePreparationRules } from './contextual-preparation';
 import { useOnline } from './useOnline';
 import { CommercePanel } from './CommercePanel';
 import { NodeAnnouncement } from './NodeAnnouncement';
@@ -41,7 +45,6 @@ import { NodeResult } from './NodeResult';
 import { text, type MessageKey } from './translations';
 import { useEffect, useState, useSyncExternalStore, useRef } from 'react';
 import { CollectionPanel } from './CollectionPanel';
-import { BeanAssignments } from './BeanAssignments';
 import { BossPartyStage } from './BossPartyStage';
 import { BossSupplies } from './BossSupplies';
 import './boss-staging.css';
@@ -85,7 +88,6 @@ export function App() {
       scope: '',
       values: [],
     }),
-    [entryError, setEntryError] = useState(false),
     [preparing, setPreparing] = useState(false),
     [preparationContext, setPreparationContext] = useState<'formation' | 'beans'>('formation'),
     [dismissedOpening, setDismissedOpening] = useState<string | null>(null);
@@ -215,8 +217,8 @@ export function App() {
     game?.revision,
     selected,
     content?.campaign.version,
-    content?.combatRules.version,
-    content?.combatRules.beans.version,
+    content ? effectivePreparationRules(run, content.combatRules).version : undefined,
+    content ? effectivePreparationRules(run, content.combatRules).beans.version : undefined,
   ]);
   const assignments = beanDraft.scope === beanScope ? beanDraft.values : NO_BEAN_ASSIGNMENTS;
   const setAssignments = (values: readonly BeanAssignment[]) =>
@@ -324,22 +326,39 @@ export function App() {
         : view === 'battle'
           ? 'scene.arena'
           : regionAppearance(run?.zoneId ?? content?.campaign.zoneId ?? '', language).mapAsset;
-  const enter = async () => {
-    if (!online) return;
-    setEntryError(false);
-    try {
+  const entry = useTrialEntry(
+    async () => {
+      if (!(await controller.prepareTrialEntry())) return;
       const response = await fetch('/api/trial/session', {
         method: 'POST',
         credentials: 'same-origin',
         headers: { 'Content-Type': 'application/json' },
         body: '{}',
       });
-      if (!response.ok) throw Error();
-      await controller.load();
-    } catch {
-      setEntryError(true);
-    }
-  };
+      if (!response.ok) {
+        const body = await response.json().catch(() => null);
+        throw new ArcanaClientError(body?.error?.code ?? 'NETWORK_ERROR', response.status);
+      }
+      setSelected(null);
+      setPreparing(false);
+      await controller.load({ allowPlayerChange: true });
+    },
+    online && !state.pending && !['loading', 'sending', 'recovering'].includes(state.status),
+  );
+  const inlinePreparation = view === 'map' && !!content && !run;
+  const recovery = (
+    <RecoveryNotice
+      state={state}
+      language={language}
+      connected={online}
+      onReload={() => void controller.load()}
+      onRecover={() => void controller.recover()}
+      onEnter={() => void entry.enter()}
+      entering={entry.pending}
+      entryError={entry.error}
+    />
+  );
+
   return (
     <div
       className={`arcana-shell game-shell${game && view === 'map' ? ' arcana-map-view' : ''}`}
@@ -410,6 +429,7 @@ export function App() {
           onLanguage={setLanguage}
           reduced={motion.reduced}
           ownReduced={motion.own}
+          systemReduced={motion.system}
           onReduced={motion.change}
         />
       </header>
@@ -428,13 +448,21 @@ export function App() {
           <button
             className="portal-enter game-object"
             aria-label={t('startLocalTrial')}
-            disabled={!online || state.status === 'loading'}
-            onClick={() => void enter()}
+            disabled={!online || state.status === 'loading' || entry.pending}
+            onClick={() => void entry.enter()}
           >
             <Artwork asset="ui.map" language={language} decorative />
-            <span>{t('gameEnterWorld')}</span>
+            <span>{entry.pending ? recoveryText(language, 'entering') : t('gameEnterWorld')}</span>
           </button>
-          {entryError && <p role="alert">{t('theTrialCouldNotStartCheckThatThe')}</p>}
+          {entry.error && (
+            <p role="alert">
+              {recoveryText(
+                language,
+                entry.error === 'RATE_LIMITED' ? 'rateLimited' : 'entryFailed',
+              )}
+            </p>
+          )}
+          {entry.pending && <p role="status">{recoveryText(language, 'entering')}</p>}
         </main>
       ) : (
         <>
@@ -468,18 +496,11 @@ export function App() {
               language={language}
               reduced={motion.reduced}
             />
-            {state.error && state.error !== 'UNAUTHORIZED' && (
-              <section role="alert" className="notice">
-                <p>{t(operationErrorKey(state.error))}</p>
-                <button
-                  disabled={!online}
-                  onClick={() => void (state.pending ? controller.recover() : controller.load())}
-                >
-                  {state.pending ? t('recoverOperation') : t('refreshState')}
-                </button>
-              </section>
-            )}
+            {!selected && !preparing && !inlinePreparation && recovery}
             {online &&
+              !selected &&
+              !preparing &&
+              !inlinePreparation &&
               (state.status === 'loading' ||
                 state.status === 'sending' ||
                 state.status === 'recovering' ||
@@ -566,7 +587,8 @@ export function App() {
                 ) : !run ? (
                   <div className="region-entry preparation-entry">
                     <ExpeditionPreparation
-                      key="new-entry"
+                      recovery={recovery}
+                      key={`new-entry:${game.playerId}`}
                       game={game}
                       catalog={content.catalog}
                       content={content}
@@ -595,6 +617,7 @@ export function App() {
                       onPrepare={(origin) => openPreparation('formation', origin)}
                     />
                     <MapPanel
+                      publicPlans={content.campaign.nodes}
                       run={run}
                       ready={ready}
                       language={language}
@@ -627,6 +650,7 @@ export function App() {
                       onLanguage={setLanguage}
                       reduced={motion.reduced}
                       ownReduced={motion.own}
+                      systemReduced={motion.system}
                       onReduced={motion.change}
                     />
                     <h3 className={selectedNode?.kind === 'boss' ? 'visually-hidden' : undefined}>
@@ -654,7 +678,7 @@ export function App() {
                         run={run}
                         game={game}
                         language={language}
-                        rules={run.campaignSnapshot?.combatRules ?? content.combatRules}
+                        rules={effectivePreparationRules(run, content.combatRules)}
                         rounding={
                           run.campaignSnapshot?.rounding ?? content.campaign.rounding ?? 'floor'
                         }
@@ -672,7 +696,7 @@ export function App() {
                           assignments={assignments}
                           language={language}
                           ready={ready}
-                          rules={run.campaignSnapshot?.combatRules ?? content.combatRules}
+                          rules={effectivePreparationRules(run, content.combatRules)}
                           onPrepare={(origin) => openPreparation('formation', origin)}
                         />
                         <BossSupplies
@@ -700,52 +724,18 @@ export function App() {
                             <Artwork asset="ui.team" language={language} decorative />
                             <span>{prepText(language, 'equipment')}</span>
                           </button>
-                          <details className="node-bean-preparation">
-                            <summary
-                              aria-label={t('nodeBeanPreparation', {
-                                count: game.inventory.products.filter(
-                                  (p) => p.kind === 'random-beans' && p.status === 'available',
-                                ).length,
-                              })}
-                            >
-                              <Artwork asset="beans.jar" language={language} decorative eager />
-                              <span aria-hidden="true">
-                                {assignments.length} /{' '}
-                                {
-                                  game.inventory.products.filter(
-                                    (p) => p.kind === 'random-beans' && p.status === 'available',
-                                  ).length
-                                }
-                              </span>
-                            </summary>
-                            <BeanAssignments
-                              run={run}
-                              game={game}
-                              content={content}
-                              language={language}
-                              ready={ready}
-                              assignments={assignments}
-                              onChange={setAssignments}
-                            />
-                          </details>
+                          <BossSupplies
+                            run={run}
+                            game={game}
+                            content={content}
+                            language={language}
+                            ready={ready}
+                            assignments={assignments}
+                            onChange={setAssignments}
+                          />
                         </>
                       )}
-                    {state.error && (
-                      <section role="alert">
-                        <p>{t(operationErrorKey(state.error))}</p>
-                        {!state.pending && (
-                          <button
-                            disabled={!online}
-                            onClick={() => {
-                              setSelected(null);
-                              void controller.load();
-                            }}
-                          >
-                            {t('refreshState')}
-                          </button>
-                        )}
-                      </section>
-                    )}
+                    {!preparing && recovery}
                     <div
                       className={
                         ['duel', 'boss'].includes(selectedNode!.kind)
@@ -823,11 +813,6 @@ export function App() {
                               <strong>5</strong>
                             </span>
                           )}
-                        </button>
-                      )}
-                      {state.pending && (
-                        <button disabled={!online} onClick={() => void controller.recover()}>
-                          {t('recoverOperation')}
                         </button>
                       )}
                       <button
@@ -942,9 +927,11 @@ export function App() {
                 onLanguage={setLanguage}
                 reduced={motion.reduced}
                 ownReduced={motion.own}
+                systemReduced={motion.system}
                 onReduced={motion.change}
               />
               <ExpeditionPreparation
+                recovery={recovery}
                 game={game}
                 catalog={content.catalog}
                 content={content}
@@ -964,12 +951,6 @@ export function App() {
                 onEquip={(request) => void controller.perform({ kind: 'equip-equipment', request })}
                 onClose={() => setPreparing(false)}
               />
-              {state.error && <p role="alert">{t(operationErrorKey(state.error))}</p>}
-              {state.pending && (
-                <button disabled={!online} onClick={() => void controller.recover()}>
-                  {t('recoverOperation')}
-                </button>
-              )}
             </dialog>
           )}
           <nav ref={navigation} aria-label={t('mainNavigation')}>

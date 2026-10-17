@@ -48,7 +48,7 @@ export default defineSafeConfig({
       : []),
     {
       command:
-        'npx --no-install vite build --config tests/browser-boss/vite-boss-a70.config.ts && npx --no-install vite preview --config tests/browser-boss/vite-boss-a70.config.ts --host 127.0.0.1 --port 5521 --strictPort',
+        'npx --no-install vite build --config tests/browser-experience-fixes/vite-experience-a75.config.ts && node tools/verification/build-a75-reference.mjs && npx --no-install vite preview --config tests/browser-experience-fixes/vite-experience-a75.config.ts --host 127.0.0.1 --port 5521 --strictPort',
       url: 'http://127.0.0.1:5521/tests/browser-boss/boss-a70.html',
       reuseExistingServer: false,
       timeout: 120000,

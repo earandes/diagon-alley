@@ -32,8 +32,10 @@ class Metadata implements ClientOperations {
   pending: PendingOperation | null = null;
   lastKey: string | null = null;
   failClaim = false;
+  failRead = false;
   failFinish = false;
   async read(playerId: string) {
+    if (this.failRead) throw new ArcanaClientError('CLIENT_STORAGE', 0);
     return this.pending?.playerId === playerId ? pendingSnapshot(this.pending) : null;
   }
   async claim(operation: PendingOperation) {
@@ -108,6 +110,180 @@ const action = {
   request: { product: 'cacao-toad' as const, quantity: 1, priceVersion: 1 },
 };
 describe('ARCANA recoverable client orchestration', () => {
+  it('A75 entry preflight finds another tab intent before allowing a new session', async () => {
+    const { controller, gateway, operations } = fixture();
+    await controller.load();
+    operations.pending = pendingSnapshot({
+      schemaVersion: 1,
+      playerId: 'player',
+      kind: 'purchase',
+      command: { key: 'other-tab-entry', expectedRevision: 1, request: action.request },
+    });
+    expect(controller.getSnapshot().pending).toBeNull();
+    expect(await controller.prepareTrialEntry()).toBe(false);
+    expect(controller.getSnapshot()).toMatchObject({
+      pending: operations.pending,
+      status: 'recovery-required',
+      error: 'OPERATION_PENDING',
+      game: { playerId: 'player' },
+    });
+    expect(gateway.purchase).not.toHaveBeenCalled();
+    expect(gateway.operation).not.toHaveBeenCalled();
+  });
+  it('A75 entry preflight blocks on unreadable local metadata without clearing the player', async () => {
+    const { controller, operations } = fixture();
+    await controller.load();
+    const before = controller.getSnapshot();
+    operations.failRead = true;
+    expect(await controller.prepareTrialEntry()).toBe(false);
+    expect(controller.getSnapshot()).toMatchObject({
+      game: before.game,
+      receipt: before.receipt,
+      status: 'error',
+      error: 'CLIENT_STORAGE',
+    });
+  });
+  it('A75 entry preflight allows a fresh visitor and an existing player without an uncertain request', async () => {
+    const { controller } = fixture();
+    expect(await controller.prepareTrialEntry()).toBe(true);
+    await controller.load();
+    expect(await controller.prepareTrialEntry()).toBe(true);
+    expect(controller.getSnapshot().game?.playerId).toBe('player');
+  });
+
+  it('A75 keeps a confirmed receipt and its owner when a later reload is unauthorized', async () => {
+    const { controller, gateway, operations } = fixture();
+    await controller.load();
+    await controller.perform(action);
+    const before = controller.getSnapshot();
+    vi.mocked(gateway.state).mockRejectedValue(new ArcanaClientError('UNAUTHORIZED', 401));
+    await controller.load();
+    expect(controller.getSnapshot()).toMatchObject({
+      game: before.game,
+      receipt: before.receipt,
+      pending: null,
+      error: 'UNAUTHORIZED',
+      status: 'error',
+    });
+    expect(operations.lastKey).toBe('buy');
+    expect(gateway.purchase).toHaveBeenCalledTimes(1);
+  });
+  it('A75 reload with a changed cookie never resolves or reassigns an uncertain command', async () => {
+    const { controller, gateway, operations, state } = fixture();
+    await controller.load();
+    gateway.purchase = vi.fn(async () => {
+      throw new ArcanaClientError('UNKNOWN_COMMIT', 503, true);
+    });
+    await controller.perform(action);
+    const before = controller.getSnapshot();
+    vi.mocked(gateway.state).mockResolvedValue(
+      projectPlayerStatus({ ...state(), playerId: 'other' }, 0),
+    );
+    await controller.load();
+    expect(controller.getSnapshot()).toMatchObject({
+      game: before.game,
+      pending: before.pending,
+      error: 'PLAYER_MISMATCH',
+      status: 'recovery-required',
+    });
+    expect(operations.pending).toEqual(before.pending);
+    expect(gateway.operation).not.toHaveBeenCalled();
+    expect(gateway.purchase).toHaveBeenCalledTimes(1);
+  });
+
+  it('A75 does not restore readiness after recovering a receipt if the follow-up session expires', async () => {
+    const { controller, gateway, operations, state } = fixture();
+    await controller.load();
+    const original = gateway.purchase;
+    gateway.purchase = vi.fn(async (command) => {
+      await original(command);
+      throw new ArcanaClientError('NETWORK_ERROR', 0, true);
+    });
+    await controller.perform(action);
+    vi.mocked(gateway.state)
+      .mockResolvedValueOnce(projectPlayerStatus(state(), 0))
+      .mockRejectedValue(new ArcanaClientError('UNAUTHORIZED', 401));
+    const restored = new GameController(gateway, operations, () => 'unused');
+    await restored.load();
+    expect(restored.getSnapshot()).toMatchObject({
+      status: 'error',
+      error: 'UNAUTHORIZED',
+      pending: null,
+      receipt: { id: 'buy' },
+    });
+    expect(gateway.purchase).toHaveBeenCalledTimes(1);
+  });
+
+  it('A75 preserves the current player and uncertain key when reloading with an expired session', async () => {
+    const { controller, gateway, operations } = fixture();
+    await controller.load();
+    gateway.purchase = vi.fn(async () => {
+      throw new ArcanaClientError('UNKNOWN_COMMIT', 503, true);
+    });
+    await controller.perform(action);
+    const before = controller.getSnapshot();
+    vi.mocked(gateway.state).mockRejectedValue(new ArcanaClientError('UNAUTHORIZED', 401));
+    await controller.load();
+    expect(controller.getSnapshot()).toMatchObject({
+      game: before.game,
+      pending: before.pending,
+      status: 'recovery-required',
+      error: 'UNAUTHORIZED',
+    });
+    expect(operations.pending).toEqual(before.pending);
+    expect(gateway.purchase).toHaveBeenCalledTimes(1);
+  });
+  it('A75 rejects a different cookie player during reload without replacing local context', async () => {
+    const { controller, gateway, state } = fixture();
+    await controller.load();
+    const before = controller.getSnapshot();
+    vi.mocked(gateway.state).mockResolvedValue(
+      projectPlayerStatus({ ...state(), playerId: 'other' }, 0),
+    );
+    await controller.load();
+    expect(controller.getSnapshot()).toMatchObject({
+      game: before.game,
+      error: 'PLAYER_MISMATCH',
+      status: 'error',
+    });
+    await controller.load({ allowPlayerChange: true });
+    expect(controller.getSnapshot()).toMatchObject({
+      game: { playerId: 'other' },
+      status: 'ready',
+    });
+  });
+  it('A75 refuses an explicit new entry while an earlier operation is uncertain', async () => {
+    const { controller, gateway } = fixture();
+    await controller.load();
+    gateway.purchase = vi.fn(async () => {
+      throw new ArcanaClientError('UNKNOWN_COMMIT', 503, true);
+    });
+    await controller.perform(action);
+    const before = controller.getSnapshot();
+    await controller.load({ allowPlayerChange: true });
+    expect(controller.getSnapshot()).toMatchObject({
+      game: before.game,
+      pending: before.pending,
+      status: 'recovery-required',
+      error: 'OPERATION_PENDING',
+    });
+  });
+  it('A75 marks expired authority queries as blocking while retaining the confirmed receipt', async () => {
+    const { controller, gateway } = fixture();
+    await controller.load();
+    await controller.perform(action);
+    const before = controller.getSnapshot();
+    vi.mocked(gateway.state).mockRejectedValue(new ArcanaClientError('UNAUTHORIZED', 401));
+    await controller.refreshStatus();
+    expect(controller.getSnapshot()).toMatchObject({
+      game: before.game,
+      receipt: before.receipt,
+      error: 'UNAUTHORIZED',
+      status: 'error',
+      pending: null,
+    });
+  });
+
   it('A68 recovers a committed seasonal participation after lost response without resubmission', async () => {
     const { controller, gateway, operations, keys, state } = fixture();
     const initial = state();

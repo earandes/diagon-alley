@@ -81,42 +81,52 @@ test('A75 arena geometry and source footprint before and after layout', async ({
     { player: 5, challenge: 'discovery', rival: 3 },
     { player: 5, challenge: 'mastery', rival: 5 },
   ];
-  for (const pack of ['diagon-alley', 'arcana'])
-    for (const shape of shapes) {
-      const url = `http://127.0.0.1:5521/tests/browser-boss/boss-a70.html?player=${shape.player}&challenge=${shape.challenge}&pack=${pack}`;
-      const started = Date.now();
-      await page.goto(url);
-      const panel = page.locator('.battle-panel'),
-        scene = page.locator('.scene-canvas');
-      await expect(scene).toHaveAttribute('data-art-ready', 'true');
-      await expect(scene).toHaveAttribute('data-boss-actor-ready', 'true');
-      await page.getByRole('button', { name: 'Pausa', exact: true }).click();
-      await expect(panel).toHaveAttribute('data-replay-playing', 'false');
-      await expect(page.locator('.pedestal')).toHaveCount(shape.player + shape.rival);
-      const g = await geometry(page);
-      for (const r of g.rows)
-        for (const b of [r.pedestal, r.figure, r.name, r.health]) {
-          expect(b.x).toBeGreaterThanOrEqual(-1);
-          expect(b.y).toBeGreaterThanOrEqual(-1);
-          expect(b.right).toBeLessThanOrEqual(g.viewport.width + 1);
-          expect(b.bottom).toBeLessThanOrEqual(g.viewport.height + 1);
-        }
-      expect(g.scroll.width).toBeLessThanOrEqual(g.viewport.width + 1);
-      expect(g.scroll.height).toBeLessThanOrEqual(g.viewport.height + 1);
-      samples.push({ pack, shape, actionToPausedReadyWallMs: Date.now() - started, geometry: g });
-      if (
-        process.platform === 'linux' &&
-        process.env.ARCANA_CAPTURE_A75 === '1' &&
-        test.info().project.name === 'chromium-390-a75' &&
-        shape.rival === 5
-      ) {
-        await mkdir(evidence, { recursive: true });
-        await page.screenshot({
-          path: resolve(evidence, `${phase}-${pack}-dense.png`),
-          fullPage: false,
+  for (const language of phase === 'baseline' ? ['es'] : ['es', 'en'])
+    for (const pack of ['diagon-alley', 'arcana'])
+      for (const shape of shapes) {
+        const url = `http://127.0.0.1:5521/tests/browser-boss/boss-a70.html?player=${shape.player}&challenge=${shape.challenge}&pack=${pack}&lang=${language}`;
+        const started = Date.now();
+        await page.goto(url);
+        const panel = page.locator('.battle-panel'),
+          scene = page.locator('.scene-canvas');
+        await expect(scene).toHaveAttribute('data-art-ready', 'true');
+        await expect(scene).toHaveAttribute('data-boss-actor-ready', 'true');
+        await page
+          .getByRole('button', { name: language === 'es' ? 'Pausa' : 'Pause', exact: true })
+          .click();
+        await expect(panel).toHaveAttribute('data-replay-playing', 'false');
+        await expect(page.locator('.pedestal')).toHaveCount(shape.player + shape.rival);
+        const g = await geometry(page);
+        for (const r of g.rows)
+          for (const b of [r.pedestal, r.figure, r.name, r.health]) {
+            expect(b.x).toBeGreaterThanOrEqual(-1);
+            expect(b.y).toBeGreaterThanOrEqual(-1);
+            expect(b.right).toBeLessThanOrEqual(g.viewport.width + 1);
+            expect(b.bottom).toBeLessThanOrEqual(g.viewport.height + 1);
+          }
+        expect(g.scroll.width).toBeLessThanOrEqual(g.viewport.width + 1);
+        expect(g.scroll.height).toBeLessThanOrEqual(g.viewport.height + 1);
+        samples.push({
+          pack,
+          language,
+          shape,
+          actionToPausedReadyWallMs: Date.now() - started,
+          geometry: g,
         });
+        if (
+          process.platform === 'linux' &&
+          process.env.ARCANA_CAPTURE_A75 === '1' &&
+          test.info().project.name === 'chromium-390-a75' &&
+          shape.rival === 5 &&
+          language === 'es'
+        ) {
+          await mkdir(evidence, { recursive: true });
+          await page.screenshot({
+            path: resolve(evidence, `${phase}-${pack}-dense.png`),
+            fullPage: false,
+          });
+        }
       }
-    }
   expect(errors).toEqual([]);
   await mkdir(evidence, { recursive: true });
   await writeFile(

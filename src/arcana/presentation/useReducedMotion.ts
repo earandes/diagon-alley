@@ -32,5 +32,5 @@ export function useReducedMotion() {
       /* Optional preference. */
     }
   };
-  return { reduced: system || own, own, change };
+  return { reduced: system || own, system, own, change };
 }

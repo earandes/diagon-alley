@@ -53,7 +53,9 @@ test('A54 motion preference updates already mounted choices and missing art reta
   await page.getByRole('button', { name: 'Bazar', exact: true }).click();
   await page.getByRole('button', { name: 'Taller de Varitas', exact: true }).click();
   await page.getByRole('button', { name: 'Ajustes', exact: true }).click();
-  await page.getByRole('button', { name: 'Reducir movimiento', exact: true }).click();
+  await page
+    .getByRole('button', { name: 'Reducir movimiento por mi elección', exact: true })
+    .click();
   await expect(page.locator('.arcana-shell')).toHaveAttribute('data-reduced', 'true');
   await page.getByRole('dialog').getByRole('button', { name: 'Cerrar', exact: true }).click();
   const willow = page

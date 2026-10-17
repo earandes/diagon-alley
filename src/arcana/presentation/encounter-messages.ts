@@ -1,6 +1,11 @@
 import type { Language } from '../domain/collection/wizards';
 
 const messages = {
+  memberIdentity: { es: 'Puesto {position} · {source}', en: 'Position {position} · {source}' },
+  memberLabel: {
+    es: '{name}, puesto {position}, {source}',
+    en: '{name}, position {position}, {source}',
+  },
   healer: { es: 'Un remedio a tiempo', en: 'A timely remedy' },
   scholar: { es: 'El precio del conocimiento', en: 'The price of knowledge' },
   one: { es: 'Un integrante', en: 'One companion' },

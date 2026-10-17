@@ -5,35 +5,33 @@ import { useLayoutEffect, useMemo, useRef, useState } from 'react';
 import type { Run } from '../domain/exploration/run';
 import type { Language } from '../domain/collection/wizards';
 import type { NodeKind } from '../domain/exploration/route';
+import type { NodePlan } from '../domain/exploration/nodes';
+import { routeInspection } from './route-inspection';
+import { RouteInspection, routeNodeName, nodeMessageKeys } from './RouteInspection';
+import { mapSettingsText } from './map-settings-messages';
 import { routeOptions } from '../application/client/read-models';
 import { fitMapLayout } from './scenes/map-layout';
 import { SceneCanvas } from './scenes/SceneCanvas';
-import { text, type MessageKey } from './translations';
+import { text } from './translations';
 import './map-a60.css';
 import { mapText } from './map-messages';
 import { useConfirmedMotion } from './useConfirmedMotion';
 import { useReducedMotion } from './useReducedMotion';
 import './motion-a69.css';
-const nodeLabels: Record<NodeKind, MessageKey> = {
-  duel: 'arcaneDuel',
-  refuge: 'alchemyRefuge',
-  chest: 'lootChest',
-  pact: 'magicPact',
-  encounter: 'chanceEncounter',
-  boss: 'zoneBoss',
-};
 export function MapPanel({
   run,
   ready,
   language,
   onSelect,
   confirmedReceiptId,
+  publicPlans,
 }: {
   run: Run;
   ready: boolean;
   language: Language;
   onSelect: (id: string, origin: HTMLButtonElement) => void;
   confirmedReceiptId?: string;
+  publicPlans?: readonly NodePlan[];
 }) {
   const { reduced } = useReducedMotion();
   const confirmedMotion = useConfirmedMotion(
@@ -43,6 +41,13 @@ export function MapPanel({
     reduced,
     280,
   );
+  const [inspectedId, setInspectedId] = useState<string | null>(null);
+  const inspectOrigin = useRef<HTMLButtonElement | null>(null);
+  const inspected = inspectedId ? routeInspection(run, inspectedId, publicPlans) : undefined;
+  const closeInspection = () => {
+    setInspectedId(null);
+    requestAnimationFrame(() => inspectOrigin.current?.focus({ preventScroll: true }));
+  };
   const [list, setList] = useState(false),
     scroll = useRef<HTMLDivElement>(null),
     [size, setSize] = useState({ width: 390, height: 600 }),
@@ -82,13 +87,20 @@ export function MapPanel({
     return () => observer.disconnect();
   }, [list]);
   const button = (id: string, kind: NodeKind) => {
-    const plan = run.campaignSnapshot?.nodes.find((candidate) => candidate.nodeId === id);
+    const plan = (run.campaignSnapshot?.nodes ?? publicPlans)?.find(
+      (candidate) => candidate.nodeId === id,
+    );
+    const inspection = routeInspection(run, id, publicPlans)!;
     const threat = plan?.kind === 'duel' ? plan.threat : undefined;
-    const label = text(language, nodeLabels[kind]);
+    const label = text(language, nodeMessageKeys[kind]);
     return (
       <button
         key={id}
         className="map-event-medallion"
+        aria-label={mapSettingsText(language, 'nodeStateName', {
+          name: routeNodeName(inspection, language),
+          state: text(language, inspection.state),
+        })}
         title={
           threat
             ? `${label} · ${tacticalText(language, threat === 'fire' ? 'fireThreat' : 'vanguard')}`
@@ -100,8 +112,14 @@ export function MapPanel({
         data-node-state={
           run.visited.includes(id) ? 'visited' : available.includes(id) ? 'available' : 'locked'
         }
-        disabled={!ready || !available.includes(id)}
-        onClick={(event) => onSelect(id, event.currentTarget)}
+        disabled={run.visited.includes(id)}
+        onClick={(event) => {
+          if (available.includes(id) && ready) onSelect(id, event.currentTarget);
+          else {
+            inspectOrigin.current = event.currentTarget;
+            setInspectedId(id);
+          }
+        }}
       >
         <span className="node-asset" aria-hidden="true">
           <Artwork asset={`node.${kind}`} language={language} className="node-icon" decorative />
@@ -117,7 +135,12 @@ export function MapPanel({
             ▴
           </span>
         )}
-        <strong className="node-label">{text(language, nodeLabels[kind])}</strong>
+        <strong className="node-label">{text(language, nodeMessageKeys[kind])}</strong>
+        {list && (
+          <small className="route-node-position">
+            {mapSettingsText(language, 'position', { ...inspection.position })}
+          </small>
+        )}
         <small className="visually-hidden">
           {text(
             language,
@@ -145,6 +168,14 @@ export function MapPanel({
   };
   return (
     <>
+      {inspected && (
+        <RouteInspection
+          node={inspected}
+          language={language}
+          onInspect={setInspectedId}
+          onClose={closeInspection}
+        />
+      )}
       <button
         className="map-view-toggle"
         aria-label={text(language, list ? 'viewMap' : 'viewNodeList')}
@@ -152,11 +183,48 @@ export function MapPanel({
         onClick={() => setList((v) => !v)}
       >
         <Artwork asset={list ? 'ui.map' : 'ui.missions'} language={language} decorative />
-        <span className="visually-hidden">{text(language, list ? 'viewMap' : 'viewNodeList')}</span>
+        <span className="map-view-fallback" aria-hidden="true">
+          {text(language, list ? 'viewMap' : 'viewNodeList')}
+        </span>
       </button>
       {list ? (
         <div className="route-list">
-          {[...run.graph.nodes].reverse().map((n) => button(n.id, n.kind))}
+          <h2>{mapSettingsText(language, 'routeBook')}</h2>
+          {[...run.graph.nodes]
+            .sort((a, b) => a.row - b.row || (a.column ?? 0) - (b.column ?? 0))
+            .map((n) => {
+              const inspection = routeInspection(run, n.id, publicPlans)!;
+              return (
+                <section className="route-book-entry" key={n.id}>
+                  {button(n.id, n.kind)}
+                  <details>
+                    <summary>{mapSettingsText(language, 'inspection')}</summary>
+                    <p>
+                      {mapSettingsText(language, 'from')}:{' '}
+                      {inspection.from.length
+                        ? inspection.from.map((node) => routeNodeName(node, language)).join(' · ')
+                        : originLabel}
+                    </p>
+                    <p>
+                      {mapSettingsText(language, 'to')}:{' '}
+                      {inspection.to.length
+                        ? inspection.to.map((node) => routeNodeName(node, language)).join(' · ')
+                        : mapSettingsText(language, 'end')}
+                    </p>
+                    <button
+                      type="button"
+                      className="route-book-inspect"
+                      onClick={(event) => {
+                        inspectOrigin.current = event.currentTarget;
+                        setInspectedId(n.id);
+                      }}
+                    >
+                      {mapSettingsText(language, 'inspection')}
+                    </button>
+                  </details>
+                </section>
+              );
+            })}
         </div>
       ) : (
         <div className="map-scroll" ref={scroll}>

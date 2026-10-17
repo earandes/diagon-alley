@@ -477,3 +477,28 @@
     margin-top: 10px;
   }
 }
+
+/* A75: formation position and provenance identify instances, including identical portraits. */
+.game-shell .encounter-target > .encounter-target-origin {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 4px;
+  font-size: 0.75rem;
+  color: var(--pack-ink, #f5e7c4);
+}
+.encounter-target-origin img {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+}
+.encounter-preview-identity {
+  grid-column: 1 / -1;
+  font-size: 0.8rem;
+  font-weight: 400;
+}
+
+.game-shell .encounter-preview-unit > img {
+  grid-row: 2 / 4;
+}

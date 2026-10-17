@@ -101,7 +101,7 @@ test('A67 isolated serial common-action timing without recording', async ({ page
   await page.locator('.portal-enter').click();
   await startExpedition(page, 'es');
   await page.evaluate(() => document.fonts.ready);
-  const node = page.locator('.map-node > button:enabled').first(),
+  const node = page.locator('.map-node > button[data-node-state="available"]').first(),
     dialog = page.locator('.node-event-dialog');
   for (let index = 0; index < 3; index++) {
     results.push(
