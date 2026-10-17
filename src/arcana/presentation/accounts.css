@@ -1,0 +1,231 @@
+/* A76: a quiet account letter, preserving native form semantics and the illustrated world. */
+.account-access {
+  width: min(470px, calc(100vw - 28px));
+  max-height: calc(100dvh - 28px);
+  box-sizing: border-box;
+  overflow: auto;
+  padding: clamp(22px, 5vw, 36px);
+  border: 3px double #c9a365;
+  border-radius: 16px 5px 16px 5px;
+  color: #fff0d0;
+  background: #132438;
+  box-shadow:
+    inset 0 0 0 5px #091422,
+    0 24px 70px #020510cc;
+  text-align: start;
+  scrollbar-color: #c9a365 #132438;
+}
+.account-access::backdrop {
+  background: #020914bf;
+}
+.account-heading {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding-right: 34px;
+  margin-bottom: 24px;
+}
+.account-heading > img {
+  width: 58px;
+  height: 68px;
+  object-fit: contain;
+}
+.account-heading h2 {
+  font:
+    500 clamp(1.35rem, 5vw, 1.8rem) / 1.2 Cinzel,
+    Georgia,
+    serif;
+  margin: 0;
+  text-wrap: balance;
+}
+.account-access .account-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 44px;
+  min-height: 44px;
+  border: 0;
+  padding: 6px;
+  margin: 0;
+  background: none;
+}
+.account-close img {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+}
+.account-access form {
+  display: grid;
+  gap: 18px;
+}
+.account-access label {
+  display: grid;
+  gap: 7px;
+  color: #fff0d0;
+  font-size: 1rem;
+}
+.account-access input {
+  box-sizing: border-box;
+  min-width: 0;
+  width: 100%;
+  min-height: 48px;
+  padding: 10px 12px;
+  border: 1px solid #bca36e;
+  border-radius: 5px;
+  background: #071524;
+  color: #fff7e7;
+  font: inherit;
+  caret-color: #f4d58f;
+}
+.account-access input::selection {
+  background: #e6c078;
+  color: #0b182a;
+}
+.account-access input:focus-visible,
+.account-access button:focus-visible,
+.account-welcome button:focus-visible,
+.settings-account button:focus-visible {
+  outline: 3px solid #b7edee;
+  outline-offset: 4px;
+}
+.account-access p {
+  margin: 0;
+  color: #e7d3a7;
+  font-size: 0.9rem;
+  line-height: 1.55;
+  overflow-wrap: anywhere;
+}
+.account-access button {
+  min-height: 44px;
+  min-width: 44px;
+  max-width: 100%;
+  margin: 0;
+  font: inherit;
+  white-space: normal;
+}
+.account-access .account-primary {
+  width: 100%;
+  padding: 13px 18px;
+  border: 1px solid #e7c582;
+  border-radius: 6px;
+  color: #132030;
+  background: #e1c181;
+  font-weight: 600;
+}
+.account-access .account-primary:hover:not(:disabled) {
+  background: #f0d59e;
+}
+.account-access .account-link {
+  padding: 7px 2px;
+  border: 0;
+  background: none;
+  color: #f1d698;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.account-access button:disabled {
+  opacity: 0.55;
+  cursor: default;
+}
+.account-password {
+  display: grid;
+  gap: 8px;
+}
+.account-password .account-link {
+  justify-self: start;
+}
+.account-switch {
+  display: grid;
+  gap: 8px;
+  padding-top: 10px;
+  border-top: 1px solid #c9a36566;
+}
+.account-access .account-error {
+  margin-top: 18px;
+  color: #ffd2c5;
+}
+.account-access .account-notice {
+  color: #e0efcd;
+}
+.account-access .account-back {
+  display: block;
+  margin-top: 18px;
+  margin-inline: auto;
+}
+.account-management {
+  display: grid;
+  gap: 18px;
+}
+.account-access .account-email {
+  font-size: 1.05rem;
+  color: #fff7e7;
+}
+.settings-account {
+  border-top: 1px solid #b18a4b66;
+  padding-top: 12px;
+  margin-bottom: 16px;
+}
+.settings-account button {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  min-height: 52px;
+  border: 0;
+  background: none;
+  padding: 7px 0;
+  color: #fff0d0;
+  text-align: start;
+}
+.settings-account img {
+  width: 36px;
+  height: 42px;
+  object-fit: contain;
+}
+.settings-account small {
+  display: block;
+  overflow-wrap: anywhere;
+  color: #e7d3a7;
+}
+.game-shell .account-welcome {
+  display: grid;
+  justify-items: center;
+  gap: 10px;
+  width: min(430px, 100%);
+}
+.game-shell .account-welcome button {
+  margin: 0;
+  min-height: 48px;
+  min-width: 160px;
+  padding: 12px 24px;
+  border: 1px solid #d7b779;
+  border-radius: 6px;
+  background: #e1c181;
+  color: #142134;
+}
+.game-shell .account-welcome .account-welcome-login {
+  background: #102036dd;
+  color: #fff0d0;
+}
+.game-shell .account-guest-hint {
+  max-width: 47ch;
+  margin: 0;
+  color: #fff0d0;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  text-shadow: 0 2px 5px #000;
+}
+.game-shell .welcome:has(.account-welcome) {
+  gap: 18px;
+  padding-block: clamp(24px, 5dvh, 60px);
+  overflow-y: auto;
+  justify-content: end;
+}
+.game-shell .welcome:has(.account-welcome) h2 {
+  font-size: clamp(2rem, 6vw, 4rem);
+}
+@media (max-height: 690px) {
+  .game-shell .welcome:has(.account-welcome) {
+    justify-content: start;
+  }
+}

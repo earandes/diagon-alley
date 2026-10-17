@@ -113,6 +113,29 @@ const action = {
   request: { product: 'cacao-toad' as const, quantity: 1, priceVersion: 1 },
 };
 describe('ARCANA recoverable client orchestration', () => {
+  it('holds identity change exclusion through transport and never loses pending metadata on cancel', async () => {
+    const { controller, gateway } = fixture();
+    await controller.load();
+    expect(await controller.beginIdentityChange(false)).toBe(true);
+    expect(await controller.beginIdentityChange(false)).toBe(false);
+    await controller.perform(action);
+    expect(gateway.purchase).not.toHaveBeenCalled();
+    await controller.finishIdentityChange('cancel', false);
+    expect(controller.getSnapshot().status).toBe('ready');
+    await controller.perform(action);
+    expect(gateway.purchase).toHaveBeenCalledTimes(1);
+  });
+  it('signs out without deleting the saved game and accepts a deliberate subsequent login', async () => {
+    const { controller, gateway } = fixture();
+    await controller.load();
+    expect(await controller.beginIdentityChange(false)).toBe(true);
+    await controller.finishIdentityChange('signed-out', false);
+    expect(controller.getSnapshot().game).toBe(null);
+    expect(gateway.purchase).not.toHaveBeenCalled();
+    expect(await controller.beginIdentityChange(false)).toBe(true);
+    await controller.finishIdentityChange('authenticated', false);
+    expect(controller.getSnapshot().game?.playerId).toBe('player');
+  });
   it('A75 entry preflight finds another tab intent before allowing a new session', async () => {
     const { controller, gateway, operations } = fixture();
     await controller.load();

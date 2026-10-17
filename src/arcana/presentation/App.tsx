@@ -1,3 +1,11 @@
+import {
+  AccountAccess,
+  AccountRequestError,
+  readAccountSession,
+  type AccountMode,
+  type AccountSession,
+} from './AccountAccess';
+import { accountText } from './account-messages';
 import { challengeText } from './ExpeditionChallenge';
 import { SeasonalEvent } from './SeasonalEvent';
 import { previewEncounterTrade } from '../domain/exploration/encounter-trades';
@@ -74,6 +82,27 @@ const nodes: Record<NodeKind, MessageKey> = {
 };
 const NO_BEAN_ASSIGNMENTS: readonly BeanAssignment[] = Object.freeze([]);
 export function App() {
+  const [accountMode, setAccountMode] = useState<AccountMode | null>(null);
+  const [accountSession, setAccountSession] = useState<AccountSession | null>(null);
+  const [accountUnavailable, setAccountUnavailable] = useState(false);
+  const accountQuery = useRef(0);
+  const refreshAccount = async () => {
+    const query = ++accountQuery.current;
+    try {
+      const current = await readAccountSession();
+      if (query !== accountQuery.current) return;
+      setAccountSession(current);
+      setAccountUnavailable(false);
+    } catch {
+      if (query !== accountQuery.current) return;
+      setAccountSession(null);
+      setAccountUnavailable(true);
+    }
+  };
+  const openAccount = (mode: AccountMode) => {
+    void refreshAccount();
+    setAccountMode(mode);
+  };
   const packId = useSyncExternalStore(subscribeContentPack, selectedContentPackId);
   const [language, setLanguage] = useState<Language>(() => {
       try {
@@ -172,7 +201,10 @@ export function App() {
     }
   }, [language, packId]);
   useEffect(() => {
-    if (navigator.onLine) void controller.load();
+    if (navigator.onLine) {
+      void controller.load();
+      void refreshAccount();
+    }
   }, []);
   useEffect(() => {
     if (!online) return;
@@ -342,6 +374,7 @@ export function App() {
       setSelected(null);
       setPreparing(false);
       await controller.load({ allowPlayerChange: true });
+      await refreshAccount();
     },
     online && !state.pending && !['loading', 'sending', 'recovering'].includes(state.status),
   );
@@ -431,6 +464,33 @@ export function App() {
           ownReduced={motion.own}
           systemReduced={motion.system}
           onReduced={motion.change}
+          accountControl={
+            <>
+              <button
+                type="button"
+                data-account-entry="settings"
+                onClick={() =>
+                  openAccount(
+                    accountSession?.kind === 'account'
+                      ? 'manage'
+                      : accountSession?.kind === 'guest'
+                        ? 'register'
+                        : 'login',
+                  )
+                }
+              >
+                <Artwork asset="ui.missions" language={language} decorative />
+                <span>
+                  {accountText(
+                    language,
+                    accountSession?.kind === 'account' ? 'account' : game ? 'save' : 'access',
+                  )}
+                </span>
+              </button>
+              {accountSession?.kind === 'account' && <small>{accountSession.email}</small>}
+              {accountUnavailable && <small>{accountText(language, 'unavailable')}</small>}
+            </>
+          }
         />
       </header>
 
@@ -444,7 +504,25 @@ export function App() {
         <main id="content" tabIndex={-1} className="welcome">
           <h2>{t('theHiddenBoulevard')}</h2>
           <span className="visually-hidden">{t('anApprenticeAWandAndAPathTo')}</span>
-          <p className="visually-hidden">{t('theTrialSessionStaysInThisBrowserFor')}</p>
+          <div className="account-welcome">
+            <button
+              type="button"
+              data-account-entry="register"
+              disabled={!online || state.status === 'loading' || entry.pending}
+              onClick={() => openAccount('register')}
+            >
+              {accountText(language, 'register')}
+            </button>
+            <button
+              type="button"
+              className="account-welcome-login"
+              data-account-entry="login"
+              disabled={!online || state.status === 'loading' || entry.pending}
+              onClick={() => openAccount('login')}
+            >
+              {accountText(language, 'login')}
+            </button>
+          </div>
           <button
             className="portal-enter game-object"
             aria-label={t('startLocalTrial')}
@@ -452,8 +530,11 @@ export function App() {
             onClick={() => void entry.enter()}
           >
             <Artwork asset="ui.map" language={language} decorative />
-            <span>{entry.pending ? recoveryText(language, 'entering') : t('gameEnterWorld')}</span>
+            <span>
+              {entry.pending ? recoveryText(language, 'entering') : accountText(language, 'guest')}
+            </span>
           </button>
+          <p className="account-guest-hint">{accountText(language, 'guestHint')}</p>
           {entry.error && (
             <p role="alert">
               {recoveryText(
@@ -973,6 +1054,37 @@ export function App() {
             ))}
           </nav>
         </>
+      )}
+      {accountMode && (
+        <AccountAccess
+          language={language}
+          initialMode={accountMode}
+          session={accountSession}
+          playerId={game?.playerId}
+          pending={!!state.pending}
+          connected={online}
+          onClose={() => setAccountMode(null)}
+          beforeIdentityChange={controller.beginIdentityChange}
+          finishIdentityChange={async (outcome, samePlayerOnly) => {
+            await controller.finishIdentityChange(outcome, samePlayerOnly);
+            if (outcome === 'authenticated' && controller.getSnapshot().error)
+              throw new AccountRequestError(controller.getSnapshot().error ?? 'AUTH_UNAVAILABLE');
+            if (outcome === 'authenticated' || outcome === 'signed-out') {
+              setSelected(null);
+              setPreparing(false);
+              setView('map');
+            }
+          }}
+          onSession={(session) => {
+            accountQuery.current++;
+            setAccountSession(session);
+            setAccountUnavailable(false);
+          }}
+          onAccessReset={async () => {
+            await controller.load();
+            await refreshAccount();
+          }}
+        />
       )}
     </div>
   );

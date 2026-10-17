@@ -46,8 +46,20 @@ jobs:
       - run: npm run test:integration
       - id: build
         run: npm run build
+      - run: node tools/verification/verify-accounts-backup-a76.mjs
       - run: npm run verify:arcana:build
       - run: npx playwright install --with-deps chromium webkit
+      - if: ${{ !cancelled() && steps.build.outcome == 'success' }}
+        run: ARCANA_CAPTURE_A76=1 npx playwright test --config playwright.accounts-a76.config.ts
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: a76-account-evidence
+          path: |
+            docs/arcana/accounts-2026-10-17/evidence/linux/**
+            test-results/accounts-a76/results.json
+            test-results/accounts-a76/**/error-context.md
+          if-no-files-found: ignore
       - id: a75phase
         run: node -e "const p=require('./tools/verification/a75-phase.json').phase;if(!['baseline','full','webkit','resume','tail'].includes(p))throw Error('Invalid A75 phase');require('fs').appendFileSync(process.env.GITHUB_OUTPUT,'phase='+p+'\\n')"
       - if: ${{ !cancelled() && steps.build.outcome == 'success' }}

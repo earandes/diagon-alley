@@ -4,7 +4,10 @@ import { localAuthority } from './tools/arcana/local-authority-plugin.ts';
 export default defineConfig(({ mode }) => ({
   base: './',
   publicDir: false,
-  server: { watch: { ignored: ['**/test-results-arcana*/**', '**/.playwright-cli/**'] } },
+  server: {
+    fs: { deny: ['.env', '.env.*', '*.{crt,pem}', '**/.git/**', '**/.local/**'] },
+    watch: { ignored: ['**/test-results-arcana*/**', '**/.playwright-cli/**', '**/.local/**'] },
+  },
   test: { include: ['tests/domain/**/*.test.ts'] },
   plugins: [arcanaPwa(), ...(mode === 'arcana' ? [localAuthority()] : [])],
 }));
