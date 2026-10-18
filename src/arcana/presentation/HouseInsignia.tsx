@@ -1,3 +1,4 @@
+import { useId } from 'react';
 import type { House, WizardTraits } from '../domain/collection/traits';
 import type { Language } from '../domain/collection/wizards';
 import type { CombatRules } from '../domain/combat/engine';
@@ -99,13 +100,19 @@ export function HouseBand({
   rules: CombatRules;
   language: Language;
 }) {
+  const detailGroup = useId();
   if (!rules.houseSynergies) return null;
   const groups = houseProgress(units).filter((h) => h.count > 0);
   if (!groups.length) return null;
   return (
     <div className="house-band" aria-label={language === 'es' ? 'Casas del equipo' : 'Team houses'}>
       {groups.map((group) => (
-        <details key={group.house} data-house-progress={group.house} data-active={group.tier > 0}>
+        <details
+          key={group.house}
+          name={`house-${detailGroup}`}
+          data-house-progress={group.house}
+          data-active={group.tier > 0}
+        >
           <summary
             aria-label={`${houseName(group.house, language)} · ${group.tier ? (language === 'es' ? `Activo nivel ${group.tier}` : `Active tier ${group.tier}`) : `${group.count}/3`}`}
           >

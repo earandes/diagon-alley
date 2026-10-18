@@ -67,7 +67,11 @@ test('A85 houses are visible and inspectable on the route in both packs/language
     expect(box!.x).toBeGreaterThanOrEqual(0);
     expect(box!.x + box!.width).toBeLessThanOrEqual(measured.width + 1);
     expect(box!.y).toBeGreaterThanOrEqual(0);
-    await summary.press('Enter');
+    const other = band.locator('[data-house-progress=gryffindor] summary');
+    await other.press('Enter');
+    await expect(band.locator('[data-house-progress=hufflepuff]')).not.toHaveAttribute('open', '');
+    await expect(band.locator('[data-house-progress=gryffindor]')).toHaveAttribute('open', '');
+    await other.press('Enter');
     await immutable(page);
     if (lang === 'es' && pack === 'diagon-alley' && info.project.name.startsWith('chromium-390'))
       await picture(page, 'map-390-es-diagon');
@@ -269,6 +273,19 @@ test('A85 the actual mastery roster discloses its active house before confirmati
     await expect(page.locator('.boss-house-mark')).toHaveCount(1);
     await expect(page.locator('.boss-house-mark')).toBeVisible();
     await expect(page.locator('.boss-party-member')).toHaveCount(5);
+    await expect
+      .poll(() =>
+        page
+          .locator('.boss-party-portrait > img:first-child')
+          .evaluateAll((images) =>
+            images.map(
+              (image) =>
+                (image as HTMLImageElement).complete &&
+                (image as HTMLImageElement).naturalWidth > 0,
+            ),
+          ),
+      )
+      .toEqual([true, true, true, true, true]);
     const footer = await page.locator('.node-combat-actions').boundingBox();
     for (const control of [
       page.locator('.node-team-prepare'),

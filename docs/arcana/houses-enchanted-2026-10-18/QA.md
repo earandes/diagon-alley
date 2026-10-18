@@ -38,3 +38,9 @@ Pendientes al registrar: errores completos deA68/A85, evidencia, candidato corre
 A75 supera el emparejado con un solo hash; se conservaron las seis muestras y tareas largas57–62ms. A68/Halloween pasa, confirmando que se recuperó el toque de ruta sin forzarlo. A70 detecta un nuevo defecto móvil real: el summary del tarro solo tiene ratio visible0,602764 en390×844 ES/Diagon al añadir casas; se conserva la expectativa de ratio1 y posición por encima del pie de combate.
 
 Corrección siguiente: los medallones propios comparten estante con el título del equipo en móvil, con iconos/conteos compactos, nombres accesibles y detalle a demanda. No se ocultan integrantes, PV o controles, ni se reduce la ilustración. El specA85 de cinco integrantes añade la misma aceptación del tarro y preparación. A69 y regresión global siguen pendientes al registrar; no se declara éxito del candidato218389c.
+
+A69 del segundo candidato termina sin error de specA85; la ejecución global sigue fallida porA70. Se inspeccionan mapa y cierre encantado, y la muestra de jefe reproduce necesidad de reordenar estantes. Las capturas de arte normales deben esperar a imágenes decodificadas: se añade barrera de carga explícita para los cinco retratos antes de juzgar la composición, sin confundir esa espera del test con latencia del producto.
+
+Se detectó por código otro riesgo de consulta: dos `details` de casa podían abrirse a la vez sobre la misma posición del HUD. Agrupación nativa exclusiva por instancia deHouseBand (`name` conuseId), y prueba de teclado que abre otra casa y comprueba el cierre de la anterior. No afecta regla o estado persistido.
+
+CI39139599667 se canceló deliberadamente durante pruebas no gráficas, antes de iniciar navegador, para comprobar el candidato completo con esa corrección; no se presenta como fallo ni éxito de producto, ni como reintento del mismoSHA. El guard, bloqueo, límites y cero reintentos de suite permanecen intactos.
