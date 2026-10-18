@@ -1,3 +1,4 @@
+import { pauseBattle, skipBattle, toggleBattleSpeed } from '../browser-trial/battle-controls';
 import { expect, test, type Page } from '@playwright/test';
 import { mkdir, writeFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
@@ -158,12 +159,7 @@ test('A85 preparation, Pact comparison, confirmed battle and truthful odds remai
     await immutable(page);
     await page.goto(`${fixture}?mode=battle&lang=${lang}&pack=${pack}`);
     await expect(page.locator('[data-unit]')).toHaveCount(10);
-    await page
-      .getByRole('button', {
-        name: lang === 'es' ? 'Omitir reproducción' : 'Skip playback',
-        exact: true,
-      })
-      .click();
+    await skipBattle(page);
     await immutable(page);
     await page.goto(`${fixture}?mode=shop&lang=${lang}&pack=${pack}`);
     await page
@@ -239,14 +235,14 @@ test('A85 recorded house trajectory moves on the shared clock and pause/2x/skip 
     return samples;
   });
   expect(positions.some((s) => s.house === 'hufflepuff' && s.offset > 5)).toBe(true);
-  await page.getByRole('button', { name: 'Pause', exact: true }).click();
+  await pauseBattle(page);
   const cursor = await page.locator('[data-replay-cursor]').getAttribute('data-replay-cursor');
   await page.evaluate(() => new Promise((resolve) => setTimeout(resolve, 160)));
   expect(await page.locator('[data-replay-cursor]').getAttribute('data-replay-cursor')).toBe(
     cursor,
   );
-  await page.getByRole('button', { name: '2x', exact: true }).click();
-  await page.getByRole('button', { name: 'Skip playback', exact: true }).click();
+  await toggleBattleSpeed(page);
+  await skipBattle(page);
   await immutable(page);
   await mkdir(root, { recursive: true });
   await writeFile(
@@ -437,5 +433,46 @@ test('A85 an active intention and house party reserve separate usable route spac
     await immutable(page);
     if (lang === 'es' && pack === 'diagon-alley' && info.project.name === 'chromium-390-motion-a69')
       await picture(page, 'map-intention-390-es-diagon');
+  }
+});
+
+test('A86 duel scene has one pause, recorded house access and remembered presentation speed', async ({ page }, info) => {
+  test.skip(!allowed(info.project.name), 'Protected six-pair Linux matrix; no local graphics.');
+  for (const pack of ['diagon-alley', 'arcana']) for (const lang of ['es','en'] as const) {
+    await page.goto(`${fixture}?mode=battle&lang=${lang}&pack=${pack}`);
+    await expect(page.locator('.scene-canvas')).toHaveAttribute('data-art-ready', 'true');
+    await pauseBattle(page);
+    await expect(page.locator('.arena-playback-tools')).toBeHidden();
+    await expect(page.locator('.game-header')).toBeHidden();
+    await expect(page.locator('.arena-position')).toHaveCount(0);
+    await expect(page.locator('.arena-pause')).toHaveCount(1);
+    await expect(page.locator('.arena-caption')).not.toContainText(/Combate guardado|Battle saved/);
+    for (const item of await page.locator('.arena-inspect > strong, .arena-health').all())
+      await expect(item).toBeInViewport({ ratio: 1 });
+    const house = page.locator('.arena-house').first();
+    await expect(house).toBeVisible();
+    await house.tap();
+    await expect(page.locator('.arena-inspector[open]')).toContainText(lang === 'es' ? 'PV al comenzar' : 'HP at each turn');
+    await page.keyboard.press('Escape');
+    await expect(house).toBeFocused();
+    await immutable(page);
+    // Selected still evidence, not proof of the existing clock-driven motion.
+    if (process.platform === 'linux' && process.env.ARCANA_CAPTURE_A69 === '1'
+      && info.project.name.startsWith('chromium-390') && lang === 'es') {
+      const target = resolve('docs/arcana/arena-scene-2026-10-18/evidence/linux');
+      await mkdir(target, { recursive: true });
+      await page.screenshot({ path: resolve(target, `arena-${pack}-390.png`), fullPage: false });
+    }
+    await page.locator('.arena-pause').click();
+    await page.locator('#arena-options .settings-trigger').click();
+    const settings = page.locator('.game-settings[open]');
+    await settings.locator('.playback-preferences').getByRole('button', { name:'2x', exact:true }).click();
+    await settings.getByRole('button', { name:lang==='es'?'Cerrar':'Close', exact:true }).click();
+    await expect(page.locator('.battle-panel')).toHaveAttribute('data-replay-speed','2');
+    await page.reload();
+    await expect(page.locator('.battle-panel')).toHaveAttribute('data-replay-speed','2');
+    await skipBattle(page);
+    await expect(page.locator('[data-arena-outcome]')).toBeVisible();
+    await immutable(page);
   }
 });

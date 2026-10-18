@@ -1,3 +1,4 @@
+import { leaveBattle } from './battle-controls';
 import { test, expect, type Page } from '@playwright/test';
 import { mkdir } from 'node:fs/promises';
 import { resolve } from 'node:path';
@@ -32,7 +33,7 @@ test('A63 repeated boss keeps previous stock separate from the new reward', asyn
     const id = await reachNode(page, 'boss', 'es');
     await page.locator(`[data-node="${id}"]`).click();
     await confirmEvent(page, 'es');
-    await page.getByRole('button', { name: 'Volver al mapa', exact: true }).click();
+    await leaveBattle(page);
     await expect(page.locator('[data-expedition-closure="won"]')).toBeVisible();
     return readGame(page);
   };
@@ -63,7 +64,7 @@ test('A63 earned frog recovers lost response and reload during reveal without an
   const id = await reachNode(page, 'boss', 'es');
   await page.locator(`[data-node="${id}"]`).click();
   await confirmEvent(page, 'es');
-  await page.getByRole('button', { name: 'Volver al mapa', exact: true }).click();
+  await leaveBattle(page);
   const before = await readGame(page);
   let posts = 0;
   page.on('request', (r) => {
@@ -114,12 +115,7 @@ for (const language of ['es', 'en'] as const)
       await confirmEvent(page, language);
       const won = await readGame(page);
       expect(won.exploration!.run!.status).toBe('won');
-      await page
-        .getByRole('button', {
-          name: language === 'es' ? 'Volver al mapa' : 'Back to map',
-          exact: true,
-        })
-        .click();
+      await leaveBattle(page);
       const closure = page.locator('[data-expedition-closure="won"]');
       await expect(closure).toBeVisible();
       await expect(page.locator('.preparation-entry')).toHaveCount(0);

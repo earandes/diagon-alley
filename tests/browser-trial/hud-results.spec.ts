@@ -1,3 +1,4 @@
+import { leaveBattle } from './battle-controls';
 import { text } from '../../src/arcana/presentation/translations';
 import { startExpedition } from './game-fixture';
 import { changeLanguage } from './game-fixture';
@@ -141,12 +142,12 @@ for (const language of ['es', 'en'] as const)
           )
           .toBe(true);
       }
-      if (kind === 'duel') await button('Volver al mapa', 'Back to map').click();
+      if (kind === 'duel') await leaveBattle(page);
     }
     await expect(
       page.getByRole('heading', { name: en ? 'Combat Arena' : 'Arena de Combate', exact: true }),
     ).toBeVisible();
-    await button('Volver al mapa', 'Back to map').click();
+    await leaveBattle(page);
     await page.locator('.closure-history > summary').click();
     await page.locator('.receipt-disclosure > summary').click();
     const result = page.getByRole('region', {
@@ -178,7 +179,7 @@ for (const language of ['es', 'en'] as const)
       page.getByRole('heading', { name: en ? 'Combat Arena' : 'Arena de Combate', exact: true }),
     ).toBeVisible();
     expect(await read()).toEqual(before);
-    await button('Volver al mapa', 'Back to map').click();
+    await leaveBattle(page);
     await page.locator('.closure-history > summary').click();
     await page.locator('.receipt-disclosure > summary').click();
     await button('Ver localizaciones desbloqueadas', 'View unlocked locations').click();

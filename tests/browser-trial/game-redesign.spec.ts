@@ -1,3 +1,4 @@
+import { leaveBattle } from './battle-controls';
 import { expect, test, type Page } from '@playwright/test';
 import { mkdir, writeFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
@@ -319,7 +320,7 @@ for (const language of ['es', 'en'] as const) {
       soap: { es: 'Jabón', en: 'Soap' },
     };
 
-    await button('Volver al mapa', 'Back to map').click();
+    await leaveBattle(page);
     await button('Álbum de Cromos', 'Card Album').click();
     await expect(page.locator('.album > article')).toHaveCount(4);
     await expect(page.locator('.album-filter-drawer')).not.toHaveAttribute('open', '');

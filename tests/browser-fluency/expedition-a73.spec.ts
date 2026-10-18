@@ -1,3 +1,4 @@
+import { openBattleOptions } from '../browser-trial/battle-controls';
 import { expect, test, type Locator, type Page } from '@playwright/test';
 import { mkdir, writeFile, readFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
@@ -200,6 +201,7 @@ async function figures(page: Page, step: Step, count: number) {
   }
 }
 async function omit(page: Page, language: Language, steps: Step[]) {
+  await openBattleOptions(page);
   const skip = page.getByRole('button', {
     name: word(language, 'Omitir reproducción', 'Skip playback'),
     exact: true,
@@ -296,10 +298,7 @@ for (const language of ['es', 'en'] as const)
         await action(
           page,
           'first-arena-return-to-map',
-          page.getByRole('button', {
-            name: word(language, 'Volver al mapa', 'Back to map'),
-            exact: true,
-          }),
+          page.locator('.arena-caption button'),
           page.locator('.branch-map'),
         ),
       );
@@ -344,10 +343,7 @@ for (const language of ['es', 'en'] as const)
         await action(
           page,
           'boss-return-to-closure',
-          page.getByRole('button', {
-            name: word(language, 'Volver al mapa', 'Back to map'),
-            exact: true,
-          }),
+          page.locator('.arena-caption button'),
           closure,
         ),
       );

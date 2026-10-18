@@ -1,3 +1,4 @@
+import { pauseBattle } from '../browser-trial/battle-controls';
 import { expect, test, type Page } from '@playwright/test';
 import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
@@ -91,9 +92,7 @@ test('A75 arena geometry and source footprint before and after layout', async ({
           scene = page.locator('.scene-canvas');
         await expect(scene).toHaveAttribute('data-art-ready', 'true');
         await expect(scene).toHaveAttribute('data-boss-actor-ready', 'true');
-        await page
-          .getByRole('button', { name: language === 'es' ? 'Pausa' : 'Pause', exact: true })
-          .click();
+        await pauseBattle(page);
         await expect(panel).toHaveAttribute('data-replay-playing', 'false');
         await expect(page.locator('.pedestal')).toHaveCount(shape.player + shape.rival);
         const g = await geometry(page);
@@ -176,7 +175,7 @@ test('A75 dense arena retains readable actors and inspector with enlarged text a
     await page.goto(
       `http://127.0.0.1:5521/tests/browser-boss/boss-a70.html?challenge=mastery&player=5&lang=en&pack=${pack}`,
     );
-    await page.getByRole('button', { name: 'Pause', exact: true }).click();
+    await pauseBattle(page);
     const before = await page.evaluate(() => window.__a70Fixture.battle);
     await page.setViewportSize({ width: 320, height: 844 });
     await page.evaluate(() => {

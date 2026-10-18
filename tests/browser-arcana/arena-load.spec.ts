@@ -1,10 +1,11 @@
+import { pauseBattle, skipBattle } from '../browser-trial/battle-controls';
 import { expect, test } from '../browser-trial/game-fixture';
 test('five-unit arena text grows at 200 percent without clipping functional labels', async ({
   page,
 }) => {
   await page.goto('/tests/arcana-arena-harness.html');
   await expect(page.locator('.pedestal')).toHaveCount(10);
-  await page.getByRole('button', { name: 'Omitir reproducción', exact: true }).click();
+  await skipBattle(page);
   const before = await page
     .locator('.pedestal strong')
     .first()
@@ -99,7 +100,7 @@ test('profiles sustained five-unit rendering at responsive sizes and stops drawi
     }
     profiles.push(profile);
   }
-  await page.getByRole('button', { name: 'Pausa', exact: true }).click();
+  await pauseBattle(page);
   const paused = await host.getAttribute('data-render-count');
   await page.waitForTimeout(500);
   expect(await host.getAttribute('data-render-count')).toBe(paused);

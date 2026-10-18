@@ -1,3 +1,4 @@
+import { leaveBattle } from './battle-controls';
 import { test, expect, type Page } from '@playwright/test';
 import { randomUUID } from 'node:crypto';
 import { mkdir, writeFile } from 'node:fs/promises';
@@ -211,12 +212,7 @@ for (const language of ['es', 'en'] as const)
       ).toBe(true);
       expect(afterCombat.inventory.products.find((p) => p.id === jar.id)!.status).toBe('consumed');
       expect(afterCombat.exploration!.intention).toEqual(next.exploration!.intention);
-      await page
-        .getByRole('button', {
-          name: language === 'es' ? 'Volver al mapa' : 'Back to map',
-          exact: true,
-        })
-        .click();
+      await leaveBattle(page);
       await expect(page.locator('[data-intention-status="completed"]')).toBeVisible();
       await capture(page, `${pack}-${language}-completed`);
       await page.reload();
@@ -233,12 +229,7 @@ for (const language of ['es', 'en'] as const)
       await replay.click();
       await expect(page.locator('.battle-panel')).toBeVisible();
       expect(await readGame(page)).toEqual(afterCombat);
-      await page
-        .getByRole('button', {
-          name: language === 'es' ? 'Volver al mapa' : 'Back to map',
-          exact: true,
-        })
-        .click();
+      await leaveBattle(page);
       expect(await readGame(page)).toEqual(afterCombat);
       expect(errors).toEqual([]);
       await mkdir(evidence, { recursive: true });

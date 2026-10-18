@@ -340,6 +340,9 @@ function Fixture() {
         )}
         {mode === 'battle' && (
           <BattlePanel
+            settings={<GameSettings language={language} onLanguage={() => {}}
+              reduced={reduced} ownReduced={reduced} onReduced={setReduced} />}
+            resources={<p data-declared-wallet>{game.inventory.crowns}</p>}
             combat={battle}
             game={game}
             content={content}

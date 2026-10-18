@@ -1,3 +1,4 @@
+import { pauseBattle, resumeBattle } from '../browser-trial/battle-controls';
 import { expect, test } from '@playwright/test';
 import { mkdir, writeFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
@@ -36,7 +37,7 @@ test('A73 pending decode hidden, paused resize and reduced preference during rep
   const panel = page.locator('.battle-panel'),
     scene = page.locator('.scene-canvas');
   await expect(scene).toHaveAttribute('data-renderer', 'webgl');
-  await page.getByRole('button', { name: 'Pausa', exact: true }).click();
+  await pauseBattle(page);
   await expect(panel).toHaveAttribute('data-replay-playing', 'false');
   await expect(scene).toHaveAttribute('data-art-ready', 'false');
   const frozen = await panel.getAttribute('data-replay-cursor');
@@ -80,7 +81,7 @@ test('A73 pending decode hidden, paused resize and reduced preference during rep
       await page.screenshot({ path: resolve(evidence, 'selected-paused-resize.png') });
     }
   }
-  await page.getByRole('button', { name: 'Auto', exact: true }).click();
+  await resumeBattle(page);
   await expect(scene).toHaveAttribute('data-boss-actor-pose', 'cast', { timeout: 20000 });
   await page.locator('[data-qa-reduced]').evaluate((button: HTMLButtonElement) => button.click());
   await expect(page.locator('[data-arena-outcome]')).toBeVisible();

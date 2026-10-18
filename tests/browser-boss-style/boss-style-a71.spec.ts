@@ -1,3 +1,4 @@
+import { leaveBattle, pauseBattle, skipBattle } from '../browser-trial/battle-controls';
 import { test, expect, type Page } from '@playwright/test';
 import { mkdir, writeFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
@@ -267,12 +268,10 @@ for (const language of ['es', 'en'] as const)
       const actionToDomUsableUpperBoundMs = Date.now() - started;
       await expect(page.locator('.scene-canvas')).toHaveAttribute('data-art-ready', 'true');
       const actionToFiguresReadyUpperBoundMs = Date.now() - started;
-      if (await skip(page, language).isEnabled()) await skip(page, language).click();
+      if (await skip(page, language).isEnabled()) await skipBattle(page);
       await expect(page.locator('[data-arena-outcome]')).toBeVisible();
       expect(JSON.stringify((await readGame(page)).receipts.at(-1))).toBe(immutable);
-      await page
-        .getByRole('button', { name: word(language, 'Volver al mapa', 'Back to map'), exact: true })
-        .click();
+      await leaveBattle(page);
       const closure = page.locator('[data-expedition-closure="won"]');
       await expect(closure).toBeVisible();
       if (language === 'es' && pack === 'diagon-alley') {
@@ -384,7 +383,7 @@ test('A71 actual actor cast stays frozen on pause and survives pack and skip', a
   expect(swapped.pose).toBe('cast');
   expect(Number(swapped.angle)).not.toBe(0);
   await capture(page, 'actor-arcana');
-  await skip(page).click();
+  await skipBattle(page);
   await expect(page.locator('[data-arena-outcome]')).toBeVisible();
   expect(
     await page.evaluate(() => ({
@@ -417,7 +416,7 @@ test('A71 articulated layer missing preserves static actor and confirmed result'
   await expect(scene).toHaveAttribute('data-visible-figures', '6');
   const before = await page.evaluate(() => window.__a70Fixture.battle);
   expect(failed).toBeGreaterThan(0);
-  await skip(page).click();
+  await skipBattle(page);
   await expect(page.locator('[data-arena-outcome]')).toBeVisible();
   await expect(page.locator('.arena-exit')).toBeEnabled();
   expect(await page.evaluate(() => window.__a70Fixture.battle)).toBe(before);
@@ -525,12 +524,12 @@ test('A71 selected cold-navigation warm playback and teardown sample', async ({ 
   const warm = await page.evaluate(() => window.__a71Perf.read());
   const actualPaints = Number(await scene.getAttribute('data-render-count')) - initialPaints;
   expect(actualPaints).toBeGreaterThan(0);
-  await page.getByRole('button', { name: 'Pausa', exact: true }).click();
+  await pauseBattle(page);
   const paused = await actorFrame(page);
   await page.waitForTimeout(200);
   expect(await actorFrame(page)).toEqual(paused);
   const omitStart = Date.now();
-  await skip(page).click();
+  await skipBattle(page);
   await expect(page.locator('[data-arena-outcome]')).toBeVisible();
   const skipToOutcomeUpperBoundMs = Date.now() - omitStart;
   const resources = await scene.evaluate((el: HTMLElement) => ({ ...el.dataset }));

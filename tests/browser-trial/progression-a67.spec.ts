@@ -1,3 +1,4 @@
+import { inspectBattleRecord, leaveBattle, skipBattle } from './battle-controls';
 import { test, expect, type Page } from '@playwright/test';
 import { Pool } from 'pg';
 import { mkdir, writeFile } from 'node:fs/promises';
@@ -69,19 +70,10 @@ async function enter(page: Page, language: Language, pack = 'diagon-alley', star
   created.add((await readGame(page)).playerId);
   if (start) await startExpedition(page, language);
 }
-async function closeReplay(page: Page, language: Language) {
+async function closeReplay(page: Page, _language: Language) {
   if (!(await page.locator('.arena-a63').count())) return;
-  const skip = page.getByRole('button', {
-    name: language === 'es' ? 'Omitir reproducción' : 'Skip playback',
-    exact: true,
-  });
-  if (await skip.isEnabled()) await skip.click();
-  await page
-    .getByRole('button', {
-      name: language === 'es' ? 'Volver al mapa' : 'Back to map',
-      exact: true,
-    })
-    .click();
+  await skipBattle(page);
+  await leaveBattle(page);
   await expect(page.locator('[data-map-phase="route"]')).toBeVisible();
 }
 async function confirmEvent(page: Page, language: Language) {
@@ -374,12 +366,8 @@ for (const language of ['es', 'en'] as const) {
       receipt.battle.input.player.length + receipt.battle.input.rival.length,
     );
     await capture(page, `${language}-specialized-arena`);
-    const skip = page.getByRole('button', {
-      name: language === 'es' ? 'Omitir reproducción' : 'Skip playback',
-      exact: true,
-    });
-    if (await skip.isEnabled()) await skip.click();
-    await page.locator('.arena-record-trigger').click();
+    await skipBattle(page);
+    await inspectBattleRecord(page);
     await expect(page.locator('.arena-inspector')).toContainText(
       language === 'es' ? 'con su varita' : 'with their wand',
     );

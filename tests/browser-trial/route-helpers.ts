@@ -1,3 +1,4 @@
+import { leaveBattle } from './battle-controls';
 import { preparedRoutePath } from '../support/prepared-route';
 import { expect, type Page } from '@playwright/test';
 import type { GameState } from '../../src/arcana/application/game';
@@ -84,12 +85,7 @@ export async function reachNode(page: Page, kind: NodeKind, language: 'es' | 'en
         })
         .count())
     )
-      await page
-        .getByRole('button', {
-          name: language === 'es' ? 'Volver al mapa' : 'Back to map',
-          exact: true,
-        })
-        .click();
+      await leaveBattle(page);
   }
   return path.at(-1)!;
 }

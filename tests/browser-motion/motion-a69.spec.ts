@@ -1,3 +1,4 @@
+import { pauseBattle, resumeBattle, skipBattle, toggleBattleSpeed } from '../browser-trial/battle-controls';
 import { expect, test, type Page } from '@playwright/test';
 import { mkdir, writeFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
@@ -148,15 +149,6 @@ async function expectFits(page: Page, actors: number) {
     ),
   ).toBe(true);
 }
-const pause = (page: Page, lang: 'es' | 'en' = 'es') =>
-  page.getByRole('button', { name: lang === 'es' ? 'Pausa' : 'Pause', exact: true });
-const auto = (page: Page, lang: 'es' | 'en' = 'es') =>
-  page.getByRole('button', { name: lang === 'es' ? 'Auto' : 'Auto', exact: true });
-const skip = (page: Page, lang: 'es' | 'en' = 'es') =>
-  page.getByRole('button', {
-    name: lang === 'es' ? 'Omitir reproducción' : 'Skip playback',
-    exact: true,
-  });
 
 test.beforeEach(async ({ page }) => {
   await instrumentation(page);
@@ -184,7 +176,7 @@ test('A69 arena real 3x3, 5x3, 5x5: both packs and ES/EN keep all actors and con
           String(player + rival),
         );
         const navigationToSceneReadyMs = await page.evaluate(() => performance.now());
-        await pause(page, lang).click();
+        await pauseBattle(page);
         const before = await preserved(page);
         const panel = page.locator('.battle-panel');
         expect(await panel.innerText()).not.toMatch(/Victoria|Derrota|Empate|Victory|Defeat|Draw/);
@@ -197,7 +189,7 @@ test('A69 arena real 3x3, 5x3, 5x5: both packs and ES/EN keep all actors and con
         await page.keyboard.press('Escape');
         await expect(page.locator('.arena-inspect').first()).toBeFocused();
         await markAction(page, '.replay-controls button:last-child');
-        await skip(page, lang).click();
+        await skipBattle(page);
         await expect(page.locator('[data-arena-outcome]')).toBeVisible();
         const skipUsableMs = await actionElapsed(page);
         expect(await preserved(page)).toEqual(before);
@@ -235,14 +227,14 @@ test('A69 replay clock: pause, 2x, inspector, hidden, skip and renderer failure 
   const panel = page.locator('.battle-panel');
   const scene = page.locator('.scene-canvas');
   // Pause before the async renderer is ready: swapping layers must not fade actors away.
-  await pause(page).click();
+  await pauseBattle(page);
   await expect(scene).toHaveAttribute('data-art-ready', 'true');
   await expect(scene).toHaveAttribute('data-visible-figures', '10');
   const before = await preserved(page);
   await expect
     .poll(async () => Number(await scene.getAttribute('data-render-count')))
     .toBeGreaterThan(0);
-  await pause(page).click();
+  await pauseBattle(page);
   await settled(page);
   await expect(panel).toHaveAttribute('data-replay-playing', 'false');
   const frozen = await panel.getAttribute('data-replay-cursor');
@@ -252,7 +244,7 @@ test('A69 replay clock: pause, 2x, inspector, hidden, skip and renderer failure 
   expect(await panel.getAttribute('data-replay-cursor')).toBe(frozen);
   expect(await panel.getAttribute('data-replay-progress')).toBe(phase);
   expect(await scene.getAttribute('data-render-count')).toBe(renders);
-  await page.getByRole('button', { name: '2x', exact: true }).click();
+  await toggleBattleSpeed(page);
   await expect(panel).toHaveAttribute('data-replay-speed', '2');
   expect(await panel.getAttribute('data-replay-cursor')).toBe(frozen);
   expect(await panel.getAttribute('data-replay-progress')).toBe(phase);
@@ -264,7 +256,7 @@ test('A69 replay clock: pause, 2x, inspector, hidden, skip and renderer failure 
   expect(await panel.getAttribute('data-replay-cursor')).toBe(frozen);
   expect(await panel.getAttribute('data-replay-progress')).toBe(phase);
   await expect(page.locator('.scene-canvas canvas')).toHaveCount(1);
-  await auto(page).click();
+  await resumeBattle(page);
   await expect
     .poll(async () => Number(await panel.getAttribute('data-replay-cursor')))
     .toBeGreaterThan(Number(frozen));
@@ -275,7 +267,7 @@ test('A69 replay clock: pause, 2x, inspector, hidden, skip and renderer failure 
   await page.keyboard.press('Escape');
   // Synthetic Page Visibility condition is declared; this is not evidence from
   // physically backgrounding a phone. It exercises the real visibility listener.
-  await auto(page).click();
+  await resumeBattle(page);
   await page.evaluate(() => {
     Object.defineProperty(document, 'hidden', { configurable: true, get: () => true });
     document.dispatchEvent(new Event('visibilitychange'));
@@ -299,7 +291,7 @@ test('A69 replay clock: pause, 2x, inspector, hidden, skip and renderer failure 
   await expect
     .poll(async () => Number(await scene.getAttribute('data-render-count')))
     .toBeGreaterThan(Number(hiddenRenders));
-  await skip(page).click();
+  await skipBattle(page);
   await expect(page.locator('[data-arena-outcome]')).toBeVisible();
   await report(page, 'controls', {
     fixtureStateUnchanged: (await preserved(page)).battle === before.battle,
@@ -480,10 +472,10 @@ test('A69 selected visual evidence and 30 serial scene teardown cycles (one Linu
     await mkdir(root, { recursive: true });
     await freezeSpellPhase(page, 'anticipation');
     await page.screenshot({ path: resolve(root, 'selected-arena-anticipation.png') });
-    await auto(page).click();
+    await resumeBattle(page);
     await freezeSpellPhase(page, 'impact');
     await page.screenshot({ path: resolve(root, 'selected-arena-contact.png') });
-    await skip(page).click();
+    await skipBattle(page);
     await expect(page.locator('[data-arena-outcome]')).toBeVisible();
     await page.screenshot({ path: resolve(root, 'selected-arena-result.png') });
   }

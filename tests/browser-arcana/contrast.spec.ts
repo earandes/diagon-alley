@@ -1,3 +1,4 @@
+import { skipBattle } from '../browser-trial/battle-controls';
 import { expect, test } from '../browser-trial/game-fixture';
 import { writeFile } from 'node:fs/promises';
 test('checks arena text against its actual rendered background and the replay focus indicator', async ({
@@ -8,7 +9,7 @@ test('checks arena text against its actual rendered background and the replay fo
     'data-renderer',
     'webgl',
   );
-  await page.getByRole('button', { name: 'Omitir reproducción', exact: true }).click();
+  await skipBattle(page);
   const labels = await page
     .locator('.pedestal strong, .pedestal p, .pedestal small')
     .evaluateAll((elements) =>
@@ -87,7 +88,7 @@ test('checks arena text against its actual rendered background and the replay fo
   });
   for (const result of report)
     expect(result.minimumRatio, String(result.text)).toBeGreaterThanOrEqual(4.5);
-  const control = page.getByRole('button', { name: 'Volver al mapa', exact: true });
+  const control = page.locator('.arena-caption button');
   await page.keyboard.press('Tab');
   await control.focus();
   await expect(control).toBeFocused();

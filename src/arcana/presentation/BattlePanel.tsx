@@ -1,3 +1,5 @@
+import type { ReactNode } from 'react';
+import { usePlaybackSpeed } from './motion/PlaybackPreferences';
 import { HouseInsignia, houseName, houseEffect } from './HouseInsignia';
 import { sceneStart, sceneEnd } from './scenes/scene-diagnostics';
 import { Artwork } from './Artwork';
@@ -19,6 +21,7 @@ import { useBattlePlayback } from './motion/useBattlePlayback';
 import { battleVisualChanges } from './motion/battle-deltas';
 import { bossPresentation } from './boss-presentation';
 import './boss-a70.css';
+import './arena-scene-a86.css';
 import { useBattleAudio } from './audio/runtime';
 const affinities = {
   neutral: 'neutral',
@@ -42,6 +45,8 @@ interface BattlePanelProps {
   language: Language;
   reduced: boolean;
   onBack: () => void;
+  settings?: ReactNode;
+  resources?: ReactNode;
 }
 export function BattlePanel(props: BattlePanelProps) {
   const replay = useMemo(() => {
@@ -71,6 +76,8 @@ function BattlePlayback({
   replay,
   confirmedPresentation = false,
   bossEncounter,
+  settings,
+  resources,
 }: BattlePanelProps & { replay: BattleReplay }) {
   const renderStarted = sceneStart();
   useLayoutEffect(() => sceneEnd('react-commit-wall', renderStarted));
@@ -79,6 +86,19 @@ function BattlePlayback({
     { cursor, playing, speed, setPlaying, setSpeed } = playback,
     frame = useMemo(() => replay.frame(cursor), [replay, cursor]);
   useBattleAudio(combat, playback);
+  const [preferredSpeed, rememberSpeed] = usePlaybackSpeed();
+  useEffect(() => setSpeed(preferredSpeed), [preferredSpeed]);
+  const [optionsOpen, setOptionsOpen] = useState(false);
+  const pauseButton = useRef<HTMLButtonElement>(null);
+  const openOptions = () => {
+    setPlaying(false);
+    setOptionsOpen(true);
+  };
+  const resume = () => {
+    setOptionsOpen(false);
+    setPlaying(true);
+    pauseButton.current?.focus();
+  };
   const stage = useRef<HTMLDivElement>(null);
   const inspector = useRef<HTMLDialogElement>(null);
   const inspectionOrigin = useRef<HTMLButtonElement | null>(null);
@@ -108,6 +128,7 @@ function BattlePlayback({
   }, [inspection]);
   const inspect = (id: string, origin: HTMLButtonElement) => {
     setPlaying(false);
+    setOptionsOpen(false);
     inspectionOrigin.current = origin;
     setInspection(id);
   };
@@ -268,6 +289,8 @@ function BattlePlayback({
     }
   };
   const next = combat.events[cursor] ?? null;
+  const houseEvents = combat.events.filter((e) => e.kind === 'house-activated');
+  const selectedHouse = houseEvents.find((e) => inspection === `house:${e.team}:${e.house}`);
   const selectedUnit = [...frame.player, ...frame.rival].find((unit) => unit.id === inspection);
   const outcomeLabel = frame.outcome
     ? t(frame.outcome === 'player' ? 'victory' : frame.outcome === 'rival' ? 'defeat' : 'draw')
@@ -298,65 +321,92 @@ function BattlePlayback({
       data-boss-leader={boss?.unit.id}
     >
       <header className="arena-heading">
+        <div className="arena-encounter-title">
+          <h2 aria-label={t('combatArena')}>
+            {arenaText(language, isBoss ? 'finalDuel' : 'duel')}
+          </h2>
+          <span className="arena-round">
+            {frame.round > 0
+              ? `${arenaText(language, 'round')} ${format.format(frame.round)}`
+              : arenaText(language, 'ready')}
+          </span>
+        </div>
         <button
-          className="arena-exit"
-          onClick={onBack}
-          aria-label={t('backToMap')}
-          title={t('backToMap')}
+          ref={pauseButton}
+          className="arena-pause"
+          aria-label={t('pause')}
+          title={t('pause')}
+          aria-expanded={optionsOpen}
+          aria-controls="arena-options"
+          onClick={openOptions}
         >
-          <span aria-hidden="true">←</span>
+          <svg viewBox="0 0 32 32" aria-hidden="true">
+            <path d="M11 8v16M21 8v16" />
+          </svg>
         </button>
-        <h2 className={boss ? 'boss-arena-name' : undefined} aria-label={t('combatArena')}>
-          {boss?.name ?? t('combatArena')}
-        </h2>
-        <span className="arena-round">
-          {arenaText(language, 'round')} {format.format(frame.round)}
-        </span>
       </header>
-      <div className="arena-playback-tools">
+      <div
+        className="arena-playback-tools"
+        id="arena-options"
+        hidden={!optionsOpen}
+        role="region"
+        aria-label={arenaText(language, 'options')}
+        onKeyDown={(event) => {
+          if (event.key === 'Escape') {
+            event.stopPropagation();
+            setOptionsOpen(false);
+            pauseButton.current?.focus();
+          }
+        }}
+      >
+        <h3>{arenaText(language, 'options')}</h3>
         <div className="replay-controls" role="group" aria-label={arenaText(language, 'controls')}>
-          <button
-            disabled={reduced || cursor === total}
-            aria-pressed={!playing}
-            onClick={() => setPlaying(false)}
-          >
-            <span aria-hidden="true">Ⅱ</span> {t('pause')}
+          <button disabled={reduced || cursor === total} onClick={resume}>
+            {arenaText(language, 'resume')}
           </button>
           <button
-            disabled={reduced || cursor === total}
-            aria-pressed={playing}
-            onClick={() => setPlaying(true)}
-          >
-            <span aria-hidden="true">▷</span> {t('autoPlayback')}
-          </button>
-          <button
-            disabled={reduced || cursor === total}
+            disabled={reduced}
             aria-pressed={speed === 2}
-            onClick={() => setSpeed((s) => (s === 1 ? 2 : 1))}
+            onClick={() => rememberSpeed(speed === 1 ? 2 : 1)}
           >
             {t('doubleSpeed')}
           </button>
           <button
             disabled={cursor === total}
             aria-label={t('skipPlayback')}
-            title={t('skipPlayback')}
             onClick={() => {
-              setPlaying(false);
+              setOptionsOpen(false);
               playback.skip();
             }}
           >
-            <span aria-hidden="true">▸▸|</span>
-            <span className="visually-hidden">{t('skipPlayback')}</span>
+            {t('skipPlayback')}
           </button>
         </div>
         <button
           className="arena-record-trigger"
-          aria-label={t('battleRecord')}
-          title={t('battleRecord')}
           onClick={(event) => inspect('record', event.currentTarget)}
         >
           <Artwork asset="ui.collection" language={language} decorative />
-          <span className="visually-hidden">{t('battleRecord')}</span>
+          {t('battleRecord')}
+        </button>
+        {resources && (
+          <details className="battle-wallet">
+            <summary>{arenaText(language, 'savedResources')}</summary>
+            {resources}
+          </details>
+        )}
+        {settings}
+        <button className="arena-exit" onClick={onBack}>
+          {t('backToMap')}
+        </button>
+        <button
+          className="arena-options-close"
+          onClick={() => {
+            setOptionsOpen(false);
+            pauseButton.current?.focus();
+          }}
+        >
+          {t('close')}
         </button>
       </div>
       <div
@@ -395,14 +445,34 @@ function BattlePlayback({
         <div className="arena-columns">
           {(['player', 'rival'] as const).map((side) => (
             <div key={side} className="arena-team" role="region" aria-label={sideName(side)}>
-              <h3>{sideName(side)}</h3>
+              <div className="arena-team-heading">
+                <h3>{sideName(side)}</h3>
+                <div className="arena-houses" aria-label={arenaText(language, 'houses')}>
+                  {houseEvents
+                    .filter((e) => e.team === side)
+                    .map((e) => (
+                      <button
+                        key={e.house}
+                        className="arena-house"
+                        data-house-passive={e.house}
+                        aria-label={`${arenaText(language, 'houseInspect')}: ${houseName(e.house, language)} · ${e.members} · ${e.tier === 1 ? 'I' : 'II'}`}
+                        onClick={(event) =>
+                          inspect(`house:${side}:${e.house}`, event.currentTarget)
+                        }
+                      >
+                        <HouseInsignia house={e.house} />
+                        <small>{e.tier === 1 ? 'I' : 'II'}</small>
+                      </button>
+                    ))}
+                </div>
+              </div>
               <div
                 className="arena-fighters"
                 style={
                   { '--arena-side-count': frame[side].length } as import('react').CSSProperties
                 }
               >
-                {frame[side].map((unit, index) => {
+                {frame[side].map((unit) => {
                   const acting = next && 'actorId' in next && next.actorId === unit.id;
                   const targeted = next?.kind === 'spell-cast' && next.targetId === unit.id;
                   const delta = deltaFor(unit.id);
@@ -419,6 +489,7 @@ function BattlePlayback({
                       data-acting={acting || undefined}
                       data-target={targeted || undefined}
                       data-fallen={unit.hp === 0 || undefined}
+                      data-in-danger={(unit.hp > 0 && unit.hp * 4 <= unit.maxHp) || undefined}
                       aria-label={name(unit.id)}
                     >
                       <button
@@ -427,6 +498,12 @@ function BattlePlayback({
                         onClick={(event) => inspect(unit.id, event.currentTarget)}
                       >
                         <span className="arena-figure-space">
+                          {(acting || targeted) && (
+                            <span className="arena-action-mark">
+                              {arenaText(language, acting ? 'actor' : 'target')}
+                            </span>
+                          )}
+
                           <Artwork
                             asset={appearances[unit.id]}
                             fallbackAsset={
@@ -455,11 +532,20 @@ function BattlePlayback({
                             </span>
                           )}
                         </span>
-                        <strong>{baseName(unit.id)}</strong>
-                        <small className="arena-position" aria-hidden="true">
-                          {index + 1}
-                        </small>
+                        <strong>
+                          {unit.house && <HouseInsignia house={unit.house} />}
+                          {baseName(unit.id)}
+                        </strong>
                         <span className="arena-health">
+                          {unit.hp > 0 && unit.hp * 4 <= unit.maxHp && (
+                            <span
+                              className="arena-danger"
+                              role="img"
+                              aria-label={arenaText(language, 'lowHealth')}
+                            >
+                              !
+                            </span>
+                          )}
                           <meter
                             min={0}
                             max={unit.maxHp}
@@ -468,10 +554,7 @@ function BattlePlayback({
                           />
                           <span>
                             {format.format(unit.hp)}
-                            <span className="visually-hidden">
-                              {' '}
-                              / {format.format(unit.maxHp)} {t('hP')}
-                            </span>
+                            <span>/{format.format(unit.maxHp)}</span>
                           </span>
                         </span>
                       </button>
@@ -505,7 +588,7 @@ function BattlePlayback({
             <button onClick={onBack}>{arenaText(language, 'continue')}</button>
           </>
         ) : (
-          <p>{frame.event ? description(frame.event) : arenaText(language, 'saved')}</p>
+          <p className="visually-hidden">{frame.event ? description(frame.event) : ''}</p>
         )}
       </footer>
       <span
@@ -521,10 +604,17 @@ function BattlePlayback({
         <dialog
           ref={inspector}
           className="arena-inspector"
-          aria-label={inspection === 'record' ? t('battleRecord') : name(inspection)}
+          aria-label={
+            inspection === 'record'
+              ? t('battleRecord')
+              : selectedHouse
+                ? houseName(selectedHouse.house, language)
+                : name(inspection)
+          }
           onCancel={(event) => {
             event.stopPropagation();
             setInspection(null);
+            setOptionsOpen(Boolean(inspectionOrigin.current?.closest('#arena-options')));
           }}
         >
           <button
@@ -534,7 +624,22 @@ function BattlePlayback({
           >
             ×
           </button>
-          {selectedUnit ? (
+          {selectedHouse ? (
+            <>
+              <HouseInsignia house={selectedHouse.house} />
+              <h2>{houseName(selectedHouse.house, language)}</h2>
+              <p>
+                {sideName(selectedHouse.team)} · {selectedHouse.members} ·{' '}
+                {selectedHouse.tier === 1 ? 'I' : 'II'}
+              </p>
+              <p>{houseEffect(selectedHouse, language)}</p>
+              <ol>
+                {selectedHouse.contributorIds.map((id) => (
+                  <li key={id}>{name(id)}</li>
+                ))}
+              </ol>
+            </>
+          ) : selectedUnit ? (
             <>
               <Artwork
                 asset={appearances[selectedUnit.id]}
