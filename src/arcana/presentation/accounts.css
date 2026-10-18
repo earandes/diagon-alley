@@ -197,6 +197,7 @@
   text-align: center;
 }
 .account-help {
+  margin: 0;
   border-top: 1px solid #c9a36555;
   padding-top: 2px;
 }
@@ -206,6 +207,11 @@
   align-items: center;
   gap: 8px;
   min-height: 44px;
+  padding: 4px 0;
+  border: 0;
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
   cursor: pointer;
   color: #f1d698;
   font-size: 0.9rem;

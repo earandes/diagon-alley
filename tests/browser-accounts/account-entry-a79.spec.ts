@@ -137,6 +137,12 @@ test('A79 sign in and recovery remain concise and accessible through actual help
   await capture(page, 'login');
   await clickAccountAction(page, { name: /^(Mostrar contraseña|Show password)$/ });
   await expect(dialog(page).locator('input[name=password]')).toHaveAttribute('type', 'text');
+  await dialog(page).locator('.account-help > summary').focus();
+  await page.keyboard.press('Enter');
+  await expect(dialog(page).locator('.account-help')).toHaveAttribute('open', '');
+  await expect(
+    dialog(page).getByRole('button', { name: /^(Olvidé mi contraseña|Forgot password)$/ }),
+  ).toBeVisible();
   await clickAccountAction(page, { name: /^(Olvidé mi contraseña|Forgot password)$/ });
   await measure(page, 'request-reset');
   await clickAccountAction(page, { name: /^(Tengo el código|I have the code)$/ });

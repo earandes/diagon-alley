@@ -1,0 +1,100 @@
+[
+  {
+    "name": "register",
+    "project": "chromium-390-a79",
+    "height": 487.609375,
+    "width": 352,
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "words": 22,
+    "fields": 1,
+    "overflow": false,
+    "helpOpen": false,
+    "primary": 1,
+    "visibleButtons": [
+      "Volver al juego",
+      "Solicitar código"
+    ]
+  },
+  {
+    "name": "verify",
+    "project": "chromium-390-a79",
+    "height": 644.234375,
+    "width": 352,
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "words": 26,
+    "fields": 2,
+    "overflow": false,
+    "helpOpen": false,
+    "primary": 1,
+    "visibleButtons": [
+      "Volver al juego",
+      "Mostrar contraseña",
+      "Verificar y guardar"
+    ]
+  },
+  {
+    "name": "login",
+    "project": "chromium-390-a79",
+    "height": 539.0625,
+    "width": 352,
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "words": 14,
+    "fields": 2,
+    "overflow": false,
+    "helpOpen": false,
+    "primary": 1,
+    "visibleButtons": [
+      "Volver al juego",
+      "Mostrar contraseña",
+      "Iniciar sesión"
+    ]
+  },
+  {
+    "name": "request-reset",
+    "project": "chromium-390-a79",
+    "height": 460.734375,
+    "width": 352,
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "words": 17,
+    "fields": 1,
+    "overflow": false,
+    "helpOpen": false,
+    "primary": 1,
+    "visibleButtons": [
+      "Volver al juego",
+      "Solicitar código de recuperación"
+    ]
+  },
+  {
+    "name": "reset",
+    "project": "chromium-390-a79",
+    "height": 584.609375,
+    "width": 352,
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "words": 22,
+    "fields": 2,
+    "overflow": false,
+    "helpOpen": false,
+    "primary": 1,
+    "visibleButtons": [
+      "Volver al juego",
+      "Mostrar contraseña",
+      "Guardar nueva contraseña"
+    ]
+  }
+]
