@@ -29,6 +29,13 @@
   border-radius: 50%;
   background: #0c192cdd;
 }
+.game-shell .welcome-tools .settings-trigger:not(:has(img)) {
+  width: auto;
+  height: auto;
+  min-width: 44px;
+  flex: 0 0 auto;
+  border-radius: 12px;
+}
 .game-shell .welcome-tools .settings-trigger img {
   width: 24px;
   height: 24px;

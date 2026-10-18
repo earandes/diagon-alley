@@ -123,6 +123,20 @@ test('A82 missing illustrations preserve all visible choices and guest operation
   await expect(page.getByRole('heading', { level: 1 })).toBeVisible();
   await expect(page.locator('[data-account-entry=register]')).toBeVisible();
   await expect(page.locator('[data-account-entry=login]')).toBeVisible();
+  const settings = page.locator('.welcome-tools .settings-trigger');
+  await expect(settings.locator('img')).toHaveCount(0);
+  await expect(settings.locator('span')).toBeVisible();
+  expect(
+    await settings.evaluate((button) => {
+      const text = button.querySelector('span')!.getBoundingClientRect();
+      const box = button.getBoundingClientRect();
+      return text.left >= box.left && text.right <= box.right && text.right <= innerWidth;
+    }),
+  ).toBe(true);
+  await settings.click();
+  await expect(page.locator('dialog.game-settings[open]')).toBeVisible();
+  await page.keyboard.press('Escape');
+  await expect(settings).toBeFocused();
   let requests = 0;
   let release!: () => void;
   const waiting = new Promise<void>((resolve) => {
