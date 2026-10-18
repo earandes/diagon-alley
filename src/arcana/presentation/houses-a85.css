@@ -72,11 +72,8 @@
   z-index: 10;
 }
 .house-detail {
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-  width: min(19rem, 85vw);
+  position: relative;
+  width: min(19rem, calc(100vw - 64px));
   max-height: 45vh;
   overflow: auto;
   background: var(--surface, #172539);
@@ -159,16 +156,6 @@
 .team-compact .house-band summary b {
   font-size: 0.75rem;
 }
-.team-compact .house-band .house-detail {
-  top: auto;
-  bottom: 100%;
-  left: 0;
-  transform: none;
-}
-.team-compact .house-band details:last-child .house-detail {
-  left: auto;
-  right: 0;
-}
 .preparation-house-filters {
   display: flex;
   gap: 0.3rem;
@@ -191,5 +178,52 @@
 }
 /* In a preparation the consultation stays in document flow and may scroll.
    On the fixed map HUD it opens above the whole band, inside the viewport margin. */
-.house-band .house-detail{position:relative;left:auto;top:auto;transform:none;width:min(19rem,calc(100vw - 64px))}
-.team-compact .house-band{width:100%}.team-compact .house-band details{position:static}.team-compact .house-band .house-detail,.team-compact .house-band details:last-child .house-detail{position:absolute;top:auto;bottom:100%;left:0;right:auto;transform:none;width:min(19rem,calc(100vw - 32px))}
+.team-compact .house-band {
+  width: 100%;
+}
+.team-compact .house-band details {
+  position: static;
+}
+.team-compact .house-band .house-detail,
+.team-compact .house-band details:last-child .house-detail {
+  position: absolute;
+  top: auto;
+  bottom: 100%;
+  left: 0;
+  right: auto;
+  transform: none;
+  width: min(19rem, calc(100vw - 32px));
+}
+
+.shop-card-catalogue > .finish-odds {
+  grid-column: 1/-1;
+  text-align: left;
+  line-height: 1.45;
+  color: inherit;
+}
+.shop-card-catalogue article small {
+  font-size: 0.75rem;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+}
+.boss-house-mark {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.85rem;
+}
+/* Reserve real space before fitMapLayout measures it. The party never covers a route target. */
+.arcana-map-view main > .expedition-panel[data-map-phase='route'] > .map-scroll {
+  height: calc(100% - var(--party-map-space, 0px));
+}
+/* The foil follows the portrait, not the full dialog width. Keep the close object above it. */
+.album-card-folio > .enchanted-holder {
+  width: min(60%, 235px);
+  margin: 0 auto;
+}
+.album-card-folio .album-folio-portrait {
+  width: 100%;
+}
+.game-shell .album-card-folio .folio-close {
+  z-index: 5;
+}

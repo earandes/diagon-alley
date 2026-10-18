@@ -1,6 +1,7 @@
 import { expect, test, type Page } from '@playwright/test';
 import { mkdir, writeFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
+test.use({ actionTimeout: 10000 });
 const fixture = '/tests/browser-houses/houses-a85.html';
 const root = resolve('docs/arcana/motion-audit-2026-10-16/evidence/linux/a85');
 const capture = process.platform === 'linux' && process.env.ARCANA_CAPTURE_A69 === '1';
@@ -11,7 +12,7 @@ const pairs = [
   ['en', 'arcana'],
 ] as const;
 function allowed(name: string) {
-  return ['chromium-1280', 'chromium-390', 'webkit-865'].some((p) => name.startsWith(p));
+  return /^(chromium|webkit)-(1280|390|865)-motion-a69$/.test(name);
 }
 async function bounds(page: Page) {
   return page.evaluate(() => ({
@@ -34,12 +35,9 @@ async function picture(page: Page, name: string) {
 test('A85 houses are visible and inspectable on the route in both packs/languages', async ({
   page,
 }, info) => {
-  test.skip(
-    !allowed(info.project.name),
-    'Bounded three-pair Linux sample; other projects retain A69 coverage.',
-  );
+  test.skip(!allowed(info.project.name), 'Protected six-pair Linux matrix; no local graphics.');
   for (const [lang, pack] of pairs) {
-    await page.goto(`${fixture}?mode=map&lang=${lang}&pack=${pack}`);
+    await page.goto(`${fixture}?mode=map&visited=1&lang=${lang}&pack=${pack}`);
     const band = page.locator('.team-compact .house-band');
     await expect(band).toBeVisible();
     await expect(band.locator('[data-house-progress=hufflepuff]')).toHaveAttribute(
@@ -47,14 +45,25 @@ test('A85 houses are visible and inspectable on the route in both packs/language
       'true',
     );
     await expect(page.locator('.team-token')).toHaveCount(5);
+    const covered = await page.locator('[data-node-state=available]').evaluateAll((nodes) =>
+      nodes
+        .filter((node) => {
+          const r = node.getBoundingClientRect();
+          return !node.contains(
+            document.elementFromPoint(r.left + r.width / 2, r.top + r.height / 2),
+          );
+        })
+        .map((n) => n.getAttribute('data-node')),
+    );
+    expect(covered).toEqual([]);
     const measured = await bounds(page);
     expect(measured.scroll).toBeLessThanOrEqual(measured.width + 1);
     expect(measured.body).toBeLessThanOrEqual(measured.height + 1);
     const summary = band.locator('[data-house-progress=hufflepuff] summary');
     await summary.focus();
     await page.keyboard.press('Enter');
-    await expect(band.locator('.house-detail').first()).toBeVisible();
-    const box = await band.locator('.house-detail').first().boundingBox();
+    await expect(band.locator('[data-house-progress=hufflepuff] .house-detail')).toBeVisible();
+    const box = await band.locator('[data-house-progress=hufflepuff] .house-detail').boundingBox();
     expect(box!.x).toBeGreaterThanOrEqual(0);
     expect(box!.x + box!.width).toBeLessThanOrEqual(measured.width + 1);
     expect(box!.y).toBeGreaterThanOrEqual(0);
@@ -67,7 +76,7 @@ test('A85 houses are visible and inspectable on the route in both packs/language
 test('A85 enchanted reveal is finite, skippable and retains its finish in the collection and after swap', async ({
   page,
 }, info) => {
-  test.skip(!allowed(info.project.name), 'Bounded three-pair Linux sample.');
+  test.skip(!allowed(info.project.name), 'Protected six-pair Linux matrix.');
   for (const [lang, pack] of pairs) {
     await page.goto(`${fixture}?mode=opening&lang=${lang}&pack=${pack}`);
     const reveal = page.locator('dialog.reveal');
@@ -126,7 +135,7 @@ test('A85 enchanted reveal is finite, skippable and retains its finish in the co
 test('A85 preparation, Pact comparison, confirmed battle and truthful odds remain usable', async ({
   page,
 }, info) => {
-  test.skip(!allowed(info.project.name), 'Bounded three-pair Linux sample.');
+  test.skip(!allowed(info.project.name), 'Protected six-pair Linux matrix.');
   for (const [lang, pack] of pairs) {
     await page.goto(`${fixture}?mode=pact&lang=${lang}&pack=${pack}`);
     await expect(page.locator('[data-pact-candidate]')).toHaveCount(2);
@@ -153,7 +162,12 @@ test('A85 preparation, Pact comparison, confirmed battle and truthful odds remai
       .click();
     await immutable(page);
     await page.goto(`${fixture}?mode=shop&lang=${lang}&pack=${pack}`);
-    await page.locator('.shop-book-object').click();
+    await page
+      .getByRole('button', {
+        name: lang === 'es' ? 'Probabilidades por cromo' : 'Card probabilities',
+        exact: true,
+      })
+      .click();
     await expect(page.locator('.finish-odds')).toContainText('1');
     await expect(page.locator('.shop-card-catalogue article')).toHaveCount(29);
     await immutable(page);
@@ -193,4 +207,72 @@ test('A85 reduced motion, text growth and absent art preserve the same cosmetic 
   const size = await bounds(page);
   expect(size.scroll).toBeLessThanOrEqual(size.width + 1);
   await immutable(page);
+});
+test('A85 recorded house trajectory moves on the shared clock and pause/2x/skip keep its result', async ({
+  page,
+}, info) => {
+  test.skip(!allowed(info.project.name), 'Protected six-pair Linux matrix; no local graphics.');
+  await page.goto(`${fixture}?mode=battle&lang=en&pack=arcana`);
+  const scene = page.locator('.scene-canvas[data-renderer=webgl]');
+  await expect(scene).toBeVisible();
+  await page.waitForFunction(
+    () => {
+      const scene = document.querySelector<HTMLElement>('.scene-canvas[data-renderer=webgl]');
+      return scene?.dataset.castHouse === 'hufflepuff' && Number(scene.dataset.castOffset) > 5;
+    },
+    {},
+    { timeout: 15000 },
+  );
+  const positions = await scene.evaluate(async (host) => {
+    const samples: { house: string | undefined; offset: number }[] = [];
+    for (let i = 0; i < 12; i++) {
+      await new Promise(requestAnimationFrame);
+      samples.push({
+        house: (host as HTMLElement).dataset.castHouse,
+        offset: Number((host as HTMLElement).dataset.castOffset),
+      });
+    }
+    return samples;
+  });
+  expect(positions.some((s) => s.house === 'hufflepuff' && s.offset > 5)).toBe(true);
+  await page.getByRole('button', { name: 'Pause', exact: true }).click();
+  const cursor = await page.locator('[data-replay-cursor]').getAttribute('data-replay-cursor');
+  await page.evaluate(() => new Promise((resolve) => setTimeout(resolve, 160)));
+  expect(await page.locator('[data-replay-cursor]').getAttribute('data-replay-cursor')).toBe(
+    cursor,
+  );
+  await page.getByRole('button', { name: '2x', exact: true }).click();
+  await page.getByRole('button', { name: 'Skip playback', exact: true }).click();
+  await immutable(page);
+  await mkdir(root, { recursive: true });
+  await writeFile(
+    resolve(root, `${info.project.name}-trajectory.json`),
+    JSON.stringify(
+      {
+        fixture: true,
+        clock: 'shared BattleLog replay',
+        positions,
+        pausedCursor: cursor,
+        unchangedConfirmedRecord: true,
+      },
+      null,
+      2,
+    ),
+  );
+});
+test('A85 the actual mastery roster discloses its active house before confirmation', async ({
+  page,
+}, info) => {
+  test.skip(!allowed(info.project.name), 'Protected Linux matrix only.');
+  for (const [lang, pack] of pairs) {
+    await page.goto(`${fixture}?mode=boss&lang=${lang}&pack=${pack}`);
+    await expect(page.locator('.boss-house-mark')).toHaveCount(1);
+    await expect(page.locator('.boss-house-mark')).toBeVisible();
+    await expect(page.locator('.boss-party-member')).toHaveCount(5);
+    const size = await bounds(page);
+    expect(size.scroll).toBeLessThanOrEqual(size.width + 1);
+    await immutable(page);
+    if (lang === 'es' && pack === 'diagon-alley' && info.project.name.startsWith('chromium-390'))
+      await picture(page, 'boss-390-es-diagon');
+  }
 });

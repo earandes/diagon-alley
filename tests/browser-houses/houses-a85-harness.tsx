@@ -1,3 +1,5 @@
+import { BossPartyStage } from '../../src/arcana/presentation/BossPartyStage';
+import { BossSupplies } from '../../src/arcana/presentation/BossSupplies';
 // Declared UI fixtures, never an earned collection or a public server grant route.
 import { useState, useSyncExternalStore } from 'react';
 import { createRoot } from 'react-dom/client';
@@ -65,7 +67,7 @@ const run: Run = {
   graphVersion: graph.version,
   graph,
   zoneId: c.campaign.zoneId,
-  visited: [],
+  visited: query.has('visited') ? [graph.nodes.find((n) => n.row === 0)!.id] : [],
   status: 'active',
   tacticalVersion: 3,
   equipmentRulesVersion: 2,
@@ -99,14 +101,12 @@ const battle = new CombatEngine({ fromSeed: (s) => new SeededRandom(s) }).resolv
   id: 'a85-combat-fixture',
   seed: 85,
   player: members.map((m) => ({ ...m.unit, hp: 60 })),
-  rival: c.opening.catalog.wizards
-    .slice(5, 10)
-    .map((w, i) => ({
-      ...c.campaign.prepareOwned({ ...copies[0], wizard: w, copyId: `rival:${i}` }),
-      power: 8,
-      hp: 90,
-      maxHp: 90,
-    })),
+  rival: c.opening.catalog.wizards.slice(5, 10).map((w, i) => ({
+    ...c.campaign.prepareOwned({ ...copies[0], wizard: w, copyId: `rival:${i}` }),
+    power: 8,
+    hp: 90,
+    maxHp: 90,
+  })),
   rules: { ...c.campaign.combatRules, maxRounds: 6 },
 });
 const record = JSON.stringify({ game, battle, receipt });
@@ -119,6 +119,7 @@ function Fixture() {
     [options, setOptions] = useState<NodeOptions>({ pactAction: 'recruit' }),
     [reduced, setReduced] = useState(query.has('reduced'));
   const pact = run.campaignSnapshot!.nodes.find((p) => p.kind === 'pact')!;
+  const boss = c.campaign.challengeContent!('mastery', graph).find((p) => p.kind === 'boss')!;
   const pactMembers = copies
     .filter(
       (copy) =>
@@ -168,6 +169,55 @@ function Fixture() {
             onStart={() => {}}
             onClose={() => setMode('map')}
           />
+        )}
+        {mode === 'boss' && (
+          <dialog
+            ref={(element) => {
+              if (element && !element.open) element.showModal();
+            }}
+            className="notice node-event-dialog boss-staging"
+            aria-label="Declared boss fixture"
+          >
+            <NodePreparation
+              plan={boss}
+              run={run}
+              game={game}
+              rounding="floor"
+              options={{}}
+              onChange={() => {}}
+              language={language}
+              ready
+              rules={content.combatRules}
+            />
+            <div className="boss-player-preparation">
+              <BossPartyStage
+                run={run}
+                game={game}
+                assignments={[]}
+                language={language}
+                ready
+                rules={content.combatRules}
+                onPrepare={() => setMode('prepare')}
+              />
+              <BossSupplies
+                run={run}
+                game={game}
+                content={content}
+                language={language}
+                ready
+                assignments={[]}
+                onChange={() => {}}
+              />
+            </div>
+            <div className="node-event-actions node-combat-actions">
+              <button onClick={() => setMode('battle')}>
+                {language === 'es' ? 'Confirmar combate · 5' : 'Confirm battle · 5'}
+              </button>
+              <button onClick={() => setMode('map')}>
+                {language === 'es' ? 'Volver' : 'Back'}
+              </button>
+            </div>
+          </dialog>
         )}
         {mode === 'pact' && (
           <section className="notice node-event-dialog">

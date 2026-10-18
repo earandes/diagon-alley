@@ -518,6 +518,8 @@ export async function createPixiScene(host: HTMLElement, data: SceneData) {
               houseCastOffset(castHouse, flight) -
               (event.missed ? flight * 42 : 0),
           };
+        host.dataset.castHouse = castHouse ?? 'legacy';
+        host.dataset.castOffset = String(houseCastOffset(castHouse, flight));
         if (p >= 0.18 && p < 0.78) {
           if (source || (actorArm && current.boss?.id === event.actorId)) {
             sparks.ellipse(from.x, from.y, 10 + Math.sin(flight * Math.PI) * 5, 4).stroke({

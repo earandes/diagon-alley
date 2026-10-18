@@ -150,3 +150,79 @@ it('freezes new memberships and offers, while an active A84 run and its first-wi
     expect((await store.read(id)).exploration!.run).toEqual(run);
   }
 });
+
+// A tiny declared campaign isolates the reward-right contract from combat difficulty.
+import { campaignFixture, runInitial } from '../../domain/arcana/support/run-fixtures';
+import {
+  AdvanceNodeUseCase,
+  ResolveCombatUseCase,
+} from '../../../src/arcana/application/run-use-cases';
+import { CombatEngine } from '../../../src/arcana/domain/combat/engine';
+it('a won legacy campaign retains its unique key when the next expedition uses house rules and content3', async () => {
+  const id = `a85-rights-${randomUUID()}`;
+  ids.push(id);
+  const store = new PostgresGameTransactions(pool);
+  await store.create(runInitial(id));
+  const random = { fromSeed: (s: number) => new SeededRandom(s) },
+    seeds = { next: () => 42 };
+  const legacy = campaignFixture();
+  const old = { ...legacy, tacticalContent: { version: 2 as const, nodes: legacy.nodes } };
+  const modern = {
+    ...legacy,
+    combatRules: {
+      ...legacy.combatRules,
+      version: 2,
+      houseSynergies: 1 as const,
+      houseMembers: { merlin: 'gryffindor' as const },
+    },
+    tacticalContent: { version: 3 as const, nodes: legacy.nodes },
+    prepareOwned: (copy: Parameters<typeof legacy.prepareOwned>[0]) => ({
+      ...legacy.prepareOwned(copy),
+      house: 'gryffindor' as const,
+    }),
+  };
+  for (const [index, config] of [old, modern].entries()) {
+    const before = await store.read(id);
+    await new StartRunUseCase(store, () => config).execute(id, {
+      key: `run${index}`,
+      expectedRevision: before.revision,
+      request: {
+        zoneId: config.zoneId,
+        campaignVersion: config.version,
+        copyIds: ['copy0', 'copy1', 'copy2'],
+      },
+    });
+    const service = new AdvanceNodeUseCase(
+      store,
+      () => config,
+      new ResolveCombatUseCase(new CombatEngine(random), seeds),
+      clock,
+      random,
+      seeds,
+    );
+    for (const node of ['duel', 'refuge', 'chest', 'pact', 'encounter', 'boss']) {
+      const state = await store.read(id);
+      await service.execute(id, {
+        key: `run${index}:${node}`,
+        expectedRevision: state.revision,
+        request: {
+          runId: `run${index}`,
+          nodeId: node,
+          campaignVersion: 1,
+          assignments: [],
+          ...(node === 'pact' ? { pactAction: 'pass' as const } : {}),
+          ...(node === 'encounter' ? { encounterAction: 'pass' as const } : {}),
+        },
+      });
+    }
+  }
+  const state = await new PostgresGameTransactions(pool).read(id);
+  expect(state.inventory.goldKeys).toBe(1);
+  expect(state.copies).toHaveLength(3);
+  const bosses = state.receipts
+    .filter((r) => r.kind === 'advance-node')
+    .filter((r) => r.request.nodeId === 'boss');
+  expect(bosses.map((r) => r.firstVictory)).toEqual([true, false]);
+  expect(bosses.map((r) => r.reward.goldKeys)).toEqual([1, 0]);
+  expect(bosses.map((r) => r.battle?.engineVersion)).toEqual([1, 2]);
+});

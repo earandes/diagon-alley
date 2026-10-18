@@ -24,6 +24,26 @@ export function TeamHud({
   onPrepare?: (origin: HTMLElement) => void;
 }) {
   const run = game.exploration?.run;
+  const partyRoot = useRef<HTMLElement>(null);
+  useLayoutEffect(() => {
+    const element = partyRoot.current;
+    const panel = element?.parentElement;
+    if (!element || !panel?.matches('.expedition-panel')) return;
+    const measure = () =>
+      panel.style.setProperty(
+        '--party-map-space',
+        element.querySelector('.house-band')
+          ? `${Math.ceil(element.getBoundingClientRect().height) + 24}px`
+          : '0px',
+      );
+    const observer = new ResizeObserver(measure);
+    observer.observe(element);
+    measure();
+    return () => {
+      observer.disconnect();
+      panel.style.removeProperty('--party-map-space');
+    };
+  }, []);
   const units = run
     ? run.members.map((m) => ({
         ...m.unit,
@@ -151,7 +171,7 @@ export function TeamHud({
         (e) => e.id === loadout?.wandId || e.id === loadout?.broomId,
       );
   return (
-    <section className="team team-compact" aria-label={text(language, 'yourTeam')}>
+    <section ref={partyRoot} className="team team-compact" aria-label={text(language, 'yourTeam')}>
       <h2 className="visually-hidden">
         {text(language, run && run.status !== 'active' ? 'lastExpeditionTeam' : 'yourTeam')}
       </h2>

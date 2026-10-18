@@ -4,7 +4,7 @@
 
 ## Encargo y límites
 
-Enric autoriza resolver los dos problemas señalados, realizar el Cromo Encantado recomendado y comprobarlo junto con casas y funciones afectadas. Interpretación explícita pendiente de confirmación contextual: acceso desigual/cobertura de casas y dominancia del ×2. No se atribuye a Enric una confirmación que aún no ha dado.
+Enric autoriza resolver los dos problemas señalados, realizar el Cromo Encantado recomendado y comprobarlo junto con casas y funciones afectadas. Enric confirmó el18 de octubre: «Sí: acceso a casas y ventaja ×2». Esos son los dos problemas autorizados; el acabado cosmético y el acceso mediante Pactos son la solución elegida dentro de ese alcance.
 
 Diseño → pruebas de reglas → implementación → persistencia real → comprobación gráfica Linux → correcciones → documentación. Sin merge a main o despliegue. Coste adicional cero, sin dependencias o generación con créditos, sin navegador local. Alcance mecánico nuevo se registra de forma explícita; no se reescriben partidas ni tablas históricas.
 
@@ -21,11 +21,11 @@ Colección/inspección → reconocer pertenencias → preparar una compañía �
 
 ## Validación y plan
 
-1. Contrastar hallazgos y contratos (en curso).
-2. Fijar taxonomía/reglas/acceso con pruebas y comparación reproducible (pendiente).
-3. Integrar casas, mapa/preparación, eventos y perfiles visuales (pendiente).
-4. Integrar variante, fuente visual, apertura/colección/probabilidades (pendiente).
-5. Tipos/build/dominio/SQLRedis y Linux serial protegido, inspección seleccionada (pendiente).
+1. Contrastar hallazgos y contratos (completado).
+2. Fijar taxonomía/reglas/acceso con pruebas y comparación reproducible (implementado; validación gráfica y correcciones en curso).
+3. Integrar casas, mapa/preparación, eventos y perfiles visuales (implementado; validación gráfica y correcciones en curso).
+4. Integrar variante, fuente visual, apertura/colección/probabilidades (implementado; validación gráfica y correcciones en curso).
+5. Tipos/build/dominio/SQLRedis y Linux serial protegido, inspección seleccionada (implementado; validación gráfica y correcciones en curso).
 6. Documentar cifras, cobertura y límites reales (pendiente).
 
 No declarar diversión, balance humano, calidad percibida o dispositivo físico a partir de tests. La observación humana puede quedar pendiente; una comprobación técnica necesaria pendiente no se presenta como superada.
