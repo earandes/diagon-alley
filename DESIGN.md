@@ -1,6 +1,6 @@
 # Diagon Alley / ARCANA · Callejón de maravillas
 
-**A78 · 18 octubre 2026 · refinamiento implementado, inspección Linux pendiente:** conservar carta ilustrada azul/oro y credenciales nativas; código como continuación principal, correo visible y reparación secundaria única. Cabecera en flujo con cierre44px, errores antes del CTA y acceso a cuenta coherente en todos los Ajustes. No assets nuevos, ritual o rediseño de bienvenida. [Interacción](docs/arcana/accounts-fixes-2026-10-18/INTERACTION.md).
+**A78 · 18 octubre 2026 · refinamiento implementado y comprobado en Linux:** conservar carta ilustrada azul/oro y credenciales nativas; código como continuación principal, correo visible y reparación secundaria única. Cabecera en flujo con cierre44px, errores antes del CTA y acceso a cuenta coherente en todos los Ajustes. No assets nuevos, ritual o rediseño de bienvenida. [Interacción](docs/arcana/accounts-fixes-2026-10-18/INTERACTION.md).
 
 A77 · Revisión premerge: carta de cuentas, campos nativos y escenario son coherentes con el Teatro de alquimia. No hay aprobación final de continuidad: CTA postcódigo, recuperación, privacidad de presentación, sesión entre pestañas, cierre móvil y Ajustes contextuales requieren corrección. [Hallazgos y galería](docs/arcana/accounts-design-review-2026-10-18/REPORT.md). Auditoría sin cambios de aplicación o arte; tests verdes no acreditan comprensión humana.
 

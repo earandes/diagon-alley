@@ -1,6 +1,6 @@
 > **A76 · Cuentas recuperables (ensayo validado, sin integración en main):** la bienvenida ofrece crear cuenta, iniciar sesión o jugar como invitado. Ajustes permite vincular el mismo jugador y conservar su colección. Registro: correo → código del buzón → contraseña; recuperación usa otro código. En este ensayo los mensajes se entregan exclusivamente a archivos privados `.local/arcana-mail/<ARCANA_TRIAL_NAMESPACE>/` (fuera de Git y acceso HTTP). Consultarlos requiere acceso local al servidor; **no se envían correos por Internet ni hay despliegue**. No compartir esos archivos. No vincular la partida habitual durante pruebas automatizadas. Contrato y resultados en [A76](docs/arcana/accounts-2026-10-17/CONTRACT.md). La cookie invitada sigue siendo temporal y perderla sin vincular puede impedir recuperar acceso. Las referencias inferiores a “sin recuperación” describen versiones previas. [Guía de uso local](docs/arcana/accounts-2026-10-17/LOCAL-GUIDE.md), [resultados y límites](docs/arcana/accounts-2026-10-17/QA.md) y [PR7 dependiente deA75](https://github.com/earandes/diagon-alley/pull/7). La validación se completó en dos tandas Linux: primera cancelada por límite total55min, continuación superada; no se abre el ensayo a Internet.
 
-**A78 · Correcciones de cuentas en rama, validación en curso:** [contrato](docs/arcana/accounts-fixes-2026-10-18/CONTRACT.md) y [QA](docs/arcana/accounts-fixes-2026-10-18/QA.md). Se resuelven los ocho hallazgos A77 sin alterar partidas o economía. El ensayo de cuentas sigue usando un buzón local privado; no correo externo ni despliegue. PR7 pendiente, sin merge autorizado.
+**A78 · Correcciones de cuentas implementadas y probadas en rama:** [contrato](docs/arcana/accounts-fixes-2026-10-18/CONTRACT.md) y [QA](docs/arcana/accounts-fixes-2026-10-18/QA.md). Se resuelven los ocho hallazgos A77 sin alterar partidas o economía. El ensayo de cuentas sigue usando un buzón local privado; no correo externo ni despliegue. PR7 pendiente, sin merge autorizado.
 
 # Diagon Alley / ARCANA
 
@@ -24,7 +24,7 @@ npm run services:up
 npm run dev
 ```
 
-Abrir `http://127.0.0.1:5189/` y comenzar explícitamente el ensayo. Cookie HttpOnly de siete días, cuenta creada por servidor y kit único; sin recuperación de cuenta o sincronización entre dispositivos. Todos los precios/pesos/stats del ensayo se identifican como provisionales. `npm run test:e2e` comprueba el recorrido es/en con SQL/Redis; `npm run verify:arcana:build` inspecciona términos del artefacto después de `npm run build`. Detener Vite con Ctrl+C y servicios propios con `npm run services:stop`.
+Abrir `http://127.0.0.1:5189/` y comenzar explícitamente el ensayo. Cookie HttpOnly de siete días y kit único por jugador. Crear cuenta, entrar y vincular invitado conservan la partida; verificación y recuperación del ensayo mediante buzón local privado, sin correo externo. [Guía de cuentas](docs/arcana/accounts-2026-10-17/LOCAL-GUIDE.md). Todos los precios/pesos/stats del ensayo se identifican como provisionales. `npm run test:e2e` comprueba el recorrido es/en con SQL/Redis; `npm run verify:arcana:build` inspecciona términos del artefacto después de `npm run build`. Detener Vite con Ctrl+C y servicios propios con `npm run services:stop`.
 
 Para probar la PWA sobre el artefacto compilado con la misma autoridad local:
 
