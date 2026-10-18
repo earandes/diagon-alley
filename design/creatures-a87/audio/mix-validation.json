@@ -1,0 +1,27 @@
+{
+  "peaks": {
+    "ambient": 0.193634033203125,
+    "burn": 0.156036376953125,
+    "cast-alchemy": 0.233428955078125,
+    "cast-creatures": 0.3271484375,
+    "cast-death": 0.272003173828125,
+    "cast-dragon": 0.3304443359375,
+    "cast-fire": 0.253448486328125,
+    "cast-hippogriff": 0.288421630859375,
+    "cast-neutral": 0.2183837890625,
+    "cast-order": 0.291046142578125,
+    "cast-phoenix": 0.281829833984375,
+    "cast-shadows": 0.202728271484375,
+    "cast-unicorn": 0.301422119140625,
+    "heal": 0.227386474609375,
+    "impact": 0.207763671875,
+    "miss": 0.134063720703125
+  },
+  "masterGain": 0.7,
+  "maxEffectsBus": 0.75,
+  "maxVoices": 4,
+  "maxMusicBus": 1,
+  "conservativeAbsolutePeakBound": 0.8294769287109375,
+  "limits": "PCM absolute-peak sum bound under current gain/voice assumptions. Not perceived loudness, hearing safety, speaker output or human listening.",
+  "browserValidation": "pending"
+}

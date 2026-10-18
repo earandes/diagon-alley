@@ -1,3 +1,4 @@
+import type { BondMode } from '../domain/combat/bonds';
 import { useGameAudioLifecycle } from './audio/runtime';
 import {
   AccountAccess,
@@ -367,7 +368,11 @@ export function App() {
   const battle =
     state.receipt?.kind === 'advance-node' ? state.receipt.battle : (savedNode?.battle ?? null);
   const label = (kind: NodeKind) => t(nodes[kind]);
-  const startExpedition = (copyIds: readonly string[], challenge?: ExpeditionChallenge) => {
+  const startExpedition = (
+    copyIds: readonly string[],
+    challenge?: ExpeditionChallenge,
+    bondFocus?: BondMode,
+  ) => {
     if (!content) return;
     void controller.perform({
       kind: 'start-run',
@@ -376,6 +381,7 @@ export function App() {
         campaignVersion: content.campaign.version,
         copyIds,
         ...(challenge ? { challenge } : {}),
+        ...(bondFocus === undefined ? {} : { bondFocus }),
       },
     });
   };
@@ -1133,8 +1139,8 @@ export function App() {
                     }}
                     language={language}
                     ready={ready}
-                    onStart={(ids, challenge) => {
-                      startExpedition(ids, challenge);
+                    onStart={(ids, challenge, bondFocus) => {
+                      startExpedition(ids, challenge, bondFocus);
                     }}
                     onTeam={(request) => void controller.perform({ kind: 'set-team', request })}
                     onEquip={(request) =>

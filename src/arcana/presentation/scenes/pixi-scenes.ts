@@ -1,3 +1,5 @@
+import { creatureProfile, castProfile, bondCastOffset, castColors } from '../motion/cast-profile';
+import type { BondGroup } from '../../domain/combat/bonds';
 import { houseCastOffset } from '../motion/house-cast';
 import { sceneNeedsContinuousFrames } from './scene-motion';
 import { sameSceneGeometry } from './scene-geometry';
@@ -32,6 +34,7 @@ export type SceneData =
       readonly kind: 'arena';
       readonly positions?: readonly ArenaPosition[];
       readonly appearances?: Readonly<Record<string, string>>;
+      readonly bondCasts?: Readonly<Record<string, BondGroup>>;
       readonly frame: ReplayFrame;
       readonly next: BattleEvent | null;
       readonly playing: boolean;
@@ -48,6 +51,9 @@ export async function createPixiScene(host: HTMLElement, data: SceneData) {
     promise: Promise<HTMLImageElement | null>;
   };
   const images = new Map<string, PreparedImage>();
+  const observe = (key: string, value: string) => {
+    if (host.dataset[key] !== value) host.dataset[key] = value;
+  };
   const prepareImage = (key: string, url: string) => {
     let prepared = images.get(key);
     if (!prepared) {
@@ -79,6 +85,11 @@ export async function createPixiScene(host: HTMLElement, data: SceneData) {
       const key = data.appearances?.[unit.id] ?? `character.${unit.wizardId}.figure`;
       const asset = visualAsset(key);
       if (asset) void prepareImage(key, asset.url);
+      if (!data.reduced && creatureProfile(unit.wizardId)) {
+        const castKey = `character.${unit.wizardId}.cast`,
+          cast = visualAsset(castKey);
+        if (cast) void prepareImage(castKey, cast.url);
+      }
     }
     if (propArt?.actor) {
       for (const url of [propArt.actor.baseUrl, propArt.actor.armUrl])
@@ -154,6 +165,11 @@ export async function createPixiScene(host: HTMLElement, data: SceneData) {
     if (destroyed || textures.has(key)) return;
     textures.set(key, Texture.from(image));
     host.dataset.textureCount = String(textures.size);
+    if (key.endsWith('.cast'))
+      observe(
+        'creatureTextures',
+        String([...textures.keys()].filter((k) => k.endsWith('.cast')).length),
+      );
     host.dataset.textureBytes = String(
       [...textures.values()].reduce((n, t) => n + t.width * t.height * 4, 0),
     );
@@ -277,14 +293,16 @@ export async function createPixiScene(host: HTMLElement, data: SceneData) {
                   sy: 1,
                 });
               }
+              const mirror = side === 'rival' && creatureProfile(unit.wizardId) ? -1 : 1;
               const pivot = asset?.pivot ?? [0.5, 0.9];
               figure.anchor.set(pivot[0], pivot[1]);
               figure.position.set(
-                x + ((pivot[0] - 0.5) * figureHeight * texture.width) / texture.height,
+                x + (mirror * (pivot[0] - 0.5) * figureHeight * texture.width) / texture.height,
                 y + (pivot[1] - 0.5) * figureHeight,
               );
               figure.height = figureHeight;
               figure.width = (figureHeight * texture.width) / texture.height;
+              figure.scale.x *= mirror;
               figure.alpha = unit.hp > 0 ? 1 : 0.35;
               figure.tint = unit.hp > 0 ? 0xffffff : 0x999999;
               figure.rotation = unit.hp > 0 ? 0 : 0.12;
@@ -354,10 +372,34 @@ export async function createPixiScene(host: HTMLElement, data: SceneData) {
           }
         }
       }
+      // Idle figures get texture slots first. Cast poses never delay basic actor presence.
+      const arena = current.kind === 'arena' ? current : null;
+      if (
+        arena &&
+        !arena.reduced &&
+        [...arena.frame.player, ...arena.frame.rival].every((u) =>
+          textures.has(arena.appearances?.[u.id] ?? `character.${u.wizardId}.figure`),
+        )
+      ) {
+        for (const unit of [...arena.frame.player, ...arena.frame.rival])
+          if (creatureProfile(unit.wizardId)) {
+            const key = `character.${unit.wizardId}.cast`,
+              asset = visualAsset(key);
+            if (asset) loadTexture(key, asset.url);
+          }
+      }
       dirty = deferredTextures;
       sceneEnd('geometry', geometryStarted);
     }
     if (current.kind === 'arena') {
+      const spellEvent = current.next;
+      const casting =
+        spellEvent?.kind === 'spell-cast' &&
+        [...current.frame.player, ...current.frame.rival].find((u) => u.id === spellEvent.actorId);
+      if (!casting || !creatureProfile(casting.wizardId)) {
+        observe('creaturePose', 'rest');
+        observe('creatureActor', '');
+      }
       host.dataset.artReady = String(
         [...current.frame.player, ...current.frame.rival].every((unit) => figures.has(unit.id)),
       );
@@ -384,6 +426,22 @@ export async function createPixiScene(host: HTMLElement, data: SceneData) {
           current.clock?.snapshot().progress ??
           Math.min(elapsed / activePack.animations.arena.eventMs, 1);
         const actor = current.next?.kind === 'spell-cast' && current.next.actorId === id;
+        const unit =
+          current.frame.player.find((u) => u.id === id) ??
+          current.frame.rival.find((u) => u.id === id);
+        const creature = unit && creatureProfile(unit.wizardId);
+        if (creature && unit) {
+          const casting =
+            actor && pose.alive && !current.reduced && progress >= 0.14 && progress < 0.9;
+          const idleKey = current.appearances?.[id] ?? `character.${unit.wizardId}.figure`;
+          const castTexture = textures.get(`character.${unit.wizardId}.cast`);
+          const poseTexture = (casting && castTexture) || textures.get(idleKey) || figure.texture;
+          if (figure.texture !== poseTexture) figure.texture = poseTexture;
+          if (actor) {
+            observe('creatureActor', id);
+            observe('creaturePose', casting && castTexture ? 'cast' : 'rest');
+          }
+        }
         const direction = pose.x < viewWidth / 2 ? 1 : -1;
         const anticipation =
           !current.reduced && actor && progress < 0.18 ? Math.sin((progress / 0.18) * Math.PI) : 0;
@@ -476,6 +534,11 @@ export async function createPixiScene(host: HTMLElement, data: SceneData) {
       if (event?.kind === 'spell-cast') {
         const baseFrom = positions.get(event.actorId)!,
           leader = figures.get(event.actorId),
+          actorUnit =
+            current.frame.player.find((u) => u.id === event.actorId) ??
+            current.frame.rival.find((u) => u.id === event.actorId),
+          creature = creatureProfile(actorUnit?.wizardId ?? ''),
+          profile = castProfile(actorUnit?.wizardId ?? '', current.bondCasts?.[event.actorId]),
           actorArm = bossArms.get(event.actorId),
           actorOrigin = propArt?.actor,
           source =
@@ -490,36 +553,38 @@ export async function createPixiScene(host: HTMLElement, data: SceneData) {
               : 0,
           rotation = leader?.rotation ?? 0,
           from =
-            actorArm && actorOrigin && current.boss?.id === event.actorId
-              ? actorArm.toGlobal({
-                  x: (actorOrigin.origin[0] - actorOrigin.armPivot[0]) * actorOrigin.frameSize[0],
-                  y: (actorOrigin.origin[1] - actorOrigin.armPivot[1]) * actorOrigin.frameSize[1],
+            creature && leader
+              ? leader.toGlobal({
+                  x: (creature.origin[0] - leader.anchor.x) * leader.texture.width,
+                  y: (creature.origin[1] - leader.anchor.y) * leader.texture.height,
                 })
-              : source && leader
-                ? {
-                    x: leader.x + dx * Math.cos(rotation) - dy * Math.sin(rotation),
-                    y: leader.y + dx * Math.sin(rotation) + dy * Math.cos(rotation),
-                  }
-                : baseFrom,
+              : actorArm && actorOrigin && current.boss?.id === event.actorId
+                ? actorArm.toGlobal({
+                    x: (actorOrigin.origin[0] - actorOrigin.armPivot[0]) * actorOrigin.frameSize[0],
+                    y: (actorOrigin.origin[1] - actorOrigin.armPivot[1]) * actorOrigin.frameSize[1],
+                  })
+                : source && leader
+                  ? {
+                      x: leader.x + dx * Math.cos(rotation) - dy * Math.sin(rotation),
+                      y: leader.y + dx * Math.sin(rotation) + dy * Math.cos(rotation),
+                    }
+                  : baseFrom,
           to = positions.get(event.targetId)!,
           p =
             current.clock?.snapshot().progress ??
             Math.min(elapsed / activePack.animations.arena.eventMs, 1),
           flight = Math.max(0, Math.min((p - 0.18) / 0.6, 1)),
-          castHouse = (
-            current.frame.player.find((u) => u.id === event.actorId) ??
-            current.frame.rival.find((u) => u.id === event.actorId)
-          )?.house,
+          castHouse = profile ? undefined : actorUnit?.house,
+          offset = profile ? bondCastOffset(profile, flight) : houseCastOffset(castHouse, flight),
+          color = profile ? castColors[profile] : paletteColor('legendaryAccent'),
           attack = {
             x: from.x + (to.x - from.x) * flight,
-            y:
-              from.y +
-              (to.y - from.y) * flight -
-              houseCastOffset(castHouse, flight) -
-              (event.missed ? flight * 42 : 0),
+            y: from.y + (to.y - from.y) * flight - offset - (event.missed ? flight * 42 : 0),
           };
         host.dataset.castHouse = castHouse ?? 'legacy';
-        host.dataset.castOffset = String(houseCastOffset(castHouse, flight));
+        host.dataset.castOffset = String(offset);
+        if (host.dataset.castProfile !== (profile ?? castHouse ?? 'legacy'))
+          host.dataset.castProfile = profile ?? castHouse ?? 'legacy';
         if (p >= 0.18 && p < 0.78) {
           if (source || (actorArm && current.boss?.id === event.actorId)) {
             sparks.ellipse(from.x, from.y, 10 + Math.sin(flight * Math.PI) * 5, 4).stroke({
@@ -531,8 +596,45 @@ export async function createPixiScene(host: HTMLElement, data: SceneData) {
           sparks
             .moveTo(from.x, from.y)
             .lineTo(attack.x, attack.y)
-            .stroke({ color: paletteColor('legendaryAccent'), alpha: 0.35, width: 2 });
-          if (castHouse === 'ravenclaw') {
+            .stroke({ color, alpha: 0.35, width: 2 });
+          if (profile === 'creatures' || profile === 'hippogriff') {
+            sparks
+              .moveTo(attack.x - 7, attack.y - 7)
+              .lineTo(attack.x + 4, attack.y + 7)
+              .moveTo(attack.x - 1, attack.y - 9)
+              .lineTo(attack.x + 10, attack.y + 5)
+              .stroke({ color, width: 2 });
+          } else if (profile === 'order') {
+            sparks
+              .moveTo(attack.x - 12, attack.y - 6)
+              .lineTo(attack.x, attack.y + 3)
+              .lineTo(attack.x + 12, attack.y - 6)
+              .stroke({ color, width: 2 });
+          } else if (profile === 'death') {
+            sparks
+              .moveTo(attack.x, attack.y - 9)
+              .lineTo(attack.x + 7, attack.y)
+              .lineTo(attack.x, attack.y + 9)
+              .lineTo(attack.x - 7, attack.y)
+              .closePath()
+              .stroke({ color, width: 2 });
+          } else if (profile === 'dragon') {
+            sparks
+              .moveTo(attack.x, attack.y)
+              .lineTo(attack.x - (to.x > from.x ? 16 : -16), attack.y - 4)
+              .lineTo(attack.x - (to.x > from.x ? 16 : -16), attack.y + 4)
+              .closePath()
+              .fill({ color, alpha: 0.85 });
+          } else if (profile === 'phoenix' || profile === 'unicorn') {
+            sparks
+              .ellipse(
+                attack.x,
+                attack.y,
+                profile === 'phoenix' ? 10 : 5,
+                profile === 'phoenix' ? 4 : 8,
+              )
+              .stroke({ color, width: 2 });
+          } else if (castHouse === 'ravenclaw') {
             sparks
               .moveTo(attack.x - 8, attack.y - 8)
               .lineTo(attack.x + 8, attack.y + 8)
@@ -550,6 +652,20 @@ export async function createPixiScene(host: HTMLElement, data: SceneData) {
           sparks
             .circle(attack.x, attack.y, 13)
             .fill({ color: paletteColor('legendaryAccent'), alpha: 0.18 });
+        }
+        if (event.guarded && p >= 0.78 && p < 1) {
+          sparks
+            .arc(to.x, to.y, 22, -Math.PI * 0.8, Math.PI * 0.3)
+            .stroke({ color: castColors.creatures, width: 3, alpha: 1 - (p - 0.78) / 0.22 });
+        }
+        if (event.bondBoost && p >= 0.78 && p < 1) {
+          const fade = 1 - (p - 0.78) / 0.22;
+          sparks
+            .moveTo(to.x - 15, to.y - 10)
+            .lineTo(to.x - 7, to.y - 15)
+            .moveTo(to.x + 7, to.y + 15)
+            .lineTo(to.x + 15, to.y + 10)
+            .stroke({ color: castColors.death, width: 2, alpha: fade });
         }
         if (!event.missed && p >= 0.78 && p < 1) {
           const impact = (p - 0.78) / 0.22;
@@ -569,6 +685,20 @@ export async function createPixiScene(host: HTMLElement, data: SceneData) {
         const p =
           current.clock?.snapshot().progress ??
           Math.min(elapsed / activePack.animations.arena.eventMs, 1);
+        if (
+          event.kind === 'healed' &&
+          event.source === 'order' &&
+          event.healerId &&
+          target &&
+          p < 1
+        ) {
+          const helper = positions.get(event.healerId);
+          if (helper)
+            sparks
+              .moveTo(helper.x, helper.y)
+              .lineTo(target.x, target.y)
+              .stroke({ color: castColors.order, width: 1.5, alpha: Math.sin(p * Math.PI) * 0.65 });
+        }
         if (target && p < 1)
           sparks.ellipse(target.x, target.y + 10 - p * 12, 12 + p * 20, 6 + p * 7).stroke({
             color: paletteColor(event.kind === 'healed' ? 'unusualAccent' : 'rivalAccent'),
@@ -662,12 +792,16 @@ export async function createPixiScene(host: HTMLElement, data: SceneData) {
       host.dataset.destroyed = 'true';
       host.dataset.activeTicking = 'false';
       host.dataset.textureCount = '0';
+      host.dataset.creatureTextures = '0';
       host.dataset.textureBytes = '0';
       host.dataset.visibleFigures = '0';
       host.dataset.bossPropReady = 'false';
       host.dataset.bossPropLayers = '0';
       host.dataset.bossActorReady = 'false';
       host.dataset.bossActorLayers = '0';
+      host.dataset.creaturePose = 'rest';
+      host.dataset.creatureActor = '';
+      host.dataset.castProfile = '';
     },
   };
 }

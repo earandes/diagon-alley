@@ -5,17 +5,20 @@ import { contextualText as c } from './contextual-messages';
 import { Artwork } from './Artwork';
 import { useSelectionMotion } from './useSelectionMotion';
 import { useReducedMotion } from './useReducedMotion';
-import { HouseBand } from './HouseInsignia';
+import { BondBand } from './BondBand';
+import type { BondMode } from '../domain/combat/bonds';
 export function PreparationSynergies({
   members,
   previous,
   rules,
   language,
+  mode,
 }: {
   members: readonly PreparationMember[];
   previous?: readonly PreparationMember[];
   rules: CombatRules;
   language: Language;
+  mode?: BondMode;
 }) {
   const active = preparationSynergies(members, rules);
   const before = previous && preparationSynergies(previous, rules);
@@ -29,9 +32,10 @@ export function PreparationSynergies({
   );
   return (
     <>
-      <HouseBand
+      <BondBand
         units={members.map((m) => ({ ...m.unit, source: m.source }))}
         rules={rules}
+        mode={mode}
         language={language}
       />
       <details className="preparation-synergies" data-preparation-synergies ref={motion}>

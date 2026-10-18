@@ -1,6 +1,6 @@
 {
   "id": "arcana",
-  "version": 6,
+  "version": 7,
   "brand": "ARCANA",
   "direction": "teatro-de-alquimia",
   "palette": {
@@ -41,11 +41,7 @@
     }
   },
   "arenaAppearances": {
-    "rivals": [
-      "rival.arcanist-1.figure",
-      "rival.arcanist-2.figure",
-      "rival.arcanist-3.figure"
-    ],
+    "rivals": ["rival.arcanist-1.figure", "rival.arcanist-2.figure", "rival.arcanist-3.figure"],
     "boss": "rival.boss.figure",
     "bossPosition": 1
   },

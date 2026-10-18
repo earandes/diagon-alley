@@ -1,0 +1,238 @@
+{
+  "fixture": true,
+  "source": "Current obtainable catalogue units, actual distinct opponent plans from seed0; no master stat changes, no gear/beans, same actor IDs within each pair. Deterministic enumeration, not independent random or human samples.",
+  "conditions": "5 formation rotations x4 own HP patterns x2 ID tie orders x current distinct opponents; frozen seed42, rules3. Preference lexicographic outcome, standing, ownHP, lower rivalHP. Arrival conditions declared; opponents start at full configured HP.",
+  "opponentProfiles": [
+    {
+      "challenge": "discovery",
+      "nodeId": "pasaje:2:0",
+      "wizards": [
+        "rival",
+        "rival",
+        "rival"
+      ]
+    },
+    {
+      "challenge": "discovery",
+      "nodeId": "pasaje:3:1",
+      "wizards": [
+        "storm-caller",
+        "rune-weaver",
+        "rival"
+      ]
+    },
+    {
+      "challenge": "discovery",
+      "nodeId": "pasaje:4:2",
+      "wizards": [
+        "circe",
+        "ember-keeper",
+        "rival"
+      ]
+    },
+    {
+      "challenge": "discovery",
+      "nodeId": "pasaje:6:0",
+      "wizards": [
+        "circe",
+        "rival",
+        "rival"
+      ]
+    },
+    {
+      "challenge": "tactical",
+      "nodeId": "pasaje:6:0",
+      "wizards": [
+        "storm-caller",
+        "rune-weaver",
+        "rival",
+        "rival"
+      ]
+    },
+    {
+      "challenge": "mastery",
+      "nodeId": "pasaje:3:1",
+      "wizards": [
+        "storm-caller",
+        "mist-seer",
+        "morgana"
+      ]
+    },
+    {
+      "challenge": "mastery",
+      "nodeId": "pasaje:4:2",
+      "wizards": [
+        "circe",
+        "ember-keeper",
+        "copper-sage"
+      ]
+    },
+    {
+      "challenge": "mastery",
+      "nodeId": "pasaje:6:0",
+      "wizards": [
+        "circe",
+        "ember-keeper",
+        "copper-sage",
+        "storm-caller",
+        "mist-seer"
+      ]
+    }
+  ],
+  "groups": [
+    {
+      "group": "order",
+      "n": 320,
+      "alternativeBetter": 77,
+      "houseBetter": 145,
+      "equal": 98,
+      "examples": {
+        "alternative": {
+          "group": "order",
+          "rotation": 0,
+          "condition": "full",
+          "idPrefix": "a",
+          "challenge": "discovery",
+          "nodeId": "pasaje:2:0",
+          "roster": [
+            "merlin",
+            "morgana",
+            "storm-caller",
+            "moon-herbalist",
+            "aurora-sage"
+          ],
+          "house": {
+            "outcome": "player",
+            "standing": 5,
+            "hp": 429,
+            "rivalHp": 0,
+            "rounds": 2,
+            "help": 0,
+            "finisher": 0
+          },
+          "alternative": {
+            "outcome": "player",
+            "standing": 5,
+            "hp": 430,
+            "rivalHp": 0,
+            "rounds": 2,
+            "help": 1,
+            "finisher": 0
+          },
+          "preference": 1
+        },
+        "house": {
+          "group": "order",
+          "rotation": 0,
+          "condition": "full",
+          "idPrefix": "a",
+          "challenge": "mastery",
+          "nodeId": "pasaje:6:0",
+          "roster": [
+            "merlin",
+            "morgana",
+            "storm-caller",
+            "moon-herbalist",
+            "aurora-sage"
+          ],
+          "house": {
+            "outcome": "player",
+            "standing": 1,
+            "hp": 73,
+            "rivalHp": 0,
+            "rounds": 15,
+            "help": 0,
+            "finisher": 0
+          },
+          "alternative": {
+            "outcome": "player",
+            "standing": 1,
+            "hp": 72,
+            "rivalHp": 0,
+            "rounds": 15,
+            "help": 4,
+            "finisher": 0
+          },
+          "preference": -1
+        }
+      }
+    },
+    {
+      "group": "death",
+      "n": 320,
+      "alternativeBetter": 27,
+      "houseBetter": 216,
+      "equal": 77,
+      "examples": {
+        "alternative": {
+          "group": "death",
+          "rotation": 0,
+          "condition": "full",
+          "idPrefix": "a",
+          "challenge": "discovery",
+          "nodeId": "pasaje:6:0",
+          "roster": [
+            "paracelso",
+            "obsidian-seer",
+            "echo-mage",
+            "veil-walker",
+            "apprentice"
+          ],
+          "house": {
+            "outcome": "player",
+            "standing": 5,
+            "hp": 381,
+            "rivalHp": 0,
+            "rounds": 5,
+            "help": 0,
+            "finisher": 0
+          },
+          "alternative": {
+            "outcome": "player",
+            "standing": 5,
+            "hp": 387,
+            "rivalHp": 0,
+            "rounds": 5,
+            "help": 0,
+            "finisher": 14
+          },
+          "preference": 1
+        },
+        "house": {
+          "group": "death",
+          "rotation": 0,
+          "condition": "full",
+          "idPrefix": "a",
+          "challenge": "discovery",
+          "nodeId": "pasaje:3:1",
+          "roster": [
+            "paracelso",
+            "obsidian-seer",
+            "echo-mage",
+            "veil-walker",
+            "apprentice"
+          ],
+          "house": {
+            "outcome": "player",
+            "standing": 5,
+            "hp": 379,
+            "rivalHp": 0,
+            "rounds": 4,
+            "help": 0,
+            "finisher": 0
+          },
+          "alternative": {
+            "outcome": "player",
+            "standing": 5,
+            "hp": 368,
+            "rivalHp": 0,
+            "rounds": 4,
+            "help": 0,
+            "finisher": 12
+          },
+          "preference": -1
+        }
+      }
+    }
+  ]
+}

@@ -1,6 +1,8 @@
+import { castProfile, confirmedBondFor, type CastProfile } from '../motion/cast-profile';
 import type { Combat } from '../../domain/combat/engine';
 import type { PlaybackPosition } from '../motion/replay-clock';
 export type EffectSound =
+  | `cast-${CastProfile}`
   | 'cast-fire'
   | 'cast-alchemy'
   | 'cast-shadows'
@@ -31,7 +33,9 @@ export class BattleAudioTrack {
         const actor = [...this.combat.input.player, ...this.combat.input.rival].find(
           (u) => u.id === event.actorId,
         );
-        return [`cast-${actor?.affinity ?? 'neutral'}`];
+        const profile =
+          actor && castProfile(actor.wizardId, confirmedBondFor(this.combat, actor.id));
+        return [profile ? `cast-${profile}` : `cast-${actor?.affinity ?? 'neutral'}`];
       }
       if (position.phase === 'impact') return [event.missed ? 'miss' : 'impact'];
     }

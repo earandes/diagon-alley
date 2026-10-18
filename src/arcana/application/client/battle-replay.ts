@@ -73,11 +73,18 @@ export class BattleReplay {
         u.mana = value;
       };
       let outcome: CombatOutcome | null = null;
+      let turnActor: string | undefined;
+      const helpedRound = new Map<CombatSide, number>();
       for (const event of this.combat.events.slice(0, cursor)) {
         switch (event.kind) {
+          case 'turn-started':
+            turnActor = event.actorId;
+            break;
           case 'house-activated': {
             if (
               !this.combat.input.rules.houseSynergies ||
+              (this.combat.input.bondFocus &&
+                this.combat.input.bondFocus[event.team] !== 'houses') ||
               !['player', 'rival'].includes(event.team)
             )
               throw Error();
@@ -112,6 +119,26 @@ export class BattleReplay {
             actor(event.actorId).bean = event.flavour;
             break;
           case 'healed':
+            if (
+              this.combat.engineVersion === 3 &&
+              (actor(event.actorId).hp <= 0 || event.hp !== actor(event.actorId).hp + event.amount)
+            )
+              throw Error();
+            if (event.source === 'order') {
+              const side = this.combat.input.player.some((u) => u.id === event.actorId)
+                ? 'player'
+                : 'rival';
+              if (
+                event.healerId !== turnActor ||
+                !event.healerId ||
+                actor(event.healerId).hp <= 0 ||
+                helpedRound.get(side) === event.round
+              )
+                throw Error();
+              helpedRound.set(side, event.round);
+            }
+            hp(event.actorId, event.hp);
+            break;
           case 'burn-tick':
             hp(event.actorId, event.hp);
             break;
@@ -123,6 +150,13 @@ export class BattleReplay {
               typeof event.missed !== 'boolean' ||
               !Number.isFinite(event.damage) ||
               event.damage < 0
+            )
+              throw Error();
+            if (
+              this.combat.engineVersion === 3 &&
+              (event.targetHp !== actor(event.targetId).hp - event.damage ||
+                (event.bondBoost !== undefined &&
+                  actor(event.targetId).hp > actor(event.targetId).maxHp / 2))
             )
               throw Error();
             mana(event.actorId, event.mana);

@@ -91,7 +91,7 @@ import {
 } from '../../../src/arcana/application/public-content';
 it('retains all thirty identities, exact base stats and identity weights; publishes honest independent finish odds', () => {
   const old = trialConfiguration('a84'),
-    next = trialConfiguration();
+    next = trialConfiguration('a85');
   expect(next.opening.catalog.wizards.map(({ traits, ...w }) => w)).toEqual(
     old.opening.catalog.wizards,
   );
@@ -109,7 +109,7 @@ it('retains all thirty identities, exact base stats and identity weights; publis
   ).toBeUndefined();
 });
 it('offers three distinct non-starter house members on a real available route before fighting, without removing the alternative', () => {
-  const c = trialConfiguration(),
+  const c = trialConfiguration('a85'),
     seen = new Set<string>();
   for (let seed = 0; seed < 128; seed++) {
     const graph = randomizeRoute(c.campaign.graph, new SeededRandom(seed));
@@ -142,7 +142,7 @@ it('offers three distinct non-starter house members on a real available route be
 });
 import currentFixture from '../../support/fixtures/a85-route-seed0.json';
 it('declares the updated Linux expedition route explicitly instead of rewriting the A84 baseline fixture', () => {
-  const c = trialConfiguration(),
+  const c = trialConfiguration('a85'),
     graph = randomizeRoute(c.campaign.graph, new SeededRandom(0));
   expect(currentFixture.graph).toEqual(graph);
   expect(currentFixture.nodes).toEqual(c.campaign.challengeContent!('discovery', graph));

@@ -1,11 +1,13 @@
 import { ArcanaError } from '../errors';
 import { validDomainId } from '../identifiers';
+import { validBondMode, type BondMode } from '../combat/bonds';
 export interface Loadout {
   readonly copyId: string;
   readonly wandId: string | null;
   readonly broomId: string | null;
 }
 export interface Team {
+  readonly bondFocus?: BondMode;
   readonly copyIds: readonly string[];
   readonly loadouts: readonly Loadout[];
 }
@@ -24,6 +26,7 @@ export function validateTeam(
 ): void {
   if (
     !team ||
+    (team.bondFocus !== undefined && !validBondMode(team.bondFocus)) ||
     !Array.isArray(team.copyIds) ||
     !Array.isArray(team.loadouts) ||
     team.copyIds.length > 5 ||
@@ -50,7 +53,10 @@ export function validateTeam(
   }
 }
 export function teamSnapshot(team: Team): Team {
+  if (team.bondFocus !== undefined && !validBondMode(team.bondFocus))
+    throw new ArcanaError('INVALID_FORMATION');
   return Object.freeze({
+    ...(team.bondFocus === undefined ? {} : { bondFocus: team.bondFocus }),
     copyIds: Object.freeze([...team.copyIds]),
     loadouts: Object.freeze(
       team.loadouts.map((l) =>
@@ -64,8 +70,13 @@ export function selectTeam(
   copyIds: readonly string[],
   owned: readonly string[],
   equipment: readonly EquipmentReference[],
+  bondFocus: BondMode | undefined = team.bondFocus,
 ): Team {
-  const selected = { copyIds, loadouts: team.loadouts };
+  const selected = {
+    copyIds,
+    loadouts: team.loadouts,
+    ...(bondFocus === undefined ? {} : { bondFocus }),
+  };
   validateTeam(selected, owned, equipment);
   return teamSnapshot(selected);
 }
@@ -93,7 +104,7 @@ export function equipItem(
   const index = loadouts.findIndex((l) => l.copyId === copyId);
   if (index < 0) loadouts.push({ copyId, wandId: null, broomId: null, [key]: equipmentId });
   else loadouts[index] = { ...loadouts[index], [key]: equipmentId };
-  const updated = { copyIds: team.copyIds, loadouts };
+  const updated = { ...team, loadouts };
   validateTeam(updated, owned, equipment);
   return teamSnapshot(updated);
 }

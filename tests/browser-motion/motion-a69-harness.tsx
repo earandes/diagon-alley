@@ -18,7 +18,7 @@ import '../../src/arcana/presentation/game-experience.css';
 
 const params = new URLSearchParams(location.search);
 setContentPack(params.get('pack') === 'arcana' ? 'arcana' : 'diagon-alley');
-const configuration = trialConfiguration();
+const configuration = trialConfiguration('a85');
 const catalog = configuration.opening.catalog;
 const language = params.get('lang') === 'en' ? 'en' : 'es';
 const makeUnits = (side: 'player' | 'rival', count: number): CombatUnitInput[] =>

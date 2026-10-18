@@ -1,12 +1,13 @@
 import type { Affinity, CombatUnitInput } from '../../domain/combat/engine';
 import data from '../../content/traits-v1.json';
+import extended from '../../content/traits-v2.json';
 import { traitsSnapshot, type House, type WizardTraits } from '../../domain/collection/traits';
 import type { WizardCatalog } from '../../domain/collection/wizards';
 import type { NodeGraph } from '../../domain/exploration/route';
 import type { NodePlan } from '../../domain/exploration/nodes';
 import { ArcanaError } from '../../domain/errors';
-export function currentTraits(id: string): WizardTraits | undefined {
-  const value = (data.characters as Record<string, WizardTraits>)[id];
+export function currentTraits(id: string, version: 1 | 2 = 1): WizardTraits | undefined {
+  const value = ((version === 2 ? extended : data).characters as Record<string, WizardTraits>)[id];
   return value && traitsSnapshot(value);
 }
 /** A non-starter house has three distinct candidates along the existing three Pacts.
@@ -40,10 +41,10 @@ export function housePacts(
         graph.nodes.find((n) => n.id === a.nodeId)!.row -
         graph.nodes.find((n) => n.id === b.nodeId)!.row,
     );
-  const decorate = (unit: CombatUnitInput): CombatUnitInput => ({
-    ...unit,
-    ...(currentTraits(unit.wizardId)?.house ? { house: currentTraits(unit.wizardId)!.house } : {}),
-  });
+  const decorate = (unit: CombatUnitInput): CombatUnitInput => {
+    const house = catalog.wizards.find((w) => w.id === unit.wizardId)?.traits?.house;
+    return { ...unit, ...(house ? { house } : {}) };
+  };
   return plans.map((plan) => {
     if (plan.kind === 'duel' || plan.kind === 'boss')
       return { ...plan, opponents: plan.opponents.map(decorate) };

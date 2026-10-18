@@ -43,7 +43,7 @@ import '../../src/arcana/presentation/styles.css';
 import '../../src/arcana/presentation/game-stage.css';
 import '../../src/arcana/presentation/game-experience.css';
 const query = new URLSearchParams(location.search),
-  c = trialConfiguration(),
+  c = trialConfiguration('a85'),
   content = projectPublicContent(c.opening, c.campaign);
 setContentPack(query.get('pack') === 'arcana' ? 'arcana' : 'diagon-alley');
 const language = query.get('lang') === 'en' ? 'en' : 'es';

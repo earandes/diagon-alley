@@ -1,9 +1,11 @@
 import { ArcanaError } from '../errors';
+import { bondProgress, BOND_GROUPS } from './bonds';
 import {
   combatInputSnapshot,
   unitSnapshot,
   validateCombatUnit,
   type Combat,
+  type BattleEvent,
   type CombatUnitResult,
 } from './engine';
 /** Validate persisted combat data without rerolling or depending on its storage adapter. */
@@ -12,7 +14,8 @@ export function combatSnapshot(record: Combat): Combat {
     const input = combatInputSnapshot(record.input);
     if (
       record.id !== input.id ||
-      record.engineVersion !== (input.rules.houseSynergies ? 2 : 1) ||
+      record.engineVersion !== (input.rules.bonds ? 3 : input.rules.houseSynergies ? 2 : 1) ||
+      (input.rules.bonds && !record.input.bondFocus) ||
       !['player', 'rival', 'draw'].includes(record.outcome) ||
       !Number.isSafeInteger(record.rounds) ||
       record.rounds < 1 ||
@@ -57,6 +60,7 @@ export function combatSnapshot(record: Combat): Combat {
       'combat-started',
       'synergy-activated',
       'house-activated',
+      'bond-activated',
       'bean-activated',
       'turn-started',
       'mana-exhausted',
@@ -66,7 +70,15 @@ export function combatSnapshot(record: Combat): Combat {
       'combat-finished',
     ];
     let priorRound = 0;
-    for (const [sequence, event] of record.events.entries()) {
+    const activated = new Set<string>(),
+      guarded = new Set<string>();
+    const groupFor = (id: string, group: (typeof BOND_GROUPS)[number]) => {
+      const side = input.player.some((u) => u.id === id) ? 'player' : 'rival';
+      return input.rules.bonds && input.bondFocus?.[side] === group
+        ? bondProgress(input[side], input.rules.bonds, group)
+        : null;
+    };
+    for (const [sequence, event] of (record.events as readonly BattleEvent[]).entries()) {
       if (
         !kinds.includes(event.kind) ||
         event.sequence !== sequence ||
@@ -78,6 +90,69 @@ export function combatSnapshot(record: Combat): Combat {
         Object.values(event).some((v) => typeof v === 'number' && (!Number.isFinite(v) || v < 0))
       )
         throw Error();
+      if (event.kind === 'bond-activated') {
+        if (
+          !input.rules.bonds ||
+          !['player', 'rival'].includes(event.team) ||
+          !BOND_GROUPS.includes(event.group) ||
+          input.bondFocus?.[event.team] !== event.group ||
+          event.round !== 0
+        )
+          throw Error();
+        const group = bondProgress(input[event.team], input.rules.bonds, event.group);
+        if (
+          !group.tier ||
+          event.tier !== group.tier ||
+          event.value !== group.value ||
+          event.members !== group.count ||
+          JSON.stringify(event.contributorIds) !== JSON.stringify(group.contributorIds) ||
+          activated.has(event.team)
+        )
+          throw Error();
+        activated.add(event.team);
+      }
+      if (event.kind === 'healed') {
+        if (!['alchemy', 'equipment', 'house', 'order'].includes(event.source)) throw Error();
+        if (event.source === 'order') {
+          const group = event.healerId ? groupFor(event.healerId, 'order') : null;
+          const side = input.player.some((u) => u.id === event.actorId) ? 'player' : 'rival';
+          if (
+            !group?.tier ||
+            !group.contributorIds.includes(event.healerId!) ||
+            event.healerId === event.actorId ||
+            !input[side].some((u) => u.id === event.healerId) ||
+            event.amount <= 0 ||
+            event.amount > group.value
+          )
+            throw Error();
+        } else if (event.healerId !== undefined) throw Error();
+      }
+      if (event.kind === 'spell-cast') {
+        if (event.guarded !== undefined) {
+          const group = groupFor(event.targetId, 'creatures');
+          if (
+            !group?.tier ||
+            event.missed ||
+            !Number.isFinite(event.guarded) ||
+            event.guarded <= 0 ||
+            event.guarded > group.value ||
+            (event.guarded < group.value && event.damage > 0) ||
+            guarded.has(event.targetId)
+          )
+            throw Error();
+          guarded.add(event.targetId);
+        }
+        if (event.bondBoost !== undefined) {
+          const group = groupFor(event.actorId, 'death');
+          if (
+            !group?.tier ||
+            !group.contributorIds.includes(event.actorId) ||
+            event.missed ||
+            event.bondBoost !== group.value
+          )
+            throw Error();
+        }
+      }
       priorRound = event.round;
     }
     const first = record.events[0],
@@ -105,7 +180,7 @@ export function combatSnapshot(record: Combat): Combat {
         record.events.map((e) =>
           Object.freeze({
             ...e,
-            ...(e.kind === 'house-activated'
+            ...(e.kind === 'house-activated' || e.kind === 'bond-activated'
               ? { contributorIds: Object.freeze([...e.contributorIds]) }
               : {}),
           }),

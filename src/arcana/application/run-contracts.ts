@@ -3,7 +3,9 @@ import type { EncounterResolution } from '../domain/exploration/encounters';
 import type { Combat } from '../domain/combat/engine';
 import type { Reward } from '../domain/economy/rewards';
 import type { Run } from '../domain/exploration/run';
+import type { BondMode } from '../domain/combat/bonds';
 export interface StartRunRequest {
+  readonly bondFocus?: BondMode;
   readonly zoneId: string;
   readonly campaignVersion: number;
   readonly copyIds: readonly string[];

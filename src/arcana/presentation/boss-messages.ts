@@ -1,6 +1,7 @@
 import type { Language } from '../domain/collection/wizards';
 const messages = {
   house: { es: 'Casa', en: 'House' },
+  order: { es: 'Ayuda de alianza', en: 'Ally help' },
   boss: { es: 'Jefe', en: 'Boss' },
   lastDuel: { es: 'El último duelo', en: 'The last duel' },
   faced: { es: 'Último duelo · {name}', en: 'Last duel · {name}' },

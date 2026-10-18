@@ -11,7 +11,7 @@ import { createInventory } from '../../src/arcana/domain/economy/inventory';
 import type { GameState } from '../../src/arcana/application/game';
 import '../../src/arcana/presentation/styles.css';
 import '../../src/arcana/presentation/game-stage.css';
-const config = trialConfiguration();
+const config = trialConfiguration('a85');
 const definitions = config.opening.catalog.wizards.slice(0, 5);
 const units = (side: string): CombatUnitInput[] =>
   (side === 'r' && new URLSearchParams(location.search).has('distinct-art')

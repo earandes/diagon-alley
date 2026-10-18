@@ -53,6 +53,7 @@ import type {
 } from './run-contracts';
 import { prepareOwnedUnit } from './prepare-team';
 import { EMPTY_TEAM, selectTeam } from '../domain/collection/team';
+import { validBondMode, effectiveBondFocus } from '../domain/combat/bonds';
 
 export interface CampaignConfiguration extends Campaign {
   readonly equipmentRulesVersion?: 2;
@@ -61,7 +62,10 @@ export interface CampaignConfiguration extends Campaign {
     graph: Campaign['graph'],
     initialWizardIds?: readonly string[],
   ) => readonly NodePlan[];
-  readonly tacticalContent?: { readonly version: 1 | 2 | 3; readonly nodes: readonly NodePlan[] };
+  readonly tacticalContent?: {
+    readonly version: 1 | 2 | 3 | 4;
+    readonly nodes: readonly NodePlan[];
+  };
   readonly routeVariation?: boolean;
   /** Optional public preparation metadata; authority still constructs every owned unit. */
   readonly ownedAffinities?: Readonly<Record<string, CombatUnitInput['affinity']>>;
@@ -86,6 +90,7 @@ const sameStart = (a: StartRunRequest, b: StartRunRequest) =>
   a.zoneId === b.zoneId &&
   a.campaignVersion === b.campaignVersion &&
   a.challenge === b.challenge &&
+  a.bondFocus === b.bondFocus &&
   a.copyIds.length === b.copyIds.length &&
   a.copyIds.every((id, i) => id === b.copyIds[i]);
 const sameAdvance = (a: AdvanceNodeRequest, b: AdvanceNodeRequest) =>
@@ -109,6 +114,7 @@ const validVersion = (n: number) => Number.isSafeInteger(n) && n > 0;
 function validateStart(request: StartRunRequest): void {
   if (
     !request ||
+    (request.bondFocus !== undefined && !validBondMode(request.bondFocus)) ||
     !validDomainId(request.zoneId) ||
     !validVersion(request.campaignVersion) ||
     (request.challenge !== undefined &&
@@ -178,6 +184,12 @@ export class StartRunUseCase {
       checkRevision(current, command.expectedRevision);
       const config = this.configuration();
       validateCampaign(config);
+      if (
+        !config.combatRules.bonds &&
+        command.request.bondFocus &&
+        !['auto', 'houses'].includes(command.request.bondFocus)
+      )
+        throw new ArcanaError('INVALID_FORMATION');
       if (command.request.challenge !== undefined && !config.challengeContent)
         throw new ArcanaError('STALE_CAMPAIGN');
       if (
@@ -206,6 +218,9 @@ export class StartRunUseCase {
         ? randomizeRoute(config.graph, this.routes!.random.fromSeed(routeGeneration.seed))
         : config.graph;
       const run = runSnapshot({
+        ...(config.combatRules.bonds
+          ? { bondFocus: command.request.bondFocus ?? current.team?.bondFocus ?? 'auto' }
+          : {}),
         ...(config.equipmentRulesVersion
           ? { equipmentRulesVersion: config.equipmentRulesVersion }
           : {}),
@@ -250,6 +265,7 @@ export class StartRunUseCase {
           command.request.copyIds,
           current.copies.map((c) => c.copyId),
           current.inventory.equipment ?? [],
+          command.request.bondFocus,
         ),
         exploration: {
           ...exploration,
@@ -303,7 +319,10 @@ export class AdvanceNodeUseCase {
         original.campaignSnapshot ??
         (() => {
           const live = this.configuration();
-          return { ...live, combatRules: { ...live.combatRules, houseSynergies: undefined } };
+          return {
+            ...live,
+            combatRules: { ...live.combatRules, houseSynergies: undefined, bonds: undefined },
+          };
         })();
       validateCampaign(config);
       if (
@@ -373,6 +392,14 @@ export class AdvanceNodeUseCase {
           player,
           rival: plan.opponents,
           rules: config.combatRules,
+          ...(config.combatRules.bonds
+            ? {
+                bondFocus: {
+                  player: effectiveBondFocus(player, config.combatRules.bonds, original.bondFocus),
+                  rival: effectiveBondFocus(plan.opponents, config.combatRules.bonds),
+                },
+              }
+            : {}),
         });
         inventory = inventorySnapshot({
           ...inventory,

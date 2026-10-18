@@ -1,0 +1,217 @@
+{
+  "status": "Configured a87 catalogue4/table4; runtime constructor uniform33 tickets is checked in creature-content-a87.test.ts; technical graphical acceptance pending",
+  "method": "Exact occupancy DP, uniform tickets. No Monte Carlo, human time, income or pity assumption.",
+  "baseline": {
+    "randomIdentities": 29,
+    "starterIdentities": 1,
+    "baseTotal": 30,
+    "identityProbability": 0.034482758620689655,
+    "enchantedIdentityProbability": 0.0003448275862068965,
+    "thresholds": [
+      {
+        "baseFraction": 0.25,
+        "distinctDrawnNeeded": 7,
+        "openings": {
+          "0.5": 8,
+          "0.9": 9,
+          "0.95": 10
+        },
+        "meanOpenings": 7.854375873723695,
+        "meanDuplicatesAtFirstThreshold": 0.8543758737236953
+      },
+      {
+        "baseFraction": 0.5,
+        "distinctDrawnNeeded": 14,
+        "openings": {
+          "0.5": 18,
+          "0.9": 22,
+          "0.95": 24
+        },
+        "meanOpenings": 18.659319326383848,
+        "meanDuplicatesAtFirstThreshold": 4.659319326383848
+      },
+      {
+        "baseFraction": 0.75,
+        "distinctDrawnNeeded": 22,
+        "openings": {
+          "0.5": 39,
+          "0.9": 48,
+          "0.95": 52
+        },
+        "meanOpenings": 39.69510298716753,
+        "meanDuplicatesAtFirstThreshold": 17.69510298716753
+      },
+      {
+        "baseFraction": 1,
+        "distinctDrawnNeeded": 29,
+        "openings": {
+          "0.5": 108,
+          "0.9": 161,
+          "0.95": 181
+        },
+        "meanOpenings": 114.88796013002467,
+        "meanDuplicatesAtFirstThreshold": 85.88796013002467
+      }
+    ],
+    "missingSpecificAt": [
+      {
+        "openings": 30,
+        "probability": 0.3489803736439956
+      },
+      {
+        "openings": 60,
+        "probability": 0.12178730118870276
+      },
+      {
+        "openings": 100,
+        "probability": 0.0299228767891776
+      },
+      {
+        "openings": 150,
+        "probability": 0.0051761281080668535
+      },
+      {
+        "openings": 200,
+        "probability": 0.0008953785553403035
+      }
+    ]
+  },
+  "proposal": {
+    "randomIdentities": 33,
+    "starterIdentities": 1,
+    "baseTotal": 34,
+    "identityProbability": 0.030303030303030304,
+    "enchantedIdentityProbability": 0.00030303030303030303,
+    "thresholds": [
+      {
+        "baseFraction": 0.25,
+        "distinctDrawnNeeded": 8,
+        "openings": {
+          "0.5": 9,
+          "0.9": 10,
+          "0.95": 11
+        },
+        "meanOpenings": 9.003721583539438,
+        "meanDuplicatesAtFirstThreshold": 1.0037215835394377
+      },
+      {
+        "baseFraction": 0.5,
+        "distinctDrawnNeeded": 16,
+        "openings": {
+          "0.5": 21,
+          "0.9": 25,
+          "0.95": 27
+        },
+        "meanOpenings": 21.42510820226014,
+        "meanDuplicatesAtFirstThreshold": 5.425108202260141
+      },
+      {
+        "baseFraction": 0.75,
+        "distinctDrawnNeeded": 25,
+        "openings": {
+          "0.5": 45,
+          "0.9": 55,
+          "0.95": 58
+        },
+        "meanOpenings": 45.24105573511946,
+        "meanDuplicatesAtFirstThreshold": 20.24105573511946
+      },
+      {
+        "baseFraction": 1,
+        "distinctDrawnNeeded": 33,
+        "openings": {
+          "0.5": 128,
+          "0.9": 188,
+          "0.95": 211
+        },
+        "meanOpenings": 134.93034144940515,
+        "meanDuplicatesAtFirstThreshold": 101.93034144940515
+      }
+    ],
+    "missingSpecificAt": [
+      {
+        "openings": 30,
+        "probability": 0.39726577652605227
+      },
+      {
+        "openings": 60,
+        "probability": 0.1578200971988473
+      },
+      {
+        "openings": 100,
+        "probability": 0.04608969606392412
+      },
+      {
+        "openings": 150,
+        "probability": 0.009894771427294596
+      },
+      {
+        "openings": 200,
+        "probability": 0.0021242600832649026
+      }
+    ]
+  },
+  "affiliationAcquisition": [
+    {
+      "group": "order",
+      "available": 14,
+      "threeDistinct": {
+        "0.5": 7,
+        "0.9": 12,
+        "0.95": 14
+      },
+      "meanOpeningsToThree": 7.645604395604412
+    },
+    {
+      "group": "death",
+      "available": 4,
+      "threeDistinct": {
+        "0.5": 32,
+        "0.9": 63,
+        "0.95": 75
+      },
+      "meanOpeningsToThree": 35.74999999999999
+    }
+  ],
+  "newCreatures": [
+    {
+      "distinctNeeded": 3,
+      "openings": {
+        "0.5": 32,
+        "0.9": 63,
+        "0.95": 75
+      },
+      "meanOpenings": 35.74999999999999
+    },
+    {
+      "distinctNeeded": 4,
+      "openings": {
+        "0.5": 61,
+        "0.9": 119,
+        "0.95": 142
+      },
+      "meanOpenings": 68.74999999999999
+    }
+  ],
+  "alreadyCompletedOldCollection": {
+    "missing": 4,
+    "meanOpenings": 68.74999999999999,
+    "openings": {
+      "0.5": 61,
+      "0.9": 119,
+      "0.95": 142
+    }
+  },
+  "firstEnchantedUnchanged": {
+    "0.5": 69,
+    "0.9": 230,
+    "0.95": 299
+  },
+  "limits": [
+    "Assumes repeated independent uniform draws from the proposed fixed table",
+    "Duplicates are not converted",
+    "No route victory or monetary gain is inferred",
+    "No calendar or human duration inferred",
+    "No grant or inventory mutation"
+  ]
+}

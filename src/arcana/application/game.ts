@@ -16,6 +16,7 @@ import {
   type PurchaseRequest,
 } from '../domain/economy/inventory';
 import { ArcanaError } from '../domain/errors';
+import { validBondMode } from '../domain/combat/bonds';
 import { validDomainId } from '../domain/identifiers';
 import { explorationSnapshot, runSnapshot, type ExplorationState } from '../domain/exploration/run';
 import { validateReward } from '../domain/economy/rewards';
@@ -262,6 +263,9 @@ export function validateGame(value: unknown): asserts value is GameState {
         if (receipt.kind === 'set-team') {
           if (
             !Array.isArray(receipt.request.copyIds) ||
+            (receipt.request.bondFocus !== undefined &&
+              (!validBondMode(receipt.request.bondFocus) ||
+                receipt.request.bondFocus !== receipt.team.bondFocus)) ||
             receipt.request.copyIds.length !== receipt.team.copyIds.length ||
             receipt.request.copyIds.some((id, i) => id !== receipt.team.copyIds[i])
           )
@@ -395,6 +399,10 @@ export function validateGame(value: unknown): asserts value is GameState {
             receipt.run.visited.length ||
             receipt.run.status !== 'active' ||
             receipt.request.zoneId !== receipt.run.zoneId ||
+            (receipt.request.bondFocus !== undefined &&
+              (!validBondMode(receipt.request.bondFocus) ||
+                (receipt.run.campaignSnapshot?.combatRules.bonds &&
+                  receipt.request.bondFocus !== receipt.run.bondFocus))) ||
             (receipt.request.challenge !== undefined &&
               receipt.request.challenge !== receipt.run.challenge) ||
             !Array.isArray(receipt.request.copyIds) ||
@@ -599,7 +607,12 @@ function snapshotReceipt(receipt: OperationReceipt): OperationReceipt {
   if (receipt.kind === 'set-team')
     return Object.freeze({
       ...receipt,
-      request: Object.freeze({ copyIds: Object.freeze([...receipt.request.copyIds]) }),
+      request: Object.freeze({
+        copyIds: Object.freeze([...receipt.request.copyIds]),
+        ...(receipt.request.bondFocus === undefined
+          ? {}
+          : { bondFocus: receipt.request.bondFocus }),
+      }),
       team: teamSnapshot(receipt.team),
       run: receipt.run === null ? null : runSnapshot(receipt.run),
     });

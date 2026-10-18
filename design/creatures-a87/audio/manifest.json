@@ -1,0 +1,102 @@
+{
+  "version": 1,
+  "author": "Original A87 offline synthesis for this project",
+  "editableSource": "compose.py",
+  "provenance": "Deterministic additive/noise synthesis; no film recording, third-party sample or score quotation",
+  "rights": "Project-original cues; no franchise audio license claimed",
+  "status": "Installed under src/arcana/presentation/audio/assets; runtime opt-in/phase browser checks pending",
+  "assets": [
+    {
+      "id": "cast-order",
+      "file": "cast-order.wav",
+      "durationSeconds": 0.28,
+      "sampleRate": 24000,
+      "channels": 1,
+      "format": "PCM16 WAV",
+      "bytes": 13484,
+      "sha256": "ad6ed1348c0b746a7a9f762bb2c9ddab7afd5c9689532503913850fda012971d",
+      "peak": 0.291046142578125,
+      "rms": 0.08572951627217942,
+      "dc": -8.628481910342262e-08
+    },
+    {
+      "id": "cast-death",
+      "file": "cast-death.wav",
+      "durationSeconds": 0.24,
+      "sampleRate": 24000,
+      "channels": 1,
+      "format": "PCM16 WAV",
+      "bytes": 11564,
+      "sha256": "227855ba5a00088ac08a58f2bb0f0a44d3682aa312ca6c47b98fb932ecf64c7f",
+      "peak": 0.272003173828125,
+      "rms": 0.07530129401730698,
+      "dc": -0.0009385161929660374
+    },
+    {
+      "id": "cast-creatures",
+      "file": "cast-creatures.wav",
+      "durationSeconds": 0.22,
+      "sampleRate": 24000,
+      "channels": 1,
+      "format": "PCM16 WAV",
+      "bytes": 10604,
+      "sha256": "6f4e8cff9f77c3128d0ad6379fda3df70417a00eef5e55e91e6d570f17e7cb7d",
+      "peak": 0.3271484375,
+      "rms": 0.07204872422333955,
+      "dc": -0.0009376583677349669
+    },
+    {
+      "id": "cast-phoenix",
+      "file": "cast-phoenix.wav",
+      "durationSeconds": 0.32,
+      "sampleRate": 24000,
+      "channels": 1,
+      "format": "PCM16 WAV",
+      "bytes": 15404,
+      "sha256": "cc58e1934634c162ef3ff3f2762680972658667b8a88e89e770f3fa9c78e7ce5",
+      "peak": 0.281829833984375,
+      "rms": 0.08934385461102785,
+      "dc": 0.000148312250773112
+    },
+    {
+      "id": "cast-hippogriff",
+      "file": "cast-hippogriff.wav",
+      "durationSeconds": 0.26,
+      "sampleRate": 24000,
+      "channels": 1,
+      "format": "PCM16 WAV",
+      "bytes": 12524,
+      "sha256": "3476b8958821bff4f9e64ece7a83c4dc495ab593771159f0fc259642ba98288d",
+      "peak": 0.288421630859375,
+      "rms": 0.06087096586858142,
+      "dc": 0.0016316095987955728
+    },
+    {
+      "id": "cast-unicorn",
+      "file": "cast-unicorn.wav",
+      "durationSeconds": 0.34,
+      "sampleRate": 24000,
+      "channels": 1,
+      "format": "PCM16 WAV",
+      "bytes": 16364,
+      "sha256": "babe1844025f01399b1abb60aadb5228687bfe5aed42d5ec5d1103d226a98663",
+      "peak": 0.301422119140625,
+      "rms": 0.09030916153873277,
+      "dc": 1.869949640012255e-08
+    },
+    {
+      "id": "cast-dragon",
+      "file": "cast-dragon.wav",
+      "durationSeconds": 0.3,
+      "sampleRate": 24000,
+      "channels": 1,
+      "format": "PCM16 WAV",
+      "bytes": 14444,
+      "sha256": "46ae8ce816c6abcb030979fabb54e10399a622e25225856756faa8c0bd5101ef",
+      "peak": 0.3304443359375,
+      "rms": 0.07587575900152664,
+      "dc": 7.574293348524305e-05
+    }
+  ],
+  "mixValidation": "verify_mix.py / mix-validation.json"
+}

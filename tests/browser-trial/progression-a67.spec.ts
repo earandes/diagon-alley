@@ -411,3 +411,119 @@ for (const language of ['es', 'en'] as const) {
     expect(receipt?.kind === 'advance-node' && receipt.request.encounterAction).toBe('pass');
   });
 }
+
+for (const [language, pack] of [
+  ['es', 'diagon-alley'],
+  ['en', 'arcana'],
+] as const) {
+  test(`A87 connected creature company ${language} ${pack}: fixed choices, temporary ownership, confirmed guard and recovery`, async ({
+    page,
+  }) => {
+    await enter(page, language, pack);
+    let state = await readGame(page);
+    const started = state.exploration!.run!;
+    expect(started.tacticalVersion).toBe(4);
+    expect(started.bondFocus).toBe('auto');
+    const path: string[] = [];
+    const walk = (id: string, prefix: string[], count: number): boolean => {
+      const node = started.graph.nodes.find((n) => n.id === id)!;
+      if (node.kind === 'duel' || node.kind === 'boss') return false;
+      const next = [...prefix, id],
+        pacts = count + Number(node.kind === 'pact');
+      if (pacts === 3) {
+        path.push(...next);
+        return true;
+      }
+      return node.next.some((child) => walk(child, next, pacts));
+    };
+    expect(started.graph.nodes.filter((n) => n.row === 0).some((n) => walk(n.id, [], 0))).toBe(
+      true,
+    );
+    let recruited = 0;
+    for (const id of path) {
+      await page.locator(`[data-node="${id}"]`).click();
+      const plan = started.campaignSnapshot!.nodes.find((n) => n.nodeId === id)!;
+      if (plan.kind !== 'pact') {
+        await confirmEvent(page, language);
+        continue;
+      }
+      const before = await readGame(page),
+        offer = plan.recruits![1];
+      expect(started.campaignSnapshot!.combatRules.bonds!.members.creatures).toContain(
+        offer.wizardId,
+      );
+      await page.locator('.node-cancel-action').click();
+      expect(await readGame(page)).toEqual(before);
+      await page.locator(`[data-node="${id}"]`).click();
+      await expect(page.locator('[data-pact-candidate]')).toHaveCount(2);
+      await page.locator(`[data-pact-candidate="${offer.id}"]`).click();
+      await page.locator('.node-confirm-action').click();
+      await expect(page.locator('.node-event-dialog[open]')).toHaveCount(0);
+      state = await readGame(page);
+      recruited++;
+      expect(state.inventory).toEqual(before.inventory);
+      expect(state.copies).toEqual(before.copies);
+      expect(state.exploration!.run!.members.filter((m) => m.source === 'temporary')).toHaveLength(
+        recruited,
+      );
+      await page.reload();
+      await expect(page.locator('.branch-map')).toBeVisible();
+      expect(await readGame(page)).toEqual(state);
+    }
+    expect(state.copies).toHaveLength(1);
+    expect(
+      new Set(
+        state
+          .exploration!.run!.members.filter((m) => m.source === 'temporary')
+          .map((m) => m.unit.wizardId),
+      ).size,
+    ).toBe(3);
+    await expect(page.locator('.team-compact [data-bond-progress=creatures]')).toHaveAttribute(
+      'data-active',
+      'true',
+    );
+    const company = await readGame(page);
+    for (const mode of ['houses', 'auto']) {
+      await page.locator('.team-prepare').click();
+      await expect(page.locator('.preparation-dialog[open]')).toBeVisible();
+      await page.locator('.bond-selector>summary').click();
+      await page.locator(`[data-bond-mode="${mode}"]`).click();
+      expect((await readGame(page)).inventory).toEqual(company.inventory);
+      await page.locator('[data-preparation-confirm]').click();
+      await expect.poll(async () => (await readGame(page)).exploration!.run!.bondFocus).toBe(mode);
+      if (await page.locator('.preparation-dialog[open]').count())
+        await page.keyboard.press('Escape');
+      await expect(page.locator('.branch-map')).toBeVisible();
+      const saved = await readGame(page);
+      expect(saved.inventory).toEqual(company.inventory);
+      expect(saved.copies).toEqual(company.copies);
+      expect(saved.exploration!.run!.members).toEqual(company.exploration!.run!.members);
+      expect(saved.exploration!.run!.visited).toEqual(company.exploration!.run!.visited);
+    }
+    await expect(page.locator('.team-compact [data-bond-progress=creatures]')).toHaveAttribute(
+      'data-active',
+      'true',
+    );
+    const duel = await reach(page, 'duel', language);
+    await page.locator(`[data-node="${duel}"]`).click();
+    await page.locator('.node-confirm-action').click();
+    await expect(page.locator('.battle-panel')).toBeVisible();
+    const committed = await readGame(page),
+      receipt = committed.receipts.at(-1)!;
+    if (receipt.kind !== 'advance-node' || !receipt.battle)
+      throw Error('Missing committed creature battle');
+    expect(receipt.battle.engineVersion).toBe(3);
+    expect(receipt.battle.input.bondFocus!.player).toBe('creatures');
+    expect(receipt.battle.events).toContainEqual(
+      expect.objectContaining({ kind: 'bond-activated', group: 'creatures', members: 3, tier: 1 }),
+    );
+    expect(receipt.battle.events.some((e) => e.kind === 'spell-cast' && (e.guarded ?? 0) > 0)).toBe(
+      true,
+    );
+    await skipBattle(page);
+    await leaveBattle(page);
+    expect(await readGame(page)).toEqual(committed);
+    await page.reload();
+    expect(await readGame(page)).toEqual(committed);
+  });
+}

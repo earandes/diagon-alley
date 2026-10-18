@@ -24,7 +24,7 @@ afterEach(() => {
   vi.unstubAllGlobals();
   setContentPack(DEFAULT_CONTENT_PACK_ID);
 });
-it('defaults to Diagon Alley and validates all thirty IDs, translations and presentation fields', () => {
+it('defaults to Diagon Alley and validates all thirty-four IDs, translations and presentation fields', () => {
   expect(DEFAULT_CONTENT_PACK_ID).toBe('diagon-alley');
   for (const id of ['arcana', 'diagon-alley'] as const) {
     const pack = getContentPack(id);
@@ -35,7 +35,7 @@ it('defaults to Diagon Alley and validates all thirty IDs, translations and pres
         reference,
       ),
     ).not.toThrow();
-    expect(Object.keys(pack.characters)).toHaveLength(30);
+    expect(Object.keys(pack.characters)).toHaveLength(34);
   }
   expect(getContentPack('diagon-alley').characters.apprentice.name.en).toBe('Harry Potter');
 });

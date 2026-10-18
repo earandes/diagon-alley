@@ -24,7 +24,7 @@ import '../../src/arcana/presentation/game-stage.css';
 import '../../src/arcana/presentation/game-experience.css';
 
 const params = new URLSearchParams(location.search);
-const config = trialConfiguration();
+const config = trialConfiguration('a85');
 const content = projectPublicContent(config.opening, config.campaign);
 const copies: GameState['copies'] = Array.from({ length: 30 }, (_, index) => ({
   copyId: `a75-copy-${index}`,

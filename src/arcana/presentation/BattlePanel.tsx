@@ -1,3 +1,6 @@
+import { bondText } from './bond-messages';
+import { BondEmblem, bondEffect, bondName } from './BondEmblem';
+import { creatureProfile } from './motion/cast-profile';
 import type { ReactNode } from 'react';
 import { arenaFigureBudget } from './arena-layout';
 import { usePlaybackSpeed } from './motion/PlaybackPreferences';
@@ -313,6 +316,8 @@ function BattlePlayback({
     switch (event.kind) {
       case 'combat-started':
         return t('battleStarts');
+      case 'bond-activated':
+        return `${sideName(event.team)} · ${bondName(event.group, language)} · ${bondEffect(event.group, event.value, language)}`;
       case 'house-activated':
         return `${sideName(event.team)} · ${houseName(event.house, language)} · ${houseEffect(event, language)}`;
       case 'synergy-activated':
@@ -336,6 +341,12 @@ function BattlePlayback({
       case 'mana-exhausted':
         return t('noManaEvent', { name: name(event.actorId) });
       case 'healed':
+        if (event.source === 'order')
+          return bondText(language, 'helpEvent', {
+            healer: name(event.healerId!),
+            recipient: name(event.actorId),
+            value: format.format(event.amount),
+          });
         if (event.source === 'house')
           return `${name(event.actorId)} · ${language === 'es' ? 'Casa' : 'House'} · +${format.format(event.amount)} ${t('hP')}`;
         if (event.source === 'equipment')
@@ -345,12 +356,24 @@ function BattlePlayback({
         return t('healEvent', { name: name(event.actorId), value: format.format(event.amount) });
       case 'burn-tick':
         return t('burnEvent', { name: name(event.actorId), value: format.format(event.damage) });
-      case 'spell-cast':
-        return t(event.missed ? 'missEvent' : 'spellEvent', {
+      case 'spell-cast': {
+        const message = t(event.missed ? 'missEvent' : 'spellEvent', {
           name: name(event.actorId),
           target: name(event.targetId),
           value: format.format(event.damage),
         });
+        return [
+          message,
+          event.guarded
+            ? bondText(language, 'blockedEvent', { value: format.format(event.guarded) })
+            : '',
+          event.bondBoost
+            ? bondText(language, 'finisherEvent', { value: format.format(event.bondBoost) })
+            : '',
+        ]
+          .filter(Boolean)
+          .join(' ');
+      }
       case 'combat-finished':
         return t(
           event.outcome === 'player' ? 'victory' : event.outcome === 'rival' ? 'defeat' : 'draw',
@@ -358,7 +381,20 @@ function BattlePlayback({
     }
   };
   const next = combat.events[cursor] ?? null;
-  const houseEvents = combat.events.filter((e) => e.kind === 'house-activated');
+  const houseEvents = useMemo(
+    () => combat.events.filter((e) => e.kind === 'house-activated'),
+    [combat.events],
+  );
+  const bondEvents = useMemo(
+    () => combat.events.filter((e) => e.kind === 'bond-activated'),
+    [combat.events],
+  );
+  const bondCasts = useMemo(
+    () =>
+      Object.fromEntries(bondEvents.flatMap((e) => e.contributorIds.map((id) => [id, e.group]))),
+    [bondEvents],
+  );
+  const selectedBond = bondEvents.find((e) => inspection === `bond:${e.team}:${e.group}`);
   const selectedHouse = houseEvents.find((e) => inspection === `house:${e.team}:${e.house}`);
   const selectedUnit = [...frame.player, ...frame.rival].find((unit) => unit.id === inspection);
   const outcomeLabel = frame.outcome
@@ -523,6 +559,7 @@ function BattlePlayback({
             kind: 'arena',
             positions,
             appearances,
+            bondCasts,
             frame,
             next,
             clock: playback.clock,
@@ -541,7 +578,28 @@ function BattlePlayback({
             <div key={side} className="arena-team" role="region" aria-label={sideName(side)}>
               <div className="arena-team-heading">
                 <h3>{sideName(side)}</h3>
-                <div className="arena-houses" aria-label={arenaText(language, 'houses')}>
+                <div
+                  className="arena-houses"
+                  aria-label={
+                    bondEvents.length
+                      ? bondText(language, 'confirmed')
+                      : arenaText(language, 'houses')
+                  }
+                >
+                  {bondEvents
+                    .filter((e) => e.team === side)
+                    .map((e) => (
+                      <button
+                        key={e.group}
+                        className="arena-house"
+                        data-bond-passive={e.group}
+                        aria-label={`${bondText(language, 'inspect')}: ${bondName(e.group, language)} · ${e.members} · ${e.tier === 1 ? 'I' : 'II'}`}
+                        onClick={(event) => inspect(`bond:${side}:${e.group}`, event.currentTarget)}
+                      >
+                        <BondEmblem group={e.group} language={language} />
+                        <small>{e.tier === 1 ? 'I' : 'II'}</small>
+                      </button>
+                    ))}
                   {houseEvents
                     .filter((e) => e.team === side)
                     .map((e) => (
@@ -567,7 +625,14 @@ function BattlePlayback({
                 }
               >
                 {frame[side].map((unit) => {
-                  const acting = next && 'actorId' in next && next.actorId === unit.id;
+                  const acting =
+                    next &&
+                    (next.kind === 'healed' && next.source === 'order'
+                      ? next.healerId === unit.id
+                      : 'actorId' in next && next.actorId === unit.id);
+                  const aid =
+                    next?.kind === 'healed' && next.source === 'order' && next.actorId === unit.id;
+                  const activeBond = bondEvents.find((e) => e.contributorIds.includes(unit.id));
                   const targeted = next?.kind === 'spell-cast' && next.targetId === unit.id;
                   const delta = deltaFor(unit.id);
                   return (
@@ -581,7 +646,10 @@ function BattlePlayback({
                         undefined
                       }
                       data-acting={acting || undefined}
-                      data-target={targeted || undefined}
+                      data-target={targeted || aid || undefined}
+                      data-aid={aid || undefined}
+                      data-creature={creatureProfile(unit.wizardId)?.species}
+                      data-side={side}
                       data-fallen={unit.hp === 0 || undefined}
                       data-in-danger={(unit.hp > 0 && unit.hp * 4 <= unit.maxHp) || undefined}
                       aria-label={name(unit.id)}
@@ -592,9 +660,11 @@ function BattlePlayback({
                         onClick={(event) => inspect(unit.id, event.currentTarget)}
                       >
                         <span className="arena-figure-space">
-                          {(acting || targeted) && (
+                          {(acting || targeted || aid) && (
                             <span className="arena-action-mark">
-                              {arenaText(language, acting ? 'actor' : 'target')}
+                              {aid
+                                ? bondText(language, 'receivingHelp')
+                                : arenaText(language, acting ? 'actor' : 'target')}
                             </span>
                           )}
 
@@ -627,7 +697,13 @@ function BattlePlayback({
                           )}
                         </span>
                         <strong>
-                          {unit.house && <HouseInsignia house={unit.house} />}
+                          {activeBond ? (
+                            <BondEmblem group={activeBond.group} language={language} />
+                          ) : creatureProfile(unit.wizardId) ? (
+                            <BondEmblem group="creatures" language={language} />
+                          ) : (
+                            unit.house && <HouseInsignia house={unit.house} />
+                          )}
                           {baseName(unit.id)}
                         </strong>
                         <span className="arena-health">
@@ -703,9 +779,11 @@ function BattlePlayback({
           aria-label={
             inspection === 'record'
               ? t('battleRecord')
-              : selectedHouse
-                ? houseName(selectedHouse.house, language)
-                : name(inspection)
+              : selectedBond
+                ? bondName(selectedBond.group, language)
+                : selectedHouse
+                  ? houseName(selectedHouse.house, language)
+                  : name(inspection)
           }
           onCancel={(event) => {
             event.stopPropagation();
@@ -729,7 +807,22 @@ function BattlePlayback({
           >
             ×
           </button>
-          {selectedHouse ? (
+          {selectedBond ? (
+            <>
+              <BondEmblem group={selectedBond.group} language={language} />
+              <h2>{bondName(selectedBond.group, language)}</h2>
+              <p>
+                {sideName(selectedBond.team)} · {selectedBond.members} ·{' '}
+                {selectedBond.tier === 1 ? 'I' : 'II'}
+              </p>
+              <p>{bondEffect(selectedBond.group, selectedBond.value, language)}</p>
+              <ol>
+                {selectedBond.contributorIds.map((id) => (
+                  <li key={id}>{name(id)}</li>
+                ))}
+              </ol>
+            </>
+          ) : selectedHouse ? (
             <>
               <HouseInsignia house={selectedHouse.house} />
               <h2>{houseName(selectedHouse.house, language)}</h2>
@@ -768,6 +861,18 @@ function BattlePlayback({
                     {houseEffect(e, language)}
                   </p>
                 ))}
+              {bondEvents
+                .filter(
+                  (e) =>
+                    e.contributorIds.includes(selectedUnit.id) ||
+                    (e.group === 'creatures' &&
+                      combat.input[e.team].some((u) => u.id === selectedUnit.id)),
+                )
+                .map((e) => (
+                  <p key={`bond-${e.sequence}`} data-bond-passive={e.group}>
+                    {bondEffect(e.group, e.value, language)}
+                  </p>
+                ))}
               <p>{name(selectedUnit.id)}</p>
               <p>
                 {t('unitAffinity', { affinity: t(affinities[selectedUnit.affinity]) })} ·{' '}
@@ -777,6 +882,9 @@ function BattlePlayback({
                 {t('hP')} {format.format(selectedUnit.hp)} / {format.format(selectedUnit.maxHp)} ·{' '}
                 {t('mP')} {format.format(selectedUnit.mana)} / {format.format(selectedUnit.maxMana)}
               </p>
+              {creatureProfile(selectedUnit.wizardId) && (
+                <small>{bondText(language, 'gear')}</small>
+              )}
               <p>
                 {t('wandBonus', {
                   value: format.format(selectedUnit.wandPowerBonus),

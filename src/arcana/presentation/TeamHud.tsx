@@ -1,3 +1,4 @@
+import { BondBand } from './BondBand';
 import { createPortal } from 'react-dom';
 import { useEffect, useId, useLayoutEffect, useRef, useState } from 'react';
 import { themedName, wizardName } from './content-packs/active';
@@ -9,7 +10,7 @@ import { equipmentName } from './equipment-label';
 import { text } from './translations';
 import { prepText } from './prep-messages';
 import { Artwork } from './Artwork';
-import { HouseBand, TraitBadge } from './HouseInsignia';
+import { TraitBadge } from './HouseInsignia';
 import { effectivePreparationRules } from './contextual-preparation';
 
 export function TeamHud({
@@ -349,8 +350,9 @@ export function TeamHud({
         </button>
       )}
       {run?.status === 'active' && content && (
-        <HouseBand
+        <BondBand
           units={run.members.map((m) => ({ ...m.unit, source: m.source }))}
+          mode={run.bondFocus}
           rules={effectivePreparationRules(run, content.combatRules)}
           language={language}
         />
