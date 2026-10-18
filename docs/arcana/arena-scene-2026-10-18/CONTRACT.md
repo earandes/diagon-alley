@@ -1,6 +1,6 @@
 # A86 · Arena como escena de duelo
 
-18 octubre2026. Baseline46a43df; A85 continúa en PR9, CI39159355139 pendiente. Nueva instrucción de Enric y referencia67683.jpg: implementar simplificación de arena e integrar casas. No merge/despliegue. La referencia no cambia participantes, estadísticas o poderes.
+18 octubre2026. Baseline46a43df; A85 continúa en PR9, CI39159355139 pendiente. Nueva instrucción de Enric y referencia67683.jpg: implementar simplificación de arena e integrar casas. En ese momento, sin merge/despliegue. Autorización posterior de Enric: integrar PR9 en main una vez validada, antes de criaturas/afiliaciones. Sin despliegue. La referencia no cambia participantes, estadísticas o poderes.
 
 ## Estado y elección
 Comprobado en código: cabecera global, monedero, dos filas de controles, pie permanente de evento/guardado y ordinales de posición consumen espacio. La escena ya tiene reloj compartido, actor/objetivo, daño, fallback e inspectores; se conservan. Casas A85 llegan al inspector pero falta lectura compacta por bando.

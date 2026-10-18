@@ -1,4 +1,10 @@
-import { pauseBattle, resumeBattle, skipBattle, setDoubleBattleSpeed } from '../browser-trial/battle-controls';
+import {
+  closeBattleOptions,
+  pauseBattle,
+  resumeBattle,
+  skipBattle,
+  setDoubleBattleSpeed,
+} from '../browser-trial/battle-controls';
 import { expect, test, type Page } from '@playwright/test';
 import { mkdir, writeFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
@@ -447,7 +453,7 @@ async function freezeSpellPhase(page: Page, desired: 'anticipation' | 'impact') 
           events[Number(panel.dataset.replayCursor)]?.kind === 'spell-cast' &&
           panel.dataset.replayPhase === phase
         ) {
-          document.querySelector<HTMLButtonElement>('.replay-controls button:first-child')!.click();
+          document.querySelector<HTMLButtonElement>('.arena-pause')!.click();
           resolve();
         } else if (performance.now() >= until) reject(Error('No requested spell phase observed'));
         else requestAnimationFrame(observe);
@@ -455,6 +461,8 @@ async function freezeSpellPhase(page: Page, desired: 'anticipation' | 'impact') 
       observe();
     });
   }, desired);
+  await expect(page.locator('#arena-options')).toBeVisible();
+  await closeBattleOptions(page);
   await expect(page.locator('.battle-panel')).toHaveAttribute('data-replay-phase', desired);
 }
 

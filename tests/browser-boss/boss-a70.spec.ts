@@ -1,4 +1,12 @@
-import { leaveBattle, inspectBattleRecord, pauseBattle, resumeBattle, skipBattle, setDoubleBattleSpeed } from '../browser-trial/battle-controls';
+import {
+  closeBattleOptions,
+  leaveBattle,
+  inspectBattleRecord,
+  pauseBattle,
+  resumeBattle,
+  skipBattle,
+  setDoubleBattleSpeed,
+} from '../browser-trial/battle-controls';
 import { test, expect, type Page } from '@playwright/test';
 import { mkdir, writeFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
@@ -151,9 +159,7 @@ async function freezeBossCast(page: Page) {
             event?.kind === 'spell-cast' &&
             event.actorId === window.__a70Fixture.leader
           ) {
-            document
-              .querySelector<HTMLButtonElement>('.replay-controls button:first-child')!
-              .click();
+            document.querySelector<HTMLButtonElement>('.arena-pause')!.click();
             done();
           } else if (performance.now() >= until)
             reject(Error('No real leader spell phase observed'));
@@ -162,6 +168,8 @@ async function freezeBossCast(page: Page) {
         observe();
       }),
   );
+  await expect(page.locator('#arena-options')).toBeVisible();
+  await closeBattleOptions(page);
 }
 
 for (const language of ['es', 'en'] as const)

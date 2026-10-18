@@ -1,4 +1,9 @@
-import { leaveBattle, pauseBattle, skipBattle } from '../browser-trial/battle-controls';
+import {
+  closeBattleOptions,
+  leaveBattle,
+  pauseBattle,
+  skipBattle,
+} from '../browser-trial/battle-controls';
 import { test, expect, type Page } from '@playwright/test';
 import { mkdir, writeFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
@@ -79,9 +84,7 @@ async function castAndPause(page: Page) {
             // the arm is still collected. Both authored gestures exceed 8°.
             Math.abs(Number(host.dataset.bossActorArmAngle)) >= 0.14
           ) {
-            document
-              .querySelector<HTMLButtonElement>('.replay-controls button:first-child')!
-              .click();
+            document.querySelector<HTMLButtonElement>('.arena-pause')!.click();
             done();
           } else if (performance.now() >= until)
             reject(Error('No actual articulated boss cast observed'));
@@ -90,6 +93,8 @@ async function castAndPause(page: Page) {
         observe();
       }),
   );
+  await expect(page.locator('#arena-options')).toBeVisible();
+  await closeBattleOptions(page);
 }
 async function actorFrame(page: Page) {
   await page.evaluate(
