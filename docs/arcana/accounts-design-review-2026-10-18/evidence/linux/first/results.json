@@ -1,0 +1,749 @@
+{
+  "config": {
+    "argv": [
+      "/opt/hostedtoolcache/node/24.21.0/x64/bin/node",
+      "/home/runner/work/diagon-alley/diagon-alley/node_modules/.bin/playwright",
+      "test",
+      "--config",
+      "playwright.accounts-review-a77.config.ts"
+    ],
+    "configFile": "/home/runner/work/diagon-alley/diagon-alley/playwright.accounts-review-a77.config.ts",
+    "rootDir": "/home/runner/work/diagon-alley/diagon-alley/tests/browser-accounts",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": "/home/runner/work/diagon-alley/diagon-alley/tools/verification/playwright-suite-lock.ts",
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 1,
+    "metadata": {
+      "ci": {
+        "commitHref": "https://github.com/earandes/diagon-alley/commit/44e915752d4fee8f2aa29623a83b7c7bf97aae46",
+        "commitHash": "44e915752d4fee8f2aa29623a83b7c7bf97aae46",
+        "prHref": "https://github.com/earandes/diagon-alley/pull/7",
+        "prTitle": "A76: cuentas recuperables y vinculación segura de invitado",
+        "prBaseHash": "ff23f580d9d3989abc9918d7b5bc8328d9e83b62",
+        "buildHref": "https://github.com/earandes/diagon-alley/actions/runs/39081730688"
+      },
+      "gitCommit": {
+        "shortHash": "44e9157",
+        "hash": "44e915752d4fee8f2aa29623a83b7c7bf97aae46",
+        "subject": "Merge 67197eeb6921db238becb286cfae677d26632b43 into ff23f580d9d3989abc9918d7b5bc8328d9e83b62",
+        "body": "Merge 67197eeb6921db238becb286cfae677d26632b43 into ff23f580d9d3989abc9918d7b5bc8328d9e83b62\n",
+        "author": {
+          "name": "Enric Arandes",
+          "email": "enric.arandes@code.seat",
+          "time": 1792282181000
+        },
+        "committer": {
+          "name": "GitHub",
+          "email": "noreply@github.com",
+          "time": 1792282181000
+        },
+        "branch": "HEAD"
+      },
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/home/runner/work/diagon-alley/diagon-alley/test-results/accounts-review-a77",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "ci": {
+            "commitHref": "https://github.com/earandes/diagon-alley/commit/44e915752d4fee8f2aa29623a83b7c7bf97aae46",
+            "commitHash": "44e915752d4fee8f2aa29623a83b7c7bf97aae46",
+            "prHref": "https://github.com/earandes/diagon-alley/pull/7",
+            "prTitle": "A76: cuentas recuperables y vinculación segura de invitado",
+            "prBaseHash": "ff23f580d9d3989abc9918d7b5bc8328d9e83b62",
+            "buildHref": "https://github.com/earandes/diagon-alley/actions/runs/39081730688"
+          },
+          "gitCommit": {
+            "shortHash": "44e9157",
+            "hash": "44e915752d4fee8f2aa29623a83b7c7bf97aae46",
+            "subject": "Merge 67197eeb6921db238becb286cfae677d26632b43 into ff23f580d9d3989abc9918d7b5bc8328d9e83b62",
+            "body": "Merge 67197eeb6921db238becb286cfae677d26632b43 into ff23f580d9d3989abc9918d7b5bc8328d9e83b62\n",
+            "author": {
+              "name": "Enric Arandes",
+              "email": "enric.arandes@code.seat",
+              "time": 1792282181000
+            },
+            "committer": {
+              "name": "GitHub",
+              "email": "noreply@github.com",
+              "time": 1792282181000
+            },
+            "branch": "HEAD"
+          },
+          "actualWorkers": 1
+        },
+        "id": "chromium-390-a77",
+        "name": "chromium-390-a77",
+        "testDir": "/home/runner/work/diagon-alley/diagon-alley/tests/browser-accounts",
+        "testIgnore": [],
+        "testMatch": [
+          "/accounts-review-a77\\.spec\\.ts$/"
+        ],
+        "timeout": 120000
+      },
+      {
+        "outputDir": "/home/runner/work/diagon-alley/diagon-alley/test-results/accounts-review-a77",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "ci": {
+            "commitHref": "https://github.com/earandes/diagon-alley/commit/44e915752d4fee8f2aa29623a83b7c7bf97aae46",
+            "commitHash": "44e915752d4fee8f2aa29623a83b7c7bf97aae46",
+            "prHref": "https://github.com/earandes/diagon-alley/pull/7",
+            "prTitle": "A76: cuentas recuperables y vinculación segura de invitado",
+            "prBaseHash": "ff23f580d9d3989abc9918d7b5bc8328d9e83b62",
+            "buildHref": "https://github.com/earandes/diagon-alley/actions/runs/39081730688"
+          },
+          "gitCommit": {
+            "shortHash": "44e9157",
+            "hash": "44e915752d4fee8f2aa29623a83b7c7bf97aae46",
+            "subject": "Merge 67197eeb6921db238becb286cfae677d26632b43 into ff23f580d9d3989abc9918d7b5bc8328d9e83b62",
+            "body": "Merge 67197eeb6921db238becb286cfae677d26632b43 into ff23f580d9d3989abc9918d7b5bc8328d9e83b62\n",
+            "author": {
+              "name": "Enric Arandes",
+              "email": "enric.arandes@code.seat",
+              "time": 1792282181000
+            },
+            "committer": {
+              "name": "GitHub",
+              "email": "noreply@github.com",
+              "time": 1792282181000
+            },
+            "branch": "HEAD"
+          },
+          "actualWorkers": 1
+        },
+        "id": "chromium-1280-a77",
+        "name": "chromium-1280-a77",
+        "testDir": "/home/runner/work/diagon-alley/diagon-alley/tests/browser-accounts",
+        "testIgnore": [],
+        "testMatch": [
+          "/accounts-review-a77\\.spec\\.ts$/"
+        ],
+        "timeout": 120000
+      },
+      {
+        "outputDir": "/home/runner/work/diagon-alley/diagon-alley/test-results/accounts-review-a77",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "ci": {
+            "commitHref": "https://github.com/earandes/diagon-alley/commit/44e915752d4fee8f2aa29623a83b7c7bf97aae46",
+            "commitHash": "44e915752d4fee8f2aa29623a83b7c7bf97aae46",
+            "prHref": "https://github.com/earandes/diagon-alley/pull/7",
+            "prTitle": "A76: cuentas recuperables y vinculación segura de invitado",
+            "prBaseHash": "ff23f580d9d3989abc9918d7b5bc8328d9e83b62",
+            "buildHref": "https://github.com/earandes/diagon-alley/actions/runs/39081730688"
+          },
+          "gitCommit": {
+            "shortHash": "44e9157",
+            "hash": "44e915752d4fee8f2aa29623a83b7c7bf97aae46",
+            "subject": "Merge 67197eeb6921db238becb286cfae677d26632b43 into ff23f580d9d3989abc9918d7b5bc8328d9e83b62",
+            "body": "Merge 67197eeb6921db238becb286cfae677d26632b43 into ff23f580d9d3989abc9918d7b5bc8328d9e83b62\n",
+            "author": {
+              "name": "Enric Arandes",
+              "email": "enric.arandes@code.seat",
+              "time": 1792282181000
+            },
+            "committer": {
+              "name": "GitHub",
+              "email": "noreply@github.com",
+              "time": 1792282181000
+            },
+            "branch": "HEAD"
+          },
+          "actualWorkers": 1
+        },
+        "id": "webkit-865-a77",
+        "name": "webkit-865-a77",
+        "testDir": "/home/runner/work/diagon-alley/diagon-alley/tests/browser-accounts",
+        "testIgnore": [],
+        "testMatch": [
+          "/accounts-review-a77\\.spec\\.ts$/"
+        ],
+        "timeout": 120000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "/home/runner/work/diagon-alley/diagon-alley/test-results/accounts-review-a77",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "ci": {
+            "commitHref": "https://github.com/earandes/diagon-alley/commit/44e915752d4fee8f2aa29623a83b7c7bf97aae46",
+            "commitHash": "44e915752d4fee8f2aa29623a83b7c7bf97aae46",
+            "prHref": "https://github.com/earandes/diagon-alley/pull/7",
+            "prTitle": "A76: cuentas recuperables y vinculación segura de invitado",
+            "prBaseHash": "ff23f580d9d3989abc9918d7b5bc8328d9e83b62",
+            "buildHref": "https://github.com/earandes/diagon-alley/actions/runs/39081730688"
+          },
+          "gitCommit": {
+            "shortHash": "44e9157",
+            "hash": "44e915752d4fee8f2aa29623a83b7c7bf97aae46",
+            "subject": "Merge 67197eeb6921db238becb286cfae677d26632b43 into ff23f580d9d3989abc9918d7b5bc8328d9e83b62",
+            "body": "Merge 67197eeb6921db238becb286cfae677d26632b43 into ff23f580d9d3989abc9918d7b5bc8328d9e83b62\n",
+            "author": {
+              "name": "Enric Arandes",
+              "email": "enric.arandes@code.seat",
+              "time": 1792282181000
+            },
+            "committer": {
+              "name": "GitHub",
+              "email": "noreply@github.com",
+              "time": 1792282181000
+            },
+            "branch": "HEAD"
+          },
+          "actualWorkers": 1
+        },
+        "name": "chromium-390-a77",
+        "testDir": "/home/runner/work/diagon-alley/diagon-alley/tests/browser-accounts",
+        "snapshotDir": "/home/runner/work/diagon-alley/diagon-alley/tests/browser-accounts",
+        "testIgnore": [],
+        "testMatch": {},
+        "timeout": 120000,
+        "use": {
+          "baseURL": "http://127.0.0.1:5534",
+          "serviceWorkers": "block",
+          "hasTouch": true,
+          "actionTimeout": 12000,
+          "video": "off",
+          "trace": "off",
+          "screenshot": "off",
+          "browserName": "chromium",
+          "viewport": {
+            "width": 390,
+            "height": 844
+          }
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "chromium-390-a77"
+      },
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "/home/runner/work/diagon-alley/diagon-alley/test-results/accounts-review-a77",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "ci": {
+            "commitHref": "https://github.com/earandes/diagon-alley/commit/44e915752d4fee8f2aa29623a83b7c7bf97aae46",
+            "commitHash": "44e915752d4fee8f2aa29623a83b7c7bf97aae46",
+            "prHref": "https://github.com/earandes/diagon-alley/pull/7",
+            "prTitle": "A76: cuentas recuperables y vinculación segura de invitado",
+            "prBaseHash": "ff23f580d9d3989abc9918d7b5bc8328d9e83b62",
+            "buildHref": "https://github.com/earandes/diagon-alley/actions/runs/39081730688"
+          },
+          "gitCommit": {
+            "shortHash": "44e9157",
+            "hash": "44e915752d4fee8f2aa29623a83b7c7bf97aae46",
+            "subject": "Merge 67197eeb6921db238becb286cfae677d26632b43 into ff23f580d9d3989abc9918d7b5bc8328d9e83b62",
+            "body": "Merge 67197eeb6921db238becb286cfae677d26632b43 into ff23f580d9d3989abc9918d7b5bc8328d9e83b62\n",
+            "author": {
+              "name": "Enric Arandes",
+              "email": "enric.arandes@code.seat",
+              "time": 1792282181000
+            },
+            "committer": {
+              "name": "GitHub",
+              "email": "noreply@github.com",
+              "time": 1792282181000
+            },
+            "branch": "HEAD"
+          },
+          "actualWorkers": 1
+        },
+        "name": "chromium-1280-a77",
+        "testDir": "/home/runner/work/diagon-alley/diagon-alley/tests/browser-accounts",
+        "snapshotDir": "/home/runner/work/diagon-alley/diagon-alley/tests/browser-accounts",
+        "testIgnore": [],
+        "testMatch": {},
+        "timeout": 120000,
+        "use": {
+          "baseURL": "http://127.0.0.1:5534",
+          "serviceWorkers": "block",
+          "hasTouch": true,
+          "actionTimeout": 12000,
+          "video": "off",
+          "trace": "off",
+          "screenshot": "off",
+          "browserName": "chromium",
+          "viewport": {
+            "width": 1280,
+            "height": 900
+          }
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "chromium-1280-a77"
+      },
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "/home/runner/work/diagon-alley/diagon-alley/test-results/accounts-review-a77",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "ci": {
+            "commitHref": "https://github.com/earandes/diagon-alley/commit/44e915752d4fee8f2aa29623a83b7c7bf97aae46",
+            "commitHash": "44e915752d4fee8f2aa29623a83b7c7bf97aae46",
+            "prHref": "https://github.com/earandes/diagon-alley/pull/7",
+            "prTitle": "A76: cuentas recuperables y vinculación segura de invitado",
+            "prBaseHash": "ff23f580d9d3989abc9918d7b5bc8328d9e83b62",
+            "buildHref": "https://github.com/earandes/diagon-alley/actions/runs/39081730688"
+          },
+          "gitCommit": {
+            "shortHash": "44e9157",
+            "hash": "44e915752d4fee8f2aa29623a83b7c7bf97aae46",
+            "subject": "Merge 67197eeb6921db238becb286cfae677d26632b43 into ff23f580d9d3989abc9918d7b5bc8328d9e83b62",
+            "body": "Merge 67197eeb6921db238becb286cfae677d26632b43 into ff23f580d9d3989abc9918d7b5bc8328d9e83b62\n",
+            "author": {
+              "name": "Enric Arandes",
+              "email": "enric.arandes@code.seat",
+              "time": 1792282181000
+            },
+            "committer": {
+              "name": "GitHub",
+              "email": "noreply@github.com",
+              "time": 1792282181000
+            },
+            "branch": "HEAD"
+          },
+          "actualWorkers": 1
+        },
+        "name": "webkit-865-a77",
+        "testDir": "/home/runner/work/diagon-alley/diagon-alley/tests/browser-accounts",
+        "snapshotDir": "/home/runner/work/diagon-alley/diagon-alley/tests/browser-accounts",
+        "testIgnore": [],
+        "testMatch": {},
+        "timeout": 120000,
+        "use": {
+          "baseURL": "http://127.0.0.1:5534",
+          "serviceWorkers": "block",
+          "hasTouch": true,
+          "actionTimeout": 12000,
+          "video": "off",
+          "trace": "off",
+          "screenshot": "off",
+          "browserName": "webkit",
+          "viewport": {
+            "width": 865,
+            "height": 1079
+          }
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "webkit-865-a77"
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "test-results/accounts-review-a77/results.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.64.0",
+    "workers": 1,
+    "webServer": {
+      "env": {
+        "ARCANA_TRIAL_NAMESPACE": "a77-cf10d6fb-0c52-444b-ab4d-1daf7410412c"
+      },
+      "command": "npx --no-install vite preview --host 127.0.0.1 --port 5534 --strictPort --mode arcana",
+      "url": "http://127.0.0.1:5534/",
+      "reuseExistingServer": false,
+      "timeout": 120000
+    }
+  },
+  "suites": [
+    {
+      "title": "accounts-review-a77.spec.ts",
+      "file": "accounts-review-a77.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "A77 remaining forms and error-state composition without game mutation",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 120000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium-390-a77",
+              "projectName": "chromium-390-a77",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1302,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-18T00:13:45.638Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3b563a47a997e8909ede-768e33d589e839a235a6",
+          "file": "accounts-review-a77.spec.ts",
+          "line": 142,
+          "column": 1
+        },
+        {
+          "title": "A77 guest link after reload, real settings swap and explicit account conflict",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 120000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium-390-a77",
+              "projectName": "chromium-390-a77",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3045,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-18T00:13:47.022Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3b563a47a997e8909ede-47bf9c61935ddbe8d86e",
+          "file": "accounts-review-a77.spec.ts",
+          "line": 206,
+          "column": 1
+        },
+        {
+          "title": "A77 transport-only registration failure and offline guidance diagnostic",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 120000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium-390-a77",
+              "projectName": "chromium-390-a77",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 433,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-18T00:13:50.081Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3b563a47a997e8909ede-da4b453766f5c181b81b",
+          "file": "accounts-review-a77.spec.ts",
+          "line": 326,
+          "column": 1
+        },
+        {
+          "title": "A77 remaining forms and error-state composition without game mutation",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 120000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium-1280-a77",
+              "projectName": "chromium-1280-a77",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2719,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-18T00:13:50.990Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3b563a47a997e8909ede-6de1710a9cbb61d94927",
+          "file": "accounts-review-a77.spec.ts",
+          "line": 142,
+          "column": 1
+        },
+        {
+          "title": "A77 guest link after reload, real settings swap and explicit account conflict",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 120000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium-1280-a77",
+              "projectName": "chromium-1280-a77",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4253,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-18T00:13:53.805Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3b563a47a997e8909ede-d61f6f5c425f5287eff3",
+          "file": "accounts-review-a77.spec.ts",
+          "line": 206,
+          "column": 1
+        },
+        {
+          "title": "A77 transport-only registration failure and offline guidance diagnostic",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 120000,
+              "annotations": [
+                {
+                  "type": "skip",
+                  "description": "Single declared transport sample, not a duplicated matrix.",
+                  "location": {
+                    "file": "/home/runner/work/diagon-alley/diagon-alley/tests/browser-accounts/accounts-review-a77.spec.ts",
+                    "line": 330,
+                    "column": 8
+                  }
+                }
+              ],
+              "expectedStatus": "skipped",
+              "projectId": "chromium-1280-a77",
+              "projectName": "chromium-1280-a77",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "skipped",
+                  "duration": 39,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-18T00:13:58.071Z",
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Single declared transport sample, not a duplicated matrix.",
+                      "location": {
+                        "file": "/home/runner/work/diagon-alley/diagon-alley/tests/browser-accounts/accounts-review-a77.spec.ts",
+                        "line": 330,
+                        "column": 8
+                      }
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "skipped"
+            }
+          ],
+          "id": "3b563a47a997e8909ede-a5c50853882c3a4db496",
+          "file": "accounts-review-a77.spec.ts",
+          "line": 326,
+          "column": 1
+        },
+        {
+          "title": "A77 remaining forms and error-state composition without game mutation",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 120000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit-865-a77",
+              "projectName": "webkit-865-a77",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2238,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-18T00:13:58.586Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3b563a47a997e8909ede-65a70ddb9b569221e859",
+          "file": "accounts-review-a77.spec.ts",
+          "line": 142,
+          "column": 1
+        },
+        {
+          "title": "A77 guest link after reload, real settings swap and explicit account conflict",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 120000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit-865-a77",
+              "projectName": "webkit-865-a77",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 8334,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-18T00:14:00.937Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3b563a47a997e8909ede-8836152702ae992bac69",
+          "file": "accounts-review-a77.spec.ts",
+          "line": 206,
+          "column": 1
+        },
+        {
+          "title": "A77 transport-only registration failure and offline guidance diagnostic",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 120000,
+              "annotations": [
+                {
+                  "type": "skip",
+                  "description": "Single declared transport sample, not a duplicated matrix.",
+                  "location": {
+                    "file": "/home/runner/work/diagon-alley/diagon-alley/tests/browser-accounts/accounts-review-a77.spec.ts",
+                    "line": 330,
+                    "column": 8
+                  }
+                }
+              ],
+              "expectedStatus": "skipped",
+              "projectId": "webkit-865-a77",
+              "projectName": "webkit-865-a77",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "skipped",
+                  "duration": 228,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-18T00:14:09.304Z",
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "Single declared transport sample, not a duplicated matrix.",
+                      "location": {
+                        "file": "/home/runner/work/diagon-alley/diagon-alley/tests/browser-accounts/accounts-review-a77.spec.ts",
+                        "line": 330,
+                        "column": 8
+                      }
+                    }
+                  ],
+                  "attachments": []
+                }
+              ],
+              "status": "skipped"
+            }
+          ],
+          "id": "3b563a47a997e8909ede-0df82bbf27e83427389e",
+          "file": "accounts-review-a77.spec.ts",
+          "line": 326,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-18T00:13:43.201Z",
+    "duration": 26449.6,
+    "expected": 7,
+    "skipped": 2,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

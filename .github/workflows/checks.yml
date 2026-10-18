@@ -11,6 +11,8 @@ permissions:
 jobs:
   check:
     runs-on: ubuntu-latest
+    outputs:
+      phase: ${{ steps.a75phase.outputs.phase }}
     # A68 adds 12 isolated projects; A69 adds six serial presentation projects,
     # full opening fixtures and one 30-cycle lifetime sample. No added workers.
     timeout-minutes: 55
@@ -46,9 +48,86 @@ jobs:
       - run: npm run test:integration
       - id: build
         run: npm run build
+      - run: node tools/verification/verify-accounts-backup-a76.mjs
       - run: npm run verify:arcana:build
       - run: npx playwright install --with-deps chromium webkit
       - if: ${{ !cancelled() && steps.build.outcome == 'success' }}
+        run: ARCANA_CAPTURE_A76=1 npx playwright test --config playwright.accounts-a76.config.ts
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: a76-account-evidence
+          path: |
+            docs/arcana/accounts-2026-10-17/evidence/linux/**
+            test-results/accounts-a76/results.json
+            test-results/accounts-a76/**/error-context.md
+          if-no-files-found: ignore
+      - if: ${{ !cancelled() && steps.build.outcome == 'success' }}
+        run: ARCANA_CAPTURE_A82=1 npx playwright test --config playwright.welcome-menu-a82.config.ts
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: a82-welcome-menu-evidence
+          path: |
+            docs/arcana/welcome-menu-2026-10-18/evidence/linux/**
+            test-results/welcome-menu-a82/**
+          if-no-files-found: ignore
+      - id: a75phase
+        run: node -e "const p=require('./tools/verification/a75-phase.json').phase;if(!['baseline','full','webkit','resume','tail'].includes(p))throw Error('Invalid A75 phase');require('fs').appendFileSync(process.env.GITHUB_OUTPUT,'phase='+p+'\\n')"
+      # A78 is a bounded serial account-fixes check; A77 remains historical evidence.
+      - if: ${{ !cancelled() && steps.build.outcome == 'success' }}
+        run: npx playwright test --config playwright.accounts-fixes-a78.config.ts
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: a78-account-fixes-evidence
+          path: |
+            docs/arcana/accounts-fixes-2026-10-18/evidence/linux/**
+            test-results/accounts-fixes-a78/results.json
+            test-results/accounts-fixes-a78/**/error-context.md
+          if-no-files-found: ignore
+      - if: ${{ !cancelled() && steps.build.outcome == 'success' }}
+        run: npx playwright test --config playwright.account-entry-a79.config.ts
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: a79-account-entry-evidence
+          path: |
+            docs/arcana/account-entry-redesign-2026-10-18/evidence/linux/**
+            test-results/account-entry-a79/**
+          if-no-files-found: ignore
+      - if: ${{ !cancelled() && steps.build.outcome == 'success' }}
+        run: npx playwright test --config playwright.account-style-a80.config.ts
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: a80-account-style-evidence
+          path: |
+            docs/arcana/account-style-2026-10-18/evidence/linux/**
+            test-results/account-style-a80/**
+          if-no-files-found: ignore
+      - if: ${{ !cancelled() && steps.build.outcome == 'success' }}
+        run: npx playwright test --config playwright.account-symbols-a81.config.ts
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: a81-account-symbols-evidence
+          path: |
+            docs/arcana/account-identity-art-2026-10-18/evidence/linux/**
+            test-results/account-symbols-a81/**
+          if-no-files-found: ignore
+      - if: ${{ !cancelled() && steps.build.outcome == 'success' }}
+        run: ARCANA_CAPTURE_A75=1 npx playwright test --config playwright.experience-a75.config.ts
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: a75-experience-evidence
+          path: |
+            docs/arcana/experience-fixes-2026-10-17/evidence/linux/**
+            test-results/experience-a75/**/error-context.md
+            test-results/experience-a75/results.json
+          if-no-files-found: ignore
+      - if: ${{ !cancelled() && steps.build.outcome == 'success' && steps.a75phase.outputs.phase == 'full' }}
         run: ARCANA_CAPTURE_A70=1 npx playwright test --config playwright.boss-a70.config.ts
       - uses: actions/upload-artifact@v4
         if: always()
@@ -58,9 +137,9 @@ jobs:
             docs/arcana/boss-increment-2026-10-16/evidence/linux/**
             test-results/boss-a70/**/error-context.md
           if-no-files-found: ignore
-      - if: ${{ !cancelled() && steps.build.outcome == 'success' }}
+      - if: ${{ !cancelled() && steps.build.outcome == 'success' && steps.a75phase.outputs.phase == 'full' }}
         run: npx playwright test --config playwright.seasonal-a68.config.ts
-      - if: ${{ !cancelled() && steps.build.outcome == 'success' }}
+      - if: ${{ !cancelled() && steps.build.outcome == 'success' && steps.a75phase.outputs.phase == 'full' }}
         # Explicit selected Linux evidence: four images in one Chromium project,
         # never screenshots of the full pack/language/viewport matrix.
         run: ARCANA_CAPTURE_A69=1 npx playwright test --config playwright.motion-a69.config.ts
@@ -73,24 +152,60 @@ jobs:
             test-results/motion-a69/**/error-context.md
             test-results-seasonal-a68/**/error-context.md
           if-no-files-found: ignore
-      - if: ${{ !cancelled() && steps.build.outcome == 'success' }}
+  # A82: two serial jobs preserve the original 55-minute ceiling per job.
+  # No concurrent browser suites, extra workers, retries or weakened watchdogs.
+  regression:
+    needs: check
+    if: ${{ needs.check.result == 'success' && contains(fromJSON('["full","resume","tail"]'), needs.check.outputs.phase) }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 55
+    services:
+      postgres:
+        image: postgres:16.9@sha256:ddfe3e8713e3ee5b8f286082cb12512488dfbf3f5a1ecb0b74a42e6055af0a5f
+        env:
+          POSTGRES_DB: arcana_dev
+          POSTGRES_USER: arcana_dev
+          POSTGRES_PASSWORD: arcana-local-development
+        ports: ['55432:5432']
+        options: >-
+          --health-cmd "pg_isready -U arcana_dev -d arcana_dev"
+          --health-interval 2s --health-timeout 2s --health-retries 15
+      redis:
+        image: redis:7-alpine@sha256:bb186d083732f669da90be8b0f975a37812b15e913465bb14d845db72a4e3e08
+        ports: ['56379:6379']
+        options: >-
+          --health-cmd "redis-cli ping"
+          --health-interval 2s --health-timeout 2s --health-retries 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci --no-fund --no-audit
+      - id: build
+        run: npm run build
+      - run: npx playwright install --with-deps chromium webkit
+      - if: ${{ !cancelled() && steps.build.outcome == 'success' && contains(fromJSON('["full","resume"]'), needs.check.outputs.phase) }}
         run: ARCANA_TRIAL_COMPILED=1 npm run test:e2e -- --project chromium --project webkit --reporter=line,github
-      - if: ${{ !cancelled() && steps.build.outcome == 'success' }}
+      - if: ${{ !cancelled() && steps.build.outcome == 'success' && contains(fromJSON('["full","resume","tail"]'), needs.check.outputs.phase) }}
         run: npx playwright test --config playwright.progression-a67.config.ts --project chromium-a67 --project webkit-a67
-      - if: ${{ !cancelled() && steps.build.outcome == 'success' }}
+      - if: ${{ !cancelled() && steps.build.outcome == 'success' && contains(fromJSON('["full","resume","tail"]'), needs.check.outputs.phase) }}
         run: npx playwright test --config playwright.gameplay-a63.config.ts
-      - if: ${{ !cancelled() && steps.build.outcome == 'success' }}
+      - if: ${{ !cancelled() && steps.build.outcome == 'success' && contains(fromJSON('["full","resume","tail"]'), needs.check.outputs.phase) }}
         run: npx playwright test --config playwright.header-pact-a66.config.ts
-      - if: ${{ !cancelled() && steps.build.outcome == 'success' }}
+      - if: ${{ !cancelled() && steps.build.outcome == 'success' && contains(fromJSON('["full","resume","tail"]'), needs.check.outputs.phase) }}
         run: npx playwright test --config playwright.intentions-a65.config.ts
-      - if: ${{ !cancelled() && steps.build.outcome == 'success' }}
+      - if: ${{ !cancelled() && steps.build.outcome == 'success' && contains(fromJSON('["full","resume","tail"]'), needs.check.outputs.phase) }}
         run: npm run test:pwa -- --project chromium --project webkit
       - id: reference
-        if: ${{ !cancelled() && steps.build.outcome == 'success' }}
+        if: ${{ !cancelled() && steps.build.outcome == 'success' && contains(fromJSON('["full","resume","tail"]'), needs.check.outputs.phase) }}
         run: node tools/verification/build-a66-reference.mjs
-      - if: ${{ !cancelled() && steps.reference.outcome == 'success' }}
+      - if: ${{ !cancelled() && steps.reference.outcome == 'success' && contains(fromJSON('["full","resume","tail"]'), needs.check.outputs.phase) }}
         run: A67_PERFORMANCE_VARIANT=baseline npx playwright test --config playwright.performance-a67.config.ts
-      - if: ${{ !cancelled() && steps.build.outcome == 'success' }}
+      - if: ${{ !cancelled() && steps.build.outcome == 'success' && contains(fromJSON('["full","resume","tail"]'), needs.check.outputs.phase) }}
         run: A67_PERFORMANCE_VARIANT=current npx playwright test --config playwright.performance-a67.config.ts
       - uses: actions/upload-artifact@v4
         if: always()
@@ -98,6 +213,7 @@ jobs:
           name: a67-validation-evidence
           path: |
             docs/arcana/progression-increment-2026-10-16/evidence/performance/*.json
+            docs/arcana/progression-increment-2026-10-16/evidence/browser/*.json
             test-results-arcana-journey/**/error-context.md
             test-results-progression-a67/**/error-context.md
             test-results-gameplay-a63/**/error-context.md

@@ -110,7 +110,10 @@ async function prepare(page: Page, language: 'es' | 'en') {
   if (language === 'en') await changeLanguage(page, 'en');
   await page
     .getByRole('button', {
-      name: language === 'en' ? 'Start local trial' : 'Comenzar ensayo local',
+      name:
+        language === 'en'
+          ? /^(Start local trial|Play as guest)$/
+          : /^(Comenzar ensayo local|Jugar como invitado)$/,
       exact: true,
     })
     .click();

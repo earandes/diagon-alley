@@ -1,0 +1,286 @@
+/* A82: one crest above the world, one family of tangible menu pieces below. */
+.game-shell[data-view='welcome'] {
+  display: block;
+  height: auto;
+  min-height: 100dvh;
+  padding: 0;
+}
+.game-shell > .game-header.welcome-tools {
+  position: absolute;
+  z-index: 4;
+  top: env(safe-area-inset-top, 0px);
+  right: env(safe-area-inset-right, 0px);
+  width: auto;
+  height: auto;
+  min-height: 0;
+  padding: 12px;
+  background: none;
+}
+.game-shell .welcome-tools .settings-trigger {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  flex: 0 0 44px;
+  min-height: 44px;
+  margin: 0;
+  padding: 8px;
+  border: 1px solid #c3a16780;
+  border-radius: 50%;
+  background: #0c192cdd;
+}
+.game-shell .welcome-tools .settings-trigger:not(:has(img)) {
+  width: auto;
+  height: auto;
+  min-width: 44px;
+  flex: 0 0 auto;
+  border-radius: 12px;
+}
+.game-shell .welcome-tools .settings-trigger img {
+  width: 24px;
+  height: 24px;
+}
+.game-shell .welcome.welcome-menu {
+  min-height: 100dvh;
+  width: 100%;
+  gap: 0;
+  padding: max(28px, env(safe-area-inset-top, 0px)) max(20px, env(safe-area-inset-right, 0px))
+    max(24px, env(safe-area-inset-bottom, 0px)) max(20px, env(safe-area-inset-left, 0px));
+  text-align: center;
+  justify-content: flex-start;
+  background: linear-gradient(180deg, #07132250, transparent 35%, #07132218 55%, #071322b8);
+}
+.game-shell .welcome-menu .welcome-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: min(560px, calc(100% - 72px));
+  margin: 0 auto;
+  padding: 0;
+  border: 0;
+  gap: 0;
+  background: none;
+  color: #ffe3a4;
+  text-shadow: 0 3px 12px #030916;
+}
+.game-shell .welcome-menu .welcome-brand:not(:has(.welcome-emblem)) {
+  /* Reserve the missing crest so the title never jumps under the Settings fallback. */
+  padding-top: clamp(72px, 12dvh, 112px);
+}
+.welcome-brand .welcome-emblem {
+  width: clamp(72px, 12dvh, 112px);
+  height: clamp(72px, 12dvh, 112px);
+  object-fit: contain;
+}
+.game-shell .welcome-menu h1 {
+  flex: none;
+  font-family: Cinzel, Georgia, serif;
+  font-size: clamp(1.7rem, 4.5vw, 3rem);
+  line-height: 1.16;
+  font-weight: 400;
+  letter-spacing: 0.055em;
+  margin: 4px 0 14px;
+  overflow-wrap: anywhere;
+}
+.welcome-brand-rule {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: min(320px, 100%);
+}
+.welcome-brand-rule::before,
+.welcome-brand-rule::after {
+  content: '';
+  height: 1px;
+  flex: 1;
+  background: linear-gradient(90deg, transparent, #e6bd71);
+}
+.welcome-brand-rule::after {
+  transform: rotate(180deg);
+}
+.welcome-brand-rule i {
+  width: 7px;
+  height: 7px;
+  transform: rotate(45deg);
+  background: #f6d590;
+}
+.game-shell .welcome-actions {
+  display: grid;
+  gap: 14px;
+  width: min(460px, 100%);
+  margin: auto 0 20px;
+  padding-top: clamp(44px, 12dvh, 150px);
+}
+.game-shell .welcome-actions .fantasy-action {
+  --action-top: #fff0c9;
+  --action-bottom: #dfb973;
+  --action-ink: #39200e;
+  --action-edge: #7a5126;
+  position: relative;
+  display: grid;
+  grid-template-columns: 52px minmax(0, 1fr) 14px;
+  align-items: center;
+  gap: 12px;
+  min-height: 80px;
+  width: 100%;
+  margin: 0;
+  padding: 12px 25px 12px 15px;
+  border: 2px solid #f0ce8a;
+  border-radius: 25px 12px;
+  background:
+    radial-gradient(ellipse at 24% 0%, #fff5d723, transparent 65%),
+    linear-gradient(160deg, var(--action-top), var(--action-bottom));
+  color: var(--action-ink);
+  box-shadow:
+    0 4px 0 #4a301e,
+    0 10px 22px #03091299,
+    inset 0 0 0 3px var(--action-edge),
+    inset 0 0 0 4px #f9d893b3;
+  text-shadow: none;
+  font:
+    500 clamp(1.05rem, 3.2vw, 1.3rem) / 1.28 Cinzel,
+    Georgia,
+    serif;
+  transition:
+    transform 120ms ease-out,
+    box-shadow 160ms ease-out,
+    border-color 160ms ease-out;
+}
+.game-shell .welcome-actions .fantasy-action[data-variant='secondary'] {
+  --action-top: #203958;
+  --action-bottom: #0b1c33;
+  --action-ink: #ffebbb;
+  --action-edge: #091528;
+}
+.game-shell .welcome-actions .fantasy-action[data-variant='tertiary'] {
+  --action-top: #282b30;
+  --action-bottom: #101822;
+  --action-ink: #f1d9a7;
+  --action-edge: #11151a;
+}
+.fantasy-action::before,
+.fantasy-action::after {
+  content: '';
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border: 1px solid #efcb85;
+  background: var(--action-bottom);
+  transform: rotate(45deg);
+  pointer-events: none;
+}
+.fantasy-action::before {
+  top: 7px;
+  right: 8px;
+}
+.fantasy-action::after {
+  bottom: 7px;
+  left: 8px;
+}
+.fantasy-action-icon {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+}
+.game-shell .welcome-actions .fantasy-action-icon img {
+  width: 52px;
+  height: 52px;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 2px #03091680);
+}
+.fantasy-action-label {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.fantasy-action-arrow {
+  width: 11px;
+  height: 11px;
+  border: solid currentColor;
+  border-width: 2px 2px 0 0;
+  transform: rotate(45deg);
+}
+.game-shell .welcome-actions .fantasy-action:hover:not(:disabled),
+.game-shell .welcome-actions .fantasy-action:focus-visible {
+  border-color: #fff0c3;
+  color: var(--action-ink);
+  transform: none;
+  background:
+    radial-gradient(ellipse at 24% 0%, #fff5d723, transparent 65%),
+    linear-gradient(160deg, var(--action-top), var(--action-bottom));
+  box-shadow:
+    0 4px 0 #4a301e,
+    0 10px 22px #03091299,
+    0 0 15px #f2cd7b55,
+    inset 0 0 0 3px var(--action-edge),
+    inset 0 0 0 4px #ffe5ac;
+}
+.game-shell .welcome-actions .fantasy-action:active:not(:disabled) {
+  transform: translateY(2px) scale(0.985);
+}
+.game-shell .welcome-actions .fantasy-action:focus-visible {
+  outline: 3px solid #9ce8ec;
+  outline-offset: 5px;
+}
+.game-shell .welcome-menu .account-guest-hint {
+  max-width: 43ch;
+  margin: 0;
+  color: #fff0d0;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  text-shadow:
+    0 2px 5px #020711,
+    0 0 10px #020711;
+}
+.game-shell .welcome-menu > [role='alert'],
+.game-shell .welcome-menu > [role='status'] {
+  max-width: 43ch;
+  margin: 8px 0;
+}
+@media (max-width: 440px) {
+  .game-shell .welcome-actions {
+    gap: 12px;
+  }
+  .game-shell .welcome-actions .fantasy-action {
+    grid-template-columns: 46px minmax(0, 1fr) 12px;
+    gap: 8px;
+    min-height: 76px;
+    padding-inline: 14px 21px;
+  }
+  .fantasy-action-icon,
+  .game-shell .welcome-actions .fantasy-action-icon img {
+    width: 46px;
+    height: 46px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .game-shell .welcome-actions .fantasy-action {
+    transition: none;
+  }
+  .game-shell .welcome-actions .fantasy-action:active:not(:disabled) {
+    transform: none;
+  }
+}
+.game-shell[data-reduced='true'] .welcome-actions .fantasy-action {
+  transition: none;
+}
+.game-shell[data-reduced='true'] .welcome-actions .fantasy-action:active:not(:disabled) {
+  transform: none;
+}
+/* The paper enters above the menu without delaying focus or any request. */
+.game-shell[data-view='welcome'][data-reduced='false'] .account-access[open] {
+  animation: welcome-letter-arrive 160ms ease-out;
+}
+@keyframes welcome-letter-arrive {
+  from {
+    opacity: 0.55;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .game-shell[data-view='welcome'] .account-access[open] {
+    animation: none;
+  }
+}

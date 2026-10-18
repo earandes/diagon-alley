@@ -1,0 +1,12 @@
+check	Run actions/checkout@v4	2026-10-18T01:37:26.7688089Z HEAD is now at a2515a3 Merge 99dae4ab2c556952211fbd72eb49d0271cfaad29 into ff23f580d9d3989abc9918d7b5bc8328d9e83b62
+check	Run npm run validate:content	2026-10-18T01:37:47.5459754Z [2m      Tests [22m [1m[32m6 passed[39m[22m[90m (6)[39m
+check	Run npm test	2026-10-18T01:38:01.1704805Z [2m      Tests [22m [1m[32m622 passed[39m[22m[90m (622)[39m
+check	Run npm run test:integration	2026-10-18T01:38:27.1503027Z [2m      Tests [22m [1m[32m99 passed[39m[22m[90m (99)[39m
+check	Run npm run verify:arcana:build	2026-10-18T01:38:40.8020073Z diagon-alley build content scan passed; total distributed bytes: 15034006. Historical I1 excluded. Private thematic dual build; ARCANA-only distribution not certified.
+check	Run ARCANA_CAPTURE_A76=1 npx playwright test --config playwright.accounts-a76.config.ts	2026-10-18T01:40:58.0536014Z   30 skipped
+check	Run ARCANA_CAPTURE_A76=1 npx playwright test --config playwright.accounts-a76.config.ts	2026-10-18T01:40:58.0536458Z   30 passed (1.5m)
+check	Run npx playwright test --config playwright.accounts-fixes-a78.config.ts	2026-10-18T01:41:39.9067977Z   11 skipped
+check	Run npx playwright test --config playwright.accounts-fixes-a78.config.ts	2026-10-18T01:41:39.9068497Z   16 passed (39.1s)
+check	Run ARCANA_CAPTURE_A79=1 npx playwright test --config playwright.account-entry-a79.config.ts	2026-10-18T01:41:54.5051337Z   2 skipped
+check	Run ARCANA_CAPTURE_A79=1 npx playwright test --config playwright.account-entry-a79.config.ts	2026-10-18T01:41:54.5051819Z   7 passed (11.5s)
+check	Run ARCANA_CAPTURE_A75=1 npx playwright test --config playwright.experience-a75.config.ts	2026-10-18T01:42:05.5542359Z   2 passed (8.2s)

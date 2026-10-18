@@ -390,6 +390,7 @@ export function CommercePanel({
             onLanguage={onLanguage}
             reduced={motion.reduced}
             ownReduced={motion.own}
+            systemReduced={motion.system}
             onReduced={motion.change}
           />
           <h3>{t(quote.kind === 'forge' ? 'confirmForge' : 'confirmExchange')}</h3>

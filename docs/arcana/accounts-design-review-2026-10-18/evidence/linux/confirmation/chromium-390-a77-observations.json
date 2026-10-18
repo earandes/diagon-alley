@@ -1,0 +1,362 @@
+[
+  {
+    "project": "chromium-390-a77",
+    "test": "A77 remaining forms and error-state composition without game mutation",
+    "name": "wrong-credentials",
+    "language": "es",
+    "pack": "diagon-alley",
+    "step": "login",
+    "width": 352,
+    "left": 19,
+    "right": 371,
+    "top": 65.5,
+    "bottom": 778.484375,
+    "scrollWidth": 346,
+    "clientWidth": 346,
+    "scrollTop": 0,
+    "activeTag": "BODY",
+    "activeName": null,
+    "passwordType": "password",
+    "closeControl": {
+      "left": 312,
+      "top": 80.5,
+      "width": 44,
+      "height": 46,
+      "hitInside": false
+    },
+    "alertText": "No se ha podido verificar el acceso. Revisa tus datos o solicita un nuevo código.",
+    "alertInViewport": true,
+    "controls": [
+      {
+        "text": "Volver al juego",
+        "disabled": false,
+        "pressed": null,
+        "height": 46
+      },
+      {
+        "text": "Mostrar contraseña",
+        "disabled": false,
+        "pressed": "false",
+        "height": 44
+      },
+      {
+        "text": "Iniciar sesión",
+        "disabled": false,
+        "pressed": null,
+        "height": 47
+      },
+      {
+        "text": "Olvidé mi contraseña",
+        "disabled": false,
+        "pressed": null,
+        "height": 44
+      },
+      {
+        "text": "Crear cuenta",
+        "disabled": false,
+        "pressed": null,
+        "height": 44
+      },
+      {
+        "text": "Volver",
+        "disabled": false,
+        "pressed": null,
+        "height": 44
+      }
+    ]
+  },
+  {
+    "project": "chromium-390-a77",
+    "test": "A77 remaining forms and error-state composition without game mutation",
+    "name": "reset-request-accepted",
+    "language": "es",
+    "pack": "diagon-alley",
+    "step": "request-reset",
+    "width": 352,
+    "left": 19,
+    "right": 371,
+    "top": 137.5,
+    "bottom": 706.484375,
+    "scrollWidth": 346,
+    "clientWidth": 346,
+    "scrollTop": 0,
+    "activeTag": "BODY",
+    "activeName": null,
+    "closeControl": {
+      "left": 312,
+      "top": 152.5,
+      "width": 44,
+      "height": 46,
+      "hitInside": false
+    },
+    "alertInViewport": null,
+    "controls": [
+      {
+        "text": "Volver al juego",
+        "disabled": false,
+        "pressed": null,
+        "height": 46
+      },
+      {
+        "text": "Enviar recuperación",
+        "disabled": false,
+        "pressed": null,
+        "height": 47
+      },
+      {
+        "text": "Tengo el código",
+        "disabled": false,
+        "pressed": null,
+        "height": 44
+      },
+      {
+        "text": "Iniciar sesión",
+        "disabled": false,
+        "pressed": null,
+        "height": 44
+      },
+      {
+        "text": "Volver",
+        "disabled": false,
+        "pressed": null,
+        "height": 44
+      }
+    ]
+  },
+  {
+    "project": "chromium-390-a77",
+    "test": "A77 remaining forms and error-state composition without game mutation",
+    "name": "reset-after-show-password",
+    "language": "es",
+    "pack": "diagon-alley",
+    "step": "reset",
+    "width": 352,
+    "left": 19,
+    "right": 371,
+    "top": 112.671875,
+    "bottom": 731.328125,
+    "scrollWidth": 346,
+    "clientWidth": 346,
+    "scrollTop": 0,
+    "activeTag": "INPUT",
+    "activeName": "token",
+    "passwordType": "text",
+    "closeControl": {
+      "left": 312,
+      "top": 127.671875,
+      "width": 44,
+      "height": 46,
+      "hitInside": false
+    },
+    "alertInViewport": null,
+    "controls": [
+      {
+        "text": "Volver al juego",
+        "disabled": false,
+        "pressed": null,
+        "height": 46
+      },
+      {
+        "text": "Ocultar contraseña",
+        "disabled": false,
+        "pressed": "true",
+        "height": 44
+      },
+      {
+        "text": "Guardar nueva contraseña",
+        "disabled": false,
+        "pressed": null,
+        "height": 47
+      },
+      {
+        "text": "Iniciar sesión",
+        "disabled": false,
+        "pressed": null,
+        "height": 44
+      },
+      {
+        "text": "Volver",
+        "disabled": false,
+        "pressed": null,
+        "height": 44
+      }
+    ]
+  },
+  {
+    "project": "chromium-390-a77",
+    "test": "A77 remaining forms and error-state composition without game mutation",
+    "name": "registration-accepted",
+    "language": "es",
+    "pack": "diagon-alley",
+    "step": "register",
+    "width": 352,
+    "left": 19,
+    "right": 371,
+    "top": 83.84375,
+    "bottom": 760.140625,
+    "scrollWidth": 346,
+    "clientWidth": 346,
+    "scrollTop": 0,
+    "activeTag": "BODY",
+    "activeName": null,
+    "closeControl": {
+      "left": 312,
+      "top": 98.84375,
+      "width": 44,
+      "height": 46,
+      "hitInside": false
+    },
+    "alertInViewport": null,
+    "controls": [
+      {
+        "text": "Volver al juego",
+        "disabled": false,
+        "pressed": null,
+        "height": 46
+      },
+      {
+        "text": "Crear cuenta",
+        "disabled": false,
+        "pressed": null,
+        "height": 47
+      },
+      {
+        "text": "Tengo el código",
+        "disabled": false,
+        "pressed": null,
+        "height": 44
+      },
+      {
+        "text": "Iniciar sesión",
+        "disabled": false,
+        "pressed": null,
+        "height": 44
+      },
+      {
+        "text": "Volver",
+        "disabled": false,
+        "pressed": null,
+        "height": 44
+      }
+    ]
+  },
+  {
+    "project": "chromium-390-a77",
+    "test": "A77 remaining forms and error-state composition without game mutation",
+    "name": "verify-empty",
+    "language": "es",
+    "pack": "diagon-alley",
+    "step": "verify",
+    "width": 352,
+    "left": 19,
+    "right": 371,
+    "top": 112.671875,
+    "bottom": 731.328125,
+    "scrollWidth": 346,
+    "clientWidth": 346,
+    "scrollTop": 0,
+    "activeTag": "INPUT",
+    "activeName": "token",
+    "passwordType": "password",
+    "closeControl": {
+      "left": 312,
+      "top": 127.671875,
+      "width": 44,
+      "height": 46,
+      "hitInside": false
+    },
+    "alertInViewport": null,
+    "controls": [
+      {
+        "text": "Volver al juego",
+        "disabled": false,
+        "pressed": null,
+        "height": 46
+      },
+      {
+        "text": "Mostrar contraseña",
+        "disabled": false,
+        "pressed": "false",
+        "height": 44
+      },
+      {
+        "text": "Verificar y guardar",
+        "disabled": false,
+        "pressed": null,
+        "height": 47
+      },
+      {
+        "text": "Iniciar sesión",
+        "disabled": false,
+        "pressed": null,
+        "height": 44
+      },
+      {
+        "text": "Volver",
+        "disabled": false,
+        "pressed": null,
+        "height": 44
+      }
+    ]
+  },
+  {
+    "project": "chromium-390-a77",
+    "test": "A77 remaining forms and error-state composition without game mutation",
+    "name": "invalid-token",
+    "language": "es",
+    "pack": "diagon-alley",
+    "step": "verify",
+    "width": 352,
+    "left": 19,
+    "right": 371,
+    "top": 70.171875,
+    "bottom": 773.8125,
+    "scrollWidth": 346,
+    "clientWidth": 346,
+    "scrollTop": 0,
+    "activeTag": "BODY",
+    "activeName": null,
+    "passwordType": "password",
+    "closeControl": {
+      "left": 312,
+      "top": 85.171875,
+      "width": 44,
+      "height": 46,
+      "hitInside": false
+    },
+    "alertText": "No se ha podido verificar el acceso. Revisa tus datos o solicita un nuevo código.",
+    "alertInViewport": true,
+    "controls": [
+      {
+        "text": "Volver al juego",
+        "disabled": false,
+        "pressed": null,
+        "height": 46
+      },
+      {
+        "text": "Mostrar contraseña",
+        "disabled": false,
+        "pressed": "false",
+        "height": 44
+      },
+      {
+        "text": "Verificar y guardar",
+        "disabled": false,
+        "pressed": null,
+        "height": 47
+      },
+      {
+        "text": "Iniciar sesión",
+        "disabled": false,
+        "pressed": null,
+        "height": 44
+      },
+      {
+        "text": "Volver",
+        "disabled": false,
+        "pressed": null,
+        "height": 44
+      }
+    ]
+  }
+]

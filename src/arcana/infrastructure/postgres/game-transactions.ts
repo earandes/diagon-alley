@@ -35,6 +35,25 @@ interface TransactionFaults {
   readonly afterCommit?: () => void;
 }
 
+/** Compose account initialization with another authoritative SQL transaction, without nesting it. */
+export function gameAccountsInTransaction(
+  client: PoolClient,
+): Pick<PlayerAccounts, 'read' | 'create'> {
+  return {
+    read: (playerId) => loadGame(client, playerId, false),
+    create: async (initial) => {
+      const snapshot = gameSnapshot(initial);
+      const inserted = await client.query(
+        'INSERT INTO arcana_accounts (player_id,revision) VALUES ($1,$2) ON CONFLICT (player_id) DO NOTHING RETURNING player_id',
+        [snapshot.playerId, snapshot.revision],
+      );
+      if (!inserted.rowCount) return loadGame(client, snapshot.playerId, true);
+      await writeGame(client, snapshot);
+      return snapshot;
+    },
+  };
+}
+
 async function loadGame(client: PoolClient, playerId: string, lock: boolean): Promise<GameState> {
   if (!validDomainId(playerId)) throw new ArcanaError('PLAYER_NOT_FOUND');
   const account = await client.query<{ revision: string }>(
@@ -289,15 +308,7 @@ export class PostgresGameTransactions implements PlayerAccounts {
 
   async create(initial: GameState): Promise<GameState> {
     const snapshot = gameSnapshot(initial);
-    return this.transaction(async (client) => {
-      const inserted = await client.query(
-        'INSERT INTO arcana_accounts (player_id,revision) VALUES ($1,$2) ON CONFLICT (player_id) DO NOTHING RETURNING player_id',
-        [snapshot.playerId, snapshot.revision],
-      );
-      if (!inserted.rowCount) return loadGame(client, snapshot.playerId, true);
-      await writeGame(client, snapshot);
-      return snapshot;
-    });
+    return this.transaction((client) => gameAccountsInTransaction(client).create(snapshot));
   }
 
   async read(playerId: string): Promise<GameState> {

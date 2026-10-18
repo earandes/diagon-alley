@@ -23,7 +23,7 @@ for (const language of ['es', 'en'] as const)
       await page.locator('.portal-enter').click();
       await startExpedition(page, language);
       const initial = await readGame(page);
-      const origin = page.locator('.map-node > button:enabled').first();
+      const origin = page.locator('.map-node > button[data-node-state="available"]').first();
       const header = page.locator('.game-header');
       const name = await header.locator('h1').innerText();
       expect(name).toBeTruthy();

@@ -1,6 +1,16 @@
 import type { Language } from '../domain/collection/wizards';
 
 const messages = {
+  findCompanion: { es: 'Buscar compañero', en: 'Find a companion' },
+  filterAffinity: { es: 'Por afinidad', en: 'By affinity' },
+  filterIdentity: { es: 'Por personaje', en: 'By character' },
+  allAffinities: { es: 'Todas las afinidades', en: 'All affinities' },
+  allIdentities: { es: 'Todos los personajes', en: 'All characters' },
+  clearFilters: { es: 'Ver todos', en: 'Show all' },
+  noMatches: {
+    es: 'Sin compañeros con esta combinación.',
+    en: 'No companions match this combination.',
+  },
   preparation: { es: 'Prepara tu expedición', en: 'Prepare your expedition' },
   choose: { es: 'Elige quién te acompaña', en: 'Choose your companions' },
   own: { es: 'Tus cromos', en: 'Your cards' },

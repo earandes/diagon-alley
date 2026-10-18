@@ -297,6 +297,7 @@ export function CardReveal({
           onLanguage={onLanguage}
           reduced={reduced}
           ownReduced={motion.own}
+          systemReduced={motion.system}
           onReduced={motion.change}
         />
       )}

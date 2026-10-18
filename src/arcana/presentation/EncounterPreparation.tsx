@@ -1,3 +1,5 @@
+import { useId } from 'react';
+import { contextualText } from './contextual-messages';
 import { Artwork } from './Artwork';
 import { themedName } from './content-packs/active';
 import { encounterText } from './encounter-messages';
@@ -23,6 +25,7 @@ export function EncounterPreparation({
   language: Language;
   ready: boolean;
 }) {
+  const targetDescription = useId();
   const t = (key: Parameters<typeof encounterText>[1], values = {}) =>
     encounterText(language, key, values);
   const selected =
@@ -84,6 +87,20 @@ export function EncounterPreparation({
             <p>{t('maximum')}</p>
             <p>{t('exactCost')}</p>
             <p>{t('keepsReserves')}</p>
+            <div className="encounter-provenance-key">
+              {(['owned', 'temporary'] as const).map((source) => (
+                <p key={source}>
+                  <Artwork
+                    asset={source === 'owned' ? 'ui.owned' : 'ui.temporary'}
+                    language={language}
+                    decorative
+                  />
+                  <strong>{t(source === 'owned' ? 'ownedShort' : 'temporaryShort')}</strong>
+                  {' · '}
+                  {contextualText(language, source)}
+                </p>
+              ))}
+            </div>
           </details>
         </div>
       </div>
@@ -178,7 +195,7 @@ export function EncounterPreparation({
       </div>
       {selected?.scope === 'unit' && (
         <div className="encounter-targets" role="group" aria-label={t('chooseUnit')}>
-          {run.members.map((member) => {
+          {run.members.map((member, index) => {
             const candidate = previewEncounterTrade(
               run.members,
               offer,
@@ -186,6 +203,10 @@ export function EncounterPreparation({
               member.unit.id,
             );
             const name = themedName(member.unit.wizardId, member.unit.id, language);
+            const source = contextualText(
+              language,
+              member.source === 'owned' ? 'owned' : 'temporary',
+            );
             const selectedUnit = member.unit.id === options.encounterUnitId;
             return (
               <button
@@ -193,7 +214,8 @@ export function EncounterPreparation({
                 type="button"
                 className="encounter-target"
                 data-encounter-unit={member.unit.id}
-                aria-label={name}
+                aria-label={t('memberLabel', { name, position: index + 1, source })}
+                aria-describedby={`${targetDescription}-${index}`}
                 aria-pressed={selectedUnit}
                 disabled={!ready || !candidate.eligible}
                 onClick={() =>
@@ -211,6 +233,15 @@ export function EncounterPreparation({
                     eager
                     decorative
                   />
+                  <span className="encounter-target-position" aria-hidden="true">
+                    {index + 1}
+                  </span>
+                  <Artwork
+                    asset={member.source === 'owned' ? 'ui.owned' : 'ui.temporary'}
+                    className="encounter-target-provenance"
+                    language={language}
+                    decorative
+                  />
                   {selectedUnit && (
                     <Artwork
                       asset="ui.seal"
@@ -222,22 +253,25 @@ export function EncounterPreparation({
                   )}
                 </span>
                 <span>{name}</span>
-                <small>
+                <span className="encounter-target-origin" aria-hidden="true">
+                  {t(member.source === 'owned' ? 'ownedShort' : 'temporaryShort')}
+                </span>
+                <small id={`${targetDescription}-${index}`}>
                   {numbers.format(member.unit.hp)} {t('health')}
                   <br />
                   {numbers.format(member.unit.mana)} {t('mana')}
+                  {!candidate.eligible && (
+                    <span className="visually-hidden">
+                      {t(
+                        member.unit.hp === 0
+                          ? 'fallen'
+                          : candidate.reason === 'no-benefit'
+                            ? 'noBenefit'
+                            : 'insufficientCondition',
+                      )}
+                    </span>
+                  )}
                 </small>
-                {!candidate.eligible && (
-                  <span className="visually-hidden">
-                    {t(
-                      member.unit.hp === 0
-                        ? 'fallen'
-                        : candidate.reason === 'no-benefit'
-                          ? 'noBenefit'
-                          : 'insufficientCondition',
-                    )}
-                  </span>
-                )}
               </button>
             );
           })}
@@ -248,8 +282,27 @@ export function EncounterPreparation({
           {changes.map((vital) => {
             const member = run.members.find(({ unit }) => unit.id === vital.unitId)!;
             const name = themedName(member.unit.wizardId, member.unit.id, language);
+            const position = run.members.indexOf(member) + 1;
+            const source = contextualText(
+              language,
+              member.source === 'owned' ? 'owned' : 'temporary',
+            );
+            const instanceName = t('memberLabel', { name, position, source });
             return (
-              <div className="encounter-preview-unit" key={vital.unitId}>
+              <div
+                className="encounter-preview-unit"
+                key={vital.unitId}
+                data-encounter-preview-unit={vital.unitId}
+                aria-label={instanceName}
+              >
+                <strong className="encounter-preview-identity">
+                  <span aria-hidden="true">
+                    {position} · {t(member.source === 'owned' ? 'ownedShort' : 'temporaryShort')}
+                  </span>
+                  <span className="visually-hidden">
+                    {t('memberIdentity', { position, source })}
+                  </span>
+                </strong>
                 <Artwork
                   asset={`character.${member.unit.wizardId}.thumbnail`}
                   language={language}
@@ -268,7 +321,7 @@ export function EncounterPreparation({
                   >
                     <span className="visually-hidden">
                       {t('change', {
-                        name,
+                        name: instanceName,
                         resource: t(resource),
                         before: numbers.format(before),
                         after: numbers.format(after),

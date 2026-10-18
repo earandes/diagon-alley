@@ -1,0 +1,734 @@
+[
+  {
+    "project": "chromium-390-a77",
+    "test": "A77 remaining forms and error-state composition without game mutation",
+    "name": "wrong-credentials",
+    "language": "es",
+    "pack": "diagon-alley",
+    "step": "login",
+    "width": 352,
+    "left": 19,
+    "right": 371,
+    "top": 65.5,
+    "bottom": 778.484375,
+    "scrollWidth": 346,
+    "clientWidth": 346,
+    "scrollTop": 0,
+    "activeTag": "BODY",
+    "activeName": null,
+    "passwordType": "password",
+    "closeControl": {
+      "left": 312,
+      "top": 80.5,
+      "width": 44,
+      "height": 46,
+      "hitInside": false
+    },
+    "alertText": "No se ha podido verificar el acceso. Revisa tus datos o solicita un nuevo código.",
+    "alertInViewport": true,
+    "controls": [
+      {
+        "text": "Volver al juego",
+        "disabled": false,
+        "pressed": null,
+        "height": 46
+      },
+      {
+        "text": "Mostrar contraseña",
+        "disabled": false,
+        "pressed": "false",
+        "height": 44
+      },
+      {
+        "text": "Iniciar sesión",
+        "disabled": false,
+        "pressed": null,
+        "height": 47
+      },
+      {
+        "text": "Olvidé mi contraseña",
+        "disabled": false,
+        "pressed": null,
+        "height": 44
+      },
+      {
+        "text": "Crear cuenta",
+        "disabled": false,
+        "pressed": null,
+        "height": 44
+      },
+      {
+        "text": "Volver",
+        "disabled": false,
+        "pressed": null,
+        "height": 44
+      }
+    ]
+  },
+  {
+    "project": "chromium-390-a77",
+    "test": "A77 remaining forms and error-state composition without game mutation",
+    "name": "reset-request-accepted",
+    "language": "es",
+    "pack": "diagon-alley",
+    "step": "request-reset",
+    "width": 352,
+    "left": 19,
+    "right": 371,
+    "top": 137.5,
+    "bottom": 706.484375,
+    "scrollWidth": 346,
+    "clientWidth": 346,
+    "scrollTop": 0,
+    "activeTag": "BODY",
+    "activeName": null,
+    "closeControl": {
+      "left": 312,
+      "top": 152.5,
+      "width": 44,
+      "height": 46,
+      "hitInside": false
+    },
+    "alertInViewport": null,
+    "controls": [
+      {
+        "text": "Volver al juego",
+        "disabled": false,
+        "pressed": null,
+        "height": 46
+      },
+      {
+        "text": "Enviar recuperación",
+        "disabled": false,
+        "pressed": null,
+        "height": 47
+      },
+      {
+        "text": "Tengo el código",
+        "disabled": false,
+        "pressed": null,
+        "height": 44
+      },
+      {
+        "text": "Iniciar sesión",
+        "disabled": false,
+        "pressed": null,
+        "height": 44
+      },
+      {
+        "text": "Volver",
+        "disabled": false,
+        "pressed": null,
+        "height": 44
+      }
+    ]
+  },
+  {
+    "project": "chromium-390-a77",
+    "test": "A77 remaining forms and error-state composition without game mutation",
+    "name": "reset-after-show-password",
+    "language": "es",
+    "pack": "diagon-alley",
+    "step": "reset",
+    "width": 352,
+    "left": 19,
+    "right": 371,
+    "top": 112.671875,
+    "bottom": 731.328125,
+    "scrollWidth": 346,
+    "clientWidth": 346,
+    "scrollTop": 0,
+    "activeTag": "INPUT",
+    "activeName": "token",
+    "passwordType": "text",
+    "closeControl": {
+      "left": 312,
+      "top": 127.671875,
+      "width": 44,
+      "height": 46,
+      "hitInside": false
+    },
+    "alertInViewport": null,
+    "controls": [
+      {
+        "text": "Volver al juego",
+        "disabled": false,
+        "pressed": null,
+        "height": 46
+      },
+      {
+        "text": "Ocultar contraseña",
+        "disabled": false,
+        "pressed": "true",
+        "height": 44
+      },
+      {
+        "text": "Guardar nueva contraseña",
+        "disabled": false,
+        "pressed": null,
+        "height": 47
+      },
+      {
+        "text": "Iniciar sesión",
+        "disabled": false,
+        "pressed": null,
+        "height": 44
+      },
+      {
+        "text": "Volver",
+        "disabled": false,
+        "pressed": null,
+        "height": 44
+      }
+    ]
+  },
+  {
+    "project": "chromium-390-a77",
+    "test": "A77 remaining forms and error-state composition without game mutation",
+    "name": "registration-accepted",
+    "language": "es",
+    "pack": "diagon-alley",
+    "step": "register",
+    "width": 352,
+    "left": 19,
+    "right": 371,
+    "top": 115.171875,
+    "bottom": 728.8125,
+    "scrollWidth": 346,
+    "clientWidth": 346,
+    "scrollTop": 0,
+    "activeTag": "BUTTON",
+    "activeName": null,
+    "closeControl": {
+      "left": 312,
+      "top": 130.171875,
+      "width": 44,
+      "height": 46,
+      "hitInside": false
+    },
+    "alertInViewport": null,
+    "controls": [
+      {
+        "text": "Volver al juego",
+        "disabled": true,
+        "pressed": null,
+        "height": 46
+      },
+      {
+        "text": "Conectando…",
+        "disabled": true,
+        "pressed": null,
+        "height": 47
+      },
+      {
+        "text": "Tengo el código",
+        "disabled": true,
+        "pressed": null,
+        "height": 44
+      },
+      {
+        "text": "Iniciar sesión",
+        "disabled": true,
+        "pressed": null,
+        "height": 44
+      },
+      {
+        "text": "Volver",
+        "disabled": true,
+        "pressed": null,
+        "height": 44
+      }
+    ]
+  },
+  {
+    "project": "chromium-390-a77",
+    "test": "A77 remaining forms and error-state composition without game mutation",
+    "name": "verify-empty",
+    "language": "es",
+    "pack": "diagon-alley",
+    "step": "verify",
+    "width": 352,
+    "left": 19,
+    "right": 371,
+    "top": 112.671875,
+    "bottom": 731.328125,
+    "scrollWidth": 346,
+    "clientWidth": 346,
+    "scrollTop": 0,
+    "activeTag": "INPUT",
+    "activeName": "token",
+    "passwordType": "password",
+    "closeControl": {
+      "left": 312,
+      "top": 127.671875,
+      "width": 44,
+      "height": 46,
+      "hitInside": false
+    },
+    "alertInViewport": null,
+    "controls": [
+      {
+        "text": "Volver al juego",
+        "disabled": false,
+        "pressed": null,
+        "height": 46
+      },
+      {
+        "text": "Mostrar contraseña",
+        "disabled": false,
+        "pressed": "false",
+        "height": 44
+      },
+      {
+        "text": "Verificar y guardar",
+        "disabled": false,
+        "pressed": null,
+        "height": 47
+      },
+      {
+        "text": "Iniciar sesión",
+        "disabled": false,
+        "pressed": null,
+        "height": 44
+      },
+      {
+        "text": "Volver",
+        "disabled": false,
+        "pressed": null,
+        "height": 44
+      }
+    ]
+  },
+  {
+    "project": "chromium-390-a77",
+    "test": "A77 remaining forms and error-state composition without game mutation",
+    "name": "invalid-token",
+    "language": "es",
+    "pack": "diagon-alley",
+    "step": "verify",
+    "width": 352,
+    "left": 19,
+    "right": 371,
+    "top": 70.171875,
+    "bottom": 773.8125,
+    "scrollWidth": 346,
+    "clientWidth": 346,
+    "scrollTop": 0,
+    "activeTag": "BODY",
+    "activeName": null,
+    "passwordType": "password",
+    "closeControl": {
+      "left": 312,
+      "top": 85.171875,
+      "width": 44,
+      "height": 46,
+      "hitInside": false
+    },
+    "alertText": "No se ha podido verificar el acceso. Revisa tus datos o solicita un nuevo código.",
+    "alertInViewport": true,
+    "controls": [
+      {
+        "text": "Volver al juego",
+        "disabled": false,
+        "pressed": null,
+        "height": 46
+      },
+      {
+        "text": "Mostrar contraseña",
+        "disabled": false,
+        "pressed": "false",
+        "height": 44
+      },
+      {
+        "text": "Verificar y guardar",
+        "disabled": false,
+        "pressed": null,
+        "height": 47
+      },
+      {
+        "text": "Iniciar sesión",
+        "disabled": false,
+        "pressed": null,
+        "height": 44
+      },
+      {
+        "text": "Volver",
+        "disabled": false,
+        "pressed": null,
+        "height": 44
+      }
+    ]
+  },
+  {
+    "project": "chromium-390-a77",
+    "test": "A77 guest link after reload, real settings swap and explicit account conflict",
+    "name": "bound-in-other-tab-mode",
+    "language": "es",
+    "pack": "diagon-alley",
+    "step": "register",
+    "width": 352,
+    "left": 19,
+    "right": 371,
+    "top": 126.34375,
+    "bottom": 717.65625,
+    "scrollWidth": 346,
+    "clientWidth": 346,
+    "scrollTop": 0,
+    "activeTag": "INPUT",
+    "activeName": "email",
+    "closeControl": {
+      "left": 312,
+      "top": 141.34375,
+      "width": 44,
+      "height": 46,
+      "hitInside": false
+    },
+    "alertInViewport": null,
+    "controls": [
+      {
+        "text": "Volver al juego",
+        "disabled": false,
+        "pressed": null,
+        "height": 46
+      },
+      {
+        "text": "Crear cuenta",
+        "disabled": false,
+        "pressed": null,
+        "height": 47
+      },
+      {
+        "text": "Tengo el código",
+        "disabled": false,
+        "pressed": null,
+        "height": 44
+      },
+      {
+        "text": "Iniciar sesión",
+        "disabled": false,
+        "pressed": null,
+        "height": 44
+      },
+      {
+        "text": "Volver",
+        "disabled": false,
+        "pressed": null,
+        "height": 44
+      }
+    ]
+  },
+  {
+    "project": "chromium-390-a77",
+    "test": "A77 guest link after reload, real settings swap and explicit account conflict",
+    "name": "linked-after-swap",
+    "language": "en",
+    "pack": "arcana",
+    "step": "manage",
+    "width": 352,
+    "left": 19,
+    "right": 371,
+    "top": 147.5,
+    "bottom": 696.5,
+    "scrollWidth": 346,
+    "clientWidth": 346,
+    "scrollTop": 0,
+    "activeTag": "BUTTON",
+    "activeName": null,
+    "closeControl": {
+      "left": 312,
+      "top": 162.5,
+      "width": 44,
+      "height": 46,
+      "hitInside": false
+    },
+    "alertInViewport": null,
+    "controls": [
+      {
+        "text": "Back to game",
+        "disabled": false,
+        "pressed": null,
+        "height": 46
+      },
+      {
+        "text": "Sign out",
+        "disabled": false,
+        "pressed": null,
+        "height": 44.59375
+      },
+      {
+        "text": "Recover access",
+        "disabled": false,
+        "pressed": null,
+        "height": 44
+      },
+      {
+        "text": "Back",
+        "disabled": false,
+        "pressed": null,
+        "height": 44
+      }
+    ]
+  },
+  {
+    "project": "chromium-390-a77",
+    "test": "A77 guest link after reload, real settings swap and explicit account conflict",
+    "name": "different-account-blocked",
+    "language": "en",
+    "pack": "arcana",
+    "step": "login",
+    "width": 352,
+    "left": 19,
+    "right": 371,
+    "top": 14,
+    "bottom": 830,
+    "scrollWidth": 346,
+    "clientWidth": 346,
+    "scrollTop": 0,
+    "activeTag": "BODY",
+    "activeName": null,
+    "passwordType": "password",
+    "closeControl": {
+      "left": 312,
+      "top": 29,
+      "width": 44,
+      "height": 46,
+      "hitInside": false
+    },
+    "alertText": "This account belongs to another game. Explicitly choose to open it; the current game will not be merged.",
+    "alertInViewport": false,
+    "controls": [
+      {
+        "text": "Back to game",
+        "disabled": false,
+        "pressed": null,
+        "height": 46
+      },
+      {
+        "text": "Show password",
+        "disabled": false,
+        "pressed": "false",
+        "height": 44
+      },
+      {
+        "text": "Open another saved game",
+        "disabled": false,
+        "pressed": "false",
+        "height": 44
+      },
+      {
+        "text": "Sign in",
+        "disabled": false,
+        "pressed": null,
+        "height": 47
+      },
+      {
+        "text": "Forgot password",
+        "disabled": false,
+        "pressed": null,
+        "height": 44
+      },
+      {
+        "text": "Create account",
+        "disabled": false,
+        "pressed": null,
+        "height": 44
+      },
+      {
+        "text": "Back",
+        "disabled": false,
+        "pressed": null,
+        "height": 44
+      }
+    ]
+  },
+  {
+    "project": "chromium-390-a77",
+    "test": "A77 guest link after reload, real settings swap and explicit account conflict",
+    "name": "different-account-explicit",
+    "language": "en",
+    "pack": "arcana",
+    "step": "login",
+    "width": 352,
+    "left": 19,
+    "right": 371,
+    "top": 14,
+    "bottom": 830,
+    "scrollWidth": 346,
+    "clientWidth": 346,
+    "scrollTop": 0,
+    "activeTag": "BUTTON",
+    "activeName": null,
+    "passwordType": "password",
+    "closeControl": {
+      "left": 312,
+      "top": 29,
+      "width": 44,
+      "height": 46,
+      "hitInside": false
+    },
+    "alertText": "This account belongs to another game. Explicitly choose to open it; the current game will not be merged.",
+    "alertInViewport": false,
+    "controls": [
+      {
+        "text": "Back to game",
+        "disabled": false,
+        "pressed": null,
+        "height": 46
+      },
+      {
+        "text": "Show password",
+        "disabled": false,
+        "pressed": "false",
+        "height": 44
+      },
+      {
+        "text": "Recover this game",
+        "disabled": false,
+        "pressed": "true",
+        "height": 44
+      },
+      {
+        "text": "Sign in",
+        "disabled": false,
+        "pressed": null,
+        "height": 47
+      },
+      {
+        "text": "Forgot password",
+        "disabled": false,
+        "pressed": null,
+        "height": 44
+      },
+      {
+        "text": "Create account",
+        "disabled": false,
+        "pressed": null,
+        "height": 44
+      },
+      {
+        "text": "Back",
+        "disabled": false,
+        "pressed": null,
+        "height": 44
+      }
+    ]
+  },
+  {
+    "project": "chromium-390-a77",
+    "test": "A77 transport-only registration failure and offline guidance diagnostic",
+    "name": "registration-network-failure",
+    "language": "es",
+    "pack": "diagon-alley",
+    "step": "register",
+    "width": 352,
+    "left": 19,
+    "right": 371,
+    "top": 83.84375,
+    "bottom": 760.140625,
+    "scrollWidth": 346,
+    "clientWidth": 346,
+    "scrollTop": 0,
+    "activeTag": "BODY",
+    "activeName": null,
+    "closeControl": {
+      "left": 312,
+      "top": 98.84375,
+      "width": 44,
+      "height": 46,
+      "hitInside": false
+    },
+    "alertText": "No llegó la respuesta. Comprueba la sesión antes de volver a enviar; no se ha descartado tu partida.",
+    "alertInViewport": true,
+    "controls": [
+      {
+        "text": "Volver al juego",
+        "disabled": false,
+        "pressed": null,
+        "height": 46
+      },
+      {
+        "text": "Crear cuenta",
+        "disabled": false,
+        "pressed": null,
+        "height": 47
+      },
+      {
+        "text": "Tengo el código",
+        "disabled": false,
+        "pressed": null,
+        "height": 44
+      },
+      {
+        "text": "Iniciar sesión",
+        "disabled": false,
+        "pressed": null,
+        "height": 44
+      },
+      {
+        "text": "Volver",
+        "disabled": false,
+        "pressed": null,
+        "height": 44
+      }
+    ]
+  },
+  {
+    "project": "chromium-390-a77",
+    "test": "A77 transport-only registration failure and offline guidance diagnostic",
+    "name": "offline",
+    "language": "es",
+    "pack": "diagon-alley",
+    "step": "register",
+    "width": 352,
+    "left": 19,
+    "right": 371,
+    "top": 61.515625,
+    "bottom": 782.46875,
+    "scrollWidth": 346,
+    "clientWidth": 346,
+    "scrollTop": 0,
+    "activeTag": "BODY",
+    "activeName": null,
+    "closeControl": {
+      "left": 312,
+      "top": 76.515625,
+      "width": 44,
+      "height": 46,
+      "hitInside": false
+    },
+    "alertText": "No llegó la respuesta. Comprueba la sesión antes de volver a enviar; no se ha descartado tu partida.",
+    "alertInViewport": true,
+    "controls": [
+      {
+        "text": "Volver al juego",
+        "disabled": false,
+        "pressed": null,
+        "height": 46
+      },
+      {
+        "text": "Crear cuenta",
+        "disabled": true,
+        "pressed": null,
+        "height": 47
+      },
+      {
+        "text": "Tengo el código",
+        "disabled": false,
+        "pressed": null,
+        "height": 44
+      },
+      {
+        "text": "Iniciar sesión",
+        "disabled": false,
+        "pressed": null,
+        "height": 44
+      },
+      {
+        "text": "Volver",
+        "disabled": false,
+        "pressed": null,
+        "height": 44
+      }
+    ]
+  }
+]

@@ -5,7 +5,7 @@ import { expect, test, type Page } from './game-fixture';
 import { writeFile } from 'node:fs/promises';
 const battle = async (page: Page) => {
   await page.goto('/');
-  await page.getByRole('button', { name: 'Comenzar ensayo local', exact: true }).click();
+  await page.getByRole('button', { name: 'Jugar como invitado', exact: true }).click();
   await startExpedition(page);
   const duelId = await reachNode(page, 'duel', 'es');
   await page.locator(`[data-node="${duelId}"]`).click();
@@ -26,7 +26,7 @@ test('keeps the first available map node above the fixed navigation after starti
   page,
 }) => {
   await page.goto('/');
-  await page.getByRole('button', { name: 'Comenzar ensayo local', exact: true }).click();
+  await page.getByRole('button', { name: 'Jugar como invitado', exact: true }).click();
   await startExpedition(page);
   const first = page.locator('[data-node="pasaje:0:0"]');
   await expect(first).toBeInViewport();
@@ -87,7 +87,7 @@ test('branching map and equivalent list keep identical accessible actions with W
   ).toBeVisible();
   await page.getByRole('button', { name: 'Volver al mapa', exact: true }).click();
   await page.getByRole('button', { name: 'Ver lista de nodos', exact: true }).click();
-  const next = page.locator('[data-node]:not(:disabled)').first();
+  const next = page.locator('[data-node][data-node-state="available"]').first();
   await expect(next).toBeEnabled();
   const beforeConsultation = await economic(page);
   await next.click();
@@ -165,7 +165,7 @@ test('skipping a GSAP reveal and changing language preserves the confirmed card 
     if (r.method() === 'POST') posts++;
   });
   await page.goto('/');
-  await page.getByRole('button', { name: 'Comenzar ensayo local', exact: true }).click();
+  await page.getByRole('button', { name: 'Jugar como invitado', exact: true }).click();
   await page.getByRole('button', { name: 'Bazar', exact: true }).click();
   await page.locator('[data-shop="confectionery"]').click();
   await page.getByRole('button', { name: 'Comprar y abrir 1 · 10 Coronas', exact: true }).click();
@@ -212,7 +212,7 @@ test('keeps the card static and confirmed when the lazy GSAP asset is missing', 
     await route.abort();
   });
   await page.goto('/');
-  await page.getByRole('button', { name: 'Comenzar ensayo local', exact: true }).click();
+  await page.getByRole('button', { name: 'Jugar como invitado', exact: true }).click();
   await page.getByRole('button', { name: 'Bazar', exact: true }).click();
   await page.locator('[data-shop="confectionery"]').click();
   await page.getByRole('button', { name: 'Comprar y abrir 1 · 10 Coronas', exact: true }).click();

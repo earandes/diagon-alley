@@ -1,0 +1,349 @@
+/* A80: illustrated correspondence, with one task and contextual help. */
+.account-access {
+  --account-paper: #faecc7;
+  --account-ink: #132438;
+  --account-accent: #392047;
+  --account-muted: #58452d;
+  --account-focus: #164f65;
+  --account-error: #76312d;
+
+  width: min(680px, calc(100vw - 28px));
+  max-height: calc(100dvh - 28px);
+  box-sizing: border-box;
+  overflow: auto;
+  padding: 8px;
+  border: 1px solid #8f7950;
+  border-radius: 8px;
+  color: #fff0d0;
+  background: var(--account-ink);
+  box-shadow:
+    0 24px 64px #020510b3,
+    inset 0 0 0 4px #0b1929;
+  text-align: start;
+  scrollbar-color: #c9a365 var(--account-ink);
+}
+.account-access[open] {
+  display: grid;
+  grid-template-columns: minmax(min-content, 220px) minmax(0, 1fr);
+  gap: 0;
+}
+.account-access::backdrop {
+  background: #020914b3;
+}
+.arcana-shell .account-access .account-heading {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 44px 168px auto;
+  align-content: center;
+  align-items: start;
+  gap: 12px;
+  position: static;
+  padding: 16px 12px 24px;
+  margin: 0;
+  background: none;
+  border: 0;
+}
+.account-heading > img {
+  grid-column: 1;
+  grid-row: 2;
+  justify-self: center;
+  width: 168px;
+  height: 168px;
+  object-fit: contain;
+}
+.account-heading h2 {
+  grid-column: 1 / -1;
+  grid-row: 3;
+  font:
+    500 1.5rem / 1.3 Cinzel,
+    Georgia,
+    serif;
+  margin: 0;
+  text-align: center;
+  text-wrap: balance;
+  overflow-wrap: normal;
+}
+.account-access .account-close {
+  grid-column: 1;
+  grid-row: 1;
+  align-self: start;
+  width: 44px;
+  min-height: 44px;
+  border: 0;
+  padding: 8px;
+  margin: 0;
+  background: none;
+  color: #fff0d0;
+}
+.account-close svg {
+  width: 26px;
+  height: 26px;
+}
+.account-access svg {
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 1.8;
+}
+.account-access form,
+.account-management {
+  display: grid;
+  align-content: center;
+  gap: 14px;
+  min-width: 0;
+  padding: 28px;
+  color: var(--account-ink);
+  background: var(--account-paper);
+  border-radius: 2px 4px 4px 2px;
+}
+.account-access label {
+  display: grid;
+  gap: 4px;
+  color: var(--account-ink);
+  font-size: 0.9rem;
+}
+.account-access input {
+  box-sizing: border-box;
+  min-width: 0;
+  width: 100%;
+  min-height: 48px;
+  padding: 10px 8px;
+  border: 0;
+  border-bottom: 1px solid #94734e;
+  border-radius: 0;
+  background: transparent;
+  color: var(--account-ink);
+  font: inherit;
+  caret-color: var(--account-ink);
+}
+.account-access input::selection {
+  background: #e6c078;
+  color: #0b182a;
+}
+.account-access input:focus-visible,
+.account-access button:focus-visible,
+.account-access summary:focus-visible {
+  outline: 3px solid var(--account-focus);
+  outline-offset: 3px;
+}
+.settings-account button:focus-visible {
+  outline: 3px solid #b7edee;
+  outline-offset: 3px;
+}
+.account-access .account-close:focus-visible {
+  outline-color: #b7edee;
+}
+.account-access p {
+  margin: 0;
+  color: var(--account-muted);
+  font-size: 0.9rem;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+}
+.account-access .account-intro {
+  text-align: center;
+}
+.account-access button {
+  min-height: 44px;
+  min-width: 44px;
+  max-width: 100%;
+  margin: 0;
+  font: inherit;
+  white-space: normal;
+}
+.account-access .account-primary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  min-height: 52px;
+  padding: 10px 14px;
+  border: 1px solid var(--account-accent);
+  border-radius: 3px;
+  color: #fff0d0;
+  background: var(--account-accent);
+  font-weight: 600;
+}
+.account-access .account-primary:hover:not(:disabled) {
+  background: #1b1428;
+}
+.account-access .account-link {
+  padding: 8px 0;
+  border: 0;
+  background: none;
+  color: var(--account-accent);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-align: start;
+}
+.account-access button:disabled {
+  opacity: 0.55;
+  cursor: default;
+}
+.account-password {
+  display: grid;
+  gap: 5px;
+}
+.account-password-entry {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 44px;
+  align-items: center;
+  background: transparent;
+  border-bottom: 1px solid #94734e;
+}
+.account-password-entry input {
+  border-bottom: 0;
+}
+.account-access .account-eye {
+  background: none;
+  border: 0;
+  padding: 10px;
+  color: var(--account-muted);
+}
+.account-eye svg {
+  width: 24px;
+  height: 24px;
+}
+.account-access .account-trial {
+  font-size: 0.8rem;
+}
+.account-delivery {
+  display: grid;
+  gap: 5px;
+}
+.account-access .account-email {
+  color: var(--account-ink);
+  font-size: 0.9rem;
+  text-align: center;
+}
+.account-delivery [role='status'] {
+  text-align: center;
+}
+.account-help {
+  margin: 0;
+  border-top: 1px solid #94734e66;
+  padding-top: 2px;
+}
+.account-help > summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 4px 0;
+  border: 0;
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
+  cursor: pointer;
+  color: var(--account-accent);
+  font-size: 0.9rem;
+  list-style: none;
+}
+.account-help > summary::-webkit-details-marker {
+  display: none;
+}
+.account-help > summary svg {
+  width: 12px;
+  height: 12px;
+  flex: 0 0 12px;
+}
+.account-help[open] > summary svg {
+  transform: rotate(90deg);
+}
+.account-help-content {
+  display: grid;
+  gap: 6px;
+  padding-bottom: 4px;
+}
+.account-switch {
+  display: grid;
+  gap: 6px;
+}
+.account-access .account-error {
+  color: var(--account-error);
+  scroll-margin-block: 16px;
+}
+.account-access .account-notice {
+  color: #215345;
+}
+.settings-account {
+  border-top: 1px solid #b18a4b66;
+  padding-top: 12px;
+  margin-bottom: 16px;
+}
+.settings-account button {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  min-height: 52px;
+  border: 0;
+  background: none;
+  padding: 7px 0;
+  color: #fff0d0;
+  text-align: start;
+}
+.settings-account img {
+  width: 36px;
+  height: 42px;
+  object-fit: contain;
+}
+.settings-account small {
+  display: block;
+  overflow-wrap: anywhere;
+  color: #e7d3a7;
+}
+/* A80: the object owns the cover; credentials remain native writing on paper. */
+.account-access .account-link:hover:not(:disabled),
+.account-access .account-eye:hover:not(:disabled) {
+  background: #d8b67b55;
+  color: var(--account-accent);
+}
+.account-access .account-close:hover:not(:disabled) {
+  background: #0b1929;
+  color: #fff0d0;
+}
+.account-access > p {
+  grid-column: 2;
+  color: #fff0d0;
+  padding: 8px 16px;
+}
+.account-access > .account-primary {
+  grid-column: 2;
+}
+@media (max-width: 640px) {
+  .account-access {
+    width: min(420px, calc(100vw - 28px));
+  }
+  .account-access[open] {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .arcana-shell .account-access .account-heading {
+    grid-template-columns: 44px minmax(0, 1fr) 44px;
+    grid-template-rows: 88px auto;
+    gap: 8px;
+    padding: 12px 14px 16px;
+    align-content: start;
+  }
+  .account-heading > img {
+    grid-column: 2;
+    grid-row: 1;
+    width: 100px;
+    height: 88px;
+  }
+  .account-heading h2 {
+    grid-row: 2;
+    font-size: 1.35rem;
+  }
+  .account-access form,
+  .account-management {
+    padding: 20px;
+    gap: 12px;
+    border-radius: 2px 2px 4px 4px;
+  }
+  .account-access > p,
+  .account-access > .account-primary {
+    grid-column: 1;
+  }
+}

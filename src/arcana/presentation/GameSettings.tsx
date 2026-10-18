@@ -1,24 +1,33 @@
-import { useEffect, useRef, useState } from 'react';
+import { createContext, useContext, useEffect, useRef, useState, type ReactNode } from 'react';
 import { Artwork } from './Artwork';
 import { contentPackOptions, selectedContentPackId, setContentPack } from './content-packs/active';
 import type { Language } from '../domain/collection/wizards';
 import { text } from './translations';
 import './settings-case.css';
+import { mapSettingsText } from './map-settings-messages';
 
-/** Preferences are presentation only. This menu never calls the game gateway. */
+export const AccountSettingsContext = createContext<ReactNode>(null);
+
+/** Preferences stay local; account actions are provided by the session coordinator. */
 export function GameSettings({
   language,
   onLanguage,
   reduced,
   ownReduced,
+  systemReduced = false,
   onReduced,
+  accountControl,
 }: {
   language: Language;
   onLanguage: (language: Language) => void;
   reduced: boolean;
   ownReduced: boolean;
+  systemReduced?: boolean;
   onReduced: (enabled: boolean) => void;
+  accountControl?: ReactNode;
 }) {
+  const sharedAccountControl = useContext(AccountSettingsContext);
+  const account = accountControl ?? sharedAccountControl;
   const [open, setOpen] = useState(false);
   const [showSave, setShowSave] = useState(false);
   const dialog = useRef<HTMLDialogElement>(null);
@@ -66,6 +75,7 @@ export function GameSettings({
             <Artwork asset="ui.settings" language={language} decorative />
             <h2>{text(language, 'gameSettings')}</h2>
           </header>
+          {account && <section className="settings-account">{account}</section>}
           <fieldset className="settings-choices">
             <legend>{text(language, 'gameLanguage')}</legend>
             {(['es', 'en'] as const).map((value) => (
@@ -100,15 +110,13 @@ export function GameSettings({
               </button>
             ))}
           </fieldset>
-          <button
-            className="settings-motion"
-            aria-pressed={reduced}
-            onClick={() => onReduced(!ownReduced)}
-          >
-            <Artwork asset="ui.motion" language={language} decorative />
-            {text(language, 'reduceMotion')}
-            {reduced && <Artwork asset="ui.seal" language={language} decorative />}
-          </button>
+          <MotionPreference
+            language={language}
+            reduced={reduced}
+            ownReduced={ownReduced}
+            systemReduced={systemReduced}
+            onReduced={onReduced}
+          />
           <button
             className="settings-save-letter"
             aria-expanded={showSave}
@@ -126,6 +134,47 @@ export function GameSettings({
           )}
         </dialog>
       )}
+    </>
+  );
+}
+
+/** Own preference remains actionable even when the operating system enforces reduced motion. */
+export function MotionPreference({
+  language,
+  reduced,
+  ownReduced,
+  systemReduced,
+  onReduced,
+}: {
+  language: Language;
+  reduced: boolean;
+  ownReduced: boolean;
+  systemReduced: boolean;
+  onReduced: (enabled: boolean) => void;
+}) {
+  return (
+    <>
+      <button
+        className="settings-motion"
+        aria-pressed={ownReduced}
+        aria-describedby="settings-motion-state"
+        onClick={() => onReduced(!ownReduced)}
+      >
+        <Artwork asset="ui.motion" language={language} decorative />
+        {mapSettingsText(language, 'motionOwn')}
+        {ownReduced && <Artwork asset="ui.seal" language={language} decorative />}
+      </button>
+      <p
+        id="settings-motion-state"
+        className="settings-motion-state"
+        data-motion-system={systemReduced}
+        data-motion-effective={reduced}
+      >
+        {mapSettingsText(
+          language,
+          systemReduced ? 'motionSystem' : reduced ? 'motionEffectiveOn' : 'motionEffectiveOff',
+        )}
+      </p>
     </>
   );
 }

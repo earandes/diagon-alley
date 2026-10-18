@@ -1,0 +1,6 @@
+check	Run npx playwright test --config playwright.accounts-fixes-a78.config.ts	2026-10-18T01:34:02.5341693Z     Expected: visible
+check	Run npx playwright test --config playwright.accounts-fixes-a78.config.ts	2026-10-18T01:34:02.5342287Z     Received: hidden
+check	Run npx playwright test --config playwright.accounts-fixes-a78.config.ts	2026-10-18T01:34:02.5373115Z   1 skipped
+check	Run npx playwright test --config playwright.accounts-fixes-a78.config.ts	2026-10-18T01:34:02.5373884Z   3 passed (22.5s)
+check	Run ARCANA_CAPTURE_A79=1 npx playwright test --config playwright.account-entry-a79.config.ts	2026-10-18T01:34:07.7200977Z     Expected: <= 3
+check	Run ARCANA_CAPTURE_A79=1 npx playwright test --config playwright.account-entry-a79.config.ts	2026-10-18T01:34:07.7201406Z     Received:    4

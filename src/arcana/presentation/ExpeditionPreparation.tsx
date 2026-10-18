@@ -1,10 +1,18 @@
 import { ChallengeChoice } from './ExpeditionChallenge';
 import type { ExpeditionChallenge } from '../domain/exploration/challenges';
-import { useEffect, useId, useRef, useState } from 'react';
+import { useEffect, useId, useRef, useState, type ReactNode } from 'react';
 import type { GameState } from '../application/game';
 import type { PublicContent } from '../application/public-content';
-import { preparationUnit, preparationFormation, previewEquipment } from './contextual-preparation';
+import {
+  preparationUnit,
+  preparationFormation,
+  previewEquipment,
+  effectivePreparationRules,
+  filterPreparationCopies,
+  type PreparationFilter,
+} from './contextual-preparation';
 import { equipmentSpellPower, equipmentInitiative } from '../domain/combat/equipment-effects';
+import { AffinityLabel } from './TacticalBadge';
 import { PreparationSynergies } from './PreparationSynergies';
 import { IntentionReminder } from './ExpeditionIntentions';
 import { contextualText as c } from './contextual-messages';
@@ -200,10 +208,12 @@ export function ExpeditionPreparation({
   content,
   context = 'formation',
   onReturnToMap,
+  recovery,
   combatChoices = [],
   onCombatNode,
 }: {
   content?: PublicContent;
+  recovery?: ReactNode;
   context?: 'formation' | 'beans';
   combatChoices?: readonly { id: string; kind: 'duel' | 'boss' }[];
   onCombatNode?: (id: string) => void;
@@ -234,6 +244,7 @@ export function ExpeditionPreparation({
   const inspectionOrigin = useRef<HTMLButtonElement | null>(null);
   const inspectionTitle = useId();
   const [page, setPage] = useState(0);
+  const [filter, setFilter] = useState<PreparationFilter>({});
   const [challenge, setChallenge] = useState<ExpeditionChallenge>('discovery');
   const lastRun = game.exploration?.run;
   const recommendedChallenge =
@@ -281,7 +292,21 @@ export function ExpeditionPreparation({
           0) > 0,
     );
   const changed = chosen.join('|') !== committedKey;
-  const pageCount = Math.max(1, Math.ceil(game.copies.length / 6));
+  const filteredCopies = filterPreparationCopies(game, content, filter);
+  const identities = game.copies.filter(
+    (copy, index, copies) =>
+      copies.findIndex((entry) => entry.wizard.id === copy.wizard.id) === index,
+  );
+  const availableAffinities = [
+    ...new Set(
+      game.copies.map((copy) => preparationUnit(game, copy, content).affinity ?? 'unknown'),
+    ),
+  ];
+  const changeFilter = (next: PreparationFilter) => {
+    setFilter(next);
+    setPage(0);
+  };
+  const pageCount = Math.max(1, Math.ceil(filteredCopies.length / 6));
   const currentPage = Math.min(page, pageCount - 1);
   const canConfirm =
     ready &&
@@ -310,6 +335,7 @@ export function ExpeditionPreparation({
           </button>
         )}
       </header>
+      {!inspected && recovery}
       {content && <IntentionReminder game={game} content={content} language={language} />}
       {context === 'beans' && (
         <section
@@ -459,18 +485,102 @@ export function ExpeditionPreparation({
             <PreparationSynergies
               members={formation}
               previous={run ? previousFormation : undefined}
-              rules={content.combatRules}
+              rules={effectivePreparationRules(run, content.combatRules)}
               language={language}
             />
           )}
           <div className="preparation-workspace">
             <div className="preparation-roster">
               <h3>{p(chosen.length ? 'own' : 'choose')}</h3>
+              {game.copies.length > 6 && (
+                <details className="preparation-filters">
+                  <summary>{p('findCompanion')}</summary>
+                  <div
+                    className="preparation-affinity-filters"
+                    role="group"
+                    aria-label={p('filterAffinity')}
+                  >
+                    <button
+                      className="game-object"
+                      aria-pressed={!filter.affinity}
+                      onClick={() => changeFilter({ ...filter, affinity: undefined })}
+                    >
+                      {p('allAffinities')}
+                    </button>
+                    {availableAffinities.map((affinity) => (
+                      <button
+                        className="game-object"
+                        key={affinity}
+                        data-preparation-affinity={affinity}
+                        aria-pressed={filter.affinity === affinity}
+                        onClick={() =>
+                          changeFilter({
+                            ...filter,
+                            affinity: filter.affinity === affinity ? undefined : affinity,
+                          })
+                        }
+                      >
+                        {affinity === 'unknown' ? (
+                          <span>{c(language, 'unknown')}</span>
+                        ) : (
+                          <AffinityLabel affinity={affinity} language={language} />
+                        )}
+                      </button>
+                    ))}
+                  </div>
+                  <details className="preparation-identity-filters">
+                    <summary>{p('filterIdentity')}</summary>
+                    <div role="group" aria-label={p('filterIdentity')}>
+                      <button
+                        className="game-object"
+                        aria-pressed={!filter.wizardId}
+                        onClick={() => changeFilter({ ...filter, wizardId: undefined })}
+                      >
+                        {p('allIdentities')}
+                      </button>
+                      {identities.map((copy) => (
+                        <button
+                          className="game-object"
+                          key={copy.wizard.id}
+                          data-preparation-identity={copy.wizard.id}
+                          aria-label={wizardName(copy.wizard, language)}
+                          aria-pressed={filter.wizardId === copy.wizard.id}
+                          onClick={() =>
+                            changeFilter({
+                              ...filter,
+                              wizardId:
+                                filter.wizardId === copy.wizard.id ? undefined : copy.wizard.id,
+                            })
+                          }
+                        >
+                          <Artwork
+                            asset={`character.${copy.wizard.id}.thumbnail`}
+                            language={language}
+                            decorative
+                          />
+                          <span>{wizardName(copy.wizard, language)}</span>
+                        </button>
+                      ))}
+                    </div>
+                  </details>
+                  {(filter.affinity || filter.wizardId) && (
+                    <button className="preparation-clear-filter" onClick={() => changeFilter({})}>
+                      {p('clearFilters')}
+                    </button>
+                  )}
+                </details>
+              )}
+              {filteredCopies.length === 0 && (
+                <p role="status" className="preparation-filter-empty">
+                  {p('noMatches')}{' '}
+                  <button onClick={() => changeFilter({})}>{p('clearFilters')}</button>
+                </p>
+              )}
               <div
                 className="preparation-cards"
-                data-count={Math.min(6, game.copies.length - currentPage * 6)}
+                data-count={Math.min(6, filteredCopies.length - currentPage * 6)}
               >
-                {game.copies.slice(currentPage * 6, currentPage * 6 + 6).map((copy) => {
+                {filteredCopies.slice(currentPage * 6, currentPage * 6 + 6).map((copy) => {
                   const selected = chosen.includes(copy.copyId);
                   const number =
                     game.copies
@@ -642,6 +752,7 @@ export function ExpeditionPreparation({
                     {c(language, inspectedUnit.affinity ?? 'unknown')}
                   </p>
                   <small className="preparation-stat-label">{c(language, 'baseToGear')}</small>
+                  {recovery}
                   {selectedCopy && (
                     <PreparationGear
                       key={selectedCopy.copyId}

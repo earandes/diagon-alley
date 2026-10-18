@@ -1,0 +1,325 @@
+{
+  "config": {
+    "argv": [
+      "/opt/hostedtoolcache/node/24.21.0/x64/bin/node",
+      "/home/runner/work/diagon-alley/diagon-alley/node_modules/.bin/playwright",
+      "test",
+      "--config",
+      "playwright.accounts-review-a77.config.ts",
+      "--project",
+      "chromium-390-a77",
+      "--grep",
+      "remaining forms"
+    ],
+    "configFile": "/home/runner/work/diagon-alley/diagon-alley/playwright.accounts-review-a77.config.ts",
+    "rootDir": "/home/runner/work/diagon-alley/diagon-alley/tests/browser-accounts",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": "/home/runner/work/diagon-alley/diagon-alley/tools/verification/playwright-suite-lock.ts",
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 1,
+    "metadata": {
+      "ci": {
+        "commitHref": "https://github.com/earandes/diagon-alley/commit/828b58964bd0104d5f1731f360bbde5090629c71",
+        "commitHash": "828b58964bd0104d5f1731f360bbde5090629c71",
+        "prHref": "https://github.com/earandes/diagon-alley/pull/7",
+        "prTitle": "A76: cuentas recuperables y vinculación segura de invitado",
+        "prBaseHash": "ff23f580d9d3989abc9918d7b5bc8328d9e83b62",
+        "buildHref": "https://github.com/earandes/diagon-alley/actions/runs/39082151180"
+      },
+      "gitCommit": {
+        "shortHash": "828b589",
+        "hash": "828b58964bd0104d5f1731f360bbde5090629c71",
+        "subject": "Merge b24b656b12470921e5b9beaa23a12e8a4691d72d into ff23f580d9d3989abc9918d7b5bc8328d9e83b62",
+        "body": "Merge b24b656b12470921e5b9beaa23a12e8a4691d72d into ff23f580d9d3989abc9918d7b5bc8328d9e83b62\n",
+        "author": {
+          "name": "Enric Arandes",
+          "email": "enric.arandes@code.seat",
+          "time": 1792282578000
+        },
+        "committer": {
+          "name": "GitHub",
+          "email": "noreply@github.com",
+          "time": 1792282578000
+        },
+        "branch": "HEAD"
+      },
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/home/runner/work/diagon-alley/diagon-alley/test-results/accounts-review-a77",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "ci": {
+            "commitHref": "https://github.com/earandes/diagon-alley/commit/828b58964bd0104d5f1731f360bbde5090629c71",
+            "commitHash": "828b58964bd0104d5f1731f360bbde5090629c71",
+            "prHref": "https://github.com/earandes/diagon-alley/pull/7",
+            "prTitle": "A76: cuentas recuperables y vinculación segura de invitado",
+            "prBaseHash": "ff23f580d9d3989abc9918d7b5bc8328d9e83b62",
+            "buildHref": "https://github.com/earandes/diagon-alley/actions/runs/39082151180"
+          },
+          "gitCommit": {
+            "shortHash": "828b589",
+            "hash": "828b58964bd0104d5f1731f360bbde5090629c71",
+            "subject": "Merge b24b656b12470921e5b9beaa23a12e8a4691d72d into ff23f580d9d3989abc9918d7b5bc8328d9e83b62",
+            "body": "Merge b24b656b12470921e5b9beaa23a12e8a4691d72d into ff23f580d9d3989abc9918d7b5bc8328d9e83b62\n",
+            "author": {
+              "name": "Enric Arandes",
+              "email": "enric.arandes@code.seat",
+              "time": 1792282578000
+            },
+            "committer": {
+              "name": "GitHub",
+              "email": "noreply@github.com",
+              "time": 1792282578000
+            },
+            "branch": "HEAD"
+          },
+          "actualWorkers": 1
+        },
+        "id": "chromium-390-a77",
+        "name": "chromium-390-a77",
+        "testDir": "/home/runner/work/diagon-alley/diagon-alley/tests/browser-accounts",
+        "testIgnore": [],
+        "testMatch": [
+          "/accounts-review-a77\\.spec\\.ts$/"
+        ],
+        "timeout": 120000
+      },
+      {
+        "outputDir": "/home/runner/work/diagon-alley/diagon-alley/test-results/accounts-review-a77",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "ci": {
+            "commitHref": "https://github.com/earandes/diagon-alley/commit/828b58964bd0104d5f1731f360bbde5090629c71",
+            "commitHash": "828b58964bd0104d5f1731f360bbde5090629c71",
+            "prHref": "https://github.com/earandes/diagon-alley/pull/7",
+            "prTitle": "A76: cuentas recuperables y vinculación segura de invitado",
+            "prBaseHash": "ff23f580d9d3989abc9918d7b5bc8328d9e83b62",
+            "buildHref": "https://github.com/earandes/diagon-alley/actions/runs/39082151180"
+          },
+          "gitCommit": {
+            "shortHash": "828b589",
+            "hash": "828b58964bd0104d5f1731f360bbde5090629c71",
+            "subject": "Merge b24b656b12470921e5b9beaa23a12e8a4691d72d into ff23f580d9d3989abc9918d7b5bc8328d9e83b62",
+            "body": "Merge b24b656b12470921e5b9beaa23a12e8a4691d72d into ff23f580d9d3989abc9918d7b5bc8328d9e83b62\n",
+            "author": {
+              "name": "Enric Arandes",
+              "email": "enric.arandes@code.seat",
+              "time": 1792282578000
+            },
+            "committer": {
+              "name": "GitHub",
+              "email": "noreply@github.com",
+              "time": 1792282578000
+            },
+            "branch": "HEAD"
+          },
+          "actualWorkers": 1
+        },
+        "id": "chromium-1280-a77",
+        "name": "chromium-1280-a77",
+        "testDir": "/home/runner/work/diagon-alley/diagon-alley/tests/browser-accounts",
+        "testIgnore": [],
+        "testMatch": [
+          "/accounts-review-a77\\.spec\\.ts$/"
+        ],
+        "timeout": 120000
+      },
+      {
+        "outputDir": "/home/runner/work/diagon-alley/diagon-alley/test-results/accounts-review-a77",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "ci": {
+            "commitHref": "https://github.com/earandes/diagon-alley/commit/828b58964bd0104d5f1731f360bbde5090629c71",
+            "commitHash": "828b58964bd0104d5f1731f360bbde5090629c71",
+            "prHref": "https://github.com/earandes/diagon-alley/pull/7",
+            "prTitle": "A76: cuentas recuperables y vinculación segura de invitado",
+            "prBaseHash": "ff23f580d9d3989abc9918d7b5bc8328d9e83b62",
+            "buildHref": "https://github.com/earandes/diagon-alley/actions/runs/39082151180"
+          },
+          "gitCommit": {
+            "shortHash": "828b589",
+            "hash": "828b58964bd0104d5f1731f360bbde5090629c71",
+            "subject": "Merge b24b656b12470921e5b9beaa23a12e8a4691d72d into ff23f580d9d3989abc9918d7b5bc8328d9e83b62",
+            "body": "Merge b24b656b12470921e5b9beaa23a12e8a4691d72d into ff23f580d9d3989abc9918d7b5bc8328d9e83b62\n",
+            "author": {
+              "name": "Enric Arandes",
+              "email": "enric.arandes@code.seat",
+              "time": 1792282578000
+            },
+            "committer": {
+              "name": "GitHub",
+              "email": "noreply@github.com",
+              "time": 1792282578000
+            },
+            "branch": "HEAD"
+          },
+          "actualWorkers": 1
+        },
+        "id": "webkit-865-a77",
+        "name": "webkit-865-a77",
+        "testDir": "/home/runner/work/diagon-alley/diagon-alley/tests/browser-accounts",
+        "testIgnore": [],
+        "testMatch": [
+          "/accounts-review-a77\\.spec\\.ts$/"
+        ],
+        "timeout": 120000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "/home/runner/work/diagon-alley/diagon-alley/test-results/accounts-review-a77",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "ci": {
+            "commitHref": "https://github.com/earandes/diagon-alley/commit/828b58964bd0104d5f1731f360bbde5090629c71",
+            "commitHash": "828b58964bd0104d5f1731f360bbde5090629c71",
+            "prHref": "https://github.com/earandes/diagon-alley/pull/7",
+            "prTitle": "A76: cuentas recuperables y vinculación segura de invitado",
+            "prBaseHash": "ff23f580d9d3989abc9918d7b5bc8328d9e83b62",
+            "buildHref": "https://github.com/earandes/diagon-alley/actions/runs/39082151180"
+          },
+          "gitCommit": {
+            "shortHash": "828b589",
+            "hash": "828b58964bd0104d5f1731f360bbde5090629c71",
+            "subject": "Merge b24b656b12470921e5b9beaa23a12e8a4691d72d into ff23f580d9d3989abc9918d7b5bc8328d9e83b62",
+            "body": "Merge b24b656b12470921e5b9beaa23a12e8a4691d72d into ff23f580d9d3989abc9918d7b5bc8328d9e83b62\n",
+            "author": {
+              "name": "Enric Arandes",
+              "email": "enric.arandes@code.seat",
+              "time": 1792282578000
+            },
+            "committer": {
+              "name": "GitHub",
+              "email": "noreply@github.com",
+              "time": 1792282578000
+            },
+            "branch": "HEAD"
+          },
+          "actualWorkers": 1
+        },
+        "name": "chromium-390-a77",
+        "testDir": "/home/runner/work/diagon-alley/diagon-alley/tests/browser-accounts",
+        "snapshotDir": "/home/runner/work/diagon-alley/diagon-alley/tests/browser-accounts",
+        "testIgnore": [],
+        "testMatch": {},
+        "timeout": 120000,
+        "use": {
+          "baseURL": "http://127.0.0.1:5534",
+          "serviceWorkers": "block",
+          "hasTouch": true,
+          "actionTimeout": 12000,
+          "video": "off",
+          "trace": "off",
+          "screenshot": "off",
+          "browserName": "chromium",
+          "viewport": {
+            "width": 390,
+            "height": 844
+          }
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "chromium-390-a77"
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "test-results/accounts-review-a77/results.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.64.0",
+    "workers": 1,
+    "webServer": {
+      "env": {
+        "ARCANA_TRIAL_NAMESPACE": "a77-e2502480-1c03-4518-a39c-79090d2c3ae3"
+      },
+      "command": "npx --no-install vite preview --host 127.0.0.1 --port 5534 --strictPort --mode arcana",
+      "url": "http://127.0.0.1:5534/",
+      "reuseExistingServer": false,
+      "timeout": 120000
+    }
+  },
+  "suites": [
+    {
+      "title": "accounts-review-a77.spec.ts",
+      "file": "accounts-review-a77.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "A77 remaining forms and error-state composition without game mutation",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 120000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium-390-a77",
+              "projectName": "chromium-390-a77",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1170,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-18T00:20:02.348Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3b563a47a997e8909ede-768e33d589e839a235a6",
+          "file": "accounts-review-a77.spec.ts",
+          "line": 149,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-18T00:20:00.014Z",
+    "duration": 3655.3520000000003,
+    "expected": 1,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

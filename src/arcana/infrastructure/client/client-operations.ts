@@ -86,6 +86,22 @@ export class IndexedDbClientOperations implements ClientOperations {
       throw this.storageError(error);
     }
   }
+  async pendingForEntry(): Promise<PendingOperation | null> {
+    try {
+      const db = await this.open();
+      const tx = db.transaction('operations', 'readonly');
+      const values = await tx.store.getAll();
+      await tx.done;
+      for (const value of values) {
+        owner(value.playerId);
+        const pending = rowSnapshot(value, value.playerId).pending;
+        if (pending) return pending;
+      }
+      return null;
+    } catch (error) {
+      throw this.storageError(error);
+    }
+  }
   async claim(value: PendingOperation): Promise<void> {
     const operation = pendingSnapshot(value);
     await this.change(operation.playerId, (row) => {

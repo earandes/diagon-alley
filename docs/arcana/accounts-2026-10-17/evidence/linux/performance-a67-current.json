@@ -1,0 +1,106 @@
+{
+  "engine": "Chromium",
+  "platform": "linux",
+  "viewport": [
+    1280,
+    900
+  ],
+  "variant": "current",
+  "scope": "Pointerdown→visible+decoded images→finite animations settled; includes API/network and runner polling overhead. One browser/server; no screenshots/video/traces. No human timing.",
+  "results": [
+    {
+      "name": "pact-open-cold",
+      "inputObserved": true,
+      "inputToUsableMs": 92.30000000004657,
+      "inputToSettledMs": 547.9000000001397,
+      "maxFrameMs": 50.100000000000136,
+      "longtasks": [
+        59
+      ],
+      "network": []
+    },
+    {
+      "name": "pact-select-0",
+      "inputObserved": true,
+      "inputToUsableMs": 61.60000000009313,
+      "inputToSettledMs": 557,
+      "maxFrameMs": 83.30000000000018,
+      "longtasks": [],
+      "network": []
+    },
+    {
+      "name": "pact-open-warm-1",
+      "inputObserved": true,
+      "inputToUsableMs": 44.4000000001397,
+      "inputToSettledMs": 437.9000000001397,
+      "maxFrameMs": 50.09999999999991,
+      "longtasks": [],
+      "network": []
+    },
+    {
+      "name": "pact-select-1",
+      "inputObserved": true,
+      "inputToUsableMs": 39.800000000046566,
+      "inputToSettledMs": 446.80000000004657,
+      "maxFrameMs": 50,
+      "longtasks": [],
+      "network": []
+    },
+    {
+      "name": "pact-open-warm-2",
+      "inputObserved": true,
+      "inputToUsableMs": 56.60000000009313,
+      "inputToSettledMs": 461.80000000004657,
+      "maxFrameMs": 50.09999999999991,
+      "longtasks": [],
+      "network": []
+    },
+    {
+      "name": "pact-select-2",
+      "inputObserved": true,
+      "inputToUsableMs": 36.300000000046566,
+      "inputToSettledMs": 429.60000000009313,
+      "maxFrameMs": 50,
+      "longtasks": [],
+      "network": []
+    },
+    {
+      "name": "pact-confirm",
+      "inputObserved": true,
+      "inputToUsableMs": 342.69999999995343,
+      "inputToSettledMs": 382.30000000004657,
+      "maxFrameMs": 66.70000000000073,
+      "longtasks": [
+        50
+      ],
+      "network": [
+        {
+          "path": "/api/nodes/advance",
+          "durationMs": 67.80000000004657
+        },
+        {
+          "path": "/api/state",
+          "durationMs": 63.199999999953434
+        }
+      ]
+    },
+    {
+      "name": "workshop-open",
+      "inputObserved": true,
+      "inputToUsableMs": 93.69999999995343,
+      "inputToSettledMs": 247.10000000009313,
+      "maxFrameMs": 16.800000000000182,
+      "longtasks": [],
+      "network": []
+    },
+    {
+      "name": "forge-quote",
+      "inputObserved": true,
+      "inputToUsableMs": 21.199999999953434,
+      "inputToSettledMs": 46.60000000009313,
+      "maxFrameMs": 16.699999999999818,
+      "longtasks": [],
+      "network": []
+    }
+  ]
+}

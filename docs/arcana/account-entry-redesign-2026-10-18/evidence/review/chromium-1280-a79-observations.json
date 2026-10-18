@@ -1,0 +1,100 @@
+[
+  {
+    "name": "register",
+    "project": "chromium-1280-a79",
+    "height": 487.609375,
+    "width": 420,
+    "viewport": {
+      "width": 1280,
+      "height": 900
+    },
+    "words": 21,
+    "fields": 1,
+    "overflow": false,
+    "helpOpen": false,
+    "primary": 1,
+    "visibleButtons": [
+      "Back to game",
+      "Request code"
+    ]
+  },
+  {
+    "name": "verify",
+    "project": "chromium-1280-a79",
+    "height": 644.234375,
+    "width": 420,
+    "viewport": {
+      "width": 1280,
+      "height": 900
+    },
+    "words": 24,
+    "fields": 2,
+    "overflow": false,
+    "helpOpen": false,
+    "primary": 1,
+    "visibleButtons": [
+      "Back to game",
+      "Show password",
+      "Verify and save"
+    ]
+  },
+  {
+    "name": "login",
+    "project": "chromium-1280-a79",
+    "height": 539.0625,
+    "width": 420,
+    "viewport": {
+      "width": 1280,
+      "height": 900
+    },
+    "words": 13,
+    "fields": 2,
+    "overflow": false,
+    "helpOpen": false,
+    "primary": 1,
+    "visibleButtons": [
+      "Back to game",
+      "Show password",
+      "Sign in"
+    ]
+  },
+  {
+    "name": "request-reset",
+    "project": "chromium-1280-a79",
+    "height": 452.734375,
+    "width": 420,
+    "viewport": {
+      "width": 1280,
+      "height": 900
+    },
+    "words": 14,
+    "fields": 1,
+    "overflow": false,
+    "helpOpen": false,
+    "primary": 1,
+    "visibleButtons": [
+      "Back to game",
+      "Request recovery code"
+    ]
+  },
+  {
+    "name": "reset",
+    "project": "chromium-1280-a79",
+    "height": 576.609375,
+    "width": 420,
+    "viewport": {
+      "width": 1280,
+      "height": 900
+    },
+    "words": 20,
+    "fields": 2,
+    "overflow": false,
+    "helpOpen": false,
+    "primary": 1,
+    "visibleButtons": [
+      "Back to game",
+      "Show password",
+      "Save new password"
+    ]
+  }
+]
