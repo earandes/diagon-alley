@@ -62,6 +62,18 @@ jobs:
           if-no-files-found: ignore
       - id: a75phase
         run: node -e "const p=require('./tools/verification/a75-phase.json').phase;if(!['baseline','full','webkit','resume','tail'].includes(p))throw Error('Invalid A75 phase');require('fs').appendFileSync(process.env.GITHUB_OUTPUT,'phase='+p+'\\n')"
+      # A77 is an explicit bounded pre-merge audit, not another full regression matrix.
+      - if: ${{ !cancelled() && steps.build.outcome == 'success' && steps.a75phase.outputs.phase == 'baseline' }}
+        run: ARCANA_CAPTURE_A77=1 npx playwright test --config playwright.accounts-review-a77.config.ts
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: a77-account-review-evidence
+          path: |
+            docs/arcana/accounts-design-review-2026-10-18/evidence/linux/**
+            test-results/accounts-review-a77/results.json
+            test-results/accounts-review-a77/**/error-context.md
+          if-no-files-found: ignore
       - if: ${{ !cancelled() && steps.build.outcome == 'success' }}
         run: ARCANA_CAPTURE_A75=1 npx playwright test --config playwright.experience-a75.config.ts
       - uses: actions/upload-artifact@v4
