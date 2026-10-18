@@ -123,26 +123,34 @@ test('A82 missing illustrations preserve all visible choices and guest operation
   await expect(page.getByRole('heading', { level: 1 })).toBeVisible();
   await expect(page.locator('[data-account-entry=register]')).toBeVisible();
   await expect(page.locator('[data-account-entry=login]')).toBeVisible();
+  // Vite embeds small SVGs as data URLs, outside network routing. Fail their
+  // actual image load too; React's existing onError must activate the fallback.
+  await page.locator('.welcome-tools img, .welcome-menu img').evaluateAll((images) => {
+    for (const image of images) (image as HTMLImageElement).src = '/a82-absent.png';
+  });
   const settings = page.locator('.welcome-tools .settings-trigger');
-  await expect(settings.locator('img')).toHaveCount(0);
-  await expect(settings.locator('span')).toBeVisible();
-  expect(
-    await settings.evaluate((button) => {
-      const text = button.querySelector('span')!.getBoundingClientRect();
-      const box = button.getBoundingClientRect();
-      return text.left >= box.left && text.right <= box.right && text.right <= innerWidth;
-    }),
-  ).toBe(true);
-  const titleBounds = await page.locator('.welcome-brand h1').boundingBox();
-  const settingsBounds = await settings.boundingBox();
-  expect(
-    titleBounds!.y >= settingsBounds!.y + settingsBounds!.height ||
-      titleBounds!.x + titleBounds!.width <= settingsBounds!.x,
-  ).toBe(true);
-  await settings.click();
-  await expect(page.locator('dialog.game-settings[open]')).toBeVisible();
-  await page.keyboard.press('Escape');
-  await expect(settings).toBeFocused();
+  for (const language of ['es', 'en'] as const) {
+    if (language === 'en') await changeLanguage(page, language);
+    await expect(settings.locator('img')).toHaveCount(0);
+    await expect(settings.locator('span')).toBeVisible();
+    expect(
+      await settings.evaluate((button) => {
+        const label = button.querySelector('span')!.getBoundingClientRect();
+        const box = button.getBoundingClientRect();
+        return label.left >= box.left && label.right <= box.right && label.right <= innerWidth;
+      }),
+    ).toBe(true);
+    const titleBounds = await page.locator('.welcome-brand h1').boundingBox();
+    const settingsBounds = await settings.boundingBox();
+    expect(
+      titleBounds!.y >= settingsBounds!.y + settingsBounds!.height ||
+        titleBounds!.x + titleBounds!.width <= settingsBounds!.x,
+    ).toBe(true);
+    await settings.click();
+    await expect(page.locator('dialog.game-settings[open]')).toBeVisible();
+    await page.keyboard.press('Escape');
+    await expect(settings).toBeFocused();
+  }
   let requests = 0;
   let release!: () => void;
   const waiting = new Promise<void>((resolve) => {
