@@ -491,6 +491,15 @@ export function App() {
           />
           <header className="game-header">
             <h1>
+              {!game && (
+                <Artwork
+                  asset="brand.emblem"
+                  language={language}
+                  className="welcome-emblem"
+                  decorative
+                  eager
+                />
+              )}
               {view === 'map' && content
                 ? regionAppearance(run?.zoneId ?? content.campaign.zoneId, language).name
                 : activePack.brand}
@@ -554,6 +563,7 @@ export function App() {
                   }
                   onClick={() => openAccount('register')}
                 >
+                  <Artwork asset="account.register" language={language} decorative eager />
                   {accountText(language, 'register')}
                 </button>
                 <button
@@ -565,6 +575,7 @@ export function App() {
                   }
                   onClick={() => openAccount('login')}
                 >
+                  <Artwork asset="account.login" language={language} decorative eager />
                   {accountText(language, 'login')}
                 </button>
               </div>

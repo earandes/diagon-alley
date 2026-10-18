@@ -313,11 +313,11 @@ export function AccountAccess({
           : step;
   const emblem =
     step === 'register'
-      ? 'ui.collection'
+      ? 'account.register'
       : step === 'login'
-        ? 'ui.map'
+        ? 'account.login'
         : step === 'manage'
-          ? 'ui.seal'
+          ? 'brand.emblem'
           : 'ui.missions';
   const errorMessage = error && (
     <p ref={errorRegion} tabIndex={-1} role="alert" className="account-error">

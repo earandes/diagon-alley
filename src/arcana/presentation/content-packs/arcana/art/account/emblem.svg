@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><defs>
+<linearGradient id="gold" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fff1ae"/><stop offset=".25" stop-color="#e9be64"/><stop offset=".65" stop-color="#986023"/><stop offset="1" stop-color="#f0ce7b"/></linearGradient>
+<linearGradient id="coat" x2=".8" y2="1"><stop stop-color="#477969"/><stop offset=".55" stop-color="#244b42"/><stop offset="1" stop-color="#102d27"/></linearGradient>
+<linearGradient id="paper" x2=".65" y2="1"><stop stop-color="#fff4d7"/><stop offset=".6" stop-color="#e5c995"/><stop offset="1" stop-color="#b68c53"/></linearGradient>
+<linearGradient id="steel" x2=".6" y2="1"><stop stop-color="#f4ead0"/><stop offset=".55" stop-color="#9aaba9"/><stop offset="1" stop-color="#384f59"/></linearGradient>
+<linearGradient id="night" x2="0" y2="1"><stop stop-color="#28445b"/><stop offset="1" stop-color="#0b1929"/></linearGradient>
+<filter id="shadow" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="0" dy="9" stdDeviation="6" flood-color="#020510" flood-opacity=".45"/></filter>
+</defs><g filter="url(#shadow)">
+<path d="M92 431V236Q92 118 256 52 420 118 420 236V431Z" fill="url(#coat)" stroke="#5a4129" stroke-width="10"/>
+<path d="M112 427V237Q112 135 256 75 400 135 400 237V427" fill="none" stroke="url(#gold)" stroke-width="12"/>
+<path d="M151 418V239Q151 166 256 115 361 166 361 239V418" fill="url(#night)" stroke="#b58c4f" stroke-width="5"/>
+<path d="M162 408V240Q162 174 256 129 350 174 350 240V408" fill="none" stroke="#e9ce91" stroke-width="2"/>
+<path d="M94 257h54m-54 77h54m216-77h54m-54 77h54M183 112l22 39m126-39-22 39" stroke="#cfa65d" stroke-width="4"/>
+<path d="M75 420h362l15 23H60Z" fill="url(#gold)" stroke="#67472a" stroke-width="5"/>
+<path d="M82 445h348v15H82Z" fill="#b58a4d" stroke="#e0bf7d" stroke-width="3"/>
+<g transform="rotate(-8 256 289)"><path d="M197 205h118v173H197Z" fill="url(#paper)" stroke="url(#gold)" stroke-width="9"/>
+<path d="M212 220h88v142h-88Z" fill="url(#coat)" stroke="#e7cc8d" stroke-width="3"/>
+<path d="M256 246Q260 276 290 280Q260 284 256 314Q252 284 222 280Q252 276 256 246Z" fill="url(#gold)"/><path d="M232 337h48" stroke="#d8b67b" stroke-width="4" stroke-linecap="round"/></g>
+<path d="M236 87h40l-20 25Z" fill="url(#gold)"/>
+</g></svg>

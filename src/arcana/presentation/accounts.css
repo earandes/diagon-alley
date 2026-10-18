@@ -391,3 +391,27 @@
     grid-column: 1;
   }
 }
+
+/* A81: one family, specific roles; labels and interactions remain independent. */
+.game-header h1:has(.welcome-emblem) {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.game-header .welcome-emblem {
+  width: 44px;
+  height: 44px;
+  flex: 0 0 44px;
+  object-fit: contain;
+}
+.game-shell .account-welcome button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+.account-welcome button > img {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+}

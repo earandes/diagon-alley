@@ -1,0 +1,148 @@
+{
+  "version": 1,
+  "tool": "Python 3 stdlib + authored SVG paths",
+  "source": "tools/visual/account-symbols.py",
+  "author": "Codex, SVG paths authored for this increment",
+  "references": [
+    "tools/visual/diagon-art-kit.py material vocabulary",
+    "A80 correspondence composition"
+  ],
+  "provenance": "New vector compositions authored for this project. No external artwork, fonts, logos or network generation.",
+  "permission": "Private project use. No claim of franchise authorization or official branding; distribution rights remain unresolved.",
+  "cashCost": 0,
+  "status": "bounded visual sample; not final brand approval",
+  "assets": [
+    {
+      "id": "brand.emblem",
+      "pack": "diagon-alley",
+      "path": "art/account/emblem.svg",
+      "width": 512,
+      "height": 512,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "alt": {
+        "es": "Emblema del juego: umbral y cromo",
+        "en": "Game emblem: gateway and card"
+      },
+      "sourceEditable": "design/production/account-symbols-v1/diagon-alley/emblem.svg",
+      "runtime": "src/arcana/presentation/content-packs/diagon-alley/art/account/emblem.svg",
+      "sha256": "07108c9c09d4bde3d3432f2e89524fc457b3e52065f852fa67291721ae057719",
+      "bytes": 2320,
+      "consumer": "App welcome header + AccountAccess manage",
+      "fallback": "Native labels and title remain; no operation depends on image load"
+    },
+    {
+      "id": "account.login",
+      "pack": "diagon-alley",
+      "path": "art/account/sign-in.svg",
+      "width": 512,
+      "height": 512,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "alt": {
+        "es": "Llave plateada y credencial de acceso",
+        "en": "Silver key and access credential"
+      },
+      "sourceEditable": "design/production/account-symbols-v1/diagon-alley/sign-in.svg",
+      "runtime": "src/arcana/presentation/content-packs/diagon-alley/art/account/sign-in.svg",
+      "sha256": "0aa809c59b8ee30a7c21749c5208b5e442cb1d131e2584c109b0f9a4a1ddef14",
+      "bytes": 2538,
+      "consumer": "App welcome action + AccountAccess login",
+      "fallback": "Native labels and title remain; no operation depends on image load"
+    },
+    {
+      "id": "account.register",
+      "pack": "diagon-alley",
+      "path": "art/account/register.svg",
+      "width": 512,
+      "height": 512,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "alt": {
+        "es": "Pluma y folio para crear cuenta",
+        "en": "Quill and folio to create an account"
+      },
+      "sourceEditable": "design/production/account-symbols-v1/diagon-alley/register.svg",
+      "runtime": "src/arcana/presentation/content-packs/diagon-alley/art/account/register.svg",
+      "sha256": "9c972482ac576774c408d0ad65d535b72f2741e91aeff43cccc7a27a683b0fea",
+      "bytes": 2675,
+      "consumer": "App welcome action + AccountAccess register",
+      "fallback": "Native labels and title remain; no operation depends on image load"
+    },
+    {
+      "id": "brand.emblem",
+      "pack": "arcana",
+      "path": "art/account/emblem.svg",
+      "width": 512,
+      "height": 512,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "alt": {
+        "es": "Emblema del juego: umbral y cromo",
+        "en": "Game emblem: gateway and card"
+      },
+      "sourceEditable": "design/production/account-symbols-v1/arcana/emblem.svg",
+      "runtime": "src/arcana/presentation/content-packs/arcana/art/account/emblem.svg",
+      "sha256": "c8c871951a0d3a86557b273a35734b93a172810712d44e3987f240d8c3d3bd4b",
+      "bytes": 2320,
+      "consumer": "App welcome header + AccountAccess manage",
+      "fallback": "Native labels and title remain; no operation depends on image load"
+    },
+    {
+      "id": "account.login",
+      "pack": "arcana",
+      "path": "art/account/sign-in.svg",
+      "width": 512,
+      "height": 512,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "alt": {
+        "es": "Llave plateada y credencial de acceso",
+        "en": "Silver key and access credential"
+      },
+      "sourceEditable": "design/production/account-symbols-v1/arcana/sign-in.svg",
+      "runtime": "src/arcana/presentation/content-packs/arcana/art/account/sign-in.svg",
+      "sha256": "87d7419546b04c935297b63cce4faa7a5a5629c5fcf537464f69d5bf64c09c35",
+      "bytes": 2538,
+      "consumer": "App welcome action + AccountAccess login",
+      "fallback": "Native labels and title remain; no operation depends on image load"
+    },
+    {
+      "id": "account.register",
+      "pack": "arcana",
+      "path": "art/account/register.svg",
+      "width": 512,
+      "height": 512,
+      "alpha": true,
+      "pivot": [
+        0.5,
+        0.5
+      ],
+      "alt": {
+        "es": "Pluma y folio para crear cuenta",
+        "en": "Quill and folio to create an account"
+      },
+      "sourceEditable": "design/production/account-symbols-v1/arcana/register.svg",
+      "runtime": "src/arcana/presentation/content-packs/arcana/art/account/register.svg",
+      "sha256": "6d34db93a97ef628726544fe1053a732eef6c4fbdef95e77973603a1d6e1c64d",
+      "bytes": 2675,
+      "consumer": "App welcome action + AccountAccess register",
+      "fallback": "Native labels and title remain; no operation depends on image load"
+    }
+  ]
+}

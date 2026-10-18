@@ -2355,5 +2355,47 @@
       "es": "Hermione Granger, figura de duelo ilustrada",
       "en": "Hermione Granger, illustrated duel figure"
     }
+  },
+  "brand.emblem": {
+    "path": "art/account/emblem.svg",
+    "width": 512,
+    "height": 512,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "alt": {
+      "es": "Emblema del juego: umbral y cromo",
+      "en": "Game emblem: gateway and card"
+    }
+  },
+  "account.login": {
+    "path": "art/account/sign-in.svg",
+    "width": 512,
+    "height": 512,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "alt": {
+      "es": "Llave plateada y credencial de acceso",
+      "en": "Silver key and access credential"
+    }
+  },
+  "account.register": {
+    "path": "art/account/register.svg",
+    "width": 512,
+    "height": 512,
+    "alpha": true,
+    "pivot": [
+      0.5,
+      0.5
+    ],
+    "alt": {
+      "es": "Pluma y folio para crear cuenta",
+      "en": "Quill and folio to create an account"
+    }
   }
 }

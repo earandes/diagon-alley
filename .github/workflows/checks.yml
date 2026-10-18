@@ -85,7 +85,7 @@ jobs:
             test-results/account-entry-a79/**
           if-no-files-found: ignore
       - if: ${{ !cancelled() && steps.build.outcome == 'success' }}
-        run: ARCANA_CAPTURE_A80=1 npx playwright test --config playwright.account-style-a80.config.ts
+        run: npx playwright test --config playwright.account-style-a80.config.ts
       - uses: actions/upload-artifact@v4
         if: always()
         with:
@@ -93,6 +93,16 @@ jobs:
           path: |
             docs/arcana/account-style-2026-10-18/evidence/linux/**
             test-results/account-style-a80/**
+          if-no-files-found: ignore
+      - if: ${{ !cancelled() && steps.build.outcome == 'success' }}
+        run: ARCANA_CAPTURE_A81=1 npx playwright test --config playwright.account-symbols-a81.config.ts
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: a81-account-symbols-evidence
+          path: |
+            docs/arcana/account-identity-art-2026-10-18/evidence/linux/**
+            test-results/account-symbols-a81/**
           if-no-files-found: ignore
       - if: ${{ !cancelled() && steps.build.outcome == 'success' }}
         run: ARCANA_CAPTURE_A75=1 npx playwright test --config playwright.experience-a75.config.ts
