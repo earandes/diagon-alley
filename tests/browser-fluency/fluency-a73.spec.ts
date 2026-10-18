@@ -1,3 +1,4 @@
+import { pauseBattle, skipBattle } from '../browser-trial/battle-controls';
 import { expect, test } from '@playwright/test';
 import { mkdir, writeFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
@@ -238,7 +239,7 @@ test('A73 bounded startup and sustained reference: generic and boss, three seria
             });
           remount = { started, ended };
         }
-        await page.getByRole('button', { name: 'Pausa', exact: true }).click();
+        await pauseBattle(page);
         await expect(scene).toHaveAttribute('data-active-ticking', 'false');
         await page.evaluate(
           () =>
@@ -254,7 +255,7 @@ test('A73 bounded startup and sustained reference: generic and boss, three seria
             animations: 'disabled',
           });
         }
-        await page.getByRole('button', { name: 'Omitir reproducción', exact: true }).click();
+        await skipBattle(page);
         await expect(page.locator('[data-arena-outcome]')).toBeVisible();
         expect(errors).toEqual([]);
         records.push({ kind, pair, variant, startup, warmStart, warm, remount });

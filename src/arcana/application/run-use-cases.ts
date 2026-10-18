@@ -59,8 +59,9 @@ export interface CampaignConfiguration extends Campaign {
   readonly challengeContent?: (
     challenge: 'discovery' | 'tactical' | 'mastery',
     graph: Campaign['graph'],
+    initialWizardIds?: readonly string[],
   ) => readonly NodePlan[];
-  readonly tacticalContent?: { readonly version: 1 | 2; readonly nodes: readonly NodePlan[] };
+  readonly tacticalContent?: { readonly version: 1 | 2 | 3; readonly nodes: readonly NodePlan[] };
   readonly routeVariation?: boolean;
   /** Optional public preparation metadata; authority still constructs every owned unit. */
   readonly ownedAffinities?: Readonly<Record<string, CombatUnitInput['affinity']>>;
@@ -216,8 +217,11 @@ export class StartRunUseCase {
                 ...config,
                 graph,
                 nodes:
-                  config.challengeContent?.(command.request.challenge ?? 'discovery', graph) ??
-                  config.tacticalContent.nodes,
+                  config.challengeContent?.(
+                    command.request.challenge ?? 'discovery',
+                    graph,
+                    members.map((m) => m.unit.wizardId),
+                  ) ?? config.tacticalContent.nodes,
               }),
             }
           : {}),
@@ -295,7 +299,12 @@ export class AdvanceNodeUseCase {
       if (!exploration || !original || original.id !== command.request.runId)
         throw new ArcanaError('INVALID_ROUTE');
       if (original.status !== 'active') throw new ArcanaError('RUN_CLOSED');
-      const config = original.campaignSnapshot ?? this.configuration();
+      const config =
+        original.campaignSnapshot ??
+        (() => {
+          const live = this.configuration();
+          return { ...live, combatRules: { ...live.combatRules, houseSynergies: undefined } };
+        })();
       validateCampaign(config);
       if (
         config.version !== command.request.campaignVersion ||

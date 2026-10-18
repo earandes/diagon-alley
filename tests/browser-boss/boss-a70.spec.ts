@@ -1,3 +1,12 @@
+import {
+  closeBattleOptions,
+  leaveBattle,
+  inspectBattleRecord,
+  pauseBattle,
+  resumeBattle,
+  skipBattle,
+  setDoubleBattleSpeed,
+} from '../browser-trial/battle-controls';
 import { test, expect, type Page } from '@playwright/test';
 import { mkdir, writeFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
@@ -11,15 +20,6 @@ const selected = () =>
   process.env.ARCANA_CAPTURE_A70 === '1' &&
   test.info().project.name === 'chromium-1280-boss-a70';
 const label = (lang: 'es' | 'en', es: string, en: string) => (lang === 'es' ? es : en);
-const skip = (page: Page, lang: 'es' | 'en' = 'es') =>
-  page.getByRole('button', {
-    name: label(lang, 'Omitir reproducción', 'Skip playback'),
-    exact: true,
-  });
-const pause = (page: Page, lang: 'es' | 'en' = 'es') =>
-  page.getByRole('button', { name: label(lang, 'Pausa', 'Pause'), exact: true });
-const auto = (page: Page, _lang: 'es' | 'en' = 'es') =>
-  page.getByRole('button', { name: 'Auto', exact: true });
 async function capture(page: Page, name: string) {
   if (!selected()) return;
   await mkdir(evidence, { recursive: true });
@@ -159,9 +159,7 @@ async function freezeBossCast(page: Page) {
             event?.kind === 'spell-cast' &&
             event.actorId === window.__a70Fixture.leader
           ) {
-            document
-              .querySelector<HTMLButtonElement>('.replay-controls button:first-child')!
-              .click();
+            document.querySelector<HTMLButtonElement>('.arena-pause')!.click();
             done();
           } else if (performance.now() >= until)
             reject(Error('No real leader spell phase observed'));
@@ -170,6 +168,8 @@ async function freezeBossCast(page: Page) {
         observe();
       }),
   );
+  await expect(page.locator('#arena-options')).toBeVisible();
+  await closeBattleOptions(page);
 }
 
 for (const language of ['es', 'en'] as const)
@@ -271,15 +271,10 @@ for (const language of ['es', 'en'] as const)
       const actionToDomUsableUpperBoundMs = Date.now() - actionStarted;
       await expect(page.locator('.scene-canvas')).toHaveAttribute('data-art-ready', 'true');
       const actionToFiguresReadyUpperBoundMs = Date.now() - actionStarted;
-      if (await skip(page, language).isEnabled()) await skip(page, language).click();
+      await skipBattle(page);
       await expect(page.locator('[data-arena-outcome]')).toBeVisible();
       expect(JSON.stringify((await readGame(page)).receipts.at(-1))).toBe(JSON.stringify(receipt));
-      await page
-        .getByRole('button', {
-          name: label(language, 'Volver al mapa', 'Back to map'),
-          exact: true,
-        })
-        .click();
+      await leaveBattle(page);
       const closure = page.locator('[data-expedition-closure="won"]');
       await expect(closure).toBeVisible();
       await expect(closure).toHaveAttribute('data-closure-boss', leader.wizardId);
@@ -376,7 +371,7 @@ test('A70 real boss profile fixtures: poses pause speed hidden inspector skip pa
     await expect(panel).toHaveAttribute('data-boss-leader', leader);
     const genericAlias = await page.evaluate(() => window.__a70Fixture.bossAlias);
     await expect(panel.locator(`.arena-portrait[data-art="${genericAlias}"]`)).toHaveCount(0);
-    await pause(page).click();
+    await pauseBattle(page);
     await expect(scene).toHaveAttribute('data-art-ready', 'true');
     await expect(scene).toHaveAttribute('data-visible-figures', String(playerCount + rivalCount));
     await expect(scene).toHaveAttribute(
@@ -388,7 +383,7 @@ test('A70 real boss profile fixtures: poses pause speed hidden inspector skip pa
     const navigationToReadyMs = await page.evaluate(() => performance.now());
     if (profile === 'discovery') {
       await expect(scene).toHaveAttribute('data-boss-prop-ready', 'true');
-      await auto(page).click();
+      await resumeBattle(page);
       await freezeBossCast(page);
       const atCast = await frozen(page);
       expect(Number(atCast.activity)).toBeGreaterThan(0);
@@ -397,7 +392,7 @@ test('A70 real boss profile fixtures: poses pause speed hidden inspector skip pa
       expect(await frozen(page)).toEqual(atCast);
       if (selected()) await capture(page, 'boss-object-cast');
     }
-    await page.getByRole('button', { name: '2x', exact: true }).click();
+    await setDoubleBattleSpeed(page);
     await expect(panel).toHaveAttribute('data-replay-speed', '2');
     const cursor = await panel.getAttribute('data-replay-cursor');
     const progress = await panel.getAttribute('data-replay-progress');
@@ -428,7 +423,7 @@ test('A70 real boss profile fixtures: poses pause speed hidden inspector skip pa
     await expect(page.locator('dialog.arena-inspector[open]')).toBeVisible();
     await page.keyboard.press('Escape');
     await expect(page.locator('.arena-inspect').first()).toBeFocused();
-    await auto(page, 'en').click();
+    await resumeBattle(page);
     await page.evaluate(() => {
       Object.defineProperty(document, 'hidden', { configurable: true, get: () => true });
       document.dispatchEvent(new Event('visibilitychange'));
@@ -440,7 +435,7 @@ test('A70 real boss profile fixtures: poses pause speed hidden inspector skip pa
       Object.defineProperty(document, 'hidden', { configurable: true, get: () => false });
       document.dispatchEvent(new Event('visibilitychange'));
     });
-    await skip(page, 'en').click();
+    await skipBattle(page);
     await expect(page.locator('[data-arena-outcome]')).toBeVisible();
     await expect(scene).toHaveAttribute('data-boss-prop-scale-x', '1');
     await expect(scene).toHaveAttribute('data-boss-prop-scale-y', '1');
@@ -480,7 +475,7 @@ test('A70 boss reduced and failed renderer retain actors outcome record and conf
   await expect(page.locator('.battle-panel')).toHaveAttribute('data-replay-playing', 'false');
   await fits(page, 10);
   const reducedState = await preserved(page);
-  await page.locator('.arena-record-trigger').click();
+  await inspectBattleRecord(page);
   await expect(page.locator('.battle-log')).toBeVisible();
   await page.keyboard.press('Escape');
   expect(await preserved(page)).toEqual(reducedState);
@@ -705,7 +700,7 @@ test('A70 absent art has a usable static result', async ({ page }) => {
   await page.goto(`${fixture}?player=3`);
   await expect(page.locator('.pedestal')).toHaveCount(6);
   const absentArtState = await preserved(page);
-  await skip(page).click();
+  await skipBattle(page);
   await expect(page.locator('[data-arena-outcome]')).toBeVisible();
   await expect(page.locator('.arena-exit')).toBeEnabled();
   expect(failedImages).toBeGreaterThan(0);
@@ -757,10 +752,10 @@ test('A70 missing overlay alone preserves original boss art and usable replay', 
   const before = await preserved(page);
   expect(failedOverlayImages).toBeGreaterThan(0);
   await fits(page, 6);
-  await skip(page).click();
+  await skipBattle(page);
   await expect(page.locator('[data-arena-outcome]')).toBeVisible();
   await expect(page.locator('.arena-exit')).toBeEnabled();
-  await page.locator('.arena-record-trigger').click();
+  await inspectBattleRecord(page);
   await expect(page.locator('.battle-log')).toBeVisible();
   await page.keyboard.press('Escape');
   expect(await preserved(page)).toEqual(before);

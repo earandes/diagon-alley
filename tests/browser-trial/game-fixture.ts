@@ -1,3 +1,4 @@
+import { openBattleOptions, closeBattleOptions } from './battle-controls';
 import { expect, test as base, type Page } from '@playwright/test';
 
 /** Historical journeys retain their original content assertions after the new default skin. */
@@ -37,6 +38,9 @@ export async function startExpedition(page: Page, language: 'es' | 'en' = 'es') 
 
 /** Exercise the actual settings UI, including inside a node/commerce confirmation. */
 export async function changeLanguage(page: Page, language: 'es' | 'en') {
+  const battle = page.locator('.arena-a63');
+  const hasBattleOptions = Boolean(await page.locator('.arena-pause').count());
+  if (hasBattleOptions) await openBattleOptions(page);
   const activeDialog = page.locator('dialog[open]').last();
   const reveal = page.locator('.reveal');
   const revealSettings = reveal.getByRole('button', { name: /^(Ajustes|Settings)$/, exact: true });
@@ -44,7 +48,11 @@ export async function changeLanguage(page: Page, language: 'es' | 'en') {
     ? activeDialog
     : (await revealSettings.count())
       ? reveal
-      : page.locator('header');
+      : hasBattleOptions
+        ? page.locator('#arena-options')
+        : (await page.locator('.battle-panel').count())
+          ? page.locator('.battle-panel')
+          : page.locator('header');
   await origin.getByRole('button', { name: /^(Ajustes|Settings)$/, exact: true }).click();
   const settings = page.locator('dialog.game-settings[open]');
   await expect(settings).toBeVisible();
@@ -56,6 +64,7 @@ export async function changeLanguage(page: Page, language: 'es' | 'en') {
     .getByRole('button', { name: language === 'es' ? 'Cerrar' : 'Close', exact: true })
     .click();
   await expect(settings).toHaveCount(0);
+  if (await battle.count()) await closeBattleOptions(page);
 }
 
 export async function openAlbumFilters(page: Page) {

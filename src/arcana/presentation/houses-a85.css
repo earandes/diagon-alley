@@ -1,0 +1,333 @@
+.house-insignia {
+  width: 30px;
+  height: 30px;
+  flex: none;
+  color: #f2d294;
+}
+.house-insignia .house-shield {
+  fill: #41242b;
+  stroke: currentColor;
+  stroke-width: 3;
+}
+.house-insignia[data-house='ravenclaw'] .house-shield {
+  fill: #20364f;
+}
+.house-insignia[data-house='hufflepuff'] .house-shield {
+  fill: #574322;
+}
+.house-insignia[data-house='slytherin'] .house-shield {
+  fill: #203d36;
+}
+.trait-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  flex-wrap: wrap;
+  font-size: 0.85rem;
+}
+.trait-badge small {
+  opacity: 0.9;
+}
+.house-band {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 0.25rem;
+  flex-wrap: wrap;
+  position: relative;
+  max-width: 100%;
+  isolation: isolate;
+}
+.house-band details {
+  position: relative;
+  margin: 0;
+}
+.house-band summary {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+  min-height: 44px;
+  min-width: 44px;
+  cursor: pointer;
+  color: var(--ink, #fff0d0);
+  font-size: 0.75rem;
+  list-style: none;
+  padding: 0.15rem 0.3rem;
+  border: 0;
+  border-bottom: 2px solid transparent;
+}
+.house-band details[data-active='true'] summary {
+  border-color: var(--gold, #e0b75d);
+}
+.house-band summary span {
+  max-width: 9rem;
+}
+.house-band summary b {
+  white-space: nowrap;
+}
+.house-band summary:focus-visible {
+  outline: 3px solid var(--focus, #a7e8ed);
+  outline-offset: 2px;
+}
+.house-band details[open] {
+  z-index: 10;
+}
+.house-detail {
+  position: relative;
+  width: min(19rem, calc(100vw - 64px));
+  max-height: 45vh;
+  overflow: auto;
+  background: var(--surface, #172539);
+  color: var(--ink, #fff0d0);
+  padding: 0.7rem;
+  border: 1px solid var(--gold, #e0b75d);
+  border-radius: 12px;
+  box-shadow: 0 8px 24px #0009;
+  font-size: 0.85rem;
+}
+.house-detail p {
+  margin: 0.4rem 0;
+}
+.house-detail ol {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  margin: 0.3rem 0;
+  padding: 0;
+  list-style: none;
+}
+.house-detail small {
+  line-height: 1.4;
+  display: block;
+}
+.enchanted-holder {
+  position: relative;
+  isolation: isolate;
+}
+.enchanted-finish {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 3;
+}
+.enchanted-label {
+  display: inline-block;
+  color: #f4dfb5;
+  font-size: 0.85rem;
+  letter-spacing: 0.03em;
+}
+.opening-card .enchanted-finish {
+  inset: 2%;
+  width: 96%;
+  height: 96%;
+}
+.album-copy-tokens button {
+  min-width: 44px;
+  min-height: 44px;
+}
+.album-copy-tokens button[aria-pressed='true'] {
+  outline: 2px solid var(--gold, #e0b75d);
+}
+.pact-house {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.2rem;
+  font-size: 0.8rem;
+  line-height: 1.3;
+}
+.pact-house .house-insignia {
+  width: 24px;
+  height: 24px;
+}
+.game-shell.arcana-map-view .team-compact:has(> .house-band) {
+  flex-wrap: wrap;
+  width: max-content;
+  max-width: calc(100% - 80px);
+}
+.team-compact > .house-band {
+  flex-basis: 100%;
+}
+.team-compact .house-band summary span {
+  font-size: 0;
+  max-width: 4rem;
+}
+.team-compact .house-band summary b {
+  font-size: 0.75rem;
+}
+.preparation-house-filters {
+  display: flex;
+  gap: 0.3rem;
+  flex-wrap: wrap;
+}
+.preparation-house-filters button {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  min-height: 44px;
+}
+.preparation-card > .house-insignia {
+  position: absolute;
+  top: 0.2rem;
+  left: 0.2rem;
+  width: 24px;
+  height: 24px;
+  z-index: 4;
+  pointer-events: none;
+}
+/* In a preparation the consultation stays in document flow and may scroll.
+   On the fixed map HUD it opens above the whole band, inside the viewport margin. */
+.team-compact .house-band {
+  width: 100%;
+}
+.team-compact .house-band details {
+  position: static;
+}
+.team-compact .house-band .house-detail,
+.team-compact .house-band details:last-child .house-detail {
+  position: absolute;
+  top: auto;
+  bottom: 100%;
+  left: 0;
+  right: auto;
+  transform: none;
+  width: min(19rem, calc(100vw - 32px));
+}
+
+.shop-card-catalogue > .finish-odds {
+  grid-column: 1/-1;
+  text-align: left;
+  line-height: 1.45;
+  color: inherit;
+}
+.shop-card-catalogue article small {
+  font-size: 0.75rem;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+}
+.boss-house-mark {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.85rem;
+}
+/* Reserve real space before fitMapLayout measures it. The party never covers a route target. */
+.arcana-map-view main > .expedition-panel[data-map-phase='route'] > .map-scroll {
+  height: calc(100% - var(--party-map-space, 0px));
+}
+/* The foil follows the portrait, not the full dialog width. Keep the close object above it. */
+.album-card-folio > .enchanted-holder {
+  width: min(60%, 235px);
+  margin: 0 auto;
+}
+.album-card-folio .album-folio-portrait {
+  width: 100%;
+}
+.game-shell .album-card-folio .folio-close {
+  z-index: 5;
+}
+@media (max-width: 620px) {
+  /* Houses share the party heading shelf. Do not push the jar under the fight footer. */
+  .boss-party-stage:has(> .house-band) > h4 {
+    grid-row: 1;
+    grid-column: 1 / -1;
+    justify-self: start;
+    max-width: 32%;
+    text-align: left;
+  }
+  .boss-party-stage > .house-band {
+    grid-row: 1;
+    grid-column: 1 / -1;
+    justify-self: end;
+    justify-content: flex-end;
+    max-width: 66%;
+  }
+  .boss-party-stage > .house-band summary span {
+    font-size: 0;
+  }
+  .boss-party-stage > .house-band summary b {
+    font-size: 0.75rem;
+  }
+}
+@media (max-width: 620px) {
+  /* Known affinity and active house share a tactical line; portraits retain their full size. */
+  .boss-prelude-identity:has(> .boss-house-mark) {
+    grid-template-columns: auto auto;
+    justify-content: center;
+    column-gap: 8px;
+  }
+  .boss-prelude-identity:has(> .boss-house-mark) > :is(h4, .boss-roster-count) {
+    grid-column: 1 / -1;
+  }
+  .boss-prelude-identity:has(> .boss-house-mark) > .tactical-affinity {
+    grid-column: 1;
+    grid-row: 2;
+    align-self: center;
+  }
+  .boss-prelude-identity > .boss-house-mark {
+    grid-column: 2;
+    grid-row: 2;
+    min-width: 0;
+  }
+}
+@media (max-width: 620px) {
+  /* Five companions keep full portraits and resource labels. Their preparation shelf
+     uses 44px objects; three equipped items fit one row instead of wrapping. */
+  .boss-staging:has(.boss-party-member:nth-child(5)) .boss-party-objects img {
+    width: clamp(14px, 4.6vw, 18px);
+    height: 22px;
+  }
+  .game-shell .boss-staging:has(.boss-party-member:nth-child(5)) .boss-party-prepare {
+    margin-top: 2px;
+  }
+  .boss-staging:has(.boss-party-member:nth-child(5)) .boss-prelude-hero {
+    gap: 2px;
+  }
+  .boss-staging:has(.boss-party-member:nth-child(5)) .node-bean-preparation > summary {
+    min-height: 44px;
+  }
+  .boss-staging:has(.boss-party-member:nth-child(5)) .node-bean-preparation > summary > img {
+    width: 32px;
+    height: 40px;
+  }
+  /* A full roster needs one consultation shelf, not two stacked rows below the
+     illustration. The book and confirmed loot preview retain their own controls
+     and content; opening the book returns its inspector to the full-width flow. */
+  .boss-staging:has(.boss-party-member:nth-child(5)) .boss-opponent-stage {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 4px;
+  }
+  .boss-staging:has(.boss-party-member:nth-child(5)) .boss-prelude {
+    display: contents;
+  }
+  .boss-staging:has(.boss-party-member:nth-child(5)) .boss-prelude-hero {
+    grid-column: 1 / -1;
+  }
+  .boss-staging:has(.boss-party-member:nth-child(5)) .boss-opponent-details {
+    grid-column: 1;
+    grid-row: 2;
+    margin: 0;
+    min-width: 0;
+    align-self: center;
+  }
+  .game-shell .boss-staging:has(.boss-party-member:nth-child(5)) .event-loot {
+    grid-column: 2;
+    grid-row: 2;
+    margin: 0;
+    gap: 8px;
+    align-self: center;
+  }
+  .boss-staging:has(.boss-party-member:nth-child(5)) .boss-opponent-details[open] {
+    grid-column: 1 / -1;
+  }
+  .boss-staging:has(.boss-party-member:nth-child(5))
+    .boss-opponent-stage:has(.boss-opponent-details[open])
+    > .event-loot {
+    grid-column: 1 / -1;
+    grid-row: 3;
+  }
+}

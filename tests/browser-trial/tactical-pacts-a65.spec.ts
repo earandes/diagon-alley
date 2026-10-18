@@ -1,3 +1,4 @@
+import { leaveBattle, skipBattle } from './battle-controls';
 import { test, expect, type Page, type Locator } from '@playwright/test';
 import { mkdir, writeFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
@@ -68,7 +69,7 @@ async function confirm(page: Page) {
   await page.locator('.node-confirm-action').click();
   await expect(page.locator('.node-event-dialog')).toHaveCount(0);
 }
-async function reachDuel(page: Page, language: Language) {
+async function reachDuel(page: Page, _language: Language) {
   const run = (await readGame(page)).exploration!.run!;
   const path = routePath(run.graph, run.visited, 'duel');
   // Traversal reads real authoritative edges. It is technical QA, not an observation of a player.
@@ -76,17 +77,8 @@ async function reachDuel(page: Page, language: Language) {
     await page.locator(`[data-node="${id}"]`).click();
     await confirm(page);
     if (await page.locator('.arena-a63').count()) {
-      const skip = page.getByRole('button', {
-        name: language === 'es' ? 'Omitir reproducción' : 'Skip playback',
-        exact: true,
-      });
-      if (await skip.isEnabled()) await skip.click();
-      await page
-        .getByRole('button', {
-          name: language === 'es' ? 'Volver al mapa' : 'Back to map',
-          exact: true,
-        })
-        .click();
+      await skipBattle(page);
+      await leaveBattle(page);
     }
   }
   return path.at(-1)!;
@@ -273,11 +265,7 @@ for (const language of ['es', 'en'] as const)
         throw Error('Missing committed combat');
       expect(receipt.battle.events.some((e) => e.kind === 'bean-activated')).toBe(true);
       const log = JSON.stringify(receipt.battle);
-      const skip = page.getByRole('button', {
-        name: language === 'es' ? 'Omitir reproducción' : 'Skip playback',
-        exact: true,
-      });
-      if (await skip.isEnabled()) await skip.click();
+      await skipBattle(page);
       await expect(page.locator('[data-arena-outcome]')).toBeVisible();
       await shoot(page, `${pack}-${language}-duel-result`);
       expect(await readGame(page)).toEqual(committed);

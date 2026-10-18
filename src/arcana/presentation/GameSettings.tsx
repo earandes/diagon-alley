@@ -5,6 +5,7 @@ import type { Language } from '../domain/collection/wizards';
 import { text } from './translations';
 import './settings-case.css';
 import { mapSettingsText } from './map-settings-messages';
+import { PlaybackPreferences } from './motion/PlaybackPreferences';
 import { AudioPreferences } from './audio/AudioPreferences';
 
 export const AccountSettingsContext = createContext<ReactNode>(null);
@@ -111,6 +112,7 @@ export function GameSettings({
               </button>
             ))}
           </fieldset>
+          <PlaybackPreferences language={language} />
           <AudioPreferences language={language} />
           <MotionPreference
             language={language}

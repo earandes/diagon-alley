@@ -56,7 +56,7 @@ describe('A75 effective preparation and collection navigation', () => {
         { ...game.exploration.run, campaignSnapshot: undefined },
         content.combatRules,
       ),
-    ).toBe(content.combatRules);
+    ).toEqual({ ...content.combatRules, houseSynergies: undefined });
     expect(effectivePreparationRules(null, content.combatRules)).toBe(content.combatRules);
     expect(
       effectivePreparationRules({ ...game.exploration.run, status: 'won' }, content.combatRules),

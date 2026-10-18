@@ -17,7 +17,8 @@ import '../../src/arcana/presentation/game-experience.css';
 
 const params = new URLSearchParams(location.search);
 setContentPack(params.get('pack') === 'arcana' ? 'arcana' : 'diagon-alley');
-const configuration = trialConfiguration();
+// Keep the paired A75 replay byte-identical to its historical reference; A85 has its own current-rules fixture.
+const configuration = trialConfiguration('a84');
 const challenge =
   params.get('challenge') === 'mastery'
     ? 'mastery'

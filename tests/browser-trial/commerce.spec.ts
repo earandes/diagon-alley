@@ -1,3 +1,4 @@
+import { leaveBattle } from './battle-controls';
 import { inspectPreparationCopy, closePreparation } from './game-fixture';
 import { startExpedition } from './game-fixture';
 import { changeLanguage } from './game-fixture';
@@ -60,14 +61,14 @@ for (const language of ['es', 'en'] as const)
       await confirmEvent(page, language);
       if (
         (await read()).exploration.run.status === 'active' &&
-        (await button('Volver al mapa', 'Back to map').count())
+        (await page.locator('.battle-panel').count())
       )
-        await button('Volver al mapa', 'Back to map').click();
+        await leaveBattle(page);
     }
     await expect(
       page.getByRole('heading', { name: en ? 'Combat Arena' : 'Arena de Combate', exact: true }),
     ).toBeVisible();
-    await button('Volver al mapa', 'Back to map').click();
+    await leaveBattle(page);
     await button('Bazar', 'Bazaar').click();
     await button('Bóvedas de Obsidiana', 'Obsidian Vaults').click();
     const boss = await read();

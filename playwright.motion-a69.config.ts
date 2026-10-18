@@ -3,7 +3,7 @@ import { defineSafeConfig } from './tools/verification/playwright-safety';
 /** Linux only through the unchanged shared host guard and cross-process suite lock. */
 export default defineSafeConfig({
   testDir: './tests/browser-motion',
-  testMatch: /(?:motion-a69|audio-a84)\.spec\.ts$/,
+  testMatch: /(?:motion-a69|audio-a84|houses-a85)\.spec\.ts$/,
   outputDir: 'test-results/motion-a69',
   timeout: 180000,
   expect: { timeout: 10000 },

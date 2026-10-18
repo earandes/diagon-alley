@@ -1,3 +1,4 @@
+import { leaveBattle, pauseBattle, resumeBattle, skipBattle, setDoubleBattleSpeed } from './battle-controls';
 import { startExpedition } from './game-fixture';
 import { changeLanguage } from './game-fixture';
 import { reachNode, confirmEvent } from './route-helpers';
@@ -40,22 +41,22 @@ test('pause, Auto, 2x, language and skip only replay the committed log', async (
   });
   await battle(page);
   const arena = page.locator('[data-replay-cursor]');
-  await page.getByRole('button', { name: 'Pausa', exact: true }).click();
+  await pauseBattle(page);
   const cursor = await arena.getAttribute('data-replay-cursor'),
     before = await economic(page),
     count = posts;
   await page.waitForTimeout(900);
   expect(await arena.getAttribute('data-replay-cursor')).toBe(cursor);
-  await page.getByRole('button', { name: '2x', exact: true }).click();
-  await expect(page.getByRole('button', { name: '2x', exact: true })).toHaveAttribute(
+  await setDoubleBattleSpeed(page);
+  await expect(page.locator('.replay-controls button').nth(1)).toHaveAttribute(
     'aria-pressed',
     'true',
   );
-  await page.getByRole('button', { name: 'Auto', exact: true }).click();
+  await resumeBattle(page);
   await expect.poll(() => arena.getAttribute('data-replay-cursor')).not.toBe(cursor);
   await changeLanguage(page, 'en');
   await expect(page.getByRole('heading', { name: 'Combat Arena' })).toBeVisible();
-  await page.getByRole('button', { name: 'Skip playback', exact: true }).click();
+  await skipBattle(page);
   await expect(page.getByRole('status').filter({ hasText: /^Victory$/ })).toBeVisible();
   expect(await economic(page)).toEqual(before);
   expect(posts).toBe(count);
@@ -85,7 +86,7 @@ test('branching map and equivalent list keep identical accessible actions with W
       )
       .first(),
   ).toBeVisible();
-  await page.getByRole('button', { name: 'Volver al mapa', exact: true }).click();
+  await leaveBattle(page);
   await page.getByRole('button', { name: 'Ver lista de nodos', exact: true }).click();
   const next = page.locator('[data-node][data-node-state="available"]').first();
   await expect(next).toBeEnabled();

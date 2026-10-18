@@ -1,3 +1,4 @@
+import { inspectBattleRecord, skipBattle } from '../browser-trial/battle-controls';
 import { changeLanguage } from '../browser-trial/game-fixture';
 import { expect, test } from '../browser-trial/game-fixture';
 for (const language of ['es', 'en'] as const)
@@ -5,9 +6,7 @@ for (const language of ['es', 'en'] as const)
     const en = language === 'en';
     await page.goto('/tests/arcana-arena-harness.html');
     if (en) await changeLanguage(page, 'en');
-    await page
-      .getByRole('button', { name: en ? 'Skip playback' : 'Omitir reproducción', exact: true })
-      .click();
+    await skipBattle(page);
     const player = page.getByRole('region', { name: en ? 'Your Team' : 'Tu Equipo', exact: true });
     const rival = page.getByRole('region', { name: en ? 'Opponent' : 'Rival', exact: true });
     await expect(player.locator('[data-team-synergies]')).toContainText(
@@ -24,9 +23,7 @@ for (const language of ['es', 'en'] as const)
       en ? '+3 HP/turn' : '+3 PV/turno',
     );
     await page.keyboard.press('Escape');
-    await page
-      .getByRole('button', { name: en ? 'Battle record' : 'Registro del combate', exact: true })
-      .click();
+    await inspectBattleRecord(page);
     await expect(page.locator('.battle-log')).toContainText(
       en ? 'Your Team · Unit 1' : 'Tu Equipo · Unidad 1',
     );
@@ -83,17 +80,17 @@ test('Shadows I benefits neutral allies and uses singular contributor text in bo
   page,
 }) => {
   await page.goto('/tests/arcana-arena-harness.html?shadow=1');
-  await page.getByRole('button', { name: 'Omitir reproducción', exact: true }).click();
+  await skipBattle(page);
   const rival = page.getByRole('region', { name: 'Rival', exact: true });
   await expect(rival.locator('[data-team-synergies]')).toContainText('Sombras I');
   await rival.locator('[data-unit="r1"] .arena-inspect').click();
   await expect(page.locator('.arena-inspector[open]')).toContainText('Afinidad: Neutral');
   await expect(page.locator('.arena-inspector[open]')).toContainText('Sombras I · +2 iniciativa');
   await page.keyboard.press('Escape');
-  await page.getByRole('button', { name: 'Registro del combate', exact: true }).click();
+  await inspectBattleRecord(page);
   await expect(page.locator('.battle-log')).toContainText('sinergia Sombras (1 integrante)');
   await page.keyboard.press('Escape');
   await changeLanguage(page, 'en');
-  await page.getByRole('button', { name: 'Battle record', exact: true }).click();
+  await inspectBattleRecord(page);
   await expect(page.locator('.battle-log')).toContainText('Shadows synergy (1 contributor)');
 });

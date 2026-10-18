@@ -17,10 +17,13 @@ import { createSeed } from './seed';
 import { equipmentSpellPower, equipmentInitiative } from './equipment-effects';
 
 import { activeSynergies, type Affinity } from './synergies';
+import { houseProgress } from './houses';
+import { HOUSES, type House } from '../collection/traits';
 export type { Affinity } from './synergies';
 export type CombatSide = 'player' | 'rival';
 export type CombatOutcome = CombatSide | 'draw';
 export interface CombatUnitInput {
+  readonly house?: House;
   readonly id: string;
   readonly wizardId: string;
   readonly level: number;
@@ -39,6 +42,9 @@ export interface CombatUnitInput {
   readonly beanUnitId?: string;
 }
 export interface CombatRules {
+  /** Optional explicit ruleset; absent historical inputs retain engine v1 exactly. */
+  readonly houseSynergies?: 1;
+  readonly houseMembers?: Readonly<Record<string, House>>;
   readonly version: number;
   readonly maxRounds: number;
   readonly spellManaCost: number;
@@ -55,6 +61,15 @@ export interface CombatInput {
   readonly rules: CombatRules;
 }
 export type BattleEventData =
+  | {
+      readonly kind: 'house-activated';
+      readonly team: CombatSide;
+      readonly house: House;
+      readonly members: number;
+      readonly tier: 1 | 2;
+      readonly value: number;
+      readonly contributorIds: readonly string[];
+    }
   | { readonly kind: 'combat-started'; readonly seed: number }
   | {
       readonly kind: 'synergy-activated';
@@ -79,7 +94,7 @@ export type BattleEventData =
   | {
       readonly kind: 'healed';
       readonly actorId: string;
-      readonly source: 'alchemy' | 'equipment';
+      readonly source: 'alchemy' | 'equipment' | 'house';
       readonly amount: number;
       readonly hp: number;
     }
@@ -103,7 +118,7 @@ export type BattleEvent = BattleEventData & { readonly sequence: number; readonl
 export type CombatUnitResult = CombatUnitInput & { readonly effect: BeanEffect | null };
 export interface Combat {
   readonly id: string;
-  readonly engineVersion: 1;
+  readonly engineVersion: 1 | 2;
   readonly input: CombatInput;
   readonly outcome: CombatOutcome;
   readonly rounds: number;
@@ -128,6 +143,7 @@ export function validateCombatUnit(unit: CombatUnitInput, shadowInitiative = 0):
     !unit ||
     !validDomainId(unit.id) ||
     !validDomainId(unit.wizardId) ||
+    (unit.house !== undefined && !HOUSES.includes(unit.house)) ||
     !Number.isSafeInteger(unit.level) ||
     unit.level < 1 ||
     !['neutral', 'alchemy', 'fire', 'shadows'].includes(unit.affinity) ||
@@ -152,6 +168,7 @@ export function validateCombatUnit(unit: CombatUnitInput, shadowInitiative = 0):
 export function validateCombatRules(rules: CombatRules): void {
   if (
     !rules ||
+    (rules.houseSynergies !== undefined && rules.houseSynergies !== 1) ||
     !Number.isSafeInteger(rules.version) ||
     rules.version < 1 ||
     !Number.isSafeInteger(rules.maxRounds) ||
@@ -163,6 +180,16 @@ export function validateCombatRules(rules: CombatRules): void {
   )
     throw new ArcanaError('INVALID_COMBAT');
   validateBeanTable(rules.beans);
+  if (
+    rules.houseMembers !== undefined &&
+    (!rules.houseMembers ||
+      typeof rules.houseMembers !== 'object' ||
+      Array.isArray(rules.houseMembers) ||
+      Object.entries(rules.houseMembers).some(
+        ([id, house]) => !validDomainId(id) || !HOUSES.includes(house),
+      ))
+  )
+    throw new ArcanaError('INVALID_COMBAT');
 }
 
 export function validateCombatInput(value: unknown): asserts value is CombatInput {
@@ -201,6 +228,7 @@ export function unitSnapshot(unit: CombatUnitInput): CombatUnitInput {
   return Object.freeze({
     id: unit.id,
     wizardId: unit.wizardId,
+    ...(unit.house ? { house: unit.house } : {}),
     level: unit.level,
     affinity: unit.affinity,
     hp: unit.hp,
@@ -227,6 +255,10 @@ export function combatInputSnapshot(input: CombatInput): CombatInput {
     player: Object.freeze(input.player.map(unitSnapshot)),
     rival: Object.freeze(input.rival.map(unitSnapshot)),
     rules: Object.freeze({
+      ...(input.rules.houseSynergies ? { houseSynergies: input.rules.houseSynergies } : {}),
+      ...(input.rules.houseMembers
+        ? { houseMembers: Object.freeze({ ...input.rules.houseMembers }) }
+        : {}),
       version: input.rules.version,
       maxRounds: input.rules.maxRounds,
       spellManaCost: input.rules.spellManaCost,
@@ -273,6 +305,25 @@ export class CombatEngine {
       };
     };
     const bonuses = { player: passives('player', player), rival: passives('rival', rival) };
+    const houses = new Map<string, ReturnType<typeof houseProgress>[number]>();
+    if (rules.houseSynergies)
+      for (const side of ['player', 'rival'] as const) {
+        for (const group of houseProgress(snapshot[side]))
+          if (group.tier) {
+            emit(0, {
+              kind: 'house-activated',
+              team: side,
+              house: group.house,
+              members: group.count,
+              tier: group.tier,
+              value: group.value,
+              contributorIds: group.contributorIds,
+            });
+            for (const id of group.contributorIds) houses.set(id, group);
+          }
+      }
+    const attempts = new Map<string, number>();
+    const firstHit = new Set<string>();
     for (const fighter of fighters)
       if (fighter.hp > 0 && fighter.beanUnitId) {
         const flavour = drawBean(rules.beans, random),
@@ -299,7 +350,14 @@ export class CombatEngine {
             : null;
     };
     const initiative = (fighter: Fighter) =>
-      initiativeWithBean(fighter, equipmentInitiative(fighter, bonuses[fighter.team].shadows));
+      initiativeWithBean(
+        fighter,
+        equipmentInitiative(
+          fighter,
+          bonuses[fighter.team].shadows +
+            (houses.get(fighter.id)?.house === 'slytherin' ? houses.get(fighter.id)!.value : 0),
+        ),
+      );
     let rounds = 0;
     for (let round = 1; round <= rules.maxRounds && outcome() === null; round++) {
       rounds = round;
@@ -343,6 +401,21 @@ export class CombatEngine {
             hp: actor.hp,
           });
         }
+        const house = houses.get(actor.id);
+        const houseHealing = Math.min(
+          actor.maxHp - actor.hp,
+          house?.house === 'hufflepuff' ? house.value : 0,
+        );
+        if (houseHealing > 0) {
+          actor.hp += houseHealing;
+          emit(round, {
+            kind: 'healed',
+            actorId: actor.id,
+            source: 'house',
+            amount: houseHealing,
+            hp: actor.hp,
+          });
+        }
         if (actor.mana < rules.spellManaCost)
           emit(round, { kind: 'mana-exhausted', actorId: actor.id, mana: actor.mana });
         else {
@@ -351,9 +424,18 @@ export class CombatEngine {
             createManaPoints(actor.mana, actor.maxMana),
             rules.spellManaCost,
           ).current;
+          const attempt = (attempts.get(actor.id) ?? 0) + 1;
+          attempts.set(actor.id, attempt);
+          const bonus =
+            house?.house === 'gryffindor' && !firstHit.has(actor.id)
+              ? house.value
+              : house?.house === 'ravenclaw' && attempt >= 3
+                ? house.value
+                : 0;
           const spell = spellWithBean(actor, equipmentSpellPower(actor));
+          if (!spell.missed) firstHit.add(actor.id);
           actor.effect = spell.carrier.effect;
-          const damage = Math.min(target.hp, spell.damage);
+          const damage = Math.min(target.hp, spell.missed ? 0 : spell.damage + bonus);
           target.hp -= damage;
           if (!spell.missed && bonuses[actor.team].fire > 0)
             target.burning = bonuses[actor.team].fire;
@@ -379,7 +461,7 @@ export class CombatEngine {
       });
     return Object.freeze({
       id: snapshot.id,
-      engineVersion: 1,
+      engineVersion: rules.houseSynergies ? 2 : 1,
       input: snapshot,
       outcome: result,
       rounds,

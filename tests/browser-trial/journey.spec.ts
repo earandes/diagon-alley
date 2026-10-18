@@ -1,3 +1,4 @@
+import { leaveBattle } from './battle-controls';
 import { startExpedition } from './game-fixture';
 import { changeLanguage } from './game-fixture';
 import { reachNode, confirmEvent } from './route-helpers';
@@ -20,12 +21,7 @@ for (const language of ['es', 'en'] as const)
     await expect(
       page.getByRole('heading', { name: language === 'es' ? 'Arena de Combate' : 'Combat Arena' }),
     ).toBeVisible();
-    await page
-      .getByRole('button', {
-        name: language === 'es' ? 'Volver al mapa' : 'Back to map',
-        exact: true,
-      })
-      .click();
+    await leaveBattle(page);
     await page
       .getByRole('button', { name: language === 'es' ? 'Bazar' : 'Bazaar', exact: true })
       .click();

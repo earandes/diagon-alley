@@ -1,3 +1,4 @@
+import { pauseBattle, resumeBattle, skipBattle, setDoubleBattleSpeed } from '../browser-trial/battle-controls';
 import { expect, test } from '../browser-trial/game-fixture';
 import { mkdir, writeFile } from 'node:fs/promises';
 const evidence = 'docs/arcana/gameplay-increment-2026-10-16/evidence';
@@ -15,9 +16,7 @@ for (const language of ['es', 'en'] as const) {
       await page.goto(
         `/tests/arcana-arena-a63-harness.html?player=${player}&rival=${rival}&lang=${language}`,
       );
-      await page
-        .getByRole('button', { name: language === 'es' ? 'Pausa' : 'Pause', exact: true })
-        .click();
+      await pauseBattle(page);
       const original = await page.evaluate(
         () => (window as unknown as { __arenaFixtureRecord: string }).__arenaFixtureRecord,
       );
@@ -129,12 +128,7 @@ for (const language of ['es', 'en'] as const) {
       await expect(inspector).toContainText(language === 'es' ? 'PM' : 'MP');
       await page.keyboard.press('Escape');
       await expect(trigger).toBeFocused();
-      await page
-        .getByRole('button', {
-          name: language === 'es' ? 'Omitir reproducción' : 'Skip playback',
-          exact: true,
-        })
-        .click();
+      await skipBattle(page);
       await expect(page.locator('[data-arena-outcome]')).toBeVisible();
       expect(
         await page.evaluate(
@@ -149,12 +143,12 @@ test('A63 replay controls, reduced, missing renderer, assets and enlarged text p
 }) => {
   await page.goto('/tests/arcana-arena-a63-harness.html');
   const panel = page.locator('.battle-panel');
-  await page.getByRole('button', { name: 'Pausa', exact: true }).click();
+  await pauseBattle(page);
   const cursor = await panel.getAttribute('data-replay-cursor');
   await page.waitForTimeout(600);
   expect(await panel.getAttribute('data-replay-cursor')).toBe(cursor);
-  await page.getByRole('button', { name: '2x', exact: true }).click();
-  await page.getByRole('button', { name: 'Auto', exact: true }).click();
+  await setDoubleBattleSpeed(page);
+  await resumeBattle(page);
   await expect
     .poll(async () => Number(await panel.getAttribute('data-replay-cursor')))
     .toBeGreaterThan(Number(cursor));
@@ -183,7 +177,7 @@ test('A63 replay controls, reduced, missing renderer, assets and enlarged text p
   );
   expect(Math.max(...during.map((sample) => sample.height))).toBeLessThanOrEqual(845);
   expect(during.every((sample) => sample.actorBottom <= sample.captionTop)).toBe(true);
-  await page.getByRole('button', { name: 'Omitir reproducción', exact: true }).click();
+  await skipBattle(page);
   await page.evaluate(() => (document.documentElement.style.fontSize = '200%'));
   await expect
     .poll(() => page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1))

@@ -1,3 +1,4 @@
+import { leaveBattle } from './battle-controls';
 import { expect, test, type Page, type TestInfo } from '@playwright/test';
 import { mkdir, writeFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
@@ -93,7 +94,7 @@ async function resolveEvent(page: Page) {
     await expect(page.locator('.battle-panel')).toBeVisible();
   else await expect(page.locator('[data-map-phase]')).toHaveAttribute('data-map-phase', 'route');
 }
-async function reachTarget(page: Page, kind: NodeKind, language: Language) {
+async function reachTarget(page: Page, kind: NodeKind, _language: Language) {
   const run = (await readGame(page)).exploration!.run!;
   const path = routePath(run.graph, run.visited, kind);
   for (const id of path.slice(0, -1)) {
@@ -101,12 +102,7 @@ async function reachTarget(page: Page, kind: NodeKind, language: Language) {
     await resolveEvent(page);
     const receipt = (await readGame(page)).receipts.at(-1);
     if (receipt?.kind === 'advance-node' && receipt.battle) {
-      await page
-        .getByRole('button', {
-          name: language === 'es' ? 'Volver al mapa' : 'Back to map',
-          exact: true,
-        })
-        .click();
+      await leaveBattle(page);
       await expect(page.locator('[data-map-phase]')).toHaveAttribute('data-map-phase', 'route');
     }
   }
@@ -378,12 +374,8 @@ for (const language of ['es', 'en'] as const) {
     const bossId = await reachTarget(page, 'boss', language);
     await page.locator(`[data-node="${bossId}"]`).click();
     await resolveEvent(page);
-    const back = page.getByRole('button', {
-      name: language === 'es' ? 'Volver al mapa' : 'Back to map',
-      exact: true,
-    });
-    await expect(back).toBeVisible();
-    await back.click();
+    await expect(page.locator('.arena-caption button')).toBeVisible();
+    await leaveBattle(page);
     await counter(page);
     const before = await readGame(page);
     expect(

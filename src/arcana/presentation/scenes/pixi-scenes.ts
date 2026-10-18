@@ -1,3 +1,4 @@
+import { houseCastOffset } from '../motion/house-cast';
 import { sceneNeedsContinuousFrames } from './scene-motion';
 import { sameSceneGeometry } from './scene-geometry';
 import { FrameInvalidation } from './frame-invalidation';
@@ -505,14 +506,20 @@ export async function createPixiScene(host: HTMLElement, data: SceneData) {
             current.clock?.snapshot().progress ??
             Math.min(elapsed / activePack.animations.arena.eventMs, 1),
           flight = Math.max(0, Math.min((p - 0.18) / 0.6, 1)),
+          castHouse = (
+            current.frame.player.find((u) => u.id === event.actorId) ??
+            current.frame.rival.find((u) => u.id === event.actorId)
+          )?.house,
           attack = {
             x: from.x + (to.x - from.x) * flight,
             y:
               from.y +
               (to.y - from.y) * flight -
-              Math.sin(flight * Math.PI) * 22 -
+              houseCastOffset(castHouse, flight) -
               (event.missed ? flight * 42 : 0),
           };
+        host.dataset.castHouse = castHouse ?? 'legacy';
+        host.dataset.castOffset = String(houseCastOffset(castHouse, flight));
         if (p >= 0.18 && p < 0.78) {
           if (source || (actorArm && current.boss?.id === event.actorId)) {
             sparks.ellipse(from.x, from.y, 10 + Math.sin(flight * Math.PI) * 5, 4).stroke({
@@ -525,7 +532,21 @@ export async function createPixiScene(host: HTMLElement, data: SceneData) {
             .moveTo(from.x, from.y)
             .lineTo(attack.x, attack.y)
             .stroke({ color: paletteColor('legendaryAccent'), alpha: 0.35, width: 2 });
-          sparks.circle(attack.x, attack.y, 6).fill(paletteColor('ink'));
+          if (castHouse === 'ravenclaw') {
+            sparks
+              .moveTo(attack.x - 8, attack.y - 8)
+              .lineTo(attack.x + 8, attack.y + 8)
+              .moveTo(attack.x + 8, attack.y - 8)
+              .lineTo(attack.x - 8, attack.y + 8)
+              .stroke({ color: paletteColor('ink'), width: 2 });
+          } else if (castHouse === 'slytherin') {
+            sparks
+              .ellipse(attack.x, attack.y, 9, 4)
+              .stroke({ color: paletteColor('ink'), width: 2 });
+          } else
+            sparks
+              .circle(attack.x, attack.y, castHouse === 'hufflepuff' ? 8 : 6)
+              .fill(paletteColor('ink'));
           sparks
             .circle(attack.x, attack.y, 13)
             .fill({ color: paletteColor('legendaryAccent'), alpha: 0.18 });

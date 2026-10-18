@@ -1,0 +1,337 @@
+/* A86: the illustration owns the viewport; controls appear only on request.
+   DOM geometry remains the source for the existing renderer and shared clock. */
+.game-shell[data-view='battle'] {
+  grid-template-rows: minmax(0, 1fr);
+  --game-header: 0px;
+}
+.game-shell[data-view='battle'] > .game-header {
+  display: none;
+}
+.game-shell[data-view='battle'] > main {
+  grid-row: 1;
+  padding: max(8px, env(safe-area-inset-top)) max(12px, env(safe-area-inset-right))
+    max(8px, env(safe-area-inset-bottom)) max(12px, env(safe-area-inset-left));
+}
+.game-shell[data-view='battle'] main > .battle-panel.arena-a63 {
+  position: relative;
+  height: calc(100dvh - 16px - env(safe-area-inset-top) - env(safe-area-inset-bottom));
+  min-height: 34rem;
+  gap: 4px;
+}
+.battle-panel.arena-a63 .arena-heading {
+  padding: 0;
+  min-height: 54px;
+  flex-wrap: nowrap;
+  border: 0;
+  background: linear-gradient(90deg, transparent, #07111be8 25%, #07111be8 75%, transparent);
+}
+.arena-encounter-title {
+  flex: 1;
+  text-align: center;
+  padding-left: 48px;
+}
+.battle-panel.arena-a63 .arena-heading h2 {
+  font-size: clamp(1rem, 2.5vw, 1.4rem);
+  font-family: var(--font-heading, Georgia, serif);
+  font-weight: 500;
+  color: var(--pack-gold, #d8b86f);
+}
+.battle-panel.arena-a63 .arena-round {
+  display: block;
+  margin-top: 2px;
+  font-size: 0.8125rem;
+}
+.arena-pause {
+  flex: 0 0 48px;
+  width: 48px;
+  min-height: 48px;
+  padding: 8px;
+  margin: 0;
+  border: 1px solid var(--pack-gold, #d8b86f);
+  border-radius: 50%;
+  background: #0c1728;
+}
+.arena-pause svg {
+  display: block;
+  width: 28px;
+  height: 28px;
+  stroke: var(--pack-gold, #d8b86f);
+  stroke-width: 3;
+  fill: none;
+}
+.battle-panel.arena-a63 .arena-stage {
+  min-height: max(
+    calc(var(--arena-count) * (60px + 3rem) + 3rem),
+    var(--arena-required-height, 0px)
+  );
+}
+.battle-panel.arena-a63 .arena-columns {
+  gap: clamp(16px, 5vw, 80px);
+  min-height: inherit;
+}
+.arena-team-heading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  gap: 6px;
+  border-bottom: 1px solid var(--pack-border, #8f7950);
+}
+.battle-panel.arena-a63 .arena-team h3 {
+  font-family: var(--font-heading, Georgia, serif);
+  min-height: 0;
+  font-weight: 500;
+  text-align: center;
+}
+.arena-houses {
+  display: flex;
+  gap: 2px;
+}
+.arena-house {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1px;
+  min-width: 44px;
+  min-height: 44px;
+  margin: 0;
+  padding: 2px;
+  border: 0;
+  background: transparent;
+}
+.arena-house .house-insignia {
+  width: 22px;
+  height: 26px;
+}
+.arena-house small {
+  font-size: 0.75rem;
+  color: var(--pack-gold, #d8b86f);
+}
+.battle-panel.arena-a63 .arena-fighters,
+.battle-panel.arena-a63
+  .arena-fighters:has(> .pedestal:nth-child(5)):has(> .pedestal[data-boss-actor='true']) {
+  display: grid;
+  grid-template-rows: repeat(var(--arena-side-count), minmax(min-content, 1fr));
+  min-height: 0;
+  gap: 4px;
+}
+.battle-panel.arena-a63 .arena-inspect {
+  justify-content: flex-end;
+  padding: 0;
+  border: 0;
+}
+.battle-panel.arena-a63 .arena-figure-space,
+.battle-panel.arena-a63 .pedestal[data-boss-actor='true'] .arena-figure-space {
+  flex: 1 1 60px;
+  height: 0;
+  min-height: 60px;
+  max-height: var(--arena-common-figure-cap, 190px);
+}
+.battle-panel.arena-a63 .pedestal[data-boss-actor='true'] .arena-figure-space {
+  min-height: 78px;
+  max-height: var(--arena-common-figure-cap, 190px);
+}
+.battle-panel.arena-a63 .arena-inspect > strong {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  width: min(100%, 230px);
+  padding: 1px 3px;
+  border-radius: 3px;
+  font-family: var(--font-heading, Georgia, serif);
+  font-weight: 500;
+  font-size: 0.8125rem;
+  line-height: 1.25;
+  background: #07121be8;
+}
+.arena-inspect > strong .house-insignia {
+  flex: 0 0 16px;
+  width: 16px;
+  height: 18px;
+}
+.battle-panel.arena-a63 .arena-health {
+  width: min(100%, 230px);
+  min-height: 20px;
+  padding: 1px 4px;
+  gap: 4px;
+  border: 1px solid var(--pack-border, #8f7950);
+  border-radius: 8px;
+}
+.battle-panel.arena-a63 .arena-health meter {
+  appearance: none;
+  height: 8px;
+  border: 0;
+  border-radius: 6px;
+  overflow: hidden;
+  background: #172b37;
+}
+.arena-health meter::-webkit-meter-bar {
+  background: #172b37;
+  border: 0;
+}
+.arena-health meter::-webkit-meter-optimum-value {
+  background: #54d8ba;
+  border-radius: 6px;
+}
+.arena-health meter::-moz-meter-bar {
+  background: #54d8ba;
+}
+.arena-team:last-child .arena-health meter::-webkit-meter-optimum-value {
+  background: #f09b91;
+}
+.arena-team:last-child .arena-health meter::-moz-meter-bar {
+  background: #f09b91;
+}
+.arena-action-mark {
+  position: absolute;
+  z-index: 4;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 1px 5px;
+  white-space: nowrap;
+  font-size: 0.75rem;
+  color: #fff0d0;
+  background: #182a34;
+  border-bottom: 2px solid var(--pack-gold, #d8b86f);
+}
+[data-target='true'] .arena-action-mark {
+  border-bottom-style: dashed;
+  border-color: var(--pack-rival-accent, #ce8680);
+}
+.battle-panel.arena-a63 .arena-caption {
+  min-height: 0;
+  padding: 0;
+  background: transparent;
+}
+.battle-panel.arena-a63 .arena-caption:has([data-arena-outcome]) {
+  min-height: 48px;
+  background: #0c1728e6;
+}
+.battle-panel.arena-a63 .synergies {
+  min-height: 0;
+}
+.battle-panel.arena-a63 .synergies:not(:empty) {
+  margin-top: 3px;
+}
+.battle-panel.arena-a63 .arena-playback-tools[hidden] {
+  display: none;
+}
+.battle-panel.arena-a63 .arena-playback-tools {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  position: fixed;
+  z-index: 12;
+  top: max(58px, env(safe-area-inset-top));
+  right: max(12px, calc((100vw - 1080px) / 2));
+  left: auto;
+  bottom: auto;
+  margin: 0;
+  width: min(320px, 100%);
+  max-height: calc(100dvh - 84px);
+  overflow: auto;
+  padding: 14px;
+  gap: 8px;
+  border: 1px solid var(--pack-gold, #d8b86f);
+  background: #0c1728;
+  border-radius: 12px;
+  box-shadow: 0 12px 24px #0008;
+}
+.arena-playback-tools h3 {
+  margin: 0 0 6px;
+  font-size: 1rem;
+}
+.battle-panel.arena-a63 .replay-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  padding: 0;
+  border: 0;
+}
+.battle-panel.arena-a63 .replay-controls button {
+  flex: 1 1 auto;
+  border: 1px solid var(--pack-border, #8f7950);
+  padding: 8px;
+}
+.battle-panel.arena-a63 .arena-record-trigger {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: auto;
+  height: auto;
+  border-radius: 6px;
+  padding: 4px 8px;
+}
+.battle-panel.arena-a63 .arena-record-trigger img {
+  width: 32px;
+  height: 38px;
+}
+.game-shell[data-view='battle'] .arena-playback-tools .battle-wallet {
+  position: static;
+  margin: 0;
+  width: auto;
+  max-width: 100%;
+}
+.game-shell[data-view='battle'] .arena-playback-tools .battle-wallet > summary {
+  width: auto;
+  height: auto;
+  border-radius: 6px;
+  padding: 8px;
+}
+.game-shell[data-view='battle'] .arena-playback-tools .battle-wallet .hud {
+  position: static;
+  transform: none;
+  width: auto;
+  margin: 0;
+}
+.battle-panel.arena-a63 .arena-playback-tools .settings-trigger {
+  align-self: center;
+}
+.battle-panel.arena-a63 .arena-playback-tools .arena-exit {
+  width: auto;
+  border-radius: 6px;
+  min-height: 44px;
+  font-size: 0.875rem;
+  margin: 0;
+}
+.arena-options-close {
+  margin: 0;
+}
+.arena-inspect:focus-visible,
+.arena-house:focus-visible,
+.arena-pause:focus-visible {
+  outline: 3px solid var(--pack-focus, #80d6e5);
+  outline-offset: 2px;
+}
+@media (max-width: 450px) {
+  .arena-team-heading {
+    gap: 2px;
+  }
+  .battle-panel.arena-a63 .arena-health {
+    font-size: 0.6875rem;
+  }
+}
+
+/* A low-health marker is static and redundant with the numerical/meter value. */
+.arena-health .arena-danger {
+  min-width: 1ch;
+  color: #fff0d0;
+  font-weight: 700;
+}
+.pedestal[data-in-danger='true'] .arena-health {
+  border-style: dashed;
+}
+
+.arena-playback-tools::backdrop {
+  background: #03091588;
+}
+
+/* Override the historical five-up cap with the common measured scale. */
+.battle-panel.arena-a63:has(.arena-fighters > .pedestal:nth-child(5)) .arena-figure-space,
+.battle-panel.arena-a63:has(.arena-fighters > .pedestal:nth-child(5))
+  .pedestal[data-boss-actor='true']
+  .arena-figure-space {
+  max-height: var(--arena-common-figure-cap, 190px);
+}

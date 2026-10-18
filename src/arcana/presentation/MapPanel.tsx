@@ -112,10 +112,11 @@ export function MapPanel({
         data-node-state={
           run.visited.includes(id) ? 'visited' : available.includes(id) ? 'available' : 'locked'
         }
-        disabled={run.visited.includes(id)}
+        disabled={run.visited.includes(id) || (available.includes(id) && !ready)}
         onClick={(event) => {
-          if (available.includes(id) && ready) onSelect(id, event.currentTarget);
-          else {
+          if (available.includes(id)) {
+            if (ready) onSelect(id, event.currentTarget);
+          } else {
             inspectOrigin.current = event.currentTarget;
             setInspectedId(id);
           }

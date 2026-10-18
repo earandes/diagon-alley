@@ -1,3 +1,5 @@
+import { HouseInsignia, houseName, houseEffect } from './HouseInsignia';
+import { houseProgress } from '../domain/combat/houses';
 import type { CombatRules, CombatUnitInput } from '../domain/combat/engine';
 import type { Language } from '../domain/collection/wizards';
 import { activeSynergies } from '../domain/combat/synergies';
@@ -55,6 +57,19 @@ export function BossPrelude({
         <div className="boss-prelude-identity">
           <h4>{leader.name}</h4>
           <AffinityLabel affinity={leader.unit.affinity} language={language} />
+          {rules?.houseSynergies &&
+            houseProgress(opponents)
+              .filter((group) => group.tier > 0)
+              .map((group) => (
+                <span
+                  key={group.house}
+                  className="boss-house-mark"
+                  title={houseEffect(group, language)}
+                >
+                  <HouseInsignia house={group.house} />
+                  {houseName(group.house, language)} · {group.tier === 1 ? 'I' : 'II'}
+                </span>
+              ))}
           <span className="boss-roster-count">
             {opponents.length} · {t.roster}
           </span>

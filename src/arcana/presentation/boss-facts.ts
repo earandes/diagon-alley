@@ -7,7 +7,7 @@ export type BossBattleFact =
   | (UnitFact & { readonly kind: 'bean'; readonly flavour: BeanFlavour })
   | (UnitFact & {
       readonly kind: 'healing';
-      readonly source: 'alchemy' | 'equipment';
+      readonly source: 'alchemy' | 'equipment' | 'house';
       readonly amount: number;
     })
   | {

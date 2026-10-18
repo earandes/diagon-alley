@@ -1,3 +1,4 @@
+import { pauseBattle, skipBattle, setDoubleBattleSpeed } from '../browser-trial/battle-controls';
 import { test, expect } from '@playwright/test';
 import { mkdir, writeFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
@@ -141,9 +142,9 @@ test('A75 paired mobile sustained replay and lifecycle preserve confirmed log', 
       expect(steady.length).toBeGreaterThan(150);
       const scene = page.locator('.scene-canvas'),
         panel = page.locator('.battle-panel');
-      await page.getByRole('button', { name: 'Pausa', exact: true }).click();
+      await pauseBattle(page);
       const cursor = await panel.getAttribute('data-replay-cursor');
-      await page.getByRole('button', { name: '2x', exact: true }).click();
+      await setDoubleBattleSpeed(page);
       await page.locator('.arena-inspect').first().click();
       await expect(page.locator('.arena-inspector[open]')).toBeVisible();
       await page.keyboard.press('Escape');
@@ -165,7 +166,7 @@ test('A75 paired mobile sustained replay and lifecycle preserve confirmed log', 
         Reflect.deleteProperty(document, 'hidden');
         document.dispatchEvent(new Event('visibilitychange'));
       });
-      await page.getByRole('button', { name: 'Omitir reproducción', exact: true }).click();
+      await skipBattle(page);
       await expect(page.locator('[data-arena-outcome]')).toBeVisible();
       expect(
         await page.evaluate(() => ({

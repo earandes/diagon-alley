@@ -1,7 +1,6 @@
 // Explicit rendering fixture, never imported by the application or distributed build.
 import { useEffect, useState } from 'react';
 import { visualAsset } from '../../src/arcana/presentation/content-packs/art';
-import { Artwork } from '../../src/arcana/presentation/Artwork';
 import { GameSettings } from '../../src/arcana/presentation/GameSettings';
 import { createRoot } from 'react-dom/client';
 import { BattlePanel } from '../../src/arcana/presentation/BattlePanel';
@@ -89,27 +88,24 @@ function Fixture() {
       />
       <header className="game-header">
         <h1>ARCANA · Fixture</h1>
-        <GameSettings
-          language={language}
-          onLanguage={setLanguage}
-          reduced={reduced}
-          ownReduced={reduced}
-          onReduced={setReduced}
-        />
       </header>
-      <details className="battle-wallet">
-        <summary aria-label={language === 'es' ? 'Recursos guardados' : 'Saved resources'}>
-          <Artwork asset="currency.crowns" language={language} decorative />
-          <span className="visually-hidden">
-            {language === 'es' ? 'Recursos guardados' : 'Saved resources'}
-          </span>
-        </summary>
-        <div className="hud">
-          <span>50</span>
-        </div>
-      </details>
+
       <main id="content">
         <BattlePanel
+          settings={
+            <GameSettings
+              language={language}
+              onLanguage={setLanguage}
+              reduced={reduced}
+              ownReduced={reduced}
+              onReduced={setReduced}
+            />
+          }
+          resources={
+            <div className="hud">
+              <span>50</span>
+            </div>
+          }
           combat={shownRecord}
           game={game}
           content={content}

@@ -1,3 +1,4 @@
+import { pauseBattle, openBattleOptions } from '../browser-trial/battle-controls';
 import { selectedA75 } from './selected-evidence';
 import { mkdir, writeFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
@@ -19,7 +20,10 @@ test.beforeEach(async ({ browserName, viewport }) => {
 });
 const read = async (page: Page) => (await (await page.request.get('/api/state')).json()).state;
 const settings = async (page: Page) => {
-  await page.locator('.game-header > .settings-trigger').click();
+  if (await page.locator('.arena-pause').count()) {
+    await openBattleOptions(page);
+    await page.locator('#arena-options .settings-trigger').click();
+  } else await page.locator('.game-header > .settings-trigger').click();
   const dialog = page.locator('dialog.game-settings[open]');
   await expect(dialog).toBeVisible();
   return dialog;
@@ -221,7 +225,7 @@ test('A75 settings preference during paused replay never restarts the confirmed 
   const node = await reachNode(page, 'duel', 'es');
   await page.locator(`[data-node="${node}"]`).click();
   await confirmEvent(page, 'es');
-  await page.getByRole('button', { name: 'Pausa', exact: true }).click();
+  await pauseBattle(page);
   const arena = page.locator('[data-replay-cursor]');
   const cursor = await arena.getAttribute('data-replay-cursor');
   const before = await read(page);

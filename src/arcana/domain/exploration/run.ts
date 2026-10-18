@@ -11,7 +11,7 @@ export interface RunMember {
   readonly unit: CombatUnitInput;
 }
 export interface Run extends RouteRun {
-  readonly tacticalVersion?: 1 | 2;
+  readonly tacticalVersion?: 1 | 2 | 3;
   readonly equipmentRulesVersion?: 2;
   readonly challenge?: 'discovery' | 'tactical' | 'mastery';
   readonly campaignSnapshot?: Campaign;
@@ -58,14 +58,15 @@ export function validateRun(run: Run): void {
   if (
     (run.equipmentRulesVersion !== undefined && run.equipmentRulesVersion !== 2) ||
     (run.challenge !== undefined &&
-      (!['discovery', 'tactical', 'mastery'].includes(run.challenge) || run.tacticalVersion !== 2))
+      (!['discovery', 'tactical', 'mastery'].includes(run.challenge) ||
+        ![2, 3].includes(run.tacticalVersion ?? 0)))
   )
     throw new ArcanaError('INVALID_ROUTE');
   validateGraph(run.graph);
   if (run.campaignSnapshot !== undefined) {
     validateCampaign(run.campaignSnapshot);
     if (
-      ![1, 2].includes(run.tacticalVersion ?? 0) ||
+      ![1, 2, 3].includes(run.tacticalVersion ?? 0) ||
       run.campaignVersion !== run.campaignSnapshot.version ||
       run.zoneId !== run.campaignSnapshot.zoneId ||
       !sameGraph(run.graph, run.campaignSnapshot.graph)

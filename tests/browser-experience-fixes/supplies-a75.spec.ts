@@ -1,3 +1,4 @@
+import { leaveBattle } from '../browser-trial/battle-controls';
 import { test, expect } from '@playwright/test';
 import { changeLanguage, startExpedition } from '../browser-trial/game-fixture';
 import { readGame, reachNode, confirmEvent } from '../browser-trial/route-helpers';
@@ -181,7 +182,7 @@ for (const language of ['es', 'en'] as const) {
       expect(advancePosts).toBe(1);
       // The arena deliberately folds the navigation dock. Return through its
       // real exit before consulting the discovered flavour in the collection.
-      await page.locator('.arena-exit').click();
+      await leaveBattle(page);
       await expect(page.locator('.battle-panel')).toHaveCount(0);
       await page
         .locator('nav button')

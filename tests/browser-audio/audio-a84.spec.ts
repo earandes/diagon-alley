@@ -1,3 +1,4 @@
+import { pauseBattle, resumeBattle, skipBattle, setDoubleBattleSpeed } from '../browser-trial/battle-controls';
 import { mkdir, writeFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
 import { test, expect, type Page } from '@playwright/test';
@@ -175,14 +176,14 @@ test('A84 saved replay clock, pause, 2x, skip and reduced never change confirmed
   await expect
     .poll(() => page.evaluate(() => (window as unknown as { __a84Sounds: number }).__a84Sounds))
     .toBeGreaterThan(0);
-  await page.getByRole('button', { name: 'Pausa', exact: true }).click();
+  await pauseBattle(page);
   expect(await page.evaluate(() => window.__a84.audio.diagnostics().effectVoices)).toBe(0);
   const paused = await page.locator('.battle-panel').getAttribute('data-replay-cursor');
   await page.waitForTimeout(250);
   expect(await page.locator('.battle-panel').getAttribute('data-replay-cursor')).toBe(paused);
-  await page.getByRole('button', { name: '2x', exact: true }).click();
-  await page.getByRole('button', { name: 'Auto', exact: true }).click();
-  await page.getByRole('button', { name: 'Omitir reproducción', exact: true }).click();
+  await setDoubleBattleSpeed(page);
+  await resumeBattle(page);
+  await skipBattle(page);
   await expect(page.locator('.battle-panel')).toHaveAttribute('data-replay-phase', 'finished');
   expect(await page.evaluate(() => window.__a84.audio.diagnostics().effectVoices)).toBe(0);
   expect(await page.evaluate(() => JSON.stringify(window.__a84.battle))).toBe(before);
@@ -244,6 +245,6 @@ test('A84 real offline mix, source bounds and missing sound remain recoverable',
   await page.keyboard.press('Escape');
   await page.locator('[data-fixture-start]').click();
   await expect(page.locator('.battle-panel')).toBeVisible();
-  await page.getByRole('button', { name: 'Omitir reproducción', exact: true }).click();
+  await skipBattle(page);
   await expect(page.locator('.battle-panel')).toHaveAttribute('data-replay-phase', 'finished');
 });

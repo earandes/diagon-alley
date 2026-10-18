@@ -8,7 +8,7 @@ import { preparedRoutePath } from '../../support/prepared-route';
 import fixture from '../../support/fixtures/a73-route-seed0.json';
 
 function start(seed: number): Run {
-  const { campaign, opening } = trialConfiguration();
+  const { campaign, opening } = trialConfiguration('a84');
   const graph = randomizeRoute(campaign.graph, new SeededRandom(seed));
   const wizard = opening.catalog.wizards.find((w) => w.id === 'apprentice')!;
   return {

@@ -1,3 +1,5 @@
+import { TraitBadge } from './HouseInsignia';
+import { EnchantedFinish, FinishLabel, enchantedName } from './EnchantedFinish';
 import { VisualChoices } from './VisualChoices';
 import { FlavourCabinet } from './FlavourCabinet';
 import { Artwork } from './Artwork';
@@ -32,8 +34,10 @@ export function CollectionPanel({
 }) {
   const [rarity, setRarity] = useState('all'),
     [discovery, setDiscovery] = useState('all'),
+    [finish, setFinish] = useState('all'),
     [page, setPage] = useState(0),
-    [inspected, setInspected] = useState<string | null>(null);
+    [inspected, setInspected] = useState<string | null>(null),
+    [inspectedCopy, setInspectedCopy] = useState<string | null>(null);
   const folio = useRef<HTMLDialogElement>(null);
   const origin = useRef<HTMLButtonElement | null>(null);
   useEffect(() => {
@@ -53,13 +57,16 @@ export function CollectionPanel({
     .filter(
       (entry) =>
         (rarity === 'all' || entry.wizard.rarity === rarity) &&
-        (discovery === 'all' || entry.discovered === (discovery === 'discovered')),
+        (discovery === 'all' || entry.discovered === (discovery === 'discovered')) &&
+        (finish === 'all' || entry.copies.some((copy) => !!copy.wizard.finish)),
     )
     .sort((left, right) => Number(right.discovered) - Number(left.discovered));
   const pages = Math.max(1, Math.ceil(entries.length / 4));
   const currentPage = Math.min(page, pages - 1);
   const visibleEntries = entries.slice(currentPage * 4, currentPage * 4 + 4);
   const inspectedEntry = allEntries.find((entry) => entry.wizard.id === inspected);
+  const selectedCopy =
+    inspectedEntry?.copies.find((c) => c.copyId === inspectedCopy) ?? inspectedEntry?.copies[0];
   const { reduced } = useReducedMotion();
   const pageMotion = useSelectionMotion(`${rarity}:${discovery}:${currentPage}`, reduced, 160);
   return (
@@ -123,6 +130,19 @@ export function CollectionPanel({
               { id: 'locked', label: t('undiscoveredCard'), asset: 'card.back' },
             ]}
           />
+          <VisualChoices
+            label={language === 'es' ? 'Acabado' : 'Finish'}
+            value={finish}
+            onChange={(value) => {
+              setFinish(value);
+              setPage(0);
+            }}
+            language={language}
+            options={[
+              { id: 'all', label: t('allCards'), asset: 'ui.collection' },
+              { id: 'enchanted', label: enchantedName(language), asset: 'rarity.arcane-legendary' },
+            ]}
+          />
         </div>
       </details>
       {!entries.length && <p role="status">{t('noMatchingCards')}</p>}
@@ -137,7 +157,7 @@ export function CollectionPanel({
             }
           >
             <button
-              className="album-card-inspect game-object"
+              className="album-card-inspect game-object enchanted-holder"
               disabled={!entry.discovered}
               aria-label={
                 entry.discovered
@@ -146,6 +166,7 @@ export function CollectionPanel({
               }
               onClick={(event) => {
                 origin.current = event.currentTarget;
+                setInspectedCopy(null);
                 setInspected(entry.wizard.id);
               }}
             >
@@ -155,10 +176,24 @@ export function CollectionPanel({
                 className="card-portrait"
                 decorative
               />
+              {entry.discovered && entry.copies.find((c) => c.wizard.finish) && (
+                <EnchantedFinish wizard={entry.copies.find((c) => c.wizard.finish)!.wizard} />
+              )}
             </button>
             <h3 className={entry.discovered ? '' : 'visually-hidden'}>
               {entry.discovered ? wizardName(entry.wizard, language) : t('undiscoveredCard')}
             </h3>
+            {entry.discovered && (
+              <TraitBadge
+                traits={catalog.wizards.find((w) => w.id === entry.wizard.id)?.traits}
+                language={language}
+              />
+            )}
+            {entry.copies.some((c) => c.wizard.finish) && (
+              <span className="enchanted-label">
+                ✧ {enchantedName(language)} ×{entry.copies.filter((c) => c.wizard.finish).length}
+              </span>
+            )}
             <RarityBadge rarity={entry.wizard.rarity} language={language} />
             <StarRating stars={entry.wizard.stars} language={language} />
             <p className={entry.discovered ? 'card-ownership' : 'visually-hidden'}>
@@ -184,13 +219,21 @@ export function CollectionPanel({
           >
             <Artwork asset="ui.clear" language={language} decorative />
           </button>
-          <Artwork
-            asset={`character.${inspectedEntry.wizard.id}.portrait`}
-            language={language}
-            className="album-folio-portrait"
-            decorative
-          />
+          <div className="enchanted-holder">
+            <Artwork
+              asset={`character.${inspectedEntry.wizard.id}.portrait`}
+              language={language}
+              className="album-folio-portrait"
+              decorative
+            />
+            {selectedCopy && <EnchantedFinish wizard={selectedCopy.wizard} />}
+          </div>
           <h3>{wizardName(inspectedEntry.wizard, language)}</h3>
+          {selectedCopy && <FinishLabel wizard={selectedCopy.wizard} language={language} />}
+          <TraitBadge
+            traits={catalog.wizards.find((w) => w.id === inspectedEntry.wizard.id)?.traits}
+            language={language}
+          />
           <RarityBadge rarity={inspectedEntry.wizard.rarity} language={language} />
           <StarRating stars={inspectedEntry.wizard.stars} language={language} />
           <p>{wizardContext(inspectedEntry.wizard, language)}</p>
@@ -198,7 +241,15 @@ export function CollectionPanel({
           <ol className="album-copy-tokens" aria-label={t('collectionCopiesQuestion')}>
             {inspectedEntry.copies.map((copy, index) => (
               <li key={copy.copyId} aria-label={prepText(language, 'copy', { number: index + 1 })}>
-                {index + 1}
+                <button
+                  type="button"
+                  aria-pressed={selectedCopy?.copyId === copy.copyId}
+                  onClick={() => setInspectedCopy(copy.copyId)}
+                  aria-label={`${prepText(language, 'copy', { number: index + 1 })}${copy.wizard.finish ? ` · ${enchantedName(language)}` : ''}`}
+                >
+                  {index + 1}
+                  {copy.wizard.finish ? ' ✧' : ''}
+                </button>
               </li>
             ))}
           </ol>

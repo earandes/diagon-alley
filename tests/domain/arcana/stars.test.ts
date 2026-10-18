@@ -42,7 +42,7 @@ it('does not infer stars for prior copies and keeps separate acquisition metadat
   expect(entry.copies.map((copy) => copy.catalogVersion)).toEqual([1, 2]);
 });
 it('publishes stars for all 30 current trial cards with five values and four rarity IDs in version 2', () => {
-  const { opening, campaign } = trialConfiguration();
+  const { opening, campaign } = trialConfiguration('a84');
   const content = projectPublicContent(opening, campaign);
   expect(content.catalog.version).toBe(2);
   expect(content.toadTable).toMatchObject({ version: 2, catalogVersion: 2 });

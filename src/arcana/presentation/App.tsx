@@ -17,7 +17,6 @@ import { NodePreparation } from './NodePreparation';
 import { ExpeditionClosure } from './ExpeditionClosure';
 import { ExpeditionIntentions, IntentionReminder } from './ExpeditionIntentions';
 import type { IntentionChoice } from '../domain/exploration/intentions';
-import { closureText } from './closure-messages';
 import { expeditionClosure, type ClosureAction } from '../application/client/expedition-closure';
 import { nodeActionLabel } from './node-event-messages';
 import './node-event-dialog.css';
@@ -492,52 +491,55 @@ export function App() {
             reduced={motion.reduced}
             active={view !== 'battle' && !selected && !preparing}
           />
-          <header className={`game-header${game ? '' : ' welcome-tools'}`}>
-            {game && (
-              <h1>
-                {view === 'map' && content
-                  ? regionAppearance(run?.zoneId ?? content.campaign.zoneId, language).name
-                  : activePack.brand}
-                {view === 'map' && run?.status === 'active' && run.challenge && (
-                  <small className="challenge-reminder">
-                    {challengeText(language, run.challenge)}
-                  </small>
-                )}
-              </h1>
-            )}
-            {game &&
-              (content?.seasonalEdition || game.seasonal?.participations.length) &&
-              state.serverTime !== null &&
-              view !== 'battle' && (
-                <SeasonalEvent
-                  state={game}
-                  language={language}
-                  serverTime={state.serverTime}
-                  edition={content?.seasonalEdition}
-                  busy={!ready}
-                  reducedMotion={motion.reduced}
-                  error={state.error}
-                  onRecover={() => void (state.pending ? controller.recover() : controller.load())}
-                  recoverLabel={state.pending ? t('recoverOperation') : t('refreshState')}
-                  onAction={(request) =>
-                    void controller.perform({ kind: 'seasonal-event', request })
-                  }
-                  onPrepareRoute={() => {
-                    setView('map');
-                    if (run && run.status !== 'active') openPreparation();
-                    else document.getElementById('content')?.focus({ preventScroll: true });
-                  }}
-                />
+          {(!game || view !== 'battle') && (
+            <header className={`game-header${game ? '' : ' welcome-tools'}`}>
+              {game && (
+                <h1>
+                  {view === 'map' && content
+                    ? regionAppearance(run?.zoneId ?? content.campaign.zoneId, language).name
+                    : activePack.brand}
+                  {view === 'map' && run?.status === 'active' && run.challenge && (
+                    <small className="challenge-reminder">
+                      {challengeText(language, run.challenge)}
+                    </small>
+                  )}
+                </h1>
               )}
-            <GameSettings
-              language={language}
-              onLanguage={setLanguage}
-              reduced={motion.reduced}
-              ownReduced={motion.own}
-              systemReduced={motion.system}
-              onReduced={motion.change}
-            />
-          </header>
+              {game &&
+                (content?.seasonalEdition || game.seasonal?.participations.length) &&
+                state.serverTime !== null && (
+                  <SeasonalEvent
+                    state={game}
+                    language={language}
+                    serverTime={state.serverTime}
+                    edition={content?.seasonalEdition}
+                    busy={!ready}
+                    reducedMotion={motion.reduced}
+                    error={state.error}
+                    onRecover={() =>
+                      void (state.pending ? controller.recover() : controller.load())
+                    }
+                    recoverLabel={state.pending ? t('recoverOperation') : t('refreshState')}
+                    onAction={(request) =>
+                      void controller.perform({ kind: 'seasonal-event', request })
+                    }
+                    onPrepareRoute={() => {
+                      setView('map');
+                      if (run && run.status !== 'active') openPreparation();
+                      else document.getElementById('content')?.focus({ preventScroll: true });
+                    }}
+                  />
+                )}
+              <GameSettings
+                language={language}
+                onLanguage={setLanguage}
+                reduced={motion.reduced}
+                ownReduced={motion.own}
+                systemReduced={motion.system}
+                onReduced={motion.change}
+              />
+            </header>
+          )}
 
           {!online && (
             <p role="status" className="notice connection-note">
@@ -630,23 +632,7 @@ export function App() {
             </main>
           ) : (
             <>
-              {view === 'battle' ? (
-                <details className="battle-wallet">
-                  <summary
-                    aria-label={closureText(language, 'wallet')}
-                    title={closureText(language, 'wallet')}
-                  >
-                    <Artwork asset="currency.crowns" language={language} decorative />
-                    <span className="visually-hidden">{closureText(language, 'wallet')}</span>
-                  </summary>
-                  <PlayerHud
-                    state={state}
-                    connected={online}
-                    language={language}
-                    onRefresh={() => void controller.refreshStatus()}
-                  />
-                </details>
-              ) : (
+              {view !== 'battle' && (
                 <PlayerHud
                   state={state}
                   connected={online}
@@ -1068,6 +1054,24 @@ export function App() {
                   <BattlePanel
                     key={battle.id}
                     combat={battle}
+                    resources={
+                      <PlayerHud
+                        state={state}
+                        connected={online}
+                        language={language}
+                        onRefresh={() => void controller.refreshStatus()}
+                      />
+                    }
+                    settings={
+                      <GameSettings
+                        language={language}
+                        onLanguage={setLanguage}
+                        reduced={motion.reduced}
+                        ownReduced={motion.own}
+                        systemReduced={motion.system}
+                        onReduced={motion.change}
+                      />
+                    }
                     confirmedPresentation={
                       state.receipt?.kind === 'advance-node' &&
                       state.receipt.battle?.id === battle.id
