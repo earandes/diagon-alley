@@ -409,17 +409,25 @@ test('A69 CardReveal actual: four ranks, new/repeat, skip, reduced, language/pac
   await page.getByRole('button', { name: 'Omitir animación' }).click();
   await expect(page.locator('.reveal')).toHaveAttribute('data-opening-state', 'result');
   await page.route('**/*.webp', (route) => route.abort());
+  await page.goto(`${fixture}?kind=opening&rarity=unusual&instance=missing-art`);
+  const missingArtRecord = await preserved(page);
+  await expect(page.locator('.reveal[data-opening-state="result"]')).toBeVisible();
+  await expect(page.locator('.reveal-continue')).toBeEnabled();
+  expect(await preserved(page)).toEqual(missingArtRecord);
+  // Independent failures: missing art may legitimately settle before the lazy import.
+  // Keep the import-failure assertion, but supply artwork so it must be attempted.
+  await page.unroute('**/*.webp');
   let failedGsapRequests = 0;
   await page.route('**/*gsap-a69*', (route) => {
     failedGsapRequests++;
     return route.abort();
   });
-  await page.goto(`${fixture}?kind=opening&rarity=unusual&instance=missing-art`);
-  const missingArtRecord = await preserved(page);
+  await page.goto(`${fixture}?kind=opening&rarity=unusual&instance=missing-import`);
+  const missingImportRecord = await preserved(page);
   await expect(page.locator('.reveal[data-opening-state="result"]')).toBeVisible();
   await expect(page.locator('.reveal-continue')).toBeEnabled();
   expect(failedGsapRequests).toBeGreaterThan(0);
-  expect(await preserved(page)).toEqual(missingArtRecord);
+  expect(await preserved(page)).toEqual(missingImportRecord);
 });
 
 async function freezeSpellPhase(page: Page, desired: 'anticipation' | 'impact') {

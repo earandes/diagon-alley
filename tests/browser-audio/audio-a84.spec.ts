@@ -86,8 +86,9 @@ test('A84 opt-in settings, real decode, preferences and both worlds/languages', 
       if (
         process.platform === 'linux' &&
         (process.env.ARCANA_CAPTURE_A84 === '1' || process.env.ARCANA_CAPTURE_A69 === '1') &&
-        pack === 'diagon-alley' &&
-        lang === 'es'
+        (test.info().project.use.browserName === 'webkit'
+          ? pack === 'arcana' && lang === 'en'
+          : pack === 'diagon-alley' && lang === 'es')
       ) {
         await mkdir(root, { recursive: true });
         await page.screenshot({
