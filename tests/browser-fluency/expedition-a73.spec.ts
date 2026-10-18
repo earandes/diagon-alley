@@ -1,13 +1,10 @@
 import { expect, test, type Locator, type Page } from '@playwright/test';
-import { mkdir, writeFile } from 'node:fs/promises';
+import { mkdir, writeFile, readFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
 import { changeLanguage } from '../browser-trial/game-fixture';
 import { expectMapFits, readGame, reachNode } from '../browser-trial/route-helpers';
 import { Pool } from 'pg';
-import { trialConfiguration } from '../../src/arcana/infrastructure/content/trial-configuration';
-import { randomizeRoute } from '../../src/arcana/domain/exploration/randomize-route';
-import { SeededRandom } from '../../src/arcana/infrastructure/random/seeded-random';
-import { runSnapshot } from '../../src/arcana/domain/exploration/run';
+import { runSnapshot, type Run } from '../../src/arcana/domain/exploration/run';
 
 // Reuse the guarded A70 Linux process, not another browser/server battery. Four
 // desktop Chromium accounts leave A71's 24-account namespace below its real quota.
@@ -46,8 +43,20 @@ async function fixedRouteFixture(page: Page, owner: string) {
   expect(state.playerId).toBe(owner);
   expect(run.visited).toEqual([]);
   expect(run.status).toBe('active');
-  const { campaign } = trialConfiguration();
-  const graph = randomizeRoute(campaign.graph, new SeededRandom(0));
+  // Plain JSON read avoids importing Vite's JSON modules through Node's browser-test loader.
+  // A domain test compares every graph/node plan with the current campaign configuration.
+  const fixture = JSON.parse(
+    await readFile(new URL('../support/fixtures/a73-route-seed0.json', import.meta.url), 'utf8'),
+  ) as {
+    version: number;
+    campaignVersion: number;
+    graph: Run['graph'];
+    nodes: NonNullable<Run['campaignSnapshot']>['nodes'];
+  };
+  expect(fixture.version).toBe(1);
+  expect(run.campaignVersion).toBe(fixture.campaignVersion);
+  expect(run.challenge ?? 'discovery').toBe('discovery');
+  const graph = fixture.graph;
   const fixed = runSnapshot({
     ...run,
     graph,
@@ -56,7 +65,7 @@ async function fixedRouteFixture(page: Page, owner: string) {
     campaignSnapshot: {
       ...run.campaignSnapshot!,
       graph,
-      nodes: campaign.challengeContent!(run.challenge ?? 'discovery', graph),
+      nodes: fixture.nodes,
     },
   });
   const pool = new Pool({

@@ -35,3 +35,12 @@ No se ha escuchado la muestra con una persona, ni probado salida física, Safari
 - Se conservan las primeras capturas/datos A84 en `evidence/first-pass`, con procedencia6570ae1. El pase final seleccionará ES/Diagon en390/1280 y EN/ARCANA en865, tres capturas en total. No se amplía una matriz de capturas.
 
 Las comprobaciones exploratorias con128semillas detectaron además rutas incompatibles con la política técnica restringida; no se usan para afirmar que todo inicio debe ganarse. Se descarta un planificador ampliado innecesario y se conservan los helpers generales originales. La fixture final no regala victorias: servidor/motor siguen resolviendo los comandos reales con contenido/stat/economía existentes.
+
+## Segunda CI: fallos conservados y corrección de aislamiento
+
+CI39124837482 sobre8f610ce: tipos/build/640pruebas unitarias e integración correctos; nueve casos A84 correctos otra vez. Check general fallido y regresión dependiente omitida.
+
+- A70 no llegó a ejecutar tests: Node rechazó `equipment-v2.json` sin atributo de importación. El nuevo import de `trialConfiguration` en la fixture técnica no era compatible con el loader de Playwright; la aplicación Vite no presenta ese error. Se sustituye por una fixture JSON leída mediante fs, generada por `node tools/verification/build-a73-route-fixture.mjs` sin navegador/listener. Un test compara grafo y planes completos con el contenido vigente, para impedir divergencias silenciosas.
+- Separar arte/import en dos navegaciones no bastó: WebKit seguía registrando cero peticiones GSAP abortadas, mientras el resultado estático permanecía accesible. Se conserva la assertion de petición fallida y se realiza esa inyección en un contexto aislado nuevo, con routing instalado antes de su primera navegación y movimiento normal explícito. La página anterior se cierra primero: ninguna escena paralela. Se elimina contaminación de caché/historial/preferencias; no se afirma haber medido internamente cuál de esas capas evitó la petición. No se cambia el renderer del producto.
+
+Nueva ejecución necesaria sobre el candidato corregido; no se atribuye éxito por corregir la configuración o por pasar las pruebas de sonido aisladas.

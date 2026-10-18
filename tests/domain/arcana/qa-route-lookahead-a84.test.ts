@@ -5,6 +5,7 @@ import { SeededRandom } from '../../../src/arcana/infrastructure/random/seeded-r
 import { CombatEngine } from '../../../src/arcana/domain/combat/engine';
 import { healRun, type Run, type RunMember } from '../../../src/arcana/domain/exploration/run';
 import { preparedRoutePath } from '../../support/prepared-route';
+import fixture from '../../support/fixtures/a73-route-seed0.json';
 
 function start(seed: number): Run {
   const { campaign, opening } = trialConfiguration();
@@ -95,4 +96,12 @@ it('the declared seed0 fixture retains first duel, boss and victory under unchan
   const after = follow(run, first);
   expect(after.status).not.toBe('lost');
   expect(follow(after, preparedRoutePath(after, 'boss')).status).not.toBe('lost');
+});
+
+it('the browser route fixture equals the current campaign graph and complete node plans', () => {
+  const run = start(0);
+  expect(fixture.version).toBe(1);
+  expect(fixture.campaignVersion).toBe(run.campaignVersion);
+  expect(fixture.graph).toEqual(run.graph);
+  expect(fixture.nodes).toEqual(run.campaignSnapshot!.nodes);
 });

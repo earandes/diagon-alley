@@ -332,6 +332,7 @@ test('A69 replay clock: pause, 2x, inspector, hidden, skip and renderer failure 
 
 test('A69 CardReveal actual: four ranks, new/repeat, skip, reduced, language/pack/remount and missing art', async ({
   page,
+  browser,
 }) => {
   for (const pack of ['diagon-alley', 'arcana'])
     for (const lang of ['es', 'en']) {
@@ -416,18 +417,31 @@ test('A69 CardReveal actual: four ranks, new/repeat, skip, reduced, language/pac
   expect(await preserved(page)).toEqual(missingArtRecord);
   // Independent failures: missing art may legitimately settle before the lazy import.
   // Keep the import-failure assertion, but supply artwork so it must be attempted.
-  await page.unroute('**/*.webp');
-  let failedGsapRequests = 0;
-  await page.route('**/*gsap-a69*', (route) => {
-    failedGsapRequests++;
-    return route.abort();
+  // A fresh context also excludes WebKit's already-used module cache from the fault injection.
+  // Close the old page first: this remains a serial check, never two active scenes.
+  const url = new URL(fixture, page.url()).href;
+  await page.close();
+  const isolated = await browser.newContext({
+    viewport: test.info().project.use.viewport,
+    serviceWorkers: 'block',
+    reducedMotion: 'no-preference',
   });
-  await page.goto(`${fixture}?kind=opening&rarity=unusual&instance=missing-import`);
-  const missingImportRecord = await preserved(page);
-  await expect(page.locator('.reveal[data-opening-state="result"]')).toBeVisible();
-  await expect(page.locator('.reveal-continue')).toBeEnabled();
-  expect(failedGsapRequests).toBeGreaterThan(0);
-  expect(await preserved(page)).toEqual(missingImportRecord);
+  try {
+    const importPage = await isolated.newPage();
+    let failedGsapRequests = 0;
+    await importPage.route('**/*gsap-a69*', (route) => {
+      failedGsapRequests++;
+      return route.abort();
+    });
+    await importPage.goto(`${url}?kind=opening&rarity=unusual&instance=missing-import`);
+    const missingImportRecord = await preserved(importPage);
+    await expect(importPage.locator('.reveal[data-opening-state="result"]')).toBeVisible();
+    await expect(importPage.locator('.reveal-continue')).toBeEnabled();
+    expect(failedGsapRequests).toBeGreaterThan(0);
+    expect(await preserved(importPage)).toEqual(missingImportRecord);
+  } finally {
+    await isolated.close();
+  }
 });
 
 async function freezeSpellPhase(page: Page, desired: 'anticipation' | 'impact') {
