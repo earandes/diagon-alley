@@ -1,0 +1,39 @@
+{
+  "broad": {
+    "run": 39115461901,
+    "head": "f9082cf2931b31642beed53c4b11884e6e47923d",
+    "checkout": "d2dc4d823a114dc2d1e90074a76008f75893c2cd",
+    "result": "success",
+    "scope": "full"
+  },
+  "focused": {
+    "run": 39119749580,
+    "head": "ce9fb0510c1af19c1a114c6f60ef02e3a6474923",
+    "checkout": "038715389378212dfd7d0c91a7762eb9cf11d3d4",
+    "result": "success",
+    "scope": "accounts and welcome + A75 baseline"
+  },
+  "base_main": "937a0a1f00bdbca7009a80cd99b7b4b450f652f0",
+  "objects_equal_to_focused": {
+    "src": "4c2ea8c10f2fabb59132536c14672a344b8e4c06",
+    "public": "c753d774b0376039471d909e9266ffd49e740039",
+    "tests": "4df851ac3ae002a387b71b64e1a5c34f9d7dcea5",
+    "package.json": "7624c06b3bf5c620b39cb74042a7a0a3467f0823",
+    "package-lock.json": "f8d0c9d8aab1a5931825ecd76ccc979dea21862c",
+    ".github": "9381448c7feff72c9d2f3f2607a140b2ae56d0d4",
+    "vite.config.ts": "56da40f5005848024c5173161849ac578911633e"
+  },
+  "source_difference_broad_to_focused": [
+    "src/arcana/presentation/welcome-menu.css"
+  ],
+  "test_difference_broad_to_focused": [
+    "tests/browser-accounts/welcome-menu-a82.spec.ts"
+  ],
+  "default_full_blob": "f413354228f81e2170de9fdfcf427a2165947390",
+  "delivered_phase": "full",
+  "limits": [
+    "Combined relevant scopes, not another full run on focused SHA.",
+    "Final documentation and merge do not claim a new CI execution.",
+    "Human and physical-device validation pending."
+  ]
+}
