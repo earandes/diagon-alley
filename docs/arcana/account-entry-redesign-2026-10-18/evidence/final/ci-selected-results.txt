@@ -1,0 +1,47 @@
+check	Run actions/checkout@v4	2026-10-18T01:43:47.1878333Z HEAD is now at 74ad009 Merge 28186fa80f586150588c3035a35c9983bd958c2b into ff23f580d9d3989abc9918d7b5bc8328d9e83b62
+check	Run actions/setup-node@v4	2026-10-18T01:43:49.0637541Z Cache restored successfully
+check	Run actions/setup-node@v4	2026-10-18T01:43:49.0674872Z Cache restored from key: node-cache-Linux-x64-npm-2071aaa6b54126b0911eeebae00c570b1d4bd3eb3cfd3e22e092bfc295b9adc1
+check	Run npm run validate:content	2026-10-18T01:44:06.6621290Z [2m      Tests [22m [1m[32m6 passed[39m[22m[90m (6)[39m
+check	Run npm test	2026-10-18T01:44:20.3744580Z [2m      Tests [22m [1m[32m622 passed[39m[22m[90m (622)[39m
+check	Run npm run test:integration	2026-10-18T01:44:34.6325726Z      [33m[2m✓[22m[39m verifies once, rotates session and restores exact same collection in a new context[33m 461[2mms[22m[39m
+check	Run npm run test:integration	2026-10-18T01:44:46.7449280Z [2m      Tests [22m [1m[32m99 passed[39m[22m[90m (99)[39m
+check	Run node tools/verification/verify-accounts-backup-a76.mjs	﻿2026-10-18T01:44:59.1030176Z ##[group]Run node tools/verification/verify-accounts-backup-a76.mjs
+check	Run node tools/verification/verify-accounts-backup-a76.mjs	2026-10-18T01:44:59.1030734Z [36;1mnode tools/verification/verify-accounts-backup-a76.mjs[0m
+check	Run node tools/verification/verify-accounts-backup-a76.mjs	2026-10-18T01:44:59.1093831Z shell: /usr/bin/bash -e {0}
+check	Run node tools/verification/verify-accounts-backup-a76.mjs	2026-10-18T01:44:59.1094279Z ##[endgroup]
+check	Run node tools/verification/verify-accounts-backup-a76.mjs	2026-10-18T01:45:00.2970267Z {
+check	Run node tools/verification/verify-accounts-backup-a76.mjs	2026-10-18T01:45:00.2970806Z   "result": "pass",
+check	Run node tools/verification/verify-accounts-backup-a76.mjs	2026-10-18T01:45:00.2971245Z   "toolMode": "native",
+check	Run node tools/verification/verify-accounts-backup-a76.mjs	2026-10-18T01:45:00.2971709Z   "fixtureOnly": true,
+check	Run node tools/verification/verify-accounts-backup-a76.mjs	2026-10-18T01:45:00.2972152Z   "tableCount": 15,
+check	Run node tools/verification/verify-accounts-backup-a76.mjs	2026-10-18T01:45:00.2972581Z   "rowCounts": {
+check	Run node tools/verification/verify-accounts-backup-a76.mjs	2026-10-18T01:45:00.2973003Z     "arcana_accounts": 1,
+check	Run node tools/verification/verify-accounts-backup-a76.mjs	2026-10-18T01:45:00.2973479Z     "arcana_equipment": 2,
+check	Run node tools/verification/verify-accounts-backup-a76.mjs	2026-10-18T01:45:00.2973959Z     "arcana_exploration": 1,
+check	Run node tools/verification/verify-accounts-backup-a76.mjs	2026-10-18T01:45:00.2974432Z     "arcana_identities": 1,
+check	Run node tools/verification/verify-accounts-backup-a76.mjs	2026-10-18T01:45:00.2974973Z     "arcana_identity_challenges": 1,
+check	Run node tools/verification/verify-accounts-backup-a76.mjs	2026-10-18T01:45:00.2975580Z     "arcana_identity_sessions": 1,
+check	Run node tools/verification/verify-accounts-backup-a76.mjs	2026-10-18T01:45:00.2976108Z     "arcana_inventory": 1,
+check	Run node tools/verification/verify-accounts-backup-a76.mjs	2026-10-18T01:45:00.2976612Z     "arcana_operations": 1,
+check	Run node tools/verification/verify-accounts-backup-a76.mjs	2026-10-18T01:45:00.2977247Z     "arcana_product_units": 1,
+check	Run node tools/verification/verify-accounts-backup-a76.mjs	2026-10-18T01:45:00.2977788Z     "arcana_seasonal_state": 1,
+check	Run node tools/verification/verify-accounts-backup-a76.mjs	2026-10-18T01:45:00.2982343Z     "arcana_team_loadouts": 1,
+check	Run node tools/verification/verify-accounts-backup-a76.mjs	2026-10-18T01:45:00.2982837Z     "arcana_team_members": 1,
+check	Run node tools/verification/verify-accounts-backup-a76.mjs	2026-10-18T01:45:00.2983333Z     "arcana_unlocked_zones": 1,
+check	Run node tools/verification/verify-accounts-backup-a76.mjs	2026-10-18T01:45:00.2983748Z     "arcana_victories": 1,
+check	Run node tools/verification/verify-accounts-backup-a76.mjs	2026-10-18T01:45:00.2984134Z     "arcana_wizard_copies": 1
+check	Run node tools/verification/verify-accounts-backup-a76.mjs	2026-10-18T01:45:00.2984495Z   },
+check	Run node tools/verification/verify-accounts-backup-a76.mjs	2026-10-18T01:45:00.2984806Z   "archiveBytes": 34088,
+check	Run node tools/verification/verify-accounts-backup-a76.mjs	2026-10-18T01:45:00.2985527Z   "snapshotSha256": "cbca0905c538e37bae7afd69bf7e4529086cf52ed22556eebab14aa10b59e9b9",
+check	Run node tools/verification/verify-accounts-backup-a76.mjs	2026-10-18T01:45:00.2986383Z   "credentialsVerifiedWithProductionAdapter": true,
+check	Run node tools/verification/verify-accounts-backup-a76.mjs	2026-10-18T01:45:00.2987096Z   "economicSnapshotsAndOwnershipExactlyEqual": true,
+check	Run node tools/verification/verify-accounts-backup-a76.mjs	2026-10-18T01:45:00.2988297Z   "note": "No browser, external email, ordinary-player database dump or device test"
+check	Run node tools/verification/verify-accounts-backup-a76.mjs	2026-10-18T01:45:00.2988752Z }
+check	Run npm run verify:arcana:build	2026-10-18T01:45:00.5835807Z diagon-alley build content scan passed; total distributed bytes: 15034085. Historical I1 excluded. Private thematic dual build; ARCANA-only distribution not certified.
+check	Run ARCANA_CAPTURE_A76=1 npx playwright test --config playwright.accounts-a76.config.ts	2026-10-18T01:47:09.7028262Z   30 skipped
+check	Run ARCANA_CAPTURE_A76=1 npx playwright test --config playwright.accounts-a76.config.ts	2026-10-18T01:47:09.7028963Z   30 passed (1.5m)
+check	Run npx playwright test --config playwright.accounts-fixes-a78.config.ts	2026-10-18T01:47:51.3421338Z   11 skipped
+check	Run npx playwright test --config playwright.accounts-fixes-a78.config.ts	2026-10-18T01:47:51.3421755Z   16 passed (39.5s)
+check	Run ARCANA_CAPTURE_A79=1 npx playwright test --config playwright.account-entry-a79.config.ts	2026-10-18T01:48:05.5545355Z   2 skipped
+check	Run ARCANA_CAPTURE_A79=1 npx playwright test --config playwright.account-entry-a79.config.ts	2026-10-18T01:48:05.5545844Z   7 passed (11.6s)
+check	Run ARCANA_CAPTURE_A75=1 npx playwright test --config playwright.experience-a75.config.ts	2026-10-18T01:48:16.3015553Z   2 passed (8.4s)

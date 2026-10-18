@@ -26,9 +26,9 @@ No backend, schema, authmétodo, KDF, dominio, economía, recursos del jugador, 
 
 ## Plan vivo
 
-1. [en curso] Composición, texto y ayuda contextual.
-2. [pendiente] Adaptar pruebas de navegación a las acciones visibles reales y aceptación A79.
-3. [pendiente] Tipos/build/unitarios y validación serial Linux de cuentas; inspección visual acotada.
-4. [pendiente] Corregir defectos demostrados, documentar y actualizar PR7 sin merge.
+1. [hecho] Composición, texto y ayuda contextual.
+2. [hecho] Adaptar pruebas de navegación a las acciones visibles reales y aceptación A79.
+3. [hecho] Tipos/build/unitarios y validación serial Linux de cuentas; siete capturas finales inspeccionadas. CI39087507256 correcto.
+4. [hecho] Corrección visual mínima confirmada; documentación y evidencia conservadas, entrega en PR7 sin merge.
 
 No navegador gráfico local. CI con guard, bloqueo, watchdog, unworker/cero retry. No observar jugadores ni dispositivo físico ficticios. La aprobación estética humana sigue pendiente.
