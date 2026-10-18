@@ -31,3 +31,7 @@ Fuente reproducible stdlibPython +SVG bajo tools/visual, editables y manifest en
 5. Documentar archivos/procedencia/fuentes/peso/licencia/consumidores y actualizar PR7 sin merge. Observación humana del significado, dispositivo físico y permiso de distribución siguen pendientes; la producción no constituye aprobación definitiva de marca.
 
 Contraste con inventario: la llave dorada de bóveda ya existe. La llave de identidad es plateada, con perfil de aro calado distinto y credencial, sin cantidad/coste. Se evita copiar el recurso económico; la distinción semántica percibida sigue siendo hipótesis humana.
+
+## Plan completado
+
+Familia mínima producida e integrada; tipos/build/624unitarios/99PGRedis y61casos activos de navegador correctos enCI39111152788. Primera inspección completa encontró recorte de cabecera al200%; corregido y confirmado en ce6cc4a/c9955b4. Fuentes/manifest/evidencia/documentación conservados y entrega en PR7 draft, sin main. Semántica percibida, branding definitivo y dispositivo físico pendientes. No se amplía a lote adicional.

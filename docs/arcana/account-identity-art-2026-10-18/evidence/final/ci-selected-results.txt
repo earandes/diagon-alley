@@ -1,0 +1,15 @@
+check	Run actions/checkout@v4	2026-10-18T08:22:17.9157654Z HEAD is now at ce6cc4a Merge c9955b4033db604afc93bd60455a069b2cbb6e0c into ff23f580d9d3989abc9918d7b5bc8328d9e83b62
+check	Run npm run validate:content	2026-10-18T08:22:39.7211494Z [2m      Tests [22m [1m[32m6 passed[39m[22m[90m (6)[39m
+check	Run npm test	2026-10-18T08:22:53.6551422Z [2m      Tests [22m [1m[32m624 passed[39m[22m[90m (624)[39m
+check	Run npm run test:integration	2026-10-18T08:23:20.0434036Z [2m      Tests [22m [1m[32m99 passed[39m[22m[90m (99)[39m
+check	Run node tools/verification/verify-accounts-backup-a76.mjs	2026-10-18T08:23:33.7745247Z   "economicSnapshotsAndOwnershipExactlyEqual": true,
+check	Run npm run verify:arcana:build	2026-10-18T08:23:34.0641363Z diagon-alley build content scan passed; total distributed bytes: 15056592. Historical I1 excluded. Private thematic dual build; ARCANA-only distribution not certified.
+check	Run ARCANA_CAPTURE_A76=1 npx playwright test --config playwright.accounts-a76.config.ts	2026-10-18T08:25:59.7929411Z   30 skipped
+check	Run ARCANA_CAPTURE_A76=1 npx playwright test --config playwright.accounts-a76.config.ts	2026-10-18T08:25:59.7932600Z   30 passed (1.6m)
+check	Run npx playwright test --config playwright.accounts-fixes-a78.config.ts	2026-10-18T08:26:43.0676479Z   11 skipped
+check	Run npx playwright test --config playwright.accounts-fixes-a78.config.ts	2026-10-18T08:26:43.0676973Z   16 passed (41.4s)
+check	Run npx playwright test --config playwright.account-entry-a79.config.ts	2026-10-18T08:26:56.2555766Z   2 skipped
+check	Run npx playwright test --config playwright.account-entry-a79.config.ts	2026-10-18T08:26:56.2556256Z   7 passed (11.1s)
+check	Run npx playwright test --config playwright.account-style-a80.config.ts	2026-10-18T08:27:06.4106111Z   3 passed (8.5s)
+check	Run ARCANA_CAPTURE_A81=1 npx playwright test --config playwright.account-symbols-a81.config.ts	2026-10-18T08:27:16.2525527Z   3 passed (8.0s)
+check	Run ARCANA_CAPTURE_A75=1 npx playwright test --config playwright.experience-a75.config.ts	2026-10-18T08:27:26.5033256Z   2 passed (8.3s)
