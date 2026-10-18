@@ -1,8 +1,8 @@
 # A87 · Lista de clasificación
 
-Diseño de catálogo actual, aún no activado. Casas/escuelas/oficios reutilizados deA85; nuevas afiliaciones contrastadas con fuentes oficiales abajo. Se registran vínculos a lo largo de la historia, sin adjudicar un juicio moral o una fecha común a todos los cromos. Las copias/historiales anteriores no se reescriben.
+Clasificación implementada en catálogo 4 y traits-v2 de la rama A87; pendiente de validación gráfica Linux. Casas/escuelas/oficios reutilizados deA85; nuevas afiliaciones contrastadas con fuentes oficiales abajo. Se registran vínculos a lo largo de la historia, sin adjudicar un juicio moral o una fecha común a todos los cromos. Las copias/historiales anteriores no se reescriben.
 
-| ID estable | PresentaciónDiagon | Casa | Escuela/oficio | Afiliaciones propuestas | Naturaleza / precisión |
+| ID estable | PresentaciónDiagon | Casa | Escuela/oficio | Afiliaciones históricas | Naturaleza / precisión |
 |---|---|---|---|---|---|
 | apprentice | Harry Potter | gryffindor | hogwarts | Ejército de Dumbledore | Persona mágica. Starter; Ejército de Dumbledore no equivale a pertenencia formal a Orden. |
 | merlin | Albus Dumbledore | gryffindor | hogwarts / professor | Orden del Fénix | Persona mágica.  |
@@ -39,14 +39,14 @@ Conteo:30personajes actuales,26con casa (14Gryffindor y4de cada otra),14Orden,4M
 
 ## Nuevas identidades de criatura
 
-| ID propuesto | Diagon / EN | ARCANA ES / EN | Fuente temática / función visual |
+| ID estable | Diagon / EN | ARCANA ES / EN | Fuente temática / función visual |
 |---|---|---|---|
 | phoenix-companion | Fawkes / Fawkes | Fénix del Alba / Dawn Phoenix | Fénix rojo/dorado, cola curva y silueta de ave; ninguna resurrección o curación nueva |
 | hippogriff-companion | Buckbeak / Buckbeak | Hipogrifo del Valle / Valley Hippogriff | Águila/caballo, cuatro extremidades y dos alas; no grifo con trasero de león |
 | forest-unicorn | Unicornio / Unicorn | Unicornio Lunar / Moon Unicorn | Adulto blanco, un cuerno; no inmortalidad ni consumible de sangre |
 | green-dragon | Dragón galés verde / Common Welsh Green | Dragón del Bosque / Forest Dragon | Dragón verde compacto y aliento visual a un objetivo; no área o fase nueva |
 
-Sus afinidades/estadísticas/rareza se decidirán contrastando las opciones existentes; ninguna rareza nueva. Los cuatro son identidades obtenibles, no recompensas estacionales. Sus alias de presentación no modifican IDs o reglas.
+Sus afinidades, estadísticas y rarezas están definidas en `creatures-v1.json` y contrastadas con los escenarios de CALIBRATION. No hay rarezas nuevas. Los cuatro son identidades obtenibles, no recompensas estacionales. Sus alias de presentación no modifican IDs o reglas.
 
 ## Fuentes oficiales consultadas18octubre2026
 

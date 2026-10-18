@@ -1,0 +1,21 @@
+{
+  "sourceRuntime": "d3cc959beefc4f737b73668da5c5eae5a73c0fa3 (same combat/runtime as799e4c5; latter changes audio only)",
+  "method": "Sequential local SSR without graphical renderer; 1536 route scenarios plus384 owned-creature scenarios and640 controlled pairs. Formatting, derived member lists and fractional-log validation added since initial study do not change any sample row.",
+  "sampleHashes": {
+    "simulation-samples.jsonl": {
+      "before": "23ef337b9d1192799e78b60f3a9f97da620e3e809f81208e11ff5d7859253dd8",
+      "after": "23ef337b9d1192799e78b60f3a9f97da620e3e809f81208e11ff5d7859253dd8",
+      "identical": true
+    },
+    "simulation-owned-creatures-samples.jsonl": {
+      "before": "1f02c9a2f7e77cb23407c8d267f07952e1567cb5297a08417208b82d6e05b8a8",
+      "after": "1f02c9a2f7e77cb23407c8d267f07952e1567cb5297a08417208b82d6e05b8a8",
+      "identical": true
+    },
+    "bond-comparison-samples.jsonl": {
+      "before": "4fb2f459b0e324c08c1a3af47b78a1e45018eb32e42f60160f2f22450e2a4c5a",
+      "after": "4fb2f459b0e324c08c1a3af47b78a1e45018eb32e42f60160f2f22450e2a4c5a",
+      "identical": true
+    }
+  }
+}

@@ -1,10 +1,10 @@
-# A87 · Guion de movimiento propuesto
+# A87 · Movimiento implementado y aceptación pendiente
 
-Fuentes preparadas; ningún consumidor de juego nuevo implementado todavía. Los tiempos son objetivos relativos al evento del relojA69, no medidas de una animación ya integrada. Dos poses pintadas por criatura; no rig corporal. No audio automático.
+Fuentes y consumidores integrados en la rama. Las fases se calculan con el reloj A69 existente; falta comprobarlas temporalmente en CI Linux. Los tiempos orientativos no son mediciones GPU o de un dispositivo físico. Dos poses pintadas por criatura; no rig corporal. No audio automático.
 
 | Momento | Anticipación → acción → reacción → cierre | Recursos / límite |
 |---|---|---|
-| Elegir vínculo | El medallón seleccionado se asienta0,98→1en140–180ms; la comparación actualiza contribuyentes/efecto real; confirmar reutiliza receipt/feedback existente | EmblemasSVG; borrador no sana, equipa o guarda por consultar. Reducido estático |
+| Elegir vínculo | El medallón pulsado reduce escala a 0,98 y recupera su posición al soltar; la comparación actualiza contribuyentes/efecto real; confirmar reutiliza receipt/feedback existente | EmblemasSVG; borrador no sana, equipa o guarda por consultar. Reducido estático |
 | Tercer contribuyente en Pacto | Comparación anuncia el vínculo efectivo que aparecería; tras commit el sello cambia aI, sin pantalla extra o contador de premio | Auto resuelve por formación antes de confirmar; elección manual conserva renuncia. Sin alerta de victoria futura |
 | Fénix | Recoge postura brevemente; cambia a pose de ala elevada/llamada; trazo de pluma dorada hacia el objetivo; impacto registrado y vuelta a reposo | Dos bitmaps, trazo localizado; ningún renacer/curación inventado |
 | Hipogrifo | Tensión leve de hombros; pose con garra levantada/beak abierto; dos trazos cortos de zarpazo; reacción del objetivo y retorno | Cuatro extremidades/dos alas preservadas; no desplazamiento largo que tape otro combatiente |
@@ -27,11 +27,11 @@ Pausa/2x/ocultación/inspector/omisión conservan el reloj y el log; no repetir 
 
 ## Sonido
 
-Una voz de lanzamiento por acción, seleccionada por perfil de criatura o vínculo efectivo, con fallback a afinidad actual. No superponer especie+afiliación+casa+afinidad por cada disparo. Impacto/fallo/curación existentes continúan. Los7cues nuevos son finitos220–340ms, picos numéricos<0,34, sin grabaciones/samplesajenos o música nueva. Falta reproducción real en navegador, lifecycle/errores y escucha humana/física; los números no validan calidad percibida.
+Una voz de lanzamiento por acción, seleccionada por perfil de criatura o vínculo efectivo, con fallback a afinidad actual. No superponer especie+afiliación+casa+afinidad por cada disparo. Fallo/curación existentes continúan; un contacto con `guarded` utiliza el cue de protección en lugar del impacto ordinario. Los7cues nuevos son finitos220–340ms, picos numéricos<0,34, sin grabaciones/samplesajenos o música nueva. Falta reproducción real en navegador, lifecycle/errores y escucha humana/física; los números no validan calidad percibida.
 
 ## Perfiles y prioridad de lectura
 
-Prioridad propuesta de **una sola identidad de lanzamiento**: especie si el actor es criatura; vínculo efectivo si ese actor contribuye; casa confirmada si existe; afinidad como fallback. No sumar cuatro proyectiles o voces. Un aliado no contribuyente que recibe guardia conserva su lanzamiento ordinario.
+Prioridad implementada de **una sola identidad de lanzamiento**: especie si el actor es criatura; vínculo efectivo si ese actor contribuye; casa confirmada si existe; afinidad como fallback. No sumar cuatro proyectiles o voces. Un aliado no contribuyente que recibe guardia conserva su lanzamiento ordinario.
 
 | Perfil | Forma/material | Contacto | Coste de ensayo |
 |---|---|---|---|

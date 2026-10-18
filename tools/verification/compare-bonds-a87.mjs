@@ -3,7 +3,7 @@ import { createServer } from 'vite';
 import { writeFile } from 'node:fs/promises';
 const server = await createServer({
   configFile: false,
-  server: { middlewareMode: true },
+  server: { middlewareMode: true, hmr: false },
   appType: 'custom',
 });
 try {

@@ -1,6 +1,6 @@
 # A87 · Compañías, no una pila de etiquetas
 
-Diseño de ensayo dentro de la delegación de Enric; parámetros sujetos a contraste con motor/escenarios. No implementado todavía. La dependencia A85/A86 se cierra antes de activar contenido nuevo.
+Diseño de ensayo dentro de la delegación de Enric; parámetros sujetos a contraste con motor/escenarios. Implementado en rama después de integrar A85/A86. Dominio y persistencia reales comprobados; revisión gráfica Linux todavía pendiente.
 
 ## Experiencia
 
@@ -45,7 +45,7 @@ Preparación: un medallón/libro de vínculo abre las alternativas con contribuy
 
 ArenaA86: activación confirmada compacta por bando y sello por integrante; efectos localizados por acción confirmada. Guardado antes de animar, una pausa y registro consultable. SonidoA84 voluntario, sin nuevas opciones permanentes o reproducción inicial.
 
-## Compatibilidad propuesta
+## Compatibilidad implementada
 
 Conservar perfiles ejecutables a84/a85. Nuevo perfil a87: catálogo/tabla4, contenido táctico4, reglas/engine3. Campaña1 y derechos de primera victoria intactos. Traitsv2 aditivos; traitsv1 y copias/receipts anteriores inmutables. Identidad actual clasificada en catálogo; combate utiliza mapas de miembros congelados en sus reglas.
 
@@ -61,7 +61,7 @@ Modelo exacto de cupones para29vs33: CDF de identidades distintas, mediana/P90/P
 
 Linux: ambos packs/idiomas,1280×900/390×844/865×1079, texto ampliado/320, cancelación/foco, arte ausente/reducido, pausa/2x/ocultación/omisión, consumo/recuperación y regresiones deA85/A86/cierre/Halloween/cuentas. Capturas seleccionadas; animación por muestras temporales del reloj, no por una imagen. No gráficos locales alternativos. Humana y móvil físico pendientes.
 
-## Revisión antes de implementar: cooperación de laOrden
+## Registro histórico de alternativas previas a la implementación
 
 La fila inicial de recuperaciónPM queda como alternativa estudiada, **no implementada**. Hechos de código: el intento cuesta1PM y el catálogo parte habitualmente de40PM. Hipótesis: recuperar2/3al principio podría cambiar poco los combates ordinarios y dar un vínculo con escasa consecuencia perceptible. No se presenta esa hipótesis como un resultado de simulación de ruta.
 
@@ -75,7 +75,7 @@ Criaturas: «primer impacto» significa primer acierto con daño bruto positivo 
 
 Nueva expedición: la elección de vínculo también debe poder viajar en `StartRunRequest` al confirmar preparación, además deSetTeampara cambiar formación activa. No asumir que iniciar run ejecuta previamente otro comando de equipo. Una consulta/borrador no guarda por sí sola.
 
-## Decisión operativa vigente del diseño, antes de código
+## Decisión operativa implementada
 
 - Modo por defecto **Auto**, solo para elegir vínculo según formación: prioriza una casa activa; si no existe, una afiliación/naturaleza activa, con prioridad estable publicada. No compra, equipa, elige ruta o inicia nada. Un equipo que acaba de reunir tres criaturas no debe necesitar una casilla adicional para que su sinergia exista. Si hay conflicto, el jugador puede elegir Casas/Orden/Mortífagos/Criaturas en el libro de preparación. Cinco objetos pequeños bajo demanda (Auto reutiliza brújula/mapa), no otra barra permanente. El mapa muestra el vínculo **efectivo**, no cinco controles.
 - Team/Run conservan modo opcional `auto|houses|order|death|creatures`; ausencia histórica=casas en reglas antiguas, auto únicamente bajo reglas3nuevas. Input de combate conserva elección efectiva `houses|order|death|creatures`, fijada antes de sortear/resolver. El replay nunca recalcula Auto con otro catálogo o bajas posteriores.
@@ -83,4 +83,4 @@ Nueva expedición: la elección de vínculo también debe poder viajar en `Start
 - Mortífagos conserva +1/2daño de remate con condición previa≤mitadPV, posterior al multiplicador de gragea.
 - Criaturas protege a **cada aliado en pie del equipo**, no solo a contribuyentes: −2/3del primer impacto con daño bruto positivo recibido; sin sobrante, sin quemadura y sin revivir. Esto permite que las tres criaturas temporales protejan al starter que ocupa el primer puesto, en vez de una sinergia inicial que no actuaría hasta que el starter cayera. Cantidad bloqueada real en log. Se compara con recuperación sostenidaHufflepuff y primer golpeGryffindor antes de aceptar valores.
 
-La accesibilidad del grupo no basta como prueba de interés. Estos ajustes responden a lectura del motor/orden real de incorporación y siguen pendientes de escenarios y recorrido integrado. El diseño inicialPM y protección3/5solo a contribuyentes quedan descartados, no implementados.
+La accesibilidad del grupo no basta como prueba de interés. Estos ajustes responden a lectura del motor/orden real de incorporación y se han contrastado con escenarios; falta la comprobación gráfica del recorrido integrado. El diseño inicialPM y protección3/5solo a contribuyentes quedan descartados, no implementados.

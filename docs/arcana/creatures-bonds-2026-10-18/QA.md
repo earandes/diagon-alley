@@ -26,4 +26,10 @@ Recorrido conectado nuevo, controles de vínculo en UI, Pactos y Cromodex, muest
 
 `npm run typecheck`, `npm test` (680/109), `npm run test:integration` (111/18, servicios reales), `npm run build`, `node tools/arcana/verify-build.mjs` y build del harness Vite correctos. Distribución17.328.456B; aviso de chunk>500KB conservado. Ambos packs completos pasan validate:skin (34personajes,188/173assets). Tres casos adicionales SQL verifican cuatro criaturas encantadas sin×2, apertura histórica y una sola llave entre versiones. Los conteos anteriores son hitos parciales históricos; estos son los más recientes. Formateo posterior sin cambio de comportamiento y tipos repetidos correctos.
 
-La prueba de arte ausente apunta al export real `creatures-a87/*/cast.webp` y exige observar solicitudes abortadas. No se presenta una ruta no interceptada como cobertura de fallo. La batería nueva está escrita, todavía no ejecutada. Ningún navegador local abierto.
+La prueba de arte ausente intercepta tanto `cast.webp` como su nombre compilado `cast-HASH.webp` y exige observar solicitudes abortadas. El build Vite se inspeccionó para comprobar la ruta; una ruta de fuente no interceptaría el export compilado. No se presenta una ruta no interceptada como cobertura de fallo. La batería nueva está escrita, todavía no ejecutada. Ningún navegador local abierto.
+
+## Ajuste de cobertura antes de gráficos
+
+La fuente inicial d3cc959 fue sustituida en la cola por799e4c5 antes de ejecutar su batería. En799e4c5 se amplió la decodificación A84 a los16WAV reales y se añadió observación de fuentes nativas bajo consentimiento en A87. Revisión posterior del build detectó que el test de pose ausente necesitaba interceptar nombres con hash. Se detuvo exclusivamente la CI propia39177867296 durante las pruebas de integración, antes de abrir navegadores, para no ejecutar esa aserción defectuosa. No es un defecto del juego ni una validación gráfica superada. Se mantiene workflow, protección, worker y cero reintentos.
+
+La CI histórica de main440d278,39173115270, ha terminado completa y correcta. No valida los cambios A87.

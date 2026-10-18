@@ -285,7 +285,7 @@ test('A87 representative group scenes, missing pose, renderer loss and reduced m
   await picture(page, 'creature-reveal-390');
   await immutable(page);
   let missingPoses = 0;
-  await page.route('**/creatures-a87/*/cast.webp', (route) => {
+  await page.route(/\/cast(?:-[^/]+)?\.webp(?:\?.*)?$/, (route) => {
     missingPoses++;
     return route.abort();
   });
