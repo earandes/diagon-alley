@@ -250,3 +250,13 @@
     justify-content: start;
   }
 }
+/* Missing decorative art gives its space back to the title, including enlarged text. */
+.arcana-shell .account-access .account-heading:not(:has(> img)) {
+  grid-template-columns: minmax(0, 1fr) 44px;
+}
+.account-heading:not(:has(> img)) h2 {
+  grid-column: 1;
+}
+.account-heading:not(:has(> img)) .account-close {
+  grid-column: 2;
+}

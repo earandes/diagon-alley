@@ -27,6 +27,12 @@ async function enter(page: Page, wide: boolean) {
 }
 async function snapshot(page: Page, name: string) {
   const project = test.info().project.name;
+  const confirmation = process.env.ARCANA_A78_CONFIRM === '1';
+  const confirmSelection: Record<string, string[]> = {
+    'chromium-390-a78': ['no-art'],
+    'chromium-1280-a78': ['login'],
+  };
+  if (confirmation && !confirmSelection[project]?.includes(name)) return;
   const selected: Record<string, string[]> = {
     'chromium-390-a78': [
       'mail-sent',
@@ -45,10 +51,14 @@ async function snapshot(page: Page, name: string) {
     !selected[project]?.includes(name)
   )
     return;
+  if (name !== 'welcome') {
+    await expect(dialog(page)).toBeVisible();
+    await expect(dialog(page)).toHaveAttribute('aria-busy', 'false');
+  }
   await mkdir(root, { recursive: true });
   // No real password/token is pictured. Verification captures precede valid secret input.
   await page.screenshot({
-    path: resolve(root, `${project}-${name}.png`),
+    path: resolve(root, `${project}-${name}${confirmation ? '-confirmed' : ''}.png`),
     fullPage: false,
   });
 }
@@ -570,6 +580,18 @@ test('A78 close target remains usable at all interior points and without art', a
   if (viewport?.width === 390) {
     await page.evaluate(() => (document.documentElement.style.fontSize = '200%'));
     expect((await hitPoints()).every(Boolean)).toBe(true);
+    const wordsRemainWhole = await dialog(page)
+      .locator('h2')
+      .evaluate((element) => {
+        const node = element.firstChild!;
+        return [...(node.textContent ?? '').matchAll(/\S+/g)].every((word) => {
+          const range = document.createRange();
+          range.setStart(node, word.index!);
+          range.setEnd(node, word.index! + word[0].length);
+          return range.getClientRects().length === 1;
+        });
+      });
+    expect(wordsRemainWhole).toBe(true);
     await snapshot(page, 'no-art');
   }
   await close.tap();

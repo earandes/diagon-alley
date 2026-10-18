@@ -23,3 +23,11 @@ CI39084819482 /a9eeb3f: A76 completa30correctas,622unitarios,99PGRedis, backup/b
 Inspección directa de tres PNG390 Linux: conflicto y reparación visibles antes del CTA, carta conservada, sin desbordamiento horizontal. En verify el objetivo de cierre recibe hit-test pero su imagen no está todavía pintada. Se elimina esa dependencia de carga: flecha vectorial inline siempre visible, con columna propia incluso sin ilustración de cabecera. No se declara acabado humano por estas capturas.
 
 Se añade comprobación conservadora de coherencia entre sesión y jugador cargado: si otra pestaña cambia a otro propietario, se ofrece reidentificación y no «Mi cuenta» de la partida anterior. No se modifica el propietario automáticamente ni la autorización del gateway. Caso Linux nuevo declarado.
+
+## CI completa del incremento
+
+CI39085206200 SUCCESS sobre head70180458f1beb99639a47b87ff5ee948e6a64975, checkout real65df2f7a453167121d28172ee36f51213b0932f2 (baseff23f580).622unitarios,99PGRedis,30A76correctos/30omisiones declaradas,16A78correctos/11omisiones por cuota de escenarios,2A75baseline correctos. Tipos, contenido, build, scanner y copia/restauración correctos. A76 duró1,5min y A78 41,1s: duración automatizada, no humana.
+
+Ocho capturas revisadas directamente de las13 seleccionadas: código390, ausencia de arte390/200%, conflicto390, verify865/200%, login1280, reset1280, gestión1280 y respuesta incierta1280. Login1280 muestra Conectando (la apertura ahora espera la sesión): no se usa como evidencia del formulario. Se añade espera causal de diálogo abierto/no busy antes de capturar. No se cambia el producto para fabricar evidencia.
+
+Único defecto visual adicional: la columna reservada al arte ausente estrecha el título en390/200% y divide una palabra. Se devuelve esa columna al título solo cuando no hay imagen y se exige que sus palabras conserven una línea cada una. Confirmación explícita de6casos (formularios y cierre, tres tamaños), con solo2PNG nuevos: login estable1280 y ausencia de arte390/200%. El resto de16casos conserva evidencia7018045; el único cambio posterior de producto es CSS de cabecera sin arte. Sin nuevas matrices generales o reintentos automáticos.

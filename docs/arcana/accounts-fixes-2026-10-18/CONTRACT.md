@@ -26,7 +26,7 @@ No cambia esquema, identidad, sesiones, tokens, KDF, inventario, premios, snapsh
 1. [implementado; QA en curso] Corregir solicitud/código/contraseña y pruebas de política compartida.
 2. [implementado; QA en curso] Unificar coordinación de Ajustes y sesión vigente; proteger borradores.
 3. [implementado; QA en curso] Composición móvil/cierre/error y pruebas de recorrido.
-4. [pendiente] Tipos/build/unitarios/PGRedis; CI Linux serial y evidencia seleccionada.
+4. [en curso; local correcto, CI pendiente] Tipos/build/unitarios/PGRedis; CI Linux serial y evidencia seleccionada.
 5. [pendiente] Correcciones de defectos demostrados, documentación y actualización PR7 sin merge.
 
 ## Seguridad y evidencia
