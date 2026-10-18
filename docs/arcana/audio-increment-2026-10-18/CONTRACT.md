@@ -34,3 +34,7 @@ Audio se añade únicamente en presentación; consume fases del reloj compartido
 5. Documentar resultados/SHA/límites y subir rama revisable. No desplegar; no asumir nueva autorización de merge a main a partir del merge ya realizado A82.
 
 No se implementan tipos, shiny, nuevas habilidades, costes, recompensas, audio de revelación, voces o música por cada pantalla. Ambos packs comparten una familia sonora original coherente con fantasía; se documenta consumidor y sustitución futura sin duplicar assets. El encargo pide «subido todo lo anterior»: estudio previo se incluye como propuesta documental, no se convierte en reglas aprobadas silenciosamente.
+
+## Cierre técnico
+
+Los cinco pasos del plan se completaron: familia sonora/fuentes, motor e interfaz integrados, comprobaciones no gráficas y CI Linux, corrección de fixtures demostradas y documentación de resultados. CI39128171523 correcta en ambos jobs sobre2330f7b/checkout4fea2b08; [QA](QA.md) conserva comandos, fallos previos y cobertura ejecutada. La rama/PR8 se entrega sin merge/despliegue. Escucha humana y dispositivo físico permanecen pendientes como aceptación perceptiva, no se afirman realizados. El cierre documental conserva los objetos comprobados.

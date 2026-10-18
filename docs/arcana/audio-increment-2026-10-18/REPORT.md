@@ -1,6 +1,6 @@
 # A84 · Ambiente y hechizos del Callejón
 
-18 octubre 2026. Implementado en `feature/a84-game-audio`, [PR8](https://github.com/earandes/diagon-alley/pull/8). Validación Linux en curso al redactar; resultados finales en QA. Sin despliegue ni integración automática en main.
+18 octubre 2026. Implementado y comprobado técnicamente en `feature/a84-game-audio`, [PR8](https://github.com/earandes/diagon-alley/pull/8). [CI39128171523](https://github.com/earandes/diagon-alley/actions/runs/39128171523) correcta en ambos jobs sobre head2330f7b, checkout4fea2b08. 641unitarias,99integración real y455casos gráficos activos (nueve nuevos de audio); omisiones/configuración en QA. Sin despliegue ni merge a main. El cierre documental posterior conserva los objetos probados.
 
 ## Qué cambia
 
@@ -32,7 +32,7 @@ Menú/cuentas A75–A82 estaban ya integrados en main `ac827a0`. El estudio de t
 
 ## Validación y observación posterior
 
-Pruebas de preferencias, fases, inmutabilidad, límites, recursos, cancelación, errores y PWA; build/tipos/scanner. Nueva batería Linux con GameSettings/BattlePanel reales en harness declarado, native AudioContext/OfflineAudioContext, tres pares motor/viewport, ES/EN/swap y regresiones existentes. No navegador ni captura nueva en el Mac. Consultar QA para ejecuciones/SHA/omisiones reales; no inferir éxito de existir un test.
+Pruebas de preferencias, fases, inmutabilidad, límites, recursos, cancelación, errores y PWA; build/tipos/scanner correctos. Batería Linux con GameSettings/BattlePanel reales en harness declarado, native AudioContext/OfflineAudioContext, tres pares motor/viewport, ES/EN/swap, texto200%, dos pestañas y regresiones existentes. Tres capturas seleccionadas inspeccionadas. No navegador ni captura nueva en el Mac. [QA](QA.md), [galería](GALLERY.md), [medidas](PERFORMANCE.md) y [equivalencia](EQUIVALENCE.md) distinguen ejecuciones/SHA/omisiones; no inferir éxito de existir un test. Se conserva una activación WebKit de547ms como límite superior driver→ready, sin atribución causal ni promesa de latencia acústica.
 
 Escucha humana pendiente: ¿el ciclo se vuelve repetitivo tras varias expediciones?, ¿se perciben lanzamiento/contacto/fallo sin resultar invasivos?, ¿es suficiente el nivel inicial en auriculares y altavoz móvil?, ¿los timbres encajan con las ilustraciones? Prueba breve posterior: habilitar ambiente, entrar en un combate, pausar/omitir y silenciar efectos sin instrucciones sobre dónde están. No se afirma comprensión o satisfacción a partir de métricas PCM.
 

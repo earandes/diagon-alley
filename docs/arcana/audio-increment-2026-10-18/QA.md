@@ -1,6 +1,8 @@
 # A84 · Registro de validación
 
-Baseline main `ac827a0f16085a354793bfe58e27dc441af267db`. Sin navegador, captura o audio reproducido en el Mac. No se toca partida habitual.
+Baseline main `ac827a0f16085a354793bfe58e27dc441af267db`. La tarea no abre navegador, genera capturas ni reproduce audio en el Mac. No se toca partida habitual; no se infiere la actividad manual de Enric a partir de esto.
+
+Entorno local no gráfico: Darwin/arm64, Node24.20.0, npm11.19.0, Python3.14.2. CI final: Ubuntu24.04.5, Node24.21.0/npm11.19.0; Playwright1.64.0 fijado por package-lock. PostgreSQL16.9 y Redis7 en servicios aislados del runner. Los límites de un worker/reintentos0corresponden a las baterías gráficas; no se atribuyen a los workers internos de Vitest.
 
 ## Ejecutado localmente, no gráfico
 
@@ -52,3 +54,40 @@ CI39126440801 sobre9abc4fc, checkout de merge05be649 contra mainac827a0: tipos/b
 A70:19correctos antes de fallar el nuevo selector en el primer recorrido A73 (ES/ARCANA); había buscado únicamente Energía/Energy donde el paquete muestra Esencia/Essence. Es un defecto del test añadido, no una operación fallida del juego. Se corrige incluyendo los cuatro nombres accesibles reales. Extractos conservados en `evidence/first-failure/fixture-errors.md`. La victoria/uso de botín de A73 y el job regression siguen pendientes de este pase; no se declaran cubiertos por las19pruebas previas.
 
 El siguiente candidato añade también texto200%en los controles A84 y una muestra nativa de storage entre dos pestañas (solo Chromium1280). La segunda pestaña no recibe gesto de activación: debe reflejar el apagado sin crear AudioContext. No cambia código de producto desde la primera familia sonora validada.
+
+## Candidato final y alcance comprobado
+
+[CI39128171523](https://github.com/earandes/diagon-alley/actions/runs/39128171523), head`2330f7b18b5a594663efa18cbd1449f7744c503e`; checkout real`4fea2b08d8416132f40bc127973bb29c44556177`contra mainac827a0. Ambos árboles Git son`8c811ef706732ce55c0f9ce81ab57d5c3e569e82`, cotejados por fetch/diff, no inferidos del nombre de rama. Jobcheck117677598386 correcto; metadata y tres reportes/tres capturas de audio en `evidence/final`.
+
+| Comprobación | Resultado del job check |
+|---|---|
+|`npm run typecheck`, `validate:content`, `build`, `verify:arcana:build`|Correctos; advertencia histórica de chunk grande conservada|
+|`npm test`|96archivos/641casos correctos|
+|`npm run test:integration`|16archivos/99casos correctos con PostgreSQL/Redis reales|
+|`verify-accounts-backup-a76.mjs`|Copia/restauración aislada correcta,15tablas; no partida habitual|
+|Cuentas A76 / menú A82|30correctos/30omisiones;6correctos|
+|A78 / A79 / A80 / A81|16/7/3/3correctos; A78omite11y A79omite2parejas no seleccionadas|
+|Experiencia A75|113correctos/175omisiones explícitas|
+|Jefe A70/A71 + expedición/recuperación A73|103correctos/35omisiones; cuatro rutas de idioma/pack con fixture declarada, sin error de página|
+|Halloween A68|12correctos|
+|Movimiento A69 + audio A84|28correctos/14omisiones, de ellos9casos A84en tres parejas; las otras parejas conservan movimiento sin duplicar audio|
+
+Sonido comprobado: silencio sin fetch/contexto inicial, activación por teclado/toque emulado, decode real de nueve recursos, render offline de curación, fuentes nativas al seguir el reloj/log, límites del gestor, pausa/2x/omisión/reducido, fallo de recurso con juego utilizable, persistencia/recarga, foco y disposición. Las cuatro combinaciones de idioma/pack por tamaño y texto200%se verifican en los tres pares; storage nativo entre dos pestañas, en Chromium1280. Tests unitarios cubren almacenamiento denegado, payload inválido, APIs ausentes y descarga tardía; no se presentan como todos esos fallos reproducidos con hardware real.
+
+Los cuatro JSON A73 están en `evidence/regression-a73`: cada uno indica fixturetrue, semilla0, comandos posterioresPG/Redisy sus límites. No se comparan sus tiempos con rutas aleatorias como si fuera el mismo recorrido. Las capturas A84son de un harness declarado con componentes reales, sin jugador económico; las pruebas económicas/operaciones corresponden a las baterías separadas.
+
+Jobregression117684588440 correcto, sobre el mismo checkout4fea2b08 verificado en su log. Estado global de CI39128171523: **success**.
+
+| Comando del segundo job | Casos correctos |
+|---|---:|
+|`ARCANA_TRIAL_COMPILED=1 npm run test:e2e -- --project chromium --project webkit --reporter=line,github`|56|
+|`playwright.progression-a67.config.ts` (Chromium/WebKit)|20|
+|`playwright.gameplay-a63.config.ts`|16|
+|`playwright.header-pact-a66.config.ts`|20|
+|`playwright.intentions-a65.config.ts`|8|
+|`npm run test:pwa -- --project chromium --project webkit`|12|
+|Referencia A66 reconstruida + performanceA67 baseline/current|1+1|
+
+Total gráfico activo de la ejecución:321en check+134en regression=455; nueve son A84. Omisiones de check:267, por selección explícita de parejas/proyectos; no se suman como cobertura ejecutada. No hay reintentos automáticos. El segundo job se inicia después del primero, no hay baterías gráficas simultáneas. `evidence/final/check-job.json` y `regression-job.json` conservan metadata de los jobs; logs completos accesibles desde la CI.
+
+El cierre documental conserva código/tests/configuración del candidato probado y registra [equivalencia](EQUIVALENCE.md), sin atribuir una ejecución nueva al SHA documental posterior. Word y evidencia histórica intactos. Sin navegador/captura/audio automatizado en Mac, sin merge/despliegue. Escucha humana, salida física, Safari/iOS/Android físicos y apreciación del timbre siguen pendientes.

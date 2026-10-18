@@ -1,0 +1,159 @@
+{
+  "id": 117684588440,
+  "run_id": 39128171523,
+  "html_url": "https://github.com/earandes/diagon-alley/actions/runs/39128171523/job/117684588440",
+  "status": "completed",
+  "conclusion": "success",
+  "started_at": "2026-10-18T13:12:33Z",
+  "completed_at": "2026-10-18T13:36:29Z",
+  "steps": [
+    {
+      "name": "Set up job",
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2026-10-18T13:12:34Z",
+      "completed_at": "2026-10-18T13:12:35Z"
+    },
+    {
+      "name": "Initialize containers",
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2026-10-18T13:12:35Z",
+      "completed_at": "2026-10-18T13:12:47Z"
+    },
+    {
+      "name": "Run actions/checkout@v4",
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2026-10-18T13:12:47Z",
+      "completed_at": "2026-10-18T13:12:59Z"
+    },
+    {
+      "name": "Run actions/setup-node@v4",
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2026-10-18T13:12:59Z",
+      "completed_at": "2026-10-18T13:13:01Z"
+    },
+    {
+      "name": "Run npm ci --no-fund --no-audit",
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2026-10-18T13:13:01Z",
+      "completed_at": "2026-10-18T13:13:06Z"
+    },
+    {
+      "name": "Run npm run build",
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2026-10-18T13:13:06Z",
+      "completed_at": "2026-10-18T13:13:19Z"
+    },
+    {
+      "name": "Run npx playwright install --with-deps chromium webkit",
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2026-10-18T13:13:19Z",
+      "completed_at": "2026-10-18T13:14:00Z"
+    },
+    {
+      "name": "Run ARCANA_TRIAL_COMPILED=1 npm run test:e2e -- --project chromium --project webkit --reporter=line,github",
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2026-10-18T13:14:00Z",
+      "completed_at": "2026-10-18T13:20:51Z"
+    },
+    {
+      "name": "Run npx playwright test --config playwright.progression-a67.config.ts --project chromium-a67 --project webkit-a67",
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2026-10-18T13:20:51Z",
+      "completed_at": "2026-10-18T13:24:22Z"
+    },
+    {
+      "name": "Run npx playwright test --config playwright.gameplay-a63.config.ts",
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2026-10-18T13:24:22Z",
+      "completed_at": "2026-10-18T13:29:10Z"
+    },
+    {
+      "name": "Run npx playwright test --config playwright.header-pact-a66.config.ts",
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2026-10-18T13:29:10Z",
+      "completed_at": "2026-10-18T13:32:35Z"
+    },
+    {
+      "name": "Run npx playwright test --config playwright.intentions-a65.config.ts",
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2026-10-18T13:32:35Z",
+      "completed_at": "2026-10-18T13:35:28Z"
+    },
+    {
+      "name": "Run npm run test:pwa -- --project chromium --project webkit",
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2026-10-18T13:35:28Z",
+      "completed_at": "2026-10-18T13:35:54Z"
+    },
+    {
+      "name": "Run node tools/verification/build-a66-reference.mjs",
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2026-10-18T13:35:54Z",
+      "completed_at": "2026-10-18T13:36:06Z"
+    },
+    {
+      "name": "Run A67_PERFORMANCE_VARIANT=baseline npx playwright test --config playwright.performance-a67.config.ts",
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2026-10-18T13:36:06Z",
+      "completed_at": "2026-10-18T13:36:16Z"
+    },
+    {
+      "name": "Run A67_PERFORMANCE_VARIANT=current npx playwright test --config playwright.performance-a67.config.ts",
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2026-10-18T13:36:16Z",
+      "completed_at": "2026-10-18T13:36:26Z"
+    },
+    {
+      "name": "Run actions/upload-artifact@v4",
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2026-10-18T13:36:26Z",
+      "completed_at": "2026-10-18T13:36:27Z"
+    },
+    {
+      "name": "Post Run actions/setup-node@v4",
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2026-10-18T13:36:27Z",
+      "completed_at": "2026-10-18T13:36:27Z"
+    },
+    {
+      "name": "Post Run actions/checkout@v4",
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2026-10-18T13:36:27Z",
+      "completed_at": "2026-10-18T13:36:27Z"
+    },
+    {
+      "name": "Stop containers",
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2026-10-18T13:36:27Z",
+      "completed_at": "2026-10-18T13:36:27Z"
+    },
+    {
+      "name": "Complete job",
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2026-10-18T13:36:27Z",
+      "completed_at": "2026-10-18T13:36:27Z"
+    }
+  ],
+  "provenance": "GitHub job API; native browser emulation, not human or physical-device tests."
+}
