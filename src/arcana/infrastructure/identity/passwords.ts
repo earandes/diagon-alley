@@ -1,4 +1,4 @@
-import { validPassword } from '../../application/identity/password-policy';
+import { validPassword } from '../../application/identity/password-policy.ts';
 import { randomBytes, scrypt, timingSafeEqual } from 'node:crypto';
 
 export type IdentityErrorCode =

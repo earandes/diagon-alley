@@ -565,3 +565,80 @@ test('A78 close target remains usable at all interior points and without art', a
   await expect(dialog(page)).toHaveCount(0);
   await expect(entry).toBeFocused();
 });
+
+test('A78 retained session response cannot reopen cancelled Settings', async ({
+  page,
+  viewport,
+}) => {
+  test.skip(viewport?.width !== 1280, 'One declared response ordering sample.');
+  await enter(page, true);
+  await page.locator('.portal-enter').click();
+  await expect(page.locator('[data-expedition-preparation=new]')).toBeVisible();
+  await page
+    .locator('header.game-header')
+    .getByRole('button', { name: 'Settings', exact: true })
+    .click();
+  let release!: () => void;
+  const held = new Promise<void>((resolve) => {
+    release = resolve;
+  });
+  await page.route('**/api/auth/session', async (route) => {
+    await held;
+    await route.continue();
+  });
+  const response = page.waitForResponse('**/api/auth/session');
+  try {
+    const entry = settings(page).locator('[data-account-entry=settings]');
+    await entry.click();
+    await expect(entry).toBeDisabled();
+    await expect(entry).toContainText('Connecting');
+    await page.keyboard.press('Escape');
+    await expect(settings(page)).toHaveCount(0);
+  } finally {
+    release();
+  }
+  await response;
+  await page.unroute('**/api/auth/session');
+  // Opening the real Settings again would be blocked by an unsolicited modal.
+  await page
+    .locator('header.game-header')
+    .getByRole('button', { name: 'Settings', exact: true })
+    .click();
+  await settings(page).locator('[data-account-entry=settings]').click();
+  await expect(dialog(page).locator('form')).toHaveAttribute('data-account-action', 'register');
+  await page.keyboard.press('Escape');
+  await expect(settings(page).locator('[data-account-entry=settings]')).toBeFocused();
+});
+
+test('A78 lost recovery request has deliberate retry and invalid code has direct repair', async ({
+  page,
+  viewport,
+}) => {
+  test.skip(viewport?.width !== 390, 'One transport sample with a genuinely accepted request.');
+  await enter(page, false);
+  await page.locator('[data-account-entry=login]').click();
+  await dialog(page).getByRole('button', { name: 'Olvidé mi contraseña', exact: true }).click();
+  const email = `a78-recovery-lost-${randomUUID()}@example.invalid`;
+  await dialog(page).locator('input[name=email]').fill(email);
+  await page.route('**/api/auth/request-reset', async (route) => {
+    expect((await route.fetch()).status()).toBe(200);
+    await route.abort('failed');
+  });
+  await primary(page).click();
+  await expect(dialog(page).getByRole('alert')).toContainText('solicitar el código de nuevo');
+  await expect(
+    dialog(page).getByRole('button', { name: 'Comprobar sesión', exact: true }),
+  ).toHaveCount(0);
+  await page.unroute('**/api/auth/request-reset');
+  await primary(page).click();
+  await expect(dialog(page).locator('form')).toHaveAttribute('data-account-action', 'reset');
+  await expect(dialog(page)).toContainText(email);
+  await dialog(page).locator('input[name=token]').fill('0'.repeat(64));
+  await dialog(page).locator('input[name=password]').fill(password);
+  await primary(page).click();
+  await expect(dialog(page).getByRole('alert')).toBeVisible();
+  await dialog(page).getByRole('button', { name: 'Solicitar otro código', exact: true }).click();
+  await expect(dialog(page).locator('input[name=email]')).toHaveValue(email);
+  await expect(primary(page)).toHaveAttribute('data-account-action', 'request-reset-submit');
+  expect((await page.request.get('/api/state')).status()).toBe(401);
+});

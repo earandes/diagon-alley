@@ -16,5 +16,6 @@ describe('shared password contract A78', () => {
     expect(validPassword('e\u0301'.repeat(8))).toBe(true);
     expect(validPassword('é'.repeat(8))).toBe(false);
     expect(validPassword('🦉'.repeat(8))).toBe(false);
+    expect(validPassword('a'.repeat(100_000))).toBe(false);
   });
 });
