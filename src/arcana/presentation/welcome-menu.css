@@ -1,6 +1,9 @@
 /* A82: one crest above the world, one family of tangible menu pieces below. */
 .game-shell[data-view='welcome'] {
-  padding-bottom: 0;
+  display: block;
+  height: auto;
+  min-height: 100dvh;
+  padding: 0;
 }
 .game-shell > .game-header.welcome-tools {
   position: absolute;
@@ -44,6 +47,9 @@
   align-items: center;
   width: min(560px, calc(100% - 72px));
   margin: 0 auto;
+  padding: 0;
+  border: 0;
+  gap: 0;
   color: #ffe3a4;
   text-shadow: 0 3px 12px #030916;
 }
@@ -182,6 +188,10 @@
 .game-shell .welcome-actions .fantasy-action:hover:not(:disabled),
 .game-shell .welcome-actions .fantasy-action:focus-visible {
   border-color: #fff0c3;
+  transform: none;
+  background:
+    radial-gradient(ellipse at 24% 0%, #fff5d723, transparent 65%),
+    linear-gradient(160deg, var(--action-top), var(--action-bottom));
   box-shadow:
     0 4px 0 #4a301e,
     0 10px 22px #03091299,
