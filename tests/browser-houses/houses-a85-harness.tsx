@@ -1,3 +1,9 @@
+import { starterEquipment } from '../../src/arcana/domain/economy/equipment';
+import { refreshRunEquipment } from '../../src/arcana/application/prepare-team';
+import { nodeActionLabel } from '../../src/arcana/presentation/node-event-messages';
+import { text } from '../../src/arcana/presentation/translations';
+import { Artwork } from '../../src/arcana/presentation/Artwork';
+import type { BeanAssignment } from '../../src/arcana/application/run-contracts';
 import { BossPartyStage } from '../../src/arcana/presentation/BossPartyStage';
 import { BossSupplies } from '../../src/arcana/presentation/BossSupplies';
 // Declared UI fixtures, never an earned collection or a public server grant route.
@@ -61,7 +67,8 @@ const members = selected.map((_, i) => ({
   unit: c.campaign.prepareOwned(copies[i]),
 }));
 const graph = randomizeRoute(c.campaign.graph, new SeededRandom(0));
-const run: Run = {
+const fixtureChallenge = query.get('mode') === 'boss' ? 'mastery' : 'discovery';
+let run: Run = {
   id: 'a85-fixture',
   campaignVersion: 1,
   graphVersion: graph.version,
@@ -71,24 +78,53 @@ const run: Run = {
   status: 'active',
   tacticalVersion: 3,
   equipmentRulesVersion: 2,
-  challenge: 'discovery',
+  challenge: fixtureChallenge,
   members,
   campaignSnapshot: {
     ...c.campaign,
     graph,
-    nodes: c.campaign.challengeContent!('discovery', graph),
+    nodes: c.campaign.challengeContent!(fixtureChallenge, graph),
   },
 };
-const game: GameState = {
+const dense = query.has('dense');
+const gear = dense
+  ? members.flatMap((_, i) =>
+      starterEquipment().map((item) => ({ ...item, id: `fixture:gear:${i}:${item.kind}` })),
+    )
+  : [];
+const beans = dense
+  ? members.map((_, i) => ({
+      id: `fixture:bean:${i}`,
+      kind: 'random-beans' as const,
+      status: 'available' as const,
+    }))
+  : [];
+const denseAssignments: readonly BeanAssignment[] = dense
+  ? members.map((m, i) => ({ unitId: m.unit.id, beanId: beans[i].id }))
+  : [];
+let game: GameState = {
   schemaVersion: 1,
   playerId: 'a85-declared',
   revision: 1,
-  inventory: createInventory(0),
+  inventory: { ...createInventory(0), equipment: gear, products: beans },
   copies,
   receipts: [],
-  team: { copyIds: copies.slice(0, 5).map((c) => c.copyId), loadouts: [] },
+  team: {
+    copyIds: copies.slice(0, 5).map((c) => c.copyId),
+    loadouts: dense
+      ? members.map((m, i) => ({
+          copyId: m.unit.id,
+          wandId: `fixture:gear:${i}:wand`,
+          broomId: `fixture:gear:${i}:broom`,
+        }))
+      : [],
+  },
   exploration: { run, victories: [], unlockedZones: [c.campaign.zoneId] },
 };
+if (dense) {
+  run = refreshRunEquipment(run, game, game.team!);
+  game = { ...game, exploration: { ...game.exploration!, run } };
+}
 const receipt: OpeningReceipt = {
   id: `a85-opening-${query.get('pack') ?? 'default'}-${language}-${query.get('instance') ?? 'primary'}`,
   kind: 'open-toad',
@@ -100,7 +136,13 @@ const receipt: OpeningReceipt = {
 const battle = new CombatEngine({ fromSeed: (s) => new SeededRandom(s) }).resolve({
   id: 'a85-combat-fixture',
   seed: 85,
-  player: members.map((m) => ({ ...m.unit, hp: 60 })),
+  player: run.members.map((m) => ({
+    ...m.unit,
+    hp: 60,
+    ...(denseAssignments.find((a) => a.unitId === m.unit.id)
+      ? { beanUnitId: denseAssignments.find((a) => a.unitId === m.unit.id)!.beanId }
+      : {}),
+  })),
   rival: c.opening.catalog.wizards.slice(5, 10).map((w, i) => ({
     ...c.campaign.prepareOwned({ ...copies[0], wizard: w, copyId: `rival:${i}` }),
     power: 8,
@@ -120,7 +162,7 @@ function Fixture() {
     [reduced, setReduced] = useState(query.has('reduced')),
     [ready, setReady] = useState(!query.has('busy'));
   const pact = run.campaignSnapshot!.nodes.find((p) => p.kind === 'pact')!;
-  const boss = c.campaign.challengeContent!('mastery', graph).find((p) => p.kind === 'boss')!;
+  const boss = run.campaignSnapshot!.nodes.find((p) => p.kind === 'boss')!;
   const pactMembers = copies
     .filter(
       (copy) =>
@@ -199,7 +241,7 @@ function Fixture() {
               <BossPartyStage
                 run={run}
                 game={game}
-                assignments={[]}
+                assignments={denseAssignments}
                 language={language}
                 ready
                 rules={content.combatRules}
@@ -211,16 +253,33 @@ function Fixture() {
                 content={content}
                 language={language}
                 ready
-                assignments={[]}
+                assignments={denseAssignments}
                 onChange={() => {}}
               />
             </div>
             <div className="node-event-actions node-combat-actions">
-              <button onClick={() => setMode('battle')}>
-                {language === 'es' ? 'Confirmar combate · 5' : 'Confirm battle · 5'}
+              <button
+                className="node-confirm-action"
+                aria-describedby="fixture-boss-cost"
+                onClick={() => setMode('battle')}
+              >
+                <Artwork asset="node.boss" language={language} decorative />
+                <span>{nodeActionLabel(language, 'boss')}</span>
+                <span
+                  id="fixture-boss-cost"
+                  className="boss-challenge-cost"
+                  aria-label={text(language, 'uses5EssenceAutomaticCombatWithYourCurrent')}
+                >
+                  <Artwork asset="currency.essence" language={language} decorative />
+                  <strong>5</strong>
+                </span>
               </button>
-              <button onClick={() => setMode('map')}>
-                {language === 'es' ? 'Volver' : 'Back'}
+              <button
+                className="node-cancel-action"
+                aria-label={text(language, 'cancel')}
+                onClick={() => setMode('map')}
+              >
+                <span aria-hidden="true">×</span>
               </button>
             </div>
           </dialog>

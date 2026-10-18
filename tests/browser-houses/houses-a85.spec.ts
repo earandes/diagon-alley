@@ -269,10 +269,16 @@ test('A85 the actual mastery roster discloses its active house before confirmati
 }, info) => {
   test.skip(!allowed(info.project.name), 'Protected Linux matrix only.');
   for (const [lang, pack] of pairs) {
-    await page.goto(`${fixture}?mode=boss&lang=${lang}&pack=${pack}`);
+    await page.goto(`${fixture}?mode=boss&dense=1&lang=${lang}&pack=${pack}`);
     await expect(page.locator('.boss-house-mark')).toHaveCount(1);
     await expect(page.locator('.boss-house-mark')).toBeVisible();
     await expect(page.locator('.boss-party-member')).toHaveCount(5);
+    await expect(page.locator('[data-boss-party-gear]')).toHaveCount(10);
+    await expect(page.locator('[data-boss-party-bean]')).toHaveCount(5);
+    await expect(page.locator('.node-bean-preparation > summary')).toHaveAttribute(
+      'data-bean-draft',
+      '5',
+    );
     await expect
       .poll(() =>
         page

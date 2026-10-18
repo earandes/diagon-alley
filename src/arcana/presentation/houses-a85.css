@@ -273,3 +273,24 @@
     min-width: 0;
   }
 }
+@media (max-width: 620px) {
+  /* Five companions keep full portraits and resource labels. Their preparation shelf
+     uses 44px objects; three equipped items fit one row instead of wrapping. */
+  .boss-staging:has(.boss-party-member:nth-child(5)) .boss-party-objects img {
+    width: clamp(14px, 4.6vw, 18px);
+    height: 22px;
+  }
+  .game-shell .boss-staging:has(.boss-party-member:nth-child(5)) .boss-party-prepare {
+    margin-top: 2px;
+  }
+  .boss-staging:has(.boss-party-member:nth-child(5)) .boss-prelude-hero {
+    gap: 2px;
+  }
+  .boss-staging:has(.boss-party-member:nth-child(5)) .node-bean-preparation > summary {
+    min-height: 44px;
+  }
+  .boss-staging:has(.boss-party-member:nth-child(5)) .node-bean-preparation > summary > img {
+    width: 32px;
+    height: 40px;
+  }
+}
