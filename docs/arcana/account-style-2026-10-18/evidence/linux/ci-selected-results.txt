@@ -1,0 +1,15 @@
+check	Run actions/checkout@v4	2026-10-18T07:57:07.2039837Z HEAD is now at 458722e Merge 79c4555d9af964231290bdadd71ce5ab49c7ef7d into ff23f580d9d3989abc9918d7b5bc8328d9e83b62
+check	Run npm run validate:content	2026-10-18T07:57:22.7184371Z [2m      Tests [22m [1m[32m6 passed[39m[22m[90m (6)[39m
+check	Run npm test	2026-10-18T07:57:33.2536937Z [2m      Tests [22m [1m[32m622 passed[39m[22m[90m (622)[39m
+check	Run npm run test:integration	2026-10-18T07:57:59.0969326Z [2m      Tests [22m [1m[32m99 passed[39m[22m[90m (99)[39m
+check	Run node tools/verification/verify-accounts-backup-a76.mjs	2026-10-18T07:58:09.9950725Z   "credentialsVerifiedWithProductionAdapter": true,
+check	Run node tools/verification/verify-accounts-backup-a76.mjs	2026-10-18T07:58:09.9951362Z   "economicSnapshotsAndOwnershipExactlyEqual": true,
+check	Run npm run verify:arcana:build	2026-10-18T07:58:10.3917767Z diagon-alley build content scan passed; total distributed bytes: 15035543. Historical I1 excluded. Private thematic dual build; ARCANA-only distribution not certified.
+check	Run ARCANA_CAPTURE_A76=1 npx playwright test --config playwright.accounts-a76.config.ts	2026-10-18T08:00:23.7907130Z   30 skipped
+check	Run ARCANA_CAPTURE_A76=1 npx playwright test --config playwright.accounts-a76.config.ts	2026-10-18T08:00:23.7907456Z   30 passed (1.3m)
+check	Run npx playwright test --config playwright.accounts-fixes-a78.config.ts	2026-10-18T08:00:59.6812555Z   11 skipped
+check	Run npx playwright test --config playwright.accounts-fixes-a78.config.ts	2026-10-18T08:00:59.6813854Z   16 passed (33.7s)
+check	Run npx playwright test --config playwright.account-entry-a79.config.ts	2026-10-18T08:01:11.0102827Z   2 skipped
+check	Run npx playwright test --config playwright.account-entry-a79.config.ts	2026-10-18T08:01:11.0103200Z   7 passed (8.7s)
+check	Run ARCANA_CAPTURE_A80=1 npx playwright test --config playwright.account-style-a80.config.ts	2026-10-18T08:01:20.4070221Z   3 passed (7.5s)
+check	Run ARCANA_CAPTURE_A75=1 npx playwright test --config playwright.experience-a75.config.ts	2026-10-18T08:01:29.2117762Z   2 passed (6.4s)

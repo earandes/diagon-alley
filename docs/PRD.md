@@ -1,6 +1,6 @@
 # Diagon Alley / ARCANA
 
-**Versión 1.0.46 · 18 octubre 2026 · A80 implementado, QA pendiente:** refinamiento de acceso como folio ilustrado, con mayor presencia de objetos y superficie de escritura en papel. Se conserva la concisión de A79, las etiquetas nativas y todos sus recorridos. [Contrato](arcana/account-style-2026-10-18/CONTRACT.md). Sin cambio de reglas/economía/autenticación. Word intactos.
+**Versión 1.0.46 · 18 octubre 2026 · A80 implementado y probado en rama:** folio ilustrado con cubierta/objeto y escritura sobre papel; una acción ciruela y ayuda a demanda. Conserva campos, texto y recuperación A79. CI39109537742:622unitarios,99PG/Redis y58casos de navegador activos, seis capturas inspeccionadas. [Informe](arcana/account-style-2026-10-18/REPORT.md), [QA y límites](arcana/account-style-2026-10-18/QA.md). No cambios de reglas/economía/autenticación ni main/despliegue. Word intactos.
 
 **Versión 1.0.45 · 18 octubre 2026 · A79 implementado y probado en rama:** acceso breve mediante objeto ilustrado, una acción principal, una sola salida y ayuda contextual. Uno o dos campos nativos, ojo integrado y reparación pertinente. Verificación móvil 816→604 px, sin cambiar autoridad, credenciales, partidas o economía. CI39087507256: 622 unitarios, 99 PG/Redis y 55 casos de navegador activos; límites humanos/físicos en [QA](arcana/account-entry-redesign-2026-10-18/QA.md). [Informe y galería](arcana/account-entry-redesign-2026-10-18/REPORT.md). PR7 sin merge ni despliegue; Word intactos.
 
