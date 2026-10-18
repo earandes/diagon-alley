@@ -12,11 +12,6 @@ const selected = () =>
   process.env.ARCANA_CAPTURE_A70 === '1' &&
   test.info().project.name === 'chromium-1280-boss-a70';
 const label = (lang: 'es' | 'en', es: string, en: string) => (lang === 'es' ? es : en);
-const skip = (page: Page, lang: 'es' | 'en' = 'es') =>
-  page.getByRole('button', {
-    name: label(lang, 'Omitir reproducción', 'Skip playback'),
-    exact: true,
-  });
 async function capture(page: Page, name: string) {
   if (!selected()) return;
   await mkdir(evidence, { recursive: true });
@@ -268,7 +263,7 @@ for (const language of ['es', 'en'] as const)
       const actionToDomUsableUpperBoundMs = Date.now() - actionStarted;
       await expect(page.locator('.scene-canvas')).toHaveAttribute('data-art-ready', 'true');
       const actionToFiguresReadyUpperBoundMs = Date.now() - actionStarted;
-      if (await skip(page, language).isEnabled()) await skipBattle(page);
+      await skipBattle(page);
       await expect(page.locator('[data-arena-outcome]')).toBeVisible();
       expect(JSON.stringify((await readGame(page)).receipts.at(-1))).toBe(JSON.stringify(receipt));
       await leaveBattle(page);

@@ -475,20 +475,30 @@ test('A86 duel scene has one pause, recorded house access and remembered present
         await page.screenshot({ path: resolve(target, `arena-${pack}-390.png`), fullPage: false });
       }
       await page.locator('.arena-pause').click();
+      const pauseMenu = page.locator('dialog#arena-options[open]');
+      await expect(pauseMenu).toBeVisible();
+      await pauseMenu.locator('.arena-options-close').focus();
+      await page.keyboard.press('Tab');
+      await expect(pauseMenu.locator('.replay-controls button').first()).toBeFocused();
+      await pauseMenu.locator('.arena-record-trigger').click();
+      await expect(page.locator('.arena-inspector[open]')).toBeVisible();
+      await page.locator('.arena-inspector-close').click();
+      await expect(pauseMenu.locator('.arena-record-trigger')).toBeFocused();
       await page.locator('#arena-options .settings-trigger').click();
       const settings = page.locator('.game-settings[open]');
       await settings
         .locator('.playback-preferences')
         .getByRole('button', { name: '2x', exact: true })
         .click();
-      await settings
-        .getByRole('button', { name: lang === 'es' ? 'Cerrar' : 'Close', exact: true })
-        .click();
+      await page.keyboard.press('Escape');
+      await expect(settings).toHaveCount(0);
+      await expect(pauseMenu).toBeVisible();
       await expect(page.locator('.battle-panel')).toHaveAttribute('data-replay-speed', '2');
       await page.reload();
       await expect(page.locator('.battle-panel')).toHaveAttribute('data-replay-speed', '2');
       await skipBattle(page);
       await expect(page.locator('[data-arena-outcome]')).toBeVisible();
+      await expect(page.locator('.arena-caption button')).toBeFocused();
       await immutable(page);
     }
 });

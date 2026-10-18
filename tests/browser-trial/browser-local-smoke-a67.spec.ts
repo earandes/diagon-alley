@@ -1,3 +1,4 @@
+import { skipBattle, leaveBattle } from './battle-controls';
 import { test, expect } from '@playwright/test';
 import { startExpedition, changeLanguage } from './game-fixture';
 import { readGame, confirmEvent, expectMapFits } from './route-helpers';
@@ -51,9 +52,8 @@ test('bounded local pact cancellation and Halloween keepsake journey', async ({ 
     await confirmEvent(page, 'es');
     const result = (await readGame(page)).receipts.at(-1);
     if (result?.kind === 'advance-node' && result.battle) {
-      const skip = page.getByRole('button', { name: 'Omitir reproducción', exact: true });
-      if (await skip.isEnabled()) await skip.click();
-      await page.getByRole('button', { name: 'Volver al mapa', exact: true }).click();
+      await skipBattle(page);
+      await leaveBattle(page);
     }
     if (i >= 1) {
       await page.locator('[data-seasonal-open]').click();

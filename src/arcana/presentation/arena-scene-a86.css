@@ -60,7 +60,10 @@
   fill: none;
 }
 .battle-panel.arena-a63 .arena-stage {
-  min-height: calc(var(--arena-count) * (60px + 3rem) + 3rem);
+  min-height: max(
+    calc(var(--arena-count) * (60px + 3rem) + 3rem),
+    var(--arena-required-height, 0px)
+  );
 }
 .battle-panel.arena-a63 .arena-columns {
   gap: clamp(16px, 5vw, 80px);
@@ -122,11 +125,11 @@
   flex: 1 1 60px;
   height: 0;
   min-height: 60px;
-  max-height: 190px;
+  max-height: var(--arena-common-figure-cap, 190px);
 }
 .battle-panel.arena-a63 .pedestal[data-boss-actor='true'] .arena-figure-space {
   min-height: 78px;
-  max-height: 225px;
+  max-height: var(--arena-common-figure-cap, 190px);
 }
 .battle-panel.arena-a63 .arena-inspect > strong {
   display: flex;
@@ -219,10 +222,13 @@
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  position: absolute;
+  position: fixed;
   z-index: 12;
-  top: 58px;
-  right: 0;
+  top: max(58px, env(safe-area-inset-top));
+  right: max(12px, calc((100vw - 1080px) / 2));
+  left: auto;
+  bottom: auto;
+  margin: 0;
   width: min(320px, 100%);
   max-height: calc(100dvh - 84px);
   overflow: auto;
@@ -316,4 +322,16 @@
 }
 .pedestal[data-in-danger='true'] .arena-health {
   border-style: dashed;
+}
+
+.arena-playback-tools::backdrop {
+  background: #03091588;
+}
+
+/* Override the historical five-up cap with the common measured scale. */
+.battle-panel.arena-a63:has(.arena-fighters > .pedestal:nth-child(5)) .arena-figure-space,
+.battle-panel.arena-a63:has(.arena-fighters > .pedestal:nth-child(5))
+  .pedestal[data-boss-actor='true']
+  .arena-figure-space {
+  max-height: var(--arena-common-figure-cap, 190px);
 }

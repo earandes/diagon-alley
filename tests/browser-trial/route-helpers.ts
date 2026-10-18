@@ -33,7 +33,7 @@ export async function expectMapFits(page: Page) {
     .toBe(true);
 }
 export async function pathTo(page: Page, kind: NodeKind) {
-  await expect(page.locator('dialog')).toHaveCount(0);
+  await expect(page.locator('dialog[open]')).toHaveCount(0);
   await expect(page.locator('[data-map-phase]')).toHaveAttribute('data-map-phase', 'route');
   const run = (await readGame(page)).exploration!.run!;
   return preparedRoutePath(run, kind);
@@ -59,7 +59,7 @@ export async function confirmEvent(page: Page, language: 'es' | 'en') {
       await pass.click();
     await confirm.click();
   }
-  await expect(page.locator('dialog')).toHaveCount(0);
+  await expect(page.locator('dialog[open]')).toHaveCount(0);
   // The committed response can precede React's route effect; await its observable destination.
   const receipt = (await readGame(page)).receipts.at(-1);
   if (receipt?.kind === 'advance-node' && receipt.battle)
@@ -76,16 +76,7 @@ export async function reachNode(page: Page, kind: NodeKind, language: 'es' | 'en
   for (const id of path.slice(0, -1)) {
     await page.locator(`[data-node="${id}"]`).click();
     await confirmEvent(page, language);
-    if (
-      (await readGame(page)).receipts.at(-1)?.kind === 'advance-node' &&
-      (await page
-        .getByRole('button', {
-          name: language === 'es' ? 'Volver al mapa' : 'Back to map',
-          exact: true,
-        })
-        .count())
-    )
-      await leaveBattle(page);
+    if (await page.locator('.battle-panel').count()) await leaveBattle(page);
   }
   return path.at(-1)!;
 }

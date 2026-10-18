@@ -48,7 +48,11 @@ export async function changeLanguage(page: Page, language: 'es' | 'en') {
     ? activeDialog
     : (await revealSettings.count())
       ? reveal
-      : hasBattleOptions ? page.locator('#arena-options') : page.locator('header');
+      : hasBattleOptions
+        ? page.locator('#arena-options')
+        : (await page.locator('.battle-panel').count())
+          ? page.locator('.battle-panel')
+          : page.locator('header');
   await origin.getByRole('button', { name: /^(Ajustes|Settings)$/, exact: true }).click();
   const settings = page.locator('dialog.game-settings[open]');
   await expect(settings).toBeVisible();

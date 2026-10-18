@@ -1,4 +1,5 @@
 import type { ReactNode } from 'react';
+import { arenaFigureBudget } from './arena-layout';
 import { usePlaybackSpeed } from './motion/PlaybackPreferences';
 import { HouseInsignia, houseName, houseEffect } from './HouseInsignia';
 import { sceneStart, sceneEnd } from './scenes/scene-diagnostics';
@@ -59,6 +60,7 @@ export function BattlePanel(props: BattlePanelProps) {
   if (!replay)
     return (
       <section className="battle-panel">
+        {props.settings}
         <h2>{text(props.language, 'combatArena')}</h2>
         <p role="alert">{text(props.language, 'savedReplayUnavailable')}</p>
         <button onClick={props.onBack}>{text(props.language, 'backToMap')}</button>
@@ -90,6 +92,19 @@ function BattlePlayback({
   useEffect(() => setSpeed(preferredSpeed), [preferredSpeed]);
   const [optionsOpen, setOptionsOpen] = useState(false);
   const pauseButton = useRef<HTMLButtonElement>(null);
+  const optionsDialog = useRef<HTMLDialogElement>(null);
+  const optionsOrigin = useRef<HTMLButtonElement | null>(null);
+  useEffect(() => {
+    if (!optionsOpen || !optionsDialog.current) return;
+    const dialog = optionsDialog.current;
+    dialog.showModal();
+    optionsOrigin.current?.focus({ preventScroll: true });
+    optionsOrigin.current = null;
+    return () => {
+      if (dialog.open) dialog.close();
+      pauseButton.current?.focus({ preventScroll: true });
+    };
+  }, [optionsOpen]);
   const outcomeAction = useRef<HTMLButtonElement>(null);
   const focusResult = useRef(false);
   useLayoutEffect(() => {
@@ -146,7 +161,46 @@ function BattlePlayback({
     if (!host) return;
     const measure = () => {
       const bounds = host.getBoundingClientRect();
-      // Read all geometry after layout; the renderer never reads DOM geometry each frame.
+      // A 5x3 formation shares one figure scale; label wrapping can enlarge the
+      // scene for accessible text instead of hiding actors or overlapping PV.
+      const heights = (selector: string) =>
+        Math.max(
+          0,
+          ...[...host.querySelectorAll<HTMLElement>(selector)].map(
+            (el) => el.getBoundingClientRect().height,
+          ),
+        );
+      const fighters = [...host.querySelectorAll<HTMLElement>('.arena-fighters')];
+      const labels = Math.max(
+        0,
+        ...[...host.querySelectorAll<HTMLElement>('.arena-inspect')].map(
+          (el) =>
+            (el.querySelector('strong')?.getBoundingClientRect().height ?? 0) +
+            (el.querySelector('.arena-health')?.getBoundingClientRect().height ?? 0),
+        ),
+      );
+      const budget = arenaFigureBudget({
+        stageHeight: bounds.height,
+        count: Math.max(combat.input.player.length, combat.input.rival.length),
+        heading: heights('.arena-team-heading'),
+        synergies: heights('.synergies'),
+        labels,
+        minimumFigure: Math.max(
+          60,
+          ...[...host.querySelectorAll<HTMLElement>('.arena-figure-space')].map(
+            (el) => parseFloat(getComputedStyle(el).minHeight) || 0,
+          ),
+        ),
+        gap: parseFloat(fighters[0] ? getComputedStyle(fighters[0]).rowGap : '4') || 0,
+      });
+      for (const [key, value] of [
+        ['--arena-common-figure-cap', budget.figureCap],
+        ['--arena-required-height', budget.requiredHeight],
+      ] as const) {
+        const nextValue = `${value.toFixed(2)}px`;
+        if (host.style.getPropertyValue(key) !== nextValue) host.style.setProperty(key, nextValue);
+      }
+      // Read positions after that layout; never during each replay frame.
       const next = [...host.querySelectorAll<HTMLElement>('[data-unit]')].map((element) => {
         const box = (element.querySelector('.arena-portrait') ?? element).getBoundingClientRect();
         return {
@@ -171,7 +225,13 @@ function BattlePlayback({
     };
     const observer = new ResizeObserver(measure);
     observer.observe(host);
-    for (const element of host.querySelectorAll('[data-unit]')) observer.observe(element);
+    for (const element of host.querySelectorAll('[data-unit]')) {
+      observer.observe(element);
+      // A translated name can wrap inside a fixed row without resizing that row.
+      // Observe the actual figure box so DOM and Canvas retain the same origin.
+      const figure = element.querySelector('.arena-portrait');
+      if (figure) observer.observe(figure);
+    }
     measure();
     return () => observer.disconnect();
   }, [combat.id, language]);
@@ -353,18 +413,15 @@ function BattlePlayback({
           </svg>
         </button>
       </header>
-      <div
+      <dialog
+        ref={optionsDialog}
         className="arena-playback-tools"
         id="arena-options"
         hidden={!optionsOpen}
-        role="region"
         aria-label={arenaText(language, 'options')}
-        onKeyDown={(event) => {
-          if (event.key === 'Escape' && !(event.target as Element).closest('dialog[open]')) {
-            event.stopPropagation();
-            setOptionsOpen(false);
-            pauseButton.current?.focus();
-          }
+        onCancel={(event) => {
+          event.stopPropagation();
+          setOptionsOpen(false);
         }}
       >
         <h3>{arenaText(language, 'options')}</h3>
@@ -417,7 +474,7 @@ function BattlePlayback({
         >
           {t('close')}
         </button>
-      </div>
+      </dialog>
       <div
         ref={stage}
         className="arena-stage"
@@ -624,13 +681,22 @@ function BattlePlayback({
           }
           onCancel={(event) => {
             event.stopPropagation();
+            optionsOrigin.current = inspectionOrigin.current?.closest('#arena-options')
+              ? inspectionOrigin.current
+              : null;
             setInspection(null);
-            setOptionsOpen(Boolean(inspectionOrigin.current?.closest('#arena-options')));
+            setOptionsOpen(Boolean(optionsOrigin.current));
           }}
         >
           <button
             className="arena-inspector-close"
-            onClick={() => setInspection(null)}
+            onClick={() => {
+              optionsOrigin.current = inspectionOrigin.current?.closest('#arena-options')
+                ? inspectionOrigin.current
+                : null;
+              setInspection(null);
+              setOptionsOpen(Boolean(optionsOrigin.current));
+            }}
             aria-label={t('close')}
           >
             ×

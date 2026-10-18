@@ -13,7 +13,8 @@ export async function closeBattleOptions(page: Page) {
 }
 export async function pauseBattle(page: Page) {
   if (await page.locator('.arena-pause').count()) {
-    await page.locator('.arena-pause').click();
+    if (!(await page.locator('#arena-options').isVisible()))
+      await page.locator('.arena-pause').click();
     await closeBattleOptions(page);
   } else await page.getByRole('button', { name: /^(Pausa|Pause)$/ }).click();
 }

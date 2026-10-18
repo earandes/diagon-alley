@@ -77,16 +77,18 @@ function Fixture() {
     <div className="arcana-shell game-shell" data-view="battle">
       <header className="game-header">
         <h1>ARCANA · Fixture</h1>
-        <GameSettings
-          language={language}
-          onLanguage={setLanguage}
-          reduced={reduced}
-          ownReduced={reduced}
-          onReduced={setReduced}
-        />
       </header>
       <main id="content">
         <BattlePanel
+          settings={
+            <GameSettings
+              language={language}
+              onLanguage={setLanguage}
+              reduced={reduced}
+              ownReduced={reduced}
+              onReduced={setReduced}
+            />
+          }
           combat={shownRecord}
           game={game}
           content={content}

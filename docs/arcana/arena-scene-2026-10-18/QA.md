@@ -7,3 +7,12 @@ Pruebas de preferencias:2correctas. Proyección estática de arena:1correcta; Sc
 CI39159355139 de A85 cancelada deliberadamente porque el nuevo recorrido requiere validar juntos A85+A86; comprobaciones parciales no equivalen a batería superada. CI39163511473 del primer candidatoA86 se sustituye para conservar la evidencia nueva en el artefacto permitido del workflow existente (sin ampliar capturas o cambiar workflow). Estado final todavía pendiente.
 
 Evidencia gráfica prevista: dos imágenes móviles seleccionadas con casas (Diagon/ARCANA), muestras de arenaA75 y coreografías ya medidas porA69/A70/A71. No capturas automáticas, vídeo o perfil local. Los rawA86 se escriben bajo el artefactoA69 existente y se copian aquí tras CI con SHA/procedencia.
+
+## Candidato combinado en curso
+Fuente27ccc03d51291b333d8e409fb69d5450f490cba3, CI39163805967. Los candidatos anteriores be00335/fbc624f se cancelaron deliberadamente al ajustar conservación de artefactos, navegación de pruebas entre preferencias recordadas y foco. No fueron reintentos automáticos ni se consideran baterías superadas. Guardas/workflow intactos. La primera pasada se conserva para inspeccionar composición y reunir defectos; hay una corrección adicional de retorno de foco al cerrar el registro con X preparada para el candidato de confirmación.
+
+## Primera ejecución terminada y correcciones
+
+CI39163805967 / fuente27ccc03 / merge1ce3b87:658unit,103PostgreSQL/Redis;A75 113pass, A68 12pass, A69 72pass. A70falló en su primer recorrido: el helper buscaba la salida ahora plegada sin abrir Pausa, por lo que comprobaba el mapa estando todavía en combate. No se considera validación integrada superada; regresión omitida por dependencia. Se corrige navegación real, sin force-click ni alterar el juego.
+
+Correcciones adicionales: Pausa es diálogo nativo con foco contenido y retorno desde registro/Ajustes; los harness pasan Ajustes al mismo consumidor que producción; presupuesto común de figuras 5×3 medido con etiquetas reales y crecimiento accesible. Cuatro tests geométricos RED/GREEN; total local662/103, tipos y build/scanner pasan. Falta CI del candidato corregido y su regresión completa. Ningún navegador local.

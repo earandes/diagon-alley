@@ -61,7 +61,7 @@ for (const language of ['es', 'en'] as const)
       await confirmEvent(page, language);
       if (
         (await read()).exploration.run.status === 'active' &&
-        (await button('Volver al mapa', 'Back to map').count())
+        (await page.locator('.battle-panel').count())
       )
         await leaveBattle(page);
     }

@@ -9,4 +9,4 @@
 - [ ] Inspeccionar dos escenas seleccionadas y comparar geometría/replay.
 - [ ] Resolver defectos demostrados, documentar SHA y límites.
 
-Fuera: merge/main, despliegue, pruebas humanas/físicas y nuevos poderes/assets por personaje.
+Autorización posterior de Enric: integrar PR9 cuando el candidato esté validado, antes de ampliar criaturas/afiliaciones. Fuera: despliegue, pruebas humanas/físicas y nuevos poderes/assets por personaje.

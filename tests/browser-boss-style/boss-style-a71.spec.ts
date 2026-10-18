@@ -15,11 +15,6 @@ const fixtureBase = process.env.A71_FIXTURE_URL ?? 'http://127.0.0.1:5473';
 const battleFixture = new URL('/tests/browser-boss/boss-a70.html', fixtureBase).href;
 const partyFixture = new URL('/tests/browser-boss-style/boss-style-a71.html', fixtureBase).href;
 const word = (lang: 'es' | 'en', es: string, en: string) => (lang === 'es' ? es : en);
-const skip = (page: Page, language: 'es' | 'en' = 'es') =>
-  page.getByRole('button', {
-    name: word(language, 'Omitir reproducción', 'Skip playback'),
-    exact: true,
-  });
 async function capture(page: Page, name: string, widths: readonly number[] = [1280]) {
   const project = test.info().project;
   if (
@@ -268,7 +263,7 @@ for (const language of ['es', 'en'] as const)
       const actionToDomUsableUpperBoundMs = Date.now() - started;
       await expect(page.locator('.scene-canvas')).toHaveAttribute('data-art-ready', 'true');
       const actionToFiguresReadyUpperBoundMs = Date.now() - started;
-      if (await skip(page, language).isEnabled()) await skipBattle(page);
+      await skipBattle(page);
       await expect(page.locator('[data-arena-outcome]')).toBeVisible();
       expect(JSON.stringify((await readGame(page)).receipts.at(-1))).toBe(immutable);
       await leaveBattle(page);
