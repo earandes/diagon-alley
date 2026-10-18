@@ -11,7 +11,7 @@ for (const language of ['es', 'en'] as const)
     await page.setViewportSize({ width: 1280, height: 900 });
     await page.goto('/');
     if (en) await changeLanguage(page, 'en');
-    await button('Comenzar ensayo local', 'Start local trial').click();
+    await button('Jugar como invitado', 'Play as guest').click();
     const read = async () => (await (await page.request.get('/api/state')).json()).state;
     await expect(page.locator('.preparation-card').first()).toBeVisible();
     await expect(page.locator('[data-team-member]')).toHaveCount(0);

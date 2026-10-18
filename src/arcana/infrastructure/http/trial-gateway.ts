@@ -2,11 +2,14 @@ import { randomUUID } from 'node:crypto';
 import Fastify, { type FastifyInstance } from 'fastify';
 import type { Sessions, RequestLimits } from '../../application/authority-ports';
 import { validDomainId } from '../../domain/identifiers';
+import type { IdentityService } from '../identity/service';
+import { registerIdentityRoutes } from './identity-routes';
 interface TrialGatewayOptions {
   readonly api: FastifyInstance;
   readonly authority: Sessions & RequestLimits;
   readonly initialize: (id: string) => Promise<unknown>;
   readonly origin: string;
+  readonly identity?: IdentityService;
 }
 const ttl = 7 * 24 * 60 * 60 * 1000;
 const sessionCookie = (header: string | undefined) =>
@@ -34,6 +37,7 @@ export function createTrialGateway(options: TrialGatewayOptions): FastifyInstanc
     if (['POST', 'DELETE'].includes(request.method) && request.headers.origin !== options.origin)
       return reply.code(403).send({ error: { code: 'INVALID_ORIGIN' } });
   });
+  if (options.identity) registerIdentityRoutes(app, options.identity, options.authority);
   app.post(
     '/api/trial/session',
     { schema: { body: { type: 'object', additionalProperties: false, properties: {} } } },

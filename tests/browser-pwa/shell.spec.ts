@@ -39,7 +39,7 @@ for (const language of ['es', 'en'] as const)
       await cdp.detach();
     }
     if (en) await changeLanguage(page, 'en');
-    await button('Comenzar ensayo local', 'Start local trial').click();
+    await button('Jugar como invitado', 'Play as guest').click();
     await button('Bazar', 'Bazaar').click();
     await page.locator('[data-shop="confectionery"]').click();
     await page.locator('[data-product="random-beans"]').click();
@@ -76,7 +76,7 @@ for (const language of ['es', 'en'] as const)
         exact: true,
       }),
     ).toBeVisible();
-    await expect(button('Comenzar ensayo local', 'Start local trial')).toBeDisabled();
+    await expect(button('Jugar como invitado', 'Play as guest')).toBeDisabled();
     await expect(page.locator('html')).toHaveAttribute('lang', language);
     const urls = await page.evaluate(async () =>
       (
@@ -118,7 +118,7 @@ test('blocked worker registration retains the normal online game without an unha
     return route.abort();
   });
   await page.goto('/');
-  await page.getByRole('button', { name: 'Comenzar ensayo local', exact: true }).click();
+  await page.getByRole('button', { name: 'Jugar como invitado', exact: true }).click();
   await expect(page.locator('.preparation-card').first()).toBeEnabled();
   await expect(page.locator('[data-preparation-confirm]')).toBeDisabled();
   await expect.poll(() => blocked).toBe(true);
@@ -205,7 +205,7 @@ for (const language of ['es', 'en'] as const)
       await navigator.serviceWorker.ready;
     });
     if (en) await changeLanguage(page, 'en');
-    await button('Comenzar ensayo local', 'Start local trial').click();
+    await button('Jugar como invitado', 'Play as guest').click();
     await button('Bazar', 'Bazaar').click();
     await page.locator('[data-shop="confectionery"]').click();
     const before = (await (await page.request.get('/api/state')).json()).state;
@@ -243,7 +243,7 @@ for (const language of ['es', 'en'] as const)
     await expect(page.locator('dialog.reveal')).toHaveCount(0);
     await context.setOffline(true);
     await page.reload();
-    await expect(button('Comenzar ensayo local', 'Start local trial')).toBeDisabled();
+    await expect(button('Jugar como invitado', 'Play as guest')).toBeDisabled();
     await context.setOffline(false);
     await expect(page).toHaveURL(/#\/shop\/confectionery$/);
     // Recovery returns the durable combined result, not an unopened stock unit.

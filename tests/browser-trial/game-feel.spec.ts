@@ -14,7 +14,7 @@ for (const language of ['es', 'en'] as const) {
       if (language === 'en') await changeLanguage(page, 'en');
       await page
         .getByRole('button', {
-          name: language === 'es' ? 'Comenzar ensayo local' : 'Start local trial',
+          name: language === 'es' ? 'Jugar como invitado' : 'Play as guest',
           exact: true,
         })
         .click();

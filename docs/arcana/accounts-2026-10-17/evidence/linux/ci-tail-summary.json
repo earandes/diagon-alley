@@ -1,0 +1,44 @@
+{
+  "run": 39074119331,
+  "url": "https://github.com/earandes/diagon-alley/actions/runs/39074119331",
+  "head": "88eaa44092fc0b4652a21b62d00f63ebb48c2e66",
+  "checkout": "7fe58d38cc780d4afaaa7eb8ebd96e1c49162412",
+  "tree": "973ccf9f46296ddb6fb604610107dba282e39010",
+  "conclusion": "success",
+  "phase": "tail",
+  "unitPassed": 618,
+  "postgresRedisPassed": 98,
+  "browser": {
+    "a76": {
+      "passed": 30,
+      "skipped": 30
+    },
+    "a75Tail": {
+      "passed": 24
+    },
+    "progressionA67": {
+      "passed": 20
+    },
+    "gameplayA63": {
+      "passed": 16
+    },
+    "headerPactsA66": {
+      "passed": 20
+    },
+    "intentionsA65": {
+      "passed": 8
+    },
+    "pwa": {
+      "passed": 12
+    },
+    "performanceA67Baseline": {
+      "passed": 1
+    },
+    "performanceA67Current": {
+      "passed": 1
+    }
+  },
+  "graphicalTotalPassed": 132,
+  "graphicalIntentionalSkips": 30,
+  "note": "Repeated scopes overlap the first run; do not sum counts as unique coverage. Source/runtime/tests unchanged against3f6; only existing phase selection full\u2192tail. Original full run remains cancelled at55min."
+}

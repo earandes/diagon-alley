@@ -37,6 +37,10 @@ class Metadata implements ClientOperations {
   failClaim = false;
   failRead = false;
   failFinish = false;
+  async pendingForEntry() {
+    if (this.failRead) throw new ArcanaClientError('CLIENT_STORAGE', 0);
+    return this.pending;
+  }
   async read(playerId: string) {
     if (this.failRead) throw new ArcanaClientError('CLIENT_STORAGE', 0);
     return this.pending?.playerId === playerId ? pendingSnapshot(this.pending) : null;
@@ -113,6 +117,77 @@ const action = {
   request: { product: 'cacao-toad' as const, quantity: 1, priceVersion: 1 },
 };
 describe('ARCANA recoverable client orchestration', () => {
+  it('holds identity change exclusion through transport and never loses pending metadata on cancel', async () => {
+    const { controller, gateway } = fixture();
+    await controller.load();
+    expect(await controller.beginIdentityChange(false)).toBe(true);
+    expect(await controller.beginIdentityChange(false)).toBe(false);
+    await controller.perform(action);
+    expect(gateway.purchase).not.toHaveBeenCalled();
+    await controller.finishIdentityChange('cancel', false);
+    expect(controller.getSnapshot().status).toBe('ready');
+    await controller.perform(action);
+    expect(gateway.purchase).toHaveBeenCalledTimes(1);
+  });
+  it('signs out without deleting the saved game and accepts a deliberate subsequent login', async () => {
+    const { controller, gateway } = fixture();
+    await controller.load();
+    expect(await controller.beginIdentityChange(false)).toBe(true);
+    await controller.finishIdentityChange('signed-out', false);
+    expect(controller.getSnapshot().game).toBe(null);
+    expect(gateway.purchase).not.toHaveBeenCalled();
+    expect(await controller.beginIdentityChange(false)).toBe(true);
+    await controller.finishIdentityChange('authenticated', false);
+    expect(controller.getSnapshot().game?.playerId).toBe('player');
+  });
+  it('keeps an uncertain identity change blocked until the session is checked', async () => {
+    const { controller, gateway } = fixture();
+    await controller.load();
+    const before = controller.getSnapshot().game;
+    expect(await controller.beginIdentityChange(false)).toBe(true);
+    await controller.finishIdentityChange('uncertain', false);
+    expect(controller.getSnapshot()).toMatchObject({
+      status: 'error',
+      error: 'INVALID_SESSION',
+      game: before,
+    });
+    await controller.perform(action);
+    expect(gateway.purchase).not.toHaveBeenCalled();
+    await controller.load();
+    expect(controller.getSnapshot().status).toBe('ready');
+  });
+  it('loads only the exact player authenticated even when an explicit switch was allowed', async () => {
+    const { controller } = fixture();
+    await controller.load();
+    const before = controller.getSnapshot().game;
+    expect(await controller.beginIdentityChange(false)).toBe(true);
+    await controller.finishIdentityChange('authenticated', false, 'other-authenticated-player');
+    expect(controller.getSnapshot()).toMatchObject({
+      status: 'error',
+      error: 'PLAYER_MISMATCH',
+      game: before,
+    });
+  });
+  it('recovers transport ownership after reload and cookie loss before permitting any new entry', async () => {
+    const { controller, operations, gateway } = fixture();
+    await controller.load();
+    vi.mocked(gateway.purchase).mockRejectedValueOnce(new ArcanaClientError('NETWORK_ERROR', 0));
+    await controller.perform(action);
+    expect(operations.pending?.playerId).toBe('player');
+    const reloaded = new GameController(gateway, operations, () => 'unused-new-key');
+    vi.mocked(gateway.state).mockRejectedValueOnce(new ArcanaClientError('UNAUTHORIZED', 401));
+    await reloaded.load();
+    expect(reloaded.getSnapshot()).toMatchObject({
+      game: null,
+      pending: { playerId: 'player' },
+      status: 'recovery-required',
+    });
+    expect(await reloaded.prepareTrialEntry()).toBe(false);
+    expect(await reloaded.beginIdentityChange(false)).toBe(false);
+    expect(await reloaded.beginIdentityChange(true)).toBe(true);
+    await reloaded.finishIdentityChange('authenticated', true, 'player');
+    expect(reloaded.getSnapshot().game?.playerId).toBe('player');
+  });
   it('A75 entry preflight finds another tab intent before allowing a new session', async () => {
     const { controller, gateway, operations } = fixture();
     await controller.load();

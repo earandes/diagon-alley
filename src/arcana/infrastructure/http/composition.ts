@@ -1,4 +1,4 @@
-import type { AuthorityClock } from '../../application/authority-ports';
+import type { AuthorityClock, Sessions } from '../../application/authority-ports';
 import { ForgeWandUseCase, OpenObsidianVaultUseCase } from '../../application/commerce-use-cases';
 import { ArcanaError } from '../../domain/errors';
 import type { Pool } from 'pg';
@@ -26,6 +26,7 @@ import { SeasonalEventUseCase } from '../../application/seasonal-events';
 import type { SeasonalEdition } from '../../domain/seasonal/events';
 import { seasonalEdition } from '../content/seasonal-content';
 interface CompositionOptions {
+  readonly sessions?: Sessions;
   readonly clock?: AuthorityClock;
   readonly seasonal?: () => SeasonalEdition;
   readonly pool: Pool;
@@ -63,7 +64,7 @@ export function composeArcanaApi(options: CompositionOptions) {
     forgeWand: new ForgeWandUseCase(games, commerce),
     openVault: new OpenObsidianVaultUseCase(games, commerce, new CryptoTickets()),
     games,
-    sessions: authority,
+    sessions: options.sessions ?? authority,
     limits: authority,
     clock,
     opening: options.opening,

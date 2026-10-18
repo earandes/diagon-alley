@@ -1,0 +1,26 @@
+{
+  "evidence": "Static contract/standard analysis; not typed or pasted in browser",
+  "htmlUnit": "UTF-16 code units",
+  "serverUnit": "Unicode code points plus UTF8 byte ceiling",
+  "policy": {
+    "minCodePoints": 15,
+    "maxCodePoints": 128,
+    "maxUTF8Bytes": 512
+  },
+  "examples": [
+    {
+      "case": "8 non-BMP symbols",
+      "utf16Units": 16,
+      "codePoints": 8,
+      "utf8Bytes": 32
+    },
+    {
+      "case": "65 non-BMP symbols",
+      "utf16Units": 130,
+      "codePoints": 65,
+      "utf8Bytes": 260
+    }
+  ],
+  "source": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/maxlength",
+  "consulted": "2026-10-18"
+}

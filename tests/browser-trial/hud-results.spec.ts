@@ -10,7 +10,7 @@ for (const language of ['es', 'en'] as const)
       page.getByRole('button', { name: en ? english : es, exact: true });
     await page.goto('/');
     if (en) await changeLanguage(page, 'en');
-    await button('Comenzar ensayo local', 'Start local trial').click();
+    await button('Jugar como invitado', 'Play as guest').click();
     const energy = page.getByRole('meter', {
       name: en ? 'Runic Essence' : 'Esencia Rúnica',
       exact: true,

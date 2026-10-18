@@ -31,7 +31,7 @@ export interface StarterConfiguration {
 }
 export class InitializePlayerUseCase {
   constructor(
-    private readonly accounts: PlayerAccounts,
+    private readonly accounts: Pick<PlayerAccounts, 'read' | 'create'>,
     private readonly configuration: () => StarterConfiguration,
     private readonly clock: AuthorityClock,
   ) {}
