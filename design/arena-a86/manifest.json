@@ -1,0 +1,34 @@
+{
+  "version": 1,
+  "status": "implemented; visual acceptance pending protected Linux evidence",
+  "resources": [
+    {
+      "id": "arena.pause",
+      "kind": "inline vector paths",
+      "source": "src/arcana/presentation/BattlePanel.tsx",
+      "consumer": "arena heading",
+      "dimensions": [32, 32],
+      "displayTarget": [48, 48],
+      "strokeWidth": 3,
+      "transparency": true,
+      "provenance": "original two-stroke pause sign authored in this repository",
+      "tool": "TypeScript/HTML SVG, no generated media or paid API",
+      "variants": "theme token ink and focus; no raster export",
+      "fallback": "localized accessible name on semantic button; vector has no network dependency"
+    },
+    {
+      "id": "arena.house",
+      "action": "reuse",
+      "source": "src/arcana/presentation/HouseInsignia.tsx",
+      "consumer": "confirmed team house actions, unit name and inspector",
+      "provenance": "original A85 emblems, not official heraldry"
+    },
+    {
+      "id": "arena.characters-and-scene",
+      "action": "reuse without transformation",
+      "consumer": "BattlePanel / existing Pixi renderer / DOM fallback",
+      "source": "existing content-pack asset maps",
+      "note": "No new character pose, outfit, anatomical rig, texture or background"
+    }
+  ]
+}

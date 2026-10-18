@@ -1,0 +1,57 @@
+{
+  "run": 39146932044,
+  "source": "cdc909f",
+  "fixture": true,
+  "houseObserved": "hufflepuff",
+  "samples": [
+    {
+      "project": "chromium-1280-motion-a69-trajectory",
+      "samples": 12,
+      "distinctOffsets": 12,
+      "minimum": 15.04183742363703,
+      "maximum": 29.98738647836777,
+      "unchangedConfirmedRecord": true
+    },
+    {
+      "project": "chromium-390-motion-a69-trajectory",
+      "samples": 12,
+      "distinctOffsets": 12,
+      "minimum": 16.15633670539828,
+      "maximum": 29.94080185284744,
+      "unchangedConfirmedRecord": true
+    },
+    {
+      "project": "chromium-865-motion-a69-trajectory",
+      "samples": 12,
+      "distinctOffsets": 12,
+      "minimum": 14.537242701562944,
+      "maximum": 29.99859841028811,
+      "unchangedConfirmedRecord": true
+    },
+    {
+      "project": "webkit-1280-motion-a69-trajectory",
+      "samples": 12,
+      "distinctOffsets": 12,
+      "minimum": 14.579502397278183,
+      "maximum": 29.984428007058447,
+      "unchangedConfirmedRecord": true
+    },
+    {
+      "project": "webkit-390-motion-a69-trajectory",
+      "samples": 12,
+      "distinctOffsets": 12,
+      "minimum": 15.416604351863057,
+      "maximum": 29.937728194031404,
+      "unchangedConfirmedRecord": true
+    },
+    {
+      "project": "webkit-865-motion-a69-trajectory",
+      "samples": 12,
+      "distinctOffsets": 12,
+      "minimum": 13.941695161313056,
+      "maximum": 29.984428007058447,
+      "unchangedConfirmedRecord": true
+    }
+  ],
+  "limits": "Shared-clock trajectory samples; not GPU time, all four houses visually observed, human comprehension or persistence proof."
+}

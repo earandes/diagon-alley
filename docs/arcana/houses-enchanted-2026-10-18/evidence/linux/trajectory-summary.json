@@ -1,0 +1,57 @@
+{
+  "run": 39153964079,
+  "source": "eb0c050",
+  "fixture": true,
+  "houseObserved": "hufflepuff",
+  "samples": [
+    {
+      "sample": "chromium-1280-motion-a69-trajectory.json",
+      "samples": 12,
+      "distinctOffsets": 12,
+      "min": 15.187960239389096,
+      "max": 29.982832030033173,
+      "recordUnchanged": true
+    },
+    {
+      "sample": "chromium-390-motion-a69-trajectory.json",
+      "samples": 12,
+      "distinctOffsets": 12,
+      "min": 15.250436744445071,
+      "max": 29.98029214936487,
+      "recordUnchanged": true
+    },
+    {
+      "sample": "chromium-865-motion-a69-trajectory.json",
+      "samples": 12,
+      "distinctOffsets": 12,
+      "min": 15.829207323183983,
+      "max": 29.946716023608186,
+      "recordUnchanged": true
+    },
+    {
+      "sample": "webkit-1280-motion-a69-trajectory.json",
+      "samples": 12,
+      "distinctOffsets": 12,
+      "min": 12.86077684209163,
+      "max": 29.984428007058447,
+      "recordUnchanged": true
+    },
+    {
+      "sample": "webkit-390-motion-a69-trajectory.json",
+      "samples": 12,
+      "distinctOffsets": 12,
+      "min": 10.863755955864498,
+      "max": 29.984428007058447,
+      "recordUnchanged": true
+    },
+    {
+      "sample": "webkit-865-motion-a69-trajectory.json",
+      "samples": 12,
+      "distinctOffsets": 12,
+      "min": 15.208795614407709,
+      "max": 29.97566994514709,
+      "recordUnchanged": true
+    }
+  ],
+  "limit": "No claim of GPU time, all four profiles visually observed, human comprehension or SQL persistence from this fixture."
+}

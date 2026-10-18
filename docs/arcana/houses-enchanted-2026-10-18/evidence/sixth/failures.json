@@ -1,0 +1,28 @@
+{
+  "run": 39146932044,
+  "source": "cdc909f12e5fc3eb13e5e6040dc3be6b2be6976c",
+  "checkout": "6b153fb63bcbe4b15f0f5f4ca59775c333970de0",
+  "conclusion": "failure",
+  "phases": {
+    "A75": "success",
+    "A70": "success",
+    "A68": "success",
+    "A69": "failure",
+    "regression": "skipped"
+  },
+  "passedA69": 58,
+  "skippedA69": 24,
+  "failures": [
+    {
+      "project": "chromium-390-motion-a69",
+      "controlBottom": 786.28125,
+      "footerTop": 752
+    },
+    {
+      "project": "webkit-390-motion-a69",
+      "controlBottom": 787.28125,
+      "footerTop": 752
+    }
+  ],
+  "scope": "Mastery5x5 with full equipment/draft beans and faithful production footer; same visibility assertion maintained."
+}

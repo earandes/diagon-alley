@@ -1,0 +1,19 @@
+{
+  "run": 39153964079,
+  "source": "eb0c05099cbf3b15fd82363e705e99d1063e5867",
+  "checkout": "b057556dcea4db87f8e3da7984a9151eed5a9d12",
+  "workflow": "failure",
+  "check": "success",
+  "regression": "failure",
+  "failedStep": "playwright.intentions-a65.config.ts",
+  "intentionPassed": 2,
+  "intentionFailed": 6,
+  "explicitFailure": {
+    "case": "chromium ES ARCANA",
+    "action": "reachNode -> click [data-node=\"pasaje:1:0\"]",
+    "observed": "section.team.team-compact intercepts pointer events; node is available, visible, enabled, stable",
+    "timeoutMs": 150000
+  },
+  "confirmedStaticCause": "Intention map-scroll selector is more specific than the new party reserve selector and used height(100%-96px) without --party-map-space. Compose both; retain reminder margin96px and natural clicks.",
+  "limits": "Other five errors only expose timeout/page state, not the same detailed call log; fix still requires full regression."
+}

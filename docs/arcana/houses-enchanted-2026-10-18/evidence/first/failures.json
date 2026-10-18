@@ -1,0 +1,29 @@
+{
+  "ci": 39135801556,
+  "source": "77013d70bb0c72aeb230d49dc4248a6033d45000",
+  "conclusion": "failure",
+  "a75": {
+    "failed": 1,
+    "cause": "Two different BattleLogs in paired benchmark"
+  },
+  "a70": {
+    "failed": 1,
+    "cause": "House HUD intercepts available route node"
+  },
+  "a68": {
+    "failed": 6,
+    "cause": "Same route-node HUD interception"
+  },
+  "a69": {
+    "failed": 9,
+    "passed": 29,
+    "skipped": 28,
+    "causes": [
+      "Wrong detail selector",
+      "Foil holder intercepts folio close",
+      "Ambiguous shop-book selector"
+    ]
+  },
+  "regression": "skipped dependency",
+  "policy": "No suite retries; corrections followed in218389c"
+}

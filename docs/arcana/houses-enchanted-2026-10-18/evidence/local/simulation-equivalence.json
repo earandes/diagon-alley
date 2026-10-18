@@ -1,0 +1,50 @@
+{
+  "simulationRuns": 1152,
+  "pairedSeedsPerGroup": 32,
+  "groups": 36,
+  "observedSimulationCandidate": "77013d70bb0c72aeb230d49dc4248a6033d45000",
+  "currentCodeCandidate": "6cf2ac84fe3b5222f1973693acadefcffb41a7c7",
+  "objects": {
+    "src/arcana/domain": {
+      "77013d7": "95e42ea5d333537d8b5528c05c0213e84713b2f1",
+      "19603c7": "95e42ea5d333537d8b5528c05c0213e84713b2f1",
+      "cdc909f": "95e42ea5d333537d8b5528c05c0213e84713b2f1",
+      "eb0c050": "95e42ea5d333537d8b5528c05c0213e84713b2f1",
+      "27ccc03": "95e42ea5d333537d8b5528c05c0213e84713b2f1",
+      "6cf2ac8": "95e42ea5d333537d8b5528c05c0213e84713b2f1"
+    },
+    "src/arcana/application": {
+      "77013d7": "f14f907a3c91727a3c889710f67d482a7c0caf10",
+      "19603c7": "f14f907a3c91727a3c889710f67d482a7c0caf10",
+      "cdc909f": "f14f907a3c91727a3c889710f67d482a7c0caf10",
+      "eb0c050": "f14f907a3c91727a3c889710f67d482a7c0caf10",
+      "27ccc03": "f14f907a3c91727a3c889710f67d482a7c0caf10",
+      "6cf2ac8": "f14f907a3c91727a3c889710f67d482a7c0caf10"
+    },
+    "src/arcana/infrastructure": {
+      "77013d7": "569141605c01f9aafbd1a4a6fa8bc18a5f7167ef",
+      "19603c7": "569141605c01f9aafbd1a4a6fa8bc18a5f7167ef",
+      "cdc909f": "569141605c01f9aafbd1a4a6fa8bc18a5f7167ef",
+      "eb0c050": "569141605c01f9aafbd1a4a6fa8bc18a5f7167ef",
+      "27ccc03": "569141605c01f9aafbd1a4a6fa8bc18a5f7167ef",
+      "6cf2ac8": "569141605c01f9aafbd1a4a6fa8bc18a5f7167ef"
+    },
+    "src/arcana/content": {
+      "77013d7": "b4566d7d3282915e24f531cec95c57717d278021",
+      "19603c7": "b4566d7d3282915e24f531cec95c57717d278021",
+      "cdc909f": "b4566d7d3282915e24f531cec95c57717d278021",
+      "eb0c050": "b4566d7d3282915e24f531cec95c57717d278021",
+      "27ccc03": "b4566d7d3282915e24f531cec95c57717d278021",
+      "6cf2ac8": "b4566d7d3282915e24f531cec95c57717d278021"
+    },
+    "tools/verification/simulate-houses-a85.mjs": {
+      "77013d7": "595e45d9ed3fbf1aaa647ae9961e1b1fa8cb98c5",
+      "19603c7": "595e45d9ed3fbf1aaa647ae9961e1b1fa8cb98c5",
+      "cdc909f": "595e45d9ed3fbf1aaa647ae9961e1b1fa8cb98c5",
+      "eb0c050": "595e45d9ed3fbf1aaa647ae9961e1b1fa8cb98c5",
+      "27ccc03": "595e45d9ed3fbf1aaa647ae9961e1b1fa8cb98c5",
+      "6cf2ac8": "595e45d9ed3fbf1aaa647ae9961e1b1fa8cb98c5"
+    }
+  },
+  "meaning": "Exact Git object equality for the model, rules and cases of use; no browser/human/performance equivalence inferred"
+}

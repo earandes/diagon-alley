@@ -1,0 +1,103 @@
+{
+  "sha": "b057556dcea4db87f8e3da7984a9151eed5a9d12",
+  "fixture": true,
+  "scope": "Mastery5x5; five equipped allies with five draft beans; production footer",
+  "footer": {
+    "x": 30,
+    "y": 780.1875,
+    "width": 805,
+    "height": 84
+  },
+  "actionParts": [
+    {
+      "top": 806.1875,
+      "height": 32,
+      "middle": 822.1875
+    },
+    {
+      "top": 814.1875,
+      "height": 16,
+      "middle": 822.1875
+    },
+    {
+      "top": 806.1875,
+      "height": 32,
+      "middle": 822.1875
+    }
+  ],
+  "figures": [
+    {
+      "width": 111.66875457763672,
+      "height": 147.04998779296875,
+      "opacity": "1",
+      "visibility": "visible",
+      "naturalWidth": 512
+    },
+    {
+      "width": 111.66875457763672,
+      "height": 147.04998779296875,
+      "opacity": "1",
+      "visibility": "visible",
+      "naturalWidth": 512
+    },
+    {
+      "width": 111.66876220703125,
+      "height": 147.04998779296875,
+      "opacity": "1",
+      "visibility": "visible",
+      "naturalWidth": 512
+    },
+    {
+      "width": 111.66876220703125,
+      "height": 147.04998779296875,
+      "opacity": "1",
+      "visibility": "visible",
+      "naturalWidth": 512
+    },
+    {
+      "width": 111.66876220703125,
+      "height": 147.04998779296875,
+      "opacity": "1",
+      "visibility": "visible",
+      "naturalWidth": 512
+    }
+  ],
+  "layout": [
+    {
+      "className": "boss-prelude-hero",
+      "top": 230.8125,
+      "bottom": 589.84375,
+      "height": 359.03125
+    },
+    {
+      "className": "boss-opponent-details",
+      "top": 591.84375,
+      "bottom": 659.84375,
+      "height": 68
+    },
+    {
+      "className": "event-loot",
+      "top": 667.84375,
+      "bottom": 707.84375,
+      "height": 40
+    },
+    {
+      "className": "boss-party-members",
+      "top": 268.8125,
+      "bottom": 510.1875,
+      "height": 241.375
+    },
+    {
+      "className": "node-team-prepare boss-party-prepare",
+      "top": 516.1875,
+      "bottom": 580.1875,
+      "height": 64
+    },
+    {
+      "className": "",
+      "top": 672.1875,
+      "bottom": 744.1875,
+      "height": 72
+    }
+  ]
+}

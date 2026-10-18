@@ -1,0 +1,103 @@
+{
+  "sha": "b057556dcea4db87f8e3da7984a9151eed5a9d12",
+  "fixture": true,
+  "scope": "Mastery5x5; five equipped allies with five draft beans; production footer",
+  "footer": {
+    "x": 178,
+    "y": 686.9564208984375,
+    "width": 924,
+    "height": 84
+  },
+  "actionParts": [
+    {
+      "top": 712.1146850585938,
+      "height": 32,
+      "middle": 728.1146850585938
+    },
+    {
+      "top": 719.6146850585938,
+      "height": 17,
+      "middle": 728.1146850585938
+    },
+    {
+      "top": 712.1146850585938,
+      "height": 32,
+      "middle": 728.1146850585938
+    }
+  ],
+  "figures": [
+    {
+      "width": 131.90936279296875,
+      "height": 190.4000244140625,
+      "opacity": "1",
+      "visibility": "visible",
+      "naturalWidth": 512
+    },
+    {
+      "width": 131.90936279296875,
+      "height": 190.4000244140625,
+      "opacity": "1",
+      "visibility": "visible",
+      "naturalWidth": 512
+    },
+    {
+      "width": 131.90936279296875,
+      "height": 190.4000244140625,
+      "opacity": "1",
+      "visibility": "visible",
+      "naturalWidth": 512
+    },
+    {
+      "width": 131.90939331054688,
+      "height": 190.4000244140625,
+      "opacity": "1",
+      "visibility": "visible",
+      "naturalWidth": 512
+    },
+    {
+      "width": 131.909423828125,
+      "height": 190.4000244140625,
+      "opacity": "1",
+      "visibility": "visible",
+      "naturalWidth": 512
+    }
+  ],
+  "layout": [
+    {
+      "className": "boss-prelude-hero",
+      "top": 148.05215454101562,
+      "bottom": 516.1146850585938,
+      "height": 368.0625305175781
+    },
+    {
+      "className": "boss-opponent-details",
+      "top": 518.1146850585938,
+      "bottom": 586.1146850585938,
+      "height": 68
+    },
+    {
+      "className": "event-loot",
+      "top": 594.1146850585938,
+      "bottom": 634.1146850585938,
+      "height": 40
+    },
+    {
+      "className": "boss-party-members",
+      "top": 189.05215454101562,
+      "bottom": 416.1146545410156,
+      "height": 227.0625
+    },
+    {
+      "className": "node-team-prepare boss-party-prepare",
+      "top": 422.1146545410156,
+      "bottom": 486.1146545410156,
+      "height": 64
+    },
+    {
+      "className": "",
+      "top": 578.1146850585938,
+      "bottom": 650.1146850585938,
+      "height": 72
+    }
+  ]
+}

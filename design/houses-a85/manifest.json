@@ -4,9 +4,59 @@
   "process": "Original SVG paths authored locally in React/TypeScript; no bitmap recolor, generation service, new dependency or renderer.",
   "provenance": "Original geometric silhouettes and card finish by project implementation. Not official crests, no externally copied art. Existing character paintings retain their own provenance. No claim of franchise distribution permission.",
   "resources": [
-    {"id":"house-insignia-v1","source":"src/arcana/presentation/HouseInsignia.tsx","dimensions":[128,128],"format":"inline SVG, transparent","variants":["gryffindor","ravenclaw","hufflepuff","slytherin"],"pivots":"centre; static","consumers":["TeamHud","PreparationSynergies","NodePreparation","ExpeditionPreparation","CollectionPanel","BattlePanel"],"fallback":"localized name and progress remain outside SVG","acceptance":"four different silhouettes at 24–30px, keyboard consultation, no reliance on colour"},
-    {"id":"enchanted-finish-v1","source":"src/arcana/presentation/EnchantedFinish.tsx","dimensions":[400,500],"format":"inline SVG, transparent, individually identified gradient","variants":["static frame","single reveal sweep"],"pivots":"centre for border; local X for foil sweep","consumers":["CardReveal","CollectionPanel","ExpeditionPreparation"],"fallback":"base portrait plus permanent localized finish label","acceptance":"subject remains visible, identity/rarity unchanged, no infinite animation, omit/reduced static result"}
+    {
+      "id": "house-insignia-v1",
+      "source": "src/arcana/presentation/HouseInsignia.tsx",
+      "dimensions": [
+        128,
+        128
+      ],
+      "format": "inline SVG, transparent",
+      "variants": [
+        "gryffindor",
+        "ravenclaw",
+        "hufflepuff",
+        "slytherin"
+      ],
+      "pivots": "centre; static",
+      "consumers": [
+        "TeamHud",
+        "PreparationSynergies",
+        "NodePreparation",
+        "ExpeditionPreparation",
+        "CollectionPanel",
+        "BattlePanel",
+        "BossPrelude"
+      ],
+      "fallback": "localized name and progress remain outside SVG",
+      "acceptance": "four different silhouettes at 24\u201330px, keyboard consultation, no reliance on colour",
+      "editableSourceBytes": 6787,
+      "weightMeaning": "UTF-8 editable source bytes, not compressed transfer or GPU resident memory; bundled SVG shares the existing renderer."
+    },
+    {
+      "id": "enchanted-finish-v1",
+      "source": "src/arcana/presentation/EnchantedFinish.tsx",
+      "dimensions": [
+        400,
+        500
+      ],
+      "format": "inline SVG, transparent, individually identified gradient",
+      "variants": [
+        "static frame",
+        "single reveal sweep"
+      ],
+      "pivots": "centre for border; local X for foil sweep",
+      "consumers": [
+        "CardReveal",
+        "CollectionPanel",
+        "ExpeditionPreparation"
+      ],
+      "fallback": "base portrait plus permanent localized finish label",
+      "acceptance": "subject remains visible, identity/rarity unchanged, no infinite animation, omit/reduced static result",
+      "editableSourceBytes": 2123,
+      "weightMeaning": "UTF-8 editable source bytes, not compressed transfer or GPU resident memory; bundled SVG shares the existing renderer."
+    }
   ],
-  "status":"implemented technical sample, artistic/human acceptance pending",
-  "editable":"paths, gradients and layers remain editable in the listed TSX sources; no claimed alternate character costume or articulated rig"
+  "status": "implemented technical sample, artistic/human acceptance pending",
+  "editable": "paths, gradients and layers remain editable in the listed TSX sources; no claimed alternate character costume or articulated rig"
 }

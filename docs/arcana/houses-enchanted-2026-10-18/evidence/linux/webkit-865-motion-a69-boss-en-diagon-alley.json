@@ -1,0 +1,103 @@
+{
+  "sha": "b057556dcea4db87f8e3da7984a9151eed5a9d12",
+  "fixture": true,
+  "scope": "Mastery5x5; five equipped allies with five draft beans; production footer",
+  "footer": {
+    "x": 30,
+    "y": 775.78125,
+    "width": 805,
+    "height": 84
+  },
+  "actionParts": [
+    {
+      "top": 801.78125,
+      "height": 32,
+      "middle": 817.78125
+    },
+    {
+      "top": 809.78125,
+      "height": 16,
+      "middle": 817.78125
+    },
+    {
+      "top": 801.78125,
+      "height": 32,
+      "middle": 817.78125
+    }
+  ],
+  "figures": [
+    {
+      "width": 65.6875,
+      "height": 86.5,
+      "opacity": "1",
+      "visibility": "visible",
+      "naturalWidth": 512
+    },
+    {
+      "width": 65.6875,
+      "height": 86.5,
+      "opacity": "1",
+      "visibility": "visible",
+      "naturalWidth": 512
+    },
+    {
+      "width": 65.6875,
+      "height": 86.5,
+      "opacity": "1",
+      "visibility": "visible",
+      "naturalWidth": 512
+    },
+    {
+      "width": 65.6875,
+      "height": 86.5,
+      "opacity": "1",
+      "visibility": "visible",
+      "naturalWidth": 512
+    },
+    {
+      "width": 65.6875,
+      "height": 86.5,
+      "opacity": "1",
+      "visibility": "visible",
+      "naturalWidth": 512
+    }
+  ],
+  "layout": [
+    {
+      "className": "boss-prelude-hero",
+      "top": 235.21875,
+      "bottom": 594.25,
+      "height": 359.03125
+    },
+    {
+      "className": "boss-opponent-details",
+      "top": 596.25,
+      "bottom": 664.25,
+      "height": 68
+    },
+    {
+      "className": "event-loot",
+      "top": 672.25,
+      "bottom": 712.25,
+      "height": 40
+    },
+    {
+      "className": "boss-party-members",
+      "top": 273.21875,
+      "bottom": 500.78125,
+      "height": 227.5625
+    },
+    {
+      "className": "node-team-prepare boss-party-prepare",
+      "top": 506.78125,
+      "bottom": 575.78125,
+      "height": 69
+    },
+    {
+      "className": "",
+      "top": 667.78125,
+      "bottom": 739.78125,
+      "height": 72
+    }
+  ]
+}

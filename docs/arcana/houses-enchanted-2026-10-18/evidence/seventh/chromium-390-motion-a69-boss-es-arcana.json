@@ -1,0 +1,49 @@
+{
+  "sha": "0ffa2a9a1d8a342bea99982a19b4f730be17c2b2",
+  "fixture": true,
+  "scope": "Mastery5x5; five equipped allies with five draft beans; production footer",
+  "footer": {
+    "x": 18,
+    "y": 728.296875,
+    "width": 354,
+    "height": 84
+  },
+  "layout": [
+    {
+      "className": "boss-prelude-hero",
+      "top": 45.6875,
+      "bottom": 292.203125,
+      "height": 246.515625
+    },
+    {
+      "className": "boss-opponent-details",
+      "top": 296.203125,
+      "bottom": 352.203125,
+      "height": 56
+    },
+    {
+      "className": "event-loot",
+      "top": 304.203125,
+      "bottom": 344.203125,
+      "height": 40
+    },
+    {
+      "className": "boss-party-members",
+      "top": 412.203125,
+      "bottom": 610.296875,
+      "height": 198.09375
+    },
+    {
+      "className": "node-team-prepare boss-party-prepare",
+      "top": 612.296875,
+      "bottom": 656.296875,
+      "height": 44
+    },
+    {
+      "className": "",
+      "top": 660.296875,
+      "bottom": 704.296875,
+      "height": 44
+    }
+  ]
+}

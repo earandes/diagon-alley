@@ -1,0 +1,22 @@
+{
+  "source": "6cf2ac84fe3b5222f1973693acadefcffb41a7c7",
+  "checkout": "0d59c6103e0ecaba1956b43b6ec8e84ba2e1f2cf",
+  "ci": 39167929972,
+  "objects": {
+    "src": "788f5931ff7a16959bfc3bc97241a3a0740e61ff",
+    "tests": "3e487a72acc4e0a673e2d7df7a8ead54c97ca4cb",
+    "tools": "54fc65c81bf0061275fbb4bab250d46d9d546d32",
+    "public": "c753d774b0376039471d909e9266ffd49e740039",
+    ".github": "9381448c7feff72c9d2f3f2607a140b2ae56d0d4",
+    "package.json": "7624c06b3bf5c620b39cb74042a7a0a3467f0823",
+    "package-lock.json": "f8d0c9d8aab1a5931825ecd76ccc979dea21862c",
+    "playwright.motion-a69.config.ts": "7d956143fcb818e38a3f5118e57e927effdc8a9d"
+  },
+  "meaning": "Source, synthetic checkout and integration merge have identical trees. Both original Linux jobs succeeded. No human/device validation inferred.",
+  "sourceTree": "df96017a592b5fdc81c5cedb9f9aff8a22cf8823",
+  "checkoutTree": "df96017a592b5fdc81c5cedb9f9aff8a22cf8823",
+  "comparison": "git fetch origin refs/pull/9/merge; git diff --exit-code HEAD FETCH_HEAD: exit0 on19Oct2026",
+  "integrationMerge": "1a549eafb33f771293603775a8586d0210c608a3",
+  "ciConclusion": "success",
+  "scope": "Selected Linux evidence of the complete validated A85+A86 candidate; source and integration tree equal"
+}

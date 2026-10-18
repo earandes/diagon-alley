@@ -1,0 +1,54 @@
+{
+  "run": 39153964079,
+  "job": 117753200030,
+  "source": "eb0c05099cbf3b15fd82363e705e99d1063e5867",
+  "checkout": "b057556dcea4db87f8e3da7984a9151eed5a9d12",
+  "jobConclusion": "success",
+  "overallWorkflow": "regression pending at extraction",
+  "nonGraphicTests": {
+    "npm test": 655,
+    "npm run test:integration": 103
+  },
+  "distributedBytes": 16336565,
+  "browserSuites": {
+    "ARCANA_CAPTURE_A76=1 npx playwright test --config playwright.accounts-a76.config.ts": {
+      "skipped": 30,
+      "passed": 30
+    },
+    "ARCANA_CAPTURE_A82=1 npx playwright test --config playwright.welcome-menu-a82.config.ts": {
+      "passed": 6
+    },
+    "npx playwright test --config playwright.accounts-fixes-a78.config.ts": {
+      "skipped": 11,
+      "passed": 16
+    },
+    "npx playwright test --config playwright.account-entry-a79.config.ts": {
+      "skipped": 2,
+      "passed": 7
+    },
+    "npx playwright test --config playwright.account-style-a80.config.ts": {
+      "passed": 3
+    },
+    "npx playwright test --config playwright.account-symbols-a81.config.ts": {
+      "passed": 3
+    },
+    "ARCANA_CAPTURE_A75=1 npx playwright test --config playwright.experience-a75.config.ts": {
+      "skipped": 175,
+      "passed": 113
+    },
+    "ARCANA_CAPTURE_A70=1 npx playwright test --config playwright.boss-a70.config.ts": {
+      "skipped": 35,
+      "passed": 103
+    },
+    "npx playwright test --config playwright.seasonal-a68.config.ts": {
+      "passed": 12
+    },
+    "ARCANA_CAPTURE_A69=1 npx playwright test --config playwright.motion-a69.config.ts": {
+      "skipped": 24,
+      "passed": 60
+    }
+  },
+  "browserPassed": 353,
+  "browserSkipped": 277,
+  "meaning": "Counts from completed check job log via API, no secrets copied; skips excluded, fixtures/human/device limits unchanged."
+}

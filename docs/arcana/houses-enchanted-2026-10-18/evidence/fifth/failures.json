@@ -1,0 +1,27 @@
+{
+  "run": 39142672831,
+  "source": "19603c744057835d474fb458ce5761e42b586148",
+  "checkout": "ca475dbc8443910eb5199dcfed5c538cd0875619",
+  "conclusion": "failure",
+  "phases": {
+    "A70": "success",
+    "A68": "success",
+    "A69": "failure",
+    "regression": "skipped"
+  },
+  "failures": [
+    {
+      "project": "chromium-390-motion-a69",
+      "test": "A85 the actual mastery roster discloses its active house before confirmation",
+      "controlBottom": 752.609375,
+      "footerTop": 744.40625
+    },
+    {
+      "project": "webkit-390-motion-a69",
+      "test": "A85 the actual mastery roster discloses its active house before confirmation",
+      "controlBottom": 753.59375,
+      "footerTop": 744.40625
+    }
+  ],
+  "interpretation": "Real residual overlap retained; controls must be fully above footer. Next source cdc compacts only dense mobile objects and corrects fixture footer fidelity; no relaxed assertion or forced click."
+}

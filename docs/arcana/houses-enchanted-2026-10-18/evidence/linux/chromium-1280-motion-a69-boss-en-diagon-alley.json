@@ -1,0 +1,103 @@
+{
+  "sha": "b057556dcea4db87f8e3da7984a9151eed5a9d12",
+  "fixture": true,
+  "scope": "Mastery5x5; five equipped allies with five draft beans; production footer",
+  "footer": {
+    "x": 178,
+    "y": 691.6228637695312,
+    "width": 924,
+    "height": 84
+  },
+  "actionParts": [
+    {
+      "top": 716.4627685546875,
+      "height": 32,
+      "middle": 732.4627685546875
+    },
+    {
+      "top": 723.9627685546875,
+      "height": 17,
+      "middle": 732.4627685546875
+    },
+    {
+      "top": 716.4627685546875,
+      "height": 32,
+      "middle": 732.4627685546875
+    }
+  ],
+  "figures": [
+    {
+      "width": 77.59375,
+      "height": 112,
+      "opacity": "1",
+      "visibility": "visible",
+      "naturalWidth": 512
+    },
+    {
+      "width": 77.59375,
+      "height": 112,
+      "opacity": "1",
+      "visibility": "visible",
+      "naturalWidth": 512
+    },
+    {
+      "width": 77.59375,
+      "height": 112,
+      "opacity": "1",
+      "visibility": "visible",
+      "naturalWidth": 512
+    },
+    {
+      "width": 77.59375,
+      "height": 112,
+      "opacity": "1",
+      "visibility": "visible",
+      "naturalWidth": 512
+    },
+    {
+      "width": 77.59375,
+      "height": 112,
+      "opacity": "1",
+      "visibility": "visible",
+      "naturalWidth": 512
+    }
+  ],
+  "layout": [
+    {
+      "className": "boss-prelude-hero",
+      "top": 147.40023803710938,
+      "bottom": 515.4627685546875,
+      "height": 368.0625305175781
+    },
+    {
+      "className": "boss-opponent-details",
+      "top": 517.4627685546875,
+      "bottom": 585.4627685546875,
+      "height": 68
+    },
+    {
+      "className": "event-loot",
+      "top": 593.4627685546875,
+      "bottom": 633.4627685546875,
+      "height": 40
+    },
+    {
+      "className": "boss-party-members",
+      "top": 188.40023803710938,
+      "bottom": 415.4627380371094,
+      "height": 227.0625
+    },
+    {
+      "className": "node-team-prepare boss-party-prepare",
+      "top": 421.4627380371094,
+      "bottom": 490.4627380371094,
+      "height": 69
+    },
+    {
+      "className": "",
+      "top": 582.4627685546875,
+      "bottom": 654.4627685546875,
+      "height": 72
+    }
+  ]
+}

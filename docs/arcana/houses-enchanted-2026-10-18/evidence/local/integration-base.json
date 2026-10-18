@@ -1,0 +1,14 @@
+{
+  "pr": 9,
+  "oldBase": "feature/a84-game-audio",
+  "baseNow": "main",
+  "baseCommit": "8b7dffd2fd3c80d864bf16c7c47941e87c52dc4c",
+  "baseTree": "e540455d4791666aaab35c6db9cf23084d7198a6",
+  "a84Baseline": "557ee0fb4d76fa965ba28dd3b543198e40c20632",
+  "a84BaselineTree": "e540455d4791666aaab35c6db9cf23084d7198a6",
+  "source": "46a43dfb0ba1fa3360dc8a711da51cefac90b336",
+  "sourceTree": "24c1f3401a776eab4dfe393a6b74bdf4eba630e5",
+  "newSyntheticMerge": "3f77e7d4c431d28669415280f31b18b25ce01b18",
+  "newSyntheticMergeTree": "24c1f3401a776eab4dfe393a6b74bdf4eba630e5",
+  "reason": "PR8 was merged independently into main at2026-10-18T19:22:40Z. PR9 retargeted without merging; old/new base trees identical and source/new merge trees identical. Runtime source remains unchanged. CI39159355139 queued behind main CI under original global serial lock; no unrelated run cancelled."
+}
