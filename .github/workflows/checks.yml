@@ -11,6 +11,8 @@ permissions:
 jobs:
   check:
     runs-on: ubuntu-latest
+    outputs:
+      phase: ${{ steps.a75phase.outputs.phase }}
     # A68 adds 12 isolated projects; A69 adds six serial presentation projects,
     # full opening fixtures and one 30-cycle lifetime sample. No added workers.
     timeout-minutes: 55
@@ -150,24 +152,60 @@ jobs:
             test-results/motion-a69/**/error-context.md
             test-results-seasonal-a68/**/error-context.md
           if-no-files-found: ignore
-      - if: ${{ !cancelled() && steps.build.outcome == 'success' && contains(fromJSON('["full","resume"]'), steps.a75phase.outputs.phase) }}
+  # A82: two serial jobs preserve the original 55-minute ceiling per job.
+  # No concurrent browser suites, extra workers, retries or weakened watchdogs.
+  regression:
+    needs: check
+    if: ${{ needs.check.result == 'success' && contains(fromJSON('["full","resume","tail"]'), needs.check.outputs.phase) }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 55
+    services:
+      postgres:
+        image: postgres:16.9@sha256:ddfe3e8713e3ee5b8f286082cb12512488dfbf3f5a1ecb0b74a42e6055af0a5f
+        env:
+          POSTGRES_DB: arcana_dev
+          POSTGRES_USER: arcana_dev
+          POSTGRES_PASSWORD: arcana-local-development
+        ports: ['55432:5432']
+        options: >-
+          --health-cmd "pg_isready -U arcana_dev -d arcana_dev"
+          --health-interval 2s --health-timeout 2s --health-retries 15
+      redis:
+        image: redis:7-alpine@sha256:bb186d083732f669da90be8b0f975a37812b15e913465bb14d845db72a4e3e08
+        ports: ['56379:6379']
+        options: >-
+          --health-cmd "redis-cli ping"
+          --health-interval 2s --health-timeout 2s --health-retries 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci --no-fund --no-audit
+      - id: build
+        run: npm run build
+      - run: npx playwright install --with-deps chromium webkit
+      - if: ${{ !cancelled() && steps.build.outcome == 'success' && contains(fromJSON('["full","resume"]'), needs.check.outputs.phase) }}
         run: ARCANA_TRIAL_COMPILED=1 npm run test:e2e -- --project chromium --project webkit --reporter=line,github
-      - if: ${{ !cancelled() && steps.build.outcome == 'success' && contains(fromJSON('["full","resume","tail"]'), steps.a75phase.outputs.phase) }}
+      - if: ${{ !cancelled() && steps.build.outcome == 'success' && contains(fromJSON('["full","resume","tail"]'), needs.check.outputs.phase) }}
         run: npx playwright test --config playwright.progression-a67.config.ts --project chromium-a67 --project webkit-a67
-      - if: ${{ !cancelled() && steps.build.outcome == 'success' && contains(fromJSON('["full","resume","tail"]'), steps.a75phase.outputs.phase) }}
+      - if: ${{ !cancelled() && steps.build.outcome == 'success' && contains(fromJSON('["full","resume","tail"]'), needs.check.outputs.phase) }}
         run: npx playwright test --config playwright.gameplay-a63.config.ts
-      - if: ${{ !cancelled() && steps.build.outcome == 'success' && contains(fromJSON('["full","resume","tail"]'), steps.a75phase.outputs.phase) }}
+      - if: ${{ !cancelled() && steps.build.outcome == 'success' && contains(fromJSON('["full","resume","tail"]'), needs.check.outputs.phase) }}
         run: npx playwright test --config playwright.header-pact-a66.config.ts
-      - if: ${{ !cancelled() && steps.build.outcome == 'success' && contains(fromJSON('["full","resume","tail"]'), steps.a75phase.outputs.phase) }}
+      - if: ${{ !cancelled() && steps.build.outcome == 'success' && contains(fromJSON('["full","resume","tail"]'), needs.check.outputs.phase) }}
         run: npx playwright test --config playwright.intentions-a65.config.ts
-      - if: ${{ !cancelled() && steps.build.outcome == 'success' && contains(fromJSON('["full","resume","tail"]'), steps.a75phase.outputs.phase) }}
+      - if: ${{ !cancelled() && steps.build.outcome == 'success' && contains(fromJSON('["full","resume","tail"]'), needs.check.outputs.phase) }}
         run: npm run test:pwa -- --project chromium --project webkit
       - id: reference
-        if: ${{ !cancelled() && steps.build.outcome == 'success' && contains(fromJSON('["full","resume","tail"]'), steps.a75phase.outputs.phase) }}
+        if: ${{ !cancelled() && steps.build.outcome == 'success' && contains(fromJSON('["full","resume","tail"]'), needs.check.outputs.phase) }}
         run: node tools/verification/build-a66-reference.mjs
-      - if: ${{ !cancelled() && steps.reference.outcome == 'success' && contains(fromJSON('["full","resume","tail"]'), steps.a75phase.outputs.phase) }}
+      - if: ${{ !cancelled() && steps.reference.outcome == 'success' && contains(fromJSON('["full","resume","tail"]'), needs.check.outputs.phase) }}
         run: A67_PERFORMANCE_VARIANT=baseline npx playwright test --config playwright.performance-a67.config.ts
-      - if: ${{ !cancelled() && steps.build.outcome == 'success' && contains(fromJSON('["full","resume","tail"]'), steps.a75phase.outputs.phase) }}
+      - if: ${{ !cancelled() && steps.build.outcome == 'success' && contains(fromJSON('["full","resume","tail"]'), needs.check.outputs.phase) }}
         run: A67_PERFORMANCE_VARIANT=current npx playwright test --config playwright.performance-a67.config.ts
       - uses: actions/upload-artifact@v4
         if: always()

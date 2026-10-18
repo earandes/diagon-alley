@@ -19,3 +19,6 @@ No cambia dominio, sesión, autenticación, inventario, costes, probabilidades o
 Tipos, build, unitarios y PG/Redis según candidato. Capturas seleccionadas y recorridos gráficos solo en CI Linux con guard/lock/watchdog originales, un worker, cero reintentos. No navegador local. Revisar evidencia y corregir defectos demostrados. Integrar dependencias A75–A81 y menú enmain únicamente tras comprobar candidato y CI; sin despliegue. Evidencia histórica intacta.
 
 Incluido: entrada, controles compartidos de esta pantalla y continuidad de cartas. Excluido: rediseño interno de credenciales, nuevos sistemas/arte de personajes, audio, publicación. Comprensión humana y dispositivo físico siguen pendientes.
+
+## Orquestación de CI
+A76 documenta agotamiento real de55min en una batería monolítica (CI39070225878). A82 separa check y regression mediante needs, nunca simultáneos, cada uno con el límite55min original. Conserva todos los comandos/scopes de full, servicios reales, guard/lock/watchdog, worker1/retries0. No se sube el presupuesto ni se omite la cola; ambos jobs usan el mismo candidato. Las cancelaciones de preparación de esta tarea no se consideran validaciones superadas.
