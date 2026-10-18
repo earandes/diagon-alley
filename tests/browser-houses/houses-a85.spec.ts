@@ -292,7 +292,35 @@ test('A85 the actual mastery roster discloses its active house before confirmati
           ),
       )
       .toEqual([true, true, true, true, true]);
+    if (lang === 'es' && pack === 'diagon-alley' && info.project.name.startsWith('chromium-390'))
+      await picture(page, 'boss-390-es-diagon');
     const footer = await page.locator('.node-combat-actions').boundingBox();
+    await mkdir(root, { recursive: true });
+    await writeFile(
+      resolve(root, `${info.project.name}-boss-${lang}-${pack}.json`),
+      JSON.stringify(
+        {
+          sha: process.env.GITHUB_SHA,
+          fixture: true,
+          scope: 'Mastery5x5; five equipped allies with five draft beans; production footer',
+          footer,
+          layout: await page
+            .locator(
+              '.boss-prelude-hero, .boss-opponent-details, .event-loot, .boss-party-members, .node-team-prepare, .node-bean-preparation > summary',
+            )
+            .evaluateAll((elements) =>
+              elements.map((el) => ({
+                className: el.className,
+                top: el.getBoundingClientRect().top,
+                bottom: el.getBoundingClientRect().bottom,
+                height: el.getBoundingClientRect().height,
+              })),
+            ),
+        },
+        null,
+        2,
+      ),
+    );
     for (const control of [
       page.locator('.node-team-prepare'),
       page.locator('.node-bean-preparation > summary'),
@@ -301,11 +329,17 @@ test('A85 the actual mastery roster discloses its active house before confirmati
       const box = await control.boundingBox();
       expect(box!.y + box!.height).toBeLessThanOrEqual(footer!.y);
     }
+    const book = page.locator('.boss-opponent-details > summary');
+    await book.press('Enter');
+    await expect(page.locator('.boss-opponent-details')).toHaveAttribute('open', '');
+    await expect(page.locator('.boss-opponent-stats section')).toHaveCount(5);
+    expect((await bounds(page)).scroll).toBeLessThanOrEqual((await bounds(page)).width + 1);
+    await book.press('Enter');
+    await expect(page.locator('.boss-opponent-details')).not.toHaveAttribute('open', '');
+    await expect(book).toBeFocused();
     const size = await bounds(page);
     expect(size.scroll).toBeLessThanOrEqual(size.width + 1);
     await immutable(page);
-    if (lang === 'es' && pack === 'diagon-alley' && info.project.name.startsWith('chromium-390'))
-      await picture(page, 'boss-390-es-diagon');
   }
 });
 test('A85 pending route actions wait while locked nodes remain read-only consultations', async ({

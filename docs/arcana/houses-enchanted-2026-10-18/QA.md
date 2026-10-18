@@ -66,3 +66,15 @@ A70 yA68 completos correctos. La acción de mapa ocupado también pasa en su cas
 Siguiente ajuste acotado a cinco integrantes en móvil: objetos de preparación44px, tarro32×40, margen superior del objeto de equipo2px y separación del héroe2px. Retratos72px, figura160px, nombres, PV/PM y áreas de44px se mantienen. Tres piezas (varita/escoba/gragea) caben en una fila, con iconos decorativos14–18px dentro del retrato-botón accesible. No se elimina información.
 
 Se refuerza la fixture deMaestría: cinco pares de equipo válidos y cinco grageas asignadas, equipo refrescado por el caso de uso compartido, snapshot de desafío correcto. El pie anterior usaba botones genéricos deQA; ahora reproduce las mismas clases, objetos, coste y etiquetas delApp. Es una corrección de fidelidad del ensayo, no un cambio de operaciones productivas. La fixture sigue sin conceder/consumir recursos reales; los recorridosA70/A71 ySQL comprueban ese contrato por separado. Se mantiene el assertion de control completamente encima del pie, ambos paquetes/idiomas/motores/tamaños.
+
+## Sexto candidato cdc909f · CI39146932044
+
+Tipos, build, scanner y compilación del harness QA correctos localmente. Distribuido:16.335.769 bytes; aviso de chunk grande conservado. La suite de unidad sigue en655 casos/100 archivos; los contratos de backend no cambiaron frente a la revisión SQL103. EstaCI vuelve a comprobarlos y ejecuta las fases gráficas originales antes de habilitar regresión. No se anticipa su resultado.
+
+La etapa A70 terminó correctamente en el sexto candidato. Se descargó el artifact por su runID39146932044 a una carpeta temporal nueva, se contrastó SHA `6b153fb63bcbe4b15f0f5f4ca59775c333970de0` y se inspeccionaron las capturasA71 móviles actuales de ambos paquetes. Preparación/cancelación conectadas conservan recursos yreceipt; no se usaron PNG históricosA70. Halloween yA69/regresión todavía pendientes al registrar.
+
+## Resultado del sexto candidato y corrección de composición
+
+CI39146932044/cdc909f: A75/A70/A68 pasan; A69 termina58 correctos,24 saltados y2 fallos (Maestría390 de ambos motores); regresión omitida. Con todas las grageas y el pie productivo fiel, el control termina786,28125/787,28125 frente al pie752:34–35px de solapamiento. La compactación anterior no bastó; no se presenta como corrección validada.
+
+Cambio mínimo siguiente, solo cinco integrantes en móvil: libro del rival y vista de botín comparten una fila bajo las figuras mediante grid, conservando ambos contenidos y controles. El inspector abierto recupera todo el ancho y desplazamiento accesible. No se reducen retratos, PV/PM, nombres o figuras. Nuevo ensayo abre/cierra el libro por teclado y conserva foco y cinco fichas; se conserva el assertion estricto de no solapamiento. Una captura seleccionada y cajasDOM se escriben antes del assertion para conservar evidencia también si falla, sin añadir captura masiva, vídeo o perfil. Tipos/build/harness/scanner locales correctos; nuevaCI todavía necesaria.
