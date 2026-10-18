@@ -72,6 +72,18 @@ test('A82 one identity, three coherent actions and reversible native account tas
     await expect(actions.nth(0)).toHaveAccessibleName('Jugar como invitado');
     await expect(actions.nth(1)).toHaveAccessibleName('Iniciar sesión');
     await expect(actions.nth(2)).toHaveAccessibleName('Crear cuenta');
+    // Legacy header material/flex rules must not obscure the actual scene.
+    expect(
+      await menu.locator('.welcome-brand').evaluate((e) => getComputedStyle(e).backgroundColor),
+    ).toBe('rgba(0, 0, 0, 0)');
+    const heading = await menu.locator('h1').boundingBox();
+    expect(heading!.height).toBeLessThan(100);
+    for (const action of await actions.all()) {
+      const color = await action.evaluate((e) => getComputedStyle(e).color);
+      await action.hover();
+      expect(await action.evaluate((e) => getComputedStyle(e).color)).toBe(color);
+    }
+    await page.mouse.move(0, 0);
     await geometry(page, `${pack}-es`);
     await capture(page, pack);
     await actions.nth(0).focus();
@@ -130,7 +142,7 @@ test('A82 missing illustrations preserve all visible choices and guest operation
   await expect(guest).toHaveAttribute('aria-busy', 'true');
   await expect(guest).toContainText(/Entrando|Entering/);
   await page.keyboard.press('Enter');
-  expect(requests).toBe(1);
+  await expect.poll(() => requests).toBe(1);
   release();
   await expect(guest).toBeEnabled();
   await expect(page.getByRole('alert')).toBeVisible();
