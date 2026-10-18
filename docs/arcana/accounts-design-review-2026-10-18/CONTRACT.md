@@ -20,3 +20,7 @@ No navegador local, CUA, WebKit, captura, grabación o perfil en este Mac. Ning�
 Se reutiliza temporalmente la fase `baseline` existente para evitar las grandes regresiones ya válidas. Se añade una prueba de auditoría explícita al workflow solo en esa fase; se restaurará `full` al terminar. No aumentar límites ni desactivar protecciones. No modificar app, economía, autoridad, inventario o arte; no account/email/tokens habituales. No incluir buzones o secretos en Git. No hay autorización de merge.
 
 La sesión humana, lector hablado, gestor de contraseñas, teclado móvil real, correo externo y dispositivo físico no se dan por realizados. Una captura no prueba movimiento; estas pantallas no añaden animación propia. Un test verde que registra un defecto UX no lo convierte en aprobado.
+
+## Confirmación focalizada del instrumento
+
+Primera tanda CI39081730688/67197ee SUCCESS:12PNG seleccionados. La etiqueta registration-accepted coincidió con role=status de Conectando en390, no con final de petición. Se conserva como evidencia de operación activa y no acredita el estado postenvío. Se corrige solo el instrumento esperando aria-busy=false antes de observar; una segunda y última pasada ejecuta únicamente remaining forms/Chromium390 y produce un PNG postenvío. Sin reintentos automáticos ni más capturas. Los otros once PNG, flujos y diagnósticos finales ya válidos se reutilizan. No hay fixes de aplicación.

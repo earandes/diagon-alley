@@ -27,6 +27,8 @@ async function enter(page: Page, wide: boolean) {
 }
 async function snapshot(page: Page, name: string) {
   const project = test.info().project.name;
+  const confirmation = process.env.ARCANA_CAPTURE_A77_CONFIRM === '1';
+  if (confirmation && (project !== 'chromium-390-a77' || name !== 'mail-sent')) return;
   const selected: Record<string, string[]> = {
     'chromium-390-a77': ['mail-sent', 'verify', 'invalid-token', 'conflict', 'network-notice'],
     'chromium-1280-a77': ['welcome', 'login', 'request-reset', 'reset', 'stale-tab', 'uncertain'],
@@ -40,9 +42,14 @@ async function snapshot(page: Page, name: string) {
     return;
   await mkdir(root, { recursive: true });
   // No real password/token is pictured. Verification captures precede valid secret input.
-  await page.screenshot({ path: resolve(root, `${project}-${name}.png`), fullPage: false });
+  await page.screenshot({
+    path: resolve(root, `${project}-${name}${confirmation ? '-confirmed' : ''}.png`),
+    fullPage: false,
+  });
 }
 async function observe(page: Page, name: string) {
+  // A visible status may still be Connecting. Observe the settled state explicitly.
+  await expect(dialog(page)).toHaveAttribute('aria-busy', 'false');
   const value = await dialog(page).evaluate((element) => {
     const box = element.getBoundingClientRect();
     const alert = element.querySelector('[role=alert]');
