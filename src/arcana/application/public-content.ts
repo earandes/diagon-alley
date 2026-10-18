@@ -114,6 +114,7 @@ export function publicContentSnapshot(value: unknown): PublicContent {
       wizards: Object.freeze(opening.catalog.wizards.map(wizardSnapshot)),
     }),
     toadTable: Object.freeze({
+      ...(opening.table.finish ? { finish: Object.freeze({ ...opening.table.finish }) } : {}),
       version: opening.table.version,
       catalogVersion: opening.table.catalogVersion,
       entries: Object.freeze(
@@ -155,6 +156,8 @@ export function publicContentSnapshot(value: unknown): PublicContent {
       }),
     }),
     combatRules: Object.freeze({
+      ...(rules.houseSynergies ? { houseSynergies: rules.houseSynergies } : {}),
+      ...(rules.houseMembers ? { houseMembers: Object.freeze({ ...rules.houseMembers }) } : {}),
       version: rules.version,
       maxRounds: rules.maxRounds,
       spellManaCost: rules.spellManaCost,

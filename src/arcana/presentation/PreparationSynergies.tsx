@@ -5,6 +5,7 @@ import { contextualText as c } from './contextual-messages';
 import { Artwork } from './Artwork';
 import { useSelectionMotion } from './useSelectionMotion';
 import { useReducedMotion } from './useReducedMotion';
+import { HouseBand } from './HouseInsignia';
 export function PreparationSynergies({
   members,
   previous,
@@ -27,48 +28,55 @@ export function PreparationSynergies({
     180,
   );
   return (
-    <details className="preparation-synergies" data-preparation-synergies ref={motion}>
-      <summary aria-label={c(language, 'formationPreview')}>
-        <Artwork asset="node.refuge" language={language} decorative />
-        {active.length ? (
-          active.map((s) => (
-            <span key={s.affinity} data-active-synergy={s.affinity}>
-              {c(language, s.affinity)}{' '}
-              <strong>{s.threshold === 3 ? 'III' : s.threshold === 2 ? 'II' : 'I'}</strong>
-            </span>
-          ))
-        ) : (
-          <span>{c(language, 'noSynergy')}</span>
-        )}
-      </summary>
-      <div className="preparation-synergy-detail">
-        {before && (
-          <small>
-            {c(language, 'comparison')}:{' '}
-            {before.map((s) => c(language, s.affinity)).join(' · ') || '—'} →{' '}
-            {active.map((s) => c(language, s.affinity)).join(' · ') || '—'}
-          </small>
-        )}
-        {active.map((s) => (
-          <p key={s.affinity} data-synergy-value={s.value}>
-            <strong>
-              {c(language, s.affinity)} {s.members}
-            </strong>
-            <span>
-              {c(
-                language,
-                s.affinity === 'alchemy'
-                  ? 'synergyAlchemy'
-                  : s.affinity === 'fire'
-                    ? 'synergyFire'
-                    : 'synergyShadows',
-                { value: s.value },
-              )}
-            </span>
-          </p>
-        ))}
-        {members.some((m) => m.unit.affinity === null) && <small>{c(language, 'unknown')}</small>}
-      </div>
-    </details>
+    <>
+      <HouseBand
+        units={members.map((m) => ({ ...m.unit, source: m.source }))}
+        rules={rules}
+        language={language}
+      />
+      <details className="preparation-synergies" data-preparation-synergies ref={motion}>
+        <summary aria-label={c(language, 'formationPreview')}>
+          <Artwork asset="node.refuge" language={language} decorative />
+          {active.length ? (
+            active.map((s) => (
+              <span key={s.affinity} data-active-synergy={s.affinity}>
+                {c(language, s.affinity)}{' '}
+                <strong>{s.threshold === 3 ? 'III' : s.threshold === 2 ? 'II' : 'I'}</strong>
+              </span>
+            ))
+          ) : (
+            <span>{c(language, 'noSynergy')}</span>
+          )}
+        </summary>
+        <div className="preparation-synergy-detail">
+          {before && (
+            <small>
+              {c(language, 'comparison')}:{' '}
+              {before.map((s) => c(language, s.affinity)).join(' · ') || '—'} →{' '}
+              {active.map((s) => c(language, s.affinity)).join(' · ') || '—'}
+            </small>
+          )}
+          {active.map((s) => (
+            <p key={s.affinity} data-synergy-value={s.value}>
+              <strong>
+                {c(language, s.affinity)} {s.members}
+              </strong>
+              <span>
+                {c(
+                  language,
+                  s.affinity === 'alchemy'
+                    ? 'synergyAlchemy'
+                    : s.affinity === 'fire'
+                      ? 'synergyFire'
+                      : 'synergyShadows',
+                  { value: s.value },
+                )}
+              </span>
+            </p>
+          ))}
+          {members.some((m) => m.unit.affinity === null) && <small>{c(language, 'unknown')}</small>}
+        </div>
+      </details>
+    </>
   );
 }

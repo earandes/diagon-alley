@@ -1,0 +1,196 @@
+import { expect, test, type Page } from '@playwright/test';
+import { mkdir, writeFile } from 'node:fs/promises';
+import { resolve } from 'node:path';
+const fixture = '/tests/browser-houses/houses-a85.html';
+const root = resolve('docs/arcana/motion-audit-2026-10-16/evidence/linux/a85');
+const capture = process.platform === 'linux' && process.env.ARCANA_CAPTURE_A69 === '1';
+const pairs = [
+  ['es', 'diagon-alley'],
+  ['en', 'diagon-alley'],
+  ['es', 'arcana'],
+  ['en', 'arcana'],
+] as const;
+function allowed(name: string) {
+  return ['chromium-1280', 'chromium-390', 'webkit-865'].some((p) => name.startsWith(p));
+}
+async function bounds(page: Page) {
+  return page.evaluate(() => ({
+    width: innerWidth,
+    height: innerHeight,
+    scroll: document.documentElement.scrollWidth,
+    body: document.documentElement.scrollHeight,
+  }));
+}
+async function immutable(page: Page) {
+  expect(
+    await page.evaluate(() => (window as unknown as { __a85: { check(): boolean } }).__a85.check()),
+  ).toBe(true);
+}
+async function picture(page: Page, name: string) {
+  if (!capture) return;
+  await mkdir(root, { recursive: true });
+  await page.screenshot({ path: resolve(root, name + '.png'), animations: 'disabled' });
+}
+test('A85 houses are visible and inspectable on the route in both packs/languages', async ({
+  page,
+}, info) => {
+  test.skip(
+    !allowed(info.project.name),
+    'Bounded three-pair Linux sample; other projects retain A69 coverage.',
+  );
+  for (const [lang, pack] of pairs) {
+    await page.goto(`${fixture}?mode=map&lang=${lang}&pack=${pack}`);
+    const band = page.locator('.team-compact .house-band');
+    await expect(band).toBeVisible();
+    await expect(band.locator('[data-house-progress=hufflepuff]')).toHaveAttribute(
+      'data-active',
+      'true',
+    );
+    await expect(page.locator('.team-token')).toHaveCount(5);
+    const measured = await bounds(page);
+    expect(measured.scroll).toBeLessThanOrEqual(measured.width + 1);
+    expect(measured.body).toBeLessThanOrEqual(measured.height + 1);
+    const summary = band.locator('[data-house-progress=hufflepuff] summary');
+    await summary.focus();
+    await page.keyboard.press('Enter');
+    await expect(band.locator('.house-detail').first()).toBeVisible();
+    const box = await band.locator('.house-detail').first().boundingBox();
+    expect(box!.x).toBeGreaterThanOrEqual(0);
+    expect(box!.x + box!.width).toBeLessThanOrEqual(measured.width + 1);
+    expect(box!.y).toBeGreaterThanOrEqual(0);
+    await summary.press('Enter');
+    await immutable(page);
+    if (lang === 'es' && pack === 'diagon-alley' && info.project.name.startsWith('chromium-390'))
+      await picture(page, 'map-390-es-diagon');
+  }
+});
+test('A85 enchanted reveal is finite, skippable and retains its finish in the collection and after swap', async ({
+  page,
+}, info) => {
+  test.skip(!allowed(info.project.name), 'Bounded three-pair Linux sample.');
+  for (const [lang, pack] of pairs) {
+    await page.goto(`${fixture}?mode=opening&lang=${lang}&pack=${pack}`);
+    const reveal = page.locator('dialog.reveal');
+    await expect(reveal).toHaveAttribute('data-finish', 'enchanted');
+    await expect(reveal).toHaveAttribute('data-opening-phase', 'reveal', { timeout: 15000 });
+    const motion = await reveal.locator('.enchanted-finish').evaluate(async (el) => {
+      const samples: string[] = [];
+      for (let i = 0; i < 24; i++) {
+        await new Promise(requestAnimationFrame);
+        samples.push(`${getComputedStyle(el).transform}|${getComputedStyle(el).opacity}`);
+      }
+      return samples;
+    });
+    expect(new Set(motion).size).toBeGreaterThan(1);
+    await expect(reveal).toHaveAttribute('data-opening-state', 'result');
+    await expect(reveal.locator('.enchanted-label')).toBeVisible();
+    await immutable(page);
+    if (lang === 'es' && pack === 'diagon-alley' && info.project.name.startsWith('chromium-390'))
+      await picture(page, 'enchanted-390-es-diagon');
+    await reveal.locator('.reveal-collect').click();
+    await page.locator('.album-filter-drawer summary').click();
+    await page
+      .getByRole('button', {
+        name: lang === 'es' ? 'Cromo Encantado' : 'Enchanted Card',
+        exact: true,
+      })
+      .click();
+    await expect(page.locator('.album article')).toHaveCount(1);
+    await expect(page.locator('.album .enchanted-finish')).toBeVisible();
+    await page.locator('.album-card-inspect').click();
+    await expect(page.locator('.album-card-folio .enchanted-label')).toBeVisible();
+    const tokens = page.locator('.album-copy-tokens button');
+    await expect(tokens).toHaveCount(2);
+    await tokens.nth(1).click();
+    await expect(page.locator('.album-card-folio .enchanted-label')).toHaveCount(0);
+    await tokens.nth(0).click();
+    await expect(page.locator('.album-card-folio .enchanted-label')).toBeVisible();
+    await page.locator('.album-card-folio .folio-close').click();
+    await page.locator('[data-qa-pack]').click();
+    await immutable(page);
+  }
+  await page.goto(`${fixture}?mode=opening&instance=skip`);
+  await page.getByRole('button', { name: 'Omitir animación', exact: true }).click();
+  await expect(page.locator('dialog.reveal')).toHaveAttribute('data-opening-state', 'result');
+  await expect(page.locator('.holographic-card .enchanted-label')).toBeVisible();
+  await page.reload();
+  await expect(page.locator('dialog.reveal')).toHaveAttribute('data-opening-state', 'result');
+  await immutable(page);
+  await page.goto(`${fixture}?mode=opening&reduced=1`);
+  await expect(page.locator('dialog.reveal')).toHaveAttribute('data-opening-state', 'result');
+  expect(
+    await page.locator('.enchanted-finish').evaluate((el) => getComputedStyle(el).animationName),
+  ).toBe('none');
+  await immutable(page);
+});
+test('A85 preparation, Pact comparison, confirmed battle and truthful odds remain usable', async ({
+  page,
+}, info) => {
+  test.skip(!allowed(info.project.name), 'Bounded three-pair Linux sample.');
+  for (const [lang, pack] of pairs) {
+    await page.goto(`${fixture}?mode=pact&lang=${lang}&pack=${pack}`);
+    await expect(page.locator('[data-pact-candidate]')).toHaveCount(2);
+    await expect(page.locator('.pact-house')).toHaveCount(2);
+    await page.locator('[data-pact-candidate]').first().click();
+    await expect(page.locator('.house-band [data-active=true]')).toHaveCount(1);
+    await immutable(page);
+    if (lang === 'en' && pack === 'arcana' && info.project.name.startsWith('webkit-865'))
+      await picture(page, 'pact-865-en-arcana');
+    await page.goto(`${fixture}?mode=prepare&lang=${lang}&pack=${pack}`);
+    await expect(page.locator('.preparation-card')).toHaveCount(6);
+    await expect(page.locator('.house-band')).toBeVisible();
+    await page.locator('.preparation-filters > summary').click();
+    await page.locator('[data-preparation-house=hufflepuff]').click();
+    await expect(page.locator('.preparation-card')).toHaveCount(5);
+    await immutable(page);
+    await page.goto(`${fixture}?mode=battle&lang=${lang}&pack=${pack}`);
+    await expect(page.locator('[data-unit]')).toHaveCount(10);
+    await page
+      .getByRole('button', {
+        name: lang === 'es' ? 'Omitir reproducción' : 'Skip playback',
+        exact: true,
+      })
+      .click();
+    await immutable(page);
+    await page.goto(`${fixture}?mode=shop&lang=${lang}&pack=${pack}`);
+    await page.locator('.shop-book-object').click();
+    await expect(page.locator('.finish-odds')).toContainText('1');
+    await expect(page.locator('.shop-card-catalogue article')).toHaveCount(29);
+    await immutable(page);
+  }
+  const data = await bounds(page);
+  await mkdir(root, { recursive: true });
+  await writeFile(
+    resolve(root, `${info.project.name}.json`),
+    JSON.stringify(
+      {
+        project: info.project.name,
+        fixture: true,
+        scope: 'A85 declared UI; SQL separate',
+        lastBounds: data,
+      },
+      null,
+      2,
+    ),
+  );
+});
+test('A85 reduced motion, text growth and absent art preserve the same cosmetic result', async ({
+  page,
+}, info) => {
+  test.skip(
+    !info.project.name.startsWith('chromium-390'),
+    'One explicit adverse sample; existing regressions cover all base failures.',
+  );
+  await page.route(/\.(webp|png)(\?.*)?$/, (r) => r.abort());
+  await page.goto(`${fixture}?mode=opening&instance=absent`);
+  await expect(page.locator('dialog.reveal')).toHaveAttribute('data-opening-state', 'result');
+  await expect(page.locator('.holographic-card .enchanted-label')).toBeVisible();
+  await immutable(page);
+  await page.goto(`${fixture}?mode=collection`);
+  await page.evaluate(() => {
+    document.documentElement.style.fontSize = '200%';
+  });
+  const size = await bounds(page);
+  expect(size.scroll).toBeLessThanOrEqual(size.width + 1);
+  await immutable(page);
+});

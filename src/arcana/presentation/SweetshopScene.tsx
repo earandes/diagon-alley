@@ -195,6 +195,22 @@ export function SweetshopScene({
             caption={shopText(language, 'checkCards')}
           >
             <div className="shop-card-catalogue">
+              {content.toadTable.finish && (
+                <p className="finish-odds">
+                  {language === 'es'
+                    ? 'Cromo Encantado (solo aspecto)'
+                    : 'Enchanted Card (cosmetic only)'}
+                  :{' '}
+                  {new Intl.NumberFormat(language === 'es' ? 'es-ES' : 'en-GB', {
+                    style: 'percent',
+                    maximumFractionDigits: 3,
+                  }).format(content.toadTable.finish.enchanted / content.toadTable.finish.total)}
+                  .{' '}
+                  {language === 'es'
+                    ? 'Independiente de la identidad.'
+                    : 'Independent of identity.'}
+                </p>
+              )}
               {toadProbabilities(content.catalog, content.toadTable).map((row) => (
                 <article key={row.wizard.id}>
                   <Artwork
@@ -209,6 +225,18 @@ export function SweetshopScene({
                       maximumFractionDigits: 3,
                     }).format(row.probability)}
                   </strong>
+                  {content.toadTable.finish && (
+                    <small>
+                      {language === 'es' ? 'Identidad + encantado' : 'Identity + enchanted'}:{' '}
+                      {new Intl.NumberFormat(language === 'es' ? 'es-ES' : 'en-GB', {
+                        style: 'percent',
+                        maximumFractionDigits: 5,
+                      }).format(
+                        (row.probability * content.toadTable.finish.enchanted) /
+                          content.toadTable.finish.total,
+                      )}
+                    </small>
+                  )}
                 </article>
               ))}
             </div>

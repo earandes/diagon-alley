@@ -1,3 +1,6 @@
+import { HOUSES } from '../domain/collection/traits';
+import { TraitBadge, HouseInsignia, houseName } from './HouseInsignia';
+import { FinishLabel, EnchantedFinish } from './EnchantedFinish';
 import { ChallengeChoice } from './ExpeditionChallenge';
 import type { ExpeditionChallenge } from '../domain/exploration/challenges';
 import { useEffect, useId, useRef, useState, type ReactNode } from 'react';
@@ -528,6 +531,35 @@ export function ExpeditionPreparation({
                       </button>
                     ))}
                   </div>
+                  {content &&
+                    effectivePreparationRules(run, content.combatRules).houseSynergies && (
+                      <div
+                        role="group"
+                        aria-label={language === 'es' ? 'Casa' : 'House'}
+                        className="preparation-house-filters"
+                      >
+                        {HOUSES.filter((h) =>
+                          game.copies.some(
+                            (copy) => preparationUnit(game, copy, content).house === h,
+                          ),
+                        ).map((h) => (
+                          <button
+                            type="button"
+                            className="game-object"
+                            key={h}
+                            data-preparation-house={h}
+                            aria-pressed={filter.house === h}
+                            aria-label={houseName(h, language)}
+                            onClick={() =>
+                              changeFilter({ ...filter, house: filter.house === h ? undefined : h })
+                            }
+                          >
+                            <HouseInsignia house={h} />
+                            <span>{houseName(h, language)}</span>
+                          </button>
+                        ))}
+                      </div>
+                    )}
                   <details className="preparation-identity-filters">
                     <summary>{p('filterIdentity')}</summary>
                     <div role="group" aria-label={p('filterIdentity')}>
@@ -563,7 +595,7 @@ export function ExpeditionPreparation({
                       ))}
                     </div>
                   </details>
-                  {(filter.affinity || filter.wizardId) && (
+                  {(filter.affinity || filter.wizardId || filter.house) && (
                     <button className="preparation-clear-filter" onClick={() => changeFilter({})}>
                       {p('clearFilters')}
                     </button>
@@ -591,9 +623,9 @@ export function ExpeditionPreparation({
                   return (
                     <div className="preparation-card-entry" key={copy.copyId}>
                       <button
-                        className="game-object preparation-card"
+                        className="game-object preparation-card enchanted-holder"
                         data-copy-id={copy.copyId}
-                        aria-label={p('chooseCopy', { name, number })}
+                        aria-label={`${p('chooseCopy', { name, number })}${unit.house ? ` · ${houseName(unit.house, language)}` : ''}`}
                         aria-describedby={`${inspectionTitle}-peek-${copy.copyId}`}
                         aria-pressed={selected}
                         disabled={!ready || (!selected && chosen.length >= capacity)}
@@ -610,7 +642,10 @@ export function ExpeditionPreparation({
                           language={language}
                           decorative
                         />
+                        <EnchantedFinish wizard={copy.wizard} />
+                        {unit.house && <HouseInsignia house={unit.house} />}
                         <span>{name}</span>
+                        <FinishLabel wizard={copy.wizard} language={language} />
                         <small
                           className={
                             game.copies.filter((entry) => entry.wizard.id === copy.wizard.id)
@@ -710,6 +745,13 @@ export function ExpeditionPreparation({
                       decorative
                     />
                     <h3 id={inspectionTitle}>{wizardName(selectedWizard, language)}</h3>
+                    <FinishLabel wizard={selectedWizard} language={language} />
+                    <TraitBadge
+                      traits={
+                        content?.catalog.wizards.find((w) => w.id === selectedWizard.id)?.traits
+                      }
+                      language={language}
+                    />
                   </div>
                   <small className="preparation-stat-label">
                     {c(language, recordedInspected?.source === 'temporary' ? 'temporary' : 'owned')}

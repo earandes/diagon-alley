@@ -1,3 +1,4 @@
+import type { House } from '../domain/collection/traits';
 import type { GameState } from '../application/game';
 import type { PublicContent } from '../application/public-content';
 import type { BeanAssignment } from '../application/run-contracts';
@@ -15,10 +16,13 @@ export function effectivePreparationRules(
   run: Run | null | undefined,
   live: CombatRules,
 ): CombatRules {
-  return run?.status === 'active' ? (run.campaignSnapshot?.combatRules ?? live) : live;
+  return run?.status === 'active'
+    ? (run.campaignSnapshot?.combatRules ?? { ...live, houseSynergies: undefined })
+    : live;
 }
 
 export interface PreparationFilter {
+  readonly house?: House;
   readonly affinity?: Affinity | 'unknown';
   readonly wizardId?: string;
 }
@@ -31,6 +35,7 @@ export function filterPreparationCopies(
   return game.copies.filter(
     (copy) =>
       (!filter.wizardId || copy.wizard.id === filter.wizardId) &&
+      (!filter.house || preparationUnit(game, copy, content).house === filter.house) &&
       (!filter.affinity ||
         (preparationUnit(game, copy, content).affinity ?? 'unknown') === filter.affinity),
   );
@@ -66,6 +71,9 @@ export function preparationUnit(
   return {
     id: copy.copyId,
     wizardId: copy.wizard.id,
+    house: run
+      ? run.campaignSnapshot?.combatRules.houseMembers?.[copy.wizard.id]
+      : content?.combatRules.houseMembers?.[copy.wizard.id],
     level: 1,
     affinity: content?.campaign.ownedAffinities?.[copy.wizard.id] ?? null,
     hp: stats.maxHp,

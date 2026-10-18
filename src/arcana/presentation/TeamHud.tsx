@@ -9,6 +9,8 @@ import { equipmentName } from './equipment-label';
 import { text } from './translations';
 import { prepText } from './prep-messages';
 import { Artwork } from './Artwork';
+import { HouseBand, TraitBadge } from './HouseInsignia';
+import { effectivePreparationRules } from './contextual-preparation';
 
 export function TeamHud({
   game,
@@ -250,6 +252,10 @@ export function TeamHud({
               decorative
             />
             <h3>{unit.name}</h3>
+            <TraitBadge
+              traits={content?.catalog.wizards.find((w) => w.id === unit.wizardId)?.traits}
+              language={language}
+            />
             <p className="inspector-source">
               {text(language, unit.temporary ? 'temporaryTeamMember' : 'ownedTeamMember')}
             </p>
@@ -321,6 +327,13 @@ export function TeamHud({
           <Artwork asset="ui.map" language={language} decorative />
           <span className="visually-hidden">{prepText(language, 'preparation')}</span>
         </button>
+      )}
+      {run?.status === 'active' && content && (
+        <HouseBand
+          units={run.members.map((m) => ({ ...m.unit, source: m.source }))}
+          rules={effectivePreparationRules(run, content.combatRules)}
+          language={language}
+        />
       )}
     </section>
   );

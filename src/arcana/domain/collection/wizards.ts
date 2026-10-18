@@ -3,6 +3,7 @@ import { ArcanaError } from '../errors';
 import { validDomainId } from '../identifiers';
 
 import type { Rarity } from './rarity';
+import { traitsSnapshot, type WizardTraits } from './traits';
 export type Language = 'es' | 'en';
 export type StarCount = 1 | 2 | 3 | 4 | 5;
 export type Localized = Readonly<Record<Language, string>>;
@@ -13,10 +14,13 @@ export interface WizardStats {
   readonly speed: number;
 }
 export interface WizardDefinition {
+  readonly traits?: WizardTraits;
   readonly id: string;
   readonly rarity: Rarity;
   /** Absent in historical snapshots; never infer a prior rating from current content. */
   readonly stars?: StarCount;
+  /** Instance-only cosmetic provenance. Catalog entries remain undecorated. Legacy is normal. */
+  readonly finish?: { readonly id: 'enchanted'; readonly version: 1 };
   readonly name: Localized;
   readonly context: Localized;
   readonly stats: WizardStats;
@@ -35,6 +39,7 @@ export interface OwnedWizard {
 export interface ToadTable {
   readonly version: number;
   readonly catalogVersion: number;
+  readonly finish?: { readonly version: 1; readonly enchanted: number; readonly total: number };
   readonly entries: readonly { readonly wizardId: string; readonly weight: number }[];
 }
 
@@ -70,6 +75,10 @@ export function validateCatalog(value: unknown): asserts value is WizardCatalog 
           typeof wizard.stars !== 'number' ||
           wizard.stars < 1 ||
           wizard.stars > 5)) ||
+      (wizard.finish !== undefined &&
+        (!record(wizard.finish) ||
+          wizard.finish.id !== 'enchanted' ||
+          wizard.finish.version !== 1)) ||
       !localized(wizard.name) ||
       !localized(wizard.context) ||
       !record(wizard.stats) ||
@@ -81,6 +90,7 @@ export function validateCatalog(value: unknown): asserts value is WizardCatalog 
     )
       throw new ArcanaError('INVALID_CATALOG');
     ids.add(wizard.id);
+    if (wizard.traits !== undefined) traitsSnapshot(wizard.traits as WizardTraits);
   }
 }
 
@@ -100,6 +110,20 @@ export function validateToadTable(
     throw new ArcanaError('INVALID_TOAD_TABLE');
   const ids = new Set<string>();
   let total = 0;
+  if (
+    value.finish !== undefined &&
+    (!record(value.finish) ||
+      value.finish.version !== 1 ||
+      !version(value.finish.total) ||
+      value.finish.total > 0x100000000 ||
+      !Number.isSafeInteger(value.finish.enchanted) ||
+      typeof value.finish.enchanted !== 'number' ||
+      value.finish.enchanted < 1 ||
+      value.finish.enchanted >= value.finish.total)
+  )
+    throw new ArcanaError('INVALID_TOAD_TABLE');
+  if (catalog.wizards.some((w) => w.finish !== undefined))
+    throw new ArcanaError('INVALID_TOAD_TABLE');
   for (const entry of value.entries) {
     if (
       !record(entry) ||
@@ -121,6 +145,10 @@ export function wizardSnapshot(wizard: WizardDefinition): WizardDefinition {
     id: wizard.id,
     rarity: wizard.rarity,
     ...(wizard.stars === undefined ? {} : { stars: wizard.stars }),
+    ...(wizard.finish === undefined
+      ? {}
+      : { finish: Object.freeze({ id: wizard.finish.id, version: wizard.finish.version }) }),
+    ...(wizard.traits ? { traits: traitsSnapshot(wizard.traits) } : {}),
     name: Object.freeze({ es: wizard.name.es, en: wizard.name.en }),
     context: Object.freeze({ es: wizard.context.es, en: wizard.context.en }),
     stats: Object.freeze({
@@ -167,8 +195,19 @@ export function drawWizard(
   let cumulative = 0;
   for (const entry of table.entries) {
     cumulative += entry.weight;
-    if (ticket < cumulative)
-      return wizardSnapshot(catalog.wizards.find((wizard) => wizard.id === entry.wizardId)!);
+    if (ticket < cumulative) {
+      const wizard = catalog.wizards.find((wizard) => wizard.id === entry.wizardId)!;
+      if (!table.finish) return wizardSnapshot(wizard);
+      const finish = random.ticket(table.finish.total);
+      if (!Number.isSafeInteger(finish) || finish < 0 || finish >= table.finish.total)
+        throw new ArcanaError('INVALID_RANDOM_TICKET');
+      return wizardSnapshot({
+        ...wizard,
+        ...(finish < table.finish.enchanted
+          ? { finish: { id: 'enchanted' as const, version: table.finish.version } }
+          : {}),
+      });
+    }
   }
   throw new ArcanaError('INVALID_TOAD_TABLE');
 }

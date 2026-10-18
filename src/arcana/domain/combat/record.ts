@@ -12,7 +12,7 @@ export function combatSnapshot(record: Combat): Combat {
     const input = combatInputSnapshot(record.input);
     if (
       record.id !== input.id ||
-      record.engineVersion !== 1 ||
+      record.engineVersion !== (input.rules.houseSynergies ? 2 : 1) ||
       !['player', 'rival', 'draw'].includes(record.outcome) ||
       !Number.isSafeInteger(record.rounds) ||
       record.rounds < 1 ||
@@ -56,6 +56,7 @@ export function combatSnapshot(record: Combat): Combat {
     const kinds = [
       'combat-started',
       'synergy-activated',
+      'house-activated',
       'bean-activated',
       'turn-started',
       'mana-exhausted',
@@ -100,7 +101,16 @@ export function combatSnapshot(record: Combat): Combat {
       input,
       player: Object.freeze(record.player.map(result)),
       rival: Object.freeze(record.rival.map(result)),
-      events: Object.freeze(record.events.map((e) => Object.freeze({ ...e }))),
+      events: Object.freeze(
+        record.events.map((e) =>
+          Object.freeze({
+            ...e,
+            ...(e.kind === 'house-activated'
+              ? { contributorIds: Object.freeze([...e.contributorIds]) }
+              : {}),
+          }),
+        ),
+      ),
     });
   } catch {
     throw new ArcanaError('INVALID_COMBAT');

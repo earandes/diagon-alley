@@ -111,6 +111,12 @@ const sameWizard = (a: WizardDefinition, b: WizardDefinition) =>
   a.id === b.id &&
   a.rarity === b.rarity &&
   a.stars === b.stars &&
+  a.finish?.id === b.finish?.id &&
+  a.finish?.version === b.finish?.version &&
+  a.traits?.version === b.traits?.version &&
+  a.traits?.house === b.traits?.house &&
+  a.traits?.school === b.traits?.school &&
+  a.traits?.profession === b.traits?.profession &&
   a.name.es === b.name.es &&
   a.name.en === b.name.en &&
   a.context.es === b.context.es &&

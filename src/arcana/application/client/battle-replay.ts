@@ -1,4 +1,5 @@
 import { activeSynergies } from '../../domain/combat/synergies';
+import { houseProgress } from '../../domain/combat/houses';
 import type {
   Combat,
   CombatUnitInput,
@@ -74,6 +75,33 @@ export class BattleReplay {
       let outcome: CombatOutcome | null = null;
       for (const event of this.combat.events.slice(0, cursor)) {
         switch (event.kind) {
+          case 'house-activated': {
+            if (
+              !this.combat.input.rules.houseSynergies ||
+              !['player', 'rival'].includes(event.team)
+            )
+              throw Error();
+            const group = houseProgress(this.combat.input[event.team]).find(
+              (h) => h.house === event.house,
+            );
+            if (
+              !group?.tier ||
+              group.tier !== event.tier ||
+              group.count !== event.members ||
+              group.value !== event.value ||
+              JSON.stringify(group.contributorIds) !== JSON.stringify(event.contributorIds) ||
+              this.combat.events
+                .slice(0, event.sequence)
+                .some(
+                  (e) =>
+                    e.kind === 'house-activated' &&
+                    e.team === event.team &&
+                    e.house === event.house,
+                )
+            )
+              throw Error();
+            break;
+          }
           case 'bean-activated':
             hp(event.actorId, event.hp);
             if (

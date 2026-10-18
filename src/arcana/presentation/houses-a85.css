@@ -1,0 +1,195 @@
+.house-insignia {
+  width: 30px;
+  height: 30px;
+  flex: none;
+  color: #f2d294;
+}
+.house-insignia .house-shield {
+  fill: #41242b;
+  stroke: currentColor;
+  stroke-width: 3;
+}
+.house-insignia[data-house='ravenclaw'] .house-shield {
+  fill: #20364f;
+}
+.house-insignia[data-house='hufflepuff'] .house-shield {
+  fill: #574322;
+}
+.house-insignia[data-house='slytherin'] .house-shield {
+  fill: #203d36;
+}
+.trait-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  flex-wrap: wrap;
+  font-size: 0.85rem;
+}
+.trait-badge small {
+  opacity: 0.9;
+}
+.house-band {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 0.25rem;
+  flex-wrap: wrap;
+  position: relative;
+  max-width: 100%;
+  isolation: isolate;
+}
+.house-band details {
+  position: relative;
+}
+.house-band summary {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+  min-height: 44px;
+  min-width: 44px;
+  cursor: pointer;
+  color: var(--ink, #fff0d0);
+  font-size: 0.75rem;
+  list-style: none;
+  padding: 0.15rem 0.3rem;
+  border-bottom: 2px solid transparent;
+}
+.house-band details[data-active='true'] summary {
+  border-color: var(--gold, #e0b75d);
+}
+.house-band summary span {
+  max-width: 9rem;
+}
+.house-band summary b {
+  white-space: nowrap;
+}
+.house-band summary:focus-visible {
+  outline: 3px solid var(--focus, #a7e8ed);
+  outline-offset: 2px;
+}
+.house-band details[open] {
+  z-index: 10;
+}
+.house-detail {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(19rem, 85vw);
+  max-height: 45vh;
+  overflow: auto;
+  background: var(--surface, #172539);
+  color: var(--ink, #fff0d0);
+  padding: 0.7rem;
+  border: 1px solid var(--gold, #e0b75d);
+  border-radius: 12px;
+  box-shadow: 0 8px 24px #0009;
+  font-size: 0.85rem;
+}
+.house-detail p {
+  margin: 0.4rem 0;
+}
+.house-detail ol {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  margin: 0.3rem 0;
+  padding: 0;
+  list-style: none;
+}
+.house-detail small {
+  line-height: 1.4;
+  display: block;
+}
+.enchanted-holder {
+  position: relative;
+  isolation: isolate;
+}
+.enchanted-finish {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 3;
+}
+.enchanted-label {
+  display: inline-block;
+  color: #f4dfb5;
+  font-size: 0.85rem;
+  letter-spacing: 0.03em;
+}
+.opening-card .enchanted-finish {
+  inset: 2%;
+  width: 96%;
+  height: 96%;
+}
+.album-copy-tokens button {
+  min-width: 44px;
+  min-height: 44px;
+}
+.album-copy-tokens button[aria-pressed='true'] {
+  outline: 2px solid var(--gold, #e0b75d);
+}
+.pact-house {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.2rem;
+  font-size: 0.8rem;
+  line-height: 1.3;
+}
+.pact-house .house-insignia {
+  width: 24px;
+  height: 24px;
+}
+.game-shell.arcana-map-view .team-compact:has(> .house-band) {
+  flex-wrap: wrap;
+  width: max-content;
+  max-width: calc(100% - 80px);
+}
+.team-compact > .house-band {
+  flex-basis: 100%;
+}
+.team-compact .house-band summary span {
+  font-size: 0;
+  max-width: 4rem;
+}
+.team-compact .house-band summary b {
+  font-size: 0.75rem;
+}
+.team-compact .house-band .house-detail {
+  top: auto;
+  bottom: 100%;
+  left: 0;
+  transform: none;
+}
+.team-compact .house-band details:last-child .house-detail {
+  left: auto;
+  right: 0;
+}
+.preparation-house-filters {
+  display: flex;
+  gap: 0.3rem;
+  flex-wrap: wrap;
+}
+.preparation-house-filters button {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  min-height: 44px;
+}
+.preparation-card > .house-insignia {
+  position: absolute;
+  top: 0.2rem;
+  left: 0.2rem;
+  width: 24px;
+  height: 24px;
+  z-index: 4;
+  pointer-events: none;
+}
+/* In a preparation the consultation stays in document flow and may scroll.
+   On the fixed map HUD it opens above the whole band, inside the viewport margin. */
+.house-band .house-detail{position:relative;left:auto;top:auto;transform:none;width:min(19rem,calc(100vw - 64px))}
+.team-compact .house-band{width:100%}.team-compact .house-band details{position:static}.team-compact .house-band .house-detail,.team-compact .house-band details:last-child .house-detail{position:absolute;top:auto;bottom:100%;left:0;right:auto;transform:none;width:min(19rem,calc(100vw - 32px))}

@@ -1,6 +1,7 @@
 import { forgeCatalogSnapshot, type ForgeCatalog } from '../../domain/economy/commerce';
 import { specializedForge } from './equipment-content';
 import { progressionContent } from './progression-content';
+import { currentTraits, housePacts } from './house-content';
 import data from '../../content/trial-v1.json';
 import type { OpeningConfiguration } from '../../application/shop-use-cases';
 import type { StarterConfiguration } from '../../application/team-use-cases';
@@ -17,15 +18,30 @@ interface Stats {
   speed: number;
 }
 /** Explicit trial data; never a claim of validated production balance. */
-export function trialConfiguration(): {
+export function trialConfiguration(contentVersion: 'a84' | 'a85' = 'a85'): {
   opening: OpeningConfiguration;
   campaign: CampaignConfiguration;
   starter: StarterConfiguration;
 } {
   const config = structuredClone(data);
+  const modern = contentVersion === 'a85';
+  if (modern) {
+    config.catalog.version = 3;
+    config.toadTable.version = 3;
+    config.toadTable.catalogVersion = 3;
+  }
   const opening = {
-    catalog: config.catalog,
-    table: config.toadTable,
+    catalog: {
+      ...config.catalog,
+      wizards: config.catalog.wizards.map((w) => ({
+        ...w,
+        ...(modern ? { traits: currentTraits(w.id) } : {}),
+      })),
+    },
+    table: {
+      ...config.toadTable,
+      ...(modern ? { finish: { version: 1, enchanted: 1, total: 100 } } : {}),
+    },
     shop: config.shop,
     commerce: {
       ...config.commerce,
@@ -49,6 +65,7 @@ export function trialConfiguration(): {
     wizardId,
     level: 1,
     affinity,
+    ...(modern && currentTraits(wizardId)?.house ? { house: currentTraits(wizardId)!.house } : {}),
     hp: stats.hp,
     maxHp: stats.hp,
     mana: stats.mana,
@@ -96,13 +113,29 @@ export function trialConfiguration(): {
   });
   const campaign: CampaignConfiguration = {
     ...base,
+    combatRules: modern
+      ? {
+          ...base.combatRules,
+          version: 2,
+          houseSynergies: 1,
+          houseMembers: Object.fromEntries(
+            opening.catalog.wizards.flatMap((w) =>
+              w.traits?.house ? [[w.id, w.traits.house]] : [],
+            ),
+          ),
+        }
+      : base.combatRules,
     equipmentRulesVersion: 2,
     tacticalContent: {
-      version: 2,
+      version: modern ? 3 : 2,
       nodes: progressionContent(nodes, opening.catalog, affinities, base.graph, 'discovery'),
     },
-    challengeContent: (challenge, graph) =>
-      progressionContent(nodes, opening.catalog, affinities, graph, challenge),
+    challengeContent: (challenge, graph, initialWizardIds) => {
+      const plans = progressionContent(nodes, opening.catalog, affinities, graph, challenge);
+      return modern
+        ? housePacts(plans, opening.catalog, affinities, graph, initialWizardIds)
+        : plans;
+    },
     routeVariation: true,
     ownedAffinities: Object.freeze({ ...affinities }),
     nodes,

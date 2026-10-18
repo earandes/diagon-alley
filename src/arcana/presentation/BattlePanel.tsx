@@ -1,3 +1,4 @@
+import { HouseInsignia, houseName, houseEffect } from './HouseInsignia';
 import { sceneStart, sceneEnd } from './scenes/scene-diagnostics';
 import { Artwork } from './Artwork';
 import { activePack } from './content-packs/active';
@@ -222,6 +223,8 @@ function BattlePlayback({
     switch (event.kind) {
       case 'combat-started':
         return t('battleStarts');
+      case 'house-activated':
+        return `${sideName(event.team)} · ${houseName(event.house, language)} · ${houseEffect(event, language)}`;
       case 'synergy-activated':
         return t(
           new Intl.PluralRules(language).select(event.members) === 'one'
@@ -243,6 +246,8 @@ function BattlePlayback({
       case 'mana-exhausted':
         return t('noManaEvent', { name: name(event.actorId) });
       case 'healed':
+        if (event.source === 'house')
+          return `${name(event.actorId)} · ${language === 'es' ? 'Casa' : 'House'} · +${format.format(event.amount)} ${t('hP')}`;
         if (event.source === 'equipment')
           return arenaText(language, 'equipmentHeal')
             .replace('{name}', name(event.actorId))
@@ -538,6 +543,21 @@ function BattlePlayback({
                 className="arena-inspector-portrait"
               />
               <h2>{baseName(selectedUnit.id)}</h2>
+              {selectedUnit.house && (
+                <p className="trait-badge">
+                  <HouseInsignia house={selectedUnit.house} />
+                  {houseName(selectedUnit.house, language)}
+                </p>
+              )}
+              {combat.events
+                .slice(0, cursor)
+                .filter((e) => e.kind === 'house-activated')
+                .filter((e) => e.contributorIds.includes(selectedUnit.id))
+                .map((e) => (
+                  <p key={`house-${e.sequence}`} data-house-passive={e.house}>
+                    {houseEffect(e, language)}
+                  </p>
+                ))}
               <p>{name(selectedUnit.id)}</p>
               <p>
                 {t('unitAffinity', { affinity: t(affinities[selectedUnit.affinity]) })} ·{' '}

@@ -1,3 +1,4 @@
+// A67 historical contract uses the executable pre-house reference; A85 tests the new version separately.
 import { randomUUID } from 'node:crypto';
 import { Pool } from 'pg';
 import { createClient } from 'redis';
@@ -181,7 +182,7 @@ afterAll(async () => {
 });
 describe('A67 encounter/progression HTTP with actual PostgreSQL and Redis', () => {
   it('stores an explicit actual challenge profile without changing campaign reward rights', async () => {
-    const actual = trialConfiguration();
+    const actual = trialConfiguration('a84');
     const r = compose(undefined, () => actual.campaign),
       p = await provision(r);
     const invalid = await post(r, p, '/api/runs', {

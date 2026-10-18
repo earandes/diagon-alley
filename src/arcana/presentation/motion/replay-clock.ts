@@ -87,6 +87,7 @@ export class ReplayClock {
 export function battleEventDuration(kind: BattleEvent['kind'], base: number): number {
   const weight: Record<BattleEvent['kind'], number> = {
     'combat-started': 0.5,
+    'house-activated': 0.42,
     'synergy-activated': 0.42,
     'bean-activated': 0.65,
     'turn-started': 0.24,

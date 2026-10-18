@@ -101,7 +101,14 @@ function selectRun(
     const previous = known.find((m) => m.unit.id === id);
     if (previous) return previous;
     const copy = current.copies.find((c) => c.copyId === id)!;
-    return { source: 'owned', unit: prepareOwnedUnit(copy, configuration, current) };
+    const prepared = prepareOwnedUnit(copy, configuration, current);
+    return {
+      source: 'owned',
+      unit: {
+        ...prepared,
+        house: run.campaignSnapshot?.combatRules.houseMembers?.[copy.wizard.id],
+      },
+    };
   });
   if (![...members, ...temporary].some((m) => m.unit.hp > 0))
     throw new ArcanaError('INVALID_FORMATION');

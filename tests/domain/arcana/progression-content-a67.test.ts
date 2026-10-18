@@ -8,7 +8,7 @@ import {
   projectPublicContent,
 } from '../../../src/arcana/application/public-content';
 import base from '../../../src/arcana/content/trial-v1.json';
-const config = trialConfiguration();
+const config = trialConfiguration('a84');
 it('freezes row-dependent threats after route generation and retains economic identities', () => {
   for (const seed of [0, 1, 12, 42, 99]) {
     const graph = randomizeRoute(config.campaign.graph, new SeededRandom(seed));

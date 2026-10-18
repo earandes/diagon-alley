@@ -18,7 +18,7 @@ try {
   const { SeededRandom } = await server.ssrLoadModule(
     '/src/arcana/infrastructure/random/seeded-random.ts',
   );
-  const { campaign } = trialConfiguration();
+  const { campaign } = trialConfiguration('a84');
   const graph = randomizeRoute(campaign.graph, new SeededRandom(0));
   await writeFile(
     new URL('../../tests/support/fixtures/a73-route-seed0.json', import.meta.url),

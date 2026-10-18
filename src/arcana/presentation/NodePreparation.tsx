@@ -1,3 +1,5 @@
+import { HouseInsignia, houseName, HouseBand } from './HouseInsignia';
+import { houseProgress } from '../domain/combat/houses';
 import { BossPrelude } from './BossPrelude';
 import { EncounterPreparation } from './EncounterPreparation';
 import { Artwork } from './Artwork';
@@ -103,6 +105,9 @@ export function NodePreparation({
               </div>
             ))}
           </div>
+          {rules?.houseSynergies && (
+            <HouseBand units={plan.opponents} rules={rules} language={language} />
+          )}
           {plan.threat && (
             <details className="tactical-rival-inspector">
               <summary>{tacticalText(language, 'inspect')}</summary>
@@ -429,6 +434,25 @@ function TacticalPact({
                   )}
                 </span>
                 <strong>{name}</strong>
+                {candidate.house && rules?.houseSynergies && (
+                  <span className="pact-house">
+                    <HouseInsignia house={candidate.house} />
+                    <span>
+                      {houseName(candidate.house, language)}{' '}
+                      {
+                        houseProgress(run.members.map((m) => m.unit)).find(
+                          (h) => h.house === candidate.house,
+                        )!.count
+                      }{' '}
+                      →{' '}
+                      {candidateMembers
+                        ? houseProgress(candidateMembers.map((m) => m.unit)).find(
+                            (h) => h.house === candidate.house,
+                          )!.count
+                        : '—'}
+                    </span>
+                  </span>
+                )}
                 <AffinityLabel affinity={candidate.affinity} language={language} />
                 {before && (
                   <span

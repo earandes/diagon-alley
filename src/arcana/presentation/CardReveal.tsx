@@ -17,6 +17,8 @@ import { text } from './translations';
 import './reveal-finale.css';
 import './reveal-theatre.css';
 import { RevealTheatre } from './RevealTheatre';
+import { EnchantedFinish, FinishLabel, enchantedName } from './EnchantedFinish';
+import { TraitBadge } from './HouseInsignia';
 import { claimVisualEvent, hasVisualEvent } from './visual-history';
 import {
   openingMotionRecipe,
@@ -94,7 +96,7 @@ export function CardReveal({
     setAnnouncement({
       id: receipt.id,
       language,
-      value: text(language, receipt.isNew ? 'newDiscovery' : 'newCopy'),
+      value: `${text(language, receipt.isNew ? 'newDiscovery' : 'newCopy')}${receipt.wizard.finish ? ` · ${enchantedName(language)}` : ''}`,
     });
   }, [staticResult, receipt.id, language]);
   useEffect(() => {
@@ -252,6 +254,20 @@ export function CardReveal({
             { opacity: recipe.intensity * 0.5, scale: 1.2, duration: at(d.reveal) },
             'reveal',
           );
+          if (receipt.wizard.finish) {
+            timeline.fromTo(
+              '.enchanted-finish',
+              { opacity: 0, scale: 0.96, transformOrigin: '50% 50%' },
+              { opacity: 1, scale: 1, duration: 0.65, ease: 'back.out(1.2)' },
+              'reveal',
+            );
+            timeline.fromTo(
+              '.enchanted-sheen',
+              { x: -350, opacity: 0.18 },
+              { x: 350, opacity: 0, duration: 0.55, ease: 'power1.inOut' },
+              'reveal+=0.1',
+            );
+          }
           for (const name of Object.keys(l) as OpeningPhase[])
             timeline.call(() => phase(name), [], name);
           // Keep the final settle in the same presentation clock, not a second timeout.
@@ -290,6 +306,8 @@ export function CardReveal({
       data-opening-phase={view.phase}
       data-discovery={receipt.isNew ? 'new' : 'repeat'}
       data-paused={view.paused}
+      data-finish={receipt.wizard.finish?.id ?? 'normal'}
+      data-reduced={noMotion}
     >
       {onLanguage && (
         <GameSettings
@@ -351,10 +369,13 @@ export function CardReveal({
             decorative
             eager
           />
+          <EnchantedFinish wizard={receipt.wizard} />
         </div>
       </div>
       <div className="holographic-card" hidden={!staticResult}>
         <h3>{wizardName(receipt.wizard, language)}</h3>
+        <FinishLabel wizard={receipt.wizard} language={language} />
+        <TraitBadge traits={receipt.wizard.traits} language={language} />
         <RarityBadge rarity={receipt.wizard.rarity} language={language} />
         <StarRating stars={receipt.wizard.stars} language={language} />
       </div>

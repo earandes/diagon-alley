@@ -46,7 +46,7 @@ async function fixedRouteFixture(page: Page, owner: string) {
   // Plain JSON read avoids importing Vite's JSON modules through Node's browser-test loader.
   // A domain test compares every graph/node plan with the current campaign configuration.
   const fixture = JSON.parse(
-    await readFile(new URL('../support/fixtures/a73-route-seed0.json', import.meta.url), 'utf8'),
+    await readFile(new URL('../support/fixtures/a85-route-seed0.json', import.meta.url), 'utf8'),
   ) as {
     version: number;
     campaignVersion: number;
