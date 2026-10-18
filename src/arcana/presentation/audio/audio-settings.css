@@ -1,0 +1,59 @@
+.settings-case .audio-choices button {
+  min-height: 108px;
+  gap: 4px;
+}
+.settings-case .audio-object {
+  width: 48px;
+  height: 48px;
+  color: #e7c889;
+  filter: drop-shadow(0 3px 2px #030b15);
+}
+.settings-case .audio-choices small {
+  color: #e7c889;
+  font-size: 0.78rem;
+}
+.audio-volume {
+  margin: -6px 0 18px;
+  color: #fff0d0;
+}
+.audio-volume summary {
+  cursor: pointer;
+  min-height: 44px;
+  display: list-item;
+  align-content: center;
+  width: fit-content;
+  padding: 8px 4px;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.audio-volume label {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 4px 10px;
+  margin: 8px 0;
+  font-size: 0.9rem;
+}
+.audio-volume input {
+  grid-column: 1 / -1;
+  width: 100%;
+  min-height: 44px;
+  margin: 0;
+  accent-color: #e0b75d;
+}
+.audio-volume small,
+.audio-state {
+  color: #e7c889;
+  font-size: 0.85rem;
+}
+.audio-state p {
+  margin: 0 0 6px;
+}
+.audio-state button {
+  min-height: 44px;
+}
+.audio-volume summary:focus-visible,
+.audio-volume input:focus-visible {
+  outline: 3px solid var(--pack-focus, #a7e8ed);
+  outline-offset: 3px;
+  border-radius: 4px;
+}

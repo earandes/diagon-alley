@@ -1,0 +1,101 @@
+{
+  "version": 1,
+  "author": "Original procedural composition for Diagon Alley / ARCANA, A84",
+  "tool": "Python stdlib additive/FM synthesis, offline",
+  "editableSource": "design/audio/a84/compose.py",
+  "provenance": "Original generated waveforms; no sampled media, score quotation or third-party recordings",
+  "rights": "Project-original composition and source; no franchise audio licence claimed",
+  "consumers": "Shared presentation audio for both content packs; no economic/domain effects",
+  "assets": [
+    {
+      "id": "ambient",
+      "file": "src/arcana/presentation/audio/assets/ambient.wav",
+      "durationSeconds": 24.0,
+      "sampleRate": 24000,
+      "channels": 1,
+      "format": "PCM16 WAV",
+      "bytes": 1152044,
+      "sha256": "91426ff60649ac28efedf4420a23c503b4ce64377b3fdcd009f7f83ccc0f07c6"
+    },
+    {
+      "id": "cast-fire",
+      "file": "src/arcana/presentation/audio/assets/cast-fire.wav",
+      "durationSeconds": 0.24,
+      "sampleRate": 24000,
+      "channels": 1,
+      "format": "PCM16 WAV",
+      "bytes": 11564,
+      "sha256": "6cd3e7948c41a8afca92eaf477ffb9cf38c538521bafa4edb1551b942aaaf847"
+    },
+    {
+      "id": "cast-alchemy",
+      "file": "src/arcana/presentation/audio/assets/cast-alchemy.wav",
+      "durationSeconds": 0.26,
+      "sampleRate": 24000,
+      "channels": 1,
+      "format": "PCM16 WAV",
+      "bytes": 12524,
+      "sha256": "5a8c4f1da8f57889ab6b6f7739236ef70681f4e51a9c24e6a807fcedec7a782f"
+    },
+    {
+      "id": "cast-shadows",
+      "file": "src/arcana/presentation/audio/assets/cast-shadows.wav",
+      "durationSeconds": 0.24,
+      "sampleRate": 24000,
+      "channels": 1,
+      "format": "PCM16 WAV",
+      "bytes": 11564,
+      "sha256": "8793d837229f2cc2b8c6fe4e8ad5fb38e91a7a2b72e6eae82a461c957e3da44b"
+    },
+    {
+      "id": "cast-neutral",
+      "file": "src/arcana/presentation/audio/assets/cast-neutral.wav",
+      "durationSeconds": 0.22,
+      "sampleRate": 24000,
+      "channels": 1,
+      "format": "PCM16 WAV",
+      "bytes": 10604,
+      "sha256": "28ec6cc9540f249d5b91672f6277e562180e935a57ca827e02c4a7d3f1208837"
+    },
+    {
+      "id": "impact",
+      "file": "src/arcana/presentation/audio/assets/impact.wav",
+      "durationSeconds": 0.16,
+      "sampleRate": 24000,
+      "channels": 1,
+      "format": "PCM16 WAV",
+      "bytes": 7724,
+      "sha256": "3c2cf498b3ac1d53b9f70ff7768f4c18ff9d503292418726ccc40782f7de38a8"
+    },
+    {
+      "id": "miss",
+      "file": "src/arcana/presentation/audio/assets/miss.wav",
+      "durationSeconds": 0.2,
+      "sampleRate": 24000,
+      "channels": 1,
+      "format": "PCM16 WAV",
+      "bytes": 9644,
+      "sha256": "e1508a45129da5b1de1c398e4be1f941bdda9e5b08a216f3dacaf64548e49073"
+    },
+    {
+      "id": "heal",
+      "file": "src/arcana/presentation/audio/assets/heal.wav",
+      "durationSeconds": 0.36,
+      "sampleRate": 24000,
+      "channels": 1,
+      "format": "PCM16 WAV",
+      "bytes": 17324,
+      "sha256": "a345a29c1fca0b4a3c67eb1b0c3aea3785ad23ea13abae9d9aefcbe0c580a5b3"
+    },
+    {
+      "id": "burn",
+      "file": "src/arcana/presentation/audio/assets/burn.wav",
+      "durationSeconds": 0.18,
+      "sampleRate": 24000,
+      "channels": 1,
+      "format": "PCM16 WAV",
+      "bytes": 8684,
+      "sha256": "4c719394b3c1fac02392550a235a815af31a67e0d4adfdfa1992e9a3d212d67b"
+    }
+  ]
+}

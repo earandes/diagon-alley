@@ -1,3 +1,4 @@
+import { useGameAudioLifecycle } from './audio/runtime';
 import {
   AccountAccess,
   AccountRequestError,
@@ -83,6 +84,7 @@ const nodes: Record<NodeKind, MessageKey> = {
 };
 const NO_BEAN_ASSIGNMENTS: readonly BeanAssignment[] = Object.freeze([]);
 export function App() {
+  useGameAudioLifecycle();
   const [accountMode, setAccountMode] = useState<AccountMode | null>(null);
   const [accountSession, setAccountSession] = useState<AccountSession | null>(null);
   const [accountUnavailable, setAccountUnavailable] = useState(false);

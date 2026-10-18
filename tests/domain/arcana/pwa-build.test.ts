@@ -4,6 +4,18 @@ import {
   getContentPack,
 } from '../../../src/arcana/presentation/content-packs/active';
 import { buildPwaAssets } from '../../../tools/arcana/pwa-build';
+
+it('A84 accepts compiled audio without downloading it in the silent PWA shell', () => {
+  const assets = buildPwaAssets([
+    { fileName: 'index.html', source: '<main />' },
+    { fileName: 'assets/ambient-a84.wav', source: 'fixture PCM' },
+  ]);
+  const source = String(assets.find((a) => a.fileName === 'service-worker.js')!.source);
+  const precache = JSON.parse(source.match(/const PRECACHE=(.*);\n/)![1]);
+  const artwork = JSON.parse(source.match(/const ART_ASSETS=(.*);\n/)![1]);
+  expect(precache).not.toContain('assets/ambient-a84.wav');
+  expect(artwork).not.toContain('assets/ambient-a84.wav');
+});
 const bundle = [
   { fileName: 'index.html', source: '<html>ARCANA</html>' },
   { fileName: 'assets/app-a.js', source: 'const app=1;' },

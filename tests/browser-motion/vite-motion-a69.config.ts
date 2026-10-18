@@ -9,7 +9,10 @@ export default defineConfig({
     outDir: 'test-results/motion-a69-build',
     emptyOutDir: true,
     rollupOptions: {
-      input: fileURLToPath(new URL('./motion-a69.html', import.meta.url)),
+      input: [
+        fileURLToPath(new URL('./motion-a69.html', import.meta.url)),
+        fileURLToPath(new URL('../browser-audio/audio-a84.html', import.meta.url)),
+      ],
       output: {
         manualChunks: (id) => (id.includes('/node_modules/gsap/') ? 'gsap-a69' : undefined),
       },

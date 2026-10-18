@@ -18,6 +18,7 @@ import { useBattlePlayback } from './motion/useBattlePlayback';
 import { battleVisualChanges } from './motion/battle-deltas';
 import { bossPresentation } from './boss-presentation';
 import './boss-a70.css';
+import { useBattleAudio } from './audio/runtime';
 const affinities = {
   neutral: 'neutral',
   alchemy: 'alchemy',
@@ -76,6 +77,7 @@ function BattlePlayback({
     playback = useBattlePlayback(combat.events, activePack.animations.arena.eventMs, reduced),
     { cursor, playing, speed, setPlaying, setSpeed } = playback,
     frame = useMemo(() => replay.frame(cursor), [replay, cursor]);
+  useBattleAudio(combat, playback);
   const stage = useRef<HTMLDivElement>(null);
   const inspector = useRef<HTMLDialogElement>(null);
   const inspectionOrigin = useRef<HTMLButtonElement | null>(null);
