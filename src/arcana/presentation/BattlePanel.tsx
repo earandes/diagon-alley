@@ -107,7 +107,8 @@ function BattlePlayback({
   }, [optionsOpen]);
   const outcomeAction = useRef<HTMLButtonElement>(null);
   const focusResult = useRef(false);
-  useLayoutEffect(() => {
+  useEffect(() => {
+    // Focus after the modal cleanup restores its origin; a layout effect runs too early.
     if (frame.outcome && focusResult.current) {
       focusResult.current = false;
       outcomeAction.current?.focus({ preventScroll: true });
@@ -419,6 +420,33 @@ function BattlePlayback({
         id="arena-options"
         hidden={!optionsOpen}
         aria-label={arenaText(language, 'options')}
+        onKeyDown={(event) => {
+          // Native modality makes the scene inert; keep Tab within the game menu
+          // too, without intercepting navigation inside a nested Settings dialog.
+          if (
+            event.key !== 'Tab' ||
+            (event.target as Element).closest('dialog') !== event.currentTarget
+          )
+            return;
+          const controls = [
+            ...event.currentTarget.querySelectorAll<HTMLElement>(
+              'button, summary, input, select, textarea, a[href], [tabindex]',
+            ),
+          ].filter(
+            (el) => el.tabIndex >= 0 && !el.matches(':disabled') && el.getClientRects().length > 0,
+          );
+          const first = controls[0],
+            last = controls.at(-1);
+          if (
+            first &&
+            last &&
+            ((event.shiftKey && document.activeElement === first) ||
+              (!event.shiftKey && document.activeElement === last))
+          ) {
+            event.preventDefault();
+            (event.shiftKey ? last : first).focus();
+          }
+        }}
         onCancel={(event) => {
           event.stopPropagation();
           setOptionsOpen(false);

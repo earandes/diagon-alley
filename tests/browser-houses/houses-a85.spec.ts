@@ -480,6 +480,8 @@ test('A86 duel scene has one pause, recorded house access and remembered present
       await pauseMenu.locator('.arena-options-close').focus();
       await page.keyboard.press('Tab');
       await expect(pauseMenu.locator('.replay-controls button').first()).toBeFocused();
+      await page.keyboard.press('Shift+Tab');
+      await expect(pauseMenu.locator('.arena-options-close')).toBeFocused();
       await pauseMenu.locator('.arena-record-trigger').click();
       await expect(page.locator('.arena-inspector[open]')).toBeVisible();
       await page.locator('.arena-inspector-close').click();
