@@ -60,6 +60,16 @@ jobs:
             test-results/accounts-a76/results.json
             test-results/accounts-a76/**/error-context.md
           if-no-files-found: ignore
+      - if: ${{ !cancelled() && steps.build.outcome == 'success' }}
+        run: ARCANA_CAPTURE_A82=1 npx playwright test --config playwright.welcome-menu-a82.config.ts
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: a82-welcome-menu-evidence
+          path: |
+            docs/arcana/welcome-menu-2026-10-18/evidence/linux/**
+            test-results/welcome-menu-a82/**
+          if-no-files-found: ignore
       - id: a75phase
         run: node -e "const p=require('./tools/verification/a75-phase.json').phase;if(!['baseline','full','webkit','resume','tail'].includes(p))throw Error('Invalid A75 phase');require('fs').appendFileSync(process.env.GITHUB_OUTPUT,'phase='+p+'\\n')"
       # A78 is a bounded serial account-fixes check; A77 remains historical evidence.
@@ -95,7 +105,7 @@ jobs:
             test-results/account-style-a80/**
           if-no-files-found: ignore
       - if: ${{ !cancelled() && steps.build.outcome == 'success' }}
-        run: ARCANA_CAPTURE_A81=1 npx playwright test --config playwright.account-symbols-a81.config.ts
+        run: npx playwright test --config playwright.account-symbols-a81.config.ts
       - uses: actions/upload-artifact@v4
         if: always()
         with:

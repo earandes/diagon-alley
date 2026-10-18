@@ -125,7 +125,6 @@
   outline: 3px solid var(--account-focus);
   outline-offset: 3px;
 }
-.account-welcome button:focus-visible,
 .settings-account button:focus-visible {
   outline: 3px solid #b7edee;
   outline-offset: 3px;
@@ -295,49 +294,6 @@
   overflow-wrap: anywhere;
   color: #e7d3a7;
 }
-.game-shell .account-welcome {
-  display: grid;
-  justify-items: center;
-  gap: 10px;
-  width: min(430px, 100%);
-}
-.game-shell .account-welcome button {
-  margin: 0;
-  min-height: 48px;
-  min-width: 160px;
-  padding: 12px 24px;
-  border: 1px solid #d7b779;
-  border-radius: 6px;
-  background: #e1c181;
-  color: #142134;
-}
-.game-shell .account-welcome .account-welcome-login {
-  background: #102036dd;
-  color: #fff0d0;
-}
-.game-shell .account-guest-hint {
-  max-width: 47ch;
-  margin: 0;
-  color: #fff0d0;
-  font-size: 0.85rem;
-  line-height: 1.5;
-  text-shadow: 0 2px 5px #000;
-}
-.game-shell .welcome:has(.account-welcome) {
-  gap: 18px;
-  padding-block: clamp(24px, 5dvh, 60px);
-  overflow-y: auto;
-  justify-content: end;
-}
-.game-shell .welcome:has(.account-welcome) h2 {
-  font-size: clamp(2rem, 6vw, 4rem);
-}
-@media (max-height: 690px) {
-  .game-shell .welcome:has(.account-welcome) {
-    justify-content: start;
-  }
-}
-
 /* A80: the object owns the cover; credentials remain native writing on paper. */
 .account-access .account-link:hover:not(:disabled),
 .account-access .account-eye:hover:not(:disabled) {
@@ -390,33 +346,4 @@
   .account-access > .account-primary {
     grid-column: 1;
   }
-}
-
-/* A81: one family, specific roles; labels and interactions remain independent. */
-.game-shell[data-view='welcome'] > .game-header {
-  height: auto;
-  min-height: var(--game-header);
-  padding-block: 6px;
-}
-.game-shell .game-header h1:has(.welcome-emblem) {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-.game-header .welcome-emblem {
-  width: 44px;
-  height: 44px;
-  flex: 0 0 44px;
-  object-fit: contain;
-}
-.game-shell .account-welcome button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-}
-.account-welcome button > img {
-  width: 36px;
-  height: 36px;
-  object-fit: contain;
 }

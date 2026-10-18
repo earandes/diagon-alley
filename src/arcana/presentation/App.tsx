@@ -6,6 +6,7 @@ import {
   type AccountSession,
 } from './AccountAccess';
 import { accountText } from './account-messages';
+import { FantasyActionButton } from './FantasyActionButton';
 import { challengeText } from './ExpeditionChallenge';
 import { SeasonalEvent } from './SeasonalEvent';
 import { previewEncounterTrade } from '../domain/exploration/encounter-trades';
@@ -489,26 +490,19 @@ export function App() {
             reduced={motion.reduced}
             active={view !== 'battle' && !selected && !preparing}
           />
-          <header className="game-header">
-            <h1>
-              {!game && (
-                <Artwork
-                  asset="brand.emblem"
-                  language={language}
-                  className="welcome-emblem"
-                  decorative
-                  eager
-                />
-              )}
-              {view === 'map' && content
-                ? regionAppearance(run?.zoneId ?? content.campaign.zoneId, language).name
-                : activePack.brand}
-              {view === 'map' && run?.status === 'active' && run.challenge && (
-                <small className="challenge-reminder">
-                  {challengeText(language, run.challenge)}
-                </small>
-              )}
-            </h1>
+          <header className={`game-header${game ? '' : ' welcome-tools'}`}>
+            {game && (
+              <h1>
+                {view === 'map' && content
+                  ? regionAppearance(run?.zoneId ?? content.campaign.zoneId, language).name
+                  : activePack.brand}
+                {view === 'map' && run?.status === 'active' && run.challenge && (
+                  <small className="challenge-reminder">
+                    {challengeText(language, run.challenge)}
+                  </small>
+                )}
+              </h1>
+            )}
             {game &&
               (content?.seasonalEdition || game.seasonal?.participations.length) &&
               state.serverTime !== null &&
@@ -550,54 +544,72 @@ export function App() {
           )}
           <NodeAnnouncement receipt={state.receipt} language={language} />
           {!game ? (
-            <main id="content" tabIndex={-1} className="welcome">
-              <h2>{t('theHiddenBoulevard')}</h2>
+            <main id="content" tabIndex={-1} className="welcome welcome-menu">
+              <header className="welcome-brand">
+                <Artwork
+                  asset="brand.emblem"
+                  language={language}
+                  className="welcome-emblem"
+                  decorative
+                  eager
+                />
+                <h1>
+                  {selectedContentPackId() === 'diagon-alley'
+                    ? regionAppearance('pasaje', language).name
+                    : activePack.brand}
+                </h1>
+                <span className="welcome-brand-rule" aria-hidden="true">
+                  <i />
+                </span>
+              </header>
               <span className="visually-hidden">{t('anApprenticeAWandAndAPathTo')}</span>
-              <div className="account-welcome">
-                {accountOpening && <p role="status">{accountText(language, 'sending')}</p>}
-                <button
-                  type="button"
-                  data-account-entry="register"
+              <div className="welcome-actions">
+                <FantasyActionButton
+                  variant="primary"
+                  asset="ui.map"
+                  language={language}
+                  className="portal-enter"
+                  aria-label={accountText(language, 'guest')}
+                  aria-busy={entry.pending || undefined}
                   disabled={
-                    accountOpening || !online || state.status === 'loading' || entry.pending
+                    accountOpening ||
+                    !online ||
+                    !!state.pending ||
+                    state.status === 'loading' ||
+                    entry.pending
                   }
-                  onClick={() => openAccount('register')}
+                  onClick={() => void entry.enter()}
                 >
-                  <Artwork asset="account.register" language={language} decorative eager />
-                  {accountText(language, 'register')}
-                </button>
-                <button
-                  type="button"
-                  className="account-welcome-login"
+                  {entry.pending
+                    ? recoveryText(language, 'entering')
+                    : accountText(language, 'guest')}
+                </FantasyActionButton>
+                <FantasyActionButton
+                  variant="secondary"
+                  asset="account.login"
+                  language={language}
                   data-account-entry="login"
                   disabled={
                     accountOpening || !online || state.status === 'loading' || entry.pending
                   }
                   onClick={() => openAccount('login')}
                 >
-                  <Artwork asset="account.login" language={language} decorative eager />
                   {accountText(language, 'login')}
-                </button>
+                </FantasyActionButton>
+                <FantasyActionButton
+                  variant="tertiary"
+                  asset="account.register"
+                  language={language}
+                  data-account-entry="register"
+                  disabled={
+                    accountOpening || !online || state.status === 'loading' || entry.pending
+                  }
+                  onClick={() => openAccount('register')}
+                >
+                  {accountText(language, 'register')}
+                </FantasyActionButton>
               </div>
-              <button
-                className="portal-enter game-object"
-                aria-label={accountText(language, 'guest')}
-                disabled={
-                  accountOpening ||
-                  !online ||
-                  !!state.pending ||
-                  state.status === 'loading' ||
-                  entry.pending
-                }
-                onClick={() => void entry.enter()}
-              >
-                <Artwork asset="ui.map" language={language} decorative />
-                <span>
-                  {entry.pending
-                    ? recoveryText(language, 'entering')
-                    : accountText(language, 'guest')}
-                </span>
-              </button>
+              {accountOpening && <p role="status">{accountText(language, 'sending')}</p>}
               {state.pending && (
                 <p role="alert" className="account-guest-hint">
                   {accountText(language, 'pending')}

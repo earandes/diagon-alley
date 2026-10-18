@@ -61,7 +61,7 @@ test('A81 own identity and access objects retain native tasks and cancellation',
   await page.goto('/');
   await expect(page.locator('[data-account-entry=register]')).toBeEnabled();
   if (wide) await changeLanguage(page, 'en');
-  await loaded(page.locator('header.game-header img[data-art="brand.emblem"]'));
+  await loaded(page.locator('.welcome-brand img[data-art="brand.emblem"]'));
   const register = page.locator('[data-account-entry=register]');
   const login = page.locator('[data-account-entry=login]');
   await loaded(register.locator('img'));
@@ -86,7 +86,7 @@ test('A81 own identity and access objects retain native tasks and cancellation',
       expect(
         await dialog(page).evaluate((element) => element.scrollWidth <= element.clientWidth + 1),
       ).toBe(true);
-      const emblem = page.locator('header.game-header img[data-art="brand.emblem"]');
+      const emblem = page.locator('.welcome-brand img[data-art="brand.emblem"]');
       const bounds = await emblem.evaluate((image) => {
         const rect = image.getBoundingClientRect();
         const header = image.closest('header')!.getBoundingClientRect();
