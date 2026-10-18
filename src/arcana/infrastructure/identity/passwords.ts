@@ -1,3 +1,4 @@
+import { validPassword } from '../../application/identity/password-policy';
 import { randomBytes, scrypt, timingSafeEqual } from 'node:crypto';
 
 export type IdentityErrorCode =
@@ -32,11 +33,6 @@ export function normalizeEmail(value: string): string {
     throw new IdentityError('INVALID_CREDENTIALS');
   return email;
 }
-const validPassword = (value: string) =>
-  typeof value === 'string' &&
-  [...value].length >= 15 &&
-  [...value].length <= 128 &&
-  Buffer.byteLength(value, 'utf8') <= 512;
 const derive = (password: string, salt: Buffer) =>
   new Promise<Buffer>((resolve, reject) => {
     // OWASP's bounded-memory alternative: N=2^15,r=8,p=3 (~32MiB per operation).

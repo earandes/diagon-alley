@@ -145,6 +145,19 @@ const register = async (guest?: string) => {
   };
 };
 describe('A76 identity gateway with PostgreSQL, Redis and private delivered files', () => {
+  it('A78 accepts exactly128 non-BMP code points through the real schema, KDF and sessions', async () => {
+    const email = randomUUID() + '@example.test';
+    expect((await post('auth/register', { email })).statusCode).toBe(200);
+    const { token } = await mailFor(email, 'verify');
+    expect((await post('auth/verify', { token, password: '🦉'.repeat(14) })).statusCode).toBe(400);
+    expect((await post('auth/verify', { token, password: '🦉'.repeat(129) })).statusCode).toBe(400);
+    const verified = await post('auth/verify', { token, password: '🦉'.repeat(128) });
+    expect(verified.statusCode).toBe(200);
+    const before = await games.read(verified.json().playerId);
+    const login = await post('auth/login', { email, password: '🦉'.repeat(128) });
+    expect(login.statusCode).toBe(200);
+    expect((await get('state', cookieOf(login))).json().state).toEqual(before);
+  });
   it('requires the missing guest session before mailing any binding challenge', async () => {
     const before = (await readdir(directory)).length;
     const response = await post('auth/register', {

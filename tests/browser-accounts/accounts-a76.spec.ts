@@ -16,8 +16,8 @@ const submit = (page: Page, action: string) =>
 const labels = (language: Language) => ({
   email: language === 'es' ? 'Correo electrónico' : 'Email',
   password: language === 'es' ? 'Contraseña' : 'Password',
-  token: language === 'es' ? 'Código del correo' : 'Email token',
-  haveCode: language === 'es' ? 'Tengo el código' : 'I have the token',
+  token: language === 'es' ? 'Código del correo' : 'Verification code',
+  haveCode: language === 'es' ? 'Tengo el código' : 'I have the code',
   login: language === 'es' ? 'Iniciar sesión' : 'Sign in',
   forgot: language === 'es' ? 'Olvidé mi contraseña' : 'Forgot password',
   close: language === 'es' ? 'Cerrar' : 'Close',
@@ -108,7 +108,7 @@ async function register(page: Page, email: string, language: Language) {
   await submit(page, 'register').click();
   await expect(dialog(page).getByRole('status')).toBeVisible();
   const token = await mailToken(email, 'verify');
-  await dialog(page).getByRole('button', { name: words.haveCode, exact: true }).click();
+  await expect(submit(page, 'verify')).toBeVisible();
   await dialog(page).getByLabel(words.token, { exact: true }).fill(token);
   await dialog(page).getByLabel(words.password, { exact: true }).fill(password);
   await expect(dialog(page).getByLabel(words.password, { exact: true })).toHaveAttribute(
@@ -180,7 +180,7 @@ test('A76 first activation excludes double registration through retained respons
   } finally {
     release();
   }
-  await expect(submit(page, 'register')).toBeEnabled();
+  await expect(submit(page, 'verify')).toBeEnabled();
   await expect(dialog(page).getByRole('status')).toContainText('Si la solicitud es válida');
   await page.keyboard.press('Escape');
   await expect(dialog(page)).toHaveCount(0);
@@ -405,7 +405,7 @@ for (const pack of ['diagon-alley', 'arcana'] as const) {
         await submit(page, 'request-reset').click();
         await expect(dialog(page).getByRole('status')).toBeVisible();
         const token = await mailToken(guestEmail, 'reset');
-        await dialog(page).getByRole('button', { name: words.haveCode, exact: true }).click();
+        await expect(submit(page, 'reset')).toBeVisible();
         await dialog(page).getByLabel(words.token, { exact: true }).fill(token);
         await dialog(page).getByLabel(words.password, { exact: true }).fill(replacement);
         await submit(page, 'reset').click();

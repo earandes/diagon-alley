@@ -1,3 +1,4 @@
+import { validPassword } from '../application/identity/password-policy';
 import { useEffect, useRef, useState, type FormEvent } from 'react';
 import type { Language } from '../domain/collection/wizards';
 import { Artwork } from './Artwork';
@@ -54,6 +55,7 @@ export async function readAccountSession(): Promise<AccountSession> {
 export function AccountAccess({
   language,
   initialMode,
+  returnFocus,
   session,
   playerId,
   ownerForRequest,
@@ -67,6 +69,7 @@ export function AccountAccess({
 }: {
   language: Language;
   initialMode: AccountMode;
+  returnFocus?: HTMLElement | null;
   session: AccountSession | null;
   playerId?: string;
   ownerForRequest?: () => string | undefined;
@@ -97,13 +100,16 @@ export function AccountAccess({
     mounted = useRef(true);
   useEffect(() => {
     mounted.current = true;
-    const origin = document.activeElement instanceof HTMLElement ? document.activeElement : null;
+    const origin =
+      returnFocus ??
+      (document.activeElement instanceof HTMLElement ? document.activeElement : null);
     const element = dialog.current;
     element?.showModal();
     return () => {
       mounted.current = false;
       if (element?.open) element.close();
       if (origin?.isConnected) origin.focus({ preventScroll: true });
+      else document.getElementById('content')?.focus({ preventScroll: true });
     };
   }, []);
   useEffect(() => {
@@ -120,8 +126,22 @@ export function AccountAccess({
     setNotice(null);
     setPassword('');
     setToken('');
+    setShowPassword(false);
     setAllowSwitch(false);
   };
+  const moveAfterRequest = (next: 'verify' | 'reset') => {
+    setStep(next);
+    setNotice('mailSent');
+    setPassword('');
+    setToken('');
+    setShowPassword(false);
+  };
+  const errorRegion = useRef<HTMLParagraphElement>(null);
+  useEffect(() => {
+    if (!error || busy) return;
+    errorRegion.current?.focus({ preventScroll: true });
+    errorRegion.current?.scrollIntoView({ block: 'nearest' });
+  }, [error, busy]);
   const close = () => {
     if (!mutex.current) onClose();
   };
@@ -134,8 +154,14 @@ export function AccountAccess({
     try {
       await action();
     } catch (reason) {
-      if (mounted.current)
-        setError(reason instanceof AccountRequestError ? reason.code : 'AUTH_UNAVAILABLE');
+      if (mounted.current) {
+        const code = reason instanceof AccountRequestError ? reason.code : 'AUTH_UNAVAILABLE';
+        setError(
+          ['register', 'request-reset'].includes(step) && code === 'NETWORK_ERROR'
+            ? 'MAIL_REQUEST_UNCERTAIN'
+            : code,
+        );
+      }
     } finally {
       mutex.current = false;
       if (mounted.current) setBusy(false);
@@ -183,6 +209,8 @@ export function AccountAccess({
   const submit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     void run(async () => {
+      if (['login', 'verify', 'reset'].includes(step) && !validPassword(password))
+        throw new AccountRequestError('PASSWORD_POLICY');
       if (step === 'login') await identity('login', { email, password });
       else if (step === 'verify') await identity('verify', { token, password });
       else if (step === 'register') {
@@ -200,11 +228,10 @@ export function AccountAccess({
         } finally {
           await finishIdentityChange('cancel', false);
         }
-        setNotice('mailSent');
-        setPassword('');
+        moveAfterRequest('verify');
       } else if (step === 'request-reset') {
         await accountRequest('request-reset', { email });
-        setNotice('mailSent');
+        moveAfterRequest('reset');
       } else if (step === 'reset') {
         try {
           await accountRequest('reset', { token, password });
@@ -216,6 +243,7 @@ export function AccountAccess({
             setStep('login');
             setToken('');
             setPassword('');
+            setShowPassword(false);
             setNotice('resetUncertain');
             await onAccessReset?.();
             return;
@@ -226,6 +254,7 @@ export function AccountAccess({
         setPassword('');
         setToken('');
         setStep('login');
+        setShowPassword(false);
         setNotice('resetDone');
       }
     });
@@ -271,6 +300,11 @@ export function AccountAccess({
         : step === 'manage'
           ? 'account'
           : step;
+  const errorMessage = error && (
+    <p ref={errorRegion} tabIndex={-1} role="alert" className="account-error">
+      {accountError(language, error)}
+    </p>
+  );
   return (
     <dialog
       ref={dialog}
@@ -284,18 +318,21 @@ export function AccountAccess({
         close();
       }}
     >
-      <button
-        type="button"
-        className="account-close game-object"
-        onClick={close}
-        disabled={busy}
-        aria-label={a(language, 'close')}
-      >
-        <Artwork asset="ui.pass" language={language} decorative />
-      </button>
       <header className="account-heading">
         <Artwork asset="ui.missions" language={language} decorative />
         <h2 id="account-title">{a(language, title)}</h2>
+        <button
+          type="button"
+          className="account-close game-object"
+          onClick={close}
+          disabled={busy}
+          aria-label={a(language, 'close')}
+        >
+          <Artwork asset="ui.pass" language={language} decorative />
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M14 5 7 12l7 7M7 12h14" />
+          </svg>
+        </button>
       </header>
       {step === 'manage' ? (
         <section className="account-management">
@@ -321,6 +358,12 @@ export function AccountAccess({
         </section>
       ) : (
         <form onSubmit={submit} data-account-action={step}>
+          {['verify', 'reset'].includes(step) && (
+            <div className="account-delivery">
+              {email && <p className="account-email">{email}</p>}
+              {notice === 'mailSent' && <p role="status">{a(language, 'mailSent')}</p>}
+            </div>
+          )}
           {step === 'register' && <p className="account-intro">{a(language, 'registerHelp')}</p>}
           {['register', 'login', 'request-reset'].includes(step) && (
             <label htmlFor="account-email">
@@ -367,8 +410,7 @@ export function AccountAccess({
                   name="password"
                   type={showPassword ? 'text' : 'password'}
                   autoComplete={step === 'login' ? 'current-password' : 'new-password'}
-                  minLength={step === 'login' ? 1 : 15}
-                  maxLength={128}
+                  aria-invalid={error === 'PASSWORD_POLICY' || undefined}
                   required
                   value={password}
                   onChange={(event) => setPassword(event.target.value)}
@@ -412,14 +454,14 @@ export function AccountAccess({
                   {a(language, allowSwitch ? 'sameOwner' : 'allowSwitch')}
                 </button>
               )}
-              {allowSwitch && <p role="status">{a(language, 'switchChosen')}</p>}
             </section>
           )}
-          {notice && (
+          {notice && notice !== 'mailSent' && (
             <p role="status" className="account-notice">
               {a(language, notice)}
             </p>
           )}
+          {errorMessage}
           <button
             type="submit"
             className="account-primary"
@@ -441,6 +483,16 @@ export function AccountAccess({
                         : 'login',
             )}
           </button>
+          {['verify', 'reset'].includes(step) && (
+            <button
+              type="button"
+              className="account-link"
+              disabled={busy || !!uncertain}
+              onClick={() => move(step === 'verify' ? 'register' : 'request-reset')}
+            >
+              {a(language, 'requestAnother')}
+            </button>
+          )}
           {step === 'register' && (
             <button
               type="button"
@@ -495,11 +547,7 @@ export function AccountAccess({
       )}
       {busy && <p role="status">{a(language, 'sending')}</p>}
       {!connected && <p role="status">{a(language, 'offline')}</p>}
-      {error && (
-        <p role="alert" className="account-error">
-          {accountError(language, error)}
-        </p>
-      )}
+      {step === 'manage' && errorMessage}
       {uncertain && (
         <button type="button" disabled={busy || !connected} onClick={checkSession}>
           {a(language, 'check')}

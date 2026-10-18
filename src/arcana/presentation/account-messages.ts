@@ -17,7 +17,7 @@ const messages = {
     es: 'Entre 15 y 128 caracteres. Puedes pegarla o usar un gestor de contraseñas.',
     en: '15 to 128 characters. You can paste it or use a password manager.',
   },
-  token: { es: 'Código del correo', en: 'Email token' },
+  token: { es: 'Código del correo', en: 'Verification code' },
   show: { es: 'Mostrar contraseña', en: 'Show password' },
   hide: { es: 'Ocultar contraseña', en: 'Hide password' },
   close: { es: 'Volver al juego', en: 'Back to game' },
@@ -27,15 +27,21 @@ const messages = {
   verifyTitle: { es: 'Verifica tu correo', en: 'Verify your email' },
   registerHelp: {
     es: 'Verifica tu correo con el código y elige una contraseña. En este ensayo, el código se entrega a un buzón local privado. Tu partida actual se conserva.',
-    en: 'Verify your email with the token and choose a password. In this trial, the token is delivered to a private local mailbox. Your current game is preserved.',
+    en: 'Verify your email with the code and choose a password. In this trial, the code is delivered to a private local mailbox. Your current game is preserved.',
   },
   mailSent: {
     es: 'Si la solicitud es válida, el código y su caducidad están en el buzón privado del ensayo. No se envía correo por Internet.',
-    en: 'If the request is valid, the token and expiry are in the trial’s private mailbox. No email is sent over the Internet.',
+    en: 'If the request is valid, the code and expiry are in the trial’s private mailbox. No email is sent over the Internet.',
   },
-  haveCode: { es: 'Tengo el código', en: 'I have the token' },
+  requestAnother: { es: 'Solicitar otro código', en: 'Request another code' },
+  editEmail: { es: 'Cambiar correo', en: 'Change email' },
+  mailUncertain: {
+    es: 'No llegó la respuesta a la solicitud. Puedes solicitar el código de nuevo cuando haya conexión. No se ha cambiado tu acceso.',
+    en: 'The code request response did not arrive. You can request it again when connected. Your access has not changed.',
+  },
+  haveCode: { es: 'Tengo el código', en: 'I have the code' },
   forgot: { es: 'Olvidé mi contraseña', en: 'Forgot password' },
-  requestReset: { es: 'Enviar recuperación', en: 'Send recovery email' },
+  requestReset: { es: 'Solicitar código de recuperación', en: 'Request recovery code' },
   resetTitle: { es: 'Recuperar acceso', en: 'Recover access' },
   reset: { es: 'Guardar nueva contraseña', en: 'Save new password' },
   resetDone: {
@@ -44,7 +50,7 @@ const messages = {
   },
   resetUncertain: {
     es: 'No se pudo confirmar la respuesta. Prueba a entrar con la nueva contraseña; si no funciona, solicita otro código de recuperación.',
-    en: 'The response could not be confirmed. Try signing in with the new password; if it does not work, request another recovery token.',
+    en: 'The response could not be confirmed. Try signing in with the new password; if it does not work, request another recovery code.',
   },
   linked: {
     es: 'Tu colección y avance están vinculados a esta cuenta.',
@@ -83,7 +89,7 @@ const messages = {
   },
   invalid: {
     es: 'No se ha podido verificar el acceso. Revisa tus datos o solicita un nuevo código.',
-    en: 'Access could not be verified. Check your details or request a new token.',
+    en: 'Access could not be verified. Check your details or request a new code.',
   },
   guestExpired: {
     es: 'La sesión invitada no está disponible. Para vincularla necesitas su sesión original. Si ya tenías cuenta, inicia sesión.',
@@ -116,18 +122,22 @@ export const accountText = (language: Language, key: AccountMessage): string =>
   messages[key][language];
 export function accountError(language: Language, code: string): string {
   const key: AccountMessage =
-    code === 'GUEST_SESSION_REQUIRED'
-      ? 'guestExpired'
-      : code === 'RATE_LIMITED'
-        ? 'rate'
-        : code === 'PLAYER_MISMATCH' || code === 'ACCOUNT_CONFLICT'
-          ? 'conflict'
-          : code === 'OPERATION_PENDING' || code === 'CLIENT_STORAGE'
-            ? 'blocked'
-            : code === 'NETWORK_ERROR'
-              ? 'uncertain'
-              : code === 'AUTH_UNAVAILABLE' || code === 'INTERNAL_ERROR' || code === 'STORAGE'
-                ? 'unavailable'
-                : 'invalid';
+    code === 'PASSWORD_POLICY'
+      ? 'passwordHint'
+      : code === 'MAIL_REQUEST_UNCERTAIN'
+        ? 'mailUncertain'
+        : code === 'GUEST_SESSION_REQUIRED'
+          ? 'guestExpired'
+          : code === 'RATE_LIMITED'
+            ? 'rate'
+            : code === 'PLAYER_MISMATCH' || code === 'ACCOUNT_CONFLICT'
+              ? 'conflict'
+              : code === 'OPERATION_PENDING' || code === 'CLIENT_STORAGE'
+                ? 'blocked'
+                : code === 'NETWORK_ERROR'
+                  ? 'uncertain'
+                  : code === 'AUTH_UNAVAILABLE' || code === 'INTERNAL_ERROR' || code === 'STORAGE'
+                    ? 'unavailable'
+                    : 'invalid';
   return accountText(language, key);
 }

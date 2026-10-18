@@ -1,10 +1,12 @@
-import { useEffect, useRef, useState, type ReactNode } from 'react';
+import { createContext, useContext, useEffect, useRef, useState, type ReactNode } from 'react';
 import { Artwork } from './Artwork';
 import { contentPackOptions, selectedContentPackId, setContentPack } from './content-packs/active';
 import type { Language } from '../domain/collection/wizards';
 import { text } from './translations';
 import './settings-case.css';
 import { mapSettingsText } from './map-settings-messages';
+
+export const AccountSettingsContext = createContext<ReactNode>(null);
 
 /** Preferences stay local; account actions are provided by the session coordinator. */
 export function GameSettings({
@@ -24,6 +26,8 @@ export function GameSettings({
   onReduced: (enabled: boolean) => void;
   accountControl?: ReactNode;
 }) {
+  const sharedAccountControl = useContext(AccountSettingsContext);
+  const account = accountControl ?? sharedAccountControl;
   const [open, setOpen] = useState(false);
   const [showSave, setShowSave] = useState(false);
   const dialog = useRef<HTMLDialogElement>(null);
@@ -71,7 +75,7 @@ export function GameSettings({
             <Artwork asset="ui.settings" language={language} decorative />
             <h2>{text(language, 'gameSettings')}</h2>
           </header>
-          {accountControl && <section className="settings-account">{accountControl}</section>}
+          {account && <section className="settings-account">{account}</section>}
           <fieldset className="settings-choices">
             <legend>{text(language, 'gameLanguage')}</legend>
             {(['es', 'en'] as const).map((value) => (
