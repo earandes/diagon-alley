@@ -302,3 +302,23 @@ test('A85 the actual mastery roster discloses its active house before confirmati
       await picture(page, 'boss-390-es-diagon');
   }
 });
+test('A85 pending route actions wait while locked nodes remain read-only consultations', async ({
+  page,
+}, info) => {
+  test.skip(
+    info.project.name !== 'chromium-390-motion-a69',
+    'One deterministic pending-state fixture; domain semantics and real seasonal journey cover the integration.',
+  );
+  await page.goto(`${fixture}?mode=map&busy=1`);
+  const available = page.locator('[data-node-state=available]').first();
+  await expect(available).toBeDisabled();
+  await page.locator('[data-node-state=locked]').first().click();
+  await expect(page.getByRole('dialog', { name: 'Consultar ruta', exact: true })).toBeVisible();
+  await page.keyboard.press('Escape');
+  await page.locator('[data-qa-ready]').click();
+  await expect(available).toBeEnabled();
+  await available.click();
+  await expect(page.locator('.tactical-pact')).toBeVisible();
+  await expect(page.getByRole('dialog', { name: 'Consultar ruta', exact: true })).toHaveCount(0);
+  await immutable(page);
+});

@@ -117,7 +117,8 @@ function Fixture() {
   useSyncExternalStore(subscribeContentPack, selectedContentPackId);
   const [mode, setMode] = useState(query.get('mode') ?? 'map'),
     [options, setOptions] = useState<NodeOptions>({ pactAction: 'recruit' }),
-    [reduced, setReduced] = useState(query.has('reduced'));
+    [reduced, setReduced] = useState(query.has('reduced')),
+    [ready, setReady] = useState(!query.has('busy'));
   const pact = run.campaignSnapshot!.nodes.find((p) => p.kind === 'pact')!;
   const boss = c.campaign.challengeContent!('mastery', graph).find((p) => p.kind === 'boss')!;
   const pactMembers = copies
@@ -151,7 +152,12 @@ function Fixture() {
               language={language}
               onPrepare={() => setMode('prepare')}
             />
-            <MapPanel run={run} ready language={language} onSelect={() => setMode('pact')} />
+            <MapPanel
+              run={run}
+              ready={ready}
+              language={language}
+              onSelect={() => setMode('pact')}
+            />
           </section>
         )}
         {mode === 'collection' && (
@@ -270,6 +276,11 @@ function Fixture() {
         style={{ position: 'fixed', bottom: 0, right: 0, zIndex: 100, fontSize: 10 }}
       >
         <span>Declared fixture</span>
+        {query.has('busy') && (
+          <button data-qa-ready onClick={() => setReady(true)}>
+            Release operation fixture
+          </button>
+        )}
         <button
           data-qa-pack
           onClick={() =>

@@ -41,6 +41,7 @@
 }
 .house-band details {
   position: relative;
+  margin: 0;
 }
 .house-band summary {
   display: flex;
@@ -53,6 +54,7 @@
   font-size: 0.75rem;
   list-style: none;
   padding: 0.15rem 0.3rem;
+  border: 0;
   border-bottom: 2px solid transparent;
 }
 .house-band details[data-active='true'] summary {
@@ -248,5 +250,26 @@
   }
   .boss-party-stage > .house-band summary b {
     font-size: 0.75rem;
+  }
+}
+@media (max-width: 620px) {
+  /* Known affinity and active house share a tactical line; portraits retain their full size. */
+  .boss-prelude-identity:has(> .boss-house-mark) {
+    grid-template-columns: auto auto;
+    justify-content: center;
+    column-gap: 8px;
+  }
+  .boss-prelude-identity:has(> .boss-house-mark) > :is(h4, .boss-roster-count) {
+    grid-column: 1 / -1;
+  }
+  .boss-prelude-identity:has(> .boss-house-mark) > .tactical-affinity {
+    grid-column: 1;
+    grid-row: 2;
+    align-self: center;
+  }
+  .boss-prelude-identity > .boss-house-mark {
+    grid-column: 2;
+    grid-row: 2;
+    min-width: 0;
   }
 }
