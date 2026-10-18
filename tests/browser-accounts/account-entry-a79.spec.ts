@@ -22,15 +22,10 @@ async function measure(page: Page, name: string) {
   await expect(dialog(page)).toHaveAttribute('aria-busy', 'false');
   const value = await dialog(page).evaluate((element) => {
     const rect = element.getBoundingClientRect();
-    const visible = (e: Element) =>
-      e.getClientRects().length > 0 && getComputedStyle(e).visibility !== 'hidden';
     return {
       height: rect.height,
       width: rect.width,
       viewport: { width: innerWidth, height: innerHeight },
-      visibleButtons: [...element.querySelectorAll('button')]
-        .filter(visible)
-        .map((button) => button.textContent?.trim() || button.getAttribute('aria-label')),
       words: (element as HTMLElement).innerText.trim().split(/\s+/).length,
       fields: element.querySelectorAll('input').length,
       overflow: element.scrollWidth > element.clientWidth + 1,
@@ -38,9 +33,18 @@ async function measure(page: Page, name: string) {
       primary: element.querySelectorAll('.account-primary').length,
     };
   });
-  observations.push({ name, project: test.info().project.name, ...value });
+  // Native closed details may retain descendant geometry. Use the exposed
+  // accessibility roles, not rectangles, to count the actual available actions.
+  const visibleButtons = await dialog(page).getByRole('button').all();
+  const buttons = await Promise.all(
+    visibleButtons.map(async (button) => {
+      await expect(button).toBeVisible();
+      return (await button.textContent())?.trim() || (await button.getAttribute('aria-label'));
+    }),
+  );
+  observations.push({ name, project: test.info().project.name, ...value, visibleButtons: buttons });
   expect(value.overflow).toBe(false);
-  expect(value.visibleButtons.length).toBeLessThanOrEqual(3);
+  expect(buttons.length).toBeLessThanOrEqual(3);
   expect(value.words).toBeLessThanOrEqual(60);
   expect(value.primary).toBe(1);
   expect(value.helpOpen).toBe(false);
@@ -167,6 +171,7 @@ test('A79 uncertain authentication has one recovery action and Enter does not re
   await expect(dialog(page).locator('.account-primary')).toHaveCount(1);
   await dialog(page).locator('input[name=password]').focus();
   await page.keyboard.press('Enter');
+  await expect(dialog(page)).toHaveAttribute('aria-busy', 'false');
   expect(requests).toBe(1);
   await capture(page, 'uncertain');
   await page.unroute('**/api/auth/login');
