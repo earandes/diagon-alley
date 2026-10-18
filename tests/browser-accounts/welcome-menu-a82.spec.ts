@@ -133,6 +133,12 @@ test('A82 missing illustrations preserve all visible choices and guest operation
       return text.left >= box.left && text.right <= box.right && text.right <= innerWidth;
     }),
   ).toBe(true);
+  const titleBounds = await page.locator('.welcome-brand h1').boundingBox();
+  const settingsBounds = await settings.boundingBox();
+  expect(
+    titleBounds!.y >= settingsBounds!.y + settingsBounds!.height ||
+      titleBounds!.x + titleBounds!.width <= settingsBounds!.x,
+  ).toBe(true);
   await settings.click();
   await expect(page.locator('dialog.game-settings[open]')).toBeVisible();
   await page.keyboard.press('Escape');

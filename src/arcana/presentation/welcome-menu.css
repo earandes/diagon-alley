@@ -63,6 +63,10 @@
   color: #ffe3a4;
   text-shadow: 0 3px 12px #030916;
 }
+.game-shell .welcome-menu .welcome-brand:not(:has(.welcome-emblem)) {
+  /* Reserve the missing crest so the title never jumps under the Settings fallback. */
+  padding-top: clamp(72px, 12dvh, 112px);
+}
 .welcome-brand .welcome-emblem {
   width: clamp(72px, 12dvh, 112px);
   height: clamp(72px, 12dvh, 112px);
