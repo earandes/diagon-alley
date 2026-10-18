@@ -1,4 +1,4 @@
-import { pauseBattle, resumeBattle, skipBattle, toggleBattleSpeed } from '../browser-trial/battle-controls';
+import { pauseBattle, resumeBattle, skipBattle, setDoubleBattleSpeed } from '../browser-trial/battle-controls';
 import { mkdir, writeFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
 import { test, expect, type Page } from '@playwright/test';
@@ -181,7 +181,7 @@ test('A84 saved replay clock, pause, 2x, skip and reduced never change confirmed
   const paused = await page.locator('.battle-panel').getAttribute('data-replay-cursor');
   await page.waitForTimeout(250);
   expect(await page.locator('.battle-panel').getAttribute('data-replay-cursor')).toBe(paused);
-  await toggleBattleSpeed(page);
+  await setDoubleBattleSpeed(page);
   await resumeBattle(page);
   await skipBattle(page);
   await expect(page.locator('.battle-panel')).toHaveAttribute('data-replay-phase', 'finished');

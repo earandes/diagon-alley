@@ -1,4 +1,4 @@
-import { pauseBattle, resumeBattle, skipBattle, toggleBattleSpeed } from '../browser-trial/battle-controls';
+import { pauseBattle, resumeBattle, skipBattle, setDoubleBattleSpeed } from '../browser-trial/battle-controls';
 import { expect, test, type Page } from '@playwright/test';
 import { mkdir, writeFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
@@ -244,7 +244,7 @@ test('A69 replay clock: pause, 2x, inspector, hidden, skip and renderer failure 
   expect(await panel.getAttribute('data-replay-cursor')).toBe(frozen);
   expect(await panel.getAttribute('data-replay-progress')).toBe(phase);
   expect(await scene.getAttribute('data-render-count')).toBe(renders);
-  await toggleBattleSpeed(page);
+  await setDoubleBattleSpeed(page);
   await expect(panel).toHaveAttribute('data-replay-speed', '2');
   expect(await panel.getAttribute('data-replay-cursor')).toBe(frozen);
   expect(await panel.getAttribute('data-replay-progress')).toBe(phase);

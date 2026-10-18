@@ -1,4 +1,4 @@
-import { leaveBattle, inspectBattleRecord, pauseBattle, resumeBattle, skipBattle, toggleBattleSpeed } from '../browser-trial/battle-controls';
+import { leaveBattle, inspectBattleRecord, pauseBattle, resumeBattle, skipBattle, setDoubleBattleSpeed } from '../browser-trial/battle-controls';
 import { test, expect, type Page } from '@playwright/test';
 import { mkdir, writeFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
@@ -389,7 +389,7 @@ test('A70 real boss profile fixtures: poses pause speed hidden inspector skip pa
       expect(await frozen(page)).toEqual(atCast);
       if (selected()) await capture(page, 'boss-object-cast');
     }
-    await toggleBattleSpeed(page);
+    await setDoubleBattleSpeed(page);
     await expect(panel).toHaveAttribute('data-replay-speed', '2');
     const cursor = await panel.getAttribute('data-replay-cursor');
     const progress = await panel.getAttribute('data-replay-progress');

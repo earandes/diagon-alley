@@ -29,9 +29,10 @@ export async function skipBattle(page: Page) {
   if (await skip.isEnabled()) await skip.click();
   else await closeBattleOptions(page);
 }
-export async function toggleBattleSpeed(page: Page) {
+export async function setDoubleBattleSpeed(page: Page) {
   await openBattleOptions(page);
-  await page.getByRole('button', { name: '2x', exact: true }).click();
+  const choice = page.getByRole('button', { name: '2x', exact: true });
+  if ((await choice.getAttribute('aria-pressed')) !== 'true') await choice.click();
   await closeBattleOptions(page);
 }
 export async function inspectBattleRecord(page: Page) {

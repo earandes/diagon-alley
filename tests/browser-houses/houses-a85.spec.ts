@@ -1,4 +1,4 @@
-import { pauseBattle, skipBattle, toggleBattleSpeed } from '../browser-trial/battle-controls';
+import { pauseBattle, skipBattle, setDoubleBattleSpeed } from '../browser-trial/battle-controls';
 import { expect, test, type Page } from '@playwright/test';
 import { mkdir, writeFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
@@ -241,7 +241,7 @@ test('A85 recorded house trajectory moves on the shared clock and pause/2x/skip 
   expect(await page.locator('[data-replay-cursor]').getAttribute('data-replay-cursor')).toBe(
     cursor,
   );
-  await toggleBattleSpeed(page);
+  await setDoubleBattleSpeed(page);
   await skipBattle(page);
   await immutable(page);
   await mkdir(root, { recursive: true });

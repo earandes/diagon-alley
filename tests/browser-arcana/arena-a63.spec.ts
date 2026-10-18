@@ -1,4 +1,4 @@
-import { pauseBattle, resumeBattle, skipBattle, toggleBattleSpeed } from '../browser-trial/battle-controls';
+import { pauseBattle, resumeBattle, skipBattle, setDoubleBattleSpeed } from '../browser-trial/battle-controls';
 import { expect, test } from '../browser-trial/game-fixture';
 import { mkdir, writeFile } from 'node:fs/promises';
 const evidence = 'docs/arcana/gameplay-increment-2026-10-16/evidence';
@@ -147,7 +147,7 @@ test('A63 replay controls, reduced, missing renderer, assets and enlarged text p
   const cursor = await panel.getAttribute('data-replay-cursor');
   await page.waitForTimeout(600);
   expect(await panel.getAttribute('data-replay-cursor')).toBe(cursor);
-  await toggleBattleSpeed(page);
+  await setDoubleBattleSpeed(page);
   await resumeBattle(page);
   await expect
     .poll(async () => Number(await panel.getAttribute('data-replay-cursor')))

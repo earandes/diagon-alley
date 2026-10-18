@@ -1,4 +1,4 @@
-import { leaveBattle, pauseBattle, resumeBattle, skipBattle, toggleBattleSpeed } from './battle-controls';
+import { leaveBattle, pauseBattle, resumeBattle, skipBattle, setDoubleBattleSpeed } from './battle-controls';
 import { startExpedition } from './game-fixture';
 import { changeLanguage } from './game-fixture';
 import { reachNode, confirmEvent } from './route-helpers';
@@ -47,7 +47,7 @@ test('pause, Auto, 2x, language and skip only replay the committed log', async (
     count = posts;
   await page.waitForTimeout(900);
   expect(await arena.getAttribute('data-replay-cursor')).toBe(cursor);
-  await toggleBattleSpeed(page);
+  await setDoubleBattleSpeed(page);
   await expect(page.locator('.replay-controls button').nth(1)).toHaveAttribute(
     'aria-pressed',
     'true',

@@ -90,6 +90,14 @@ function BattlePlayback({
   useEffect(() => setSpeed(preferredSpeed), [preferredSpeed]);
   const [optionsOpen, setOptionsOpen] = useState(false);
   const pauseButton = useRef<HTMLButtonElement>(null);
+  const outcomeAction = useRef<HTMLButtonElement>(null);
+  const focusResult = useRef(false);
+  useLayoutEffect(() => {
+    if (frame.outcome && focusResult.current) {
+      focusResult.current = false;
+      outcomeAction.current?.focus({ preventScroll: true });
+    }
+  }, [frame.outcome]);
   const openOptions = () => {
     setPlaying(false);
     setOptionsOpen(true);
@@ -352,7 +360,7 @@ function BattlePlayback({
         role="region"
         aria-label={arenaText(language, 'options')}
         onKeyDown={(event) => {
-          if (event.key === 'Escape') {
+          if (event.key === 'Escape' && !(event.target as Element).closest('dialog[open]')) {
             event.stopPropagation();
             setOptionsOpen(false);
             pauseButton.current?.focus();
@@ -375,6 +383,7 @@ function BattlePlayback({
             disabled={cursor === total}
             aria-label={t('skipPlayback')}
             onClick={() => {
+              focusResult.current = true;
               setOptionsOpen(false);
               playback.skip();
             }}
@@ -585,7 +594,9 @@ function BattlePlayback({
         {outcomeLabel ? (
           <>
             <strong data-arena-outcome={frame.outcome}>{outcomeLabel}</strong>
-            <button onClick={onBack}>{arenaText(language, 'continue')}</button>
+            <button ref={outcomeAction} onClick={onBack}>
+              {arenaText(language, 'continue')}
+            </button>
           </>
         ) : (
           <p className="visually-hidden">{frame.event ? description(frame.event) : ''}</p>
