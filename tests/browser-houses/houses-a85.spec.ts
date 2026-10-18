@@ -269,6 +269,15 @@ test('A85 the actual mastery roster discloses its active house before confirmati
     await expect(page.locator('.boss-house-mark')).toHaveCount(1);
     await expect(page.locator('.boss-house-mark')).toBeVisible();
     await expect(page.locator('.boss-party-member')).toHaveCount(5);
+    const footer = await page.locator('.node-combat-actions').boundingBox();
+    for (const control of [
+      page.locator('.node-team-prepare'),
+      page.locator('.node-bean-preparation > summary'),
+    ]) {
+      await expect(control).toBeInViewport({ ratio: 1 });
+      const box = await control.boundingBox();
+      expect(box!.y + box!.height).toBeLessThanOrEqual(footer!.y);
+    }
     const size = await bounds(page);
     expect(size.scroll).toBeLessThanOrEqual(size.width + 1);
     await immutable(page);

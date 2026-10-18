@@ -32,3 +32,9 @@ Pendientes al registrar: errores completos deA68/A85, evidencia, candidato corre
 - A68 confirmó la misma intercepción de `house-band` en seis contextos; no hay evidencia de un fallo independiente del progreso estacional. Su regresión sigue siendo obligatoria.
 - Álbum: el contenedor nuevo del foil ocupaba todo el ancho del diálogo y tapaba el cierre. Se ciñe a la anchura del retrato y el control de cierre queda por encima, manteniendo toque y foco; no se usa clic forzado.
 - SpecA85: la consulta de Hufflepuff comprobaba por error el primer detalle (Gryffindor cerrado), y el selector de libro era ambiguo con el libro de grageas. Se dirigen a la casa y nombre accesible elegidos, conservando las exigencias. Se acota cada acción a10s para no esperar180s ante una intercepción, sin reintentos de suite.
+
+## Segundo candidato218389c · CI39138141861 (todavía en curso al registrar)
+
+A75 supera el emparejado con un solo hash; se conservaron las seis muestras y tareas largas57–62ms. A68/Halloween pasa, confirmando que se recuperó el toque de ruta sin forzarlo. A70 detecta un nuevo defecto móvil real: el summary del tarro solo tiene ratio visible0,602764 en390×844 ES/Diagon al añadir casas; se conserva la expectativa de ratio1 y posición por encima del pie de combate.
+
+Corrección siguiente: los medallones propios comparten estante con el título del equipo en móvil, con iconos/conteos compactos, nombres accesibles y detalle a demanda. No se ocultan integrantes, PV o controles, ni se reduce la ilustración. El specA85 de cinco integrantes añade la misma aceptación del tarro y preparación. A69 y regresión global siguen pendientes al registrar; no se declara éxito del candidato218389c.

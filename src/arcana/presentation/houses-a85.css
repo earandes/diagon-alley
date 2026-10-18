@@ -227,3 +227,26 @@
 .game-shell .album-card-folio .folio-close {
   z-index: 5;
 }
+@media (max-width: 620px) {
+  /* Houses share the party heading shelf. Do not push the jar under the fight footer. */
+  .boss-party-stage:has(> .house-band) > h4 {
+    grid-row: 1;
+    grid-column: 1 / -1;
+    justify-self: start;
+    max-width: 32%;
+    text-align: left;
+  }
+  .boss-party-stage > .house-band {
+    grid-row: 1;
+    grid-column: 1 / -1;
+    justify-self: end;
+    justify-content: flex-end;
+    max-width: 66%;
+  }
+  .boss-party-stage > .house-band summary span {
+    font-size: 0;
+  }
+  .boss-party-stage > .house-band summary b {
+    font-size: 0.75rem;
+  }
+}
