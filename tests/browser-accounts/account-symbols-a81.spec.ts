@@ -86,6 +86,20 @@ test('A81 own identity and access objects retain native tasks and cancellation',
       expect(
         await dialog(page).evaluate((element) => element.scrollWidth <= element.clientWidth + 1),
       ).toBe(true);
+      const emblem = page.locator('header.game-header img[data-art="brand.emblem"]');
+      const bounds = await emblem.evaluate((image) => {
+        const rect = image.getBoundingClientRect();
+        const header = image.closest('header')!.getBoundingClientRect();
+        return {
+          top: rect.top,
+          bottom: rect.bottom,
+          headerTop: header.top,
+          headerBottom: header.bottom,
+        };
+      });
+      expect(bounds.top).toBeGreaterThanOrEqual(0);
+      expect(bounds.top).toBeGreaterThanOrEqual(bounds.headerTop);
+      expect(bounds.bottom).toBeLessThanOrEqual(bounds.headerBottom);
       await capture(page, 'login-200');
       await page.evaluate(() => (document.documentElement.style.fontSize = ''));
     }

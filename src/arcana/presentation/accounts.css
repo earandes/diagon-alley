@@ -393,7 +393,12 @@
 }
 
 /* A81: one family, specific roles; labels and interactions remain independent. */
-.game-header h1:has(.welcome-emblem) {
+.game-shell[data-view='welcome'] > .game-header {
+  height: auto;
+  min-height: var(--game-header);
+  padding-block: 6px;
+}
+.game-shell .game-header h1:has(.welcome-emblem) {
   display: flex;
   align-items: center;
   gap: 10px;
