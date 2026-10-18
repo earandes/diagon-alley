@@ -399,3 +399,43 @@ test('A85 pending route actions wait while locked nodes remain read-only consult
   await expect(page.getByRole('dialog', { name: 'Consultar ruta', exact: true })).toHaveCount(0);
   await immutable(page);
 });
+test('A85 an active intention and house party reserve separate usable route space', async ({
+  page,
+}, info) => {
+  test.skip(!allowed(info.project.name), 'Protected six-pair Linux matrix only.');
+  for (const [lang, pack] of pairs) {
+    await page.goto(`${fixture}?mode=map&visited=1&intention=1&lang=${lang}&pack=${pack}`);
+    const reminder = page.locator('.expedition-panel > .intention-reminder');
+    await expect(reminder).toHaveAttribute('data-intention-status', 'active');
+    await expect(page.locator('.team-compact .house-band')).toBeVisible();
+    await expect
+      .poll(() =>
+        page.locator('[data-node]').evaluateAll((nodes) =>
+          nodes
+            .filter((node) => {
+              const box = node.getBoundingClientRect();
+              return !node.contains(
+                document.elementFromPoint(box.left + box.width / 2, box.top + box.height / 2),
+              );
+            })
+            .map((node) => node.getAttribute('data-node')),
+        ),
+      )
+      .toEqual([]);
+    const summary = reminder.locator(':scope > summary');
+    expect(
+      await summary.evaluate((node) => {
+        const box = node.getBoundingClientRect();
+        return node.contains(
+          document.elementFromPoint(box.left + box.width / 2, box.top + box.height / 2),
+        );
+      }),
+    ).toBe(true);
+    const size = await bounds(page);
+    expect(size.scroll).toBeLessThanOrEqual(size.width + 1);
+    expect(size.body).toBeLessThanOrEqual(size.height + 1);
+    await immutable(page);
+    if (lang === 'es' && pack === 'diagon-alley' && info.project.name === 'chromium-390-motion-a69')
+      await picture(page, 'map-intention-390-es-diagon');
+  }
+});

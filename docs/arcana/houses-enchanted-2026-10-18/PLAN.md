@@ -10,3 +10,5 @@
 Sin main/despliegue; no se marca entrega completa antes de resolver las comprobaciones técnicas pertinentes.
 
 7. e352a2e/CI39150545527 supera `check` completo; regresión cancelada antes de navegador por corrección de fidelidad del harness. Nuevo candidato solo refuerza el ensayo (CSS compartido, ajuste/contexto real, decodificación/cajas de retratos y acción inline); pipeline completo pendiente. El estante de producción permanece intacto.
+
+8. eb0c050/CI39153964079: check completo correcto y muestra densa inspeccionada; regresión falla en seis intenciones por bloqueo de Pacto bajo el equipo. Reserva de intención/equipo compuesta y nuevo caso determinista en los seis pares; nuevaCI pendiente. No se cierra técnicamente.

@@ -7,6 +7,7 @@ import type { BeanAssignment } from '../../src/arcana/application/run-contracts'
 import { BossPartyStage } from '../../src/arcana/presentation/BossPartyStage';
 import { BossSupplies } from '../../src/arcana/presentation/BossSupplies';
 import { GameSettings } from '../../src/arcana/presentation/GameSettings';
+import { IntentionReminder } from '../../src/arcana/presentation/ExpeditionIntentions';
 // Declared UI fixtures, never an earned collection or a public server grant route.
 import { useState, useSyncExternalStore } from 'react';
 import { createRoot } from 'react-dom/client';
@@ -97,13 +98,14 @@ const gear = dense
       starterEquipment().map((item) => ({ ...item, id: `fixture:gear:${i}:${item.kind}` })),
     )
   : [];
-const beans = dense
-  ? members.map((_, i) => ({
-      id: `fixture:bean:${i}`,
-      kind: 'random-beans' as const,
-      status: 'available' as const,
-    }))
-  : [];
+const beans =
+  dense || query.has('intention')
+    ? members.map((_, i) => ({
+        id: `fixture:bean:${i}`,
+        kind: 'random-beans' as const,
+        status: 'available' as const,
+      }))
+    : [];
 const denseAssignments: readonly BeanAssignment[] = dense
   ? members.map((m, i) => ({ unitId: m.unit.id, beanId: beans[i].id }))
   : [];
@@ -124,7 +126,21 @@ let game: GameState = {
         }))
       : [],
   },
-  exploration: { run, victories: [], unlockedZones: [c.campaign.zoneId] },
+  exploration: {
+    run,
+    victories: [],
+    unlockedZones: [c.campaign.zoneId],
+    ...(query.has('intention')
+      ? {
+          intention: {
+            version: 1 as const,
+            afterRunId: 'fixture-previous-run',
+            runId: run.id,
+            choice: { kind: 'bean' as const },
+          },
+        }
+      : {}),
+  },
 };
 if (dense) {
   run = refreshRunEquipment(run, game, game.team!);
@@ -193,6 +209,7 @@ function Fixture() {
       <main id="content">
         {mode === 'map' && (
           <section className="expedition-panel" data-map-phase="route">
+            <IntentionReminder game={game} content={content} language={language} />
             <TeamHud
               game={game}
               content={content}

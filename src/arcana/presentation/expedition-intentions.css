@@ -191,7 +191,9 @@
 .arcana-map-view
   .expedition-panel[data-map-phase='route']:has(> .intention-reminder)
   > .map-scroll {
-  height: calc(100% - 96px);
+  /* This higher-specificity route rule must compose both occupied shelves.
+     Otherwise an active intention silently restores the map beneath the party. */
+  height: calc(100% - 96px - var(--party-map-space, 0px));
   margin-top: 96px;
 }
 .arcana-map-view .expedition-panel[data-map-phase='route'] > .intention-reminder[open] {
