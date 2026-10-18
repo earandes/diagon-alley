@@ -8,3 +8,5 @@
 6. Informe, evidencia y cobertura final: pendiente.
 
 Sin main/despliegue; no se marca entrega completa antes de resolver las comprobaciones técnicas pertinentes.
+
+7. e352a2e/CI39150545527 supera `check` completo; regresión cancelada antes de navegador por corrección de fidelidad del harness. Nuevo candidato solo refuerza el ensayo (CSS compartido, ajuste/contexto real, decodificación/cajas de retratos y acción inline); pipeline completo pendiente. El estante de producción permanece intacto.

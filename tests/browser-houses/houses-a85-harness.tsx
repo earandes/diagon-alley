@@ -6,6 +6,7 @@ import { Artwork } from '../../src/arcana/presentation/Artwork';
 import type { BeanAssignment } from '../../src/arcana/application/run-contracts';
 import { BossPartyStage } from '../../src/arcana/presentation/BossPartyStage';
 import { BossSupplies } from '../../src/arcana/presentation/BossSupplies';
+import { GameSettings } from '../../src/arcana/presentation/GameSettings';
 // Declared UI fixtures, never an earned collection or a public server grant route.
 import { useState, useSyncExternalStore } from 'react';
 import { createRoot } from 'react-dom/client';
@@ -21,6 +22,10 @@ import { CollectionPanel } from '../../src/arcana/presentation/CollectionPanel';
 import { CardReveal } from '../../src/arcana/presentation/CardReveal';
 import { BattlePanel } from '../../src/arcana/presentation/BattlePanel';
 import { NodePreparation } from '../../src/arcana/presentation/NodePreparation';
+// App owns this shared dialog sheet. Matching button classes without it stacks
+// the confirmation artwork, label and cost into the legacy grid control.
+import '../../src/arcana/presentation/node-event-dialog.css';
+import '../../src/arcana/presentation/header-pact.css';
 import { ExpeditionPreparation } from '../../src/arcana/presentation/ExpeditionPreparation';
 import { SweetshopScene } from '../../src/arcana/presentation/SweetshopScene';
 import {
@@ -173,7 +178,7 @@ function Fixture() {
     .map((copy) => ({ source: 'owned' as const, unit: c.campaign.prepareOwned(copy) }));
   return (
     <div
-      className={`arcana-shell game-shell${mode === 'map' ? ' arcana-map-view' : ''}`}
+      className={`arcana-shell game-shell${mode === 'map' || mode === 'boss' ? ' arcana-map-view' : ''}`}
       data-view={mode === 'battle' ? 'battle' : 'map'}
     >
       <div
@@ -225,7 +230,15 @@ function Fixture() {
             }}
             className="notice node-event-dialog boss-staging"
             aria-label="Declared boss fixture"
+            data-event-kind="boss"
           >
+            <GameSettings
+              language={language}
+              onLanguage={() => {}}
+              reduced={reduced}
+              ownReduced={reduced}
+              onReduced={setReduced}
+            />
             <NodePreparation
               plan={boss}
               run={run}

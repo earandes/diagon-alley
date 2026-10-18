@@ -292,9 +292,35 @@ test('A85 the actual mastery roster discloses its active house before confirmati
           ),
       )
       .toEqual([true, true, true, true, true]);
+    const figures = await page
+      .locator('.boss-party-portrait > img:first-child')
+      .evaluateAll(async (images) => {
+        await Promise.all(images.map((image) => (image as HTMLImageElement).decode()));
+        await new Promise(requestAnimationFrame);
+        await new Promise(requestAnimationFrame);
+        return images.map((image) => {
+          const box = image.getBoundingClientRect(),
+            style = getComputedStyle(image);
+          return {
+            width: box.width,
+            height: box.height,
+            opacity: style.opacity,
+            visibility: style.visibility,
+            naturalWidth: (image as HTMLImageElement).naturalWidth,
+          };
+        });
+      });
     if (lang === 'es' && pack === 'diagon-alley' && info.project.name.startsWith('chromium-390'))
       await picture(page, 'boss-390-es-diagon');
     const footer = await page.locator('.node-combat-actions').boundingBox();
+    // Faithful production action: illustration, label and visible cost share
+    // one row rather than the legacy grid button accidentally used by the fixture.
+    const actionParts = await page.locator('.node-confirm-action > *').evaluateAll((elements) =>
+      elements.map((el) => {
+        const box = el.getBoundingClientRect();
+        return { top: box.top, height: box.height, middle: box.top + box.height / 2 };
+      }),
+    );
     await mkdir(root, { recursive: true });
     await writeFile(
       resolve(root, `${info.project.name}-boss-${lang}-${pack}.json`),
@@ -304,6 +330,8 @@ test('A85 the actual mastery roster discloses its active house before confirmati
           fixture: true,
           scope: 'Mastery5x5; five equipped allies with five draft beans; production footer',
           footer,
+          actionParts,
+          figures,
           layout: await page
             .locator(
               '.boss-prelude-hero, .boss-opponent-details, .event-loot, .boss-party-members, .node-team-prepare, .node-bean-preparation > summary',
@@ -321,6 +349,15 @@ test('A85 the actual mastery roster discloses its active house before confirmati
         2,
       ),
     );
+    for (const figure of figures) {
+      expect(figure.width).toBeGreaterThanOrEqual(32);
+      expect(figure.height).toBeGreaterThanOrEqual(60);
+      expect(Number(figure.opacity)).toBe(1);
+      expect(figure.visibility).toBe('visible');
+    }
+    expect(
+      Math.max(...actionParts.map((p) => p.middle)) - Math.min(...actionParts.map((p) => p.middle)),
+    ).toBeLessThanOrEqual(1);
     for (const control of [
       page.locator('.node-team-prepare'),
       page.locator('.node-bean-preparation > summary'),
