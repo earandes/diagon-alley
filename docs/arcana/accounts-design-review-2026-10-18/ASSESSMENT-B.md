@@ -6,7 +6,7 @@
 
 - Lectura de `AccountAccess.tsx`, `account-messages.ts`, `accounts.css`, integración en `App.tsx`/`GameSettings.tsx`, `Artwork.tsx`, pruebas A76 y su configuración. Contexto Impeccable cargado una vez y referencia critique leída.
 - Detector CLI ejecutado **una sola vez**: `.agents/skills/arcana-impeccable/scripts/impeccable detect --json src/arcana/presentation/AccountAccess.tsx > .local/a77-detect.json`. Resultado JSON `[]`, cero findings, cero reglas/localizaciones devueltas. No hay falsos positivos que descartar. El alcance es ese TSX; no inspecciona por sí mismo el recorrido, la CSS en cascada ni la adecuación artística.
-- Se inspeccionaron las tres imágenes Linux A76 ya existentes: bienvenida, registro y cuenta en Ajustes, todas Chromium390×844/ES/Diagon. Procedencia en A76/GALLERY.md: código `3f6e122`, checkout merge `bc8c166`, árbol `c755d7d`. No son nuevas capturas ni acreditan los demás estados.
+- Se inspeccionaron las tres imágenes Linux A76 ya existentes: bienvenida, registro y cuenta en Ajustes, todas Chromium 390×844/ES/Diagon. Procedencia en A76/GALLERY.md: código `3f6e122`, checkout merge `bc8c166`, árbol `c755d7d`. No son nuevas capturas ni acreditan los demás estados.
 - **No se lanzó navegador, servidor, suite, overlay/inyección, captura ni reproducción local.** La inspección dinámica nueva corresponde a Linux bajo las protecciones del repositorio. Tampoco se ejecutaron pruebas unitarias en este assessment; se contrasta qué afirman las anteriores.
 - Un detector limpio no demuestra calidad del diseño, foco correcto, WCAG completa, comprensión o diversión. No hay observación humana, lector hablado, gestor de contraseñas real ni dispositivo físico.
 
@@ -14,7 +14,7 @@
 
 1. Credenciales con etiquetas reales, campos `email`/`password`, autocomplete, pegado sin bloquear y visibilidad explícita: AccountAccess líneas326–389. Es una excepción autorizada al lenguaje de objetos del combate; convertir estos campos en arte o gestos sería una regresión.
 2. Un único acceso contextual en Ajustes; no se añade HUD permanente: App467–496. El correo y el estado se muestran fuera de ilustraciones.
-3. Diálogo nativo, Escape interceptado, operación en curso excluyente y restauración al origen conectado: AccountAccess98–111,125–142,275–295. Los botones e inputs tienen objetivos CSS de44/48px y foco visible: accounts.css67–105.
+3. Diálogo nativo, Escape interceptado, operación en curso excluyente y restauración al origen conectado: AccountAccess98–111,125–142,275–295. Los botones e inputs tienen objetivos CSS de44/48 px y foco visible: accounts.css67–105.
 4. Desbordamiento vertical accesible y texto refluible: accounts.css3–7,91–96,159–162. En las capturas, la carta no tapa el significado de los campos y la cuenta ficticia larga se ajusta.
 5. Los errores no se sustituyen por éxito optimista: error general `role=alert`, espera `role=status`, consulta de sesión para resultado incierto: AccountAccess496–506. La efectividad de todos sus estados aún necesita la cobertura indicada debajo.
 
@@ -68,7 +68,7 @@ Las capturas de register y manage no muestran un objeto reconocible de cierre en
 
 ## Cobertura existente frente a cobertura pendiente
 
-Los resultados A76 están documentados en QA.md: 30 casos específicos correctos/30 omisiones deliberadas, en dos tandas Linux cuyos SHA y equivalencia están separados. **No se suman como pruebas únicas.** La matriz completa corresponde a formularios; los recorridos de autoridad se muestrean en Chromium390 para cada idioma/pack.
+Los resultados A76 están documentados en QA.md: 30 casos específicos correctos/30 omisiones deliberadas, en dos tandas Linux cuyos SHA y equivalencia están separados. **No se suman como pruebas únicas.** La matriz completa corresponde a formularios; los recorridos de autoridad se muestrean en Chromium 390 para cada idioma/pack.
 
 | Área nueva | Lo que comprueba el spec A76 | Lo que no acredita todavía |
 | --- | --- | --- |
@@ -82,7 +82,7 @@ Los resultados A76 están documentados en QA.md: 30 casos específicos correctos
 | Conexión y servicios | Integración técnica en otros tests/documentos | Estado visualoffline al abrir y durante enviar; deadline15s visible; unavailable/rate-limit/reconexión y acción recomendada |
 | Ajustes y foco | Abrir cuenta, Escape, volver a contexto; registro devuelve foco a origen en matriz | Cadena completa de Tab/ShiftTab; foco tras cambio de task/error/éxito/logout; dos modales con200% texto y tecladovirtual; lector hablado |
 | Idioma/pack | Preferencias fijadas antes del formulario; strings de cuatro variantes | Cambio durante proceso en el diálogo, o cerrar→Ajustes→cambiar→reabrir: conservación explícita de paso/contexto/operación; no confundir variantes iniciales con transición probada |
-| Responsive |6proyectos: Chromium/WebKit×390/865/1280; reset al200% sin overflow horizontal | Captura/inspección artística de todos esos estados;320px y viewport reducido por teclado virtual; contraste medido y objetivos reales de elementos superpuestos |
+| Responsive |6 proyectos: Chromium/WebKit×390/865/1280; reset al200% sin overflow horizontal | Captura/inspección artística de todos esos estados;320 px y viewport reducido por teclado virtual; contraste medido y objetivos reales de elementos superpuestos |
 | Movimiento | Matriz con reducedMotion=reduce | Preferencia propia/sistema cambiada durante acceso; no hay animaciones nuevas que exijan coreografía, no se atribuye validación temporal conPNG |
 
 La fixture de compra `purchaseFrogFixture` usa un endpoint real y cambia progreso de prueba (tests130–149). Acredita conservación exacta de estado tras identidad, pero no recorre por interfaz todas las acciones del álbum/tienda. Los recorridos existentes de regresión completan otros riesgos; sus resultados no sustituyen los estados nuevos de autenticación enumerados aquí.
@@ -101,3 +101,22 @@ La fixture de compra `purchaseFrogFixture` usa un endpoint real y cambia progres
 3. Corregir únicamente issues consolidados autorizados después de esta revisión; no tocar economía/renderer ni ampliar autenticación productiva por estética.
 
 Questions skipped: este assessment técnico independiente se entrega al coordinador para consolidación; no inicia entrevista ni solicita decisiones al usuario.
+
+## Apéndice B06 · P2 · Ajustes contextuales omiten el acceso de cuenta
+
+**Contraste de código nuevo, sin reproducción dinámica.** `App.tsx` tiene tres instancias de `GameSettings`: la de cabecera (460–498) recibe `accountControl`; la del diálogo de nodo (738–745) y la del diálogo de preparación (1015–1022) no la reciben. `GameSettings` declara la prop opcional (25) y solo renderiza la sección de cuenta si existe (74). Por tanto, por la condición JSX, los Ajustes abiertos desde esos dos contextos no contienen «Guardar mi partida»/«Mi cuenta»/«Acceder a mi cuenta».
+
+La cabecera no sirve de alternativa mientras permanece abierto el contexto modal: `header-pact.css`2–4 aplica `visibility:hidden` a `.game-shell:has(dialog[open]) > .game-header > .settings-trigger`. Además, los dos contenedores se abren con `showModal()` (`App`140 y162), por lo que su exterior queda inerte por semántica del diálogo nativo. No es necesario inventar una regla `inert` propia para explicar esa restricción.
+
+**Alcance exacto:**
+
+- Nodo seleccionado (duelo/jefe/Pacto/refugio/cofre/encuentro en el diálogo general): engranaje del nodo → Ajustes sin cuenta.
+- Preparación modal abierta desde equipo/consumibles/retorno a nueva expedición: engranaje contextual → Ajustes sin cuenta.
+- Preparación inicial **inline** cuando no hay run (`App`677–693): no introduce ese diálogo ni otra instancia; utiliza el engranaje de cabecera y sí recibe acceso de cuenta. No generalizar la omisión a toda preparación.
+- Al cerrar el contexto y abrir Ajustes desde la cabecera, el acceso reaparece. No es un bloqueo permanente de registro/login ni prueba de pérdida de datos.
+
+**Problema:** la misma acción «Ajustes» ofrece distinta capacidad de guardar/gestionar según desde dónde se abre, justo en momentos donde el jugador puede querer asegurar la preparación o colección. El contrato de un único acceso coherente durante el juego se cumple solo en cabecera.
+
+**Cambio mínimo propuesto para fase de corrección:** proporcionar el mismo control contextual compartido a las tres instancias o centralizar la apertura del mismo estuche con gestión explícita de su pila/modal y foco. No añadir botones permanentes fuera de Ajustes, no copiar lógica de cuentas, no permitir cambio de propietario con operación incierta y no descartar borradores silenciosamente.
+
+**Aceptación pendiente:** invitado y cuenta vinculada, desde mapa/preparación inline/preparación modal/diálogo de duelo y jefe: el mismo acceso pertinente aparece; abrir/cancelar retorna al engranaje correcto; no cambia formación, inventario o rama; pendientes mantienen bloqueo y propietario. ES/EN y ambos packs. El helper `accountFromSettings` del spec A76 sabe elegir un engranaje del diálogo activo (90–98), pero sus recorridos actuales no demuestran esta variante: en los casos usados no se abre la cuenta desde esos dos diálogos con la prop omitida.

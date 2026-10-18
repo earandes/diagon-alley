@@ -1,5 +1,7 @@
 # Diagon Alley / ARCANA · Callejón de maravillas
 
+A77 · Revisión premerge: carta de cuentas, campos nativos y escenario son coherentes con el Teatro de alquimia. No hay aprobación final de continuidad: CTA postcódigo, recuperación, privacidad de presentación, sesión entre pestañas, cierre móvil y Ajustes contextuales requieren corrección. [Hallazgos y galería](docs/arcana/accounts-design-review-2026-10-18/REPORT.md). Auditoría sin cambios de aplicación o arte; tests verdes no acreditan comprensión humana.
+
 A76 · Cuentas recuperables: bienvenida con crear cuenta y entrada existente, invitado en jerarquía secundaria y límite de acceso visible. Una carta de acceso compacta, con campos nativos y etiquetas reales para credenciales, es la excepción autorizada a la ausencia de formularios del recorrido táctico. Ajustes contiene un único acceso contextual para guardar invitado o gestionar cuenta; no otro HUD. Correo y errores permanecen fuera del arte; sin assets, efectos o dependencias nuevos. [Diseño y seguimiento](docs/arcana/accounts-2026-10-17/UI.md). Implementado en rama, formularios/foco/reflujo validados enLinux y tres capturas seleccionadas inspeccionadas. Aceptación humana y dispositivo físico pendientes; detalle porSHA enQA. No integrado enmain.
 
 ## A75 · Claridad de acción y continuidad

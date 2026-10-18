@@ -1,0 +1,688 @@
+[
+  {
+    "project": "chromium-1280-a77",
+    "test": "A77 remaining forms and error-state composition without game mutation",
+    "name": "wrong-credentials",
+    "language": "en",
+    "pack": "arcana",
+    "step": "login",
+    "width": 470,
+    "left": 405,
+    "right": 875,
+    "top": 86.671875,
+    "bottom": 813.328125,
+    "scrollWidth": 464,
+    "clientWidth": 464,
+    "scrollTop": 0,
+    "activeTag": "BODY",
+    "activeName": null,
+    "passwordType": "password",
+    "closeControl": {
+      "left": 816,
+      "top": 101.671875,
+      "width": 44,
+      "height": 46,
+      "hitInside": true
+    },
+    "alertText": "Access could not be verified. Check your details or request a new token.",
+    "alertInViewport": true,
+    "controls": [
+      {
+        "text": "Back to game",
+        "disabled": false,
+        "pressed": null,
+        "height": 46
+      },
+      {
+        "text": "Show password",
+        "disabled": false,
+        "pressed": "false",
+        "height": 44
+      },
+      {
+        "text": "Sign in",
+        "disabled": false,
+        "pressed": null,
+        "height": 47
+      },
+      {
+        "text": "Forgot password",
+        "disabled": false,
+        "pressed": null,
+        "height": 44
+      },
+      {
+        "text": "Create account",
+        "disabled": false,
+        "pressed": null,
+        "height": 44
+      },
+      {
+        "text": "Back",
+        "disabled": false,
+        "pressed": null,
+        "height": 44
+      }
+    ]
+  },
+  {
+    "project": "chromium-1280-a77",
+    "test": "A77 remaining forms and error-state composition without game mutation",
+    "name": "reset-request-accepted",
+    "language": "en",
+    "pack": "arcana",
+    "step": "request-reset",
+    "width": 470,
+    "left": 405,
+    "right": 875,
+    "top": 178.828125,
+    "bottom": 721.15625,
+    "scrollWidth": 464,
+    "clientWidth": 464,
+    "scrollTop": 0,
+    "activeTag": "BUTTON",
+    "activeName": null,
+    "closeControl": {
+      "left": 816,
+      "top": 193.828125,
+      "width": 44,
+      "height": 46,
+      "hitInside": true
+    },
+    "alertInViewport": null,
+    "controls": [
+      {
+        "text": "Back to game",
+        "disabled": true,
+        "pressed": null,
+        "height": 46
+      },
+      {
+        "text": "Connecting…",
+        "disabled": true,
+        "pressed": null,
+        "height": 47
+      },
+      {
+        "text": "I have the token",
+        "disabled": true,
+        "pressed": null,
+        "height": 44
+      },
+      {
+        "text": "Sign in",
+        "disabled": true,
+        "pressed": null,
+        "height": 44
+      },
+      {
+        "text": "Back",
+        "disabled": true,
+        "pressed": null,
+        "height": 44
+      }
+    ]
+  },
+  {
+    "project": "chromium-1280-a77",
+    "test": "A77 remaining forms and error-state composition without game mutation",
+    "name": "reset-after-show-password",
+    "language": "en",
+    "pack": "arcana",
+    "step": "reset",
+    "width": 470,
+    "left": 405,
+    "right": 875,
+    "top": 122.671875,
+    "bottom": 777.328125,
+    "scrollWidth": 464,
+    "clientWidth": 464,
+    "scrollTop": 0,
+    "activeTag": "INPUT",
+    "activeName": "token",
+    "passwordType": "text",
+    "closeControl": {
+      "left": 816,
+      "top": 137.671875,
+      "width": 44,
+      "height": 46,
+      "hitInside": true
+    },
+    "alertInViewport": null,
+    "controls": [
+      {
+        "text": "Back to game",
+        "disabled": false,
+        "pressed": null,
+        "height": 46
+      },
+      {
+        "text": "Hide password",
+        "disabled": false,
+        "pressed": "true",
+        "height": 44
+      },
+      {
+        "text": "Save new password",
+        "disabled": false,
+        "pressed": null,
+        "height": 47
+      },
+      {
+        "text": "Sign in",
+        "disabled": false,
+        "pressed": null,
+        "height": 44
+      },
+      {
+        "text": "Back",
+        "disabled": false,
+        "pressed": null,
+        "height": 44
+      }
+    ]
+  },
+  {
+    "project": "chromium-1280-a77",
+    "test": "A77 remaining forms and error-state composition without game mutation",
+    "name": "registration-accepted",
+    "language": "en",
+    "pack": "arcana",
+    "step": "register",
+    "width": 470,
+    "left": 405,
+    "right": 875,
+    "top": 136.34375,
+    "bottom": 763.65625,
+    "scrollWidth": 464,
+    "clientWidth": 464,
+    "scrollTop": 0,
+    "activeTag": "BUTTON",
+    "activeName": null,
+    "closeControl": {
+      "left": 816,
+      "top": 151.34375,
+      "width": 44,
+      "height": 46,
+      "hitInside": true
+    },
+    "alertInViewport": null,
+    "controls": [
+      {
+        "text": "Back to game",
+        "disabled": true,
+        "pressed": null,
+        "height": 46
+      },
+      {
+        "text": "Connecting…",
+        "disabled": true,
+        "pressed": null,
+        "height": 47
+      },
+      {
+        "text": "I have the token",
+        "disabled": true,
+        "pressed": null,
+        "height": 44
+      },
+      {
+        "text": "Sign in",
+        "disabled": true,
+        "pressed": null,
+        "height": 44
+      },
+      {
+        "text": "Back",
+        "disabled": true,
+        "pressed": null,
+        "height": 44
+      }
+    ]
+  },
+  {
+    "project": "chromium-1280-a77",
+    "test": "A77 remaining forms and error-state composition without game mutation",
+    "name": "verify-empty",
+    "language": "en",
+    "pack": "arcana",
+    "step": "verify",
+    "width": 470,
+    "left": 405,
+    "right": 875,
+    "top": 122.671875,
+    "bottom": 777.328125,
+    "scrollWidth": 464,
+    "clientWidth": 464,
+    "scrollTop": 0,
+    "activeTag": "INPUT",
+    "activeName": "token",
+    "passwordType": "password",
+    "closeControl": {
+      "left": 816,
+      "top": 137.671875,
+      "width": 44,
+      "height": 46,
+      "hitInside": true
+    },
+    "alertInViewport": null,
+    "controls": [
+      {
+        "text": "Back to game",
+        "disabled": false,
+        "pressed": null,
+        "height": 46
+      },
+      {
+        "text": "Show password",
+        "disabled": false,
+        "pressed": "false",
+        "height": 44
+      },
+      {
+        "text": "Verify and save",
+        "disabled": false,
+        "pressed": null,
+        "height": 47
+      },
+      {
+        "text": "Sign in",
+        "disabled": false,
+        "pressed": null,
+        "height": 44
+      },
+      {
+        "text": "Back",
+        "disabled": false,
+        "pressed": null,
+        "height": 44
+      }
+    ]
+  },
+  {
+    "project": "chromium-1280-a77",
+    "test": "A77 remaining forms and error-state composition without game mutation",
+    "name": "invalid-token",
+    "language": "en",
+    "pack": "arcana",
+    "step": "verify",
+    "width": 470,
+    "left": 405,
+    "right": 875,
+    "top": 91.34375,
+    "bottom": 808.65625,
+    "scrollWidth": 464,
+    "clientWidth": 464,
+    "scrollTop": 0,
+    "activeTag": "BODY",
+    "activeName": null,
+    "passwordType": "password",
+    "closeControl": {
+      "left": 816,
+      "top": 106.34375,
+      "width": 44,
+      "height": 46,
+      "hitInside": true
+    },
+    "alertText": "Access could not be verified. Check your details or request a new token.",
+    "alertInViewport": true,
+    "controls": [
+      {
+        "text": "Back to game",
+        "disabled": false,
+        "pressed": null,
+        "height": 46
+      },
+      {
+        "text": "Show password",
+        "disabled": false,
+        "pressed": "false",
+        "height": 44
+      },
+      {
+        "text": "Verify and save",
+        "disabled": false,
+        "pressed": null,
+        "height": 47
+      },
+      {
+        "text": "Sign in",
+        "disabled": false,
+        "pressed": null,
+        "height": 44
+      },
+      {
+        "text": "Back",
+        "disabled": false,
+        "pressed": null,
+        "height": 44
+      }
+    ]
+  },
+  {
+    "project": "chromium-1280-a77",
+    "test": "A77 guest link after reload, real settings swap and explicit account conflict",
+    "name": "bound-in-other-tab-mode",
+    "language": "en",
+    "pack": "arcana",
+    "step": "register",
+    "width": 470,
+    "left": 405,
+    "right": 875,
+    "top": 147.5,
+    "bottom": 752.484375,
+    "scrollWidth": 464,
+    "clientWidth": 464,
+    "scrollTop": 0,
+    "activeTag": "INPUT",
+    "activeName": "email",
+    "closeControl": {
+      "left": 816,
+      "top": 162.5,
+      "width": 44,
+      "height": 46,
+      "hitInside": true
+    },
+    "alertInViewport": null,
+    "controls": [
+      {
+        "text": "Back to game",
+        "disabled": false,
+        "pressed": null,
+        "height": 46
+      },
+      {
+        "text": "Create account",
+        "disabled": false,
+        "pressed": null,
+        "height": 47
+      },
+      {
+        "text": "I have the token",
+        "disabled": false,
+        "pressed": null,
+        "height": 44
+      },
+      {
+        "text": "Sign in",
+        "disabled": false,
+        "pressed": null,
+        "height": 44
+      },
+      {
+        "text": "Back",
+        "disabled": false,
+        "pressed": null,
+        "height": 44
+      }
+    ]
+  },
+  {
+    "project": "chromium-1280-a77",
+    "test": "A77 guest link after reload, real settings swap and explicit account conflict",
+    "name": "linked-after-swap",
+    "language": "en",
+    "pack": "arcana",
+    "step": "manage",
+    "width": 470,
+    "left": 405,
+    "right": 875,
+    "top": 170.515625,
+    "bottom": 729.484375,
+    "scrollWidth": 464,
+    "clientWidth": 464,
+    "scrollTop": 0,
+    "activeTag": "BUTTON",
+    "activeName": null,
+    "closeControl": {
+      "left": 816,
+      "top": 185.515625,
+      "width": 44,
+      "height": 46,
+      "hitInside": true
+    },
+    "alertInViewport": null,
+    "controls": [
+      {
+        "text": "Back to game",
+        "disabled": false,
+        "pressed": null,
+        "height": 46
+      },
+      {
+        "text": "Sign out",
+        "disabled": false,
+        "pressed": null,
+        "height": 44.59375
+      },
+      {
+        "text": "Recover access",
+        "disabled": false,
+        "pressed": null,
+        "height": 44
+      },
+      {
+        "text": "Back",
+        "disabled": false,
+        "pressed": null,
+        "height": 44
+      }
+    ]
+  },
+  {
+    "project": "chromium-1280-a77",
+    "test": "A77 guest link after reload, real settings swap and explicit account conflict",
+    "name": "different-account-blocked",
+    "language": "en",
+    "pack": "arcana",
+    "step": "login",
+    "width": 470,
+    "left": 405,
+    "right": 875,
+    "top": 14,
+    "bottom": 886,
+    "scrollWidth": 464,
+    "clientWidth": 464,
+    "scrollTop": 0,
+    "activeTag": "BODY",
+    "activeName": null,
+    "passwordType": "password",
+    "closeControl": {
+      "left": 816,
+      "top": 29,
+      "width": 44,
+      "height": 46,
+      "hitInside": true
+    },
+    "alertText": "This account belongs to another game. Explicitly choose to open it; the current game will not be merged.",
+    "alertInViewport": true,
+    "controls": [
+      {
+        "text": "Back to game",
+        "disabled": false,
+        "pressed": null,
+        "height": 46
+      },
+      {
+        "text": "Show password",
+        "disabled": false,
+        "pressed": "false",
+        "height": 44
+      },
+      {
+        "text": "Open another saved game",
+        "disabled": false,
+        "pressed": "false",
+        "height": 44
+      },
+      {
+        "text": "Sign in",
+        "disabled": false,
+        "pressed": null,
+        "height": 47
+      },
+      {
+        "text": "Forgot password",
+        "disabled": false,
+        "pressed": null,
+        "height": 44
+      },
+      {
+        "text": "Create account",
+        "disabled": false,
+        "pressed": null,
+        "height": 44
+      },
+      {
+        "text": "Back",
+        "disabled": false,
+        "pressed": null,
+        "height": 44
+      }
+    ]
+  },
+  {
+    "project": "chromium-1280-a77",
+    "test": "A77 guest link after reload, real settings swap and explicit account conflict",
+    "name": "different-account-explicit",
+    "language": "en",
+    "pack": "arcana",
+    "step": "login",
+    "width": 470,
+    "left": 405,
+    "right": 875,
+    "top": 14,
+    "bottom": 886,
+    "scrollWidth": 464,
+    "clientWidth": 464,
+    "scrollTop": 0,
+    "activeTag": "BUTTON",
+    "activeName": null,
+    "passwordType": "password",
+    "closeControl": {
+      "left": 816,
+      "top": 29,
+      "width": 44,
+      "height": 46,
+      "hitInside": true
+    },
+    "alertText": "This account belongs to another game. Explicitly choose to open it; the current game will not be merged.",
+    "alertInViewport": true,
+    "controls": [
+      {
+        "text": "Back to game",
+        "disabled": false,
+        "pressed": null,
+        "height": 46
+      },
+      {
+        "text": "Show password",
+        "disabled": false,
+        "pressed": "false",
+        "height": 44
+      },
+      {
+        "text": "Recover this game",
+        "disabled": false,
+        "pressed": "true",
+        "height": 44
+      },
+      {
+        "text": "Sign in",
+        "disabled": false,
+        "pressed": null,
+        "height": 47
+      },
+      {
+        "text": "Forgot password",
+        "disabled": false,
+        "pressed": null,
+        "height": 44
+      },
+      {
+        "text": "Create account",
+        "disabled": false,
+        "pressed": null,
+        "height": 44
+      },
+      {
+        "text": "Back",
+        "disabled": false,
+        "pressed": null,
+        "height": 44
+      }
+    ]
+  },
+  {
+    "project": "chromium-1280-a77",
+    "test": "A77 guest link after reload, real settings swap and explicit account conflict",
+    "name": "lost-login-response",
+    "language": "en",
+    "pack": "arcana",
+    "step": "login",
+    "width": 470,
+    "left": 405,
+    "right": 875,
+    "top": 64.375,
+    "bottom": 835.625,
+    "scrollWidth": 464,
+    "clientWidth": 464,
+    "scrollTop": 0,
+    "activeTag": "BODY",
+    "activeName": null,
+    "passwordType": "password",
+    "closeControl": {
+      "left": 816,
+      "top": 79.375,
+      "width": 44,
+      "height": 46,
+      "hitInside": true
+    },
+    "alertText": "The response did not arrive. Check the session before sending again; your game has not been discarded.",
+    "alertInViewport": true,
+    "controls": [
+      {
+        "text": "Back to game",
+        "disabled": false,
+        "pressed": null,
+        "height": 46
+      },
+      {
+        "text": "Show password",
+        "disabled": false,
+        "pressed": "false",
+        "height": 44
+      },
+      {
+        "text": "Sign in",
+        "disabled": true,
+        "pressed": null,
+        "height": 47
+      },
+      {
+        "text": "Forgot password",
+        "disabled": true,
+        "pressed": null,
+        "height": 44
+      },
+      {
+        "text": "Create account",
+        "disabled": true,
+        "pressed": null,
+        "height": 44
+      },
+      {
+        "text": "Check session",
+        "disabled": false,
+        "pressed": null,
+        "height": 44.59375
+      },
+      {
+        "text": "Back",
+        "disabled": false,
+        "pressed": null,
+        "height": 44
+      }
+    ]
+  }
+]

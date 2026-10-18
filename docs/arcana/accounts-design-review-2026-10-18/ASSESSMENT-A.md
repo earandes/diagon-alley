@@ -6,7 +6,7 @@
 
 Se leyó la skill Impeccable y su referencia critique, se cargó contexto mediante `impeccable context --target src/arcana/presentation/AccountAccess.tsx` y se contrastaron AccountAccess.tsx, App.tsx, GameSettings.tsx, accounts.css, account-messages.ts, UI.md, GALLERY.md y el contenido de las pruebas A76. Se inspeccionaron los píxeles de las tres capturas existentes con view_image. No se ejecutó detector desde este assessment, navegador, test gráfico, captura ni grabación nueva en el Mac.
 
-HEAD revisado: `0f849bad6e36b694c5efc1515518a12c42fed85f`. Las capturas proceden de CI Linux39070225878, código `3f6e1223d7b9ada6cae55f50f7b2627f2c35100b`, merge `bc8c166ab38132c7c0e8e471a7206973c25dd151`, árbol idéntico según GALLERY. Son Chromium390×844, ES/Diagon. No representan los otros tamaños/idiomas/packs. No se reinterpreta una captura estática como movimiento ni se atribuyen resultados a jugadores.
+HEAD revisado: `0f849bad6e36b694c5efc1515518a12c42fed85f`. Las capturas proceden de CI Linux39070225878, código `3f6e1223d7b9ada6cae55f50f7b2627f2c35100b`, merge `bc8c166ab38132c7c0e8e471a7206973c25dd151`, árbol idéntico según GALLERY. Son Chromium 390×844, ES/Diagon. No representan los otros tamaños/idiomas/packs. No se reinterpreta una captura estática como movimiento ni se atribuyen resultados a jugadores.
 
 ## Veredicto de especificidad y continuidad
 
@@ -53,7 +53,7 @@ La mayor oportunidad está en la coreografía de los pasos y la confirmación de
 
 ### A-D04 · P2 de presentación · Dos jerarquías distintas en la bienvenida
 
-- **Evidencia visual:** selected-welcome.png muestra Crear cuenta como rectángulo dorado de unos168×48px, Iniciar sesión como otro rectángulo de dimensión similar y el invitado como un portal ilustrado de casi todo el ancho y unos80px de alto. App.tsx:511–540 y accounts.css:190–209 crean esa diferencia. UI.md declara invitado secundario.
+- **Evidencia visual:** selected-welcome.png muestra Crear cuenta como rectángulo dorado de unos168×48 px, Iniciar sesión como otro rectángulo de dimensión similar y el invitado como un portal ilustrado de casi todo el ancho y unos80 px de alto. App.tsx:511–540 y accounts.css:190–209 crean esa diferencia. UI.md declara invitado secundario.
 - **Problema experto:** el orden y el relleno dorado priorizan cuenta, pero la masa, forma y asset hacen del invitado el objeto protagonista. Es una tensión de jerarquía, no prueba de que alguien elija mal. La decisión de probar como invitado sigue siendo válida y no debe ocultarse.
 - **Cambio mínimo propuesto:** decidir una jerarquía explícita de entrada; si cuenta continúa siendo prioritaria, equilibrar los tres accesos dentro de la misma composición sin tres paneles equivalentes, conservando invitado fácil de encontrar. Probar primero tamaño/espaciado y agrupación con recursos existentes; no producir otro portal ni añadir texto promocional.
 - **Aceptación posterior:** inspección comparada de bienvenida desktop/móvil y ambos packs; las tres rutas siguen accesibles, el CTA elegido se distingue por más de un indicador y el escenario conserva protagonismo.
@@ -114,7 +114,7 @@ Superficie mixta: Experience en bienvenida, Operate en identidad. Se puntúa la 
 | Vinculación finalizada | No | Confirmación finita de progreso protegido. |
 | Offline/arte ausente/texto ampliado | No | Aserciones técnicas no sustituyen su revisión compositiva. |
 
-Los tests A76 recorridos por código comprueban funcionamiento y varias dimensiones DOM; el test de texto200% mide el contenedor en reset y no acredita por sí solo todas las pantallas con texto ampliado. No ampliar ese resultado a una certificación global.
+Los tests A76 recorridos por código comprueban funcionamiento y varias dimensiones DOM; el test de texto 200% mide el contenedor en reset y no acredita por sí solo todas las pantallas con texto ampliado. No ampliar ese resultado a una certificación global.
 
 ## Recomendación al coordinador
 

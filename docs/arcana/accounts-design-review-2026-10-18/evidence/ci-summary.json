@@ -1,0 +1,31 @@
+{
+  "baseline": "0f849bad6e36b694c5efc1515518a12c42fed85f",
+  "applicationSrcTree": "009108da03c2725264a3038d0d0d0f2055d9d750",
+  "sourceChanged": false,
+  "first": {
+    "run": 39081730688,
+    "head": "67197eeb6921db238becb286cfae677d26632b43",
+    "checkout": "44e915752d4fee8f2aa29623a83b7c7bf97aae46",
+    "conclusion": "success",
+    "cases": 7,
+    "intentionalSkipped": 2,
+    "durationMs": 26449.6,
+    "selectedPNGs": 12
+  },
+  "confirmation": {
+    "run": 39082151180,
+    "head": "b24b656b12470921e5b9beaa23a12e8a4691d72d",
+    "checkout": "828b58964bd0104d5f1731f360bbde5090629c71",
+    "conclusion": "success",
+    "cases": 1,
+    "skipped": 0,
+    "durationMs": 3655.352,
+    "selectedPNGs": 1
+  },
+  "warnings": [
+    "First390mail-sent was busy, not post-submit; kept as operation-active evidence. Stable state has separate confirmation.",
+    "Confirmation repeats one existing forms scenario; not additional unique journey.",
+    "Diagnostic pass does not approve known UX defects.",
+    "No local browser/capture/video, physical device or human test."
+  ]
+}
