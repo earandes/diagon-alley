@@ -1,0 +1,130 @@
+[
+  {
+    "kind": "gesture-to-ready",
+    "project": "chromium-390-motion-a69",
+    "pack": "diagon-alley",
+    "lang": "es",
+    "wallMs": 167,
+    "geometry": {
+      "width": 352,
+      "viewport": 390,
+      "scrollWidth": 346,
+      "clientWidth": 346
+    },
+    "text200": {
+      "scrollWidth": 314,
+      "clientWidth": 314
+    }
+  },
+  {
+    "kind": "gesture-to-ready",
+    "project": "chromium-390-motion-a69",
+    "pack": "diagon-alley",
+    "lang": "en",
+    "wallMs": 117,
+    "geometry": {
+      "width": 352,
+      "viewport": 390,
+      "scrollWidth": 346,
+      "clientWidth": 346
+    },
+    "text200": {
+      "scrollWidth": 314,
+      "clientWidth": 314
+    }
+  },
+  {
+    "kind": "gesture-to-ready",
+    "project": "chromium-390-motion-a69",
+    "pack": "arcana",
+    "lang": "es",
+    "wallMs": 126,
+    "geometry": {
+      "width": 352,
+      "viewport": 390,
+      "scrollWidth": 346,
+      "clientWidth": 346
+    },
+    "text200": {
+      "scrollWidth": 314,
+      "clientWidth": 314
+    }
+  },
+  {
+    "kind": "gesture-to-ready",
+    "project": "chromium-390-motion-a69",
+    "pack": "arcana",
+    "lang": "en",
+    "wallMs": 117,
+    "geometry": {
+      "width": 352,
+      "viewport": 390,
+      "scrollWidth": 346,
+      "clientWidth": 346
+    },
+    "text200": {
+      "scrollWidth": 314,
+      "clientWidth": 314
+    }
+  },
+  {
+    "kind": "offline-real-decode",
+    "results": [
+      {
+        "name": "ambient",
+        "duration": 24,
+        "decodedFloatBytes": 4608000,
+        "fetchAndDecodeWallMs": 39
+      },
+      {
+        "name": "cast-fire",
+        "duration": 0.24,
+        "decodedFloatBytes": 46080,
+        "fetchAndDecodeWallMs": 3
+      },
+      {
+        "name": "cast-alchemy",
+        "duration": 0.26,
+        "decodedFloatBytes": 49920,
+        "fetchAndDecodeWallMs": 2.199999999953434
+      },
+      {
+        "name": "cast-shadows",
+        "duration": 0.24,
+        "decodedFloatBytes": 46080,
+        "fetchAndDecodeWallMs": 2.2000000001862645
+      },
+      {
+        "name": "cast-neutral",
+        "duration": 0.22,
+        "decodedFloatBytes": 42240,
+        "fetchAndDecodeWallMs": 2.0999999998603016
+      },
+      {
+        "name": "impact",
+        "duration": 0.16,
+        "decodedFloatBytes": 30720,
+        "fetchAndDecodeWallMs": 1.8000000000465661
+      },
+      {
+        "name": "miss",
+        "duration": 0.2,
+        "decodedFloatBytes": 38400,
+        "fetchAndDecodeWallMs": 2.199999999953434
+      },
+      {
+        "name": "heal",
+        "duration": 0.36,
+        "decodedFloatBytes": 69120,
+        "fetchAndDecodeWallMs": 2.5
+      },
+      {
+        "name": "burn",
+        "duration": 0.18,
+        "decodedFloatBytes": 34560,
+        "fetchAndDecodeWallMs": 2
+      }
+    ],
+    "peak": 0.227393239736557
+  }
+]

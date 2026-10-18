@@ -1,8 +1,10 @@
 import { expect, test, type Locator, type Page } from '@playwright/test';
-import { mkdir, writeFile } from 'node:fs/promises';
+import { mkdir, writeFile, readFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
 import { changeLanguage } from '../browser-trial/game-fixture';
 import { expectMapFits, readGame, reachNode } from '../browser-trial/route-helpers';
+import { Pool } from 'pg';
+import { runSnapshot, type Run } from '../../src/arcana/domain/exploration/run';
 
 // Reuse the guarded A70 Linux process, not another browser/server battery. Four
 // desktop Chromium accounts leave A71's 24-account namespace below its real quota.
@@ -30,6 +32,87 @@ declare global {
 }
 const word = (language: Language, es: string, en: string) => (language === 'es' ? es : en);
 const now = (page: Page) => page.evaluate(() => performance.now());
+
+/** Declared isolated server-state fixture, not a promise every random first route wins.
+ * Fix only the unvisited layout to seed0. Stats, inventory, opponents and all subsequent
+ * commands remain the existing rules/authority. Never rewrite historical receipts. */
+async function fixedRouteFixture(page: Page, owner: string) {
+  if (process.platform !== 'linux') throw Error('A73 graph fixture is CI Linux only');
+  const state = await readGame(page),
+    run = state.exploration!.run!;
+  expect(state.playerId).toBe(owner);
+  expect(run.visited).toEqual([]);
+  expect(run.status).toBe('active');
+  // Plain JSON read avoids importing Vite's JSON modules through Node's browser-test loader.
+  // A domain test compares every graph/node plan with the current campaign configuration.
+  const fixture = JSON.parse(
+    await readFile(new URL('../support/fixtures/a73-route-seed0.json', import.meta.url), 'utf8'),
+  ) as {
+    version: number;
+    campaignVersion: number;
+    graph: Run['graph'];
+    nodes: NonNullable<Run['campaignSnapshot']>['nodes'];
+  };
+  expect(fixture.version).toBe(1);
+  expect(run.campaignVersion).toBe(fixture.campaignVersion);
+  expect(run.challenge ?? 'discovery').toBe('discovery');
+  const graph = fixture.graph;
+  const fixed = runSnapshot({
+    ...run,
+    graph,
+    graphVersion: graph.version,
+    routeGeneration: { version: 1, seed: 0 },
+    campaignSnapshot: {
+      ...run.campaignSnapshot!,
+      graph,
+      nodes: fixture.nodes,
+    },
+  });
+  const pool = new Pool({
+    host: '127.0.0.1',
+    port: 55432,
+    user: 'arcana_dev',
+    password: 'arcana-local-development',
+    database: 'arcana_dev',
+    max: 1,
+  });
+  const client = await pool.connect();
+  try {
+    await client.query('BEGIN');
+    const locked = await client.query(
+      'SELECT revision FROM arcana_accounts WHERE player_id=$1 FOR UPDATE',
+      [owner],
+    );
+    expect(Number(locked.rows[0].revision)).toBe(state.revision);
+    const changed = await client.query(
+      'UPDATE arcana_exploration SET run_state=$1::jsonb WHERE player_id=$2 AND run_id=$3',
+      [JSON.stringify(fixed), owner, run.id],
+    );
+    expect(changed.rowCount).toBe(1);
+    await client.query('UPDATE arcana_accounts SET revision=revision+1 WHERE player_id=$1', [
+      owner,
+    ]);
+    await client.query('COMMIT');
+  } catch (error) {
+    await client.query('ROLLBACK');
+    throw error;
+  } finally {
+    client.release();
+    await pool.end();
+  }
+  // Refresh through the real controller without resetting performance.timeOrigin.
+  const response = page.waitForResponse(
+    (reply) => new URL(reply.url()).pathname === '/api/state' && reply.request().method() === 'GET',
+  );
+  const refresh = page.getByRole('button', {
+    name: /^(Actualizar (Energía|Esencia)|Refresh (Energy|Essence))$/,
+    exact: true,
+  });
+  await refresh.click();
+  await response;
+  await expect(refresh).toBeEnabled();
+  await expect(page.locator('.branch-map')).toBeVisible();
+}
 
 /** The capture listener stamps the dispatched user click, after actionability.
  * Polling/automation completion is explicitly an upper bound, not renderer CPU. */
@@ -172,6 +255,9 @@ for (const language of ['es', 'en'] as const)
       );
       steps.push(await enterMap(page, language, 'first-expedition-to-map'));
       await expectMapFits(page);
+      // Same declared route for all four language/pack samples; no account reroll,
+      // reward grant, skipped victory assertion or difficulty adjustment.
+      await fixedRouteFixture(page, (await readGame(page)).playerId);
       const initial = await readGame(page);
       const firstRun = initial.exploration!.run!;
       const firstDuel = await reachNode(page, 'duel', language);
@@ -311,7 +397,9 @@ for (const language of ['es', 'en'] as const)
             engine: test.info().project.use.browserName,
             viewport: test.info().project.use.viewport,
             physicalDevice: false,
-            fixture: false,
+            fixture: true,
+            fixtureDefinition:
+              'Isolated unvisited route fixed to seed0; statistics/economy unchanged; real subsequent PG/Redis commands. Not comparable to prior random-route samples as a matched A/B.',
             isolatedAuthorityAccount: next.playerId,
             cache:
               'Fresh Playwright context, service workers blocked; origin/process/OS caches not purged. Not a cold-machine claim.',

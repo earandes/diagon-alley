@@ -1,0 +1,114 @@
+[
+  {
+    "kind": "gesture-to-ready",
+    "project": "webkit-865-motion-a69",
+    "pack": "diagon-alley",
+    "lang": "es",
+    "wallMs": 195,
+    "geometry": {
+      "width": 520,
+      "viewport": 865,
+      "scrollWidth": 514,
+      "clientWidth": 514
+    }
+  },
+  {
+    "kind": "gesture-to-ready",
+    "project": "webkit-865-motion-a69",
+    "pack": "diagon-alley",
+    "lang": "en",
+    "wallMs": 136,
+    "geometry": {
+      "width": 520,
+      "viewport": 865,
+      "scrollWidth": 514,
+      "clientWidth": 514
+    }
+  },
+  {
+    "kind": "gesture-to-ready",
+    "project": "webkit-865-motion-a69",
+    "pack": "arcana",
+    "lang": "es",
+    "wallMs": 141,
+    "geometry": {
+      "width": 520,
+      "viewport": 865,
+      "scrollWidth": 514,
+      "clientWidth": 514
+    }
+  },
+  {
+    "kind": "gesture-to-ready",
+    "project": "webkit-865-motion-a69",
+    "pack": "arcana",
+    "lang": "en",
+    "wallMs": 142,
+    "geometry": {
+      "width": 520,
+      "viewport": 865,
+      "scrollWidth": 514,
+      "clientWidth": 514
+    }
+  },
+  {
+    "kind": "offline-real-decode",
+    "results": [
+      {
+        "name": "ambient",
+        "duration": 23.999979166666666,
+        "decodedFloatBytes": 4607996,
+        "fetchAndDecodeWallMs": 132
+      },
+      {
+        "name": "cast-fire",
+        "duration": 0.23997916666666666,
+        "decodedFloatBytes": 46076,
+        "fetchAndDecodeWallMs": 8
+      },
+      {
+        "name": "cast-alchemy",
+        "duration": 0.25997916666666665,
+        "decodedFloatBytes": 49916,
+        "fetchAndDecodeWallMs": 5
+      },
+      {
+        "name": "cast-shadows",
+        "duration": 0.23997916666666666,
+        "decodedFloatBytes": 46076,
+        "fetchAndDecodeWallMs": 4
+      },
+      {
+        "name": "cast-neutral",
+        "duration": 0.21997916666666667,
+        "decodedFloatBytes": 42236,
+        "fetchAndDecodeWallMs": 4
+      },
+      {
+        "name": "impact",
+        "duration": 0.15997916666666667,
+        "decodedFloatBytes": 30716,
+        "fetchAndDecodeWallMs": 3
+      },
+      {
+        "name": "miss",
+        "duration": 0.19997916666666668,
+        "decodedFloatBytes": 38396,
+        "fetchAndDecodeWallMs": 4
+      },
+      {
+        "name": "heal",
+        "duration": 0.3599791666666667,
+        "decodedFloatBytes": 69116,
+        "fetchAndDecodeWallMs": 5
+      },
+      {
+        "name": "burn",
+        "duration": 0.17997916666666666,
+        "decodedFloatBytes": 34556,
+        "fetchAndDecodeWallMs": 10
+      }
+    ],
+    "peak": 0.22736893594264984
+  }
+]

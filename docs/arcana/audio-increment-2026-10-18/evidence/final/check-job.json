@@ -1,0 +1,271 @@
+{
+  "id": 117677598386,
+  "run_id": 39128171523,
+  "html_url": "https://github.com/earandes/diagon-alley/actions/runs/39128171523/job/117677598386",
+  "status": "completed",
+  "conclusion": "success",
+  "started_at": "2026-10-18T12:39:10Z",
+  "completed_at": "2026-10-18T13:12:30Z",
+  "steps": [
+    {
+      "name": "Set up job",
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2026-10-18T12:39:11Z",
+      "completed_at": "2026-10-18T12:39:12Z"
+    },
+    {
+      "name": "Initialize containers",
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2026-10-18T12:39:12Z",
+      "completed_at": "2026-10-18T12:39:32Z"
+    },
+    {
+      "name": "Run actions/checkout@v4",
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2026-10-18T12:39:32Z",
+      "completed_at": "2026-10-18T12:39:45Z"
+    },
+    {
+      "name": "Run actions/setup-node@v4",
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2026-10-18T12:39:45Z",
+      "completed_at": "2026-10-18T12:39:51Z"
+    },
+    {
+      "name": "Run npm ci --no-fund --no-audit",
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2026-10-18T12:39:51Z",
+      "completed_at": "2026-10-18T12:39:56Z"
+    },
+    {
+      "name": "Run npm run typecheck",
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2026-10-18T12:39:56Z",
+      "completed_at": "2026-10-18T12:40:05Z"
+    },
+    {
+      "name": "Run npm run validate:content",
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2026-10-18T12:40:05Z",
+      "completed_at": "2026-10-18T12:40:05Z"
+    },
+    {
+      "name": "Run npm test",
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2026-10-18T12:40:05Z",
+      "completed_at": "2026-10-18T12:40:17Z"
+    },
+    {
+      "name": "Run npm run test:integration",
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2026-10-18T12:40:17Z",
+      "completed_at": "2026-10-18T12:40:39Z"
+    },
+    {
+      "name": "Run npm run build",
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2026-10-18T12:40:39Z",
+      "completed_at": "2026-10-18T12:40:49Z"
+    },
+    {
+      "name": "Run node tools/verification/verify-accounts-backup-a76.mjs",
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2026-10-18T12:40:49Z",
+      "completed_at": "2026-10-18T12:40:51Z"
+    },
+    {
+      "name": "Run npm run verify:arcana:build",
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2026-10-18T12:40:51Z",
+      "completed_at": "2026-10-18T12:40:51Z"
+    },
+    {
+      "name": "Run npx playwright install --with-deps chromium webkit",
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2026-10-18T12:40:51Z",
+      "completed_at": "2026-10-18T12:41:51Z"
+    },
+    {
+      "name": "Run ARCANA_CAPTURE_A76=1 npx playwright test --config playwright.accounts-a76.config.ts",
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2026-10-18T12:41:51Z",
+      "completed_at": "2026-10-18T12:43:19Z"
+    },
+    {
+      "name": "Run actions/upload-artifact@v4",
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2026-10-18T12:43:19Z",
+      "completed_at": "2026-10-18T12:43:21Z"
+    },
+    {
+      "name": "Run ARCANA_CAPTURE_A82=1 npx playwright test --config playwright.welcome-menu-a82.config.ts",
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2026-10-18T12:43:21Z",
+      "completed_at": "2026-10-18T12:43:36Z"
+    },
+    {
+      "name": "Run actions/upload-artifact@v4",
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2026-10-18T12:43:36Z",
+      "completed_at": "2026-10-18T12:43:38Z"
+    },
+    {
+      "name": "Run node -e \"const p=require('./tools/verification/a75-phase.json').phase;if(!['baseline','full','webkit','resume','tail'].includes(p))throw Error('Invalid A75 phase');require('fs').appendFileSync(process.env.GITHUB_OUTPUT,'phase='+p+'\\\\n')\"",
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2026-10-18T12:43:38Z",
+      "completed_at": "2026-10-18T12:43:38Z"
+    },
+    {
+      "name": "Run npx playwright test --config playwright.accounts-fixes-a78.config.ts",
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2026-10-18T12:43:38Z",
+      "completed_at": "2026-10-18T12:44:14Z"
+    },
+    {
+      "name": "Run actions/upload-artifact@v4",
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2026-10-18T12:44:14Z",
+      "completed_at": "2026-10-18T12:44:16Z"
+    },
+    {
+      "name": "Run npx playwright test --config playwright.account-entry-a79.config.ts",
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2026-10-18T12:44:16Z",
+      "completed_at": "2026-10-18T12:44:26Z"
+    },
+    {
+      "name": "Run actions/upload-artifact@v4",
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2026-10-18T12:44:26Z",
+      "completed_at": "2026-10-18T12:44:27Z"
+    },
+    {
+      "name": "Run npx playwright test --config playwright.account-style-a80.config.ts",
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2026-10-18T12:44:27Z",
+      "completed_at": "2026-10-18T12:44:35Z"
+    },
+    {
+      "name": "Run actions/upload-artifact@v4",
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2026-10-18T12:44:35Z",
+      "completed_at": "2026-10-18T12:44:37Z"
+    },
+    {
+      "name": "Run npx playwright test --config playwright.account-symbols-a81.config.ts",
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2026-10-18T12:44:37Z",
+      "completed_at": "2026-10-18T12:44:43Z"
+    },
+    {
+      "name": "Run actions/upload-artifact@v4",
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2026-10-18T12:44:43Z",
+      "completed_at": "2026-10-18T12:44:44Z"
+    },
+    {
+      "name": "Run ARCANA_CAPTURE_A75=1 npx playwright test --config playwright.experience-a75.config.ts",
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2026-10-18T12:44:44Z",
+      "completed_at": "2026-10-18T12:48:29Z"
+    },
+    {
+      "name": "Run actions/upload-artifact@v4",
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2026-10-18T12:48:29Z",
+      "completed_at": "2026-10-18T12:48:30Z"
+    },
+    {
+      "name": "Run ARCANA_CAPTURE_A70=1 npx playwright test --config playwright.boss-a70.config.ts",
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2026-10-18T12:48:30Z",
+      "completed_at": "2026-10-18T13:03:08Z"
+    },
+    {
+      "name": "Run actions/upload-artifact@v4",
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2026-10-18T13:03:08Z",
+      "completed_at": "2026-10-18T13:03:10Z"
+    },
+    {
+      "name": "Run npx playwright test --config playwright.seasonal-a68.config.ts",
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2026-10-18T13:03:10Z",
+      "completed_at": "2026-10-18T13:05:20Z"
+    },
+    {
+      "name": "Run ARCANA_CAPTURE_A69=1 npx playwright test --config playwright.motion-a69.config.ts",
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2026-10-18T13:05:20Z",
+      "completed_at": "2026-10-18T13:12:24Z"
+    },
+    {
+      "name": "Run actions/upload-artifact@v4",
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2026-10-18T13:12:24Z",
+      "completed_at": "2026-10-18T13:12:26Z"
+    },
+    {
+      "name": "Post Run actions/setup-node@v4",
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2026-10-18T13:12:26Z",
+      "completed_at": "2026-10-18T13:12:26Z"
+    },
+    {
+      "name": "Post Run actions/checkout@v4",
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2026-10-18T13:12:26Z",
+      "completed_at": "2026-10-18T13:12:27Z"
+    },
+    {
+      "name": "Stop containers",
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2026-10-18T13:12:27Z",
+      "completed_at": "2026-10-18T13:12:27Z"
+    },
+    {
+      "name": "Complete job",
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2026-10-18T13:12:27Z",
+      "completed_at": "2026-10-18T13:12:27Z"
+    }
+  ],
+  "provenance": "GitHub job API; counts in QA come from its completed log. Not human or physical-device testing."
+}

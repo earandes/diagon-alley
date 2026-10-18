@@ -1,0 +1,751 @@
+{
+  "version": 1,
+  "source": "current campaign; seed0; discovery; graph and node plans only",
+  "campaignVersion": 1,
+  "graph": {
+    "version": 1,
+    "nodes": [
+      {
+        "id": "pasaje:0:0",
+        "row": 0,
+        "column": 0,
+        "kind": "pact",
+        "next": ["pasaje:1:0", "pasaje:1:1"]
+      },
+      {
+        "id": "pasaje:1:0",
+        "row": 1,
+        "column": 0,
+        "kind": "pact",
+        "next": ["pasaje:3:2", "pasaje:4:1", "pasaje:2:0"]
+      },
+      {
+        "id": "pasaje:1:1",
+        "row": 1,
+        "column": 1,
+        "kind": "chest",
+        "next": ["pasaje:3:2"]
+      },
+      {
+        "id": "pasaje:3:2",
+        "row": 2,
+        "column": 0,
+        "kind": "pact",
+        "next": ["pasaje:2:1"]
+      },
+      {
+        "id": "pasaje:4:1",
+        "row": 2,
+        "column": 1,
+        "kind": "encounter",
+        "next": ["pasaje:5:2"]
+      },
+      {
+        "id": "pasaje:2:0",
+        "row": 2,
+        "column": 2,
+        "kind": "duel",
+        "next": ["pasaje:3:0"]
+      },
+      {
+        "id": "pasaje:2:1",
+        "row": 3,
+        "column": 0,
+        "kind": "refuge",
+        "next": ["pasaje:5:1", "pasaje:5:0"]
+      },
+      {
+        "id": "pasaje:5:2",
+        "row": 3,
+        "column": 1,
+        "kind": "refuge",
+        "next": ["pasaje:3:1"]
+      },
+      {
+        "id": "pasaje:3:0",
+        "row": 3,
+        "column": 2,
+        "kind": "chest",
+        "next": ["pasaje:5:0"]
+      },
+      {
+        "id": "pasaje:5:1",
+        "row": 4,
+        "column": 0,
+        "kind": "chest",
+        "next": ["pasaje:4:0"]
+      },
+      {
+        "id": "pasaje:3:1",
+        "row": 4,
+        "column": 1,
+        "kind": "duel",
+        "next": ["pasaje:4:2"]
+      },
+      {
+        "id": "pasaje:5:0",
+        "row": 4,
+        "column": 2,
+        "kind": "duel",
+        "next": ["pasaje:2:2"]
+      },
+      {
+        "id": "pasaje:4:0",
+        "row": 5,
+        "column": 0,
+        "kind": "refuge",
+        "next": ["pasaje:6:0"]
+      },
+      {
+        "id": "pasaje:4:2",
+        "row": 5,
+        "column": 1,
+        "kind": "duel",
+        "next": ["pasaje:6:0"]
+      },
+      {
+        "id": "pasaje:2:2",
+        "row": 5,
+        "column": 2,
+        "kind": "encounter",
+        "next": ["pasaje:6:0"]
+      },
+      {
+        "id": "pasaje:6:0",
+        "row": 6,
+        "column": 0,
+        "kind": "boss",
+        "next": []
+      }
+    ]
+  },
+  "nodes": [
+    {
+      "nodeId": "pasaje:0:0",
+      "kind": "pact",
+      "recruit": {
+        "id": "pasaje:0:0:choice:0",
+        "wizardId": "rune-weaver",
+        "level": 1,
+        "affinity": "alchemy",
+        "hp": 80,
+        "maxHp": 80,
+        "mana": 40,
+        "maxMana": 40,
+        "power": 12,
+        "speed": 8,
+        "wandPowerBonus": 0,
+        "wandMultiplier": 1,
+        "broomInitiative": 0
+      },
+      "recruits": [
+        {
+          "id": "pasaje:0:0:choice:0",
+          "wizardId": "rune-weaver",
+          "level": 1,
+          "affinity": "alchemy",
+          "hp": 80,
+          "maxHp": 80,
+          "mana": 40,
+          "maxMana": 40,
+          "power": 12,
+          "speed": 8,
+          "wandPowerBonus": 0,
+          "wandMultiplier": 1,
+          "broomInitiative": 0
+        },
+        {
+          "id": "pasaje:0:0:choice:1",
+          "wizardId": "circe",
+          "level": 1,
+          "affinity": "fire",
+          "hp": 85,
+          "maxHp": 85,
+          "mana": 40,
+          "maxMana": 40,
+          "power": 12,
+          "speed": 8,
+          "wandPowerBonus": 0,
+          "wandMultiplier": 1,
+          "broomInitiative": 0
+        }
+      ]
+    },
+    {
+      "nodeId": "pasaje:1:0",
+      "kind": "pact",
+      "recruit": {
+        "id": "pasaje:1:0:choice:0",
+        "wizardId": "flamel",
+        "level": 1,
+        "affinity": "alchemy",
+        "hp": 95,
+        "maxHp": 95,
+        "mana": 40,
+        "maxMana": 40,
+        "power": 10,
+        "speed": 6,
+        "wandPowerBonus": 0,
+        "wandMultiplier": 1,
+        "broomInitiative": 0
+      },
+      "recruits": [
+        {
+          "id": "pasaje:1:0:choice:0",
+          "wizardId": "flamel",
+          "level": 1,
+          "affinity": "alchemy",
+          "hp": 95,
+          "maxHp": 95,
+          "mana": 40,
+          "maxMana": 40,
+          "power": 10,
+          "speed": 6,
+          "wandPowerBonus": 0,
+          "wandMultiplier": 1,
+          "broomInitiative": 0
+        },
+        {
+          "id": "pasaje:1:0:choice:1",
+          "wizardId": "ember-keeper",
+          "level": 1,
+          "affinity": "fire",
+          "hp": 90,
+          "maxHp": 90,
+          "mana": 40,
+          "maxMana": 40,
+          "power": 10,
+          "speed": 6,
+          "wandPowerBonus": 0,
+          "wandMultiplier": 1,
+          "broomInitiative": 0
+        }
+      ]
+    },
+    {
+      "nodeId": "pasaje:1:1",
+      "kind": "chest",
+      "reward": {
+        "crowns": 10,
+        "goldKeys": 0,
+        "products": ["random-beans"]
+      }
+    },
+    {
+      "nodeId": "pasaje:2:0",
+      "kind": "duel",
+      "levelId": "pasaje:2:0",
+      "opponents": [
+        {
+          "id": "pasaje:2:0:rival:0",
+          "wizardId": "rival",
+          "level": 1,
+          "affinity": "neutral",
+          "hp": 25,
+          "maxHp": 25,
+          "mana": 30,
+          "maxMana": 30,
+          "power": 3,
+          "speed": 3,
+          "wandPowerBonus": 0,
+          "wandMultiplier": 1,
+          "broomInitiative": 0
+        },
+        {
+          "id": "pasaje:2:0:rival:1",
+          "wizardId": "rival",
+          "level": 1,
+          "affinity": "neutral",
+          "hp": 25,
+          "maxHp": 25,
+          "mana": 30,
+          "maxMana": 30,
+          "power": 3,
+          "speed": 3,
+          "wandPowerBonus": 0,
+          "wandMultiplier": 1,
+          "broomInitiative": 0
+        },
+        {
+          "id": "pasaje:2:0:rival:2",
+          "wizardId": "rival",
+          "level": 1,
+          "affinity": "neutral",
+          "hp": 25,
+          "maxHp": 25,
+          "mana": 30,
+          "maxMana": 30,
+          "power": 3,
+          "speed": 3,
+          "wandPowerBonus": 0,
+          "wandMultiplier": 1,
+          "broomInitiative": 0
+        }
+      ],
+      "reward": {
+        "crowns": 20,
+        "goldKeys": 0,
+        "products": ["random-beans"]
+      }
+    },
+    {
+      "nodeId": "pasaje:2:1",
+      "kind": "refuge"
+    },
+    {
+      "nodeId": "pasaje:2:2",
+      "kind": "encounter",
+      "choices": [
+        {
+          "weight": 1,
+          "effect": {
+            "kind": "reward",
+            "reward": {
+              "crowns": 10,
+              "goldKeys": 0,
+              "products": []
+            }
+          },
+          "narrative": {
+            "version": 1,
+            "text": {
+              "es": "Una polilla de bronce te guía hasta una hornacina. Entre piedras sueltas encuentras una pequeña bolsa de Coronas.",
+              "en": "A bronze moth guides you to a niche. Among loose stones you find a small pouch of Crowns."
+            }
+          }
+        },
+        {
+          "weight": 1,
+          "effect": {
+            "kind": "heal",
+            "fraction": 0.1
+          },
+          "narrative": {
+            "version": 1,
+            "text": {
+              "es": "Bajo el puente brota un manantial luminoso. Su agua despeja el cansancio de tu aquelarre.",
+              "en": "A luminous spring rises beneath the bridge. Its water eases your coven’s weariness."
+            }
+          }
+        },
+        {
+          "weight": 1,
+          "effect": {
+            "kind": "damage",
+            "fraction": 0.1
+          },
+          "narrative": {
+            "version": 1,
+            "text": {
+              "es": "Una raíz despierta al rozar tu sombra. Sus espinas alcanzan al equipo antes de volver a dormirse.",
+              "en": "A root awakens when it touches your shadow. Its thorns strike the team before it falls asleep again."
+            }
+          }
+        }
+      ],
+      "offer": {
+        "id": "pasaje:2:2:healer:1",
+        "npcId": "flamel",
+        "kind": "healer",
+        "options": [
+          {
+            "id": "mend-one",
+            "scope": "unit",
+            "restore": "hp",
+            "fraction": 0.4,
+            "costFraction": 0.2
+          },
+          {
+            "id": "mend-team",
+            "scope": "team",
+            "restore": "hp",
+            "fraction": 0.15,
+            "costFraction": 0.1
+          }
+        ]
+      }
+    },
+    {
+      "nodeId": "pasaje:3:0",
+      "kind": "chest",
+      "reward": {
+        "crowns": 10,
+        "goldKeys": 0,
+        "products": ["random-beans"]
+      }
+    },
+    {
+      "nodeId": "pasaje:3:1",
+      "kind": "duel",
+      "levelId": "pasaje:3:1",
+      "opponents": [
+        {
+          "id": "pasaje:3:1:rival:0",
+          "wizardId": "storm-caller",
+          "level": 1,
+          "affinity": "shadows",
+          "hp": 85,
+          "maxHp": 85,
+          "mana": 40,
+          "maxMana": 40,
+          "power": 11,
+          "speed": 7,
+          "wandPowerBonus": 0,
+          "wandMultiplier": 1,
+          "broomInitiative": 0
+        },
+        {
+          "id": "pasaje:3:1:rival:1",
+          "wizardId": "rune-weaver",
+          "level": 1,
+          "affinity": "alchemy",
+          "hp": 80,
+          "maxHp": 80,
+          "mana": 40,
+          "maxMana": 40,
+          "power": 12,
+          "speed": 8,
+          "wandPowerBonus": 0,
+          "wandMultiplier": 1,
+          "broomInitiative": 0
+        },
+        {
+          "id": "pasaje:3:1:rival:2",
+          "wizardId": "rival",
+          "level": 1,
+          "affinity": "neutral",
+          "hp": 25,
+          "maxHp": 25,
+          "mana": 30,
+          "maxMana": 30,
+          "power": 3,
+          "speed": 3,
+          "wandPowerBonus": 0,
+          "wandMultiplier": 1,
+          "broomInitiative": 0
+        }
+      ],
+      "reward": {
+        "crowns": 20,
+        "goldKeys": 0,
+        "products": ["random-beans"]
+      },
+      "threat": "vanguard"
+    },
+    {
+      "nodeId": "pasaje:3:2",
+      "kind": "pact",
+      "recruit": {
+        "id": "pasaje:3:2:choice:0",
+        "wizardId": "rune-weaver",
+        "level": 1,
+        "affinity": "alchemy",
+        "hp": 80,
+        "maxHp": 80,
+        "mana": 40,
+        "maxMana": 40,
+        "power": 12,
+        "speed": 8,
+        "wandPowerBonus": 0,
+        "wandMultiplier": 1,
+        "broomInitiative": 0
+      },
+      "recruits": [
+        {
+          "id": "pasaje:3:2:choice:0",
+          "wizardId": "rune-weaver",
+          "level": 1,
+          "affinity": "alchemy",
+          "hp": 80,
+          "maxHp": 80,
+          "mana": 40,
+          "maxMana": 40,
+          "power": 12,
+          "speed": 8,
+          "wandPowerBonus": 0,
+          "wandMultiplier": 1,
+          "broomInitiative": 0
+        },
+        {
+          "id": "pasaje:3:2:choice:1",
+          "wizardId": "morgana",
+          "level": 1,
+          "affinity": "shadows",
+          "hp": 90,
+          "maxHp": 90,
+          "mana": 40,
+          "maxMana": 40,
+          "power": 12,
+          "speed": 8,
+          "wandPowerBonus": 0,
+          "wandMultiplier": 1,
+          "broomInitiative": 0
+        }
+      ]
+    },
+    {
+      "nodeId": "pasaje:4:0",
+      "kind": "refuge"
+    },
+    {
+      "nodeId": "pasaje:4:1",
+      "kind": "encounter",
+      "choices": [
+        {
+          "weight": 1,
+          "effect": {
+            "kind": "reward",
+            "reward": {
+              "crowns": 10,
+              "goldKeys": 0,
+              "products": []
+            }
+          },
+          "narrative": {
+            "version": 1,
+            "text": {
+              "es": "Una polilla de bronce te guía hasta una hornacina. Entre piedras sueltas encuentras una pequeña bolsa de Coronas.",
+              "en": "A bronze moth guides you to a niche. Among loose stones you find a small pouch of Crowns."
+            }
+          }
+        },
+        {
+          "weight": 1,
+          "effect": {
+            "kind": "heal",
+            "fraction": 0.1
+          },
+          "narrative": {
+            "version": 1,
+            "text": {
+              "es": "Bajo el puente brota un manantial luminoso. Su agua despeja el cansancio de tu aquelarre.",
+              "en": "A luminous spring rises beneath the bridge. Its water eases your coven’s weariness."
+            }
+          }
+        },
+        {
+          "weight": 1,
+          "effect": {
+            "kind": "damage",
+            "fraction": 0.1
+          },
+          "narrative": {
+            "version": 1,
+            "text": {
+              "es": "Una raíz despierta al rozar tu sombra. Sus espinas alcanzan al equipo antes de volver a dormirse.",
+              "en": "A root awakens when it touches your shadow. Its thorns strike the team before it falls asleep again."
+            }
+          }
+        }
+      ],
+      "offer": {
+        "id": "pasaje:4:1:scholar:1",
+        "npcId": "morgana",
+        "kind": "scholar",
+        "options": [
+          {
+            "id": "focus-one",
+            "scope": "unit",
+            "restore": "mana",
+            "fraction": 0.5,
+            "costFraction": 0.2
+          },
+          {
+            "id": "focus-team",
+            "scope": "team",
+            "restore": "mana",
+            "fraction": 0.2,
+            "costFraction": 0.1
+          }
+        ]
+      }
+    },
+    {
+      "nodeId": "pasaje:4:2",
+      "kind": "duel",
+      "levelId": "pasaje:4:2",
+      "opponents": [
+        {
+          "id": "pasaje:4:2:rival:0",
+          "wizardId": "circe",
+          "level": 1,
+          "affinity": "fire",
+          "hp": 85,
+          "maxHp": 85,
+          "mana": 40,
+          "maxMana": 40,
+          "power": 12,
+          "speed": 8,
+          "wandPowerBonus": 0,
+          "wandMultiplier": 1,
+          "broomInitiative": 0
+        },
+        {
+          "id": "pasaje:4:2:rival:1",
+          "wizardId": "ember-keeper",
+          "level": 1,
+          "affinity": "fire",
+          "hp": 90,
+          "maxHp": 90,
+          "mana": 40,
+          "maxMana": 40,
+          "power": 10,
+          "speed": 6,
+          "wandPowerBonus": 0,
+          "wandMultiplier": 1,
+          "broomInitiative": 0
+        },
+        {
+          "id": "pasaje:4:2:rival:2",
+          "wizardId": "rival",
+          "level": 1,
+          "affinity": "neutral",
+          "hp": 25,
+          "maxHp": 25,
+          "mana": 30,
+          "maxMana": 30,
+          "power": 3,
+          "speed": 3,
+          "wandPowerBonus": 0,
+          "wandMultiplier": 1,
+          "broomInitiative": 0
+        }
+      ],
+      "reward": {
+        "crowns": 20,
+        "goldKeys": 0,
+        "products": ["random-beans"]
+      },
+      "threat": "fire"
+    },
+    {
+      "nodeId": "pasaje:5:0",
+      "kind": "duel",
+      "levelId": "pasaje:5:0",
+      "opponents": [
+        {
+          "id": "pasaje:5:0:rival:0",
+          "wizardId": "storm-caller",
+          "level": 1,
+          "affinity": "shadows",
+          "hp": 85,
+          "maxHp": 85,
+          "mana": 40,
+          "maxMana": 40,
+          "power": 11,
+          "speed": 7,
+          "wandPowerBonus": 0,
+          "wandMultiplier": 1,
+          "broomInitiative": 0
+        },
+        {
+          "id": "pasaje:5:0:rival:1",
+          "wizardId": "rune-weaver",
+          "level": 1,
+          "affinity": "alchemy",
+          "hp": 80,
+          "maxHp": 80,
+          "mana": 40,
+          "maxMana": 40,
+          "power": 12,
+          "speed": 8,
+          "wandPowerBonus": 0,
+          "wandMultiplier": 1,
+          "broomInitiative": 0
+        },
+        {
+          "id": "pasaje:5:0:rival:2",
+          "wizardId": "rival",
+          "level": 1,
+          "affinity": "neutral",
+          "hp": 25,
+          "maxHp": 25,
+          "mana": 30,
+          "maxMana": 30,
+          "power": 3,
+          "speed": 3,
+          "wandPowerBonus": 0,
+          "wandMultiplier": 1,
+          "broomInitiative": 0
+        }
+      ],
+      "reward": {
+        "crowns": 20,
+        "goldKeys": 0,
+        "products": ["random-beans"]
+      },
+      "threat": "vanguard"
+    },
+    {
+      "nodeId": "pasaje:5:1",
+      "kind": "chest",
+      "reward": {
+        "crowns": 10,
+        "goldKeys": 0,
+        "products": ["random-beans"]
+      }
+    },
+    {
+      "nodeId": "pasaje:5:2",
+      "kind": "refuge"
+    },
+    {
+      "nodeId": "pasaje:6:0",
+      "kind": "boss",
+      "levelId": "pasaje:6:0",
+      "opponents": [
+        {
+          "id": "pasaje:6:0:rival:0",
+          "wizardId": "circe",
+          "level": 1,
+          "affinity": "fire",
+          "hp": 85,
+          "maxHp": 85,
+          "mana": 40,
+          "maxMana": 40,
+          "power": 12,
+          "speed": 8,
+          "wandPowerBonus": 0,
+          "wandMultiplier": 1,
+          "broomInitiative": 0
+        },
+        {
+          "id": "pasaje:6:0:rival:1",
+          "wizardId": "rival",
+          "level": 1,
+          "affinity": "neutral",
+          "hp": 80,
+          "maxHp": 80,
+          "mana": 40,
+          "maxMana": 40,
+          "power": 6,
+          "speed": 5,
+          "wandPowerBonus": 0,
+          "wandMultiplier": 1,
+          "broomInitiative": 0
+        },
+        {
+          "id": "pasaje:6:0:rival:2",
+          "wizardId": "rival",
+          "level": 1,
+          "affinity": "neutral",
+          "hp": 80,
+          "maxHp": 80,
+          "mana": 40,
+          "maxMana": 40,
+          "power": 6,
+          "speed": 5,
+          "wandPowerBonus": 0,
+          "wandMultiplier": 1,
+          "broomInitiative": 0
+        }
+      ],
+      "reward": {
+        "crowns": 50,
+        "goldKeys": 1,
+        "products": ["cacao-toad"]
+      },
+      "threat": "fire"
+    }
+  ]
+}

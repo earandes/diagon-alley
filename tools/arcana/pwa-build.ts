@@ -58,7 +58,7 @@ export function buildPwaAssets(input: readonly BuildAsset[]): readonly BuildAsse
     !input.some((asset) => asset.fileName === 'index.html') ||
     input.some(
       (asset) =>
-        !/^(index\.html|assets\/[A-Za-z0-9._-]+\.(js|css|svg|png|webp|woff2|ttf))$/.test(
+        !/^(index\.html|assets\/[A-Za-z0-9._-]+\.(js|css|svg|png|webp|woff2|ttf|wav))$/.test(
           asset.fileName,
         ),
     )
@@ -110,7 +110,10 @@ export function buildPwaAssets(input: readonly BuildAsset[]): readonly BuildAsse
     .filter((asset) => /\.(webp|png|svg)$/.test(asset.fileName))
     .map((asset) => asset.fileName)
     .sort();
-  const precache = ordered.filter((asset) => !artwork.includes(asset.fileName));
+  // Audio remains optional and network-only: installing the silent shell must not fetch it.
+  const precache = ordered.filter(
+    (asset) => !artwork.includes(asset.fileName) && !asset.fileName.endsWith('.wav'),
+  );
   const hash = createHash('sha256').update(worker);
   for (const asset of ordered) hash.update(asset.fileName).update(asset.source);
   const version = hash.digest('hex').slice(0, 24);

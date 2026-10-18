@@ -1,0 +1,342 @@
+{
+  "scope": "Exact hypothetical combinatorics, not combat balance, human behaviour or duration",
+  "content_sha256": "d2b88567d8f190eac47ad74aee4a6195b71c28ab53717e9d8706bff8713c3049",
+  "pack_sha256": "5f4195a82c49044c9413f60670823fab207261f73edc496b5bb332736b7b90c3",
+  "catalog": [
+    {
+      "id": "apprentice",
+      "name": "Harry Potter",
+      "current_affinity": "alchemy",
+      "rarity": "common",
+      "proposed_house_metadata": "Gryffindor",
+      "proposed_teacher_metadata": false,
+      "proposed_auror_metadata": false
+    },
+    {
+      "id": "merlin",
+      "name": "Albus Dumbledore",
+      "current_affinity": "alchemy",
+      "rarity": "common",
+      "proposed_house_metadata": "Gryffindor",
+      "proposed_teacher_metadata": true,
+      "proposed_auror_metadata": false
+    },
+    {
+      "id": "morgana",
+      "name": "Minerva McGonagall",
+      "current_affinity": "shadows",
+      "rarity": "common",
+      "proposed_house_metadata": "Gryffindor",
+      "proposed_teacher_metadata": true,
+      "proposed_auror_metadata": false
+    },
+    {
+      "id": "flamel",
+      "name": "Nicolás Flamel",
+      "current_affinity": "alchemy",
+      "rarity": "common",
+      "proposed_house_metadata": "Beauxbatons",
+      "proposed_teacher_metadata": false,
+      "proposed_auror_metadata": false
+    },
+    {
+      "id": "paracelso",
+      "name": "Severus Snape",
+      "current_affinity": "alchemy",
+      "rarity": "common",
+      "proposed_house_metadata": "Slytherin",
+      "proposed_teacher_metadata": true,
+      "proposed_auror_metadata": false
+    },
+    {
+      "id": "circe",
+      "name": "Hermione Granger",
+      "current_affinity": "fire",
+      "rarity": "common",
+      "proposed_house_metadata": "Gryffindor",
+      "proposed_teacher_metadata": false,
+      "proposed_auror_metadata": false
+    },
+    {
+      "id": "ember-keeper",
+      "name": "Ron Weasley",
+      "current_affinity": "fire",
+      "rarity": "common",
+      "proposed_house_metadata": "Gryffindor",
+      "proposed_teacher_metadata": false,
+      "proposed_auror_metadata": false
+    },
+    {
+      "id": "mist-seer",
+      "name": "Luna Lovegood",
+      "current_affinity": "shadows",
+      "rarity": "common",
+      "proposed_house_metadata": "Ravenclaw",
+      "proposed_teacher_metadata": false,
+      "proposed_auror_metadata": false
+    },
+    {
+      "id": "rune-weaver",
+      "name": "Ginny Weasley",
+      "current_affinity": "alchemy",
+      "rarity": "unusual",
+      "proposed_house_metadata": "Gryffindor",
+      "proposed_teacher_metadata": false,
+      "proposed_auror_metadata": false
+    },
+    {
+      "id": "copper-sage",
+      "name": "Arthur Weasley",
+      "current_affinity": "fire",
+      "rarity": "unusual",
+      "proposed_house_metadata": "Gryffindor",
+      "proposed_teacher_metadata": false,
+      "proposed_auror_metadata": false
+    },
+    {
+      "id": "moon-herbalist",
+      "name": "Pomona Sprout",
+      "current_affinity": "shadows",
+      "rarity": "unusual",
+      "proposed_house_metadata": "Hufflepuff",
+      "proposed_teacher_metadata": true,
+      "proposed_auror_metadata": false
+    },
+    {
+      "id": "ash-wanderer",
+      "name": "Remus Lupin",
+      "current_affinity": "alchemy",
+      "rarity": "unusual",
+      "proposed_house_metadata": "Gryffindor",
+      "proposed_teacher_metadata": true,
+      "proposed_auror_metadata": false
+    },
+    {
+      "id": "shadow-scribe",
+      "name": "Sirius Black",
+      "current_affinity": "fire",
+      "rarity": "unusual",
+      "proposed_house_metadata": "Gryffindor",
+      "proposed_teacher_metadata": false,
+      "proposed_auror_metadata": false
+    },
+    {
+      "id": "storm-caller",
+      "name": "Nymphadora Tonks",
+      "current_affinity": "shadows",
+      "rarity": "unusual",
+      "proposed_house_metadata": "Hufflepuff",
+      "proposed_teacher_metadata": false,
+      "proposed_auror_metadata": true
+    },
+    {
+      "id": "dew-alchemist",
+      "name": "Neville Longbottom",
+      "current_affinity": "alchemy",
+      "rarity": "unusual",
+      "proposed_house_metadata": "Gryffindor",
+      "proposed_teacher_metadata": false,
+      "proposed_auror_metadata": false
+    },
+    {
+      "id": "dawn-oracle",
+      "name": "Sybill Trelawney",
+      "current_affinity": "fire",
+      "rarity": "unusual",
+      "proposed_house_metadata": "Ravenclaw",
+      "proposed_teacher_metadata": true,
+      "proposed_auror_metadata": false
+    },
+    {
+      "id": "crystal-watch",
+      "name": "Filius Flitwick",
+      "current_affinity": "shadows",
+      "rarity": "epic",
+      "proposed_house_metadata": "Ravenclaw",
+      "proposed_teacher_metadata": true,
+      "proposed_auror_metadata": false
+    },
+    {
+      "id": "night-forger",
+      "name": "Rubeus Hagrid",
+      "current_affinity": "alchemy",
+      "rarity": "epic",
+      "proposed_house_metadata": "Gryffindor",
+      "proposed_teacher_metadata": true,
+      "proposed_auror_metadata": false
+    },
+    {
+      "id": "moss-guardian",
+      "name": "Molly Weasley",
+      "current_affinity": "fire",
+      "rarity": "epic",
+      "proposed_house_metadata": "Gryffindor",
+      "proposed_teacher_metadata": false,
+      "proposed_auror_metadata": false
+    },
+    {
+      "id": "comet-scholar",
+      "name": "Cho Chang",
+      "current_affinity": "shadows",
+      "rarity": "epic",
+      "proposed_house_metadata": "Ravenclaw",
+      "proposed_teacher_metadata": false,
+      "proposed_auror_metadata": false
+    },
+    {
+      "id": "cinder-dancer",
+      "name": "Fred Weasley",
+      "current_affinity": "alchemy",
+      "rarity": "epic",
+      "proposed_house_metadata": "Gryffindor",
+      "proposed_teacher_metadata": false,
+      "proposed_auror_metadata": false
+    },
+    {
+      "id": "wind-reader",
+      "name": "George Weasley",
+      "current_affinity": "fire",
+      "rarity": "epic",
+      "proposed_house_metadata": "Gryffindor",
+      "proposed_teacher_metadata": false,
+      "proposed_auror_metadata": false
+    },
+    {
+      "id": "star-binder",
+      "name": "Cedric Diggory",
+      "current_affinity": "shadows",
+      "rarity": "epic",
+      "proposed_house_metadata": "Hufflepuff",
+      "proposed_teacher_metadata": false,
+      "proposed_auror_metadata": false
+    },
+    {
+      "id": "root-speaker",
+      "name": "Alastor Moody",
+      "current_affinity": "alchemy",
+      "rarity": "epic",
+      "proposed_house_metadata": "Sin casa verificada en este estudio",
+      "proposed_teacher_metadata": false,
+      "proposed_auror_metadata": true
+    },
+    {
+      "id": "obsidian-seer",
+      "name": "Bellatrix Lestrange",
+      "current_affinity": "fire",
+      "rarity": "arcane-legendary",
+      "proposed_house_metadata": "Slytherin",
+      "proposed_teacher_metadata": false,
+      "proposed_auror_metadata": false
+    },
+    {
+      "id": "silver-sentinel",
+      "name": "Kingsley Shacklebolt",
+      "current_affinity": "shadows",
+      "rarity": "arcane-legendary",
+      "proposed_house_metadata": "Sin casa verificada en este estudio",
+      "proposed_teacher_metadata": false,
+      "proposed_auror_metadata": true
+    },
+    {
+      "id": "sun-priestess",
+      "name": "Fleur Delacour",
+      "current_affinity": "alchemy",
+      "rarity": "arcane-legendary",
+      "proposed_house_metadata": "Beauxbatons",
+      "proposed_teacher_metadata": false,
+      "proposed_auror_metadata": false
+    },
+    {
+      "id": "echo-mage",
+      "name": "Draco Malfoy",
+      "current_affinity": "fire",
+      "rarity": "arcane-legendary",
+      "proposed_house_metadata": "Slytherin",
+      "proposed_teacher_metadata": false,
+      "proposed_auror_metadata": false
+    },
+    {
+      "id": "veil-walker",
+      "name": "Lord Voldemort",
+      "current_affinity": "shadows",
+      "rarity": "arcane-legendary",
+      "proposed_house_metadata": "Slytherin",
+      "proposed_teacher_metadata": false,
+      "proposed_auror_metadata": false
+    },
+    {
+      "id": "aurora-sage",
+      "name": "Newt Scamander",
+      "current_affinity": "alchemy",
+      "rarity": "arcane-legendary",
+      "proposed_house_metadata": "Hufflepuff",
+      "proposed_teacher_metadata": false,
+      "proposed_auror_metadata": false
+    }
+  ],
+  "group_counts": {
+    "Gryffindor": 14,
+    "Ravenclaw": 4,
+    "Hufflepuff": 4,
+    "Slytherin": 4,
+    "Beauxbatons": 2,
+    "Sin casa verificada en este estudio": 2
+  },
+  "teachers": 8,
+  "aurors": 3,
+  "three_distinct_members_openings_quantiles_starter_included": {
+    "Gryffindor": {
+      "0.5": 4,
+      "0.9": 8,
+      "0.95": 9
+    },
+    "Ravenclaw": {
+      "0.5": 28,
+      "0.9": 55,
+      "0.95": 66
+    },
+    "Hufflepuff": {
+      "0.5": 28,
+      "0.9": 55,
+      "0.95": 66
+    },
+    "Slytherin": {
+      "0.5": 28,
+      "0.9": 55,
+      "0.95": 66
+    }
+  },
+  "all_unique_identity_five_member_teams": 142506,
+  "teams_house_active": 65676,
+  "teams_teachers_active": 14532,
+  "teams_house_and_teachers_active": 7158,
+  "hypothetical_variant_scenarios": [
+    {
+      "hypothetical_probability_per_opening": 0.001,
+      "first_variant_openings_median": 693,
+      "first_variant_openings_p90": 2302,
+      "first_variant_openings_p95": 2995,
+      "probability_none_after_100": 0.9047921471137089,
+      "specific_identity_variant_probability": 3.4482758620689657e-05,
+      "mean_openings_all_29_variants_if_independent_uniform": 114887.96013002467
+    },
+    {
+      "hypothetical_probability_per_opening": 0.005,
+      "first_variant_openings_median": 139,
+      "first_variant_openings_p90": 460,
+      "first_variant_openings_p95": 598,
+      "probability_none_after_100": 0.6057704364907279,
+      "specific_identity_variant_probability": 0.0001724137931034483,
+      "mean_openings_all_29_variants_if_independent_uniform": 22977.592026004935
+    },
+    {
+      "hypothetical_probability_per_opening": 0.01,
+      "first_variant_openings_median": 69,
+      "first_variant_openings_p90": 230,
+      "first_variant_openings_p95": 299,
+      "probability_none_after_100": 0.3660323412732292,
+      "specific_identity_variant_probability": 0.0003448275862068966,
+      "mean_openings_all_29_variants_if_independent_uniform": 11488.796013002468
+    }
+  ]
+}
