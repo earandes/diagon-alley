@@ -52,12 +52,13 @@ test('A82 one identity, three coherent actions and reversible native account tas
   page,
 }) => {
   await page.emulateMedia({ reducedMotion: 'reduce' });
+  await page.goto('/');
   for (const pack of ['diagon-alley', 'arcana']) {
-    await page.addInitScript(
-      (value) => localStorage.setItem('arcana.presentation.content-pack.v1', value),
-      pack,
-    );
-    await page.goto('/');
+    await page.evaluate((value) => {
+      localStorage.setItem('arcana.presentation.content-pack.v1', value);
+      localStorage.setItem('arcana-language', 'es');
+    }, pack);
+    await page.reload();
     const menu = page.locator('.welcome-menu');
     await expect(menu.locator('.portal-enter')).toBeEnabled();
     await page.evaluate(() => document.fonts.ready);
