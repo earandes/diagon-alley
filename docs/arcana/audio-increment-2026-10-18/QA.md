@@ -44,3 +44,11 @@ CI39124837482 sobre8f610ce: tipos/build/640pruebas unitarias e integración corr
 - Separar arte/import en dos navegaciones no bastó: WebKit seguía registrando cero peticiones GSAP abortadas, mientras el resultado estático permanecía accesible. Se conserva la assertion de petición fallida y se realiza esa inyección en un contexto aislado nuevo, con routing instalado antes de su primera navegación y movimiento normal explícito. La página anterior se cierra primero: ninguna escena paralela. Se elimina contaminación de caché/historial/preferencias; no se afirma haber medido internamente cuál de esas capas evitó la petición. No se cambia el renderer del producto.
 
 Nueva ejecución necesaria sobre el candidato corregido; no se atribuye éxito por corregir la configuración o por pasar las pruebas de sonido aisladas.
+
+## Tercera CI: movimiento/audio correctos, selector de fixture pendiente
+
+CI39126440801 sobre9abc4fc, checkout de merge05be649 contra mainac827a0: tipos/build/641unitarias/integración correctos. A76:30; A82:6; A78:16; A79:7; A80:3; A81:3; A75:113; A68:12 casos correctos. A69+A84:28correctos/14omisiones explícitas; quedan resueltas las tres inyecciones de import fallido de WebKit. Los nueve casos A84 pasan por tercera vez, sin sumar esas repeticiones como cobertura única.
+
+A70:19correctos antes de fallar el nuevo selector en el primer recorrido A73 (ES/ARCANA); había buscado únicamente Energía/Energy donde el paquete muestra Esencia/Essence. Es un defecto del test añadido, no una operación fallida del juego. Se corrige incluyendo los cuatro nombres accesibles reales. Extractos conservados en `evidence/first-failure/fixture-errors.md`. La victoria/uso de botín de A73 y el job regression siguen pendientes de este pase; no se declaran cubiertos por las19pruebas previas.
+
+El siguiente candidato añade también texto200%en los controles A84 y una muestra nativa de storage entre dos pestañas (solo Chromium1280). La segunda pestaña no recibe gesto de activación: debe reflejar el apagado sin crear AudioContext. No cambia código de producto desde la primera familia sonora validada.

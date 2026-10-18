@@ -105,7 +105,7 @@ async function fixedRouteFixture(page: Page, owner: string) {
     (reply) => new URL(reply.url()).pathname === '/api/state' && reply.request().method() === 'GET',
   );
   const refresh = page.getByRole('button', {
-    name: /^(Actualizar Energía|Refresh Energy)$/,
+    name: /^(Actualizar (Energía|Esencia)|Refresh (Energy|Essence))$/,
     exact: true,
   });
   await refresh.click();

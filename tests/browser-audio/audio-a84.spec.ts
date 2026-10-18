@@ -75,6 +75,15 @@ test('A84 opt-in settings, real decode, preferences and both worlds/languages', 
         clientWidth: e.clientWidth,
       }));
       expect(geometry.scrollWidth).toBeLessThanOrEqual(geometry.clientWidth + 1);
+      await page.evaluate(() => (document.documentElement.style.fontSize = '200%'));
+      const enlarged = await dialog.evaluate((e) => ({
+        scrollWidth: e.scrollWidth,
+        clientWidth: e.clientWidth,
+      }));
+      expect(enlarged.scrollWidth).toBeLessThanOrEqual(enlarged.clientWidth + 1);
+      await expect(music).toBeVisible();
+      await expect(slider).toBeVisible();
+      await page.evaluate(() => (document.documentElement.style.fontSize = ''));
       samples.push({
         kind: 'gesture-to-ready',
         project: test.info().project.name,
@@ -82,6 +91,7 @@ test('A84 opt-in settings, real decode, preferences and both worlds/languages', 
         lang,
         wallMs: ready,
         geometry,
+        text200: enlarged,
       });
       if (
         process.platform === 'linux' &&
@@ -96,7 +106,32 @@ test('A84 opt-in settings, real decode, preferences and both worlds/languages', 
           fullPage: false,
         });
       }
-      await music.click();
+      // One bounded two-tab sample: native storage events propagate mute, never unlock audio.
+      const other =
+        test.info().project.name.includes('chromium-1280') &&
+        pack === 'diagon-alley' &&
+        lang === 'es'
+          ? await page.context().newPage()
+          : null;
+      try {
+        if (other) {
+          await other.goto(`${new URL(fixture, page.url())}?pack=${pack}&lang=${lang}`);
+          expect(await other.evaluate(() => window.__a84.preferences.getSnapshot().music)).toBe(
+            true,
+          );
+          expect(await other.evaluate(() => window.__a84.audio.diagnostics().context)).toBe(false);
+          await page.bringToFront();
+        }
+        await music.click();
+        if (other) {
+          await expect
+            .poll(() => other.evaluate(() => window.__a84.preferences.getSnapshot().music))
+            .toBe(false);
+          expect(await other.evaluate(() => window.__a84.audio.diagnostics().context)).toBe(false);
+        }
+      } finally {
+        await other?.close();
+      }
       await expect
         .poll(() => page.evaluate(() => window.__a84.audio.diagnostics().musicVoices))
         .toBe(0);
