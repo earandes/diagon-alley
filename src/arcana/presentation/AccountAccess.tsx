@@ -328,7 +328,6 @@ export function AccountAccess({
           disabled={busy}
           aria-label={a(language, 'close')}
         >
-          <Artwork asset="ui.pass" language={language} decorative />
           <svg viewBox="0 0 24 24" aria-hidden="true">
             <path d="M14 5 7 12l7 7M7 12h14" />
           </svg>

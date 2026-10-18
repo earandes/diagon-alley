@@ -17,3 +17,9 @@ Cancelar vuelve al origen conectado; un origen desmontado lleva al contenido. El
 La cabecera tiene tres columnas reales: símbolo, título flexible, cierre44px. El cierre deja de superponerse a la cabecera y conserva una flecha SVG local si falla el arte. Los errores aparecen antes del CTA y de los enlaces secundarios, con desplazamiento al mensaje y foco recuperable. No se reducen fuentes ni se oculta información para aparentar que cabe. El texto ampliado puede desplazarse.
 
 No se producen personajes, fondos, partículas ni animaciones nuevas: el problema era de jerarquía y estados. Los campos de credenciales conservan presentación convencional por seguridad/accesibilidad, no se disfrazan de objetos del juego.
+
+## Tecnología y coste
+
+Sin dependencias, arte o renderer nuevos. El contexto solo transmite controles semánticos de cuenta; no consulta inventario ni hace polling. Abrir conserva la consulta de sesión ya existente, ahora esperando su resultado antes de elegir tarea y mostrando feedback durante esa espera. No se presenta como mejora de latencia: todavía no se han medido tiempos humanos o rendimiento universal. La política compartida limita trabajo ante entradas enormes antes de contar/encodear y conserva el límite real del servidor.
+
+Tras la primera inspección Linux, el cierre usa la flecha vectorial inline como recurso principal: un objetivo activable sin icono pintado no basta. La ilustración de cabecera puede faltar sin desplazar título/cierre de sus columnas. Además, una sesión de otra pestaña solo se presenta como «Mi cuenta» si coincide con el jugador cargado; si no coincide, se ofrece reidentificación conservando las guardas de propietario.

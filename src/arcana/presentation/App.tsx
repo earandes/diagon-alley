@@ -114,7 +114,17 @@ export function App() {
     try {
       const current = await refreshAccount();
       if (current === undefined || !accountOrigin.current?.isConnected) return; // Superseded query never opens a stale task.
-      setAccountMode(current?.kind === 'account' ? 'manage' : mode === 'manage' ? 'login' : mode);
+      const owner =
+        controller.getSnapshot().game?.playerId ?? controller.getSnapshot().pending?.playerId;
+      setAccountMode(
+        current?.kind === 'account'
+          ? !owner || current.playerId === owner
+            ? 'manage'
+            : 'login'
+          : mode === 'manage'
+            ? 'login'
+            : mode,
+      );
     } finally {
       openingAccount.current = false;
       setAccountOpening(false);
@@ -409,6 +419,9 @@ export function App() {
     />
   );
 
+  const accountOwner = game?.playerId ?? state.pending?.playerId;
+  const accountKind =
+    !accountOwner || accountSession?.playerId === accountOwner ? accountSession?.kind : 'anonymous';
   const accountControl = (
     <>
       <button
@@ -417,11 +430,7 @@ export function App() {
         disabled={accountOpening}
         onClick={() =>
           openAccount(
-            accountSession?.kind === 'account'
-              ? 'manage'
-              : accountSession?.kind === 'guest'
-                ? 'register'
-                : 'login',
+            accountKind === 'account' ? 'manage' : accountKind === 'guest' ? 'register' : 'login',
           )
         }
       >
@@ -431,15 +440,15 @@ export function App() {
             language,
             accountOpening
               ? 'sending'
-              : accountSession?.kind === 'account'
+              : accountKind === 'account'
                 ? 'account'
-                : accountSession?.kind === 'guest'
+                : accountKind === 'guest'
                   ? 'save'
                   : 'access',
           )}
         </span>
       </button>
-      {accountSession?.kind === 'account' && <small>{accountSession.email}</small>}
+      {accountKind === 'account' && <small>{accountSession?.email}</small>}
       {accountUnavailable && <small>{accountText(language, 'unavailable')}</small>}
     </>
   );

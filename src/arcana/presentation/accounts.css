@@ -30,11 +30,15 @@
   border: 0;
 }
 .account-heading > img {
+  grid-column: 1;
+  grid-row: 1;
   width: 48px;
   height: 58px;
   object-fit: contain;
 }
 .account-heading h2 {
+  grid-column: 2;
+  grid-row: 1;
   font:
     500 clamp(1.35rem, 5vw, 1.8rem) / 1.2 Cinzel,
     Georgia,
@@ -43,6 +47,8 @@
   text-wrap: balance;
 }
 .account-access .account-close {
+  grid-column: 3;
+  grid-row: 1;
   position: relative;
   justify-self: end;
   align-self: start;
@@ -54,20 +60,12 @@
   margin: 0;
   background: none;
 }
-.account-close img {
-  width: 30px;
-  height: 30px;
-  object-fit: contain;
-}
 .account-close svg {
   width: 28px;
   height: 28px;
   stroke: currentColor;
   fill: none;
   stroke-width: 2;
-}
-.account-close:has(img) svg {
-  display: none;
 }
 .account-delivery {
   display: grid;

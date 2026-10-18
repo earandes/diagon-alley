@@ -28,7 +28,14 @@ async function enter(page: Page, wide: boolean) {
 async function snapshot(page: Page, name: string) {
   const project = test.info().project.name;
   const selected: Record<string, string[]> = {
-    'chromium-390-a78': ['mail-sent', 'verify', 'invalid-token', 'conflict', 'network-notice'],
+    'chromium-390-a78': [
+      'mail-sent',
+      'verify',
+      'invalid-token',
+      'conflict',
+      'network-notice',
+      'no-art',
+    ],
     'chromium-1280-a78': ['welcome', 'login', 'request-reset', 'reset', 'stale-tab', 'uncertain'],
     'webkit-865-a78': ['verify-200'],
   };
@@ -458,6 +465,7 @@ test('A78 same account access across map, node, preparation, reveal and forge; o
   const wide = viewport?.width === 1280;
   await enter(page, wide);
   await page.locator('.portal-enter').click();
+  await expect(page.locator('[data-expedition-preparation=new]')).toBeVisible();
   const language = wide ? 'en' : 'es';
   await settingsRoundTrip(page, page.locator('header.game-header'));
   await startExpedition(page, language);
@@ -554,12 +562,15 @@ test('A78 close target remains usable at all interior points and without art', a
     });
   expect((await hitPoints()).every(Boolean)).toBe(true);
   await page.route('**/a78-absent.svg', (route) => route.fulfill({ status: 404, body: '' }));
-  await close.locator('img').evaluate((img) => img.setAttribute('src', '/a78-absent.svg'));
-  await expect(close.locator('img')).toHaveCount(0);
+  await dialog(page)
+    .locator('.account-heading > img')
+    .evaluate((img) => img.setAttribute('src', '/a78-absent.svg'));
+  await expect(dialog(page).locator('.account-heading > img')).toHaveCount(0);
   await expect(close.locator('svg')).toBeVisible();
   if (viewport?.width === 390) {
     await page.evaluate(() => (document.documentElement.style.fontSize = '200%'));
     expect((await hitPoints()).every(Boolean)).toBe(true);
+    await snapshot(page, 'no-art');
   }
   await close.tap();
   await expect(dialog(page)).toHaveCount(0);
@@ -641,4 +652,54 @@ test('A78 lost recovery request has deliberate retry and invalid code has direct
   await expect(dialog(page).locator('input[name=email]')).toHaveValue(email);
   await expect(primary(page)).toHaveAttribute('data-account-action', 'request-reset-submit');
   expect((await page.request.get('/api/state')).status()).toBe(401);
+});
+
+test('A78 a session changed by another tab is not labelled as the loaded game account', async ({
+  page,
+  browser,
+  viewport,
+}) => {
+  test.skip(viewport?.width !== 1280, 'One declared cross-owner session sample.');
+  await enter(page, true);
+  await page.locator('.portal-enter').click();
+  await expect(page.locator('[data-expedition-preparation=new]')).toBeVisible();
+  const before = await game(page);
+  const origin = new URL(page.url()).origin;
+  const other = await browser.newContext({ baseURL: origin, extraHTTPHeaders: { Origin: origin } });
+  try {
+    const email = `a78-other-tab-${randomUUID()}@example.invalid`;
+    expect((await other.request.post('/api/auth/register', { data: { email } })).status()).toBe(
+      200,
+    );
+    expect(
+      (
+        await other.request.post('/api/auth/verify', {
+          data: { token: await privateToken(email), password },
+        })
+      ).status(),
+    ).toBe(200);
+    const otherTab = await page.context().newPage();
+    try {
+      expect(
+        (
+          await otherTab.request.post('/api/auth/login', {
+            headers: { Origin: origin },
+            data: { email, password, expectedPlayerId: before.playerId, allowPlayerChange: true },
+          })
+        ).status(),
+      ).toBe(200);
+    } finally {
+      await otherTab.close();
+    }
+    await openFromSettings(page);
+    await expect(dialog(page).locator('form')).toHaveAttribute('data-account-action', 'login');
+    await expect(settings(page).locator('[data-account-entry=settings]')).toContainText(
+      'Account access',
+    );
+    await expect(dialog(page).locator('[data-account-action=logout]')).toHaveCount(0);
+    await page.keyboard.press('Escape');
+    await expect(settings(page).locator('[data-account-entry=settings]')).toBeFocused();
+  } finally {
+    await other.close();
+  }
 });
