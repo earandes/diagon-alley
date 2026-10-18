@@ -72,7 +72,8 @@ for (const language of ['es', 'en'] as const)
     await page.reload();
     await expect(
       page.getByRole('heading', {
-        name: en ? 'The Hidden Boulevard' : 'El Bulevar Oculto',
+        name: 'ARCANA',
+        level: 1,
         exact: true,
       }),
     ).toBeVisible();
