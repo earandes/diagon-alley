@@ -64,7 +64,9 @@ test('A84 opt-in settings, real decode, preferences and both worlds/languages', 
       const slider = dialog.getByRole('slider', {
         name: lang === 'es' ? 'Volumen del ambiente' : 'Ambience volume',
       });
-      await slider.fill('0.4');
+      await slider.focus();
+      await page.keyboard.press('Home');
+      for (let step = 0; step < 8; step++) await page.keyboard.press('ArrowRight');
       await expect(slider).toHaveAttribute('aria-valuetext', /^40\s*%$/);
       const geometry = await dialog.evaluate((e) => ({
         width: e.getBoundingClientRect().width,
