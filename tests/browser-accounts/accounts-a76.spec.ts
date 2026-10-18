@@ -1,3 +1,4 @@
+import { clickAccountAction, clickAccountControl } from './account-controls';
 import { randomUUID } from 'node:crypto';
 import { mkdir, readdir, readFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
@@ -15,8 +16,8 @@ const submit = (page: Page, action: string) =>
   dialog(page).locator(`button[data-account-action="${action}-submit"]`);
 const labels = (language: Language) => ({
   email: language === 'es' ? 'Correo electrónico' : 'Email',
-  password: language === 'es' ? 'Contraseña' : 'Password',
-  token: language === 'es' ? 'Código del correo' : 'Verification code',
+  password: language === 'es' ? /^(Contraseña|Nueva contraseña)$/ : /^(Password|New password)$/,
+  token: language === 'es' ? 'Código' : 'Code',
   haveCode: language === 'es' ? 'Tengo el código' : 'I have the code',
   login: language === 'es' ? 'Iniciar sesión' : 'Sign in',
   forgot: language === 'es' ? 'Olvidé mi contraseña' : 'Forgot password',
@@ -181,7 +182,7 @@ test('A76 first activation excludes double registration through retained respons
     release();
   }
   await expect(submit(page, 'verify')).toBeEnabled();
-  await expect(dialog(page).getByRole('status')).toContainText('Si la solicitud es válida');
+  await expect(dialog(page).getByRole('status')).toContainText('Solicitud recibida');
   await page.keyboard.press('Escape');
   await expect(dialog(page)).toHaveCount(0);
   expect((await page.request.get('/api/state')).status()).toBe(401);
@@ -237,20 +238,14 @@ for (const pack of ['diagon-alley', 'arcana'] as const) {
       const passwordInput = dialog(page).getByLabel(labels(language).password, { exact: true });
       await expect(passwordInput).toHaveAttribute('autocomplete', 'current-password');
       await passwordInput.fill(password);
-      await dialog(page)
-        .getByRole('button', {
-          name: language === 'es' ? 'Mostrar contraseña' : 'Show password',
-          exact: true,
-        })
-        .click();
+      await clickAccountAction(page, {
+        name: language === 'es' ? 'Mostrar contraseña' : 'Show password',
+        exact: true,
+      });
       await expect(passwordInput).toHaveAttribute('type', 'text');
-      await dialog(page)
-        .getByRole('button', { name: labels(language).forgot, exact: true })
-        .click();
+      await clickAccountAction(page, { name: labels(language).forgot, exact: true });
       await expect(dialog(page).locator('[data-account-action="request-reset"]')).toBeVisible();
-      await dialog(page)
-        .getByRole('button', { name: labels(language).haveCode, exact: true })
-        .click();
+      await clickAccountAction(page, { name: labels(language).haveCode, exact: true });
       await expect(
         dialog(page).getByLabel(labels(language).token, { exact: true }),
       ).toHaveAttribute('autocomplete', 'one-time-code');
@@ -319,7 +314,7 @@ for (const pack of ['diagon-alley', 'arcana'] as const) {
         expect(await readGame(second)).toEqual(firstProgress);
 
         await accountFromSettings(page);
-        await dialog(page).locator('[data-account-action="logout"]').click();
+        await clickAccountControl(dialog(page).locator('[data-account-action="logout"]'));
         await expect(dialog(page)).toHaveCount(0);
         await dismissSettings(page);
         await expect(page.locator('.portal-enter')).toBeEnabled();
@@ -339,7 +334,7 @@ for (const pack of ['diagon-alley', 'arcana'] as const) {
         await accountFromSettings(page);
         await expect(dialog(page)).toContainText(guestEmail);
         if (language === 'es' && pack === 'diagon-alley') await selected(page, 'settings-account');
-        await dialog(page).locator('[data-account-action="logout"]').click();
+        await clickAccountControl(dialog(page).locator('[data-account-action="logout"]'));
         await expect(dialog(page)).toHaveCount(0);
         await dismissSettings(page);
         await page.locator('[data-account-entry="login"]').click();
@@ -372,7 +367,7 @@ for (const pack of ['diagon-alley', 'arcana'] as const) {
         await page.reload();
         await accountFromSettings(page);
         if (!(await dialog(page).locator('form[data-account-action="login"]').count()))
-          await dialog(page).getByRole('button', { name: words.login, exact: true }).click();
+          await clickAccountAction(page, { name: words.login, exact: true });
         await signIn(page, firstEmail, language);
         await expect(dialog(page).getByRole('alert')).toBeVisible();
         await expect(
@@ -395,12 +390,10 @@ for (const pack of ['diagon-alley', 'arcana'] as const) {
 
         // Reset delivery is the private local mailbox, not a claim about external email delivery.
         await accountFromSettings(page);
-        await dialog(page)
-          .getByRole('button', {
-            name: language === 'es' ? 'Recuperar acceso' : 'Recover access',
-            exact: true,
-          })
-          .click();
+        await clickAccountAction(page, {
+          name: language === 'es' ? 'Recuperar acceso' : 'Recover access',
+          exact: true,
+        });
         await dialog(page).getByLabel(words.email, { exact: true }).fill(guestEmail);
         await submit(page, 'request-reset').click();
         await expect(dialog(page).getByRole('status')).toBeVisible();

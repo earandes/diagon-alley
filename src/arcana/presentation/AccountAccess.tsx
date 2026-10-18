@@ -208,6 +208,7 @@ export function AccountAccess({
   };
   const submit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    if (uncertain) return;
     void run(async () => {
       if (['login', 'verify', 'reset'].includes(step) && !validPassword(password))
         throw new AccountRequestError('PASSWORD_POLICY');
@@ -292,6 +293,16 @@ export function AccountAccess({
       }
     });
   const passwordNeeded = ['login', 'verify', 'reset'].includes(step);
+  const codeStep = step === 'verify' || step === 'reset';
+  const repairOwner =
+    step === 'login' && ['PLAYER_MISMATCH', 'ACCOUNT_CONFLICT'].includes(error ?? '');
+  const repairCode = [
+    'INVALID_TOKEN',
+    'GUEST_SESSION_REQUIRED',
+    'PLAYER_MISMATCH',
+    'ACCOUNT_CONFLICT',
+  ].includes(error ?? '');
+  const helpBeforeAction = step === 'login' && (repairOwner || allowSwitch);
   const title =
     step === 'verify'
       ? 'verifyTitle'
@@ -300,16 +311,175 @@ export function AccountAccess({
         : step === 'manage'
           ? 'account'
           : step;
+  const emblem =
+    step === 'register'
+      ? 'ui.collection'
+      : step === 'login'
+        ? 'ui.map'
+        : step === 'manage'
+          ? 'ui.seal'
+          : 'ui.missions';
   const errorMessage = error && (
     <p ref={errorRegion} tabIndex={-1} role="alert" className="account-error">
-      {accountError(language, error)}
+      {step === 'login' && error === 'INVALID_CREDENTIALS'
+        ? a(language, 'loginInvalid')
+        : accountError(language, error)}
     </p>
+  );
+  const help = (
+    <details
+      key={step}
+      className="account-help"
+      open={repairOwner || repairCode || allowSwitch || undefined}
+    >
+      <summary>
+        {a(
+          language,
+          step === 'register'
+            ? 'registerOptions'
+            : step === 'login'
+              ? 'loginOptions'
+              : step === 'manage'
+                ? 'manageOptions'
+                : 'codeOptions',
+        )}
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="m8 4 8 8-8 8" />
+        </svg>
+      </summary>
+      <div className="account-help-content">
+        {step === 'register' && (
+          <>
+            <button
+              type="button"
+              className="account-link"
+              disabled={busy || !!uncertain}
+              onClick={() => move('login')}
+            >
+              {a(language, 'login')}
+            </button>
+            <button
+              type="button"
+              className="account-link"
+              disabled={busy || !!uncertain}
+              onClick={() => move('verify')}
+            >
+              {a(language, 'haveCode')}
+            </button>
+            <p>{a(language, 'registerHelp')}</p>
+          </>
+        )}
+        {step === 'login' && (
+          <>
+            {playerId && !pending && (
+              <section className="account-switch">
+                <p>{a(language, session?.kind === 'guest' ? 'switchHelp' : 'switchAccountHelp')}</p>
+                <button
+                  type="button"
+                  className="account-link"
+                  aria-pressed={allowSwitch}
+                  disabled={busy || !!uncertain}
+                  onClick={() => setAllowSwitch(!allowSwitch)}
+                >
+                  {a(language, allowSwitch ? 'sameOwner' : 'allowSwitch')}
+                </button>
+              </section>
+            )}
+            <button
+              type="button"
+              className="account-link"
+              disabled={busy || !!uncertain}
+              onClick={() => move('request-reset')}
+            >
+              {a(language, 'forgot')}
+            </button>
+            <button
+              type="button"
+              className="account-link"
+              disabled={busy || !!uncertain || pending}
+              onClick={() => move('register')}
+            >
+              {a(language, 'register')}
+            </button>
+            <p>{a(language, 'passwordDetails')}</p>
+          </>
+        )}
+        {step === 'request-reset' && (
+          <>
+            <button
+              type="button"
+              className="account-link"
+              disabled={busy || !!uncertain}
+              onClick={() => move('reset')}
+            >
+              {a(language, 'haveCode')}
+            </button>
+            <button
+              type="button"
+              className="account-link"
+              disabled={busy || !!uncertain}
+              onClick={() => move('login')}
+            >
+              {a(language, 'login')}
+            </button>
+            <p>{a(language, 'mailSent')}</p>
+          </>
+        )}
+        {codeStep && (
+          <>
+            <button
+              type="button"
+              className="account-link"
+              disabled={busy || !!uncertain}
+              onClick={() => move(step === 'verify' ? 'register' : 'request-reset')}
+            >
+              {a(language, 'requestAnother')}
+            </button>
+            <p>{a(language, 'mailSent')}</p>
+            <p>{a(language, 'passwordDetails')}</p>
+            {error === 'GUEST_SESSION_REQUIRED' && (
+              <button
+                type="button"
+                className="account-link"
+                disabled={busy || !!uncertain}
+                onClick={() => move('login')}
+              >
+                {a(language, 'login')}
+              </button>
+            )}
+          </>
+        )}
+        {step === 'manage' && (
+          <>
+            <button
+              type="button"
+              className="account-link"
+              disabled={busy || !!uncertain}
+              onClick={() => move('request-reset')}
+            >
+              {a(language, 'resetTitle')}
+            </button>
+            <p>{a(language, 'logoutHelp')}</p>
+            <button
+              type="button"
+              className="account-link"
+              data-account-action="logout"
+              disabled={busy || !connected || pending || !!uncertain}
+              onClick={() => void run(() => identity('logout', {}))}
+            >
+              {a(language, 'logout')}
+            </button>
+          </>
+        )}
+      </div>
+    </details>
   );
   return (
     <dialog
       ref={dialog}
       className="account-access"
       data-account-dialog
+      data-account-step={step}
       aria-labelledby="account-title"
       aria-busy={busy}
       onCancel={(event) => {
@@ -319,8 +489,6 @@ export function AccountAccess({
       }}
     >
       <header className="account-heading">
-        <Artwork asset="ui.missions" language={language} decorative />
-        <h2 id="account-title">{a(language, title)}</h2>
         <button
           type="button"
           className="account-close game-object"
@@ -332,38 +500,29 @@ export function AccountAccess({
             <path d="M14 5 7 12l7 7M7 12h14" />
           </svg>
         </button>
+        <Artwork asset={emblem} language={language} decorative eager />
+        <h2 id="account-title">{a(language, title)}</h2>
       </header>
       {step === 'manage' ? (
         <section className="account-management">
           <p className="account-email">{session?.email}</p>
           <p>{a(language, 'linked')}</p>
-          <p>{a(language, 'logoutHelp')}</p>
-          <button
-            type="button"
-            data-account-action="logout"
-            disabled={busy || !connected || pending || !!uncertain}
-            onClick={() => void run(() => identity('logout', {}))}
-          >
-            {a(language, 'logout')}
-          </button>
-          <button
-            type="button"
-            className="account-link"
-            onClick={() => move('request-reset')}
-            disabled={busy}
-          >
-            {a(language, 'resetTitle')}
-          </button>
+          {errorMessage}
+          {help}
         </section>
       ) : (
         <form onSubmit={submit} data-account-action={step}>
-          {['verify', 'reset'].includes(step) && (
+          {(step === 'register' || step === 'login') && (
+            <p className="account-intro">
+              {a(language, step === 'register' ? 'registerHint' : 'loginHint')}
+            </p>
+          )}
+          {codeStep && (
             <div className="account-delivery">
               {email && <p className="account-email">{email}</p>}
-              {notice === 'mailSent' && <p role="status">{a(language, 'mailSent')}</p>}
+              {notice === 'mailSent' && <p role="status">{a(language, 'mailReceived')}</p>}
             </div>
           )}
-          {step === 'register' && <p className="account-intro">{a(language, 'registerHelp')}</p>}
           {['register', 'login', 'request-reset'].includes(step) && (
             <label htmlFor="account-email">
               {a(language, 'email')}
@@ -382,7 +541,7 @@ export function AccountAccess({
               />
             </label>
           )}
-          {['verify', 'reset'].includes(step) && (
+          {codeStep && (
             <label htmlFor="account-token">
               {a(language, 'token')}
               <input
@@ -403,7 +562,9 @@ export function AccountAccess({
           {passwordNeeded && (
             <div className="account-password">
               <label htmlFor="account-password">
-                {a(language, 'password')}
+                {a(language, step === 'login' ? 'password' : 'newPassword')}
+              </label>
+              <div className="account-password-entry">
                 <input
                   id="account-password"
                   name="password"
@@ -416,145 +577,88 @@ export function AccountAccess({
                   disabled={busy}
                   aria-describedby={step === 'login' ? undefined : 'account-password-hint'}
                 />
-              </label>
-              <button
-                type="button"
-                className="account-link"
-                aria-controls="account-password"
-                aria-pressed={showPassword}
-                onClick={() => setShowPassword(!showPassword)}
-                disabled={busy}
-              >
-                {a(language, showPassword ? 'hide' : 'show')}
-              </button>
+                <button
+                  type="button"
+                  className="account-eye"
+                  aria-label={a(language, showPassword ? 'hide' : 'show')}
+                  aria-controls="account-password"
+                  aria-pressed={showPassword}
+                  disabled={busy}
+                  onClick={() => setShowPassword(!showPassword)}
+                >
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12Z" />
+                    <circle cx="12" cy="12" r="3" />
+                    {showPassword && <path d="m3 3 18 18" />}
+                  </svg>
+                </button>
+              </div>
               {step !== 'login' && <p id="account-password-hint">{a(language, 'passwordHint')}</p>}
             </div>
           )}
-          {step === 'login' && playerId && (
-            <section className="account-switch">
-              <p>
-                {a(
-                  language,
-                  pending
-                    ? 'pending'
-                    : session?.kind === 'guest'
-                      ? 'switchHelp'
-                      : 'switchAccountHelp',
-                )}
-              </p>
-              {!pending && (
-                <button
-                  type="button"
-                  className="account-link"
-                  aria-pressed={allowSwitch}
-                  disabled={busy}
-                  onClick={() => setAllowSwitch(!allowSwitch)}
-                >
-                  {a(language, allowSwitch ? 'sameOwner' : 'allowSwitch')}
-                </button>
-              )}
-            </section>
-          )}
+          {step !== 'login' && <p className="account-trial">{a(language, 'trialHint')}</p>}
+          {step === 'login' && pending && <p>{a(language, 'pending')}</p>}
+          {allowSwitch && <p role="status">{a(language, 'switchChosen')}</p>}
           {notice && notice !== 'mailSent' && (
             <p role="status" className="account-notice">
               {a(language, notice)}
             </p>
           )}
+          {helpBeforeAction && help}
           {errorMessage}
-          <button
-            type="submit"
-            className="account-primary"
-            data-account-action={`${step}-submit`}
-            disabled={busy || !connected || !!uncertain || (step === 'register' && pending)}
-          >
-            {a(
-              language,
-              busy
-                ? 'sending'
-                : step === 'request-reset'
-                  ? 'requestReset'
-                  : step === 'verify'
-                    ? 'verify'
-                    : step === 'reset'
-                      ? 'reset'
-                      : step === 'register'
-                        ? 'register'
-                        : 'login',
-            )}
-          </button>
-          {['verify', 'reset'].includes(step) && (
+          {uncertain ? (
             <button
               type="button"
-              className="account-link"
-              disabled={busy || !!uncertain}
-              onClick={() => move(step === 'verify' ? 'register' : 'request-reset')}
+              className="account-primary"
+              disabled={busy || !connected}
+              onClick={checkSession}
             >
-              {a(language, 'requestAnother')}
+              <Artwork asset="ui.seal" language={language} decorative eager />
+              {a(language, busy ? 'sending' : 'check')}
             </button>
-          )}
-          {step === 'register' && (
+          ) : (
             <button
-              type="button"
-              className="account-link"
-              disabled={busy || !!uncertain}
-              onClick={() => move('verify')}
+              type="submit"
+              className="account-primary"
+              data-account-action={`${step}-submit`}
+              disabled={busy || !connected || (step === 'register' && pending)}
             >
-              {a(language, 'haveCode')}
+              <Artwork asset="ui.seal" language={language} decorative eager />
+              {a(
+                language,
+                busy
+                  ? 'sending'
+                  : step === 'request-reset'
+                    ? 'requestReset'
+                    : step === 'verify'
+                      ? 'verify'
+                      : step === 'reset'
+                        ? 'reset'
+                        : step === 'register'
+                          ? 'requestCode'
+                          : 'login',
+              )}
             </button>
           )}
-          {step === 'request-reset' && (
-            <button
-              type="button"
-              className="account-link"
-              disabled={busy || !!uncertain}
-              onClick={() => move('reset')}
-            >
-              {a(language, 'haveCode')}
-            </button>
-          )}
-          {step === 'login' && (
-            <button
-              type="button"
-              className="account-link"
-              disabled={busy || !!uncertain}
-              onClick={() => move('request-reset')}
-            >
-              {a(language, 'forgot')}
-            </button>
-          )}
-          {step !== 'login' && (
-            <button
-              type="button"
-              className="account-link"
-              disabled={busy || !!uncertain}
-              onClick={() => move('login')}
-            >
-              {a(language, 'login')}
-            </button>
-          )}
-          {step === 'login' && (
-            <button
-              type="button"
-              className="account-link"
-              disabled={busy || !!uncertain || pending}
-              onClick={() => move('register')}
-            >
-              {a(language, 'register')}
-            </button>
-          )}
+          {!helpBeforeAction && help}
         </form>
       )}
-      {busy && <p role="status">{a(language, 'sending')}</p>}
+      {busy && (
+        <p role="status" className="visually-hidden">
+          {a(language, 'sending')}
+        </p>
+      )}
       {!connected && <p role="status">{a(language, 'offline')}</p>}
-      {step === 'manage' && errorMessage}
-      {uncertain && (
-        <button type="button" disabled={busy || !connected} onClick={checkSession}>
+      {step === 'manage' && uncertain && (
+        <button
+          type="button"
+          className="account-primary"
+          disabled={busy || !connected}
+          onClick={checkSession}
+        >
           {a(language, 'check')}
         </button>
       )}
-      <button type="button" className="account-link account-back" disabled={busy} onClick={close}>
-        {a(language, 'cancel')}
-      </button>
     </dialog>
   );
 }

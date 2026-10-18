@@ -1,6 +1,7 @@
 import type { Language } from '../domain/collection/wizards';
 
 const messages = {
+  requestCode: { es: 'Solicitar código', en: 'Request code' },
   register: { es: 'Crear cuenta', en: 'Create account' },
   login: { es: 'Iniciar sesión', en: 'Sign in' },
   guest: { es: 'Jugar como invitado', en: 'Play as guest' },
@@ -13,11 +14,12 @@ const messages = {
   access: { es: 'Acceder a mi cuenta', en: 'Account access' },
   email: { es: 'Correo electrónico', en: 'Email' },
   password: { es: 'Contraseña', en: 'Password' },
+  newPassword: { es: 'Nueva contraseña', en: 'New password' },
   passwordHint: {
-    es: 'Entre 15 y 128 caracteres. Puedes pegarla o usar un gestor de contraseñas.',
-    en: '15 to 128 characters. You can paste it or use a password manager.',
+    es: 'Entre 15 y 128 caracteres.',
+    en: '15 to 128 characters.',
   },
-  token: { es: 'Código del correo', en: 'Verification code' },
+  token: { es: 'Código', en: 'Code' },
   show: { es: 'Mostrar contraseña', en: 'Show password' },
   hide: { es: 'Ocultar contraseña', en: 'Hide password' },
   close: { es: 'Volver al juego', en: 'Back to game' },
@@ -25,6 +27,19 @@ const messages = {
   sending: { es: 'Conectando…', en: 'Connecting…' },
   verify: { es: 'Verificar y guardar', en: 'Verify and save' },
   verifyTitle: { es: 'Verifica tu correo', en: 'Verify your email' },
+  loginInvalid: { es: 'Correo o contraseña incorrectos.', en: 'Incorrect email or password.' },
+  registerHint: { es: 'Guarda tus cromos y tu avance.', en: 'Save your cards and progress.' },
+  loginHint: { es: 'Continúa tu aventura.', en: 'Continue your adventure.' },
+  trialHint: { es: 'Ensayo local. Sin correo externo.', en: 'Local trial. No external email.' },
+  mailReceived: { es: 'Solicitud recibida.', en: 'Request received.' },
+  registerOptions: { es: '¿Ya tienes cuenta o código?', en: 'Already have an account or code?' },
+  loginOptions: { es: '¿Necesitas ayuda para entrar?', en: 'Need help signing in?' },
+  codeOptions: { es: '¿No tienes el código?', en: 'Missing your code?' },
+  manageOptions: { es: 'Gestionar acceso', en: 'Manage access' },
+  passwordDetails: {
+    es: 'Puedes pegar la contraseña o usar tu gestor. No la recortamos ni cambiamos sus caracteres.',
+    en: 'You can paste your password or use a password manager. We do not trim or change its characters.',
+  },
   registerHelp: {
     es: 'Verifica tu correo con el código y elige una contraseña. En este ensayo, el código se entrega a un buzón local privado. Tu partida actual se conserva.',
     en: 'Verify your email with the code and choose a password. In this trial, the code is delivered to a private local mailbox. Your current game is preserved.',
@@ -36,8 +51,8 @@ const messages = {
   requestAnother: { es: 'Solicitar otro código', en: 'Request another code' },
   editEmail: { es: 'Cambiar correo', en: 'Change email' },
   mailUncertain: {
-    es: 'No llegó la respuesta a la solicitud. Puedes solicitar el código de nuevo cuando haya conexión. No se ha cambiado tu acceso.',
-    en: 'The code request response did not arrive. You can request it again when connected. Your access has not changed.',
+    es: 'No llegó la respuesta. Puedes solicitar el código de nuevo.',
+    en: 'The response did not arrive. You can request the code again.',
   },
   haveCode: { es: 'Tengo el código', en: 'I have the code' },
   forgot: { es: 'Olvidé mi contraseña', en: 'Forgot password' },

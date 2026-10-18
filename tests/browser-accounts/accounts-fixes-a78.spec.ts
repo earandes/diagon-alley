@@ -1,3 +1,4 @@
+import { clickAccountAction, clickAccountControl } from './account-controls';
 import { randomUUID } from 'node:crypto';
 import { mkdir, readdir, readFile, writeFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
@@ -8,9 +9,12 @@ const password = 'A78 private fictitious passphrase!';
 const dialog = (page: Page) => page.locator('[data-account-dialog][open]');
 const primary = (page: Page) => dialog(page).locator('button[type=submit]');
 const haveCode = (page: Page) =>
-  dialog(page).getByRole('button', { name: /^(Tengo el código|I have the code)$/ });
+  dialog(page).getByRole('button', {
+    name: /^(Tengo el código|I have the code)$/,
+    includeHidden: true,
+  });
 const loginLink = (page: Page) =>
-  dialog(page).getByRole('button', { name: /^(Iniciar sesión|Sign in)$/ });
+  dialog(page).getByRole('button', { name: /^(Iniciar sesión|Sign in)$/, includeHidden: true });
 const settings = (page: Page) => page.locator('dialog.game-settings[open]');
 const observations: unknown[] = [];
 const root = resolve('docs/arcana/accounts-fixes-2026-10-18/evidence/linux');
@@ -185,12 +189,8 @@ test('A78 remaining forms and error-state composition without game mutation', as
   await primary(page).click();
   await expect(dialog(page).getByRole('alert')).toBeVisible();
   await observe(page, 'wrong-credentials');
-  await dialog(page)
-    .getByRole('button', { name: /^(Mostrar contraseña|Show password)$/ })
-    .click();
-  await dialog(page)
-    .getByRole('button', { name: /^(Olvidé mi contraseña|Forgot password)$/ })
-    .click();
+  await clickAccountAction(page, { name: /^(Mostrar contraseña|Show password)$/ });
+  await clickAccountAction(page, { name: /^(Olvidé mi contraseña|Forgot password)$/ });
   await snapshot(page, 'request-reset');
   await dialog(page)
     .locator('input[name=email]')
@@ -230,9 +230,7 @@ test('A78 remaining forms and error-state composition without game mutation', as
   await expect(dialog(page).getByRole('alert')).toBeVisible();
   await observe(page, 'invalid-token');
   await snapshot(page, 'invalid-token');
-  await dialog(page)
-    .getByRole('button', { name: /^(Solicitar otro código|Request another code)$/ })
-    .click();
+  await clickAccountAction(page, { name: /^(Solicitar otro código|Request another code)$/ });
   await expect(dialog(page).locator('input[name=email]')).toHaveValue(/a78-review-/);
   await expect(primary(page)).toHaveAttribute('data-account-action', 'register-submit');
   await page.keyboard.press('Escape');
@@ -267,7 +265,7 @@ test('A78 guest link after reload, real settings swap and explicit account confl
   expect(await game(page)).toEqual(saved);
 
   await openFromSettings(page);
-  await haveCode(page).click();
+  await clickAccountControl(haveCode(page));
   await dialog(page).locator('input[name=token]').fill(token);
   await dialog(page).locator('input[name=password]').fill(password);
   await primary(page).click();
@@ -300,7 +298,7 @@ test('A78 guest link after reload, real settings swap and explicit account confl
   await observe(page, 'linked-after-swap');
   await snapshot(page, 'manage');
   expect(await game(page)).toEqual(saved);
-  await dialog(page).locator('[data-account-action=logout]').click();
+  await clickAccountControl(dialog(page).locator('[data-account-action=logout]'));
   await expect(dialog(page)).toHaveCount(0);
   await dismissSettings(page);
   await page.locator('.portal-enter').click();
@@ -308,7 +306,7 @@ test('A78 guest link after reload, real settings swap and explicit account confl
   const guest = await game(page);
   expect(guest.playerId).not.toBe(saved.playerId);
   await openFromSettings(page);
-  await loginLink(page).click();
+  await clickAccountControl(loginLink(page));
   await dialog(page).locator('input[name=email]').fill(email);
   await dialog(page).locator('input[name=password]').fill(password);
   await primary(page).click();
@@ -316,7 +314,7 @@ test('A78 guest link after reload, real settings swap and explicit account confl
   await observe(page, 'different-account-blocked');
   await snapshot(page, 'conflict');
   expect(await game(page)).toEqual(guest);
-  await dialog(page).getByRole('button', { name: 'Open another saved game', exact: true }).click();
+  await clickAccountAction(page, { name: 'Open another saved game', exact: true });
   await observe(page, 'different-account-explicit');
   await primary(page).click();
   await expect(dialog(page)).toHaveCount(0);
@@ -325,7 +323,7 @@ test('A78 guest link after reload, real settings swap and explicit account confl
 
   if (wide) {
     await openFromSettings(page);
-    await dialog(page).locator('[data-account-action=logout]').click();
+    await clickAccountControl(dialog(page).locator('[data-account-action=logout]'));
     await expect(dialog(page)).toHaveCount(0);
     await dismissSettings(page);
     await page.locator('[data-account-entry=login]').click();
@@ -343,7 +341,7 @@ test('A78 guest link after reload, real settings swap and explicit account confl
     await observe(page, 'lost-login-response');
     await snapshot(page, 'uncertain');
     await page.unroute('**/api/auth/login');
-    await dialog(page).getByRole('button', { name: 'Check session', exact: true }).click();
+    await clickAccountAction(page, { name: 'Check session', exact: true });
     await expect
       .poll(() =>
         page.evaluate(() => {
@@ -532,12 +530,12 @@ test('A78 same account access across map, node, preparation, reveal and forge; o
     });
     await quote.getByRole('button', { name: /^(Ajustes|Settings)$/ }).click();
     await settings(page).locator('[data-account-entry=settings]').click();
-    await loginLink(page).click();
+    await clickAccountControl(loginLink(page));
     await dialog(page).locator('input[name=email]').fill(email);
     await dialog(page).locator('input[name=password]').fill(password);
-    await dialog(page)
-      .getByRole('button', { name: /^(Abrir otra partida guardada|Open another saved game)$/ })
-      .click();
+    await clickAccountAction(page, {
+      name: /^(Abrir otra partida guardada|Open another saved game)$/,
+    });
     await primary(page).click();
     await expect(dialog(page)).toHaveCount(0);
     await expect(quote).toHaveCount(0);
@@ -650,7 +648,7 @@ test('A78 lost recovery request has deliberate retry and invalid code has direct
   test.skip(viewport?.width !== 390, 'One transport sample with a genuinely accepted request.');
   await enter(page, false);
   await page.locator('[data-account-entry=login]').click();
-  await dialog(page).getByRole('button', { name: 'Olvidé mi contraseña', exact: true }).click();
+  await clickAccountAction(page, { name: 'Olvidé mi contraseña', exact: true });
   const email = `a78-recovery-lost-${randomUUID()}@example.invalid`;
   await dialog(page).locator('input[name=email]').fill(email);
   await page.route('**/api/auth/request-reset', async (route) => {
@@ -670,7 +668,7 @@ test('A78 lost recovery request has deliberate retry and invalid code has direct
   await dialog(page).locator('input[name=password]').fill(password);
   await primary(page).click();
   await expect(dialog(page).getByRole('alert')).toBeVisible();
-  await dialog(page).getByRole('button', { name: 'Solicitar otro código', exact: true }).click();
+  await clickAccountAction(page, { name: 'Solicitar otro código', exact: true });
   await expect(dialog(page).locator('input[name=email]')).toHaveValue(email);
   await expect(primary(page)).toHaveAttribute('data-account-action', 'request-reset-submit');
   expect((await page.request.get('/api/state')).status()).toBe(401);
