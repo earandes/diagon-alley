@@ -37,7 +37,8 @@ export class BattleAudioTrack {
           actor && castProfile(actor.wizardId, confirmedBondFor(this.combat, actor.id));
         return [profile ? `cast-${profile}` : `cast-${actor?.affinity ?? 'neutral'}`];
       }
-      if (position.phase === 'impact') return [event.missed ? 'miss' : 'impact'];
+      if (position.phase === 'impact')
+        return [event.missed ? 'miss' : event.guarded ? 'cast-creatures' : 'impact'];
     }
     if (position.phase === 'impact' && event?.kind === 'healed' && event.amount > 0)
       return ['heal'];

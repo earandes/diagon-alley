@@ -7,6 +7,7 @@ import { Artwork } from '../../src/arcana/presentation/Artwork';
 import type { BeanAssignment } from '../../src/arcana/application/run-contracts';
 import { BossPartyStage } from '../../src/arcana/presentation/BossPartyStage';
 import { BossSupplies } from '../../src/arcana/presentation/BossSupplies';
+import { gameAudio, useGameAudioLifecycle } from '../../src/arcana/presentation/audio/runtime';
 import { GameSettings } from '../../src/arcana/presentation/GameSettings';
 import { IntentionReminder } from '../../src/arcana/presentation/ExpeditionIntentions';
 // Declared UI fixtures, never an earned collection or a public server grant route.
@@ -193,9 +194,14 @@ const battle = new CombatEngine({ fromSeed: (s) => new SeededRandom(s) }).resolv
 });
 const record = JSON.stringify({ game, battle, receipt });
 Object.assign(window, {
-  __a87: { record, check: () => JSON.stringify({ game, battle, receipt }) === record },
+  __a87: {
+    audio: gameAudio,
+    record,
+    check: () => JSON.stringify({ game, battle, receipt }) === record,
+  },
 });
 function Fixture() {
+  useGameAudioLifecycle();
   useSyncExternalStore(subscribeContentPack, selectedContentPackId);
   const [mode, setMode] = useState(query.get('mode') ?? 'map'),
     [options, setOptions] = useState<NodeOptions>({ pactAction: 'recruit' }),
@@ -225,6 +231,15 @@ function Fixture() {
       />
       <header className="game-header">
         <h1>{activePack.brand}</h1>
+        {mode === 'map' && (
+          <GameSettings
+            language={language}
+            onLanguage={() => {}}
+            reduced={reduced}
+            ownReduced={reduced}
+            onReduced={setReduced}
+          />
+        )}
       </header>
       <main id="content">
         {mode === 'map' && (

@@ -453,3 +453,88 @@ test('A87 bounded creature workload measures action, pose loading and sustained 
     rows,
   });
 });
+
+// Observes native audio starts after real Settings consent. No synthetic sound engine.
+test('A87 creature launch cues reach native audio only after consent and stop on pause or skip', async ({
+  page,
+}, info) => {
+  test.skip(
+    info.project.name !== 'chromium-390-motion-a69',
+    'One bounded native sample; real decoding in all A84 audio projects covers all seven new files.',
+  );
+  let wavRequests = 0;
+  page.on('request', (r) => {
+    if (r.url().endsWith('.wav')) wavRequests++;
+  });
+  await page.goto(`${fixture}?mode=map&lang=es&pack=diagon-alley`);
+  expect(wavRequests).toBe(0);
+  await page.locator('.settings-trigger').click();
+  await page
+    .locator('dialog.settings-case[open]')
+    .getByRole('button', { name: /^Efectos/ })
+    .click();
+  await expect
+    .poll(() =>
+      page.evaluate(() =>
+        (
+          window as unknown as { __a87: { audio: { getSnapshot(): string } } }
+        ).__a87.audio.getSnapshot(),
+      ),
+    )
+    .toBe('ready');
+  expect(wavRequests).toBe(15);
+  await page.keyboard.press('Escape');
+  await page.evaluate(() => {
+    const rows: { cue: string; nativeStarted: boolean }[] = [];
+    let starts = 0;
+    const native = AudioBufferSourceNode.prototype.start;
+    AudioBufferSourceNode.prototype.start = function (...args: Parameters<typeof native>) {
+      starts++;
+      return native.apply(this, args);
+    };
+    const data = (
+      window as unknown as {
+        __a87: { audio: { play(name: string): void }; audioCues: typeof rows };
+      }
+    ).__a87;
+    const play = data.audio.play.bind(data.audio);
+    data.audio.play = (cue: string) => {
+      const before = starts;
+      play(cue);
+      rows.push({ cue, nativeStarted: starts > before });
+    };
+    data.audioCues = rows;
+  });
+  await page.locator('[data-qa-combat]').click();
+  await expect
+    .poll(() =>
+      page.evaluate(
+        () =>
+          (
+            window as unknown as { __a87: { audioCues: { cue: string; nativeStarted: boolean }[] } }
+          ).__a87.audioCues.filter(
+            (r) => r.nativeStarted && /^cast-(phoenix|hippogriff|unicorn|dragon)$/.test(r.cue),
+          ).length,
+      ),
+    )
+    .toBeGreaterThan(0);
+  await page.locator('.arena-pause').click();
+  const before = await page.evaluate(
+    () => (window as unknown as { __a87: { audioCues: unknown[] } }).__a87.audioCues.length,
+  );
+  await page.waitForTimeout(200);
+  expect(
+    await page.evaluate(
+      () => (window as unknown as { __a87: { audioCues: unknown[] } }).__a87.audioCues.length,
+    ),
+  ).toBe(before);
+  await skipBattle(page);
+  await immutable(page);
+  await report('creature-native-audio', {
+    wavRequests,
+    cues: await page.evaluate(
+      () => (window as unknown as { __a87: { audioCues: unknown[] } }).__a87.audioCues,
+    ),
+    scope: 'Native source start observed, not human listening or acoustic balance.',
+  });
+});

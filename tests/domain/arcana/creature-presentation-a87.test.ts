@@ -57,7 +57,7 @@ it('emits one species cue from confirmed events, without repeating at the same c
   const battle = new CombatEngine({ fromSeed: (seed) => new SeededRandom(seed) }).resolve({
     id: 'audio',
     seed: 0,
-    player: creatures.slice(0, 3).map((id, n) => fighter(`p${n}`, id, 20 - n)),
+    player: creatures.map((id, n) => fighter(`p${n}`, id, 20 - n)),
     rival: [0, 1, 2].map((n) => fighter(`r${n}`, 'rival', 1)),
     rules: c.campaign.combatRules,
   });
@@ -74,4 +74,16 @@ it('emits one species cue from confirmed events, without repeating at the same c
   expect(track.consume(position)).toEqual(['cast-phoenix']);
   expect(track.consume(position)).toEqual([]);
   expect(track.consume({ ...position, cursor: cursor + 1, visible: false })).toEqual([]);
+  for (const [n, expected] of ['phoenix', 'hippogriff', 'unicorn', 'dragon'].entries()) {
+    const at = battle.events.findIndex((e) => e.kind === 'spell-cast' && e.actorId === `p${n}`);
+    expect(at).toBeGreaterThan(0);
+    expect(new BattleAudioTrack(battle).consume({ ...position, cursor: at })).toEqual([
+      `cast-${expected}`,
+    ]);
+  }
+  const guarded = battle.events.findIndex((e) => e.kind === 'spell-cast' && (e.guarded ?? 0) > 0);
+  expect(guarded).toBeGreaterThan(0);
+  expect(
+    new BattleAudioTrack(battle).consume({ ...position, cursor: guarded, phase: 'impact' }),
+  ).toEqual(['cast-creatures']);
 });
