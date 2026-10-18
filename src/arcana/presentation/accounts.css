@@ -1,43 +1,59 @@
-/* A79: a compact illustrated pass; one task and contextual help. */
+/* A80: illustrated correspondence, with one task and contextual help. */
 .account-access {
-  width: min(420px, calc(100vw - 28px));
+  --account-paper: #faecc7;
+  --account-ink: #132438;
+  --account-accent: #392047;
+  --account-muted: #58452d;
+  --account-focus: #164f65;
+  --account-error: #76312d;
+
+  width: min(680px, calc(100vw - 28px));
   max-height: calc(100dvh - 28px);
   box-sizing: border-box;
   overflow: auto;
-  padding: 24px;
-  border: 1px solid #c9a365;
-  border-radius: 6px;
+  padding: 8px;
+  border: 1px solid #8f7950;
+  border-radius: 8px;
   color: #fff0d0;
-  background: #132438;
-  box-shadow: 0 20px 60px #020510b3;
+  background: var(--account-ink);
+  box-shadow:
+    0 24px 64px #020510b3,
+    inset 0 0 0 4px #0b1929;
   text-align: start;
-  scrollbar-color: #c9a365 #132438;
+  scrollbar-color: #c9a365 var(--account-ink);
+}
+.account-access[open] {
+  display: grid;
+  grid-template-columns: minmax(min-content, 220px) minmax(0, 1fr);
+  gap: 0;
 }
 .account-access::backdrop {
   background: #020914b3;
 }
 .arcana-shell .account-access .account-heading {
   display: grid;
-  grid-template-columns: 44px minmax(0, 1fr) 44px;
+  grid-template-columns: 1fr;
+  grid-template-rows: 44px 168px auto;
+  align-content: center;
   align-items: start;
-  gap: 8px;
+  gap: 12px;
   position: static;
-  padding: 0;
-  margin: 0 0 20px;
+  padding: 16px 12px 24px;
+  margin: 0;
   background: none;
   border: 0;
 }
 .account-heading > img {
-  grid-column: 2;
-  grid-row: 1;
+  grid-column: 1;
+  grid-row: 2;
   justify-self: center;
-  width: 76px;
-  height: 76px;
+  width: 168px;
+  height: 168px;
   object-fit: contain;
 }
 .account-heading h2 {
   grid-column: 1 / -1;
-  grid-row: 2;
+  grid-row: 3;
   font:
     500 1.5rem / 1.3 Cinzel,
     Georgia,
@@ -45,6 +61,7 @@
   margin: 0;
   text-align: center;
   text-wrap: balance;
+  overflow-wrap: normal;
 }
 .account-access .account-close {
   grid-column: 1;
@@ -70,12 +87,18 @@
 .account-access form,
 .account-management {
   display: grid;
+  align-content: center;
   gap: 14px;
+  min-width: 0;
+  padding: 28px;
+  color: var(--account-ink);
+  background: var(--account-paper);
+  border-radius: 2px 4px 4px 2px;
 }
 .account-access label {
   display: grid;
   gap: 4px;
-  color: #fff0d0;
+  color: var(--account-ink);
   font-size: 0.9rem;
 }
 .account-access input {
@@ -85,12 +108,12 @@
   min-height: 48px;
   padding: 10px 8px;
   border: 0;
-  border-bottom: 1px solid #bca36e;
+  border-bottom: 1px solid #94734e;
   border-radius: 0;
-  background: #0b1929;
-  color: #fff7e7;
+  background: transparent;
+  color: var(--account-ink);
   font: inherit;
-  caret-color: #f4d58f;
+  caret-color: var(--account-ink);
 }
 .account-access input::selection {
   background: #e6c078;
@@ -98,15 +121,21 @@
 }
 .account-access input:focus-visible,
 .account-access button:focus-visible,
-.account-access summary:focus-visible,
+.account-access summary:focus-visible {
+  outline: 3px solid var(--account-focus);
+  outline-offset: 3px;
+}
 .account-welcome button:focus-visible,
 .settings-account button:focus-visible {
   outline: 3px solid #b7edee;
   outline-offset: 3px;
 }
+.account-access .account-close:focus-visible {
+  outline-color: #b7edee;
+}
 .account-access p {
   margin: 0;
-  color: #e7d3a7;
+  color: var(--account-muted);
   font-size: 0.9rem;
   line-height: 1.45;
   overflow-wrap: anywhere;
@@ -130,25 +159,20 @@
   width: 100%;
   min-height: 52px;
   padding: 10px 14px;
-  border: 1px solid #e7c582;
+  border: 1px solid var(--account-accent);
   border-radius: 3px;
-  color: #132030;
-  background: #e1c181;
+  color: #fff0d0;
+  background: var(--account-accent);
   font-weight: 600;
 }
-.account-primary img {
-  width: 30px;
-  height: 30px;
-  object-fit: contain;
-}
 .account-access .account-primary:hover:not(:disabled) {
-  background: #f0d59e;
+  background: #1b1428;
 }
 .account-access .account-link {
   padding: 8px 0;
   border: 0;
   background: none;
-  color: #f1d698;
+  color: var(--account-accent);
   text-decoration: underline;
   text-underline-offset: 4px;
   text-align: start;
@@ -165,8 +189,8 @@
   display: grid;
   grid-template-columns: minmax(0, 1fr) 44px;
   align-items: center;
-  background: #0b1929;
-  border-bottom: 1px solid #bca36e;
+  background: transparent;
+  border-bottom: 1px solid #94734e;
 }
 .account-password-entry input {
   border-bottom: 0;
@@ -175,7 +199,7 @@
   background: none;
   border: 0;
   padding: 10px;
-  color: #e7d3a7;
+  color: var(--account-muted);
 }
 .account-eye svg {
   width: 24px;
@@ -189,7 +213,7 @@
   gap: 5px;
 }
 .account-access .account-email {
-  color: #fff7e7;
+  color: var(--account-ink);
   font-size: 0.9rem;
   text-align: center;
 }
@@ -198,7 +222,7 @@
 }
 .account-help {
   margin: 0;
-  border-top: 1px solid #c9a36555;
+  border-top: 1px solid #94734e66;
   padding-top: 2px;
 }
 .account-help > summary {
@@ -213,7 +237,7 @@
   background: none;
   box-shadow: none;
   cursor: pointer;
-  color: #f1d698;
+  color: var(--account-accent);
   font-size: 0.9rem;
   list-style: none;
 }
@@ -238,11 +262,11 @@
   gap: 6px;
 }
 .account-access .account-error {
-  color: #ffd2c5;
+  color: var(--account-error);
   scroll-margin-block: 16px;
 }
 .account-access .account-notice {
-  color: #e0efcd;
+  color: #215345;
 }
 .settings-account {
   border-top: 1px solid #b18a4b66;
@@ -311,5 +335,59 @@
 @media (max-height: 690px) {
   .game-shell .welcome:has(.account-welcome) {
     justify-content: start;
+  }
+}
+
+/* A80: the object owns the cover; credentials remain native writing on paper. */
+.account-access .account-link:hover:not(:disabled),
+.account-access .account-eye:hover:not(:disabled) {
+  background: #d8b67b55;
+  color: var(--account-accent);
+}
+.account-access .account-close:hover:not(:disabled) {
+  background: #0b1929;
+  color: #fff0d0;
+}
+.account-access > p {
+  grid-column: 2;
+  color: #fff0d0;
+  padding: 8px 16px;
+}
+.account-access > .account-primary {
+  grid-column: 2;
+}
+@media (max-width: 640px) {
+  .account-access {
+    width: min(420px, calc(100vw - 28px));
+  }
+  .account-access[open] {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .arcana-shell .account-access .account-heading {
+    grid-template-columns: 44px minmax(0, 1fr) 44px;
+    grid-template-rows: 88px auto;
+    gap: 8px;
+    padding: 12px 14px 16px;
+    align-content: start;
+  }
+  .account-heading > img {
+    grid-column: 2;
+    grid-row: 1;
+    width: 100px;
+    height: 88px;
+  }
+  .account-heading h2 {
+    grid-row: 2;
+    font-size: 1.35rem;
+  }
+  .account-access form,
+  .account-management {
+    padding: 20px;
+    gap: 12px;
+    border-radius: 2px 2px 4px 4px;
+  }
+  .account-access > p,
+  .account-access > .account-primary {
+    grid-column: 1;
   }
 }

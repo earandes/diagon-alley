@@ -613,7 +613,6 @@ export function AccountAccess({
               disabled={busy || !connected}
               onClick={checkSession}
             >
-              <Artwork asset="ui.seal" language={language} decorative eager />
               {a(language, busy ? 'sending' : 'check')}
             </button>
           ) : (
@@ -623,7 +622,6 @@ export function AccountAccess({
               data-account-action={`${step}-submit`}
               disabled={busy || !connected || (step === 'register' && pending)}
             >
-              <Artwork asset="ui.seal" language={language} decorative eager />
               {a(
                 language,
                 busy
