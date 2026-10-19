@@ -22,3 +22,7 @@ Se reutiliza evidencia A89 de reglas/PG/Redis/economía solo cuando los objetos 
 ## Límites que no se borran
 
 Imágenes estáticas no prueban movimiento. Acciones de automatización no prueban comprensión o interés. Colores forzados activos, lector físico, zoom real y dispositivo físico no se consideran cubiertos por emulación de texto o detector. WebKit≈22msP95rAF de la cohorte histórica no garantiza objetivo20ms ni equivale a GPU. Rendimiento nuevo se registra con su cohorte real, incluidos valores desfavorables.
+
+## Fallo de confirmación S07 conservado
+
+CI39279045685/bff4488:4casos pasados,1fallo y91omitidos al detenerse con maxFailures1. La regla de `settings-case.css` ganó por igual especificidad/orden: contraste permanecía en y476 al lado del grupo cuyo borde inferior era582. Defecto real de cascada, corregido dando alcance específico al componente; no cambia la aceptación ni se atribuye a sincronización. Se solicitó cancelar la continuación para validar el candidato corregido. [Error y resultados originales](evidence/attempt-2/failure.json).

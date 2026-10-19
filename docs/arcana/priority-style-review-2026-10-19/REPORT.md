@@ -31,7 +31,6 @@ Se elige agrupar la ayuda de intenciones frente a simplemente atenuar cuatro rec
 | S04/P3 | PNG: cuatro ayudas con aspecto de botón competían con tres objetos | Un libro «Cómo intentarlo» con todas las explicaciones. Objetos principales, foco cian visible y abandono secundario intactos; no cambio de semántica/commit. |
 | S05/P3 | PNG: «tabla4» compite con fuente/azar | Porcentaje exacto en primer plano, versión en ayuda junto a explicación aleatoria. No se omite información ni cambia probabilidad. |
 | S06/P2 | Source: imagen ausente + guía oculta + sin marcador deja diana vacía | «Consultar orientación» visible solo si falta imagen, igual a su nombre accesible; icono compacto habitual intacto. Fallback y recuperación por teclado se prueban con error explícito de SVG inline. |
-
 | S07/P2 | PNG nuevo de Ajustes: tamaño apilado y contraste ocupando dos alturas de106px | Grupo de tamaños horizontal, contraste debajo y sello existente. Altura mínima56px ordinaria;320px permite apilar para texto ampliado. Prueba de fila, separación, selección y reflujo. |
 
 Ocho pruebas ES/EN fallaron antes del cambio por S01/S02/S03/S05 y pasan después. S04 se comprueba además por ayuda única y conservación del contenido. S06 requiere navegador permitido: el caso existente de arte ausente solo cubría arena. No se reetiqueta el finding estático como reproducción gráfica anterior.

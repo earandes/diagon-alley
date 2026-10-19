@@ -22,7 +22,7 @@ html[data-reading-size='large'] {
   margin: 0.35rem 0;
   font-size: 0.875rem;
 }
-.settings-case .reading-preferences {
+.settings-case .settings-choices.reading-preferences {
   grid-template-columns: minmax(0, 1fr);
 }
 .reading-preferences > [role='group'] {
@@ -30,7 +30,7 @@ html[data-reading-size='large'] {
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 10px;
 }
-.settings-case .reading-preferences button {
+.settings-case .settings-choices.reading-preferences button {
   min-height: 56px;
   padding: 10px 32px 10px 10px;
   overflow-wrap: anywhere;
