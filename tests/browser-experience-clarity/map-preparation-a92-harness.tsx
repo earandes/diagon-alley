@@ -5,6 +5,8 @@ import { createRoot } from 'react-dom/client';
 import { MapPanel } from '../../src/arcana/presentation/MapPanel';
 import { TeamHud } from '../../src/arcana/presentation/TeamHud';
 import { BossPartyStage } from '../../src/arcana/presentation/BossPartyStage';
+import { NodePreparation } from '../../src/arcana/presentation/NodePreparation';
+import { BossSupplies } from '../../src/arcana/presentation/BossSupplies';
 import { BossPrelude } from '../../src/arcana/presentation/BossPrelude';
 import { projectPublicContent } from '../../src/arcana/application/public-content';
 import { trialConfiguration } from '../../src/arcana/infrastructure/content/trial-configuration';
@@ -32,6 +34,7 @@ document.documentElement.lang = language;
 document.documentElement.dataset.readingSize = params.get('large') === '1' ? 'large' : 'normal';
 const config = trialConfiguration('a85');
 const content = projectPublicContent(config.opening, config.campaign);
+const fullPreparation = params.get('full') === '1';
 const count = Math.min(5, Math.max(1, Number(params.get('count') ?? 5)));
 const ids = ['merlin', 'morgana', 'moon-herbalist', 'flamel', 'apprentice'];
 const copies = ids.slice(0, count).map((id, index) => ({
@@ -65,7 +68,12 @@ const game: GameState = {
   schemaVersion: 1,
   playerId: 'a92-declared-map-only',
   revision: 1,
-  inventory: createInventory(0),
+  inventory: {
+    ...createInventory(0),
+    products: fullPreparation
+      ? [{ id: 'a92-full-jar', kind: 'random-beans', status: 'available' }]
+      : [],
+  },
   copies,
   receipts: [],
   team: { copyIds: copies.map((copy) => copy.copyId), loadouts: [] },
@@ -75,7 +83,8 @@ const boss = config.campaign.challengeContent!('discovery', config.campaign.grap
   (node) => node.kind === 'boss',
 );
 if (boss?.kind !== 'boss') throw Error('A92 fixture requires existing boss');
-const opponents = boss.opponents;
+const bossPlan = boss;
+const opponents = bossPlan.opponents;
 const mode = params.get('mode') ?? 'map';
 const prepare = () => {
   window.__a92MapPrep.prepared++;
@@ -146,9 +155,27 @@ function Fixture() {
             className="notice node-event-dialog boss-staging"
             data-event-kind="boss"
           >
-            <div className="boss-opponent-stage">
-              <BossPrelude opponents={opponents} rules={content.combatRules} language={language} />
-            </div>
+            {fullPreparation ? (
+              <NodePreparation
+                plan={bossPlan}
+                run={run}
+                game={game}
+                rounding={config.campaign.rounding}
+                options={{}}
+                onChange={() => {}}
+                language={language}
+                ready
+                rules={content.combatRules}
+              />
+            ) : (
+              <div className="boss-opponent-stage">
+                <BossPrelude
+                  opponents={opponents}
+                  rules={content.combatRules}
+                  language={language}
+                />
+              </div>
+            )}
             <div className="boss-player-preparation">
               <BossPartyStage
                 run={run}
@@ -159,6 +186,17 @@ function Fixture() {
                 rules={content.combatRules}
                 onPrepare={prepare}
               />
+              {fullPreparation && (
+                <BossSupplies
+                  run={run}
+                  game={game}
+                  content={content}
+                  language={language}
+                  ready
+                  assignments={[]}
+                  onChange={() => {}}
+                />
+              )}
             </div>
             <div className="node-event-actions node-combat-actions">
               <button className="node-confirm-action" onClick={() => setSelection('confirmed')}>

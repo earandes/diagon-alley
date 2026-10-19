@@ -1,0 +1,38 @@
+{
+  "run": 39323571082,
+  "head": "6747f8197e4a8e68a31a621739e13d5e5560fffb",
+  "checkout": "f6f5712f659daf5976bd64191c479bbed9b34560",
+  "step": "ARCANA_CAPTURE_A70=1 npx playwright test --config playwright.boss-a70.config.ts",
+  "status": "failure",
+  "artifact": {
+    "id": 12222260947,
+    "name": "a70-boss-evidence"
+  },
+  "cause": "Demonstrated product overlap in initial boss consultation, chromium390 EN Diagon: control bottom801.5140991210938 exceeds footer top765.33056640625 at boss-a70.spec.ts223. Original log does not identify control/party count.",
+  "precedingBatches": {
+    "A76_A89_A92": {
+      "passed": 147,
+      "skipped": 69,
+      "failed": 0
+    },
+    "A75": {
+      "passed": 114,
+      "skipped": 174,
+      "failed": 0
+    }
+  },
+  "retry": "No automatic retry; preserve failure and inspect cause before correction.",
+  "workflowConclusion": "cancelled after retaining the failed step; A69 interrupted and regression not executed",
+  "counts": {
+    "passed": 25,
+    "failed": 1,
+    "notRun": 112
+  },
+  "assertion": {
+    "actualBottom": 801.5140991210938,
+    "maximumBottom": 765.33056640625,
+    "overlapPx": 36.18353271484375
+  },
+  "correction": "Extend existing opponent book/loot shelf to four posts, which now also occupy two rows. Keep figures/type/resources/footer. Add full NodePreparation+BossSupplies fixtures for four/five and contextual diagnostics to original assertion.",
+  "nextValidation": "New corrected candidate; no automatic retry or weakened assertion."
+}

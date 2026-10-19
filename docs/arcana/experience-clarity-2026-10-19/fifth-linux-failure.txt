@@ -1,0 +1,28 @@
+check	Run ARCANA_CAPTURE_A70=1 npx playwright test --config playwright.boss-a70.config.ts	2026-10-19T21:13:49.6088834Z ·························F
+check	Run ARCANA_CAPTURE_A70=1 npx playwright test --config playwright.boss-a70.config.ts	2026-10-19T21:13:49.6089522Z Testing stopped early after 1 maximum allowed failures.
+check	Run ARCANA_CAPTURE_A70=1 npx playwright test --config playwright.boss-a70.config.ts	2026-10-19T21:13:49.7185522Z 
+check	Run ARCANA_CAPTURE_A70=1 npx playwright test --config playwright.boss-a70.config.ts	2026-10-19T21:13:49.7192969Z 
+check	Run ARCANA_CAPTURE_A70=1 npx playwright test --config playwright.boss-a70.config.ts	2026-10-19T21:13:49.7199756Z   1) [chromium-390-boss-a70] › tests/browser-boss/boss-a70.spec.ts:185:5 › A70 real authority journey: preview cancel battle loot next intention en diagon-alley 
+check	Run ARCANA_CAPTURE_A70=1 npx playwright test --config playwright.boss-a70.config.ts	2026-10-19T21:13:49.7200597Z 
+check	Run ARCANA_CAPTURE_A70=1 npx playwright test --config playwright.boss-a70.config.ts	2026-10-19T21:13:49.7200887Z     Error: expect(received).toBeLessThanOrEqual(expected)
+check	Run ARCANA_CAPTURE_A70=1 npx playwright test --config playwright.boss-a70.config.ts	2026-10-19T21:13:49.7201241Z 
+check	Run ARCANA_CAPTURE_A70=1 npx playwright test --config playwright.boss-a70.config.ts	2026-10-19T21:13:49.7201414Z     Expected: <= 765.33056640625
+check	Run ARCANA_CAPTURE_A70=1 npx playwright test --config playwright.boss-a70.config.ts	2026-10-19T21:13:49.7201827Z     Received:    801.5140991210938
+check	Run ARCANA_CAPTURE_A70=1 npx playwright test --config playwright.boss-a70.config.ts	2026-10-19T21:13:49.7202083Z 
+check	Run ARCANA_CAPTURE_A70=1 npx playwright test --config playwright.boss-a70.config.ts	2026-10-19T21:13:49.7202431Z       221 |         await expect(control).toBeInViewport({ ratio: 1 });
+check	Run ARCANA_CAPTURE_A70=1 npx playwright test --config playwright.boss-a70.config.ts	2026-10-19T21:13:49.7203050Z       222 |         const box = await control.boundingBox();
+check	Run ARCANA_CAPTURE_A70=1 npx playwright test --config playwright.boss-a70.config.ts	2026-10-19T21:13:49.7203719Z     > 223 |         expect(box!.y + box!.height).toBeLessThanOrEqual(footerBox!.y);
+check	Run ARCANA_CAPTURE_A70=1 npx playwright test --config playwright.boss-a70.config.ts	2026-10-19T21:13:49.7204351Z           |                                      ^
+check	Run ARCANA_CAPTURE_A70=1 npx playwright test --config playwright.boss-a70.config.ts	2026-10-19T21:13:49.7204773Z       224 |       }
+check	Run ARCANA_CAPTURE_A70=1 npx playwright test --config playwright.boss-a70.config.ts	2026-10-19T21:13:49.7205099Z       225 |       expect(
+check	Run ARCANA_CAPTURE_A70=1 npx playwright test --config playwright.boss-a70.config.ts	2026-10-19T21:13:49.7205486Z       226 |         await prelude
+check	Run ARCANA_CAPTURE_A70=1 npx playwright test --config playwright.boss-a70.config.ts	2026-10-19T21:13:49.7206171Z         at /home/runner/work/diagon-alley/diagon-alley/tests/browser-boss/boss-a70.spec.ts:223:38
+check	Run ARCANA_CAPTURE_A70=1 npx playwright test --config playwright.boss-a70.config.ts	2026-10-19T21:13:49.7206655Z 
+check	Run ARCANA_CAPTURE_A70=1 npx playwright test --config playwright.boss-a70.config.ts	2026-10-19T21:13:49.7207254Z     Error Context: test-results/boss-a70/browser-boss-boss-a70-A70--1aa03-t-intention-en-diagon-alley-chromium-390-boss-a70/error-context.md
+check	Run ARCANA_CAPTURE_A70=1 npx playwright test --config playwright.boss-a70.config.ts	2026-10-19T21:13:49.7207715Z 
+check	Run ARCANA_CAPTURE_A70=1 npx playwright test --config playwright.boss-a70.config.ts	2026-10-19T21:13:49.7207886Z   1 failed
+check	Run ARCANA_CAPTURE_A70=1 npx playwright test --config playwright.boss-a70.config.ts	2026-10-19T21:13:49.7208876Z     [chromium-390-boss-a70] › tests/browser-boss/boss-a70.spec.ts:185:5 › A70 real authority journey: preview cancel battle loot next intention en diagon-alley 
+check	Run ARCANA_CAPTURE_A70=1 npx playwright test --config playwright.boss-a70.config.ts	2026-10-19T21:13:49.7209698Z   112 did not run
+check	Run ARCANA_CAPTURE_A70=1 npx playwright test --config playwright.boss-a70.config.ts	2026-10-19T21:13:49.7209912Z   25 passed (3.3m)
+check	Run ARCANA_CAPTURE_A70=1 npx playwright test --config playwright.boss-a70.config.ts	2026-10-19T21:13:49.7210211Z   1 error was not a part of any test, see above for details
+check	Run ARCANA_CAPTURE_A70=1 npx playwright test --config playwright.boss-a70.config.ts	2026-10-19T21:13:49.7608989Z ##[error]Process completed with exit code 1.

@@ -117,6 +117,46 @@ for (const pack of ['diagon-alley', 'arcana'])
       ).toBeInViewport();
       if (pack === 'diagon-alley' && lang === 'es') await selected(page, 'preparation-names');
     });
+    test(`A92 ${pack}/${lang} four and five posts keep real loot and preparation above the footer`, async ({
+      page,
+    }, info) => {
+      test.skip(
+        info.project.name !== 'chromium-390-a92',
+        'Bounded mobile regression of the demonstrated overlap.',
+      );
+      for (const count of [4, 5]) {
+        await page.goto(
+          `${fixture}?pack=${pack}&lang=${lang}&mode=preparation&count=${count}&full=1`,
+        );
+        const dialog = page.locator('.node-event-dialog');
+        await expect(page.locator('[data-boss-member]')).toHaveCount(count);
+        await expect(page.locator('.event-loot')).toBeVisible();
+        await expect(page.locator('.node-bean-preparation > summary')).toHaveAttribute(
+          'data-bean-stock',
+          '1',
+        );
+        expect(await dialog.evaluate((element) => element.scrollTop)).toBe(0);
+        const footer = await page.locator('.node-combat-actions').boundingBox();
+        for (const selector of ['.node-team-prepare', '.node-bean-preparation > summary']) {
+          const control = page.locator(selector);
+          await expect(control).toBeInViewport({ ratio: 1 });
+          const box = await control.boundingBox();
+          expect(
+            box!.y + box!.height,
+            `${selector}, ${count} members, ${pack}/${lang}`,
+          ).toBeLessThanOrEqual(footer!.y);
+        }
+        await page.locator('.node-bean-preparation > summary').click();
+        await expect(page.locator('.node-bean-preparation')).toHaveAttribute('open', '');
+        await page.locator('.node-bean-preparation > summary').click();
+        await expect(page.locator('.node-bean-preparation')).not.toHaveAttribute('open', '');
+        expect(await page.evaluate(() => window.__a92MapPrep.read())).toBe(
+          await page.evaluate(() => window.__a92MapPrep.before),
+        );
+        if (pack === 'diagon-alley' && lang === 'es')
+          await selected(page, `full-preparation-${count}`);
+      }
+    });
     test(`A92 ${pack}/${lang} preparation reflows at 320px with enlarged text`, async ({
       page,
     }, info) => {

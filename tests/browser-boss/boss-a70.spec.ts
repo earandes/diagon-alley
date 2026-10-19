@@ -220,7 +220,10 @@ for (const language of ['es', 'en'] as const)
       ]) {
         await expect(control).toBeInViewport({ ratio: 1 });
         const box = await control.boundingBox();
-        expect(box!.y + box!.height).toBeLessThanOrEqual(footerBox!.y);
+        expect(
+          box!.y + box!.height,
+          `${await control.getAttribute('class')}: ${run.members.length} members, ${language}/${pack}`,
+        ).toBeLessThanOrEqual(footerBox!.y);
       }
       expect(
         await prelude
