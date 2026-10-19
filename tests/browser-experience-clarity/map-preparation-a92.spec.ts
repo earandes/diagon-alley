@@ -136,15 +136,45 @@ for (const pack of ['diagon-alley', 'arcana'])
           '1',
         );
         expect(await dialog.evaluate((element) => element.scrollTop)).toBe(0);
-        const footer = await page.locator('.node-combat-actions').boundingBox();
         for (const selector of ['.node-team-prepare', '.node-bean-preparation > summary']) {
-          const control = page.locator(selector);
-          await expect(control).toBeInViewport({ ratio: 1 });
-          const box = await control.boundingBox();
+          await expect(page.locator(selector)).toBeInViewport({ ratio: 1 });
+        }
+        const geometry = await dialog.evaluate((element) => {
+          const footer = element.querySelector('.node-combat-actions')!.getBoundingClientRect();
+          return ['.node-team-prepare', '.node-bean-preparation > summary'].map((selector) => {
+            const box = element.querySelector(selector)!.getBoundingClientRect();
+            return {
+              selector,
+              bottom: box.bottom,
+              footerTop: footer.top,
+              gap: footer.top - box.bottom,
+            };
+          });
+        });
+        await mkdir(evidence, { recursive: true });
+        await writeFile(
+          resolve(evidence, `${info.project.name}-${pack}-${lang}-full-${count}.json`),
+          JSON.stringify(
+            {
+              sha: process.env.GITHUB_SHA ?? null,
+              fixture: true,
+              count,
+              lang,
+              pack,
+              coordinateSample: 'single synchronous layout read; no animation wait',
+              geometry,
+            },
+            null,
+            2,
+          ),
+        );
+        if (pack === 'diagon-alley' && lang === 'es')
+          await selected(page, `full-preparation-${count}`);
+        for (const box of geometry) {
           expect(
-            box!.y + box!.height,
-            `${selector}, ${count} members, ${pack}/${lang}`,
-          ).toBeLessThanOrEqual(footer!.y);
+            box.bottom,
+            `${box.selector}, ${count} members, ${pack}/${lang}`,
+          ).toBeLessThanOrEqual(box.footerTop);
         }
         await page.locator('.node-bean-preparation > summary').click();
         await expect(page.locator('.node-bean-preparation')).toHaveAttribute('open', '');
@@ -153,8 +183,6 @@ for (const pack of ['diagon-alley', 'arcana'])
         expect(await page.evaluate(() => window.__a92MapPrep.read())).toBe(
           await page.evaluate(() => window.__a92MapPrep.before),
         );
-        if (pack === 'diagon-alley' && lang === 'es')
-          await selected(page, `full-preparation-${count}`);
       }
     });
     test(`A92 ${pack}/${lang} preparation reflows at 320px with enlarged text`, async ({

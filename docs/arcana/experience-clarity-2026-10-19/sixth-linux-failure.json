@@ -1,0 +1,21 @@
+{
+  "run": 39328115236,
+  "head": "6d37b35f971ca1fa357241f6e4fb4dbcce35bb62",
+  "workflowConclusion": "cancelled after new full fixture failed",
+  "stats": {
+    "startTime": "2026-10-19T21:34:02.561Z",
+    "duration": 30714.880999999998,
+    "expected": 11,
+    "skipped": 220,
+    "unexpected": 1,
+    "flaky": 0
+  },
+  "case": "A92 diagon-alley/es four and five posts keep real loot and preparation above the footer; count4; Chromium390",
+  "actualBottom": 782.1361694335938,
+  "footerTop": 756.3809204101562,
+  "overlapPx": 25.7552490234375,
+  "scope": "11passed,1failed;220skipped includes unexecuted cases after maximum failure, not coverage",
+  "cause": "Opponent shelf alone is insufficient. Independent affinity line per post consumes space in both rows. Geometry test also read footer/control across different animation frames; entry translate10px cannot explain entire overlap.",
+  "correction": "Affinity lozenge placed inside portrait, distinct corners for position/provenance. Preserve text/description/font/figures/resources. Both rectangles sampled in a single layout read, original non-overlap assertion unchanged. Full fixture saves geometry before assertion and two selected screenshots.",
+  "retry": "No automatic retry; corrected candidate must execute."
+}

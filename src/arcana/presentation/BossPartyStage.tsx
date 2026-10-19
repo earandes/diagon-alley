@@ -105,9 +105,9 @@ export function BossPartyStage({
                   decorative
                   eager
                 />
-              </span>
-              <span id={`${affinityDescription}-${index}`} className="boss-member-affinity">
-                <AffinityLabel affinity={unit.affinity} language={language} />
+                <span id={`${affinityDescription}-${index}`} className="boss-member-affinity">
+                  <AffinityLabel affinity={unit.affinity} language={language} />
+                </span>
               </span>
               <span className="boss-party-name" aria-hidden="true">
                 {name}

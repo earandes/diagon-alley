@@ -441,3 +441,35 @@
     font-size: 0.72rem;
   }
 }
+
+/* A92: affinity belongs to the portrait, not another line between figure and name.
+   Distinct corners keep formation position and provenance clear of its lozenge. */
+.boss-party-portrait {
+  position: relative;
+}
+.boss-party-position {
+  position: absolute;
+  grid-area: auto;
+  top: 0;
+  left: 0;
+}
+.boss-party-portrait > .boss-party-origin {
+  position: absolute;
+  grid-area: auto;
+  top: 0;
+  right: 0;
+}
+.boss-party-portrait > .boss-member-affinity {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 100%;
+  z-index: 1;
+  line-height: 1;
+}
+.boss-member-affinity > .tactical-affinity {
+  max-width: 100%;
+  background: #101e2bf2;
+  white-space: nowrap;
+}
