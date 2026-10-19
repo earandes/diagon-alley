@@ -14,7 +14,7 @@ import {
 } from '../../src/arcana/presentation/content-packs/active';
 import '../../src/arcana/presentation/styles.css';
 import '../../src/arcana/presentation/game-stage.css';
-const opening = trialConfiguration().opening;
+const opening = trialConfiguration('a85').opening;
 
 function Fixture() {
   useSyncExternalStore(subscribeContentPack, selectedContentPackId);

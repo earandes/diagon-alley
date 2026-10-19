@@ -88,6 +88,7 @@ export function battleEventDuration(kind: BattleEvent['kind'], base: number): nu
   const weight: Record<BattleEvent['kind'], number> = {
     'combat-started': 0.5,
     'house-activated': 0.42,
+    'bond-activated': 0.42,
     'synergy-activated': 0.42,
     'bean-activated': 0.65,
     'turn-started': 0.24,

@@ -33,13 +33,13 @@ it('preserves discovery snapshots and copies rather than silently reclassifying 
   );
   const updated = {
     ...opening.catalog,
-    version: 2,
+    version: opening.catalog.version + 1,
     wizards: opening.catalog.wizards.map((w) =>
       w.id === prior.id ? { ...w, rarity: 'epic' as const } : w,
     ),
   };
   const entries = cromodex(updated, copies);
-  expect(entries).toHaveLength(30);
+  expect(entries).toHaveLength(34);
   expect(entries.find((e) => e.wizard.id === prior.id)).toMatchObject({
     discovered: true,
     wizard: { rarity: 'common' },
@@ -65,9 +65,9 @@ it('retains owned cards outside current catalogue and locks undiscovered identit
 it('derives exact per-identity probabilities from supplied positive versioned weights', () => {
   const { opening } = trialConfiguration(),
     probabilities = toadProbabilities(opening.catalog, opening.table);
-  expect(probabilities).toHaveLength(29);
+  expect(probabilities).toHaveLength(33);
   expect(probabilities.reduce((n, p) => n + p.probability, 0)).toBeCloseTo(1);
-  expect(probabilities[0].probability).toBe(1 / 29);
+  expect(probabilities[0].probability).toBe(1 / 33);
 });
 it('projects only adjacent choices and leaves the run unchanged', () => {
   const { campaign } = trialConfiguration(),

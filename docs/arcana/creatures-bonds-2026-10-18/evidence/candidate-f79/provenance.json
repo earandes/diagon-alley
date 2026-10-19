@@ -1,0 +1,23 @@
+{
+  "run": 39186209500,
+  "head": "f79d9cea65434482120a83259c5e6096e358e646",
+  "checkout": "7ef9b2b12aea276ed82eecd7c93e31c5dff5c820",
+  "check": "success",
+  "regression": "failure",
+  "unit": 681,
+  "realPostgresRedis": 111,
+  "graphicsCheckPassed": 380,
+  "graphicsRegression": {
+    "passed": 129,
+    "failed": 9
+  },
+  "failures": [
+    "Eight A52 tests expect1of30; actual UI correctly shows1of34.",
+    "One A87 test asks for an ordinary duel from a valid three-Pact branch whose only remaining combat is the boss."
+  ],
+  "a87Connected": {
+    "passed": 3,
+    "failed": 1
+  },
+  "scope": "Protected serial Linux. Presentation and account/body regressions in check passed; failed workflow is not complete acceptance. No human or physical-device claim."
+}

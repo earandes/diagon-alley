@@ -17,6 +17,8 @@ import { validateGraph, type NodeGraph } from '../domain/exploration/route';
 import { type NodePlan, validateCampaign } from '../domain/exploration/nodes';
 import { validDomainId } from '../domain/identifiers';
 import { ArcanaError } from '../domain/errors';
+import { bondRulesSnapshot, BOND_GROUPS } from '../domain/combat/bonds';
+import { matchesClassification } from '../domain/collection/classification';
 import type { OpeningConfiguration } from './shop-use-cases';
 import type { CampaignConfiguration } from './run-use-cases';
 export interface PublicContent {
@@ -91,6 +93,23 @@ export function publicContentSnapshot(value: unknown): PublicContent {
   )
     throw new ArcanaError('INVALID_CAMPAIGN');
   const rules = campaign.combatRules;
+  if (
+    rules.bonds &&
+    BOND_GROUPS.some((group) =>
+      rules.bonds!.members[group].some((id) => !opening.catalog.wizards.some((w) => w.id === id)),
+    )
+  )
+    throw new ArcanaError('INVALID_CAMPAIGN');
+  if (
+    rules.bonds &&
+    BOND_GROUPS.some((group) =>
+      opening.catalog.wizards.some(
+        (w) =>
+          rules.bonds!.members[group].includes(w.id) !== matchesClassification(w.traits, group),
+      ),
+    )
+  )
+    throw new ArcanaError('INVALID_CAMPAIGN');
   const affinities = campaign.ownedAffinities;
   if (
     affinities !== undefined &&
@@ -156,6 +175,7 @@ export function publicContentSnapshot(value: unknown): PublicContent {
       }),
     }),
     combatRules: Object.freeze({
+      ...(rules.bonds ? { bonds: bondRulesSnapshot(rules.bonds) } : {}),
       ...(rules.houseSynergies ? { houseSynergies: rules.houseSynergies } : {}),
       ...(rules.houseMembers ? { houseMembers: Object.freeze({ ...rules.houseMembers }) } : {}),
       version: rules.version,

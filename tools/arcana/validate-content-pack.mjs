@@ -22,7 +22,10 @@ const { validateContentPack } = await import(
 );
 validateContentPack(
   { ...metadata, messages: { ...reference, ...messages }, characters, assets, narratives },
-  config.catalog.wizards.map((w) => w.id),
+  [
+    ...config.catalog.wizards,
+    ...JSON.parse(await readFile('src/arcana/content/creatures-v1.json', 'utf8')).wizards,
+  ].map((w) => w.id),
   reference,
 );
 if (metadata.id !== requested) throw Error('Pack ID must match its folder');
@@ -79,7 +82,10 @@ for (const [key, asset] of Object.entries(assets)) {
 }
 if (process.argv.includes('--complete')) {
   const required = [
-    ...config.catalog.wizards.flatMap((w) =>
+    ...[
+      ...config.catalog.wizards,
+      ...JSON.parse(await readFile('src/arcana/content/creatures-v1.json', 'utf8')).wizards,
+    ].flatMap((w) =>
       ['portrait', 'thumbnail', 'figure'].map((variant) => `character.${w.id}.${variant}`),
     ),
     ...['boulevard', 'passage', 'arena', 'confectionery', 'workshop', 'vault'].map(

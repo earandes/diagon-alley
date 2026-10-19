@@ -19,7 +19,7 @@ it('covers current IDs and bilingual UI without containing any authority fields'
       messages,
     ),
   ).not.toThrow();
-  expect(Object.keys(characters)).toHaveLength(30);
+  expect(Object.keys(characters)).toHaveLength(34);
   expect(Object.values(characters).every((c) => !('stats' in c))).toBe(true);
 });
 it('rejects missing IDs, translation parameters and unbounded choreography', () => {

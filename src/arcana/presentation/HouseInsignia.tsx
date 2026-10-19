@@ -1,3 +1,4 @@
+import { bondText } from './bond-messages';
 import { useId } from 'react';
 import type { House, WizardTraits } from '../domain/collection/traits';
 import type { Language } from '../domain/collection/wizards';
@@ -5,6 +6,7 @@ import type { CombatRules } from '../domain/combat/engine';
 import { houseProgress, type HouseMember, type HouseProgress } from '../domain/combat/houses';
 import { selectedContentPackId, themedName } from './content-packs/active';
 import './houses-a85.css';
+import { BondEmblem, bondName } from './BondEmblem';
 const names: Record<House, readonly [string, string, string]> = {
   gryffindor: ['Gryffindor', 'Compañía del León', 'Lion Company'],
   ravenclaw: ['Ravenclaw', 'Círculo del Cuervo', 'Raven Circle'],
@@ -56,7 +58,15 @@ export function HouseInsignia({ house }: { house: House }) {
     </svg>
   );
 }
-export function TraitBadge({ traits, language }: { traits?: WizardTraits; language: Language }) {
+export function TraitBadge({
+  traits,
+  language,
+  expanded = false,
+}: {
+  traits?: WizardTraits;
+  language: Language;
+  expanded?: boolean;
+}) {
   if (!traits) return null;
   return (
     <span className="trait-badge">
@@ -75,19 +85,40 @@ export function TraitBadge({ traits, language }: { traits?: WizardTraits; langua
               : 'Dawn Academy'}
         </span>
       )}
+      {traits.nature === 'creature' && (
+        <span>
+          <BondEmblem group="creatures" language={language} />
+          {bondName('creatures', language)}
+        </span>
+      )}
       {traits.profession && (
         <small>
-          {traits.profession === 'professor'
-            ? language === 'es'
-              ? 'Profesor/a'
-              : 'Professor'
-            : selectedContentPackId() === 'diagon-alley'
-              ? 'Auror'
-              : language === 'es'
-                ? 'Custodio'
-                : 'Warden'}
+          {
+            {
+              professor: language === 'es' ? 'Profesor/a' : 'Professor',
+              auror:
+                selectedContentPackId() === 'diagon-alley'
+                  ? 'Auror'
+                  : language === 'es'
+                    ? 'Custodio'
+                    : 'Warden',
+              alchemist: language === 'es' ? 'Alquimista' : 'Alchemist',
+              magizoologist: language === 'es' ? 'Magizoólogo/a' : 'Magizoologist',
+            }[traits.profession]
+          }
         </small>
       )}
+      {expanded && !!traits.affiliations?.length && (
+        <span className="trait-affiliations">
+          {traits.affiliations.map((group) => (
+            <span key={group}>
+              {group === 'army' ? null : <BondEmblem group={group} language={language} />}
+              <span>{bondName(group, language)}</span>
+            </span>
+          ))}
+        </span>
+      )}
+      {expanded && !!traits.affiliations?.length && <small>{bondText(language, 'history')}</small>}
     </span>
   );
 }

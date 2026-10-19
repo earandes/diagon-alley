@@ -5,6 +5,7 @@ import { resolve } from 'node:path';
 import { changeLanguage, startExpedition } from './game-fixture';
 import { readGame, expectMapFits } from './route-helpers';
 import { routePath } from '../support/arcana-route';
+import { synergyProgress } from '../../src/arcana/domain/combat/synergies';
 import type { Language } from '../../src/arcana/domain/collection/wizards';
 
 const evidence = resolve(
@@ -171,7 +172,31 @@ for (const language of ['es', 'en'] as const)
         expect(candidates.first()).toHaveAttribute('aria-pressed', 'true'),
       );
       await expect(page.locator('.node-confirm-action')).toBeEnabled();
-      await expect(page.locator('[data-affinity-progress]')).toHaveCount(2);
+      const offer = run.campaignSnapshot!.nodes.find((plan) => plan.nodeId === first.id);
+      if (offer?.kind !== 'pact' || !offer.recruits) throw Error('Missing public Pact offer');
+      // Neutral has no affinity bonus. Validate each actual offer, not an assumed
+      // pair of non-neutral candidates (creatures can legitimately be Neutral).
+      const beforeAffinity = synergyProgress(run.members.map((member) => member.unit));
+      for (const recruit of offer.recruits) {
+        const preview = page.locator(
+          `[data-pact-candidate="${recruit.id}"] [data-affinity-progress]`,
+        );
+        const before = beforeAffinity.find((entry) => entry.affinity === recruit.affinity);
+        if (!before) {
+          expect(recruit.affinity).toBe('neutral');
+          await expect(preview).toHaveCount(0);
+        } else {
+          const after = synergyProgress([
+            ...run.members.map((member) => member.unit),
+            recruit,
+          ]).find((entry) => entry.affinity === recruit.affinity)!;
+          await expect(preview).toHaveCount(1);
+          await expect(preview).toHaveAttribute('data-affinity-progress', recruit.affinity);
+          await expect(preview).toContainText(
+            `${before.members} → ${after.members} / ${before.threshold}`,
+          );
+        }
+      }
       expect(await readGame(page)).toEqual(initial);
       expect(posts).toBe(0);
       for (const size of sizes) {

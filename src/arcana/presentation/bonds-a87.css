@@ -1,0 +1,206 @@
+.bond-emblem {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  flex: 0 0 auto;
+}
+.bond-emblem img[data-art] {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.bond-band .bond-emblem {
+  width: 32px;
+  height: 32px;
+}
+.bond-band summary {
+  gap: 0.35rem;
+}
+.game-shell .bond-selector {
+  margin: 0.4rem 0;
+  border: 0;
+  max-width: 100%;
+}
+.game-shell .bond-selector > summary {
+  display: flex;
+  gap: 0.4rem;
+  align-items: center;
+  width: fit-content;
+  min-height: 44px;
+  cursor: pointer;
+  color: var(--gold, #e5bf73);
+  padding: 0;
+  border: 0;
+  background: none;
+  box-shadow: none;
+}
+.game-shell .bond-selector > summary > img[data-art] {
+  width: 36px;
+  height: 36px;
+}
+.game-shell .bond-selector > small {
+  display: block;
+  margin: 0.5rem;
+  max-width: 52ch;
+  line-height: 1.45;
+  font-size: 0.8rem;
+}
+.game-shell .bond-choices {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.4rem;
+}
+.game-shell .bond-choices button {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  flex: 1 1 5.25rem;
+  min-width: min(100%, 5.25rem);
+  min-height: 5.5rem;
+  max-width: 7rem;
+  margin: 0;
+  font-size: 0.8rem;
+  line-height: 1.25;
+  padding: 0.4rem;
+  border: 1px solid transparent;
+  border-radius: 50% 50% 12px 12px;
+  background: transparent;
+  color: inherit;
+}
+.game-shell .bond-choices button[aria-pressed='true'] {
+  border-color: transparent;
+  background: transparent;
+  box-shadow: none;
+  color: #f4d28b;
+}
+.game-shell .bond-choices button > img[data-art],
+.game-shell .bond-choices .bond-emblem {
+  width: 32px;
+  height: 32px;
+}
+.game-shell .bond-choices button:focus-visible,
+.game-shell .bond-selector summary:focus-visible {
+  outline: 3px solid #8fe3df;
+  outline-offset: 3px;
+}
+.trait-affiliations {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem 0.7rem;
+  align-items: center;
+}
+.trait-affiliations > span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2rem;
+}
+@media (prefers-reduced-motion: reduce) {
+  .game-shell .bond-choices button {
+    transition: none;
+  }
+}
+
+.classification-choices {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  width: 100%;
+}
+.classification-choices button {
+  display: flex;
+  gap: 0.25rem;
+  align-items: center;
+  min-height: 44px;
+  padding: 0.25rem 0.5rem;
+  border: 1px solid transparent;
+  background: transparent;
+  color: inherit;
+  border-radius: 24px;
+}
+.classification-choices button[aria-pressed='true'] {
+  border-color: #e8c780;
+  box-shadow: inset 0 -2px #e8c780;
+}
+.classification-choices button > img,
+.classification-choices .house-insignia {
+  width: 24px;
+  height: 24px;
+}
+.classification-choices button:focus-visible {
+  outline: 3px solid #8fe3df;
+  outline-offset: 2px;
+}
+.game-shell .bond-choices button:active {
+  transform: scale(0.98);
+}
+@media (prefers-reduced-motion: reduce) {
+  .game-shell .bond-choices button:active {
+    transform: none;
+  }
+}
+
+[data-aid='true'] .arena-action-mark {
+  border-color: #8fd6af;
+  border-bottom-style: double;
+}
+.arena-team .pedestal[data-creature][data-side='rival'] .arena-portrait {
+  transform: scaleX(-1);
+}
+.arena-house .bond-emblem {
+  width: 24px;
+  height: 24px;
+}
+.pedestal strong .bond-emblem {
+  width: 14px;
+  height: 14px;
+}
+
+/* A missing illustrated seal must leave a visible group name on the compact map. */
+.team-compact .bond-band summary:has(.bond-emblem:empty) > span:not(.bond-emblem) {
+  font-size: 0.75rem;
+  max-width: 9rem;
+}
+
+.game-shell .bond-choices button > span:last-child {
+  min-height: 2.5em;
+  max-width: 100%;
+  overflow-wrap: normal;
+  word-break: normal;
+}
+.game-shell .bond-choices button[aria-pressed='true'] > :first-child {
+  border-radius: 50%;
+  outline: 2px solid #e8c780;
+  outline-offset: 4px;
+}
+.game-shell .bond-choices button[aria-pressed='true']::after {
+  content: '';
+  position: absolute;
+  bottom: 3px;
+  width: 22px;
+  height: 2px;
+  background: #e8c780;
+}
+
+/* Aid uses a double sage mark, distinct from the dashed hostile target. */
+.battle-panel.arena-a63 .pedestal[data-aid='true'] .arena-action-mark {
+  border-color: #8fd6af;
+  border-bottom-style: double;
+  border-bottom-width: 3px;
+}
+.battle-panel.arena-a63 .pedestal[data-aid='true'] .arena-figure-space::after {
+  border: 3px double #8fd6af;
+}
+
+.game-shell[data-reduced='true'] .bond-choices button {
+  transition: none;
+}
+.game-shell[data-reduced='true'] .bond-choices button:active {
+  transform: none;
+}

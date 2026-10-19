@@ -19,6 +19,15 @@ import { equipmentSpellPower, equipmentInitiative } from './equipment-effects';
 import { activeSynergies, type Affinity } from './synergies';
 import { houseProgress } from './houses';
 import { HOUSES, type House } from '../collection/traits';
+import {
+  bondProgress,
+  bondRulesSnapshot,
+  effectiveBondFocus,
+  BOND_GROUPS,
+  type BondRules,
+  type BondFocus,
+  type BondProgress,
+} from './bonds';
 export type { Affinity } from './synergies';
 export type CombatSide = 'player' | 'rival';
 export type CombatOutcome = CombatSide | 'draw';
@@ -42,6 +51,7 @@ export interface CombatUnitInput {
   readonly beanUnitId?: string;
 }
 export interface CombatRules {
+  readonly bonds?: BondRules;
   /** Optional explicit ruleset; absent historical inputs retain engine v1 exactly. */
   readonly houseSynergies?: 1;
   readonly houseMembers?: Readonly<Record<string, House>>;
@@ -54,6 +64,7 @@ export interface CombatRules {
   readonly beans: BeanTable;
 }
 export interface CombatInput {
+  readonly bondFocus?: Readonly<Record<CombatSide, BondFocus>>;
   readonly id: string;
   readonly seed: number;
   readonly player: readonly CombatUnitInput[];
@@ -61,6 +72,15 @@ export interface CombatInput {
   readonly rules: CombatRules;
 }
 export type BattleEventData =
+  | {
+      readonly kind: 'bond-activated';
+      readonly team: CombatSide;
+      readonly group: 'order' | 'death' | 'creatures';
+      readonly members: number;
+      readonly tier: 1 | 2;
+      readonly value: number;
+      readonly contributorIds: readonly string[];
+    }
   | {
       readonly kind: 'house-activated';
       readonly team: CombatSide;
@@ -94,7 +114,8 @@ export type BattleEventData =
   | {
       readonly kind: 'healed';
       readonly actorId: string;
-      readonly source: 'alchemy' | 'equipment' | 'house';
+      readonly source: 'alchemy' | 'equipment' | 'house' | 'order';
+      readonly healerId?: string;
       readonly amount: number;
       readonly hp: number;
     }
@@ -112,13 +133,15 @@ export type BattleEventData =
       readonly missed: boolean;
       readonly mana: number;
       readonly targetHp: number;
+      readonly guarded?: number;
+      readonly bondBoost?: number;
     }
   | { readonly kind: 'combat-finished'; readonly outcome: CombatOutcome; readonly rounds: number };
 export type BattleEvent = BattleEventData & { readonly sequence: number; readonly round: number };
 export type CombatUnitResult = CombatUnitInput & { readonly effect: BeanEffect | null };
 export interface Combat {
   readonly id: string;
-  readonly engineVersion: 1 | 2;
+  readonly engineVersion: 1 | 2 | 3;
   readonly input: CombatInput;
   readonly outcome: CombatOutcome;
   readonly rounds: number;
@@ -180,6 +203,10 @@ export function validateCombatRules(rules: CombatRules): void {
   )
     throw new ArcanaError('INVALID_COMBAT');
   validateBeanTable(rules.beans);
+  if (rules.bonds !== undefined) {
+    if (rules.version < 3 || rules.houseSynergies !== 1) throw new ArcanaError('INVALID_COMBAT');
+    bondRulesSnapshot(rules.bonds);
+  }
   if (
     rules.houseMembers !== undefined &&
     (!rules.houseMembers ||
@@ -199,6 +226,15 @@ export function validateCombatInput(value: unknown): asserts value is CombatInpu
     createSeed(input.seed);
     const rules = input.rules;
     validateCombatRules(rules);
+    if (
+      input.bondFocus !== undefined &&
+      (!rules.bonds ||
+        !input.bondFocus ||
+        [input.bondFocus.player, input.bondFocus.rival].some(
+          (f) => !['houses', ...BOND_GROUPS].includes(f),
+        ))
+    )
+      throw Error();
     const ids = new Set<string>(),
       beans = new Set<string>();
     for (const team of [input.player, input.rival]) {
@@ -254,7 +290,16 @@ export function combatInputSnapshot(input: CombatInput): CombatInput {
     seed: input.seed,
     player: Object.freeze(input.player.map(unitSnapshot)),
     rival: Object.freeze(input.rival.map(unitSnapshot)),
+    ...(input.rules.bonds
+      ? {
+          bondFocus: Object.freeze({
+            player: input.bondFocus?.player ?? effectiveBondFocus(input.player, input.rules.bonds),
+            rival: input.bondFocus?.rival ?? effectiveBondFocus(input.rival, input.rules.bonds),
+          }),
+        }
+      : {}),
     rules: Object.freeze({
+      ...(input.rules.bonds ? { bonds: bondRulesSnapshot(input.rules.bonds) } : {}),
       ...(input.rules.houseSynergies ? { houseSynergies: input.rules.houseSynergies } : {}),
       ...(input.rules.houseMembers
         ? { houseMembers: Object.freeze({ ...input.rules.houseMembers }) }
@@ -306,8 +351,29 @@ export class CombatEngine {
     };
     const bonuses = { player: passives('player', player), rival: passives('rival', rival) };
     const houses = new Map<string, ReturnType<typeof houseProgress>[number]>();
+    const bonds = new Map<CombatSide, BondProgress>();
+    if (rules.bonds)
+      for (const side of ['player', 'rival'] as const) {
+        const focus = snapshot.bondFocus![side];
+        if (focus !== 'houses') {
+          const group = bondProgress(snapshot[side], rules.bonds, focus);
+          if (group.tier) {
+            bonds.set(side, group);
+            emit(0, {
+              kind: 'bond-activated',
+              team: side,
+              group: focus,
+              members: group.count,
+              tier: group.tier,
+              value: group.value,
+              contributorIds: group.contributorIds,
+            });
+          }
+        }
+      }
     if (rules.houseSynergies)
       for (const side of ['player', 'rival'] as const) {
+        if (snapshot.bondFocus && snapshot.bondFocus[side] !== 'houses') continue;
         for (const group of houseProgress(snapshot[side]))
           if (group.tier) {
             emit(0, {
@@ -324,6 +390,8 @@ export class CombatEngine {
       }
     const attempts = new Map<string, number>();
     const firstHit = new Set<string>();
+    const guarded = new Set<string>();
+    const helpedRound = new Map<CombatSide, number>();
     for (const fighter of fighters)
       if (fighter.hp > 0 && fighter.beanUnitId) {
         const flavour = drawBean(rules.beans, random),
@@ -402,6 +470,34 @@ export class CombatEngine {
           });
         }
         const house = houses.get(actor.id);
+        const bond = bonds.get(actor.team);
+        if (
+          bond?.group === 'order' &&
+          bond.contributorIds.includes(actor.id) &&
+          helpedRound.get(actor.team) !== round
+        ) {
+          const team = actor.team === 'player' ? player : rival;
+          const recipient = team
+            .filter((u) => u.id !== actor.id && u.hp > 0 && u.hp < u.maxHp)
+            .sort(
+              (a, b) => a.hp / a.maxHp - b.hp / b.maxHp || team.indexOf(a) - team.indexOf(b),
+            )[0];
+          if (recipient) {
+            const amount = Math.min(bond.value, recipient.maxHp - recipient.hp);
+            if (amount > 0) {
+              recipient.hp += amount;
+              helpedRound.set(actor.team, round);
+              emit(round, {
+                kind: 'healed',
+                source: 'order',
+                actorId: recipient.id,
+                healerId: actor.id,
+                amount,
+                hp: recipient.hp,
+              });
+            }
+          }
+        }
         const houseHealing = Math.min(
           actor.maxHp - actor.hp,
           house?.house === 'hufflepuff' ? house.value : 0,
@@ -435,7 +531,21 @@ export class CombatEngine {
           const spell = spellWithBean(actor, equipmentSpellPower(actor));
           if (!spell.missed) firstHit.add(actor.id);
           actor.effect = spell.carrier.effect;
-          const damage = Math.min(target.hp, spell.missed ? 0 : spell.damage + bonus);
+          const bondBoost =
+            !spell.missed &&
+            bond?.group === 'death' &&
+            bond.contributorIds.includes(actor.id) &&
+            target.hp <= target.maxHp / 2
+              ? bond.value
+              : 0;
+          const rawDamage = spell.missed ? 0 : spell.damage + bonus + bondBoost;
+          const defense = bonds.get(target.team);
+          let blocked = 0;
+          if (rawDamage > 0 && defense?.group === 'creatures' && !guarded.has(target.id)) {
+            blocked = Math.min(rawDamage, defense.value);
+            guarded.add(target.id);
+          }
+          const damage = Math.min(target.hp, rawDamage - blocked);
           target.hp -= damage;
           if (!spell.missed && bonuses[actor.team].fire > 0)
             target.burning = bonuses[actor.team].fire;
@@ -447,6 +557,8 @@ export class CombatEngine {
             missed: spell.missed,
             mana: actor.mana,
             targetHp: target.hp,
+            ...(blocked > 0 ? { guarded: blocked } : {}),
+            ...(bondBoost > 0 ? { bondBoost } : {}),
           });
         }
         actor.effect = finishTurn(actor).effect;
@@ -461,7 +573,7 @@ export class CombatEngine {
       });
     return Object.freeze({
       id: snapshot.id,
-      engineVersion: rules.houseSynergies ? 2 : 1,
+      engineVersion: rules.bonds ? 3 : rules.houseSynergies ? 2 : 1,
       input: snapshot,
       outcome: result,
       rounds,

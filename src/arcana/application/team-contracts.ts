@@ -1,8 +1,10 @@
 import type { Team } from '../domain/collection/team';
+import type { BondMode } from '../domain/combat/bonds';
 import type { WizardDefinition } from '../domain/collection/wizards';
 import type { EquipmentSlot } from '../domain/economy/equipment';
 import type { Run } from '../domain/exploration/run';
 export interface SetTeamRequest {
+  readonly bondFocus?: BondMode;
   readonly copyIds: readonly string[];
 }
 export interface EquipEquipmentRequest {

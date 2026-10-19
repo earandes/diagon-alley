@@ -1,3 +1,7 @@
+import { bondText } from './bond-messages';
+import { ClassificationChoices } from './ClassificationChoices';
+import { BondSelector } from './BondBand';
+import type { BondMode } from '../domain/combat/bonds';
 import { HOUSES } from '../domain/collection/traits';
 import { TraitBadge, HouseInsignia, houseName } from './HouseInsignia';
 import { FinishLabel, EnchantedFinish } from './EnchantedFinish';
@@ -65,6 +69,7 @@ function PreparationGear({
   );
   return (
     <div className="preparation-gear">
+      {copy.wizard.traits?.nature === 'creature' && <small>{bondText(language, 'gear')}</small>}
       <div
         className="preparation-gear-slots"
         ref={slotMotion}
@@ -227,7 +232,11 @@ export function ExpeditionPreparation({
   ready: boolean;
   onTeam: (request: SetTeamRequest) => void;
   onEquip: (request: EquipEquipmentRequest) => void;
-  onStart: (copyIds: readonly string[], challenge?: ExpeditionChallenge) => void;
+  onStart: (
+    copyIds: readonly string[],
+    challenge?: ExpeditionChallenge,
+    bondFocus?: BondMode,
+  ) => void;
   onClose?: () => void;
 }) {
   const numbers = new Intl.NumberFormat(language === 'es' ? 'es-ES' : 'en-US', {
@@ -237,6 +246,15 @@ export function ExpeditionPreparation({
     (product) => product.kind === 'random-beans' && product.status === 'available',
   );
   const run = game.exploration?.run?.status === 'active' ? game.exploration.run : null;
+  const effectiveRules = content && effectivePreparationRules(run, content.combatRules);
+  const committedFocus: BondMode = effectiveRules?.bonds
+    ? (run?.bondFocus ?? game.team?.bondFocus ?? 'auto')
+    : 'houses';
+  const [bondFocus, setBondFocus] = useState<BondMode>(committedFocus);
+  useEffect(
+    () => setBondFocus(committedFocus),
+    [committedFocus, run?.id, effectiveRules?.version, game.playerId],
+  );
   const committed = run
     ? run.members.filter((member) => member.source === 'owned').map((member) => member.unit.id)
     : [];
@@ -294,7 +312,7 @@ export function ExpeditionPreparation({
           game.copies.find((copy) => copy.copyId === id)?.wizard.stats.maxHp ??
           0) > 0,
     );
-  const changed = chosen.join('|') !== committedKey;
+  const changed = chosen.join('|') !== committedKey || bondFocus !== committedFocus;
   const filteredCopies = filterPreparationCopies(game, content, filter);
   const identities = game.copies.filter(
     (copy, index, copies) =>
@@ -479,13 +497,25 @@ export function ExpeditionPreparation({
               </summary>
               <div>
                 <p>{p('minimum')}</p>
+                {run && content?.combatRules.bonds && !effectiveRules?.bonds && (
+                  <p>{bondText(language, 'legacy')}</p>
+                )}
                 <p>{p('duels')}</p>
                 {temporary.length > 0 && <p>{p('temporaryHint')}</p>}
               </div>
             </details>
           </div>
+          {effectiveRules?.bonds && (
+            <BondSelector
+              mode={bondFocus}
+              onChange={setBondFocus}
+              language={language}
+              disabled={!ready}
+            />
+          )}
           {content && (
             <PreparationSynergies
+              mode={bondFocus}
               members={formation}
               previous={run ? previousFormation : undefined}
               rules={effectivePreparationRules(run, content.combatRules)}
@@ -498,6 +528,17 @@ export function ExpeditionPreparation({
               {game.copies.length > 6 && (
                 <details className="preparation-filters">
                   <summary>{p('findCompanion')}</summary>
+                  <ClassificationChoices
+                    value={filter.classification ?? 'all'}
+                    onChange={(classification) =>
+                      changeFilter({
+                        ...filter,
+                        classification: classification === 'all' ? undefined : classification,
+                      })
+                    }
+                    language={language}
+                    includeHouses={false}
+                  />
                   <div
                     className="preparation-affinity-filters"
                     role="group"
@@ -595,7 +636,10 @@ export function ExpeditionPreparation({
                       ))}
                     </div>
                   </details>
-                  {(filter.affinity || filter.wizardId || filter.house) && (
+                  {(filter.affinity ||
+                    filter.wizardId ||
+                    filter.house ||
+                    filter.classification) && (
                     <button className="preparation-clear-filter" onClick={() => changeFilter({})}>
                       {p('clearFilters')}
                     </button>
@@ -821,8 +865,12 @@ export function ExpeditionPreparation({
               disabled={!canConfirm}
               onClick={() =>
                 run
-                  ? onTeam({ copyIds: chosen })
-                  : onStart(chosen, content?.campaign.challenges ? challenge : undefined)
+                  ? onTeam({ copyIds: chosen, ...(effectiveRules?.bonds ? { bondFocus } : {}) })
+                  : onStart(
+                      chosen,
+                      content?.campaign.challenges ? challenge : undefined,
+                      effectiveRules?.bonds ? bondFocus : undefined,
+                    )
               }
             >
               <Artwork asset={run ? 'ui.seal' : 'ui.map'} language={language} decorative />

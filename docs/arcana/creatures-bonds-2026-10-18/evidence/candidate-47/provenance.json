@@ -1,0 +1,23 @@
+{
+  "run": 39182975065,
+  "head": "47b58925e9ef1472429e735a16429d9ff2a71f1d",
+  "checkout": "c0119d57c267aece7f754ced5ccdc45d8c88fea9",
+  "check": "failure",
+  "regression": "skipped",
+  "motion": {
+    "passed": 86,
+    "failed": 1,
+    "skipped": 39
+  },
+  "boss": {
+    "passed": 72,
+    "failed": 1,
+    "skipped": 21
+  },
+  "scope": "Protected Linux serial CI only. A87 screenshots are declared presentation fixtures. Boss scroll failure is real connected App. No physical device, human playtest or listening inferred.",
+  "findings": [
+    "Boss consultation starts with scrollTop6 once in WebKit390 ES/ARCANA; product initial scroll correction prepared.",
+    "Missing seal test does not fail the bundled image, so cannot validate fallback. Native failed-resource injection prepared.",
+    "QA footer covers collection header in preparation screenshot; only mounted on map in next fixture."
+  ]
+}

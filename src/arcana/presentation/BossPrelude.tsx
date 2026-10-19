@@ -14,14 +14,14 @@ const messages = {
   es: {
     roster: 'Rivales',
     details: 'Conocer al rival',
-    active: 'Sinergias activas',
-    none: 'Sin sinergia activa',
+    active: 'Bonos de afinidad',
+    none: 'Sin bono de afinidad',
   },
   en: {
     roster: 'Opponents',
     details: 'Inspect opponents',
-    active: 'Active synergies',
-    none: 'No active synergy',
+    active: 'Affinity bonuses',
+    none: 'No affinity bonus',
   },
 };
 /** The roster is frozen by the server; the book is consultation, never a second confirmation. */

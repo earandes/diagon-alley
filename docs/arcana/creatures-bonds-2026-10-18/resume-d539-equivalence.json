@@ -1,0 +1,16 @@
+{
+  "fullCheckSource": "d5391037254bd5f4a0b4bb49b9ad00f25fe93e4b",
+  "fullCheckCheckout": "c2f78da10ed8ef0dc6c944f394d1e9507c389509",
+  "ci": 39196343905,
+  "check": "success",
+  "regression": "failure:3 stale neutral-affinity expectations",
+  "applicationSourceTree": "4ddbcc88bf5fb06e4f6fddb1953c8ffb95f7a8a3",
+  "applicationDiff": "",
+  "changedValidation": [
+    "tests/browser-trial/tactical-pacts-a65.spec.ts",
+    "tools/verification/a75-phase.json"
+  ],
+  "assertion": "Each public Pact candidate: Neutral0previews; others1 with shared before/after/threshold",
+  "phase": "resume original; main restoration to full still required",
+  "limitations": "No full battery attributed to resume; human and physical validation pending"
+}

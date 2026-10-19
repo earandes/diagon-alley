@@ -1,3 +1,4 @@
+import { validBondMode } from '../../domain/combat/bonds';
 import { nodeOptionsSnapshot } from '../node-options';
 import type { SeasonalRequest } from '../seasonal-events';
 import type { ForgeWandRequest, OpenVaultRequest } from '../../domain/economy/commerce';
@@ -166,7 +167,8 @@ export function pendingSnapshot(value: unknown): PendingOperation {
         };
         break;
       case 'start-run':
-        fields(r, ['zoneId', 'campaignVersion', 'copyIds'], ['challenge']);
+        fields(r, ['zoneId', 'campaignVersion', 'copyIds'], ['challenge', 'bondFocus']);
+        if (r.bondFocus !== undefined && !validBondMode(r.bondFocus)) throw Error();
         if (
           r.challenge !== undefined &&
           (typeof r.challenge !== 'string' ||
@@ -176,6 +178,7 @@ export function pendingSnapshot(value: unknown): PendingOperation {
         if (!validDomainId(r.zoneId) || !version(r.campaignVersion) || !ids(r.copyIds, 1))
           throw Error();
         request = {
+          ...(r.bondFocus === undefined ? {} : { bondFocus: r.bondFocus }),
           zoneId: r.zoneId,
           campaignVersion: r.campaignVersion,
           ...(r.challenge === undefined ? {} : { challenge: r.challenge }),
@@ -225,9 +228,13 @@ export function pendingSnapshot(value: unknown): PendingOperation {
         break;
       }
       case 'set-team':
-        fields(r, ['copyIds']);
+        fields(r, ['copyIds'], ['bondFocus']);
+        if (r.bondFocus !== undefined && !validBondMode(r.bondFocus)) throw Error();
         if (!ids(r.copyIds)) throw Error();
-        request = { copyIds: Object.freeze([...r.copyIds]) };
+        request = {
+          copyIds: Object.freeze([...r.copyIds]),
+          ...(r.bondFocus === undefined ? {} : { bondFocus: r.bondFocus }),
+        };
         break;
       case 'equip-equipment':
         fields(r, ['copyId', 'slot', 'equipmentId']);

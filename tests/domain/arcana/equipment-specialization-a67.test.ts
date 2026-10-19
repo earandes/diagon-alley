@@ -235,7 +235,7 @@ describe('A67 versioned equipment specialization', () => {
     ).toContain('HP/turn');
   });
   it('keeps original unit snapshots and logs byte-equivalent when no optional equipment effect exists', () => {
-    const config = trialConfiguration();
+    const config = trialConfiguration('a84');
     const input = {
       id: 'old',
       seed: 2,

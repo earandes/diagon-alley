@@ -18,14 +18,14 @@ try {
   const { SeededRandom } = await server.ssrLoadModule(
     '/src/arcana/infrastructure/random/seeded-random.ts',
   );
-  const { campaign } = trialConfiguration();
+  const { campaign } = trialConfiguration('a85');
   const graph = randomizeRoute(campaign.graph, new SeededRandom(0));
   await writeFile(
     new URL('../../tests/support/fixtures/a85-route-seed0.json', import.meta.url),
     JSON.stringify(
       {
         version: 1,
-        source: 'current campaign; seed0; discovery; graph and node plans only',
+        source: 'frozen a85 campaign; seed0; discovery; graph and node plans only',
         campaignVersion: campaign.version,
         graph,
         nodes: campaign.challengeContent('discovery', graph),

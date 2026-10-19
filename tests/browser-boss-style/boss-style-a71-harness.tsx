@@ -19,7 +19,7 @@ import '../../src/arcana/presentation/game-experience.css';
 const params = new URLSearchParams(location.search);
 const language = params.get('lang') === 'en' ? 'en' : 'es';
 setContentPack(params.get('pack') === 'arcana' ? 'arcana' : 'diagon-alley');
-const configuration = trialConfiguration();
+const configuration = trialConfiguration('a85');
 const content = projectPublicContent(configuration.opening, configuration.campaign);
 const count = Math.min(5, Math.max(1, Number(params.get('members') ?? 5)));
 const members: RunMember[] = Array.from({ length: count }, (_, i) => ({

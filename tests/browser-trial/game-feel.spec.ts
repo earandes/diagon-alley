@@ -43,8 +43,8 @@ for (const language of ['es', 'en'] as const) {
       await expect(
         page.getByText(
           language === 'es'
-            ? 'Identidades descubiertas: 1 de 30'
-            : 'Identities discovered: 1 of 30',
+            ? 'Identidades descubiertas: 1 de 34'
+            : 'Identities discovered: 1 of 34',
         ),
       ).toBeVisible();
       await expect(page.locator('.card-team-state')).toHaveCount(1);

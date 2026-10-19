@@ -1,4 +1,7 @@
-import { HouseInsignia, houseName, HouseBand } from './HouseInsignia';
+import { bondProgress } from '../domain/combat/bonds';
+import { BondEmblem, bondName } from './BondEmblem';
+import { BondBand } from './BondBand';
+import { HouseInsignia, houseName } from './HouseInsignia';
 import { houseProgress } from '../domain/combat/houses';
 import { BossPrelude } from './BossPrelude';
 import { EncounterPreparation } from './EncounterPreparation';
@@ -106,7 +109,7 @@ export function NodePreparation({
             ))}
           </div>
           {rules?.houseSynergies && (
-            <HouseBand units={plan.opponents} rules={rules} language={language} />
+            <BondBand units={plan.opponents} rules={rules} language={language} />
           )}
           {plan.threat && (
             <details className="tactical-rival-inspector">
@@ -453,6 +456,29 @@ function TacticalPact({
                     </span>
                   </span>
                 )}
+                {rules?.bonds?.members.creatures.includes(candidate.wizardId) && (
+                  <span className="pact-house">
+                    <BondEmblem group="creatures" language={language} />
+                    <span>
+                      {bondName('creatures', language)}{' '}
+                      {
+                        bondProgress(
+                          run.members.map((m) => m.unit),
+                          rules.bonds,
+                          'creatures',
+                        ).count
+                      }{' '}
+                      →{' '}
+                      {candidateMembers
+                        ? bondProgress(
+                            candidateMembers.map((m) => m.unit),
+                            rules.bonds,
+                            'creatures',
+                          ).count
+                        : '—'}
+                    </span>
+                  </span>
+                )}
                 <AffinityLabel affinity={candidate.affinity} language={language} />
                 {before && (
                   <span
@@ -527,6 +553,7 @@ function TacticalPact({
       )}
       {proposed && rules && (
         <PreparationSynergies
+          mode={run.bondFocus}
           members={proposed}
           previous={run.members}
           rules={rules}

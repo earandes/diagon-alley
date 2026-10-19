@@ -13,7 +13,7 @@ import type { GameState } from '../../src/arcana/application/game';
 import '../../src/arcana/presentation/styles.css';
 import '../../src/arcana/presentation/game-stage.css';
 import '../../src/arcana/presentation/game-experience.css';
-const config = trialConfiguration();
+const config = trialConfiguration('a85');
 const params = new URLSearchParams(location.search);
 const definitions = config.opening.catalog.wizards.slice(0, Number(params.get('player') ?? 5));
 const units = (side: string): CombatUnitInput[] =>

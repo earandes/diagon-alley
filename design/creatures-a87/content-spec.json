@@ -1,0 +1,483 @@
+{
+  "status": "Design only; pending engine/route scenarios and runtime integration after PR9 merge",
+  "catalogVersion": 4,
+  "tacticalVersion": 4,
+  "rulesVersion": 3,
+  "campaignVersion": 1,
+  "table": {
+    "randomIdentities": 33,
+    "weightPerIdentity": 1,
+    "enchantedNumerator": 1,
+    "enchantedDenominator": 100
+  },
+  "traits": {
+    "version": 2,
+    "characters": {
+      "apprentice": {
+        "version": 2,
+        "house": "gryffindor",
+        "school": "hogwarts",
+        "nature": "person",
+        "affiliations": [
+          "army"
+        ]
+      },
+      "merlin": {
+        "version": 2,
+        "house": "gryffindor",
+        "school": "hogwarts",
+        "profession": "professor",
+        "nature": "person",
+        "affiliations": [
+          "order"
+        ]
+      },
+      "morgana": {
+        "version": 2,
+        "house": "gryffindor",
+        "school": "hogwarts",
+        "profession": "professor",
+        "nature": "person",
+        "affiliations": [
+          "order"
+        ]
+      },
+      "flamel": {
+        "version": 2,
+        "school": "beauxbatons",
+        "nature": "person",
+        "affiliations": [],
+        "profession": "alchemist"
+      },
+      "paracelso": {
+        "version": 2,
+        "house": "slytherin",
+        "school": "hogwarts",
+        "profession": "professor",
+        "nature": "person",
+        "affiliations": [
+          "order",
+          "death"
+        ]
+      },
+      "circe": {
+        "version": 2,
+        "house": "gryffindor",
+        "school": "hogwarts",
+        "nature": "person",
+        "affiliations": [
+          "army"
+        ]
+      },
+      "ember-keeper": {
+        "version": 2,
+        "house": "gryffindor",
+        "school": "hogwarts",
+        "nature": "person",
+        "affiliations": [
+          "army"
+        ]
+      },
+      "mist-seer": {
+        "version": 2,
+        "house": "ravenclaw",
+        "school": "hogwarts",
+        "nature": "person",
+        "affiliations": [
+          "army"
+        ]
+      },
+      "rune-weaver": {
+        "version": 2,
+        "house": "gryffindor",
+        "school": "hogwarts",
+        "nature": "person",
+        "affiliations": [
+          "army"
+        ]
+      },
+      "copper-sage": {
+        "version": 2,
+        "house": "gryffindor",
+        "school": "hogwarts",
+        "nature": "person",
+        "affiliations": [
+          "order"
+        ]
+      },
+      "moon-herbalist": {
+        "version": 2,
+        "house": "hufflepuff",
+        "school": "hogwarts",
+        "profession": "professor",
+        "nature": "person",
+        "affiliations": []
+      },
+      "ash-wanderer": {
+        "version": 2,
+        "house": "gryffindor",
+        "school": "hogwarts",
+        "profession": "professor",
+        "nature": "person",
+        "affiliations": [
+          "order"
+        ]
+      },
+      "shadow-scribe": {
+        "version": 2,
+        "house": "gryffindor",
+        "school": "hogwarts",
+        "nature": "person",
+        "affiliations": [
+          "order"
+        ]
+      },
+      "storm-caller": {
+        "version": 2,
+        "house": "hufflepuff",
+        "school": "hogwarts",
+        "profession": "auror",
+        "nature": "person",
+        "affiliations": [
+          "order"
+        ]
+      },
+      "dew-alchemist": {
+        "version": 2,
+        "house": "gryffindor",
+        "school": "hogwarts",
+        "nature": "person",
+        "affiliations": [
+          "army"
+        ]
+      },
+      "dawn-oracle": {
+        "version": 2,
+        "house": "ravenclaw",
+        "school": "hogwarts",
+        "profession": "professor",
+        "nature": "person",
+        "affiliations": []
+      },
+      "crystal-watch": {
+        "version": 2,
+        "house": "ravenclaw",
+        "school": "hogwarts",
+        "profession": "professor",
+        "nature": "person",
+        "affiliations": []
+      },
+      "night-forger": {
+        "version": 2,
+        "house": "gryffindor",
+        "school": "hogwarts",
+        "profession": "professor",
+        "nature": "person",
+        "affiliations": [
+          "order"
+        ]
+      },
+      "moss-guardian": {
+        "version": 2,
+        "house": "gryffindor",
+        "school": "hogwarts",
+        "nature": "person",
+        "affiliations": [
+          "order"
+        ]
+      },
+      "comet-scholar": {
+        "version": 2,
+        "house": "ravenclaw",
+        "school": "hogwarts",
+        "nature": "person",
+        "affiliations": [
+          "army"
+        ]
+      },
+      "cinder-dancer": {
+        "version": 2,
+        "house": "gryffindor",
+        "school": "hogwarts",
+        "nature": "person",
+        "affiliations": [
+          "order",
+          "army"
+        ]
+      },
+      "wind-reader": {
+        "version": 2,
+        "house": "gryffindor",
+        "school": "hogwarts",
+        "nature": "person",
+        "affiliations": [
+          "order",
+          "army"
+        ]
+      },
+      "star-binder": {
+        "version": 2,
+        "house": "hufflepuff",
+        "school": "hogwarts",
+        "nature": "person",
+        "affiliations": []
+      },
+      "root-speaker": {
+        "version": 2,
+        "profession": "auror",
+        "nature": "person",
+        "affiliations": [
+          "order"
+        ]
+      },
+      "obsidian-seer": {
+        "version": 2,
+        "house": "slytherin",
+        "school": "hogwarts",
+        "nature": "person",
+        "affiliations": [
+          "death"
+        ]
+      },
+      "silver-sentinel": {
+        "version": 2,
+        "profession": "auror",
+        "nature": "person",
+        "affiliations": [
+          "order"
+        ]
+      },
+      "sun-priestess": {
+        "version": 2,
+        "school": "beauxbatons",
+        "nature": "person",
+        "affiliations": [
+          "order"
+        ]
+      },
+      "echo-mage": {
+        "version": 2,
+        "house": "slytherin",
+        "school": "hogwarts",
+        "nature": "person",
+        "affiliations": [
+          "death"
+        ]
+      },
+      "veil-walker": {
+        "version": 2,
+        "house": "slytherin",
+        "school": "hogwarts",
+        "nature": "person",
+        "affiliations": [
+          "death"
+        ]
+      },
+      "aurora-sage": {
+        "version": 2,
+        "house": "hufflepuff",
+        "school": "hogwarts",
+        "nature": "person",
+        "affiliations": [],
+        "profession": "magizoologist"
+      },
+      "phoenix-companion": {
+        "version": 2,
+        "nature": "creature",
+        "species": "phoenix",
+        "affiliations": []
+      },
+      "hippogriff-companion": {
+        "version": 2,
+        "nature": "creature",
+        "species": "hippogriff",
+        "affiliations": []
+      },
+      "forest-unicorn": {
+        "version": 2,
+        "nature": "creature",
+        "species": "unicorn",
+        "affiliations": []
+      },
+      "green-dragon": {
+        "version": 2,
+        "nature": "creature",
+        "species": "dragon",
+        "affiliations": []
+      }
+    }
+  },
+  "creatures": [
+    {
+      "id": "phoenix-companion",
+      "name": {
+        "es": "Fénix del Alba",
+        "en": "Dawn Phoenix"
+      },
+      "diagonName": {
+        "es": "Fawkes",
+        "en": "Fawkes"
+      },
+      "rarity": "epic",
+      "stars": 4,
+      "affinity": "fire",
+      "stats": {
+        "maxHp": 80,
+        "maxMana": 40,
+        "power": 12,
+        "speed": 8
+      },
+      "species": "phoenix"
+    },
+    {
+      "id": "hippogriff-companion",
+      "name": {
+        "es": "Hipogrifo del Valle",
+        "en": "Valley Hippogriff"
+      },
+      "diagonName": {
+        "es": "Buckbeak",
+        "en": "Buckbeak"
+      },
+      "rarity": "common",
+      "stars": 2,
+      "affinity": "neutral",
+      "stats": {
+        "maxHp": 95,
+        "maxMana": 40,
+        "power": 11,
+        "speed": 6
+      },
+      "species": "hippogriff"
+    },
+    {
+      "id": "forest-unicorn",
+      "name": {
+        "es": "Unicornio Lunar",
+        "en": "Moon Unicorn"
+      },
+      "diagonName": {
+        "es": "Unicornio",
+        "en": "Unicorn"
+      },
+      "rarity": "unusual",
+      "stars": 3,
+      "affinity": "alchemy",
+      "stats": {
+        "maxHp": 90,
+        "maxMana": 40,
+        "power": 10,
+        "speed": 7
+      },
+      "species": "unicorn"
+    },
+    {
+      "id": "green-dragon",
+      "name": {
+        "es": "Dragón del Bosque",
+        "en": "Forest Dragon"
+      },
+      "diagonName": {
+        "es": "Dragón galés verde",
+        "en": "Common Welsh Green"
+      },
+      "rarity": "arcane-legendary",
+      "stars": 5,
+      "affinity": "fire",
+      "stats": {
+        "maxHp": 100,
+        "maxMana": 40,
+        "power": 12,
+        "speed": 4
+      },
+      "species": "dragon"
+    }
+  ],
+  "bondRules": {
+    "version": 1,
+    "orderHealing": [
+      1,
+      2
+    ],
+    "deathDamage": [
+      1,
+      2
+    ],
+    "creatureGuard": [
+      2,
+      3
+    ],
+    "members": {
+      "order": [
+        "merlin",
+        "morgana",
+        "paracelso",
+        "copper-sage",
+        "ash-wanderer",
+        "shadow-scribe",
+        "storm-caller",
+        "night-forger",
+        "moss-guardian",
+        "root-speaker",
+        "silver-sentinel",
+        "sun-priestess",
+        "cinder-dancer",
+        "wind-reader"
+      ],
+      "death": [
+        "paracelso",
+        "obsidian-seer",
+        "echo-mage",
+        "veil-walker"
+      ],
+      "creatures": [
+        "phoenix-companion",
+        "hippogriff-companion",
+        "forest-unicorn",
+        "green-dragon"
+      ]
+    }
+  },
+  "groupPresentation": {
+    "order": {
+      "diagon-alley": {
+        "es": "Orden del Fénix",
+        "en": "Order of the Phoenix"
+      },
+      "arcana": {
+        "es": "Concordia del Farol",
+        "en": "Lantern Concord"
+      }
+    },
+    "death": {
+      "diagon-alley": {
+        "es": "Mortífagos",
+        "en": "Death Eaters"
+      },
+      "arcana": {
+        "es": "Cónclave de la Máscara",
+        "en": "Mask Conclave"
+      }
+    },
+    "army": {
+      "diagon-alley": {
+        "es": "Ejército de Dumbledore",
+        "en": "Dumbledore’s Army"
+      },
+      "arcana": {
+        "es": "Círculo de Aprendices",
+        "en": "Apprentice Circle"
+      }
+    },
+    "creatures": {
+      "diagon-alley": {
+        "es": "Criaturas fantásticas",
+        "en": "Fantastic creatures"
+      },
+      "arcana": {
+        "es": "Bestiario",
+        "en": "Bestiary"
+      }
+    }
+  }
+}

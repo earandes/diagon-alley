@@ -1,3 +1,8 @@
+import { ClassificationChoices } from './ClassificationChoices';
+import {
+  matchesClassification,
+  type ClassificationFilter,
+} from '../domain/collection/classification';
 import { TraitBadge } from './HouseInsignia';
 import { EnchantedFinish, FinishLabel, enchantedName } from './EnchantedFinish';
 import { VisualChoices } from './VisualChoices';
@@ -32,6 +37,7 @@ export function CollectionPanel({
   language: Language;
   onPrepare?: (origin: HTMLElement) => void;
 }) {
+  const [classification, setClassification] = useState<ClassificationFilter>('all');
   const [rarity, setRarity] = useState('all'),
     [discovery, setDiscovery] = useState('all'),
     [finish, setFinish] = useState('all'),
@@ -56,6 +62,10 @@ export function CollectionPanel({
   const entries = allEntries
     .filter(
       (entry) =>
+        matchesClassification(
+          catalog.wizards.find((w) => w.id === entry.wizard.id)?.traits ?? entry.wizard.traits,
+          classification,
+        ) &&
         (rarity === 'all' || entry.wizard.rarity === rarity) &&
         (discovery === 'all' || entry.discovered === (discovery === 'discovered')) &&
         (finish === 'all' || entry.copies.some((copy) => !!copy.wizard.finish)),
@@ -68,7 +78,11 @@ export function CollectionPanel({
   const selectedCopy =
     inspectedEntry?.copies.find((c) => c.copyId === inspectedCopy) ?? inspectedEntry?.copies[0];
   const { reduced } = useReducedMotion();
-  const pageMotion = useSelectionMotion(`${rarity}:${discovery}:${currentPage}`, reduced, 160);
+  const pageMotion = useSelectionMotion(
+    `${rarity}:${discovery}:${finish}:${classification}:${currentPage}`,
+    reduced,
+    160,
+  );
   return (
     <section className="collection-panel">
       <h2>{t('chromodex')}</h2>
@@ -99,6 +113,14 @@ export function CollectionPanel({
           <span>{t('gameAlbumFilters')}</span>
         </summary>
         <div className="album-filters visual-filters">
+          <ClassificationChoices
+            value={classification}
+            onChange={(value) => {
+              setClassification(value);
+              setPage(0);
+            }}
+            language={language}
+          />
           <VisualChoices
             label={t('rarityFilter')}
             value={rarity}
@@ -232,6 +254,7 @@ export function CollectionPanel({
           {selectedCopy && <FinishLabel wizard={selectedCopy.wizard} language={language} />}
           <TraitBadge
             traits={catalog.wizards.find((w) => w.id === inspectedEntry.wizard.id)?.traits}
+            expanded
             language={language}
           />
           <RarityBadge rarity={inspectedEntry.wizard.rarity} language={language} />

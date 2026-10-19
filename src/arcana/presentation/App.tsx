@@ -1,3 +1,4 @@
+import type { BondMode } from '../domain/combat/bonds';
 import { useGameAudioLifecycle } from './audio/runtime';
 import {
   AccountAccess,
@@ -194,6 +195,9 @@ export function App() {
         '[data-encounter-choice]:not(:disabled),[data-pact-candidate]:not(:disabled),[data-pact-choice]:not(:disabled),[data-pact-action]:not(:disabled),.node-confirm-action:not(:disabled)',
       )
       ?.focus({ preventScroll: true });
+    // Native dialog focus may retain a small scroll offset on mobile WebKit.
+    // Each new consultation starts at its illustration; later user scrolling is free.
+    current.scrollTop = 0;
     return () => {
       if (current.open) current.close();
       const origin = nodeOrigin.current;
@@ -367,7 +371,11 @@ export function App() {
   const battle =
     state.receipt?.kind === 'advance-node' ? state.receipt.battle : (savedNode?.battle ?? null);
   const label = (kind: NodeKind) => t(nodes[kind]);
-  const startExpedition = (copyIds: readonly string[], challenge?: ExpeditionChallenge) => {
+  const startExpedition = (
+    copyIds: readonly string[],
+    challenge?: ExpeditionChallenge,
+    bondFocus?: BondMode,
+  ) => {
     if (!content) return;
     void controller.perform({
       kind: 'start-run',
@@ -376,6 +384,7 @@ export function App() {
         campaignVersion: content.campaign.version,
         copyIds,
         ...(challenge ? { challenge } : {}),
+        ...(bondFocus === undefined ? {} : { bondFocus }),
       },
     });
   };
@@ -1133,8 +1142,8 @@ export function App() {
                     }}
                     language={language}
                     ready={ready}
-                    onStart={(ids, challenge) => {
-                      startExpedition(ids, challenge);
+                    onStart={(ids, challenge, bondFocus) => {
+                      startExpedition(ids, challenge, bondFocus);
                     }}
                     onTeam={(request) => void controller.perform({ kind: 'set-team', request })}
                     onEquip={(request) =>

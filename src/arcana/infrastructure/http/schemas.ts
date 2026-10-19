@@ -1,3 +1,5 @@
+import { BOND_MODES } from '../../domain/combat/bonds';
+const bondFocus = { type: 'string', enum: [...BOND_MODES] };
 const id = { type: 'string', minLength: 1, maxLength: 120, pattern: '^[a-zA-Z0-9_:-]+$' };
 const version = { type: 'integer', minimum: 1, maximum: Number.MAX_SAFE_INTEGER };
 const object = (properties: Record<string, unknown>) => ({
@@ -41,7 +43,7 @@ export const startRunSchema = command(
     campaignVersion: version,
     copyIds: { type: 'array', minItems: 1, maxItems: 5, uniqueItems: true, items: id },
   },
-  { challenge: { type: 'string', enum: ['discovery', 'tactical', 'mastery'] } },
+  { challenge: { type: 'string', enum: ['discovery', 'tactical', 'mastery'] }, bondFocus },
 );
 export const advanceNodeSchema = command(
   {
@@ -69,9 +71,12 @@ export const advanceNodeSchema = command(
 );
 export const operationParams = object({ id });
 export const noQuery = object({});
-export const setTeamSchema = command({
-  copyIds: { type: 'array', maxItems: 5, uniqueItems: true, items: id },
-});
+export const setTeamSchema = command(
+  {
+    copyIds: { type: 'array', maxItems: 5, uniqueItems: true, items: id },
+  },
+  { bondFocus },
+);
 export const equipEquipmentSchema = command({
   copyId: id,
   slot: { type: 'string', enum: ['wand', 'broom'] },

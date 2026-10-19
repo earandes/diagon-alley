@@ -1,0 +1,73 @@
+check	Run ARCANA_CAPTURE_A69=1 npx playwright test --config playwright.motion-a69.config.ts	﻿2026-10-19T00:12:52.2641429Z ##[group]Run ARCANA_CAPTURE_A69=1 npx playwright test --config playwright.motion-a69.config.ts
+check	Run ARCANA_CAPTURE_A69=1 npx playwright test --config playwright.motion-a69.config.ts	2026-10-19T00:12:52.2641873Z [36;1mARCANA_CAPTURE_A69=1 npx playwright test --config playwright.motion-a69.config.ts[0m
+check	Run ARCANA_CAPTURE_A69=1 npx playwright test --config playwright.motion-a69.config.ts	2026-10-19T00:12:52.2694199Z shell: /usr/bin/bash -e {0}
+check	Run ARCANA_CAPTURE_A69=1 npx playwright test --config playwright.motion-a69.config.ts	2026-10-19T00:12:52.2694399Z ##[endgroup]
+check	Run ARCANA_CAPTURE_A69=1 npx playwright test --config playwright.motion-a69.config.ts	2026-10-19T00:12:53.5139477Z [WebServer] [plugin builtin:vite-reporter] 
+check	Run ARCANA_CAPTURE_A69=1 npx playwright test --config playwright.motion-a69.config.ts	2026-10-19T00:12:53.5156370Z [WebServer] (!) Some chunks are larger than 500 kB after minification. Consider:
+check	Run ARCANA_CAPTURE_A69=1 npx playwright test --config playwright.motion-a69.config.ts	2026-10-19T00:12:53.5156924Z [WebServer] - Using dynamic import() to code-split the application
+check	Run ARCANA_CAPTURE_A69=1 npx playwright test --config playwright.motion-a69.config.ts	2026-10-19T00:12:53.5157781Z [WebServer] - Use build.rolldownOptions.output.codeSplitting to improve chunking: https://rolldown.rs/reference/OutputOptions.codeSplitting
+check	Run ARCANA_CAPTURE_A69=1 npx playwright test --config playwright.motion-a69.config.ts	2026-10-19T00:12:53.5158540Z [WebServer] - Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+check	Run ARCANA_CAPTURE_A69=1 npx playwright test --config playwright.motion-a69.config.ts	2026-10-19T00:12:54.9573832Z 
+check	Run ARCANA_CAPTURE_A69=1 npx playwright test --config playwright.motion-a69.config.ts	2026-10-19T00:12:54.9591893Z Running 126 tests using 1 worker
+check	Run ARCANA_CAPTURE_A69=1 npx playwright test --config playwright.motion-a69.config.ts	2026-10-19T00:23:43.4244314Z ·····°°°···°··°··········T···············°°°°··°°°···°··°·····°°°°··°°°···°··°··
+check	Run ARCANA_CAPTURE_A69=1 npx playwright test --config playwright.motion-a69.config.ts	2026-10-19T00:31:29.9957811Z ···°°°°·T°°°···°··°·····°·····°°°···°··°·····°
+check	Run ARCANA_CAPTURE_A69=1 npx playwright test --config playwright.motion-a69.config.ts	2026-10-19T00:31:29.9962083Z 
+check	Run ARCANA_CAPTURE_A69=1 npx playwright test --config playwright.motion-a69.config.ts	2026-10-19T00:31:29.9967275Z   1) [chromium-390-motion-a69] › tests/browser-creatures/creatures-a87.spec.ts:159:1 › A87 creature poses and confirmed bond stay legible, pause exactly and survive skip and swap 
+check	Run ARCANA_CAPTURE_A69=1 npx playwright test --config playwright.motion-a69.config.ts	2026-10-19T00:31:29.9967696Z 
+check	Run ARCANA_CAPTURE_A69=1 npx playwright test --config playwright.motion-a69.config.ts	2026-10-19T00:31:29.9967792Z     Test timeout of 180000ms exceeded.
+check	Run ARCANA_CAPTURE_A69=1 npx playwright test --config playwright.motion-a69.config.ts	2026-10-19T00:31:29.9967941Z 
+check	Run ARCANA_CAPTURE_A69=1 npx playwright test --config playwright.motion-a69.config.ts	2026-10-19T00:31:29.9968457Z     Error Context: test-results/motion-a69/creatures-a87-A87-creature-541df-y-and-survive-skip-and-swap-chromium-390-motion-a69/error-context.md
+check	Run ARCANA_CAPTURE_A69=1 npx playwright test --config playwright.motion-a69.config.ts	2026-10-19T00:31:29.9968884Z 
+check	Run ARCANA_CAPTURE_A69=1 npx playwright test --config playwright.motion-a69.config.ts	2026-10-19T00:31:29.9969299Z   2) [webkit-390-motion-a69] › tests/browser-creatures/creatures-a87.spec.ts:159:1 › A87 creature poses and confirmed bond stay legible, pause exactly and survive skip and swap 
+check	Run ARCANA_CAPTURE_A69=1 npx playwright test --config playwright.motion-a69.config.ts	2026-10-19T00:31:29.9969801Z 
+check	Run ARCANA_CAPTURE_A69=1 npx playwright test --config playwright.motion-a69.config.ts	2026-10-19T00:31:29.9969922Z     Test timeout of 180000ms exceeded.
+check	Run ARCANA_CAPTURE_A69=1 npx playwright test --config playwright.motion-a69.config.ts	2026-10-19T00:31:29.9970105Z 
+check	Run ARCANA_CAPTURE_A69=1 npx playwright test --config playwright.motion-a69.config.ts	2026-10-19T00:31:29.9970223Z     Error: locator.click: Test timeout of 180000ms exceeded.
+check	Run ARCANA_CAPTURE_A69=1 npx playwright test --config playwright.motion-a69.config.ts	2026-10-19T00:31:29.9970428Z     Call log:
+check	Run ARCANA_CAPTURE_A69=1 npx playwright test --config playwright.motion-a69.config.ts	2026-10-19T00:31:29.9970610Z       - waiting for locator('.arena-caption button')
+check	Run ARCANA_CAPTURE_A69=1 npx playwright test --config playwright.motion-a69.config.ts	2026-10-19T00:31:29.9970945Z         - locator resolved to <button>Continuar</button>
+check	Run ARCANA_CAPTURE_A69=1 npx playwright test --config playwright.motion-a69.config.ts	2026-10-19T00:31:29.9971157Z       - attempting click action
+check	Run ARCANA_CAPTURE_A69=1 npx playwright test --config playwright.motion-a69.config.ts	2026-10-19T00:31:29.9971423Z         2 × waiting for element to be visible, enabled and stable
+check	Run ARCANA_CAPTURE_A69=1 npx playwright test --config playwright.motion-a69.config.ts	2026-10-19T00:31:29.9971660Z           - element is visible, enabled and stable
+check	Run ARCANA_CAPTURE_A69=1 npx playwright test --config playwright.motion-a69.config.ts	2026-10-19T00:31:29.9971861Z           - scrolling into view if needed
+check	Run ARCANA_CAPTURE_A69=1 npx playwright test --config playwright.motion-a69.config.ts	2026-10-19T00:31:29.9972037Z           - done scrolling
+check	Run ARCANA_CAPTURE_A69=1 npx playwright test --config playwright.motion-a69.config.ts	2026-10-19T00:31:29.9972464Z           - <button data-qa-pack="true">Swap</button> from <footer class="a87-fixture-controls">…</footer> subtree intercepts pointer events
+check	Run ARCANA_CAPTURE_A69=1 npx playwright test --config playwright.motion-a69.config.ts	2026-10-19T00:31:29.9973024Z         - retrying click action
+check	Run ARCANA_CAPTURE_A69=1 npx playwright test --config playwright.motion-a69.config.ts	2026-10-19T00:31:29.9973275Z         - waiting 20ms
+check	Run ARCANA_CAPTURE_A69=1 npx playwright test --config playwright.motion-a69.config.ts	2026-10-19T00:31:29.9973650Z         2 × waiting for element to be visible, enabled and stable
+check	Run ARCANA_CAPTURE_A69=1 npx playwright test --config playwright.motion-a69.config.ts	2026-10-19T00:31:29.9974027Z           - element is visible, enabled and stable
+check	Run ARCANA_CAPTURE_A69=1 npx playwright test --config playwright.motion-a69.config.ts	2026-10-19T00:31:29.9974282Z           - scrolling into view if needed
+check	Run ARCANA_CAPTURE_A69=1 npx playwright test --config playwright.motion-a69.config.ts	2026-10-19T00:31:29.9974457Z           - done scrolling
+check	Run ARCANA_CAPTURE_A69=1 npx playwright test --config playwright.motion-a69.config.ts	2026-10-19T00:31:29.9974955Z           - <button data-qa-pack="true">Swap</button> from <footer class="a87-fixture-controls">…</footer> subtree intercepts pointer events
+check	Run ARCANA_CAPTURE_A69=1 npx playwright test --config playwright.motion-a69.config.ts	2026-10-19T00:31:29.9975579Z         - retrying click action
+check	Run ARCANA_CAPTURE_A69=1 npx playwright test --config playwright.motion-a69.config.ts	2026-10-19T00:31:29.9975741Z           - waiting 100ms
+check	Run ARCANA_CAPTURE_A69=1 npx playwright test --config playwright.motion-a69.config.ts	2026-10-19T00:31:29.9975989Z         328 × waiting for element to be visible, enabled and stable
+check	Run ARCANA_CAPTURE_A69=1 npx playwright test --config playwright.motion-a69.config.ts	2026-10-19T00:31:29.9976227Z             - element is visible, enabled and stable
+check	Run ARCANA_CAPTURE_A69=1 npx playwright test --config playwright.motion-a69.config.ts	2026-10-19T00:31:29.9976431Z             - scrolling into view if needed
+check	Run ARCANA_CAPTURE_A69=1 npx playwright test --config playwright.motion-a69.config.ts	2026-10-19T00:31:29.9976610Z             - done scrolling
+check	Run ARCANA_CAPTURE_A69=1 npx playwright test --config playwright.motion-a69.config.ts	2026-10-19T00:31:29.9977321Z             - <button data-qa-pack="true">Swap</button> from <footer class="a87-fixture-controls">…</footer> subtree intercepts pointer events
+check	Run ARCANA_CAPTURE_A69=1 npx playwright test --config playwright.motion-a69.config.ts	2026-10-19T00:31:29.9977873Z           - retrying click action
+check	Run ARCANA_CAPTURE_A69=1 npx playwright test --config playwright.motion-a69.config.ts	2026-10-19T00:31:29.9978049Z             - waiting 500ms
+check	Run ARCANA_CAPTURE_A69=1 npx playwright test --config playwright.motion-a69.config.ts	2026-10-19T00:31:29.9978254Z         - waiting for element to be visible, enabled and stable
+check	Run ARCANA_CAPTURE_A69=1 npx playwright test --config playwright.motion-a69.config.ts	2026-10-19T00:31:29.9978398Z 
+check	Run ARCANA_CAPTURE_A69=1 npx playwright test --config playwright.motion-a69.config.ts	2026-10-19T00:31:29.9978404Z 
+check	Run ARCANA_CAPTURE_A69=1 npx playwright test --config playwright.motion-a69.config.ts	2026-10-19T00:31:29.9978503Z        at ../browser-trial/battle-controls.ts:45
+check	Run ARCANA_CAPTURE_A69=1 npx playwright test --config playwright.motion-a69.config.ts	2026-10-19T00:31:29.9978637Z 
+check	Run ARCANA_CAPTURE_A69=1 npx playwright test --config playwright.motion-a69.config.ts	2026-10-19T00:31:29.9978747Z       43 | export async function leaveBattle(page: Page) {
+check	Run ARCANA_CAPTURE_A69=1 npx playwright test --config playwright.motion-a69.config.ts	2026-10-19T00:31:29.9979011Z       44 |   const resultAction = page.locator('.arena-caption button');
+check	Run ARCANA_CAPTURE_A69=1 npx playwright test --config playwright.motion-a69.config.ts	2026-10-19T00:31:29.9979298Z     > 45 |   if (await resultAction.isVisible()) await resultAction.click();
+check	Run ARCANA_CAPTURE_A69=1 npx playwright test --config playwright.motion-a69.config.ts	2026-10-19T00:31:29.9979563Z          |                                                          ^
+check	Run ARCANA_CAPTURE_A69=1 npx playwright test --config playwright.motion-a69.config.ts	2026-10-19T00:31:29.9979803Z       46 |   else if (await page.locator('.arena-pause').count()) {
+check	Run ARCANA_CAPTURE_A69=1 npx playwright test --config playwright.motion-a69.config.ts	2026-10-19T00:31:29.9980032Z       47 |     await openBattleOptions(page);
+check	Run ARCANA_CAPTURE_A69=1 npx playwright test --config playwright.motion-a69.config.ts	2026-10-19T00:31:29.9980337Z       48 |     await page.locator('.arena-exit').click();
+check	Run ARCANA_CAPTURE_A69=1 npx playwright test --config playwright.motion-a69.config.ts	2026-10-19T00:31:29.9980689Z         at leaveBattle (/home/runner/work/diagon-alley/diagon-alley/tests/browser-trial/battle-controls.ts:45:58)
+check	Run ARCANA_CAPTURE_A69=1 npx playwright test --config playwright.motion-a69.config.ts	2026-10-19T00:31:29.9981117Z         at /home/runner/work/diagon-alley/diagon-alley/tests/browser-creatures/creatures-a87.spec.ts:194:5
+check	Run ARCANA_CAPTURE_A69=1 npx playwright test --config playwright.motion-a69.config.ts	2026-10-19T00:31:29.9981332Z 
+check	Run ARCANA_CAPTURE_A69=1 npx playwright test --config playwright.motion-a69.config.ts	2026-10-19T00:31:29.9981651Z     Error Context: test-results/motion-a69/creatures-a87-A87-creature-541df-y-and-survive-skip-and-swap-webkit-390-motion-a69/error-context.md
+check	Run ARCANA_CAPTURE_A69=1 npx playwright test --config playwright.motion-a69.config.ts	2026-10-19T00:31:29.9981970Z 
+check	Run ARCANA_CAPTURE_A69=1 npx playwright test --config playwright.motion-a69.config.ts	2026-10-19T00:31:29.9982036Z   2 failed
+check	Run ARCANA_CAPTURE_A69=1 npx playwright test --config playwright.motion-a69.config.ts	2026-10-19T00:31:29.9982544Z     [chromium-390-motion-a69] › tests/browser-creatures/creatures-a87.spec.ts:159:1 › A87 creature poses and confirmed bond stay legible, pause exactly and survive skip and swap 
+check	Run ARCANA_CAPTURE_A69=1 npx playwright test --config playwright.motion-a69.config.ts	2026-10-19T00:31:29.9983266Z     [webkit-390-motion-a69] › tests/browser-creatures/creatures-a87.spec.ts:159:1 › A87 creature poses and confirmed bond stay legible, pause exactly and survive skip and swap 
+check	Run ARCANA_CAPTURE_A69=1 npx playwright test --config playwright.motion-a69.config.ts	2026-10-19T00:31:29.9983685Z   39 skipped
+check	Run ARCANA_CAPTURE_A69=1 npx playwright test --config playwright.motion-a69.config.ts	2026-10-19T00:31:29.9983900Z   85 passed (18.6m)
+check	Run ARCANA_CAPTURE_A69=1 npx playwright test --config playwright.motion-a69.config.ts	2026-10-19T00:31:30.0178281Z ##[error]Process completed with exit code 1.

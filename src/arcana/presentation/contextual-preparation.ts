@@ -1,3 +1,7 @@
+import {
+  matchesClassification,
+  type ClassificationFilter,
+} from '../domain/collection/classification';
 import type { House } from '../domain/collection/traits';
 import type { GameState } from '../application/game';
 import type { PublicContent } from '../application/public-content';
@@ -17,11 +21,16 @@ export function effectivePreparationRules(
   live: CombatRules,
 ): CombatRules {
   return run?.status === 'active'
-    ? (run.campaignSnapshot?.combatRules ?? { ...live, houseSynergies: undefined })
+    ? (run.campaignSnapshot?.combatRules ?? {
+        ...live,
+        houseSynergies: undefined,
+        bonds: undefined,
+      })
     : live;
 }
 
 export interface PreparationFilter {
+  readonly classification?: ClassificationFilter;
   readonly house?: House;
   readonly affinity?: Affinity | 'unknown';
   readonly wizardId?: string;
@@ -35,6 +44,12 @@ export function filterPreparationCopies(
   return game.copies.filter(
     (copy) =>
       (!filter.wizardId || copy.wizard.id === filter.wizardId) &&
+      (!filter.classification ||
+        matchesClassification(
+          content?.catalog.wizards.find((w) => w.id === copy.wizard.id)?.traits ??
+            copy.wizard.traits,
+          filter.classification,
+        )) &&
       (!filter.house || preparationUnit(game, copy, content).house === filter.house) &&
       (!filter.affinity ||
         (preparationUnit(game, copy, content).affinity ?? 'unknown') === filter.affinity),

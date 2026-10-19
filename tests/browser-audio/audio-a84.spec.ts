@@ -1,4 +1,9 @@
-import { pauseBattle, resumeBattle, skipBattle, setDoubleBattleSpeed } from '../browser-trial/battle-controls';
+import {
+  pauseBattle,
+  resumeBattle,
+  skipBattle,
+  setDoubleBattleSpeed,
+} from '../browser-trial/battle-controls';
 import { mkdir, writeFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
 import { test, expect, type Page } from '@playwright/test';
@@ -60,7 +65,7 @@ test('A84 opt-in settings, real decode, preferences and both worlds/languages', 
       expect(requests).toBe(1);
       await effects.tap();
       await expect.poll(() => page.evaluate(() => window.__a84.audio.getSnapshot())).toBe('ready');
-      await expect.poll(() => requests).toBe(9);
+      await expect.poll(() => requests).toBe(16);
       await dialog.locator('.audio-volume summary').click();
       const slider = dialog.getByRole('slider', {
         name: lang === 'es' ? 'Volumen del ambiente' : 'Ambience volume',
@@ -231,7 +236,18 @@ test('A84 real offline mix, source bounds and missing sound remain recoverable',
   });
   expect(decoded.peak).toBeGreaterThan(0.01);
   expect(decoded.peak).toBeLessThan(1);
-  expect(decoded.results).toHaveLength(9);
+  expect(decoded.results).toHaveLength(16);
+  expect(decoded.results.map((r) => r.name)).toEqual(
+    expect.arrayContaining([
+      'cast-order',
+      'cast-death',
+      'cast-creatures',
+      'cast-phoenix',
+      'cast-hippogriff',
+      'cast-unicorn',
+      'cast-dragon',
+    ]),
+  );
   samples.push({ kind: 'offline-real-decode', ...decoded });
   await page.route('**/*.wav', (route) => route.abort());
   await page.locator('.settings-trigger').click();

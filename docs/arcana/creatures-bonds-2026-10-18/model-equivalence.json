@@ -1,0 +1,19 @@
+{
+  "scope": "Corrected four-house A87 before first integration. Route content changes; engine parameters, old A85 profile and exact collection model unchanged. V1 preserved under evidence/calibration-v1. Candidate SHA recorded in QA after committing.",
+  "a85RowsIdentical": true,
+  "controlledPairsIdentical": true,
+  "files": {
+    "simulation-samples.jsonl": {
+      "current": "9783aead8ae4cc28232361e749109db158390b53ec3fd7627afa30911953dca8",
+      "v1": "23ef337b9d1192799e78b60f3a9f97da620e3e809f81208e11ff5d7859253dd8"
+    },
+    "simulation-owned-creatures-samples.jsonl": {
+      "current": "d17ed4e4742dd8063903bc01b0fcf0d1dd1b4f187cfa4f51e3442090d75dca42",
+      "v1": "1f02c9a2f7e77cb23407c8d267f07952e1567cb5297a08417208b82d6e05b8a8"
+    },
+    "bond-comparison-samples.jsonl": {
+      "current": "4fb2f459b0e324c08c1a3af47b78a1e45018eb32e42f60160f2f22450e2a4c5a",
+      "v1": "4fb2f459b0e324c08c1a3af47b78a1e45018eb32e42f60160f2f22450e2a4c5a"
+    }
+  }
+}

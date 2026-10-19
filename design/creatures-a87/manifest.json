@@ -1,0 +1,125 @@
+{
+  "version": 1,
+  "status": "Installed; selected Linux context and temporal checks passed on d539103/CI39196343905 check job. Human/physical acceptance pending.",
+  "tool": "Integrated image_gen with local style references; no API key, purchased credit or external paid service",
+  "subjectDirection": "Detailed painted storybook, warm old gold against cool night; neutral mythic creature assets shared by packs with separate localized names",
+  "sourceKind": "Editable RGBA raster masters and recorded prompts; no layered painting or body rig claimed",
+  "references": [
+    "design/diagon-alley/illustrated-v2/masters/aurora-sage.png",
+    "src/arcana/presentation/content-packs/arcana/art/scene/arena.webp"
+  ],
+  "provenance": "New generated artwork for this private project; not official franchise art or a film still. Existing T01 distribution uncertainty retained.",
+  "masters": [
+    {
+      "file": "dragon/attack-v1.png",
+      "bytes": 2468419,
+      "sha256": "1f3a4cb0f31e48476f1537100da076bc03fe0654f16231c740c0f4c065e77f8e",
+      "status": "Selected flat painting; Linux pose/frame/fallback checks passed. Human motion/style acceptance pending."
+    },
+    {
+      "file": "dragon/master-v1.png",
+      "bytes": 2383753,
+      "sha256": "89b96910690cf59cba7af03c74a994e2bb158f3c1d816d78516551acb3d4fdda",
+      "status": "Selected flat painting; Linux pose/frame/fallback checks passed. Human motion/style acceptance pending."
+    },
+    {
+      "file": "hippogriff/attack-v1.png",
+      "bytes": 2573230,
+      "sha256": "ad0cb0fc23e60f7422a17f8b6fff36dc39b797c5177563af02c2b4f4f0ae6b95",
+      "status": "Selected flat painting; Linux pose/frame/fallback checks passed. Human motion/style acceptance pending."
+    },
+    {
+      "file": "hippogriff/master-v1.png",
+      "bytes": 2471434,
+      "sha256": "590c93f10702fb250bb98ac92e0e6ee727d06bc8cf4777a5cff34a1b78512ced",
+      "status": "Selected flat painting; Linux pose/frame/fallback checks passed. Human motion/style acceptance pending."
+    },
+    {
+      "file": "phoenix/attack-v1.png",
+      "bytes": 1949162,
+      "sha256": "ba8953aa76dfc222a311a1fdfdb75ad38c41e91f8791f05f552ef4a36c20e0ca",
+      "status": "Selected flat painting; Linux pose/frame/fallback checks passed. Human motion/style acceptance pending."
+    },
+    {
+      "file": "phoenix/master-v1.png",
+      "bytes": 2476208,
+      "sha256": "8babde3cf1f76d1f5e8ebf0bc544dd9fbfdf88d99de5748e1d2fc116eadef688",
+      "status": "rejected framing; not exported"
+    },
+    {
+      "file": "phoenix/master-v2.png",
+      "bytes": 2002192,
+      "sha256": "76ddb207ef739ff8341bfe5f0b7f1fdd4442166bb53a50b7e93f038833521670",
+      "status": "Selected flat painting; Linux pose/frame/fallback checks passed. Human motion/style acceptance pending."
+    },
+    {
+      "file": "unicorn/attack-v1.png",
+      "bytes": 1733403,
+      "sha256": "b1e7e667ca0ea87b4dbfed4a665cb68f80896aeff03cf2b7c92cd1daff03b9b9",
+      "status": "rejected framing; not exported"
+    },
+    {
+      "file": "unicorn/attack-v2.png",
+      "bytes": 1439396,
+      "sha256": "4efdf18a4e0331f4efd96d0466a477a81df8b486fb463905ca3beee9af38cd41",
+      "status": "Selected flat painting; Linux pose/frame/fallback checks passed. Human motion/style acceptance pending."
+    },
+    {
+      "file": "unicorn/master-v1.png",
+      "bytes": 1965927,
+      "sha256": "6bec66ff687bbf9d71e53f6d9a635b3e822a05a0b6bc6992b6dfe060e1175cf0",
+      "status": "Selected flat painting; Linux pose/frame/fallback checks passed. Human motion/style acceptance pending."
+    }
+  ],
+  "technicalExports": "export.py / exports-index.json;16 WebP alpha exports849532B installed under src/arcana/presentation/content-packs/arcana/art/creatures-a87; shared URLs in both packs",
+  "emblems": "Three original editable SVG masters, 128-square; order winged lantern, death fractured mask, creatures paw. Not official emblems. Selected Linux context and native missing-image fallback checked.",
+  "sound": "Seven original finite synthesized PCM cues installed; A84 opt-in and current gain/voice limit retained; numeric mix bound0.82948, no listening study claimed",
+  "contextStudy": {
+    "file": "../../docs/arcana/creatures-bonds-2026-10-18/art-study/phoenix-context-study.png",
+    "kind": "Generated static art-direction composite, NOT application screenshot, performance evidence or exact scale test",
+    "limit": "Creature occupies more than requested35percent of frame; used for colour/material coherence only. Runtime size still needs Linux proof."
+  },
+  "fallback": "Semantic localized name and existing placeholder if creature art fails; no reward/operation blocked. Reduced/static equivalent planned.",
+  "animation": "Two painted poses per creature, shared pixel scale and artist-selected contact anchors (anchors.json). Intended clock-driven texture swap; no body rig, tween-generated wing articulation, extra renderer or new ticker claimed.",
+  "consumers": {
+    "portrait": [
+      "CardReveal",
+      "CollectionPanel",
+      "ExpeditionPreparation",
+      "NodePreparation"
+    ],
+    "figure": [
+      "BattlePanel",
+      "pixi-scenes"
+    ],
+    "cast": [
+      "pixi-scenes via cast-profile.ts and shared replay clock"
+    ],
+    "thumbnail": [
+      "TeamHud",
+      "BeanAssignments",
+      "NodeResult",
+      "EncounterPreparation",
+      "BossBattleFacts"
+    ],
+    "emblems": [
+      "BondBand",
+      "BondSelector",
+      "ClassificationChoices",
+      "TraitBadge",
+      "BattlePanel"
+    ],
+    "sound": [
+      "BattleAudioTrack",
+      "GameAudio existing opt-in"
+    ]
+  },
+  "technicalEvidence": {
+    "source": "d5391037254bd5f4a0b4bb49b9ad00f25fe93e4b",
+    "checkout": "c2f78da10ed8ef0dc6c944f394d1e9507c389509",
+    "ci": 39196343905,
+    "checkJob": "success",
+    "humanObserved": false,
+    "physicalDevice": false
+  }
+}

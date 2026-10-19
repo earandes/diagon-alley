@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "status": "Artist-selected normalized contact anchors; require temporal Linux alignment verification",
+  "actors": {
+    "phoenix-companion": { "idle": "phoenix/master-v2.png", "cast": "phoenix/attack-v1.png", "idleContact": [0.65, 0.82], "castContact": [0.66, 0.83], "contact": "bronze perch base" },
+    "hippogriff-companion": { "idle": "hippogriff/master-v1.png", "cast": "hippogriff/attack-v1.png", "idleContact": [0.47, 0.94], "castContact": [0.47, 0.94], "contact": "rear hooves ground line" },
+    "forest-unicorn": { "idle": "unicorn/master-v1.png", "cast": "unicorn/attack-v2.png", "idleContact": [0.52, 0.97], "castContact": [0.52, 0.88], "contact": "planted hooves ground line" },
+    "green-dragon": { "idle": "dragon/master-v1.png", "cast": "dragon/attack-v1.png", "idleContact": [0.63, 0.90], "castContact": [0.63, 0.90], "contact": "front claws, tail remains below" }
+  }
+}

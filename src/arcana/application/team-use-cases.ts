@@ -5,6 +5,7 @@ import { createInventory, inventorySnapshot } from '../domain/economy/inventory'
 import { runSnapshot, type Run, type RunMember } from '../domain/exploration/run';
 import { ArcanaError } from '../domain/errors';
 import { validDomainId } from '../domain/identifiers';
+import { validBondMode } from '../domain/combat/bonds';
 import {
   checkPlayer,
   checkRevision,
@@ -115,6 +116,9 @@ function selectRun(
   return refreshRunEquipment(
     runSnapshot({
       ...run,
+      ...(run.campaignSnapshot?.combatRules.bonds
+        ? { bondFocus: current.team?.bondFocus ?? run.bondFocus ?? 'auto' }
+        : {}),
       members: [...members, ...temporary],
       reserves: known.filter((m) => !copyIds.includes(m.unit.id)),
     }),
@@ -131,22 +135,40 @@ export class SetTeamUseCase {
     playerId: string,
     command: OperationCommand<SetTeamRequest>,
   ): Promise<OperationResult> => {
-    if (!validDomainId(command.key) || !command.request || !Array.isArray(command.request.copyIds))
+    if (
+      !validDomainId(command.key) ||
+      !command.request ||
+      !Array.isArray(command.request.copyIds) ||
+      (command.request.bondFocus !== undefined && !validBondMode(command.request.bondFocus))
+    )
       throw new ArcanaError('INVALID_OPERATION');
     const state = await this.games.transact(playerId, (current) => {
       checkPlayer(current, playerId);
       const prior = current.receipts.find((r) => r.id === command.key);
       if (prior) {
-        if (prior.kind !== 'set-team' || !sameIds(prior.request.copyIds, command.request.copyIds))
+        if (
+          prior.kind !== 'set-team' ||
+          !sameIds(prior.request.copyIds, command.request.copyIds) ||
+          prior.request.bondFocus !== command.request.bondFocus
+        )
           throw new ArcanaError('OPERATION_CONFLICT');
         return current;
       }
       checkRevision(current, command.expectedRevision);
+      const activeRun = current.exploration?.run;
+      if (
+        activeRun?.status === 'active' &&
+        !activeRun.campaignSnapshot?.combatRules.bonds &&
+        command.request.bondFocus &&
+        !['auto', 'houses'].includes(command.request.bondFocus)
+      )
+        throw new ArcanaError('INVALID_FORMATION');
       const team = selectTeam(
         current.team ?? EMPTY_TEAM,
         command.request.copyIds,
         current.copies.map((c) => c.copyId),
         current.inventory.equipment ?? [],
+        command.request.bondFocus,
       );
       const next = { ...current, team },
         active = current.exploration?.run?.status === 'active';
@@ -154,7 +176,12 @@ export class SetTeamUseCase {
       const receipt: TeamReceipt = {
         id: command.key,
         kind: 'set-team',
-        request: { copyIds: [...command.request.copyIds] },
+        request: {
+          copyIds: [...command.request.copyIds],
+          ...(command.request.bondFocus === undefined
+            ? {}
+            : { bondFocus: command.request.bondFocus }),
+        },
         team,
         run,
       };

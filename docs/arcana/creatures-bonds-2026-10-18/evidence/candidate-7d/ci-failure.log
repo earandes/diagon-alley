@@ -1,0 +1,37 @@
+check	Run ARCANA_CAPTURE_A75=1 npx playwright test --config playwright.experience-a75.config.ts	﻿2026-10-19T03:42:50.4998495Z ##[group]Run ARCANA_CAPTURE_A75=1 npx playwright test --config playwright.experience-a75.config.ts
+check	Run ARCANA_CAPTURE_A75=1 npx playwright test --config playwright.experience-a75.config.ts	2026-10-19T03:42:50.4999934Z [36;1mARCANA_CAPTURE_A75=1 npx playwright test --config playwright.experience-a75.config.ts[0m
+check	Run ARCANA_CAPTURE_A75=1 npx playwright test --config playwright.experience-a75.config.ts	2026-10-19T03:42:50.5074327Z shell: /usr/bin/bash -e {0}
+check	Run ARCANA_CAPTURE_A75=1 npx playwright test --config playwright.experience-a75.config.ts	2026-10-19T03:42:50.5074641Z ##[endgroup]
+check	Run ARCANA_CAPTURE_A75=1 npx playwright test --config playwright.experience-a75.config.ts	2026-10-19T03:42:52.5177026Z [WebServer] [plugin builtin:vite-reporter] 
+check	Run ARCANA_CAPTURE_A75=1 npx playwright test --config playwright.experience-a75.config.ts	2026-10-19T03:42:52.5178166Z [WebServer] (!) Some chunks are larger than 500 kB after minification. Consider:
+check	Run ARCANA_CAPTURE_A75=1 npx playwright test --config playwright.experience-a75.config.ts	2026-10-19T03:42:52.5179286Z [WebServer] - Using dynamic import() to code-split the application
+check	Run ARCANA_CAPTURE_A75=1 npx playwright test --config playwright.experience-a75.config.ts	2026-10-19T03:42:52.5181598Z [WebServer] - Use build.rolldownOptions.output.codeSplitting to improve chunking: https://rolldown.rs/reference/OutputOptions.codeSplitting
+check	Run ARCANA_CAPTURE_A75=1 npx playwright test --config playwright.experience-a75.config.ts	2026-10-19T03:42:52.5183184Z [WebServer] - Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+check	Run ARCANA_CAPTURE_A75=1 npx playwright test --config playwright.experience-a75.config.ts	2026-10-19T03:42:54.5594598Z 
+check	Run ARCANA_CAPTURE_A75=1 npx playwright test --config playwright.experience-a75.config.ts	2026-10-19T03:42:54.5595480Z Running 1 test using 1 worker
+check	Run ARCANA_CAPTURE_A75=1 npx playwright test --config playwright.experience-a75.config.ts	2026-10-19T03:42:54.5595817Z 
+check	Run ARCANA_CAPTURE_A75=1 npx playwright test --config playwright.experience-a75.config.ts	2026-10-19T03:44:08.7713682Z   ✘  1 [webkit-390-a75] › tests/browser-experience-fixes/arena-performance-a75.spec.ts:22:1 › A75 paired mobile sustained replay and lifecycle preserve confirmed log (1.2m)
+check	Run ARCANA_CAPTURE_A75=1 npx playwright test --config playwright.experience-a75.config.ts	2026-10-19T03:44:08.7734822Z Testing stopped early after 1 maximum allowed failures.
+check	Run ARCANA_CAPTURE_A75=1 npx playwright test --config playwright.experience-a75.config.ts	2026-10-19T03:44:08.7862750Z 
+check	Run ARCANA_CAPTURE_A75=1 npx playwright test --config playwright.experience-a75.config.ts	2026-10-19T03:44:08.7868469Z 
+check	Run ARCANA_CAPTURE_A75=1 npx playwright test --config playwright.experience-a75.config.ts	2026-10-19T03:44:08.7879739Z   1) [webkit-390-a75] › tests/browser-experience-fixes/arena-performance-a75.spec.ts:22:1 › A75 paired mobile sustained replay and lifecycle preserve confirmed log 
+check	Run ARCANA_CAPTURE_A75=1 npx playwright test --config playwright.experience-a75.config.ts	2026-10-19T03:44:08.7881201Z 
+check	Run ARCANA_CAPTURE_A75=1 npx playwright test --config playwright.experience-a75.config.ts	2026-10-19T03:44:08.7881645Z     Error: expect(received).toBeLessThanOrEqual(expected)
+check	Run ARCANA_CAPTURE_A75=1 npx playwright test --config playwright.experience-a75.config.ts	2026-10-19T03:44:08.7882127Z 
+check	Run ARCANA_CAPTURE_A75=1 npx playwright test --config playwright.experience-a75.config.ts	2026-10-19T03:44:08.7882319Z     Expected: <= 20
+check	Run ARCANA_CAPTURE_A75=1 npx playwright test --config playwright.experience-a75.config.ts	2026-10-19T03:44:08.7882761Z     Received:    23
+check	Run ARCANA_CAPTURE_A75=1 npx playwright test --config playwright.experience-a75.config.ts	2026-10-19T03:44:08.7883026Z 
+check	Run ARCANA_CAPTURE_A75=1 npx playwright test --config playwright.experience-a75.config.ts	2026-10-19T03:44:08.7883617Z       240 |     after = results.filter((r) => r.variant === 'current').map((r) => r.sustained.p95);
+check	Run ARCANA_CAPTURE_A75=1 npx playwright test --config playwright.experience-a75.config.ts	2026-10-19T03:44:08.7884426Z       241 |   expect(new Set(results.map((result) => result.battleHash)).size).toBe(1);
+check	Run ARCANA_CAPTURE_A75=1 npx playwright test --config playwright.experience-a75.config.ts	2026-10-19T03:44:08.7885283Z     > 242 |   expect(percentile(after, 0.5)).toBeLessThanOrEqual(Math.max(20, percentile(before, 0.5) + 1));
+check	Run ARCANA_CAPTURE_A75=1 npx playwright test --config playwright.experience-a75.config.ts	2026-10-19T03:44:08.7885927Z           |                                  ^
+check	Run ARCANA_CAPTURE_A75=1 npx playwright test --config playwright.experience-a75.config.ts	2026-10-19T03:44:08.7886344Z       243 | });
+check	Run ARCANA_CAPTURE_A75=1 npx playwright test --config playwright.experience-a75.config.ts	2026-10-19T03:44:08.7886781Z       244 |
+check	Run ARCANA_CAPTURE_A75=1 npx playwright test --config playwright.experience-a75.config.ts	2026-10-19T03:44:08.7887723Z         at /home/runner/work/diagon-alley/diagon-alley/tests/browser-experience-fixes/arena-performance-a75.spec.ts:242:34
+check	Run ARCANA_CAPTURE_A75=1 npx playwright test --config playwright.experience-a75.config.ts	2026-10-19T03:44:08.7888320Z 
+check	Run ARCANA_CAPTURE_A75=1 npx playwright test --config playwright.experience-a75.config.ts	2026-10-19T03:44:08.7889018Z     Error Context: test-results/experience-a75/arena-performance-a75-A75--00a2d-ycle-preserve-confirmed-log-webkit-390-a75/error-context.md
+check	Run ARCANA_CAPTURE_A75=1 npx playwright test --config playwright.experience-a75.config.ts	2026-10-19T03:44:08.7889745Z 
+check	Run ARCANA_CAPTURE_A75=1 npx playwright test --config playwright.experience-a75.config.ts	2026-10-19T03:44:08.7889857Z   1 failed
+check	Run ARCANA_CAPTURE_A75=1 npx playwright test --config playwright.experience-a75.config.ts	2026-10-19T03:44:08.7891178Z     [webkit-390-a75] › tests/browser-experience-fixes/arena-performance-a75.spec.ts:22:1 › A75 paired mobile sustained replay and lifecycle preserve confirmed log 
+check	Run ARCANA_CAPTURE_A75=1 npx playwright test --config playwright.experience-a75.config.ts	2026-10-19T03:44:08.7892176Z   1 error was not a part of any test, see above for details
+check	Run ARCANA_CAPTURE_A75=1 npx playwright test --config playwright.experience-a75.config.ts	2026-10-19T03:44:08.8247234Z ##[error]Process completed with exit code 1.

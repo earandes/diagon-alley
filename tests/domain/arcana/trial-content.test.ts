@@ -31,11 +31,11 @@ describe('explicit ARCANA local trial content', () => {
     expect(view.commerce?.vault.entries.every((e) => e.loot.equipment.length > 0)).toBe(true);
     expect(Object.isFrozen(view.commerce?.forge.recipes)).toBe(true);
   });
-  it('provides 30 bilingual identities and versioned valid shop/opening content', () => {
+  it('provides 34 bilingual identities and versioned valid shop/opening content', () => {
     const { opening, starter } = trialConfiguration();
     validateToadTable(opening.catalog, opening.table);
     validateShop(opening.shop);
-    expect(opening.catalog.wizards).toHaveLength(30);
+    expect(opening.catalog.wizards).toHaveLength(34);
     expect(starter.catalog).toEqual(opening.catalog);
     expect(opening.catalog.wizards.find((w) => w.id === starter.apprenticeId)?.name.es).toBe(
       'Aprendiz de Alquimia',

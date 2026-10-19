@@ -21,7 +21,7 @@ import '../../src/arcana/presentation/styles.css';
 import '../../src/arcana/presentation/game-stage.css';
 import '../../src/arcana/presentation/game-experience.css';
 
-const configuration = trialConfiguration();
+const configuration = trialConfiguration('a85');
 const units = (side: 'player' | 'rival'): CombatUnitInput[] =>
   configuration.opening.catalog.wizards
     .slice(side === 'player' ? 0 : 5, side === 'player' ? 5 : 10)

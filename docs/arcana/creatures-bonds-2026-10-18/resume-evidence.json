@@ -1,0 +1,12 @@
+{
+  "validatedSource": "f79d9cea65434482120a83259c5e6096e358e646",
+  "validatedCheckout": "7ef9b2b12aea276ed82eecd7c93e31c5dff5c820",
+  "run": 39186209500,
+  "check": "success",
+  "checkGraphics": 380,
+  "regression": "failure:129passed9failed",
+  "phase": "resume",
+  "reused": "Only unchanged application/content/art and unchanged check-suite objects. This candidate changes two regression tests and scheduling, not product rules. Main full CI required before delivery.",
+  "unchangedSrcTree": "f161df23372a9b4f4bdcf0a3c33b8a815cb01d43",
+  "productDiffBeforeCommit": []
+}

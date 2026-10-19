@@ -1,8 +1,7 @@
 import { pauseBattle, skipBattle, setDoubleBattleSpeed } from '../browser-trial/battle-controls';
 import { test, expect } from '@playwright/test';
-import { mkdir, writeFile } from 'node:fs/promises';
+import { mkdir, writeFile, readFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
-import { readFileSync } from 'node:fs';
 import { createHash } from 'node:crypto';
 declare global {
   interface Window {
@@ -12,12 +11,12 @@ declare global {
       frames: { at: number; ms: number; phase: string; cursor: number }[];
       tasks: { at: number; ms: number }[];
       stop: () => void;
+      sceneMetrics: { name: string; start: number; duration: number }[];
     };
   }
 }
+const reference = JSON.parse(await readFile('tools/verification/a75-reference.json', 'utf8'));
 const evidence = resolve('docs/arcana/experience-fixes-2026-10-17/evidence/linux');
-const phase = JSON.parse(readFileSync('tools/verification/a75-phase.json', 'utf8')).phase;
-const focus = phase === 'webkit';
 const percentile = (numbers: number[], p: number) =>
   [...numbers].sort((a, b) => a - b)[Math.max(0, Math.ceil(numbers.length * p) - 1)];
 
@@ -25,9 +24,7 @@ test('A75 paired mobile sustained replay and lifecycle preserve confirmed log', 
   browser,
 }) => {
   test.skip(
-    phase === 'resume'
-      ? !['chromium-390-a75', 'webkit-390-a75'].includes(test.info().project.name)
-      : test.info().project.name !== `${focus ? 'webkit' : 'chromium'}-390-a75`,
+    !['chromium-390-a75', 'webkit-390-a75'].includes(test.info().project.name),
     'Three fixed AB/BA/AB pairs in one explicit Linux engine/mobile project, not a universal device benchmark.',
   );
   const engine = test.info().project.use.browserName ?? 'chromium';
@@ -54,7 +51,11 @@ test('A75 paired mobile sustained replay and lifecycle preserve confirmed log', 
           frames: [],
           tasks: [],
           stop: () => {},
+          sceneMetrics: [],
         } as Window['__a75Perf']);
+        window.__arcanaSceneMetric = (metric) => {
+          if (p.sceneMetrics.length < 6000) p.sceneMetrics.push(metric);
+        };
         document.addEventListener(
           'pointerdown',
           (e) => {
@@ -125,7 +126,22 @@ test('A75 paired mobile sustained replay and lifecycle preserve confirmed log', 
       const metrics = await page.evaluate(() => {
         window.__a75Perf.stop();
         const p = window.__a75Perf;
-        return { start: p.start, ready: p.ready, frames: p.frames, tasks: p.tasks };
+        return {
+          start: p.start,
+          ready: p.ready,
+          frames: p.frames,
+          tasks: p.tasks,
+          sceneMetrics: p.sceneMetrics,
+          surface: [...document.querySelectorAll<HTMLCanvasElement>('.scene-canvas canvas')].map(
+            (c) => ({
+              width: c.width,
+              height: c.height,
+              cssWidth: c.getBoundingClientRect().width,
+              cssHeight: c.getBoundingClientRect().height,
+              dpr: devicePixelRatio,
+            }),
+          ),
+        };
       });
       const steady = metrics.frames.filter(
         (f) => f.at >= metrics.ready! + 500 && f.at < metrics.ready! + 10500,
@@ -192,6 +208,8 @@ test('A75 paired mobile sustained replay and lifecycle preserve confirmed log', 
         },
         temporalFrames: steady.map((f, i) => (i % 12 === 0 ? f : null)).filter(Boolean),
         longTasks: metrics.tasks,
+        sceneMetrics: metrics.sceneMetrics,
+        surface: metrics.surface,
         pausedCursor: cursor,
         preservedBattleAndGame: true,
         errors,
@@ -207,7 +225,9 @@ test('A75 paired mobile sustained replay and lifecycle preserve confirmed log', 
     JSON.stringify(
       {
         sha: process.env.GITHUB_SHA,
-        baseline: '937a0a1f00bdbca7009a80cd99b7b4b450f652f0',
+        baseline: reference.baseline,
+        historicalBaseline: reference.historicalBaseline,
+        referenceReason: reference.reason,
         fixture: true,
         physicalDevice: false,
         engine,
