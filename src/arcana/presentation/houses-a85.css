@@ -316,7 +316,8 @@
     align-items: center;
     justify-content: center;
     gap: 0 8px;
-    padding-inline: 0;
+    /*44px system control plus a small gap; full-row heading must not enter it. */
+    padding-inline: 48px;
   }
   .boss-staging:has(.boss-party-member:nth-child(4)) .boss-prelude-identity > h4 {
     flex: 0 0 100%;

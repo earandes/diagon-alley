@@ -151,6 +151,24 @@ for (const pack of ['diagon-alley', 'arcana'])
             };
           });
         });
+        const headerGeometry = await dialog.evaluate((element) => {
+          const settings = element
+            .querySelector(':scope > .settings-trigger')!
+            .getBoundingClientRect();
+          return ['.boss-prelude-identity h4', '.boss-roster-count'].map((selector) => {
+            const box = element.querySelector(selector)!.getBoundingClientRect();
+            return {
+              selector,
+              box: box.toJSON(),
+              settings: settings.toJSON(),
+              clear:
+                box.right <= settings.left ||
+                box.left >= settings.right ||
+                box.bottom <= settings.top ||
+                box.top >= settings.bottom,
+            };
+          });
+        });
         await mkdir(evidence, { recursive: true });
         await writeFile(
           resolve(evidence, `${info.project.name}-${pack}-${lang}-full-${count}.json`),
@@ -163,6 +181,7 @@ for (const pack of ['diagon-alley', 'arcana'])
               pack,
               coordinateSample: 'single synchronous layout read; no animation wait',
               geometry,
+              headerGeometry,
             },
             null,
             2,
@@ -170,6 +189,10 @@ for (const pack of ['diagon-alley', 'arcana'])
         );
         if (pack === 'diagon-alley' && lang === 'es')
           await selected(page, `full-preparation-${count}`);
+        expect(
+          headerGeometry.every((item) => item.clear),
+          JSON.stringify(headerGeometry),
+        ).toBe(true);
         for (const box of geometry) {
           expect(
             box.bottom,

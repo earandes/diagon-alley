@@ -7,6 +7,7 @@ import { TeamHud } from '../../src/arcana/presentation/TeamHud';
 import { BossPartyStage } from '../../src/arcana/presentation/BossPartyStage';
 import { NodePreparation } from '../../src/arcana/presentation/NodePreparation';
 import { BossSupplies } from '../../src/arcana/presentation/BossSupplies';
+import { GameSettings } from '../../src/arcana/presentation/GameSettings';
 import { BossPrelude } from '../../src/arcana/presentation/BossPrelude';
 import { projectPublicContent } from '../../src/arcana/application/public-content';
 import { trialConfiguration } from '../../src/arcana/infrastructure/content/trial-configuration';
@@ -155,6 +156,15 @@ function Fixture() {
             className="notice node-event-dialog boss-staging"
             data-event-kind="boss"
           >
+            {fullPreparation && (
+              <GameSettings
+                language={language}
+                onLanguage={() => {}}
+                reduced={false}
+                ownReduced={false}
+                onReduced={() => {}}
+              />
+            )}
             {fullPreparation ? (
               <NodePreparation
                 plan={bossPlan}
