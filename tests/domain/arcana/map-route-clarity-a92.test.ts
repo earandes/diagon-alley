@@ -2,6 +2,9 @@ import { describe, expect, it } from 'vitest';
 import { createElement } from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
 import { mapRouteConnections } from '../../../src/arcana/presentation/map-route-connections';
+import { BeanAssignments } from '../../../src/arcana/presentation/BeanAssignments';
+import { projectPublicContent } from '../../../src/arcana/application/public-content';
+import { trialConfiguration } from '../../../src/arcana/infrastructure/content/trial-configuration';
 import { BossPartyStage } from '../../../src/arcana/presentation/BossPartyStage';
 import { campaignFixture, runInitial } from './support/run-fixtures';
 import { fitMapLayout } from '../../../src/arcana/presentation/scenes/map-layout';
@@ -94,6 +97,25 @@ describe('A92 public connections and deliberate preparation', () => {
       expect(html).not.toContain('data-bond-progress="order"');
       expect(html).toContain(language === 'es' ? 'Vínculo del equipo' : 'Team bond');
       expect(html.match(/data-boss-member=/g)).toHaveLength(3);
+      const current = trialConfiguration();
+      const content = {
+        ...projectPublicContent(current.opening, current.campaign),
+        combatRules: rules,
+      };
+      const beanRun: Run = { ...run, campaignSnapshot: { ...campaign, combatRules: rules } };
+      const beans = renderToStaticMarkup(
+        createElement(BeanAssignments, {
+          run: beanRun,
+          game,
+          content,
+          language,
+          assignments: [],
+          ready: true,
+          onChange: () => {},
+        }),
+      );
+      expect(beans).toContain('data-bond-progress="death"');
+      expect(beans).not.toContain('data-bond-progress="order"');
       expect(JSON.stringify({ run, game, rules })).toBe(before);
     });
 });

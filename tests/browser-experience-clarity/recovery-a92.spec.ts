@@ -97,6 +97,7 @@ for (const [lang, pack] of [
     await expect(inspector).toBeVisible();
     expect(await readGame(page)).toEqual(before);
     await expect(inspector.locator('[data-recovery-notice]')).toHaveCount(0);
+    await expect(inspector.locator('.preparation-inspection-close')).toBeFocused();
   });
 }
 

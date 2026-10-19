@@ -6,6 +6,8 @@ RecoveryNotice ofrece Volver a entrar cuando el error es de sesión, también co
 
 Al recuperar al mismo propietario se mantiene la consulta/preparación existente; solo cambiar dueño o cerrar sesión provoca salida de contexto. GameController ya tiene exclusión de identidad y pending por dueño; no se reescribe. La sesión de otra cuenta no autoriza recuperar una key ajena. El navegador no importa saldos.
 
+Revisión final de foco: el botón de recuperación desaparece tras reconciliar la sesión. El cleanup anterior intentaba enfocar content fuera del inspector todavía modal. Se conserva el diálogo que contenía el origen y, si el botón ya no existe, se devuelve el foco a su control estable. Cancelar sigue devolviendo al botón de recuperación. El destino incorrecto se contrastó por código; la posición final del foco necesita el caso Linux, ahora con aserción explícita del cierre del inspector.
+
 Cierres de libro, sabores y folio comparten CloseButton con SVG inline: no depende de descargar ui.clear/ui.pass. Se conservan botón, nombre localizado, Escape y retorno. No requiere fuente de imagen nueva.
 
 SeasonalEvent usa un adaptador localizado: disponibilidad, oportunidad ya usada y condición tienen causas distintas; commit incierto sigue usando mensaje compartido de comprobación, no se declara rechazado. Intro ES corregida y nombre EN sin artículo impropio. Correo de ensayo e invitado mantienen sus límites reales.

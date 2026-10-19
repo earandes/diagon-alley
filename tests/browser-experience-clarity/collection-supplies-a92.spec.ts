@@ -10,6 +10,19 @@ const pairs = [
   ['es', 'arcana'],
   ['en', 'arcana'],
 ] as const;
+async function sample(page: import('@playwright/test').Page, name: string) {
+  if (
+    process.platform !== 'linux' ||
+    process.env.ARCANA_CAPTURE_A92 !== '1' ||
+    test.info().project.name !== 'chromium-390-a92'
+  )
+    return;
+  const directory = resolve(
+    process.env.A92_EVIDENCE_ROOT ?? 'docs/arcana/experience-clarity-2026-10-19/evidence/linux',
+  );
+  await mkdir(directory, { recursive: true });
+  await page.screenshot({ path: resolve(directory, `${name}.png`) });
+}
 for (const [lang, pack] of pairs) {
   test(`A92 collection keeps identity, spread, filters and focus ${lang}/${pack}`, async ({
     page,
@@ -57,6 +70,7 @@ for (const [lang, pack] of pairs) {
     await expect(panel.locator('progress')).toHaveAttribute('value', '3');
     await expect(panel.locator('[data-collection-id]')).toHaveCount(capacity);
     await panel.locator('[data-collection-id]').first().getByRole('button').click();
+    if (lang === 'es' && pack === 'diagon-alley') await sample(page, 'portrait-first-folio');
     await page.locator('.album-copy-details > summary').click();
     await expect(page.locator('.album-copy-tokens button')).toHaveCount(12);
     await page.locator('.album-copy-tokens button').nth(3).click();
@@ -82,7 +96,7 @@ for (const [lang, pack] of pairs) {
       );
       await mkdir(directory, { recursive: true });
       await page.screenshot({
-        path: resolve(directory, `${test.info().project.name}-collection.png`),
+        path: resolve(directory, `${test.info().project.name}-${pack}-collection.png`),
       });
     }
   });
@@ -95,6 +109,7 @@ for (const [lang, pack] of pairs) {
     await expect(page.locator('.bean-stock-jar')).toHaveCount(1);
     await expect(page.locator('.bean-stock-page')).toHaveCount(2);
     await expect(page.locator('.bean-stock-object')).toHaveAttribute('data-bean-stock', '100');
+    if (lang === 'es' && pack === 'diagon-alley') await sample(page, 'bounded-stock100');
     const next = page.getByRole('button', {
       name: lang === 'es' ? 'Tarro siguiente' : 'Next jar',
       exact: true,

@@ -103,12 +103,18 @@ export function AccountAccess({
     const origin =
       returnFocus ??
       (document.activeElement instanceof HTMLElement ? document.activeElement : null);
+    // The recovery action can disappear after successful authentication while its inspector remains.
+    const context = origin?.closest<HTMLDialogElement>('dialog[open]');
     const element = dialog.current;
     element?.showModal();
     return () => {
       mounted.current = false;
       if (element?.open) element.close();
       if (origin?.isConnected) origin.focus({ preventScroll: true });
+      else if (context?.isConnected && context.open)
+        context
+          .querySelector<HTMLElement>('[autofocus], button:not(:disabled), input:not(:disabled)')
+          ?.focus({ preventScroll: true });
       else document.getElementById('content')?.focus({ preventScroll: true });
     };
   }, []);

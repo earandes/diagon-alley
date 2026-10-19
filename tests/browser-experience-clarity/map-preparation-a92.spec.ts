@@ -52,9 +52,7 @@ for (const pack of ['diagon-alley', 'arcana'])
       await page.goto(`${fixture}?pack=${pack}&lang=${lang}&mode=preparation&count=5`);
       const members = page.locator('[data-boss-member]');
       await expect(members).toHaveCount(5);
-      await expect(
-        page.getByText(lang === 'es' ? 'Vínculo' : 'Bond', { exact: true }).first(),
-      ).toBeVisible();
+      await expect(page.locator('[data-boss-party] .team-bond-caption')).toBeVisible();
       const geometry = await page.locator('.boss-party-name').evaluateAll((nodes) =>
         nodes.map((node) => {
           const element = node as HTMLElement;
@@ -103,5 +101,39 @@ for (const pack of ['diagon-alley', 'arcana'])
         page.getByRole('button', { name: lang === 'es' ? 'Combatir · 5' : 'Battle · 5' }),
       ).toBeVisible();
       if (pack === 'diagon-alley' && lang === 'es') await selected(page, 'preparation-names');
+    });
+    test(`A92 ${pack}/${lang} preparation reflows at 320px with enlarged text`, async ({
+      page,
+    }, info) => {
+      test.skip(
+        info.project.name !== 'chromium-390-a92',
+        'One bounded reflow sample per language/pack.',
+      );
+      await page.setViewportSize({ width: 320, height: 844 });
+      await page.goto(`${fixture}?pack=${pack}&lang=${lang}&mode=preparation&count=5&large=1`);
+      await page.evaluate(() => (document.documentElement.style.fontSize = '200%'));
+      await expect
+        .poll(() => page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1))
+        .toBe(true);
+      const names = page.locator('.boss-party-name');
+      await expect(names).toHaveCount(5);
+      expect(
+        await names.evaluateAll((elements) =>
+          elements.every((element) => element.scrollWidth <= element.clientWidth + 1),
+        ),
+      ).toBe(true);
+      for (const member of await page.locator('[data-boss-member]').all()) {
+        await member.focus();
+        await expect(member).toBeFocused();
+        await expect(member).toBeInViewport();
+      }
+      const confirm = page.getByRole('button', {
+        name: lang === 'es' ? 'Combatir · 5' : 'Battle · 5',
+      });
+      await confirm.focus();
+      await expect(confirm).toBeInViewport();
+      expect(await page.evaluate(() => window.__a92MapPrep.read())).toBe(
+        await page.evaluate(() => window.__a92MapPrep.before),
+      );
     });
   }

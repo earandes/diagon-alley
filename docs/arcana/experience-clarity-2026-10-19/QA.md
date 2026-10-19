@@ -29,3 +29,11 @@ Pendientes: CI del SHA candidato, inspección seleccionada, correcciones si apar
 El primer push fue rechazado por OAuth sin scope workflow; no se cambian credenciales ni protecciones. A92 se incorpora como proyectos/servidores al runner A76 que el workflow vigente ya ejecuta, con artefacto seleccionado bajo accounts/evidence/linux/a92. Los builders siguen secuenciales antes del primer preview, el mismo defineSafeConfig y un worker global. A92 usa su propio backend5630/namespace a92-UUID, separado de A76 para no mezclar las cuotas de acceso de sus cuentas ficticias. Ningún límite se relaja. El historial local del intento se conserva; la rama publicada se reconstruye desde main excluyendo exclusivamente el cambio propio de workflow. No force push ni sobrescritura ajena.
 
 La referencia incluye tsconfig.json del mismo commit base para hacer explícita la configuración JSX, sin heredar accidentalmente la del checkout superior. La primera ejecución de CI se sustituye por este candidato de aislamiento antes de atribuirle validación.
+
+## Primer resultado gráfico y correcciones de ensayo
+
+CI39316551396 sobre b442dec pasó tipos/contenido/unitarios/integración/build/backup. A76+A92 se detuvo con10casos correctos y1fallo antes de ejecutar el resto (189omitidos por límite, no cobertura). El selector global del test encontraba primero Vínculo dentro del libro cerrado del rival. Ahora identifica el estandarte del bando propio; no se rebaja su visibilidad exigida. Error y procedencia en first-linux-failure.json.
+
+La inspección de las primeras PNG mostró además que el harness de preparación carecía del CSS base de diálogo y de showModal; el mapa carecía del backdrop y variables del pack. No son capturas representativas del juego. Se corrige el mismo harness en ambos lados de la comparación, conservando runtime base86d6a92. Los nombres de capturas incluyen pack para impedir sobrescrituras entre presentaciones. Ejecución cancelada tras conservar evidencia; candidato nuevo necesario, sin reintento automático ni éxito atribuido a repetir.
+
+Revisión adicional acotada: foco contextual tras login con origen desmontado y vínculo elegido en consulta de grageas. Se añaden aserción de foco y reflujo320/texto200% con cinco puestos, además del RED/verde SSR de grageas. Estas comprobaciones gráficas todavía no se han ejecutado sobre la corrección.

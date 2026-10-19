@@ -5,7 +5,7 @@
 - [x] I1: metas/recuperación/errores/fallbacks con pruebas.
 - [x] I2: mapa/gramática/puestos con pruebas y muestra.
 - [x] I3: Cromodex/grageas escalables con pruebas y muestra.
-- [ ] Integración, tipos/build/contenido y persistencia real pertinente.
+- [x] Integración, tipos/build/contenido y persistencia real pertinente; cambios posteriores se verifican en su candidato.
 - [ ] Rama/PR, CI Linux del candidato, inspección y correcciones.
 - [ ] Documentación final, SHA/CI/límites y cierre de goal.
 

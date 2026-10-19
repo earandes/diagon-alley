@@ -53,3 +53,13 @@ El harness tiene un contenedor de mapa declarado para comparación componente a 
 No nueva captura ni navegador en este Mac. CSS3+2 es una implementación candidata, no evidencia de mejor encuadre. Falta revisar altura, scroll ordinario del mapa real, nombre/palabra y recursos de cinco puestos dentro del flujo integrado en Linux,320/390/865/1280, ambos packs/idiomas,115%y200%, teclado y reducido. La suite histórica de arena debe comprobar3×3/5×3/5×5 sin cambiar replay. No hay mediciones nuevas rAF/GPU ni pruebas humanas. Si la altura de3+2 compite con la confirmación, corregir composición con evidencia; no ocultar filas o reducir datos para pasar.
 
 No nuevos assets, dependencias, sonidos o reglas. Las líneas SVG son presentación procedural local, no un lote de ilustraciones. No commits/push/servicios ejecutados por el agente.
+
+## Revisión final · consumidor de grageas
+
+El coordinador detectó el mismo riesgo en `BeanAssignments`: su llamada final a `PreparationSynergies` omitía `mode={run.bondFocus}`. Es un defecto dentro U07: una formación con vínculo guardado Mortífagos y tres contribuyentes tanto de Orden como Mortífagos mostraba el grupo elegido por Auto (Orden), aunque el combate conservaría Mortífagos.
+
+La prueba SSR ES/EN se amplió con una run actual cuyo snapshot contiene las reglas de ambos grupos, para no confundir la ausencia deliberada de vínculos de una run histórica sin snapshot con este defecto. La fixture inicial sin snapshot mostró precisamente ese fallback histórico; corregida la fixture, el rojo confirmó `order` frente al `death` esperado. Cambio mínimo: pasar el modo guardado en ese consumidor, sin tocar asignación, stock, reglas efectivas o commit.
+
+Comprobación ejecutada tras la corrección: `npx --no-install vitest run tests/domain/arcana/map-route-clarity-a92.test.ts tests/domain/arcana/commerce-preparation-a89.test.ts`:15/15verdes en2archivos. No navegador/servicios/CI/Git.
+
+Consumidores equivalentes contrastados: TeamHud y propuesta de Pacto ya pasan run.bondFocus; ExpeditionPreparation pasa su borrador bondFocus; BossPartyStage ya fue corregido en este incremento. BossPrelude y BondBand de rivales conservan Auto porque no representan la elección propia y el motor resuelve por defecto el vínculo rival mediante effectiveBondFocus(input.rival, rules.bonds). No se les propaga el modo del jugador.

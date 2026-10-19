@@ -1,6 +1,6 @@
 // Isolated, declared component fixture; compatible with baseline86d6a92.
 // No account, operation or economic authority. No new A92-only imports.
-import { useState } from 'react';
+import { useState, useEffect, useRef, type CSSProperties } from 'react';
 import { createRoot } from 'react-dom/client';
 import { MapPanel } from '../../src/arcana/presentation/MapPanel';
 import { TeamHud } from '../../src/arcana/presentation/TeamHud';
@@ -11,11 +11,17 @@ import { trialConfiguration } from '../../src/arcana/infrastructure/content/tria
 import { createInventory } from '../../src/arcana/domain/economy/inventory';
 import type { GameState } from '../../src/arcana/application/game';
 import type { Run } from '../../src/arcana/domain/exploration/run';
-import { setContentPack, activePack } from '../../src/arcana/presentation/content-packs/active';
+import {
+  setContentPack,
+  activePack,
+  regionAppearance,
+} from '../../src/arcana/presentation/content-packs/active';
+import { visualAsset } from '../../src/arcana/presentation/content-packs/art';
 import '../../src/arcana/presentation/styles.css';
 import '../../src/arcana/presentation/game-stage.css';
 import '../../src/arcana/presentation/game-experience.css';
 import '../../src/arcana/presentation/priority-a89.css';
+import '../../src/arcana/presentation/node-event-dialog.css';
 
 const params = new URLSearchParams(location.search);
 const language = params.get('lang') === 'en' ? 'en' : 'es';
@@ -84,13 +90,29 @@ Object.assign(window, {
 });
 function Fixture() {
   const [selection, setSelection] = useState('');
+  const encounter = useRef<HTMLDialogElement>(null);
+  useEffect(() => {
+    encounter.current?.showModal();
+  }, []);
   return (
     <div
       className={`arcana-shell game-shell ${mode === 'map' ? 'arcana-map-view' : ''}`}
       data-pack={activePack.id}
       data-a92-mode={mode}
       data-reading-size={params.get('large') === '1' ? 'large' : 'normal'}
+      style={
+        {
+          ...Object.fromEntries(
+            Object.entries(activePack.palette).map(([key, value]) => [
+              '--pack-' + key.replace(/[A-Z]/g, (letter) => '-' + letter.toLowerCase()),
+              value,
+            ]),
+          ),
+          '--scene-url': `url("${visualAsset(regionAppearance(run.zoneId, language).mapAsset)?.url ?? ''}")`,
+        } as CSSProperties
+      }
     >
+      <div className="game-world-backdrop" aria-hidden="true" />
       <main id="content">
         {mode === 'map' ? (
           <section
@@ -117,7 +139,11 @@ function Fixture() {
             <output className="visually-hidden">{selection}</output>
           </section>
         ) : (
-          <dialog open className="notice node-event-dialog boss-staging" data-event-kind="boss">
+          <dialog
+            ref={encounter}
+            className="notice node-event-dialog boss-staging"
+            data-event-kind="boss"
+          >
             <div className="boss-opponent-stage">
               <BossPrelude opponents={opponents} rules={content.combatRules} language={language} />
             </div>

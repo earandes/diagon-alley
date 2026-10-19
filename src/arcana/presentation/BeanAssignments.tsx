@@ -266,7 +266,12 @@ export function BeanAssignments({
           </p>
         </>
       )}
-      <PreparationSynergies members={run.members} rules={rules} language={language} />
+      <PreparationSynergies
+        members={run.members}
+        mode={run.bondFocus}
+        rules={rules}
+        language={language}
+      />
       <details className="bean-context-help">
         <summary>{text(language, 'beanEffects')}</summary>
         <p>{p(language, 'preserve')}</p>
