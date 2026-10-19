@@ -87,6 +87,36 @@ function evidenced(
 }
 
 describe('A89 company intention is a versioned voluntary plan', () => {
+  it('keeps a viable selected Ravenclaw plan when new copies make Gryffindor eligible', () => {
+    const idsFor = (houseName: string) =>
+      Object.entries(availability.combatRules.houseMembers!)
+        .filter(([, house]) => house === houseName)
+        .slice(0, 3)
+        .map(([id]) => id);
+    const raven = { kind: 'company', focus: 'house', house: 'ravenclaw' } as const;
+    const before = closed(idsFor('ravenclaw'));
+    expect(availableIntentions(before, availability)).toContainEqual(raven);
+    const after = closed([...idsFor('ravenclaw'), ...idsFor('gryffindor')]);
+    const selected: GameState = {
+      ...after,
+      exploration: {
+        ...after.exploration!,
+        intention: { version: 2, afterRunId: 'old', runId: null, choice: raven },
+      },
+    };
+    expect(companyIntentionProgress(selected, availability, raven)?.tier).toBe(1);
+    const options = availableIntentions(selected, availability);
+    expect(options).toContainEqual(raven);
+    expect(options.length).toBeLessThanOrEqual(3);
+    expect(intentionProgress(selected, availability)?.status).toBe('selected');
+    const insufficient = closed([...idsFor('ravenclaw').slice(0, 2), ...idsFor('gryffindor')]);
+    const unavailable = {
+      ...insufficient,
+      exploration: { ...insufficient.exploration!, intention: selected.exploration!.intention },
+    };
+    expect(availableIntentions(unavailable, availability)).not.toContainEqual(raven);
+    expect(intentionProgress(unavailable, availability)?.status).toBe('unavailable');
+  });
   it('preserves v1 and binds v2 once, rejecting malformed or mixed versions', () => {
     const prior = {
       version: 1 as const,

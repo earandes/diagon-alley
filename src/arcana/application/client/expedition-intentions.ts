@@ -47,6 +47,8 @@ export function availableIntentions(
   const run = game.exploration?.run;
   if (!run || run.status === 'active') return Object.freeze([]);
   const options: IntentionChoice[] = [];
+  const selected =
+    game.exploration?.intention?.runId === null ? game.exploration.intention.choice : null;
   const battles = game.receipts.flatMap((receipt) =>
     receipt.kind === 'advance-node' && receipt.request.runId === run.id && receipt.battle
       ? [receipt.battle]
@@ -61,22 +63,33 @@ export function availableIntentions(
     ...HOUSES.map((house) => ({ kind: 'company' as const, focus: 'house' as const, house })),
     ...BOND_GROUPS.map((group) => ({ kind: 'company' as const, focus: 'bond' as const, group })),
   ];
-  const company = companies.find((choice) => {
-    if (!companyIntentionProgress(game, availability, choice)?.tier) return false;
-    return !battles.some((battle) =>
-      battle.events.some(
-        (event) =>
-          (event.kind === 'house-activated' &&
-            event.team === 'player' &&
-            choice.focus === 'house' &&
-            event.house === choice.house) ||
-          (event.kind === 'bond-activated' &&
-            event.team === 'player' &&
-            choice.focus === 'bond' &&
-            event.group === choice.group),
-      ),
-    );
-  });
+  // A suggestion must not invalidate an already selected company merely because ownership grows.
+  const selectedCompany =
+    selected?.kind === 'company'
+      ? companies.find(
+          (choice) =>
+            sameIntentionChoice(choice, selected) &&
+            !!companyIntentionProgress(game, availability, choice)?.tier,
+        )
+      : undefined;
+  const company =
+    selectedCompany ??
+    companies.find((choice) => {
+      if (!companyIntentionProgress(game, availability, choice)?.tier) return false;
+      return !battles.some((battle) =>
+        battle.events.some(
+          (event) =>
+            (event.kind === 'house-activated' &&
+              event.team === 'player' &&
+              choice.focus === 'house' &&
+              event.house === choice.house) ||
+            (event.kind === 'bond-activated' &&
+              event.team === 'player' &&
+              choice.focus === 'bond' &&
+              event.group === choice.group),
+        ),
+      );
+    });
   if (company) options.push(company);
   const companion = game.copies.find((copy) => !previousIds.has(copy.wizard.id));
   if (companion) options.push({ kind: 'new-companion', wizardId: companion.wizard.id });
@@ -107,8 +120,6 @@ export function availableIntentions(
   if ((bean || affordable) && flavourCollection(game).some((flavour) => !flavour.discovered))
     options.push({ kind: 'bean' });
   const visible = options.slice(0, 3);
-  const selected =
-    game.exploration?.intention?.runId === null ? game.exploration.intention.choice : null;
   const selectedOption =
     selected && options.find((option) => sameIntentionChoice(option, selected));
   // A new suggestion must not make a viable, already chosen legacy plan look unavailable.

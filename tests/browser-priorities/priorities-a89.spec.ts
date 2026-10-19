@@ -245,7 +245,30 @@ test('A89 Cromodex goal persists per owner, keeps silhouettes and requires an ow
     expect((await read(page)).game.copies).toEqual(initial.game.copies);
     await page.evaluate((id) => window.__a89.acquireTarget(id), goal.wizardId);
     await expect(page.locator('[data-goal-state=acquired]')).toBeVisible();
-    expect((await read(page)).game.inventory).toEqual(initial.game.inventory);
+    const acquired = (await read(page)).game;
+    expect(acquired.inventory.crowns).toEqual(initial.game.inventory.crowns);
+    expect(acquired.inventory.essence).toEqual(initial.game.inventory.essence);
+    expect(acquired.inventory.equipment).toEqual(initial.game.inventory.equipment);
+    const originalProductIds = new Set(
+      initial.game.inventory.products.map((product: { id: string }) => product.id),
+    );
+    expect(
+      acquired.inventory.products.filter((product: { id: string }) =>
+        originalProductIds.has(product.id),
+      ),
+    ).toEqual(initial.game.inventory.products);
+    expect(
+      acquired.inventory.products.filter(
+        (product: { id: string }) => !originalProductIds.has(product.id),
+      ),
+    ).toEqual([
+      {
+        id: 'a89-acquired-target-opening:unit',
+        kind: 'cacao-toad',
+        status: 'consumed',
+        operationId: 'a89-acquired-target-opening',
+      },
+    ]);
     await expect(page.locator('.collection-progress progress')).toHaveAttribute('max', '34');
     await expect(page.locator('.collection-progress progress')).toHaveAttribute('value', '4');
     await widthFits(page);
@@ -508,11 +531,14 @@ test('A89 narrow text reflow and missing renderer keep readable actions and fact
     importsFailed++;
     await route.abort();
   });
+  // A readable result action survives absent art as well as the failed renderer import.
+  await page.route(/\/assets\/.*\.(?:webp|png|svg)$/, (route) => route.abort());
   await load(page, 'battle', 'en', 'arcana', '&reduced=1');
   const before = economic(await read(page));
   await expect.poll(() => importsFailed).toBeGreaterThan(0);
   await expect(page.locator('.scene-fallback')).toBeVisible();
   await skipBattle(page);
+  await expect(page.locator('[data-arena-facts-trigger] > span')).toBeVisible();
   await page.locator('[data-arena-facts-trigger]').click();
   await expect(page.locator('[data-battle-fact]').first()).toBeVisible();
   expect(economic(await read(page))).toBe(before);

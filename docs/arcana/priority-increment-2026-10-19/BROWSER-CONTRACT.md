@@ -55,6 +55,16 @@ El artefacto conserva SHA, origen técnico, fixture, viewport, idioma/pack, cuat
 
 La selección de imágenes y el SHA/CI efectivamente ejecutados se registrarán en QA y galería integradas. No atribuir el éxito de una preparación estática a la batería Linux pendiente.
 
+## Primera ejecución y corrección de fixture
+
+La primera CI39243286949 se detuvo en la elección de compañía: el estado inicial de la fixture contenía copias con origen rana sin receipts de apertura y el cierre refería una zona ausente de `unlockedZones`. El caso de uso rechazaba correctamente `INVALID_GAME`; cambiar la apariencia o repetir la prueba no habría corregido ese estado. La batería no se considera superada.
+
+La construcción se extrajo a `tests/browser-priorities/fixture-state.ts`, importada tanto por el harness como por un test no gráfico. Se conserva `runInitial` como base de ensayo y se declaran procedencias coherentes: kit con sus dos equipos, aperturas guionizadas con unidad consumida/operación/copia/versiones/`isNew` y receiptv1 cuando se usa la intención histórica. Tres identidades de Gryffindor y un duplicado siguen presentes; el duplicado procede de una identidad disponible en la tabla, no del aprendiz excluido de ella. La zona del cierre está desbloqueada. **Ninguna validación o regla de dominio se relajó.**
+
+El simulador de adquisición del objetivo también añade su receipt y unidad consumida de fixture, en vez de insertar una copia sin procedencia. El test conserva exactamente todos los productos previos, moneda, energía y equipo, y reconoce esa nueva unidad consumida guionizada. Esto no representa una compra gratuita disponible en el producto; la consulta y los borradores siguen exigiendo inventario íntegramente idéntico. `window.__a89.read` incluye ahora el error de la fixture para diagnosticar fallos sin capturas adicionales.
+
+`priority-fixture-a89.test.ts`:8casos RED reprodujeron el estado inválido antes de corregirlo;9/9GREEN tras corregir siete variantes iniciales, ejecutar selecciónv2 desde el mismo factory con intenciónv1 y comprobar adquisición coherente. Los casos negativos siguen rechazando copia sin receipt y run con zona bloqueada. Además se comprueba que las copias de rana pertenecen a la tabla declarada. Tipos y build de fixture correctos. La nueva ejecución Linux queda pendiente del coordinador; estos resultados no sustituyen la inspección gráfica.
+
 ## Entrada en CI sin modificar workflows
 
 La credencial GitHub disponible rechazó la primera subida porque no permite modificar `.github/workflows/checks.yml`. No se amplió su scope. Se retiró esa modificación del commit no publicado. La batería A89 se incorpora a `playwright.accounts-a76.config.ts`, que el workflow existente ya ejecuta: proyectos y testDirs separados, un único worker/lock/watchdog y los mismos seis proyectos A76 conservados. Opciones A89 compartidas con el comando aislado mediante `playwright.priorities-a89.options.ts`; ambos llaman al guard original. Ningún servidor o navegador local se inicia al comprobar tipos.

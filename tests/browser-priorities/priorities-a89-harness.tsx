@@ -1,14 +1,8 @@
 // Declared UI fixtures using real components. No player account, economic server or campaign balance claim.
 import { useState, type CSSProperties } from 'react';
 import { createRoot } from 'react-dom/client';
-import { trialConfiguration } from '../../src/arcana/infrastructure/content/trial-configuration';
-import { projectPublicContent } from '../../src/arcana/application/public-content';
-import { createInventory } from '../../src/arcana/domain/economy/inventory';
-import { starterEquipment } from '../../src/arcana/domain/economy/equipment';
 import { CombatEngine } from '../../src/arcana/domain/combat/engine';
 import { SeededRandom } from '../../src/arcana/infrastructure/random/seeded-random';
-import type { GameState } from '../../src/arcana/application/game';
-import type { Run } from '../../src/arcana/domain/exploration/run';
 import type { Language } from '../../src/arcana/domain/collection/wizards';
 import type { BeanAssignment } from '../../src/arcana/application/run-contracts';
 import type { IntentionChoice } from '../../src/arcana/domain/exploration/intentions';
@@ -31,110 +25,19 @@ import {
   type ContentPackId,
 } from '../../src/arcana/presentation/content-packs/active';
 import { visualAsset } from '../../src/arcana/presentation/content-packs/art';
-import { campaignFixture } from '../domain/arcana/support/run-fixtures';
+import { acquirePriorityFixtureCopy, createPriorityFixtureState } from './fixture-state';
 import '../../src/arcana/presentation/styles.css';
 import '../../src/arcana/presentation/game-stage.css';
 import '../../src/arcana/presentation/game-experience.css';
 import '../../src/arcana/presentation/node-event-dialog.css';
 import '../../src/arcana/presentation/header-pact.css';
 
-const query = new URLSearchParams(location.search),
-  configuration = trialConfiguration(),
-  content = projectPublicContent(configuration.opening, configuration.campaign);
+const query = new URLSearchParams(location.search);
+const { configuration, content, copies, active, initial } = createPriorityFixtureState(query);
 const view = query.get('view') ?? 'company';
 const pack = (query.get('pack') === 'arcana' ? 'arcana' : 'diagon-alley') as ContentPackId;
 setContentPack(pack);
 if (query.has('reduced')) localStorage.setItem('arcana-reduced-motion', 'true');
-const selected = content.catalog.wizards
-  .filter((w) => w.traits?.house === 'gryffindor')
-  .slice(0, 3);
-const copies: GameState['copies'] = [
-  ...selected,
-  selected[0],
-  ...(query.has('dense') ? [selected[1]] : []),
-].map((wizard, i) => ({
-  copyId: `a89-copy-${i}`,
-  wizard,
-  catalogVersion: content.catalog.version,
-  sourceId: 'a89-declared-fixture',
-  origin: 'toad',
-}));
-const fixtureCampaign = campaignFixture();
-const closed: Run = {
-  id: 'a89-prior',
-  status: 'won',
-  campaignVersion: fixtureCampaign.version,
-  zoneId: fixtureCampaign.zoneId,
-  graphVersion: fixtureCampaign.graph.version,
-  graph: fixtureCampaign.graph,
-  visited: fixtureCampaign.graph.nodes.map((n) => n.id),
-  members: copies
-    .slice(0, 1)
-    .map((copy) => ({ source: 'owned', unit: configuration.campaign.prepareOwned(copy) })),
-};
-const active: Run = {
-  id: 'a89-active',
-  status: 'active',
-  campaignVersion: content.campaign.version,
-  graphVersion: content.campaign.graph.version,
-  graph: content.campaign.graph,
-  zoneId: content.campaign.zoneId,
-  visited: [],
-  members: copies.slice(0, query.has('single') ? 1 : 3).map((copy, i) => ({
-    source: i === 2 && query.has('temporary') ? 'temporary' : 'owned',
-    unit: {
-      ...configuration.campaign.prepareOwned(copy),
-      hp: i === 1 ? 0 : i === 0 ? 10 : copy.wizard.stats.maxHp,
-    },
-  })),
-  tacticalVersion: 4,
-  equipmentRulesVersion: 2,
-  campaignSnapshot: {
-    ...configuration.campaign,
-    graph: configuration.campaign.graph,
-    nodes: configuration.campaign.challengeContent!('discovery', configuration.campaign.graph),
-  },
-};
-const beanCount = query.has('empty') ? 0 : query.has('one') ? 1 : 3;
-const initial: GameState = {
-  schemaVersion: 1,
-  playerId: 'a89-fixture-owner-a',
-  revision: 1,
-  inventory: {
-    ...createInventory(0),
-    crowns: 50,
-    equipment: starterEquipment(),
-    products: Array.from({ length: beanCount }, (_, i) => ({
-      id: `a89-jar-${i}`,
-      kind: 'random-beans',
-      status: 'available',
-    })),
-  },
-  copies,
-  receipts: [],
-  team: {
-    copyIds: copies.slice(0, 3).map((c) => c.copyId),
-    loadouts: [
-      { copyId: copies[0].copyId, wandId: 'starter:wand', broomId: null },
-      { copyId: copies[3].copyId, wandId: null, broomId: 'starter:broom' },
-    ],
-  },
-  exploration: {
-    run: view === 'company' ? closed : active,
-    victories: [],
-    unlockedZones: [content.campaign.zoneId],
-    ...(view === 'company' && query.has('legacy')
-      ? {
-          intention: {
-            version: 1 as const,
-            afterRunId: closed.id,
-            runId: null,
-            choice: { kind: 'bean' as const },
-          },
-        }
-      : {}),
-  },
-};
 // Deliberately prolonged battle input for pause/skip observation. Not a campaign composition or reward.
 const players = copies.slice(0, query.has('dense') ? 5 : 3).map((copy, index) => ({
   ...configuration.campaign.prepareOwned(copy),
@@ -208,7 +111,7 @@ function Fixture() {
   };
   window.__a89 = {
     read: () =>
-      JSON.stringify({ game, assignments, consultations, forgeRequests, returned, battle }),
+      JSON.stringify({ game, assignments, consultations, forgeRequests, returned, battle, error }),
     switchOwner: () =>
       setGame((current) => ({
         ...current,
@@ -238,10 +141,12 @@ function Fixture() {
                 },
               },
             }
-          : {
-              ...current,
-              copies: [...current.copies, { ...copies[0], copyId: 'a89-acquired-target', wizard }],
-            },
+          : acquirePriorityFixtureCopy(
+              current,
+              wizard,
+              content.catalog.version,
+              content.toadTable.version,
+            ),
       );
     },
   };
