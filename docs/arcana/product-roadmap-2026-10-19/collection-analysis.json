@@ -1,0 +1,81 @@
+{
+  "kind": "exact mathematical model, not measured human play",
+  "profile_assumption": "A87/current assembler: base tickets plus four creature tickets",
+  "inputs": [
+    {
+      "file": "src/arcana/content/trial-v1.json",
+      "sha256": "d2b88567d8f190eac47ad74aee4a6195b71c28ab53717e9d8706bff8713c3049"
+    },
+    {
+      "file": "src/arcana/content/creatures-v1.json",
+      "sha256": "8222b7c2870d961caa694fe732057562f41f31b2a3a1bb79c40241f8b27ebf08"
+    },
+    {
+      "file": "src/arcana/infrastructure/content/trial-configuration.ts",
+      "sha256": "b443d0c93d695b1b04a19f9a9c94cc87107b6b60ce1ec31d1422429c5f4d87d7"
+    }
+  ],
+  "guaranteed_identity_ids": [
+    "apprentice"
+  ],
+  "total_identities": 34,
+  "uniform_tickets": 33,
+  "probability_per_ticket_identity": 0.030303030303030304,
+  "completion_milestones": [
+    {
+      "target_share": 0.5,
+      "total_distinct_target": 17,
+      "random_distinct_required": 16,
+      "openings": {
+        "p50": 21,
+        "p90": 25,
+        "p95": 27
+      }
+    },
+    {
+      "target_share": 0.75,
+      "total_distinct_target": 26,
+      "random_distinct_required": 25,
+      "openings": {
+        "p50": 45,
+        "p90": 55,
+        "p95": 58
+      }
+    },
+    {
+      "target_share": 0.9,
+      "total_distinct_target": 31,
+      "random_distinct_required": 30,
+      "openings": {
+        "p50": 73,
+        "p90": 93,
+        "p95": 100
+      }
+    },
+    {
+      "target_share": 1.0,
+      "total_distinct_target": 34,
+      "random_distinct_required": 33,
+      "openings": {
+        "p50": 128,
+        "p90": 188,
+        "p95": 211
+      }
+    }
+  ],
+  "mean_openings_to_all": 134.93034144940518,
+  "mean_duplicates_at_completion": 101.93034144940518,
+  "first_any_enchanted_assuming_independent_one_percent": {
+    "p50": 69,
+    "p90": 230,
+    "p95": 299
+  },
+  "checks": "five known mathematical cases and probability mass conservation",
+  "limits": [
+    "No hours or calendar forecast",
+    "No income, costs or route policy model",
+    "No duplicate exchange or pity",
+    "No user testing",
+    "No production services accessed"
+  ]
+}
