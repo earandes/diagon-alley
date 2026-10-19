@@ -113,11 +113,11 @@
   overflow: hidden;
   border-radius: 8px;
 }
-.boss-party-stage[data-party-pack='arcana'] .boss-party-portrait > img:first-child {
+.boss-party-stage[data-party-pack='arcana'] .boss-party-portrait > img[data-art$='.portrait'] {
   transform: scale(1.7);
   transform-origin: 50% 0;
 }
-.boss-party-portrait > img:first-child {
+.boss-party-portrait > img[data-art$='.portrait'] {
   grid-area: 1 / 1 / 3 / 3;
   width: 100%;
   height: clamp(70px, 10vw, 112px);
@@ -175,7 +175,9 @@
   height: 26px;
   object-fit: contain;
 }
-.boss-party-member[data-boss-party-condition='fallen'] .boss-party-portrait > img:first-child {
+.boss-party-member[data-boss-party-condition='fallen']
+  .boss-party-portrait
+  > img[data-art$='.portrait'] {
   filter: saturate(0.35);
 }
 .game-shell .boss-party-stage .boss-party-prepare {
@@ -346,7 +348,7 @@
     gap: 2px;
     padding-bottom: 2px;
   }
-  .boss-party-portrait > img:first-child {
+  .boss-party-portrait > img[data-art$='.portrait'] {
     height: 72px;
   }
   .game-shell .boss-party-stage .boss-party-prepare {
@@ -434,7 +436,7 @@
     font-size: 0.78rem;
     line-height: 1.25;
   }
-  .boss-party-portrait > img:first-child {
+  .boss-party-portrait > img[data-art$='.portrait'] {
     height: 60px;
   }
   .boss-party-condition {
@@ -446,6 +448,7 @@
    Distinct corners keep formation position and provenance clear of its lozenge. */
 .boss-party-portrait {
   position: relative;
+  min-height: clamp(70px, 10vw, 112px);
 }
 .boss-party-position {
   position: absolute;
@@ -472,4 +475,10 @@
   max-width: 100%;
   background: #101e2bf2;
   white-space: nowrap;
+}
+
+@media (max-width: 620px) {
+  .boss-party-portrait {
+    min-height: 60px;
+  }
 }

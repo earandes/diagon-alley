@@ -184,6 +184,37 @@ for (const pack of ['diagon-alley', 'arcana'])
           await page.evaluate(() => window.__a92MapPrep.before),
         );
       }
+      const portraitUrls = await page
+        .locator('[data-boss-party] img[data-art$=".portrait"]')
+        .evaluateAll((images) => images.map((image) => (image as HTMLImageElement).src));
+      expect(portraitUrls).toHaveLength(5);
+      await page.route('**/*', (route) =>
+        portraitUrls.includes(route.request().url()) ? route.abort() : route.continue(),
+      );
+      await page.reload();
+      await expect(page.locator('[data-boss-party] img[data-art$=".portrait"]')).toHaveCount(0);
+      await expect(page.locator('[data-boss-party] .boss-party-origin')).toHaveCount(5);
+      const fallbackFrames = await page.locator('.boss-party-portrait').evaluateAll((frames) =>
+        frames.map((frame) => {
+          const box = frame.getBoundingClientRect();
+          const marker = frame.querySelector('.boss-party-origin')!.getBoundingClientRect();
+          return {
+            height: box.height,
+            markerContained:
+              marker.top >= box.top &&
+              marker.bottom <= box.bottom &&
+              marker.left >= box.left &&
+              marker.right <= box.right,
+          };
+        }),
+      );
+      expect(fallbackFrames.every((frame) => frame.height >= 60 && frame.markerContained)).toBe(
+        true,
+      );
+      await expect(page.locator('.boss-party-name')).toHaveCount(5);
+      expect(await page.evaluate(() => window.__a92MapPrep.read())).toBe(
+        await page.evaluate(() => window.__a92MapPrep.before),
+      );
     });
     test(`A92 ${pack}/${lang} preparation reflows at 320px with enlarged text`, async ({
       page,
