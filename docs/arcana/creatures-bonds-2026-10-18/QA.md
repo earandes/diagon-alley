@@ -131,3 +131,5 @@ CI39193444875 A75 fallida; no acredita regresión ni finalización. P95WebKit22m
 0240287 / CI39194828275: ensayoWebKitpareado fallido22/23/22ms; checkfallido y regresión omitida. Contención CSS retirada por no mejorar. Crudos y logs conservados en candidate-024. Nuevo ensayo con superficie compuesta, pendiente.
 
 7d90924 / CI39195537584: ensayoWebKitcontraA84 fallido23/23/23ms; regresión omitida. Superficie compuesta retirada por no mejorar. Se corrige la referencia del incremento almainA86 real440d278, conservando las comparacionesA84 y la fórmula original. La atribución aA87 sigue sin estar demostrada; el ensayo deA86 pendiente la contrastará.
+
+La ejecuciónf0/39193444875 se canceló deliberadamente tras elfalloA75, duranteA70; no es una batería completa. a6a0039solo prepara la referencia inmediata y fasewebkit, sustituida antes de gráficos por full. La próxima batería repite el candidato con ambosmotores y las dos expectativas corregidas; no se reutiliza elcheckf79como validación de este código.

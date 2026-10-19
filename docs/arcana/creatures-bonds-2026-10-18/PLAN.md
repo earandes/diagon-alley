@@ -12,8 +12,8 @@
 - [x] Cerrar jobcheck completof79:380gráficos,681unit y111PG/Redis correctos; nueve fallos de expectativas en regresión conservados.
 - [x] Corregir las dos expectativas de regresión. Resume057detecta por primera vez elensayoWebKitpareado:23ms frentea20; regresión aún no repetida.
 - [x] Contrastar deduplicaciónf0: no basta (WebKit22ms); conservar crudos. Contención024 tampoco mejora (22/23/22), retirada.
-- [ ] Contrastar superficie compuesta7d90924 mediante fasewebkit original; analizar dimensiones/CPU y diferencias frentea la referencia históricaA84. No reducir figuras o resolución ni atribuir una causa GPU sin evidencia.
-- [ ] Restaurar full, validar candidato real con ambas comparaciones pareadas y todos los recorridos afectados.
+- [x] Contrastar superficie compuesta7d90924: no mejora (23ms), retirada. No se conserva ningún cambioCSS experimental. Crudos, superficies yCPU guardados.
+- [ ] Fullrestaurado: contrastar A87con su predecesor inmediatomain440d278enChromium/WebKit y validar todos los recorridos. ConservarA84histórica y el20msobjetivo, distinguiendo no-regresión y presupuesto absoluto.
 - [ ] Cerrar los dos recorridos de QAcorregidos y comprobar maincompleto antes de finalizar.
 - [ ] Consolidar documentación/evidencia, revisar diff, integrar resultado validado y comprobar main/CI; sin despliegue.
 
