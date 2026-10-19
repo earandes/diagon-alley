@@ -200,3 +200,9 @@
   max-height: min(380px, calc(100% - 100px));
   overflow: auto;
 }
+
+/* A89: owned here so standalone consumers do not depend on App/Settings CSS. */
+.intention-object > .house-insignia {
+  width: 4rem;
+  height: 4rem;
+}

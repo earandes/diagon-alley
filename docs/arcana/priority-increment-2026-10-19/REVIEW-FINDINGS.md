@@ -15,3 +15,11 @@
 Inspección de `ExpeditionGuide`, `ReadingPreferences`, preferencias, selector de objetivo, integración App y contratos de intención. La guía consulta sin avanzar, conserva mínimo de formación del dominio y coste constante compartido. Preferencias separadas por propietario/dispositivo, canales `storage` y memoria acotada, protección de contraste del sistema, cleanup de listeners y foco de orientación revisados por código. Esta inspección no acredita calidad visual o foco en ejecución.
 
 No se encontró otro defecto bloqueante demostrado dentro de esta revisión estática. Persisten los límites documentados de lectura/ayuda de dispositivo frente a sincronización de cuenta y los casos dinámicos de la suite Linux. No se afirma que las pruebas humanas, el navegador o el dispositivo físico se hayan revisado aquí.
+
+## Revisión de cierre PM03/PM06
+
+Sin otro defecto demostrable en el contraste final de código y pruebas. El plan seleccionado viable precede a sugerencias nuevas; máximo tres opciones, contribuyentes distintos/vivos y regla efectiva de snapshot. El cumplimiento exige activación propia y runId confirmado, sin premio, replay o consulta que lo complete. v1/v2 permanecen estrictos.
+
+Hechos: máximo dos categorías, prioridad del plan solo si ocurrió, cantidades aplicadas y actor/objetivo del bando propio. App y cierre relacionan la preferencia con el runId del receipt, incluidos resultados históricos. Un log antiguo puede aportar menos hechos, sin reconstruir daño o azar. La revisión no acredita comprensión humana, dispositivo físico ni un E2E de compañía con colección fabricada.
+
+Otros defectos de integración detectados y corregidos constan con sus fallos originales en QA: fixture inválida, retratos del taller, reflujo320/200%, excepción de puntero de guía, enlace doble a Confitería, selector de retorno al añadir libro y espacio de ayuda sobre nodo. Los dos primeros fallos de copy/selector son de prueba; el solape del mapa, escala y navegación son de producto. No se presentan como la misma clase de evidencia.

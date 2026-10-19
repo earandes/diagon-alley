@@ -1,0 +1,32 @@
+{
+  "runId": 39250400395,
+  "headSha": "c76cb27fc5ef519fa3affd2b259d18b2dcf92fdf",
+  "checkoutSha": "3a396022c5ae8c18fbe5522366651f480ef1e660",
+  "tree": "03dd28bf2de9c8f6a8b84933c46e6f7f106a411b",
+  "a89": {
+    "passed": 27,
+    "deliberatelySkipped": 9,
+    "unexpected": 0
+  },
+  "a76": {
+    "passed": 30,
+    "deliberatelySkipped": 30,
+    "unexpected": 0
+  },
+  "a75": {
+    "passed": 114,
+    "deliberatelySkipped": 174,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "a70Failure": {
+    "test": "boss reduced and failed renderer retain actors outcome record and confirmed state",
+    "project": "chromium-1280-boss-a70",
+    "observed": "All ten actor geometries fit, but document scrollHeight1017 for viewport900. The new book styles are not imported by standalone BattlePanel consumers.",
+    "evidence": "evidence/attempt-7/boss-reduced-overflow.md",
+    "originalContextSha256": "e6d7816782cb23922b49acd0d71b7c024a1186cbc2a7cd3d5c2043005e181627",
+    "evidenceNormalization": "Trailing whitespace removed from Markdown source excerpt only; original retained in GitHub artifact and SHA256 recorded."
+  },
+  "correction": "Move result-book CSS from App/Settings priority stylesheet to the existing arena stylesheet. Move house fact and intention sizing to their owning stylesheets. No dimensions changed or content hidden. Standalone Vite build includes the book rules in a stylesheet linked from boss-a70.html. CI needed to confirm layout.",
+  "status": "Full workflow failed; own obsolete motion work will be cancelled before starting corrected candidate."
+}

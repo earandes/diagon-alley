@@ -30,3 +30,7 @@ CI4 validó reflujo/fallback (7recorridos) y demostró interceptación de punter
 CI5 validó8casos y prefijo App real hasta hechos; selector ambiguo de salida corregido enhelper y6consumidores. Próximo candidato6 sin cambios de producto, con toques emulados explícitos.
 
 CI6:27casosA89 y30A76 correctos; capturas revisadas y cohorte App completa. A70 mostró solape guía/nodo escritorio, corrección con espacio real y aceptación ampliada. Build/tipos correctos localmente; candidato7 pendiente para regresión. Goal activo.
+
+CI7:57activos correctos(27A89/30A76), con geometría nueva mapa en12combinaciones y nuevos enlaces conectados completos. Capturas seleccionadas revisadas, evidencia/attempt-6 preservada. Regresiones completas aún en curso; goal activo.
+
+CI7 conserva A89/A76/A75 correctos y confirma mapa libre. Segundo defecto A70: estilos de libro no incluidos en consumidor standalone. Reubicación a hojas propietarias, build/tipos y compilación A70 correctos; nueva CI necesaria. Goal activo.

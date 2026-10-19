@@ -1,6 +1,6 @@
 # A89 · Contrato de validación gráfica Linux
 
-19 octubre 2026. Suite preparada, **no ejecutada todavía** al registrar este documento. Tipos y empaquetado estático no acreditan comportamiento gráfico, animación, dispositivo físico o comprensión humana.
+19 octubre 2026. Contrato preparado antes de ejecutar; resultado posterior en QA y GALLERY. A89 pasó27casos activos en CI39250400395, con9omisiones de cohorte deliberadas. Tipos y empaquetado estático no acreditan comportamiento gráfico, animación, dispositivo físico o comprensión humana.
 
 ## Seguridad y ejecución
 
@@ -56,7 +56,7 @@ El artefacto conserva SHA, origen técnico, fixture, viewport, idioma/pack, cuat
 - `npx --no-install vite build --config tests/browser-priorities/vite-priorities-a89.config.ts`: correcto. Aviso de bundle de fixture superior500kB conservado; el harness deliberadamente importa varios recorridos. No es medida de descarga inicial del build real.
 - Ninguna ejecución Playwright, captura, vídeo o perfil local.
 
-La selección de imágenes y el SHA/CI efectivamente ejecutados se registrarán en QA y galería integradas. No atribuir el éxito de una preparación estática a la batería Linux pendiente.
+La selección de imágenes y el SHA/CI efectivamente ejecutados están en QA y GALLERY. No atribuir el éxito de una preparación estática a una batería gráfica o una observación humana.
 
 ## Primera ejecución y corrección de fixture
 
@@ -66,7 +66,7 @@ La construcción se extrajo a `tests/browser-priorities/fixture-state.ts`, impor
 
 El simulador de adquisición del objetivo también añade su receipt y unidad consumida de fixture, en vez de insertar una copia sin procedencia. El test conserva exactamente todos los productos previos, moneda, energía y equipo, y reconoce esa nueva unidad consumida guionizada. Esto no representa una compra gratuita disponible en el producto; la consulta y los borradores siguen exigiendo inventario íntegramente idéntico. `window.__a89.read` incluye ahora el error de la fixture para diagnosticar fallos sin capturas adicionales.
 
-`priority-fixture-a89.test.ts`:8casos RED reprodujeron el estado inválido antes de corregirlo;9/9GREEN tras corregir siete variantes iniciales, ejecutar selecciónv2 desde el mismo factory con intenciónv1 y comprobar adquisición coherente. Los casos negativos siguen rechazando copia sin receipt y run con zona bloqueada. Además se comprueba que las copias de rana pertenecen a la tabla declarada. Tipos y build de fixture correctos. La nueva ejecución Linux queda pendiente del coordinador; estos resultados no sustituyen la inspección gráfica.
+`priority-fixture-a89.test.ts`:8casos RED reprodujeron el estado inválido antes de corregirlo;9/9GREEN tras corregir siete variantes iniciales, ejecutar selecciónv2 desde el mismo factory con intenciónv1 y comprobar adquisición coherente. Los casos negativos siguen rechazando copia sin receipt y run con zona bloqueada. Además se comprueba que las copias de rana pertenecen a la tabla declarada. Tipos y build de fixture correctos. La ejecución Linux posterior y la inspección seleccionada se registran en QA; estos resultados unitarios no las sustituyen.
 
 ## Entrada en CI sin modificar workflows
 
