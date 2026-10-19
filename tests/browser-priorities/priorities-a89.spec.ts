@@ -187,7 +187,7 @@ test('A89 declared guide and company choices preserve resources, ownership and e
     expect(economic(await read(page))).toBe(before);
     await page.reload();
     await expect(page.locator('.priority-guide-trigger > span')).toHaveCount(0);
-    await page.locator('.priority-guide-trigger').click();
+    await page.locator('.priority-guide-trigger').tap();
     await page
       .getByRole('button', {
         name: lang === 'es' ? 'Consultar orientación' : 'Show guidance',
@@ -360,7 +360,7 @@ test('A89 bean risk stays unknown, precise carriers and draft changes never cons
     );
     await expect(page.locator('[data-bean-mint-preview]')).toBeVisible();
     expect(economic(await read(page))).toBe(before);
-    await page.locator('.bean-carrier').last().click();
+    await page.locator('.bean-carrier').last().tap();
     await expect
       .poll(async () => (await read(page)).assignments)
       .toEqual([{ unitId: 'a89-copy-2', beanId: 'a89-jar-0' }]);
@@ -606,7 +606,7 @@ test('A89 real compiled welcome, starter, guide and Pact consultation cancel wit
     await startExpedition(page, lang);
     const before = (await (await page.request.get('http://127.0.0.1:5610/api/state')).json()).state;
     const guide = page.locator('.priority-guide');
-    await guide.locator('summary').click();
+    await guide.locator('summary').tap();
     const consult = guide.getByRole('button', {
       name: lang === 'es' ? 'Consultar Pacto' : 'Inspect Pact',
       exact: true,

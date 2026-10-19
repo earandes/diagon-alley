@@ -500,7 +500,7 @@ test('A86 duel scene has one pause, recorded house access and remembered present
       await expect(page.locator('.battle-panel')).toHaveAttribute('data-replay-speed', '2');
       await skipBattle(page);
       await expect(page.locator('[data-arena-outcome]')).toBeVisible();
-      await expect(page.locator('.arena-caption button')).toBeFocused();
+      await expect(page.locator('.arena-caption button:not([data-arena-facts-trigger])')).toBeFocused();
       await immutable(page);
     }
 });

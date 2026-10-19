@@ -26,3 +26,5 @@ CI2 conserva3casos correctos antes de aserción obsoleta de copy de grageas. Cap
 CI3 pasó6recorridos antes de fallo real de reflujo320/200. Corrección responsive, diagnóstico geométrico y muestra de grageas/insignia integrados. Build/tipos/skin y30focales correctos; candidato4 para verificar aceptación sin ocultación.
 
 CI4 validó reflujo/fallback (7recorridos) y demostró interceptación de puntero en guía sobre mapa real. Excepción de interacción restaurada, grid heredado eliminado y doble navegación del enlace de fuente corregida. Candidato5 pendiente deCI; no se relajó click, ancho o criterios.
+
+CI5 validó8casos y prefijo App real hasta hechos; selector ambiguo de salida corregido enhelper y6consumidores. Próximo candidato6 sin cambios de producto, con toques emulados explícitos.

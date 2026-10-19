@@ -35,7 +35,7 @@ test('A63 action-to-result profiles closure, owned loot and contextual preparati
   await page.goto('/'); await page.locator('.portal-enter').click(); await startExpedition(page);
   const boss=await reachNode(page,'boss','es'); await page.locator(`[data-node="${boss}"]`).click(); await confirmEvent(page,'es');
   const won=await readGame(page), profiles=[];
-  profiles.push(await measure(page,'boss-back-to-closure',page.locator('.arena-caption button'),page.locator('.expedition-closure')));
+  profiles.push(await measure(page,'boss-back-to-closure',page.locator('.arena-caption button:not([data-arena-facts-trigger])'),page.locator('.expedition-closure')));
   profiles.push(await measure(page,'explicit-next-preparation',page.locator('[data-closure-action="prepare"]'),page.locator('.preparation-dialog[open]')));
   await page.keyboard.press('Escape'); expect(await readGame(page)).toEqual(won);
   const start=await page.evaluate(()=>performance.now());

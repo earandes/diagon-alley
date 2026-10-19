@@ -88,7 +88,7 @@ test('checks arena text against its actual rendered background and the replay fo
   });
   for (const result of report)
     expect(result.minimumRatio, String(result.text)).toBeGreaterThanOrEqual(4.5);
-  const control = page.locator('.arena-caption button');
+  const control = page.locator('.arena-caption button:not([data-arena-facts-trigger])');
   await page.keyboard.press('Tab');
   await control.focus();
   await expect(control).toBeFocused();
