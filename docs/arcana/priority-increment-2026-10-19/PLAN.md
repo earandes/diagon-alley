@@ -28,3 +28,5 @@ CI3 pasó6recorridos antes de fallo real de reflujo320/200. Corrección responsi
 CI4 validó reflujo/fallback (7recorridos) y demostró interceptación de puntero en guía sobre mapa real. Excepción de interacción restaurada, grid heredado eliminado y doble navegación del enlace de fuente corregida. Candidato5 pendiente deCI; no se relajó click, ancho o criterios.
 
 CI5 validó8casos y prefijo App real hasta hechos; selector ambiguo de salida corregido enhelper y6consumidores. Próximo candidato6 sin cambios de producto, con toques emulados explícitos.
+
+CI6:27casosA89 y30A76 correctos; capturas revisadas y cohorte App completa. A70 mostró solape guía/nodo escritorio, corrección con espacio real y aceptación ampliada. Build/tipos correctos localmente; candidato7 pendiente para regresión. Goal activo.

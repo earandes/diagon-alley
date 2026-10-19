@@ -3,9 +3,12 @@ import { changeLanguage } from './game-fixture';
 import { test, expect } from './game-fixture';
 import { readGame, reachNode, confirmEvent } from './route-helpers';
 import { mkdir, writeFile } from 'node:fs/promises';
-const legacyRoot = process.env.ARCANA_NODES_EVIDENCE_ROOT ?? 'docs/arcana/pokelike-2026-10-15/legacy';
+const legacyRoot =
+  process.env.ARCANA_NODES_EVIDENCE_ROOT ?? 'docs/arcana/pokelike-2026-10-15/legacy';
 const evidence = `${legacyRoot}/captures`;
-test.beforeAll(async () => { await mkdir(evidence, { recursive: true }); });
+test.beforeAll(async () => {
+  await mkdir(evidence, { recursive: true });
+});
 for (const language of ['es', 'en'] as const) {
   test(`A56 full map, six silhouettes and stable route ${language}`, async ({ page }, info) => {
     await page.goto('/');
@@ -68,7 +71,7 @@ for (const language of ['es', 'en'] as const) {
         });
         const obstacles = [
           ...document.querySelectorAll(
-            '.expedition-heading h2,.guide-help > summary,.expedition-guide small,.team-token',
+            '.expedition-heading h2,.guide-help > summary,.priority-guide-help > summary,.expedition-guide small,.team-token',
           ),
         ];
         const overlaps = [...document.querySelectorAll('[data-node]')].flatMap((node) => {
@@ -109,7 +112,7 @@ for (const language of ['es', 'en'] as const) {
             );
             const obstacles = [
               ...document.querySelectorAll(
-                '.expedition-heading h2,.guide-help > summary,.expedition-guide small,.team-token',
+                '.expedition-heading h2,.guide-help > summary,.priority-guide-help > summary,.expedition-guide small,.team-token',
               ),
             ].map((e) => {
               const range = document.createRange();

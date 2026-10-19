@@ -71,6 +71,15 @@ html[data-reading-size='large'] {
 .priority-guide-help {
   pointer-events: auto;
 }
+/* Reserve the heading's real hit area. The graph refits this smaller surface;
+   the existing intention reminder already reserves its own, taller shelf. */
+.arcana-map-view
+  main
+  > .expedition-panel[data-map-phase='route']:not(:has(> .intention-reminder))
+  > .map-scroll {
+  margin-top: 60px;
+  height: calc(100% - 60px - var(--party-map-space, 0px));
+}
 .priority-guide-help > summary {
   list-style: none;
   cursor: pointer;

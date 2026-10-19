@@ -606,6 +606,39 @@ test('A89 real compiled welcome, starter, guide and Pact consultation cancel wit
     await startExpedition(page, lang);
     const before = (await (await page.request.get('http://127.0.0.1:5610/api/state')).json()).state;
     const guide = page.locator('.priority-guide');
+    for (const viewport of [
+      { width: 1280, height: 900 },
+      { width: 865, height: 1079 },
+      { width: 390, height: 844 },
+    ]) {
+      await page.setViewportSize(viewport);
+      await expect
+        .poll(() =>
+          page.locator('.map-node').evaluateAll((nodes) => {
+            const help = document.querySelector('.priority-guide-trigger')!.getBoundingClientRect();
+            const map = document.querySelector('.branch-map')!.getBoundingClientRect();
+            return (
+              nodes.length > 0 &&
+              nodes.every((node) => {
+                const r = node.getBoundingClientRect();
+                const clear =
+                  r.right <= help.left ||
+                  r.left >= help.right ||
+                  r.bottom <= help.top ||
+                  r.top >= help.bottom;
+                return (
+                  clear &&
+                  r.top >= map.top &&
+                  r.bottom <= map.bottom &&
+                  r.left >= map.left &&
+                  r.right <= map.right
+                );
+              })
+            );
+          }),
+        )
+        .toBe(true);
+    }
     await guide.locator('summary').tap();
     const consult = guide.getByRole('button', {
       name: lang === 'es' ? 'Consultar Pacto' : 'Inspect Pact',
