@@ -14,6 +14,14 @@ async function selected(page: import('@playwright/test').Page, name: string) {
   )
     return;
   await mkdir(evidence, { recursive: true });
+  await page.evaluate(async () => {
+    await Promise.all(
+      document
+        .getAnimations()
+        .filter((a) => a.effect?.getComputedTiming().iterations !== Infinity)
+        .map((a) => a.finished.catch(() => {})),
+    );
+  });
   await page.screenshot({ path: resolve(evidence, `${name}.png`), fullPage: false });
 }
 for (const pack of ['diagon-alley', 'arcana'])
@@ -100,6 +108,9 @@ for (const pack of ['diagon-alley', 'arcana'])
       await expect(
         page.getByRole('button', { name: lang === 'es' ? 'Combatir · 5' : 'Battle · 5' }),
       ).toBeVisible();
+      await expect(
+        page.getByRole('button', { name: lang === 'es' ? 'Combatir · 5' : 'Battle · 5' }),
+      ).toBeInViewport();
       if (pack === 'diagon-alley' && lang === 'es') await selected(page, 'preparation-names');
     });
     test(`A92 ${pack}/${lang} preparation reflows at 320px with enlarged text`, async ({

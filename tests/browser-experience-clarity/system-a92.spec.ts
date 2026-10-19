@@ -15,7 +15,7 @@ for (const [lang, pack] of [
     });
     await book.click();
     const close = page.getByRole('button', {
-      name: lang === 'es' ? 'Cerrar libro' : 'Close book',
+      name: lang === 'es' ? 'Cerrar el libro' : 'Close the book',
       exact: true,
     });
     await expect(close).toBeVisible();

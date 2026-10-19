@@ -1,0 +1,32 @@
+{
+  "run": 39317496834,
+  "sha": "72434bbfc24b79ae3ebae2c1bff532a7b46f96db",
+  "artifact": "a76-account-evidence",
+  "stats": {
+    "startTime": "2026-10-19T20:15:46.662Z",
+    "duration": 41301.727000000006,
+    "expected": 26,
+    "skipped": 189,
+    "unexpected": 1,
+    "flaky": 0
+  },
+  "failures": [
+    {
+      "title": "A92 es/diagon-alley books retain a visible close with all artwork missing",
+      "project": "chromium-390-a92",
+      "errors": [
+        {
+          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('button', { name: 'Cerrar libro', exact: true })\nExpected: visible\nTimeout: 12000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByRole('button', { name: 'Cerrar libro', exact: true }) with timeout 12000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('button', { name: 'Cerrar libro', exact: true })\u001b[22m\n",
+          "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('button', { name: 'Cerrar libro', exact: true })\nExpected: visible\nTimeout: 12000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByRole('button', { name: 'Cerrar libro', exact: true }) with timeout 12000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('button', { name: 'Cerrar libro', exact: true })\u001b[22m\n\n    at /home/runner/work/diagon-alley/diagon-alley/tests/browser-experience-clarity/system-a92.spec.ts:21:25",
+          "location": {
+            "file": "/home/runner/work/diagon-alley/diagon-alley/tests/browser-experience-clarity/system-a92.spec.ts",
+            "column": 25,
+            "line": 21
+          },
+          "snippet": "\u001b[0m \u001b[90m 19 |\u001b[39m       exact\u001b[33m:\u001b[39m \u001b[36mtrue\u001b[39m\u001b[33m,\u001b[39m\n \u001b[90m 20 |\u001b[39m     })\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 21 |\u001b[39m     \u001b[36mawait\u001b[39m expect(close)\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                         \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 22 |\u001b[39m     \u001b[36mconst\u001b[39m shape \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m close\u001b[33m.\u001b[39mlocator(\u001b[32m'svg'\u001b[39m)\u001b[33m.\u001b[39mevaluate((e) \u001b[33m=>\u001b[39m ({\n \u001b[90m 23 |\u001b[39m       width\u001b[33m:\u001b[39m e\u001b[33m.\u001b[39mgetBoundingClientRect()\u001b[33m.\u001b[39mwidth\u001b[33m,\u001b[39m\n \u001b[90m 24 |\u001b[39m       height\u001b[33m:\u001b[39m e\u001b[33m.\u001b[39mgetBoundingClientRect()\u001b[33m.\u001b[39mheight\u001b[33m,\u001b[39m\u001b[0m"
+        }
+      ]
+    }
+  ],
+  "classification": "Test expected a different close label than the existing localized accessible name. 26 successful cases are partial coverage, not suite acceptance."
+}

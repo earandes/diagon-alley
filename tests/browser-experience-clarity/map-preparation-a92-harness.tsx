@@ -22,6 +22,8 @@ import '../../src/arcana/presentation/game-stage.css';
 import '../../src/arcana/presentation/game-experience.css';
 import '../../src/arcana/presentation/priority-a89.css';
 import '../../src/arcana/presentation/node-event-dialog.css';
+import '../../src/arcana/presentation/node-a60.css';
+import '../../src/arcana/presentation/contextual-preparation.css';
 
 const params = new URLSearchParams(location.search);
 const language = params.get('lang') === 'en' ? 'en' : 'es';

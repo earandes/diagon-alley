@@ -60,6 +60,12 @@ test('A92 same route and names before/after; bounded technical action comparison
     await page.evaluate(async () => {
       await document.fonts.ready;
       await Promise.all([...document.images].map((image) => image.decode().catch(() => {})));
+      await Promise.all(
+        document
+          .getAnimations()
+          .filter((a) => a.effect?.getComputedTiming().iterations !== Infinity)
+          .map((a) => a.finished.catch(() => {})),
+      );
     });
     const shape = await page.locator('.boss-party-name').evaluateAll((names) =>
       names.map((n) => ({
@@ -69,7 +75,14 @@ test('A92 same route and names before/after; bounded technical action comparison
         overflowWrap: getComputedStyle(n).overflowWrap,
       })),
     );
-    measurements.push({ variant, fixture: 'same-five-names', shape });
+    const presentation = await page.locator('dialog').evaluate((element) => ({
+      opacity: getComputedStyle(element).opacity,
+      background: getComputedStyle(element).background,
+      box: element.getBoundingClientRect().toJSON(),
+      scrollHeight: element.scrollHeight,
+      clientHeight: element.clientHeight,
+    }));
+    measurements.push({ variant, fixture: 'same-five-names', shape, presentation });
     if (process.env.ARCANA_CAPTURE_A92 === '1')
       await page.screenshot({
         path: resolve(out, `${variant}-same-preparation.png`),
