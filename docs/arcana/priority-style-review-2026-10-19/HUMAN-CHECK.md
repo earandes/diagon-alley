@@ -9,3 +9,5 @@ Preparada, no ejecutada. Partida de ensayo aislada, sin alterar cuenta habitual.
 5. «Después del combate, averigua qué ocurrió y continúa». Observar si el libro aporta una consecuencia verificable y si la continuación sigue predominando.
 
 Registrar dudas, ayuda, interpretaciones, tiempo activo y pausas sin objetivo. No fijar un umbral de éxito arbitrario para declarar diversión. Validar móvil físico, reflujo/zoom real, interacción con gesto y lector; las capturas y tests Linux no sustituyen estas observaciones.
+
+Hipótesis prioritarias: H1, agrupar la ayuda mantiene la comparación entre planes y devuelve protagonismo a los objetos; H2, distinguir disponibilidad, borrador y consecuencia confirmada ayuda a explicar la próxima decisión. Se contrasta mediante acciones y explicación espontánea de la persona, no con una nota estética o un detector. Ambas siguen pendientes.

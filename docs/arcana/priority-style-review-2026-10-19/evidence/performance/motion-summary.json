@@ -1,0 +1,729 @@
+{
+  "runId": 39280235365,
+  "testedCheckout": "1dfca93108628d2d5fd29940240aad974e2a84dc",
+  "jsonEvidenceCount": 264,
+  "errorContextCount": 0,
+  "arenaWindows": [
+    {
+      "file": "chromium-1280-motion-a69-arena-arcana-en-3x3.json",
+      "p95RafMs": 49.9,
+      "maxRafMs": 66.6,
+      "skipUsableMs": 10.200000000186265,
+      "navigationToSceneReadyMs": 363.6999999997206,
+      "visibleFigures": [
+        "6"
+      ]
+    },
+    {
+      "file": "chromium-1280-motion-a69-arena-arcana-en-5x3.json",
+      "p95RafMs": 33.400000000000006,
+      "maxRafMs": 66.69999999999999,
+      "skipUsableMs": 10.899999999906868,
+      "navigationToSceneReadyMs": 356.89999999990687,
+      "visibleFigures": [
+        "8"
+      ]
+    },
+    {
+      "file": "chromium-1280-motion-a69-arena-arcana-en-5x5.json",
+      "p95RafMs": 33.400000000000034,
+      "maxRafMs": 49.900000000000006,
+      "skipUsableMs": 42.3000000002794,
+      "navigationToSceneReadyMs": 395,
+      "visibleFigures": [
+        "10"
+      ]
+    },
+    {
+      "file": "chromium-1280-motion-a69-arena-arcana-es-3x3.json",
+      "p95RafMs": 33.400000000000006,
+      "maxRafMs": 66.6,
+      "skipUsableMs": 9.699999999720603,
+      "navigationToSceneReadyMs": 335.90000000037253,
+      "visibleFigures": [
+        "6"
+      ]
+    },
+    {
+      "file": "chromium-1280-motion-a69-arena-arcana-es-5x3.json",
+      "p95RafMs": 50.099999999999994,
+      "maxRafMs": 66.6,
+      "skipUsableMs": 10.5,
+      "navigationToSceneReadyMs": 366,
+      "visibleFigures": [
+        "8"
+      ]
+    },
+    {
+      "file": "chromium-1280-motion-a69-arena-arcana-es-5x5.json",
+      "p95RafMs": 33.39999999999998,
+      "maxRafMs": 66.6,
+      "skipUsableMs": 10.399999999906868,
+      "navigationToSceneReadyMs": 397.20000000018626,
+      "visibleFigures": [
+        "10"
+      ]
+    },
+    {
+      "file": "chromium-1280-motion-a69-arena-diagon-alley-en-3x3.json",
+      "p95RafMs": 33.30000000000001,
+      "maxRafMs": 83.29999999999998,
+      "skipUsableMs": 10.199999999720603,
+      "navigationToSceneReadyMs": 323.6999999997206,
+      "visibleFigures": [
+        "6"
+      ]
+    },
+    {
+      "file": "chromium-1280-motion-a69-arena-diagon-alley-en-5x3.json",
+      "p95RafMs": 50,
+      "maxRafMs": 66.69999999999999,
+      "skipUsableMs": 38.5,
+      "navigationToSceneReadyMs": 371.70000000018626,
+      "visibleFigures": [
+        "8"
+      ]
+    },
+    {
+      "file": "chromium-1280-motion-a69-arena-diagon-alley-en-5x5.json",
+      "p95RafMs": 50,
+      "maxRafMs": 66.60000000000002,
+      "skipUsableMs": 11.600000000093132,
+      "navigationToSceneReadyMs": 384.3000000002794,
+      "visibleFigures": [
+        "10"
+      ]
+    },
+    {
+      "file": "chromium-1280-motion-a69-arena-diagon-alley-es-3x3.json",
+      "p95RafMs": 33.400000000000006,
+      "maxRafMs": 83.30000000000001,
+      "skipUsableMs": 26.300000000279397,
+      "navigationToSceneReadyMs": 441.79999999981374,
+      "visibleFigures": [
+        "6"
+      ]
+    },
+    {
+      "file": "chromium-1280-motion-a69-arena-diagon-alley-es-5x3.json",
+      "p95RafMs": 33.400000000000006,
+      "maxRafMs": 66.69999999999999,
+      "skipUsableMs": 42.89999999990687,
+      "navigationToSceneReadyMs": 336.10000000009313,
+      "visibleFigures": [
+        "8"
+      ]
+    },
+    {
+      "file": "chromium-1280-motion-a69-arena-diagon-alley-es-5x5.json",
+      "p95RafMs": 33.400000000000006,
+      "maxRafMs": 66.69999999999999,
+      "skipUsableMs": 10.600000000093132,
+      "navigationToSceneReadyMs": 370.3000000002794,
+      "visibleFigures": [
+        "10"
+      ]
+    },
+    {
+      "file": "chromium-390-motion-a69-arena-arcana-en-3x3.json",
+      "p95RafMs": 33.400000000000006,
+      "maxRafMs": 33.400000000000006,
+      "skipUsableMs": 9,
+      "navigationToSceneReadyMs": 257.90000000037253,
+      "visibleFigures": [
+        "6"
+      ]
+    },
+    {
+      "file": "chromium-390-motion-a69-arena-arcana-en-5x3.json",
+      "p95RafMs": 33.400000000000006,
+      "maxRafMs": 50,
+      "skipUsableMs": 10.600000000093132,
+      "navigationToSceneReadyMs": 267.79999999981374,
+      "visibleFigures": [
+        "8"
+      ]
+    },
+    {
+      "file": "chromium-390-motion-a69-arena-arcana-en-5x5.json",
+      "p95RafMs": 50,
+      "maxRafMs": 50,
+      "skipUsableMs": 10.100000000093132,
+      "navigationToSceneReadyMs": 314.39999999990687,
+      "visibleFigures": [
+        "10"
+      ]
+    },
+    {
+      "file": "chromium-390-motion-a69-arena-arcana-es-3x3.json",
+      "p95RafMs": 16.80000000000001,
+      "maxRafMs": 50,
+      "skipUsableMs": 10.900000000372529,
+      "navigationToSceneReadyMs": 255,
+      "visibleFigures": [
+        "6"
+      ]
+    },
+    {
+      "file": "chromium-390-motion-a69-arena-arcana-es-5x3.json",
+      "p95RafMs": 33.19999999999999,
+      "maxRafMs": 33.400000000000006,
+      "skipUsableMs": 10.100000000093132,
+      "navigationToSceneReadyMs": 239.20000000018626,
+      "visibleFigures": [
+        "8"
+      ]
+    },
+    {
+      "file": "chromium-390-motion-a69-arena-arcana-es-5x5.json",
+      "p95RafMs": 33.400000000000006,
+      "maxRafMs": 50.099999999999994,
+      "skipUsableMs": 10.399999999906868,
+      "navigationToSceneReadyMs": 362.60000000009313,
+      "visibleFigures": [
+        "10"
+      ]
+    },
+    {
+      "file": "chromium-390-motion-a69-arena-diagon-alley-en-3x3.json",
+      "p95RafMs": 33.400000000000006,
+      "maxRafMs": 33.400000000000006,
+      "skipUsableMs": 10.100000000093132,
+      "navigationToSceneReadyMs": 242.60000000009313,
+      "visibleFigures": [
+        "6"
+      ]
+    },
+    {
+      "file": "chromium-390-motion-a69-arena-diagon-alley-en-5x3.json",
+      "p95RafMs": 33.3,
+      "maxRafMs": 33.400000000000006,
+      "skipUsableMs": 10.100000000093132,
+      "navigationToSceneReadyMs": 246.89999999990687,
+      "visibleFigures": [
+        "8"
+      ]
+    },
+    {
+      "file": "chromium-390-motion-a69-arena-diagon-alley-en-5x5.json",
+      "p95RafMs": 33.39999999999999,
+      "maxRafMs": 50,
+      "skipUsableMs": 11.400000000372529,
+      "navigationToSceneReadyMs": 326.79999999981374,
+      "visibleFigures": [
+        "10"
+      ]
+    },
+    {
+      "file": "chromium-390-motion-a69-arena-diagon-alley-es-3x3.json",
+      "p95RafMs": 49.900000000000034,
+      "maxRafMs": 50,
+      "skipUsableMs": 11.299999999813735,
+      "navigationToSceneReadyMs": 380.5,
+      "visibleFigures": [
+        "6"
+      ]
+    },
+    {
+      "file": "chromium-390-motion-a69-arena-diagon-alley-es-5x3.json",
+      "p95RafMs": 33.400000000000006,
+      "maxRafMs": 50,
+      "skipUsableMs": 11,
+      "navigationToSceneReadyMs": 258.10000000009313,
+      "visibleFigures": [
+        "8"
+      ]
+    },
+    {
+      "file": "chromium-390-motion-a69-arena-diagon-alley-es-5x5.json",
+      "p95RafMs": 33.400000000000006,
+      "maxRafMs": 49.89999999999998,
+      "skipUsableMs": 11,
+      "navigationToSceneReadyMs": 294.39999999990687,
+      "visibleFigures": [
+        "10"
+      ]
+    },
+    {
+      "file": "chromium-865-motion-a69-arena-arcana-en-3x3.json",
+      "p95RafMs": 49.99999999999999,
+      "maxRafMs": 50,
+      "skipUsableMs": 22.09999999962747,
+      "navigationToSceneReadyMs": 325.90000000037253,
+      "visibleFigures": [
+        "6"
+      ]
+    },
+    {
+      "file": "chromium-865-motion-a69-arena-arcana-en-5x3.json",
+      "p95RafMs": 50,
+      "maxRafMs": 66.79999999999998,
+      "skipUsableMs": 10.5,
+      "navigationToSceneReadyMs": 382.5,
+      "visibleFigures": [
+        "8"
+      ]
+    },
+    {
+      "file": "chromium-865-motion-a69-arena-arcana-en-5x5.json",
+      "p95RafMs": 49.900000000000006,
+      "maxRafMs": 66.69999999999999,
+      "skipUsableMs": 10.799999999813735,
+      "navigationToSceneReadyMs": 376,
+      "visibleFigures": [
+        "10"
+      ]
+    },
+    {
+      "file": "chromium-865-motion-a69-arena-arcana-es-3x3.json",
+      "p95RafMs": 33.400000000000034,
+      "maxRafMs": 50.099999999999994,
+      "skipUsableMs": 43.200000000186265,
+      "navigationToSceneReadyMs": 308,
+      "visibleFigures": [
+        "6"
+      ]
+    },
+    {
+      "file": "chromium-865-motion-a69-arena-arcana-es-5x3.json",
+      "p95RafMs": 33.400000000000034,
+      "maxRafMs": 66.70000000000002,
+      "skipUsableMs": 39.39999999990687,
+      "navigationToSceneReadyMs": 382.79999999981374,
+      "visibleFigures": [
+        "8"
+      ]
+    },
+    {
+      "file": "chromium-865-motion-a69-arena-arcana-es-5x5.json",
+      "p95RafMs": 50.099999999999994,
+      "maxRafMs": 66.69999999999999,
+      "skipUsableMs": 10.5,
+      "navigationToSceneReadyMs": 409,
+      "visibleFigures": [
+        "10"
+      ]
+    },
+    {
+      "file": "chromium-865-motion-a69-arena-diagon-alley-en-3x3.json",
+      "p95RafMs": 33.39999999999998,
+      "maxRafMs": 66.60000000000002,
+      "skipUsableMs": 9.899999999906868,
+      "navigationToSceneReadyMs": 363.60000000009313,
+      "visibleFigures": [
+        "6"
+      ]
+    },
+    {
+      "file": "chromium-865-motion-a69-arena-diagon-alley-en-5x3.json",
+      "p95RafMs": 49.900000000000006,
+      "maxRafMs": 66.69999999999999,
+      "skipUsableMs": 26.100000000093132,
+      "navigationToSceneReadyMs": 400.60000000009313,
+      "visibleFigures": [
+        "8"
+      ]
+    },
+    {
+      "file": "chromium-865-motion-a69-arena-diagon-alley-en-5x5.json",
+      "p95RafMs": 50,
+      "maxRafMs": 66.6,
+      "skipUsableMs": 10.800000000279397,
+      "navigationToSceneReadyMs": 388,
+      "visibleFigures": [
+        "10"
+      ]
+    },
+    {
+      "file": "chromium-865-motion-a69-arena-diagon-alley-es-3x3.json",
+      "p95RafMs": 50,
+      "maxRafMs": 66.69999999999999,
+      "skipUsableMs": 25.200000000186265,
+      "navigationToSceneReadyMs": 420.89999999990687,
+      "visibleFigures": [
+        "6"
+      ]
+    },
+    {
+      "file": "chromium-865-motion-a69-arena-diagon-alley-es-5x3.json",
+      "p95RafMs": 33.400000000000006,
+      "maxRafMs": 50.099999999999994,
+      "skipUsableMs": 48.89999999990687,
+      "navigationToSceneReadyMs": 361.29999999981374,
+      "visibleFigures": [
+        "8"
+      ]
+    },
+    {
+      "file": "chromium-865-motion-a69-arena-diagon-alley-es-5x5.json",
+      "p95RafMs": 33.400000000000006,
+      "maxRafMs": 66.60000000000002,
+      "skipUsableMs": 27.100000000093132,
+      "navigationToSceneReadyMs": 370.10000000009313,
+      "visibleFigures": [
+        "10"
+      ]
+    },
+    {
+      "file": "webkit-1280-motion-a69-arena-arcana-en-3x3.json",
+      "p95RafMs": 54,
+      "maxRafMs": 66,
+      "skipUsableMs": 26,
+      "navigationToSceneReadyMs": 378,
+      "visibleFigures": [
+        "6"
+      ]
+    },
+    {
+      "file": "webkit-1280-motion-a69-arena-arcana-en-5x3.json",
+      "p95RafMs": 67,
+      "maxRafMs": 79,
+      "skipUsableMs": 34,
+      "navigationToSceneReadyMs": 440,
+      "visibleFigures": [
+        "8"
+      ]
+    },
+    {
+      "file": "webkit-1280-motion-a69-arena-arcana-en-5x5.json",
+      "p95RafMs": 77,
+      "maxRafMs": 78,
+      "skipUsableMs": 29,
+      "navigationToSceneReadyMs": 428,
+      "visibleFigures": [
+        "10"
+      ]
+    },
+    {
+      "file": "webkit-1280-motion-a69-arena-arcana-es-3x3.json",
+      "p95RafMs": 53,
+      "maxRafMs": 53,
+      "skipUsableMs": 19,
+      "navigationToSceneReadyMs": 435,
+      "visibleFigures": [
+        "6"
+      ]
+    },
+    {
+      "file": "webkit-1280-motion-a69-arena-arcana-es-5x3.json",
+      "p95RafMs": 71,
+      "maxRafMs": 73,
+      "skipUsableMs": 28,
+      "navigationToSceneReadyMs": 424,
+      "visibleFigures": [
+        "8"
+      ]
+    },
+    {
+      "file": "webkit-1280-motion-a69-arena-arcana-es-5x5.json",
+      "p95RafMs": 60,
+      "maxRafMs": 65,
+      "skipUsableMs": 38,
+      "navigationToSceneReadyMs": 455,
+      "visibleFigures": [
+        "10"
+      ]
+    },
+    {
+      "file": "webkit-1280-motion-a69-arena-diagon-alley-en-3x3.json",
+      "p95RafMs": 53,
+      "maxRafMs": 69,
+      "skipUsableMs": 24,
+      "navigationToSceneReadyMs": 426,
+      "visibleFigures": [
+        "6"
+      ]
+    },
+    {
+      "file": "webkit-1280-motion-a69-arena-diagon-alley-en-5x3.json",
+      "p95RafMs": 54,
+      "maxRafMs": 64,
+      "skipUsableMs": 34,
+      "navigationToSceneReadyMs": 431,
+      "visibleFigures": [
+        "8"
+      ]
+    },
+    {
+      "file": "webkit-1280-motion-a69-arena-diagon-alley-en-5x5.json",
+      "p95RafMs": 55,
+      "maxRafMs": 68,
+      "skipUsableMs": 20,
+      "navigationToSceneReadyMs": 442,
+      "visibleFigures": [
+        "10"
+      ]
+    },
+    {
+      "file": "webkit-1280-motion-a69-arena-diagon-alley-es-3x3.json",
+      "p95RafMs": 89,
+      "maxRafMs": 106,
+      "skipUsableMs": 32,
+      "navigationToSceneReadyMs": 504,
+      "visibleFigures": [
+        "6"
+      ]
+    },
+    {
+      "file": "webkit-1280-motion-a69-arena-diagon-alley-es-5x3.json",
+      "p95RafMs": 61,
+      "maxRafMs": 65,
+      "skipUsableMs": 27,
+      "navigationToSceneReadyMs": 414,
+      "visibleFigures": [
+        "8"
+      ]
+    },
+    {
+      "file": "webkit-1280-motion-a69-arena-diagon-alley-es-5x5.json",
+      "p95RafMs": 72,
+      "maxRafMs": 74,
+      "skipUsableMs": 33,
+      "navigationToSceneReadyMs": 431,
+      "visibleFigures": [
+        "10"
+      ]
+    },
+    {
+      "file": "webkit-390-motion-a69-arena-arcana-en-3x3.json",
+      "p95RafMs": 35,
+      "maxRafMs": 51,
+      "skipUsableMs": 34,
+      "navigationToSceneReadyMs": 310,
+      "visibleFigures": [
+        "6"
+      ]
+    },
+    {
+      "file": "webkit-390-motion-a69-arena-arcana-en-5x3.json",
+      "p95RafMs": 37,
+      "maxRafMs": 40,
+      "skipUsableMs": 20,
+      "navigationToSceneReadyMs": 285,
+      "visibleFigures": [
+        "8"
+      ]
+    },
+    {
+      "file": "webkit-390-motion-a69-arena-arcana-en-5x5.json",
+      "p95RafMs": 31,
+      "maxRafMs": 47,
+      "skipUsableMs": 27,
+      "navigationToSceneReadyMs": 397,
+      "visibleFigures": [
+        "10"
+      ]
+    },
+    {
+      "file": "webkit-390-motion-a69-arena-arcana-es-3x3.json",
+      "p95RafMs": 39,
+      "maxRafMs": 47,
+      "skipUsableMs": 20,
+      "navigationToSceneReadyMs": 285,
+      "visibleFigures": [
+        "6"
+      ]
+    },
+    {
+      "file": "webkit-390-motion-a69-arena-arcana-es-5x3.json",
+      "p95RafMs": 38,
+      "maxRafMs": 56,
+      "skipUsableMs": 24,
+      "navigationToSceneReadyMs": 319,
+      "visibleFigures": [
+        "8"
+      ]
+    },
+    {
+      "file": "webkit-390-motion-a69-arena-arcana-es-5x5.json",
+      "p95RafMs": 32,
+      "maxRafMs": 46,
+      "skipUsableMs": 30,
+      "navigationToSceneReadyMs": 387,
+      "visibleFigures": [
+        "10"
+      ]
+    },
+    {
+      "file": "webkit-390-motion-a69-arena-diagon-alley-en-3x3.json",
+      "p95RafMs": 45,
+      "maxRafMs": 48,
+      "skipUsableMs": 28,
+      "navigationToSceneReadyMs": 316,
+      "visibleFigures": [
+        "6"
+      ]
+    },
+    {
+      "file": "webkit-390-motion-a69-arena-diagon-alley-en-5x3.json",
+      "p95RafMs": 43,
+      "maxRafMs": 44,
+      "skipUsableMs": 28,
+      "navigationToSceneReadyMs": 306,
+      "visibleFigures": [
+        "8"
+      ]
+    },
+    {
+      "file": "webkit-390-motion-a69-arena-diagon-alley-en-5x5.json",
+      "p95RafMs": 32,
+      "maxRafMs": 54,
+      "skipUsableMs": 26,
+      "navigationToSceneReadyMs": 393,
+      "visibleFigures": [
+        "10"
+      ]
+    },
+    {
+      "file": "webkit-390-motion-a69-arena-diagon-alley-es-3x3.json",
+      "p95RafMs": 80,
+      "maxRafMs": 121,
+      "skipUsableMs": 32,
+      "navigationToSceneReadyMs": 462,
+      "visibleFigures": [
+        "6"
+      ]
+    },
+    {
+      "file": "webkit-390-motion-a69-arena-diagon-alley-es-5x3.json",
+      "p95RafMs": 34,
+      "maxRafMs": 43,
+      "skipUsableMs": 35,
+      "navigationToSceneReadyMs": 272,
+      "visibleFigures": [
+        "8"
+      ]
+    },
+    {
+      "file": "webkit-390-motion-a69-arena-diagon-alley-es-5x5.json",
+      "p95RafMs": 42,
+      "maxRafMs": 45,
+      "skipUsableMs": 31,
+      "navigationToSceneReadyMs": 312,
+      "visibleFigures": [
+        "10"
+      ]
+    },
+    {
+      "file": "webkit-865-motion-a69-arena-arcana-en-3x3.json",
+      "p95RafMs": 49,
+      "maxRafMs": 50,
+      "skipUsableMs": 25,
+      "navigationToSceneReadyMs": 285,
+      "visibleFigures": [
+        "6"
+      ]
+    },
+    {
+      "file": "webkit-865-motion-a69-arena-arcana-en-5x3.json",
+      "p95RafMs": 55,
+      "maxRafMs": 71,
+      "skipUsableMs": 27,
+      "navigationToSceneReadyMs": 338,
+      "visibleFigures": [
+        "8"
+      ]
+    },
+    {
+      "file": "webkit-865-motion-a69-arena-arcana-en-5x5.json",
+      "p95RafMs": 59,
+      "maxRafMs": 69,
+      "skipUsableMs": 29,
+      "navigationToSceneReadyMs": 407,
+      "visibleFigures": [
+        "10"
+      ]
+    },
+    {
+      "file": "webkit-865-motion-a69-arena-arcana-es-3x3.json",
+      "p95RafMs": 48,
+      "maxRafMs": 61,
+      "skipUsableMs": 22,
+      "navigationToSceneReadyMs": 349,
+      "visibleFigures": [
+        "6"
+      ]
+    },
+    {
+      "file": "webkit-865-motion-a69-arena-arcana-es-5x3.json",
+      "p95RafMs": 55,
+      "maxRafMs": 81,
+      "skipUsableMs": 47,
+      "navigationToSceneReadyMs": 428,
+      "visibleFigures": [
+        "8"
+      ]
+    },
+    {
+      "file": "webkit-865-motion-a69-arena-arcana-es-5x5.json",
+      "p95RafMs": 67,
+      "maxRafMs": 68,
+      "skipUsableMs": 23,
+      "navigationToSceneReadyMs": 426,
+      "visibleFigures": [
+        "10"
+      ]
+    },
+    {
+      "file": "webkit-865-motion-a69-arena-diagon-alley-en-3x3.json",
+      "p95RafMs": 57,
+      "maxRafMs": 71,
+      "skipUsableMs": 26,
+      "navigationToSceneReadyMs": 332,
+      "visibleFigures": [
+        "6"
+      ]
+    },
+    {
+      "file": "webkit-865-motion-a69-arena-diagon-alley-en-5x3.json",
+      "p95RafMs": 52,
+      "maxRafMs": 62,
+      "skipUsableMs": 31,
+      "navigationToSceneReadyMs": 409,
+      "visibleFigures": [
+        "8"
+      ]
+    },
+    {
+      "file": "webkit-865-motion-a69-arena-diagon-alley-en-5x5.json",
+      "p95RafMs": 65,
+      "maxRafMs": 70,
+      "skipUsableMs": 27,
+      "navigationToSceneReadyMs": 416,
+      "visibleFigures": [
+        "10"
+      ]
+    },
+    {
+      "file": "webkit-865-motion-a69-arena-diagon-alley-es-3x3.json",
+      "p95RafMs": 92,
+      "maxRafMs": 124,
+      "skipUsableMs": 40,
+      "navigationToSceneReadyMs": 569,
+      "visibleFigures": [
+        "6"
+      ]
+    },
+    {
+      "file": "webkit-865-motion-a69-arena-diagon-alley-es-5x3.json",
+      "p95RafMs": 50,
+      "maxRafMs": 58,
+      "skipUsableMs": 33,
+      "navigationToSceneReadyMs": 406,
+      "visibleFigures": [
+        "8"
+      ]
+    },
+    {
+      "file": "webkit-865-motion-a69-arena-diagon-alley-es-5x5.json",
+      "p95RafMs": 53,
+      "maxRafMs": 78,
+      "skipUsableMs": 53,
+      "navigationToSceneReadyMs": 432,
+      "visibleFigures": [
+        "10"
+      ]
+    }
+  ],
+  "limits": "Static images do not prove motion. Declared fixed-seed presentation fixtures. P95 rAF is not GPU time; 20ms is an unmet target in multiple windows. Resource counters are not global leak proof. Full suite counts require final job logs."
+}

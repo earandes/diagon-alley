@@ -1,0 +1,128 @@
+{
+  "runId": 39280235365,
+  "testedHead": "19f0b4fa1becad9f779b05c1936daeb86b544e07",
+  "cohort": "Existing A75 paired benchmark, not a newly added profile. 390x844 ES Diagon declared mastery5x5 AB-BA-AB; module evaluated before fixture mount; not a physical device, GPU measurement or cold-start proof.",
+  "samples": [
+    {
+      "engine": "chromium",
+      "pair": 0,
+      "variant": "baseline",
+      "battleHash": "f431632086d79fb237469f2573d6b33ddb85c5f16b6b43b26e97e3d87ce74730",
+      "p95RafMs": 16.799999999999272,
+      "maxRafMs": 16.80000000000109,
+      "actionToReadyFrameMs": 324,
+      "navigationToReadyFrameMs": 478.80000000004657
+    },
+    {
+      "engine": "chromium",
+      "pair": 0,
+      "variant": "current",
+      "battleHash": "f431632086d79fb237469f2573d6b33ddb85c5f16b6b43b26e97e3d87ce74730",
+      "p95RafMs": 16.799999999999272,
+      "maxRafMs": 16.80000000000109,
+      "actionToReadyFrameMs": 348,
+      "navigationToReadyFrameMs": 498.79999999998836
+    },
+    {
+      "engine": "chromium",
+      "pair": 1,
+      "variant": "current",
+      "battleHash": "f431632086d79fb237469f2573d6b33ddb85c5f16b6b43b26e97e3d87ce74730",
+      "p95RafMs": 16.700000000000728,
+      "maxRafMs": 16.80000000000109,
+      "actionToReadyFrameMs": 335.80000000004657,
+      "navigationToReadyFrameMs": 496.10000000009313
+    },
+    {
+      "engine": "chromium",
+      "pair": 1,
+      "variant": "baseline",
+      "battleHash": "f431632086d79fb237469f2573d6b33ddb85c5f16b6b43b26e97e3d87ce74730",
+      "p95RafMs": 16.799999999999272,
+      "maxRafMs": 16.80000000000109,
+      "actionToReadyFrameMs": 316.4000000000233,
+      "navigationToReadyFrameMs": 473.0999999999767
+    },
+    {
+      "engine": "chromium",
+      "pair": 2,
+      "variant": "baseline",
+      "battleHash": "f431632086d79fb237469f2573d6b33ddb85c5f16b6b43b26e97e3d87ce74730",
+      "p95RafMs": 16.799999999999272,
+      "maxRafMs": 16.80000000000109,
+      "actionToReadyFrameMs": 320,
+      "navigationToReadyFrameMs": 473.9000000000233
+    },
+    {
+      "engine": "chromium",
+      "pair": 2,
+      "variant": "current",
+      "battleHash": "f431632086d79fb237469f2573d6b33ddb85c5f16b6b43b26e97e3d87ce74730",
+      "p95RafMs": 16.700000000000728,
+      "maxRafMs": 16.80000000000109,
+      "actionToReadyFrameMs": 320.5999999999767,
+      "navigationToReadyFrameMs": 459.9000000000233
+    },
+    {
+      "engine": "webkit",
+      "pair": 0,
+      "variant": "baseline",
+      "battleHash": "f431632086d79fb237469f2573d6b33ddb85c5f16b6b43b26e97e3d87ce74730",
+      "p95RafMs": 22,
+      "maxRafMs": 106,
+      "actionToReadyFrameMs": 743,
+      "navigationToReadyFrameMs": 939
+    },
+    {
+      "engine": "webkit",
+      "pair": 0,
+      "variant": "current",
+      "battleHash": "f431632086d79fb237469f2573d6b33ddb85c5f16b6b43b26e97e3d87ce74730",
+      "p95RafMs": 22,
+      "maxRafMs": 34,
+      "actionToReadyFrameMs": 524,
+      "navigationToReadyFrameMs": 709
+    },
+    {
+      "engine": "webkit",
+      "pair": 1,
+      "variant": "current",
+      "battleHash": "f431632086d79fb237469f2573d6b33ddb85c5f16b6b43b26e97e3d87ce74730",
+      "p95RafMs": 21,
+      "maxRafMs": 107,
+      "actionToReadyFrameMs": 393,
+      "navigationToReadyFrameMs": 584
+    },
+    {
+      "engine": "webkit",
+      "pair": 1,
+      "variant": "baseline",
+      "battleHash": "f431632086d79fb237469f2573d6b33ddb85c5f16b6b43b26e97e3d87ce74730",
+      "p95RafMs": 22,
+      "maxRafMs": 27,
+      "actionToReadyFrameMs": 425,
+      "navigationToReadyFrameMs": 600
+    },
+    {
+      "engine": "webkit",
+      "pair": 2,
+      "variant": "baseline",
+      "battleHash": "f431632086d79fb237469f2573d6b33ddb85c5f16b6b43b26e97e3d87ce74730",
+      "p95RafMs": 22,
+      "maxRafMs": 29,
+      "actionToReadyFrameMs": 454,
+      "navigationToReadyFrameMs": 629
+    },
+    {
+      "engine": "webkit",
+      "pair": 2,
+      "variant": "current",
+      "battleHash": "f431632086d79fb237469f2573d6b33ddb85c5f16b6b43b26e97e3d87ce74730",
+      "p95RafMs": 23,
+      "maxRafMs": 40,
+      "actionToReadyFrameMs": 435,
+      "navigationToReadyFrameMs": 628
+    }
+  ],
+  "limits": "Prior target20ms remains a target, not a universal result; timings include host variability. This UI revision makes no universal speed improvement claim. Raw observations, including unfavorable samples, preserved losslessly."
+}

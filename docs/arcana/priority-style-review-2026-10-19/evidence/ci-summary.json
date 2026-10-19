@@ -1,0 +1,66 @@
+{
+  "runId": 39280235365,
+  "url": "https://github.com/earandes/diagon-alley/actions/runs/39280235365",
+  "status": "completed",
+  "conclusion": "success",
+  "testedHead": "19f0b4fa1becad9f779b05c1936daeb86b544e07",
+  "testedCheckout": "1dfca93108628d2d5fd29940240aad974e2a84dc",
+  "treeIdentical": true,
+  "jobs": [
+    {
+      "databaseId": 118153695468,
+      "name": "check",
+      "status": "completed",
+      "conclusion": "success",
+      "startedAt": "2026-10-19T15:47:04Z",
+      "completedAt": "2026-10-19T16:37:02Z"
+    },
+    {
+      "databaseId": 118176041160,
+      "name": "regression",
+      "status": "completed",
+      "conclusion": "success",
+      "startedAt": "2026-10-19T16:37:06Z",
+      "completedAt": "2026-10-19T17:03:57Z"
+    }
+  ],
+  "unitPassed": 759,
+  "integrationPassed": 120,
+  "contentValidationPassed": 6,
+  "browserPassed": 549,
+  "plannedBrowserSkipped": 303,
+  "regression": {
+    "general": 56,
+    "progression": 24,
+    "gameplay": 16,
+    "headerPact": 20,
+    "intentions": 8,
+    "pwa": 12,
+    "performanceBaseline": 1,
+    "performanceCurrent": 1
+  },
+  "regressionLogSha256": "f867ecd957b309023c36d9728c6267d900c00a2da7ee69fe23ec7fd91e20a818",
+  "localBrowserOpened": false,
+  "productionAssetsCreated": false,
+  "mainMerged": false,
+  "earlierAttempts": [
+    {
+      "runId": 39277262203,
+      "head": "76984caa164e6f917762b4d4415207f77b2289df",
+      "conclusion": "cancelled",
+      "reason": "New selected screenshot exposed S07; fixed before new candidate."
+    },
+    {
+      "runId": 39279045685,
+      "head": "bff4488a4d5d21496965e231f09bc708339c598f",
+      "conclusion": "cancelled",
+      "observedFailure": {
+        "passed": 4,
+        "failed": 1,
+        "skippedAfterMaxFailures": 91
+      },
+      "reason": "Actual CSS cascade defect; specificity corrected without changing acceptance."
+    }
+  ],
+  "limits": "Technical automated validation and selected expert visual inspection; not human comprehension, retention, real zoom/screen reader or physical device. Performance targets not universally met; all unfavorable samples retained."
+}

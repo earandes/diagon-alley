@@ -1,0 +1,123 @@
+{
+  "runId": 39280235365,
+  "testedHead": "19f0b4fa1becad9f779b05c1936daeb86b544e07",
+  "testedCheckout": "1dfca93108628d2d5fd29940240aad974e2a84dc",
+  "checkoutTreeIdentical": true,
+  "tree": "1a6b0cdec0831f4f4ce51647dd15ecf6b7ffd324",
+  "stats": {
+    "startTime": "2026-10-19T15:49:51.079Z",
+    "duration": 198637.669,
+    "expected": 57,
+    "skipped": 39,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "images": [
+    {
+      "file": "selected-battle-390.png",
+      "sha256": "bdf69b0e4de33ae2847f8ed8efce4d837e9d4ae678087f11bfa21be8c2b46458",
+      "origin": "CI Linux Chromium",
+      "fixture": true,
+      "language": "es",
+      "pack": "diagon-alley",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "inspectedVisually": true
+    },
+    {
+      "file": "selected-beans-390.png",
+      "sha256": "e80d0201891de45a9295b0cf3882a2847cefa3f6a9012073cf1e5f9bfb71ff0f",
+      "origin": "CI Linux Chromium",
+      "fixture": true,
+      "language": "es",
+      "pack": "diagon-alley",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "inspectedVisually": true
+    },
+    {
+      "file": "selected-collection-390.png",
+      "sha256": "b37d025674a0caf80f9952b4f4e9f43ea77388e24619872e66b10c194e3cc73f",
+      "origin": "CI Linux Chromium",
+      "fixture": false,
+      "language": "es",
+      "pack": "diagon-alley",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "inspectedVisually": true
+    },
+    {
+      "file": "selected-company-390.png",
+      "sha256": "f1c4c05fb007436ff51b9a08819d6971e50c311c3847e0890d42142b0d82a100",
+      "origin": "CI Linux Chromium",
+      "fixture": true,
+      "language": "es",
+      "pack": "diagon-alley",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "inspectedVisually": true
+    },
+    {
+      "file": "selected-company-help-1280.png",
+      "sha256": "c5a05fa3eabb234b974e6dab1aad57a59f7047bbc9a7682018d79b8794504e9e",
+      "origin": "CI Linux Chromium",
+      "fixture": true,
+      "language": "en",
+      "pack": "arcana",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "inspectedVisually": true
+    },
+    {
+      "file": "selected-forge-390.png",
+      "sha256": "b6f1fb0c2e9ee091a4547f0a3fa25e14b0e24f64ad55af2283c019a85195b06e",
+      "origin": "CI Linux Chromium",
+      "fixture": false,
+      "language": "es",
+      "pack": "diagon-alley",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "inspectedVisually": true
+    },
+    {
+      "file": "selected-guide-390.png",
+      "sha256": "7761ee9bbdacab8c78a5e33e51f44bc08b7c2b8b0aafbb1d65d2260fd64fde49",
+      "origin": "CI Linux Chromium",
+      "fixture": false,
+      "language": "es",
+      "pack": "diagon-alley",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "inspectedVisually": true
+    },
+    {
+      "file": "selected-reading-390.png",
+      "sha256": "9ff0af2cbf5dd86e23b1a64af52cba73251a0067172dd34e5b364b4b6d4483fe",
+      "origin": "CI Linux Chromium",
+      "fixture": true,
+      "language": "es",
+      "pack": "diagon-alley",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "inspectedVisually": true
+    }
+  ],
+  "capturePolicy": "Eight explicit selected Linux screenshots; no automatic screenshot matrix, video or trace. No local browser opened.",
+  "limits": "Static composition only; selected pairs are not the whole behavioral matrix; declared fixtures are not earned campaign content or human observations. Full workflow later concluded success; see ../ci-summary.json."
+}

@@ -6,14 +6,14 @@
 
 Revisión de todas las superficies nuevas A89: guía, intención de compañía/recordatorio, hechos del combate, lectura en Ajustes, Cromodex y fuentes/objetivo, comparación de varitas y preparación/riesgo de grageas. PM01/14 y PM10/22 no añaden pantallas; se comprueba que no se presenten como UI nueva. Se reutilizan las seis imágenes seleccionadas de CI39261802331 y los contratos/cobertura de A89. Capturas estáticas acreditan composición, no movimiento ni comprensión.
 
-Game UI/UX, Impeccable y entrega-iterativa aplicados. Dos revisiones aisladas: Assessment A diseño independiente antes de conocer detector; Assessment B detector estático y cobertura. Restricciones del Mac prevalecen: ninguna apertura de navegador, overlay, perfil, grabación o captura local. Comprobación gráfica nueva solo CI Linux, guard original, serie, un worker, cero reintentos. Una revisión batched y una confirmación; no ciclos cosméticos abiertos.
+Game UI/UX, Impeccable y entrega-iterativa aplicados. Dos revisiones aisladas: Assessment A diseño independiente antes de conocer detector; Assessment B detector estático y cobertura. Restricciones del Mac prevalecen: ninguna apertura de navegador, overlay, perfil, grabación o captura local. Comprobación gráfica nueva solo CI Linux, guard original, serie, un worker, cero reintentos. Lote de revisión acotado. La confirmación descubrió S07 y después su defecto de cascada; tres candidatos documentados, con corrección demostrada entre ejecuciones. No ciclos cosméticos abiertos.
 
 ## Correcciones acotadas y aceptación
 
 | ID | Evidencia → problema | Cambio mínimo → aceptación |
 | --- | --- | --- |
 | S01 | Source: aria-label genérico sustituye la instrucción visible de la guía | Nombre accesible conserva la instrucción ES/EN; icono solo sigue nombrado. Abrir/cerrar no opera ni pierde foco. |
-| S02 | Source compartido: en cierre se proyectan todas las copias a PV máximos, pero el texto dice «en pie» | Explicar identidades propias disponibles para preparar y necesidad de incluirlas/en pie al confirmar; sin afirmar compañía ya activa. No cambiar cálculo, disponibilidad o reglas. |
+| S02 | Source compartido: en cierre se proyectan todas las copias a PV máximos, pero el texto dice «en pie» | Explicar identidades propias disponibles para preparar; solo contribuyen las identidades distintas en pie de la formación confirmada, sin exigir incluir toda la colección ni afirmar compañía ya activa. No cambiar cálculo, disponibilidad o reglas. |
 | S03 | PNG compañía/source: el escudo seleccionado se convierte en libro en recordatorio | Conservar HouseInsignia en seleccionado, activo, cumplido o no disponible; estado textual, pack e idioma intactos. |
 | S04 | PNG compañía: tres «Cómo intentarlo» y barra «?» compiten con tres objetos | Un libro de ayuda para comparar todas las alternativas antes de elegir. Tres objetos siguen siendo acciones explícitas; abandonar secundario. Consulta no guarda ni consume. Semántica nativa, foco y objetivos cómodos conservados. |
 | S05 | PNG Cromodex: versión técnica acompaña probabilidad en primer plano | Mantener fuente y probabilidad exacta visibles; versión y explicación aleatoria bajo «Cómo obtenerlo». Mismo contenido/objetivo/propietario, sin cambiar azar. |

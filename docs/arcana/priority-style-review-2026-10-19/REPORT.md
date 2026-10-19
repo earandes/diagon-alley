@@ -49,6 +49,10 @@ Detector B inicial: siete TSX, salida0 y `[]`. Detector final sobre los bytes mo
 
 La primera confirmación39277262203 pasó57casos de cuentas/prioridades y39omisiones deliberadas, incluyendo S01–S06. La captura adicional de Ajustes descubrió S07. Se canceló deliberadamente el resto de esa ejecución para corregirlo y validar un único candidato final; no se presenta la cancelación como fallo de producto ni batería completa superada. Captura desfavorable preservada.
 
-CI final pendiente en el momento de redactar este contrato/informe; resultados finales en [QA](QA.md). ES/EN×packs/tamaños se comprueba por pruebas, no por una matriz de capturas. Ocho imágenes nuevas previstas y explícitas: cinco superficies seleccionadas originales, guía App, lectura y ayuda de compañía escritorio EN/ARCANA. Observación humana, lector real, zoom real y dispositivo físico pendientes.
+Confirmación final: ocho imágenes nuevas inspeccionadas por el coordinador y Assessment A; no nuevo defecto bloqueante en la selección. Los57casos de cuentas/prioridades y114de experienciaA75 pasan sobre19f0b4f/checkout1dfca931 idéntico. CI39280235365 completa correcta:759unitarias,120PG/Redis y549browser, con303omisiones deliberadas. Resultados, SHA y límites en [QA](QA.md). ES/EN×packs/tamaños se comprueba por pruebas, no por una matriz de capturas. Ocho imágenes nuevas explícitas: cinco superficies seleccionadas originales, guía App, lectura y ayuda de compañía escritorio EN/ARCANA. Observación humana, lector real, zoom real y dispositivo físico pendientes.
 
 Questions skipped: Enric ya fijó estilo, concisión y autorización para corregir; no se requiere otra decisión de producto para este lote.
+
+## Entrega
+
+S01–S07 implementados y técnicamente comprobados en la rama, con ocho capturas seleccionadas inspeccionadas y regresión completa correcta. [Galería](GALLERY.md), [archivos y alcance](CHANGES.md), [sesión humana pendiente](HUMAN-CHECK.md). No merge, despliegue o publicación. La aceptación de estilo no declara rendimiento universal: las ventanas A69 conservan extremos hasta92msP95rAF WebKit, frente90ms en la cohorte histórica no pareada; sin atribución causal a A90.

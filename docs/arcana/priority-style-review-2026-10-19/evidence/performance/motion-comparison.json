@@ -1,0 +1,655 @@
+{
+  "historicalRun": 39261802331,
+  "currentRun": 39280235365,
+  "comparability": "Same existing fixture filenames/configuration; separate CI runs without AB pairing, host equivalence, repetition or causal attribution. Short finite replay windows are not universal sustained performance. Neither suite enforces the 20ms aspirational target.",
+  "rows": [
+    {
+      "file": "chromium-1280-motion-a69-arena-arcana-en-3x3.json",
+      "oldCheckout": "200a92c82ca71004223eb2f3bde886ce8d22615f",
+      "newCheckout": "1dfca93108628d2d5fd29940240aad974e2a84dc",
+      "oldP95RafMs": 33.30000000000001,
+      "newP95RafMs": 49.9,
+      "oldSamples": 29,
+      "newSamples": 34
+    },
+    {
+      "file": "chromium-1280-motion-a69-arena-arcana-en-5x3.json",
+      "oldCheckout": "200a92c82ca71004223eb2f3bde886ce8d22615f",
+      "newCheckout": "1dfca93108628d2d5fd29940240aad974e2a84dc",
+      "oldP95RafMs": 49.900000000000006,
+      "newP95RafMs": 33.400000000000006,
+      "oldSamples": 30,
+      "newSamples": 36
+    },
+    {
+      "file": "chromium-1280-motion-a69-arena-arcana-en-5x5.json",
+      "oldCheckout": "200a92c82ca71004223eb2f3bde886ce8d22615f",
+      "newCheckout": "1dfca93108628d2d5fd29940240aad974e2a84dc",
+      "oldP95RafMs": 50,
+      "newP95RafMs": 33.400000000000034,
+      "oldSamples": 35,
+      "newSamples": 36
+    },
+    {
+      "file": "chromium-1280-motion-a69-arena-arcana-es-3x3.json",
+      "oldCheckout": "200a92c82ca71004223eb2f3bde886ce8d22615f",
+      "newCheckout": "1dfca93108628d2d5fd29940240aad974e2a84dc",
+      "oldP95RafMs": 33.400000000000006,
+      "newP95RafMs": 33.400000000000006,
+      "oldSamples": 29,
+      "newSamples": 35
+    },
+    {
+      "file": "chromium-1280-motion-a69-arena-arcana-es-5x3.json",
+      "oldCheckout": "200a92c82ca71004223eb2f3bde886ce8d22615f",
+      "newCheckout": "1dfca93108628d2d5fd29940240aad974e2a84dc",
+      "oldP95RafMs": 50,
+      "newP95RafMs": 50.099999999999994,
+      "oldSamples": 30,
+      "newSamples": 33
+    },
+    {
+      "file": "chromium-1280-motion-a69-arena-arcana-es-5x5.json",
+      "oldCheckout": "200a92c82ca71004223eb2f3bde886ce8d22615f",
+      "newCheckout": "1dfca93108628d2d5fd29940240aad974e2a84dc",
+      "oldP95RafMs": 33.400000000000006,
+      "newP95RafMs": 33.39999999999998,
+      "oldSamples": 36,
+      "newSamples": 36
+    },
+    {
+      "file": "chromium-1280-motion-a69-arena-diagon-alley-en-3x3.json",
+      "oldCheckout": "200a92c82ca71004223eb2f3bde886ce8d22615f",
+      "newCheckout": "1dfca93108628d2d5fd29940240aad974e2a84dc",
+      "oldP95RafMs": 33.30000000000001,
+      "newP95RafMs": 33.30000000000001,
+      "oldSamples": 32,
+      "newSamples": 34
+    },
+    {
+      "file": "chromium-1280-motion-a69-arena-diagon-alley-en-5x3.json",
+      "oldCheckout": "200a92c82ca71004223eb2f3bde886ce8d22615f",
+      "newCheckout": "1dfca93108628d2d5fd29940240aad974e2a84dc",
+      "oldP95RafMs": 33.400000000000006,
+      "newP95RafMs": 50,
+      "oldSamples": 30,
+      "newSamples": 36
+    },
+    {
+      "file": "chromium-1280-motion-a69-arena-diagon-alley-en-5x5.json",
+      "oldCheckout": "200a92c82ca71004223eb2f3bde886ce8d22615f",
+      "newCheckout": "1dfca93108628d2d5fd29940240aad974e2a84dc",
+      "oldP95RafMs": 50,
+      "newP95RafMs": 50,
+      "oldSamples": 34,
+      "newSamples": 37
+    },
+    {
+      "file": "chromium-1280-motion-a69-arena-diagon-alley-es-3x3.json",
+      "oldCheckout": "200a92c82ca71004223eb2f3bde886ce8d22615f",
+      "newCheckout": "1dfca93108628d2d5fd29940240aad974e2a84dc",
+      "oldP95RafMs": 49.900000000000006,
+      "newP95RafMs": 33.400000000000006,
+      "oldSamples": 33,
+      "newSamples": 38
+    },
+    {
+      "file": "chromium-1280-motion-a69-arena-diagon-alley-es-5x3.json",
+      "oldCheckout": "200a92c82ca71004223eb2f3bde886ce8d22615f",
+      "newCheckout": "1dfca93108628d2d5fd29940240aad974e2a84dc",
+      "oldP95RafMs": 33.400000000000034,
+      "newP95RafMs": 33.400000000000006,
+      "oldSamples": 33,
+      "newSamples": 35
+    },
+    {
+      "file": "chromium-1280-motion-a69-arena-diagon-alley-es-5x5.json",
+      "oldCheckout": "200a92c82ca71004223eb2f3bde886ce8d22615f",
+      "newCheckout": "1dfca93108628d2d5fd29940240aad974e2a84dc",
+      "oldP95RafMs": 33.400000000000006,
+      "newP95RafMs": 33.400000000000006,
+      "oldSamples": 35,
+      "newSamples": 34
+    },
+    {
+      "file": "chromium-390-motion-a69-arena-arcana-en-3x3.json",
+      "oldCheckout": "200a92c82ca71004223eb2f3bde886ce8d22615f",
+      "newCheckout": "1dfca93108628d2d5fd29940240aad974e2a84dc",
+      "oldP95RafMs": 16.80000000000001,
+      "newP95RafMs": 33.400000000000006,
+      "oldSamples": 27,
+      "newSamples": 29
+    },
+    {
+      "file": "chromium-390-motion-a69-arena-arcana-en-5x3.json",
+      "oldCheckout": "200a92c82ca71004223eb2f3bde886ce8d22615f",
+      "newCheckout": "1dfca93108628d2d5fd29940240aad974e2a84dc",
+      "oldP95RafMs": 16.80000000000001,
+      "newP95RafMs": 33.400000000000006,
+      "oldSamples": 28,
+      "newSamples": 28
+    },
+    {
+      "file": "chromium-390-motion-a69-arena-arcana-en-5x5.json",
+      "oldCheckout": "200a92c82ca71004223eb2f3bde886ce8d22615f",
+      "newCheckout": "1dfca93108628d2d5fd29940240aad974e2a84dc",
+      "oldP95RafMs": 16.80000000000001,
+      "newP95RafMs": 50,
+      "oldSamples": 29,
+      "newSamples": 31
+    },
+    {
+      "file": "chromium-390-motion-a69-arena-arcana-es-3x3.json",
+      "oldCheckout": "200a92c82ca71004223eb2f3bde886ce8d22615f",
+      "newCheckout": "1dfca93108628d2d5fd29940240aad974e2a84dc",
+      "oldP95RafMs": 16.700000000000045,
+      "newP95RafMs": 16.80000000000001,
+      "oldSamples": 29,
+      "newSamples": 32
+    },
+    {
+      "file": "chromium-390-motion-a69-arena-arcana-es-5x3.json",
+      "oldCheckout": "200a92c82ca71004223eb2f3bde886ce8d22615f",
+      "newCheckout": "1dfca93108628d2d5fd29940240aad974e2a84dc",
+      "oldP95RafMs": 33.39999999999999,
+      "newP95RafMs": 33.19999999999999,
+      "oldSamples": 25,
+      "newSamples": 30
+    },
+    {
+      "file": "chromium-390-motion-a69-arena-arcana-es-5x5.json",
+      "oldCheckout": "200a92c82ca71004223eb2f3bde886ce8d22615f",
+      "newCheckout": "1dfca93108628d2d5fd29940240aad974e2a84dc",
+      "oldP95RafMs": 33.30000000000001,
+      "newP95RafMs": 33.400000000000006,
+      "oldSamples": 29,
+      "newSamples": 36
+    },
+    {
+      "file": "chromium-390-motion-a69-arena-diagon-alley-en-3x3.json",
+      "oldCheckout": "200a92c82ca71004223eb2f3bde886ce8d22615f",
+      "newCheckout": "1dfca93108628d2d5fd29940240aad974e2a84dc",
+      "oldP95RafMs": 16.80000000000001,
+      "newP95RafMs": 33.400000000000006,
+      "oldSamples": 26,
+      "newSamples": 29
+    },
+    {
+      "file": "chromium-390-motion-a69-arena-diagon-alley-en-5x3.json",
+      "oldCheckout": "200a92c82ca71004223eb2f3bde886ce8d22615f",
+      "newCheckout": "1dfca93108628d2d5fd29940240aad974e2a84dc",
+      "oldP95RafMs": 16.80000000000001,
+      "newP95RafMs": 33.3,
+      "oldSamples": 26,
+      "newSamples": 30
+    },
+    {
+      "file": "chromium-390-motion-a69-arena-diagon-alley-en-5x5.json",
+      "oldCheckout": "200a92c82ca71004223eb2f3bde886ce8d22615f",
+      "newCheckout": "1dfca93108628d2d5fd29940240aad974e2a84dc",
+      "oldP95RafMs": 33.3,
+      "newP95RafMs": 33.39999999999999,
+      "oldSamples": 29,
+      "newSamples": 34
+    },
+    {
+      "file": "chromium-390-motion-a69-arena-diagon-alley-es-3x3.json",
+      "oldCheckout": "200a92c82ca71004223eb2f3bde886ce8d22615f",
+      "newCheckout": "1dfca93108628d2d5fd29940240aad974e2a84dc",
+      "oldP95RafMs": 33.30000000000001,
+      "newP95RafMs": 49.900000000000034,
+      "oldSamples": 32,
+      "newSamples": 34
+    },
+    {
+      "file": "chromium-390-motion-a69-arena-diagon-alley-es-5x3.json",
+      "oldCheckout": "200a92c82ca71004223eb2f3bde886ce8d22615f",
+      "newCheckout": "1dfca93108628d2d5fd29940240aad974e2a84dc",
+      "oldP95RafMs": 33.3,
+      "newP95RafMs": 33.400000000000006,
+      "oldSamples": 26,
+      "newSamples": 31
+    },
+    {
+      "file": "chromium-390-motion-a69-arena-diagon-alley-es-5x5.json",
+      "oldCheckout": "200a92c82ca71004223eb2f3bde886ce8d22615f",
+      "newCheckout": "1dfca93108628d2d5fd29940240aad974e2a84dc",
+      "oldP95RafMs": 16.700000000000045,
+      "newP95RafMs": 33.400000000000006,
+      "oldSamples": 28,
+      "newSamples": 33
+    },
+    {
+      "file": "chromium-865-motion-a69-arena-arcana-en-3x3.json",
+      "oldCheckout": "200a92c82ca71004223eb2f3bde886ce8d22615f",
+      "newCheckout": "1dfca93108628d2d5fd29940240aad974e2a84dc",
+      "oldP95RafMs": 33.400000000000006,
+      "newP95RafMs": 49.99999999999999,
+      "oldSamples": 34,
+      "newSamples": 38
+    },
+    {
+      "file": "chromium-865-motion-a69-arena-arcana-en-5x3.json",
+      "oldCheckout": "200a92c82ca71004223eb2f3bde886ce8d22615f",
+      "newCheckout": "1dfca93108628d2d5fd29940240aad974e2a84dc",
+      "oldP95RafMs": 33.30000000000001,
+      "newP95RafMs": 50,
+      "oldSamples": 35,
+      "newSamples": 34
+    },
+    {
+      "file": "chromium-865-motion-a69-arena-arcana-en-5x5.json",
+      "oldCheckout": "200a92c82ca71004223eb2f3bde886ce8d22615f",
+      "newCheckout": "1dfca93108628d2d5fd29940240aad974e2a84dc",
+      "oldP95RafMs": 33.400000000000006,
+      "newP95RafMs": 49.900000000000006,
+      "oldSamples": 36,
+      "newSamples": 37
+    },
+    {
+      "file": "chromium-865-motion-a69-arena-arcana-es-3x3.json",
+      "oldCheckout": "200a92c82ca71004223eb2f3bde886ce8d22615f",
+      "newCheckout": "1dfca93108628d2d5fd29940240aad974e2a84dc",
+      "oldP95RafMs": 33.39999999999998,
+      "newP95RafMs": 33.400000000000034,
+      "oldSamples": 33,
+      "newSamples": 36
+    },
+    {
+      "file": "chromium-865-motion-a69-arena-arcana-es-5x3.json",
+      "oldCheckout": "200a92c82ca71004223eb2f3bde886ce8d22615f",
+      "newCheckout": "1dfca93108628d2d5fd29940240aad974e2a84dc",
+      "oldP95RafMs": 49.900000000000006,
+      "newP95RafMs": 33.400000000000034,
+      "oldSamples": 32,
+      "newSamples": 34
+    },
+    {
+      "file": "chromium-865-motion-a69-arena-arcana-es-5x5.json",
+      "oldCheckout": "200a92c82ca71004223eb2f3bde886ce8d22615f",
+      "newCheckout": "1dfca93108628d2d5fd29940240aad974e2a84dc",
+      "oldP95RafMs": 33.400000000000006,
+      "newP95RafMs": 50.099999999999994,
+      "oldSamples": 33,
+      "newSamples": 38
+    },
+    {
+      "file": "chromium-865-motion-a69-arena-diagon-alley-en-3x3.json",
+      "oldCheckout": "200a92c82ca71004223eb2f3bde886ce8d22615f",
+      "newCheckout": "1dfca93108628d2d5fd29940240aad974e2a84dc",
+      "oldP95RafMs": 33.400000000000006,
+      "newP95RafMs": 33.39999999999998,
+      "oldSamples": 29,
+      "newSamples": 35
+    },
+    {
+      "file": "chromium-865-motion-a69-arena-diagon-alley-en-5x3.json",
+      "oldCheckout": "200a92c82ca71004223eb2f3bde886ce8d22615f",
+      "newCheckout": "1dfca93108628d2d5fd29940240aad974e2a84dc",
+      "oldP95RafMs": 33.29999999999998,
+      "newP95RafMs": 49.900000000000006,
+      "oldSamples": 35,
+      "newSamples": 35
+    },
+    {
+      "file": "chromium-865-motion-a69-arena-diagon-alley-en-5x5.json",
+      "oldCheckout": "200a92c82ca71004223eb2f3bde886ce8d22615f",
+      "newCheckout": "1dfca93108628d2d5fd29940240aad974e2a84dc",
+      "oldP95RafMs": 33.400000000000034,
+      "newP95RafMs": 50,
+      "oldSamples": 36,
+      "newSamples": 33
+    },
+    {
+      "file": "chromium-865-motion-a69-arena-diagon-alley-es-3x3.json",
+      "oldCheckout": "200a92c82ca71004223eb2f3bde886ce8d22615f",
+      "newCheckout": "1dfca93108628d2d5fd29940240aad974e2a84dc",
+      "oldP95RafMs": 33.400000000000006,
+      "newP95RafMs": 50,
+      "oldSamples": 32,
+      "newSamples": 38
+    },
+    {
+      "file": "chromium-865-motion-a69-arena-diagon-alley-es-5x3.json",
+      "oldCheckout": "200a92c82ca71004223eb2f3bde886ce8d22615f",
+      "newCheckout": "1dfca93108628d2d5fd29940240aad974e2a84dc",
+      "oldP95RafMs": 49.900000000000006,
+      "newP95RafMs": 33.400000000000006,
+      "oldSamples": 32,
+      "newSamples": 38
+    },
+    {
+      "file": "chromium-865-motion-a69-arena-diagon-alley-es-5x5.json",
+      "oldCheckout": "200a92c82ca71004223eb2f3bde886ce8d22615f",
+      "newCheckout": "1dfca93108628d2d5fd29940240aad974e2a84dc",
+      "oldP95RafMs": 33.400000000000006,
+      "newP95RafMs": 33.400000000000006,
+      "oldSamples": 34,
+      "newSamples": 36
+    },
+    {
+      "file": "webkit-1280-motion-a69-arena-arcana-en-3x3.json",
+      "oldCheckout": "200a92c82ca71004223eb2f3bde886ce8d22615f",
+      "newCheckout": "1dfca93108628d2d5fd29940240aad974e2a84dc",
+      "oldP95RafMs": 48,
+      "newP95RafMs": 54,
+      "oldSamples": 34,
+      "newSamples": 38
+    },
+    {
+      "file": "webkit-1280-motion-a69-arena-arcana-en-5x3.json",
+      "oldCheckout": "200a92c82ca71004223eb2f3bde886ce8d22615f",
+      "newCheckout": "1dfca93108628d2d5fd29940240aad974e2a84dc",
+      "oldP95RafMs": 48,
+      "newP95RafMs": 67,
+      "oldSamples": 34,
+      "newSamples": 39
+    },
+    {
+      "file": "webkit-1280-motion-a69-arena-arcana-en-5x5.json",
+      "oldCheckout": "200a92c82ca71004223eb2f3bde886ce8d22615f",
+      "newCheckout": "1dfca93108628d2d5fd29940240aad974e2a84dc",
+      "oldP95RafMs": 46,
+      "newP95RafMs": 77,
+      "oldSamples": 32,
+      "newSamples": 37
+    },
+    {
+      "file": "webkit-1280-motion-a69-arena-arcana-es-3x3.json",
+      "oldCheckout": "200a92c82ca71004223eb2f3bde886ce8d22615f",
+      "newCheckout": "1dfca93108628d2d5fd29940240aad974e2a84dc",
+      "oldP95RafMs": 45,
+      "newP95RafMs": 53,
+      "oldSamples": 34,
+      "newSamples": 39
+    },
+    {
+      "file": "webkit-1280-motion-a69-arena-arcana-es-5x3.json",
+      "oldCheckout": "200a92c82ca71004223eb2f3bde886ce8d22615f",
+      "newCheckout": "1dfca93108628d2d5fd29940240aad974e2a84dc",
+      "oldP95RafMs": 56,
+      "newP95RafMs": 71,
+      "oldSamples": 39,
+      "newSamples": 35
+    },
+    {
+      "file": "webkit-1280-motion-a69-arena-arcana-es-5x5.json",
+      "oldCheckout": "200a92c82ca71004223eb2f3bde886ce8d22615f",
+      "newCheckout": "1dfca93108628d2d5fd29940240aad974e2a84dc",
+      "oldP95RafMs": 50,
+      "newP95RafMs": 60,
+      "oldSamples": 39,
+      "newSamples": 36
+    },
+    {
+      "file": "webkit-1280-motion-a69-arena-diagon-alley-en-3x3.json",
+      "oldCheckout": "200a92c82ca71004223eb2f3bde886ce8d22615f",
+      "newCheckout": "1dfca93108628d2d5fd29940240aad974e2a84dc",
+      "oldP95RafMs": 51,
+      "newP95RafMs": 53,
+      "oldSamples": 37,
+      "newSamples": 37
+    },
+    {
+      "file": "webkit-1280-motion-a69-arena-diagon-alley-en-5x3.json",
+      "oldCheckout": "200a92c82ca71004223eb2f3bde886ce8d22615f",
+      "newCheckout": "1dfca93108628d2d5fd29940240aad974e2a84dc",
+      "oldP95RafMs": 46,
+      "newP95RafMs": 54,
+      "oldSamples": 39,
+      "newSamples": 39
+    },
+    {
+      "file": "webkit-1280-motion-a69-arena-diagon-alley-en-5x5.json",
+      "oldCheckout": "200a92c82ca71004223eb2f3bde886ce8d22615f",
+      "newCheckout": "1dfca93108628d2d5fd29940240aad974e2a84dc",
+      "oldP95RafMs": 46,
+      "newP95RafMs": 55,
+      "oldSamples": 35,
+      "newSamples": 38
+    },
+    {
+      "file": "webkit-1280-motion-a69-arena-diagon-alley-es-3x3.json",
+      "oldCheckout": "200a92c82ca71004223eb2f3bde886ce8d22615f",
+      "newCheckout": "1dfca93108628d2d5fd29940240aad974e2a84dc",
+      "oldP95RafMs": 90,
+      "newP95RafMs": 89,
+      "oldSamples": 34,
+      "newSamples": 36
+    },
+    {
+      "file": "webkit-1280-motion-a69-arena-diagon-alley-es-5x3.json",
+      "oldCheckout": "200a92c82ca71004223eb2f3bde886ce8d22615f",
+      "newCheckout": "1dfca93108628d2d5fd29940240aad974e2a84dc",
+      "oldP95RafMs": 49,
+      "newP95RafMs": 61,
+      "oldSamples": 33,
+      "newSamples": 35
+    },
+    {
+      "file": "webkit-1280-motion-a69-arena-diagon-alley-es-5x5.json",
+      "oldCheckout": "200a92c82ca71004223eb2f3bde886ce8d22615f",
+      "newCheckout": "1dfca93108628d2d5fd29940240aad974e2a84dc",
+      "oldP95RafMs": 55,
+      "newP95RafMs": 72,
+      "oldSamples": 35,
+      "newSamples": 35
+    },
+    {
+      "file": "webkit-390-motion-a69-arena-arcana-en-3x3.json",
+      "oldCheckout": "200a92c82ca71004223eb2f3bde886ce8d22615f",
+      "newCheckout": "1dfca93108628d2d5fd29940240aad974e2a84dc",
+      "oldP95RafMs": 35,
+      "newP95RafMs": 35,
+      "oldSamples": 34,
+      "newSamples": 41
+    },
+    {
+      "file": "webkit-390-motion-a69-arena-arcana-en-5x3.json",
+      "oldCheckout": "200a92c82ca71004223eb2f3bde886ce8d22615f",
+      "newCheckout": "1dfca93108628d2d5fd29940240aad974e2a84dc",
+      "oldP95RafMs": 37,
+      "newP95RafMs": 37,
+      "oldSamples": 38,
+      "newSamples": 38
+    },
+    {
+      "file": "webkit-390-motion-a69-arena-arcana-en-5x5.json",
+      "oldCheckout": "200a92c82ca71004223eb2f3bde886ce8d22615f",
+      "newCheckout": "1dfca93108628d2d5fd29940240aad974e2a84dc",
+      "oldP95RafMs": 39,
+      "newP95RafMs": 31,
+      "oldSamples": 38,
+      "newSamples": 43
+    },
+    {
+      "file": "webkit-390-motion-a69-arena-arcana-es-3x3.json",
+      "oldCheckout": "200a92c82ca71004223eb2f3bde886ce8d22615f",
+      "newCheckout": "1dfca93108628d2d5fd29940240aad974e2a84dc",
+      "oldP95RafMs": 35,
+      "newP95RafMs": 39,
+      "oldSamples": 37,
+      "newSamples": 40
+    },
+    {
+      "file": "webkit-390-motion-a69-arena-arcana-es-5x3.json",
+      "oldCheckout": "200a92c82ca71004223eb2f3bde886ce8d22615f",
+      "newCheckout": "1dfca93108628d2d5fd29940240aad974e2a84dc",
+      "oldP95RafMs": 32,
+      "newP95RafMs": 38,
+      "oldSamples": 39,
+      "newSamples": 41
+    },
+    {
+      "file": "webkit-390-motion-a69-arena-arcana-es-5x5.json",
+      "oldCheckout": "200a92c82ca71004223eb2f3bde886ce8d22615f",
+      "newCheckout": "1dfca93108628d2d5fd29940240aad974e2a84dc",
+      "oldP95RafMs": 33,
+      "newP95RafMs": 32,
+      "oldSamples": 40,
+      "newSamples": 46
+    },
+    {
+      "file": "webkit-390-motion-a69-arena-diagon-alley-en-3x3.json",
+      "oldCheckout": "200a92c82ca71004223eb2f3bde886ce8d22615f",
+      "newCheckout": "1dfca93108628d2d5fd29940240aad974e2a84dc",
+      "oldP95RafMs": 35,
+      "newP95RafMs": 45,
+      "oldSamples": 36,
+      "newSamples": 40
+    },
+    {
+      "file": "webkit-390-motion-a69-arena-diagon-alley-en-5x3.json",
+      "oldCheckout": "200a92c82ca71004223eb2f3bde886ce8d22615f",
+      "newCheckout": "1dfca93108628d2d5fd29940240aad974e2a84dc",
+      "oldP95RafMs": 41,
+      "newP95RafMs": 43,
+      "oldSamples": 37,
+      "newSamples": 40
+    },
+    {
+      "file": "webkit-390-motion-a69-arena-diagon-alley-en-5x5.json",
+      "oldCheckout": "200a92c82ca71004223eb2f3bde886ce8d22615f",
+      "newCheckout": "1dfca93108628d2d5fd29940240aad974e2a84dc",
+      "oldP95RafMs": 32,
+      "newP95RafMs": 32,
+      "oldSamples": 39,
+      "newSamples": 45
+    },
+    {
+      "file": "webkit-390-motion-a69-arena-diagon-alley-es-3x3.json",
+      "oldCheckout": "200a92c82ca71004223eb2f3bde886ce8d22615f",
+      "newCheckout": "1dfca93108628d2d5fd29940240aad974e2a84dc",
+      "oldP95RafMs": 66,
+      "newP95RafMs": 80,
+      "oldSamples": 38,
+      "newSamples": 36
+    },
+    {
+      "file": "webkit-390-motion-a69-arena-diagon-alley-es-5x3.json",
+      "oldCheckout": "200a92c82ca71004223eb2f3bde886ce8d22615f",
+      "newCheckout": "1dfca93108628d2d5fd29940240aad974e2a84dc",
+      "oldP95RafMs": 36,
+      "newP95RafMs": 34,
+      "oldSamples": 39,
+      "newSamples": 40
+    },
+    {
+      "file": "webkit-390-motion-a69-arena-diagon-alley-es-5x5.json",
+      "oldCheckout": "200a92c82ca71004223eb2f3bde886ce8d22615f",
+      "newCheckout": "1dfca93108628d2d5fd29940240aad974e2a84dc",
+      "oldP95RafMs": 34,
+      "newP95RafMs": 42,
+      "oldSamples": 35,
+      "newSamples": 39
+    },
+    {
+      "file": "webkit-865-motion-a69-arena-arcana-en-3x3.json",
+      "oldCheckout": "200a92c82ca71004223eb2f3bde886ce8d22615f",
+      "newCheckout": "1dfca93108628d2d5fd29940240aad974e2a84dc",
+      "oldP95RafMs": 47,
+      "newP95RafMs": 49,
+      "oldSamples": 33,
+      "newSamples": 33
+    },
+    {
+      "file": "webkit-865-motion-a69-arena-arcana-en-5x3.json",
+      "oldCheckout": "200a92c82ca71004223eb2f3bde886ce8d22615f",
+      "newCheckout": "1dfca93108628d2d5fd29940240aad974e2a84dc",
+      "oldP95RafMs": 42,
+      "newP95RafMs": 55,
+      "oldSamples": 32,
+      "newSamples": 31
+    },
+    {
+      "file": "webkit-865-motion-a69-arena-arcana-en-5x5.json",
+      "oldCheckout": "200a92c82ca71004223eb2f3bde886ce8d22615f",
+      "newCheckout": "1dfca93108628d2d5fd29940240aad974e2a84dc",
+      "oldP95RafMs": 53,
+      "newP95RafMs": 59,
+      "oldSamples": 39,
+      "newSamples": 37
+    },
+    {
+      "file": "webkit-865-motion-a69-arena-arcana-es-3x3.json",
+      "oldCheckout": "200a92c82ca71004223eb2f3bde886ce8d22615f",
+      "newCheckout": "1dfca93108628d2d5fd29940240aad974e2a84dc",
+      "oldP95RafMs": 50,
+      "newP95RafMs": 48,
+      "oldSamples": 32,
+      "newSamples": 36
+    },
+    {
+      "file": "webkit-865-motion-a69-arena-arcana-es-5x3.json",
+      "oldCheckout": "200a92c82ca71004223eb2f3bde886ce8d22615f",
+      "newCheckout": "1dfca93108628d2d5fd29940240aad974e2a84dc",
+      "oldP95RafMs": 39,
+      "newP95RafMs": 55,
+      "oldSamples": 34,
+      "newSamples": 39
+    },
+    {
+      "file": "webkit-865-motion-a69-arena-arcana-es-5x5.json",
+      "oldCheckout": "200a92c82ca71004223eb2f3bde886ce8d22615f",
+      "newCheckout": "1dfca93108628d2d5fd29940240aad974e2a84dc",
+      "oldP95RafMs": 52,
+      "newP95RafMs": 67,
+      "oldSamples": 34,
+      "newSamples": 38
+    },
+    {
+      "file": "webkit-865-motion-a69-arena-diagon-alley-en-3x3.json",
+      "oldCheckout": "200a92c82ca71004223eb2f3bde886ce8d22615f",
+      "newCheckout": "1dfca93108628d2d5fd29940240aad974e2a84dc",
+      "oldP95RafMs": 45,
+      "newP95RafMs": 57,
+      "oldSamples": 36,
+      "newSamples": 30
+    },
+    {
+      "file": "webkit-865-motion-a69-arena-diagon-alley-en-5x3.json",
+      "oldCheckout": "200a92c82ca71004223eb2f3bde886ce8d22615f",
+      "newCheckout": "1dfca93108628d2d5fd29940240aad974e2a84dc",
+      "oldP95RafMs": 40,
+      "newP95RafMs": 52,
+      "oldSamples": 39,
+      "newSamples": 38
+    },
+    {
+      "file": "webkit-865-motion-a69-arena-diagon-alley-en-5x5.json",
+      "oldCheckout": "200a92c82ca71004223eb2f3bde886ce8d22615f",
+      "newCheckout": "1dfca93108628d2d5fd29940240aad974e2a84dc",
+      "oldP95RafMs": 50,
+      "newP95RafMs": 65,
+      "oldSamples": 40,
+      "newSamples": 32
+    },
+    {
+      "file": "webkit-865-motion-a69-arena-diagon-alley-es-3x3.json",
+      "oldCheckout": "200a92c82ca71004223eb2f3bde886ce8d22615f",
+      "newCheckout": "1dfca93108628d2d5fd29940240aad974e2a84dc",
+      "oldP95RafMs": 74,
+      "newP95RafMs": 92,
+      "oldSamples": 38,
+      "newSamples": 39
+    },
+    {
+      "file": "webkit-865-motion-a69-arena-diagon-alley-es-5x3.json",
+      "oldCheckout": "200a92c82ca71004223eb2f3bde886ce8d22615f",
+      "newCheckout": "1dfca93108628d2d5fd29940240aad974e2a84dc",
+      "oldP95RafMs": 46,
+      "newP95RafMs": 50,
+      "oldSamples": 39,
+      "newSamples": 35
+    },
+    {
+      "file": "webkit-865-motion-a69-arena-diagon-alley-es-5x5.json",
+      "oldCheckout": "200a92c82ca71004223eb2f3bde886ce8d22615f",
+      "newCheckout": "1dfca93108628d2d5fd29940240aad974e2a84dc",
+      "oldP95RafMs": 45,
+      "newP95RafMs": 53,
+      "oldSamples": 37,
+      "newSamples": 38
+    }
+  ]
+}
