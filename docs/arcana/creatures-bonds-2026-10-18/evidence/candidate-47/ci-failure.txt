@@ -1,0 +1,88 @@
+check	Run ARCANA_CAPTURE_A70=1 npx playwright test --config playwright.boss-a70.config.ts	﻿2026-10-19T01:05:31.5115527Z ##[group]Run ARCANA_CAPTURE_A70=1 npx playwright test --config playwright.boss-a70.config.ts
+check	Run ARCANA_CAPTURE_A70=1 npx playwright test --config playwright.boss-a70.config.ts	2026-10-19T01:05:31.5116135Z [36;1mARCANA_CAPTURE_A70=1 npx playwright test --config playwright.boss-a70.config.ts[0m
+check	Run ARCANA_CAPTURE_A70=1 npx playwright test --config playwright.boss-a70.config.ts	2026-10-19T01:05:31.5173367Z shell: /usr/bin/bash -e {0}
+check	Run ARCANA_CAPTURE_A70=1 npx playwright test --config playwright.boss-a70.config.ts	2026-10-19T01:05:31.5173650Z ##[endgroup]
+check	Run ARCANA_CAPTURE_A70=1 npx playwright test --config playwright.boss-a70.config.ts	2026-10-19T01:05:34.6636839Z [WebServer] WebSocket server error: Port 24678 is already in use
+check	Run ARCANA_CAPTURE_A70=1 npx playwright test --config playwright.boss-a70.config.ts	2026-10-19T01:05:36.7920069Z [WebServer] [plugin builtin:vite-reporter] 
+check	Run ARCANA_CAPTURE_A70=1 npx playwright test --config playwright.boss-a70.config.ts	2026-10-19T01:05:36.7920968Z [WebServer] (!) Some chunks are larger than 500 kB after minification. Consider:
+check	Run ARCANA_CAPTURE_A70=1 npx playwright test --config playwright.boss-a70.config.ts	2026-10-19T01:05:36.7921814Z [WebServer] - Using dynamic import() to code-split the application
+check	Run ARCANA_CAPTURE_A70=1 npx playwright test --config playwright.boss-a70.config.ts	2026-10-19T01:05:36.7923022Z [WebServer] - Use build.rolldownOptions.output.codeSplitting to improve chunking: https://rolldown.rs/reference/OutputOptions.codeSplitting
+check	Run ARCANA_CAPTURE_A70=1 npx playwright test --config playwright.boss-a70.config.ts	2026-10-19T01:05:36.7924288Z [WebServer] - Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+check	Run ARCANA_CAPTURE_A70=1 npx playwright test --config playwright.boss-a70.config.ts	2026-10-19T01:05:38.1916844Z 
+check	Run ARCANA_CAPTURE_A70=1 npx playwright test --config playwright.boss-a70.config.ts	2026-10-19T01:05:38.1917691Z Running 138 tests using 1 worker
+check	Run ARCANA_CAPTURE_A70=1 npx playwright test --config playwright.boss-a70.config.ts	2026-10-19T01:14:19.0913550Z ·····························°··········°°°°°°······°··········°°°°°°······°····
+check	Run ARCANA_CAPTURE_A70=1 npx playwright test --config playwright.boss-a70.config.ts	2026-10-19T01:15:43.4236089Z ······°°°°°°·F
+check	Run ARCANA_CAPTURE_A70=1 npx playwright test --config playwright.boss-a70.config.ts	2026-10-19T01:15:43.4236991Z Testing stopped early after 1 maximum allowed failures.
+check	Run ARCANA_CAPTURE_A70=1 npx playwright test --config playwright.boss-a70.config.ts	2026-10-19T01:15:43.5207263Z 
+check	Run ARCANA_CAPTURE_A70=1 npx playwright test --config playwright.boss-a70.config.ts	2026-10-19T01:15:43.5214345Z 
+check	Run ARCANA_CAPTURE_A70=1 npx playwright test --config playwright.boss-a70.config.ts	2026-10-19T01:15:43.5221921Z   1) [webkit-390-boss-a70] › tests/browser-boss/boss-a70.spec.ts:177:5 › A70 real authority journey: preview cancel battle loot next intention es arcana 
+check	Run ARCANA_CAPTURE_A70=1 npx playwright test --config playwright.boss-a70.config.ts	2026-10-19T01:15:43.5222801Z 
+check	Run ARCANA_CAPTURE_A70=1 npx playwright test --config playwright.boss-a70.config.ts	2026-10-19T01:15:43.5223139Z     Error: expect(received).toBe(expected) // Object.is equality
+check	Run ARCANA_CAPTURE_A70=1 npx playwright test --config playwright.boss-a70.config.ts	2026-10-19T01:15:43.5223518Z 
+check	Run ARCANA_CAPTURE_A70=1 npx playwright test --config playwright.boss-a70.config.ts	2026-10-19T01:15:43.5223658Z     Expected: 0
+check	Run ARCANA_CAPTURE_A70=1 npx playwright test --config playwright.boss-a70.config.ts	2026-10-19T01:15:43.5223974Z     Received: 6
+check	Run ARCANA_CAPTURE_A70=1 npx playwright test --config playwright.boss-a70.config.ts	2026-10-19T01:15:43.5224149Z 
+check	Run ARCANA_CAPTURE_A70=1 npx playwright test --config playwright.boss-a70.config.ts	2026-10-19T01:15:43.5224599Z       205 |       // Visibility alone does not detect an overlapping sibling or auto-scroll on click.
+check	Run ARCANA_CAPTURE_A70=1 npx playwright test --config playwright.boss-a70.config.ts	2026-10-19T01:15:43.5225574Z       206 |       const consultation = page.locator('.node-event-dialog');
+check	Run ARCANA_CAPTURE_A70=1 npx playwright test --config playwright.boss-a70.config.ts	2026-10-19T01:15:43.5226438Z     > 207 |       expect(await consultation.evaluate((element) => element.scrollTop)).toBe(0);
+check	Run ARCANA_CAPTURE_A70=1 npx playwright test --config playwright.boss-a70.config.ts	2026-10-19T01:15:43.5227195Z           |                                                                           ^
+check	Run ARCANA_CAPTURE_A70=1 npx playwright test --config playwright.boss-a70.config.ts	2026-10-19T01:15:43.5227931Z       208 |       const footerBox = await page.locator('.node-combat-actions').boundingBox();
+check	Run ARCANA_CAPTURE_A70=1 npx playwright test --config playwright.boss-a70.config.ts	2026-10-19T01:15:43.5228567Z       209 |       for (const control of [
+check	Run ARCANA_CAPTURE_A70=1 npx playwright test --config playwright.boss-a70.config.ts	2026-10-19T01:15:43.5229054Z       210 |         page.locator('.node-team-prepare'),
+check	Run ARCANA_CAPTURE_A70=1 npx playwright test --config playwright.boss-a70.config.ts	2026-10-19T01:15:43.5229790Z         at /home/runner/work/diagon-alley/diagon-alley/tests/browser-boss/boss-a70.spec.ts:207:75
+check	Run ARCANA_CAPTURE_A70=1 npx playwright test --config playwright.boss-a70.config.ts	2026-10-19T01:15:43.5230258Z 
+check	Run ARCANA_CAPTURE_A70=1 npx playwright test --config playwright.boss-a70.config.ts	2026-10-19T01:15:43.5231054Z     Error Context: test-results/boss-a70/browser-boss-boss-a70-A70--10715-ot-next-intention-es-arcana-webkit-390-boss-a70/error-context.md
+check	Run ARCANA_CAPTURE_A70=1 npx playwright test --config playwright.boss-a70.config.ts	2026-10-19T01:15:43.5231843Z 
+check	Run ARCANA_CAPTURE_A70=1 npx playwright test --config playwright.boss-a70.config.ts	2026-10-19T01:15:43.5231998Z   1 failed
+check	Run ARCANA_CAPTURE_A70=1 npx playwright test --config playwright.boss-a70.config.ts	2026-10-19T01:15:43.5233096Z     [webkit-390-boss-a70] › tests/browser-boss/boss-a70.spec.ts:177:5 › A70 real authority journey: preview cancel battle loot next intention es arcana 
+check	Run ARCANA_CAPTURE_A70=1 npx playwright test --config playwright.boss-a70.config.ts	2026-10-19T01:15:43.5233910Z   21 skipped
+check	Run ARCANA_CAPTURE_A70=1 npx playwright test --config playwright.boss-a70.config.ts	2026-10-19T01:15:43.5234223Z   44 did not run
+check	Run ARCANA_CAPTURE_A70=1 npx playwright test --config playwright.boss-a70.config.ts	2026-10-19T01:15:43.5234531Z   72 passed (10.2m)
+check	Run ARCANA_CAPTURE_A70=1 npx playwright test --config playwright.boss-a70.config.ts	2026-10-19T01:15:43.5234984Z   1 error was not a part of any test, see above for details
+check	Run ARCANA_CAPTURE_A70=1 npx playwright test --config playwright.boss-a70.config.ts	2026-10-19T01:15:43.5576342Z ##[error]Process completed with exit code 1.
+check	Run ARCANA_CAPTURE_A69=1 npx playwright test --config playwright.motion-a69.config.ts	﻿2026-10-19T01:18:02.6710526Z ##[group]Run ARCANA_CAPTURE_A69=1 npx playwright test --config playwright.motion-a69.config.ts
+check	Run ARCANA_CAPTURE_A69=1 npx playwright test --config playwright.motion-a69.config.ts	2026-10-19T01:18:02.6711118Z [36;1mARCANA_CAPTURE_A69=1 npx playwright test --config playwright.motion-a69.config.ts[0m
+check	Run ARCANA_CAPTURE_A69=1 npx playwright test --config playwright.motion-a69.config.ts	2026-10-19T01:18:02.6768712Z shell: /usr/bin/bash -e {0}
+check	Run ARCANA_CAPTURE_A69=1 npx playwright test --config playwright.motion-a69.config.ts	2026-10-19T01:18:02.6768988Z ##[endgroup]
+check	Run ARCANA_CAPTURE_A69=1 npx playwright test --config playwright.motion-a69.config.ts	2026-10-19T01:18:04.2241371Z [WebServer] [plugin builtin:vite-reporter] 
+check	Run ARCANA_CAPTURE_A69=1 npx playwright test --config playwright.motion-a69.config.ts	2026-10-19T01:18:04.2242372Z [WebServer] (!) Some chunks are larger than 500 kB after minification. Consider:
+check	Run ARCANA_CAPTURE_A69=1 npx playwright test --config playwright.motion-a69.config.ts	2026-10-19T01:18:04.2255545Z [WebServer] - Using dynamic import() to code-split the application
+check	Run ARCANA_CAPTURE_A69=1 npx playwright test --config playwright.motion-a69.config.ts	2026-10-19T01:18:04.2256854Z [WebServer] - Use build.rolldownOptions.output.codeSplitting to improve chunking: https://rolldown.rs/reference/OutputOptions.codeSplitting
+check	Run ARCANA_CAPTURE_A69=1 npx playwright test --config playwright.motion-a69.config.ts	2026-10-19T01:18:04.2257636Z [WebServer] - Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+check	Run ARCANA_CAPTURE_A69=1 npx playwright test --config playwright.motion-a69.config.ts	2026-10-19T01:18:05.5715908Z 
+check	Run ARCANA_CAPTURE_A69=1 npx playwright test --config playwright.motion-a69.config.ts	2026-10-19T01:18:05.5746404Z Running 126 tests using 1 worker
+check	Run ARCANA_CAPTURE_A69=1 npx playwright test --config playwright.motion-a69.config.ts	2026-10-19T01:27:13.5606046Z ·····°°°···°··°···········F··············°°°°··°°°···°··°·····°°°°··°°°···°··°··
+check	Run ARCANA_CAPTURE_A69=1 npx playwright test --config playwright.motion-a69.config.ts	2026-10-19T01:32:46.1212513Z ···°°°°··°°°···°··°·····°·····°°°···°··°·····°
+check	Run ARCANA_CAPTURE_A69=1 npx playwright test --config playwright.motion-a69.config.ts	2026-10-19T01:32:46.1219922Z 
+check	Run ARCANA_CAPTURE_A69=1 npx playwright test --config playwright.motion-a69.config.ts	2026-10-19T01:32:46.1227029Z   1) [chromium-390-motion-a69] › tests/browser-creatures/creatures-a87.spec.ts:258:1 › A87 representative group scenes, missing pose, renderer loss and reduced motion preserve confirmed results 
+check	Run ARCANA_CAPTURE_A69=1 npx playwright test --config playwright.motion-a69.config.ts	2026-10-19T01:32:46.1227972Z 
+check	Run ARCANA_CAPTURE_A69=1 npx playwright test --config playwright.motion-a69.config.ts	2026-10-19T01:32:46.1228255Z     Error: expect(locator).toHaveCount(expected) failed
+check	Run ARCANA_CAPTURE_A69=1 npx playwright test --config playwright.motion-a69.config.ts	2026-10-19T01:32:46.1228588Z 
+check	Run ARCANA_CAPTURE_A69=1 npx playwright test --config playwright.motion-a69.config.ts	2026-10-19T01:32:46.1229079Z     Locator:  locator('.team-compact [data-bond-progress=creatures] summary').locator('img[data-art]')
+check	Run ARCANA_CAPTURE_A69=1 npx playwright test --config playwright.motion-a69.config.ts	2026-10-19T01:32:46.1229809Z     Expected: 0
+check	Run ARCANA_CAPTURE_A69=1 npx playwright test --config playwright.motion-a69.config.ts	2026-10-19T01:32:46.1230125Z     Received: 1
+check	Run ARCANA_CAPTURE_A69=1 npx playwright test --config playwright.motion-a69.config.ts	2026-10-19T01:32:46.1230453Z     Timeout:  10000ms
+check	Run ARCANA_CAPTURE_A69=1 npx playwright test --config playwright.motion-a69.config.ts	2026-10-19T01:32:46.1230654Z 
+check	Run ARCANA_CAPTURE_A69=1 npx playwright test --config playwright.motion-a69.config.ts	2026-10-19T01:32:46.1230784Z     Call log:
+check	Run ARCANA_CAPTURE_A69=1 npx playwright test --config playwright.motion-a69.config.ts	2026-10-19T01:32:46.1231634Z       - Expect "toHaveCount" locator('.team-compact [data-bond-progress=creatures] summary').locator('img[data-art]') with timeout 10000ms
+check	Run ARCANA_CAPTURE_A69=1 npx playwright test --config playwright.motion-a69.config.ts	2026-10-19T01:32:46.1232479Z       - waiting for locator('.team-compact [data-bond-progress=creatures] summary').locator('img[data-art]')
+check	Run ARCANA_CAPTURE_A69=1 npx playwright test --config playwright.motion-a69.config.ts	2026-10-19T01:32:46.1233193Z         24 × locator resolved to 1 element
+check	Run ARCANA_CAPTURE_A69=1 npx playwright test --config playwright.motion-a69.config.ts	2026-10-19T01:32:46.1233505Z            - unexpected value "1"
+check	Run ARCANA_CAPTURE_A69=1 npx playwright test --config playwright.motion-a69.config.ts	2026-10-19T01:32:46.1233674Z 
+check	Run ARCANA_CAPTURE_A69=1 npx playwright test --config playwright.motion-a69.config.ts	2026-10-19T01:32:46.1233680Z 
+check	Run ARCANA_CAPTURE_A69=1 npx playwright test --config playwright.motion-a69.config.ts	2026-10-19T01:32:46.1233911Z       403 |   await page.goto(`${fixture}?mode=map&lang=es&pack=diagon-alley`);
+check	Run ARCANA_CAPTURE_A69=1 npx playwright test --config playwright.motion-a69.config.ts	2026-10-19T01:32:46.1234453Z       404 |   const missingSeal = page.locator('.team-compact [data-bond-progress=creatures] summary');
+check	Run ARCANA_CAPTURE_A69=1 npx playwright test --config playwright.motion-a69.config.ts	2026-10-19T01:32:46.1234999Z     > 405 |   await expect(missingSeal.locator('img[data-art]')).toHaveCount(0);
+check	Run ARCANA_CAPTURE_A69=1 npx playwright test --config playwright.motion-a69.config.ts	2026-10-19T01:32:46.1235709Z           |                                                      ^
+check	Run ARCANA_CAPTURE_A69=1 npx playwright test --config playwright.motion-a69.config.ts	2026-10-19T01:32:46.1236296Z       406 |   await expect(missingSeal).toContainText('Criaturas fantásticas');
+check	Run ARCANA_CAPTURE_A69=1 npx playwright test --config playwright.motion-a69.config.ts	2026-10-19T01:32:46.1236659Z       407 |   expect(
+check	Run ARCANA_CAPTURE_A69=1 npx playwright test --config playwright.motion-a69.config.ts	2026-10-19T01:32:46.1236935Z       408 |     await missingSeal
+check	Run ARCANA_CAPTURE_A69=1 npx playwright test --config playwright.motion-a69.config.ts	2026-10-19T01:32:46.1237537Z         at /home/runner/work/diagon-alley/diagon-alley/tests/browser-creatures/creatures-a87.spec.ts:405:54
+check	Run ARCANA_CAPTURE_A69=1 npx playwright test --config playwright.motion-a69.config.ts	2026-10-19T01:32:46.1237882Z 
+check	Run ARCANA_CAPTURE_A69=1 npx playwright test --config playwright.motion-a69.config.ts	2026-10-19T01:32:46.1238371Z     Error Context: test-results/motion-a69/creatures-a87-A87-represen-22188--preserve-confirmed-results-chromium-390-motion-a69/error-context.md
+check	Run ARCANA_CAPTURE_A69=1 npx playwright test --config playwright.motion-a69.config.ts	2026-10-19T01:32:46.1238878Z 
+check	Run ARCANA_CAPTURE_A69=1 npx playwright test --config playwright.motion-a69.config.ts	2026-10-19T01:32:46.1238976Z   1 failed
+check	Run ARCANA_CAPTURE_A69=1 npx playwright test --config playwright.motion-a69.config.ts	2026-10-19T01:32:46.1239776Z     [chromium-390-motion-a69] › tests/browser-creatures/creatures-a87.spec.ts:258:1 › A87 representative group scenes, missing pose, renderer loss and reduced motion preserve confirmed results 
+check	Run ARCANA_CAPTURE_A69=1 npx playwright test --config playwright.motion-a69.config.ts	2026-10-19T01:32:46.1240804Z   39 skipped
+check	Run ARCANA_CAPTURE_A69=1 npx playwright test --config playwright.motion-a69.config.ts	2026-10-19T01:32:46.1241088Z   86 passed (14.7m)
+check	Run ARCANA_CAPTURE_A69=1 npx playwright test --config playwright.motion-a69.config.ts	2026-10-19T01:32:46.1491116Z ##[error]Process completed with exit code 1.

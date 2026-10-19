@@ -18,7 +18,7 @@ Baseline main440d278; códigoA87 todavía sin commit/CI propio. Ningún navegado
 
 Fuentes preparadas/instaladas:16WebPalpha y7WAVoriginales más3SVG. Estática inspeccionada; poses no son rig corporal. Se añadió prioridad de texturas enreposo antes deposescast, solo especiespresentes, sin nuevoSprite/ticker. Esto es implementación, **todavía no prueba de fluidez o calidad en contexto**.
 
-## Pendiente antes de entrega
+## Pendiente registrado antes del primer candidato (hito histórico)
 
 Recorrido conectado nuevo, controles de vínculo en UI, Pactos y Cromodex, muestras temporales/arte ausente/reducido, ambosidiomas/paquetes/tamaños, simulaciones pareadas y medidas con límites; CI real delcandidato y revisión de evidencia. Actualizar registros de assets/PRD/DECISIONS/DESIGN segúnresultado. LaCI main39173115270pruebaA85+A86, noA87.
 
@@ -73,3 +73,23 @@ La nueva calibración termina1.920expediciones y640pares: las filasA85 y lospare
 ## Límite de credencial resuelto sin ampliar permisos
 
 Elpush delcommit local a7d5fd7 fue rechazado por GitHub porque añadía unflagde evidencia y dos paths alworkflow y la credencial carece de scopeworkflow. No llegó al remoto. Se mantiene `.github/workflows/checks.yml` idéntico albaseline y se enmienda únicamente ese commit propio no publicado, sin forcepush. Las dos capturas complementarias delApp conectado no se ejecutan; se sustituyen por evidencia DOM real, retratos decodificados y persistencia. La imagen delPacto usa la fixture declarada con wrapper equivalente y el flag original de captura Linux A69. No se finge una fotografía delApp real o se elude una protección delMac. Las comprobaciones técnicas pertinentes continúan.
+
+## Candidato enviado 47b5892
+
+Fuente completa `47b58925e9ef1472429e735a16429d9ff2a71f1d`, PR10. Run [39182975065](https://github.com/earandes/diagon-alley/actions/runs/39182975065) en curso. El workflow permanece idéntico al baseline: no se ampliaron permisos ni se alteraron guardas. Tipos, validación de contenido, unitarias, integración real, build, copia/restauración y análisis de distribución ya constan correctos en los steps de esa ejecución; la parte gráfica y sus resultados finales deben comprobarse por separado.
+
+## Finding durante39182975065: apertura del jefe en WebKit390
+
+El único error publicado por la batería A70 aparece en el App conectado, ES/ARCANA: al abrir el jefe con teclado, el diálogo tiene `scrollTop=6` cuando el contrato exige0. No es un fallo de combate o consumo: ocurre antes de confirmar. [Contexto original](evidence/candidate-47/webkit-390-boss-open-scroll-error-context.md). El efecto de apertura usa `showModal()` y foco con `preventScroll`, pero no establece posición inicial ni evita el anclaje de scroll tras layout. Esto permite un desplazamiento nativo; su causa exacta (foco/relayout) no se atribuye sin perfil.
+
+Cambio mínimo propuesto: posición inicial0 al abrir el diálogo y desactivar solo el anclaje automático en ese contenedor. Se conserva scroll manual/texto ampliado, foco y acción sticky. Aceptación sin relajar: la prueba existente debe seguir exigiendo0 y preparación/grageas completamente por encima de confirmar; cancelación devuelve foco y estado exactos. La ejecución actual continúa en serie para conservar evidencia de criaturas; no se repite un fallo sin cambio.
+
+## Resultado completo39182975065
+
+Fuente47b5892, checkoutc0119d57. Check fallido; regression omitida. A70:72correctos,1fallido,21omitidos. Motion:86correctos,1fallido,39omitidos. Los retornos móviles antes fallidos, ambos paquetes durante pausa y las demás muestras nuevas terminan correctamente. El segundo error está al final del caso adverso: la prueba espera eliminar un emblema, pero intercepta un nombreSVG que no se solicita en ese build. No es evidencia de fallo deArtwork o de su fallback; ese tramo aún no está validado.
+
+Se conserva el [log completo de los fallos](evidence/candidate-47/ci-failure.txt). El ajuste de prueba usará una URL ausente explícita sobre la imagen real para provocar un error nativo, observar su petición fallida y verificar que Artwork activa el nombre alternativo. No se eliminará el elemento ni se forzará el estado React. No se relaja la aceptación o se presenta una ruta no interceptada como cobertura.
+
+Revisión visual47: medallones y ayuda corregidos, Pacto con wrapper y ambos paquetes legibles. Se conservan14imágenes seleccionadas y JSONdepausa/rendimiento/audio. Una long task de56ms aparece en una muestraARCANA; P95rAF16,7–16,8ms en las seis. No se afirma mejora de arranque respecto a428. Las doce pruebas activas de clasificación/poses, rendimiento y audio nativo pasan; el caso adverso falla únicamente al provocar el emblema. No se acredita la regresión conectada, omitida por el fallo deljobcheck.
+
+La prueba de emblema ahora cambia solo `src` de su imagen real a una URL conocida ausente y observa una petición abortada más el handler nativo deArtwork; no borra el elemento ni fuerza React. Se registra si el original estaba inline. Se deja el footer de herramientas únicamente enmapa para que no invada la preparación de la fixture. Tipos/build repetidos correctos; distribución17.329.867B, advertencia dechunk existente conservada.

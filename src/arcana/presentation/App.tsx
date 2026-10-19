@@ -195,6 +195,9 @@ export function App() {
         '[data-encounter-choice]:not(:disabled),[data-pact-candidate]:not(:disabled),[data-pact-choice]:not(:disabled),[data-pact-action]:not(:disabled),.node-confirm-action:not(:disabled)',
       )
       ?.focus({ preventScroll: true });
+    // Native dialog focus may retain a small scroll offset on mobile WebKit.
+    // Each new consultation starts at its illustration; later user scrolling is free.
+    current.scrollTop = 0;
     return () => {
       if (current.open) current.close();
       const origin = nodeOrigin.current;

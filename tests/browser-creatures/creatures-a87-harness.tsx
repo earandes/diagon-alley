@@ -456,25 +456,23 @@ function Fixture() {
           />
         )}
       </main>
-      {mode !== 'battle' && (
+      {mode === 'map' && (
         <footer
           className="a87-fixture-controls"
           style={{ position: 'fixed', bottom: 0, right: 0, zIndex: 100, fontSize: 10 }}
         >
           <span>Declared presentation fixture</span>
-          {mode !== 'battle' && (
-            <button
-              data-qa-combat
-              onClick={() => {
-                Object.assign((window as unknown as { __a87: object }).__a87, {
-                  entryStarted: performance.now(),
-                });
-                setMode('battle');
-              }}
-            >
-              Combat fixture
-            </button>
-          )}
+          <button
+            data-qa-combat
+            onClick={() => {
+              Object.assign((window as unknown as { __a87: object }).__a87, {
+                entryStarted: performance.now(),
+              });
+              setMode('battle');
+            }}
+          >
+            Combat fixture
+          </button>
           {query.has('busy') && (
             <button data-qa-ready onClick={() => setReady(true)}>
               Release operation fixture

@@ -47,3 +47,7 @@ Picos, RMS, DC, formato y mezcla se han comprobado numéricamente. El límite ab
 Ilustraciones generadas con la herramienta integrada, usando referencias del acabado ya activo. Emblemas y síntesis de audio originales del proyecto. No se descargaron arte oficial o grabaciones de películas. Se mantiene la incertidumbre T01: la producción original no acredita licencia para distribuir una franquicia.
 
 La integración no significa acabado definitivamente aceptado. Deben revisarse siluetas, tamaño móvil, continuidad entre poses, lectura del contacto, movimiento reducido y recursos ausentes en el recorrido real. La escucha humana y el dispositivo físico quedan pendientes y se separan de las pruebas técnicas.
+
+## Alineación estática de los exports
+
+[Comprobación de contacto](asset-contact-check.json): reconstrucción de los puntos elegidos por el artista a partir de escala, offset y dimensiones registradas. Diferencia reposo/lanzamiento en el raster342×428: fénix0,05px, hipogrifo0px, unicornio0,36px y dragón0px. No es seguimiento anatómico automático ni medición de la escena GPU. El resto del cuerpo cambia deliberadamente de pose; la continuidad percibida debe revisarse en la secuencia, además de esta alineación técnica.

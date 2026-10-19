@@ -1,6 +1,6 @@
 # A87 · Criaturas coleccionables y vínculos tácticos
 
-Estado: implementado en rama, validación gráfica Linux en curso. PR [10](https://github.com/earandes/diagon-alley/pull/10). Primer candidato428927f tuvo dos fallos de fixture; correcciones y nueva calibración preparadas para otro candidato. Sin integración A87, despliegue, sesión humana o dispositivo físico atribuidos todavía.
+Estado: implementado en rama, pendiente de cerrar la validación del candidato corregido. PR [10](https://github.com/earandes/diagon-alley/pull/10). Las dos ejecuciones Linux previas se conservan fallidas:428927f detectó el footer de fixture;47b5892 pasó los retornos y la composición nueva, pero detectó scroll inicial del jefe enWebKit y una inyección de emblema que no provocaba fallo. Ambos tienen correcciones acotadas y aceptación sin relajar. Sin integración A87, despliegue, sesión humana o dispositivo físico atribuidos todavía.
 
 ## Qué puede decidir el jugador
 

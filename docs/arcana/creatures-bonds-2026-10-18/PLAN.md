@@ -1,13 +1,15 @@
 # Plan A87
 
-- [x] Cerrar validación e integrar dependenciaPR9/A85–A86: CI39167929972 completa correcta, main440d278 con código equivalente; CI propia del SHA documental39173115270 completa y correcta.
-- [x] Confirmar alcance de criaturas obtenibles y preparar contrato de diseño.
-- [x] Clasificación detallada y fuentes oficiales; estructura de elección sin apilado. Parámetros contrastados con escenarios declarados; no son prueba humana de equilibrio.
-- [ ] Familia de16exports y7sonidos implementada; primera inspección Linux realizada, correcciones de composición y nueva revisión pendientes.
-- [x] Reglas/snapshots versionados y confirmación de vínculo/recuperación.
-- [x] Cromodex, preparación/mapa/Pactos/revelación y combate conectados.
-- [x] Modelos pareados, probabilidades/completitud y pruebas reales pertinentes.
-- [ ] Linux protegido: ejecutar, inspeccionar, corregir, validar regresiones.
-- [ ] Documentar resultados/candidato y entrega; sin despliegue.
+- [x] Integrar dependenciaPR9/A85–A86: CI39167929972 completa correcta, main440d278 equivalente y CI propia39173115270 correcta.
+- [x] Confirmar criaturas obtenibles; contrato, clasificación y diseño sin apilado.
+- [x] Producir16WebP,3emblemas y7sonidos con fuentes, consumidores y comprobaciones estáticas.
+- [x] Implementar reglas/snapshots, elección/recuperación y recorridos Cromodex–Pacto–mapa–combate.
+- [x] Calibrar1.920expediciones,640pares y probabilidades/completitud exactas; conservar resultados adversos y versión anterior.
+- [x] Tipos/build,681unit y111PostgreSQL/Redis reales sobre la corrección de cuatro casas.
+- [x] Revisar primera evidenciaLinux428; corregir footer de fixture, libro, contexto de afinidad y marca de ayuda.
+- [x] Revisar composición/poses/audio/rendimiento47b5892, run39182975065. A75correcta; A70detecta scrollTop6 enWebKit390 y A87una inyección de emblema inválida. Check fallido, regresión omitida; evidencia conservada.
+- [x] Implementar posición inicial del diálogo y anclaje acotados, inyección nativa de recurso ausente y footer de fixture solo enmapa; tipos/build/harness correctos. Aserciones originales conservadas.
+- [ ] Validar enLinux el siguiente candidato y el recorrido conectado; corregir nuevos fallos demostrados.
+- [ ] Consolidar documentación/evidencia, revisar diff, integrar resultado validado y comprobar main/CI; sin despliegue.
 
-No se presenta una propuesta, prueba automatizada o muestra estática como validación humana.
+Ningún navegador abierto en elMac. Matrices enCI protegida, una batería cada vez. La revisión humana, escucha perceptiva y móvil físico siguen pendientes y no se presentan como realizadas.

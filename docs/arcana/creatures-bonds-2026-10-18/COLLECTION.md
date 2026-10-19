@@ -36,6 +36,8 @@ Los escenarios de [calibración](CALIBRATION.md) comparan recursos finales y vic
 
 Los tres Pactos permiten reunir tres criaturas temporales antes del primer combate sin esperar la mediana de 32 aperturas. Las pruebas de contenido verifican la vía en 128 grafos y la validación conectada debe comprobarla en navegador. Esto no concede propiedad, descubre cromos o elimina la cola de la colección permanente.
 
-Añadir criaturas tampoco iguala la distribución de casas propias. El acceso táctico a una formación viable y la duración de completar una colección son problemas distintos.
+Añadir criaturas tampoco iguala la distribución de casas propias: hay14Gryffindor, cuatro miembros de cada otra casa y cuatro personas sin casa. El inicial ya pertenece aGryffindor. Con el inicial solo y los tres Pactos de temaGryffindor pueden reunirse cuatro identidades; otra casa parte de tres temporales. Una copia propia de esa otra casa puede orientar el tema y permitir cuatro identidades distintas, puesto que las copias ya presentes se ordenan después en las ofertas. La vía de cuatro temas no se presenta como idéntica probabilidad de propiedad o idéntico umbral inicial.
+
+El acceso táctico a una formación viable, la fuerza concreta de cada pasivo y la duración de completar la colección son problemas distintos. Se conservan las estadísticas, los efectos de casas y el kit; la calibración incluye sus diferencias de resultado, sin afirmar igualdad universal.
 
 No se añaden monedas, XP, canjes, pity o compensaciones, ni se cambian precios, premios o energía para ocultar las colas. Si la observación humana detecta repetición vacía, se estudiará una propuesta posterior con estos supuestos visibles.

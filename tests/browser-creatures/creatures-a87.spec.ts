@@ -398,10 +398,21 @@ test('A87 representative group scenes, missing pose, renderer loss and reduced m
   await expect(page.locator('[data-bond-mode=creatures]')).toBeEnabled();
   await immutable(page);
 
-  await page.route(/\/bond-creatures(?:-[^/]+)?\.svg(?:\?.*)?$/, (route) => route.abort());
+  let missingSealRequests = 0;
+  await page.route('**/a87-missing-bond.svg', (route) => {
+    missingSealRequests++;
+    return route.abort();
+  });
   await page.setViewportSize({ width: 390, height: 844 });
   await page.goto(`${fixture}?mode=map&lang=es&pack=diagon-alley`);
   const missingSeal = page.locator('.team-compact [data-bond-progress=creatures] summary');
+  const bundledSeal = await missingSeal.locator('img[data-art]').getAttribute('src');
+  // Small SVGs may be inlined by Vite, so intercepting their source filename
+  // cannot cause a failure. Exercise the real native error and Artwork handler.
+  await missingSeal.locator('img[data-art]').evaluate((image: HTMLImageElement) => {
+    image.src = '/a87-missing-bond.svg';
+  });
+  await expect.poll(() => missingSealRequests).toBeGreaterThan(0);
   await expect(missingSeal.locator('img[data-art]')).toHaveCount(0);
   await expect(missingSeal).toContainText('Criaturas fantásticas');
   expect(
@@ -418,6 +429,8 @@ test('A87 representative group scenes, missing pose, renderer loss and reduced m
     declaredRivalCreatureOrientation: true,
     missingCast: true,
     missingBondSeal: true,
+    missingSealRequests,
+    bundledSealWasInline: bundledSeal?.startsWith('data:') ?? false,
     rendererLoss: true,
     importFailure: true,
     text320x200: true,

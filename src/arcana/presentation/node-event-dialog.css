@@ -5,6 +5,7 @@
   max-height: calc(100dvh - 36px);
   box-sizing: border-box;
   overflow: auto;
+  overflow-anchor: none;
   padding: 30px clamp(20px, 5vw, 42px) 24px;
   color: #f5e8c9;
   border: 1px solid #d1b477;
