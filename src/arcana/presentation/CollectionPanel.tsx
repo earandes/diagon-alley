@@ -356,6 +356,7 @@ export function CollectionPanel({
                 asset={entry.discovered ? `character.${entry.wizard.id}.portrait` : 'card.back'}
                 language={language}
                 className="card-portrait"
+                fallbackAsset="card.back"
                 decorative
               />
               {entry.discovered && entry.copies.find((c) => c.wizard.finish) && (
@@ -428,6 +429,7 @@ export function CollectionPanel({
               }
               language={language}
               className="album-folio-portrait"
+              fallbackAsset="card.back"
               decorative
             />
             {selectedCopy && <EnchantedFinish wizard={selectedCopy.wizard} />}

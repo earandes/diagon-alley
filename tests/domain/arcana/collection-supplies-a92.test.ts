@@ -150,3 +150,25 @@ it('A92 can show 34 identities and 30 duplicate copies without leaking undiscove
   expect(html).not.toContain('character.dragon.portrait');
   expect(html.match(/data-collection-id=/g) ?? []).toHaveLength(4);
 });
+
+it('A92 archived identities retain a full card back when their portrait no longer has an asset', () => {
+  const state = runInitial();
+  const archived = {
+    ...state.copies[0],
+    copyId: 'a92-archived-copy',
+    wizard: { ...state.copies[0].wizard, id: 'a92-missing-portrait' },
+  };
+  const html = renderToStaticMarkup(
+    createElement(CollectionPanel, {
+      game: { ...state, copies: [archived] },
+      catalog: content.catalog,
+      content,
+      language: 'es',
+    }),
+  );
+  const article =
+    html.split('data-collection-id="a92-missing-portrait"')[1]?.split('</article>')[0] ?? '';
+  expect(article.includes('class="card-portrait"')).toBe(true);
+  expect(article.includes('data-art="card.back"')).toBe(true);
+  expect(article.includes('Archivo')).toBe(true);
+});

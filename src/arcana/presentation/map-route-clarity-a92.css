@@ -21,6 +21,13 @@
   stroke-width: 1.8px;
   stroke-dasharray: 1 6;
 }
+.map-route-paths [data-route-state='future'] .route-path-bed {
+  stroke-width: 4px;
+  opacity: 0.65;
+}
+.map-route-paths [data-route-state='future'] .route-path-ink {
+  stroke-width: 1.5px;
+}
 .map-route-paths [data-route-state='visited'] .route-path-ink {
   stroke: #d2c39f;
   stroke-width: 2px;
@@ -37,6 +44,7 @@
 .map-route-paths [data-route-inspected='true'] .route-path-bed {
   stroke: #101c2c;
   stroke-width: 10px;
+  opacity: 0.88;
 }
 .map-route-paths [data-route-inspected='true'] .route-path-ink {
   stroke: #e6f6ef;

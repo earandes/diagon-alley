@@ -396,6 +396,20 @@
   hyphens: none;
   width: 100%;
 }
+.boss-party-objects:empty {
+  display: none;
+}
+@media (min-width: 621px) and (max-width: 1000px) {
+  .game-shell .boss-party-member {
+    flex: 0 1 calc(33.333% - 6px);
+    width: auto;
+    min-width: min(100%, 5.75rem);
+    max-width: 7rem;
+  }
+  .boss-party-members[data-party-count='4'] .boss-party-member {
+    flex-basis: calc(50% - 6px);
+  }
+}
 .boss-member-affinity > .tactical-affinity {
   margin: 0;
   padding: 1px 5px;

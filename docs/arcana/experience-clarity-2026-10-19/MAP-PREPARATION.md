@@ -63,3 +63,9 @@ La prueba SSR ES/EN se amplió con una run actual cuyo snapshot contiene las reg
 Comprobación ejecutada tras la corrección: `npx --no-install vitest run tests/domain/arcana/map-route-clarity-a92.test.ts tests/domain/arcana/commerce-preparation-a89.test.ts`:15/15verdes en2archivos. No navegador/servicios/CI/Git.
 
 Consumidores equivalentes contrastados: TeamHud y propuesta de Pacto ya pasan run.bondFocus; ExpeditionPreparation pasa su borrador bondFocus; BossPartyStage ya fue corregido en este incremento. BossPrelude y BondBand de rivales conservan Auto porque no representan la elección propia y el motor resuelve por defecto el vínculo rival mediante effectiveBondFocus(input.rival, rules.bonds). No se les propaga el modo del jugador.
+
+### Corrección tras inspección Linux
+
+La comparación con el paisaje real en72434bb mostró que aplicar soporte7px a todas las ramas futuras formaba una malla dominante. Se reduce únicamente futuro a4px/opacity0,65 con tinta1,5px; disponible/recorrido/consulta mantienen jerarquía y todos los enlaces. La consulta restituye soporte opaco local. Es una corrección de composición basada en PNG seleccionadas, no prueba de comprensión humana. Requiere nueva comparación sobre el candidato que la incluya.
+
+La prueba de palabras a865px falló realmente en214f7e4. Se amplía3+2 al tramo de media escena de escritorio621–1000px, y2+2 para cuatro. No se reduce fuente ni se permite overflow; se conserva la misma aceptación y se registra geometría antes de exigirla, también cuando falle. Las bandejas de objetos vacías dejan de reservar una fila sin información. Se añade una única captura seleccionada865 para inspeccionar el caso corregido.

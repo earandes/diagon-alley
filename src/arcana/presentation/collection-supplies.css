@@ -14,6 +14,7 @@
 }
 .game-shell .album-illustrated .album-card-inspect {
   width: 100%;
+  aspect-ratio: 4 / 5;
   margin: 0;
   display: block;
   padding: 0;
@@ -83,6 +84,7 @@
 }
 .game-shell .album-card-folio > .enchanted-holder {
   width: min(70%, 265px);
+  aspect-ratio: 4 / 5;
 }
 .album-identity-details {
   margin-block: 10px;

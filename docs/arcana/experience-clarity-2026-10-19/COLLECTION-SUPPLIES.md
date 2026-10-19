@@ -66,3 +66,13 @@ Spec preparada para ES/EN×Diagon/ARCANA bajo proyectos del coordinador. Comprue
 - Detector Impeccable, una sola ejecución sobre CollectionPanel/BeanAssignments/CSSpropio: `[]`, exit0. No certifica estilo o accesibilidad.
 - `npx --no-install vite build --config tests/browser-experience-clarity/vite-collection-a92.config.ts`: correcto, sin abrir navegador. Fixture genera JS899,80kB y CSS122,69kB sin gzip; aviso de chunk>500kB conservado. No equivale al build del juego ni demuestra rendimiento. Usa imports del helper de fixtures A89 y componentes reales; no se añade al producto.
 - No se modificó configuración global o CSS compartido. Arte y sonido intactos.
+
+### Inspección seleccionada posterior de CI72434bb
+
+Se inspeccionaron PNG Linux ya generadas, sin abrir navegador: folio, colección390Diagon/ARCANA y stock100 del artefacto `test-results/a92-ci-72434bb/docs/arcana/accounts-2026-10-17/evidence/linux/a92/`. No había muestra1280 de colección en ese directorio; no se acredita aquí escritorio visual.
+
+Folio: retrato y nombre dominan; ficha y copias son consultas diferenciadas, cierre visible y advertencia de fuente no vigente correcta para el protagonista inicial. Tarro100: objeto único, stock y unidad distintos, caída/temporal reconocibles, borrador y detalle de riesgo presentes. El PNG de tarro es composición de componente, no aceptación de la preparación completa.
+
+**Defecto demostrado y corregido:** identidad de archivo sin asset registrado colapsaba su retrato y el marco encantado quedaba diminuto. Se añadió fallback `card.back` para portadas y folio, y reserva4/5 sobre el contenedor, sin alterar la identidad ni su acabado. Prueba SSR falló antes y pasó después. Última ejecución acotada:32pruebas correctas en3archivos. La nueva evidencia gráfica queda pendiente del siguiente candidato CI del coordinador.
+
+En la muestra ARCANA390 algunos metadatos de las dos primeras cartas se ven incompletos, a diferencia de la tercera. La revisión estática no encontró una regla de ocultación ni una condición por paquete: traducciones, datos y componentes emiten rareza/copias correctamente; `useSelectionMotion` mueve el álbum completo, no textos individuales. No se atribuye una causa o un defecto de producto confirmado a esa imagen aislada. Para el siguiente muestreo se declara movimiento reducido efectivo desde `emulateMedia`, se espera `document.fonts.ready` tras restituir el tamaño y se comprueban presencia/altura de rareza/copias antes de capturar. Esto evita presentar una fase transitoria como reposo, sin retraso arbitrario ni cambios de contenido. No sustituye inspeccionar la siguiente imagen ni probar animación aparte.

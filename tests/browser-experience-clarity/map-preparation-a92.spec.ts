@@ -10,7 +10,8 @@ async function selected(page: import('@playwright/test').Page, name: string) {
   if (
     process.platform !== 'linux' ||
     process.env.ARCANA_CAPTURE_A92 !== '1' ||
-    test.info().project.name !== 'chromium-390-a92'
+    (test.info().project.name !== 'chromium-390-a92' &&
+      !(test.info().project.name === 'chromium-865-a92' && name === 'preparation-names'))
   )
     return;
   await mkdir(evidence, { recursive: true });
@@ -22,7 +23,10 @@ async function selected(page: import('@playwright/test').Page, name: string) {
         .map((a) => a.finished.catch(() => {})),
     );
   });
-  await page.screenshot({ path: resolve(evidence, `${name}.png`), fullPage: false });
+  await page.screenshot({
+    path: resolve(evidence, `${test.info().project.name}-${name}.png`),
+    fullPage: false,
+  });
 }
 for (const pack of ['diagon-alley', 'arcana'])
   for (const lang of ['es', 'en']) {
@@ -81,9 +85,6 @@ for (const pack of ['diagon-alley', 'arcana'])
           };
         }),
       );
-      expect(
-        geometry.every((entry) => entry.fragments === 1 && entry.scrollWidth <= entry.width + 1),
-      ).toBe(true);
       for (const member of await members.all()) await expect(member).toBeVisible();
       const measurements = {
         sha: process.env.GITHUB_SHA ?? null,
@@ -99,6 +100,9 @@ for (const pack of ['diagon-alley', 'arcana'])
         resolve(evidence, `${test.info().project.name}-${pack}-${lang}-names.json`),
         JSON.stringify(measurements, null, 2),
       );
+      expect(
+        geometry.every((entry) => entry.fragments === 1 && entry.scrollWidth <= entry.width + 1),
+      ).toBe(true);
       await members.first().focus();
       await page.keyboard.press('Enter');
       expect(await page.evaluate(() => window.__a92MapPrep.prepared)).toBe(1);

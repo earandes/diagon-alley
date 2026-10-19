@@ -27,6 +27,8 @@ for (const [lang, pack] of pairs) {
   test(`A92 collection keeps identity, spread, filters and focus ${lang}/${pack}`, async ({
     page,
   }) => {
+    // These samples evaluate resting composition, not a transient selection animation.
+    await page.emulateMedia({ reducedMotion: 'reduce' });
     await page.goto(`${fixture}?lang=${lang}&pack=${pack}`);
     const panel = page.locator('.collection-panel');
     await expect(panel.locator('progress')).toHaveAttribute('value', '3');
@@ -34,6 +36,11 @@ for (const [lang, pack] of pairs) {
     await expect(panel.locator('.collection-archive-count')).toContainText('1');
     const capacity = (page.viewportSize()?.width ?? 0) >= 820 ? 8 : 4;
     await expect(panel.locator('[data-collection-id]')).toHaveCount(capacity);
+    const archived = panel.locator('[data-collection-id="a92-archived"]');
+    await expect(archived.locator('.card-portrait[data-art="card.back"]')).toBeVisible();
+    await expect
+      .poll(async () => (await archived.locator('.album-card-inspect').boundingBox())?.height ?? 0)
+      .toBeGreaterThan(100);
     const next = page.getByRole('button', {
       name: lang === 'es' ? 'Página siguiente' : 'Next page',
       exact: true,
@@ -90,13 +97,27 @@ for (const [lang, pack] of pairs) {
       lang === 'es' &&
       ['chromium-390-a92', 'chromium-1280-a92'].includes(test.info().project.name)
     ) {
-      await page.evaluate(() => (document.documentElement.style.fontSize = ''));
+      await page.evaluate(async () => {
+        document.documentElement.style.fontSize = '';
+        await document.fonts.ready;
+      });
+      const discovered = panel.locator('[data-collection-discovered="true"]');
+      for (const card of await discovered.all()) {
+        await expect(card.locator('.rarity-badge > span')).toHaveText(
+          lang === 'es' ? 'Común' : 'Common',
+        );
+        await expect(card.locator('.card-ownership')).toBeVisible();
+        await expect
+          .poll(async () => (await card.locator('.card-ownership').boundingBox())?.height ?? 0)
+          .toBeGreaterThan(5);
+      }
       const directory = resolve(
         process.env.A92_EVIDENCE_ROOT ?? 'docs/arcana/experience-clarity-2026-10-19/evidence/linux',
       );
       await mkdir(directory, { recursive: true });
       await page.screenshot({
         path: resolve(directory, `${test.info().project.name}-${pack}-collection.png`),
+        fullPage: true,
       });
     }
   });
