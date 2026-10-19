@@ -9,6 +9,7 @@ import { mkdir, writeFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
 import { changeLanguage, startExpedition } from '../browser-trial/game-fixture';
 import { readGame, reachNode, confirmEvent, expectMapFits } from '../browser-trial/route-helpers';
+import { fixedRouteFixture } from '../support/fixed-route-fixture';
 
 // The A71 authority has its own ephemeral namespace, with unchanged entry limits.
 test.use({ baseURL: 'http://127.0.0.1:5472' });
@@ -111,7 +112,7 @@ async function actorFrame(page: Page) {
 
 for (const language of ['es', 'en'] as const)
   for (const pack of ['diagon-alley', 'arcana'] as const) {
-    test(`A71 staged real boss: consult prepare cancel confirm loot ${language} ${pack}`, async ({
+    test(`A71 declared-route boss: consult prepare cancel confirm loot ${language} ${pack}`, async ({
       page,
     }) => {
       const errors: string[] = [];
@@ -124,10 +125,21 @@ for (const language of ['es', 'en'] as const)
       if (language === 'en') await changeLanguage(page, language);
       await page.locator('.portal-enter').click();
       await startExpedition(page, language);
+      // A presentation/loot fixture must reach its boss; random routes may legitimately lose.
+      // Only this fresh, unvisited isolated run is fixed. Subsequent operations remain real.
+      await fixedRouteFixture(
+        page,
+        (await readGame(page)).playerId,
+        new URL('../support/fixtures/a87-route-seed0.json', import.meta.url),
+      );
       const bossId = await reachNode(page, 'boss', language);
-      await expectMapFits(page);
       const before = await readGame(page);
       const run = before.exploration!.run!;
+      expect(run.status, 'The declared boss fixture must reach the unvisited boss alive').toBe(
+        'active',
+      );
+      expect(run.visited).not.toContain(bossId);
+      await expectMapFits(page);
       const plan = run.campaignSnapshot!.nodes.find((node) => node.nodeId === bossId)!;
       if (plan.kind !== 'boss') throw Error('Expected current saved boss plan');
       const origin = page.locator(`button[data-node="${bossId}"]`);
@@ -290,7 +302,9 @@ for (const language of ['es', 'en'] as const)
       expect(opened.copies.length).toBe(committed.copies.length + 1);
       expect(errors).toEqual([]);
       await report(`${language}-${pack}-real-journey`, {
-        fixture: false,
+        fixture: true,
+        fixtureDefinition: 'A87 discovery seed0 graph/node plans; original stats/inventory/rules',
+        subsequentAuthorityOperations: true,
         isolatedAuthorityAccount: committed.playerId,
         runId: run.id,
         actionToDomUsableUpperBoundMs,

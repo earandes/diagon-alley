@@ -17,3 +17,13 @@ Baseline `a74c932b9a0f6d446af057d1d746785504d1a199`. macOS; Node24 y dependencia
 Se añade un caso nativo por cada una de las tres parejas existentes de audio: Chromium1280/390 yWebKit865. Route retiene unWAV opcional, contexto sigue sin existir antes delgesto; ambiente comienza con carga general todavía pendiente, sin cue atrasado al liberar; apagar yEscape conserva foco. Usa WebAudio/archivos reales, no stubdeaudio. Sin screenshots nuevas porA88. El resto deA84/A87 conserva ES/EN/paquetes, pausa/2x/ocultación/omisión, preferencia multitab y fallos nativos.
 
 La batería completa no se atribuirá a unSHA distinto. PostgreSQL/Redis se ejecutan enCI como regresión; el cambio no altera sus contratos. Observación humana, escucha, lector audible y dispositivo físico pendientes. No se declara menorP95rAF o arranque universal a partir del límite de concurrencia. WebKit20–23ms históricos permanecen.
+
+## Primera CI39213910504 ·06cc89a / checkout5c29d3f
+
+Resultado **fallido**. Tipos/build/687unit/111PGRedis y A75 correctos. A70 se detuvo en35correctos/1fallo/101sin ejecutar; A68 pasó12; movimiento/audio pasó90, incluidos3casosA88. Regresiónskipped. No una batería completa superada. Logs y snapshot en `evidence/ci-06cc/`.
+
+El snapshot del fallo muestra «Expedition ended» trasresolvernodo4: no existe mapa que medir. Es un recorrido aleatorio derrotado en una prueba de presentación que requiere llegar aljefe. No se atribuye el fallo aCSS/audio. No se conserva el estado completo de esa ruta aleatoria, por lo que no se reconstruye suseed o el motivo exacto de cada golpe.
+
+Corrección QA: reutilizar el preparador de ruta aislada A73 con una nueva definición seed0A87, comprobada contra grafo/nodos/configuración actuales y con tres órdenes deID propio. Solo modifica elestado no visitado de esa cuenta efímera enPostgreSQLCI, mediante lock/revisión; conserva inventario/stats/reglas/receipts y todos los comandos posteriores reales. A71 se declara fixture=true, no prueba de todas las rutasaleatorias. No cambia producto, dificultad o premios. Se mantiene la aceptación delmapa/arena y se explicita fallo de preparación si el escenario no llega vivo. La nueva ejecución valida esta corrección; no se repite el mismo código para buscar un resultado favorable.
+
+RED de fixture: importación de la definición inexistente (no tests ejecutados), conservado; no se presenta como un fallo semántico deproducto. GREEN:2casos de coherencia y llegada/victoria de lafixture. La anteriorCI mantiene sus fallos y mediciones.

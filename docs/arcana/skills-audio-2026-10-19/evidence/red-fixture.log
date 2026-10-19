@@ -1,0 +1,25 @@
+
+ RUN  v5.0.3 /Users/enricarandes/work/diagon-alley
+
+ ❯ tests/domain/arcana/qa-boss-route-a88.test.ts (0 test)
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/domain/arcana/qa-boss-route-a88.test.ts [ tests/domain/arcana/qa-boss-route-a88.test.ts ]
+Error: Cannot find module '../../support/fixtures/a87-route-seed0.json' imported from /Users/enricarandes/work/diagon-alley/tests/domain/arcana/qa-boss-route-a88.test.ts
+ ❯ tests/domain/arcana/qa-boss-route-a88.test.ts:8:1
+      6| import { healRun, type Run, type RunMember } from '../../../src/arcana…
+      7| import { preparedRoutePath } from '../../support/prepared-route';
+      8| import fixture from '../../support/fixtures/a87-route-seed0.json';
+       | ^
+      9|
+     10| it('pins the boss presentation fixture to current A87 public content, …
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  no tests
+   Start at  09:46:28
+   Duration  151ms (worker 96%, environment 4%)
+

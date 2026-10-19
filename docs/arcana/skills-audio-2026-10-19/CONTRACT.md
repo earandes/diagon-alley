@@ -8,7 +8,7 @@ El jugador activa música/efectos voluntariamente desde los Ajustes existentes. 
 
 ## Decisión y recorrido
 
-Ajustes → activar audio → ambiente listo puede comenzar → efectos se preparan con trabajo acotado → combate emite solo cues disponibles → pausa/omisión/ocultación/apagado → regreso. Máximo dos cadenas de carga+decode activas; ninguna cola de impactos. No se añade otro control o contenido musical.
+Ajustes → activar audio → ambiente listo puede comenzar → efectos se preparan con trabajo acotado → combate emite solo cues disponibles → pausa/omisión/ocultación/apagado → regreso. Máximo dos cadenas de carga+decode activas por instancia/página; ninguna cola de impactos. No se añade otro control o contenido musical. Al activar ambos canales en una tanda se prepara primero el ambiente; no se interrumpen o reordenan las solicitudes ya encoladas de una tanda anterior.
 
 Comparadas: precargar antes de consentimiento (rechazada), esperar todo como ahora (retiene dependencia innecesaria), carga acotada y publicación independiente (elegida). Puede tardar más en tener todos los efectos; a cambio reduce concurrencia y la música no espera al más lento. No se afirma todavía mejora de FPS o escucha.
 

@@ -6,7 +6,7 @@ Se evaluaron35entradas GameDev deSkillIssue. Se instalaron únicamente tres guí
 
 ## Qué cambia en el juego
 
-Ajustes y sus objetos existentes se conservan. Tras elegir audio, el ambiente tiene prioridad y comienza en cuanto está preparado sin esperar un efecto lento. Carga+decode pasan de hasta16cadenas simultáneas a un máximo2, incluso mientras acaba uncontexto anterior. Recursos opcionales fallidos no bloquean el resto de la cola; dispose descarta trabajo que no empezó. Sin cola de golpes pendientes, cambios devoz, mezcla o volumen. Silencio por defecto y antes delconsentimiento, máximo4efectos y1ambiente conservados.
+Ajustes y sus objetos existentes se conservan. Tras elegir audio, al activar ambos canales juntos el ambiente tiene prioridad y comienza en cuanto está preparado sin esperar un efecto lento. Carga+decode pasan de hasta16cadenas simultáneas a un máximo2, incluso mientras acaba uncontexto anterior. Recursos opcionales fallidos no bloquean el resto de la cola; dispose descarta trabajo que no empezó. Sin cola de golpes pendientes, cambios devoz, mezcla o volumen. Silencio por defecto y antes delconsentimiento, máximo4efectos y1ambiente conservados.
 
 Se eligió este cambio frente a otra generación visual: aporta una mejora funcional reproducible sin rehacer arte que ya funciona, esperar a un servicio, gastar créditos o añadir pantallas. Puede tardar más en tener todos los efectos disponibles; no se presenta como una mejora universal deFPS. [Contrato](CONTRACT.md), [QA y límites](QA.md).
 
