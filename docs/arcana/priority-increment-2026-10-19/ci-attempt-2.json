@@ -1,0 +1,23 @@
+{
+  "runId": 39244647501,
+  "headSha": "3abdcaf4d4b5a74206320b08feb718dcb1aa4dd5",
+  "stats": {
+    "startTime": "2026-10-19T11:29:18.121Z",
+    "duration": 27955.846,
+    "expected": 3,
+    "skipped": 88,
+    "unexpected": 1,
+    "flaky": 0
+  },
+  "failures": [
+    {
+      "test": "A89 bean risk stays unknown, precise carriers and draft changes never consume or discover",
+      "project": "chromium-390-a89",
+      "status": "failed",
+      "errors": [
+        "Error: expect(locator).toContainText(expected) failed\n\nLocator: locator('.bean-draft-count')\nExpected substring: \"sin consumir\"\nReceived string:    \"1 asignado \u00b7 borrador\"\nTimeout: 12000ms\n\nCall log:\n  - Expect \"toContainText\" locator('.bean-draft-count') with timeout 12000ms\n  - waiting for locator('.bean-draft-count')\n    28 \u00d7 locator resolved to <p role=\"status\" class=\"bean-draft-count\">1 asignado \u00b7 borrador</p>\n       - unexpected value \"1 asignado \u00b7 borrador\"\n\n\n  325 |     await page.keyboard.press('Enter');\n  326 |     await expect(page.locator('.bean-carrier').first()).toHaveAttribute('aria-pressed', 'true');\n> 327 |     await expect(page.locator('.bean-draft-count')).toContainText(\n      |                                                     ^\n  328 |       lang === 'es' ? 'sin consumir' : 'not consumed',\n  329 |     );\n  330 |     await finishMeasurement(page, beanMark);\n    at /home/runner/work/diagon-alley/diagon-alley/tests/browser-priorities/priorities-a89.spec.ts:327:53"
+      ]
+    }
+  ],
+  "disposition": "Own run cancelled after preserving failure and selected evidence; no automatic retry."
+}

@@ -13,6 +13,9 @@
 .forge-reference-copy {
   position: relative;
   flex: 0 0 3.25rem;
+  width: 3.25rem;
+  box-sizing: border-box;
+  margin: 0;
   min-height: 4.25rem;
   padding: 0.1rem;
   border: 1px solid transparent;
@@ -20,7 +23,7 @@
   background: transparent;
 }
 .forge-reference-copy > img:first-child {
-  width: 100%;
+  width: 3rem;
   height: 3.5rem;
   object-fit: contain;
 }

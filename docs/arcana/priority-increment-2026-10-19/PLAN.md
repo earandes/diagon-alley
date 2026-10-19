@@ -20,3 +20,5 @@ Ciclo0 medido e implementado. Ciclos1–2 implementados y conectados;735unitario
 Actualización: estudio PM10/22 terminado,81.000 casos de sensibilidad y384 rutas; recomendación conservar economía. Comprobación final739unitarios/120integración y build correctos. Cinco capturas explícitas y cuatro observaciones de respuesta preparadas para CI Linux; no son medidas ejecutadas aún.
 
 CIinicial39243286949 cancelada tras preservar fallo de fixture de origen. R01 corregido con14casos focales; factory de fixture y prueba previa en corrección. Se prepara nuevo candidato; ningún recorrido gráfico se declara validado por esta ejecución.
+
+CI2 conserva3casos correctos antes de aserción obsoleta de copy de grageas. Capturas revisadas y estante de referencias corregido. Se añade un caso App real acotado para enlaces nuevos; CI3 pendiente. No se completa goal con estas omisiones.

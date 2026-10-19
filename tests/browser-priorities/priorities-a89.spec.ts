@@ -9,6 +9,8 @@ import {
   closeBattleOptions,
 } from '../browser-trial/battle-controls';
 import { changeLanguage, startExpedition } from '../browser-trial/game-fixture';
+import { leaveBattle } from '../browser-trial/battle-controls';
+import type { GameState } from '../../src/arcana/application/game';
 
 const fixture = '/tests/browser-priorities/priorities-a89.html';
 const pairs = [
@@ -230,7 +232,6 @@ test('A89 Cromodex goal persists per owner, keeps silhouettes and requires an ow
       JSON.parse(localStorage.getItem('arcana.collection-goal.v1.a89-fixture-owner-a')!),
     );
     expect(goal).toMatchObject({ version: 1, owner: 'a89-fixture-owner-a' });
-    await selected(page, 'collection', lang, pack);
     expect(economic(await read(page))).toBe(economic(initial));
     await page.keyboard.press('Escape');
     await expect(pending).toBeFocused();
@@ -284,6 +285,7 @@ test('A89 wand fitting chooses exact copies, exposes trade-offs and cancels with
     const before = economic(await read(page));
     const references = page.locator('[data-forge-reference]');
     await expect(references).toHaveCount(4);
+    expect(await references.first().locator('img').first().evaluate(image => image.getBoundingClientRect().width)).toBeGreaterThanOrEqual(40);
     await references.last().focus();
     const referenceMark = await beginMeasurement(page, 'wand-reference', lang, pack);
     await page.keyboard.press('Enter');
@@ -305,7 +307,6 @@ test('A89 wand fitting chooses exact copies, exposes trade-offs and cancels with
     await expect(page.locator('.forge-action')).toBeFocused();
     expect((await read(page)).forgeRequests).toBe(0);
     expect(economic(await read(page))).toBe(before);
-    await selected(page, 'forge', lang, pack);
     await widthFits(page);
   }
 });
@@ -325,7 +326,7 @@ test('A89 bean risk stays unknown, precise carriers and draft changes never cons
     await page.keyboard.press('Enter');
     await expect(page.locator('.bean-carrier').first()).toHaveAttribute('aria-pressed', 'true');
     await expect(page.locator('.bean-draft-count')).toContainText(
-      lang === 'es' ? 'sin consumir' : 'not consumed',
+      lang === 'es' ? 'borrador' : 'draft',
     );
     await finishMeasurement(page, beanMark);
     await page.locator('.bean-context-help > summary').click();
@@ -596,4 +597,164 @@ test('A89 real compiled welcome, starter, guide and Pact consultation cancel wit
     await page.context().clearCookies();
     await page.evaluate(() => localStorage.clear());
   }
+});
+
+test('A89 one connected expedition joins confirmed facts, collection source, wand fitting and preparation', async ({
+  page,
+}, info) => {
+  test.skip(
+    info.project.name !== 'chromium-390-a89',
+    'One Spanish/Diagon connected cohort closes new App links; no additional rendering matrix.',
+  );
+  const origin = 'http://127.0.0.1:5610';
+  const errors: string[] = [];
+  page.on('pageerror', (error) => errors.push(error.message));
+  const authoritative = async (): Promise<GameState> => {
+    const response = await page.request.get(`${origin}/api/state`);
+    expect(response.ok()).toBe(true);
+    return (await response.json()).state;
+  };
+  await page.addInitScript(() => {
+    localStorage.setItem('arcana.presentation.content-pack.v1', 'diagon-alley');
+  });
+  await page.goto(origin);
+  if ((await page.locator('html').getAttribute('lang')) !== 'es') await changeLanguage(page, 'es');
+  await page.locator('.portal-enter').click();
+  await startExpedition(page, 'es');
+  const started = await authoritative();
+  expect(started.copies).toHaveLength(1);
+  const run = started.exploration!.run!;
+  // Public edges and node kinds only: no seeds, predicted outcomes, DB edits or forced rewards.
+  const candidates: string[][] = [];
+  const visit = (id: string, prefix: string[], size: number) => {
+    const node = run.graph.nodes.find((entry) => entry.id === id)!;
+    if (node.kind === 'duel' || node.kind === 'boss') {
+      if (size >= 3) candidates.push([...prefix, id]);
+      return;
+    }
+    const nextSize = node.kind === 'pact' ? Math.min(5, size + 1) : size;
+    for (const next of node.next) visit(next, [...prefix, id], nextSize);
+  };
+  for (const first of run.graph.nodes.filter((entry) => entry.row === 0))
+    visit(first.id, [], run.members.length);
+  // An ordinary duel is preferred; a route whose first legal fight is the boss remains legitimate.
+  candidates.sort((a, b) => {
+    const boss = (path: string[]) =>
+      Number(run.graph.nodes.find((entry) => entry.id === path.at(-1))!.kind === 'boss');
+    return boss(a) - boss(b) || a.length - b.length || a.join('|').localeCompare(b.join('|'));
+  });
+  expect(candidates.length, 'The starter must have a public route to a valid first combat').toBeGreaterThan(0);
+  const path = candidates[0];
+  for (const id of path.slice(0, -1)) {
+    const before = await authoritative();
+    await page.locator(`[data-node="${id}"]`).click();
+    const candidate = page.locator('[data-pact-candidate]').first();
+    if (await candidate.count()) await candidate.click();
+    const pass = page.locator('[data-encounter-choice="pass"]');
+    if (await pass.count()) await pass.click();
+    expect(await authoritative()).toEqual(before);
+    await page.locator('.node-confirm-action').click();
+    await expect(page.locator('.node-event-dialog[open]')).toHaveCount(0);
+    await expect.poll(async () => (await authoritative()).exploration!.run!.visited.includes(id)).toBe(true);
+  }
+  const party = await authoritative();
+  expect(party.exploration!.run!.members.length).toBeGreaterThanOrEqual(3);
+  expect(party.copies).toEqual(started.copies);
+
+  await page.goto(`${origin}/#/shop/confectionery`);
+  await expect(page.locator('.sweetshop-scene')).toBeVisible();
+  await page.locator('[data-product="random-beans"]').click();
+  await page.locator('.shop-purchase-ticket').click();
+  await expect.poll(async () => (await authoritative()).revision).toBe(party.revision + 1);
+  const bought = await authoritative();
+  const purchase = bought.receipts.at(-1)!;
+  expect(purchase.kind).toBe('purchase');
+  if (purchase.kind !== 'purchase') throw Error('Expected one actual jar purchase');
+  const jarId = purchase.unitIds[0];
+  expect(bought.inventory.crowns).toBe(party.inventory.crowns - purchase.spentCrowns);
+  await page.goto(`${origin}/#/map`);
+  await page.locator(`[data-node="${path.at(-1)}"]`).click();
+  await page.locator('.node-bean-preparation > summary').click();
+  await page.locator(`[data-bean-id="${jarId}"]`).click();
+  const carrier = bought.exploration!.run!.members.find((entry) => entry.unit.hp > 0)!.unit.id;
+  await page.locator(`[data-bean-unit="${carrier}"]`).click();
+  await expect(page.locator(`[data-bean-unit="${carrier}"]`)).toHaveAttribute('aria-pressed', 'true');
+  expect(await authoritative()).toEqual(bought);
+  await page.locator('.node-confirm-action').click();
+  await expect(page.locator('.battle-panel')).toBeVisible();
+  const committed = await authoritative();
+  const receipt = committed.receipts.at(-1)!;
+  if (receipt.kind !== 'advance-node' || !receipt.battle) throw Error('Missing confirmed first battle');
+  expect(committed.inventory.products.find((entry) => entry.id === jarId)!.status).toBe('consumed');
+  expect(receipt.battle.events).toContainEqual(
+    expect.objectContaining({ kind: 'bean-activated', unitId: jarId }),
+  );
+  await skipBattle(page);
+  await expect(page.locator('[data-arena-outcome]')).toBeVisible();
+  await page.locator('[data-arena-facts-trigger]').click();
+  const facts = page.locator('[data-battle-facts] [data-battle-fact]');
+  await expect(facts.first()).toBeVisible();
+  expect(await facts.count()).toBeLessThanOrEqual(2);
+  await page.keyboard.press('Escape');
+  await leaveBattle(page);
+  await expect(page.locator('[data-map-phase]')).toBeVisible();
+  expect(await authoritative()).toEqual(committed);
+
+  await page.locator('nav').getByRole('button', { name: 'Álbum de Cromos', exact: true }).click();
+  await expect(page.locator('.album')).toBeVisible();
+  await page.getByRole('button', { name: /^Consultar cromo pendiente \d+$/ }).first().click();
+  const folio = page.locator('.album-card-folio[open]');
+  await folio.getByRole('button', { name: 'Seguir este cromo', exact: true }).click();
+  await expect(page.locator('[data-goal-state=searching]')).toBeVisible();
+  await expect(folio.getByRole('region', { name: 'Cómo obtenerlo', exact: true })).toBeVisible();
+  await selected(page, 'collection', 'es', 'diagon-alley');
+  await folio.getByRole('button', { name: 'Ir a la confitería', exact: true }).click();
+  await expect(page.locator('.sweetshop-scene')).toBeVisible();
+  await expect(page.locator('.album-card-folio[open]')).toHaveCount(0);
+  expect(await authoritative()).toEqual(committed);
+
+  await page.goto(`${origin}/#/shop/workshop`);
+  await expect(page.locator('[data-forge-comparison]')).toBeVisible();
+  const ownReference = page.locator(`[data-forge-reference="${committed.copies[0].copyId}"]`);
+  await ownReference.click();
+  await expect(ownReference).toHaveAttribute('aria-pressed', 'true');
+  await expect(page.locator('[data-forge-value]')).toHaveCount(3);
+  await page.locator('.forge-action').click();
+  const quote = page.locator('.shop-trade-confirmation[open]');
+  await expect(quote).toBeVisible();
+  await quote.getByRole('button', { name: 'Cancelar', exact: true }).click();
+  await expect(quote).toHaveCount(0);
+  await expect(page.locator('.forge-action')).toBeFocused();
+  expect(await authoritative()).toEqual(committed);
+  await selected(page, 'forge', 'es', 'diagon-alley');
+  await page.locator('nav').getByRole('button', { name: 'Álbum de Cromos', exact: true }).click();
+  await page.locator('.album-prepare-link').click();
+  await expect(page.locator('.preparation-dialog[open]')).toBeVisible();
+  expect(await authoritative()).toEqual(committed);
+  await page.keyboard.press('Escape');
+  await expect(page.locator('.album-prepare-link')).toBeFocused();
+  await page.locator('nav').getByRole('button', { name: 'Mapa', exact: true }).click();
+  await expect(page.locator('[data-map-phase]')).toBeVisible();
+  expect(await authoritative()).toEqual(committed);
+  expect(errors).toEqual([]);
+  await mkdir(directory, { recursive: true });
+  await writeFile(
+    resolve(directory, 'connected-links-a89.json'),
+    JSON.stringify({
+      sha: process.env.GITHUB_SHA ?? null,
+      fixture: false,
+      origin: 'technical-automation',
+      isolatedGuest: true,
+      language: 'es',
+      pack: 'diagon-alley',
+      viewport: page.viewportSize(),
+      initialOwnedCopies: started.copies.length,
+      preparedMembers: party.exploration!.run!.members.length,
+      firstCombatKind: run.graph.nodes.find((entry) => entry.id === path.at(-1))!.kind,
+      sourceLinkReachedSweetShop: true,
+      forgeCancelledWithoutOperation: true,
+      preparationCancelledWithoutOperation: true,
+      limitations: 'One connected cohort, no forced result, full boss/loot/next-run continuity covered separately by A63/A73 regressions. Company v2 remains composed UI and HTTP/PG evidence. Not human observation.',
+    }, null, 2),
+  );
 });

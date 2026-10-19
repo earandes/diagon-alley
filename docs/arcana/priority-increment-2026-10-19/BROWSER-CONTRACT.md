@@ -13,10 +13,10 @@ Dos servidores propios, sin reutilizar sesiones ajenas: puerto5610 para el build
 - Chromium390×844,1280×900,865×1079.
 - WebKit390×844 como cohorte móvil adicional; no se afirma matriz WebKit de tres tamaños.
 - Seis recorridos de componentes recorren ES/EN×Diagon/ARCANA en cada proyecto.
-- Dos casos adicionales solo Chromium390: reflujo320/texto200%+fallo de importación, y entrada/Pacto con el build y gateway reales.
--32casos registrados,26activos y6omisiones deliberadas previstas. La ejecución real puede revelar fallos; esta cuenta no equivale a casos superados.
+- Tres casos adicionales solo Chromium390: reflujo320/texto200%+fallo de importación; entrada/Pacto con el build y gateway reales; y una cohorte conectada ES/Diagon que enlaza las acciones nuevas de App.
+-36casos registrados,27activos y9omisiones deliberadas previstas. La ejecución real puede revelar fallos; esta cuenta no equivale a casos superados.
 
-Capturas explícitas autorizadas: **cinco**, únicamente Linux con `ARCANA_CAPTURE_A89=1`, proyectoChromium390, español yDiagon. Nombres `selected-company-390.png`, `selected-collection-390.png`, `selected-forge-390.png`, `selected-beans-390.png` y `selected-battle-390.png`. Cromodex conserva objetivo seleccionado y folio pendiente abierto en su muestra. No hay captura automática por test, repetición o matriz, ni vídeos/trazas. Este límite amplía la primera propuesta interna de cuatro al añadir la composición nueva de Cromodex.
+Capturas explícitas autorizadas: **cinco**, únicamente Linux con `ARCANA_CAPTURE_A89=1`, proyectoChromium390, español yDiagon. Nombres `selected-company-390.png`, `selected-collection-390.png`, `selected-forge-390.png`, `selected-beans-390.png` y `selected-battle-390.png`. Colección y taller se capturan exclusivamente en la nueva cohorte de App real, sustituyendo sus muestras de fixture; no se añaden dos capturas. Cromodex conserva objetivo seleccionado y folio pendiente abierto en su muestra. Las otras tres muestras siguen siendo componentes de ensayo declarados. No hay captura automática por test, repetición o matriz, ni vídeos/trazas. Este límite amplía la primera propuesta interna de cuatro al añadir la composición nueva de Cromodex.
 
 ## Fixtures y fronteras de evidencia
 
@@ -25,6 +25,8 @@ Capturas explícitas autorizadas: **cinco**, únicamente Linux con `ARCANA_CAPTU
 La elección de compañía utiliza el caso de uso real con un adaptador en memoria exclusivo de fixture; acredita interacción y serialización, no durabilidad del servidor. La obtención propia/temporal del objetivo de colección se modifica mediante una API de fixture solo en su bundle de ensayo; no existe un endpoint público de concesión. Persistencia, autoridad, respuesta perdida y concurrencia se comprueban separadamente en integración PostgreSQL/Redis.
 
 El caso del build real crea invitados aislados, selecciona explícitamente una copia, inicia ruta y consulta/cancela Pacto. No modifica directamente sus saldos, inventario o resultados. Limpia únicamente cookies/preferencias del contexto de ensayo entre las cuatro presentaciones; no accede a la partida habitual.
+
+La cohorte conectada adicional usa otro invitado real y únicamente acciones UI y consultas GET. Desde el kit elige una ruta por aristas públicas que permite reclutar legalmente al menos tres integrantes antes del primer combate, sin consultar semillas ni predecir victoria. Compra un tarro, asigna esa unidad concreta, confirma, consulta hasta dos hechos del receipt tras omitir y vuelve al mapa. Después marca un cromo pendiente, usa su fuente para llegar a Confitería, consulta la comparación de varita, cancela la forja y abre/cancela preparación desde Álbum antes de regresar al mapa. Cada consulta/cancelación conserva el agregado autoritativo íntegro; consumo y log se comprueban contra la unidad comprada. No fuerza resultados, progreso o inventario. La composición de compañía v2 permanece acreditada por UI y HTTP/PG en capas separadas, no por una colección fabricada en servidor. Jefe, botín y siguiente expedición explícita continúan en las regresiones A63/A73: no se presenta esta cohorte como un único E2E global.
 
 ## Aceptación ejecutable
 
@@ -38,6 +40,7 @@ El caso del build real crea invitados aislados, selecciona explícitamente una c
 | Combate | Diez peanas/PV visibles en tamaño ordinario; libro de hechos ausente antes del desenlace, máximo2hechos después de omitir, ningún cálculo económico; leer/cerrar devuelve foco; tamaño de lectura durante pausa no reinicia cursor |
 | Reflujo/fallback | 320px y texto200% sin desbordamiento horizontal; fallo real de importación de renderer conserva representación estática, hechos y estado |
 | Build real | Bienvenida→invitado→copia→ruta→consultar Pacto→cancelar conserva exactamente estado autoritativo |
+| Enlaces nuevos de App | Kit→Pactos→≥3 integrantes→compra/asignación/consumo de tarro→primer BattleLog→libro→mapa; objetivo→fuente→Confitería; copia de referencia→cancelar forja→preparación/cancelación→mapa, sin concesiones de ensayo |
 
 Las comparaciones de snapshots de fixture comprueban no mutación de inventario/copias/equipo y log. Las capturas solo acreditan composición. Estas pruebas no miden rAF/GPU ni acreditan latencia humana; la medición de rendimiento y los recorridos económicos completos se registran en la validación integrada correspondiente.
 

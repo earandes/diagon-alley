@@ -40,3 +40,13 @@ La revisión paralela detectó ademásR01, una compañía elegida todavía viabl
 Factory compartida de fixtures con receipts de kit/apertura, unidades consumidas y zona desbloqueada coherentes. Nueve tests nuevos ejecutan las mismas invariantes que usa la autoridad antes de browser;8RED anteriores→9GREEN. R01 conserva compañía seleccionada viable y rechaza la realmente inviable. El libro de hechos mantiene nombre visible si falta su imagen, con una aserción dinámica añadida a la cohorte de renderer/arte ausente (todavía pendiente Linux).
 
 `npm run build` correcto: principal1.160,08kB/gzip355,51kB y advertencia500KB conservada. `npm test`:117archivos/749pruebas correctas. Sin navegador local. El siguiente push es un candidato corregido, no un reintento de la misma batería sin cambio.
+
+## CI segunda39244647501 ·3abdcaf
+
+Se ejecutaron correctamente orientación/compañía, Cromodex y comparación de varitas en Chromium390 con las cuatro parejas ES/EN×packs. El siguiente caso se detuvo por etiqueta desactualizada: la UI muestra «1 asignado · borrador», el test esperaba «sin consumir». Se conserva la comprobación económica exacta y se corrige la aserción a «borrador/draft».3correctos,1fallido,88omitidos/no ejecutados por límite. Se canceló la ejecución propia tras descargar evidencia. No se declara gráfica completa.
+
+Tres PNG seleccionados y observaciones parciales de respuesta conservados en `evidence/attempt-2`. Composición de componentes sobre fixture, no escena completa de App. La revisión visual detectó retratos demasiado pequeños en el estante de referencia de varitas; se elimina dimensión porcentual circular, se fija ancho3rem dentro del puesto3,25rem y se comprueba anchura real≥40px. Es una corrección de lectura, no rediseño artístico o lote de assets. Foco cian permanece por teclado. Confirmación visual pendiente del siguiente candidato.
+
+La auditoría de cobertura distinguió contratos/fixtures y App real. Se añade una única cohorte integrada para comprobar enlaces nuevos, sin afirmar que un conjunto de casos aislados es un E2E completo. La compañía v2 conserva cobertura compuesta UI+HTTP/PG; no se concede una colección desde el navegador para fabricar ese escenario.
+
+Candidato3: build/tipos/skin y749unitarias correctas localmente, después del ajuste de estante, la aserción de borrador y la cohorte conectada. La cohorte visita operaciones y enlaces reales con invitado aislado; no se fuerza seed, colección o resultado. Treinta y seis casos A89 registrados,27activos/9omisiones previstas; resultado Linux aún pendiente.
