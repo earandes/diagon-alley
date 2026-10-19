@@ -24,6 +24,8 @@ Al completar el conjunto se esperan 85,89 duplicados antes y 101,93 después: E[
 
 El acabado encantado sigue siendo un 1% independiente, cosmético y sin ×2 para sinergias. No añade otras 34 identidades al denominador. La probabilidad conjunta de una identidad concreta encantada pasa de 1/2900 a 1/3300, sin pity o garantía de aparición. El inicial sigue fuera de esa tabla. Los recuerdos estacionales permanecen separados de la colección base.
 
+Las cuatro rarezas y estrellas describen las identidades del ensayo; esta tabla uniforme no asigna un peso diferente por rareza. No debe inferirse que el dragón tenga menos probabilidad que el hipogrifo por su etiqueta. Revisar esa relación sería otra decisión económica.
+
 La probabilidad individual cambia de 1/29 ≈ 3,448% a 1/33 ≈ 3,030%. Conservar el peso 1 no conserva su porcentaje cuando se añade masa positiva. El libro deriva las cifras activas; una petición con tabla obsoleta requiere actualizar y reconfirmar antes de consumir. Recuperar un receipt histórico nunca sortea de nuevo.
 
 ## Lo que no estima el modelo

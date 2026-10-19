@@ -559,7 +559,28 @@ for (const [language, pack] of [
       'data-active',
       'true',
     );
-    const duel = await reach(page, 'duel', language);
+    // A valid three-Pact branch can bypass ordinary duels. Follow public edges
+    // to its first combat without simulating an outcome or changing the route.
+    const preparedRun = (await readGame(page)).exploration!.run!;
+    const lastNode = preparedRun.graph.nodes.find((n) => n.id === preparedRun.visited.at(-1))!;
+    const queue = lastNode.next.map((id) => [id]);
+    let combatPath: string[] | undefined;
+    while (queue.length) {
+      const path = queue.shift()!;
+      const node = preparedRun.graph.nodes.find((n) => n.id === path.at(-1))!;
+      if (node.kind === 'duel' || node.kind === 'boss') {
+        combatPath = path;
+        break;
+      }
+      for (const id of node.next) queue.push([...path, id]);
+    }
+    expect(combatPath, 'The active route must still have a reachable combat').toBeDefined();
+    for (const id of combatPath!.slice(0, -1)) {
+      await page.locator(`[data-node="${id}"]`).click();
+      await confirmEvent(page, language);
+    }
+    const duel = combatPath!.at(-1)!;
+    const combatKind = preparedRun.graph.nodes.find((n) => n.id === duel)!.kind;
     await page.locator(`[data-node="${duel}"]`).click();
     const confirmationStarted = Date.now();
     await page.locator('.node-confirm-action').click();
@@ -574,6 +595,7 @@ for (const [language, pack] of [
           sha: process.env.GITHUB_SHA,
           fixture: false,
           isolatedAccount: true,
+          combatKind,
           confirmationToFiguresUpperBoundMs,
           conditions:
             'Actual isolated guest, HTTP/PG/Redis commit and DOM/canvas readiness at1280x900; Node wall interval includes Playwright click/waits/polling. Not human duration, GPU time or a matched performance experiment.',

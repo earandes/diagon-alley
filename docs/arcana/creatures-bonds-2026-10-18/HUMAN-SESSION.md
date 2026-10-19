@@ -20,4 +20,4 @@ Registrar errores, consultas espontáneas, intervenciones necesarias, momentos s
 
 ## Preguntas de cierre
 
-Qué cree que aportó cada vínculo; qué confundió; qué cambiaría al repetir; qué sonido o movimiento le resultó excesivo. No prometer que una composición garantiza ganar. Comprobar texto ampliado, teclado y movimiento reducido con personas que utilicen esas preferencias, además de los controles automáticos.
+Qué cree que aportó cada vínculo; cómo interpreta rareza, acabado encantado y probabilidades del libro; qué confundió; qué cambiaría al repetir; qué sonido o movimiento le resultó excesivo. No prometer que una composición garantiza ganar. Comprobar texto ampliado, teclado y movimiento reducido con personas que utilicen esas preferencias, además de los controles automáticos.

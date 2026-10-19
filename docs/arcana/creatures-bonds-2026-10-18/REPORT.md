@@ -1,6 +1,6 @@
 # A87 · Criaturas coleccionables y vínculos tácticos
 
-Estado: implementado en rama, pendiente de cerrar la validación del candidato corregido. PR [10](https://github.com/earandes/diagon-alley/pull/10). Las dos ejecuciones Linux previas se conservan fallidas:428927f detectó el footer de fixture;47b5892 pasó los retornos y la composición nueva, pero detectó scroll inicial del jefe enWebKit y una inyección de emblema que no provocaba fallo. Ambos tienen correcciones acotadas y aceptación sin relajar. Sin integración A87, despliegue, sesión humana o dispositivo físico atribuidos todavía.
+Estado: implementado en rama, integración pendiente de terminar la validación. PR [10](https://github.com/earandes/diagon-alley/pull/10). El candidato f79d9ce cierra correctamente las380comprobaciones gráficas deljobcheck,681unitarias y111conPG/Redis. Su regresión detecta nueve expectativas de QA: ocho contadores antiguos de30y una ruta que asumía un duelo donde solo queda jefe. Se corrigen sin tocar aplicación, contenido o recursos; se repite la regresión en modo resumeoriginal, con reutilización explícita de la evidencia idéntica. La fasefull volverá antes de cerrar main. Los fallos previos y límites se conservan. Sin despliegue, sesión humana o dispositivo físico atribuidos.
 
 ## Qué puede decidir el jugador
 

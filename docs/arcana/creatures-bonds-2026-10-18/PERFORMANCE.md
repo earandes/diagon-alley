@@ -41,3 +41,13 @@ El P95de las ventanas cortas de arranque es33,4ms en ambos casos. No se oculta e
 [Crudos](evidence/candidate-47/creature-performance.json). Seis contextos con las mismas condiciones declaradas: Diagon figuras225,4/240,6/201,7ms y registro234,6/243,2/210,1ms; ARCANA286,3/232,6/237,9ms y288,8/235,8/241,8ms. P95rAF16,7–16,8ms en todas. Una long task de56ms en la primera muestraARCANA; las otras cinco no registran. No se oculta ese pico ni se atribuye aGPU o a una causa concreta.
 
 Las seis muestras428habían dado figuras161,6–202,7ms y registro163,7–204,7ms, sin long tasks en sus ventanas. Esta segunda muestra es más lenta: no se declara mejora o ausencia universal de picos. Ambas están bajo los presupuestos de ensayo. La batería general47falla por scroll del jefe e inyección inválida de un emblema, aunque el ensayo de rendimiento termina correcto.
+
+### Precisión sobre la condición de arranque
+
+La fixture ya ha evaluado su módulo de aplicación y montado el mapa antes del clic. El test espera al equipoDOM, no a una marca de mapaRendererReady: la importación asíncrona dePixi del mapa puede haber terminado o solaparse todavía con ese clic. Por tanto, la frase de los crudos «modules already evaluated» no acredita que todos los módulos/recursos gráficos estuvieran calientes. Se declara esa incertidumbre; no se presenta fríoOS, import aislado o efecto causal. El tiempo observado incluye el trabajo que reste desde la acción, sin insertar otra espera en la pantalla anterior.
+
+## Muestra f79d9ce, run39186209500
+
+[Crudos](evidence/candidate-f79/creature-performance.json), checkout7ef9b2b. Diagon figuras207,8/195,1/201,6ms y registro210,0/197,3/204,1ms. ARCANA211,1/224,0/201,3ms y registro213,3/226,9/203,4ms. P95rAF16,7–16,8ms en las seis; long tasks53y52ms en las dos primerasARCANA, ninguna observada en las otras cuatro. No se excluyen esos valores. Eljobcheck termina correcto; la regresión sigue en curso al registrar esta sección.
+
+Las tres ejecuciones conservan variabilidad de arranque y tareas largas ocasionales. No se atribuye la diferencia de195–224frentea202–286o162–203ms a una optimización: la corrección actual es de diálogo/fixture y la coreografía no se ha sustituido. Se cumple el presupuesto sostenido de estas muestras; no se garantiza un dispositivo físico, fríoOS o ausencia general de fugas.
