@@ -9,7 +9,9 @@ test('A92 same route and names before/after; bounded technical action comparison
     info.project.name !== 'chromium-390-a92',
     'One declared paired fixture, not a capture matrix.',
   );
-  const out = resolve('docs/arcana/experience-clarity-2026-10-19/evidence/linux');
+  const out = resolve(
+    process.env.A92_EVIDENCE_ROOT ?? 'docs/arcana/experience-clarity-2026-10-19/evidence/linux',
+  );
   await mkdir(out, { recursive: true });
   const measurements: unknown[] = [];
   let originalGraph = '';

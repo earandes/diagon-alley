@@ -63,3 +63,11 @@ writeFileSync(
     2,
   ) + '\n',
 );
+
+if (process.env.A92_EVIDENCE_ROOT) {
+  mkdirSync(process.env.A92_EVIDENCE_ROOT, { recursive: true });
+  cpSync(
+    'test-results/a92-reference.json',
+    resolve(process.env.A92_EVIDENCE_ROOT, 'reference.json'),
+  );
+}

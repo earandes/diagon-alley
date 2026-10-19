@@ -19,12 +19,10 @@ for (const [lang, pack] of [
       exact: true,
     });
     await expect(close).toBeVisible();
-    const shape = await close
-      .locator('svg')
-      .evaluate((e) => ({
-        width: e.getBoundingClientRect().width,
-        height: e.getBoundingClientRect().height,
-      }));
+    const shape = await close.locator('svg').evaluate((e) => ({
+      width: e.getBoundingClientRect().width,
+      height: e.getBoundingClientRect().height,
+    }));
     expect(shape.width).toBeGreaterThanOrEqual(20);
     expect(shape.height).toBeGreaterThanOrEqual(20);
     await close.click();

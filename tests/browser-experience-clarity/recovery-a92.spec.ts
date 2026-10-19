@@ -12,8 +12,9 @@ async function createAccount(page: Page) {
   const headers = { Origin: 'http://127.0.0.1:5530' };
   const registered = await page.request.post('/api/auth/register', { headers, data: { email } });
   expect(registered.status()).toBe(200);
-  const namespace = process.env.ARCANA_CLARITY_A92_NAMESPACE;
-  if (!namespace || !/^a92-[a-f0-9-]{36}$/.test(namespace))
+  const namespace =
+    process.env.ARCANA_ACCOUNTS_A76_NAMESPACE ?? process.env.ARCANA_CLARITY_A92_NAMESPACE;
+  if (!namespace || !/^(?:a76|a92)-[a-f0-9-]{36}$/.test(namespace))
     throw Error('Isolated A92 mailbox required');
   const directory = resolve('.local/arcana-mail', namespace);
   let token: string | undefined;
@@ -157,7 +158,9 @@ test('A92 a lost economic response keeps its owner across contextual sign-in and
     await page.reload();
     expect(await readGame(page)).toEqual(committed);
     if (process.platform === 'linux' && process.env.ARCANA_CAPTURE_A92 === '1') {
-      const out = resolve('docs/arcana/experience-clarity-2026-10-19/evidence/linux');
+      const out = resolve(
+        process.env.A92_EVIDENCE_ROOT ?? 'docs/arcana/experience-clarity-2026-10-19/evidence/linux',
+      );
       await mkdir(out, { recursive: true });
       // No capture of credentials or mailbox. Only the recovered game is visible.
       await page.screenshot({ path: resolve(out, 'recovered-game.png'), fullPage: false });

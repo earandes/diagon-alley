@@ -77,7 +77,9 @@ for (const [lang, pack] of pairs) {
       ['chromium-390-a92', 'chromium-1280-a92'].includes(test.info().project.name)
     ) {
       await page.evaluate(() => (document.documentElement.style.fontSize = ''));
-      const directory = resolve('docs/arcana/experience-clarity-2026-10-19/evidence/linux');
+      const directory = resolve(
+        process.env.A92_EVIDENCE_ROOT ?? 'docs/arcana/experience-clarity-2026-10-19/evidence/linux',
+      );
       await mkdir(directory, { recursive: true });
       await page.screenshot({
         path: resolve(directory, `${test.info().project.name}-collection.png`),

@@ -23,3 +23,7 @@ A92 cubre cuatro pares ES/EN×packs,390/865/1280, lectura ampliada y stock100, g
 Los tests antiguos de selección de tarros navegan ahora prev/siguiente mediante bean-controls, sin mutar estado o relajar stock/ID/consumo. El folio de copias se abre por su disclosure nativo. A63 comprueba orientación tras consumir llave única. No se reemplazan pruebas adversas por detección de clases.
 
 Pendientes: CI del SHA candidato, inspección seleccionada, correcciones si aparecen defectos, mediciones y estado final. Personas, escucha voluntaria, lector real, zoom real y dispositivo físico no realizados. P95rAF20ms sigue siendo objetivo no universal; conservar extremos A90.
+
+## Adaptación de CI por permisos
+
+El primer push fue rechazado por OAuth sin scope workflow; no se cambian credenciales ni protecciones. A92 se incorpora como proyectos/servidores al runner A76 que el workflow vigente ya ejecuta, con artefacto seleccionado bajo accounts/evidence/linux/a92. Los builders siguen secuenciales antes del primer preview, el mismo defineSafeConfig y un worker global. Cuenta real de ensayo usa el namespace UUID de esa batería, no el del jugador habitual. El historial local del intento se conserva; la rama publicada se reconstruye desde main excluyendo exclusivamente el cambio propio de workflow. No force push ni sobrescritura ajena.
