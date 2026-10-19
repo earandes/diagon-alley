@@ -163,7 +163,11 @@ export function CollectionPanel({
       </div>
       {completion.historical.discovered > 0 && (
         <p className="collection-archive-count">
-          {s(language, 'archiveCount', { count: completion.historical.discovered })}
+          {s(
+            language,
+            completion.historical.discovered === 1 ? 'archiveCountOne' : 'archiveCount',
+            { count: completion.historical.discovered },
+          )}
         </p>
       )}
       <p className="collection-copy-count">{savedCopies(language, game.copies.length)}</p>
@@ -289,7 +293,11 @@ export function CollectionPanel({
       </details>
       {activeFilters > 0 && (
         <div className="album-active-filters" role="status">
-          <span>{s(language, 'filtered', { count: activeFilters })}</span>
+          <span>
+            {s(language, activeFilters === 1 ? 'filteredOne' : 'filtered', {
+              count: activeFilters,
+            })}
+          </span>
           <button
             type="button"
             onClick={() => {

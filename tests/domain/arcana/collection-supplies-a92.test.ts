@@ -171,4 +171,5 @@ it('A92 archived identities retain a full card back when their portrait no longe
   expect(article.includes('class="card-portrait"')).toBe(true);
   expect(article.includes('data-art="card.back"')).toBe(true);
   expect(article.includes('Archivo')).toBe(true);
+  expect(html).toContain('Archivo: 1 identidad</p>');
 });

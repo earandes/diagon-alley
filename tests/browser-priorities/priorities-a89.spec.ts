@@ -407,7 +407,8 @@ test('A89 bean risk stays unknown, precise carriers and draft changes never cons
     await widthFits(page);
     await load(page, 'beans', lang, pack, '&empty=1');
     await expect(page.locator('.bean-stock-label')).toContainText('0');
-    await expect(page.locator('.bean-jar-choice')).toHaveCount(0);
+    await expect(page.locator('[data-bean-id]')).toHaveCount(0);
+    await expect(page.locator('.empty-bean-tray')).toBeVisible();
     await expect(page.locator('.bean-carrier')).toHaveCount(0);
   }
 });
