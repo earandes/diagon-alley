@@ -127,3 +127,5 @@ Preparado el siguiente candidato: `artReady`, `castHouse` y `castOffset` publica
 ### f0c7810: presupuesto WebKit continúa fallando
 
 CI39193444875 A75 fallida; no acredita regresión ni finalización. P95WebKit22ms contra17ms, guard y aserciones sin relajar. Evidencia cruda en candidate-f0. Se prepara un ensayo limitado usando la fasewebkit que ya admite la configuración, sin navegador local ni cambios deworkflow.
+
+0240287 / CI39194828275: ensayoWebKitpareado fallido22/23/22ms; checkfallido y regresión omitida. Contención CSS retirada por no mejorar. Crudos y logs conservados en candidate-024. Nuevo ensayo con superficie compuesta, pendiente.

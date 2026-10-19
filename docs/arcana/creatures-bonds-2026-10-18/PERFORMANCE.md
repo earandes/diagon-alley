@@ -69,3 +69,9 @@ Se conserva elresultado fallido y se prueba deduplicación de tres atributos de 
 CI39193444875 conserva el fallo WebKit: P95 referencia17/17/17ms, candidato22/22/22ms; Chromium16,7–16,8ms en ambos. La hipótesis de las tres escrituras redundantes no explica suficientemente la diferencia. No se aumenta el presupuesto ni se elimina el ensayo.
 
 Siguiente ensayo acotado con fasewebkit original: contención CSS del host absoluto deCanvas, cuyo tamaño ya pertenece alstage. No cambia resolución, tamaño/visibilidad de figuras, datos ni reloj. Hipótesis: limitar invalidación/composición de la superficie; no se afirma causa GPU. Se registra además la geometría física/CSS deCanvas y el sink acotado de métricas CPU/wall existente para distinguir geometría, paint y submit. La instrumentación es idéntica para referencia/candidato, no CPU GPU pura. Si no mejora, conservar el resultado adverso y revisar la causa.
+
+## Contraste0240287 — contención descartada
+
+CI39194828275 fasewebkit fallida. P95 referencia18/17/18ms, candidato22/23/22ms. Surface366×605 frente366×766, DPR1. Paint/submitP95~1ms enambos y commitsReactP95~2ms, con precisión/semánticaCPU/wall del entorno, no GPU. La contención no aporta mejora y se retira. No se omite el resultado adverso.
+
+Se prueba a continuación una superficie de composición independiente para el host transparente con translateZ(0), manteniendo dimensiones, resolución y las diez figuras. Hipótesis acotada de composición con etiquetas/meters nativos; no es una atribución GPU confirmada. El layer vive y se desmonta con la escena; no añade texturasPixi, eventos o caché global. Misma matriz pareada, guard y umbral.

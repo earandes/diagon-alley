@@ -336,8 +336,8 @@
   max-height: var(--arena-common-figure-cap, 190px);
 }
 
-/* The absolute scene already owns a fixed viewport. Bound layout/style/paint
-   invalidation to that surface; all actor/target effects stay inside it. */
+/* Keep the transparent renderer in its own compositing surface above the
+   native labels/meters. Its lifetime is the scene; resolution/art are unchanged. */
 .arena-stage > .scene-canvas {
-  contain: strict;
+  transform: translateZ(0);
 }
