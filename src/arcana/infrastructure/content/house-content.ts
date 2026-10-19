@@ -10,23 +10,32 @@ export function currentTraits(id: string, version: 1 | 2 = 1): WizardTraits | un
   const value = ((version === 2 ? extended : data).characters as Record<string, WizardTraits>)[id];
   return value && traitsSnapshot(value);
 }
-/** A non-starter house has three distinct candidates along the existing three Pacts.
- * The graph signature chooses its theme once; the stored plans never reroll on inspection. */
+/** A85 retains its three non-starter themes. A87 also offers Gryffindor when its
+ * old specialist alternative is replaced by creatures. The starter alone must not
+ * force that house on every route. All offers remain fixed by the stored graph. */
 export function housePacts(
   plans: readonly NodePlan[],
   catalog: WizardCatalog,
   affinities: Readonly<Record<string, Affinity>>,
   graph: NodeGraph,
   initialWizardIds: readonly string[] = [],
+  includeStarterHouse = false,
 ): readonly NodePlan[] {
   let signature = 0;
   for (const node of graph.nodes)
     for (const char of `${node.id}:${node.row}:${node.next.join(',')}`)
       signature = (Math.imul(signature, 31) + char.charCodeAt(0)) >>> 0;
-  const houses: House[] = ['ravenclaw', 'hufflepuff', 'slytherin'];
+  const houses: House[] = includeStarterHouse
+    ? ['gryffindor', 'ravenclaw', 'hufflepuff', 'slytherin']
+    : ['ravenclaw', 'hufflepuff', 'slytherin'];
   const initial = new Set(initialWizardIds);
   const preferred = houses.filter((h) =>
-    catalog.wizards.some((w) => w.traits?.house === h && initial.has(w.id)),
+    catalog.wizards.some(
+      (w) =>
+        w.traits?.house === h &&
+        initial.has(w.id) &&
+        (!includeStarterHouse || w.id !== 'apprentice'),
+    ),
   );
   const pool = preferred.length ? preferred : houses;
   const house = pool[signature % pool.length];

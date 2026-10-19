@@ -3,11 +3,13 @@ import { mkdir, writeFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
 import {
   closeBattleOptions,
+  openBattleOptions,
   inspectBattleRecord,
   leaveBattle,
   setDoubleBattleSpeed,
   skipBattle,
 } from '../browser-trial/battle-controls';
+test.use({ actionTimeout: 10000 });
 const fixture = '/tests/browser-creatures/creatures-a87.html';
 const root = resolve('docs/arcana/motion-audit-2026-10-16/evidence/linux/a87');
 const capture = process.platform === 'linux' && process.env.ARCANA_CAPTURE_A69 === '1';
@@ -54,6 +56,19 @@ async function fits(page: Page) {
   expect(await page.evaluate(() => document.documentElement.scrollHeight <= innerHeight + 1)).toBe(
     true,
   );
+}
+async function swapPausedPack(page: Page, pack: string) {
+  await openBattleOptions(page);
+  await page.locator('#arena-options .settings-trigger').click();
+  const settings = page.locator('.game-settings[open]');
+  await settings
+    .getByRole('button', { name: pack === 'arcana' ? /ARCANA/ : /Diagon|Callejón/ })
+    .click();
+  await page.keyboard.press('Escape');
+  await expect(settings).toHaveCount(0);
+  await closeBattleOptions(page);
+  await expect(page.locator('.scene-arena')).toHaveAttribute('data-art-ready', 'true');
+  await expect(page.locator('.scene-arena')).toHaveAttribute('data-creature-textures', '4');
 }
 async function castAndPause(page: Page) {
   await page.evaluate(
@@ -122,9 +137,34 @@ test('A87 route, Cromodex and formation draft keep classification, ownership and
       await picture(page, `creature-folio-${pack}-390`);
     await page.keyboard.press('Escape');
     await immutable(page);
+    await page
+      .getByRole('group', { name: /Clasificación|Classification/ })
+      .getByRole('button', { name: /Mortífagos|Death Eaters|Cónclave de la Máscara|Mask Conclave/ })
+      .click();
+    await expect(page.locator('.album article')).toHaveCount(4);
+    await page.locator('.album article').first().getByRole('button').first().click();
+    await expect(page.locator('.album-card-folio .trait-affiliations > span')).toHaveCount(2);
+    await expect(page.locator('.album-card-folio')).toContainText(/descriptivos|descriptive/);
+    if (info.project.name === 'chromium-390-motion-a69' && lang === 'es')
+      await picture(page, `dual-affiliation-folio-${pack}-390`);
+    await page.keyboard.press('Escape');
+    await page
+      .getByRole('group', { name: /Clasificación|Classification/ })
+      .getByRole('button', {
+        name: /Ejército de Dumbledore|Dumbledore’s Army|Círculo de Aprendices|Apprentice Circle/,
+      })
+      .click();
+    await page.locator('.album article').first().getByRole('button').first().click();
+    await expect(page.locator('.album-card-folio .trait-affiliations > span')).toHaveCount(1);
+    await expect(page.locator('.album-card-folio')).toContainText(/descriptivos|descriptive/);
+    await page.keyboard.press('Escape');
+    await immutable(page);
     await page.goto(`${fixture}?mode=prepare&lang=${lang}&pack=${pack}`);
     await page.locator('.bond-selector>summary').click();
     await expect(page.locator('.bond-choices button')).toHaveCount(5);
+    expect(
+      await page.locator('.bond-choices').evaluate((el) => el.getBoundingClientRect().height),
+    ).toBeLessThanOrEqual(220);
     if (info.project.name === 'chromium-390-motion-a69' && lang === 'es')
       await picture(page, `bond-preparation-${pack}-390`);
     await page.locator('[data-bond-mode=houses]').focus();
@@ -161,6 +201,9 @@ test('A87 creature poses and confirmed bond stay legible, pause exactly and surv
 }, info) => {
   for (const [lang, pack] of [pairs[0], pairs[3]]) {
     await page.goto(`${fixture}?mode=battle&lang=${lang}&pack=${pack}`);
+    await expect(page.locator('.arena-heading h2')).toHaveText(
+      lang === 'es' ? 'Duelo mágico' : 'Magical duel',
+    );
     await expect(page.locator('.scene-arena')).toHaveAttribute('data-art-ready', 'true');
     await castAndPause(page);
     await fits(page);
@@ -178,6 +221,11 @@ test('A87 creature poses and confirmed bond stay legible, pause exactly and surv
     expect(await host.getAttribute('data-cast-offset')).toBe(paused.offset);
     if (info.project.name === 'chromium-390-motion-a69')
       await picture(page, `creature-cast-${pack}-390`);
+    await swapPausedPack(page, pack === 'diagon-alley' ? 'arcana' : 'diagon-alley');
+    await expect(host).toHaveAttribute('data-creature-pose', 'cast');
+    expect(await host.getAttribute('data-cast-offset')).toBe(paused.offset);
+    await fits(page);
+    await immutable(page);
     await page.locator('[data-bond-passive=creatures].arena-house').click();
     await expect(page.locator('.arena-inspector')).toBeVisible();
     await expect(page.locator('.arena-inspector li')).toHaveCount(4);
@@ -227,7 +275,6 @@ test('A87 representative group scenes, missing pose, renderer loss and reduced m
             );
             const until = performance.now() + 20000;
             let watched = -1,
-              firstSeen = 0,
               sawFlight = false;
             const observe = () => {
               const cursor = Number(
@@ -237,7 +284,6 @@ test('A87 representative group scenes, missing pose, renderer loss and reduced m
               const host = document.querySelector<HTMLElement>('.scene-arena');
               if (cursor !== watched) {
                 watched = cursor;
-                firstSeen = performance.now();
                 sawFlight = false;
               }
               let ready = false;
@@ -245,7 +291,9 @@ test('A87 representative group scenes, missing pose, renderer loss and reduced m
                 ready =
                   event?.kind === 'healed' &&
                   event.source === 'order' &&
-                  performance.now() - firstSeen > 45 &&
+                  Number(
+                    document.querySelector<HTMLElement>('.battle-panel')!.dataset.replayProgress,
+                  ) >= 0.78 &&
                   !!document.querySelector('[data-aid=true]');
               else if (
                 event?.kind === 'spell-cast' &&
@@ -278,6 +326,15 @@ test('A87 representative group scenes, missing pose, renderer loss and reduced m
       await skipBattle(page);
       await immutable(page);
     }
+  // A declared reversed composition tests renderer orientation, not new campaign enemies.
+  await page.goto(`${fixture}?mode=battle&rival-creatures=1&lang=es&pack=arcana`);
+  await expect(page.locator('.pedestal[data-side=rival][data-creature]')).toHaveCount(4);
+  await castAndPause(page);
+  await fits(page);
+  await expect(page.locator('.scene-arena')).toHaveAttribute('data-creature-facing', 'left');
+  await picture(page, 'creature-rival-declared-390');
+  await skipBattle(page);
+  await immutable(page);
   await page.goto(`${fixture}?mode=opening&lang=es&pack=diagon-alley`);
   await expect(page.locator('dialog.reveal')).toHaveAttribute('data-opening-phase', 'reveal', {
     timeout: 15000,
@@ -294,6 +351,9 @@ test('A87 representative group scenes, missing pose, renderer loss and reduced m
   await fits(page);
   await expect.poll(() => missingPoses).toBeGreaterThan(0);
   await expect(page.locator('.scene-arena')).not.toHaveAttribute('data-creature-textures', '4');
+  await expect(page.locator('.pedestal[data-acting=true][data-creature]')).toHaveCount(1);
+  await expect(page.locator('.scene-arena')).toHaveAttribute('data-creature-pose', 'rest');
+  await immutable(page);
   await page
     .locator('.scene-arena canvas')
     .evaluate((el) =>
@@ -313,6 +373,9 @@ test('A87 representative group scenes, missing pose, renderer loss and reduced m
   await expect(page.locator('[data-bond-progress=creatures]')).toHaveAttribute(
     'data-active',
     'true',
+  );
+  await expect(page.locator('[data-preparation-synergies]>summary')).toContainText(
+    /afinidad|affinity/,
   );
   await immutable(page);
   await picture(page, 'creature-pact-390');
@@ -335,9 +398,26 @@ test('A87 representative group scenes, missing pose, renderer loss and reduced m
   await expect(page.locator('[data-bond-mode=creatures]')).toBeEnabled();
   await immutable(page);
 
+  await page.route(/\/bond-creatures(?:-[^/]+)?\.svg(?:\?.*)?$/, (route) => route.abort());
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto(`${fixture}?mode=map&lang=es&pack=diagon-alley`);
+  const missingSeal = page.locator('.team-compact [data-bond-progress=creatures] summary');
+  await expect(missingSeal.locator('img[data-art]')).toHaveCount(0);
+  await expect(missingSeal).toContainText('Criaturas fantásticas');
+  expect(
+    await missingSeal
+      .locator('span')
+      .last()
+      .evaluate((el) => parseFloat(getComputedStyle(el).fontSize)),
+  ).toBeGreaterThan(0);
+  await missingSeal.press('Enter');
+  await expect(page.locator('.team-compact .house-detail')).toBeVisible();
+  await immutable(page);
   await report('representative-adverse-states', {
     groups: ['order', 'death'],
+    declaredRivalCreatureOrientation: true,
     missingCast: true,
+    missingBondSeal: true,
     rendererLoss: true,
     importFailure: true,
     text320x200: true,
@@ -523,6 +603,7 @@ test('A87 creature launch cues reach native audio only after consent and stop on
     () => (window as unknown as { __a87: { audioCues: unknown[] } }).__a87.audioCues.length,
   );
   await page.waitForTimeout(200);
+  await swapPausedPack(page, 'arcana');
   expect(
     await page.evaluate(
       () => (window as unknown as { __a87: { audioCues: unknown[] } }).__a87.audioCues.length,

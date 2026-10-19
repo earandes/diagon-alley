@@ -166,7 +166,8 @@ const receipt: OpeningReceipt = {
   copyId: copies[0].copyId,
   isNew: !query.has('repeat'),
 };
-const battle = new CombatEngine({ fromSeed: (s) => new SeededRandom(s) }).resolve({
+const mirroredBattle = query.has('rival-creatures');
+const originalBattle = new CombatEngine({ fromSeed: (s) => new SeededRandom(s) }).resolve({
   id: 'a87-combat-fixture',
   seed: 85,
   player: run.members.map((m) => ({
@@ -192,6 +193,15 @@ const battle = new CombatEngine({ fromSeed: (s) => new SeededRandom(s) }).resolv
     rival: 'houses',
   },
 });
+const battle = mirroredBattle
+  ? new CombatEngine({ fromSeed: (s) => new SeededRandom(s) }).resolve({
+      ...originalBattle.input,
+      id: 'a87-mirrored-declared',
+      player: originalBattle.input.rival,
+      rival: originalBattle.input.player,
+      bondFocus: { player: 'houses', rival: originalBattle.input.bondFocus!.player },
+    })
+  : originalBattle;
 const record = JSON.stringify({ game, battle, receipt });
 Object.assign(window, {
   __a87: {
@@ -220,6 +230,7 @@ function Fixture() {
     <div
       className={`arcana-shell game-shell${mode === 'map' || mode === 'boss' ? ' arcana-map-view' : ''}`}
       data-view={mode === 'battle' ? 'battle' : 'map'}
+      data-reduced={reduced}
     >
       <div
         className="game-world-backdrop"
@@ -352,7 +363,28 @@ function Fixture() {
           </dialog>
         )}
         {mode === 'pact' && (
-          <section className="notice node-event-dialog">
+          <dialog
+            ref={(element) => {
+              if (element && !element.open) element.showModal();
+            }}
+            className="notice node-event-dialog"
+            data-event-kind="pact"
+            aria-label={text(language, 'nodeConfirmation')}
+          >
+            <Artwork
+              asset="node.pact"
+              language={language}
+              className="node-confirmation-art"
+              decorative
+            />
+            <GameSettings
+              language={language}
+              onLanguage={() => {}}
+              reduced={reduced}
+              ownReduced={reduced}
+              onReduced={setReduced}
+            />
+            <h3>{text(language, 'magicPact')}</h3>
             <NodePreparation
               plan={pact}
               run={{ ...run, members: pactMembers }}
@@ -364,7 +396,24 @@ function Fixture() {
               ready
               rules={content.combatRules}
             />
-          </section>
+            <div className="node-event-actions">
+              <button
+                className="node-confirm-action"
+                disabled={!options.recruitId}
+                onClick={() => setMode('map')}
+              >
+                <Artwork asset="node.pact" language={language} decorative />
+                <span>{nodeActionLabel(language, 'pact')}</span>
+              </button>
+              <button
+                className="node-cancel-action"
+                aria-label={text(language, 'cancel')}
+                onClick={() => setMode('map')}
+              >
+                <span aria-hidden="true">×</span>
+              </button>
+            </div>
+          </dialog>
         )}
         {mode === 'opening' && (
           <CardReveal
@@ -407,41 +456,43 @@ function Fixture() {
           />
         )}
       </main>
-      <footer
-        className="a87-fixture-controls"
-        style={{ position: 'fixed', bottom: 0, right: 0, zIndex: 100, fontSize: 10 }}
-      >
-        <span>Declared presentation fixture</span>
-        {mode !== 'battle' && (
-          <button
-            data-qa-combat
-            onClick={() => {
-              Object.assign((window as unknown as { __a87: object }).__a87, {
-                entryStarted: performance.now(),
-              });
-              setMode('battle');
-            }}
-          >
-            Combat fixture
-          </button>
-        )}
-        {query.has('busy') && (
-          <button data-qa-ready onClick={() => setReady(true)}>
-            Release operation fixture
-          </button>
-        )}
-        <button
-          data-qa-pack
-          onClick={() =>
-            setContentPack(selectedContentPackId() === 'arcana' ? 'diagon-alley' : 'arcana')
-          }
+      {mode !== 'battle' && (
+        <footer
+          className="a87-fixture-controls"
+          style={{ position: 'fixed', bottom: 0, right: 0, zIndex: 100, fontSize: 10 }}
         >
-          Swap
-        </button>
-        <button data-qa-reduced onClick={() => setReduced(true)}>
-          Reduce
-        </button>
-      </footer>
+          <span>Declared presentation fixture</span>
+          {mode !== 'battle' && (
+            <button
+              data-qa-combat
+              onClick={() => {
+                Object.assign((window as unknown as { __a87: object }).__a87, {
+                  entryStarted: performance.now(),
+                });
+                setMode('battle');
+              }}
+            >
+              Combat fixture
+            </button>
+          )}
+          {query.has('busy') && (
+            <button data-qa-ready onClick={() => setReady(true)}>
+              Release operation fixture
+            </button>
+          )}
+          <button
+            data-qa-pack
+            onClick={() =>
+              setContentPack(selectedContentPackId() === 'arcana' ? 'diagon-alley' : 'arcana')
+            }
+          >
+            Swap
+          </button>
+          <button data-qa-reduced onClick={() => setReduced(true)}>
+            Reduce
+          </button>
+        </footer>
+      )}
     </div>
   );
 }

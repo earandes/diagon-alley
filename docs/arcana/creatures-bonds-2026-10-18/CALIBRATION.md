@@ -1,62 +1,77 @@
-# A87 · Decisiones y calibración de ensayo
+# A87 · Calibración del contenido corregido
 
-Implementado enrama; faltaCILinux y revisión visual antes de aceptar la entrega. No se infiere diversión, comprensión o retención.
+Escenarios técnicos ejecutados; aceptación gráfica del candidato pendiente. No son hábitos humanos, comprensión o prueba de diversión. Se conservan todos los valores, también derrotas y empeoramientos.
 
-## Qué se eligió
+## Decisión de acceso
 
-Un vínculo por equipo, tres identidades vivas activan y cuatro refuerzan. Auto prioriza una casa activa, luego Orden/Mortífagos/criaturas; se puede elegir otra especialización en el libro de preparación. Las afinidades siguen independientes. Datos biográficos no conceden todos un pasivo. Snape puede figurar en dos afiliaciones históricas sin sumar ambas; criaturas no reciben casa ficticia. Encantado sigue sin potencia.
+Dos candidatos por Pacto y tres Pactos existentes: una vía humana de casa y otra de criaturas. El tema humano de nuevas expediciones puede ser cualquiera de las cuatro casas. El inicial solo no fuerza Gryffindor; otros cromos propios de una casa pueden orientar la oferta. Se excluyen primero las identidades propias al ofrecer tres candidatos distintos.
 
-Reglas3: Orden ayuda1/2PV a otro aliado vivo herido una vez por bando/ronda; Mortífagos suma1/2daño bruto de remate sobre objetivo ya a mitadPV o menos; criaturas amortigua2/3del primer acierto positivo contra cada aliado. No quemadura, sobrante o resurrección. Activación bloqueada al confirmar; no recalcular durante replay.
+La primera versión A87 conservaba tres temas humanos y eliminaba las alternativas Gryffindor al sustituir al especialista. La alternativa A85 sí incluía Gryffindor, aunque tampoco garantizaba tres identidades distintas de esa casa. La corrección amplía a cuatro temas completos en A87 sin alterar ofertas históricas A85. No añade paneles, candidatos, precios o sorteos al consultar. [Calibración anterior conservada](CALIBRATION-V1.md).
 
-Se descartó recuperarPMal inicio porque1PMporintento/40PMbase hacía dudoso su valor ordinario. No se presenta eso como experimento humano. Guardia solo a contribuyentes se descartó porque el inicial ocupa el primer puesto y la familia tardaría en actuar; el efecto de equipo conserva una renuncia de composición, sin otra barra permanente.
+## Reglas elegidas
 
-## Recorridos pareados:1536
+Un vínculo por bando: Auto prioriza una casa activa y después Orden, Mortífagos y criaturas. Puede elegirse otra familia explícitamente. Tres identidades vivas activan y cuatro refuerzan; duplicados y acabado encantado no inflan el conteo. Afinidades independientes.
 
-[Script](../../../tools/verification/simulate-creatures-a87.mjs), [resumen](simulation.json), [todas las muestras](simulation-samples.jsonl). PerfilA85 frenteA87,32semillas iguales por grupo, colección inicial/mixta de tres compras guionizadas, tres desafíos y políticas cantidad/afinidad/casa/criaturas.48grupos, todos cerrados. Casos de uso/motor reales, transacción enmemoria. Sin grageas; condición inicial completa, refugiosPV, encuentros pasados y prioridad de ruta pública voraz. No representan hábitos humanos, SQL o tasas universales.
+- Orden: hasta1/2PV a otro aliado vivo herido, una ayuda por bando y ronda. Sin autocura o resurrección.
+- Mortífagos: +1/2daño bruto al acertar sobre objetivo que ya estaba a mitadPV o menos, después del multiplicador de gragea. No modifica objetivo o azar.
+- Criaturas: cada aliado amortigua hasta2/3del primer impacto positivo. Fallo o daño bruto0no gastan; no sobrante o reducción de quemadura.
 
-| Estado/política | A85 victorias/32 | A87 victorias/32 |
-|---|---:|---:|
-| Inicial · Descubrimiento, todas |32|32|
-| Inicial · Táctico, cantidad |31|30|
-| Inicial · Táctico, afinidad |31|29|
-| Inicial · Táctico, casa |28|28|
-| Inicial · Táctico, criaturas |31|29|
-| Inicial · Maestría, todas |0|0|
-| Tres compras mixtas · Descubrimiento, todas |32|32|
-| Tres compras mixtas · Táctico, cantidad/afinidad/casa |32|32|
-| Tres compras mixtas · Táctico, criaturas |31|29|
-| Tres compras mixtas · Maestría, cantidad |12|11|
-| Tres compras mixtas · Maestría, afinidad |15|11|
-| Tres compras mixtas · Maestría, casa |15|15|
-| Tres compras mixtas · Maestría, criaturas |0|0|
+Se descartaron recuperaciónPM y guardia solo para contribuyentes: la primera tendría un valor ordinario dudoso con40PM iniciales y coste1; la segunda dejaría sin protección al inicial en el primer puesto. Son decisiones de diseño contrastadas con el motor, no observaciones humanas. Los valores actuales se conservan tras comparar beneficios y renuncias; no se busca una tasa arbitraria de victoria.
 
-La política de criaturas reserva los humanos comprados para dejar puestos a tres temporales; por eso gastar30coronas en esa fixture no garantiza aprovecharlas. No se oculta esa renuncia ni se usa el caso para declarar que las criaturas siempre son peores. Táctico/inicialA87: ensemillas1y3, criaturas gana donde casa pierde; en28 ocurre lo contrario. Cambian composición y decisiones; no se atribuye causalmente una victoria al bloqueo sin una comparación controlada.
+## 1.536 expediciones pareadas
 
-Los premios/precios permanecen; los ingresos sí varían al cambiar victorias/ruta. Por ejemplo, Maestría/mixta/afinidad pasa de64,4a58,1coronas medias finales. Eso no se denomina neutralidad económica.
+[Script](../../../tools/verification/simulate-creatures-a87.mjs), [resumen](simulation.json), [todas las filas](simulation-samples.jsonl).32semillas iguales por grupo, perfilesA85/A87, inicial o tres compras guionizadas, tres desafíos y cuatro políticas.48grupos, ninguna run quedó activa. Transacción en memoria y casos de uso/motor reales, sin navegador o SQL.
 
-## Colección de criaturas propia:384escenarios adicionales
+Sin grageas/equipo, condición inicial completa, refugiosPV, encuentros pasados y ruta voraz pública por tipo de nodo. `quantity` prioriza potencia/PV, `affinity` grupos de afinidad y `house` casas; esta última conserva al inicial y primer comprado. `creature` reserva humanos para dejar puestos, prioriza criaturas y usa potencia como desempate; enA85, donde no había criaturas, ese término es0. No es una política humana óptima ni una recomendación del juego.
 
-`node tools/verification/simulate-creatures-a87.mjs --owned-creatures`. [Resumen](simulation-owned-creatures.json), [muestras](simulation-owned-creatures-samples.jsonl). Tres compras seleccionadas por fixture(Fénix/Hipogrifo/Unicornio), no tres compras aleatorias garantizadas.32semillas×3desafíos×4políticas, soloA87 porque esas identidades no existían enA85. La política de criaturas conserva las propias y puede reclutar la cuarta enPacto.
+| Colección · desafío · política | A85 victorias | A87 victorias | PVmedios finales A87 |
+|---|---:|---:|---:|
+| starter · discovery · quantity | 32/32 | 32/32 | 257.2 |
+| starter · discovery · affinity | 32/32 | 31/32 | 255.4 |
+| starter · discovery · house | 32/32 | 31/32 | 252.8 |
+| starter · discovery · creature | 32/32 | 32/32 | 242.9 |
+| starter · tactical · quantity | 31/32 | 31/32 | 161.7 |
+| starter · tactical · affinity | 31/32 | 28/32 | 158.8 |
+| starter · tactical · house | 28/32 | 28/32 | 156.5 |
+| starter · tactical · creature | 31/32 | 29/32 | 117.1 |
+| starter · mastery · quantity | 0/32 | 0/32 | 0.0 |
+| starter · mastery · affinity | 0/32 | 0/32 | 0.0 |
+| starter · mastery · house | 0/32 | 0/32 | 0.0 |
+| starter · mastery · creature | 0/32 | 0/32 | 0.0 |
+| three-purchases · discovery · quantity | 32/32 | 32/32 | 374.7 |
+| three-purchases · discovery · affinity | 32/32 | 32/32 | 355.4 |
+| three-purchases · discovery · house | 32/32 | 32/32 | 363.8 |
+| three-purchases · discovery · creature | 32/32 | 32/32 | 242.9 |
+| three-purchases · tactical · quantity | 32/32 | 32/32 | 307.5 |
+| three-purchases · tactical · affinity | 32/32 | 32/32 | 297.9 |
+| three-purchases · tactical · house | 32/32 | 32/32 | 306.6 |
+| three-purchases · tactical · creature | 31/32 | 29/32 | 117.1 |
+| three-purchases · mastery · quantity | 12/32 | 11/32 | 24.9 |
+| three-purchases · mastery · affinity | 15/32 | 11/32 | 15.2 |
+| three-purchases · mastery · house | 15/32 | 15/32 | 60.1 |
+| three-purchases · mastery · creature | 0/32 | 0/32 | 0.0 |
 
-Todas las políticas ganan32/32enDescubrimiento/Táctico. Maestría: cantidad11, afinidad12, casa14, criaturas11. PVmedios trasTáctico: cantidad/criaturas311,0frente a291,3decasa; trasMaestría13,1frente a39,7. Se conserva el peor desempeño de criaturas enel desafío largo. No demuestra que toda formación o jugador alcance esos resultados.
+Con inicial, Táctico: criaturas gana en semillas1,2,3donde casa pierde; casa gana en16y28donde criaturas pierde. Descubrimiento: casa/afinidad pierden en18, mientras cantidad y criaturas completan32/32. Esto conserva una vía viable con inicial, sin prometer que cualquier preparación gane. Maestría inicial0/32en las cuatro políticas.
 
-## Renuncias sobre los mismos integrantes:640pares
+En la colección mixta, reservar humanos comprados para dejar puestos puede desperdiciar su coste: no se oculta que la política de criaturas obtiene0/32enMaestría. Los precios y premios no cambian, pero sí los ingresos derivados de resultados: Maestría/mixta/afinidad pasa de64,375a58,125Coronas medias finales. Son cuentas de primera victoria, no ingresos repetibles universales para calcular horas de colección.
 
-[Script](../../../tools/verification/compare-bonds-a87.mjs), [resumen/ejemplos](bond-comparison.json), [muestras](bond-comparison-samples.jsonl). Miembros propios obtenibles y composicionesrivales actuales distintas; cinco órdenes de formación, cuatro estados de llegadaPV, dos órdenes de desempateID. Sin equipo/grageas, unseed42: enumeración determinista, **no320semillas independientes**. Preferencia: desenlace, supervivientes, PVpropios yPVrivalrestante. Los integrantes y sus estadísticas base son iguales dentro de cada par.
+## 384 escenarios con criaturas propias
 
-- Orden frente aHufflepuff:77casos favorecenOrden,145favorecencasa,98iguales.74ventajas deOrden ocurren ganando; tres convierten una no victoria en victoria enesta cuadrícula. Ejemplo completo/Descubrimiento:430PVrestantes conOrden y429concasa. EnMaestría con igual formación:72frente a73. No inflar una diferencia de1PVcomo cambio radical.
-- Mortífagos frente aSlytherin:27favorecenremate,216iniciativa,77iguales.26ventajas ocurren ganando, ninguna cambia una derrota porvictoria aquí. Ejemplo jefeDescubrimiento:387PVfrente a381; duelo deotroperfil:368frente a379. Especialización de uso concreto, no mejora universal.
+`node tools/verification/simulate-creatures-a87.mjs --owned-creatures`. [Resumen](simulation-owned-creatures.json), [filas](simulation-owned-creatures-samples.jsonl). Fénix, hipogrifo y unicornio adquiridos en tres aperturas seleccionadas por fixture. No se promete obtenerlos en tres compras aleatorias: el modelo exacto da32aperturas de mediana para tres especies propias.
 
-Valores1/2y2/3conservados tras observar ventajas/renuncias; no se busca50%deganar para declarar diversión. El efecto de cada vínculo se reconoce por eventos registrados y cantidades, sin afirmar «ganaste gracias a…».
+32semillas ×3desafíos ×4políticas; todas completan32/32Descubrimiento y Táctico. Maestría: cantidad11, afinidad15, casa17 y criaturas11victorias. PVmedios trasTáctico:311,0con cantidad/criaturas frente292,5concasa; trasMaestría13,1frente47,2. La protección breve no sustituye a toda preparación prolongada. Se conserva su resultado peor en el desafío largo.
 
-## Acceso y duración de colección
+## 640 pares con los mismos integrantes
 
-Tres Pactos existentes ofrecen, como alternativa a casa, tres criaturas distintas fijadas al crear run.128grafos mantienen un camino antes delprimer combate. Temporal no es propiedad o descubrimiento delCromodex. Orden no se promete como compañía garantizada del inicial: depende de colección o mezclas de reclutas; hay14identidades frente a4Mortífagos/4criaturas. Mortífagos puede aprovechar la ofertaSlytherin. Son accesos diferentes declarados, no equivalentes a la corrección de casasA85.
+[Script](../../../tools/verification/compare-bonds-a87.mjs), [resumen](bond-comparison.json), [filas](bond-comparison-samples.jsonl). Cinco órdenes, cuatro condiciones de llegadaPV, dos desempates porID y rivales actuales distintos; unseed42. Es enumeración determinista, no320semillas independientes. Sin equipo o grageas. Preferencia lexicográfica: desenlace, supervivientes, PVpropios y menorPVrival.
 
-[Modelo exacto](collection-model.json):34identidades base(starter+33equiprobables), tabla4. Completitud desde inicial: mediana128aperturas,P90188,P95211, frente a108/161/181antes. Tres criaturas propias:32/63/75; las cuatro61/119/142. El regalo temporal no reduce esas cifras de propiedad. Un jugador que ya tenía30mantiene sus30descubrimientos y le faltan cuatro, con distribución61/119/142; no restar medianas128−108.
+- Orden frenteHufflepuff:77casos favorecenOrden,145casa,98iguales.74ventajas deOrden ocurren ganando; tres cambian una no victoria por victoria en esta cuadrícula. Un ejemplo deja430PVfrente429; otro72frente73. No inflar una diferencia de1PVcomo un cambio radical.
+- Mortífagos frenteSlytherin:27favorecenremate,216iniciativa,77iguales.26ventajas ocurren ganando; ninguna cambia una derrota por victoria aquí. Ejemplos:387PVfrente381en un jefe y368frente379en otro duelo. Es una especialización de uso concreto.
 
-1/33poridentidad;1/3300para una identidad encantada. Acabado1%independiente intacto. Duplicados esperados al100%≈101,93; no fusión, pity o canje nuevo. El modelo verifica cupones conocidos y probabilidades normalizadas. No convertir aperturas en horas o dinero gastado sin modelar ingresos, derrotas, costes ytiempos humanos.
+Estas filas son idénticas a la versión anterior porque no se cambiaron integrantes, enemigos o reglas de combate. El contenido de los Pactos sí cambia y por eso se repitieron las expediciones. [Hashes y comparación](model-equivalence.json). Las filas A85 permanecen idénticas; no se sobrescribió la referencia.
 
-## Límites
+## Colección y límites
 
-Sin consumo de grageas o equipo enestos modelos; sus contratos tienen pruebas separadas. No se simuló toda colección posible, todas las condiciones, frecuencia de juego ocalendario. Las comparaciones de perf/arte son una validación distinta pendiente. Cambiar un parámetro exige conservar las muestras previas y repetir los casos afectados. Las cifras delmodelo no acreditan dificultad percibida, preferencia estética o interés enrepetir.
+Tabla4:33tickets equiprobables y el inicial fuera del azar.34identidades, sin duplicar por acabado o sumar recuerdos.1/33poridentidad;1/3300poridentidad encantada,1%cosmético independiente. Completitud desde inicial: mediana128aperturas,P90188,P95211; antes108/161/181. Tres especies propias32/63/75y las cuatro61/119/142. [Modelo exacto](collection-model.json), [interpretación](COLLECTION.md). No convertir esas cifras en horas sin ingresos, gastos y tiempos humanos.
+
+No se simulan todas las colecciones, condiciones, equipo, grageas o hábitos. Las diferencias entre políticas combinan composición y preparación: no se atribuye causalmente una victoria a la guardia sin control. Orden no se garantiza con el inicial; sus14identidades y la colección disponible ofrecen otro acceso, distinto de las cuatro casas y criaturas. El funcionamiento, el arte, el sonido y el rendimiento se comprueban en capas separadas. La observación humana y el dispositivo físico siguen pendientes.

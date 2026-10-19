@@ -1,0 +1,15 @@
+{
+  "run": 39178088811,
+  "head": "428927faf8e4ce07e3f69111a7369a460761d524",
+  "checkout": "729c707608f4eba83ac975d06caf5075e64ab796",
+  "check": "failure",
+  "regression": "skipped",
+  "motion": {
+    "passed": 85,
+    "failed": 2,
+    "skipped": 39
+  },
+  "failures": "Fixture-only bottom debug controls intercept real Continue at390px in Chromium/WebKit. No force click, retry or acceptance relaxation. New fixture removes its own debug footer only during battle.",
+  "visualLimits": "Pact PNG was a body-only section without the actual modal wrapper. It does not validate real popup contrast. Correct wrapper and two selected connected-app PNGs prepared for next CI.",
+  "capturedIn": "Protected serial Linux CI; not Mac screenshots, physical device or human playtest."
+}

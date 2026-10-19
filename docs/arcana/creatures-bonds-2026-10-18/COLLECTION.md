@@ -1,25 +1,41 @@
-# A87 · Modelo exacto de la ampliación propuesta
+# A87 · Duración de la colección ampliada
 
-No es contenido habilitado todavía. [Script](collection-model.mjs), [resultados](collection-model.json). Ejecutado conNode24; cadenas de ocupación finitas exactas y suma de probabilidad comprobada. Casos conocidos:1identidad se obtiene en1apertura;2identidades completas a2aperturas=0,5 y a3=0,75; esperanza3identidades=5,5. SinMonteCarlo o datos humanos.
+Contenido implementado en catálogo/tabla 4; validación gráfica todavía pendiente. [Script reproducible](collection-model.mjs), [resultados crudos](collection-model.json). Ejecutado con Node 24.
 
-Supuesto: sorteo uniforme independiente; configuración anterior verificada29entradas de peso1, starter fuera del azar. Propuesta33entradas de peso1 después de añadir4criaturas. Debe contrastarse con la tabla realmente implementada antes de aceptar el incremento.
+## Método y supuestos
 
-| Definición | Mediana aperturas | P90 | P95 | Media |
+Cadenas de ocupación finitas exactas para sorteos uniformes independientes. La tabla anterior contiene 29 entradas de peso 1; la nueva contiene 33, con cuatro criaturas añadidas. El inicial queda fuera del azar. El constructor real y el libro de probabilidades utilizan esa tabla versionada; la prueba de contenido comprueba sus porcentajes. No se usa Monte Carlo o comportamiento humano.
+
+Se comprueban casos conocidos: una identidad se obtiene en una apertura; dos identidades están completas tras dos aperturas con probabilidad 0,5 y tras tres con 0,75; la esperanza para tres identidades es 5,5 aperturas. La suma de probabilidad y la normalización se validan.
+
+| Definición | Mediana de aperturas | P90 | P95 | Media |
 |---|---:|---:|---:|---:|
-| Colección anterior30, starter+29 |108|161|181|114,89|
-| Colección nueva34, starter+33 |128|188|211|134,93|
-| Tres criaturas propias distintas entre las cuatro nuevas |32|63|75|35,75|
-| Cuatro criaturas nuevas, incl. alguien que ya completó las30 anteriores |61|119|142|68,75|
-| Primera copia encantada, cualquier identidad elegible |69|230|299|100|
+| Colección anterior: inicial + 29 | 108 | 161 | 181 | 114,89 |
+| Colección nueva: inicial + 33 | 128 | 188 | 211 | 134,93 |
+| Tres criaturas propias distintas entre las cuatro nuevas | 32 | 63 | 75 | 35,75 |
+| Las cuatro criaturas nuevas | 61 | 119 | 142 | 68,75 |
+| Primera copia encantada de cualquier identidad elegible | 69 | 230 | 299 | 100 |
 
-Las primeras dos filas parten solo del starter. No son «20aperturas para obtener las cuatro nuevas»; esa resta de medianas sería incorrecta. La tercera/cuarta siguen solo el subconjunto nuevo entre33posibles. La cuarta es el coste marginal de alguien con el catálogo anterior completo. No se pierden sus30descubrimientos, pero el denominador actual crece.
+Las dos primeras filas parten únicamente del inicial. No significan que obtener las cuatro nuevas requiera 128 − 108 aperturas: restar medianas sería incorrecto. La cuarta fila también representa a alguien que ya había completado las 30 identidades anteriores y busca las cuatro nuevas entre 33 posibles. Conserva sus 30 descubrimientos, aunque el denominador actual crezca a 34.
 
-A completar el conjunto completo se esperan85,89duplicados antes y101,93después (E[T]−n). Las cantidades de copias no son otro porcentaje obligatorio. Cuatro rarezas actuales; acabado encantado sigue independiente1% y no es otra identidad. Probabilidad conjunta de una identidad concreta encantada:1/2900→1/3300; sinpity o garantía de aparición. Harry inicial sigue fuera de esa tabla.
+## Copias y acabados
 
-Esto no conserva los porcentajes individuales aunque conserve cada peso:1/29≈3,448%→1/33≈3,030%. Añadir masa positiva exige redistribuir probabilidades. El libro debe derivar las cifras de la nueva tabla versionada y reconfirmar una petición obsoleta antes de gastar. Recuperar un receipt anterior nunca sortea de nuevo.
+Al completar el conjunto se esperan 85,89 duplicados antes y 101,93 después: E[T] menos las identidades obtenidas por sorteo. La cantidad de copias y todas las combinaciones de equipo no forman otro porcentaje obligatorio.
 
-Con el precio actual10Coronas, abrir128ranas compradas costaría1280Coronas brutas; ese producto no es una estimación de horas ni de ingreso necesario de expediciones. Regalos, botín, derrota, costes de preparación y energía alteran aperturas compradas/tiempo. Este modelo no los inventa ni transforma tiempos de automatización en tiempo humano. Las simulaciones de ruta compararán recursos bajo políticas/colecciones declaradas por separado.
+El acabado encantado sigue siendo un 1% independiente, cosmético y sin ×2 para sinergias. No añade otras 34 identidades al denominador. La probabilidad conjunta de una identidad concreta encantada pasa de 1/2900 a 1/3300, sin pity o garantía de aparición. El inicial sigue fuera de esa tabla. Los recuerdos estacionales permanecen separados de la colección base.
 
-La vía táctica de tresPactos debe permitir reunir tres criaturas temporales antes del primer combate sin esperar32aperturas. Eso no concede propiedad, no completa elCromodex y no elimina la cola de la colección permanente. La distribución desigual de casas propias tampoco desaparece por añadir criaturas; no volver a presentar un acceso táctico corregido como igualdad de colección.
+La probabilidad individual cambia de 1/29 ≈ 3,448% a 1/33 ≈ 3,030%. Conservar el peso 1 no conserva su porcentaje cuando se añade masa positiva. El libro deriva las cifras activas; una petición con tabla obsoleta requiere actualizar y reconfirmar antes de consumir. Recuperar un receipt histórico nunca sortea de nuevo.
 
-No se añade una solución económica automática a las colas: sinmonedas/XP/canjes/pity nuevos, sinprecios/premios/energía alterados. Si la sesión humana revela repetición vacía, deberá evaluarse una propuesta posterior con estos supuestos explícitos.
+## Lo que no estima el modelo
+
+A 10 Coronas por rana, 128 aperturas compradas supondrían 1.280 Coronas brutas. Esa multiplicación no estima horas, calendario o ingresos necesarios. Regalos y botín reducen compras; derrotas, preparación y Esencia alteran la ruta de ingresos. No se convierten tiempos de automatización en tiempo humano.
+
+Los escenarios de [calibración](CALIBRATION.md) comparan recursos finales y victorias de expediciones declaradas. No constituyen una predicción de hábitos de compra, frecuencia de juego o retención. Una estimación temporal requerirá observar duración de acciones, políticas de gasto y frecuencia humana.
+
+## Acceso táctico frente a propiedad
+
+Los tres Pactos permiten reunir tres criaturas temporales antes del primer combate sin esperar la mediana de 32 aperturas. Las pruebas de contenido verifican la vía en 128 grafos y la validación conectada debe comprobarla en navegador. Esto no concede propiedad, descubre cromos o elimina la cola de la colección permanente.
+
+Añadir criaturas tampoco iguala la distribución de casas propias. El acceso táctico a una formación viable y la duración de completar una colección son problemas distintos.
+
+No se añaden monedas, XP, canjes, pity o compensaciones, ni se cambian precios, premios o energía para ocultar las colas. Si la observación humana detecta repetición vacía, se estudiará una propuesta posterior con estos supuestos visibles.

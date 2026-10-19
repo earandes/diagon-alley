@@ -457,6 +457,61 @@ for (const [language, pack] of [
       await page.locator(`[data-node="${id}"]`).click();
       await expect(page.locator('[data-pact-candidate]')).toHaveCount(2);
       await page.locator(`[data-pact-candidate="${offer.id}"]`).click();
+      if (recruited === 2) {
+        const portraits = page.locator(
+          '.node-event-dialog[open] .tactical-pact-portrait img[data-art$=".portrait"]',
+        );
+        await expect(portraits).toHaveCount(2);
+        await expect
+          .poll(() =>
+            portraits.evaluateAll((images) =>
+              images.every(
+                (image) =>
+                  (image as HTMLImageElement).complete &&
+                  (image as HTMLImageElement).naturalWidth > 0,
+              ),
+            ),
+          )
+          .toBe(true);
+        const layout = await page.locator('.node-event-dialog[open]').evaluate((el) => {
+          const box = el.getBoundingClientRect(),
+            style = getComputedStyle(el);
+          return {
+            x: box.x,
+            y: box.y,
+            width: box.width,
+            height: box.height,
+            viewportWidth: innerWidth,
+            viewportHeight: innerHeight,
+            scrollWidth: el.scrollWidth,
+            clientWidth: el.clientWidth,
+            background: style.backgroundImage,
+            color: style.color,
+          };
+        });
+        expect(layout.x).toBeGreaterThanOrEqual(0);
+        expect(layout.y).toBeGreaterThanOrEqual(0);
+        expect(layout.x + layout.width).toBeLessThanOrEqual(layout.viewportWidth + 1);
+        expect(layout.y + layout.height).toBeLessThanOrEqual(layout.viewportHeight + 1);
+        expect(layout.scrollWidth).toBeLessThanOrEqual(layout.clientWidth + 1);
+        expect(layout.background).not.toBe('none');
+        await mkdir(root, { recursive: true });
+        await writeFile(
+          resolve(root, `${test.info().project.name}-a87-pact-layout-${language}-${pack}.json`),
+          JSON.stringify(
+            {
+              sha: process.env.GITHUB_SHA,
+              fixture: false,
+              isolatedAccount: true,
+              layout,
+              scope:
+                'Actual connected App dialog with two decoded portraits and public fixed offers; DOM evidence, no screenshot or human observation.',
+            },
+            null,
+            2,
+          ) + '\n',
+        );
+      }
       await page.locator('.node-confirm-action').click();
       await expect(page.locator('.node-event-dialog[open]')).toHaveCount(0);
       state = await readGame(page);
@@ -506,8 +561,27 @@ for (const [language, pack] of [
     );
     const duel = await reach(page, 'duel', language);
     await page.locator(`[data-node="${duel}"]`).click();
+    const confirmationStarted = Date.now();
     await page.locator('.node-confirm-action').click();
     await expect(page.locator('.battle-panel')).toBeVisible();
+    await expect(page.locator('.scene-arena')).toHaveAttribute('data-art-ready', 'true');
+    const confirmationToFiguresUpperBoundMs = Date.now() - confirmationStarted;
+    await mkdir(root, { recursive: true });
+    await writeFile(
+      resolve(root, `${test.info().project.name}-a87-${language}-${pack}.json`),
+      JSON.stringify(
+        {
+          sha: process.env.GITHUB_SHA,
+          fixture: false,
+          isolatedAccount: true,
+          confirmationToFiguresUpperBoundMs,
+          conditions:
+            'Actual isolated guest, HTTP/PG/Redis commit and DOM/canvas readiness at1280x900; Node wall interval includes Playwright click/waits/polling. Not human duration, GPU time or a matched performance experiment.',
+        },
+        null,
+        2,
+      ) + '\n',
+    );
     const committed = await readGame(page),
       receipt = committed.receipts.at(-1)!;
     if (receipt.kind !== 'advance-node' || !receipt.battle)

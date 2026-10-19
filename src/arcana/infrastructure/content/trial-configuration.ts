@@ -167,7 +167,7 @@ export function trialConfiguration(contentVersion: 'a84' | 'a85' | 'a87' = 'a87'
     challengeContent: (challenge, graph, initialWizardIds) => {
       const plans = progressionContent(nodes, opening.catalog, affinities, graph, challenge);
       const housed = modern
-        ? housePacts(plans, opening.catalog, affinities, graph, initialWizardIds)
+        ? housePacts(plans, opening.catalog, affinities, graph, initialWizardIds, extended)
         : plans;
       return extended
         ? creaturePacts(housed, opening.catalog, affinities, graph, initialWizardIds)

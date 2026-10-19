@@ -1,5 +1,6 @@
 import type { Language } from '../domain/collection/wizards';
 export const bondMessages = {
+  magicalDuel: { es: 'Duelo mágico', en: 'Magical duel' },
   activeTier: { es: 'Activo nivel {tier}', en: 'Active tier {tier}' },
   teamBond: { es: 'Vínculo del equipo', en: 'Team bond' },
   chooseBond: { es: 'Elegir vínculo del equipo', en: 'Choose team bond' },
@@ -17,12 +18,12 @@ export const bondMessages = {
     en: 'Replaces the house bonus; affinity remains. Duplicates and enchanted finishes do not multiply the count. Locked at combat confirmation.',
   },
   choiceHelp: {
-    es: 'Un vínculo por equipo. Automático prioriza una casa activa; después {order}, {death} y {creatures}. Cambiar aquí es un borrador: guarda o confirma la preparación.',
-    en: 'One bond per team. Automatic prefers an active house, then {order}, {death} and {creatures}. This is a draft: save or confirm preparation.',
+    es: 'Un vínculo. Automático: casa activa → {order} → {death} → {creatures}. Borrador hasta guardar.',
+    en: 'One bond. Automatic: active house → {order} → {death} → {creatures}. Draft until saved.',
   },
   history: {
-    es: 'Afiliaciones de su historia; solo el vínculo elegido activa su bono.',
-    en: 'Historical affiliations; only the chosen bond activates its bonus.',
+    es: 'Afiliaciones históricas, no bonos acumulables. Los grupos sin vínculo disponible son descriptivos.',
+    en: 'Historical affiliations, not stacked bonuses. Groups without an available bond are descriptive.',
   },
   gear: {
     es: 'El equipo representa un vínculo mágico con esta criatura.',

@@ -440,6 +440,7 @@ export async function createPixiScene(host: HTMLElement, data: SceneData) {
           if (actor) {
             observe('creatureActor', id);
             observe('creaturePose', casting && castTexture ? 'cast' : 'rest');
+            observe('creatureFacing', pose.sx < 0 ? 'left' : 'right');
           }
         }
         const direction = pose.x < viewWidth / 2 ? 1 : -1;

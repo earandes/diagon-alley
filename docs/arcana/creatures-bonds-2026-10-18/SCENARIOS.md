@@ -1,6 +1,6 @@
 # A87 · Escenarios de aceptación antes de código
 
-Diseñados, **todavía no ejecutados**. No son partidas humanas ni promesa de balance. Fijar semilla, HP/PM, orden y reglas de cada fixture; publicar también resultados desfavorables.
+Casos de aceptación definidos antes de implementar. El estado de ejecución de cada capa se registra en QA; esta tabla no equivale a una batería completa superada. No son partidas humanas ni promesa de balance. Fijar semilla, HP/PM, orden y reglas de cada fixture; publicar también resultados desfavorables.
 
 ## Reglas y renuncias
 

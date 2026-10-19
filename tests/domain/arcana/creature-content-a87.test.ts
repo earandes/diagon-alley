@@ -95,3 +95,26 @@ it('fixes three distinct creature alternatives along the same three Pacts, with 
     expect(c.campaign.challengeContent!('discovery', graph, ['apprentice'])).toEqual(plans);
   }
 });
+
+it('keeps all four human house routes available from the starter without forcing Gryffindor on every expedition', () => {
+  const c = trialConfiguration('a87'),
+    seen = new Set<string>();
+  for (let seed = 0; seed < 128; seed++) {
+    const graph = randomizeRoute(c.campaign.graph, new SeededRandom(seed));
+    const plans = c.campaign.challengeContent!('discovery', graph, ['apprentice']);
+    const candidates = plans.flatMap((p) => (p.kind === 'pact' ? [p.recruit] : []));
+    expect(new Set(candidates.map((c) => c.house)).size).toBe(1);
+    expect(new Set(candidates.map((c) => c.wizardId)).size).toBe(3);
+    seen.add(candidates[0].house!);
+    const preferred = c.campaign.challengeContent!('discovery', graph, [
+      'apprentice',
+      'star-binder',
+    ]);
+    expect(preferred.flatMap((p) => (p.kind === 'pact' ? [p.recruit.house] : []))).toEqual([
+      'hufflepuff',
+      'hufflepuff',
+      'hufflepuff',
+    ]);
+  }
+  expect([...seen].sort()).toEqual(['gryffindor', 'hufflepuff', 'ravenclaw', 'slytherin']);
+});

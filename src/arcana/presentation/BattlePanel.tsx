@@ -428,7 +428,13 @@ function BattlePlayback({
       <header className="arena-heading">
         <div className="arena-encounter-title">
           <h2 aria-label={t('combatArena')}>
-            {arenaText(language, isBoss ? 'finalDuel' : 'duel')}
+            {isBoss
+              ? arenaText(language, 'finalDuel')
+              : [...combat.input.player, ...combat.input.rival].some((u) =>
+                    creatureProfile(u.wizardId),
+                  )
+                ? bondText(language, 'magicalDuel')
+                : arenaText(language, 'duel')}
           </h2>
           <span className="arena-round">
             {frame.round > 0

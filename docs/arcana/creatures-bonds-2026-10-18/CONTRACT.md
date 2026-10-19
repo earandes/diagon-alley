@@ -39,3 +39,7 @@ No gráficos locales fuera del smoke original; CI Linux serial con guard/bloqueo
 PR9integrada enmain1a549eafb33f771293603775a8586d0210c608a3, árbol idéntico a6cf2ac8/checkout0d59c610, CI39167929972 completa correcta:662unit,103PGRedis,365gráficoscheck+134regresión(incluidos2benchmarks). Cierre documental440d2784de96ef19d99447bf693812eaf94011e2subido amain con diff acotado sin cambios runtime. NingunaPRabierta. RamaA87parte exactamente de440d278.
 
 CI del merge39173082086cancelada deliberadamente durante testsunitarios, antes de gráficos, al quedar sustituida por39173115270delSHA documental (pendiente al empezarA87). No se cancela CIajena o se presenta la cancelación como éxito. La batería completa de6cfy equivalencia del árbol sustentan la base; se seguirá consultando la nuevaCI por su estado real. Rawlogs de cierre conservan whitespace original de las herramientas; no se editaron para simular salida distinta.
+
+## Corrección final de acceso antes de integrar
+
+En A87, el tema humano de los tres Pactos también puede ser Gryffindor. El inicial solo no fuerza su casa; otros personajes propios pueden orientar el tema. Se conservan dos candidatos por Pacto: casa o criatura. La alternativa antigua A85 incluía Gryffindor, pero no garantizaba tres identidades distintas de esa casa. Se mantiene el perfil histórico A85, se archivan los escenarios de A87 con tres temas y se recalibra la versión corregida con cuatro. Sin modificar tablas, premios, estadísticas o campaña.
