@@ -147,9 +147,45 @@ test('A92 a lost economic response keeps its owner across contextual sign-in and
     await login(page, otherEmail, 'es');
     await expect(dialog(page).getByRole('alert')).toBeVisible();
     expect((await page.request.get('/api/state')).status()).toBe(401);
-    await login(page, email, 'es');
+    let verifiedSessionReady = false;
+    let releaseSession = () => {};
+    const sessionGate = new Promise<void>((resolve) => {
+      releaseSession = resolve;
+    });
+    await page.route('**/api/auth/session', async (route) => {
+      const response = await route.fetch();
+      if ((await response.json()).playerId === committed?.playerId) {
+        verifiedSessionReady = true;
+        await sessionGate;
+      }
+      await route.fulfill({ response });
+    });
+    try {
+      await login(page, email, 'es');
+      await expect.poll(() => verifiedSessionReady).toBe(true);
+      await expect(dialog(page)).toBeVisible();
+      await expect(page.locator('dialog.reveal[open]')).toHaveCount(0);
+    } finally {
+      releaseSession();
+    }
     await expect(dialog(page)).toHaveCount(0);
     expect(await readGame(page)).toEqual(committed);
+    const opening = page.locator('dialog.reveal[open]');
+    await expect(opening).toBeVisible();
+    // An existing reveal must survive opening and cancelling its own account consultation.
+    await opening.getByRole('button', { name: 'Ajustes', exact: true }).click();
+    const settings = page.locator('dialog.game-settings[open]').last();
+    await settings.locator('[data-account-entry="settings"]').click();
+    await expect(dialog(page)).toBeVisible();
+    await expect(opening).toHaveCount(1);
+    await page.keyboard.press('Escape');
+    await expect(dialog(page)).toHaveCount(0);
+    await expect(settings).toBeVisible();
+    await page.keyboard.press('Escape');
+    await expect(page.locator('dialog.game-settings[open]')).toHaveCount(0);
+    await expect(opening).toBeVisible();
+    await page.keyboard.press('Escape');
+    await expect(opening).toHaveCount(0);
     expect(posts).toBe(1);
     expect((await readGame(page)).receipts.filter((r) => r.id === key)).toHaveLength(1);
     const recovered = await page.request.get(`/api/operations/${key}`);

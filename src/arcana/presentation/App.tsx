@@ -154,6 +154,10 @@ export function App() {
     [preparationContext, setPreparationContext] = useState<'formation' | 'beans'>('formation'),
     [dismissedOpening, setDismissedOpening] = useState<string | null>(null);
   const { view, setView, bazaarPlace, setBazaarPlace } = useNavigation();
+  const [admittedOpening, setAdmittedOpening] = useState<{
+    playerId: string;
+    receiptId: string;
+  } | null>(null);
   const online = useOnline();
   const navigation = useRef<HTMLElement>(null);
   const motion = useReducedMotion(),
@@ -211,6 +215,26 @@ export function App() {
   }, [selected, view]);
   const state = useSyncExternalStore(controller.subscribe, controller.getSnapshot),
     t = (key: MessageKey, values?: Record<string, string | number>) => text(language, key, values);
+  useEffect(() => {
+    const receipt = state.receipt;
+    const playerId = state.game?.playerId;
+    if (
+      accountMode ||
+      view !== 'shop' ||
+      !playerId ||
+      !receipt ||
+      !['open-toad', 'buy-open-toad'].includes(receipt.kind) ||
+      dismissedOpening === receipt.id
+    )
+      return;
+    // Presentation admission only: a recovered result must not cover unfinished authentication.
+    // Keep an already admitted reveal mounted when its own Settings opens AccountAccess.
+    setAdmittedOpening((previous) =>
+      previous?.playerId === playerId && previous.receiptId === receipt.id
+        ? previous
+        : { playerId, receiptId: receipt.id },
+    );
+  }, [accountMode, view, state.game?.playerId, state.receipt, dismissedOpening]);
   useEffect(() => {
     const nav = navigation.current;
     const shell = nav?.closest<HTMLElement>('.arcana-shell');
@@ -676,6 +700,8 @@ export function App() {
                   {view === 'shop' &&
                     (state.receipt?.kind === 'open-toad' ||
                       state.receipt?.kind === 'buy-open-toad') &&
+                    admittedOpening?.playerId === game.playerId &&
+                    admittedOpening.receiptId === state.receipt.id &&
                     dismissedOpening !== state.receipt.id && (
                       <CardReveal
                         key={state.receipt.id}

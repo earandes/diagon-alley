@@ -102,6 +102,11 @@ async function accountFromSettings(page: Page) {
 }
 
 async function dismissSettings(page: Page) {
+  const opening = page.locator('dialog.reveal[open]');
+  if (await opening.count()) {
+    await page.keyboard.press('Escape');
+    await expect(opening).toHaveCount(0);
+  }
   const settings = page.locator('dialog.game-settings[open]');
   if (await settings.count()) {
     const close = settings.locator('.settings-close');
@@ -387,6 +392,8 @@ for (const pack of ['diagon-alley', 'arcana'] as const) {
         ).toHaveCount(0);
         await signIn(page, guestEmail, language);
         await expect(dialog(page)).toHaveCount(0);
+        // The recovered opening is confirmed, and now follows completed authentication.
+        await expect(page.locator('dialog.reveal[open]')).toBeVisible();
         await dismissSettings(page);
         expect(await readGame(page)).toEqual(committed);
         expect(posts).toBe(1);
