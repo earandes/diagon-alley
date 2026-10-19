@@ -17,6 +17,7 @@ import { text } from './translations';
 import { seasonalText, type SeasonalMessageKey } from './seasonal-messages';
 import pumpkinLantern from './art/seasonal-a68/pumpkin-lantern.svg?url';
 import './seasonal-event.css';
+import { seasonalOperationMessage } from './seasonal-operation-message';
 
 /** Frozen unfinished editions stay reachable after the server publishes another definition. */
 export function seasonalDisplayEdition(
@@ -331,7 +332,7 @@ export function SeasonalEvent({
             <p className="seasonal-intro">{complete ? t('completeDetail') : t('story')}</p>
             {error && (
               <div className="seasonal-error" role="alert">
-                <p>{error}</p>
+                <p>{seasonalOperationMessage(language, error)}</p>
                 {onRecover && (
                   <button
                     type="button"

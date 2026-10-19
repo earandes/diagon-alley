@@ -3,6 +3,7 @@ import { flavourCollection } from '../application/client/flavour-collection';
 import type { GameState } from '../application/game';
 import type { Language } from '../domain/collection/wizards';
 import { Artwork } from './Artwork';
+import { CloseButton } from './CloseButton';
 import { text } from './translations';
 import { prepText } from './prep-messages';
 import './expedition-preparation.css';
@@ -95,13 +96,11 @@ export function FlavourCabinet({ game, language }: { game: GameState; language: 
           aria-label={prepText(language, 'recipe')}
           onCancel={() => setRecipe(false)}
         >
-          <button
+          <CloseButton
             className="folio-close game-object"
-            aria-label={text(language, 'close')}
-            onClick={() => setRecipe(false)}
-          >
-            <Artwork asset="ui.clear" language={language} decorative />
-          </button>
+            label={text(language, 'close')}
+            onClose={() => setRecipe(false)}
+          />
           <h3>{prepText(language, 'recipe')}</h3>
           <ol className="flavour-recipe-steps">
             {(

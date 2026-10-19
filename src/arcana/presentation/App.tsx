@@ -109,7 +109,7 @@ export function App() {
       return null;
     }
   };
-  const openAccount = async (mode: AccountMode) => {
+  const openAccount = async (mode: AccountMode, reauthenticate = false) => {
     if (openingAccount.current) return;
     openingAccount.current = true;
     accountOrigin.current =
@@ -121,13 +121,15 @@ export function App() {
       const owner =
         controller.getSnapshot().game?.playerId ?? controller.getSnapshot().pending?.playerId;
       setAccountMode(
-        current?.kind === 'account'
-          ? !owner || current.playerId === owner
-            ? 'manage'
-            : 'login'
-          : mode === 'manage'
-            ? 'login'
-            : mode,
+        reauthenticate
+          ? 'login'
+          : current?.kind === 'account'
+            ? !owner || current.playerId === owner
+              ? 'manage'
+              : 'login'
+            : mode === 'manage'
+              ? 'login'
+              : mode,
       );
     } finally {
       openingAccount.current = false;
@@ -426,6 +428,8 @@ export function App() {
       connected={online}
       onReload={() => void controller.load()}
       onRecover={() => void controller.recover()}
+      onSignIn={() => void openAccount('login', true)}
+      accessOpening={accountOpening}
       onEnter={() => void entry.enter()}
       entering={entry.pending}
       entryError={entry.error}
@@ -626,11 +630,7 @@ export function App() {
                   </FantasyActionButton>
                 </div>
                 {accountOpening && <p role="status">{accountText(language, 'sending')}</p>}
-                {state.pending && (
-                  <p role="alert" className="account-guest-hint">
-                    {accountText(language, 'pending')}
-                  </p>
-                )}
+                {state.pending && recovery}
                 <p className="account-guest-hint">{accountText(language, 'guestHint')}</p>
                 {entry.error && (
                   <p role="alert">
@@ -753,7 +753,7 @@ export function App() {
                           />
                           <ExpeditionIntentions
                             game={game}
-                            content={content}
+                            content={content ?? undefined}
                             language={language}
                             ready={ready}
                             onChoose={chooseIntention}
@@ -766,7 +766,7 @@ export function App() {
                             key={`new-entry:${game.playerId}`}
                             game={game}
                             catalog={content.catalog}
-                            content={content}
+                            content={content ?? undefined}
                             language={language}
                             ready={ready}
                             onTeam={(request) =>
@@ -782,14 +782,14 @@ export function App() {
                         <>
                           <IntentionReminder
                             game={game}
-                            content={content}
+                            content={content ?? undefined}
                             language={language}
                             ready={ready}
                             onCancel={() => chooseIntention(null)}
                           />
                           <TeamHud
                             game={game}
-                            content={content}
+                            content={content ?? undefined}
                             language={language}
                             onPrepare={(origin) => openPreparation('formation', origin)}
                           />
@@ -887,7 +887,7 @@ export function App() {
                               <BossSupplies
                                 run={run}
                                 game={game}
-                                content={content}
+                                content={content ?? undefined}
                                 language={language}
                                 ready={ready}
                                 assignments={assignments}
@@ -914,7 +914,7 @@ export function App() {
                                 <BossSupplies
                                   run={run}
                                   game={game}
-                                  content={content}
+                                  content={content ?? undefined}
                                   language={language}
                                   ready={ready}
                                   assignments={assignments}
@@ -1028,7 +1028,7 @@ export function App() {
                       {bazaarPlace === 'confectionery' && (
                         <SweetshopScene
                           game={game}
-                          content={content}
+                          content={content ?? undefined}
                           language={language}
                           ready={ready}
                           onStreet={() => setBazaarPlace('street')}
@@ -1133,6 +1133,7 @@ export function App() {
                   )}
                   {view === 'missions' && (
                     <JourneyCabinet
+                      content={content ?? undefined}
                       game={game}
                       language={language}
                       onMap={() => setView('map')}
@@ -1223,7 +1224,9 @@ export function App() {
               onClose={() => setAccountMode(null)}
               beforeIdentityChange={controller.beginIdentityChange}
               finishIdentityChange={async (outcome, samePlayerOnly, expectedPlayerId) => {
-                const previousOwner = controller.getSnapshot().game?.playerId;
+                const previousOwner =
+                  controller.getSnapshot().game?.playerId ??
+                  controller.getSnapshot().pending?.playerId;
                 await controller.finishIdentityChange(outcome, samePlayerOnly, expectedPlayerId);
                 const currentOwner = controller.getSnapshot().game?.playerId;
                 if (
@@ -1235,7 +1238,10 @@ export function App() {
                   throw new AccountRequestError(
                     controller.getSnapshot().error ?? 'AUTH_UNAVAILABLE',
                   );
-                if (outcome === 'authenticated' || outcome === 'signed-out') {
+                if (
+                  outcome === 'signed-out' ||
+                  (outcome === 'authenticated' && previousOwner !== currentOwner)
+                ) {
                   setSelected(null);
                   setPreparing(false);
                   setView('map');

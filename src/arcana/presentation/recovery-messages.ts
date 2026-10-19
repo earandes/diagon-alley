@@ -1,5 +1,10 @@
 import type { Language } from '../domain/collection/wizards';
 const messages = {
+  signIn: { es: 'Volver a entrar', en: 'Sign in again' },
+  accountHelp: {
+    es: 'Si vinculaste esta partida, entra en la misma cuenta. Comprobar no repite el gasto.',
+    en: 'If you linked this game, sign in to the same account. Checking does not repeat the cost.',
+  },
   offline: {
     es: 'Sin conexión. Vuelve a conectar para consultar el estado.',
     en: 'Offline. Reconnect to check the state.',
