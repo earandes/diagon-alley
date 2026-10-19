@@ -22,3 +22,5 @@ Actualización: estudio PM10/22 terminado,81.000 casos de sensibilidad y384 ruta
 CIinicial39243286949 cancelada tras preservar fallo de fixture de origen. R01 corregido con14casos focales; factory de fixture y prueba previa en corrección. Se prepara nuevo candidato; ningún recorrido gráfico se declara validado por esta ejecución.
 
 CI2 conserva3casos correctos antes de aserción obsoleta de copy de grageas. Capturas revisadas y estante de referencias corregido. Se añade un caso App real acotado para enlaces nuevos; CI3 pendiente. No se completa goal con estas omisiones.
+
+CI3 pasó6recorridos antes de fallo real de reflujo320/200. Corrección responsive, diagnóstico geométrico y muestra de grageas/insignia integrados. Build/tipos/skin y30focales correctos; candidato4 para verificar aceptación sin ocultación.

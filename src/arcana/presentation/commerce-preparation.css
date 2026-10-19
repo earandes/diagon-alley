@@ -1,12 +1,21 @@
 .wand-fitting {
   width: min(100%, 34rem);
+  min-width: 0;
   margin: 1rem auto;
   color: var(--pack-ink, #fff0d0);
+}
+.game-shell .shop-workshop .shop-interior-heading h2 {
+  min-width: 0;
+  max-width: 100%;
+  overflow-wrap: anywhere;
 }
 .forge-reference-shelf {
   display: flex;
   gap: 0.5rem;
   overflow-x: auto;
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
   padding: 0.4rem 0.2rem 0.7rem;
   scrollbar-color: var(--pack-gold, #e0b75d) transparent;
 }
@@ -52,7 +61,7 @@
 }
 .forge-fitting-objects {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1rem;
 }
 .forge-fitting-objects > div {
@@ -64,6 +73,7 @@
 .forge-fitting-objects .equipment-art {
   width: 6rem;
   height: 7rem;
+  max-width: 100%;
 }
 .game-shell .shop-workshop .forge-fitting-objects .forge-action {
   width: 100%;
@@ -98,7 +108,8 @@
 }
 .forge-fitted-values > div {
   flex: 0 1 auto;
-  min-width: 5rem;
+  min-width: min(5rem, 100%);
+  max-width: 100%;
 }
 .forge-fitted-values dt {
   font-size: 0.85em;
@@ -117,6 +128,12 @@
 .forge-fitting-help p,
 .forge-legacy-note {
   line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+@media (max-width: 360px) {
+  .forge-fitting-objects {
+    grid-template-columns: minmax(0, 1fr);
+  }
 }
 .forge-fitting-help section {
   margin-block: 1rem;

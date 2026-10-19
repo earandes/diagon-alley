@@ -50,3 +50,11 @@ Tres PNG seleccionados y observaciones parciales de respuesta conservados en `ev
 La auditoría de cobertura distinguió contratos/fixtures y App real. Se añade una única cohorte integrada para comprobar enlaces nuevos, sin afirmar que un conjunto de casos aislados es un E2E completo. La compañía v2 conserva cobertura compuesta UI+HTTP/PG; no se concede una colección desde el navegador para fabricar ese escenario.
 
 Candidato3: build/tipos/skin y749unitarias correctas localmente, después del ajuste de estante, la aserción de borrador y la cohorte conectada. La cohorte visita operaciones y enlaces reales con invitado aislado; no se fuerza seed, colección o resultado. Treinta y seis casos A89 registrados,27activos/9omisiones previstas; resultado Linux aún pendiente.
+
+## CI tercera39245664263 ·f7f867a
+
+Seis recorridos A89 correctos en Chromium390 y cuatro parejas de idioma/pack: guía/compañía, objetivo, referencia de varita, riesgo/borrador, lectura/contraste de sistema y reproducción/libro de hechos. El caso320/200% mostró desbordamiento horizontal real del taller.6correctos,1fallido,89no ejecutados/omisiones por límite; ejecución propia cancelada después de conservar resultado y capturas.
+
+Corrección mínima de reflujo: tracks con mínimo0, arte acotado al puesto, estante con scroll propio y anchura acotada; comparación en una columna≤360px; título de taller con mínimo0/partición y ayuda con reflujo de palabras largas. No overflow:hidden para ocultar contenido ni reducción global de letra. Se añade diagnóstico de geometría al fallo para identificar descendientes, sin capturas/perfil adicionales o relajación del ancho de aceptación.
+
+Capturas nuevas de grageas y hechos revisadas; el encuadre seleccionado de grageas se ajusta a tarro/portadores con ayuda plegada tras comprobarla, sin cambiar su comportamiento. Los hechos de casa reutilizan su emblema existente. No más lote de assets ni rediseño general. La confirmación se realiza en el siguiente candidato.

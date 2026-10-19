@@ -1,0 +1,23 @@
+{
+  "runId": 39245664263,
+  "headSha": "f7f867ade6fc30e66ede5f5016f129993fd463e7",
+  "stats": {
+    "startTime": "2026-10-19T11:37:51.137Z",
+    "duration": 25313.423000000003,
+    "expected": 6,
+    "skipped": 89,
+    "unexpected": 1,
+    "flaky": 0
+  },
+  "failures": [
+    {
+      "test": "A89 narrow text reflow and missing renderer keep readable actions and facts",
+      "project": "chromium-390-a89",
+      "status": "failed",
+      "errors": [
+        "Error: expect(received).toBe(expected) // Object.is equality\n\nExpected: true\nReceived: false\n\n  131 | }\n  132 | async function widthFits(page: Page) {\n> 133 |   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1)).toBe(\n      |                                                                                             ^\n  134 |     true,\n  135 |   );\n  136 | }\n    at widthFits (/home/runner/work/diagon-alley/diagon-alley/tests/browser-priorities/priorities-a89.spec.ts:133:93)\n    at /home/runner/work/diagon-alley/diagon-alley/tests/browser-priorities/priorities-a89.spec.ts:527:5"
+      ]
+    }
+  ],
+  "disposition": "Cancelled own workflow after preserving demonstrated narrow reflow failure; corrected candidate required."
+}

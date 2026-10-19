@@ -2,7 +2,7 @@ import type { Combat } from '../domain/combat/engine';
 import type { Language } from '../domain/collection/wizards';
 import { battleFacts, type BattleFact as BossBattleFact } from '../application/client/battle-facts';
 import type { IntentionChoice } from '../domain/exploration/intentions';
-import { houseName } from './HouseInsignia';
+import { HouseInsignia, houseName } from './HouseInsignia';
 import { bondName } from './BondEmblem';
 import { priorityText } from './priority-messages';
 import { bossText } from './boss-messages';
@@ -101,7 +101,11 @@ export function BattleFacts({
             data-boss-fact={bossContext ? fact.kind : undefined}
           >
             <summary>
-              <Artwork asset={visual.asset} language={language} decorative />
+              {fact.kind === 'house' ? (
+                <HouseInsignia house={fact.house} />
+              ) : (
+                <Artwork asset={visual.asset} language={language} decorative />
+              )}
               <span>
                 <small>{visual.label}</small>
                 <span>{visual.summary}</span>
