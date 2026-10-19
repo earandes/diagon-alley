@@ -1,3 +1,4 @@
+import { AffinityLabel } from './TacticalBadge';
 import { BondBand } from './BondBand';
 import { createPortal } from 'react-dom';
 import { useEffect, useId, useLayoutEffect, useRef, useState } from 'react';
@@ -62,6 +63,7 @@ export function TeamHud({
         .map((c) => ({
           id: c.copyId,
           wizardId: c.wizard.id,
+          affinity: content?.campaign.ownedAffinities?.[c.wizard.id] ?? null,
           temporary: false,
           name: wizardName(c.wizard, language),
           hp: c.wizard.stats.maxHp,
@@ -187,6 +189,7 @@ export function TeamHud({
               else triggers.current.delete(member.id);
             }}
             aria-label={member.name}
+            aria-describedby={member.affinity ? `${panelId}-affinity-${member.id}` : undefined}
             aria-haspopup="dialog"
             aria-expanded={opened === member.id}
             aria-controls={opened === member.id ? panelId : undefined}
@@ -217,6 +220,13 @@ export function TeamHud({
               className="team-portrait"
               decorative
             />
+            {member.affinity && (
+              <AffinityLabel
+                id={`${panelId}-affinity-${member.id}`}
+                affinity={member.affinity}
+                language={language}
+              />
+            )}
             <small className="team-source">
               <Artwork
                 asset={member.temporary ? 'ui.temporary' : 'ui.owned'}
@@ -273,6 +283,7 @@ export function TeamHud({
               decorative
             />
             <h3>{unit.name}</h3>
+            {unit.affinity && <AffinityLabel affinity={unit.affinity} language={language} />}
             <TraitBadge
               traits={content?.catalog.wizards.find((w) => w.id === unit.wizardId)?.traits}
               language={language}

@@ -388,3 +388,42 @@
     scroll-behavior: auto;
   }
 }
+
+/* A92: let full names determine a post's width rather than breaking an identity mid-word. */
+.boss-party-name {
+  overflow-wrap: normal;
+  word-break: normal;
+  hyphens: none;
+  width: 100%;
+}
+.boss-member-affinity > .tactical-affinity {
+  margin: 0;
+  padding: 1px 5px;
+  font-size: 0.65rem;
+  line-height: 1.3;
+}
+@media (max-width: 620px) {
+  .boss-party-members {
+    gap: 6px 8px;
+    align-items: start;
+  }
+  .game-shell .boss-party-member {
+    flex: 0 1 calc(33.333% - 6px);
+    min-width: min(100%, 6.25rem);
+    max-width: 9.25rem;
+    padding: 0 2px 4px;
+  }
+  .boss-party-members[data-party-count='4'] .boss-party-member {
+    flex-basis: calc(50% - 8px);
+  }
+  .boss-party-name {
+    font-size: 0.78rem;
+    line-height: 1.25;
+  }
+  .boss-party-portrait > img:first-child {
+    height: 60px;
+  }
+  .boss-party-condition {
+    font-size: 0.72rem;
+  }
+}

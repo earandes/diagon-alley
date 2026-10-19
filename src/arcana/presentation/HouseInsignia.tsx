@@ -136,7 +136,12 @@ export function HouseBand({
   const groups = houseProgress(units).filter((h) => h.count > 0);
   if (!groups.length) return null;
   return (
-    <div className="house-band" aria-label={language === 'es' ? 'Casas del equipo' : 'Team houses'}>
+    <div
+      className="house-band"
+      data-team-bond="houses"
+      aria-label={language === 'es' ? 'Casas del equipo' : 'Team houses'}
+    >
+      <span className="team-bond-caption">{bondText(language, 'bond')}</span>
       {groups.map((group) => (
         <details
           key={group.house}

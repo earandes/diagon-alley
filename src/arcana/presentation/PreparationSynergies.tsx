@@ -1,3 +1,4 @@
+import { planText } from './plan-messages-a92';
 import type { CombatRules } from '../domain/combat/engine';
 import type { Language } from '../domain/collection/wizards';
 import { preparationSynergies, type PreparationMember } from './contextual-preparation';
@@ -39,8 +40,9 @@ export function PreparationSynergies({
         language={language}
       />
       <details className="preparation-synergies" data-preparation-synergies ref={motion}>
-        <summary aria-label={c(language, 'formationPreview')}>
+        <summary aria-label={planText(language, 'affinityPlan')}>
           <Artwork asset="node.refuge" language={language} decorative />
+          <span className="affinity-plan-caption">{planText(language, 'affinities')}</span>
           {active.length ? (
             active.map((s) => (
               <span key={s.affinity} data-active-synergy={s.affinity}>

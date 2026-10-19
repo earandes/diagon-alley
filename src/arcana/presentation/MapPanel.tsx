@@ -1,3 +1,4 @@
+import { MapRoutePaths } from './MapRoutePaths';
 import { regionAppearance } from './content-packs/active';
 import { Artwork } from './Artwork';
 import { ThreatBadge, tacticalText } from './TacticalBadge';
@@ -42,6 +43,7 @@ export function MapPanel({
     280,
   );
   const [inspectedId, setInspectedId] = useState<string | null>(null);
+  const [focusedNode, setFocusedNode] = useState<string | null>(null);
   const inspectOrigin = useRef<HTMLButtonElement | null>(null);
   const inspected = inspectedId ? routeInspection(run, inspectedId, publicPlans) : undefined;
   const closeInspection = () => {
@@ -62,9 +64,6 @@ export function MapPanel({
       ? Math.min(size.height - 22, (firstPoint?.y ?? size.height / 2) + 56)
       : size.height - 24,
   };
-  const incomingChoices = layout.edges.filter(
-    (edge) => available.includes(edge.to.id) && edge.from.id === run.visited.at(-1),
-  );
   const confirmedPoint = layout.nodes.find((point) => point.id === run.visited.at(-1));
   const previousPoint =
     run.visited.length > 1 ? layout.nodes.find((point) => point.id === run.visited.at(-2)) : origin;
@@ -108,6 +107,9 @@ export function MapPanel({
         }
         data-node={id}
         data-node-kind={kind}
+        data-node-inspected={(inspectedId ?? focusedNode) === id}
+        onFocus={() => setFocusedNode(id)}
+        onBlur={() => setFocusedNode(null)}
         data-confirmed-motion={confirmedMotion && id === run.visited.at(-1)}
         data-node-state={
           run.visited.includes(id) ? 'visited' : available.includes(id) ? 'available' : 'locked'
@@ -248,6 +250,13 @@ export function MapPanel({
               data={{ kind: 'map', layout, visited: run.visited, available }}
               language={language}
             />
+            <MapRoutePaths
+              layout={layout}
+              visited={run.visited}
+              available={available}
+              inspectedId={inspectedId ?? focusedNode}
+              origin={origin}
+            />
             {confirmedMotion && previousPoint && confirmedPoint && (
               <svg
                 className="motion-map-confirmed-trace"
@@ -262,28 +271,6 @@ export function MapPanel({
                 />
               </svg>
             )}
-            <svg
-              className="map-origin-trail"
-              viewBox={`0 0 ${layout.width} ${layout.height}`}
-              aria-hidden="true"
-              preserveAspectRatio="none"
-            >
-              {incomingChoices.map(({ from, to }) => (
-                <g key={`${from.id}:${to.id}`}>
-                  <path
-                    className="map-choice-trail-bed"
-                    d={`M ${from.x} ${from.y} L ${to.x} ${to.y}`}
-                  />
-                  <path
-                    className="map-choice-trail"
-                    d={`M ${from.x} ${from.y} L ${to.x} ${to.y}`}
-                  />
-                </g>
-              ))}
-              {firstLayer.map((point) => (
-                <path key={point.id} d={`M ${origin.x} ${origin.y} L ${point.x} ${point.y}`} />
-              ))}
-            </svg>
             <div
               className="map-origin"
               data-map-origin="true"

@@ -1,0 +1,49 @@
+/* Public route ink stays readable over both paintings. Pattern carries state without colour. */
+.map-route-paths {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+.map-route-paths path {
+  fill: none;
+  vector-effect: non-scaling-stroke;
+  stroke-linecap: round;
+}
+.map-route-paths .route-path-bed {
+  stroke: #08131f;
+  stroke-width: 7px;
+  opacity: 0.88;
+}
+.map-route-paths .route-path-ink {
+  stroke: #c5b595;
+  stroke-width: 1.8px;
+  stroke-dasharray: 1 6;
+}
+.map-route-paths [data-route-state='visited'] .route-path-ink {
+  stroke: #d2c39f;
+  stroke-width: 2px;
+  stroke-dasharray: none;
+}
+.map-route-paths [data-route-state='available'] .route-path-bed {
+  stroke-width: 9px;
+}
+.map-route-paths [data-route-state='available'] .route-path-ink {
+  stroke: #ffe6a3;
+  stroke-width: 3px;
+  stroke-dasharray: 7 5;
+}
+.map-route-paths [data-route-inspected='true'] .route-path-bed {
+  stroke: #101c2c;
+  stroke-width: 10px;
+}
+.map-route-paths [data-route-inspected='true'] .route-path-ink {
+  stroke: #e6f6ef;
+  stroke-width: 3px;
+  stroke-dasharray: 10 3 1 3;
+}
+.game-shell.arcana-map-view .map-event-medallion[data-node-inspected='true'] {
+  outline: 2px solid #e6f6ef;
+  outline-offset: 6px;
+}
