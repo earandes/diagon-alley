@@ -308,6 +308,23 @@
   .boss-staging:has(.boss-party-member:nth-child(4)) .boss-prelude-hero {
     grid-column: 1 / -1;
   }
+  /* Known threat metadata shares one wrapping line beneath the name. All labels
+     remain visible; larger text may wrap without forcing fixed columns. */
+  .boss-staging:has(.boss-party-member:nth-child(4)) .boss-prelude-identity {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 0 8px;
+    padding-inline: 0;
+  }
+  .boss-staging:has(.boss-party-member:nth-child(4)) .boss-prelude-identity > h4 {
+    flex: 0 0 100%;
+    margin: 2px 0 0;
+  }
+  .boss-staging:has(.boss-party-member:nth-child(4)) .boss-roster-count {
+    margin-top: 0;
+  }
   /* The global summary padding adds20px to this compact shelf. Keep its44px
      target without shrinking the book, text or any combatant. */
   .boss-staging:has(.boss-party-member:nth-child(4)) .boss-opponent-details > summary {

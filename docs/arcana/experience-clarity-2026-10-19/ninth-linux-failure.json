@@ -1,0 +1,299 @@
+{
+  "run": 39331328858,
+  "head": "56deea8e4f739d99088e67ee2f662a9d19ba2214",
+  "checkout": "06609ebfc9fea4c5abf04289581cc06a0d68d493",
+  "workflowConclusion": "cancelled after Arcana five-post geometry failed",
+  "passed": 19,
+  "failed": 1,
+  "skippedIncludingUnexecuted": 212,
+  "case": "ARCANA ES five posts, bean summary overlaps12.515625px",
+  "fallbackOutcome": "Diagon ES/EN missing portraits pass, all raw heights60 and provenance contained. No reconstruction of previous boolean failure; precision explanation remains unconfirmed, not called a proved root cause.",
+  "geometry": {
+    "sha": "06609ebfc9fea4c5abf04289581cc06a0d68d493",
+    "fixture": true,
+    "count": 5,
+    "lang": "es",
+    "pack": "arcana",
+    "coordinateSample": "single synchronous layout read; no animation wait",
+    "geometry": [
+      {
+        "selector": ".node-team-prepare",
+        "bottom": 716.8115234375,
+        "footerTop": 757.7958984375,
+        "gap": 40.984375
+      },
+      {
+        "selector": ".node-bean-preparation > summary",
+        "bottom": 770.3115234375,
+        "footerTop": 757.7958984375,
+        "gap": -12.515625
+      }
+    ]
+  },
+  "fallbackFrames": [
+    {
+      "sha": "06609ebfc9fea4c5abf04289581cc06a0d68d493",
+      "fixture": true,
+      "fallbackFrames": [
+        {
+          "frame": {
+            "x": 32.015625,
+            "y": 375.9206848144531,
+            "width": 100.65625,
+            "height": 60,
+            "top": 375.9206848144531,
+            "right": 132.671875,
+            "bottom": 435.9206848144531,
+            "left": 32.015625
+          },
+          "marker": {
+            "x": 110.671875,
+            "y": 375.9206848144531,
+            "width": 22,
+            "height": 22,
+            "top": 375.9206848144531,
+            "right": 132.671875,
+            "bottom": 397.9206848144531,
+            "left": 110.671875
+          },
+          "height": 60,
+          "precision": 1.5487013798123894e-12,
+          "markerContained": true
+        },
+        {
+          "frame": {
+            "x": 144.671875,
+            "y": 375.9206848144531,
+            "width": 100.65625,
+            "height": 60,
+            "top": 375.9206848144531,
+            "right": 245.328125,
+            "bottom": 435.9206848144531,
+            "left": 144.671875
+          },
+          "marker": {
+            "x": 223.328125,
+            "y": 375.9206848144531,
+            "width": 22,
+            "height": 22,
+            "top": 375.9206848144531,
+            "right": 245.328125,
+            "bottom": 397.9206848144531,
+            "left": 223.328125
+          },
+          "height": 60,
+          "precision": 1.5487013798123894e-12,
+          "markerContained": true
+        },
+        {
+          "frame": {
+            "x": 257.328125,
+            "y": 375.9206848144531,
+            "width": 100.65625,
+            "height": 60,
+            "top": 375.9206848144531,
+            "right": 357.984375,
+            "bottom": 435.9206848144531,
+            "left": 257.328125
+          },
+          "marker": {
+            "x": 335.984375,
+            "y": 375.9206848144531,
+            "width": 22,
+            "height": 22,
+            "top": 375.9206848144531,
+            "right": 357.984375,
+            "bottom": 397.9206848144531,
+            "left": 335.984375
+          },
+          "height": 60,
+          "precision": 1.5487013798123894e-12,
+          "markerContained": true
+        },
+        {
+          "frame": {
+            "x": 88.34375,
+            "y": 513.3269653320312,
+            "width": 100.65625,
+            "height": 60,
+            "top": 513.3269653320312,
+            "right": 189,
+            "bottom": 573.3269653320312,
+            "left": 88.34375
+          },
+          "marker": {
+            "x": 167,
+            "y": 513.3269653320312,
+            "width": 22,
+            "height": 22,
+            "top": 513.3269653320312,
+            "right": 189,
+            "bottom": 535.3269653320312,
+            "left": 167
+          },
+          "height": 60,
+          "precision": 2.036866552160288e-12,
+          "markerContained": true
+        },
+        {
+          "frame": {
+            "x": 201,
+            "y": 513.3269653320312,
+            "width": 100.65625,
+            "height": 60,
+            "top": 513.3269653320312,
+            "right": 301.65625,
+            "bottom": 573.3269653320312,
+            "left": 201
+          },
+          "marker": {
+            "x": 279.65625,
+            "y": 513.3269653320312,
+            "width": 22,
+            "height": 22,
+            "top": 513.3269653320312,
+            "right": 301.65625,
+            "bottom": 535.3269653320312,
+            "left": 279.65625
+          },
+          "height": 60,
+          "precision": 2.036866552160288e-12,
+          "markerContained": true
+        }
+      ]
+    },
+    {
+      "sha": "06609ebfc9fea4c5abf04289581cc06a0d68d493",
+      "fixture": true,
+      "fallbackFrames": [
+        {
+          "frame": {
+            "x": 32.015625,
+            "y": 377.59375,
+            "width": 100.65625,
+            "height": 60,
+            "top": 377.59375,
+            "right": 132.671875,
+            "bottom": 437.59375,
+            "left": 32.015625
+          },
+          "marker": {
+            "x": 110.671875,
+            "y": 377.59375,
+            "width": 22,
+            "height": 22,
+            "top": 377.59375,
+            "right": 132.671875,
+            "bottom": 399.59375,
+            "left": 110.671875
+          },
+          "height": 60,
+          "precision": 1.5546453013826067e-12,
+          "markerContained": true
+        },
+        {
+          "frame": {
+            "x": 144.671875,
+            "y": 377.59375,
+            "width": 100.65625,
+            "height": 60,
+            "top": 377.59375,
+            "right": 245.328125,
+            "bottom": 437.59375,
+            "left": 144.671875
+          },
+          "marker": {
+            "x": 223.328125,
+            "y": 377.59375,
+            "width": 22,
+            "height": 22,
+            "top": 377.59375,
+            "right": 245.328125,
+            "bottom": 399.59375,
+            "left": 223.328125
+          },
+          "height": 60,
+          "precision": 1.5546453013826067e-12,
+          "markerContained": true
+        },
+        {
+          "frame": {
+            "x": 257.328125,
+            "y": 377.59375,
+            "width": 100.65625,
+            "height": 60,
+            "top": 377.59375,
+            "right": 357.984375,
+            "bottom": 437.59375,
+            "left": 257.328125
+          },
+          "marker": {
+            "x": 335.984375,
+            "y": 377.59375,
+            "width": 22,
+            "height": 22,
+            "top": 377.59375,
+            "right": 357.984375,
+            "bottom": 399.59375,
+            "left": 335.984375
+          },
+          "height": 60,
+          "precision": 1.5546453013826067e-12,
+          "markerContained": true
+        },
+        {
+          "frame": {
+            "x": 88.34375,
+            "y": 515,
+            "width": 100.65625,
+            "height": 60,
+            "top": 515,
+            "right": 189,
+            "bottom": 575,
+            "left": 88.34375
+          },
+          "marker": {
+            "x": 167,
+            "y": 515,
+            "width": 22,
+            "height": 22,
+            "top": 515,
+            "right": 189,
+            "bottom": 537,
+            "left": 167
+          },
+          "height": 60,
+          "precision": 2.042810365310288e-12,
+          "markerContained": true
+        },
+        {
+          "frame": {
+            "x": 201,
+            "y": 515,
+            "width": 100.65625,
+            "height": 60,
+            "top": 515,
+            "right": 301.65625,
+            "bottom": 575,
+            "left": 201
+          },
+          "marker": {
+            "x": 279.65625,
+            "y": 515,
+            "width": 22,
+            "height": 22,
+            "top": 515,
+            "right": 301.65625,
+            "bottom": 537,
+            "left": 279.65625
+          },
+          "height": 60,
+          "precision": 2.042810365310288e-12,
+          "markerContained": true
+        }
+      ]
+    }
+  ],
+  "correction": "Known affinity/house/roster metadata share a wrapping line below full boss name. No hidden labels, fixed text columns, smaller font or figures.",
+  "retry": "No automatic retry; changed candidate required."
+}
