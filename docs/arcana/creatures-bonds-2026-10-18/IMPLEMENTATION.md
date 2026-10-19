@@ -1,6 +1,6 @@
 # A87 · Fronteras implementadas y riesgos
 
-Implementado en rama sobre main440d278, después de integrar PR9. Tipos/build y680pruebas unitarias más111dePostgreSQL/Redis correctas; la cobertura gráfica Linux y aceptación artística en contexto siguen pendientes. La tabla identifica responsabilidades y riesgos, no acredita por sí sola cada prueba.
+Integrado mediante PR10 en main `bde8275bac6d48a2bfb8e3a259fe322edb27d102`.681pruebas unitarias y111conPostgreSQL/Redis correctas; fullcheckd539103yregresión651dd98 con objetos de aplicación idénticos. LaCI final de main se verifica tras restablecer full. La tabla describe responsabilidades; QA distingue cada ejecución. Percepción artística y dispositivo físico pendientes.
 
 | Frontera | Cambio mínimo | Riesgo que comprobar |
 |---|---|---|
@@ -20,4 +20,4 @@ Implementado en rama sobre main440d278, después de integrar PR9. Tipos/build y6
 
 No usar la tabla de clasificación como autoridad de un combate histórico. El perfilnuevoa87debe conservar referencias ejecutablesa84/a85; fixtures históricas que dependan de ellas las declaran explícitamente, sin desactivar cobertura del contenido actual.
 
-Riesgo artístico pendiente: los humanosARCANA conservan acabado de figura completa distinto de los bustosDiagon. La familia compartida de criaturas debe inspeccionarse en contexto de ambos paquetes. Si el contraste de material no encaja, producir la adaptación mínima solo tras esa muestra; una similitud de paleta encontactsheet no demuestra integración artística.
+Riesgo artístico pendiente: los humanosARCANA conservan acabado de figura completa distinto de los bustosDiagon. La familia compartida se inspeccionó en capturas seleccionadas de ambos paquetes; la continuidad percibida se observará con una persona. Si el contraste de material no encaja, producir la adaptación mínima solo tras esa muestra; una similitud de paleta encontactsheet no demuestra integración artística.

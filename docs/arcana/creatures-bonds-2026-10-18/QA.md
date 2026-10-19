@@ -149,3 +149,11 @@ EvidenciaA87actual en candidate-d539:13PNGseleccionadas, JSONdeclasificación/po
 56E2E+24A67(incluidos4recorridos A87 reales)+16A63+17A66+8intenciones+12PWA+2benchmarks=135correctos,3fallidos: A65tactical-pacts exige siempre2progresosdeafinidad. El contextoDOMmuestra Luna/Sombras yBuckbeak/Neutral: Neutral no tiene bono, por loque solo1preview es correcto. Otros2casos son lamisma expectativa, no un fallo geométrico o deoperación. No se añade un bonoNeutral o un contador falso. Se corrige eltest para comprobar cadaoferta pública con synergyProgress compartido: Neutral exige0; las demás exigen1conantes/después/umbral reales. Evidencia y3contextos conservados, sinreintentos. Totalcandidato:516gráficoscorrectos/3fallidos(de519activos).
 
 Se utilizará fase resume original para ejecutar la expectativa corregida y regresión; no cambia ningún archivo de aplicación desde d539103. El jobcheck completo anterior se reutiliza solo para objetos idénticos. Antes de la entrega main volverá afasefull y suCI completa deberá verificarse; no se atribuye una bateríafull aresume. Guard, bloqueo,watchdog,1worker/0retries intactos.
+
+651dd98 / checkoutaab023b280df769839aaa147bce7bf343a118960 / árbol4a816f983acf4d7c2aee3a08ada0cccdbf5433d6: jobcheckresume correcto, incluidas114A75 y ambos ensayos pareados. Src idéntico ad539, capturas/poses delcheckfull previo reutilizadas con ese límite explícito. A70/A68/A69no ejecutados enresume. La correcciónNeutral sigue pendiente deljobregresión alregistrarlo.
+
+## Cierre de rama651dd98 e integración
+
+CI39202690011 correcta: jobcheckresume179gráficos yregresión138(56E2E,24A67,16A63,20A66,8intenciones,12PWA,2benchmarks). CorrecciónNeutral comprobada sin modificar aplicación. Se reutilizan202gráficos A70/Halloween/A69 de d539103con src idéntico, sin sumar el solapamiento o atribuir full aresume. Tipos/build/6contenido/681unit/111PGRedis correctos. Cero reintentos automáticos.
+
+PR10fusionada19octubre2026 05:42:10UTC mediante mainbde8275bac6d48a2bfb8e3a259fe322edb27d102. Árbolcompleto4a816f983acf4d7c2aee3a08ada0cccdbf5433d6 idéntico a651dd98ycheckoutaab023b280df769839aaa147bce7bf343a118960. Fullse restablece en elcierre documental inmediato y suCI de main debe conocerse antesdefinalizar. Sinforcepush/despliegue; archivos ajenos yWord preservados.

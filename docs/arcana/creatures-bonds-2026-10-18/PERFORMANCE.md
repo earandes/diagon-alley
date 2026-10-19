@@ -95,3 +95,7 @@ Chromium390 ES,3contextos nuevos porpack,300rAF sostenidos porcontexto después 
 El ensayo pareadoA75también conserva arranques desfavorables: medianaWebKitacción→ready pasa464→536ms(+72ms), con3pares y alta variabilidad de primeravisita; Chromium310,7→329,6ms(+18,9). No se declara una mejora de arranque o causa demostrada. La no-regresión del comparador sostenido no acredita todos los tiempos de interacción. Crudos con extremos en candidate-d539.
 
 Recorridos A87 reales d539103(HTTP/PG/Redis,1280×900): ChromiumESDiagon/duelo795ms, ChromiumENARCANA/duelo912ms, WebKitESDiagon/jefe2771ms yWebKitENARCANA/jefe2485ms acciónconfirmación→figuras (cotaNodeincluyeclick/waits). Difierenmotor/idioma/pack/combate, no son una distribución o ensayo pareado. Conservar los casos lentos; noatribuirlos a GPU, persona o a una mejora deA87. Los4casos conservanlog/receipt/estadoexacto trasrecarga.
+
+## Repetición651dd98 con aplicación idéntica
+
+CI39202690011resume: A75correcta114/174omitidas/0flaky. ChromiumP95antes16,8/16,8/16,7 ydespués16,8/16,7/16,7ms. WebKitantes20/20/19 ydespués20/20/20ms. El árbol src es exactamente4ddbcc88bf5fb06e4f6fddb1953c8ffb95f7a8a3 en651yd539; cambian una expectativa detest, fase deejecución y documentación. No se atribuye la diferencia22→20ms auna corrección deproducto o aNeutral. Ambas cohortes se conservan; muestra variabilidad delensayo y no acredita20msestables o rendimiento físico. Esta repetición se ejecuta para verificar una corrección relevante deQA, no un reintento automático de rendimiento para elegir un valor favorable.
