@@ -1,0 +1,442 @@
+{
+  "method": "CSS source declarations only; cascade/import/use and effective timing require runtime. Loops remain loops even when node count is bounded.",
+  "entries": [
+    {
+      "path": "src/arcana/presentation/accounts.css",
+      "lines": 349,
+      "keyframes": [],
+      "animationDeclarations": [],
+      "hasSystemReducedSelector": false,
+      "hasOwnReducedSelector": false,
+      "sha256": "7b3ac410ce22e6e8770d3a786e1c1799ecb58b4af0c90ebf21e5191653be9390"
+    },
+    {
+      "path": "src/arcana/presentation/arena-a63.css",
+      "lines": 580,
+      "keyframes": [
+        "arena-delta-a63"
+      ],
+      "animationDeclarations": [
+        "animation: arena-delta-a63 300ms ease-out both",
+        "animation: none",
+        "animation: none"
+      ],
+      "hasSystemReducedSelector": true,
+      "hasOwnReducedSelector": false,
+      "sha256": "59aac091a9c215e0f08e38a3ceefefc8ddaafb9e08131d912ebe925a2a696c22"
+    },
+    {
+      "path": "src/arcana/presentation/arena-scene-a86.css",
+      "lines": 337,
+      "keyframes": [],
+      "animationDeclarations": [],
+      "hasSystemReducedSelector": false,
+      "hasOwnReducedSelector": false,
+      "sha256": "3569cec793c8ac5b396450b7ca823c40f579ef3376ef3a11fef477063a1ab5e8"
+    },
+    {
+      "path": "src/arcana/presentation/audio/audio-settings.css",
+      "lines": 59,
+      "keyframes": [],
+      "animationDeclarations": [],
+      "hasSystemReducedSelector": false,
+      "hasOwnReducedSelector": false,
+      "sha256": "24d815918f44d19039fe2654007dccf2755afc9523b3c3339134d329b9ddeab0"
+    },
+    {
+      "path": "src/arcana/presentation/bonds-a87.css",
+      "lines": 206,
+      "keyframes": [],
+      "animationDeclarations": [],
+      "hasSystemReducedSelector": true,
+      "hasOwnReducedSelector": false,
+      "sha256": "97d3070b99b77eb7d9a5a234316f290ac85236c3b7479ed298e72b813efd5f7f"
+    },
+    {
+      "path": "src/arcana/presentation/boss-a70.css",
+      "lines": 195,
+      "keyframes": [],
+      "animationDeclarations": [],
+      "hasSystemReducedSelector": false,
+      "hasOwnReducedSelector": false,
+      "sha256": "0d409dcedfd24a319cd53809f515074803aff1618528004b98852ffe65ade302"
+    },
+    {
+      "path": "src/arcana/presentation/boss-closure-a70.css",
+      "lines": 125,
+      "keyframes": [],
+      "animationDeclarations": [],
+      "hasSystemReducedSelector": false,
+      "hasOwnReducedSelector": false,
+      "sha256": "0f2aaf56b0892b2818811570751292922d7d121f93ff613c16930941cdc338ff"
+    },
+    {
+      "path": "src/arcana/presentation/boss-staging.css",
+      "lines": 390,
+      "keyframes": [],
+      "animationDeclarations": [],
+      "hasSystemReducedSelector": true,
+      "hasOwnReducedSelector": false,
+      "sha256": "1afcc1a1f4da4b4b6eab0363eca22c03136437c3fd3d833f9b48cd3bada78c04"
+    },
+    {
+      "path": "src/arcana/presentation/celebration-a59.css",
+      "lines": 131,
+      "keyframes": [
+        "a59-reward-particle",
+        "a59-reward-halo"
+      ],
+      "animationDeclarations": [
+        "animation: a59-reward-halo var(--burst-duration) cubic-bezier(0.18, 0.7, 0.2, 1) both",
+        "animation: a59-reward-particle var(--particle-duration) cubic-bezier(0.18, 0.7, 0.2, 1)\n    var(--particle-delay) both",
+        "animation: none"
+      ],
+      "hasSystemReducedSelector": true,
+      "hasOwnReducedSelector": false,
+      "sha256": "180d40209024e44189606ff5a718fb50d49bb998311ab076afc750f3e338c3b0"
+    },
+    {
+      "path": "src/arcana/presentation/collection-goal.css",
+      "lines": 104,
+      "keyframes": [],
+      "animationDeclarations": [],
+      "hasSystemReducedSelector": false,
+      "hasOwnReducedSelector": false,
+      "sha256": "377108cbf74d385da3bdcb8977eaea9519cf5083b1591fc08eccf555253e1a91"
+    },
+    {
+      "path": "src/arcana/presentation/commerce-preparation.css",
+      "lines": 169,
+      "keyframes": [],
+      "animationDeclarations": [],
+      "hasSystemReducedSelector": false,
+      "hasOwnReducedSelector": false,
+      "sha256": "1b3610a74269699382deddfc2c08ac47cc88643d72895f2f6f2a8c15b0f5ffe5"
+    },
+    {
+      "path": "src/arcana/presentation/contextual-preparation.css",
+      "lines": 395,
+      "keyframes": [],
+      "animationDeclarations": [],
+      "hasSystemReducedSelector": true,
+      "hasOwnReducedSelector": false,
+      "sha256": "35b6ed39f56cf9b4770ebe7569da7812d420b5f572809cfb22a54bf3d2b646d2"
+    },
+    {
+      "path": "src/arcana/presentation/encounter-a67.css",
+      "lines": 524,
+      "keyframes": [],
+      "animationDeclarations": [],
+      "hasSystemReducedSelector": true,
+      "hasOwnReducedSelector": false,
+      "sha256": "1508498919a25f76d2100f41d6c1a11013cd80cdb8e7816eb7f8a72dd008f7b1"
+    },
+    {
+      "path": "src/arcana/presentation/expedition-challenge.css",
+      "lines": 83,
+      "keyframes": [],
+      "animationDeclarations": [],
+      "hasSystemReducedSelector": false,
+      "hasOwnReducedSelector": false,
+      "sha256": "58818fbf55a9cd5ceb87c90cfbb4e3ebac417b382180143cb78241767301517b"
+    },
+    {
+      "path": "src/arcana/presentation/expedition-closure.css",
+      "lines": 49,
+      "keyframes": [
+        "closure-arrive"
+      ],
+      "animationDeclarations": [
+        "animation: closure-arrive 340ms ease-out both",
+        "animation: none !important"
+      ],
+      "hasSystemReducedSelector": true,
+      "hasOwnReducedSelector": false,
+      "sha256": "dbb62d28c2356387d65f55b807a7a0975c27bf83b1f40ddc99ccdc155f8ad9f3"
+    },
+    {
+      "path": "src/arcana/presentation/expedition-intentions.css",
+      "lines": 234,
+      "keyframes": [],
+      "animationDeclarations": [],
+      "hasSystemReducedSelector": true,
+      "hasOwnReducedSelector": false,
+      "sha256": "612f5ad056b49d2042657ad5f26b649beffaf0f4f2510be951d6a6398d99fac7"
+    },
+    {
+      "path": "src/arcana/presentation/expedition-preparation.css",
+      "lines": 999,
+      "keyframes": [
+        "preparation-seal-in"
+      ],
+      "animationDeclarations": [
+        "animation: preparation-seal-in 180ms ease-out both",
+        "animation: none",
+        "animation: none"
+      ],
+      "hasSystemReducedSelector": true,
+      "hasOwnReducedSelector": false,
+      "sha256": "6a5a10fdc4d847fc70a0959b3232940391f88aa49c3088dc57adb9e2389838b2"
+    },
+    {
+      "path": "src/arcana/presentation/game-experience.css",
+      "lines": 444,
+      "keyframes": [
+        "lantern-breathe",
+        "alley-mist",
+        "alley-mote"
+      ],
+      "animationDeclarations": [
+        "animation: lantern-breathe 6s ease-in-out infinite alternate",
+        "animation-delay: -3s",
+        "animation: alley-mist 18s ease-in-out infinite alternate",
+        "animation: alley-mote 14s linear infinite",
+        "animation-play-state: paused",
+        "animation-play-state: paused"
+      ],
+      "hasSystemReducedSelector": true,
+      "hasOwnReducedSelector": false,
+      "sha256": "134b32882d41cf85761b4c58131204774a73a4fabb482530feb47c9fe20de8b3"
+    },
+    {
+      "path": "src/arcana/presentation/game-stage.css",
+      "lines": 1319,
+      "keyframes": [],
+      "animationDeclarations": [],
+      "hasSystemReducedSelector": true,
+      "hasOwnReducedSelector": false,
+      "sha256": "4075ce7e554ec8d70593f9d3c870370c5461c5da1adf32d38b7c778e9e2614b7"
+    },
+    {
+      "path": "src/arcana/presentation/header-pact.css",
+      "lines": 18,
+      "keyframes": [],
+      "animationDeclarations": [],
+      "hasSystemReducedSelector": false,
+      "hasOwnReducedSelector": false,
+      "sha256": "d24c2f575512a08796c09161c62a0216ed792e63561f9861d1523e594bf4d74b"
+    },
+    {
+      "path": "src/arcana/presentation/houses-a85.css",
+      "lines": 333,
+      "keyframes": [],
+      "animationDeclarations": [],
+      "hasSystemReducedSelector": false,
+      "hasOwnReducedSelector": false,
+      "sha256": "d4833eededd5ea99716a87ec124143262d63f149b9a456175aefac719234a072"
+    },
+    {
+      "path": "src/arcana/presentation/map-a60.css",
+      "lines": 262,
+      "keyframes": [
+        "a60-route-invitation"
+      ],
+      "animationDeclarations": [
+        "animation: a60-route-invitation 900ms ease-out 2",
+        "animation: none !important",
+        "animation: none !important"
+      ],
+      "hasSystemReducedSelector": true,
+      "hasOwnReducedSelector": false,
+      "sha256": "89a8777c94ee3a75735adf684ca1c5b814cc5c3e894415a6b5a4f9d219be220f"
+    },
+    {
+      "path": "src/arcana/presentation/map-settings-a75.css",
+      "lines": 130,
+      "keyframes": [],
+      "animationDeclarations": [],
+      "hasSystemReducedSelector": false,
+      "hasOwnReducedSelector": false,
+      "sha256": "06b027225f19076419a94b0129ba7132d50fde9ab4ca6b94f9c041c1758fd7d1"
+    },
+    {
+      "path": "src/arcana/presentation/motion-a69.css",
+      "lines": 177,
+      "keyframes": [
+        "a69-route-ink",
+        "a69-node-settle",
+        "a69-result-settle",
+        "a69-delta-read"
+      ],
+      "animationDeclarations": [
+        "animation: a69-route-ink 280ms cubic-bezier(0.16, 1, 0.3, 1) both",
+        "animation: none",
+        "animation: a69-node-settle 220ms ease-out both",
+        "animation: a69-result-settle 240ms cubic-bezier(0.16, 1, 0.3, 1) both",
+        "animation: none !important",
+        "animation: a69-result-settle 340ms ease-out both !important",
+        "animation: a69-result-settle 240ms cubic-bezier(0.16, 1, 0.3, 1) both",
+        "animation-play-state: paused !important",
+        "animation-duration: 160ms !important",
+        "animation-duration: 180ms !important",
+        "animation-duration: 160ms !important",
+        "animation: none !important",
+        "animation: none !important",
+        "animation-play-state: paused",
+        "animation: a69-delta-read 520ms ease-out both",
+        "animation-play-state: paused",
+        "animation: none",
+        "animation: none"
+      ],
+      "hasSystemReducedSelector": true,
+      "hasOwnReducedSelector": false,
+      "sha256": "70a119b4e2e23d44f1ae91a5f52e4e667065d045772657269cdaba9185d63fc2"
+    },
+    {
+      "path": "src/arcana/presentation/node-a60.css",
+      "lines": 270,
+      "keyframes": [],
+      "animationDeclarations": [],
+      "hasSystemReducedSelector": false,
+      "hasOwnReducedSelector": false,
+      "sha256": "41ee756d79addfe7bb26e86415e345efb8a8db938cb1a9f0fd097a34b31a0c8e"
+    },
+    {
+      "path": "src/arcana/presentation/node-event-dialog.css",
+      "lines": 202,
+      "keyframes": [
+        "a60-event-arrive",
+        "a60-event-object"
+      ],
+      "animationDeclarations": [
+        "animation: a60-event-arrive 200ms ease-out both",
+        "animation: a60-event-object 350ms ease-out both",
+        "animation: none",
+        "animation: none"
+      ],
+      "hasSystemReducedSelector": true,
+      "hasOwnReducedSelector": false,
+      "sha256": "7da6365d470d5ab5419d95039a858e3ae05e0e0d48db53ee06cb938da53e5b87"
+    },
+    {
+      "path": "src/arcana/presentation/priority-a89.css",
+      "lines": 124,
+      "keyframes": [],
+      "animationDeclarations": [],
+      "hasSystemReducedSelector": false,
+      "hasOwnReducedSelector": false,
+      "sha256": "7f2e5b479d22e63621ce27b6b83fa6c62e6ab455d1dbbf0fd85c04aab86f3a18"
+    },
+    {
+      "path": "src/arcana/presentation/recovery-notice.css",
+      "lines": 31,
+      "keyframes": [],
+      "animationDeclarations": [],
+      "hasSystemReducedSelector": false,
+      "hasOwnReducedSelector": false,
+      "sha256": "320c4bcf2c8d97def009daafe63c7b9e52794fb40c42282036c8fe6da3e4a7f9"
+    },
+    {
+      "path": "src/arcana/presentation/reveal-finale.css",
+      "lines": 83,
+      "keyframes": [],
+      "animationDeclarations": [],
+      "hasSystemReducedSelector": true,
+      "hasOwnReducedSelector": false,
+      "sha256": "59f1c205c641400996623f66d389bad658482b79e7e0ae2df747df63baecd0da"
+    },
+    {
+      "path": "src/arcana/presentation/reveal-theatre.css",
+      "lines": 211,
+      "keyframes": [
+        "a60-orbit-settle",
+        "a60-starlight",
+        "a60-crown",
+        "a60-rank-stamp"
+      ],
+      "animationDeclarations": [
+        "animation: a60-orbit-settle 1400ms ease-out both",
+        "animation: a60-starlight 1200ms ease-out both",
+        "animation: a60-crown 1300ms ease-out both",
+        "animation: a60-rank-stamp 600ms cubic-bezier(0.18, 0.8, 0.3, 1.12) both",
+        "animation: a60-rank-stamp 650ms 160ms ease-out both",
+        "animation: none !important",
+        "animation: none !important",
+        "animation-play-state: paused !important",
+        "animation: none",
+        "animation: none !important"
+      ],
+      "hasSystemReducedSelector": true,
+      "hasOwnReducedSelector": false,
+      "sha256": "292c5a7814b7d6addceb546a3accdf647549ff9f95923ec187bd110ed3574562"
+    },
+    {
+      "path": "src/arcana/presentation/seasonal-event.css",
+      "lines": 473,
+      "keyframes": [
+        "seasonal-lantern-reveal"
+      ],
+      "animationDeclarations": [
+        "animation: seasonal-lantern-reveal 0.45s ease-out both",
+        "animation: none",
+        "animation: none"
+      ],
+      "hasSystemReducedSelector": true,
+      "hasOwnReducedSelector": false,
+      "sha256": "07ddb6f1243bdb8a91db88e360b8c5f96f84739fbefcf60f714d1a8457d113af"
+    },
+    {
+      "path": "src/arcana/presentation/settings-case.css",
+      "lines": 185,
+      "keyframes": [],
+      "animationDeclarations": [],
+      "hasSystemReducedSelector": false,
+      "hasOwnReducedSelector": false,
+      "sha256": "8fb10493624d8646138abbd1ff24e53f8668dcbfb49c0951133b9085b8bd7159"
+    },
+    {
+      "path": "src/arcana/presentation/shop-journey.css",
+      "lines": 1295,
+      "keyframes": [
+        "shop-arrive"
+      ],
+      "animationDeclarations": [
+        "animation: shop-arrive 200ms ease-out both",
+        "animation: none !important"
+      ],
+      "hasSystemReducedSelector": true,
+      "hasOwnReducedSelector": false,
+      "sha256": "0dac5e7b101370c8b501aee3cabaf01ca274ec8f491b0b7847f966459dbdaabb"
+    },
+    {
+      "path": "src/arcana/presentation/styles.css",
+      "lines": 3125,
+      "keyframes": [
+        "arcana-confetti",
+        "arena-entry"
+      ],
+      "animationDeclarations": [
+        "animation: arcana-confetti var(--duration) ease-out both",
+        "animation: arena-entry var(--arena-entry, 350ms) ease-out both",
+        "animation: none !important",
+        "animation: none"
+      ],
+      "hasSystemReducedSelector": true,
+      "hasOwnReducedSelector": false,
+      "sha256": "c05de2fa4013a85efd31a21500686ed395974c3ee18dbe4d649084564c200706"
+    },
+    {
+      "path": "src/arcana/presentation/tactical-a65.css",
+      "lines": 378,
+      "keyframes": [],
+      "animationDeclarations": [],
+      "hasSystemReducedSelector": true,
+      "hasOwnReducedSelector": false,
+      "sha256": "9e56eede5326e43cc9c76577dfefa0b03650cffa83a40f2094abe4d7f823c0d0"
+    },
+    {
+      "path": "src/arcana/presentation/welcome-menu.css",
+      "lines": 286,
+      "keyframes": [
+        "welcome-letter-arrive"
+      ],
+      "animationDeclarations": [
+        "animation: welcome-letter-arrive 160ms ease-out",
+        "animation: none"
+      ],
+      "hasSystemReducedSelector": true,
+      "hasOwnReducedSelector": false,
+      "sha256": "dd860b4f0a3de60c3656f6c9995fd30bffaa73af48c5a90a5dccce11bdf68bae"
+    }
+  ]
+}

@@ -1,0 +1,1465 @@
+[
+  {
+    "path": "src/arcana/presentation/AccountAccess.tsx",
+    "line": 335,
+    "element": "summary",
+    "sourceExcerpt": "<summary>\n        {a(\n          language,\n          step === 'register'\n            ? 'registerOptions'\n            : step === 'login'\n              ? 'loginOptions'\n              : step === 'manage'\n                ? 'manageOptions'\n                : 'codeOptions',\n        )}\n        <svg viewBox=\"0 0 24 24\" aria-hidden=\"true\">\n          <path d=\"m8 4 8 8-8 8\" />\n        </svg>\n      </summary>\n      <div className=\"account-help-content\">\n        {step === 'register' && (\n          <>\n            <button\n              type=\"button\"\n           ",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/AccountAccess.tsx",
+    "line": 353,
+    "element": "button",
+    "sourceExcerpt": "<button\n              type=\"button\"\n              className=\"account-link\"\n              disabled={busy || !!uncertain}\n              onClick={() => move('login')}\n            >\n              {a(language, 'login')}\n            </button>\n            <button\n              type=\"button\"\n              className=\"account-link\"\n              disabled={busy || !!uncertain}\n              onClick={() => move('verify')}\n            >\n              {a(language, 'haveCode')}\n            </button>\n            <p>{a(language, 'registerHelp')}</p>\n          <",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/AccountAccess.tsx",
+    "line": 361,
+    "element": "button",
+    "sourceExcerpt": "<button\n              type=\"button\"\n              className=\"account-link\"\n              disabled={busy || !!uncertain}\n              onClick={() => move('verify')}\n            >\n              {a(language, 'haveCode')}\n            </button>\n            <p>{a(language, 'registerHelp')}</p>\n          </>\n        )}\n        {step === 'login' && (\n          <>\n            {playerId && !pending && (\n              <section className=\"account-switch\">\n                <p>{a(language, session?.kind === 'guest' ? 'switchHelp' : 'switchAccountHelp')}</p>\n",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/AccountAccess.tsx",
+    "line": 377,
+    "element": "button",
+    "sourceExcerpt": "<button\n                  type=\"button\"\n                  className=\"account-link\"\n                  aria-pressed={allowSwitch}\n                  disabled={busy || !!uncertain}\n                  onClick={() => setAllowSwitch(!allowSwitch)}\n                >\n                  {a(language, allowSwitch ? 'sameOwner' : 'allowSwitch')}\n                </button>\n              </section>\n            )}\n            <button\n              type=\"button\"\n              className=\"account-link\"\n              disabled={busy || !!uncertain}\n              onCli",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/AccountAccess.tsx",
+    "line": 388,
+    "element": "button",
+    "sourceExcerpt": "<button\n              type=\"button\"\n              className=\"account-link\"\n              disabled={busy || !!uncertain}\n              onClick={() => move('request-reset')}\n            >\n              {a(language, 'forgot')}\n            </button>\n            <button\n              type=\"button\"\n              className=\"account-link\"\n              disabled={busy || !!uncertain || pending}\n              onClick={() => move('register')}\n            >\n              {a(language, 'register')}\n            </button>\n            <p>{a(language, 'passwordD",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/AccountAccess.tsx",
+    "line": 396,
+    "element": "button",
+    "sourceExcerpt": "<button\n              type=\"button\"\n              className=\"account-link\"\n              disabled={busy || !!uncertain || pending}\n              onClick={() => move('register')}\n            >\n              {a(language, 'register')}\n            </button>\n            <p>{a(language, 'passwordDetails')}</p>\n          </>\n        )}\n        {step === 'request-reset' && (\n          <>\n            <button\n              type=\"button\"\n              className=\"account-link\"\n              disabled={busy || !!uncertain}\n              onClick={() => move('",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/AccountAccess.tsx",
+    "line": 409,
+    "element": "button",
+    "sourceExcerpt": "<button\n              type=\"button\"\n              className=\"account-link\"\n              disabled={busy || !!uncertain}\n              onClick={() => move('reset')}\n            >\n              {a(language, 'haveCode')}\n            </button>\n            <button\n              type=\"button\"\n              className=\"account-link\"\n              disabled={busy || !!uncertain}\n              onClick={() => move('login')}\n            >\n              {a(language, 'login')}\n            </button>\n            <p>{a(language, 'mailSent')}</p>\n          </>\n  ",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/AccountAccess.tsx",
+    "line": 417,
+    "element": "button",
+    "sourceExcerpt": "<button\n              type=\"button\"\n              className=\"account-link\"\n              disabled={busy || !!uncertain}\n              onClick={() => move('login')}\n            >\n              {a(language, 'login')}\n            </button>\n            <p>{a(language, 'mailSent')}</p>\n          </>\n        )}\n        {codeStep && (\n          <>\n            <button\n              type=\"button\"\n              className=\"account-link\"\n              disabled={busy || !!uncertain}\n              onClick={() => move(step === 'verify' ? 'register' : 'request",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/AccountAccess.tsx",
+    "line": 430,
+    "element": "button",
+    "sourceExcerpt": "<button\n              type=\"button\"\n              className=\"account-link\"\n              disabled={busy || !!uncertain}\n              onClick={() => move(step === 'verify' ? 'register' : 'request-reset')}\n            >\n              {a(language, 'requestAnother')}\n            </button>\n            <p>{a(language, 'mailSent')}</p>\n            <p>{a(language, 'passwordDetails')}</p>\n            {error === 'GUEST_SESSION_REQUIRED' && (\n              <button\n                type=\"button\"\n                className=\"account-link\"\n                disa",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/AccountAccess.tsx",
+    "line": 441,
+    "element": "button",
+    "sourceExcerpt": "<button\n                type=\"button\"\n                className=\"account-link\"\n                disabled={busy || !!uncertain}\n                onClick={() => move('login')}\n              >\n                {a(language, 'login')}\n              </button>\n            )}\n          </>\n        )}\n        {step === 'manage' && (\n          <>\n            <button\n              type=\"button\"\n              className=\"account-link\"\n              disabled={busy || !!uncertain}\n              onClick={() => move('request-reset')}\n            >\n              {a",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/AccountAccess.tsx",
+    "line": 454,
+    "element": "button",
+    "sourceExcerpt": "<button\n              type=\"button\"\n              className=\"account-link\"\n              disabled={busy || !!uncertain}\n              onClick={() => move('request-reset')}\n            >\n              {a(language, 'resetTitle')}\n            </button>\n            <p>{a(language, 'logoutHelp')}</p>\n            <button\n              type=\"button\"\n              className=\"account-link\"\n              data-account-action=\"logout\"\n              disabled={busy || !connected || pending || !!uncertain}\n              onClick={() => void run(() => identity(",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/AccountAccess.tsx",
+    "line": 463,
+    "element": "button",
+    "sourceExcerpt": "<button\n              type=\"button\"\n              className=\"account-link\"\n              data-account-action=\"logout\"\n              disabled={busy || !connected || pending || !!uncertain}\n              onClick={() => void run(() => identity('logout', {}))}\n            >\n              {a(language, 'logout')}\n            </button>\n          </>\n        )}\n      </div>\n    </details>\n  );\n  return (\n    <dialog\n      ref={dialog}\n      className=\"account-access\"\n      data-account-dialog\n      data-account-step={step}\n      aria-labelledby=\"accoun",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/AccountAccess.tsx",
+    "line": 478,
+    "element": "dialog",
+    "sourceExcerpt": "<dialog\n      ref={dialog}\n      className=\"account-access\"\n      data-account-dialog\n      data-account-step={step}\n      aria-labelledby=\"account-title\"\n      aria-busy={busy}\n      onCancel={(event) => {\n        event.preventDefault();\n        event.stopPropagation();\n        close();\n      }}\n    >\n      <header className=\"account-heading\">\n        <button\n          type=\"button\"\n          className=\"account-close game-object\"\n          onClick={close}\n          disabled={busy}\n          aria-label={a(language, 'close')}\n        >\n         ",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/AccountAccess.tsx",
+    "line": 492,
+    "element": "button",
+    "sourceExcerpt": "<button\n          type=\"button\"\n          className=\"account-close game-object\"\n          onClick={close}\n          disabled={busy}\n          aria-label={a(language, 'close')}\n        >\n          <svg viewBox=\"0 0 24 24\" aria-hidden=\"true\">\n            <path d=\"M14 5 7 12l7 7M7 12h14\" />\n          </svg>\n        </button>\n        <Artwork asset={emblem} language={language} decorative eager />\n        <h2 id=\"account-title\">{a(language, title)}</h2>\n      </header>\n      {step === 'manage' ? (\n        <section className=\"account-management\">\n   ",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/AccountAccess.tsx",
+    "line": 529,
+    "element": "input",
+    "sourceExcerpt": "<input\n                id=\"account-email\"\n                name=\"email\"\n                type=\"email\"\n                autoComplete=\"email\"\n                autoCapitalize=\"none\"\n                spellCheck={false}\n                maxLength={254}\n                required\n                value={email}\n                onChange={(event) => setEmail(event.target.value)}\n                disabled={busy}\n              />\n            </label>\n          )}\n          {codeStep && (\n            <label htmlFor=\"account-token\">\n              {a(language, 'token'",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/AccountAccess.tsx",
+    "line": 547,
+    "element": "input",
+    "sourceExcerpt": "<input\n                id=\"account-token\"\n                name=\"token\"\n                type=\"text\"\n                autoComplete=\"one-time-code\"\n                autoCapitalize=\"none\"\n                spellCheck={false}\n                required\n                maxLength={64}\n                value={token}\n                onChange={(event) => setToken(event.target.value)}\n                disabled={busy}\n              />\n            </label>\n          )}\n          {passwordNeeded && (\n            <div className=\"account-password\">\n              <labe",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/AccountAccess.tsx",
+    "line": 568,
+    "element": "input",
+    "sourceExcerpt": "<input\n                  id=\"account-password\"\n                  name=\"password\"\n                  type={showPassword ? 'text' : 'password'}\n                  autoComplete={step === 'login' ? 'current-password' : 'new-password'}\n                  aria-invalid={error === 'PASSWORD_POLICY' || undefined}\n                  required\n                  value={password}\n                  onChange={(event) => setPassword(event.target.value)}\n                  disabled={busy}\n                  aria-describedby={step === 'login' ? undefined : 'account-pas",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/AccountAccess.tsx",
+    "line": 580,
+    "element": "button",
+    "sourceExcerpt": "<button\n                  type=\"button\"\n                  className=\"account-eye\"\n                  aria-label={a(language, showPassword ? 'hide' : 'show')}\n                  aria-controls=\"account-password\"\n                  aria-pressed={showPassword}\n                  disabled={busy}\n                  onClick={() => setShowPassword(!showPassword)}\n                >\n                  <svg viewBox=\"0 0 24 24\" aria-hidden=\"true\">\n                    <path d=\"M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12Z\" />\n                    <circle cx=\"12\" cy",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/AccountAccess.tsx",
+    "line": 610,
+    "element": "button",
+    "sourceExcerpt": "<button\n              type=\"button\"\n              className=\"account-primary\"\n              disabled={busy || !connected}\n              onClick={checkSession}\n            >\n              {a(language, busy ? 'sending' : 'check')}\n            </button>\n          ) : (\n            <button\n              type=\"submit\"\n              className=\"account-primary\"\n              data-account-action={`${step}-submit`}\n              disabled={busy || !connected || (step === 'register' && pending)}\n            >\n              {a(\n                language,\n  ",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/AccountAccess.tsx",
+    "line": 619,
+    "element": "button",
+    "sourceExcerpt": "<button\n              type=\"submit\"\n              className=\"account-primary\"\n              data-account-action={`${step}-submit`}\n              disabled={busy || !connected || (step === 'register' && pending)}\n            >\n              {a(\n                language,\n                busy\n                  ? 'sending'\n                  : step === 'request-reset'\n                    ? 'requestReset'\n                    : step === 'verify'\n                      ? 'verify'\n                      : step === 'reset'\n                        ? 'reset'\n",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/AccountAccess.tsx",
+    "line": 651,
+    "element": "button",
+    "sourceExcerpt": "<button\n          type=\"button\"\n          className=\"account-primary\"\n          disabled={busy || !connected}\n          onClick={checkSession}\n        >\n          {a(language, 'check')}\n        </button>\n      )}\n    </dialog>\n  );\n}\n",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/App.tsx",
+    "line": 440,
+    "element": "button",
+    "sourceExcerpt": "<button\n        type=\"button\"\n        data-account-entry=\"settings\"\n        disabled={accountOpening}\n        onClick={() =>\n          openAccount(\n            accountKind === 'account' ? 'manage' : accountKind === 'guest' ? 'register' : 'login',\n          )\n        }\n      >\n        <Artwork asset=\"ui.missions\" language={language} decorative />\n        <span>\n          {accountText(\n            language,\n            accountOpening\n              ? 'sending'\n              : accountKind === 'account'\n                ? 'account'\n                : ",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/App.tsx",
+    "line": 812,
+    "element": "dialog",
+    "sourceExcerpt": "<dialog\n                          ref={dialog}\n                          onCancel={() => setSelected(null)}\n                          aria-label={t('nodeConfirmation')}\n                          className={`notice node-event-dialog${selectedNode?.kind === 'boss' ? ' boss-staging' : ''}`}\n                          data-event-kind={selectedNode?.kind}\n                        >\n                          {selectedNode?.kind !== 'boss' && (\n                            <Artwork\n                              asset={`node.${run.graph.nodes.find((n) => ",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/App.tsx",
+    "line": 904,
+    "element": "button",
+    "sourceExcerpt": "<button\n                                  className=\"node-team-prepare\"\n                                  onClick={(event) =>\n                                    openPreparation('formation', event.currentTarget)\n                                  }\n                                  disabled={!ready}\n                                >\n                                  <Artwork asset=\"ui.team\" language={language} decorative />\n                                  <span>{prepText(language, 'equipment')}</span>\n                                </button>\n",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/App.tsx",
+    "line": 934,
+    "element": "button",
+    "sourceExcerpt": "<button\n                                aria-label={\n                                  selectedPlan?.kind === 'encounter' && selectedPlan.offer\n                                    ? encounterText(\n                                        language,\n                                        nodeOptions.encounterAction === 'pass' ? 'pass' : 'accept',\n                                      )\n                                    : nodeActionLabel(language, selectedNode!.kind)\n                                }\n                                title={\n     ",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/App.tsx",
+    "line": 1010,
+    "element": "button",
+    "sourceExcerpt": "<button\n                              className=\"node-cancel-action\"\n                              aria-label={t(ready ? 'cancel' : 'close')}\n                              title={t(ready ? 'cancel' : 'close')}\n                              onClick={() => setSelected(null)}\n                            >\n                              <span aria-hidden=\"true\">×</span>\n                            </button>\n                          </div>\n                        </dialog>\n                      )}\n                    </section>\n                  )}\n",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/App.tsx",
+    "line": 1131,
+    "element": "button",
+    "sourceExcerpt": "<button onClick={() => setView('map')}>{t('backToMap')}</button>\n                    </section>\n                  )}\n                  {view === 'missions' && (\n                    <JourneyCabinet\n                      game={game}\n                      language={language}\n                      onMap={() => setView('map')}\n                      onCollection={() => setView('collection')}\n                      onShop={() => setBazaarPlace('street')}\n                      onVault={() => {\n                        setView('shop');\n                   ",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/App.tsx",
+    "line": 1149,
+    "element": "dialog",
+    "sourceExcerpt": "<dialog\n                    ref={preparationDialog}\n                    className=\"preparation-dialog\"\n                    aria-label={prepText(language, 'preparation')}\n                    onCancel={() => setPreparing(false)}\n                  >\n                    <GameSettings\n                      language={language}\n                      onLanguage={setLanguage}\n                      reduced={motion.reduced}\n                      ownReduced={motion.own}\n                      systemReduced={motion.system}\n                      onReduced={mo",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/App.tsx",
+    "line": 1197,
+    "element": "button",
+    "sourceExcerpt": "<button\n                      key={key}\n                      aria-current={view === key ? 'page' : undefined}\n                      onClick={() => (key === 'shop' ? setBazaarPlace('street') : setView(key))}\n                    >\n                      <Artwork asset={`ui.${key}`} language={language} decorative />\n                      <span>{t(label)}</span>\n                    </button>\n                  ))}\n                </nav>\n              </>\n            )}\n          </Fragment>\n          {accountMode && (\n            <AccountAccess\n    ",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/BattlePanel.tsx",
+    "line": 73,
+    "element": "button",
+    "sourceExcerpt": "<button onClick={props.onBack}>{text(props.language, 'backToMap')}</button>\n      </section>\n    );\n  return <BattlePlayback key={props.combat.id} {...props} replay={replay} />;\n}\nfunction BattlePlayback({\n  combat,\n  game,\n  content,\n  language,\n  reduced,\n  onBack,\n  replay,\n  confirmedPresentation = false,\n  bossEncounter,\n  settings,\n  resources,\n  preferredIntention,\n}: BattlePanelProps & { replay: BattleReplay }) {\n  const renderStarted = sceneStart();\n  useLayoutEffect(() => sceneEnd('react-commit-wall', renderStarted));\n  const total = ",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/BattlePanel.tsx",
+    "line": 450,
+    "element": "button",
+    "sourceExcerpt": "<button\n          ref={pauseButton}\n          className=\"arena-pause\"\n          aria-label={t('pause')}\n          title={t('pause')}\n          aria-expanded={optionsOpen}\n          aria-controls=\"arena-options\"\n          onClick={openOptions}\n        >\n          <svg viewBox=\"0 0 32 32\" aria-hidden=\"true\">\n            <path d=\"M11 8v16M21 8v16\" />\n          </svg>\n        </button>\n      </header>\n      <dialog\n        ref={optionsDialog}\n        className=\"arena-playback-tools\"\n        id=\"arena-options\"\n        hidden={!optionsOpen}\n        a",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/BattlePanel.tsx",
+    "line": 464,
+    "element": "dialog",
+    "sourceExcerpt": "<dialog\n        ref={optionsDialog}\n        className=\"arena-playback-tools\"\n        id=\"arena-options\"\n        hidden={!optionsOpen}\n        aria-label={arenaText(language, 'options')}\n        onKeyDown={(event) => {\n          // Native modality makes the scene inert; keep Tab within the game menu\n          // too, without intercepting navigation inside a nested Settings dialog.\n          if (\n            event.key !== 'Tab' ||\n            (event.target as Element).closest('dialog') !== event.currentTarget\n          )\n            return;\n     ",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/BattlePanel.tsx",
+    "line": 504,
+    "element": "button",
+    "sourceExcerpt": "<button disabled={reduced || cursor === total} onClick={resume}>\n            {arenaText(language, 'resume')}\n          </button>\n          <button\n            disabled={reduced}\n            aria-pressed={speed === 2}\n            onClick={() => rememberSpeed(speed === 1 ? 2 : 1)}\n          >\n            {t('doubleSpeed')}\n          </button>\n          <button\n            disabled={cursor === total}\n            aria-label={t('skipPlayback')}\n            onClick={() => {\n              focusResult.current = true;\n              setOptionsOpen(false)",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/BattlePanel.tsx",
+    "line": 507,
+    "element": "button",
+    "sourceExcerpt": "<button\n            disabled={reduced}\n            aria-pressed={speed === 2}\n            onClick={() => rememberSpeed(speed === 1 ? 2 : 1)}\n          >\n            {t('doubleSpeed')}\n          </button>\n          <button\n            disabled={cursor === total}\n            aria-label={t('skipPlayback')}\n            onClick={() => {\n              focusResult.current = true;\n              setOptionsOpen(false);\n              playback.skip();\n            }}\n          >\n            {t('skipPlayback')}\n          </button>\n        </div>\n        <but",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/BattlePanel.tsx",
+    "line": 514,
+    "element": "button",
+    "sourceExcerpt": "<button\n            disabled={cursor === total}\n            aria-label={t('skipPlayback')}\n            onClick={() => {\n              focusResult.current = true;\n              setOptionsOpen(false);\n              playback.skip();\n            }}\n          >\n            {t('skipPlayback')}\n          </button>\n        </div>\n        <button\n          className=\"arena-record-trigger\"\n          onClick={(event) => inspect('record', event.currentTarget)}\n        >\n          <Artwork asset=\"ui.collection\" language={language} decorative />\n          {t",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/BattlePanel.tsx",
+    "line": 526,
+    "element": "button",
+    "sourceExcerpt": "<button\n          className=\"arena-record-trigger\"\n          onClick={(event) => inspect('record', event.currentTarget)}\n        >\n          <Artwork asset=\"ui.collection\" language={language} decorative />\n          {t('battleRecord')}\n        </button>\n        {resources && (\n          <details className=\"battle-wallet\">\n            <summary>{arenaText(language, 'savedResources')}</summary>\n            {resources}\n          </details>\n        )}\n        {settings}\n        <button className=\"arena-exit\" onClick={onBack}>\n          {t('backToMap",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/BattlePanel.tsx",
+    "line": 535,
+    "element": "summary",
+    "sourceExcerpt": "<summary>{arenaText(language, 'savedResources')}</summary>\n            {resources}\n          </details>\n        )}\n        {settings}\n        <button className=\"arena-exit\" onClick={onBack}>\n          {t('backToMap')}\n        </button>\n        <button\n          className=\"arena-options-close\"\n          onClick={() => {\n            setOptionsOpen(false);\n            pauseButton.current?.focus();\n          }}\n        >\n          {t('close')}\n        </button>\n      </dialog>\n      <div\n        ref={stage}\n        className=\"arena-stage\"\n        d",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/BattlePanel.tsx",
+    "line": 540,
+    "element": "button",
+    "sourceExcerpt": "<button className=\"arena-exit\" onClick={onBack}>\n          {t('backToMap')}\n        </button>\n        <button\n          className=\"arena-options-close\"\n          onClick={() => {\n            setOptionsOpen(false);\n            pauseButton.current?.focus();\n          }}\n        >\n          {t('close')}\n        </button>\n      </dialog>\n      <div\n        ref={stage}\n        className=\"arena-stage\"\n        data-reduced={reduced}\n        style={\n          {\n            '--arena-count': Math.max(frame.player.length, frame.rival.length),\n            ",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/BattlePanel.tsx",
+    "line": 543,
+    "element": "button",
+    "sourceExcerpt": "<button\n          className=\"arena-options-close\"\n          onClick={() => {\n            setOptionsOpen(false);\n            pauseButton.current?.focus();\n          }}\n        >\n          {t('close')}\n        </button>\n      </dialog>\n      <div\n        ref={stage}\n        className=\"arena-stage\"\n        data-reduced={reduced}\n        style={\n          {\n            '--arena-count': Math.max(frame.player.length, frame.rival.length),\n            '--arena-entry': `${activePack.animations.arena.entryMs}ms`,\n          } as import('react').CSSPropert",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/BattlePanel.tsx",
+    "line": 603,
+    "element": "button",
+    "sourceExcerpt": "<button\n                        key={e.group}\n                        className=\"arena-house\"\n                        data-bond-passive={e.group}\n                        aria-label={`${bondText(language, 'inspect')}: ${bondName(e.group, language)} · ${e.members} · ${e.tier === 1 ? 'I' : 'II'}`}\n                        onClick={(event) => inspect(`bond:${side}:${e.group}`, event.currentTarget)}\n                      >\n                        <BondEmblem group={e.group} language={language} />\n                        <small>{e.tier === 1 ? 'I' : '",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/BattlePanel.tsx",
+    "line": 617,
+    "element": "button",
+    "sourceExcerpt": "<button\n                        key={e.house}\n                        className=\"arena-house\"\n                        data-house-passive={e.house}\n                        aria-label={`${arenaText(language, 'houseInspect')}: ${houseName(e.house, language)} · ${e.members} · ${e.tier === 1 ? 'I' : 'II'}`}\n                        onClick={(event) =>\n                          inspect(`house:${side}:${e.house}`, event.currentTarget)\n                        }\n                      >\n                        <HouseInsignia house={e.house} />\n           ",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/BattlePanel.tsx",
+    "line": 668,
+    "element": "button",
+    "sourceExcerpt": "<button\n                        className=\"arena-inspect\"\n                        aria-label={`${arenaText(language, 'inspect')}: ${name(unit.id)}`}\n                        onClick={(event) => inspect(unit.id, event.currentTarget)}\n                      >\n                        <span className=\"arena-figure-space\">\n                          {(acting || targeted || aid) && (\n                            <span className=\"arena-action-mark\">\n                              {aid\n                                ? bondText(language, 'receivingHelp')\n  ",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/BattlePanel.tsx",
+    "line": 730,
+    "element": "meter",
+    "sourceExcerpt": "<meter\n                            min={0}\n                            max={unit.maxHp}\n                            value={unit.hp}\n                            aria-label={t('healthOf', { name: name(unit.id) })}\n                          />\n                          <span>\n                            {format.format(unit.hp)}\n                            <span>/{format.format(unit.maxHp)}</span>\n                          </span>\n                        </span>\n                      </button>\n                    </article>\n                  );\n   ",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/BattlePanel.tsx",
+    "line": 769,
+    "element": "button",
+    "sourceExcerpt": "<button\n              data-arena-facts-trigger\n              className=\"arena-result-book game-object\"\n              aria-label={bossText(language, 'facts')}\n              onClick={(event) => {\n                inspectionOrigin.current = event.currentTarget;\n                setInspection('facts');\n              }}\n            >\n              <Artwork asset=\"ui.collection\" language={language} decorative />\n              <span className=\"visually-hidden\">{bossText(language, 'facts')}</span>\n            </button>\n            <button ref={outcomeAct",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/BattlePanel.tsx",
+    "line": 781,
+    "element": "button",
+    "sourceExcerpt": "<button ref={outcomeAction} onClick={onBack}>\n              {arenaText(language, 'continue')}\n            </button>\n          </>\n        ) : (\n          <p className=\"visually-hidden\">{frame.event ? description(frame.event) : ''}</p>\n        )}\n      </footer>\n      <span\n        className=\"visually-hidden\"\n        role=\"status\"\n        aria-live=\"polite\"\n        aria-atomic=\"true\"\n        lang={announcedLanguage}\n      >\n        {announcement}\n      </span>\n      {inspection && (\n        <dialog\n          ref={inspector}\n          className=\"",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/BattlePanel.tsx",
+    "line": 799,
+    "element": "dialog",
+    "sourceExcerpt": "<dialog\n          ref={inspector}\n          className=\"arena-inspector\"\n          aria-label={\n            inspection === 'facts'\n              ? bossText(language, 'facts')\n              : inspection === 'record'\n                ? t('battleRecord')\n                : selectedBond\n                  ? bondName(selectedBond.group, language)\n                  : selectedHouse\n                    ? houseName(selectedHouse.house, language)\n                    : name(inspection)\n          }\n          onCancel={(event) => {\n            event.stopPropaga",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/BattlePanel.tsx",
+    "line": 822,
+    "element": "button",
+    "sourceExcerpt": "<button\n            className=\"arena-inspector-close\"\n            onClick={() => {\n              optionsOrigin.current = inspectionOrigin.current?.closest('#arena-options')\n                ? inspectionOrigin.current\n                : null;\n              setInspection(null);\n              setOptionsOpen(Boolean(optionsOrigin.current));\n            }}\n            aria-label={t('close')}\n          >\n            ×\n          </button>\n          {inspection === 'facts' ? (\n            <>\n              <h2>{bossText(language, 'facts')}</h2>\n          ",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/BeanAssignments.tsx",
+    "line": 89,
+    "element": "button",
+    "sourceExcerpt": "<button\n            key={jar.id}\n            className=\"game-object bean-jar-choice\"\n            data-bean-id={jar.id}\n            data-visual-value={jar.id}\n            aria-label={c(language, 'jar', { number: index + 1 })}\n            aria-pressed={selected === jar.id}\n            onClick={() => setChosenJar(jar.id)}\n          >\n            <Artwork asset=\"beans.jar\" language={language} decorative />\n            <span>{index + 1}</span>\n            {draft.some((a) => a.beanId === jar.id) && (\n              <Artwork\n                asset=\"ui.s",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/BeanAssignments.tsx",
+    "line": 129,
+    "element": "button",
+    "sourceExcerpt": "<button\n                  key={unit.id}\n                  className=\"game-object bean-carrier\"\n                  data-bean-unit={unit.id}\n                  aria-pressed={!!pressed}\n                  aria-describedby={`${descriptionId}-${unit.id}`}\n                  disabled={!selected || unit.hp <= 0}\n                  aria-label={c(language, pressed ? 'remove' : 'assign', {\n                    name,\n                    number: jarNumber,\n                    position: index + 1,\n                  })}\n                  onClick={() => selected &&",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/BeanAssignments.tsx",
+    "line": 186,
+    "element": "summary",
+    "sourceExcerpt": "<summary>{text(language, 'beanEffects')}</summary>\n        <p>{p(language, 'preserve')}</p>\n        <p>{c(language, 'consumedOnBattle')}</p>\n        <p className=\"bean-risk-note\">\n          {p(language, 'risk', { probability: percent.format(risk.penaltyProbability) })}\n        </p>\n        <p>{p(language, 'distribution', { version: numbers.format(risk.version) })}</p>\n        {risk.possibilities.map((e) => (\n          <p key={e.flavour}>\n            <Artwork\n              asset={`product.bean-${e.flavour}`}\n              language={language}\n   ",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/BondBand.tsx",
+    "line": 35,
+    "element": "summary",
+    "sourceExcerpt": "<summary\n          aria-label={`${bondName(focus, language)} · ${group.tier ? bondText(language, 'activeTier', { tier: group.tier }) : `${group.count}/3`}`}\n        >\n          <BondEmblem group={focus} language={language} />\n          <span>\n            {bondName(focus, language)}{' '}\n            <b>\n              {group.tier\n                ? `${group.count} · ${group.tier === 1 ? 'I' : 'II'}`\n                : `${group.count}/3`}\n            </b>\n          </span>\n        </summary>\n        <div className=\"house-detail\">\n          <strong>{",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/BondBand.tsx",
+    "line": 87,
+    "element": "summary",
+    "sourceExcerpt": "<summary>\n        <Artwork asset=\"ui.collection\" language={language} decorative />\n        <span>\n          {bondText(language, 'bond')} · {bondName(mode, language)}\n        </span>\n      </summary>\n      <div role=\"group\" aria-label={bondText(language, 'chooseBond')} className=\"bond-choices\">\n        {BOND_MODES.map((id) => (\n          <button\n            key={id}\n            data-bond-mode={id}\n            type=\"button\"\n            disabled={disabled}\n            aria-pressed={mode === id}\n            onClick={() => onChange(id)}\n          >\n",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/BondBand.tsx",
+    "line": 95,
+    "element": "button",
+    "sourceExcerpt": "<button\n            key={id}\n            data-bond-mode={id}\n            type=\"button\"\n            disabled={disabled}\n            aria-pressed={mode === id}\n            onClick={() => onChange(id)}\n          >\n            {id === 'auto' || id === 'houses' ? (\n              <Artwork\n                asset={id === 'auto' ? 'ui.map' : 'ui.collection'}\n                language={language}\n                decorative\n              />\n            ) : (\n              <BondEmblem group={id} language={language} />\n            )}\n            <span>{bondNam",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/BossBattleFacts.tsx",
+    "line": 103,
+    "element": "summary",
+    "sourceExcerpt": "<summary>\n              {fact.kind === 'house' ? (\n                <HouseInsignia house={fact.house} />\n              ) : (\n                <Artwork asset={visual.asset} language={language} decorative />\n              )}\n              <span>\n                <small>{visual.label}</small>\n                <span>{visual.summary}</span>\n              </span>\n            </summary>\n            <p>{visual.description}</p>\n          </details>\n        );\n      })}\n    </section>\n  );\n}\n",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/BossPartyStage.tsx",
+    "line": 62,
+    "element": "button",
+    "sourceExcerpt": "<button\n              type=\"button\"\n              key={unit.id}\n              className=\"boss-party-member\"\n              data-boss-member={unit.id}\n              data-boss-party-source={source}\n              data-boss-party-condition={unit.hp <= 0 ? 'fallen' : 'standing'}\n              disabled={!ready}\n              onClick={(event) => onPrepare(event.currentTarget)}\n              aria-label={s(language, 'member', {\n                name,\n                position: index + 1,\n                source: origin,\n                hp: unit.hp,\n        ",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/BossPartyStage.tsx",
+    "line": 146,
+    "element": "button",
+    "sourceExcerpt": "<button\n        type=\"button\"\n        className=\"node-team-prepare boss-party-prepare\"\n        disabled={!ready}\n        onClick={(event) => onPrepare(event.currentTarget)}\n      >\n        <Artwork asset=\"ui.team\" language={language} decorative eager />\n        <span>{s(language, 'prepare')}</span>\n      </button>\n      {rules && <PreparationSynergies members={run.members} rules={rules} language={language} />}\n    </section>\n  );\n}\n",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/BossPrelude.tsx",
+    "line": 115,
+    "element": "summary",
+    "sourceExcerpt": "<summary>\n          <Artwork asset=\"ui.collection\" language={language} decorative eager />\n          <span>{t.details}</span>\n        </summary>\n        <div className=\"boss-opponent-stats\">\n          {opponents.map((unit, index) => (\n            <section key={unit.id}>\n              <strong>{name(unit, index)}</strong>\n              <AffinityLabel affinity={unit.affinity} language={language} />\n              <dl>\n                {(\n                  [\n                    ['health', `${unit.hp} / ${unit.maxHp}`],\n                    ['mana', `$",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/BossSupplies.tsx",
+    "line": 18,
+    "element": "summary",
+    "sourceExcerpt": "<summary\n        data-bean-stock={stock}\n        data-bean-draft={draft}\n        aria-label={text(language, 'nodeBeanPreparation', { count: stock })}\n      >\n        <Artwork asset=\"beans.jar\" language={language} decorative eager />\n        <span className=\"boss-supply-caption\">\n          <span>{text(language, 'chanceBeans')}</span>\n          <strong aria-hidden=\"true\">×{numbers.format(stock)}</strong>\n          {draft > 0 && (\n            <small>\n              {commercePrepText(language, draft === 1 ? 'draftOne' : 'draft', {\n                co",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/CardReveal.tsx",
+    "line": 295,
+    "element": "dialog",
+    "sourceExcerpt": "<dialog\n      ref={region}\n      className=\"reveal\"\n      aria-label={text(language, 'confirmedCard')}\n      onCancel={(event) => {\n        event.preventDefault();\n        onClose?.();\n      }}\n      data-opening-state={staticResult ? 'result' : 'playing'}\n      data-rarity={receipt.wizard.rarity}\n      data-reveal-magic={magic && !noMotion && !omitted ? 'cast' : 'still'}\n      data-opening-phase={view.phase}\n      data-discovery={receipt.isNew ? 'new' : 'repeat'}\n      data-paused={view.paused}\n      data-finish={receipt.wizard.finish?.id ?? '",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/CardReveal.tsx",
+    "line": 389,
+    "element": "button",
+    "sourceExcerpt": "<button onClick={() => setOmittedId(receipt.id)}>{text(language, 'skipReveal')}</button>\n      )}\n      <div className=\"reveal-actions\">\n        {onCollection && staticResult && (\n          <button className=\"reveal-collect game-object\" onClick={onCollection}>\n            <Artwork asset=\"ui.collection\" language={language} decorative />\n            {text(language, 'viewInChromodex')}\n          </button>\n        )}\n        {onClose && (\n          <button className=\"reveal-continue game-object\" onClick={onClose}>\n            <Artwork asset=\"ui.map",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/CardReveal.tsx",
+    "line": 393,
+    "element": "button",
+    "sourceExcerpt": "<button className=\"reveal-collect game-object\" onClick={onCollection}>\n            <Artwork asset=\"ui.collection\" language={language} decorative />\n            {text(language, 'viewInChromodex')}\n          </button>\n        )}\n        {onClose && (\n          <button className=\"reveal-continue game-object\" onClick={onClose}>\n            <Artwork asset=\"ui.map\" language={language} decorative />\n            {text(language, 'continuePlaying')}\n          </button>\n        )}\n      </div>\n    </dialog>\n  );\n}\n",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/CardReveal.tsx",
+    "line": 399,
+    "element": "button",
+    "sourceExcerpt": "<button className=\"reveal-continue game-object\" onClick={onClose}>\n            <Artwork asset=\"ui.map\" language={language} decorative />\n            {text(language, 'continuePlaying')}\n          </button>\n        )}\n      </div>\n    </dialog>\n  );\n}\n",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/ClassificationChoices.tsx",
+    "line": 36,
+    "element": "button",
+    "sourceExcerpt": "<button type=\"button\" key={id} aria-pressed={id === value} onClick={() => onChange(id)}>\n            {house ? (\n              <HouseInsignia house={house} />\n            ) : id === 'all' || id === 'army' ? (\n              <Artwork asset=\"ui.collection\" language={language} decorative />\n            ) : (\n              <BondEmblem group={id as 'order' | 'death' | 'creatures'} language={language} />\n            )}\n            <span>\n              {house\n                ? houseName(house, language)\n                : id === 'all'\n                  ?",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/CollectionPanel.tsx",
+    "line": 135,
+    "element": "progress",
+    "sourceExcerpt": "<progress\n            value={discovered}\n            max={allEntries.length}\n            aria-label={t('collectionProgress')}\n          />\n        </label>\n      </div>\n      <p className=\"collection-copy-count\">{savedCopies(language, game.copies.length)}</p>\n      {goalView && (\n        <aside\n          className=\"collection-goal-bookmark\"\n          aria-label={g('objective')}\n          data-goal-state={goalView.status}\n        >\n          <Artwork asset=\"ui.collection\" language={language} decorative />\n          <div>\n            <strong>{g('",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/CollectionPanel.tsx",
+    "line": 153,
+    "element": "button",
+    "sourceExcerpt": "<button\n                type=\"button\"\n                className=\"goal-open\"\n                onClick={(event) => {\n                  origin.current = event.currentTarget;\n                  setInspectedCopy(null);\n                  setInspected(goalEntry.wizard.id);\n                }}\n              >\n                {entryLabel(goalEntry)}\n              </button>\n            ) : (\n              <span>{g('archived')}</span>\n            )}\n            <small role=\"status\">\n              {g(\n                goalView.status === 'acquired'\n           ",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/CollectionPanel.tsx",
+    "line": 177,
+    "element": "button",
+    "sourceExcerpt": "<button\n            type=\"button\"\n            className=\"goal-clear game-object\"\n            aria-label={g('clear')}\n            onClick={() => bookmark.choose(null)}\n          >\n            <Artwork asset=\"ui.clear\" language={language} decorative />\n            <span>{g('clear')}</span>\n          </button>\n          <details>\n            <summary>{g('source')}</summary>\n            <p>{g('help')}</p>\n          </details>\n        </aside>\n      )}\n      {!bookmark.durable && bookmark.goal && <p role=\"status\">{g('session')}</p>}\n      {onPrepare",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/CollectionPanel.tsx",
+    "line": 187,
+    "element": "summary",
+    "sourceExcerpt": "<summary>{g('source')}</summary>\n            <p>{g('help')}</p>\n          </details>\n        </aside>\n      )}\n      {!bookmark.durable && bookmark.goal && <p role=\"status\">{g('session')}</p>}\n      {onPrepare && (\n        <button\n          className=\"album-prepare-link game-object\"\n          onClick={(event) => onPrepare(event.currentTarget)}\n        >\n          <Artwork asset=\"ui.map\" language={language} decorative />\n          <span>{prepText(language, 'prepareLink')}</span>\n        </button>\n      )}\n      <FlavourCabinet game={game} langua",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/CollectionPanel.tsx",
+    "line": 194,
+    "element": "button",
+    "sourceExcerpt": "<button\n          className=\"album-prepare-link game-object\"\n          onClick={(event) => onPrepare(event.currentTarget)}\n        >\n          <Artwork asset=\"ui.map\" language={language} decorative />\n          <span>{prepText(language, 'prepareLink')}</span>\n        </button>\n      )}\n      <FlavourCabinet game={game} language={language} />\n      <details className=\"album-filter-drawer\">\n        <summary aria-label={t('rarityFilter')}>\n          <Artwork asset=\"ui.owned\" language={language} decorative />\n          <span>{t('gameAlbumFilters')}",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/CollectionPanel.tsx",
+    "line": 204,
+    "element": "summary",
+    "sourceExcerpt": "<summary aria-label={t('rarityFilter')}>\n          <Artwork asset=\"ui.owned\" language={language} decorative />\n          <span>{t('gameAlbumFilters')}</span>\n        </summary>\n        <div className=\"album-filters visual-filters\">\n          <ClassificationChoices\n            value={classification}\n            onChange={(value) => {\n              setClassification(value);\n              setPage(0);\n            }}\n            language={language}\n          />\n          <VisualChoices\n            label={t('rarityFilter')}\n            value={rarity}",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/CollectionPanel.tsx",
+    "line": 290,
+    "element": "button",
+    "sourceExcerpt": "<button\n              className=\"album-card-inspect game-object enchanted-holder\"\n              aria-label={\n                entry.discovered\n                  ? prepText(language, 'consult', { name: wizardName(entry.wizard, language) })\n                  : g('consult', { number: allEntries.indexOf(entry) + 1 })\n              }\n              onClick={(event) => {\n                origin.current = event.currentTarget;\n                setInspectedCopy(null);\n                setInspected(entry.wizard.id);\n              }}\n            >\n            ",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/CollectionPanel.tsx",
+    "line": 339,
+    "element": "dialog",
+    "sourceExcerpt": "<dialog\n          ref={folio}\n          className=\"discovery-folio album-card-folio\"\n          aria-label={entryLabel(inspectedEntry)}\n          onCancel={() => setInspected(null)}\n        >\n          <button\n            className=\"folio-close game-object\"\n            aria-label={t('close')}\n            onClick={() => setInspected(null)}\n          >\n            <Artwork asset=\"ui.clear\" language={language} decorative />\n          </button>\n          <div className=\"enchanted-holder\">\n            <Artwork\n              asset={\n                in",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/CollectionPanel.tsx",
+    "line": 345,
+    "element": "button",
+    "sourceExcerpt": "<button\n            className=\"folio-close game-object\"\n            aria-label={t('close')}\n            onClick={() => setInspected(null)}\n          >\n            <Artwork asset=\"ui.clear\" language={language} decorative />\n          </button>\n          <div className=\"enchanted-holder\">\n            <Artwork\n              asset={\n                inspectedEntry.discovered\n                  ? `character.${inspectedEntry.wizard.id}.portrait`\n                  : 'card.back'\n              }\n              language={language}\n              className=\"a",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/CollectionPanel.tsx",
+    "line": 393,
+    "element": "button",
+    "sourceExcerpt": "<button\n                type=\"button\"\n                className=\"collection-goal-follow game-object\"\n                aria-pressed={bookmark.goal?.wizardId === inspectedEntry.wizard.id}\n                onClick={() =>\n                  bookmark.choose(\n                    bookmark.goal?.wizardId === inspectedEntry.wizard.id\n                      ? null\n                      : {\n                          version: 1,\n                          owner: game.playerId,\n                          wizardId: inspectedEntry.wizard.id,\n                       ",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/CollectionPanel.tsx",
+    "line": 426,
+    "element": "button",
+    "sourceExcerpt": "<button\n                    type=\"button\"\n                    aria-pressed={selectedCopy?.copyId === copy.copyId}\n                    onClick={() => setInspectedCopy(copy.copyId)}\n                    aria-label={`${prepText(language, 'copy', { number: index + 1 })}${copy.wizard.finish ? ` · ${enchantedName(language)}` : ''}`}\n                  >\n                    {index + 1}\n                    {copy.wizard.finish ? ' ✧' : ''}\n                  </button>\n                </li>\n              ))}\n            </ol>\n          )}\n          {inspect",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/CollectionPanel.tsx",
+    "line": 445,
+    "element": "button",
+    "sourceExcerpt": "<button\n          className=\"game-object\"\n          aria-label={t('gamePreviousPage')}\n          disabled={currentPage === 0}\n          onClick={() => setPage(currentPage - 1)}\n        >\n          <Artwork asset=\"ui.pass\" language={language} decorative />\n          <span className=\"visually-hidden\">{t('gamePreviousPage')}</span>\n        </button>\n        <span aria-live=\"polite\">\n          {currentPage + 1} / {pages}\n        </span>\n        <button\n          className=\"game-object\"\n          aria-label={t('gameNextPage')}\n          disabled={cu",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/CollectionPanel.tsx",
+    "line": 457,
+    "element": "button",
+    "sourceExcerpt": "<button\n          className=\"game-object\"\n          aria-label={t('gameNextPage')}\n          disabled={currentPage === pages - 1}\n          onClick={() => setPage(currentPage + 1)}\n        >\n          <Artwork asset=\"ui.pass\" language={language} decorative />\n          <span className=\"visually-hidden\">{t('gameNextPage')}</span>\n        </button>\n      </div>\n    </section>\n  );\n}\n",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/CollectionSources.tsx",
+    "line": 36,
+    "element": "button",
+    "sourceExcerpt": "<button\n              type=\"button\"\n              className=\"collection-goal-follow game-object\"\n              onClick={(event) => onAcquire(event.currentTarget)}\n            >\n              <Artwork asset=\"toad.box\" language={language} decorative />\n              <span>{t('acquire')}</span>\n            </button>\n          )}\n        </>\n      ) : (\n        <p>{t(sources.probability === null ? 'unknown' : 'unavailable')}</p>\n      )}\n      {sources.temporaryOpportunity && (\n        <p>\n          <strong>{t('temporary')}</strong>\n          <smal",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/CollectionSources.tsx",
+    "line": 56,
+    "element": "summary",
+    "sourceExcerpt": "<summary>{t('source')}</summary>\n        <p>{t('sourceHelp')}</p>\n        {sources.tableVersion !== null && (\n          <small>{t('table', { version: sources.tableVersion })}</small>\n        )}\n      </details>\n    </section>\n  );\n}\n",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/CommercePanel.tsx",
+    "line": 178,
+    "element": "button",
+    "sourceExcerpt": "<button\n                  data-primary-action\n                  className=\"forge-action\"\n                  aria-label={t('forgeWandPrice', { value: numbers.format(recipe.crowns) })}\n                  disabled={!ready || !offer?.affordable}\n                  onClick={(e) =>\n                    open(\n                      {\n                        kind: 'forge',\n                        recipe,\n                        version: content.forge.version,\n                        seen: result?.id ?? null,\n                      },\n                      e.",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/CommercePanel.tsx",
+    "line": 220,
+    "element": "button",
+    "sourceExcerpt": "<button\n              className=\"vault-lock-action game-object\"\n              data-primary-action\n              aria-label={t('openVaultPrice')}\n              aria-describedby={!offers.canOpenVault ? 'vault-key-hint' : undefined}\n              disabled={!ready || !offers.canOpenVault}\n              onClick={(e) =>\n                open(\n                  { kind: 'vault', version: content.vault.version, seen: result?.id ?? null },\n                  e.currentTarget,\n                )\n              }\n            >\n              <span className=\"vau",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/CommercePanel.tsx",
+    "line": 264,
+    "element": "button",
+    "sourceExcerpt": "<button\n                  type=\"button\"\n                  className=\"game-object vault-map-action\"\n                  aria-label={shopText(language, 'findKey')}\n                  onClick={onMap}\n                >\n                  <Artwork asset=\"ui.map\" language={language} decorative />\n                  <span>{shopText(language, 'findKey')}</span>\n                </button>\n              )}\n            </div>\n          )}\n        </>\n      )}\n      {result && (\n        <section\n          ref={resultRegion}\n          className=\"notice commerce-r",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/CommercePanel.tsx",
+    "line": 329,
+    "element": "button",
+    "sourceExcerpt": "<button\n            className=\"shop-result-kit game-object\"\n            onClick={(event) => onPrepare(event.currentTarget)}\n          >\n            <Artwork asset=\"ui.map\" language={language} decorative />\n            {shopText(language, 'prepareGear')}\n          </button>\n        </section>\n      )}\n      <div className=\"shop-counter-tools\">\n        {mode === 'vault' && (\n          <ShopBook\n            language={language}\n            label={t('possibleVaultLoot')}\n            caption={shopText(language, 'checkLoot')}\n            asset=\"produc",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/CommercePanel.tsx",
+    "line": 396,
+    "element": "dialog",
+    "sourceExcerpt": "<dialog\n          ref={dialog}\n          className=\"notice shop-trade-confirmation\"\n          aria-label={t('equipmentConfirmation')}\n          onCancel={() => setQuote(null)}\n        >\n          <GameSettings\n            language={language}\n            onLanguage={onLanguage}\n            reduced={motion.reduced}\n            ownReduced={motion.own}\n            systemReduced={motion.system}\n            onReduced={motion.change}\n          />\n          <h3>{t(quote.kind === 'forge' ? 'confirmForge' : 'confirmExchange')}</h3>\n          <p>\n        ",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/CommercePanel.tsx",
+    "line": 440,
+    "element": "button",
+    "sourceExcerpt": "<button\n            className=\"shop-confirm-seal\"\n            disabled={!ready}\n            onClick={() =>\n              quote.kind === 'forge'\n                ? onForge({ recipeId: quote.recipe.id, catalogVersion: quote.version })\n                : onVault({ tableVersion: quote.version })\n            }\n          >\n            <Artwork\n              asset={quote.kind === 'forge' ? 'ui.seal' : 'product.gold-key'}\n              language={language}\n              decorative\n            />\n            {t(quote.kind === 'forge' ? 'confirmForge' : 'co",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/CommercePanel.tsx",
+    "line": 457,
+    "element": "button",
+    "sourceExcerpt": "<button disabled={!connected} onClick={onRecover}>\n              {t('recoverOperation')}\n            </button>\n          )}\n          <button onClick={() => setQuote(null)}>{t(ready ? 'cancel' : 'close')}</button>\n        </dialog>\n      )}\n    </section>\n  );\n}\n",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/CommercePanel.tsx",
+    "line": 461,
+    "element": "button",
+    "sourceExcerpt": "<button onClick={() => setQuote(null)}>{t(ready ? 'cancel' : 'close')}</button>\n        </dialog>\n      )}\n    </section>\n  );\n}\n",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/EncounterPreparation.tsx",
+    "line": 82,
+    "element": "summary",
+    "sourceExcerpt": "<summary aria-label={t('inspect')}>\n              <span aria-hidden=\"true\">i</span>\n            </summary>\n            <p>{t(offer.kind === 'healer' ? 'healerDetail' : 'scholarDetail')}</p>\n            <p>{t('noRevive')}</p>\n            <p>{t('maximum')}</p>\n            <p>{t('exactCost')}</p>\n            <p>{t('keepsReserves')}</p>\n            <div className=\"encounter-provenance-key\">\n              {(['owned', 'temporary'] as const).map((source) => (\n                <p key={source}>\n                  <Artwork\n                    asset={source",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/EncounterPreparation.tsx",
+    "line": 125,
+    "element": "button",
+    "sourceExcerpt": "<button\n              key={choice.id}\n              type=\"button\"\n              className=\"encounter-offer-object\"\n              data-encounter-choice={choice.id}\n              aria-pressed={isSelected}\n              disabled={!ready || !eligible}\n              onClick={() => onChange({ encounterAction: 'trade', encounterChoiceId: choice.id })}\n            >\n              <span className=\"encounter-offer-art\" aria-hidden=\"true\">\n                <span className={unitChoices ? 'encounter-scope-single' : 'encounter-scope-team'}>\n                  ",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/EncounterPreparation.tsx",
+    "line": 212,
+    "element": "button",
+    "sourceExcerpt": "<button\n                key={member.unit.id}\n                type=\"button\"\n                className=\"encounter-target\"\n                data-encounter-unit={member.unit.id}\n                aria-label={t('memberLabel', { name, position: index + 1, source })}\n                aria-describedby={`${targetDescription}-${index}`}\n                aria-pressed={selectedUnit}\n                disabled={!ready || !candidate.eligible}\n                onClick={() =>\n                  onChange({\n                    encounterAction: 'trade',\n                  ",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/EncounterPreparation.tsx",
+    "line": 348,
+    "element": "button",
+    "sourceExcerpt": "<button\n        type=\"button\"\n        className=\"encounter-pass\"\n        data-encounter-choice=\"pass\"\n        aria-pressed={passed}\n        disabled={!ready}\n        onClick={() => onChange({ encounterAction: 'pass' })}\n      >\n        <Artwork asset=\"ui.pass\" language={language} eager decorative />\n        <span>{t('pass')}</span>\n        {passed && (\n          <Artwork\n            asset=\"ui.seal\"\n            className=\"encounter-pass-seal\"\n            language={language}\n            eager\n            decorative\n          />\n        )}\n      <",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/ExpeditionChallenge.tsx",
+    "line": 50,
+    "element": "summary",
+    "sourceExcerpt": "<summary aria-label={challengeText(language, 'choose')}>\n        <Artwork\n          asset={\n            value === 'discovery' ? 'ui.map' : `node.${value === 'tactical' ? 'duel' : 'boss'}`\n          }\n          language={language}\n          decorative\n        />\n        <span>{challengeText(language, value)}</span>\n        <span aria-hidden=\"true\">⌄</span>\n      </summary>\n      <div role=\"group\" aria-label={challengeText(language, 'choose')}>\n        {EXPEDITION_CHALLENGES.map((challenge) => (\n          <button\n            key={challenge}\n     ",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/ExpeditionChallenge.tsx",
+    "line": 63,
+    "element": "button",
+    "sourceExcerpt": "<button\n            key={challenge}\n            data-expedition-challenge={challenge}\n            aria-pressed={value === challenge}\n            disabled={!ready}\n            onClick={() => onChange(challenge)}\n          >\n            <Artwork\n              asset={\n                challenge === 'discovery'\n                  ? 'ui.map'\n                  : `node.${challenge === 'tactical' ? 'duel' : 'boss'}`\n              }\n              language={language}\n              decorative\n            />\n            <span>\n              {challengeText(la",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/ExpeditionClosure.tsx",
+    "line": 147,
+    "element": "button",
+    "sourceExcerpt": "<button\n              key={action}\n              type=\"button\"\n              data-closure-action={action}\n              className={index === 0 ? 'closure-primary' : 'closure-secondary'}\n              disabled={!ready}\n              onClick={(event) => onAction(action, event.currentTarget)}\n            >\n              <Artwork asset={assets[action]} language={language} decorative eager />\n              <span>\n                {label(action)}\n                {action === 'frog' && <small>{t('noCharge')}</small>}\n                {action === 'vault' ",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/ExpeditionClosure.tsx",
+    "line": 170,
+    "element": "summary",
+    "sourceExcerpt": "<summary>\n          <Artwork asset=\"ui.map\" language={language} decorative />\n          <span>{t('details')}</span>\n        </summary>\n        {bossBattle && (\n          <BossBattleFacts combat={bossBattle} language={language} preferred={preferredIntention} />\n        )}\n        <p>{t('kept')}</p>\n        <div className=\"closure-companions\" aria-label={t('companions')}>\n          {run.members.map((member) => (\n            <span key={member.unit.id} title={t(member.source === 'owned' ? 'owned' : 'temporary')}>\n              <Artwork\n            ",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/ExpeditionGuide.tsx",
+    "line": 66,
+    "element": "summary",
+    "sourceExcerpt": "<summary\n          ref={trigger}\n          className=\"priority-guide-trigger\"\n          aria-label={hidden ? t(language, 'showGuide') : undefined}\n        >\n          <Artwork asset={icon} language={language} decorative />\n          {!hidden && <span>{t(language, objective.kind)}</span>}\n          {hidden && (\n            <small className=\"priority-guide-fallback\" aria-hidden=\"true\">\n              {t(language, 'showGuide')}\n            </small>\n          )}\n        </summary>\n        <div className=\"priority-guide-body\">\n          <p>{t(languag",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/ExpeditionGuide.tsx",
+    "line": 83,
+    "element": "button",
+    "sourceExcerpt": "<button\n                disabled={!ready}\n                onClick={(event) => onConsult(objective.nodeId!, event.currentTarget)}\n              >\n                {t(language, 'inspectPact')}\n              </button>\n            ) : (\n              onPrepare &&\n              objective.kind !== 'energy' && (\n                <button disabled={!ready} onClick={(event) => onPrepare(event.currentTarget)}>\n                  {t(language, 'openPreparation')}\n                </button>\n              )\n            )}\n            <button\n              classNa",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/ExpeditionGuide.tsx",
+    "line": 92,
+    "element": "button",
+    "sourceExcerpt": "<button disabled={!ready} onClick={(event) => onPrepare(event.currentTarget)}>\n                  {t(language, 'openPreparation')}\n                </button>\n              )\n            )}\n            <button\n              className=\"priority-guide-dismiss\"\n              onClick={() => {\n                const next = !hidden;\n                setHidden(next);\n                try {\n                  localStorage.setItem(key, String(next));\n                } catch {\n                  /* Optional preference. */\n                }\n                reques",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/ExpeditionGuide.tsx",
+    "line": 97,
+    "element": "button",
+    "sourceExcerpt": "<button\n              className=\"priority-guide-dismiss\"\n              onClick={() => {\n                const next = !hidden;\n                setHidden(next);\n                try {\n                  localStorage.setItem(key, String(next));\n                } catch {\n                  /* Optional preference. */\n                }\n                requestAnimationFrame(() => trigger.current?.focus({ preventScroll: true }));\n              }}\n            >\n              {t(language, hidden ? 'showGuide' : 'hideGuide')}\n            </button>\n          ",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/ExpeditionIntentions.tsx",
+    "line": 103,
+    "element": "button",
+    "sourceExcerpt": "<button\n                type=\"button\"\n                className=\"intention-object\"\n                aria-pressed={selected}\n                aria-disabled={!ready || selected || undefined}\n                aria-label={t(language, 'choose', {\n                  name: [visual.label, visual.target].filter(Boolean).join(' · '),\n                })}\n                onClick={(event) => {\n                  if (ready && !selected) onChoose(choice, event.currentTarget);\n                }}\n              >\n                {choice.kind === 'company' && choice.f",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/ExpeditionIntentions.tsx",
+    "line": 138,
+    "element": "summary",
+    "sourceExcerpt": "<summary>\n          <Artwork asset=\"ui.collection\" language={language} decorative />\n          <span>{t(language, 'details')}</span>\n        </summary>\n        <p>{t(language, 'hint')}</p>\n        {choices.map((choice) => {\n          const visual = intentionVisual(choice, game, language);\n          const group =\n            choice.kind === 'company' ? companyIntentionProgress(game, availability, choice) : null;\n          return (\n            <section className=\"intention-explanation\" key={choice.kind}>\n              <h4>{visual.target || visual",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/ExpeditionIntentions.tsx",
+    "line": 170,
+    "element": "button",
+    "sourceExcerpt": "<button\n          type=\"button\"\n          className=\"intention-release\"\n          disabled={!ready}\n          onClick={(event) => onChoose(null, event.currentTarget)}\n        >\n          {t(language, 'cancel')}\n        </button>\n      )}\n    </section>\n  );\n}\nexport function IntentionReminder({\n  game,\n  content,\n  language,\n  onCancel,\n  ready = true,\n}: {\n  game: GameState;\n  content: PublicContent;\n  language: Language;\n  ready?: boolean;\n  onCancel?: (origin: HTMLElement) => void;\n}) {\n  const progress = intentionProgress(game, intentionAva",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/ExpeditionIntentions.tsx",
+    "line": 200,
+    "element": "summary",
+    "sourceExcerpt": "<summary>\n        {progress.intention.choice.kind === 'company' &&\n        progress.intention.choice.focus === 'house' ? (\n          <HouseInsignia house={progress.intention.choice.house} />\n        ) : (\n          <Artwork asset={visual.asset} language={language} decorative />\n        )}\n        <span>\n          {visual.target || visual.label}\n          <small>{t(language, progress.status)}</small>\n        </span>\n        <span className=\"intention-state-mark\" aria-hidden=\"true\">\n          {progress.status === 'completed'\n            ? '✓'\n   ",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/ExpeditionIntentions.tsx",
+    "line": 225,
+    "element": "button",
+    "sourceExcerpt": "<button\n            type=\"button\"\n            disabled={!ready}\n            onClick={(event) => onCancel(event.currentTarget)}\n          >\n            {t(language, 'cancel')}\n          </button>\n        )}\n      </div>\n    </details>\n  );\n}\n",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/ExpeditionPreparation.tsx",
+    "line": 82,
+    "element": "button",
+    "sourceExcerpt": "<button\n              key={kind}\n              className=\"game-object preparation-gear-slot\"\n              aria-expanded={slot === kind}\n              aria-label={text(language, kind === 'wand' ? 'wandForCopy' : 'broomForCopy', {\n                number: game.copies.indexOf(copy) + 1,\n              })}\n              onClick={() => setSlot(slot === kind ? null : kind)}\n            >\n              {item ? (\n                <EquipmentArt item={item} language={language} selectionMotion={false} />\n              ) : (\n                <Artwork asset=\"u",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/ExpeditionPreparation.tsx",
+    "line": 109,
+    "element": "button",
+    "sourceExcerpt": "<button\n            className=\"game-object\"\n            disabled={!ready || !equippedId}\n            aria-label={prepText(language, 'remove')}\n            aria-pressed={!equippedId}\n            onClick={() => onEquip({ copyId: copy.copyId, slot, equipmentId: null })}\n          >\n            <Artwork asset=\"ui.clear\" language={language} decorative />\n            <span>{prepText(language, 'remove')}</span>\n            <small className=\"gear-stat-comparison\">\n              {slot === 'wand' ? text(language, 'power') : c(language, 'initiative')}{' '",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/ExpeditionPreparation.tsx",
+    "line": 148,
+    "element": "button",
+    "sourceExcerpt": "<button\n                  key={item.id}\n                  className=\"game-object\"\n                  data-equipment-id={item.id}\n                  disabled={!ready || equippedId === item.id}\n                  aria-pressed={equippedId === item.id}\n                  aria-label={label}\n                  title={label}\n                  onClick={() => onEquip({ copyId: copy.copyId, slot, equipmentId: item.id })}\n                >\n                  <EquipmentArt item={item} language={language} />\n                  <span>{name}</span>\n                 ",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/ExpeditionPreparation.tsx",
+    "line": 349,
+    "element": "button",
+    "sourceExcerpt": "<button\n            className=\"preparation-back game-object\"\n            aria-label={p('return')}\n            onClick={onClose}\n          >\n            <Artwork asset=\"ui.pass\" language={language} decorative />\n            <span className=\"visually-hidden\">{p('return')}</span>\n          </button>\n        )}\n      </header>\n      {!inspected && recovery}\n      {content && <IntentionReminder game={game} content={content} language={language} />}\n      {context === 'beans' && (\n        <section\n          className=\"preparation-beans-destination\"\n  ",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/ExpeditionPreparation.tsx",
+    "line": 378,
+    "element": "button",
+    "sourceExcerpt": "<button\n                  key={node.id}\n                  className=\"game-object\"\n                  data-prepare-combat={node.id}\n                  disabled={!ready}\n                  onClick={() => onCombatNode(node.id)}\n                >\n                  <Artwork asset={`node.${node.kind}`} language={language} decorative />\n                  <span>{c(language, node.kind === 'boss' ? 'prepareBoss' : 'prepareDuel')}</span>\n                  <small>\n                    <Artwork asset=\"currency.essence\" language={language} decorative />5\n       ",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/ExpeditionPreparation.tsx",
+    "line": 395,
+    "element": "button",
+    "sourceExcerpt": "<button className=\"game-object\" onClick={onReturnToMap}>\n              <Artwork asset=\"ui.map\" language={language} decorative />\n              <span>{c(language, 'returnMap')}</span>\n            </button>\n          )}\n        </section>\n      )}\n      {context === 'formation' && (\n        <>\n          {!run && content?.campaign.challenges && (\n            <ChallengeChoice\n              recommended={recommendedChallenge}\n              value={challenge}\n              onChange={setChallenge}\n              language={language}\n              ready={r",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/ExpeditionPreparation.tsx",
+    "line": 439,
+    "element": "button",
+    "sourceExcerpt": "<button\n                    className=\"game-object\"\n                    aria-label={p('consult', { name })}\n                    aria-haspopup=\"dialog\"\n                    onClick={(event) => inspect(member.unit.id, event.currentTarget)}\n                  >\n                    <Artwork\n                      asset={`character.${member.unit.wizardId}.thumbnail`}\n                      language={language}\n                      decorative\n                    />\n                    <span>{index + 1}</span>\n                    <Artwork\n                ",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/ExpeditionPreparation.tsx",
+    "line": 495,
+    "element": "summary",
+    "sourceExcerpt": "<summary aria-label={p('help')} title={p('help')}>\n                <span aria-hidden=\"true\">?</span>\n              </summary>\n              <div>\n                <p>{p('minimum')}</p>\n                {run && content?.combatRules.bonds && !effectiveRules?.bonds && (\n                  <p>{bondText(language, 'legacy')}</p>\n                )}\n                <p>{p('duels')}</p>\n                {temporary.length > 0 && <p>{p('temporaryHint')}</p>}\n              </div>\n            </details>\n          </div>\n          {effectiveRules?.bonds && (\n    ",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/ExpeditionPreparation.tsx",
+    "line": 530,
+    "element": "summary",
+    "sourceExcerpt": "<summary>{p('findCompanion')}</summary>\n                  <ClassificationChoices\n                    value={filter.classification ?? 'all'}\n                    onChange={(classification) =>\n                      changeFilter({\n                        ...filter,\n                        classification: classification === 'all' ? undefined : classification,\n                      })\n                    }\n                    language={language}\n                    includeHouses={false}\n                  />\n                  <div\n                    ",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/ExpeditionPreparation.tsx",
+    "line": 547,
+    "element": "button",
+    "sourceExcerpt": "<button\n                      className=\"game-object\"\n                      aria-pressed={!filter.affinity}\n                      onClick={() => changeFilter({ ...filter, affinity: undefined })}\n                    >\n                      {p('allAffinities')}\n                    </button>\n                    {availableAffinities.map((affinity) => (\n                      <button\n                        className=\"game-object\"\n                        key={affinity}\n                        data-preparation-affinity={affinity}\n                     ",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/ExpeditionPreparation.tsx",
+    "line": 555,
+    "element": "button",
+    "sourceExcerpt": "<button\n                        className=\"game-object\"\n                        key={affinity}\n                        data-preparation-affinity={affinity}\n                        aria-pressed={filter.affinity === affinity}\n                        onClick={() =>\n                          changeFilter({\n                            ...filter,\n                            affinity: filter.affinity === affinity ? undefined : affinity,\n                          })\n                        }\n                      >\n                        {affinity ===",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/ExpeditionPreparation.tsx",
+    "line": 587,
+    "element": "button",
+    "sourceExcerpt": "<button\n                            type=\"button\"\n                            className=\"game-object\"\n                            key={h}\n                            data-preparation-house={h}\n                            aria-pressed={filter.house === h}\n                            aria-label={houseName(h, language)}\n                            onClick={() =>\n                              changeFilter({ ...filter, house: filter.house === h ? undefined : h })\n                            }\n                          >\n                            <",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/ExpeditionPreparation.tsx",
+    "line": 605,
+    "element": "summary",
+    "sourceExcerpt": "<summary>{p('filterIdentity')}</summary>\n                    <div role=\"group\" aria-label={p('filterIdentity')}>\n                      <button\n                        className=\"game-object\"\n                        aria-pressed={!filter.wizardId}\n                        onClick={() => changeFilter({ ...filter, wizardId: undefined })}\n                      >\n                        {p('allIdentities')}\n                      </button>\n                      {identities.map((copy) => (\n                        <button\n                          class",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/ExpeditionPreparation.tsx",
+    "line": 607,
+    "element": "button",
+    "sourceExcerpt": "<button\n                        className=\"game-object\"\n                        aria-pressed={!filter.wizardId}\n                        onClick={() => changeFilter({ ...filter, wizardId: undefined })}\n                      >\n                        {p('allIdentities')}\n                      </button>\n                      {identities.map((copy) => (\n                        <button\n                          className=\"game-object\"\n                          key={copy.wizard.id}\n                          data-preparation-identity={copy.wizard.id}\n",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/ExpeditionPreparation.tsx",
+    "line": 615,
+    "element": "button",
+    "sourceExcerpt": "<button\n                          className=\"game-object\"\n                          key={copy.wizard.id}\n                          data-preparation-identity={copy.wizard.id}\n                          aria-label={wizardName(copy.wizard, language)}\n                          aria-pressed={filter.wizardId === copy.wizard.id}\n                          onClick={() =>\n                            changeFilter({\n                              ...filter,\n                              wizardId:\n                                filter.wizardId === copy.wizar",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/ExpeditionPreparation.tsx",
+    "line": 643,
+    "element": "button",
+    "sourceExcerpt": "<button className=\"preparation-clear-filter\" onClick={() => changeFilter({})}>\n                      {p('clearFilters')}\n                    </button>\n                  )}\n                </details>\n              )}\n              {filteredCopies.length === 0 && (\n                <p role=\"status\" className=\"preparation-filter-empty\">\n                  {p('noMatches')}{' '}\n                  <button onClick={() => changeFilter({})}>{p('clearFilters')}</button>\n                </p>\n              )}\n              <div\n                className=\"pre",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/ExpeditionPreparation.tsx",
+    "line": 652,
+    "element": "button",
+    "sourceExcerpt": "<button onClick={() => changeFilter({})}>{p('clearFilters')}</button>\n                </p>\n              )}\n              <div\n                className=\"preparation-cards\"\n                data-count={Math.min(6, filteredCopies.length - currentPage * 6)}\n              >\n                {filteredCopies.slice(currentPage * 6, currentPage * 6 + 6).map((copy) => {\n                  const selected = chosen.includes(copy.copyId);\n                  const number =\n                    game.copies\n                      .filter((entry) => entry.wizard.id ",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/ExpeditionPreparation.tsx",
+    "line": 669,
+    "element": "button",
+    "sourceExcerpt": "<button\n                        className=\"game-object preparation-card enchanted-holder\"\n                        data-copy-id={copy.copyId}\n                        aria-label={`${p('chooseCopy', { name, number })}${unit.house ? ` · ${houseName(unit.house, language)}` : ''}`}\n                        aria-describedby={`${inspectionTitle}-peek-${copy.copyId}`}\n                        aria-pressed={selected}\n                        disabled={!ready || (!selected && chosen.length >= capacity)}\n                        onClick={() => {\n              ",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/ExpeditionPreparation.tsx",
+    "line": 725,
+    "element": "button",
+    "sourceExcerpt": "<button\n                        className=\"game-object preparation-inspect-trigger\"\n                        data-preparation-inspect={copy.copyId}\n                        aria-label={p('consult', { name })}\n                        aria-haspopup=\"dialog\"\n                        onClick={(event) => inspect(copy.copyId, event.currentTarget)}\n                      >\n                        <svg aria-hidden=\"true\" viewBox=\"0 0 32 32\">\n                          <circle cx=\"16\" cy=\"16\" r=\"12\" />\n                          <path d=\"M16 15v8M16 9v1\" />\n ",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/ExpeditionPreparation.tsx",
+    "line": 743,
+    "element": "button",
+    "sourceExcerpt": "<button\n                    className=\"game-object\"\n                    aria-label={text(language, 'gamePreviousPage')}\n                    disabled={currentPage === 0}\n                    onClick={() => setPage(currentPage - 1)}\n                  >\n                    <Artwork asset=\"ui.pass\" language={language} decorative />\n                  </button>\n                  <span>\n                    {currentPage + 1}/{pageCount}\n                  </span>\n                  <button\n                    className=\"game-object\"\n                    ar",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/ExpeditionPreparation.tsx",
+    "line": 754,
+    "element": "button",
+    "sourceExcerpt": "<button\n                    className=\"game-object\"\n                    aria-label={text(language, 'gameNextPage')}\n                    disabled={currentPage === pageCount - 1}\n                    onClick={() => setPage(currentPage + 1)}\n                  >\n                    <Artwork asset=\"ui.pass\" language={language} decorative />\n                  </button>\n                </div>\n              )}\n            </div>\n            {selectedWizard && inspectedUnit && (\n              <dialog\n                ref={inspector}\n                classN",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/ExpeditionPreparation.tsx",
+    "line": 766,
+    "element": "dialog",
+    "sourceExcerpt": "<dialog\n                ref={inspector}\n                className=\"preparation-inspection\"\n                aria-labelledby={inspectionTitle}\n                onCancel={(event) => {\n                  event.preventDefault();\n                  event.stopPropagation();\n                  closeInspection();\n                }}\n              >\n                <button\n                  className=\"game-object preparation-inspection-close\"\n                  aria-label={p('return')}\n                  onClick={closeInspection}\n                  autoFocus\n   ",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/ExpeditionPreparation.tsx",
+    "line": 776,
+    "element": "button",
+    "sourceExcerpt": "<button\n                  className=\"game-object preparation-inspection-close\"\n                  aria-label={p('return')}\n                  onClick={closeInspection}\n                  autoFocus\n                >\n                  <span aria-hidden=\"true\">×</span>\n                </button>\n                <>\n                  <div className=\"preparation-character\">\n                    <Artwork\n                      asset={`character.${selectedWizard.id}.figure`}\n                      language={language}\n                      decorative\n         ",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/ExpeditionPreparation.tsx",
+    "line": 862,
+    "element": "button",
+    "sourceExcerpt": "<button\n              className=\"preparation-confirm game-object\"\n              data-preparation-confirm\n              disabled={!canConfirm}\n              onClick={() =>\n                run\n                  ? onTeam({ copyIds: chosen, ...(effectiveRules?.bonds ? { bondFocus } : {}) })\n                  : onStart(\n                      chosen,\n                      content?.campaign.challenges ? challenge : undefined,\n                      effectiveRules?.bonds ? bondFocus : undefined,\n                    )\n              }\n            >\n      ",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/FantasyActionButton.tsx",
+    "line": 20,
+    "element": "button",
+    "sourceExcerpt": "<button\n      {...button}\n      type={button.type ?? 'button'}\n      className={`fantasy-action ${className}`}\n      data-variant={variant}\n    >\n      <span className=\"fantasy-action-icon\" aria-hidden=\"true\">\n        <Artwork asset={asset} language={language} decorative eager />\n      </span>\n      <span className=\"fantasy-action-label\">{children}</span>\n      <span className=\"fantasy-action-arrow\" aria-hidden=\"true\" />\n    </button>\n  );\n}\n",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/FlavourCabinet.tsx",
+    "line": 49,
+    "element": "button",
+    "sourceExcerpt": "<button\n            className=\"flavour-specimen game-object\"\n            key={entry.flavour}\n            data-discovered={entry.discovered}\n            aria-pressed={selected === entry.flavour}\n            aria-label={text(\n              language,\n              entry.discovered ? 'gameKnownFlavour' : 'gameUnknownFlavour',\n              { name: text(language, labels[entry.flavour]) },\n            )}\n            onClick={() => setSelected(entry.flavour)}\n          >\n            <Artwork asset={`product.bean-${entry.flavour}`} language={language} ",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/FlavourCabinet.tsx",
+    "line": 81,
+    "element": "button",
+    "sourceExcerpt": "<button\n        ref={origin}\n        className=\"flavour-recipe-trigger game-object\"\n        aria-label={text(language, 'gameFlavourHelpTitle')}\n        aria-haspopup=\"dialog\"\n        onClick={() => setRecipe(true)}\n      >\n        <Artwork asset=\"ui.collection\" language={language} decorative />\n        <span>{prepText(language, 'recipe')}</span>\n      </button>\n      {recipe && (\n        <dialog\n          ref={folio}\n          className=\"discovery-folio flavour-recipe\"\n          aria-label={prepText(language, 'recipe')}\n          onCancel={() =",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/FlavourCabinet.tsx",
+    "line": 92,
+    "element": "dialog",
+    "sourceExcerpt": "<dialog\n          ref={folio}\n          className=\"discovery-folio flavour-recipe\"\n          aria-label={prepText(language, 'recipe')}\n          onCancel={() => setRecipe(false)}\n        >\n          <button\n            className=\"folio-close game-object\"\n            aria-label={text(language, 'close')}\n            onClick={() => setRecipe(false)}\n          >\n            <Artwork asset=\"ui.clear\" language={language} decorative />\n          </button>\n          <h3>{prepText(language, 'recipe')}</h3>\n          <ol className=\"flavour-recipe-steps\">",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/FlavourCabinet.tsx",
+    "line": 98,
+    "element": "button",
+    "sourceExcerpt": "<button\n            className=\"folio-close game-object\"\n            aria-label={text(language, 'close')}\n            onClick={() => setRecipe(false)}\n          >\n            <Artwork asset=\"ui.clear\" language={language} decorative />\n          </button>\n          <h3>{prepText(language, 'recipe')}</h3>\n          <ol className=\"flavour-recipe-steps\">\n            {(\n              [\n                ['beans.jar', 'getJar'],\n                ['node.duel', 'assign'],\n                ['product.bean-mint', 'discover'],\n              ] as const\n         ",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/GameSettings.tsx",
+    "line": 49,
+    "element": "button",
+    "sourceExcerpt": "<button\n        ref={trigger}\n        className=\"settings-trigger game-object\"\n        aria-label={text(language, 'gameSettings')}\n        title={text(language, 'gameSettings')}\n        onClick={() => setOpen(true)}\n      >\n        <Artwork asset=\"ui.settings\" language={language} decorative />\n        <span className=\"visually-hidden\">{text(language, 'gameSettings')}</span>\n      </button>\n      {open && (\n        <dialog\n          ref={dialog}\n          className=\"game-settings settings-case\"\n          aria-label={text(language, 'gameSettings'",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/GameSettings.tsx",
+    "line": 60,
+    "element": "dialog",
+    "sourceExcerpt": "<dialog\n          ref={dialog}\n          className=\"game-settings settings-case\"\n          aria-label={text(language, 'gameSettings')}\n          onCancel={(event) => {\n            event.stopPropagation();\n            setOpen(false);\n          }}\n        >\n          <button\n            className=\"settings-close game-object\"\n            aria-label={text(language, 'close')}\n            onClick={() => setOpen(false)}\n          >\n            <Artwork asset=\"ui.pass\" language={language} decorative />\n            <span className=\"visually-hidden\">{tex",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/GameSettings.tsx",
+    "line": 69,
+    "element": "button",
+    "sourceExcerpt": "<button\n            className=\"settings-close game-object\"\n            aria-label={text(language, 'close')}\n            onClick={() => setOpen(false)}\n          >\n            <Artwork asset=\"ui.pass\" language={language} decorative />\n            <span className=\"visually-hidden\">{text(language, 'close')}</span>\n          </button>\n          <header className=\"settings-case-heading\">\n            <Artwork asset=\"ui.settings\" language={language} decorative />\n            <h2>{text(language, 'gameSettings')}</h2>\n          </header>\n          {acco",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/GameSettings.tsx",
+    "line": 85,
+    "element": "button",
+    "sourceExcerpt": "<button\n                key={value}\n                aria-pressed={language === value}\n                onClick={() => onLanguage(value)}\n              >\n                <span className=\"language-monogram\" aria-hidden=\"true\">\n                  {value.toUpperCase()}\n                </span>\n                <span>{value === 'es' ? 'Español' : 'English'}</span>\n                {language === value && <Artwork asset=\"ui.seal\" language={language} decorative />}\n              </button>\n            ))}\n          </fieldset>\n          <fieldset className=\"",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/GameSettings.tsx",
+    "line": 101,
+    "element": "button",
+    "sourceExcerpt": "<button\n                key={pack.id}\n                aria-pressed={selectedContentPackId() === pack.id}\n                onClick={() => setContentPack(pack.id)}\n              >\n                <span className={`world-medallion world-medallion-${pack.id}`} aria-hidden=\"true\">\n                  {pack.id === 'diagon-alley' ? '✦' : '☽'}\n                </span>\n                <span>{pack.name[language]}</span>\n                {selectedContentPackId() === pack.id && (\n                  <Artwork asset=\"ui.seal\" language={language} decorative />\n     ",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/GameSettings.tsx",
+    "line": 126,
+    "element": "button",
+    "sourceExcerpt": "<button\n            className=\"settings-save-letter\"\n            aria-expanded={showSave}\n            onClick={() => setShowSave(!showSave)}\n          >\n            <Artwork asset=\"ui.missions\" language={language} decorative />\n            <span>{text(language, 'gameAboutSave')}</span>\n          </button>\n          {showSave && (\n            <div className=\"settings-help\">\n              <p>{text(language, 'localTrialProvisionalBalanceAndArtSavedOn')}</p>\n              <p>{text(language, 'gameWorldSwapHint')}</p>\n              <p>{text(language,",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/GameSettings.tsx",
+    "line": 163,
+    "element": "button",
+    "sourceExcerpt": "<button\n        className=\"settings-motion\"\n        aria-pressed={ownReduced}\n        aria-describedby=\"settings-motion-state\"\n        onClick={() => onReduced(!ownReduced)}\n      >\n        <Artwork asset=\"ui.motion\" language={language} decorative />\n        {mapSettingsText(language, 'motionOwn')}\n        {ownReduced && <Artwork asset=\"ui.seal\" language={language} decorative />}\n      </button>\n      <p\n        id=\"settings-motion-state\"\n        className=\"settings-motion-state\"\n        data-motion-system={systemReduced}\n        data-motion-ef",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/HouseInsignia.tsx",
+    "line": 147,
+    "element": "summary",
+    "sourceExcerpt": "<summary\n            aria-label={`${houseName(group.house, language)} · ${group.tier ? (language === 'es' ? `Activo nivel ${group.tier}` : `Active tier ${group.tier}`) : `${group.count}/3`}`}\n          >\n            <HouseInsignia house={group.house} />\n            <span>\n              {houseName(group.house, language)}{' '}\n              <b>\n                {group.tier\n                  ? `${group.count} · ${group.tier === 1 ? 'I' : 'II'}`\n                  : `${group.count}/3`}\n              </b>\n            </span>\n          </summary>\n     ",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/JourneyCabinet.tsx",
+    "line": 33,
+    "element": "button",
+    "sourceExcerpt": "<button\n          className=\"journey-object game-object\"\n          onClick={onMap}\n          aria-label={text(language, 'map')}\n        >\n          <Artwork asset=\"ui.map\" language={language} decorative />\n          <span>{run?.visited.length ?? 0}</span>\n          <small>{text(language, 'gameExplore')}</small>\n        </button>\n        <button\n          className=\"journey-object game-object\"\n          onClick={onCollection}\n          aria-label={text(language, 'chromodex')}\n        >\n          <Artwork asset=\"ui.collection\" language={language}",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/JourneyCabinet.tsx",
+    "line": 42,
+    "element": "button",
+    "sourceExcerpt": "<button\n          className=\"journey-object game-object\"\n          onClick={onCollection}\n          aria-label={text(language, 'chromodex')}\n        >\n          <Artwork asset=\"ui.collection\" language={language} decorative />\n          <span>{own}/30</span>\n          <small>{text(language, 'gameCollect')}</small>\n        </button>\n        <button\n          className=\"journey-object game-object\"\n          onClick={keys ? onVault : onMap}\n          aria-label={text(language, keys ? 'obsidianVaults' : 'gameBossChallenge')}\n        >\n          <Art",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/JourneyCabinet.tsx",
+    "line": 51,
+    "element": "button",
+    "sourceExcerpt": "<button\n          className=\"journey-object game-object\"\n          onClick={keys ? onVault : onMap}\n          aria-label={text(language, keys ? 'obsidianVaults' : 'gameBossChallenge')}\n        >\n          <Artwork asset={keys ? 'product.gold-key' : 'node.boss'} language={language} decorative />\n          <span>{keys || (bossComplete ? '✓' : '')}</span>\n          <small>{text(language, keys ? 'gameOpenVault' : 'gameBossChallenge')}</small>\n        </button>\n      </div>\n      <FlavourCabinet game={game} language={language} />\n      <button\n     ",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/JourneyCabinet.tsx",
+    "line": 62,
+    "element": "button",
+    "sourceExcerpt": "<button\n        className=\"journey-next game-object\"\n        onClick={keys ? onVault : own < 3 ? onShop : onMap}\n      >\n        <Artwork\n          asset={keys ? 'product.gold-key' : own < 3 ? 'toad.box' : 'ui.map'}\n          language={language}\n          decorative\n        />\n        {text(\n          language,\n          keys ? 'gameOpenVault' : own < 3 ? 'gameFindYourNextWizard' : 'gameContinueAdventure',\n        )}\n      </button>\n      <section className=\"journey-atlas\" aria-label={text(language, 'unlockedLocations')}>\n        <h3>{prepText(",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/JourneyCabinet.tsx",
+    "line": 79,
+    "element": "button",
+    "sourceExcerpt": "<button\n            className=\"journey-atlas-page game-object\"\n            onClick={onMap}\n            aria-label={text(language, 'map')}\n          >\n            <Artwork\n              asset={regionAppearance('pasaje', language).mapAsset}\n              language={language}\n              decorative\n            />\n            <span>{regionAppearance('pasaje', language).name}</span>\n            <small>{prepText(language, 'current')}</small>\n          </button>\n          <div className=\"journey-atlas-page\" data-future=\"true\">\n            <Artwork\n  ",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/MapPanel.tsx",
+    "line": 97,
+    "element": "button",
+    "sourceExcerpt": "<button\n        key={id}\n        className=\"map-event-medallion\"\n        aria-label={mapSettingsText(language, 'nodeStateName', {\n          name: routeNodeName(inspection, language),\n          state: text(language, inspection.state),\n        })}\n        title={\n          threat\n            ? `${label} · ${tacticalText(language, threat === 'fire' ? 'fireThreat' : 'vanguard')}`\n            : label\n        }\n        data-node={id}\n        data-node-kind={kind}\n        data-confirmed-motion={confirmedMotion && id === run.visited.at(-1)}\n        dat",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/MapPanel.tsx",
+    "line": 180,
+    "element": "button",
+    "sourceExcerpt": "<button\n        className=\"map-view-toggle\"\n        aria-label={text(language, list ? 'viewMap' : 'viewNodeList')}\n        title={text(language, list ? 'viewMap' : 'viewNodeList')}\n        onClick={() => setList((v) => !v)}\n      >\n        <Artwork asset={list ? 'ui.map' : 'ui.missions'} language={language} decorative />\n        <span className=\"map-view-fallback\" aria-hidden=\"true\">\n          {text(language, list ? 'viewMap' : 'viewNodeList')}\n        </span>\n      </button>\n      {list ? (\n        <div className=\"route-list\">\n          <h2>{m",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/MapPanel.tsx",
+    "line": 202,
+    "element": "summary",
+    "sourceExcerpt": "<summary>{mapSettingsText(language, 'inspection')}</summary>\n                    <p>\n                      {mapSettingsText(language, 'from')}:{' '}\n                      {inspection.from.length\n                        ? inspection.from.map((node) => routeNodeName(node, language)).join(' · ')\n                        : originLabel}\n                    </p>\n                    <p>\n                      {mapSettingsText(language, 'to')}:{' '}\n                      {inspection.to.length\n                        ? inspection.to.map((node) => routeNod",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/MapPanel.tsx",
+    "line": 215,
+    "element": "button",
+    "sourceExcerpt": "<button\n                      type=\"button\"\n                      className=\"route-book-inspect\"\n                      onClick={(event) => {\n                        inspectOrigin.current = event.currentTarget;\n                        setInspectedId(n.id);\n                      }}\n                    >\n                      {mapSettingsText(language, 'inspection')}\n                    </button>\n                  </details>\n                </section>\n              );\n            })}\n        </div>\n      ) : (\n        <div className=\"map-scroll\" r",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/NodePreparation.tsx",
+    "line": 116,
+    "element": "summary",
+    "sourceExcerpt": "<summary>{tacticalText(language, 'inspect')}</summary>\n              <div>\n                {plan.opponents.map((unit) => (\n                  <section key={unit.id}>\n                    <strong>\n                      {unit.wizardId === 'rival'\n                        ? t('opponent')\n                        : themedName(unit.wizardId, unit.wizardId, language)}\n                    </strong>\n                    <AffinityLabel affinity={unit.affinity} language={language} />\n                    <dl>\n                      <div>\n                       ",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/NodePreparation.tsx",
+    "line": 253,
+    "element": "button",
+    "sourceExcerpt": "<button\n                type=\"button\"\n                className=\"node-pact-action node-pact-primary\"\n                data-pact-action=\"recruit\"\n                aria-label={t('nodeRecruit')}\n                disabled={!ready}\n                onClick={() => onResolve({ pactAction: 'recruit' })}\n              >\n                <Artwork asset=\"ui.temporary\" language={language} decorative eager />\n                <span>{t('nodeRecruit')}</span>\n              </button>\n              <button\n                type=\"button\"\n                className=\"node",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/NodePreparation.tsx",
+    "line": 264,
+    "element": "button",
+    "sourceExcerpt": "<button\n                type=\"button\"\n                className=\"node-pact-action\"\n                data-pact-action=\"pass\"\n                aria-label={t('nodePass')}\n                disabled={!ready || run.members.length < 3}\n                onClick={() => onResolve({ pactAction: 'pass' })}\n              >\n                <Artwork asset=\"ui.pass\" language={language} decorative eager />\n                <span>{t('nodePass')}</span>\n              </button>\n            </div>\n          ) : (\n            choices(\n              options.pactAction ?? ",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/NodePreparation.tsx",
+    "line": 331,
+    "element": "summary",
+    "sourceExcerpt": "<summary aria-label={t('nodeOutcomeHelp')}>?</summary>\n            <p>{t('encounterRiskHint')}</p>\n          </details>\n        </>\n      )}\n    </div>\n  );\n}\n\nfunction TacticalPact({\n  recruits,\n  run,\n  options,\n  onChange,\n  language,\n  ready,\n  rules,\n}: {\n  recruits: readonly CombatUnitInput[];\n  run: Run;\n  options: NodeOptions;\n  onChange: (options: NodeOptions) => void;\n  language: Language;\n  ready: boolean;\n  rules?: CombatRules;\n}) {\n  const t = (key: Parameters<typeof text>[1]) => text(language, key);\n  const c = (key: Parameters<ty",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/NodePreparation.tsx",
+    "line": 398,
+    "element": "button",
+    "sourceExcerpt": "<button\n                type=\"button\"\n                className=\"tactical-pact-portrait\"\n                aria-label={`${t('nodeRecruit')}: ${name} · ${t('temporaryAlly')}`}\n                aria-pressed={chosen}\n                disabled={!ready || !canRecruit}\n                data-pact-candidate={candidate.id}\n                onClick={() =>\n                  onChange({\n                    pactAction: 'recruit',\n                    recruitId: candidate.id,\n                    ...(full && replacement ? { replaceUnitId: replacement.unit.id } : {}),",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/NodePreparation.tsx",
+    "line": 502,
+    "element": "summary",
+    "sourceExcerpt": "<summary aria-label={`${c('inspect')}: ${name}`} title={`${c('inspect')}: ${name}`}>\n                  <span aria-hidden=\"true\">i</span>\n                </summary>\n                <p>{t('temporaryAlly')}</p>\n                <dl>\n                  <div>\n                    <dt>{c('health')}</dt>\n                    <dd>\n                      {candidate.hp} / {candidate.maxHp}\n                    </dd>\n                  </div>\n                  <div>\n                    <dt>{c('mana')}</dt>\n                    <dd>\n                      {candidat",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/NodePreparation.tsx",
+    "line": 567,
+    "element": "button",
+    "sourceExcerpt": "<button\n          type=\"button\"\n          className=\"tactical-pact-pass\"\n          aria-pressed={options.pactAction === 'pass'}\n          disabled={!ready || run.members.length < 3}\n          data-pact-choice=\"pass\"\n          onClick={() => onChange({ pactAction: 'pass' })}\n        >\n          <Artwork asset=\"ui.pass\" language={language} decorative eager />\n          {t('nodePass')}\n        </button>\n      )}\n    </section>\n  );\n}\n",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/NodeResult.tsx",
+    "line": 78,
+    "element": "summary",
+    "sourceExcerpt": "<summary aria-label={text(language, 'confirmedNodeResult')}>\n          <Artwork\n            asset={`node.${kind}`}\n            language={language}\n            className=\"receipt-event-icon\"\n            decorative\n          />\n          <span className=\"receipt-saved-seal\" aria-hidden=\"true\">\n            <Artwork asset=\"ui.seal\" language={language} decorative />\n          </span>\n          <span className=\"receipt-objects\" aria-hidden=\"true\">\n            {receipt.reward.crowns > 0 && (\n              <span>\n                <Artwork asset=\"currenc",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/NodeResult.tsx",
+    "line": 182,
+    "element": "button",
+    "sourceExcerpt": "<button\n            onClick={(event) => {\n              if (returnAction) {\n                returnAction.onReturn(event.currentTarget);\n                return;\n              }\n              event.currentTarget.closest('details')?.removeAttribute('open');\n              const target = document.querySelector<HTMLButtonElement>(\n                '[data-node]:not(:disabled), [data-start-run]',\n              );\n\n              target?.focus({ preventScroll: true });\n            }}\n          >\n            {returnAction?.label ?? text(language, 'returnTo",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/NodeResult.tsx",
+    "line": 283,
+    "element": "button",
+    "sourceExcerpt": "<button onClick={onMissions}>{text(language, 'viewUnlockedLocations')}</button>\n            </p>\n          )}\n          {receipt.battle && (\n            <>\n              <p>\n                {text(\n                  language,\n                  receipt.battle.outcome === 'player'\n                    ? 'victory'\n                    : receipt.battle.outcome === 'rival'\n                      ? 'defeat'\n                      : 'draw',\n                )}\n              </p>\n              <button onClick={onReplay}>{text(language, 'viewSavedBattle')}</b",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/NodeResult.tsx",
+    "line": 298,
+    "element": "button",
+    "sourceExcerpt": "<button onClick={onReplay}>{text(language, 'viewSavedBattle')}</button>\n            </>\n          )}\n          <details>\n            <summary>{text(language, 'savedTeamVitals')}</summary>\n            {receipt.run.members.map((m, index) => (\n              <p key={m.unit.id}>\n                {text(language, 'savedUnitVitals', {\n                  number: index + 1,\n                  hp: numbers.format(m.unit.hp),\n                  maxHp: numbers.format(m.unit.maxHp),\n                  mana: numbers.format(m.unit.mana),\n                  maxMana: n",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/NodeResult.tsx",
+    "line": 302,
+    "element": "summary",
+    "sourceExcerpt": "<summary>{text(language, 'savedTeamVitals')}</summary>\n            {receipt.run.members.map((m, index) => (\n              <p key={m.unit.id}>\n                {text(language, 'savedUnitVitals', {\n                  number: index + 1,\n                  hp: numbers.format(m.unit.hp),\n                  maxHp: numbers.format(m.unit.maxHp),\n                  mana: numbers.format(m.unit.mana),\n                  maxMana: numbers.format(m.unit.maxMana),\n                })}\n              </p>\n            ))}\n          </details>\n        </div>\n      </det",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/OperationFeedback.tsx",
+    "line": 68,
+    "element": "summary",
+    "sourceExcerpt": "<summary aria-label={value ?? undefined}>\n            <Artwork\n              asset={\n                receipt?.kind === 'purchase'\n                  ? receipt.request.product === 'cacao-toad'\n                    ? 'toad.box'\n                    : 'beans.jar'\n                  : receipt?.kind === 'set-team'\n                    ? 'ui.owned'\n                    : 'product.wand-birch'\n              }\n              language={language}\n              decorative\n            />\n            {receipt?.kind === 'purchase' && (\n              <>\n             ",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/PlayerHud.tsx",
+    "line": 39,
+    "element": "meter",
+    "sourceExcerpt": "<meter\n                aria-label={text(language, 'runicEssence')}\n                min={0}\n                max={energy.maximum}\n                value={energy.points}\n              />\n            </label>\n            <small className=\"visually-hidden\">\n              {energy.nextPointAt === null\n                ? text(language, 'essenceFull')\n                : text(language, 'nextEssenceAt', {\n                    time: new Intl.DateTimeFormat(language === 'es' ? 'es-ES' : 'en-US', {\n                      hour: '2-digit',\n                      min",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/PlayerHud.tsx",
+    "line": 61,
+    "element": "button",
+    "sourceExcerpt": "<button\n          disabled={\n            !connected || state.status !== 'ready' || !!state.pending || state.refreshingStatus\n          }\n          onClick={onRefresh}\n        >\n          <Artwork asset=\"currency.essence\" language={language} decorative />\n          <span className=\"visually-hidden\">{text(language, 'refreshEssence')}</span>\n        </button>\n      </div>\n      <span className=\"key-balance\">\n        <Artwork asset=\"product.gold-key\" language={language} decorative />\n        <strong aria-hidden=\"true\">{format.format(state.game.inve",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/PreparationSynergies.tsx",
+    "line": 42,
+    "element": "summary",
+    "sourceExcerpt": "<summary aria-label={c(language, 'formationPreview')}>\n          <Artwork asset=\"node.refuge\" language={language} decorative />\n          {active.length ? (\n            active.map((s) => (\n              <span key={s.affinity} data-active-synergy={s.affinity}>\n                {c(language, s.affinity)}{' '}\n                <strong>{s.threshold === 3 ? 'III' : s.threshold === 2 ? 'II' : 'I'}</strong>\n              </span>\n            ))\n          ) : (\n            <span>{c(language, 'noSynergy')}</span>\n          )}\n        </summary>\n        <div",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/ReadingPreferences.tsx",
+    "line": 107,
+    "element": "button",
+    "sourceExcerpt": "<button\n            key={size}\n            aria-pressed={value.size === size}\n            onClick={() => change({ ...value, size })}\n          >\n            {t(language, size)}\n            {value.size === size && <Artwork asset=\"ui.seal\" language={language} decorative />}\n          </button>\n        ))}\n      </div>\n      <button\n        aria-pressed={value.contrast}\n        onClick={() => change({ ...value, contrast: !value.contrast })}\n      >\n        {t(language, 'contrast')}\n        {value.contrast && <Artwork asset=\"ui.seal\" language={lang",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/ReadingPreferences.tsx",
+    "line": 117,
+    "element": "button",
+    "sourceExcerpt": "<button\n        aria-pressed={value.contrast}\n        onClick={() => change({ ...value, contrast: !value.contrast })}\n      >\n        {t(language, 'contrast')}\n        {value.contrast && <Artwork asset=\"ui.seal\" language={language} decorative />}\n      </button>\n      <p>{t(language, system ? 'systemContrast' : 'ownContrast')}</p>\n    </fieldset>\n  );\n}\n",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/RecoveryNotice.tsx",
+    "line": 58,
+    "element": "button",
+    "sourceExcerpt": "<button\n            className=\"game-object\"\n            disabled={!connected}\n            onClick={state.pending ? onRecover : onReload}\n          >\n            {r(language, state.pending ? 'recover' : invalid ? 'check' : 'reload')}\n          </button>\n          {invalid && !state.pending && onEnter && (\n            <details className=\"recovery-new-entry\">\n              <summary>{r(language, 'newTrial')}</summary>\n              <p>{r(language, 'newTrialHelp')}</p>\n              <button className=\"game-object\" disabled={!connected} onClick={onEn",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/RecoveryNotice.tsx",
+    "line": 67,
+    "element": "summary",
+    "sourceExcerpt": "<summary>{r(language, 'newTrial')}</summary>\n              <p>{r(language, 'newTrialHelp')}</p>\n              <button className=\"game-object\" disabled={!connected} onClick={onEnter}>\n                {r(language, 'newTrial')}\n              </button>\n            </details>\n          )}\n        </div>\n      )}\n    </section>\n  );\n}\n",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/RecoveryNotice.tsx",
+    "line": 69,
+    "element": "button",
+    "sourceExcerpt": "<button className=\"game-object\" disabled={!connected} onClick={onEnter}>\n                {r(language, 'newTrial')}\n              </button>\n            </details>\n          )}\n        </div>\n      )}\n    </section>\n  );\n}\n",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/RouteInspection.tsx",
+    "line": 54,
+    "element": "button",
+    "sourceExcerpt": "<button key={related.id} type=\"button\" onClick={() => onInspect(related.id)}>\n        <Artwork asset={`node.${related.kind}`} language={language} decorative />\n        <span>{routeNodeName(related, language)}</span>\n      </button>\n    ));\n  return (\n    <dialog\n      ref={dialog}\n      className=\"route-inspection\"\n      aria-label={message(language, 'inspection')}\n      data-route-inspection={node.id}\n      onCancel={(event) => {\n        event.preventDefault();\n        event.stopPropagation();\n        onClose();\n      }}\n    >\n      <button re",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/RouteInspection.tsx",
+    "line": 60,
+    "element": "dialog",
+    "sourceExcerpt": "<dialog\n      ref={dialog}\n      className=\"route-inspection\"\n      aria-label={message(language, 'inspection')}\n      data-route-inspection={node.id}\n      onCancel={(event) => {\n        event.preventDefault();\n        event.stopPropagation();\n        onClose();\n      }}\n    >\n      <button ref={close} type=\"button\" className=\"route-inspection-close\" onClick={onClose}>\n        {text(language, 'close')}\n      </button>\n      <header>\n        <Artwork\n          asset={`node.${node.kind}`}\n          language={language}\n          className=\"route-",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/RouteInspection.tsx",
+    "line": 71,
+    "element": "button",
+    "sourceExcerpt": "<button ref={close} type=\"button\" className=\"route-inspection-close\" onClick={onClose}>\n        {text(language, 'close')}\n      </button>\n      <header>\n        <Artwork\n          asset={`node.${node.kind}`}\n          language={language}\n          className=\"route-inspection-figure\"\n          decorative\n        />\n        <h2 ref={heading} tabIndex={-1} aria-label={routeNodeName(node, language)}>\n          {text(language, nodeMessageKeys[node.kind])}\n        </h2>\n        <p>{message(language, 'position', { ...node.position })}</p>\n        <str",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/SeasonalEvent.tsx",
+    "line": 278,
+    "element": "button",
+    "sourceExcerpt": "<button\n        type=\"button\"\n        ref={origin}\n        className=\"seasonal-invitation\"\n        data-seasonal-open\n        aria-label={t('invitation')}\n        onClick={() => setOpen(true)}\n      >\n        {lantern('seasonal-invitation-art')}\n        <span className=\"seasonal-invitation-label\">\n          {keepsake ? t('history') : t('invitation')}\n        </span>\n        {participation && !complete && (\n          <small>\n            {participation.completedObjectiveIds.length}/{definition.objectiveIds.length}\n          </small>\n        )}\n  ",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/SeasonalEvent.tsx",
+    "line": 302,
+    "element": "dialog",
+    "sourceExcerpt": "<dialog\n          ref={dialog}\n          className=\"seasonal-dialog\"\n          aria-labelledby=\"seasonal-title\"\n          data-seasonal-dialog\n          data-seasonal-phase={phase}\n          onCancel={(event) => {\n            event.preventDefault();\n            close();\n          }}\n        >\n          <section className=\"seasonal-story\" aria-busy={busy}>\n            <span\n              className=\"visually-hidden\"\n              role=\"status\"\n              aria-live=\"polite\"\n              lang={announcement?.language}\n            >\n             ",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/SeasonalEvent.tsx",
+    "line": 326,
+    "element": "button",
+    "sourceExcerpt": "<button type=\"button\" data-seasonal-close className=\"seasonal-close\" onClick={close}>\n                {t('close')} <span aria-hidden=\"true\">↩</span>\n              </button>\n              <h2 id=\"seasonal-title\">{t('title')}</h2>\n            </header>\n            <p className=\"seasonal-intro\">{complete ? t('completeDetail') : t('story')}</p>\n            {error && (\n              <div className=\"seasonal-error\" role=\"alert\">\n                <p>{error}</p>\n                {onRecover && (\n                  <button\n                    type=\"button\"\n",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/SeasonalEvent.tsx",
+    "line": 336,
+    "element": "button",
+    "sourceExcerpt": "<button\n                    type=\"button\"\n                    className=\"seasonal-secondary\"\n                    disabled={busy}\n                    onClick={onRecover}\n                  >\n                    {recoverLabel ?? t('recover')}\n                  </button>\n                )}\n              </div>\n            )}\n            <SeasonalWindowGallery\n              edition={definition}\n              completed={participation?.completedObjectiveIds ?? []}\n              language={language}\n              participating={!!participation}\n        ",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/SeasonalEvent.tsx",
+    "line": 366,
+    "element": "button",
+    "sourceExcerpt": "<button\n                      type=\"button\"\n                      className=\"seasonal-primary\"\n                      data-seasonal-join\n                      disabled={busy || otherActive}\n                      onClick={() => command('join')}\n                    >\n                      {busy ? t('pending') : t('join')}\n                    </button>\n                    {otherActive && <p>{t('activeEdition')}</p>}\n                  </>\n                ) : (\n                  <p>\n                    {t(phase === 'upcoming' ? 'upcoming' : phase ===",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/SeasonalEvent.tsx",
+    "line": 391,
+    "element": "button",
+    "sourceExcerpt": "<button\n                        type=\"button\"\n                        className=\"seasonal-choice\"\n                        data-seasonal-choice=\"dispel\"\n                        aria-pressed={choice === 'dispel'}\n                        disabled={busy}\n                        onClick={() => setChoice('dispel')}\n                      >\n                        <span className=\"seasonal-choice-object\" aria-hidden=\"true\">\n                          ✧\n                        </span>\n                        <strong>{t('dispel')}</strong>\n               ",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/SeasonalEvent.tsx",
+    "line": 410,
+    "element": "button",
+    "sourceExcerpt": "<button\n                        type=\"button\"\n                        className=\"seasonal-choice\"\n                        data-seasonal-choice=\"prepare\"\n                        aria-pressed={choice === 'prepare'}\n                        disabled={busy || !preparation?.eligible}\n                        onClick={() => setChoice('prepare')}\n                      >\n                        <span\n                          className=\"seasonal-choice-object seasonal-healing-object\"\n                          aria-hidden=\"true\"\n                        >\n",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/SeasonalEvent.tsx",
+    "line": 484,
+    "element": "button",
+    "sourceExcerpt": "<button\n                        type=\"button\"\n                        className=\"seasonal-primary\"\n                        data-seasonal-confirm={choice}\n                        disabled={busy || (choice === 'prepare' && !preparation?.eligible)}\n                        onClick={() => command(choice)}\n                      >\n                        {busy\n                          ? t('pending')\n                          : t(choice === 'dispel' ? 'confirmDispel' : 'confirmPrepare')}\n                      </button>\n                    )}\n         ",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/SeasonalEvent.tsx",
+    "line": 501,
+    "element": "button",
+    "sourceExcerpt": "<button\n                        type=\"button\"\n                        className=\"seasonal-primary\"\n                        data-seasonal-prepare-route\n                        disabled={busy}\n                        onClick={() => {\n                          close();\n                          onPrepareRoute();\n                        }}\n                      >\n                        {t('route')}\n                      </button>\n                    )}\n                    {run?.status === 'active' && phase !== 'closed' && (\n                      <",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/SeasonalEvent.tsx",
+    "line": 515,
+    "element": "button",
+    "sourceExcerpt": "<button type=\"button\" className=\"seasonal-secondary\" onClick={close}>\n                        {t('returnRoute')}\n                      </button>\n                    )}\n                  </div>\n                )}\n                {lastOpportunity && (\n                  <p\n                    className=\"seasonal-last-result\"\n                    data-seasonal-last-action={lastOpportunity.action}\n                  >\n                    {t(lastOpportunity.action === 'dispel' ? 'savedDispel' : 'savedPrepare')}\n                  </p>\n                )}",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/SeasonalEvent.tsx",
+    "line": 550,
+    "element": "summary",
+    "sourceExcerpt": "<summary>{t('details')}</summary>\n              <p>{t('objective')}</p>\n              <p>{t('participationCost')}</p>\n              <p>{t('tradeRules')}</p>\n              <p>\n                {t('participationDates', {\n                  start: date(definition.startsAt),\n                  end: date(definition.participationEndsAt),\n                })}\n              </p>\n              <p>{t('finishDates', { end: date(definition.completionEndsAt) })}</p>\n              <p>{t('serverCalendar', { timezone: definition.timezone })}</p>\n              <p>{",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/SeasonalEvent.tsx",
+    "line": 567,
+    "element": "summary",
+    "sourceExcerpt": "<summary>{t('history')}</summary>\n                <ul>\n                  {definition.editionId !== edition.editionId && (\n                    <li>\n                      <button\n                        type=\"button\"\n                        className=\"seasonal-secondary\"\n                        onClick={() => {\n                          setViewedEdition(edition.editionId);\n                          setChoice(null);\n                        }}\n                      >\n                        {t('historicalEdition', { edition: edition.editionId })}\n ",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/SeasonalEvent.tsx",
+    "line": 571,
+    "element": "button",
+    "sourceExcerpt": "<button\n                        type=\"button\"\n                        className=\"seasonal-secondary\"\n                        onClick={() => {\n                          setViewedEdition(edition.editionId);\n                          setChoice(null);\n                        }}\n                      >\n                        {t('historicalEdition', { edition: edition.editionId })}\n                      </button>\n                    </li>\n                  )}\n                  {historical.map((entry) => (\n                    <li key={entry.edition.e",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/SeasonalEvent.tsx",
+    "line": 585,
+    "element": "button",
+    "sourceExcerpt": "<button\n                        type=\"button\"\n                        className=\"seasonal-secondary\"\n                        onClick={() => {\n                          setViewedEdition(entry.edition.editionId);\n                          setChoice(null);\n                        }}\n                      >\n                        {t('historicalEdition', { edition: entry.edition.editionId })} ·{' '}\n                        {entry.completedObjectiveIds.length}/{entry.edition.objectiveIds.length}\n                      </button>\n                    </",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/ShopBook.tsx",
+    "line": 38,
+    "element": "button",
+    "sourceExcerpt": "<button\n        ref={trigger}\n        type=\"button\"\n        className={`shop-book-object game-object${compact ? ' shop-info-object' : ''}`}\n        aria-label={label}\n        aria-haspopup=\"dialog\"\n        onClick={() => setOpen(true)}\n      >\n        {compact ? (\n          <span className=\"shop-info-seal\" aria-hidden=\"true\">\n            i\n          </span>\n        ) : (\n          <span className=\"shop-book-cover\">\n            <Artwork asset={asset} language={language} decorative />\n          </span>\n        )}\n        <span>{caption}</span>\n  ",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/ShopBook.tsx",
+    "line": 58,
+    "element": "dialog",
+    "sourceExcerpt": "<dialog\n          ref={dialog}\n          className=\"shop-ledger\"\n          aria-labelledby={heading}\n          onCancel={() => setOpen(false)}\n        >\n          <div className=\"shop-ledger-heading\">\n            <h2 id={heading}>{label}</h2>\n            <button\n              type=\"button\"\n              className=\"shop-ledger-close game-object\"\n              aria-label={shopText(language, 'closeBook')}\n              onClick={() => setOpen(false)}\n            >\n              <Artwork asset=\"ui.pass\" language={language} decorative />\n            ",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/ShopBook.tsx",
+    "line": 66,
+    "element": "button",
+    "sourceExcerpt": "<button\n              type=\"button\"\n              className=\"shop-ledger-close game-object\"\n              aria-label={shopText(language, 'closeBook')}\n              onClick={() => setOpen(false)}\n            >\n              <Artwork asset=\"ui.pass\" language={language} decorative />\n              <span className=\"visually-hidden\">{shopText(language, 'closeBook')}</span>\n            </button>\n          </div>\n          {children}\n        </dialog>\n      )}\n    </>\n  );\n}\n\nexport function ShopExit({ language, onStreet }: { language: Language; onSt",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/ShopBook.tsx",
+    "line": 86,
+    "element": "button",
+    "sourceExcerpt": "<button\n      type=\"button\"\n      className=\"shop-street-exit game-object\"\n      onClick={onStreet}\n      aria-label={shopText(language, 'street')}\n    >\n      <svg className=\"shop-return-sign\" viewBox=\"0 0 76 54\" aria-hidden=\"true\" focusable=\"false\">\n        <path d=\"M30 6h29v42H30z\" fill=\"#573d32\" stroke=\"#d6b471\" strokeWidth=\"2\" />\n        <path d=\"M39 15h16v29H39z\" fill=\"#132235\" stroke=\"#ad8c54\" />\n        <path d=\"M39 14l12-4v34l-12 3z\" fill=\"#bd985d\" stroke=\"#eed59c\" />\n        <path\n          d=\"M42 29H7m0 0 12-12M7 29l12 12\"\n          ",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/ShopHub.tsx",
+    "line": 58,
+    "element": "button",
+    "sourceExcerpt": "<button\n              type=\"button\"\n              key={shop.id}\n              className=\"shop-storefront game-object\"\n              data-shop={shop.id}\n              data-painted={painted}\n              aria-label={text(language, shop.title)}\n              onClick={() => onEnter(shop.id)}\n            >\n              {!painted && <span className=\"storefront-sign\">{text(language, shop.title)}</span>}\n              <span className=\"storefront-window\">\n                <Artwork\n                  className=\"storefront-interior\"\n                  asse",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/SweetshopScene.tsx",
+    "line": 59,
+    "element": "button",
+    "sourceExcerpt": "<button\n              className=\"sweetshop-object game-object\"\n              data-product={offer.kind}\n              aria-label={t(offer.kind === 'cacao-toad' ? 'cocoaToad' : 'chanceBeans')}\n              aria-pressed={product === offer.kind}\n              onClick={() => setProduct(offer.kind)}\n            >\n              <Artwork\n                asset={offer.kind === 'cacao-toad' ? 'toad.box' : 'beans.jar'}\n                language={language}\n                decorative\n                eager\n              />\n              <span className=\"sweet",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/SweetshopScene.tsx",
+    "line": 119,
+    "element": "button",
+    "sourceExcerpt": "<button\n            className=\"open-frog-action\"\n            data-primary-action\n            disabled={!ready}\n            aria-label={shopText(language, 'openOwnedLabel')}\n            onClick={() =>\n              onOpen({\n                unitId: units[0].id,\n                catalogVersion: content.catalog.version,\n                tableVersion: content.toadTable.version,\n              })\n            }\n          >\n            <Artwork asset=\"toad.seal\" language={language} decorative />\n            <span>\n              {shopText(language, 'openOw",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/SweetshopScene.tsx",
+    "line": 140,
+    "element": "button",
+    "sourceExcerpt": "<button\n            className=\"bean-prepare-action game-object\"\n            data-primary-action\n            onClick={(event) => onPrepare(event.currentTarget)}\n          >\n            <Artwork asset=\"ui.map\" language={language} decorative />\n            <span>\n              {shopText(language, 'prepareGear')}\n              <small>{shopText(language, 'beansNext')}</small>\n            </span>\n            <span aria-hidden=\"true\">→</span>\n          </button>\n        )}\n        {offer && (!frog || !units.length) && (\n          <button\n            c",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/SweetshopScene.tsx",
+    "line": 154,
+    "element": "button",
+    "sourceExcerpt": "<button\n            className={`counter-buy shop-purchase-ticket${!frog && units.length ? ' shop-purchase-secondary' : ''}`}\n            data-primary-action={!units.length || undefined}\n            disabled={!ready || game.inventory.crowns < offer.crowns}\n            aria-label={\n              frog\n                ? shopText(language, 'buyOpenLabel', {\n                    value: numbers.format(offer.crowns),\n                    currency: t('crowns'),\n                  })\n                : t('buyChanceBeans', { value: numbers.format(offer.crowns",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/TacticalBadge.tsx",
+    "line": 87,
+    "element": "summary",
+    "sourceExcerpt": "<summary>\n        <ThreatBadge threat={threat} language={language} />\n      </summary>\n      <p>{tacticalText(language, threat === 'vanguard' ? 'vanguardHelp' : 'fireHelp')}</p>\n    </details>\n  );\n}\n",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/TeamHud.tsx",
+    "line": 182,
+    "element": "button",
+    "sourceExcerpt": "<button\n            className=\"team-token\"\n            data-team-member={member.id}\n            ref={(element) => {\n              if (element) triggers.current.set(member.id, element);\n              else triggers.current.delete(member.id);\n            }}\n            aria-label={member.name}\n            aria-haspopup=\"dialog\"\n            aria-expanded={opened === member.id}\n            aria-controls={opened === member.id ? panelId : undefined}\n            onPointerEnter={(event) => {\n              if (event.pointerType === 'mouse') inspect(membe",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/TeamHud.tsx",
+    "line": 230,
+    "element": "meter",
+    "sourceExcerpt": "<meter\n              min={0}\n              max={member.maxHp}\n              value={member.hp}\n              aria-label={text(language, 'healthOf', { name: member.name })}\n            />\n            <span className=\"team-art-fallback\">{member.name}</span>\n          </button>\n        </div>\n      ))}\n      {unit &&\n        createPortal(\n          <div\n            id={panelId}\n            ref={card}\n            role=\"dialog\"\n            data-inspected-unit={unit.id}\n            aria-label={unit.name}\n            className=\"team-inspector\"\n        ",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/TeamHud.tsx",
+    "line": 258,
+    "element": "button",
+    "sourceExcerpt": "<button\n              className=\"inspector-close\"\n              aria-label={text(language, 'close')}\n              onClick={() => {\n                close();\n                suppressFocus.current = unit.id;\n                triggers.current.get(unit.id)?.focus();\n              }}\n            >\n              ×\n            </button>\n            <Artwork\n              asset={`character.${unit.wizardId}.portrait`}\n              language={language}\n              className=\"inspector-portrait\"\n              decorative\n            />\n            <h3>{un",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/TeamHud.tsx",
+    "line": 342,
+    "element": "button",
+    "sourceExcerpt": "<button\n          className=\"team-prepare game-object\"\n          onClick={(event) => onPrepare(event.currentTarget)}\n          aria-label={prepText(language, 'preparation')}\n          title={prepText(language, 'preparation')}\n        >\n          <Artwork asset=\"ui.map\" language={language} decorative />\n          <span className=\"visually-hidden\">{prepText(language, 'preparation')}</span>\n        </button>\n      )}\n      {run?.status === 'active' && content && (\n        <BondBand\n          units={run.members.map((m) => ({ ...m.unit, source: m.so",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/VisualChoices.tsx",
+    "line": 48,
+    "element": "button",
+    "sourceExcerpt": "<button\n            key={option.id}\n            type=\"button\"\n            className=\"visual-choice\"\n            data-visual-value={option.id}\n            aria-label={option.label}\n            title={option.label}\n            aria-pressed={value === option.id}\n            disabled={option.disabled}\n            onClick={(event) => {\n              animation.current?.cancel();\n              if (!reduced && !document.hidden && value !== option.id)\n                animation.current = animate(\n                  event.currentTarget,\n                  {",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/WandRecipeComparison.tsx",
+    "line": 80,
+    "element": "button",
+    "sourceExcerpt": "<button\n            key={entry.copyId}\n            type=\"button\"\n            className=\"game-object forge-reference-copy\"\n            data-forge-reference={entry.copyId}\n            aria-label={c(language, 'copy', { name: name(entry), number: index + 1 })}\n            aria-pressed={entry.copyId === copy.copyId}\n            onClick={() => setReference({ player: game.playerId, copyId: entry.copyId })}\n          >\n            <Artwork\n              asset={`character.${entry.wizard.id}.thumbnail`}\n              language={language}\n              dec",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/WandRecipeComparison.tsx",
+    "line": 125,
+    "element": "summary",
+    "sourceExcerpt": "<summary>{c(language, 'details')}</summary>\n        <p>\n          {c(\n            language,\n            'condition',\n            Object.fromEntries(\n              (['hp', 'maxHp', 'mana', 'maxMana'] as const).map((key) => [\n                key,\n                numbers.format(preview.current.before[key]),\n              ]),\n            ),\n          )}\n        </p>\n        {preview.current.before.hp === 0 && <p>{c(language, 'fallen')}</p>}\n        {preview.current.before.hp === preview.current.before.maxHp &&\n          preview.current.healingAfter",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/audio/AudioPreferences.tsx",
+    "line": 32,
+    "element": "button",
+    "sourceExcerpt": "<button\n            key={channel}\n            type=\"button\"\n            aria-pressed={preferences[channel]}\n            onClick={() => void toggle(channel)}\n          >\n            <SoundObject kind={channel} />\n            <span>{a(language, channel)}</span>\n            <small>{a(language, preferences[channel] ? 'enabled' : 'disabled')}</small>\n            {preferences[channel] && <Artwork asset=\"ui.seal\" language={language} decorative />}\n          </button>\n        ))}\n      </fieldset>\n      {(preferences.music || preferences.effects) && (\n",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/audio/AudioPreferences.tsx",
+    "line": 47,
+    "element": "summary",
+    "sourceExcerpt": "<summary>{a(language, 'volume')}</summary>\n          {(['music', 'effects'] as const)\n            .filter((channel) => preferences[channel])\n            .map((channel) => {\n              const key = channel === 'music' ? 'musicVolume' : 'effectsVolume';\n              const percent = new Intl.NumberFormat(language, { style: 'percent' }).format(\n                preferences[key],\n              );\n              return (\n                <label key={channel} htmlFor={`${id}-${channel}`}>\n                  <span>{a(language, key)}</span>\n             ",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/audio/AudioPreferences.tsx",
+    "line": 59,
+    "element": "input",
+    "sourceExcerpt": "<input\n                    id={`${id}-${channel}`}\n                    type=\"range\"\n                    min=\"0\"\n                    max=\"1\"\n                    step=\"0.05\"\n                    value={preferences[key]}\n                    aria-valuetext={percent}\n                    onChange={(event) =>\n                      audioPreferences.set({ [key]: Number(event.currentTarget.value) })\n                    }\n                  />\n                </label>\n              );\n            })}\n          <small>{a(language, 'local')}</small>\n        <",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/audio/AudioPreferences.tsx",
+    "line": 85,
+    "element": "button",
+    "sourceExcerpt": "<button type=\"button\" onClick={() => void gameAudio.activate()}>\n            {a(language, 'retry')}\n          </button>\n        </div>\n      )}\n    </section>\n  );\n}\n\nfunction SoundObject({ kind }: { kind: 'music' | 'effects' }) {\n  return (\n    <svg\n      className=\"audio-object\"\n      viewBox=\"0 0 64 64\"\n      aria-hidden=\"true\"\n      focusable=\"false\"\n      fill=\"none\"\n    >\n      <path d=\"M13 53h39M17 49h31\" stroke=\"currentColor\" strokeWidth=\"2\" strokeLinecap=\"round\" />\n      {kind === 'music' ? (\n        <>\n          <path\n            d=\"M",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  },
+  {
+    "path": "src/arcana/presentation/motion/PlaybackPreferences.tsx",
+    "line": 52,
+    "element": "button",
+    "sourceExcerpt": "<button key={value} aria-pressed={speed === value} onClick={() => setSpeed(value)}>\n          {value}x\n        </button>\n      ))}\n    </fieldset>\n  );\n}\n",
+    "note": "Lexical anchor, not an element parser; JSX expressions may continue outside excerpt; conditional/loop occurrences are not rendered counts."
+  }
+]
