@@ -91,7 +91,11 @@ export function availableIntentions(
       );
     });
   if (company) options.push(company);
-  const companion = game.copies.find((copy) => !previousIds.has(copy.wizard.id));
+  const eligibleCompanions = game.copies.filter((copy) => !previousIds.has(copy.wizard.id));
+  const companion =
+    (selected?.kind === 'new-companion'
+      ? eligibleCompanions.find((copy) => copy.wizard.id === selected.wizardId)
+      : undefined) ?? eligibleCompanions[0];
   if (companion) options.push({ kind: 'new-companion', wizardId: companion.wizard.id });
   const previousSynergies = new Set(
     battles.length
@@ -108,7 +112,11 @@ export function availableIntentions(
       affinity: availability.ownedAffinities[copy.wizard.id] ?? 'neutral',
     })),
   );
-  const synergy = possible.find((s) => !previousSynergies.has(s.affinity));
+  const eligibleSynergies = possible.filter((s) => !previousSynergies.has(s.affinity));
+  const synergy =
+    (selected?.kind === 'synergy'
+      ? eligibleSynergies.find((s) => s.affinity === selected.affinity)
+      : undefined) ?? eligibleSynergies[0];
   if (synergy) options.push({ kind: 'synergy', affinity: synergy.affinity });
   const bean = game.inventory.products.some(
     (product) => product.kind === 'random-beans' && product.status === 'available',

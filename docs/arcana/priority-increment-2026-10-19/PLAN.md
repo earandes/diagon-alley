@@ -38,3 +38,5 @@ CI7 conserva A89/A76/A75 correctos y confirma mapa libre. Segundo defecto A70: e
 CI8 candidato4c85312: fuente de estilos autocontenida;57activosA89/A76 correctos y capturas actuales revisadas. A75/A70 y resto en curso. Raw rAF de intentos6/7 preservados completos, comprimidos sin pérdida con SHA256, sin ocultar extremos. Goal activo.
 
 CI8:103A70 y12Halloween correctos; movimiento88correctos/2fallidos(390ESARCANA jarra/pie). Layout compacto de jarra y sincronización de medida corregidos; candidato9 necesario. No se marca completo el goal ni se declara ejecutada la regresión omitida.
+
+CI9 sobre5111468 superó tipos/contenido/749unitarias/120integración/build y A89/A76 antes de cancelación deliberada: R02 demuestra desplazamiento de intención v1 viable al crecer colección, corregido con2RED→GREEN y751unitarias locales. Se prepara candidato10; CI9 parcial no acredita A70/A69/regresión. Goal activo.

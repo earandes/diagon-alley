@@ -23,3 +23,11 @@ Sin otro defecto demostrable en el contraste final de código y pruebas. El plan
 Hechos: máximo dos categorías, prioridad del plan solo si ocurrió, cantidades aplicadas y actor/objetivo del bando propio. App y cierre relacionan la preferencia con el runId del receipt, incluidos resultados históricos. Un log antiguo puede aportar menos hechos, sin reconstruir daño o azar. La revisión no acredita comprensión humana, dispositivo físico ni un E2E de compañía con colección fabricada.
 
 Otros defectos de integración detectados y corregidos constan con sus fallos originales en QA: fixture inválida, retratos del taller, reflujo320/200%, excepción de puntero de guía, enlace doble a Confitería, selector de retorno al añadir libro y espacio de ayuda sobre nodo. Los dos primeros fallos de copy/selector son de prueba; el solape del mapa, escala y navegación son de producto. No se presentan como la misma clase de evidencia.
+
+## R02 · Compatibilidad de intenciones v1 ante crecimiento de colección
+
+**Evidencia → problema.** El mismo patrón de R01 persistía en sugerencias antiguas: una sinergia de sombras seleccionada seguía viable, pero adquirir tres identidades de alquimia hacía que el primer `find` devolviera alquimia antes de conservar la elección. Dos pruebas nuevas fallaron antes de corregir: crecimiento real para sinergia y cambio declarado de orden del read-model para compañero. Este segundo caso no se presenta como comportamiento de adquisición append-only.
+
+**Cambio mínimo.** Dentro del conjunto ya elegible, priorizar afinidad o identidad seleccionada; después sugerir la primera alternativa. Sin nuevos umbrales, persistencia, premios o más de tres opciones. Si pierde elegibilidad, no se conserva artificialmente.
+
+**Aceptación y prueba.** Se conserva el plan viable; se marca no disponible el realmente inviable. Dos RED→GREEN,30/30 focales y tipos correctos; batería local completa posterior117archivos/751pruebas correctas. La CI9 se canceló expresamente tras preservar A89/A76 correctos para no ejecutar el resto sobre código obsoleto. El candidato siguiente debe superar la validación integrada; no se atribuye esa cobertura a la corrección todavía.

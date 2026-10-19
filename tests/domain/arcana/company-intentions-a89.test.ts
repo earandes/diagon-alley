@@ -87,6 +87,62 @@ function evidenced(
 }
 
 describe('A89 company intention is a versioned voluntary plan', () => {
+  it('keeps a viable selected legacy shadows plan when acquisition enables an earlier affinity', () => {
+    const shadowId = Object.entries(availability.ownedAffinities).find(
+      ([, affinity]) => affinity === 'shadows',
+    )![0];
+    const alchemyIds = Object.entries(availability.ownedAffinities)
+      .filter(([, affinity]) => affinity === 'alchemy')
+      .slice(0, 3)
+      .map(([id]) => id);
+    const base = closed(['merlin', shadowId]);
+    const choice = { kind: 'synergy', affinity: 'shadows' } as const;
+    expect(availableIntentions(base, availability)).toContainEqual(choice);
+    const grown = closed([...new Set(['merlin', shadowId, ...alchemyIds])]);
+    const selected = {
+      ...grown,
+      exploration: {
+        ...grown.exploration!,
+        intention: { version: 1 as const, afterRunId: 'old', runId: null, choice },
+      },
+    };
+    expect(availableIntentions(selected, availability)).toContainEqual(choice);
+    expect(availableIntentions(selected, availability).length).toBeLessThanOrEqual(3);
+    expect(intentionProgress(selected, availability)?.status).toBe('selected');
+    const noShadows = {
+      ...selected,
+      copies: selected.copies.filter(
+        (copy) => availability.ownedAffinities[copy.wizard.id] !== 'shadows',
+      ),
+    };
+    expect(availableIntentions(noShadows, availability)).not.toContainEqual(choice);
+    expect(intentionProgress(noShadows, availability)?.status).toBe('unavailable');
+  });
+
+  it('preserves a selected owned companion across enumeration changes, but not after ownership is lost', () => {
+    // Declared read-model order change, not a claim that normal append-only acquisition reorders copies.
+    const base = closed(['merlin', 'flamel']);
+    const choice = { kind: 'new-companion', wizardId: 'flamel' } as const;
+    expect(availableIntentions(base, availability)).toContainEqual(choice);
+    const grown = closed(['merlin', 'circe', 'flamel']);
+    const selected = {
+      ...grown,
+      exploration: {
+        ...grown.exploration!,
+        intention: { version: 1 as const, afterRunId: 'old', runId: null, choice },
+      },
+    };
+    expect(availableIntentions(selected, availability)).toContainEqual(choice);
+    expect(availableIntentions(selected, availability).length).toBeLessThanOrEqual(3);
+    expect(intentionProgress(selected, availability)?.status).toBe('selected');
+    const withoutCompanion = {
+      ...selected,
+      copies: selected.copies.filter((copy) => copy.wizard.id !== 'flamel'),
+    };
+    expect(availableIntentions(withoutCompanion, availability)).not.toContainEqual(choice);
+    expect(intentionProgress(withoutCompanion, availability)?.status).toBe('unavailable');
+  });
+
   it('keeps a viable selected Ravenclaw plan when new copies make Gryffindor eligible', () => {
     const idsFor = (houseName: string) =>
       Object.entries(availability.combatRules.houseMembers!)
