@@ -1,4 +1,4 @@
-import { useId } from 'react';
+import { useId, type ReactNode } from 'react';
 import type { GameState } from '../application/game';
 import type { BeanAssignment } from '../application/run-contracts';
 import type { CombatRules } from '../domain/combat/engine';
@@ -22,6 +22,7 @@ export function BossPartyStage({
   ready,
   rules,
   onPrepare,
+  supplies,
 }: {
   run: Run;
   game: GameState;
@@ -30,12 +31,13 @@ export function BossPartyStage({
   ready: boolean;
   rules?: CombatRules;
   onPrepare: (origin: HTMLButtonElement) => void;
+  supplies?: ReactNode;
 }) {
   const draft = validBeanAssignments(assignments, run, game);
   const affinityDescription = useId();
   return (
     <section
-      className="boss-party-stage"
+      className={`boss-party-stage${supplies ? ' boss-party-with-supplies' : ''}`}
       data-boss-party
       data-party-pack={activePack.id}
       aria-label={s(language, 'party')}
@@ -167,6 +169,7 @@ export function BossPartyStage({
           language={language}
         />
       )}
+      {supplies}
     </section>
   );
 }

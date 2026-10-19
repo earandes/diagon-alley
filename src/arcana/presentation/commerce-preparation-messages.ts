@@ -71,6 +71,7 @@ const messages = {
     en: 'Confirmed combat consumes the jar and records its flavour.',
   },
   distribution: { es: 'Posibilidades · tabla {version}', en: 'Possibilities · table {version}' },
+  draftCompact: { es: 'Borrador {count}', en: 'Draft {count}' },
   draft: { es: '{count} asignados · sin consumir', en: '{count} assigned · not consumed' },
   draftOne: { es: '1 asignado · sin consumir', en: '1 assigned · not consumed' },
 } as const;

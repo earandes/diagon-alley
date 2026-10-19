@@ -482,3 +482,44 @@
     min-height: 60px;
   }
 }
+
+@media (max-width: 620px) {
+  /* One preparation shelf: formation, affinities and jar. The third object no
+     longer starts a separate row under two rows of equipped companions. */
+  .boss-party-stage.boss-party-with-supplies {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    column-gap: 4px;
+  }
+  .boss-party-with-supplies > .house-band {
+    grid-column: 1 / -1;
+  }
+  .boss-party-with-supplies > .node-bean-preparation {
+    min-width: 0;
+    margin: 0;
+  }
+  .boss-party-with-supplies > .node-bean-preparation[open] {
+    grid-column: 1 / -1;
+  }
+  .boss-party-with-supplies > .node-bean-preparation > summary {
+    grid-template-columns: 32px minmax(0, 1fr);
+    justify-content: center;
+    gap: 2px;
+    padding: 2px;
+  }
+  .game-shell .boss-party-with-supplies .boss-party-prepare {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2px;
+    padding: 2px;
+  }
+}
+
+@media (max-width: 620px) {
+  .boss-party-with-supplies > .node-bean-preparation .boss-supply-caption {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+  }
+  .boss-party-with-supplies > .node-bean-preparation > summary::after {
+    content: none;
+  }
+}

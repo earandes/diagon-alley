@@ -1,7 +1,7 @@
 /* A92: a folio has a cover and a consultation layer. No domain state lives in its layout. */
 .game-shell .album.album-illustrated {
   gap: clamp(10px, 2vw, 20px);
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 8rem), 1fr));
   align-items: start;
 }
 .game-shell .album.album-illustrated[data-album-capacity='8'] {
@@ -209,4 +209,20 @@
   .game-shell .album-illustrated .card h3 {
     font-size: 0.88rem;
   }
+}
+
+/* At enlarged text a two-card folio may contain an unbroken name or badge wider
+   than its track. Let the card shrink and its functional labels wrap; no clipping. */
+.game-shell .album-illustrated .card {
+  min-width: 0;
+}
+.game-shell
+  .album-illustrated
+  .card
+  :is(h3, .enchanted-label, .rarity-badge, .card-ownership, .card-team-state) {
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+.game-shell .album-illustrated .rarity-badge {
+  flex-wrap: wrap;
 }

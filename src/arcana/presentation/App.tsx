@@ -909,15 +909,17 @@ export function App() {
                                 ready={ready}
                                 rules={effectivePreparationRules(run, content.combatRules)}
                                 onPrepare={(origin) => openPreparation('formation', origin)}
-                              />
-                              <BossSupplies
-                                run={run}
-                                game={game}
-                                content={content ?? undefined}
-                                language={language}
-                                ready={ready}
-                                assignments={assignments}
-                                onChange={setAssignments}
+                                supplies={
+                                  <BossSupplies
+                                    run={run}
+                                    game={game}
+                                    content={content ?? undefined}
+                                    language={language}
+                                    ready={ready}
+                                    assignments={assignments}
+                                    onChange={setAssignments}
+                                  />
+                                }
                               />
                             </div>
                           )}

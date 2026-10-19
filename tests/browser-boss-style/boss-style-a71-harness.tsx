@@ -122,15 +122,17 @@ function Fixture() {
               ready
               rules={content.combatRules}
               onPrepare={(origin) => setConsulted(origin.dataset.bossMember ?? 'formation')}
-            />
-            <BossSupplies
-              run={run}
-              game={game}
-              content={content}
-              language={language}
-              ready
-              assignments={assignments}
-              onChange={(value) => setAssignments(value ?? [])}
+              supplies={
+                <BossSupplies
+                  run={run}
+                  game={game}
+                  content={content}
+                  language={language}
+                  ready
+                  assignments={assignments}
+                  onChange={(value) => setAssignments(value ?? [])}
+                />
+              }
             />
           </div>
           <output data-component-consulted>{consulted}</output>

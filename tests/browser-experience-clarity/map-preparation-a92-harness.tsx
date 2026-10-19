@@ -195,18 +195,20 @@ function Fixture() {
                 ready
                 rules={content.combatRules}
                 onPrepare={prepare}
+                supplies={
+                  fullPreparation ? (
+                    <BossSupplies
+                      run={run}
+                      game={game}
+                      content={content}
+                      language={language}
+                      ready
+                      assignments={[]}
+                      onChange={() => {}}
+                    />
+                  ) : null
+                }
               />
-              {fullPreparation && (
-                <BossSupplies
-                  run={run}
-                  game={game}
-                  content={content}
-                  language={language}
-                  ready
-                  assignments={[]}
-                  onChange={() => {}}
-                />
-              )}
             </div>
             <div className="node-event-actions node-combat-actions">
               <button className="node-confirm-action" onClick={() => setSelection('confirmed')}>
