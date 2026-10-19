@@ -1,0 +1,83 @@
+
+ RUN  v5.0.3 /Users/enricarandes/work/diagon-alley
+
+ ❯ tests/domain/arcana/recovery-clarity-a92.test.ts (10 tests | 4 failed) 11ms
+   ❯ A92 contextual recovery es (5)
+     × offers sign-in without creating another player, pending=false 7ms
+     × offers sign-in without creating another player, pending=true 1ms
+   ❯ A92 contextual recovery en (5)
+     × offers sign-in without creating another player, pending=false 0ms
+     × offers sign-in without creating another player, pending=true 0ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 4 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/domain/arcana/recovery-clarity-a92.test.ts > A92 contextual recovery es > offers sign-in without creating another player, pending=false
+AssertionError: expected '<section class="recovery-notice" data…' to contain 'Volver a entrar'
+
+Expected: "Volver a entrar"
+Received: "<section class="recovery-notice" data-recovery-notice="true" aria-busy="false"><p role="alert">La sesión ya no permite continuar.</p><small>Reconsultar no crea otra cuenta ni repite el gasto.</small><div class="recovery-actions"><button class="game-object">Comprobar sesión</button><details class="recovery-new-entry"><summary>Entrar en otro ensayo</summary><p>Es una entrada explícita al ensayo. Si la sesión anterior caducó, se creará otra partida sin trasladar sus recursos.</p><button class="game-object">Entrar en otro ensayo</button></details></div></section>"
+
+ ❯ tests/domain/arcana/recovery-clarity-a92.test.ts:28:20
+     26|         onEnter: enter, onSignIn: signIn,
+     27|       }));
+     28|       expect(html).toContain(language === 'es' ? 'Volver a entrar' : '…
+       |                    ^
+     29|       if (retained) {
+     30|         expect(html).toContain(language === 'es' ? 'Recuperar operació…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/4]⎯
+
+ FAIL  tests/domain/arcana/recovery-clarity-a92.test.ts > A92 contextual recovery es > offers sign-in without creating another player, pending=true
+AssertionError: expected '<section class="recovery-notice" data…' to contain 'Volver a entrar'
+
+Expected: "Volver a entrar"
+Received: "<section class="recovery-notice" data-recovery-notice="true" aria-busy="false"><p role="alert">La sesión ya no permite continuar.</p><p>Hay una operación pendiente. Conservamos su petición; recupera el resultado antes de empezar otra partida.</p><small>Reconsultar no crea otra cuenta ni repite el gasto.</small><div class="recovery-actions"><button class="game-object">Recuperar operación</button></div></section>"
+
+ ❯ tests/domain/arcana/recovery-clarity-a92.test.ts:28:20
+     26|         onEnter: enter, onSignIn: signIn,
+     27|       }));
+     28|       expect(html).toContain(language === 'es' ? 'Volver a entrar' : '…
+       |                    ^
+     29|       if (retained) {
+     30|         expect(html).toContain(language === 'es' ? 'Recuperar operació…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/4]⎯
+
+ FAIL  tests/domain/arcana/recovery-clarity-a92.test.ts > A92 contextual recovery en > offers sign-in without creating another player, pending=false
+AssertionError: expected '<section class="recovery-notice" data…' to contain 'Sign in again'
+
+Expected: "Sign in again"
+Received: "<section class="recovery-notice" data-recovery-notice="true" aria-busy="false"><p role="alert">This session can no longer continue.</p><small>Checking again does not create another account or repeat the cost.</small><div class="recovery-actions"><button class="game-object">Check session</button><details class="recovery-new-entry"><summary>Enter another trial</summary><p>This explicitly enters the trial. If the previous session expired, a separate game will be created without transferring its resources.</p><button class="game-object">Enter another trial</button></details></div></section>"
+
+ ❯ tests/domain/arcana/recovery-clarity-a92.test.ts:28:20
+     26|         onEnter: enter, onSignIn: signIn,
+     27|       }));
+     28|       expect(html).toContain(language === 'es' ? 'Volver a entrar' : '…
+       |                    ^
+     29|       if (retained) {
+     30|         expect(html).toContain(language === 'es' ? 'Recuperar operació…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/4]⎯
+
+ FAIL  tests/domain/arcana/recovery-clarity-a92.test.ts > A92 contextual recovery en > offers sign-in without creating another player, pending=true
+AssertionError: expected '<section class="recovery-notice" data…' to contain 'Sign in again'
+
+Expected: "Sign in again"
+Received: "<section class="recovery-notice" data-recovery-notice="true" aria-busy="false"><p role="alert">This session can no longer continue.</p><p>An operation is pending. Its request is retained; recover the result before starting another game.</p><small>Checking again does not create another account or repeat the cost.</small><div class="recovery-actions"><button class="game-object">Recover operation</button></div></section>"
+
+ ❯ tests/domain/arcana/recovery-clarity-a92.test.ts:28:20
+     26|         onEnter: enter, onSignIn: signIn,
+     27|       }));
+     28|       expect(html).toContain(language === 'es' ? 'Volver a entrar' : '…
+       |                    ^
+     29|       if (retained) {
+     30|         expect(html).toContain(language === 'es' ? 'Recuperar operació…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/4]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  4 failed | 6 passed (10)
+   Start at  21:50:44
+   Duration  425ms (transform 77%, import 20%, tests 3%)
+

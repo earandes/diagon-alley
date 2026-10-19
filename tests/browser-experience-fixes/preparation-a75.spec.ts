@@ -1,3 +1,4 @@
+import { chooseBeanJar } from '../browser-trial/bean-controls';
 import { selectedA75 } from './selected-evidence';
 import { test, expect, type Page } from '@playwright/test';
 
@@ -122,9 +123,9 @@ for (const language of ['es', 'en'] as const) {
       await expect(summary).toHaveAttribute('data-bean-draft', '0');
       await expect(summary).not.toContainText('/');
       await summary.click();
-      await page.locator('[data-bean-id="a75-jar-0"]').click();
+      await chooseBeanJar(page, 'a75-jar-0');
       await page.locator('[data-bean-unit="a75-copy-0"]').click();
-      await page.locator('[data-bean-id="a75-jar-1"]').click();
+      await chooseBeanJar(page, 'a75-jar-1');
       await page.locator('[data-bean-unit="a75-pact-copy"]').click();
       await expect(summary).toHaveAttribute('data-bean-draft', '2');
       await expect(summary).toHaveAttribute('data-bean-stock', '3');

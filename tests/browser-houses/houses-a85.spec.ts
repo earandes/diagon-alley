@@ -113,6 +113,7 @@ test('A85 enchanted reveal is finite, skippable and retains its finish in the co
     await expect(page.locator('.album .enchanted-finish')).toBeVisible();
     await page.locator('.album-card-inspect').click();
     await expect(page.locator('.album-card-folio .enchanted-label')).toBeVisible();
+    await page.locator('.album-copy-details > summary').click();
     const tokens = page.locator('.album-copy-tokens button');
     await expect(tokens).toHaveCount(2);
     await tokens.nth(1).click();

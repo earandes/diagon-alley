@@ -1,3 +1,4 @@
+import { chooseBeanJar } from './bean-controls';
 import { leaveBattle } from './battle-controls';
 import { expect, test, type Page } from '@playwright/test';
 import { mkdir, writeFile } from 'node:fs/promises';
@@ -287,7 +288,7 @@ for (const language of ['es', 'en'] as const) {
     await page.locator('.node-bean-preparation > summary').click();
     const before = await readGame(page),
       actor = before.exploration!.run!.members[0].unit.id;
-    await page.locator(`[data-bean-id="${bean.id}"]`).click();
+    await chooseBeanJar(page, bean.id);
     await page.locator(`[data-bean-unit="${actor}"]`).click();
     expect(await readGame(page)).toEqual(before);
     await confirmEvent(page, language);

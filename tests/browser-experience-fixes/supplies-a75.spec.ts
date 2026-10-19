@@ -1,3 +1,4 @@
+import { chooseBeanJar } from '../browser-trial/bean-controls';
 import { leaveBattle } from '../browser-trial/battle-controls';
 import { test, expect } from '@playwright/test';
 import { changeLanguage, startExpedition } from '../browser-trial/game-fixture';
@@ -76,7 +77,7 @@ for (const language of ['es', 'en'] as const) {
       await expect(summary).toHaveAttribute('data-bean-draft', '0');
       await expect(summary).not.toContainText('/');
       await summary.click();
-      await page.locator(`[data-bean-id="${jar.id}"]`).click();
+      await chooseBeanJar(page, jar.id);
       await page.locator(`[data-bean-unit="${carrier}"]`).click();
       await expect(summary).toHaveAttribute('data-bean-draft', '1');
       await expect(summary).toHaveAttribute('data-bean-stock', String(stock));
@@ -105,7 +106,7 @@ for (const language of ['es', 'en'] as const) {
       await expect(summary).toHaveAttribute('data-bean-draft', '0');
       await expect(summary).toHaveAttribute('data-bean-stock', String(stock));
       await summary.click();
-      await page.locator(`[data-bean-id="${jar.id}"]`).click();
+      await chooseBeanJar(page, jar.id);
       await page.locator(`[data-bean-unit="${carrier}"]`).click();
       let advancePosts = 0;
       page.on('request', (request) => {

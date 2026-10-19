@@ -1,3 +1,4 @@
+import { chooseBeanJar } from '../browser-trial/bean-controls';
 import { test, expect, type Page } from '@playwright/test';
 import { mkdir, writeFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
@@ -839,7 +840,7 @@ test('A89 one connected expedition joins confirmed facts, collection source, wan
   await page.goto(`${origin}/#/map`);
   await page.locator(`[data-node="${path.at(-1)}"]`).click();
   await page.locator('.node-bean-preparation > summary').click();
-  await page.locator(`[data-bean-id="${jarId}"]`).click();
+  await chooseBeanJar(page, jarId);
   const carrier = bought.exploration!.run!.members.find((entry) => entry.unit.hp > 0)!.unit.id;
   await page.locator(`[data-bean-unit="${carrier}"]`).click();
   await expect(page.locator(`[data-bean-unit="${carrier}"]`)).toHaveAttribute(
