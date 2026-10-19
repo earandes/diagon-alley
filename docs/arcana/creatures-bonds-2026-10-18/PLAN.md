@@ -11,7 +11,9 @@
 - [x] Implementar posición inicial del diálogo y anclaje acotados, inyección nativa de recurso ausente y footer de fixture solo enmapa; tipos/build/harness correctos. Aserciones originales conservadas.
 - [x] Cerrar jobcheck completof79:380gráficos,681unit y111PG/Redis correctos; nueve fallos de expectativas en regresión conservados.
 - [x] Corregir las dos expectativas de regresión. Resume057detecta por primera vez elensayoWebKitpareado:23ms frentea20; regresión aún no repetida.
-- [ ] Validar deduplicación de publicación DOM delrenderer con fullrestaurado y ensayo WebKitobligatorio. Mismas figuras/log/budget; investigar si elobjetivo no se alcanza.
+- [x] Contrastar deduplicaciónf0: no basta (WebKit22ms); conservar crudos. Contención024 tampoco mejora (22/23/22), retirada.
+- [ ] Contrastar superficie compuesta7d90924 mediante fasewebkit original; analizar dimensiones/CPU y diferencias frentea la referencia históricaA84. No reducir figuras o resolución ni atribuir una causa GPU sin evidencia.
+- [ ] Restaurar full, validar candidato real con ambas comparaciones pareadas y todos los recorridos afectados.
 - [ ] Cerrar los dos recorridos de QAcorregidos y comprobar maincompleto antes de finalizar.
 - [ ] Consolidar documentación/evidencia, revisar diff, integrar resultado validado y comprobar main/CI; sin despliegue.
 

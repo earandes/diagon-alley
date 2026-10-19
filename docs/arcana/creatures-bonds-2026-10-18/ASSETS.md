@@ -1,6 +1,6 @@
 # A87 · Recursos y consumidores
 
-Implementados en la rama A87; aceptación en contexto Linux pendiente. El [manifest de producción](../../../design/creatures-a87/manifest.json) y el [índice de exports](../../../design/creatures-a87/exports-index.json) conservan rutas, dimensiones, variantes, transformaciones y procedencia.
+Implementados en la rama A87. Contexto y poses contrastados en Linux f79 (capturas seleccionadas y pruebas temporales); cierre del candidato posterior pendiente. El [manifest de producción](../../../design/creatures-a87/manifest.json) y el [índice de exports](../../../design/creatures-a87/exports-index.json) conservan rutas, dimensiones, variantes, transformaciones y procedencia.
 
 ## Familia ilustrada
 
@@ -18,7 +18,7 @@ Son pinturas planas con dos poses, no piezas anatómicas ni un rig corporal. Las
 | Cast | Una misma Sprite de arena alterna textura durante el gesto | Figure; la pose ausente no bloquea el combate |
 | Emblemas de grupo | Libro de preparación, mapa, clasificación e inspector de arena | Nombre localizado |
 
-Las criaturas se comparten entre Diagon Alley y ARCANA mediante el sistema de assets existente. Los nombres y contextos se localizan por paquete; el texto funcional permanece fuera de las imágenes. No se sustituyen fondos o personajes anteriores. Falta comprobar material, encuadre y peso visual en las capturas reales de ambos paquetes. Una similitud en un estudio de color no sustituye esa revisión.
+Las criaturas se comparten entre Diagon Alley y ARCANA mediante el sistema de assets existente. Los nombres y contextos se localizan por paquete; el texto funcional permanece fuera de las imágenes. No se sustituyen fondos o personajes anteriores. Se revisaron material, encuadre y peso visual en capturas Linux de ambos paquetes: familia ilustrada de criaturas coherente con Diagon; los humanos históricos de ARCANA conservan un acabado distinto, sin rehacerlos en este alcance. Una similitud en un estudio de color no sustituye esa revisión.
 
 ## Tres emblemas originales
 
@@ -40,7 +40,7 @@ Siete WAV PCM16 mono de 24 kHz, 220–340 ms y 94.388 bytes en total. Fuente rep
 
 Se utiliza el ajuste de efectos A84. No hay audio al entrar, nueva música, otro control permanente o reproducción obligatoria. Una sola voz de lanzamiento; la especie prevalece sobre el grupo. La protección registrada puede sustituir el impacto ordinario, sin sumar otra capa de sonido.
 
-Picos, RMS, DC, formato y mezcla se han comprobado numéricamente. El límite absoluto calculado para cuatro voces máximas, ambiente y ganancias actuales es 0,82948, menor que 1. Es una cota digital conservadora, no una escucha perceptiva ni una medición en altavoz físico. La decodificación nativa y el ciclo de vida en navegador están preparados para CI; no se dan por ejecutados todavía.
+Picos, RMS, DC, formato y mezcla se han comprobado numéricamente. El límite absoluto calculado para cuatro voces máximas, ambiente y ganancias actuales es 0,82948, menor que 1. Es una cota digital conservadora, no una escucha perceptiva ni una medición en altavoz físico. Decodificación nativa de los16WAV y ciclo de vida con consentimiento ejecutados enCI f79. La prueba observa arranques de fuentes nativas y peticiones, no acredita escucha humana de todos los cues.
 
 ## Procedencia y aceptación
 

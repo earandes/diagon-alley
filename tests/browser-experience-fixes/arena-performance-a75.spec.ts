@@ -1,6 +1,6 @@
 import { pauseBattle, skipBattle, setDoubleBattleSpeed } from '../browser-trial/battle-controls';
 import { test, expect } from '@playwright/test';
-import { mkdir, writeFile } from 'node:fs/promises';
+import { mkdir, writeFile, readFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
 import { createHash } from 'node:crypto';
 declare global {
@@ -15,6 +15,7 @@ declare global {
     };
   }
 }
+const reference = JSON.parse(await readFile('tools/verification/a75-reference.json', 'utf8'));
 const evidence = resolve('docs/arcana/experience-fixes-2026-10-17/evidence/linux');
 const percentile = (numbers: number[], p: number) =>
   [...numbers].sort((a, b) => a - b)[Math.max(0, Math.ceil(numbers.length * p) - 1)];
@@ -224,7 +225,9 @@ test('A75 paired mobile sustained replay and lifecycle preserve confirmed log', 
     JSON.stringify(
       {
         sha: process.env.GITHUB_SHA,
-        baseline: '937a0a1f00bdbca7009a80cd99b7b4b450f652f0',
+        baseline: reference.baseline,
+        historicalBaseline: reference.historicalBaseline,
+        referenceReason: reference.reason,
         fixture: true,
         physicalDevice: false,
         engine,

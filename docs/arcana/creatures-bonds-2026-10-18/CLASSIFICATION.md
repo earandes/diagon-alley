@@ -1,6 +1,6 @@
 # A87 · Lista de clasificación
 
-Clasificación implementada en catálogo 4 y traits-v2 de la rama A87; pendiente de validación gráfica Linux. Casas/escuelas/oficios reutilizados deA85; nuevas afiliaciones contrastadas con fuentes oficiales abajo. Se registran vínculos a lo largo de la historia, sin adjudicar un juicio moral o una fecha común a todos los cromos. Las copias/historiales anteriores no se reescriben.
+Clasificación implementada en catálogo 4 y traits-v2 de la rama A87; clasificación/filtros comprobados en la matriz Linux f79; cierre técnico del candidato posterior pendiente. Casas/escuelas/oficios reutilizados deA85; nuevas afiliaciones contrastadas con fuentes oficiales abajo. Se registran vínculos a lo largo de la historia, sin adjudicar un juicio moral o una fecha común a todos los cromos. Las copias/historiales anteriores no se reescriben.
 
 | ID estable | PresentaciónDiagon | Casa | Escuela/oficio | Afiliaciones históricas | Naturaleza / precisión |
 |---|---|---|---|---|---|

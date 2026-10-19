@@ -1,6 +1,6 @@
 # A87 · Matriz de cobertura técnica
 
-Estado del candidato `47b5892`: CI39182975065 terminada fallida, con dos correcciones preparadas para otro candidato. Los resultados definitivos y el checkout probado deben leerse en QA. Esta matriz separa capas; una fixture visual no acredita una concesión del servidor.
+Referencia de cobertura ejecutada: f79d9ce / CI39186209500, jobcheck correcto con380comprobaciones gráficas,681unitarias y111conPG/Redis. Regresión:129correctas y9fallidas por dos expectativas corregidas posteriormente (contador30→34 y primer combate alcanzable duelo/jefe); pendientes de ejecución final. La comprobación adicional pareada WebKit muestra un límite abierto contraA84. Los cambios posteriores de composición necesitan su propia validación; no se atribuye elcheckf79 al código nuevo. QA conserva cada SHA, resultado y omisión.
 
 | Riesgo / recorrido | Evidencia preparada o ejecutada | Límite |
 |---|---|---|

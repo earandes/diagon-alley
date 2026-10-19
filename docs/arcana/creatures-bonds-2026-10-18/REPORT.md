@@ -30,7 +30,7 @@ La autoridad conserva dueño, clave, petición, resultado y versiones. Consultar
 
 Cuatro familias de ilustración con dos poses alineadas por contacto; 16 WebP transparentes, tres emblemas SVG y siete cues originales. Fuente, prompts, transformaciones y consumidores en [ASSETS](ASSETS.md). No se atribuye un rig corporal a dos pinturas planas. El libro de vínculo usa cinco medallones compactos y distingue afinidad de vínculo. La arena utiliza una Sprite por unidad y el reloj existente; no añade filtros, relojes o partículas continuas.
 
-Los efectos de protección y remate dependen de cantidades del log. Ayudante y receptor se diferencian. El sonido usa Ajustes A84, desactivado hasta consentimiento, con una voz de lanzamiento y límite existente de voces. Reducido, pausa, omisión y fallbacks conservan resultado y acciones. La aceptación visual y temporal del candidato sigue pendiente de CI.
+Los efectos de protección y remate dependen de cantidades del log. Ayudante y receptor se diferencian. El sonido usa Ajustes A84, desactivado hasta consentimiento, con una voz de lanzamiento y límite existente de voces. Reducido, pausa, omisión y fallbacks conservan resultado y acciones. Las capturas seleccionadas y las comprobaciones temporales f79 acreditan composición y funcionamiento de poses; el candidato posterior sigue pendiente del presupuesto WebKit y la regresión final.
 
 ## Calibración y economía
 

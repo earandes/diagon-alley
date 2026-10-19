@@ -1,9 +1,11 @@
 import { spawnSync } from 'node:child_process';
-import { mkdirSync, mkdtempSync, symlinkSync, writeFileSync, rmSync } from 'node:fs';
+import { mkdirSync, mkdtempSync, symlinkSync, writeFileSync, rmSync, readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 if (process.platform !== 'linux') throw Error('A75 graphical reference is Linux CI only.');
-const baseline = '937a0a1f00bdbca7009a80cd99b7b4b450f652f0',
-  root = process.cwd();
+const { baseline, historicalBaseline, reason } = JSON.parse(
+  readFileSync(new URL('./a75-reference.json', import.meta.url), 'utf8'),
+);
+const root = process.cwd();
 mkdirSync(resolve('test-results'), { recursive: true });
 const target = mkdtempSync(resolve('test-results/a75-reference-source-'));
 function run(command, args, cwd = root) {
@@ -43,6 +45,8 @@ writeFileSync(
   JSON.stringify(
     {
       baseline,
+      historicalBaseline,
+      reason,
       sourcePatch: null,
       mode: 'Identical incumbent fixture and runtime; no instrumentation patch. Same installed dependency lock family.',
     },

@@ -75,3 +75,9 @@ Siguiente ensayo acotado con fasewebkit original: contención CSS del host absol
 CI39194828275 fasewebkit fallida. P95 referencia18/17/18ms, candidato22/23/22ms. Surface366×605 frente366×766, DPR1. Paint/submitP95~1ms enambos y commitsReactP95~2ms, con precisión/semánticaCPU/wall del entorno, no GPU. La contención no aporta mejora y se retira. No se omite el resultado adverso.
 
 Se prueba a continuación una superficie de composición independiente para el host transparente con translateZ(0), manteniendo dimensiones, resolución y las diez figuras. Hipótesis acotada de composición con etiquetas/meters nativos; no es una atribución GPU confirmada. El layer vive y se desmonta con la escena; no añade texturasPixi, eventos o caché global. Misma matriz pareada, guard y umbral.
+
+## Contraste7d90924 y alcance correcto de la referencia
+
+CI39195537584 fallida: A84P95WebKit18/18/18ms y candidato23/23/23ms. translateZ no mejora y se retira. No se mantiene una capa sin beneficio demostrado. Las dos modificacionesCSS ensayadas quedan fuera del producto final.
+
+La comparación usada hasta aquí reconstruyeA84(937a0a1), no elmain440d278(A85+A86) sobre elque comienzaA87. El lienzo ya creció enA86; es preciso medir ese predecesor antes de atribuir el límite a las criaturas. Se fija440d278 como referencia inmediata, compartida por builder/test mediante a75-reference.json. Mismos3pares, tamaños, log, instrumentación, cachés declaradas, umbral no-regresión max(20,medianaReferencia+1) y guard original. No se aumenta el20ms objetivo. Los pares históricosA84 desfavorables permanecen y no se presentan como superados. SiA86 también supera20, se documentará el objetivo absoluto pendiente además de comprobar la no-regresión deA87; no se ocultará esa diferencia en una afirmación de20ms cumplidos.
