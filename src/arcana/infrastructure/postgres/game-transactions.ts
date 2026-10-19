@@ -1,5 +1,6 @@
 import type { SeasonalState } from '../../domain/seasonal/events';
 import { readFile } from 'node:fs/promises';
+import { isDeepStrictEqual } from 'node:util';
 import type { Pool, PoolClient } from 'pg';
 import {
   gameSnapshot,
@@ -200,8 +201,18 @@ async function loadGame(client: PoolClient, playerId: string, lock: boolean): Pr
   });
 }
 
-async function writeGame(client: PoolClient, state: GameState): Promise<void> {
+async function writeGame(
+  client: PoolClient,
+  state: GameState,
+  priorReceipts: GameState['receipts'] = [],
+): Promise<void> {
   validateGame(state);
+  // History is immutable, including order. Reject replacement before any write, under account lock.
+  if (
+    state.receipts.length < priorReceipts.length ||
+    priorReceipts.some((receipt, index) => !isDeepStrictEqual(receipt, state.receipts[index]))
+  )
+    throw new ArcanaError('INVALID_GAME');
   await client.query('UPDATE arcana_accounts SET revision=$2 WHERE player_id=$1', [
     state.playerId,
     state.revision,
@@ -217,7 +228,7 @@ async function writeGame(client: PoolClient, state: GameState): Promise<void> {
       state.inventory.goldKeys ?? 0,
     ],
   );
-  // All aggregate replacement writes stay in this tx. Optimize deltas only after measuring real workloads.
+  // Mutable aggregate replacement stays in this tx; measured immutable history is append-only.
   for (const table of [
     'arcana_seasonal_state',
     'arcana_team_members',
@@ -225,7 +236,6 @@ async function writeGame(client: PoolClient, state: GameState): Promise<void> {
     'arcana_equipment',
     'arcana_product_units',
     'arcana_wizard_copies',
-    'arcana_operations',
     'arcana_exploration',
     'arcana_victories',
     'arcana_unlocked_zones',
@@ -271,11 +281,13 @@ async function writeGame(client: PoolClient, state: GameState): Promise<void> {
       'INSERT INTO arcana_team_loadouts (player_id,copy_id,wand_id,broom_id,ordinal) VALUES ($1,$2,$3,$4,$5)',
       [state.playerId, loadout.copyId, loadout.wandId, loadout.broomId, ordinal],
     );
-  for (const [ordinal, receipt] of state.receipts.entries())
+  for (let ordinal = priorReceipts.length; ordinal < state.receipts.length; ordinal++) {
+    const receipt = state.receipts[ordinal];
     await client.query(
       'INSERT INTO arcana_operations (player_id,operation_id,receipt,ordinal) VALUES ($1,$2,$3,$4)',
       [state.playerId, receipt.id, JSON.stringify(receipt), ordinal],
     );
+  }
   if (state.exploration) {
     const { run, victories, unlockedZones } = state.exploration;
     await client.query(
@@ -324,7 +336,7 @@ export class PostgresGameTransactions implements PlayerAccounts {
       if (next.playerId !== playerId) throw new ArcanaError('PLAYER_MISMATCH');
       if (next !== current && next.revision !== current.revision + 1)
         throw new ArcanaError('STALE_GAME');
-      if (next !== current) await writeGame(client, next);
+      if (next !== current) await writeGame(client, next, current.receipts);
       return gameSnapshot(next);
     });
   }

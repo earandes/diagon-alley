@@ -1,0 +1,293 @@
+{
+  "schemaVersion": 1,
+  "label": "before",
+  "measuredAt": "2026-10-19T10:49:39.531Z",
+  "node": "v24.20.0",
+  "platform": "darwin",
+  "fixture": "set-team empty roster, history only; 3 bounded observations per scale",
+  "implementationSha256": "4cc8bbccf52b705a6b7637a223ade555bb0e21ab355a67e61c535eb4af5b87f0",
+  "notes": [
+    "clientSqlMs includes driver and loopback, not PostgreSQL CPU",
+    "heap delta is noisy process heap with GC, not resident memory or leak proof",
+    "recoveryMs includes full aggregate read and an equality assertion",
+    "ordinary accounts/schema excluded by search_path; schema removed in finally"
+  ],
+  "samples": [
+    {
+      "initialCount": 0,
+      "actualCount": 0,
+      "sample": 0,
+      "readMs": 5.6742089999999905,
+      "readQueries": {
+        "count": 14,
+        "rowsReturned": 2,
+        "rowsAffected": 0,
+        "clientSqlMs": 5.376123999999976
+      },
+      "serializeMs": 0.010165999999998121,
+      "stateBytes": 224,
+      "writeMs": 9.72037499999999,
+      "writeQueries": {
+        "count": 27,
+        "rowsReturned": 2,
+        "rowsAffected": 3,
+        "clientSqlMs": 9.333002000000022
+      },
+      "recoveryMs": 5.361333000000002,
+      "heapDeltaBytes": 394936
+    },
+    {
+      "initialCount": 0,
+      "actualCount": 1,
+      "sample": 1,
+      "readMs": 4.705709000000013,
+      "readQueries": {
+        "count": 14,
+        "rowsReturned": 3,
+        "rowsAffected": 0,
+        "clientSqlMs": 4.622333999999995
+      },
+      "serializeMs": 0.004874999999969987,
+      "stateBytes": 329,
+      "writeMs": 9.477417000000003,
+      "writeQueries": {
+        "count": 28,
+        "rowsReturned": 3,
+        "rowsAffected": 5,
+        "clientSqlMs": 9.312753999999927
+      },
+      "recoveryMs": 4.111124999999959,
+      "heapDeltaBytes": 310456
+    },
+    {
+      "initialCount": 0,
+      "actualCount": 2,
+      "sample": 2,
+      "readMs": 3.5453749999999786,
+      "readQueries": {
+        "count": 14,
+        "rowsReturned": 4,
+        "rowsAffected": 0,
+        "clientSqlMs": 3.475080999999932
+      },
+      "serializeMs": 0.004083000000036918,
+      "stateBytes": 435,
+      "writeMs": 8.003083000000004,
+      "writeQueries": {
+        "count": 29,
+        "rowsReturned": 4,
+        "rowsAffected": 7,
+        "clientSqlMs": 7.86820599999993
+      },
+      "recoveryMs": 4.410124999999994,
+      "heapDeltaBytes": 291344
+    },
+    {
+      "initialCount": 100,
+      "actualCount": 100,
+      "sample": 0,
+      "readMs": 4.329000000000008,
+      "readQueries": {
+        "count": 14,
+        "rowsReturned": 102,
+        "rowsAffected": 0,
+        "clientSqlMs": 4.15512700000005
+      },
+      "serializeMs": 0.024333000000012817,
+      "stateBytes": 10915,
+      "writeMs": 34.28129100000001,
+      "writeQueries": {
+        "count": 127,
+        "rowsReturned": 102,
+        "rowsAffected": 203,
+        "clientSqlMs": 33.68158200000022
+      },
+      "recoveryMs": 5.025707999999952,
+      "heapDeltaBytes": -5889560
+    },
+    {
+      "initialCount": 100,
+      "actualCount": 101,
+      "sample": 1,
+      "readMs": 3.5532910000000015,
+      "readQueries": {
+        "count": 14,
+        "rowsReturned": 103,
+        "rowsAffected": 0,
+        "clientSqlMs": 3.4523320000000126
+      },
+      "serializeMs": 0.023333999999977095,
+      "stateBytes": 11023,
+      "writeMs": 35.211708000000044,
+      "writeQueries": {
+        "count": 128,
+        "rowsReturned": 103,
+        "rowsAffected": 205,
+        "clientSqlMs": 34.81041700000003
+      },
+      "recoveryMs": 4.651792,
+      "heapDeltaBytes": 1843712
+    },
+    {
+      "initialCount": 100,
+      "actualCount": 102,
+      "sample": 2,
+      "readMs": 3.4373750000000314,
+      "readQueries": {
+        "count": 14,
+        "rowsReturned": 104,
+        "rowsAffected": 0,
+        "clientSqlMs": 3.3302910000002157
+      },
+      "serializeMs": 0.022750000000030468,
+      "stateBytes": 11131,
+      "writeMs": 33.06383299999999,
+      "writeQueries": {
+        "count": 129,
+        "rowsReturned": 104,
+        "rowsAffected": 207,
+        "clientSqlMs": 32.6753379999999
+      },
+      "recoveryMs": 4.204457999999988,
+      "heapDeltaBytes": -4359184
+    },
+    {
+      "initialCount": 1000,
+      "actualCount": 1000,
+      "sample": 0,
+      "readMs": 5.999667000000045,
+      "readQueries": {
+        "count": 14,
+        "rowsReturned": 1002,
+        "rowsAffected": 0,
+        "clientSqlMs": 5.507791000000111
+      },
+      "serializeMs": 0.16345799999999144,
+      "stateBytes": 108116,
+      "writeMs": 305.4475839999999,
+      "writeQueries": {
+        "count": 1027,
+        "rowsReturned": 1002,
+        "rowsAffected": 2003,
+        "clientSqlMs": 302.44420500000035
+      },
+      "recoveryMs": 10.669458000000077,
+      "heapDeltaBytes": 5166744
+    },
+    {
+      "initialCount": 1000,
+      "actualCount": 1001,
+      "sample": 1,
+      "readMs": 6.291582999999946,
+      "readQueries": {
+        "count": 14,
+        "rowsReturned": 1003,
+        "rowsAffected": 0,
+        "clientSqlMs": 5.742583999999397
+      },
+      "serializeMs": 0.18925000000012915,
+      "stateBytes": 108225,
+      "writeMs": 298.0385409999999,
+      "writeQueries": {
+        "count": 1028,
+        "rowsReturned": 1003,
+        "rowsAffected": 2005,
+        "clientSqlMs": 295.3687540000003
+      },
+      "recoveryMs": 10.785959000000048,
+      "heapDeltaBytes": -8447304
+    },
+    {
+      "initialCount": 1000,
+      "actualCount": 1002,
+      "sample": 2,
+      "readMs": 6.109208999999964,
+      "readQueries": {
+        "count": 14,
+        "rowsReturned": 1004,
+        "rowsAffected": 0,
+        "clientSqlMs": 5.538540999999441
+      },
+      "serializeMs": 0.15954199999987395,
+      "stateBytes": 108334,
+      "writeMs": 292.35695799999985,
+      "writeQueries": {
+        "count": 1029,
+        "rowsReturned": 1004,
+        "rowsAffected": 2007,
+        "clientSqlMs": 288.3066290000031
+      },
+      "recoveryMs": 8.811249999999973,
+      "heapDeltaBytes": 1860712
+    },
+    {
+      "initialCount": 5000,
+      "actualCount": 5000,
+      "sample": 0,
+      "readMs": 18.45275000000038,
+      "readQueries": {
+        "count": 14,
+        "rowsReturned": 5002,
+        "rowsAffected": 0,
+        "clientSqlMs": 15.75937599999952
+      },
+      "serializeMs": 0.8686250000000655,
+      "stateBytes": 544116,
+      "writeMs": 1459.050292,
+      "writeQueries": {
+        "count": 5027,
+        "rowsReturned": 5002,
+        "rowsAffected": 10003,
+        "clientSqlMs": 1439.1702689999315
+      },
+      "recoveryMs": 26.19012500000008,
+      "heapDeltaBytes": -24281952
+    },
+    {
+      "initialCount": 5000,
+      "actualCount": 5001,
+      "sample": 1,
+      "readMs": 18.36737499999981,
+      "readQueries": {
+        "count": 14,
+        "rowsReturned": 5003,
+        "rowsAffected": 0,
+        "clientSqlMs": 15.995621999998548
+      },
+      "serializeMs": 0.9181670000007216,
+      "stateBytes": 544225,
+      "writeMs": 1544.3429589999996,
+      "writeQueries": {
+        "count": 5028,
+        "rowsReturned": 5003,
+        "rowsAffected": 10005,
+        "clientSqlMs": 1514.3902740000012
+      },
+      "recoveryMs": 34.71520800000053,
+      "heapDeltaBytes": 8266488
+    },
+    {
+      "initialCount": 5000,
+      "actualCount": 5002,
+      "sample": 2,
+      "readMs": 12.459415999999692,
+      "readQueries": {
+        "count": 14,
+        "rowsReturned": 5004,
+        "rowsAffected": 0,
+        "clientSqlMs": 10.058248999999705
+      },
+      "serializeMs": 0.9110000000000582,
+      "stateBytes": 544334,
+      "writeMs": 1577.9782919999998,
+      "writeQueries": {
+        "count": 5029,
+        "rowsReturned": 5004,
+        "rowsAffected": 10007,
+        "clientSqlMs": 1546.1246190000193
+      },
+      "recoveryMs": 36.1460419999994,
+      "heapDeltaBytes": 1142632
+    }
+  ]
+}
