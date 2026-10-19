@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "status": "Installed in A87 branch; static source inspection completed, Linux context acceptance pending",
+  "status": "Installed; selected Linux context and temporal checks passed on d539103/CI39196343905 check job. Human/physical acceptance pending.",
   "tool": "Integrated image_gen with local style references; no API key, purchased credit or external paid service",
   "subjectDirection": "Detailed painted storybook, warm old gold against cool night; neutral mythic creature assets shared by packs with separate localized names",
   "sourceKind": "Editable RGBA raster masters and recorded prompts; no layered painting or body rig claimed",
@@ -14,31 +14,31 @@
       "file": "dragon/attack-v1.png",
       "bytes": 2468419,
       "sha256": "1f3a4cb0f31e48476f1537100da076bc03fe0654f16231c740c0f4c065e77f8e",
-      "status": "static style inspected; runtime pose alignment/scale acceptance pending"
+      "status": "Selected flat painting; Linux pose/frame/fallback checks passed. Human motion/style acceptance pending."
     },
     {
       "file": "dragon/master-v1.png",
       "bytes": 2383753,
       "sha256": "89b96910690cf59cba7af03c74a994e2bb158f3c1d816d78516551acb3d4fdda",
-      "status": "static style inspected; runtime pose alignment/scale acceptance pending"
+      "status": "Selected flat painting; Linux pose/frame/fallback checks passed. Human motion/style acceptance pending."
     },
     {
       "file": "hippogriff/attack-v1.png",
       "bytes": 2573230,
       "sha256": "ad0cb0fc23e60f7422a17f8b6fff36dc39b797c5177563af02c2b4f4f0ae6b95",
-      "status": "static style inspected; runtime pose alignment/scale acceptance pending"
+      "status": "Selected flat painting; Linux pose/frame/fallback checks passed. Human motion/style acceptance pending."
     },
     {
       "file": "hippogriff/master-v1.png",
       "bytes": 2471434,
       "sha256": "590c93f10702fb250bb98ac92e0e6ee727d06bc8cf4777a5cff34a1b78512ced",
-      "status": "static style inspected; runtime pose alignment/scale acceptance pending"
+      "status": "Selected flat painting; Linux pose/frame/fallback checks passed. Human motion/style acceptance pending."
     },
     {
       "file": "phoenix/attack-v1.png",
       "bytes": 1949162,
       "sha256": "ba8953aa76dfc222a311a1fdfdb75ad38c41e91f8791f05f552ef4a36c20e0ca",
-      "status": "static style inspected; runtime pose alignment/scale acceptance pending"
+      "status": "Selected flat painting; Linux pose/frame/fallback checks passed. Human motion/style acceptance pending."
     },
     {
       "file": "phoenix/master-v1.png",
@@ -50,7 +50,7 @@
       "file": "phoenix/master-v2.png",
       "bytes": 2002192,
       "sha256": "76ddb207ef739ff8341bfe5f0b7f1fdd4442166bb53a50b7e93f038833521670",
-      "status": "static style inspected; runtime pose alignment/scale acceptance pending"
+      "status": "Selected flat painting; Linux pose/frame/fallback checks passed. Human motion/style acceptance pending."
     },
     {
       "file": "unicorn/attack-v1.png",
@@ -62,17 +62,17 @@
       "file": "unicorn/attack-v2.png",
       "bytes": 1439396,
       "sha256": "4efdf18a4e0331f4efd96d0466a477a81df8b486fb463905ca3beee9af38cd41",
-      "status": "static style inspected; runtime pose alignment/scale acceptance pending"
+      "status": "Selected flat painting; Linux pose/frame/fallback checks passed. Human motion/style acceptance pending."
     },
     {
       "file": "unicorn/master-v1.png",
       "bytes": 1965927,
       "sha256": "6bec66ff687bbf9d71e53f6d9a635b3e822a05a0b6bc6992b6dfe060e1175cf0",
-      "status": "static style inspected; runtime pose alignment/scale acceptance pending"
+      "status": "Selected flat painting; Linux pose/frame/fallback checks passed. Human motion/style acceptance pending."
     }
   ],
   "technicalExports": "export.py / exports-index.json;16 WebP alpha exports849532B installed under src/arcana/presentation/content-packs/arcana/art/creatures-a87; shared URLs in both packs",
-  "emblems": "Three original editable SVG masters, 128-square; order winged lantern, death fractured mask, creatures paw. Not official emblems. Context inspection pending Linux.",
+  "emblems": "Three original editable SVG masters, 128-square; order winged lantern, death fractured mask, creatures paw. Not official emblems. Selected Linux context and native missing-image fallback checked.",
   "sound": "Seven original finite synthesized PCM cues installed; A84 opt-in and current gain/voice limit retained; numeric mix bound0.82948, no listening study claimed",
   "contextStudy": {
     "file": "../../docs/arcana/creatures-bonds-2026-10-18/art-study/phoenix-context-study.png",
@@ -113,5 +113,13 @@
       "BattleAudioTrack",
       "GameAudio existing opt-in"
     ]
+  },
+  "technicalEvidence": {
+    "source": "d5391037254bd5f4a0b4bb49b9ad00f25fe93e4b",
+    "checkout": "c2f78da10ed8ef0dc6c944f394d1e9507c389509",
+    "ci": 39196343905,
+    "checkJob": "success",
+    "humanObserved": false,
+    "physicalDevice": false
   }
 }

@@ -81,3 +81,17 @@ Se prueba a continuación una superficie de composición independiente para el h
 CI39195537584 fallida: A84P95WebKit18/18/18ms y candidato23/23/23ms. translateZ no mejora y se retira. No se mantiene una capa sin beneficio demostrado. Las dos modificacionesCSS ensayadas quedan fuera del producto final.
 
 La comparación usada hasta aquí reconstruyeA84(937a0a1), no elmain440d278(A85+A86) sobre elque comienzaA87. El lienzo ya creció enA86; es preciso medir ese predecesor antes de atribuir el límite a las criaturas. Se fija440d278 como referencia inmediata, compartida por builder/test mediante a75-reference.json. Mismos3pares, tamaños, log, instrumentación, cachés declaradas, umbral no-regresión max(20,medianaReferencia+1) y guard original. No se aumenta el20ms objetivo. Los pares históricosA84 desfavorables permanecen y no se presentan como superados. SiA86 también supera20, se documentará el objetivo absoluto pendiente además de comprobar la no-regresión deA87; no se ocultará esa diferencia en una afirmación de20ms cumplidos.
+
+## Referencia inmediata A86: resultado d539103
+
+CI39196343905, ensayoA75correcto(114casosactivos,174omitidos,noflaky). Baseline congelada440d278, mismo BattleLog y3paresAB–BA–AB. ChromiumP95antes16,7/16,8/16,7 y después16,7/16,7/16,8ms. WebKitantes22/22/22 y después22/22/21ms. Mediana22enambos: el límite frenteal20msobjetivo ya existe enA86 y esta muestra no detecta regresiónA87. No se afirma una mejora WebKit,20mscumplidos o rendimiento universal. ComparacionesA84desfavorables conservadas arriba.
+
+Acción→readyFrameChromium antes310,5/338,7/310,7ms, después338,3/320,5/329,6; WebKitantes691/464/387,después539/536/426ms. Primerasvisitas/cachés/contextos yfixture declarados, precisiónWebKit entera y coste de instrumentación. No fríoOS, latencia HTTP real de una persona o tiempoGPU. El resto deljobcheck yregresión aún están ejecutándose alregistrar este resultado.
+
+## A87 seis contextos del candidato d539103
+
+Chromium390 ES,3contextos nuevos porpack,300rAF sostenidos porcontexto después de medir arranque: Diagonfiguras273,5/269/303,5ms,registrocast284,4/279,5/307,4; ARCANA314,5/282,4/253 y318,4/285,5/255,9ms. P95sostenido16,7–16,8ms enlas6muestras. Hay tareas largas58/57/62/57/57/61ms, comprendiendo arranque; no se omiten ni se afirma ausencia de bloqueos. Son valores peores que algunas ejecuciones anteriores no pareadas: no se atribuye una mejora de arranque a las tres publicaciones deduplicadas. Targets deensayo1000/1500ms cumplidos enesta fixture; no garantía universal, HTTP de juego real, fríoOS, memoria residente o GPU.
+
+El ensayo pareadoA75también conserva arranques desfavorables: medianaWebKitacción→ready pasa464→536ms(+72ms), con3pares y alta variabilidad de primeravisita; Chromium310,7→329,6ms(+18,9). No se declara una mejora de arranque o causa demostrada. La no-regresión del comparador sostenido no acredita todos los tiempos de interacción. Crudos con extremos en candidate-d539.
+
+Recorridos A87 reales d539103(HTTP/PG/Redis,1280×900): ChromiumESDiagon/duelo795ms, ChromiumENARCANA/duelo912ms, WebKitESDiagon/jefe2771ms yWebKitENARCANA/jefe2485ms acciónconfirmación→figuras (cotaNodeincluyeclick/waits). Difierenmotor/idioma/pack/combate, no son una distribución o ensayo pareado. Conservar los casos lentos; noatribuirlos a GPU, persona o a una mejora deA87. Los4casos conservanlog/receipt/estadoexacto trasrecarga.

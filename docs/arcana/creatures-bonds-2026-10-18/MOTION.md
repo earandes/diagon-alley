@@ -1,4 +1,4 @@
-# A87 · Movimiento implementado y aceptación pendiente
+# A87 · Movimiento implementado y comprobaciones técnicas
 
 Fuentes y consumidores integrados en la rama. Las fases se calculan con el reloj A69 existente; falta comprobarlas temporalmente en CI Linux. Los tiempos orientativos no son mediciones GPU o de un dispositivo físico. Dos poses pintadas por criatura; no rig corporal. No audio automático.
 
@@ -17,7 +17,7 @@ Fuentes y consumidores integrados en la rama. Las fases se calculan con el reloj
 
 ## Reloj y poses
 
-Mantener anticipación0–0,18; vuelo/acción0,18–0,78; contacto/asentamiento hasta1según el evento existente. Cambio de textura a la posecastdurante acción, retorno afigureal cerrar. Una misma escala de export y contacto elegido por artista evitan el encogimiento/teletransporte de pies; falta verificar que la variación visible sea≤5pxa escala móvil. Sin reloj independiente, setTimeouto AnimatedSpriteen bucle.
+Mantener anticipación0–0,18; vuelo/acción0,18–0,78; contacto/asentamiento hasta1según el evento existente. Cambio de textura a la posecastdurante acción, retorno afigureal cerrar. Una misma escala de export y contacto elegido por artista evitan el encogimiento/teletransporte de pies; el cálculo de contacto de exports registra diferencias inferiores a0,36px a342×428; no es seguimiento anatómico ni prueba perceptiva. Las pruebas Linuxd539 conservan escala, pose y offset al pausar/cambiar paquete. La continuidad percibida sigue para observación humana. Sin reloj independiente, setTimeouto AnimatedSpriteen bucle.
 
 Preferir una sola figuraSprite con intercambio de textura ya preparada frente a añadir otroSpritepor unidad para una mezcla ornamental. Cargar únicamente poses de criaturas presentes, junto a la preparación gráfica actual; registrar su coste desde la acción. Si falta la posecast, conservarfigure. No retraso artificial o nueva carga/generación durante el gesto.
 
@@ -44,3 +44,7 @@ Prioridad implementada de **una sola identidad de lanzamiento**: especie si el a
 | Dragón | Aliento estrecho verde/oro desde mandíbula | Contacto a un objetivo, quemadura solo si el log existente la confirma | ConoGraphic finito, no partículas libres |
 
 Todos son lenguaje visual de hechos del log, no ataques o habilidades nuevas. No inferir una afinidad por el color de la criatura: el inspector mantiene la afinidad real y su símbolo. El reverso del emblema o la intensidad no implica rareza distinta.
+
+## Evidencia temporal del candidato
+
+CI39196343905jobcheckcorrecto. Los12casos deposes(por6proyectos,2pares idioma/pack y cambio depaquete) y clasificación ejecutan pausas, velocidad2x, inspector, omisión y retorno. Una batería representativa añade ayuda/remate, orientación rival declarada, reducido, ausencia deSVG/cast y fallo deimport/contexto. LosPNGsolo muestran instantes; losJSONy aserciones del reloj sustentan la comprobación temporal. No se ha realizado una sesión humana o captura en dispositivo físico.

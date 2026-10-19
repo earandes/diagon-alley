@@ -1,5 +1,18 @@
 # A87 · Evidencia visual seleccionada
 
+## Candidato d539103 · evidencia seleccionada actual
+
+CI39196343905, checkoutc2f78da10ed8ef0dc6c944f394d1e9507c389509. Jobcheck correcto; regresión conectada pendiente alregistrar esta sección. TrecePNGdeChromium390, activadas explícitamente enLinux dentro de fixtures declaradas. No capturadas en elMac. No son prueba con jugadores o evidencia de movimiento por sísolas.
+
+- [Libro de vínculo Diagon](evidence/candidate-d539/bond-preparation-diagon-alley-390.png): cinco medallones, selección inequívoca y bono deafinidad separado. El diálogo conserva desplazamiento para colección/confirmación.
+- [Arena Diagon](evidence/candidate-d539/creature-cast-diagon-alley-390.png) y [ARCANA](evidence/candidate-d539/creature-cast-arcana-390.png): cuatro criaturas y un integrante humano frenteacinco rivales; nombres/PV completos y actor/objetivo localizados. HumanosARCANAhistóricos conservan otro material, fuera del lote nuevo.
+- [Pacto](evidence/candidate-d539/creature-pact-390.png): fixture del diálogo real. LaAppconectada aporta evidenciaDOM/HTTP separada, no se confunden.
+- [Cromodex Diagon](evidence/candidate-d539/creature-folio-diagon-alley-390.png), [doble afiliación](evidence/candidate-d539/dual-affiliation-folio-diagon-alley-390.png) y [revelación](evidence/candidate-d539/creature-reveal-390.png).
+- [Ayuda](evidence/candidate-d539/bond-order-effect-390.png), [remate](evidence/candidate-d539/bond-death-effect-390.png) y [orientación rival declarada](evidence/candidate-d539/creature-rival-declared-390.png).
+
+Los JSONdeposes registran pausa/offset, texturas, cambio depaquete y retorno; el registro nativo deaudio no equivale a escucha. La revisión seleccionada del libro yambasarenas se realizó sobre estosPNG, además de la revisión previa47/f79. No se declara aceptación artística definitiva o dispositivo físico.
+
+
 Las imágenes proceden exclusivamente de la CI Linux protegida. No se han abierto navegadores ni creado capturas en el Mac. Una imagen acredita composición, no animación, persistencia, escucha o comprensión humana.
 
 ## Referencia inicial428927f

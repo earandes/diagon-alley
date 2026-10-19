@@ -13,7 +13,11 @@
 - [x] Corregir las dos expectativas de regresión. Resume057detecta por primera vez elensayoWebKitpareado:23ms frentea20; regresión aún no repetida.
 - [x] Contrastar deduplicaciónf0: no basta (WebKit22ms); conservar crudos. Contención024 tampoco mejora (22/23/22), retirada.
 - [x] Contrastar superficie compuesta7d90924: no mejora (23ms), retirada. No se conserva ningún cambioCSS experimental. Crudos, superficies yCPU guardados.
-- [ ] Fullrestaurado: contrastar A87con su predecesor inmediatomain440d278enChromium/WebKit y validar todos los recorridos. ConservarA84histórica y el20msobjetivo, distinguiendo no-regresión y presupuesto absoluto.
+- [x] Fullrestaurado, A75correcta114casos: A86yA87mediana22msWebKit, Chromium16,7. Límite20msWebKit previo, sin regresiónA87enla muestra. ConservarA84histórica y distinguir ambos criterios.
+- [x] Jobcheckd539103completo:381gráficos,681unit,111PG/Redis correctos; evidencia A87 seleccionada inspeccionada. Arranque/tareaslargas adversos y límiteWebKit previo documentados.
+- [x] Regresiónd539103:135correctos/3fallos deexpectativaA66(Neutral sinbono), incluidos56E2Ey4A87realescorrectos. Conservar errores; no alterar producto correcto.
+- [ ] Validar corrección A66poroferta/afinidad conresumeoriginal; objetos de aplicación/arte idénticos a d539103.
+- [ ] Restablecer full al cerrar main y verificar suCI completa, sin atribuir full alresume.
 - [ ] Cerrar los dos recorridos de QAcorregidos y comprobar maincompleto antes de finalizar.
 - [ ] Consolidar documentación/evidencia, revisar diff, integrar resultado validado y comprobar main/CI; sin despliegue.
 

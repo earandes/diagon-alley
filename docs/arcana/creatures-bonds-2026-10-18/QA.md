@@ -133,3 +133,19 @@ CI39193444875 A75 fallida; no acredita regresión ni finalización. P95WebKit22m
 7d90924 / CI39195537584: ensayoWebKitcontraA84 fallido23/23/23ms; regresión omitida. Superficie compuesta retirada por no mejorar. Se corrige la referencia del incremento almainA86 real440d278, conservando las comparacionesA84 y la fórmula original. La atribución aA87 sigue sin estar demostrada; el ensayo deA86 pendiente la contrastará.
 
 La ejecuciónf0/39193444875 se canceló deliberadamente tras elfalloA75, duranteA70; no es una batería completa. a6a0039solo prepara la referencia inmediata y fasewebkit, sustituida antes de gráficos por full. La próxima batería repite el candidato con ambosmotores y las dos expectativas corregidas; no se reutiliza elcheckf79como validación de este código.
+
+### d539103 / CI39196343905 — A75correcta, resto en ejecución
+
+Fuente d5391037254bd5f4a0b4bb49b9ad00f25fe93e4b, checkoutc2f78da10ed8ef0dc6c944f394d1e9507c389509, árbolcompleto454d64291131550d84269a9e721271adb27b647a idéntico. A75:114correctas/174omitidas,0inesperadas/0flaky. Ambascomparacionespareadas ejecutadas: Chromiummediana16,7msyWebKit22msen referenciaA86/candidato. Objetivo absoluto20msWebKit pendiente previo, sin regresión detectadaA87enesta muestra. No se atribuye éxito alresto hasta terminar.
+
+### Jobcheck d539103 completo y correcto
+
+CI39196343905job117879840990:6comprobaciones decontenido,681unitarias/109archivos,111PG/Redis/18archivos; tipos,build,scan ybackup/restore correctos. Gráficos:30cuentas+6bienvenida+16A78+7A79+3A80+3A81+114A75+103A70/A71/A73+12Halloween+87movimiento=381activos correctos. Las omisiones no se suman como pruebas superadas. Sin reintentos automáticos. Regresión todavía en ejecución alregistrar este cierre parcial.
+
+EvidenciaA87actual en candidate-d539:13PNGseleccionadas, JSONdeclasificación/poses de6proyectos, adversos yaudio nativo. Inspección manual estática seleccionada de libroDiagon y arenasDiagon/ARCANA:10unidades,nombres/PV,jerarquíaactiva/objetivo y figuras completas visibles; figuras humanas históricasARCANAsiguen un material diferente, declarado. Las capturas no se usan como prueba temporal. Pruebas de poses conservanreloj/offset/pausa/2x/inspector/pack/omisión/desmontaje; adverso declara recursoausente nativo, renderer/importfallidos, reducido y320×200%. Audio:15peticionesWAVtrasconsentimiento y arranques nativos observados; no escucha humana. Se conservan los arranques lentos y tareas largas57–62ms.
+
+### d539103: regresión cerrada con3expectativas A66 incorrectas
+
+56E2E+24A67(incluidos4recorridos A87 reales)+16A63+17A66+8intenciones+12PWA+2benchmarks=135correctos,3fallidos: A65tactical-pacts exige siempre2progresosdeafinidad. El contextoDOMmuestra Luna/Sombras yBuckbeak/Neutral: Neutral no tiene bono, por loque solo1preview es correcto. Otros2casos son lamisma expectativa, no un fallo geométrico o deoperación. No se añade un bonoNeutral o un contador falso. Se corrige eltest para comprobar cadaoferta pública con synergyProgress compartido: Neutral exige0; las demás exigen1conantes/después/umbral reales. Evidencia y3contextos conservados, sinreintentos. Totalcandidato:516gráficoscorrectos/3fallidos(de519activos).
+
+Se utilizará fase resume original para ejecutar la expectativa corregida y regresión; no cambia ningún archivo de aplicación desde d539103. El jobcheck completo anterior se reutiliza solo para objetos idénticos. Antes de la entrega main volverá afasefull y suCI completa deberá verificarse; no se atribuye una bateríafull aresume. Guard, bloqueo,watchdog,1worker/0retries intactos.
