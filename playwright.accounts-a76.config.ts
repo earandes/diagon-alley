@@ -64,7 +64,15 @@ export default defineSafeConfig({
     },
     ...(Array.isArray(priorityBrowserOptions.webServer) ? priorityBrowserOptions.webServer : []),
     ...(Array.isArray(clarityBrowserOptions.webServer)
-      ? clarityBrowserOptions.webServer.slice(1)
+      ? clarityBrowserOptions.webServer.map((server, index) =>
+          index === 0
+            ? {
+                ...server,
+                command:
+                  'npx --no-install vite preview --host 127.0.0.1 --port 5630 --strictPort --mode arcana',
+              }
+            : server,
+        )
       : []),
   ],
 });

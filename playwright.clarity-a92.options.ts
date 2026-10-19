@@ -11,7 +11,7 @@ export const clarityBrowserOptions: PlaywrightTestConfig = {
   reporter: [['list'], ['json', { outputFile: 'test-results/clarity-a92/results.json' }]],
   expect: { timeout: 12000 },
   use: {
-    baseURL: 'http://127.0.0.1:5530',
+    baseURL: 'http://127.0.0.1:5630',
     hasTouch: true,
     serviceWorkers: 'block',
     actionTimeout: 12000,
@@ -35,8 +35,8 @@ export const clarityBrowserOptions: PlaywrightTestConfig = {
     {
       env: { ARCANA_TRIAL_NAMESPACE: namespace },
       command:
-        'node tools/verification/build-clarity-a92.mjs && npx --no-install vite preview --host 127.0.0.1 --port 5530 --strictPort --mode arcana',
-      url: 'http://127.0.0.1:5530/',
+        'node tools/verification/build-clarity-a92.mjs && npx --no-install vite preview --host 127.0.0.1 --port 5630 --strictPort --mode arcana',
+      url: 'http://127.0.0.1:5630/',
       reuseExistingServer: false,
       timeout: 120000,
     },

@@ -23,6 +23,7 @@ try {
     'tests/domain/arcana/support',
     'tests/browser-priorities/fixture-state.ts',
     'package.json',
+    'tsconfig.json',
   ]);
   run('tar', ['-xf', archive, '-C', reference]);
 } finally {

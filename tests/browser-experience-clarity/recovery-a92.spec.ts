@@ -9,11 +9,10 @@ const dialog = (page: Page) => page.locator('[data-account-dialog][open]');
 
 async function createAccount(page: Page) {
   const email = `a92-${randomUUID()}@example.invalid`;
-  const headers = { Origin: 'http://127.0.0.1:5530' };
+  const headers = { Origin: new URL(page.url()).origin };
   const registered = await page.request.post('/api/auth/register', { headers, data: { email } });
   expect(registered.status()).toBe(200);
-  const namespace =
-    process.env.ARCANA_ACCOUNTS_A76_NAMESPACE ?? process.env.ARCANA_CLARITY_A92_NAMESPACE;
+  const namespace = process.env.ARCANA_CLARITY_A92_NAMESPACE;
   if (!namespace || !/^(?:a76|a92)-[a-f0-9-]{36}$/.test(namespace))
     throw Error('Isolated A92 mailbox required');
   const directory = resolve('.local/arcana-mail', namespace);
@@ -114,7 +113,7 @@ test('A92 a lost economic response keeps its owner across contextual sign-in and
   const email = await createAccount(page);
   await page.reload();
   const foreignContext = await browser.newContext({
-    baseURL: 'http://127.0.0.1:5530',
+    baseURL: 'http://127.0.0.1:5630',
     serviceWorkers: 'block',
   });
   try {
