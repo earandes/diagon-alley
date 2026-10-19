@@ -34,3 +34,7 @@ CI6:27casosA89 y30A76 correctos; capturas revisadas y cohorte App completa. A70 
 CI7:57activos correctos(27A89/30A76), con geometría nueva mapa en12combinaciones y nuevos enlaces conectados completos. Capturas seleccionadas revisadas, evidencia/attempt-6 preservada. Regresiones completas aún en curso; goal activo.
 
 CI7 conserva A89/A76/A75 correctos y confirma mapa libre. Segundo defecto A70: estilos de libro no incluidos en consumidor standalone. Reubicación a hojas propietarias, build/tipos y compilación A70 correctos; nueva CI necesaria. Goal activo.
+
+CI8 candidato4c85312: fuente de estilos autocontenida;57activosA89/A76 correctos y capturas actuales revisadas. A75/A70 y resto en curso. Raw rAF de intentos6/7 preservados completos, comprimidos sin pérdida con SHA256, sin ocultar extremos. Goal activo.
+
+CI8:103A70 y12Halloween correctos; movimiento88correctos/2fallidos(390ESARCANA jarra/pie). Layout compacto de jarra y sincronización de medida corregidos; candidato9 necesario. No se marca completo el goal ni se declara ejecutada la regresión omitida.

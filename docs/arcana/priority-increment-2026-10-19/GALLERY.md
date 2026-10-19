@@ -1,6 +1,6 @@
 # Evidencia visual seleccionada · A89
 
-Cinco imágenes de CI Linux39250400395, headc76cb27/checkout3a39602 (mismo árbol), Chromium390×844, español y Diagon Alley. Procedencia, SHA256 y tipo de escena en [provenance.json](evidence/final/provenance.json). Selección e inspección manual de artefactos existentes; no se abrió un navegador ni se capturó el Mac. La corrección de la guía se comprueba por límites/no solape en el caso App real a los tres tamaños y cuatro parejas; estas imágenes no representan el mapa. Cuatro imágenes nuevas inspeccionadas; grageas idéntica por SHA256 a la muestra anterior revisada. La evidencia previa de CI6 se conserva en evidence/attempt-6.
+Cinco imágenes de CI Linux39254029300, head4c85312/checkout3950a2d (mismo árbol), Chromium390×844, español y Diagon Alley. Procedencia, SHA256 y tipo de escena en [provenance.json](evidence/final/provenance.json). Selección e inspección manual de artefactos existentes; no se abrió un navegador ni se capturó el Mac. La corrección de la guía se comprueba por límites/no solape en el caso App real a los tres tamaños y cuatro parejas; estas imágenes no representan el mapa. Cuatro imágenes nuevas inspeccionadas; grageas idéntica por SHA256 a la muestra anterior revisada. La evidencia previa se conserva en evidence/attempt-6 y evidence/attempt-7/ui.
 
 ## Compañía: elegir un plan voluntario
 

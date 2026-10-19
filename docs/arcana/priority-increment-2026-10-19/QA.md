@@ -83,8 +83,20 @@ La CI6 se canceló deliberadamente después de conservar la evidencia citada y e
 
 Checkout3a39602 y headc76cb27 comparten árbol03dd28bf2de9c8f6a8b84933c46e6f7f106a411b. Tipos/contenido/749unitarias/120integración/build/backup correctos. A89 volvió a pasar27activos+9omisiones deliberadas; A76 pasó30+30omisiones, total57/39/0inesperados/0flaky. El caso App real verifica ahora los límites y ausencia de solape con la guía en1280×900,865×1079 y390×844, en las cuatro parejas. La cohorte conectada terminó todos sus enlaces sin estado económico forzado.
 
-Evidencia actual en evidence/final. Cuatro PNG nuevos inspeccionados; grageas idéntica por SHA256 a la muestra ya inspeccionada. La evidencia CI6 se conserva en attempt-6. Sigue pendiente el resultado de regresiones y el cierre del workflow; no se anticipa un estado verde global.
+Evidencia de CI7 conservada en evidence/attempt-7/ui. Cuatro PNG nuevos inspeccionados; grageas idéntica por SHA256 a la muestra ya inspeccionada. La evidencia CI6 se conserva en attempt-6. Sigue pendiente el resultado de regresiones y el cierre del workflow; no se anticipa un estado verde global.
 
 CI7 A75 terminó114activos/174omisiones deliberadas/0fallos/0flaky. La regresión A70 superó el punto de mapa corregido y mostró otro defecto: en el consumidor standalone de BattlePanel, el libro nuevo no carga CSS de Ajustes/App; scrollHeight1017 frente900 en reducido5×5, sin actor/PV fuera de bounds. Evidencia y contexto en ci-attempt-7.json y evidence/attempt-7.
 
 Corrección mínima: estilos del libro a arena-a63.css, insignia de hecho a boss-closure-a70.css y tamaño del objeto de intención a su propia hoja. Las medidas no cambian; los consumidores reciben sus dependencias sin importar App. Build real/tipos/skin y compilación estática del fixture A70 correctos; el HTML compilado enlaza la hoja que contiene arena-result-book. Se amplía únicamente diagnóstico de overflow con geometría del libro/pie, sin relajar aceptación. Candidato siguiente necesario.
+
+CI7 se canceló tras conservar el fallo de overflow. A69 quedó interrumpida, sin resultado superado, y regresión no se ejecutó. No se reintentó el mismo código: la dependencia CSS se corrigió en4c85312.
+
+## CI octava39254029300 ·4c85312
+
+Head4c8531264e1e479b2844f1151d6ab0897f49f9fb y checkout3950a2d3c7d4702f491ad97fa0ada01aa08a8c12 comparten árbol9b844b67de549ccbf91cd5c87a5c370405f3bb43. No otro cambio de producto tras este candidato. A89 volvió a terminar27activos/9omisiones y A76,30/30; total57correctos/39omisiones deliberadas/0inesperados/0flaky. Tipos,749unitarias,120integración,skin/contenido,build y backup correctos.
+
+Cuatro imágenes nuevas inspeccionadas; grageas idéntica por SHA256 a la ya revisada. Capturas/JSON/procedencia actuales en evidence/final. La inspección no añade un lote artístico ni acredita animación o personas. El resultado de la regresión A70 y el workflow completo sigue pendiente al escribir esta entrada.
+
+CI8 final: workflow fallido.749unitarias/120PGRedis correctas;409browser correctos,2fallidos y303omisiones deliberadas en check. A70/A71/A73 terminó103correctos/35omisiones; Halloween12correctos. A69 terminó88correctos/2fallidos/42omisiones. El job regression se omitió por dependencia fallida; no se declara ejecutado. Dos fallos son la misma preparación de jefe en390ESARCANA, Chromium y WebKit: cinco aliados equipados, cinco borradores; jarra/leyenda113px invade el pie fijo≈10px. Los JSON de geometría del caso exacto y contextos se conservan en evidence/attempt-8, con hashes originales antes de normalizar whitespace de excerpt.
+
+Se elige una repisa horizontal jarra/leyenda/stock frente a mantener113px y exigir scroll adicional. La leyenda conserva nombre, existencias y borrador en su propia segunda línea; no se ocultan datos, achican retratos o alteran costes. Columnas explícitas conservan lectura si falta la imagen. El test espera fonts.ready y la entrada finita del diálogo, evitando comparar rectángulos de instantes distintos; no se desactiva movimiento del producto ni se relaja límite. Se añade una sola captura explícita del caso390ESARCANA en Chromium, además de las cincoA89 y la selección previa de regresión. Medidas finales aún pendientes del nuevo candidato. Build/tipos/skin correctos localmente; ningún navegador local.

@@ -291,7 +291,11 @@ test('A85 the actual mastery roster discloses its active house before confirmati
     const figures = await page
       .locator('.boss-party-portrait > img:first-child')
       .evaluateAll(async (images) => {
+        await document.fonts.ready;
         await Promise.all(images.map((image) => (image as HTMLImageElement).decode()));
+        const dialog = document.querySelector('dialog.boss-staging');
+        if (dialog)
+          await Promise.all(dialog.getAnimations().map((animation) => animation.finished));
         await new Promise(requestAnimationFrame);
         await new Promise(requestAnimationFrame);
         return images.map((image) => {
@@ -308,6 +312,8 @@ test('A85 the actual mastery roster discloses its active house before confirmati
       });
     if (lang === 'es' && pack === 'diagon-alley' && info.project.name.startsWith('chromium-390'))
       await picture(page, 'boss-390-es-diagon');
+    if (lang === 'es' && pack === 'arcana' && info.project.name === 'chromium-390-motion-a69')
+      await picture(page, 'boss-390-es-arcana-a89');
     const footer = await page.locator('.node-combat-actions').boundingBox();
     // Faithful production action: illustration, label and visible cost share
     // one row rather than the legacy grid button accidentally used by the fixture.
@@ -500,7 +506,9 @@ test('A86 duel scene has one pause, recorded house access and remembered present
       await expect(page.locator('.battle-panel')).toHaveAttribute('data-replay-speed', '2');
       await skipBattle(page);
       await expect(page.locator('[data-arena-outcome]')).toBeVisible();
-      await expect(page.locator('.arena-caption button:not([data-arena-facts-trigger])')).toBeFocused();
+      await expect(
+        page.locator('.arena-caption button:not([data-arena-facts-trigger])'),
+      ).toBeFocused();
       await immutable(page);
     }
 });
