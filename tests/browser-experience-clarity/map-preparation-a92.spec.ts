@@ -198,19 +198,56 @@ for (const pack of ['diagon-alley', 'arcana'])
         frames.map((frame) => {
           const box = frame.getBoundingClientRect();
           const marker = frame.querySelector('.boss-party-origin')!.getBoundingClientRect();
+          // Coordinate subtraction can represent60px as59.99999999999994.
+          // Bound tolerance to machine precision at this coordinate magnitude,
+          // never a visible CSS pixel or a relaxed layout allowance.
+          const precision =
+            Number.EPSILON *
+            Math.max(
+              1,
+              ...[
+                box.top,
+                box.bottom,
+                box.left,
+                box.right,
+                marker.top,
+                marker.bottom,
+                marker.left,
+                marker.right,
+              ].map(Math.abs),
+            ) *
+            16;
           return {
+            frame: box.toJSON(),
+            marker: marker.toJSON(),
             height: box.height,
+            precision,
             markerContained:
-              marker.top >= box.top &&
-              marker.bottom <= box.bottom &&
-              marker.left >= box.left &&
-              marker.right <= box.right,
+              marker.top + precision >= box.top &&
+              marker.bottom <= box.bottom + precision &&
+              marker.left + precision >= box.left &&
+              marker.right <= box.right + precision,
           };
         }),
       );
-      expect(fallbackFrames.every((frame) => frame.height >= 60 && frame.markerContained)).toBe(
-        true,
+      await writeFile(
+        resolve(evidence, `${info.project.name}-${pack}-${lang}-absent-portraits.json`),
+        JSON.stringify(
+          {
+            sha: process.env.GITHUB_SHA ?? null,
+            fixture: true,
+            fallbackFrames,
+          },
+          null,
+          2,
+        ),
       );
+      expect(
+        fallbackFrames.every(
+          (frame) => frame.height + frame.precision >= 60 && frame.markerContained,
+        ),
+        JSON.stringify(fallbackFrames),
+      ).toBe(true);
       await expect(page.locator('.boss-party-name')).toHaveCount(5);
       expect(await page.evaluate(() => window.__a92MapPrep.read())).toBe(
         await page.evaluate(() => window.__a92MapPrep.before),
