@@ -361,7 +361,7 @@ test('A87 representative group scenes, missing pose, renderer loss and reduced m
     );
   await expect(page.locator('.scene-fallback')).toBeVisible();
   await expect(page.locator('[data-arena-outcome]')).toBeVisible();
-  await expect(page.locator('.arena-caption button')).toBeEnabled();
+  await expect(page.locator('.arena-caption button:not([data-arena-facts-trigger])')).toBeEnabled();
   await immutable(page);
   await page.emulateMedia({ reducedMotion: 'reduce' });
   await page.goto(`${fixture}?mode=battle&reduced=1&lang=en&pack=arcana`);

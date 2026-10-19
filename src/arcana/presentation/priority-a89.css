@@ -1,0 +1,124 @@
+html[data-reading-size='large'] {
+  font-size: 115%;
+}
+@media (forced-colors: none) {
+  html[data-reading-contrast='true'] .arcana-shell {
+    --pack-ink: #fff8e5 !important;
+    --pack-muted: #eee1c8 !important;
+    --pack-border: #e8cc8c !important;
+    --pack-surface: #09111d !important;
+    --pack-focus: #b5f6ff !important;
+  }
+}
+@media (prefers-contrast: more) and (forced-colors: none) {
+  .arcana-shell {
+    --pack-ink: #fff8e5 !important;
+    --pack-muted: #eee1c8 !important;
+    --pack-border: #e8cc8c !important;
+    --pack-surface: #09111d !important;
+  }
+}
+.reading-preferences p {
+  margin: 0.35rem 0;
+  font-size: 0.875rem;
+}
+.settings-case .settings-choices.reading-preferences {
+  grid-template-columns: minmax(0, 1fr);
+}
+.reading-preferences > [role='group'] {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+.settings-case .settings-choices.reading-preferences button {
+  min-height: 56px;
+  padding: 10px 32px 10px 10px;
+  overflow-wrap: anywhere;
+}
+@media (max-width: 360px) {
+  .reading-preferences > [role='group'] {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+.priority-guide-trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  min-height: 44px;
+  min-width: 44px;
+}
+.priority-guide-trigger img {
+  width: 24px;
+  height: 28px;
+  object-fit: contain;
+}
+.priority-guide-trigger span {
+  font-size: 0.875rem;
+  max-width: 12rem;
+}
+.priority-guide-trigger > .priority-guide-fallback {
+  display: none;
+}
+.priority-guide-trigger:not(:has(> img)) > .priority-guide-fallback {
+  display: inline;
+  font-size: 0.875rem;
+}
+.priority-guide-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.priority-guide-actions button {
+  font-size: 0.875rem;
+}
+.priority-guide-dismiss {
+  border: 0;
+  background: transparent;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+@media (max-width: 480px) {
+  .priority-guide-trigger span {
+    max-width: 8rem;
+  }
+}
+
+.expedition-guide.priority-guide {
+  display: block;
+  padding: 0;
+  z-index: 4;
+  max-width: min(15rem, 70vw);
+}
+.priority-guide-help {
+  pointer-events: auto;
+}
+/* Reserve the heading's real hit area. The graph refits this smaller surface;
+   the existing intention reminder already reserves its own, taller shelf. */
+.arcana-map-view
+  main
+  > .expedition-panel[data-map-phase='route']:not(:has(> .intention-reminder))
+  > .map-scroll {
+  margin-top: 60px;
+  height: calc(100% - 60px - var(--party-map-space, 0px));
+}
+.priority-guide-help > summary {
+  list-style: none;
+  cursor: pointer;
+}
+.priority-guide-help > summary::-webkit-details-marker {
+  display: none;
+}
+.priority-guide-help[open] .priority-guide-body {
+  position: absolute;
+  z-index: 5;
+  right: 0;
+  width: min(320px, calc(100vw - 36px));
+  padding: 1rem;
+  background: var(--pack-surface);
+  border: 1px solid var(--pack-gold);
+  box-shadow: 0 10px 24px #0008;
+}
+.priority-guide-body p {
+  font-size: 0.9rem;
+  margin-top: 0;
+}

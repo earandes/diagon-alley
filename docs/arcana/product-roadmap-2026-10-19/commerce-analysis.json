@@ -1,0 +1,127 @@
+{
+  "kind": "exact mathematical scenarios, not measured player behaviour",
+  "inputs": [
+    {
+      "file": "src/arcana/content/trial-v1.json",
+      "sha256": "d2b88567d8f190eac47ad74aee4a6195b71c28ab53717e9d8706bff8713c3049"
+    },
+    {
+      "file": "src/arcana/content/creatures-v1.json",
+      "sha256": "8222b7c2870d961caa694fe732057562f41f31b2a3a1bb79c40241f8b27ebf08"
+    },
+    {
+      "file": "src/arcana/infrastructure/content/trial-configuration.ts",
+      "sha256": "b443d0c93d695b1b04a19f9a9c94cc87107b6b60ce1ec31d1422429c5f4d87d7"
+    },
+    {
+      "file": "src/arcana/content/equipment-v2.json",
+      "sha256": "c893f3db449da7dbeac4f90f7585af9d815db61be5ffd10f78e85491eb1f3b14"
+    }
+  ],
+  "marginal_new_identity": [
+    {
+      "owned_random_identities": 0,
+      "missing": 33,
+      "next_opening_new_probability": 1.0,
+      "mean_openings_to_next_new": 1.0
+    },
+    {
+      "owned_random_identities": 16,
+      "missing": 17,
+      "next_opening_new_probability": 0.5151515151515151,
+      "mean_openings_to_next_new": 1.9411764705882353
+    },
+    {
+      "owned_random_identities": 25,
+      "missing": 8,
+      "next_opening_new_probability": 0.24242424242424243,
+      "mean_openings_to_next_new": 4.125
+    },
+    {
+      "owned_random_identities": 30,
+      "missing": 3,
+      "next_opening_new_probability": 0.09090909090909091,
+      "mean_openings_to_next_new": 11.0
+    },
+    {
+      "owned_random_identities": 32,
+      "missing": 1,
+      "next_opening_new_probability": 0.030303030303030304,
+      "mean_openings_to_next_new": 33.0
+    }
+  ],
+  "one_selected_missing_identity": [
+    {
+      "uniform_pool_size": 33,
+      "status": "current",
+      "probability": 0.030303030303030304,
+      "mean_openings": 33,
+      "openings": {
+        "p50": 23,
+        "p90": 75,
+        "p95": 98
+      },
+      "probability_still_missing_after_50_openings": 0.21468510908752875
+    },
+    {
+      "uniform_pool_size": 8,
+      "status": "hypothetical",
+      "probability": 0.125,
+      "mean_openings": 8,
+      "openings": {
+        "p50": 6,
+        "p90": 18,
+        "p95": 23
+      },
+      "probability_still_missing_after_50_openings": 0.0012600931512018426
+    }
+  ],
+  "catalogue_dilution": [
+    {
+      "random_identities": 33,
+      "status": "current",
+      "mean_openings_to_all": 134.93034144940518,
+      "openings": {
+        "p50": 128,
+        "p90": 188,
+        "p95": 211
+      }
+    },
+    {
+      "random_identities": 45,
+      "status": "hypothetical +12",
+      "mean_openings_to_all": 197.7726651998095,
+      "openings": {
+        "p50": 188,
+        "p90": 270,
+        "p95": 302
+      }
+    }
+  ],
+  "four_uniform_flavours": {
+    "unit": "independent committed activations, not purchases, wins or battles",
+    "mean_activations_to_all": 8.333333333333334,
+    "activations": {
+      "p50": 7,
+      "p90": 13,
+      "p95": 16
+    },
+    "probability_of_adverse_flavour_per_activation": 0.5,
+    "caveat": "Two adverse flavours by rules, not a 50% defeat probability"
+  },
+  "vault": {
+    "current_entries": 2,
+    "assumption": "one campaign first-boss key, no other key grant in reviewed current content",
+    "probability_own_both_exclusive_vault_gear_from_that_one_key": 0,
+    "caveat": "A choice of one bundle still does not make both obtainable"
+  },
+  "checks": "known n=1/n=2 occupancy, geometric p=.5, flavour expectation, mass; input assertions",
+  "limits": [
+    "No new product configured",
+    "No changed weights, prices or rewards",
+    "No conversion to hours, crowns, runs or calendar",
+    "No income, route, defeat or resource-spending policy",
+    "Themed pool overlaps/eligibility and directed acquisition not implemented",
+    "No human play or retention evidence"
+  ]
+}

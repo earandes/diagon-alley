@@ -116,3 +116,10 @@
     flex-basis: 100%;
   }
 }
+
+/* A89: owned here so standalone consumers do not depend on App/Settings CSS. */
+.boss-battle-facts .house-insignia {
+  width: 2rem;
+  height: 2rem;
+  flex: none;
+}

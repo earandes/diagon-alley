@@ -1,0 +1,66 @@
+{
+  "runId": 39279045685,
+  "headSha": "bff4488a4d5d21496965e231f09bc708339c598f",
+  "stats": {
+    "startTime": "2026-10-19T15:37:50.125Z",
+    "duration": 19540.577999999998,
+    "expected": 4,
+    "skipped": 91,
+    "unexpected": 1,
+    "flaky": 0
+  },
+  "failures": [
+    {
+      "title": "A89 reading is semantic, remembers the owner and does not override forced motion preferences",
+      "project": "chromium-390-a89",
+      "results": [
+        {
+          "workerIndex": 0,
+          "parallelIndex": 0,
+          "status": "failed",
+          "duration": 417,
+          "error": {
+            "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeGreaterThanOrEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: >= \u001b[32m582\u001b[39m\nReceived:    \u001b[31m476\u001b[39m",
+            "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeGreaterThanOrEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: >= \u001b[32m582\u001b[39m\nReceived:    \u001b[31m476\u001b[39m\n    at /home/runner/work/diagon-alley/diagon-alley/tests/browser-priorities/priorities-a89.spec.ts:463:33",
+            "location": {
+              "file": "/home/runner/work/diagon-alley/diagon-alley/tests/browser-priorities/priorities-a89.spec.ts",
+              "column": 33,
+              "line": 463
+            },
+            "snippet": "\u001b[0m \u001b[90m 461 |\u001b[39m     \u001b[36mconst\u001b[39m contrastGeometry \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m settings\u001b[33m.\u001b[39mlocator(\u001b[32m'.reading-preferences > button'\u001b[39m)\u001b[33m.\u001b[39mboundingBox()\u001b[33m;\u001b[39m\n \u001b[90m 462 |\u001b[39m     \u001b[36mconst\u001b[39m refreshedSizes \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m sizeOptions\u001b[33m.\u001b[39mboundingBox()\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 463 |\u001b[39m     expect(contrastGeometry\u001b[33m!\u001b[39m\u001b[33m.\u001b[39my)\u001b[33m.\u001b[39mtoBeGreaterThanOrEqual(refreshedSizes\u001b[33m!\u001b[39m\u001b[33m.\u001b[39my \u001b[33m+\u001b[39m refreshedSizes\u001b[33m!\u001b[39m\u001b[33m.\u001b[39mheight)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                 \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 464 |\u001b[39m     \u001b[36mconst\u001b[39m ownMotion \u001b[33m=\u001b[39m settings\u001b[33m.\u001b[39mlocator(\u001b[32m'.settings-motion'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 465 |\u001b[39m     \u001b[36mawait\u001b[39m expect(ownMotion)\u001b[33m.\u001b[39mtoHaveAttribute(\u001b[32m'aria-pressed'\u001b[39m\u001b[33m,\u001b[39m \u001b[32m'false'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 466 |\u001b[39m     \u001b[36mawait\u001b[39m ownMotion\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\u001b[0m"
+          },
+          "errors": [
+            {
+              "location": {
+                "file": "/home/runner/work/diagon-alley/diagon-alley/tests/browser-priorities/priorities-a89.spec.ts",
+                "column": 33,
+                "line": 463
+              },
+              "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeGreaterThanOrEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: >= \u001b[32m582\u001b[39m\nReceived:    \u001b[31m476\u001b[39m\n\n  461 |     const contrastGeometry = await settings.locator('.reading-preferences > button').boundingBox();\n  462 |     const refreshedSizes = await sizeOptions.boundingBox();\n> 463 |     expect(contrastGeometry!.y).toBeGreaterThanOrEqual(refreshedSizes!.y + refreshedSizes!.height);\n      |                                 ^\n  464 |     const ownMotion = settings.locator('.settings-motion');\n  465 |     await expect(ownMotion).toHaveAttribute('aria-pressed', 'false');\n  466 |     await ownMotion.click();\n    at /home/runner/work/diagon-alley/diagon-alley/tests/browser-priorities/priorities-a89.spec.ts:463:33"
+            }
+          ],
+          "stdout": [],
+          "stderr": [],
+          "retry": 0,
+          "startTime": "2026-10-19T15:38:09.117Z",
+          "annotations": [],
+          "attachments": [
+            {
+              "name": "error-context",
+              "contentType": "text/markdown",
+              "path": "/home/runner/work/diagon-alley/diagon-alley/test-results/accounts-a76/priorities-a89-A89-reading-4226a-e-forced-motion-preferences-chromium-390-a89/error-context.md"
+            }
+          ],
+          "errorLocation": {
+            "file": "/home/runner/work/diagon-alley/diagon-alley/tests/browser-priorities/priorities-a89.spec.ts",
+            "column": 33,
+            "line": 463
+          }
+        }
+      ]
+    }
+  ],
+  "cause": "Settings shared CSS wins equal-specificity reading rules loaded earlier; contrast remains at y476 beside the size group whose bottom is582. Product CSS cascade defect, not a retry/synchronization excuse.",
+  "correction": "Component scope includes both settings-choices and reading-preferences, increasing specificity without important/global override. Acceptance unchanged.",
+  "cancellationRequested": true
+}

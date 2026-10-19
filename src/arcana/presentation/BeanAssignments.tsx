@@ -15,6 +15,9 @@ import {
 } from './contextual-preparation';
 import { PreparationSynergies } from './PreparationSynergies';
 import './contextual-preparation.css';
+import { beanRiskPreview, mintRecoveryPreview } from './commerce-preparation';
+import { commercePrepText as p } from './commerce-preparation-messages';
+import './commerce-preparation.css';
 type Assignments = AdvanceNodeRequest['assignments'];
 export function BeanAssignments({
   run,
@@ -53,7 +56,15 @@ export function BeanAssignments({
     soap: 'soapEffect',
   } as const;
   const rules = effectivePreparationRules(run, content.combatRules);
-  const total = rules.beans.entries.reduce((n, e) => n + e.weight, 0);
+  const risk = beanRiskPreview(rules.beans);
+  const carrier = run.members.find((member) =>
+    draft.some(
+      (assignment) => assignment.beanId === selected && assignment.unitId === member.unit.id,
+    ),
+  );
+  const numbers = new Intl.NumberFormat(language === 'es' ? 'es-ES' : 'en-US', {
+    maximumFractionDigits: 2,
+  });
   const percent = new Intl.NumberFormat(language === 'es' ? 'es-ES' : 'en-US', {
     style: 'percent',
     maximumFractionDigits: 2,
@@ -61,11 +72,17 @@ export function BeanAssignments({
   return (
     <fieldset disabled={!ready} className="bean-assignments contextual-beans">
       <legend>{text(language, 'beanChallenge')}</legend>
+      <div className="bean-risk-summary">
+        {available.length > 0 && <p>{p(language, 'unknown')}</p>}
+        <p className="bean-stock-label">
+          {p(language, 'stock', { count: numbers.format(available.length) })}
+        </p>
+      </div>
       <div className="bean-object-shelf" role="group" aria-label={c(language, 'pickJar')}>
         {!available.length && (
           <div className="empty-bean-tray">
             <Artwork asset="beans.jar" language={language} className="choice-art" decorative />
-            <span aria-label={text(language, 'noBeansAvailable')}>0</span>
+            <span>{text(language, 'noBeansAvailable')}</span>
           </div>
         )}
         {available.map((jar, index) => (
@@ -167,8 +184,13 @@ export function BeanAssignments({
       <PreparationSynergies members={run.members} rules={rules} language={language} />
       <details className="bean-context-help">
         <summary>{text(language, 'beanEffects')}</summary>
+        <p>{p(language, 'preserve')}</p>
         <p>{c(language, 'consumedOnBattle')}</p>
-        {rules.beans.entries.map((e) => (
+        <p className="bean-risk-note">
+          {p(language, 'risk', { probability: percent.format(risk.penaltyProbability) })}
+        </p>
+        <p>{p(language, 'distribution', { version: numbers.format(risk.version) })}</p>
+        {risk.possibilities.map((e) => (
           <p key={e.flavour}>
             <Artwork
               asset={`product.bean-${e.flavour}`}
@@ -176,10 +198,18 @@ export function BeanAssignments({
               className="flavour-art"
               decorative
             />
-            {text(language, flavours[e.flavour])} · {percent.format(e.weight / total)} ·{' '}
+            {text(language, flavours[e.flavour])} · {percent.format(e.probability)} ·{' '}
             {text(language, effects[e.flavour])}
           </p>
         ))}
+        {carrier && risk.possibilities.some((entry) => entry.flavour === 'mint') && (
+          <p data-bean-mint-preview={carrier.unit.id}>
+            {p(language, mintRecoveryPreview(carrier.unit) === 0 ? 'mintFull' : 'mint', {
+              value: numbers.format(mintRecoveryPreview(carrier.unit)),
+            })}
+          </p>
+        )}
+        <p>{p(language, 'unknownAgain')}</p>
       </details>
     </fieldset>
   );

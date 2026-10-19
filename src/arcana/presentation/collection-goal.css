@@ -1,0 +1,104 @@
+.collection-goal-bookmark {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  flex-wrap: wrap;
+  padding: 0.6rem 0.8rem;
+  color: var(--pack-ink);
+}
+.collection-goal-bookmark > img[data-art] {
+  width: 2.6rem;
+  height: 2.8rem;
+  object-fit: contain;
+}
+.collection-goal-bookmark strong,
+.collection-goal-bookmark small {
+  display: block;
+}
+.collection-goal-bookmark .goal-clear {
+  margin-inline-start: auto;
+  min-width: 44px;
+  min-height: 44px;
+}
+.collection-goal-bookmark .goal-clear img {
+  width: 1.5rem;
+  height: 1.5rem;
+  object-fit: contain;
+}
+.collection-goal-bookmark .goal-open {
+  color: inherit;
+  background: transparent;
+  border: 0;
+  text-align: start;
+}
+.collection-goal-bookmark details {
+  flex-basis: 100%;
+  font-size: 0.9rem;
+}
+.collection-goal-bookmark details p {
+  max-width: 45rem;
+}
+.collection-goal-follow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 44px;
+  padding: 0.5rem 0.8rem;
+  margin-inline: auto;
+  color: var(--pack-ink);
+  border: 1px solid var(--pack-gold);
+  border-radius: 50% 50% 0.4rem 0.4rem /15% 15% 0.4rem 0.4rem;
+  background: var(--pack-surface);
+}
+.collection-goal-follow img[data-art] {
+  width: 2.3rem;
+  height: 2.3rem;
+  object-fit: contain;
+}
+.album-card-folio .collection-source {
+  margin-block: 0.8rem;
+  padding-block: 0.5rem;
+  border-block: 1px solid var(--pack-border);
+}
+.collection-source p {
+  margin: 0.35rem 0;
+}
+.collection-source small {
+  display: block;
+}
+.collection-source details {
+  margin-block: 0.5rem;
+}
+.card[data-collection-goal='true'] {
+  position: relative;
+}
+.album-goal-seal {
+  position: absolute;
+  inset-block-start: 0.4rem;
+  inset-inline-end: 0.4rem;
+  pointer-events: none;
+}
+.album-goal-seal img {
+  width: 2.2rem;
+  height: 2.2rem;
+  object-fit: contain;
+}
+.collection-group-count {
+  font-size: 0.9rem;
+  margin: 0.5rem 0;
+}
+.collection-goal-bookmark button:focus-visible,
+.collection-goal-follow:focus-visible {
+  outline: 3px solid var(--pack-focus, var(--pack-gold));
+  outline-offset: 4px;
+}
+@media (max-width: 420px) {
+  .collection-goal-bookmark {
+    padding: 0.5rem;
+  }
+  .collection-goal-bookmark > div {
+    flex: 1;
+    min-width: 0;
+  }
+}

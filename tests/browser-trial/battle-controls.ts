@@ -41,7 +41,8 @@ export async function inspectBattleRecord(page: Page) {
   await page.locator('.arena-record-trigger').click();
 }
 export async function leaveBattle(page: Page) {
-  const resultAction = page.locator('.arena-caption button');
+  // A89's result book is inspect-only; leaving still uses the single navigation action.
+  const resultAction = page.locator('.arena-caption button:not([data-arena-facts-trigger])');
   if (await resultAction.isVisible()) await resultAction.click();
   else if (await page.locator('.arena-pause').count()) {
     await openBattleOptions(page);

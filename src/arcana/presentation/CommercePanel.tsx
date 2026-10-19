@@ -22,6 +22,8 @@ import { text, type MessageKey } from './translations';
 import { ShopBook, ShopExit } from './ShopBook';
 import { shopText } from './shop-messages';
 import './shop-journey.css';
+import type { PublicContent } from '../application/public-content';
+import { WandRecipeComparison } from './WandRecipeComparison';
 type Quote =
   | { kind: 'forge'; recipe: WandRecipe; version: number; seen: string | null }
   | { kind: 'vault'; version: number; seen: string | null };
@@ -43,6 +45,7 @@ export function CommercePanel({
   reduced = false,
   onStreet,
   onMap,
+  preparationContent,
 }: {
   mode: 'workshop' | 'vault';
   content: CommerceCatalogs;
@@ -61,6 +64,7 @@ export function CommercePanel({
   reduced?: boolean;
   onStreet?: () => void;
   onMap?: () => void;
+  preparationContent?: PublicContent;
 }) {
   const [wood, setWood] = useState(content.forge.recipes[0].wood),
     [core, setCore] = useState(content.forge.recipes[0].core),
@@ -161,32 +165,42 @@ export function CommercePanel({
           </div>
           {recipe ? (
             <>
-              <p className="recipe-name">{equipmentName(blueprint(recipe), language)}</p>
-              <button
-                data-primary-action
-                className="forge-action"
-                aria-label={t('forgeWandPrice', { value: numbers.format(recipe.crowns) })}
-                disabled={!ready || !offer?.affordable}
-                onClick={(e) =>
-                  open(
-                    {
-                      kind: 'forge',
-                      recipe,
-                      version: content.forge.version,
-                      seen: result?.id ?? null,
-                    },
-                    e.currentTarget,
-                  )
-                }
+              <p className="recipe-name">
+                {t(recipe.wood)} · {t(recipe.core)}
+              </p>
+              <WandRecipeComparison
+                game={game}
+                recipe={recipe}
+                version={content.forge.version}
+                language={language}
+                content={preparationContent}
               >
-                <EquipmentArt item={blueprint(recipe)} language={language} />
-                <span className="object-price">
-                  <Artwork asset="currency.crowns" language={language} decorative />
-                  <span>
-                    {shopText(language, 'forge')} · {numbers.format(recipe.crowns)}
+                <button
+                  data-primary-action
+                  className="forge-action"
+                  aria-label={t('forgeWandPrice', { value: numbers.format(recipe.crowns) })}
+                  disabled={!ready || !offer?.affordable}
+                  onClick={(e) =>
+                    open(
+                      {
+                        kind: 'forge',
+                        recipe,
+                        version: content.forge.version,
+                        seen: result?.id ?? null,
+                      },
+                      e.currentTarget,
+                    )
+                  }
+                >
+                  <EquipmentArt item={blueprint(recipe)} language={language} />
+                  <span className="object-price">
+                    <Artwork asset="currency.crowns" language={language} decorative />
+                    <span>
+                      {shopText(language, 'forge')} · {numbers.format(recipe.crowns)}
+                    </span>
                   </span>
-                </span>
-              </button>
+                </button>
+              </WandRecipeComparison>
               {!offer?.affordable && <p>{t('notEnoughCrownsForRecipe')}</p>}
             </>
           ) : (

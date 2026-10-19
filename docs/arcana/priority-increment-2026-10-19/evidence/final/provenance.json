@@ -1,0 +1,64 @@
+{
+  "runId": 39261802331,
+  "artifact": "a76-account-evidence",
+  "artifactSubfolder": "docs/arcana/accounts-2026-10-17/evidence/linux/a89",
+  "headSha": "9b2ea615ee6bda258d6f21c54053d61901702626",
+  "checkoutSha": "200a92c82ca71004223eb2f3bde886ce8d22615f",
+  "tree": "4ade02dc2e15adc5315e198955bd0519ee511ebc",
+  "screenshotsInspected": true,
+  "captureCount": 5,
+  "fixtureScreens": [
+    "company",
+    "beans",
+    "battle"
+  ],
+  "realAppScreens": [
+    "collection",
+    "forge"
+  ],
+  "physicalDevice": false,
+  "humanSession": false,
+  "files": [
+    {
+      "file": "selected-collection-390.png",
+      "sha256": "f836d83e01e15d5af1e88c7892447840b203696cead18feb31e3ad35c00d1728"
+    },
+    {
+      "file": "selected-company-390.png",
+      "sha256": "862de9cf73e6a94faf0810e6a294ea8170f6c3890dd6483906e99e52ee61a70b"
+    },
+    {
+      "file": "selected-forge-390.png",
+      "sha256": "a7ebd67f0672e9130c75ba967f22752cee17f7e45660757a31872fe2ea800347"
+    },
+    {
+      "file": "selected-beans-390.png",
+      "sha256": "e80d0201891de45a9295b0cf3882a2847cefa3f6a9012073cf1e5f9bfb71ff0f"
+    },
+    {
+      "file": "connected-links-a89.json",
+      "sha256": "3d009b46b910908aea2902d254d6052994b98289da50ba15bde6608927aec1ee"
+    },
+    {
+      "file": "renderer-fallback.json",
+      "sha256": "952dda95747217f58abf07b20dc46bc887283c5090001a68789b13edb2c11b78"
+    },
+    {
+      "file": "selected-battle-390.png",
+      "sha256": "ec0a62f41f496d7eeae1e379efd21d130d17b8646bf573572691cfd3fb0cd2cb"
+    },
+    {
+      "file": "action-usable-a89.json",
+      "sha256": "38dc66f5a5d0f48c522573b596405926282a59b097abcf280d8c268ec20aa11b"
+    },
+    {
+      "file": "browser-results.json",
+      "sha256": "8ec3f3854350f6ee58d2004e6596d3962746a52ee2226bf430d8ab54761eeadb"
+    }
+  ],
+  "newImagesInspected": 3,
+  "unchangedImagesComparedByHash": [
+    "selected-beans-390.png",
+    "selected-battle-390.png"
+  ]
+}

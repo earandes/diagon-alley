@@ -1,0 +1,23 @@
+{
+  "runId": 39247376499,
+  "headSha": "6f5240a01bab35b781e39525203512d37000d58d",
+  "stats": {
+    "startTime": "2026-10-19T11:51:06.468Z",
+    "duration": 23669.373,
+    "expected": 8,
+    "skipped": 87,
+    "unexpected": 1,
+    "flaky": 0
+  },
+  "failures": [
+    {
+      "test": "A89 one connected expedition joins confirmed facts, collection source, wand fitting and preparation",
+      "project": "chromium-390-a89",
+      "status": "failed",
+      "errors": [
+        "Error: locator.isVisible: Error: strict mode violation: locator('.arena-caption button') resolved to 2 elements:\n    1) <button aria-label=\"En este combate\" data-arena-facts-trigger=\"true\" class=\"arena-result-book game-object\">\u2026</button> aka getByRole('button', { name: 'En este combate' })\n    2) <button>Continuar</button> aka getByRole('button', { name: 'Continuar' })\n\nCall log:\n    - checking visibility of locator('.arena-caption button')\n\n\n   at browser-trial/battle-controls.ts:45\n\n  43 | export async function leaveBattle(page: Page) {\n  44 |   const resultAction = page.locator('.arena-caption button');\n> 45 |   if (await resultAction.isVisible()) await resultAction.click();\n     |                          ^\n  46 |   else if (await page.locator('.arena-pause').count()) {\n  47 |     await openBattleOptions(page);\n  48 |     await page.locator('.arena-exit').click();\n    at leaveBattle (/home/runner/work/diagon-alley/diagon-alley/tests/browser-trial/battle-controls.ts:45:26)\n    at /home/runner/work/diagon-alley/diagon-alley/tests/browser-priorities/priorities-a89.spec.ts:734:9"
+      ]
+    }
+  ],
+  "disposition": "Cancelled own run after preserving ambiguous legacy navigation selector; tests corrected without changing product."
+}

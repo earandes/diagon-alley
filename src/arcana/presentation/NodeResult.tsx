@@ -12,6 +12,8 @@ import { confirmedRecruit, recordedNodeChanges } from './node-result-motion';
 import { encounterText } from './encounter-messages';
 import { themedName } from './content-packs/active';
 import './motion-a69.css';
+import { BattleFacts } from './BossBattleFacts';
+import type { IntentionChoice } from '../domain/exploration/intentions';
 const kinds: Record<NodeKind, MessageKey> = {
   duel: 'arcaneDuel',
   refuge: 'alchemyRefuge',
@@ -28,6 +30,8 @@ export function NodeResult({
   returnAction,
   confirmed = false,
   previousRun,
+  showFacts = true,
+  preferredIntention,
 }: {
   receipt: NodeReceipt;
   language: Language;
@@ -36,6 +40,8 @@ export function NodeResult({
   returnAction?: { label: string; onReturn: (origin: HTMLButtonElement) => void };
   confirmed?: boolean;
   previousRun?: Run;
+  showFacts?: boolean;
+  preferredIntention?: IntentionChoice | null;
 }) {
   const kind = receipt.run.graph.nodes.find((n) => n.id === receipt.request.nodeId)!.kind;
   const numbers = new Intl.NumberFormat(language === 'es' ? 'es-ES' : 'en-US', {
@@ -165,6 +171,9 @@ export function NodeResult({
             ⌄
           </span>
         </summary>
+        {showFacts && receipt.battle && (
+          <BattleFacts combat={receipt.battle} language={language} preferred={preferredIntention} />
+        )}
         <div className="receipt-body">
           <h3>
             {text(language, 'confirmedNodeResult')} · {text(language, kinds[kind])}

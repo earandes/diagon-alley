@@ -115,6 +115,14 @@ async function fits(page: Page, count: number) {
               violations: ['page-overflow'],
               scrollWidth: root.scrollWidth,
               scrollHeight: root.scrollHeight,
+              caption: document.querySelector('.arena-caption')?.getBoundingClientRect().toJSON(),
+              book: [...document.querySelectorAll<HTMLElement>('.arena-result-book')].map(
+                (element) => ({
+                  rect: element.getBoundingClientRect().toJSON(),
+                  image: element.querySelector('img')?.getBoundingClientRect().toJSON(),
+                  padding: getComputedStyle(element).padding,
+                }),
+              ),
               viewport,
             });
           return offenders;

@@ -1,0 +1,19 @@
+{
+  "testedHead": "19f0b4fa1becad9f779b05c1936daeb86b544e07",
+  "testedCheckout": "1dfca93108628d2d5fd29940240aad974e2a84dc",
+  "testedTree": "1a6b0cdec0831f4f4ce51647dd15ecf6b7ffd324",
+  "runId": 39280235365,
+  "comparison": "Git modes and blob IDs from tested head versus final staged index; all tracked paths except exact documented exemptions. Unrelated untracked work is excluded from staging.",
+  "exactDocumentaryExemptions": [
+    "DESIGN.md",
+    "README.md",
+    "docs/DECISIONS.md",
+    "docs/PRD.md"
+  ],
+  "evidenceFolderExemption": "docs/arcana/priority-style-review-2026-10-19/",
+  "comparedPaths": 5430,
+  "canonicalMapSha256": "0588d7b5ab98e6ad0e4a189780d54bcee0948fcd6a495f34e4b0b37934dfbb81",
+  "differences": [],
+  "runtimeTestsToolsWorkflowsAssetsHistoricalFixturesIdentical": true,
+  "limits": "Final documentary commit did not rerun the suite. CI results belong to the tested head and identical merge checkout, not a claim of execution on a later documentation SHA. No merge to main."
+}

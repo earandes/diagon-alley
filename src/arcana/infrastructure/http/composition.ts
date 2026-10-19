@@ -58,6 +58,7 @@ export function composeArcanaApi(options: CompositionOptions) {
     ),
     setIntention: new SetIntentionUseCase(games, () => ({
       ownedAffinities: options.campaign().ownedAffinities ?? {},
+      combatRules: options.campaign().combatRules,
       beanPrice:
         options.opening().shop.products.find((p) => p.kind === 'random-beans')?.crowns ?? Infinity,
     })),

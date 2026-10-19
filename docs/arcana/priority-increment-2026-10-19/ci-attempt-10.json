@@ -1,0 +1,63 @@
+{
+  "runId": 39261802331,
+  "headSha": "9b2ea615ee6bda258d6f21c54053d61901702626",
+  "checkoutSha": "200a92c82ca71004223eb2f3bde886ce8d22615f",
+  "tree": "4ade02dc2e15adc5315e198955bd0519ee511ebc",
+  "conclusion": "success",
+  "unit": 751,
+  "integration": 120,
+  "accountsAndPriorities": {
+    "passed": 57,
+    "skipped": 39,
+    "failed": 0,
+    "flaky": 0
+  },
+  "experienceA75": {
+    "passed": 114,
+    "skipped": 174,
+    "failed": 0
+  },
+  "evidence": "evidence/final",
+  "performance": "evidence/performance/attempt-10",
+  "pending": [],
+  "bossSuite": {
+    "passed": 103,
+    "skipped": 35,
+    "failed": 0
+  },
+  "seasonalSuite": {
+    "passed": 12,
+    "failed": 0
+  },
+  "checkJob": "success",
+  "browserCheckJob": {
+    "passed": 411,
+    "deliberatelySkipped": 303,
+    "failed": 0
+  },
+  "motionSuite": {
+    "passed": 90,
+    "skipped": 42,
+    "failed": 0
+  },
+  "status": "completed",
+  "regressionJob": {
+    "passed": 138,
+    "failed": 0,
+    "suites": {
+      "generalTrial": 56,
+      "progressionA67": 24,
+      "gameplayA63": 16,
+      "headerPactA66": 20,
+      "intentionsA65": 8,
+      "pwa": 12,
+      "performanceBaseline": 1,
+      "performanceCurrent": 1
+    }
+  },
+  "totalBrowser": {
+    "passed": 549,
+    "failed": 0,
+    "deliberatelySkipped": 303
+  }
+}

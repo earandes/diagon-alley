@@ -26,6 +26,9 @@ import { battleVisualChanges } from './motion/battle-deltas';
 import { bossPresentation } from './boss-presentation';
 import './boss-a70.css';
 import './arena-scene-a86.css';
+import { BattleFacts } from './BossBattleFacts';
+import type { IntentionChoice } from '../domain/exploration/intentions';
+import { bossText } from './boss-messages';
 import { useBattleAudio } from './audio/runtime';
 const affinities = {
   neutral: 'neutral',
@@ -41,6 +44,7 @@ const flavours = {
 } as const;
 interface BattlePanelProps {
   combat: Combat;
+  preferredIntention?: IntentionChoice | null;
   confirmedPresentation?: boolean;
   /** Declared presentation fixtures only; the app derives this from its saved node. */
   bossEncounter?: boolean;
@@ -83,6 +87,7 @@ function BattlePlayback({
   bossEncounter,
   settings,
   resources,
+  preferredIntention,
 }: BattlePanelProps & { replay: BattleReplay }) {
   const renderStarted = sceneStart();
   useLayoutEffect(() => sceneEnd('react-commit-wall', renderStarted));
@@ -761,6 +766,18 @@ function BattlePlayback({
         {outcomeLabel ? (
           <>
             <strong data-arena-outcome={frame.outcome}>{outcomeLabel}</strong>
+            <button
+              data-arena-facts-trigger
+              className="arena-result-book game-object"
+              aria-label={bossText(language, 'facts')}
+              onClick={(event) => {
+                inspectionOrigin.current = event.currentTarget;
+                setInspection('facts');
+              }}
+            >
+              <Artwork asset="ui.collection" language={language} decorative />
+              <span className="visually-hidden">{bossText(language, 'facts')}</span>
+            </button>
             <button ref={outcomeAction} onClick={onBack}>
               {arenaText(language, 'continue')}
             </button>
@@ -783,13 +800,15 @@ function BattlePlayback({
           ref={inspector}
           className="arena-inspector"
           aria-label={
-            inspection === 'record'
-              ? t('battleRecord')
-              : selectedBond
-                ? bondName(selectedBond.group, language)
-                : selectedHouse
-                  ? houseName(selectedHouse.house, language)
-                  : name(inspection)
+            inspection === 'facts'
+              ? bossText(language, 'facts')
+              : inspection === 'record'
+                ? t('battleRecord')
+                : selectedBond
+                  ? bondName(selectedBond.group, language)
+                  : selectedHouse
+                    ? houseName(selectedHouse.house, language)
+                    : name(inspection)
           }
           onCancel={(event) => {
             event.stopPropagation();
@@ -813,7 +832,12 @@ function BattlePlayback({
           >
             ×
           </button>
-          {selectedBond ? (
+          {inspection === 'facts' ? (
+            <>
+              <h2>{bossText(language, 'facts')}</h2>
+              <BattleFacts combat={combat} language={language} preferred={preferredIntention} />
+            </>
+          ) : selectedBond ? (
             <>
               <BondEmblem group={selectedBond.group} language={language} />
               <h2>{bondName(selectedBond.group, language)}</h2>

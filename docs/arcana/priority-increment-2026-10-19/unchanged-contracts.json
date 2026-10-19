@@ -1,0 +1,60 @@
+{
+  "baseline": "d4a6d36fd0b1fb96ab4f3e8a071c88cfc5621f1f",
+  "candidate": "9b2ea615ee6bda258d6f21c54053d61901702626",
+  "checks": [
+    {
+      "path": "src/arcana/domain/combat/engine.ts",
+      "baselineObject": "88adba20037f0882051941dd9326c59e684252c5",
+      "candidateObject": "88adba20037f0882051941dd9326c59e684252c5",
+      "identical": true
+    },
+    {
+      "path": "src/arcana/presentation/scenes/pixi-scenes.ts",
+      "baselineObject": "7bb766e127a6c1b515096c0d9dbcaef47e102e51",
+      "candidateObject": "7bb766e127a6c1b515096c0d9dbcaef47e102e51",
+      "identical": true
+    },
+    {
+      "path": "src/arcana/presentation/scenes/SceneCanvas.tsx",
+      "baselineObject": "f1f607f034c4bcbadbbae1de9a3cca7517333fa8",
+      "candidateObject": "f1f607f034c4bcbadbbae1de9a3cca7517333fa8",
+      "identical": true
+    },
+    {
+      "path": "src/arcana/domain/economy",
+      "baselineObject": "eef5e4f8a554e1e88208a90bf4c0c3327351e6c6",
+      "candidateObject": "eef5e4f8a554e1e88208a90bf4c0c3327351e6c6",
+      "identical": true
+    },
+    {
+      "path": "src/arcana/content",
+      "baselineObject": "4e7ab2216fc29eed2b1184285c472411192cf6b5",
+      "candidateObject": "4e7ab2216fc29eed2b1184285c472411192cf6b5",
+      "identical": true
+    },
+    {
+      "path": "src/arcana/presentation/content-packs",
+      "baselineObject": "73162bdd3edb9efbedf658c920da74c6c3edf4a0",
+      "candidateObject": "73162bdd3edb9efbedf658c920da74c6c3edf4a0",
+      "identical": true
+    },
+    {
+      "path": "package.json",
+      "baselineObject": "7624c06b3bf5c620b39cb74042a7a0a3467f0823",
+      "candidateObject": "7624c06b3bf5c620b39cb74042a7a0a3467f0823",
+      "identical": true
+    },
+    {
+      "path": "package-lock.json",
+      "baselineObject": "f8d0c9d8aab1a5931825ecd76ccc979dea21862c",
+      "candidateObject": "f8d0c9d8aab1a5931825ecd76ccc979dea21862c",
+      "identical": true
+    },
+    {
+      "path": ".github/workflows/checks.yml",
+      "baselineObject": "71c2eed32a572867c0b8f83905166636ceb43589",
+      "candidateObject": "71c2eed32a572867c0b8f83905166636ceb43589",
+      "identical": true
+    }
+  ]
+}

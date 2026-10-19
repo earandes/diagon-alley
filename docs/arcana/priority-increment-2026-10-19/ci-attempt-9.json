@@ -1,0 +1,20 @@
+{
+  "runId": 39260815038,
+  "headSha": "5111468ac1cdf3635a83dcf4c95ae3fc0125b23c",
+  "conclusion": "cancelled deliberately after confirmed R02",
+  "passedBeforeCancellation": [
+    "types",
+    "content",
+    "749 unit",
+    "120 PostgreSQL/Redis integration",
+    "build",
+    "backup",
+    "A89/A76"
+  ],
+  "notClaimed": [
+    "boss",
+    "motion",
+    "regression"
+  ],
+  "reason": "R02 confirmed RED: selected viable legacy synergy displaced by acquisition. New corrected candidate required."
+}

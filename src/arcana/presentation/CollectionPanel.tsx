@@ -13,9 +13,15 @@ import { wizardName, wizardContext } from './content-packs/active';
 import { StarRating } from './StarRating';
 import { useEffect, useRef, useState } from 'react';
 import type { GameState } from '../application/game';
+import type { PublicContent } from '../application/public-content';
+import { collectionGoalView, collectionSources } from '../application/client/collection-goal';
+import { useCollectionGoal } from './useCollectionGoal';
+import { collectionGoalText } from './collection-goal-messages';
+import { CollectionSources } from './CollectionSources';
 import type { WizardCatalog, Language } from '../domain/collection/wizards';
 import { prepText } from './prep-messages';
 import './expedition-preparation.css';
+import './collection-goal.css';
 import { cromodex } from '../application/client/read-models';
 import { savedCopies, text, type MessageKey } from './translations';
 import { useSelectionMotion } from './useSelectionMotion';
@@ -31,11 +37,15 @@ export function CollectionPanel({
   catalog,
   language,
   onPrepare,
+  content,
+  onAcquire,
 }: {
   game: GameState;
   catalog: WizardCatalog;
   language: Language;
   onPrepare?: (origin: HTMLElement) => void;
+  content?: PublicContent;
+  onAcquire?: (origin: HTMLElement) => void;
 }) {
   const [classification, setClassification] = useState<ClassificationFilter>('all');
   const [rarity, setRarity] = useState('all'),
@@ -45,7 +55,13 @@ export function CollectionPanel({
     [inspected, setInspected] = useState<string | null>(null),
     [inspectedCopy, setInspectedCopy] = useState<string | null>(null);
   const folio = useRef<HTMLDialogElement>(null);
+  const heading = useRef<HTMLHeadingElement>(null);
   const origin = useRef<HTMLButtonElement | null>(null);
+  const bookmark = useCollectionGoal(game.playerId);
+  useEffect(() => {
+    setInspected(null);
+    setInspectedCopy(null);
+  }, [game.playerId]);
   useEffect(() => {
     const current = folio.current;
     if (!inspected || !current) return;
@@ -53,11 +69,30 @@ export function CollectionPanel({
     return () => {
       if (current.open) current.close();
       if (origin.current?.isConnected) origin.current.focus({ preventScroll: true });
+      else if (heading.current?.isConnected) heading.current.focus({ preventScroll: true });
     };
   }, [inspected]);
   const t = (key: MessageKey, values?: Record<string, string | number>) =>
     text(language, key, values);
   const allEntries = cromodex(catalog, game.copies);
+  const goalView = collectionGoalView(bookmark.goal, game, catalog, content);
+  const goalEntry = allEntries.find((entry) => entry.wizard.id === goalView?.goal.wizardId);
+  const g = (
+    key: Parameters<typeof collectionGoalText>[1],
+    values?: Record<string, string | number>,
+  ) => collectionGoalText(language, key, values);
+  const entryLabel = (entry: (typeof allEntries)[number]) =>
+    entry.discovered
+      ? wizardName(entry.wizard, language)
+      : g('pending', { number: allEntries.indexOf(entry) + 1 });
+  const groupEntries = allEntries.filter(
+    (entry) =>
+      !entry.historical &&
+      matchesClassification(
+        catalog.wizards.find((w) => w.id === entry.wizard.id)?.traits,
+        classification,
+      ),
+  );
   const discovered = allEntries.filter((entry) => entry.discovered).length;
   const entries = allEntries
     .filter(
@@ -75,6 +110,12 @@ export function CollectionPanel({
   const currentPage = Math.min(page, pages - 1);
   const visibleEntries = entries.slice(currentPage * 4, currentPage * 4 + 4);
   const inspectedEntry = allEntries.find((entry) => entry.wizard.id === inspected);
+  useEffect(() => {
+    if (inspected && !inspectedEntry) setInspected(null);
+  }, [inspected, inspectedEntry]);
+  const inspectedSources = inspectedEntry
+    ? collectionSources(inspectedEntry.wizard.id, game, catalog, content)
+    : null;
   const selectedCopy =
     inspectedEntry?.copies.find((c) => c.copyId === inspectedCopy) ?? inspectedEntry?.copies[0];
   const { reduced } = useReducedMotion();
@@ -85,7 +126,9 @@ export function CollectionPanel({
   );
   return (
     <section className="collection-panel">
-      <h2>{t('chromodex')}</h2>
+      <h2 ref={heading} tabIndex={-1}>
+        {t('chromodex')}
+      </h2>
       <div className="collection-progress">
         <label>
           {t('collectionDiscoveryCount', { count: discovered, total: allEntries.length })}
@@ -97,6 +140,56 @@ export function CollectionPanel({
         </label>
       </div>
       <p className="collection-copy-count">{savedCopies(language, game.copies.length)}</p>
+      {goalView && (
+        <aside
+          className="collection-goal-bookmark"
+          aria-label={g('objective')}
+          data-goal-state={goalView.status}
+        >
+          <Artwork asset="ui.collection" language={language} decorative />
+          <div>
+            <strong>{g('objective')}</strong>
+            {goalEntry ? (
+              <button
+                type="button"
+                className="goal-open"
+                onClick={(event) => {
+                  origin.current = event.currentTarget;
+                  setInspectedCopy(null);
+                  setInspected(goalEntry.wizard.id);
+                }}
+              >
+                {entryLabel(goalEntry)}
+              </button>
+            ) : (
+              <span>{g('archived')}</span>
+            )}
+            <small role="status">
+              {g(
+                goalView.status === 'acquired'
+                  ? 'acquired'
+                  : goalView.status === 'archived'
+                    ? 'archived'
+                    : 'searching',
+              )}
+            </small>
+          </div>
+          <button
+            type="button"
+            className="goal-clear game-object"
+            aria-label={g('clear')}
+            onClick={() => bookmark.choose(null)}
+          >
+            <Artwork asset="ui.clear" language={language} decorative />
+            <span>{g('clear')}</span>
+          </button>
+          <details>
+            <summary>{g('source')}</summary>
+            <p>{g('help')}</p>
+          </details>
+        </aside>
+      )}
+      {!bookmark.durable && bookmark.goal && <p role="status">{g('session')}</p>}
       {onPrepare && (
         <button
           className="album-prepare-link game-object"
@@ -167,6 +260,14 @@ export function CollectionPanel({
           />
         </div>
       </details>
+      {classification !== 'all' && (
+        <p className="collection-group-count">
+          {g('counts', {
+            owned: groupEntries.filter((entry) => entry.discovered).length,
+            total: groupEntries.length,
+          })}
+        </p>
+      )}
       {!entries.length && <p role="status">{t('noMatchingCards')}</p>}
       <div className="album" ref={pageMotion} data-album-motion="selection-only">
         {visibleEntries.map((entry) => (
@@ -174,17 +275,24 @@ export function CollectionPanel({
             key={entry.wizard.id}
             className={entry.discovered ? 'card' : 'card locked'}
             data-rarity={entry.wizard.rarity}
+            data-collection-goal={bookmark.goal?.wizardId === entry.wizard.id}
+            data-collection-id={entry.wizard.id}
+            data-collection-discovered={entry.discovered}
             aria-label={
               entry.discovered ? wizardName(entry.wizard, language) : t('undiscoveredCard')
             }
           >
+            {bookmark.goal?.wizardId === entry.wizard.id && (
+              <span className="album-goal-seal" role="img" aria-label={g('tracked')}>
+                <Artwork asset="ui.collection" language={language} decorative />
+              </span>
+            )}
             <button
               className="album-card-inspect game-object enchanted-holder"
-              disabled={!entry.discovered}
               aria-label={
                 entry.discovered
                   ? prepText(language, 'consult', { name: wizardName(entry.wizard, language) })
-                  : t('undiscoveredCard')
+                  : g('consult', { number: allEntries.indexOf(entry) + 1 })
               }
               onClick={(event) => {
                 origin.current = event.currentTarget;
@@ -231,7 +339,7 @@ export function CollectionPanel({
         <dialog
           ref={folio}
           className="discovery-folio album-card-folio"
-          aria-label={wizardName(inspectedEntry.wizard, language)}
+          aria-label={entryLabel(inspectedEntry)}
           onCancel={() => setInspected(null)}
         >
           <button
@@ -243,14 +351,18 @@ export function CollectionPanel({
           </button>
           <div className="enchanted-holder">
             <Artwork
-              asset={`character.${inspectedEntry.wizard.id}.portrait`}
+              asset={
+                inspectedEntry.discovered
+                  ? `character.${inspectedEntry.wizard.id}.portrait`
+                  : 'card.back'
+              }
               language={language}
               className="album-folio-portrait"
               decorative
             />
             {selectedCopy && <EnchantedFinish wizard={selectedCopy.wizard} />}
           </div>
-          <h3>{wizardName(inspectedEntry.wizard, language)}</h3>
+          <h3>{entryLabel(inspectedEntry)}</h3>
           {selectedCopy && <FinishLabel wizard={selectedCopy.wizard} language={language} />}
           <TraitBadge
             traits={catalog.wizards.find((w) => w.id === inspectedEntry.wizard.id)?.traits}
@@ -259,24 +371,74 @@ export function CollectionPanel({
           />
           <RarityBadge rarity={inspectedEntry.wizard.rarity} language={language} />
           <StarRating stars={inspectedEntry.wizard.stars} language={language} />
-          <p>{wizardContext(inspectedEntry.wizard, language)}</p>
-          <p>{t('cardCopyCount', { count: inspectedEntry.copies.length })}</p>
-          <ol className="album-copy-tokens" aria-label={t('collectionCopiesQuestion')}>
-            {inspectedEntry.copies.map((copy, index) => (
-              <li key={copy.copyId} aria-label={prepText(language, 'copy', { number: index + 1 })}>
-                <button
-                  type="button"
-                  aria-pressed={selectedCopy?.copyId === copy.copyId}
-                  onClick={() => setInspectedCopy(copy.copyId)}
-                  aria-label={`${prepText(language, 'copy', { number: index + 1 })}${copy.wizard.finish ? ` · ${enchantedName(language)}` : ''}`}
+          {inspectedEntry.discovered && <p>{wizardContext(inspectedEntry.wizard, language)}</p>}
+          {inspectedSources && (
+            <CollectionSources
+              sources={inspectedSources}
+              language={language}
+              onAcquire={
+                onAcquire
+                  ? (element) => {
+                      setInspected(null);
+                      onAcquire(element);
+                    }
+                  : undefined
+              }
+            />
+          )}
+          {inspectedSources &&
+            !inspectedEntry.discovered &&
+            inspectedSources.probability !== null &&
+            inspectedSources.probability > 0 && (
+              <button
+                type="button"
+                className="collection-goal-follow game-object"
+                aria-pressed={bookmark.goal?.wizardId === inspectedEntry.wizard.id}
+                onClick={() =>
+                  bookmark.choose(
+                    bookmark.goal?.wizardId === inspectedEntry.wizard.id
+                      ? null
+                      : {
+                          version: 1,
+                          owner: game.playerId,
+                          wizardId: inspectedEntry.wizard.id,
+                          catalogVersion: catalog.version,
+                        },
+                  )
+                }
+              >
+                <Artwork asset="ui.collection" language={language} decorative />
+                <span>
+                  {g(bookmark.goal?.wizardId === inspectedEntry.wizard.id ? 'clear' : 'track')}
+                </span>
+              </button>
+            )}
+          {inspectedEntry.discovered && (
+            <p>{t('cardCopyCount', { count: inspectedEntry.copies.length })}</p>
+          )}
+          {inspectedEntry.discovered && (
+            <ol className="album-copy-tokens" aria-label={t('collectionCopiesQuestion')}>
+              {inspectedEntry.copies.map((copy, index) => (
+                <li
+                  key={copy.copyId}
+                  aria-label={prepText(language, 'copy', { number: index + 1 })}
                 >
-                  {index + 1}
-                  {copy.wizard.finish ? ' ✧' : ''}
-                </button>
-              </li>
-            ))}
-          </ol>
-          <p className="album-readonly-note">{prepText(language, 'albumHelp')}</p>
+                  <button
+                    type="button"
+                    aria-pressed={selectedCopy?.copyId === copy.copyId}
+                    onClick={() => setInspectedCopy(copy.copyId)}
+                    aria-label={`${prepText(language, 'copy', { number: index + 1 })}${copy.wizard.finish ? ` · ${enchantedName(language)}` : ''}`}
+                  >
+                    {index + 1}
+                    {copy.wizard.finish ? ' ✧' : ''}
+                  </button>
+                </li>
+              ))}
+            </ol>
+          )}
+          {inspectedEntry.discovered && (
+            <p className="album-readonly-note">{prepText(language, 'albumHelp')}</p>
+          )}
         </dialog>
       )}
       <div className="album-page-controls" aria-label={t('gameAlbumPages')}>

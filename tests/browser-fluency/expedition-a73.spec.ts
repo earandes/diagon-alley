@@ -216,7 +216,7 @@ for (const language of ['es', 'en'] as const)
         await action(
           page,
           'first-arena-return-to-map',
-          page.locator('.arena-caption button'),
+          page.locator('.arena-caption button:not([data-arena-facts-trigger])'),
           page.locator('.branch-map'),
         ),
       );
@@ -261,7 +261,7 @@ for (const language of ['es', 'en'] as const)
         await action(
           page,
           'boss-return-to-closure',
-          page.locator('.arena-caption button'),
+          page.locator('.arena-caption button:not([data-arena-facts-trigger])'),
           closure,
         ),
       );

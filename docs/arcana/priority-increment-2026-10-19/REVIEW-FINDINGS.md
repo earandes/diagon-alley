@@ -1,0 +1,33 @@
+# Revisión integrada previa a CI final
+
+## R01 · Una sugerencia nueva invalidaba un plan de compañía todavía viable
+
+**Evidencia → problema.** `availableIntentions` seleccionaba la primera compañía viable del catálogo antes de intentar conservar el plan escogido. Situación reproducida con fixture del catálogo vigente:3identidades Ravenclaw, elección Ravenclaw, adquisición posterior de3Gryffindor; ambas compañías viables. El selector devolvía Gryffindor/compañero/afinidad, dejando Ravenclaw fuera y marcando el plan como no disponible. No había pérdida de copias, pero se anunciaba una pérdida de viabilidad inexistente.
+
+**Cambio mínimo.** Antes de sugerir otra compañía, conservar la ya seleccionada si el mismo predicado compartido confirma que sigue viable. No ofrecer más compañías, cambiar umbrales, equipar, consumir o iniciar una expedición. Máximo3opciones y tratamiento de intenciones antiguas conservados.
+
+**Aceptación.** La compañía seleccionada continúa visible y con estado seleccionado tras ampliar colección; una compañía realmente inviable sigue sin quedar habilitada por esta corrección.
+
+**Prueba.** Nuevo caso `keeps a viable selected Ravenclaw plan when new copies make Gryffindor eligible` en `company-intentions-a89.test.ts`. RED real:1fallo/7correctos mostrando Gryffindor en lugar de Ravenclaw; GREEN posterior8casos. Ejecución combinada con `intention-presentation.test.ts`:14/14correctos, incluido plan legado de grageas. Sin navegador local, Git o nueva CI atribuida. La primera CI sobre `aa575ea` no incluye este cambio; el coordinador debe verificar un candidato posterior.
+
+## Cobertura de revisión de guía y lectura
+
+Inspección de `ExpeditionGuide`, `ReadingPreferences`, preferencias, selector de objetivo, integración App y contratos de intención. La guía consulta sin avanzar, conserva mínimo de formación del dominio y coste constante compartido. Preferencias separadas por propietario/dispositivo, canales `storage` y memoria acotada, protección de contraste del sistema, cleanup de listeners y foco de orientación revisados por código. Esta inspección no acredita calidad visual o foco en ejecución.
+
+No se encontró otro defecto bloqueante demostrado dentro de esta revisión estática. Persisten los límites documentados de lectura/ayuda de dispositivo frente a sincronización de cuenta y los casos dinámicos de la suite Linux. No se afirma que las pruebas humanas, el navegador o el dispositivo físico se hayan revisado aquí.
+
+## Revisión de cierre PM03/PM06
+
+Sin otro defecto demostrable en el contraste final de código y pruebas. El plan seleccionado viable precede a sugerencias nuevas; máximo tres opciones, contribuyentes distintos/vivos y regla efectiva de snapshot. El cumplimiento exige activación propia y runId confirmado, sin premio, replay o consulta que lo complete. v1/v2 permanecen estrictos.
+
+Hechos: máximo dos categorías, prioridad del plan solo si ocurrió, cantidades aplicadas y actor/objetivo del bando propio. App y cierre relacionan la preferencia con el runId del receipt, incluidos resultados históricos. Un log antiguo puede aportar menos hechos, sin reconstruir daño o azar. La revisión no acredita comprensión humana, dispositivo físico ni un E2E de compañía con colección fabricada.
+
+Otros defectos de integración detectados y corregidos constan con sus fallos originales en QA: fixture inválida, retratos del taller, reflujo320/200%, excepción de puntero de guía, enlace doble a Confitería, selector de retorno al añadir libro y espacio de ayuda sobre nodo. Los dos primeros fallos de copy/selector son de prueba; el solape del mapa, escala y navegación son de producto. No se presentan como la misma clase de evidencia.
+
+## R02 · Compatibilidad de intenciones v1 ante crecimiento de colección
+
+**Evidencia → problema.** El mismo patrón de R01 persistía en sugerencias antiguas: una sinergia de sombras seleccionada seguía viable, pero adquirir tres identidades de alquimia hacía que el primer `find` devolviera alquimia antes de conservar la elección. Dos pruebas nuevas fallaron antes de corregir: crecimiento real para sinergia y cambio declarado de orden del read-model para compañero. Este segundo caso no se presenta como comportamiento de adquisición append-only.
+
+**Cambio mínimo.** Dentro del conjunto ya elegible, priorizar afinidad o identidad seleccionada; después sugerir la primera alternativa. Sin nuevos umbrales, persistencia, premios o más de tres opciones. Si pierde elegibilidad, no se conserva artificialmente.
+
+**Aceptación y prueba.** Se conserva el plan viable; se marca no disponible el realmente inviable. Dos RED→GREEN,30/30 focales y tipos correctos; batería local completa posterior117archivos/751pruebas correctas. La CI9 se canceló expresamente tras preservar A89/A76 correctos para no ejecutar el resto sobre código obsoleto. El candidato siguiente debe superar la validación integrada; no se atribuye esa cobertura a la corrección todavía.

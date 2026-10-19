@@ -1,0 +1,78 @@
+{
+  "runId": 39280235365,
+  "jobId": 118153695468,
+  "testedHead": "19f0b4fa1becad9f779b05c1936daeb86b544e07",
+  "testedCheckout": "1dfca93108628d2d5fd29940240aad974e2a84dc",
+  "treeIdentical": true,
+  "logSha256": "f13a7b1617e6203a4b4c8ae85b9b1933abf0cd0470a83edb9d0e4fdbd9ad6410",
+  "contentValidationTestsPassed": 6,
+  "unitTestsPassed": 759,
+  "unitFilesPassed": 118,
+  "integrationTestsPassed": 120,
+  "integrationFilesPassed": 20,
+  "integrationServices": "PostgreSQL16.9 and Redis7 isolated real services",
+  "backupRestoration": {
+    "result": "pass",
+    "fixtureOnly": true,
+    "tables": 15,
+    "credentialsVerified": true,
+    "economicSnapshotsOwnershipExactlyEqual": true
+  },
+  "buildScanBytesCI": 17368010,
+  "browserSuites": [
+    {
+      "command": "ARCANA_CAPTURE_A76=1 npx playwright test --config playwright.accounts-a76.config.ts",
+      "passed": 57,
+      "skipped": 39
+    },
+    {
+      "command": "ARCANA_CAPTURE_A82=1 npx playwright test --config playwright.welcome-menu-a82.config.ts",
+      "passed": 6,
+      "skipped": 0
+    },
+    {
+      "command": "npx playwright test --config playwright.accounts-fixes-a78.config.ts",
+      "passed": 16,
+      "skipped": 11
+    },
+    {
+      "command": "npx playwright test --config playwright.account-entry-a79.config.ts",
+      "passed": 7,
+      "skipped": 2
+    },
+    {
+      "command": "npx playwright test --config playwright.account-style-a80.config.ts",
+      "passed": 3,
+      "skipped": 0
+    },
+    {
+      "command": "npx playwright test --config playwright.account-symbols-a81.config.ts",
+      "passed": 3,
+      "skipped": 0
+    },
+    {
+      "command": "ARCANA_CAPTURE_A75=1 npx playwright test --config playwright.experience-a75.config.ts",
+      "passed": 114,
+      "skipped": 174
+    },
+    {
+      "command": "ARCANA_CAPTURE_A70=1 npx playwright test --config playwright.boss-a70.config.ts",
+      "passed": 103,
+      "skipped": 35
+    },
+    {
+      "command": "npx playwright test --config playwright.seasonal-a68.config.ts",
+      "passed": 12,
+      "skipped": 0
+    },
+    {
+      "command": "ARCANA_CAPTURE_A69=1 npx playwright test --config playwright.motion-a69.config.ts",
+      "passed": 90,
+      "skipped": 42
+    }
+  ],
+  "browserPassed": 411,
+  "plannedSkipped": 303,
+  "regression": "success:138 cases passed; full workflow success",
+  "limits": "Counts from completed job log; aggregate API may lag. Full workflow success requires regression completion. Not human or physical-device validation."
+}

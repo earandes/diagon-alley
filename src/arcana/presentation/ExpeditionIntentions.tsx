@@ -6,21 +6,38 @@ import { sameIntentionChoice } from '../domain/exploration/intentions';
 import {
   availableIntentions,
   intentionProgress,
+  companyIntentionProgress,
   type IntentionAvailability,
 } from '../application/client/expedition-intentions';
 import { Artwork } from './Artwork';
 import { themedName } from './content-packs/active';
 import { intentionText as t } from './intention-messages';
 import './expedition-intentions.css';
+import { HouseInsignia, houseName } from './HouseInsignia';
+import { bondName } from './BondEmblem';
+import { priorityText } from './priority-messages';
 
 export function intentionAvailability(content: PublicContent): IntentionAvailability {
   return {
     ownedAffinities: content.campaign.ownedAffinities ?? {},
+    combatRules: content.combatRules,
     beanPrice:
       content.shop.products.find((product) => product.kind === 'random-beans')?.crowns ?? Infinity,
   };
 }
 function intentionVisual(choice: IntentionChoice, game: GameState, language: Language) {
+  if (choice.kind === 'company') {
+    const target =
+      choice.focus === 'house'
+        ? houseName(choice.house, language)
+        : bondName(choice.group, language);
+    return {
+      asset: choice.focus === 'house' ? 'ui.collection' : `bond.${choice.group}`,
+      label: priorityText(language, 'company'),
+      target,
+      detail: priorityText(language, 'companyDetail', { name: target }),
+    };
+  }
   if (choice.kind === 'new-companion') {
     const fallback =
       game.copies.find((copy) => copy.wizard.id === choice.wizardId)?.wizard.name[language] ??
@@ -95,7 +112,11 @@ export function ExpeditionIntentions({
                   if (ready && !selected) onChoose(choice, event.currentTarget);
                 }}
               >
-                <Artwork asset={visual.asset} language={language} decorative />
+                {choice.kind === 'company' && choice.focus === 'house' ? (
+                  <HouseInsignia house={choice.house} />
+                ) : (
+                  <Artwork asset={visual.asset} language={language} decorative />
+                )}
                 <span className="intention-object-label">
                   {visual.label}
                   <small>{visual.target}</small>
@@ -106,23 +127,6 @@ export function ExpeditionIntentions({
                   </span>
                 )}
               </button>
-              <details className="intention-explanation">
-                <summary>{t(language, 'details')}</summary>
-                <p>{visual.detail}</p>
-                {choice.kind === 'bean' && (
-                  <small>
-                    {game.inventory.products.some(
-                      (p) => p.kind === 'random-beans' && p.status === 'available',
-                    )
-                      ? t(language, 'ownBean')
-                      : t(language, 'buyBean', {
-                          cost: new Intl.NumberFormat(language === 'es' ? 'es-ES' : 'en-GB').format(
-                            availability.beanPrice,
-                          ),
-                        })}
-                  </small>
-                )}
-              </details>
             </div>
           );
         })}
@@ -131,8 +135,36 @@ export function ExpeditionIntentions({
         <IntentionReminder game={game} content={content} language={language} />
       )}
       <details className="intention-purpose">
-        <summary aria-label={t(language, 'heading')}>?</summary>
+        <summary>
+          <Artwork asset="ui.collection" language={language} decorative />
+          <span>{t(language, 'details')}</span>
+        </summary>
         <p>{t(language, 'hint')}</p>
+        {choices.map((choice) => {
+          const visual = intentionVisual(choice, game, language);
+          const group =
+            choice.kind === 'company' ? companyIntentionProgress(game, availability, choice) : null;
+          return (
+            <section className="intention-explanation" key={choice.kind}>
+              <h4>{visual.target || visual.label}</h4>
+              <p>{visual.detail}</p>
+              {group && <p>{priorityText(language, 'availableCompany', { count: group.count })}</p>}
+              {choice.kind === 'bean' && (
+                <p>
+                  {game.inventory.products.some(
+                    (product) => product.kind === 'random-beans' && product.status === 'available',
+                  )
+                    ? t(language, 'ownBean')
+                    : t(language, 'buyBean', {
+                        cost: new Intl.NumberFormat(language === 'es' ? 'es-ES' : 'en-GB').format(
+                          availability.beanPrice,
+                        ),
+                      })}
+                </p>
+              )}
+            </section>
+          );
+        })}
       </details>
       {current && (
         <button
@@ -166,7 +198,12 @@ export function IntentionReminder({
   return (
     <details className="intention-reminder" data-intention-status={progress.status}>
       <summary>
-        <Artwork asset={visual.asset} language={language} decorative />
+        {progress.intention.choice.kind === 'company' &&
+        progress.intention.choice.focus === 'house' ? (
+          <HouseInsignia house={progress.intention.choice.house} />
+        ) : (
+          <Artwork asset={visual.asset} language={language} decorative />
+        )}
         <span>
           {visual.target || visual.label}
           <small>{t(language, progress.status)}</small>

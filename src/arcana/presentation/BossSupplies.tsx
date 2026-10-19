@@ -3,6 +3,7 @@ import { BeanAssignments } from './BeanAssignments';
 import { Artwork } from './Artwork';
 import { text } from './translations';
 import { validBeanAssignments } from './contextual-preparation';
+import { commercePrepText } from './commerce-preparation-messages';
 
 /** Read-only stock and draft presentation; only the existing battle command consumes. */
 export function BossSupplies(props: ComponentProps<typeof BeanAssignments>) {
@@ -23,7 +24,13 @@ export function BossSupplies(props: ComponentProps<typeof BeanAssignments>) {
         <span className="boss-supply-caption">
           <span>{text(language, 'chanceBeans')}</span>
           <strong aria-hidden="true">×{numbers.format(stock)}</strong>
-          {draft > 0 && <small>{language === 'es' ? 'Sin consumir' : 'Not consumed'}</small>}
+          {draft > 0 && (
+            <small>
+              {commercePrepText(language, draft === 1 ? 'draftOne' : 'draft', {
+                count: numbers.format(draft),
+              })}
+            </small>
+          )}
         </span>
       </summary>
       <BeanAssignments {...props} />

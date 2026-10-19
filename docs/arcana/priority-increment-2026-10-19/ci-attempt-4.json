@@ -1,0 +1,23 @@
+{
+  "runId": 39246641437,
+  "headSha": "bd88a6ae30d0843e9e0a4237cd6396c7aca8b97b",
+  "stats": {
+    "startTime": "2026-10-19T11:45:14.965Z",
+    "duration": 32639.544,
+    "expected": 7,
+    "skipped": 88,
+    "unexpected": 1,
+    "flaky": 0
+  },
+  "failures": [
+    {
+      "test": "A89 real compiled welcome, starter, guide and Pact consultation cancel without advancement",
+      "project": "chromium-390-a89",
+      "status": "failed",
+      "errors": [
+        "TimeoutError: locator.click: Timeout 12000ms exceeded.\nCall log:\n  - waiting for locator('.priority-guide').locator('summary')\n    - locator resolved to <summary aria-label=\"Pr\u00f3ximo paso\" class=\"priority-guide-trigger\">\u2026</summary>\n  - attempting click action\n    2 \u00d7 waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n      - scrolling into view if needed\n      - done scrolling\n      - <div class=\"branch-map\" data-region=\"pasaje\" data-map-axis=\"vertical\" data-motion-policy=\"confirmed\">\u2026</div> from <div class=\"map-scroll\">\u2026</div> subtree intercepts pointer events\n    - retrying click action\n    - waiting 20ms\n    2 \u00d7 waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n      - scrolling into view if needed\n      - done scrolling\n      - <div class=\"branch-map\" data-region=\"pasaje\" data-map-axis=\"vertical\" data-motion-policy=\"confirmed\">\u2026</div> from <div class=\"map-scroll\">\u2026</div> subtree intercepts pointer events\n    - retrying click action\n      - waiting 100ms\n    22 \u00d7 waiting for element to be visible, enabled and stable\n       - element is visible, enabled and stable\n       - scrolling into view if needed\n       - done scrolling\n       - <div class=\"branch-map\" data-region=\"pasaje\" data-map-axis=\"vertical\" data-motion-policy=\"confirmed\">\u2026</div> from <div class=\"map-scroll\">\u2026</div> subtree intercepts pointer events\n     - retrying click action\n       - waiting 500ms\n\n\n  607 |     const before = (await (await page.request.get('http://127.0.0.1:5610/api/state')).json()).state;\n  608 |     const guide = page.locator('.priority-guide');\n> 609 |     await guide.locator('summary').click();\n      |                                    ^\n  610 |     const consult = guide.getByRole('button', {\n  611 |       name: lang === 'es' ? 'Consultar Pacto' : 'Inspect Pact',\n  612 |       exact: true,\n    at /home/runner/work/diagon-alley/diagon-alley/tests/browser-priorities/priorities-a89.spec.ts:609:36"
+      ]
+    }
+  ],
+  "disposition": "Cancelled own run after preserving pointer interception failure; no successful full CI claimed."
+}

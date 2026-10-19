@@ -23,6 +23,7 @@ import { nodeActionLabel } from './node-event-messages';
 import './node-event-dialog.css';
 import './header-pact.css';
 import { AccountSettingsContext, GameSettings } from './GameSettings';
+import { ReadingScope } from './ReadingPreferences';
 import { SweetshopScene } from './SweetshopScene';
 import { JourneyCabinet } from './JourneyCabinet';
 import { Artwork } from './Artwork';
@@ -370,6 +371,7 @@ export function App() {
   };
   const battle =
     state.receipt?.kind === 'advance-node' ? state.receipt.battle : (savedNode?.battle ?? null);
+  const battleReceipt = state.receipt?.kind === 'advance-node' ? state.receipt : savedNode;
   const label = (kind: NodeKind) => t(nodes[kind]);
   const startExpedition = (
     copyIds: readonly string[],
@@ -465,431 +467,423 @@ export function App() {
   );
 
   return (
-    <AccountSettingsContext.Provider value={accountControl}>
-      <div
-        className={`arcana-shell game-shell${game && view === 'map' ? ' arcana-map-view' : ''}`}
-        data-reduced={motion.reduced}
-        data-view={!game ? 'welcome' : view}
-        data-content-pack={activePack.id}
-        style={
-          {
-            ...Object.fromEntries(
-              Object.entries(activePack.palette).map(([key, value]) => [
-                '--pack-' + key.replace(/[A-Z]/g, (letter) => '-' + letter.toLowerCase()),
-                value,
-              ]),
-            ),
-            '--control-frame': `url("${visualAsset('ui.frame')?.url ?? ''}")`,
-            '--scene-url': `url("${visualAsset(scene)?.url ?? ''}")`,
-          } as CSSProperties
-        }
-      >
-        <Fragment key={accountContextRevision}>
-          <a
-            href="#content"
-            className="skip-link"
-            onClick={(event) => {
-              event.preventDefault();
-              document.getElementById('content')?.focus();
-            }}
-          >
-            {t('skipToContent')}
-          </a>
-          <div className="game-world-backdrop" aria-hidden="true" />
-          <SceneAtmosphere
-            reduced={motion.reduced}
-            active={view !== 'battle' && !selected && !preparing}
-          />
-          {(!game || view !== 'battle') && (
-            <header className={`game-header${game ? '' : ' welcome-tools'}`}>
-              {game && (
-                <h1>
-                  {view === 'map' && content
-                    ? regionAppearance(run?.zoneId ?? content.campaign.zoneId, language).name
-                    : activePack.brand}
-                  {view === 'map' && run?.status === 'active' && run.challenge && (
-                    <small className="challenge-reminder">
-                      {challengeText(language, run.challenge)}
-                    </small>
-                  )}
-                </h1>
-              )}
-              {game &&
-                (content?.seasonalEdition || game.seasonal?.participations.length) &&
-                state.serverTime !== null && (
-                  <SeasonalEvent
-                    state={game}
-                    language={language}
-                    serverTime={state.serverTime}
-                    edition={content?.seasonalEdition}
-                    busy={!ready}
-                    reducedMotion={motion.reduced}
-                    error={state.error}
-                    onRecover={() =>
-                      void (state.pending ? controller.recover() : controller.load())
-                    }
-                    recoverLabel={state.pending ? t('recoverOperation') : t('refreshState')}
-                    onAction={(request) =>
-                      void controller.perform({ kind: 'seasonal-event', request })
-                    }
-                    onPrepareRoute={() => {
-                      setView('map');
-                      if (run && run.status !== 'active') openPreparation();
-                      else document.getElementById('content')?.focus({ preventScroll: true });
-                    }}
-                  />
+    <ReadingScope owner={game?.playerId ?? null}>
+      <AccountSettingsContext.Provider value={accountControl}>
+        <div
+          className={`arcana-shell game-shell${game && view === 'map' ? ' arcana-map-view' : ''}`}
+          data-reduced={motion.reduced}
+          data-view={!game ? 'welcome' : view}
+          data-content-pack={activePack.id}
+          style={
+            {
+              ...Object.fromEntries(
+                Object.entries(activePack.palette).map(([key, value]) => [
+                  '--pack-' + key.replace(/[A-Z]/g, (letter) => '-' + letter.toLowerCase()),
+                  value,
+                ]),
+              ),
+              '--control-frame': `url("${visualAsset('ui.frame')?.url ?? ''}")`,
+              '--scene-url': `url("${visualAsset(scene)?.url ?? ''}")`,
+            } as CSSProperties
+          }
+        >
+          <Fragment key={accountContextRevision}>
+            <a
+              href="#content"
+              className="skip-link"
+              onClick={(event) => {
+                event.preventDefault();
+                document.getElementById('content')?.focus();
+              }}
+            >
+              {t('skipToContent')}
+            </a>
+            <div className="game-world-backdrop" aria-hidden="true" />
+            <SceneAtmosphere
+              reduced={motion.reduced}
+              active={view !== 'battle' && !selected && !preparing}
+            />
+            {(!game || view !== 'battle') && (
+              <header className={`game-header${game ? '' : ' welcome-tools'}`}>
+                {game && (
+                  <h1>
+                    {view === 'map' && content
+                      ? regionAppearance(run?.zoneId ?? content.campaign.zoneId, language).name
+                      : activePack.brand}
+                    {view === 'map' && run?.status === 'active' && run.challenge && (
+                      <small className="challenge-reminder">
+                        {challengeText(language, run.challenge)}
+                      </small>
+                    )}
+                  </h1>
                 )}
-              <GameSettings
-                language={language}
-                onLanguage={setLanguage}
-                reduced={motion.reduced}
-                ownReduced={motion.own}
-                systemReduced={motion.system}
-                onReduced={motion.change}
-              />
-            </header>
-          )}
-
-          {!online && (
-            <p role="status" className="notice connection-note">
-              {t(game ? 'offlinePriorReading' : 'offlineNeedsConnection')}
-            </p>
-          )}
-          <NodeAnnouncement receipt={state.receipt} language={language} />
-          {!game ? (
-            <main id="content" tabIndex={-1} className="welcome welcome-menu">
-              <header className="welcome-brand">
-                <Artwork
-                  asset="brand.emblem"
-                  language={language}
-                  className="welcome-emblem"
-                  decorative
-                  eager
-                />
-                <h1>
-                  {selectedContentPackId() === 'diagon-alley'
-                    ? regionAppearance('pasaje', language).name
-                    : activePack.brand}
-                </h1>
-                <span className="welcome-brand-rule" aria-hidden="true">
-                  <i />
-                </span>
-              </header>
-              <span className="visually-hidden">{t('anApprenticeAWandAndAPathTo')}</span>
-              <div className="welcome-actions">
-                <FantasyActionButton
-                  variant="primary"
-                  asset="ui.map"
-                  language={language}
-                  className="portal-enter"
-                  aria-label={accountText(language, 'guest')}
-                  aria-busy={entry.pending || undefined}
-                  disabled={
-                    accountOpening ||
-                    !online ||
-                    !!state.pending ||
-                    state.status === 'loading' ||
-                    entry.pending
-                  }
-                  onClick={() => void entry.enter()}
-                >
-                  {entry.pending
-                    ? recoveryText(language, 'entering')
-                    : accountText(language, 'guest')}
-                </FantasyActionButton>
-                <FantasyActionButton
-                  variant="secondary"
-                  asset="account.login"
-                  language={language}
-                  data-account-entry="login"
-                  disabled={
-                    accountOpening || !online || state.status === 'loading' || entry.pending
-                  }
-                  onClick={() => openAccount('login')}
-                >
-                  {accountText(language, 'login')}
-                </FantasyActionButton>
-                <FantasyActionButton
-                  variant="tertiary"
-                  asset="account.register"
-                  language={language}
-                  data-account-entry="register"
-                  disabled={
-                    accountOpening || !online || state.status === 'loading' || entry.pending
-                  }
-                  onClick={() => openAccount('register')}
-                >
-                  {accountText(language, 'register')}
-                </FantasyActionButton>
-              </div>
-              {accountOpening && <p role="status">{accountText(language, 'sending')}</p>}
-              {state.pending && (
-                <p role="alert" className="account-guest-hint">
-                  {accountText(language, 'pending')}
-                </p>
-              )}
-              <p className="account-guest-hint">{accountText(language, 'guestHint')}</p>
-              {entry.error && (
-                <p role="alert">
-                  {recoveryText(
-                    language,
-                    entry.error === 'RATE_LIMITED' ? 'rateLimited' : 'entryFailed',
-                  )}
-                </p>
-              )}
-              {entry.pending && <p role="status">{recoveryText(language, 'entering')}</p>}
-            </main>
-          ) : (
-            <>
-              {view !== 'battle' && (
-                <PlayerHud
-                  state={state}
-                  connected={online}
-                  language={language}
-                  onRefresh={() => void controller.refreshStatus()}
-                />
-              )}
-              <main id="content" tabIndex={-1}>
-                <OperationFeedback
-                  receipt={state.error || state.pending ? null : state.receipt}
-                  language={language}
-                  reduced={motion.reduced}
-                />
-                {!selected && !preparing && !inlinePreparation && recovery}
-                {online &&
-                  !selected &&
-                  !preparing &&
-                  !inlinePreparation &&
-                  (state.status === 'loading' ||
-                    state.status === 'sending' ||
-                    state.status === 'recovering' ||
-                    state.refreshingStatus) && (
-                    <p role="status">
-                      {state.pending
-                        ? t('recoveringTheOperationWaitBeforeSpendingAgain')
-                        : t('synchronizingState')}
-                    </p>
-                  )}
-                {view === 'shop' &&
-                  (state.receipt?.kind === 'open-toad' ||
-                    state.receipt?.kind === 'buy-open-toad') &&
-                  dismissedOpening !== state.receipt.id && (
-                    <CardReveal
-                      key={state.receipt.id}
-                      receipt={state.receipt}
+                {game &&
+                  (content?.seasonalEdition || game.seasonal?.participations.length) &&
+                  state.serverTime !== null && (
+                    <SeasonalEvent
+                      state={game}
                       language={language}
-                      reduced={motion.reduced}
-                      onLanguage={setLanguage}
-                      onCollection={() => {
-                        openingFromClosure.current = null;
-                        setDismissedOpening(state.receipt!.id);
-                        setView('collection');
-                      }}
-                      onClose={() => {
-                        setDismissedOpening(state.receipt!.id);
-                        const origin = openingFromClosure.current;
-                        if (
-                          origin &&
-                          origin.runId === run?.id &&
-                          run?.status !== 'active' &&
-                          state.receipt?.kind === 'open-toad' &&
-                          state.receipt.request.unitId === origin.unitId
-                        ) {
-                          openingFromClosure.current = null;
-                          setView('map');
-                        }
+                      serverTime={state.serverTime}
+                      edition={content?.seasonalEdition}
+                      busy={!ready}
+                      reducedMotion={motion.reduced}
+                      error={state.error}
+                      onRecover={() =>
+                        void (state.pending ? controller.recover() : controller.load())
+                      }
+                      recoverLabel={state.pending ? t('recoverOperation') : t('refreshState')}
+                      onAction={(request) =>
+                        void controller.perform({ kind: 'seasonal-event', request })
+                      }
+                      onPrepareRoute={() => {
+                        setView('map');
+                        if (run && run.status !== 'active') openPreparation();
+                        else document.getElementById('content')?.focus({ preventScroll: true });
                       }}
                     />
                   )}
-                {view === 'map' && content && (
-                  <section
-                    className="expedition-panel"
-                    data-map-phase={closure ? 'closed' : !run ? 'entry' : 'route'}
+                <GameSettings
+                  language={language}
+                  onLanguage={setLanguage}
+                  reduced={motion.reduced}
+                  ownReduced={motion.own}
+                  systemReduced={motion.system}
+                  onReduced={motion.change}
+                />
+              </header>
+            )}
+
+            {!online && (
+              <p role="status" className="notice connection-note">
+                {t(game ? 'offlinePriorReading' : 'offlineNeedsConnection')}
+              </p>
+            )}
+            <NodeAnnouncement receipt={state.receipt} language={language} />
+            {!game ? (
+              <main id="content" tabIndex={-1} className="welcome welcome-menu">
+                <header className="welcome-brand">
+                  <Artwork
+                    asset="brand.emblem"
+                    language={language}
+                    className="welcome-emblem"
+                    decorative
+                    eager
+                  />
+                  <h1>
+                    {selectedContentPackId() === 'diagon-alley'
+                      ? regionAppearance('pasaje', language).name
+                      : activePack.brand}
+                  </h1>
+                  <span className="welcome-brand-rule" aria-hidden="true">
+                    <i />
+                  </span>
+                </header>
+                <span className="visually-hidden">{t('anApprenticeAWandAndAPathTo')}</span>
+                <div className="welcome-actions">
+                  <FantasyActionButton
+                    variant="primary"
+                    asset="ui.map"
+                    language={language}
+                    className="portal-enter"
+                    aria-label={accountText(language, 'guest')}
+                    aria-busy={entry.pending || undefined}
+                    disabled={
+                      accountOpening ||
+                      !online ||
+                      !!state.pending ||
+                      state.status === 'loading' ||
+                      entry.pending
+                    }
+                    onClick={() => void entry.enter()}
                   >
-                    {!closure && (
-                      <div className="expedition-heading">
-                        <ExpeditionGuide run={run} language={language} />
-                      </div>
+                    {entry.pending
+                      ? recoveryText(language, 'entering')
+                      : accountText(language, 'guest')}
+                  </FantasyActionButton>
+                  <FantasyActionButton
+                    variant="secondary"
+                    asset="account.login"
+                    language={language}
+                    data-account-entry="login"
+                    disabled={
+                      accountOpening || !online || state.status === 'loading' || entry.pending
+                    }
+                    onClick={() => openAccount('login')}
+                  >
+                    {accountText(language, 'login')}
+                  </FantasyActionButton>
+                  <FantasyActionButton
+                    variant="tertiary"
+                    asset="account.register"
+                    language={language}
+                    data-account-entry="register"
+                    disabled={
+                      accountOpening || !online || state.status === 'loading' || entry.pending
+                    }
+                    onClick={() => openAccount('register')}
+                  >
+                    {accountText(language, 'register')}
+                  </FantasyActionButton>
+                </div>
+                {accountOpening && <p role="status">{accountText(language, 'sending')}</p>}
+                {state.pending && (
+                  <p role="alert" className="account-guest-hint">
+                    {accountText(language, 'pending')}
+                  </p>
+                )}
+                <p className="account-guest-hint">{accountText(language, 'guestHint')}</p>
+                {entry.error && (
+                  <p role="alert">
+                    {recoveryText(
+                      language,
+                      entry.error === 'RATE_LIMITED' ? 'rateLimited' : 'entryFailed',
                     )}
-                    {!closure && savedNode && (
-                      <NodeResult
-                        receipt={savedNode}
-                        confirmed={ready && state.receipt?.id === savedNode.id}
-                        previousRun={
-                          nodeBefore.current?.nodeId === savedNode.request.nodeId
-                            ? nodeBefore.current.run
-                            : undefined
-                        }
+                  </p>
+                )}
+                {entry.pending && <p role="status">{recoveryText(language, 'entering')}</p>}
+              </main>
+            ) : (
+              <>
+                {view !== 'battle' && (
+                  <PlayerHud
+                    state={state}
+                    connected={online}
+                    language={language}
+                    onRefresh={() => void controller.refreshStatus()}
+                  />
+                )}
+                <main id="content" tabIndex={-1}>
+                  <OperationFeedback
+                    receipt={state.error || state.pending ? null : state.receipt}
+                    language={language}
+                    reduced={motion.reduced}
+                  />
+                  {!selected && !preparing && !inlinePreparation && recovery}
+                  {online &&
+                    !selected &&
+                    !preparing &&
+                    !inlinePreparation &&
+                    (state.status === 'loading' ||
+                      state.status === 'sending' ||
+                      state.status === 'recovering' ||
+                      state.refreshingStatus) && (
+                      <p role="status">
+                        {state.pending
+                          ? t('recoveringTheOperationWaitBeforeSpendingAgain')
+                          : t('synchronizingState')}
+                      </p>
+                    )}
+                  {view === 'shop' &&
+                    (state.receipt?.kind === 'open-toad' ||
+                      state.receipt?.kind === 'buy-open-toad') &&
+                    dismissedOpening !== state.receipt.id && (
+                      <CardReveal
+                        key={state.receipt.id}
+                        receipt={state.receipt}
                         language={language}
-                        onReplay={() => setView('battle')}
-                        onMissions={() => setView('missions')}
+                        reduced={motion.reduced}
+                        onLanguage={setLanguage}
+                        onCollection={() => {
+                          openingFromClosure.current = null;
+                          setDismissedOpening(state.receipt!.id);
+                          setView('collection');
+                        }}
+                        onClose={() => {
+                          setDismissedOpening(state.receipt!.id);
+                          const origin = openingFromClosure.current;
+                          if (
+                            origin &&
+                            origin.runId === run?.id &&
+                            run?.status !== 'active' &&
+                            state.receipt?.kind === 'open-toad' &&
+                            state.receipt.request.unitId === origin.unitId
+                          ) {
+                            openingFromClosure.current = null;
+                            setView('map');
+                          }
+                        }}
                       />
                     )}
-                    {closure ? (
-                      <>
-                        <ExpeditionClosure
-                          game={game}
-                          confirmedReceiptId={ready ? state.receipt?.id : undefined}
+                  {view === 'map' && content && (
+                    <section
+                      className="expedition-panel"
+                      data-map-phase={closure ? 'closed' : !run ? 'entry' : 'route'}
+                    >
+                      {!closure && (
+                        <div className="expedition-heading">
+                          <ExpeditionGuide
+                            run={run}
+                            language={language}
+                            effectiveEssence={state.energy?.points}
+                            ready={ready}
+                            onPrepare={(origin) => openPreparation('formation', origin)}
+                            onConsult={selectNode}
+                          />
+                        </div>
+                      )}
+                      {!closure && savedNode && (
+                        <NodeResult
+                          receipt={savedNode}
+                          preferredIntention={
+                            game.exploration?.intention?.runId === savedNode.request.runId
+                              ? game.exploration?.intention?.choice
+                              : undefined
+                          }
+                          confirmed={ready && state.receipt?.id === savedNode.id}
+                          previousRun={
+                            nodeBefore.current?.nodeId === savedNode.request.nodeId
+                              ? nodeBefore.current.run
+                              : undefined
+                          }
                           language={language}
-                          ready={ready}
-                          onAction={closureAction}
                           onReplay={() => setView('battle')}
                           onMissions={() => setView('missions')}
                         />
-                        <ExpeditionIntentions
-                          game={game}
-                          content={content}
-                          language={language}
-                          ready={ready}
-                          onChoose={chooseIntention}
-                        />
-                      </>
-                    ) : !run ? (
-                      <div className="region-entry preparation-entry">
-                        <ExpeditionPreparation
-                          recovery={recovery}
-                          key={`new-entry:${game.playerId}`}
-                          game={game}
-                          catalog={content.catalog}
-                          content={content}
-                          language={language}
-                          ready={ready}
-                          onTeam={(request) =>
-                            void controller.perform({ kind: 'set-team', request })
-                          }
-                          onEquip={(request) =>
-                            void controller.perform({ kind: 'equip-equipment', request })
-                          }
-                          onStart={startExpedition}
-                        />
-                      </div>
-                    ) : (
-                      <>
-                        <IntentionReminder
-                          game={game}
-                          content={content}
-                          language={language}
-                          ready={ready}
-                          onCancel={() => chooseIntention(null)}
-                        />
-                        <TeamHud
-                          game={game}
-                          content={content}
-                          language={language}
-                          onPrepare={(origin) => openPreparation('formation', origin)}
-                        />
-                        <MapPanel
-                          publicPlans={content.campaign.nodes}
-                          run={run}
-                          ready={ready}
-                          language={language}
-                          onSelect={selectNode}
-                          confirmedReceiptId={
-                            ready && state.receipt?.id === savedNode?.id ? savedNode?.id : undefined
-                          }
-                        />
-                      </>
-                    )}
-
-                    {selected && run && (
-                      <dialog
-                        ref={dialog}
-                        onCancel={() => setSelected(null)}
-                        aria-label={t('nodeConfirmation')}
-                        className={`notice node-event-dialog${selectedNode?.kind === 'boss' ? ' boss-staging' : ''}`}
-                        data-event-kind={selectedNode?.kind}
-                      >
-                        {selectedNode?.kind !== 'boss' && (
-                          <Artwork
-                            asset={`node.${run.graph.nodes.find((n) => n.id === selected)!.kind}`}
-                            language={language}
-                            className="node-confirmation-art"
-                            decorative
-                          />
-                        )}
-                        <GameSettings
-                          language={language}
-                          onLanguage={setLanguage}
-                          reduced={motion.reduced}
-                          ownReduced={motion.own}
-                          systemReduced={motion.system}
-                          onReduced={motion.change}
-                        />
-                        <h3
-                          className={selectedNode?.kind === 'boss' ? 'visually-hidden' : undefined}
-                        >
-                          {label(run.graph.nodes.find((n) => n.id === selected)!.kind)}
-                        </h3>
-                        <p className="visually-hidden">
-                          {['duel', 'boss'].includes(
-                            run.graph.nodes.find((n) => n.id === selected)!.kind,
-                          )
-                            ? t('uses5EssenceAutomaticCombatWithYourCurrent')
-                            : t('resolveThisEventWithYourCurrentTeam')}
-                        </p>
-                        {selectedNode?.kind === 'duel' && (
-                          <div
-                            className="node-cost"
-                            aria-label={t('uses5EssenceAutomaticCombatWithYourCurrent')}
-                          >
-                            <Artwork asset="currency.essence" language={language} decorative />
-                            <strong>5</strong>
-                          </div>
-                        )}
-                        {selectedPlan && (
-                          <NodePreparation
-                            plan={selectedPlan}
-                            run={run}
+                      )}
+                      {closure ? (
+                        <>
+                          <ExpeditionClosure
                             game={game}
+                            confirmedReceiptId={ready ? state.receipt?.id : undefined}
                             language={language}
-                            rules={effectivePreparationRules(run, content.combatRules)}
-                            rounding={
-                              run.campaignSnapshot?.rounding ?? content.campaign.rounding ?? 'floor'
-                            }
-                            options={nodeOptions}
                             ready={ready}
-                            onChange={setNodeOptions}
-                            onResolve={directPact ? resolveNode : undefined}
+                            onAction={closureAction}
+                            onReplay={() => setView('battle')}
+                            onMissions={() => setView('missions')}
                           />
-                        )}
-                        {content && selectedNode?.kind === 'boss' && (
-                          <div className="boss-player-preparation">
-                            <BossPartyStage
+                          <ExpeditionIntentions
+                            game={game}
+                            content={content}
+                            language={language}
+                            ready={ready}
+                            onChoose={chooseIntention}
+                          />
+                        </>
+                      ) : !run ? (
+                        <div className="region-entry preparation-entry">
+                          <ExpeditionPreparation
+                            recovery={recovery}
+                            key={`new-entry:${game.playerId}`}
+                            game={game}
+                            catalog={content.catalog}
+                            content={content}
+                            language={language}
+                            ready={ready}
+                            onTeam={(request) =>
+                              void controller.perform({ kind: 'set-team', request })
+                            }
+                            onEquip={(request) =>
+                              void controller.perform({ kind: 'equip-equipment', request })
+                            }
+                            onStart={startExpedition}
+                          />
+                        </div>
+                      ) : (
+                        <>
+                          <IntentionReminder
+                            game={game}
+                            content={content}
+                            language={language}
+                            ready={ready}
+                            onCancel={() => chooseIntention(null)}
+                          />
+                          <TeamHud
+                            game={game}
+                            content={content}
+                            language={language}
+                            onPrepare={(origin) => openPreparation('formation', origin)}
+                          />
+                          <MapPanel
+                            publicPlans={content.campaign.nodes}
+                            run={run}
+                            ready={ready}
+                            language={language}
+                            onSelect={selectNode}
+                            confirmedReceiptId={
+                              ready && state.receipt?.id === savedNode?.id
+                                ? savedNode?.id
+                                : undefined
+                            }
+                          />
+                        </>
+                      )}
+
+                      {selected && run && (
+                        <dialog
+                          ref={dialog}
+                          onCancel={() => setSelected(null)}
+                          aria-label={t('nodeConfirmation')}
+                          className={`notice node-event-dialog${selectedNode?.kind === 'boss' ? ' boss-staging' : ''}`}
+                          data-event-kind={selectedNode?.kind}
+                        >
+                          {selectedNode?.kind !== 'boss' && (
+                            <Artwork
+                              asset={`node.${run.graph.nodes.find((n) => n.id === selected)!.kind}`}
+                              language={language}
+                              className="node-confirmation-art"
+                              decorative
+                            />
+                          )}
+                          <GameSettings
+                            language={language}
+                            onLanguage={setLanguage}
+                            reduced={motion.reduced}
+                            ownReduced={motion.own}
+                            systemReduced={motion.system}
+                            onReduced={motion.change}
+                          />
+                          <h3
+                            className={
+                              selectedNode?.kind === 'boss' ? 'visually-hidden' : undefined
+                            }
+                          >
+                            {label(run.graph.nodes.find((n) => n.id === selected)!.kind)}
+                          </h3>
+                          <p className="visually-hidden">
+                            {['duel', 'boss'].includes(
+                              run.graph.nodes.find((n) => n.id === selected)!.kind,
+                            )
+                              ? t('uses5EssenceAutomaticCombatWithYourCurrent')
+                              : t('resolveThisEventWithYourCurrentTeam')}
+                          </p>
+                          {selectedNode?.kind === 'duel' && (
+                            <div
+                              className="node-cost"
+                              aria-label={t('uses5EssenceAutomaticCombatWithYourCurrent')}
+                            >
+                              <Artwork asset="currency.essence" language={language} decorative />
+                              <strong>5</strong>
+                            </div>
+                          )}
+                          {selectedPlan && (
+                            <NodePreparation
+                              plan={selectedPlan}
                               run={run}
                               game={game}
-                              assignments={assignments}
                               language={language}
-                              ready={ready}
                               rules={effectivePreparationRules(run, content.combatRules)}
-                              onPrepare={(origin) => openPreparation('formation', origin)}
-                            />
-                            <BossSupplies
-                              run={run}
-                              game={game}
-                              content={content}
-                              language={language}
+                              rounding={
+                                run.campaignSnapshot?.rounding ??
+                                content.campaign.rounding ??
+                                'floor'
+                              }
+                              options={nodeOptions}
                               ready={ready}
-                              assignments={assignments}
-                              onChange={setAssignments}
+                              onChange={setNodeOptions}
+                              onResolve={directPact ? resolveNode : undefined}
                             />
-                          </div>
-                        )}
-                        {content &&
-                          selectedNode?.kind !== 'boss' &&
-                          ['duel', 'boss'].includes(
-                            run.graph.nodes.find((n) => n.id === selected)!.kind,
-                          ) && (
-                            <>
-                              <button
-                                className="node-team-prepare"
-                                onClick={(event) =>
-                                  openPreparation('formation', event.currentTarget)
-                                }
-                                disabled={!ready}
-                              >
-                                <Artwork asset="ui.team" language={language} decorative />
-                                <span>{prepText(language, 'equipment')}</span>
-                              </button>
+                          )}
+                          {content && selectedNode?.kind === 'boss' && (
+                            <div className="boss-player-preparation">
+                              <BossPartyStage
+                                run={run}
+                                game={game}
+                                assignments={assignments}
+                                language={language}
+                                ready={ready}
+                                rules={effectivePreparationRules(run, content.combatRules)}
+                                onPrepare={(origin) => openPreparation('formation', origin)}
+                              />
                               <BossSupplies
                                 run={run}
                                 game={game}
@@ -899,325 +893,367 @@ export function App() {
                                 assignments={assignments}
                                 onChange={setAssignments}
                               />
-                            </>
+                            </div>
                           )}
-                        {!preparing && recovery}
-                        <div
-                          className={
-                            ['duel', 'boss'].includes(selectedNode!.kind)
-                              ? 'node-event-actions node-combat-actions'
-                              : 'node-event-actions'
-                          }
-                        >
-                          {!directPact && (
-                            <button
-                              aria-label={
-                                selectedPlan?.kind === 'encounter' && selectedPlan.offer
-                                  ? encounterText(
-                                      language,
-                                      nodeOptions.encounterAction === 'pass' ? 'pass' : 'accept',
-                                    )
-                                  : nodeActionLabel(language, selectedNode!.kind)
-                              }
-                              title={
-                                selectedPlan?.kind === 'encounter' && selectedPlan.offer
-                                  ? encounterText(
-                                      language,
-                                      nodeOptions.encounterAction === 'pass' ? 'pass' : 'accept',
-                                    )
-                                  : nodeActionLabel(language, selectedNode!.kind)
-                              }
-                              className="node-confirm-action"
-                              aria-describedby={
-                                selectedNode?.kind === 'boss' ? 'boss-challenge-cost' : undefined
-                              }
-                              autoFocus
-                              disabled={
-                                !ready ||
-                                (selectedPlan?.kind === 'encounter' &&
-                                  selectedPlan.offer !== undefined &&
-                                  nodeOptions.encounterAction !== 'pass' &&
-                                  !previewEncounterTrade(
-                                    run.members,
-                                    selectedPlan.offer,
-                                    nodeOptions.encounterChoiceId,
-                                    nodeOptions.encounterUnitId,
-                                  ).eligible) ||
-                                (selectedPlan?.kind === 'pact' &&
-                                  selectedPlan.recruits !== undefined &&
-                                  nodeOptions.pactAction !== 'pass' &&
-                                  !selectedPlan.recruits.some(
-                                    (unit) => unit.id === nodeOptions.recruitId,
-                                  )) ||
-                                (run.graph.nodes.find((n) => n.id === selected)?.kind === 'pact' &&
-                                  run.members.length === 5 &&
-                                  nodeOptions.pactAction !== 'pass' &&
-                                  !nodeOptions.replaceUnitId)
-                              }
-                              onClick={() => resolveNode()}
-                            >
-                              <Artwork
-                                asset={`node.${selectedNode!.kind}`}
-                                language={language}
-                                decorative
-                              />
-                              <span>
-                                {selectedPlan?.kind === 'encounter' && selectedPlan.offer
-                                  ? encounterText(
-                                      language,
-                                      nodeOptions.encounterAction === 'pass' ? 'pass' : 'accept',
-                                    )
-                                  : nodeActionLabel(language, selectedNode!.kind)}
-                              </span>
-                              {selectedNode?.kind === 'boss' && (
-                                <span
-                                  id="boss-challenge-cost"
-                                  className="boss-challenge-cost"
-                                  aria-label={t('uses5EssenceAutomaticCombatWithYourCurrent')}
+                          {content &&
+                            selectedNode?.kind !== 'boss' &&
+                            ['duel', 'boss'].includes(
+                              run.graph.nodes.find((n) => n.id === selected)!.kind,
+                            ) && (
+                              <>
+                                <button
+                                  className="node-team-prepare"
+                                  onClick={(event) =>
+                                    openPreparation('formation', event.currentTarget)
+                                  }
+                                  disabled={!ready}
                                 >
-                                  <Artwork
-                                    asset="currency.essence"
-                                    language={language}
-                                    decorative
-                                  />
-                                  <strong>5</strong>
-                                </span>
-                              )}
-                            </button>
-                          )}
-                          <button
-                            className="node-cancel-action"
-                            aria-label={t(ready ? 'cancel' : 'close')}
-                            title={t(ready ? 'cancel' : 'close')}
-                            onClick={() => setSelected(null)}
+                                  <Artwork asset="ui.team" language={language} decorative />
+                                  <span>{prepText(language, 'equipment')}</span>
+                                </button>
+                                <BossSupplies
+                                  run={run}
+                                  game={game}
+                                  content={content}
+                                  language={language}
+                                  ready={ready}
+                                  assignments={assignments}
+                                  onChange={setAssignments}
+                                />
+                              </>
+                            )}
+                          {!preparing && recovery}
+                          <div
+                            className={
+                              ['duel', 'boss'].includes(selectedNode!.kind)
+                                ? 'node-event-actions node-combat-actions'
+                                : 'node-event-actions'
+                            }
                           >
-                            <span aria-hidden="true">×</span>
-                          </button>
-                        </div>
-                      </dialog>
-                    )}
-                  </section>
-                )}
-                {view === 'shop' && content && (
-                  <section>
-                    {bazaarPlace === 'street' && (
-                      <ShopHub language={language} onEnter={setBazaarPlace} />
-                    )}
-                    {bazaarPlace === 'confectionery' && (
-                      <SweetshopScene
-                        game={game}
-                        content={content}
-                        language={language}
-                        ready={ready}
-                        onStreet={() => setBazaarPlace('street')}
-                        onPurchase={(request) =>
-                          void controller.perform({ kind: 'purchase', request })
-                        }
-                        onOpen={(request) =>
-                          void controller.perform({ kind: 'open-toad', request })
-                        }
-                        onBuyOpen={(request) =>
-                          void controller.perform({ kind: 'buy-open-toad', request })
-                        }
-                        onPrepare={(origin) => openPreparation('beans', origin)}
-                      />
-                    )}
-                    {(bazaarPlace === 'workshop' || bazaarPlace === 'vault') &&
-                      content.commerce && (
-                        <CommercePanel
-                          key={bazaarPlace}
-                          reduced={motion.reduced}
-                          mode={bazaarPlace}
-                          connected={online}
-                          content={content.commerce}
+                            {!directPact && (
+                              <button
+                                aria-label={
+                                  selectedPlan?.kind === 'encounter' && selectedPlan.offer
+                                    ? encounterText(
+                                        language,
+                                        nodeOptions.encounterAction === 'pass' ? 'pass' : 'accept',
+                                      )
+                                    : nodeActionLabel(language, selectedNode!.kind)
+                                }
+                                title={
+                                  selectedPlan?.kind === 'encounter' && selectedPlan.offer
+                                    ? encounterText(
+                                        language,
+                                        nodeOptions.encounterAction === 'pass' ? 'pass' : 'accept',
+                                      )
+                                    : nodeActionLabel(language, selectedNode!.kind)
+                                }
+                                className="node-confirm-action"
+                                aria-describedby={
+                                  selectedNode?.kind === 'boss' ? 'boss-challenge-cost' : undefined
+                                }
+                                autoFocus
+                                disabled={
+                                  !ready ||
+                                  (selectedPlan?.kind === 'encounter' &&
+                                    selectedPlan.offer !== undefined &&
+                                    nodeOptions.encounterAction !== 'pass' &&
+                                    !previewEncounterTrade(
+                                      run.members,
+                                      selectedPlan.offer,
+                                      nodeOptions.encounterChoiceId,
+                                      nodeOptions.encounterUnitId,
+                                    ).eligible) ||
+                                  (selectedPlan?.kind === 'pact' &&
+                                    selectedPlan.recruits !== undefined &&
+                                    nodeOptions.pactAction !== 'pass' &&
+                                    !selectedPlan.recruits.some(
+                                      (unit) => unit.id === nodeOptions.recruitId,
+                                    )) ||
+                                  (run.graph.nodes.find((n) => n.id === selected)?.kind ===
+                                    'pact' &&
+                                    run.members.length === 5 &&
+                                    nodeOptions.pactAction !== 'pass' &&
+                                    !nodeOptions.replaceUnitId)
+                                }
+                                onClick={() => resolveNode()}
+                              >
+                                <Artwork
+                                  asset={`node.${selectedNode!.kind}`}
+                                  language={language}
+                                  decorative
+                                />
+                                <span>
+                                  {selectedPlan?.kind === 'encounter' && selectedPlan.offer
+                                    ? encounterText(
+                                        language,
+                                        nodeOptions.encounterAction === 'pass' ? 'pass' : 'accept',
+                                      )
+                                    : nodeActionLabel(language, selectedNode!.kind)}
+                                </span>
+                                {selectedNode?.kind === 'boss' && (
+                                  <span
+                                    id="boss-challenge-cost"
+                                    className="boss-challenge-cost"
+                                    aria-label={t('uses5EssenceAutomaticCombatWithYourCurrent')}
+                                  >
+                                    <Artwork
+                                      asset="currency.essence"
+                                      language={language}
+                                      decorative
+                                    />
+                                    <strong>5</strong>
+                                  </span>
+                                )}
+                              </button>
+                            )}
+                            <button
+                              className="node-cancel-action"
+                              aria-label={t(ready ? 'cancel' : 'close')}
+                              title={t(ready ? 'cancel' : 'close')}
+                              onClick={() => setSelected(null)}
+                            >
+                              <span aria-hidden="true">×</span>
+                            </button>
+                          </div>
+                        </dialog>
+                      )}
+                    </section>
+                  )}
+                  {view === 'shop' && content && (
+                    <section>
+                      {bazaarPlace === 'street' && (
+                        <ShopHub language={language} onEnter={setBazaarPlace} />
+                      )}
+                      {bazaarPlace === 'confectionery' && (
+                        <SweetshopScene
                           game={game}
-                          receipt={state.receipt}
+                          content={content}
                           language={language}
                           ready={ready}
-                          pending={!!state.pending}
-                          error={state.error}
-                          onForge={(request) =>
-                            void controller.perform({ kind: 'forge-wand', request })
-                          }
-                          onVault={(request) =>
-                            void controller.perform({ kind: 'open-vault', request })
-                          }
-                          onRecover={() => void controller.recover()}
-                          onPrepare={(origin) => openPreparation('formation', origin)}
                           onStreet={() => setBazaarPlace('street')}
-                          onMap={() => setView('map')}
-                          onLanguage={setLanguage}
+                          onPurchase={(request) =>
+                            void controller.perform({ kind: 'purchase', request })
+                          }
+                          onOpen={(request) =>
+                            void controller.perform({ kind: 'open-toad', request })
+                          }
+                          onBuyOpen={(request) =>
+                            void controller.perform({ kind: 'buy-open-toad', request })
+                          }
+                          onPrepare={(origin) => openPreparation('beans', origin)}
                         />
                       )}
-                  </section>
-                )}
-                {view === 'collection' && content && (
-                  <CollectionPanel
-                    game={game}
-                    catalog={content.catalog}
-                    language={language}
-                    onPrepare={(origin) => openPreparation('formation', origin)}
-                  />
-                )}
-                {view === 'battle' && battle && (
-                  <BattlePanel
-                    key={battle.id}
-                    combat={battle}
-                    resources={
-                      <PlayerHud
-                        state={state}
-                        connected={online}
-                        language={language}
-                        onRefresh={() => void controller.refreshStatus()}
-                      />
-                    }
-                    settings={
-                      <GameSettings
-                        language={language}
-                        onLanguage={setLanguage}
-                        reduced={motion.reduced}
-                        ownReduced={motion.own}
-                        systemReduced={motion.system}
-                        onReduced={motion.change}
-                      />
-                    }
-                    confirmedPresentation={
-                      state.receipt?.kind === 'advance-node' &&
-                      state.receipt.battle?.id === battle.id
-                    }
-                    game={game}
-                    content={content}
-                    language={language}
-                    reduced={motion.reduced}
-                    onBack={() => setView('map')}
-                  />
-                )}
-                {view === 'battle' && !battle && (
-                  <section>
-                    <h2>{t('combatArena')}</h2>
-                    <p>{t('noSavedBattle')}</p>
-                    <button onClick={() => setView('map')}>{t('backToMap')}</button>
-                  </section>
-                )}
-                {view === 'missions' && (
-                  <JourneyCabinet
-                    game={game}
-                    language={language}
-                    onMap={() => setView('map')}
-                    onCollection={() => setView('collection')}
-                    onShop={() => setBazaarPlace('street')}
-                    onVault={() => {
-                      setView('shop');
-                      setBazaarPlace('vault');
-                    }}
-                  />
-                )}
-              </main>
-              {preparing && content && (
-                <dialog
-                  ref={preparationDialog}
-                  className="preparation-dialog"
-                  aria-label={prepText(language, 'preparation')}
-                  onCancel={() => setPreparing(false)}
-                >
-                  <GameSettings
-                    language={language}
-                    onLanguage={setLanguage}
-                    reduced={motion.reduced}
-                    ownReduced={motion.own}
-                    systemReduced={motion.system}
-                    onReduced={motion.change}
-                  />
-                  <ExpeditionPreparation
-                    recovery={recovery}
-                    game={game}
-                    catalog={content.catalog}
-                    content={content}
-                    context={preparationContext}
-                    combatChoices={combatChoices}
-                    onCombatNode={openCombatPreparation}
-                    onReturnToMap={() => {
-                      setPreparing(false);
-                      setView('map');
-                    }}
-                    language={language}
-                    ready={ready}
-                    onStart={(ids, challenge, bondFocus) => {
-                      startExpedition(ids, challenge, bondFocus);
-                    }}
-                    onTeam={(request) => void controller.perform({ kind: 'set-team', request })}
-                    onEquip={(request) =>
-                      void controller.perform({ kind: 'equip-equipment', request })
-                    }
-                    onClose={() => setPreparing(false)}
-                  />
-                </dialog>
-              )}
-              <nav ref={navigation} aria-label={t('mainNavigation')}>
-                {(
-                  [
-                    ['map', 'map'],
-                    ['collection', 'chromodex'],
-                    ['shop', 'bazaar'],
-                    ['missions', 'missions'],
-                  ] as const
-                ).map(([key, label]) => (
-                  <button
-                    key={key}
-                    aria-current={view === key ? 'page' : undefined}
-                    onClick={() => (key === 'shop' ? setBazaarPlace('street') : setView(key))}
+                      {(bazaarPlace === 'workshop' || bazaarPlace === 'vault') &&
+                        content.commerce && (
+                          <CommercePanel
+                            key={bazaarPlace}
+                            reduced={motion.reduced}
+                            mode={bazaarPlace}
+                            connected={online}
+                            content={content.commerce}
+                            preparationContent={content}
+                            game={game}
+                            receipt={state.receipt}
+                            language={language}
+                            ready={ready}
+                            pending={!!state.pending}
+                            error={state.error}
+                            onForge={(request) =>
+                              void controller.perform({ kind: 'forge-wand', request })
+                            }
+                            onVault={(request) =>
+                              void controller.perform({ kind: 'open-vault', request })
+                            }
+                            onRecover={() => void controller.recover()}
+                            onPrepare={(origin) => openPreparation('formation', origin)}
+                            onStreet={() => setBazaarPlace('street')}
+                            onMap={() => setView('map')}
+                            onLanguage={setLanguage}
+                          />
+                        )}
+                    </section>
+                  )}
+                  {view === 'collection' && content && (
+                    <CollectionPanel
+                      game={game}
+                      catalog={content.catalog}
+                      content={content}
+                      language={language}
+                      onAcquire={() => {
+                        setBazaarPlace('confectionery');
+                      }}
+                      onPrepare={(origin) => openPreparation('formation', origin)}
+                    />
+                  )}
+                  {view === 'battle' && battle && (
+                    <BattlePanel
+                      key={battle.id}
+                      combat={battle}
+                      preferredIntention={
+                        game.exploration?.intention?.runId === battleReceipt?.request.runId
+                          ? game.exploration?.intention?.choice
+                          : undefined
+                      }
+                      resources={
+                        <PlayerHud
+                          state={state}
+                          connected={online}
+                          language={language}
+                          onRefresh={() => void controller.refreshStatus()}
+                        />
+                      }
+                      settings={
+                        <GameSettings
+                          language={language}
+                          onLanguage={setLanguage}
+                          reduced={motion.reduced}
+                          ownReduced={motion.own}
+                          systemReduced={motion.system}
+                          onReduced={motion.change}
+                        />
+                      }
+                      confirmedPresentation={
+                        state.receipt?.kind === 'advance-node' &&
+                        state.receipt.battle?.id === battle.id
+                      }
+                      game={game}
+                      content={content}
+                      language={language}
+                      reduced={motion.reduced}
+                      onBack={() => setView('map')}
+                    />
+                  )}
+                  {view === 'battle' && !battle && (
+                    <section>
+                      <h2>{t('combatArena')}</h2>
+                      <p>{t('noSavedBattle')}</p>
+                      <button onClick={() => setView('map')}>{t('backToMap')}</button>
+                    </section>
+                  )}
+                  {view === 'missions' && (
+                    <JourneyCabinet
+                      game={game}
+                      language={language}
+                      onMap={() => setView('map')}
+                      onCollection={() => setView('collection')}
+                      onShop={() => setBazaarPlace('street')}
+                      onVault={() => {
+                        setView('shop');
+                        setBazaarPlace('vault');
+                      }}
+                    />
+                  )}
+                </main>
+                {preparing && content && (
+                  <dialog
+                    ref={preparationDialog}
+                    className="preparation-dialog"
+                    aria-label={prepText(language, 'preparation')}
+                    onCancel={() => setPreparing(false)}
                   >
-                    <Artwork asset={`ui.${key}`} language={language} decorative />
-                    <span>{t(label)}</span>
-                  </button>
-                ))}
-              </nav>
-            </>
-          )}
-        </Fragment>
-        {accountMode && (
-          <AccountAccess
-            language={language}
-            returnFocus={accountOrigin.current}
-            initialMode={accountMode}
-            session={accountSession}
-            playerId={game?.playerId ?? state.pending?.playerId}
-            ownerForRequest={() =>
-              controller.getSnapshot().game?.playerId ?? controller.getSnapshot().pending?.playerId
-            }
-            pending={!!state.pending}
-            connected={online}
-            onClose={() => setAccountMode(null)}
-            beforeIdentityChange={controller.beginIdentityChange}
-            finishIdentityChange={async (outcome, samePlayerOnly, expectedPlayerId) => {
-              const previousOwner = controller.getSnapshot().game?.playerId;
-              await controller.finishIdentityChange(outcome, samePlayerOnly, expectedPlayerId);
-              const currentOwner = controller.getSnapshot().game?.playerId;
-              if (
-                ['authenticated', 'signed-out'].includes(outcome) &&
-                previousOwner !== currentOwner
-              )
-                setAccountContextRevision((revision) => revision + 1);
-              if (outcome === 'authenticated' && controller.getSnapshot().error)
-                throw new AccountRequestError(controller.getSnapshot().error ?? 'AUTH_UNAVAILABLE');
-              if (outcome === 'authenticated' || outcome === 'signed-out') {
-                setSelected(null);
-                setPreparing(false);
-                setView('map');
+                    <GameSettings
+                      language={language}
+                      onLanguage={setLanguage}
+                      reduced={motion.reduced}
+                      ownReduced={motion.own}
+                      systemReduced={motion.system}
+                      onReduced={motion.change}
+                    />
+                    <ExpeditionPreparation
+                      recovery={recovery}
+                      game={game}
+                      catalog={content.catalog}
+                      content={content}
+                      context={preparationContext}
+                      combatChoices={combatChoices}
+                      onCombatNode={openCombatPreparation}
+                      onReturnToMap={() => {
+                        setPreparing(false);
+                        setView('map');
+                      }}
+                      language={language}
+                      ready={ready}
+                      onStart={(ids, challenge, bondFocus) => {
+                        startExpedition(ids, challenge, bondFocus);
+                      }}
+                      onTeam={(request) => void controller.perform({ kind: 'set-team', request })}
+                      onEquip={(request) =>
+                        void controller.perform({ kind: 'equip-equipment', request })
+                      }
+                      onClose={() => setPreparing(false)}
+                    />
+                  </dialog>
+                )}
+                <nav ref={navigation} aria-label={t('mainNavigation')}>
+                  {(
+                    [
+                      ['map', 'map'],
+                      ['collection', 'chromodex'],
+                      ['shop', 'bazaar'],
+                      ['missions', 'missions'],
+                    ] as const
+                  ).map(([key, label]) => (
+                    <button
+                      key={key}
+                      aria-current={view === key ? 'page' : undefined}
+                      onClick={() => (key === 'shop' ? setBazaarPlace('street') : setView(key))}
+                    >
+                      <Artwork asset={`ui.${key}`} language={language} decorative />
+                      <span>{t(label)}</span>
+                    </button>
+                  ))}
+                </nav>
+              </>
+            )}
+          </Fragment>
+          {accountMode && (
+            <AccountAccess
+              language={language}
+              returnFocus={accountOrigin.current}
+              initialMode={accountMode}
+              session={accountSession}
+              playerId={game?.playerId ?? state.pending?.playerId}
+              ownerForRequest={() =>
+                controller.getSnapshot().game?.playerId ??
+                controller.getSnapshot().pending?.playerId
               }
-            }}
-            onSession={(session) => {
-              accountQuery.current++;
-              setAccountSession(session);
-              setAccountUnavailable(false);
-            }}
-            onAccessReset={async () => {
-              await controller.load();
-              await refreshAccount();
-            }}
-          />
-        )}
-      </div>
-    </AccountSettingsContext.Provider>
+              pending={!!state.pending}
+              connected={online}
+              onClose={() => setAccountMode(null)}
+              beforeIdentityChange={controller.beginIdentityChange}
+              finishIdentityChange={async (outcome, samePlayerOnly, expectedPlayerId) => {
+                const previousOwner = controller.getSnapshot().game?.playerId;
+                await controller.finishIdentityChange(outcome, samePlayerOnly, expectedPlayerId);
+                const currentOwner = controller.getSnapshot().game?.playerId;
+                if (
+                  ['authenticated', 'signed-out'].includes(outcome) &&
+                  previousOwner !== currentOwner
+                )
+                  setAccountContextRevision((revision) => revision + 1);
+                if (outcome === 'authenticated' && controller.getSnapshot().error)
+                  throw new AccountRequestError(
+                    controller.getSnapshot().error ?? 'AUTH_UNAVAILABLE',
+                  );
+                if (outcome === 'authenticated' || outcome === 'signed-out') {
+                  setSelected(null);
+                  setPreparing(false);
+                  setView('map');
+                }
+              }}
+              onSession={(session) => {
+                accountQuery.current++;
+                setAccountSession(session);
+                setAccountUnavailable(false);
+              }}
+              onAccessReset={async () => {
+                await controller.load();
+                await refreshAccount();
+              }}
+            />
+          )}
+        </div>
+      </AccountSettingsContext.Provider>
+    </ReadingScope>
   );
 }

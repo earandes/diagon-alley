@@ -374,7 +374,7 @@ for (const language of ['es', 'en'] as const) {
     const bossId = await reachTarget(page, 'boss', language);
     await page.locator(`[data-node="${bossId}"]`).click();
     await resolveEvent(page);
-    await expect(page.locator('.arena-caption button')).toBeVisible();
+    await expect(page.locator('.arena-caption button:not([data-arena-facts-trigger])')).toBeVisible();
     await leaveBattle(page);
     await counter(page);
     const before = await readGame(page);

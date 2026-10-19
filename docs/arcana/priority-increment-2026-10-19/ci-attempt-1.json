@@ -1,0 +1,23 @@
+{
+  "runId": 39243286949,
+  "headSha": "aa575eaf3a59eff85f87f337dd6377603d1b9738",
+  "stats": {
+    "startTime": "2026-10-19T11:17:59.463Z",
+    "duration": 21415.008,
+    "expected": 0,
+    "skipped": 91,
+    "unexpected": 1,
+    "flaky": 0
+  },
+  "failures": [
+    {
+      "test": "A89 declared guide and company choices preserve resources, ownership and explicit confirmation",
+      "project": "chromium-390-a89",
+      "status": "failed",
+      "errors": [
+        "Error: expect(locator).toHaveAttribute(expected) failed\n\nLocator:  locator('[data-intention-choice=company] .intention-object')\nExpected: \"true\"\nReceived: \"false\"\nTimeout:  12000ms\n\nCall log:\n  - Expect \"toHaveAttribute\" locator('[data-intention-choice=company] .intention-object') with timeout 12000ms\n  - waiting for locator('[data-intention-choice=company] .intention-object')\n    28 \u00d7 locator resolved to <button type=\"button\" aria-pressed=\"false\" class=\"intention-object\" aria-label=\"Elegir Probar una compa\u00f1\u00eda \u00b7 Gryffindor\">\u2026</button>\n       - unexpected value \"false\"\n\n\n  187 |     await choose.focus();\n  188 |     await page.keyboard.press('Enter');\n> 189 |     await expect(choose).toHaveAttribute('aria-pressed', 'true');\n      |                          ^\n  190 |     await expect.poll(async () => (await read(page)).game.exploration.intention.version).toBe(2);\n  191 |     const intent = (await read(page)).game.exploration.intention;\n  192 |     expect(intent.choice).toEqual({ kind: 'company', focus: 'house', house: 'gryffindor' });\n    at /home/runner/work/diagon-alley/diagon-alley/tests/browser-priorities/priorities-a89.spec.ts:189:26"
+      ]
+    }
+  ],
+  "disposition": "Own run cancelled after preserving first failure; not a successful validation or automatic retry."
+}

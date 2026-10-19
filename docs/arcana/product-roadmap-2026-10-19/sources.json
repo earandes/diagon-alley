@@ -1,0 +1,207 @@
+{
+  "studyDate": "2026-10-19",
+  "codeBaseline": "d4a6d36fd0b1fb96ab4f3e8a071c88cfc5621f1f",
+  "status": "documented proposals; no feature implementation or observed player metrics",
+  "repositorySources": [
+    {
+      "file": "AGENTS.md",
+      "role": "scope, host protection and engineering invariants"
+    },
+    {
+      "file": "docs/PRD.md",
+      "role": "current product direction and historical changes, version 1.0.54"
+    },
+    {
+      "file": "docs/DECISIONS.md",
+      "role": "approved versus proposed rules; historical entries do not override updates"
+    },
+    {
+      "file": "DESIGN.md",
+      "role": "illustrated direction, objects, UI and animation constraints"
+    },
+    {
+      "file": "README.md",
+      "role": "current commands, local-only gateway and account limitations"
+    },
+    {
+      "file": "docs/arcana/creatures-bonds-2026-10-18/REPORT.md",
+      "role": "current roster, bonds and documented delivery"
+    },
+    {
+      "file": "docs/arcana/creatures-bonds-2026-10-18/COLLECTION.md",
+      "role": "current exact collection model and unequal ownership access"
+    },
+    {
+      "file": "docs/arcana/creatures-bonds-2026-10-18/CALIBRATION.md",
+      "role": "controlled scenarios and limits of causal claims"
+    },
+    {
+      "file": "docs/arcana/progression-increment-2026-10-16/COMPLETION.md",
+      "role": "historical economy/time assumptions and exclusive vault branches; old roster not reused as current"
+    },
+    {
+      "file": "docs/arcana/seasonal-halloween-2026-10-16/EXTENDING.md",
+      "role": "Christmas extension requires presentation and possibly code, not configuration only"
+    },
+    {
+      "file": "docs/arcana/skills-audio-2026-10-19/REPORT.md",
+      "role": "A88 technical validation, separate from player or physical-device evidence"
+    },
+    {
+      "file": "docs/arcana/deployment-study-2026-10-19/REPORT.md",
+      "role": "previous platform research, not deployed infrastructure"
+    },
+    {
+      "file": "src/arcana/domain/exploration/intentions.ts",
+      "role": "current intention variants exclude bond-specific goals"
+    },
+    {
+      "file": "src/arcana/application/client/expedition-intentions.ts",
+      "role": "availability and evidence from committed receipts"
+    },
+    {
+      "file": "src/arcana/domain/combat/bonds.ts",
+      "role": "single effective bond and distinct living contributors"
+    },
+    {
+      "file": "src/arcana/presentation/boss-facts.ts",
+      "role": "existing factual closure projection"
+    },
+    {
+      "file": "src/arcana/presentation/CollectionPanel.tsx",
+      "role": "existing filters, copies and undiscovered-card presentation"
+    },
+    {
+      "file": "src/arcana/presentation/ExpeditionPreparation.tsx",
+      "role": "existing copy selection, filtering, equipment previews and challenge selection"
+    },
+    {
+      "file": "src/arcana/presentation/GameSettings.tsx",
+      "role": "existing settings without a dedicated contrast/text-size preference in reviewed component"
+    },
+    {
+      "file": "src/arcana/infrastructure/postgres/game-transactions.ts",
+      "role": "full receipt reads and aggregate replacement writes; cost remains unmeasured"
+    },
+    {
+      "file": "src/arcana/infrastructure/http/trial-gateway.ts",
+      "role": "loopback gateway boundary"
+    },
+    {
+      "file": "src/arcana/infrastructure/identity/mail.ts",
+      "role": "private local mailbox, not external delivery"
+    },
+    {
+      "file": "src/arcana/presentation/ShopHub.tsx",
+      "role": "three actual destinations; entry is consultation only"
+    },
+    {
+      "file": "src/arcana/presentation/ShopBook.tsx",
+      "role": "existing accessible probability and information book, not a proposed new feature"
+    },
+    {
+      "file": "src/arcana/presentation/CommercePanel.tsx",
+      "role": "forge materials and price, vault key states, loot ledger and contextual return"
+    },
+    {
+      "file": "src/arcana/presentation/FlavourCabinet.tsx",
+      "role": "existing four specimens and discovery help book"
+    },
+    {
+      "file": "src/arcana/presentation/equipment-specialization.ts",
+      "role": "current localized specialization presentation"
+    },
+    {
+      "file": "src/arcana/domain/economy/commerce.ts",
+      "role": "current forge/vault contracts, random loot and atomic inventory changes at domain boundary"
+    },
+    {
+      "file": "src/arcana/application/commerce-use-cases.ts",
+      "role": "transaction and recovery for forge/vault"
+    },
+    {
+      "file": "src/arcana/application/shop-use-cases.ts",
+      "role": "owned frog and atomic buy-open already implemented"
+    },
+    {
+      "file": "src/arcana/application/client/flavour-collection.ts",
+      "role": "discovery requires validated committed activation, not merely assigning"
+    },
+    {
+      "file": "src/arcana/domain/combat/beans.ts",
+      "role": "four real effects and their adverse possibilities"
+    },
+    {
+      "file": "src/arcana/infrastructure/content/equipment-content.ts",
+      "role": "v2 recipes apply to new purchases, not historical equipment"
+    },
+    {
+      "file": "src/arcana/infrastructure/content/trial-configuration.ts",
+      "role": "A87 assembler and catalogue/ticket composition"
+    },
+    {
+      "file": "src/arcana/content/trial-v1.json",
+      "role": "raw prices, recipes, vault bundles, bean weights and campaign"
+    },
+    {
+      "file": "src/arcana/content/equipment-v2.json",
+      "role": "effective core specializations replacing raw historical values"
+    },
+    {
+      "file": "src/arcana/content/creatures-v1.json",
+      "role": "four extra obtainable identities"
+    },
+    {
+      "file": "src/arcana/domain/economy/rewards.ts",
+      "role": "repeat reward policy removes products/keys"
+    },
+    {
+      "file": "src/arcana/application/run-use-cases.ts",
+      "role": "first victory entitlement level plus campaign version"
+    }
+  ],
+  "externalSources": [
+    {
+      "url": "https://docs.gameanalytics.com/products-and-features/pipeline-iq/metrics-api/api-specification/",
+      "role": "cohort retention definition only; no benchmark or provider installation",
+      "consulted": "2026-10-19"
+    },
+    {
+      "url": "https://www.w3.org/TR/WCAG22/",
+      "role": "accessibility criteria; 24px AA target with exceptions, no certification claim",
+      "consulted": "2026-10-19"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/xbox/accessibility/xbox-accessibility-guidelines/103",
+      "role": "multi-channel communication and accessible game presentation",
+      "consulted": "2026-10-19"
+    },
+    {
+      "url": "https://support.pokemon.com/hc/en-us/articles/30330309361172-Pok%C3%A9mon-TCG-Pocket-Gameplay-FAQ",
+      "role": "official expansion-specific directed acquisition reference; no ratios copied",
+      "consulted": "2026-10-19"
+    },
+    {
+      "url": "https://magic.wizards.com/en/news/mtg-arena/introducing-mtg-arena-golden-packs",
+      "role": "historical official 2022 announcement; not represented as all current rules",
+      "consulted": "2026-10-19"
+    },
+    {
+      "url": "https://www.megacrit.com/press-kits/slay-the-spire/",
+      "role": "official positioning of deck building, routes and unlockables; not a duration benchmark",
+      "consulted": "2026-10-19"
+    }
+  ],
+  "skillsApplied": [
+    "game-design-workshop",
+    "data-analytics:design-kpis"
+  ],
+  "evidenceLimits": [
+    "No product analytics queried",
+    "No human sessions executed",
+    "No browser opened",
+    "No new application tests executed",
+    "No deployment or paid services"
+  ],
+  "extension": "PM16-PM24 and candidate shops; current priority in PRIORITIES.md; analysis only"
+}

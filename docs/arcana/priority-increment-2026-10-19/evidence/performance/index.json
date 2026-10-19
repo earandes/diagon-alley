@@ -1,0 +1,623 @@
+{
+  "format": "Original GitHub artifact JSON bytes compressed losslessly with gzip mtime=0. Python gzip.decompress reads them; SHA256 verifies byte equivalence. No frames, long tasks or unfavorable results removed.",
+  "entries": [
+    {
+      "file": "attempt-6/paired-mobile-performance.json.gz",
+      "sourceSha": "98e76c8768233cdf36007444d1826e4bb2322e43",
+      "referenceSha": "440d2784de96ef19d99447bf693812eaf94011e2",
+      "originalSha256": "f7a30314d9fcd8db781eddb2e45f082d6dc92bdc8917688b8b7669081d538777",
+      "gzipSha256": "a9968558b0b91ec811dba4d7c3cb96df0f57e3991fc09acccaaab9f0c4cdf7e3",
+      "originalBytes": 976693,
+      "gzipBytes": 39630,
+      "samples": [
+        {
+          "pair": 0,
+          "variant": "baseline",
+          "actionToReadyFrameMs": 214.5,
+          "navigationToReadyFrameMs": 320.70000000001164,
+          "sustained": {
+            "samples": 600,
+            "p95": 16.700000000000728,
+            "maximum": 16.80000000000109
+          }
+        },
+        {
+          "pair": 0,
+          "variant": "current",
+          "actionToReadyFrameMs": 213.79999999998836,
+          "navigationToReadyFrameMs": 333,
+          "sustained": {
+            "samples": 600,
+            "p95": 16.700000000000728,
+            "maximum": 16.80000000000109
+          }
+        },
+        {
+          "pair": 1,
+          "variant": "current",
+          "actionToReadyFrameMs": 229.70000000001164,
+          "navigationToReadyFrameMs": 333.70000000001164,
+          "sustained": {
+            "samples": 600,
+            "p95": 16.700000000000728,
+            "maximum": 16.80000000000109
+          }
+        },
+        {
+          "pair": 1,
+          "variant": "baseline",
+          "actionToReadyFrameMs": 213.60000000003492,
+          "navigationToReadyFrameMs": 319.30000000004657,
+          "sustained": {
+            "samples": 600,
+            "p95": 16.799999999999272,
+            "maximum": 16.80000000000109
+          }
+        },
+        {
+          "pair": 2,
+          "variant": "baseline",
+          "actionToReadyFrameMs": 234.10000000003492,
+          "navigationToReadyFrameMs": 338.79999999998836,
+          "sustained": {
+            "samples": 600,
+            "p95": 16.799999999999272,
+            "maximum": 16.80000000000109
+          }
+        },
+        {
+          "pair": 2,
+          "variant": "current",
+          "actionToReadyFrameMs": 230.39999999996508,
+          "navigationToReadyFrameMs": 329.3999999999651,
+          "sustained": {
+            "samples": 600,
+            "p95": 16.700000000000728,
+            "maximum": 16.80000000000109
+          }
+        }
+      ]
+    },
+    {
+      "file": "attempt-6/paired-webkit-performance.json.gz",
+      "sourceSha": "98e76c8768233cdf36007444d1826e4bb2322e43",
+      "referenceSha": "440d2784de96ef19d99447bf693812eaf94011e2",
+      "originalSha256": "71879acf3d28009144fcd400ea5c9b8b41bb8089e6a099cb292bd93556ba8886",
+      "gzipSha256": "09de2578ffa5ed2843b9fa4d134d023e72c030aee72d27d0815d2294a719ba5d",
+      "originalBytes": 780377,
+      "gzipBytes": 32560,
+      "samples": [
+        {
+          "pair": 0,
+          "variant": "baseline",
+          "actionToReadyFrameMs": 387,
+          "navigationToReadyFrameMs": 511,
+          "sustained": {
+            "samples": 600,
+            "p95": 21,
+            "maximum": 137
+          }
+        },
+        {
+          "pair": 0,
+          "variant": "current",
+          "actionToReadyFrameMs": 366,
+          "navigationToReadyFrameMs": 502,
+          "sustained": {
+            "samples": 612,
+            "p95": 21,
+            "maximum": 45
+          }
+        },
+        {
+          "pair": 1,
+          "variant": "current",
+          "actionToReadyFrameMs": 333,
+          "navigationToReadyFrameMs": 469,
+          "sustained": {
+            "samples": 611,
+            "p95": 20,
+            "maximum": 57
+          }
+        },
+        {
+          "pair": 1,
+          "variant": "baseline",
+          "actionToReadyFrameMs": 319,
+          "navigationToReadyFrameMs": 437,
+          "sustained": {
+            "samples": 618,
+            "p95": 20,
+            "maximum": 24
+          }
+        },
+        {
+          "pair": 2,
+          "variant": "baseline",
+          "actionToReadyFrameMs": 333,
+          "navigationToReadyFrameMs": 458,
+          "sustained": {
+            "samples": 616,
+            "p95": 20,
+            "maximum": 25
+          }
+        },
+        {
+          "pair": 2,
+          "variant": "current",
+          "actionToReadyFrameMs": 329,
+          "navigationToReadyFrameMs": 466,
+          "sustained": {
+            "samples": 613,
+            "p95": 21,
+            "maximum": 27
+          }
+        }
+      ]
+    },
+    {
+      "file": "attempt-7/paired-mobile-performance.json.gz",
+      "sourceSha": "3a396022c5ae8c18fbe5522366651f480ef1e660",
+      "referenceSha": "440d2784de96ef19d99447bf693812eaf94011e2",
+      "originalSha256": "4b2954992aa058f29a1720a9ac28b212823c3db10b7edf33fc1458a96af8cbb4",
+      "gzipSha256": "ae4caed46dfd10388deb10f827bfaea220c3058c85ea59fea44ed2f951db3c10",
+      "originalBytes": 968142,
+      "gzipBytes": 39800,
+      "samples": [
+        {
+          "pair": 0,
+          "variant": "baseline",
+          "actionToReadyFrameMs": 318.5,
+          "navigationToReadyFrameMs": 470.69999999995343,
+          "sustained": {
+            "samples": 600,
+            "p95": 16.799999999999727,
+            "maximum": 16.80000000000109
+          }
+        },
+        {
+          "pair": 0,
+          "variant": "current",
+          "actionToReadyFrameMs": 324.30000000004657,
+          "navigationToReadyFrameMs": 483.20000000006985,
+          "sustained": {
+            "samples": 600,
+            "p95": 16.700000000000728,
+            "maximum": 16.80000000000109
+          }
+        },
+        {
+          "pair": 1,
+          "variant": "current",
+          "actionToReadyFrameMs": 320.69999999995343,
+          "navigationToReadyFrameMs": 471.89999999990687,
+          "sustained": {
+            "samples": 600,
+            "p95": 16.700000000000728,
+            "maximum": 16.80000000000109
+          }
+        },
+        {
+          "pair": 1,
+          "variant": "baseline",
+          "actionToReadyFrameMs": 340.70000000006985,
+          "navigationToReadyFrameMs": 493.70000000006985,
+          "sustained": {
+            "samples": 600,
+            "p95": 16.700000000000728,
+            "maximum": 16.80000000000109
+          }
+        },
+        {
+          "pair": 2,
+          "variant": "baseline",
+          "actionToReadyFrameMs": 326.5,
+          "navigationToReadyFrameMs": 481.29999999993015,
+          "sustained": {
+            "samples": 600,
+            "p95": 16.700000000000728,
+            "maximum": 16.80000000000109
+          }
+        },
+        {
+          "pair": 2,
+          "variant": "current",
+          "actionToReadyFrameMs": 338.70000000006985,
+          "navigationToReadyFrameMs": 477.4000000000233,
+          "sustained": {
+            "samples": 600,
+            "p95": 16.700000000000728,
+            "maximum": 16.80000000000109
+          }
+        }
+      ]
+    },
+    {
+      "file": "attempt-7/paired-webkit-performance.json.gz",
+      "sourceSha": "3a396022c5ae8c18fbe5522366651f480ef1e660",
+      "referenceSha": "440d2784de96ef19d99447bf693812eaf94011e2",
+      "originalSha256": "62ce611b03cb2dace8e5eed870c7b52f9c3391e6485e20c95c6f0dc3cb270685",
+      "gzipSha256": "c43127d092af0fc030376e88a622ab6be9b9d823acc7d101817ef3ac06ead142",
+      "originalBytes": 782292,
+      "gzipBytes": 32953,
+      "samples": [
+        {
+          "pair": 0,
+          "variant": "baseline",
+          "actionToReadyFrameMs": 752,
+          "navigationToReadyFrameMs": 930,
+          "sustained": {
+            "samples": 593,
+            "p95": 22,
+            "maximum": 106
+          }
+        },
+        {
+          "pair": 0,
+          "variant": "current",
+          "actionToReadyFrameMs": 505,
+          "navigationToReadyFrameMs": 683,
+          "sustained": {
+            "samples": 610,
+            "p95": 22,
+            "maximum": 28
+          }
+        },
+        {
+          "pair": 1,
+          "variant": "current",
+          "actionToReadyFrameMs": 402,
+          "navigationToReadyFrameMs": 585,
+          "sustained": {
+            "samples": 598,
+            "p95": 23,
+            "maximum": 107
+          }
+        },
+        {
+          "pair": 1,
+          "variant": "baseline",
+          "actionToReadyFrameMs": 423,
+          "navigationToReadyFrameMs": 614,
+          "sustained": {
+            "samples": 606,
+            "p95": 22,
+            "maximum": 28
+          }
+        },
+        {
+          "pair": 2,
+          "variant": "baseline",
+          "actionToReadyFrameMs": 400,
+          "navigationToReadyFrameMs": 597,
+          "sustained": {
+            "samples": 606,
+            "p95": 22,
+            "maximum": 28
+          }
+        },
+        {
+          "pair": 2,
+          "variant": "current",
+          "actionToReadyFrameMs": 463,
+          "navigationToReadyFrameMs": 655,
+          "sustained": {
+            "samples": 607,
+            "p95": 22,
+            "maximum": 33
+          }
+        }
+      ]
+    },
+    {
+      "file": "attempt-8/paired-mobile-performance.json.gz",
+      "sourceSha": "3950a2d3c7d4702f491ad97fa0ada01aa08a8c12",
+      "referenceSha": "440d2784de96ef19d99447bf693812eaf94011e2",
+      "originalSha256": "2b87f8f77ee9ac8f2648cd3235ef8defc36dc5f24ea0914c73cafeb7eb2743df",
+      "gzipSha256": "7e01f830a347e007851146d292a011af686a27afa2a419a8ce9758bc35ab19b5",
+      "originalBytes": 972224,
+      "gzipBytes": 39849,
+      "samples": [
+        {
+          "pair": 0,
+          "variant": "baseline",
+          "actionToReadyFrameMs": 246.29999999998836,
+          "navigationToReadyFrameMs": 371.1000000000349,
+          "sustained": {
+            "samples": 600,
+            "p95": 16.700000000000728,
+            "maximum": 16.80000000000109
+          }
+        },
+        {
+          "pair": 0,
+          "variant": "current",
+          "actionToReadyFrameMs": 230.5,
+          "navigationToReadyFrameMs": 335.3999999999651,
+          "sustained": {
+            "samples": 600,
+            "p95": 16.700000000000728,
+            "maximum": 16.80000000000109
+          }
+        },
+        {
+          "pair": 1,
+          "variant": "current",
+          "actionToReadyFrameMs": 229.59999999997672,
+          "navigationToReadyFrameMs": 334.9000000000233,
+          "sustained": {
+            "samples": 600,
+            "p95": 16.799999999999272,
+            "maximum": 16.80000000000109
+          }
+        },
+        {
+          "pair": 1,
+          "variant": "baseline",
+          "actionToReadyFrameMs": 218.39999999996508,
+          "navigationToReadyFrameMs": 341.5,
+          "sustained": {
+            "samples": 600,
+            "p95": 16.700000000000728,
+            "maximum": 16.80000000000109
+          }
+        },
+        {
+          "pair": 2,
+          "variant": "baseline",
+          "actionToReadyFrameMs": 214.09999999997672,
+          "navigationToReadyFrameMs": 322.29999999998836,
+          "sustained": {
+            "samples": 600,
+            "p95": 16.700000000000728,
+            "maximum": 16.80000000000109
+          }
+        },
+        {
+          "pair": 2,
+          "variant": "current",
+          "actionToReadyFrameMs": 247.89999999996508,
+          "navigationToReadyFrameMs": 356.0999999999767,
+          "sustained": {
+            "samples": 600,
+            "p95": 16.799999999999272,
+            "maximum": 16.80000000000109
+          }
+        }
+      ]
+    },
+    {
+      "file": "attempt-8/paired-webkit-performance.json.gz",
+      "sourceSha": "3950a2d3c7d4702f491ad97fa0ada01aa08a8c12",
+      "referenceSha": "440d2784de96ef19d99447bf693812eaf94011e2",
+      "originalSha256": "f02d5b4be00425925138e8cb1c2054a04e5514810ed47d649e98d1441c2833d3",
+      "gzipSha256": "f5b3fda3fd9bacb32197138d3277ff7ff21e8fb316db07ff69b341dcd3e01af2",
+      "originalBytes": 780798,
+      "gzipBytes": 32496,
+      "samples": [
+        {
+          "pair": 0,
+          "variant": "baseline",
+          "actionToReadyFrameMs": 389,
+          "navigationToReadyFrameMs": 508,
+          "sustained": {
+            "samples": 603,
+            "p95": 20,
+            "maximum": 132
+          }
+        },
+        {
+          "pair": 0,
+          "variant": "current",
+          "actionToReadyFrameMs": 372,
+          "navigationToReadyFrameMs": 509,
+          "sustained": {
+            "samples": 613,
+            "p95": 20,
+            "maximum": 48
+          }
+        },
+        {
+          "pair": 1,
+          "variant": "current",
+          "actionToReadyFrameMs": 323,
+          "navigationToReadyFrameMs": 459,
+          "sustained": {
+            "samples": 612,
+            "p95": 20,
+            "maximum": 55
+          }
+        },
+        {
+          "pair": 1,
+          "variant": "baseline",
+          "actionToReadyFrameMs": 320,
+          "navigationToReadyFrameMs": 434,
+          "sustained": {
+            "samples": 616,
+            "p95": 20,
+            "maximum": 24
+          }
+        },
+        {
+          "pair": 2,
+          "variant": "baseline",
+          "actionToReadyFrameMs": 333,
+          "navigationToReadyFrameMs": 465,
+          "sustained": {
+            "samples": 614,
+            "p95": 20,
+            "maximum": 25
+          }
+        },
+        {
+          "pair": 2,
+          "variant": "current",
+          "actionToReadyFrameMs": 325,
+          "navigationToReadyFrameMs": 461,
+          "sustained": {
+            "samples": 614,
+            "p95": 20,
+            "maximum": 24
+          }
+        }
+      ]
+    },
+    {
+      "file": "attempt-10/paired-mobile-performance.json.gz",
+      "runId": 39261802331,
+      "sourceSha": "200a92c82ca71004223eb2f3bde886ce8d22615f",
+      "referenceSha": "440d2784de96ef19d99447bf693812eaf94011e2",
+      "originalSha256": "58cac1972d7ab805107b3096ad2285f5e34bdc0f180d0aadf0e5a4d9e0d483dc",
+      "gzipSha256": "f73490f638d3f196ef27850aa14e20051ae065232598dd9254b61a365bfb2edb",
+      "originalBytes": 970791,
+      "gzipBytes": 39788,
+      "samples": [
+        {
+          "pair": 0,
+          "variant": "baseline",
+          "actionToReadyFrameMs": 269.20000000001164,
+          "navigationToReadyFrameMs": 403.5999999999767,
+          "sustained": {
+            "samples": 600,
+            "p95": 16.799999999999272,
+            "maximum": 16.80000000000109
+          }
+        },
+        {
+          "pair": 0,
+          "variant": "current",
+          "actionToReadyFrameMs": 279.3999999999651,
+          "navigationToReadyFrameMs": 407.20000000001164,
+          "sustained": {
+            "samples": 600,
+            "p95": 16.799999999999272,
+            "maximum": 16.80000000000109
+          }
+        },
+        {
+          "pair": 1,
+          "variant": "current",
+          "actionToReadyFrameMs": 283.1000000000349,
+          "navigationToReadyFrameMs": 400.70000000001164,
+          "sustained": {
+            "samples": 600,
+            "p95": 16.799999999999272,
+            "maximum": 16.80000000000109
+          }
+        },
+        {
+          "pair": 1,
+          "variant": "baseline",
+          "actionToReadyFrameMs": 263.4000000000233,
+          "navigationToReadyFrameMs": 406.4000000000233,
+          "sustained": {
+            "samples": 600,
+            "p95": 16.700000000000728,
+            "maximum": 16.80000000000109
+          }
+        },
+        {
+          "pair": 2,
+          "variant": "baseline",
+          "actionToReadyFrameMs": 280,
+          "navigationToReadyFrameMs": 423.70000000001164,
+          "sustained": {
+            "samples": 600,
+            "p95": 16.799999999999272,
+            "maximum": 16.80000000000109
+          }
+        },
+        {
+          "pair": 2,
+          "variant": "current",
+          "actionToReadyFrameMs": 263.20000000001164,
+          "navigationToReadyFrameMs": 390.4000000000233,
+          "sustained": {
+            "samples": 600,
+            "p95": 16.700000000000728,
+            "maximum": 16.80000000000109
+          }
+        }
+      ]
+    },
+    {
+      "file": "attempt-10/paired-webkit-performance.json.gz",
+      "runId": 39261802331,
+      "sourceSha": "200a92c82ca71004223eb2f3bde886ce8d22615f",
+      "referenceSha": "440d2784de96ef19d99447bf693812eaf94011e2",
+      "originalSha256": "952be2d9af601492e04563ac85a5910108b50286f30fa52707c74e4f1267f244",
+      "gzipSha256": "aa7e61f68a0ed6db2c6f4b7cf032d62224188861760803c2eb6e6535748ba4db",
+      "originalBytes": 780889,
+      "gzipBytes": 33186,
+      "samples": [
+        {
+          "pair": 0,
+          "variant": "baseline",
+          "actionToReadyFrameMs": 538,
+          "navigationToReadyFrameMs": 694,
+          "sustained": {
+            "samples": 587,
+            "p95": 23,
+            "maximum": 179
+          }
+        },
+        {
+          "pair": 0,
+          "variant": "current",
+          "actionToReadyFrameMs": 464,
+          "navigationToReadyFrameMs": 628,
+          "sustained": {
+            "samples": 607,
+            "p95": 22,
+            "maximum": 62
+          }
+        },
+        {
+          "pair": 1,
+          "variant": "current",
+          "actionToReadyFrameMs": 396,
+          "navigationToReadyFrameMs": 551,
+          "sustained": {
+            "samples": 603,
+            "p95": 22,
+            "maximum": 77
+          }
+        },
+        {
+          "pair": 1,
+          "variant": "baseline",
+          "actionToReadyFrameMs": 382,
+          "navigationToReadyFrameMs": 561,
+          "sustained": {
+            "samples": 607,
+            "p95": 22,
+            "maximum": 45
+          }
+        },
+        {
+          "pair": 2,
+          "variant": "baseline",
+          "actionToReadyFrameMs": 409,
+          "navigationToReadyFrameMs": 574,
+          "sustained": {
+            "samples": 604,
+            "p95": 22,
+            "maximum": 27
+          }
+        },
+        {
+          "pair": 2,
+          "variant": "current",
+          "actionToReadyFrameMs": 377,
+          "navigationToReadyFrameMs": 524,
+          "sustained": {
+            "samples": 606,
+            "p95": 22,
+            "maximum": 26
+          }
+        }
+      ]
+    }
+  ]
+}

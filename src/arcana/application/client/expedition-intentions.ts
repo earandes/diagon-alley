@@ -5,10 +5,39 @@ import { activeSynergies } from '../../domain/combat/synergies';
 import type { IntentionChoice } from '../../domain/exploration/intentions';
 import { sameIntentionChoice } from '../../domain/exploration/intentions';
 import { flavourCollection } from './flavour-collection';
+import { BOND_GROUPS, bondProgress } from '../../domain/combat/bonds';
+import { HOUSES } from '../../domain/collection/traits';
+import { houseProgress } from '../../domain/combat/houses';
+import type { CombatRules } from '../../domain/combat/engine';
+import type { CompanyIntentionChoice } from '../../domain/exploration/intentions';
 
 export interface IntentionAvailability {
   readonly ownedAffinities: Readonly<Record<string, Affinity>>;
   readonly beanPrice: number;
+  /** Live rules apply only to the next run; active previews use their saved rules. */
+  readonly combatRules?: CombatRules;
+}
+export function companyIntentionProgress(
+  game: GameState,
+  availability: IntentionAvailability,
+  choice: CompanyIntentionChoice,
+) {
+  const active = game.exploration?.run?.status === 'active' ? game.exploration.run : null;
+  const rules = active ? active.campaignSnapshot?.combatRules : availability.combatRules;
+  if (!rules) return null;
+  const units = active
+    ? active.members.map((m) => m.unit)
+    : game.copies.map((copy) => ({
+        id: copy.copyId,
+        wizardId: copy.wizard.id,
+        hp: copy.wizard.stats.maxHp,
+        house: rules.houseMembers?.[copy.wizard.id],
+      }));
+  if (choice.focus === 'house')
+    return rules.houseSynergies
+      ? houseProgress(units).find((p) => p.house === choice.house)!
+      : null;
+  return rules.bonds ? bondProgress(units, rules.bonds, choice.group) : null;
 }
 /** Only directly owned alternatives are promised. Temporary offers are not guaranteed ownership. */
 export function availableIntentions(
@@ -18,6 +47,8 @@ export function availableIntentions(
   const run = game.exploration?.run;
   if (!run || run.status === 'active') return Object.freeze([]);
   const options: IntentionChoice[] = [];
+  const selected =
+    game.exploration?.intention?.runId === null ? game.exploration.intention.choice : null;
   const battles = game.receipts.flatMap((receipt) =>
     receipt.kind === 'advance-node' && receipt.request.runId === run.id && receipt.battle
       ? [receipt.battle]
@@ -28,7 +59,43 @@ export function availableIntentions(
       ? battles.flatMap((battle) => battle.input.player.map((unit) => unit.wizardId))
       : run.members.map((m) => m.unit.wizardId),
   );
-  const companion = game.copies.find((copy) => !previousIds.has(copy.wizard.id));
+  const companies: readonly CompanyIntentionChoice[] = [
+    ...HOUSES.map((house) => ({ kind: 'company' as const, focus: 'house' as const, house })),
+    ...BOND_GROUPS.map((group) => ({ kind: 'company' as const, focus: 'bond' as const, group })),
+  ];
+  // A suggestion must not invalidate an already selected company merely because ownership grows.
+  const selectedCompany =
+    selected?.kind === 'company'
+      ? companies.find(
+          (choice) =>
+            sameIntentionChoice(choice, selected) &&
+            !!companyIntentionProgress(game, availability, choice)?.tier,
+        )
+      : undefined;
+  const company =
+    selectedCompany ??
+    companies.find((choice) => {
+      if (!companyIntentionProgress(game, availability, choice)?.tier) return false;
+      return !battles.some((battle) =>
+        battle.events.some(
+          (event) =>
+            (event.kind === 'house-activated' &&
+              event.team === 'player' &&
+              choice.focus === 'house' &&
+              event.house === choice.house) ||
+            (event.kind === 'bond-activated' &&
+              event.team === 'player' &&
+              choice.focus === 'bond' &&
+              event.group === choice.group),
+        ),
+      );
+    });
+  if (company) options.push(company);
+  const eligibleCompanions = game.copies.filter((copy) => !previousIds.has(copy.wizard.id));
+  const companion =
+    (selected?.kind === 'new-companion'
+      ? eligibleCompanions.find((copy) => copy.wizard.id === selected.wizardId)
+      : undefined) ?? eligibleCompanions[0];
   if (companion) options.push({ kind: 'new-companion', wizardId: companion.wizard.id });
   const previousSynergies = new Set(
     battles.length
@@ -45,7 +112,11 @@ export function availableIntentions(
       affinity: availability.ownedAffinities[copy.wizard.id] ?? 'neutral',
     })),
   );
-  const synergy = possible.find((s) => !previousSynergies.has(s.affinity));
+  const eligibleSynergies = possible.filter((s) => !previousSynergies.has(s.affinity));
+  const synergy =
+    (selected?.kind === 'synergy'
+      ? eligibleSynergies.find((s) => s.affinity === selected.affinity)
+      : undefined) ?? eligibleSynergies[0];
   if (synergy) options.push({ kind: 'synergy', affinity: synergy.affinity });
   const bean = game.inventory.products.some(
     (product) => product.kind === 'random-beans' && product.status === 'available',
@@ -56,7 +127,13 @@ export function availableIntentions(
     game.inventory.crowns >= availability.beanPrice;
   if ((bean || affordable) && flavourCollection(game).some((flavour) => !flavour.discovered))
     options.push({ kind: 'bean' });
-  return Object.freeze(options.map((option) => Object.freeze(option)));
+  const visible = options.slice(0, 3);
+  const selectedOption =
+    selected && options.find((option) => sameIntentionChoice(option, selected));
+  // A new suggestion must not make a viable, already chosen legacy plan look unavailable.
+  if (selectedOption && !visible.some((option) => sameIntentionChoice(option, selectedOption)))
+    visible.splice(2, 1, selectedOption);
+  return Object.freeze(visible.map((option) => Object.freeze(option)));
 }
 export function canSelectIntention(
   game: GameState,
@@ -95,6 +172,18 @@ export function intentionProgress(game: GameState, availability?: IntentionAvail
                 event.kind === 'synergy-activated' &&
                 event.team === 'player' &&
                 event.affinity === choice.affinity,
+            );
+          if (choice.kind === 'company')
+            return battle.events.some(
+              (event) =>
+                (event.kind === 'house-activated' &&
+                  event.team === 'player' &&
+                  choice.focus === 'house' &&
+                  event.house === choice.house) ||
+                (event.kind === 'bond-activated' &&
+                  event.team === 'player' &&
+                  choice.focus === 'bond' &&
+                  event.group === choice.group),
             );
           return battle.events.some(
             (event) =>

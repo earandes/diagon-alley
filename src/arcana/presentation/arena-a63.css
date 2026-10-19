@@ -550,3 +550,31 @@
     flex-shrink: 0;
   }
 }
+
+/* A89: owned here so standalone consumers do not depend on App/Settings CSS. */
+.arena-result-book {
+  width: 44px;
+  height: 44px;
+  padding: 5px;
+  background: transparent;
+}
+.arena-result-book img {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+}
+.arena-result-book:not(:has(img)) {
+  width: auto;
+  min-width: 44px;
+  max-width: 10rem;
+}
+.arena-result-book:not(:has(img)) .visually-hidden {
+  position: static;
+  width: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  clip: auto;
+  clip-path: none;
+  white-space: normal;
+}

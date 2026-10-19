@@ -1,0 +1,44 @@
+{
+  "runId": 39254029300,
+  "headSha": "4c8531264e1e479b2844f1151d6ab0897f49f9fb",
+  "checkoutSha": "3950a2d3c7d4702f491ad97fa0ada01aa08a8c12",
+  "tree": "9b844b67de549ccbf91cd5c87a5c370405f3bb43",
+  "conclusion": "failure",
+  "unit": 749,
+  "integration": 120,
+  "browserCheckJob": {
+    "passed": 409,
+    "failed": 2,
+    "deliberatelySkipped": 303
+  },
+  "passedSuites": [
+    "accounts/A89",
+    "welcome",
+    "account-fixes",
+    "account-entry",
+    "account-style",
+    "account-symbols",
+    "experience-A75",
+    "boss/A71/A73",
+    "seasonal-A68"
+  ],
+  "motion": {
+    "passed": 88,
+    "failed": 2,
+    "skipped": 42,
+    "failure": "Mastery roster / ES ARCANA / five equipped units and five draft beans / Chromium390 and WebKit390; jar summary bottom exceeds sticky footer by about10px."
+  },
+  "regressionJob": "skipped after failed check, not executed",
+  "evidence": "evidence/attempt-8",
+  "originalErrorContextHashes": {
+    "chromium-boss-jar-overlap.md": "749abe140b8d82ab729b66124f278b326751ce20d99d1ac09da7d0b79eba9a7a",
+    "webkit-boss-jar-overlap.md": "5186b64b75456e4f2a8b098dc55e3e815603c4132576f6bcff0f73fb0c7a5e0a"
+  },
+  "contextNormalization": "Trailing whitespace only, original hashes retained.",
+  "correction": "Compact grid jar/caption/stock with separate draft line; no information or portraits hidden. Await font readiness and natural finite dialog entry completion before comparison. Existing viewport and no-overlap assertions unchanged.",
+  "designAlternatives": {
+    "chosen": "Keep jar, stock and draft on a shared object shelf; wrap text within caption.",
+    "rejected": "Keep tall stacked jar and require scrolling down before confirmation in ordinary390; retains information but weakens immediate preparation."
+  },
+  "expectedNotMeasured": "Reduce113px stacked summary and maintain real separation before sticky confirmation. Next CI must verify."
+}
