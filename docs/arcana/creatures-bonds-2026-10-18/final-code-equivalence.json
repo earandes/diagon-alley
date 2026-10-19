@@ -1,0 +1,24 @@
+{
+  "codeValidatedAt": "0f8ec05addc747912e7dddaac133d973fb71b062",
+  "ci": 39205969427,
+  "ciConclusion": "success",
+  "phase": "full",
+  "activeGraphicalCases": 519,
+  "unitTests": 681,
+  "realPostgresRedisTests": 111,
+  "contentChecks": 6,
+  "validatedObjects": {
+    "src": "4ddbcc88bf5fb06e4f6fddb1953c8ffb95f7a8a3",
+    "tests": "d74420be0cc9974b8d0531eefe10519a8cdfddef",
+    "tools": "e14457c503736ecd2154b5dc1343538ca36ba76e",
+    ".github": "9381448c7feff72c9d2f3f2607a140b2ae56d0d4",
+    "package.json": "7624c06b3bf5c620b39cb74042a7a0a3467f0823",
+    "package-lock.json": "f8d0c9d8aab1a5931825ecd76ccc979dea21862c",
+    "tsconfig.json": "eec6aa0842ae8c71f301150de6046c0a3d9d59e8",
+    "tsconfig.worker.json": "9eee2b43095e3ba8824d4f3b022a56d10288e364",
+    "vite.config.ts": "56da40f5005848024c5173161849ac578911633e"
+  },
+  "nonDocumentationDiff": [],
+  "scope": "This final documentary commit changes no application, tests, tools, workflow, dependency, config or runtime asset objects. Full CI belongs to0f8ec05, not the subsequent documentary SHA.",
+  "ciForDocumentaryCommit": "Intentionally omitted with native [skip ci] to avoid another unchanged graphical battery. No code checks or host guards weakened."
+}

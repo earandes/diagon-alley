@@ -157,3 +157,13 @@ Se utilizará fase resume original para ejecutar la expectativa corregida y regr
 CI39202690011 correcta: jobcheckresume179gráficos yregresión138(56E2E,24A67,16A63,20A66,8intenciones,12PWA,2benchmarks). CorrecciónNeutral comprobada sin modificar aplicación. Se reutilizan202gráficos A70/Halloween/A69 de d539103con src idéntico, sin sumar el solapamiento o atribuir full aresume. Tipos/build/6contenido/681unit/111PGRedis correctos. Cero reintentos automáticos.
 
 PR10fusionada19octubre2026 05:42:10UTC mediante mainbde8275bac6d48a2bfb8e3a259fe322edb27d102. Árbolcompleto4a816f983acf4d7c2aee3a08ada0cccdbf5433d6 idéntico a651dd98ycheckoutaab023b280df769839aaa147bce7bf343a118960. Fullse restablece en elcierre documental inmediato y suCI de main debe conocerse antesdefinalizar. Sinforcepush/despliegue; archivos ajenos yWord preservados.
+
+### Main0f8ec05 y CI completa en curso
+
+Mainremoto0f8ec05addc747912e7dddaac133d973fb71b062, fasefullrestablecida. CI39205969427. Src, tests, dependencias yworkflows idénticos a651dd98; en tools solo cambia elcontrol original de fase resume→full. Se cancela únicamente CI39205912335delmergebde8275, durante typecheck y antes de gráficos, al quedar sustituida por laCI full. Cancelación documentada, no éxito. PR1–10 verificadas comoMERGED; ningunaPRabierta. Elresultado completo demain queda pendiente alregistrar esta entrada.
+
+Main0f8, CI39205969427job117908917629: checkfull correcto,381gráficos,681unit,111PGRedis y6validaciones decontenido, tipos/build/scan/backup-restore. Fuente real demain0f8, no merge sintético. Los artefactos de movimiento ypareados nuevos se conservan comoJSON en main-0f8; PNGd539se reutilizan por identidad de src, sin presentarlos como capturas nuevas. Regresión aún enejecución alregistrarlo.
+
+## Cierre técnico de main
+
+CI39205969427 full correcta sobre0f8ec05addc747912e7dddaac133d973fb71b062.381gráficoscheck+138regresión=519activos correctos;681unitarias/109archivos,111PGRedis/18archivos,6contenido,tipos/build/scan/backup-restore. Ninguna omisión contada como pasada, unworker, cero reintentos. Los4recorridos A87HTTP/PGRedis, laexpectativaNeutral y regresiones anteriores correctos sobre main. Objetos deaplicación/tests/tools/assets posteriores idénticos alSHA probado; elcommitfinal solo incorpora evidencia, con[skip ci]nativo. No se le atribuye otra batería. SHAremoto comprobado en la entrega. Sin despliegue.

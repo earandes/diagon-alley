@@ -17,9 +17,9 @@
 - [x] Jobcheckd539103completo:381gráficos,681unit,111PG/Redis correctos; evidencia A87 seleccionada inspeccionada. Arranque/tareaslargas adversos y límiteWebKit previo documentados.
 - [x] Regresiónd539103:135correctos/3fallos deexpectativaA66(Neutral sinbono), incluidos56E2Ey4A87realescorrectos. Conservar errores; no alterar producto correcto.
 - [x] Validar A66poroferta/afinidad enresume651dd98: Neutral sinbono falso, recorrido completo conservado y aplicación idéntica ad539103.
-- [ ] Restablecer full al cerrar main y verificar suCI completa, sin atribuir full alresume.
-- [ ] Cerrar los dos recorridos de QAcorregidos y comprobar maincompleto antes de finalizar.
+- [x] Fullrestablecido enmain0f8ec05; CI39205969427 completa y correcta. No se atribuye full aresume.
+- [x] Recorridos QA corregidos comprobados en fullmain, incluidas4rutas A87reales y Neutral sin falso bono.
 - [x] Consolidar fuentes y evidencia, revisar diff e integrar PR10validada enmainbde8275bac6d48a2bfb8e3a259fe322edb27d102; sin despliegue.
-- [ ] Verificar laCI full de main y registrar su resultado exacto en el cierre documental.
+- [x] CI full de main verificada:519gráficos,681unit y111PGRedis correctos. Cierre final solo documental con equivalencia de objetos.
 
 Ningún navegador abierto en elMac. Matrices enCI protegida, una batería cada vez. La revisión humana, escucha perceptiva y móvil físico siguen pendientes y no se presentan como realizadas.

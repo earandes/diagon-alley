@@ -99,3 +99,9 @@ Recorridos A87 reales d539103(HTTP/PG/Redis,1280×900): ChromiumESDiagon/duelo79
 ## Repetición651dd98 con aplicación idéntica
 
 CI39202690011resume: A75correcta114/174omitidas/0flaky. ChromiumP95antes16,8/16,8/16,7 ydespués16,8/16,7/16,7ms. WebKitantes20/20/19 ydespués20/20/20ms. El árbol src es exactamente4ddbcc88bf5fb06e4f6fddb1953c8ffb95f7a8a3 en651yd539; cambian una expectativa detest, fase deejecución y documentación. No se atribuye la diferencia22→20ms auna corrección deproducto o aNeutral. Ambas cohortes se conservan; muestra variabilidad delensayo y no acredita20msestables o rendimiento físico. Esta repetición se ejecuta para verificar una corrección relevante deQA, no un reintento automático de rendimiento para elegir un valor favorable.
+
+## Main0f8ec05: tercera cohorte pareada
+
+CI39205969427full, A75correcta114activos/174omitidos/0flaky. Chromiumantes16,8/16,7/16,7 ydespués16,7/16,7/16,7ms. WebKitantes22/23/23 ydespués23/23/23ms, mediana23enambos; sinregresión sostenida detectada enesta cohorte. Appidéntica a651/d539, fasefullrestaurada. Conservar las3cohortes:20,22y23mssegúnejecución; no se presenta elcaso20como una corrección o garantía. Los ensayos históricosA84desfavorables se mantienen. La cifra no es GPU, FPSmedio o rendimiento enmóvil físico. LaCI completa de main aún continúa alregistrarlo.
+
+Main0f8/A87,6contextosChromium390: Diagonfiguras316,8/289,4/270,9ms,registrocast321,5/294/280,9; ARCANA315,5/318,9/327,3 y319,5/322,4/330,9ms. P95sostenido16,7–16,8ms. Tareas largas61;60;51+61;50+60;66;62ms por muestra. Se conservan, no se declara eliminación de picos. Mismas condiciones de fixture, módulos evaluados antes deacción yregistroCPU de texturas, no subidaGPU. No es unensayo pareado contra otras ejecucionesA87 ni medida en teléfono.

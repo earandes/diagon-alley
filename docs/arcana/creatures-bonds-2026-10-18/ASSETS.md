@@ -1,6 +1,6 @@
 # A87 · Recursos y consumidores
 
-Implementados en la rama A87. Contexto y poses contrastados en Linux f79 (capturas seleccionadas y pruebas temporales); cierre del candidato posterior pendiente. El [manifest de producción](../../../design/creatures-a87/manifest.json) y el [índice de exports](../../../design/creatures-a87/exports-index.json) conservan rutas, dimensiones, variantes, transformaciones y procedencia.
+Implementados e integrados. Main0f8ec05 ha superado CI39205969427 completa. Contexto y poses contrastados mediante capturas seleccionadas, carga de recursos y pruebas temporales, con el alcance preciso de COVERAGE. Percepción artística, escucha y dispositivo físico pendientes. El [manifest de producción](../../../design/creatures-a87/manifest.json) y el [índice de exports](../../../design/creatures-a87/exports-index.json) conservan rutas, dimensiones, variantes, transformaciones y procedencia.
 
 ## Familia ilustrada
 

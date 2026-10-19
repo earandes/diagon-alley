@@ -1,6 +1,6 @@
 # A87 · Matriz de cobertura técnica
 
-Referencia de cobertura ejecutada: f79d9ce / CI39186209500, jobcheck correcto con380comprobaciones gráficas,681unitarias y111conPG/Redis. Regresión:129correctas y9fallidas por dos expectativas corregidas posteriormente (contador30→34 y primer combate alcanzable duelo/jefe); pendientes de ejecución final. La comprobación adicional pareada WebKit muestra un límite abierto contraA84. Los cambios posteriores de composición necesitan su propia validación; no se atribuye elcheckf79 al código nuevo. QA conserva cada SHA, resultado y omisión.
+Cierre técnico: main0f8ec05, CI39205969427 full correcta con519gráficos activos,681unitarios y111PG/Redis. QA conserva las ejecuciones anteriores fallidas y la corrección de tres expectativas (contador30→34, primer combate alcanzable y Neutral sin bono). No se cuentan omisiones como casos superados. Los límites de capa y observación humana se mantienen; la cifra no equivale a una cobertura exhaustiva de todas las combinaciones.
 
 | Riesgo / recorrido | Evidencia preparada o ejecutada | Límite |
 |---|---|---|
@@ -18,3 +18,7 @@ Referencia de cobertura ejecutada: f79d9ce / CI39186209500, jobcheck correcto co
 | Propiedad y economía | Consumos/receipts actuales, aperturas nuevas y antiguas, premios únicos; modelo exacto | Cambiar catálogo cambia las probabilidades normalizadas y la duración de colección |
 
 La sesión humana y el dispositivo físico se mantienen en [HUMAN-SESSION](HUMAN-SESSION.md). No se han realizado. La escucha subjetiva y el interés por repetir no se infieren de pruebas automáticas.
+
+### Alcance preciso de poses y sonido
+
+La muestra temporal de pausa/swap registra el primer actor de criatura de la fixture (`phoenix`,12casos entre proyectos/pares de presentación). Las cuatro texturascast se decodifican/registran juntoa las10figuras; los perfiles y fuentes de las4especies se comprueban por datos/código, assets y contacto estático. No se afirma una matriz independiente de cada gesto de cada especie en todos los navegadores. La valoración perceptiva de los4gestos sigue en la sesión humana. Audio:16WAV decodificados; arranques nativos de cues concretos documentados, sin afirmar escucha de todos ellos.

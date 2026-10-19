@@ -1,11 +1,15 @@
 # A87 · Integración y versión comprobada
 
-PR10 integrada en main `bde8275bac6d48a2bfb8e3a259fe322edb27d102`. Fuente validada `651dd98b6c8c8697a4a14a7c819b15740eb2814e`, checkout `aab023b280df769839aaa147bce7bf343a118960`, árbol completo `4a816f983acf4d7c2aee3a08ada0cccdbf5433d6`.
+PR10 fusionada19octubre2026 05:42:10UTC mediante main `bde8275bac6d48a2bfb8e3a259fe322edb27d102`. Árbol completo idéntico a fuente651dd98/checkoutaab023b: `4a816f983acf4d7c2aee3a08ada0cccdbf5433d6`. Todas las PR1–10 MERGED; ninguna abierta al verificar.
 
-La aplicación tiene el mismo árbol `src` que d539103: `4ddbcc88bf5fb06e4f6fddb1953c8ffb95f7a8a3`. El jobcheck full de d539103/CI39196343905 cubre381gráficos; la corrección posterior A66deNeutral se ejecuta enresume651dd98/CI39202690011. No se suma el solapamiento como casos únicos ni se atribuye full aresume. QA conserva los fallos y cada capa de evidencia.
+Cierre de documentación y restauración de full en `0f8ec05addc747912e7dddaac133d973fb71b062`. **CI39205969427 completa y correcta**:381gráficoscheck+138regresión=519activos,681unitarios,111PG/Redis y6validaciones decontenido; tipos/build/scan/backup-restore correctos. Sin reintentos automáticos. [Resultado real](https://github.com/earandes/diagon-alley/actions/runs/39205969427), [estado guardado](evidence/main-0f8/ci-status.json), [recuento](evidence/main-0f8/graphical-counts.json).
 
-Este cierre restaura la fasefull original para main. La nuevaCI completa deberá conocerse antes de terminar; al registrar esta referencia todavía no se atribuye su éxito. El cierre final incorporará SHA, resultado y equivalencia si después solo cambia documentación.
+La CI39205912335 delmerge se canceló durante typecheck, antes de gráficos, al ser sustituida por la batería full del cierre0f8. Se registra como cancelada, no superada. La fuente651dd98 había superado resume39202690011 y reutiliza solo los objetos idénticos del checkfull d539103; main0f8 ejecuta de nuevo toda la matriz y cierra la comprobación integrada.
 
-No hay cambios de aplicación, imágenes o sonidos respecto al objeto probado al consolidar esta documentación. Se conservan archivos ajenos y Word. Sin force-push, despliegue o publicación de la aplicación.
+El último commit solo registra documentación/evidencia. Se omite otra batería idéntica mediante el marcador nativo `[skip ci]`; no se cambia ninguna protección, test, configuración, aplicación o asset. La batería completa pertenece a0f8ec05, no al SHA documental posterior. [Prueba de objetos idénticos](final-code-equivalence.json). El SHA remoto de ese cierre se verifica y comunica en la entrega; no se usa force-push.
 
-Límites:20–22msP95rAFWebKit según cohorte y tareas largas de arranque; noGPU o rendimiento físico medidos. Observación humana y escucha pendientes.
+Sin despliegue o publicación de la aplicación. Word, archivos históricos y trabajo ajeno conservados. Los pendientes humanos/físicos no se presentan como realizados.
+
+## Límites conservados
+
+WebKitP95rAF20–23mssegún cohorte, como lareferencia inmediataA86; no se afirma20msestables o causaGPU. Se conservan arranques y tareaslargas50–66ms de lasfixtures. NoCPUdecodepura, memoriaresidente o GPUmedidas. Poses de las4especies implementadas, datos/exports comprobados y muestra temporal nativa del primer actor declarada enCOVERAGE; no una matriz individual exhaustiva por especie. Audio decodificado y cues concretos observados, sin escucha humana. Comprensión, estilo percibido, lector real y móvil físico quedan para la sesión posterior.

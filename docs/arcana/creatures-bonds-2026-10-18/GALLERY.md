@@ -1,5 +1,7 @@
 # A87 · Evidencia visual seleccionada
 
+Cierre técnico: main0f8ec05, CI39205969427 full correcta. Las capturas de d539103 se reutilizan con aplicación y assets idénticos; no se presentan como nuevas capturas de main. La evidencia temporal y autoritativa de main está en [QA](QA.md) y `evidence/main-0f8/`. La revisión humana y el dispositivo físico siguen pendientes.
+
 ## Candidato d539103 · evidencia seleccionada actual
 
 CI39196343905, checkoutc2f78da10ed8ef0dc6c944f394d1e9507c389509. Jobcheck correcto; regresión conectada pendiente alregistrar esta sección. TrecePNGdeChromium390, activadas explícitamente enLinux dentro de fixtures declaradas. No capturadas en elMac. No son prueba con jugadores o evidencia de movimiento por sísolas.

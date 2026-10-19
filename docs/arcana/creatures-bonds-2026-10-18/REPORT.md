@@ -1,6 +1,6 @@
 # A87 · Criaturas coleccionables y vínculos tácticos
 
-**Estado de esta referencia:** PR [10](https://github.com/earandes/diagon-alley/pull/10) integrada en main `bde8275bac6d48a2bfb8e3a259fe322edb27d102`. Jobcheck full de `d539103` correcto:381gráficos,681unitarios y111PostgreSQL/Redis. `651dd98`, [CI39202690011](https://github.com/earandes/diagon-alley/actions/runs/39202690011), corrige y verifica la expectativa sobre Neutral mediante resume original, con aplicación/arte idénticos. No se atribuye una batería completa aresume. Se restablece full en main; suCI completa se verifica antes del cierre técnico de la tarea. [Integración y equivalencia](INTEGRATION.md). Sin despliegue; observación humana, escucha y dispositivo físico pendientes.
+**Entregado técnicamente e integrado.** PR [10](https://github.com/earandes/diagon-alley/pull/10) fusionada en main; PR1–10 verificadas comoMERGED. [CI completa39205969427](https://github.com/earandes/diagon-alley/actions/runs/39205969427) correcta sobre `0f8ec05addc747912e7dddaac133d973fb71b062`:6validaciones decontenido,681unitarias,111conPostgreSQL/Redis reales y519gráficas activas. Full restablecido, unworker y cero reintentos automáticos. El cierre documental posterior tiene aplicación, tests, herramientas y assets idénticos; no se atribuye a ese SHA otra batería. [Integración](INTEGRATION.md), [equivalencia](final-code-equivalence.json), [QA](QA.md). Sin despliegue; comprensión, escucha y dispositivo físico pendientes.
 
 ## Qué cambia para el jugador
 
@@ -54,7 +54,7 @@ La [calibración reproducible](CALIBRATION.md) conserva 1.920 escenarios y 640 p
 
 [QA](QA.md) registra comandos, SHA, fases, errores y correcciones. La captura de un Pacto es una fixture del diálogo; los cuatro recorridos HTTP/PG/Redis aportan evidencia autoritativa separada. Cancelación, recarga, respuesta perdida, concurrencia, snapshots anteriores, idiomas, paquetes, teclado, reducido y fallbacks se distinguen por capa en [COVERAGE](COVERAGE.md).
 
-El [rendimiento](PERFORMANCE.md) conserva todos los intentos. Chromium sostenido da P95 rAF 16,7–16,8 ms en las muestras declaradas. WebKit ha dado 20 y 22 ms con el mismo código en diferentes cohortes, igual que su referencia inmediata A86: sin regresión sostenida detectada, sin afirmar 20 ms estables. Hay arranques y tareas largas desfavorables. rAF no es tiempo GPU; registro de textura no es memoria residente ni subida GPU medida.
+El [rendimiento](PERFORMANCE.md) conserva todos los intentos. Chromium sostenido da P95 rAF 16,7–16,8 ms en las muestras declaradas. WebKit ha dado 20, 22 y 23 ms con el mismo código en diferentes cohortes, igual que su referencia inmediata A86: sin regresión sostenida detectada, sin afirmar 20 ms estables. Hay arranques y tareas largas desfavorables. rAF no es tiempo GPU; registro de textura no es memoria residente ni subida GPU medida.
 
 No se abrió un navegador en el Mac. Gráficos en Linux con guard, bloqueo, watchdog, un worker y cero reintentos automáticos. [Sesión humana pendiente](HUMAN-SESSION.md): comprensión del vínculo, percepción de consecuencias, estilo, escucha y dispositivo físico. T01 y los límites de distribución permanecen; no se ha desplegado o publicado la aplicación.
 

@@ -1,6 +1,6 @@
 # A87 · Fronteras implementadas y riesgos
 
-Integrado mediante PR10 en main `bde8275bac6d48a2bfb8e3a259fe322edb27d102`.681pruebas unitarias y111conPostgreSQL/Redis correctas; fullcheckd539103yregresión651dd98 con objetos de aplicación idénticos. LaCI final de main se verifica tras restablecer full. La tabla describe responsabilidades; QA distingue cada ejecución. Percepción artística y dispositivo físico pendientes.
+Integrado mediante PR10 en main `bde8275bac6d48a2bfb8e3a259fe322edb27d102`.681pruebas unitarias y111conPostgreSQL/Redis correctas; fullcheckd539103yregresión651dd98 con objetos de aplicación idénticos. Main0f8ec05 ha superado CI39205969427 full con519casos gráficos activos,681unitarios y111PG/Redis. La tabla describe responsabilidades; QA distingue cada ejecución. Percepción artística y dispositivo físico pendientes.
 
 | Frontera | Cambio mínimo | Riesgo que comprobar |
 |---|---|---|
