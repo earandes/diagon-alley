@@ -51,3 +51,15 @@ La fixture ya ha evaluado su módulo de aplicación y montado el mapa antes del 
 [Crudos](evidence/candidate-f79/creature-performance.json), checkout7ef9b2b. Diagon figuras207,8/195,1/201,6ms y registro210,0/197,3/204,1ms. ARCANA211,1/224,0/201,3ms y registro213,3/226,9/203,4ms. P95rAF16,7–16,8ms en las seis; long tasks53y52ms en las dos primerasARCANA, ninguna observada en las otras cuatro. No se excluyen esos valores. Eljobcheck termina correcto; la regresión sigue en curso al registrar esta sección.
 
 Las tres ejecuciones conservan variabilidad de arranque y tareas largas ocasionales. No se atribuye la diferencia de195–224frentea202–286o162–203ms a una optimización: la corrección actual es de diálogo/fixture y la coreografía no se ha sustituido. Se cumple el presupuesto sostenido de estas muestras; no se garantiza un dispositivo físico, fríoOS o ausencia general de fugas.
+
+## Regresión general A67, no comparación conA86
+
+El mismo run conserva [baselineA66](evidence/candidate-f79/a67-baseline.json) y [actual](evidence/candidate-f79/a67-current.json), ChromiumLinux1280×900. Primer popup dePacto:93,6ms→107,3ms hasta utilizable y544,8→542,6ms hasta asentamiento; no mejora universal. Los máximos de intervalo de esa ventana son83,3y50,1ms, no P95sostenido o tiempoGPU. La palabra«cold»delnombre delcaso identifica primera consulta; no controla cachés delOS.
+
+Es un benchmark diagnóstico de recorrido frente aA66, concontenido/rivales de sus respectivosSHAy ordenbaseline→actual, no elensayopareadoA86niuncontrolcausalaislado decriaturas. Ambos comandos terminan correctos; no sustituyen el presupuesto A87de300intervalos en seiscontextos. Se conservan valores adversos ycrudos completos.
+
+## WebKitpareado057: límite no cumplido
+
+La fase resume publica por primera vez en este incremento el [ensayoWebKit](evidence/candidate-057/paired-webkit-performance.json) deA75. BaselineP9518/19/18ms; actual23/22/23ms sobre elmismo loglegacy, seiscontextos AB–BA–AB. Arranque baseline601/403/469ms, actual553/533/393ms; máximo sostenido baseline106/104/26, actual34/27/33ms. No hay longtasks API soportadas registradas enWebKit; no significa ausencia de trabajo largo. Chromium600intervalos P9516,7ms en todas. No es la muestra de criaturasChromiumA87ni tiempoGPU.
+
+Se conserva elresultado fallido y se prueba deduplicación de tres atributos de diagnóstico porframe. Es una hipótesis sobre coste de publicación DOM, no una atribuciónconfirmada aGPU o una autorización para ocultar unidades. Fullpasará a incluir ambos motores en este ensayo, con elmismo límite y número de pares.

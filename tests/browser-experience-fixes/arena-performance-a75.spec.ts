@@ -2,7 +2,6 @@ import { pauseBattle, skipBattle, setDoubleBattleSpeed } from '../browser-trial/
 import { test, expect } from '@playwright/test';
 import { mkdir, writeFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
-import { readFileSync } from 'node:fs';
 import { createHash } from 'node:crypto';
 declare global {
   interface Window {
@@ -16,8 +15,6 @@ declare global {
   }
 }
 const evidence = resolve('docs/arcana/experience-fixes-2026-10-17/evidence/linux');
-const phase = JSON.parse(readFileSync('tools/verification/a75-phase.json', 'utf8')).phase;
-const focus = phase === 'webkit';
 const percentile = (numbers: number[], p: number) =>
   [...numbers].sort((a, b) => a - b)[Math.max(0, Math.ceil(numbers.length * p) - 1)];
 
@@ -25,9 +22,7 @@ test('A75 paired mobile sustained replay and lifecycle preserve confirmed log', 
   browser,
 }) => {
   test.skip(
-    phase === 'resume'
-      ? !['chromium-390-a75', 'webkit-390-a75'].includes(test.info().project.name)
-      : test.info().project.name !== `${focus ? 'webkit' : 'chromium'}-390-a75`,
+    !['chromium-390-a75', 'webkit-390-a75'].includes(test.info().project.name),
     'Three fixed AB/BA/AB pairs in one explicit Linux engine/mobile project, not a universal device benchmark.',
   );
   const engine = test.info().project.use.browserName ?? 'chromium';

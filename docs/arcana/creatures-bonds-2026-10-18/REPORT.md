@@ -1,6 +1,6 @@
 # A87 · Criaturas coleccionables y vínculos tácticos
 
-Estado: implementado en rama, integración pendiente de terminar la validación. PR [10](https://github.com/earandes/diagon-alley/pull/10). El candidato f79d9ce cierra correctamente las380comprobaciones gráficas deljobcheck,681unitarias y111conPG/Redis. Su regresión detecta nueve expectativas de QA: ocho contadores antiguos de30y una ruta que asumía un duelo donde solo queda jefe. Se corrigen sin tocar aplicación, contenido o recursos; se repite la regresión en modo resumeoriginal, con reutilización explícita de la evidencia idéntica. La fasefull volverá antes de cerrar main. Los fallos previos y límites se conservan. Sin despliegue, sesión humana o dispositivo físico atribuidos.
+Estado: implementado en rama, integración pendiente de cerrar las comprobaciones. PR [10](https://github.com/earandes/diagon-alley/pull/10). f79d9ce supera380comprobaciones gráficas deljobcheck,681unitarias y111PG/Redis; sus nueve expectativas de regresión se corrigieron sin modificar producto. La fase resume057ejecuta además un ensayo pareadoWebKit antes omitido porfull y detecta medianaP9523ms frentea20. Se conservan sus crudos y se prueba una deduplicación mínima de atributos DOM porframe; la causa es hipótesis hasta medir. Se restaura full y elensayo WebKit pasa a ser obligatorio enella. Los dos recorridos corregidos y el presupuesto permanecen pendientes; no se da por entregado con ese límite abierto. Sin despliegue, sesión humana o dispositivo físico atribuidos.
 
 ## Qué puede decidir el jugador
 

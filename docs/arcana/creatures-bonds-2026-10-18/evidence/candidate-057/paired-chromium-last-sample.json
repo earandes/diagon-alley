@@ -1,0 +1,7544 @@
+{
+  "sha": "e410332366cbb88730b2ce93e745657748be42be",
+  "engine": "chromium",
+  "pair": 2,
+  "variant": "current",
+  "metrics": {
+    "start": 148.30000000004657,
+    "ready": 471.80000000004657,
+    "frames": [
+      {
+        "at": 26.6,
+        "ms": 16.6,
+        "phase": "",
+        "cursor": -1
+      },
+      {
+        "at": 43.3,
+        "ms": 16.699999999999996,
+        "phase": "",
+        "cursor": -1
+      },
+      {
+        "at": 60,
+        "ms": 16.700000000000003,
+        "phase": "",
+        "cursor": -1
+      },
+      {
+        "at": 76.6,
+        "ms": 16.599999999999994,
+        "phase": "",
+        "cursor": -1
+      },
+      {
+        "at": 93.2,
+        "ms": 16.60000000000001,
+        "phase": "",
+        "cursor": -1
+      },
+      {
+        "at": 109.9,
+        "ms": 16.700000000000003,
+        "phase": "",
+        "cursor": -1
+      },
+      {
+        "at": 126.6,
+        "ms": 16.69999999999999,
+        "phase": "",
+        "cursor": -1
+      },
+      {
+        "at": 143.2,
+        "ms": 16.599999999999994,
+        "phase": "",
+        "cursor": -1
+      },
+      {
+        "at": 159.9,
+        "ms": 16.700000000000017,
+        "phase": "anticipation",
+        "cursor": 0
+      },
+      {
+        "at": 176.6,
+        "ms": 16.69999999999999,
+        "phase": "anticipation",
+        "cursor": 0
+      },
+      {
+        "at": 193.3,
+        "ms": 16.700000000000017,
+        "phase": "anticipation",
+        "cursor": 0
+      },
+      {
+        "at": 209.9,
+        "ms": 16.599999999999994,
+        "phase": "anticipation",
+        "cursor": 0
+      },
+      {
+        "at": 226.6,
+        "ms": 16.69999999999999,
+        "phase": "anticipation",
+        "cursor": 0
+      },
+      {
+        "at": 243.2,
+        "ms": 16.599999999999994,
+        "phase": "anticipation",
+        "cursor": 0
+      },
+      {
+        "at": 259.9,
+        "ms": 16.69999999999999,
+        "phase": "flight",
+        "cursor": 0
+      },
+      {
+        "at": 276.5,
+        "ms": 16.600000000000023,
+        "phase": "flight",
+        "cursor": 0
+      },
+      {
+        "at": 343.3,
+        "ms": 66.80000000000001,
+        "phase": "flight",
+        "cursor": 0
+      },
+      {
+        "at": 359.9,
+        "ms": 16.599999999999966,
+        "phase": "flight",
+        "cursor": 0
+      },
+      {
+        "at": 376.6,
+        "ms": 16.700000000000045,
+        "phase": "flight",
+        "cursor": 0
+      },
+      {
+        "at": 426.6,
+        "ms": 50,
+        "phase": "flight",
+        "cursor": 0
+      },
+      {
+        "at": 443.3,
+        "ms": 16.69999999999999,
+        "phase": "flight",
+        "cursor": 0
+      },
+      {
+        "at": 459.9,
+        "ms": 16.599999999999966,
+        "phase": "impact",
+        "cursor": 0
+      },
+      {
+        "at": 476.5,
+        "ms": 16.600000000000023,
+        "phase": "impact",
+        "cursor": 0
+      },
+      {
+        "at": 493.3,
+        "ms": 16.80000000000001,
+        "phase": "settle",
+        "cursor": 0
+      },
+      {
+        "at": 509.9,
+        "ms": 16.599999999999966,
+        "phase": "settle",
+        "cursor": 0
+      },
+      {
+        "at": 526.5,
+        "ms": 16.600000000000023,
+        "phase": "anticipation",
+        "cursor": 1
+      },
+      {
+        "at": 543.2,
+        "ms": 16.700000000000045,
+        "phase": "anticipation",
+        "cursor": 1
+      },
+      {
+        "at": 559.9,
+        "ms": 16.699999999999932,
+        "phase": "anticipation",
+        "cursor": 1
+      },
+      {
+        "at": 576.6,
+        "ms": 16.700000000000045,
+        "phase": "flight",
+        "cursor": 1
+      },
+      {
+        "at": 593.3,
+        "ms": 16.699999999999932,
+        "phase": "flight",
+        "cursor": 1
+      },
+      {
+        "at": 609.9,
+        "ms": 16.600000000000023,
+        "phase": "flight",
+        "cursor": 1
+      },
+      {
+        "at": 626.6,
+        "ms": 16.700000000000045,
+        "phase": "flight",
+        "cursor": 1
+      },
+      {
+        "at": 643.2,
+        "ms": 16.600000000000023,
+        "phase": "flight",
+        "cursor": 1
+      },
+      {
+        "at": 659.9,
+        "ms": 16.699999999999932,
+        "phase": "flight",
+        "cursor": 1
+      },
+      {
+        "at": 676.6,
+        "ms": 16.700000000000045,
+        "phase": "flight",
+        "cursor": 1
+      },
+      {
+        "at": 693.3,
+        "ms": 16.699999999999932,
+        "phase": "flight",
+        "cursor": 1
+      },
+      {
+        "at": 709.9,
+        "ms": 16.600000000000023,
+        "phase": "flight",
+        "cursor": 1
+      },
+      {
+        "at": 726.6,
+        "ms": 16.700000000000045,
+        "phase": "flight",
+        "cursor": 1
+      },
+      {
+        "at": 743.2,
+        "ms": 16.600000000000023,
+        "phase": "impact",
+        "cursor": 1
+      },
+      {
+        "at": 759.9,
+        "ms": 16.699999999999932,
+        "phase": "impact",
+        "cursor": 1
+      },
+      {
+        "at": 776.5,
+        "ms": 16.600000000000023,
+        "phase": "settle",
+        "cursor": 1
+      },
+      {
+        "at": 793.2,
+        "ms": 16.700000000000045,
+        "phase": "anticipation",
+        "cursor": 2
+      },
+      {
+        "at": 809.9,
+        "ms": 16.699999999999932,
+        "phase": "anticipation",
+        "cursor": 2
+      },
+      {
+        "at": 826.5,
+        "ms": 16.600000000000023,
+        "phase": "anticipation",
+        "cursor": 2
+      },
+      {
+        "at": 843.2,
+        "ms": 16.700000000000045,
+        "phase": "flight",
+        "cursor": 2
+      },
+      {
+        "at": 859.9,
+        "ms": 16.699999999999932,
+        "phase": "flight",
+        "cursor": 2
+      },
+      {
+        "at": 876.6,
+        "ms": 16.700000000000045,
+        "phase": "flight",
+        "cursor": 2
+      },
+      {
+        "at": 893.2,
+        "ms": 16.600000000000023,
+        "phase": "flight",
+        "cursor": 2
+      },
+      {
+        "at": 909.9,
+        "ms": 16.699999999999932,
+        "phase": "flight",
+        "cursor": 2
+      },
+      {
+        "at": 926.5,
+        "ms": 16.600000000000023,
+        "phase": "flight",
+        "cursor": 2
+      },
+      {
+        "at": 943.3,
+        "ms": 16.799999999999955,
+        "phase": "flight",
+        "cursor": 2
+      },
+      {
+        "at": 959.8,
+        "ms": 16.5,
+        "phase": "flight",
+        "cursor": 2
+      },
+      {
+        "at": 976.6,
+        "ms": 16.800000000000068,
+        "phase": "flight",
+        "cursor": 2
+      },
+      {
+        "at": 993.2,
+        "ms": 16.600000000000023,
+        "phase": "flight",
+        "cursor": 2
+      },
+      {
+        "at": 1009.9,
+        "ms": 16.699999999999932,
+        "phase": "impact",
+        "cursor": 2
+      },
+      {
+        "at": 1026.6,
+        "ms": 16.699999999999932,
+        "phase": "impact",
+        "cursor": 2
+      },
+      {
+        "at": 1043.2,
+        "ms": 16.600000000000136,
+        "phase": "settle",
+        "cursor": 2
+      },
+      {
+        "at": 1059.8,
+        "ms": 16.59999999999991,
+        "phase": "settle",
+        "cursor": 2
+      },
+      {
+        "at": 1076.5,
+        "ms": 16.700000000000045,
+        "phase": "anticipation",
+        "cursor": 3
+      },
+      {
+        "at": 1093.2,
+        "ms": 16.700000000000045,
+        "phase": "anticipation",
+        "cursor": 3
+      },
+      {
+        "at": 1109.9,
+        "ms": 16.700000000000045,
+        "phase": "anticipation",
+        "cursor": 3
+      },
+      {
+        "at": 1126.5,
+        "ms": 16.59999999999991,
+        "phase": "flight",
+        "cursor": 3
+      },
+      {
+        "at": 1143.2,
+        "ms": 16.700000000000045,
+        "phase": "flight",
+        "cursor": 3
+      },
+      {
+        "at": 1159.9,
+        "ms": 16.700000000000045,
+        "phase": "flight",
+        "cursor": 3
+      },
+      {
+        "at": 1176.6,
+        "ms": 16.699999999999818,
+        "phase": "flight",
+        "cursor": 3
+      },
+      {
+        "at": 1193.3,
+        "ms": 16.700000000000045,
+        "phase": "flight",
+        "cursor": 3
+      },
+      {
+        "at": 1209.8,
+        "ms": 16.5,
+        "phase": "flight",
+        "cursor": 3
+      },
+      {
+        "at": 1226.6,
+        "ms": 16.799999999999955,
+        "phase": "flight",
+        "cursor": 3
+      },
+      {
+        "at": 1243.2,
+        "ms": 16.600000000000136,
+        "phase": "flight",
+        "cursor": 3
+      },
+      {
+        "at": 1259.9,
+        "ms": 16.700000000000045,
+        "phase": "flight",
+        "cursor": 3
+      },
+      {
+        "at": 1276.6,
+        "ms": 16.699999999999818,
+        "phase": "flight",
+        "cursor": 3
+      },
+      {
+        "at": 1293.2,
+        "ms": 16.600000000000136,
+        "phase": "impact",
+        "cursor": 3
+      },
+      {
+        "at": 1309.9,
+        "ms": 16.700000000000045,
+        "phase": "impact",
+        "cursor": 3
+      },
+      {
+        "at": 1326.5,
+        "ms": 16.59999999999991,
+        "phase": "settle",
+        "cursor": 3
+      },
+      {
+        "at": 1343.2,
+        "ms": 16.700000000000045,
+        "phase": "anticipation",
+        "cursor": 4
+      },
+      {
+        "at": 1359.9,
+        "ms": 16.700000000000045,
+        "phase": "anticipation",
+        "cursor": 4
+      },
+      {
+        "at": 1376.5,
+        "ms": 16.59999999999991,
+        "phase": "flight",
+        "cursor": 4
+      },
+      {
+        "at": 1393.2,
+        "ms": 16.700000000000045,
+        "phase": "flight",
+        "cursor": 4
+      },
+      {
+        "at": 1409.9,
+        "ms": 16.700000000000045,
+        "phase": "flight",
+        "cursor": 4
+      },
+      {
+        "at": 1426.6,
+        "ms": 16.699999999999818,
+        "phase": "flight",
+        "cursor": 4
+      },
+      {
+        "at": 1443.2,
+        "ms": 16.600000000000136,
+        "phase": "flight",
+        "cursor": 4
+      },
+      {
+        "at": 1459.9,
+        "ms": 16.700000000000045,
+        "phase": "flight",
+        "cursor": 4
+      },
+      {
+        "at": 1476.6,
+        "ms": 16.699999999999818,
+        "phase": "impact",
+        "cursor": 4
+      },
+      {
+        "at": 1493.2,
+        "ms": 16.600000000000136,
+        "phase": "settle",
+        "cursor": 4
+      },
+      {
+        "at": 1509.8,
+        "ms": 16.59999999999991,
+        "phase": "anticipation",
+        "cursor": 5
+      },
+      {
+        "at": 1526.6,
+        "ms": 16.799999999999955,
+        "phase": "anticipation",
+        "cursor": 5
+      },
+      {
+        "at": 1543.2,
+        "ms": 16.600000000000136,
+        "phase": "anticipation",
+        "cursor": 5
+      },
+      {
+        "at": 1559.8,
+        "ms": 16.59999999999991,
+        "phase": "anticipation",
+        "cursor": 5
+      },
+      {
+        "at": 1576.5,
+        "ms": 16.700000000000045,
+        "phase": "anticipation",
+        "cursor": 5
+      },
+      {
+        "at": 1593.2,
+        "ms": 16.700000000000045,
+        "phase": "anticipation",
+        "cursor": 5
+      },
+      {
+        "at": 1609.9,
+        "ms": 16.700000000000045,
+        "phase": "anticipation",
+        "cursor": 5
+      },
+      {
+        "at": 1626.5,
+        "ms": 16.59999999999991,
+        "phase": "flight",
+        "cursor": 5
+      },
+      {
+        "at": 1643.2,
+        "ms": 16.700000000000045,
+        "phase": "flight",
+        "cursor": 5
+      },
+      {
+        "at": 1659.9,
+        "ms": 16.700000000000045,
+        "phase": "flight",
+        "cursor": 5
+      },
+      {
+        "at": 1676.5,
+        "ms": 16.59999999999991,
+        "phase": "flight",
+        "cursor": 5
+      },
+      {
+        "at": 1693.2,
+        "ms": 16.700000000000045,
+        "phase": "flight",
+        "cursor": 5
+      },
+      {
+        "at": 1709.8,
+        "ms": 16.59999999999991,
+        "phase": "flight",
+        "cursor": 5
+      },
+      {
+        "at": 1726.5,
+        "ms": 16.700000000000045,
+        "phase": "flight",
+        "cursor": 5
+      },
+      {
+        "at": 1743.2,
+        "ms": 16.700000000000045,
+        "phase": "flight",
+        "cursor": 5
+      },
+      {
+        "at": 1759.8,
+        "ms": 16.59999999999991,
+        "phase": "flight",
+        "cursor": 5
+      },
+      {
+        "at": 1776.5,
+        "ms": 16.700000000000045,
+        "phase": "flight",
+        "cursor": 5
+      },
+      {
+        "at": 1793.2,
+        "ms": 16.700000000000045,
+        "phase": "flight",
+        "cursor": 5
+      },
+      {
+        "at": 1809.9,
+        "ms": 16.700000000000045,
+        "phase": "flight",
+        "cursor": 5
+      },
+      {
+        "at": 1826.5,
+        "ms": 16.59999999999991,
+        "phase": "flight",
+        "cursor": 5
+      },
+      {
+        "at": 1843.1,
+        "ms": 16.59999999999991,
+        "phase": "flight",
+        "cursor": 5
+      },
+      {
+        "at": 1859.8,
+        "ms": 16.700000000000045,
+        "phase": "flight",
+        "cursor": 5
+      },
+      {
+        "at": 1876.5,
+        "ms": 16.700000000000045,
+        "phase": "flight",
+        "cursor": 5
+      },
+      {
+        "at": 1893.2,
+        "ms": 16.700000000000045,
+        "phase": "flight",
+        "cursor": 5
+      },
+      {
+        "at": 1909.9,
+        "ms": 16.700000000000045,
+        "phase": "flight",
+        "cursor": 5
+      },
+      {
+        "at": 1926.5,
+        "ms": 16.59999999999991,
+        "phase": "flight",
+        "cursor": 5
+      },
+      {
+        "at": 1943.2,
+        "ms": 16.700000000000045,
+        "phase": "flight",
+        "cursor": 5
+      },
+      {
+        "at": 1959.9,
+        "ms": 16.700000000000045,
+        "phase": "flight",
+        "cursor": 5
+      },
+      {
+        "at": 1976.5,
+        "ms": 16.59999999999991,
+        "phase": "flight",
+        "cursor": 5
+      },
+      {
+        "at": 1993.2,
+        "ms": 16.700000000000045,
+        "phase": "flight",
+        "cursor": 5
+      },
+      {
+        "at": 2009.8,
+        "ms": 16.59999999999991,
+        "phase": "impact",
+        "cursor": 5
+      },
+      {
+        "at": 2026.5,
+        "ms": 16.700000000000045,
+        "phase": "impact",
+        "cursor": 5
+      },
+      {
+        "at": 2043.1,
+        "ms": 16.59999999999991,
+        "phase": "impact",
+        "cursor": 5
+      },
+      {
+        "at": 2059.8,
+        "ms": 16.700000000000273,
+        "phase": "impact",
+        "cursor": 5
+      },
+      {
+        "at": 2076.6,
+        "ms": 16.799999999999727,
+        "phase": "impact",
+        "cursor": 5
+      },
+      {
+        "at": 2093.2,
+        "ms": 16.59999999999991,
+        "phase": "settle",
+        "cursor": 5
+      },
+      {
+        "at": 2109.9,
+        "ms": 16.700000000000273,
+        "phase": "settle",
+        "cursor": 5
+      },
+      {
+        "at": 2126.5,
+        "ms": 16.59999999999991,
+        "phase": "settle",
+        "cursor": 5
+      },
+      {
+        "at": 2143.2,
+        "ms": 16.699999999999818,
+        "phase": "settle",
+        "cursor": 5
+      },
+      {
+        "at": 2159.8,
+        "ms": 16.600000000000364,
+        "phase": "anticipation",
+        "cursor": 6
+      },
+      {
+        "at": 2176.6,
+        "ms": 16.799999999999727,
+        "phase": "flight",
+        "cursor": 6
+      },
+      {
+        "at": 2193.2,
+        "ms": 16.59999999999991,
+        "phase": "flight",
+        "cursor": 6
+      },
+      {
+        "at": 2209.9,
+        "ms": 16.700000000000273,
+        "phase": "flight",
+        "cursor": 6
+      },
+      {
+        "at": 2226.5,
+        "ms": 16.59999999999991,
+        "phase": "flight",
+        "cursor": 6
+      },
+      {
+        "at": 2243.2,
+        "ms": 16.699999999999818,
+        "phase": "flight",
+        "cursor": 6
+      },
+      {
+        "at": 2259.8,
+        "ms": 16.600000000000364,
+        "phase": "flight",
+        "cursor": 6
+      },
+      {
+        "at": 2276.5,
+        "ms": 16.699999999999818,
+        "phase": "impact",
+        "cursor": 6
+      },
+      {
+        "at": 2293.1,
+        "ms": 16.59999999999991,
+        "phase": "settle",
+        "cursor": 6
+      },
+      {
+        "at": 2309.8,
+        "ms": 16.700000000000273,
+        "phase": "anticipation",
+        "cursor": 7
+      },
+      {
+        "at": 2326.5,
+        "ms": 16.699999999999818,
+        "phase": "anticipation",
+        "cursor": 7
+      },
+      {
+        "at": 2343.2,
+        "ms": 16.699999999999818,
+        "phase": "anticipation",
+        "cursor": 7
+      },
+      {
+        "at": 2359.9,
+        "ms": 16.700000000000273,
+        "phase": "anticipation",
+        "cursor": 7
+      },
+      {
+        "at": 2376.5,
+        "ms": 16.59999999999991,
+        "phase": "anticipation",
+        "cursor": 7
+      },
+      {
+        "at": 2393.2,
+        "ms": 16.699999999999818,
+        "phase": "anticipation",
+        "cursor": 7
+      },
+      {
+        "at": 2409.8,
+        "ms": 16.600000000000364,
+        "phase": "anticipation",
+        "cursor": 7
+      },
+      {
+        "at": 2426.5,
+        "ms": 16.699999999999818,
+        "phase": "flight",
+        "cursor": 7
+      },
+      {
+        "at": 2443.2,
+        "ms": 16.699999999999818,
+        "phase": "flight",
+        "cursor": 7
+      },
+      {
+        "at": 2459.9,
+        "ms": 16.700000000000273,
+        "phase": "flight",
+        "cursor": 7
+      },
+      {
+        "at": 2476.5,
+        "ms": 16.59999999999991,
+        "phase": "flight",
+        "cursor": 7
+      },
+      {
+        "at": 2493.2,
+        "ms": 16.699999999999818,
+        "phase": "flight",
+        "cursor": 7
+      },
+      {
+        "at": 2509.8,
+        "ms": 16.600000000000364,
+        "phase": "flight",
+        "cursor": 7
+      },
+      {
+        "at": 2526.5,
+        "ms": 16.699999999999818,
+        "phase": "flight",
+        "cursor": 7
+      },
+      {
+        "at": 2543.2,
+        "ms": 16.699999999999818,
+        "phase": "flight",
+        "cursor": 7
+      },
+      {
+        "at": 2559.8,
+        "ms": 16.600000000000364,
+        "phase": "flight",
+        "cursor": 7
+      },
+      {
+        "at": 2576.5,
+        "ms": 16.699999999999818,
+        "phase": "flight",
+        "cursor": 7
+      },
+      {
+        "at": 2593.2,
+        "ms": 16.699999999999818,
+        "phase": "flight",
+        "cursor": 7
+      },
+      {
+        "at": 2609.8,
+        "ms": 16.600000000000364,
+        "phase": "flight",
+        "cursor": 7
+      },
+      {
+        "at": 2626.5,
+        "ms": 16.699999999999818,
+        "phase": "flight",
+        "cursor": 7
+      },
+      {
+        "at": 2643.2,
+        "ms": 16.699999999999818,
+        "phase": "flight",
+        "cursor": 7
+      },
+      {
+        "at": 2659.9,
+        "ms": 16.700000000000273,
+        "phase": "flight",
+        "cursor": 7
+      },
+      {
+        "at": 2676.4,
+        "ms": 16.5,
+        "phase": "flight",
+        "cursor": 7
+      },
+      {
+        "at": 2693.1,
+        "ms": 16.699999999999818,
+        "phase": "flight",
+        "cursor": 7
+      },
+      {
+        "at": 2709.8,
+        "ms": 16.700000000000273,
+        "phase": "flight",
+        "cursor": 7
+      },
+      {
+        "at": 2726.5,
+        "ms": 16.699999999999818,
+        "phase": "flight",
+        "cursor": 7
+      },
+      {
+        "at": 2743.1,
+        "ms": 16.59999999999991,
+        "phase": "flight",
+        "cursor": 7
+      },
+      {
+        "at": 2759.8,
+        "ms": 16.700000000000273,
+        "phase": "flight",
+        "cursor": 7
+      },
+      {
+        "at": 2776.5,
+        "ms": 16.699999999999818,
+        "phase": "flight",
+        "cursor": 7
+      },
+      {
+        "at": 2793.1,
+        "ms": 16.59999999999991,
+        "phase": "flight",
+        "cursor": 7
+      },
+      {
+        "at": 2809.8,
+        "ms": 16.700000000000273,
+        "phase": "impact",
+        "cursor": 7
+      },
+      {
+        "at": 2826.4,
+        "ms": 16.59999999999991,
+        "phase": "impact",
+        "cursor": 7
+      },
+      {
+        "at": 2843.2,
+        "ms": 16.799999999999727,
+        "phase": "impact",
+        "cursor": 7
+      },
+      {
+        "at": 2859.9,
+        "ms": 16.700000000000273,
+        "phase": "impact",
+        "cursor": 7
+      },
+      {
+        "at": 2876.5,
+        "ms": 16.59999999999991,
+        "phase": "impact",
+        "cursor": 7
+      },
+      {
+        "at": 2893.2,
+        "ms": 16.699999999999818,
+        "phase": "settle",
+        "cursor": 7
+      },
+      {
+        "at": 2909.8,
+        "ms": 16.600000000000364,
+        "phase": "settle",
+        "cursor": 7
+      },
+      {
+        "at": 2926.5,
+        "ms": 16.699999999999818,
+        "phase": "settle",
+        "cursor": 7
+      },
+      {
+        "at": 2943.2,
+        "ms": 16.699999999999818,
+        "phase": "settle",
+        "cursor": 7
+      },
+      {
+        "at": 2959.8,
+        "ms": 16.600000000000364,
+        "phase": "anticipation",
+        "cursor": 8
+      },
+      {
+        "at": 2976.5,
+        "ms": 16.699999999999818,
+        "phase": "anticipation",
+        "cursor": 8
+      },
+      {
+        "at": 2993.2,
+        "ms": 16.699999999999818,
+        "phase": "flight",
+        "cursor": 8
+      },
+      {
+        "at": 3009.8,
+        "ms": 16.600000000000364,
+        "phase": "flight",
+        "cursor": 8
+      },
+      {
+        "at": 3026.5,
+        "ms": 16.699999999999818,
+        "phase": "flight",
+        "cursor": 8
+      },
+      {
+        "at": 3043.2,
+        "ms": 16.699999999999818,
+        "phase": "flight",
+        "cursor": 8
+      },
+      {
+        "at": 3059.8,
+        "ms": 16.600000000000364,
+        "phase": "flight",
+        "cursor": 8
+      },
+      {
+        "at": 3076.4,
+        "ms": 16.59999999999991,
+        "phase": "impact",
+        "cursor": 8
+      },
+      {
+        "at": 3093.1,
+        "ms": 16.699999999999818,
+        "phase": "settle",
+        "cursor": 8
+      },
+      {
+        "at": 3109.8,
+        "ms": 16.700000000000273,
+        "phase": "anticipation",
+        "cursor": 9
+      },
+      {
+        "at": 3126.5,
+        "ms": 16.699999999999818,
+        "phase": "anticipation",
+        "cursor": 9
+      },
+      {
+        "at": 3143.2,
+        "ms": 16.699999999999818,
+        "phase": "anticipation",
+        "cursor": 9
+      },
+      {
+        "at": 3159.8,
+        "ms": 16.600000000000364,
+        "phase": "anticipation",
+        "cursor": 9
+      },
+      {
+        "at": 3176.5,
+        "ms": 16.699999999999818,
+        "phase": "anticipation",
+        "cursor": 9
+      },
+      {
+        "at": 3193.1,
+        "ms": 16.59999999999991,
+        "phase": "anticipation",
+        "cursor": 9
+      },
+      {
+        "at": 3209.8,
+        "ms": 16.700000000000273,
+        "phase": "anticipation",
+        "cursor": 9
+      },
+      {
+        "at": 3226.5,
+        "ms": 16.699999999999818,
+        "phase": "flight",
+        "cursor": 9
+      },
+      {
+        "at": 3243.1,
+        "ms": 16.59999999999991,
+        "phase": "flight",
+        "cursor": 9
+      },
+      {
+        "at": 3259.8,
+        "ms": 16.700000000000273,
+        "phase": "flight",
+        "cursor": 9
+      },
+      {
+        "at": 3276.4,
+        "ms": 16.59999999999991,
+        "phase": "flight",
+        "cursor": 9
+      },
+      {
+        "at": 3293.1,
+        "ms": 16.699999999999818,
+        "phase": "flight",
+        "cursor": 9
+      },
+      {
+        "at": 3309.8,
+        "ms": 16.700000000000273,
+        "phase": "flight",
+        "cursor": 9
+      },
+      {
+        "at": 3326.5,
+        "ms": 16.699999999999818,
+        "phase": "flight",
+        "cursor": 9
+      },
+      {
+        "at": 3343.1,
+        "ms": 16.59999999999991,
+        "phase": "flight",
+        "cursor": 9
+      },
+      {
+        "at": 3359.8,
+        "ms": 16.700000000000273,
+        "phase": "flight",
+        "cursor": 9
+      },
+      {
+        "at": 3376.5,
+        "ms": 16.699999999999818,
+        "phase": "flight",
+        "cursor": 9
+      },
+      {
+        "at": 3393.2,
+        "ms": 16.699999999999818,
+        "phase": "flight",
+        "cursor": 9
+      },
+      {
+        "at": 3409.8,
+        "ms": 16.600000000000364,
+        "phase": "flight",
+        "cursor": 9
+      },
+      {
+        "at": 3426.4,
+        "ms": 16.59999999999991,
+        "phase": "flight",
+        "cursor": 9
+      },
+      {
+        "at": 3443.1,
+        "ms": 16.699999999999818,
+        "phase": "flight",
+        "cursor": 9
+      },
+      {
+        "at": 3459.8,
+        "ms": 16.700000000000273,
+        "phase": "flight",
+        "cursor": 9
+      },
+      {
+        "at": 3476.4,
+        "ms": 16.59999999999991,
+        "phase": "flight",
+        "cursor": 9
+      },
+      {
+        "at": 3493.1,
+        "ms": 16.699999999999818,
+        "phase": "flight",
+        "cursor": 9
+      },
+      {
+        "at": 3509.7,
+        "ms": 16.59999999999991,
+        "phase": "flight",
+        "cursor": 9
+      },
+      {
+        "at": 3526.5,
+        "ms": 16.800000000000182,
+        "phase": "flight",
+        "cursor": 9
+      },
+      {
+        "at": 3543.1,
+        "ms": 16.59999999999991,
+        "phase": "flight",
+        "cursor": 9
+      },
+      {
+        "at": 3559.8,
+        "ms": 16.700000000000273,
+        "phase": "flight",
+        "cursor": 9
+      },
+      {
+        "at": 3576.4,
+        "ms": 16.59999999999991,
+        "phase": "flight",
+        "cursor": 9
+      },
+      {
+        "at": 3593.1,
+        "ms": 16.699999999999818,
+        "phase": "flight",
+        "cursor": 9
+      },
+      {
+        "at": 3609.8,
+        "ms": 16.700000000000273,
+        "phase": "flight",
+        "cursor": 9
+      },
+      {
+        "at": 3626.4,
+        "ms": 16.59999999999991,
+        "phase": "impact",
+        "cursor": 9
+      },
+      {
+        "at": 3643.1,
+        "ms": 16.699999999999818,
+        "phase": "impact",
+        "cursor": 9
+      },
+      {
+        "at": 3659.8,
+        "ms": 16.700000000000273,
+        "phase": "impact",
+        "cursor": 9
+      },
+      {
+        "at": 3676.5,
+        "ms": 16.699999999999818,
+        "phase": "impact",
+        "cursor": 9
+      },
+      {
+        "at": 3693.1,
+        "ms": 16.59999999999991,
+        "phase": "settle",
+        "cursor": 9
+      },
+      {
+        "at": 3709.8,
+        "ms": 16.700000000000273,
+        "phase": "settle",
+        "cursor": 9
+      },
+      {
+        "at": 3726.5,
+        "ms": 16.699999999999818,
+        "phase": "settle",
+        "cursor": 9
+      },
+      {
+        "at": 3743.1,
+        "ms": 16.59999999999991,
+        "phase": "settle",
+        "cursor": 9
+      },
+      {
+        "at": 3759.7,
+        "ms": 16.59999999999991,
+        "phase": "anticipation",
+        "cursor": 10
+      },
+      {
+        "at": 3776.4,
+        "ms": 16.700000000000273,
+        "phase": "anticipation",
+        "cursor": 10
+      },
+      {
+        "at": 3793.1,
+        "ms": 16.699999999999818,
+        "phase": "flight",
+        "cursor": 10
+      },
+      {
+        "at": 3809.8,
+        "ms": 16.700000000000273,
+        "phase": "flight",
+        "cursor": 10
+      },
+      {
+        "at": 3826.4,
+        "ms": 16.59999999999991,
+        "phase": "flight",
+        "cursor": 10
+      },
+      {
+        "at": 3843.1,
+        "ms": 16.699999999999818,
+        "phase": "flight",
+        "cursor": 10
+      },
+      {
+        "at": 3859.8,
+        "ms": 16.700000000000273,
+        "phase": "flight",
+        "cursor": 10
+      },
+      {
+        "at": 3876.5,
+        "ms": 16.699999999999818,
+        "phase": "flight",
+        "cursor": 10
+      },
+      {
+        "at": 3893.1,
+        "ms": 16.59999999999991,
+        "phase": "impact",
+        "cursor": 10
+      },
+      {
+        "at": 3909.8,
+        "ms": 16.700000000000273,
+        "phase": "settle",
+        "cursor": 10
+      },
+      {
+        "at": 3926.4,
+        "ms": 16.59999999999991,
+        "phase": "anticipation",
+        "cursor": 11
+      },
+      {
+        "at": 3943.1,
+        "ms": 16.699999999999818,
+        "phase": "anticipation",
+        "cursor": 11
+      },
+      {
+        "at": 3959.8,
+        "ms": 16.700000000000273,
+        "phase": "anticipation",
+        "cursor": 11
+      },
+      {
+        "at": 3976.5,
+        "ms": 16.699999999999818,
+        "phase": "anticipation",
+        "cursor": 11
+      },
+      {
+        "at": 3993.1,
+        "ms": 16.59999999999991,
+        "phase": "anticipation",
+        "cursor": 11
+      },
+      {
+        "at": 4009.8,
+        "ms": 16.700000000000273,
+        "phase": "anticipation",
+        "cursor": 11
+      },
+      {
+        "at": 4026.4,
+        "ms": 16.59999999999991,
+        "phase": "anticipation",
+        "cursor": 11
+      },
+      {
+        "at": 4043.1,
+        "ms": 16.699999999999818,
+        "phase": "flight",
+        "cursor": 11
+      },
+      {
+        "at": 4059.7,
+        "ms": 16.59999999999991,
+        "phase": "flight",
+        "cursor": 11
+      },
+      {
+        "at": 4076.4,
+        "ms": 16.700000000000273,
+        "phase": "flight",
+        "cursor": 11
+      },
+      {
+        "at": 4093.1,
+        "ms": 16.699999999999818,
+        "phase": "flight",
+        "cursor": 11
+      },
+      {
+        "at": 4109.7,
+        "ms": 16.59999999999991,
+        "phase": "flight",
+        "cursor": 11
+      },
+      {
+        "at": 4126.5,
+        "ms": 16.800000000000182,
+        "phase": "flight",
+        "cursor": 11
+      },
+      {
+        "at": 4143.1,
+        "ms": 16.600000000000364,
+        "phase": "flight",
+        "cursor": 11
+      },
+      {
+        "at": 4159.8,
+        "ms": 16.699999999999818,
+        "phase": "flight",
+        "cursor": 11
+      },
+      {
+        "at": 4176.4,
+        "ms": 16.599999999999454,
+        "phase": "flight",
+        "cursor": 11
+      },
+      {
+        "at": 4193.1,
+        "ms": 16.700000000000728,
+        "phase": "flight",
+        "cursor": 11
+      },
+      {
+        "at": 4209.8,
+        "ms": 16.699999999999818,
+        "phase": "flight",
+        "cursor": 11
+      },
+      {
+        "at": 4226.4,
+        "ms": 16.599999999999454,
+        "phase": "flight",
+        "cursor": 11
+      },
+      {
+        "at": 4243.1,
+        "ms": 16.700000000000728,
+        "phase": "flight",
+        "cursor": 11
+      },
+      {
+        "at": 4259.8,
+        "ms": 16.699999999999818,
+        "phase": "flight",
+        "cursor": 11
+      },
+      {
+        "at": 4276.4,
+        "ms": 16.599999999999454,
+        "phase": "flight",
+        "cursor": 11
+      },
+      {
+        "at": 4293.1,
+        "ms": 16.700000000000728,
+        "phase": "flight",
+        "cursor": 11
+      },
+      {
+        "at": 4309.8,
+        "ms": 16.699999999999818,
+        "phase": "flight",
+        "cursor": 11
+      },
+      {
+        "at": 4326.4,
+        "ms": 16.599999999999454,
+        "phase": "flight",
+        "cursor": 11
+      },
+      {
+        "at": 4343.1,
+        "ms": 16.700000000000728,
+        "phase": "flight",
+        "cursor": 11
+      },
+      {
+        "at": 4359.7,
+        "ms": 16.599999999999454,
+        "phase": "flight",
+        "cursor": 11
+      },
+      {
+        "at": 4376.4,
+        "ms": 16.699999999999818,
+        "phase": "flight",
+        "cursor": 11
+      },
+      {
+        "at": 4393.1,
+        "ms": 16.700000000000728,
+        "phase": "flight",
+        "cursor": 11
+      },
+      {
+        "at": 4409.7,
+        "ms": 16.599999999999454,
+        "phase": "flight",
+        "cursor": 11
+      },
+      {
+        "at": 4426.4,
+        "ms": 16.699999999999818,
+        "phase": "impact",
+        "cursor": 11
+      },
+      {
+        "at": 4443,
+        "ms": 16.600000000000364,
+        "phase": "impact",
+        "cursor": 11
+      },
+      {
+        "at": 4459.7,
+        "ms": 16.699999999999818,
+        "phase": "impact",
+        "cursor": 11
+      },
+      {
+        "at": 4476.4,
+        "ms": 16.699999999999818,
+        "phase": "impact",
+        "cursor": 11
+      },
+      {
+        "at": 4493.1,
+        "ms": 16.700000000000728,
+        "phase": "impact",
+        "cursor": 11
+      },
+      {
+        "at": 4509.7,
+        "ms": 16.599999999999454,
+        "phase": "settle",
+        "cursor": 11
+      },
+      {
+        "at": 4526.4,
+        "ms": 16.699999999999818,
+        "phase": "settle",
+        "cursor": 11
+      },
+      {
+        "at": 4543,
+        "ms": 16.600000000000364,
+        "phase": "settle",
+        "cursor": 11
+      },
+      {
+        "at": 4559.7,
+        "ms": 16.699999999999818,
+        "phase": "settle",
+        "cursor": 11
+      },
+      {
+        "at": 4576.4,
+        "ms": 16.699999999999818,
+        "phase": "anticipation",
+        "cursor": 12
+      },
+      {
+        "at": 4593.1,
+        "ms": 16.700000000000728,
+        "phase": "flight",
+        "cursor": 12
+      },
+      {
+        "at": 4609.7,
+        "ms": 16.599999999999454,
+        "phase": "flight",
+        "cursor": 12
+      },
+      {
+        "at": 4626.4,
+        "ms": 16.699999999999818,
+        "phase": "flight",
+        "cursor": 12
+      },
+      {
+        "at": 4643.1,
+        "ms": 16.700000000000728,
+        "phase": "flight",
+        "cursor": 12
+      },
+      {
+        "at": 4659.8,
+        "ms": 16.699999999999818,
+        "phase": "flight",
+        "cursor": 12
+      },
+      {
+        "at": 4676.4,
+        "ms": 16.599999999999454,
+        "phase": "flight",
+        "cursor": 12
+      },
+      {
+        "at": 4693.1,
+        "ms": 16.700000000000728,
+        "phase": "impact",
+        "cursor": 12
+      },
+      {
+        "at": 4709.7,
+        "ms": 16.599999999999454,
+        "phase": "settle",
+        "cursor": 12
+      },
+      {
+        "at": 4726.4,
+        "ms": 16.699999999999818,
+        "phase": "anticipation",
+        "cursor": 13
+      },
+      {
+        "at": 4743.1,
+        "ms": 16.700000000000728,
+        "phase": "anticipation",
+        "cursor": 13
+      },
+      {
+        "at": 4759.8,
+        "ms": 16.699999999999818,
+        "phase": "anticipation",
+        "cursor": 13
+      },
+      {
+        "at": 4776.4,
+        "ms": 16.599999999999454,
+        "phase": "anticipation",
+        "cursor": 13
+      },
+      {
+        "at": 4793.1,
+        "ms": 16.700000000000728,
+        "phase": "anticipation",
+        "cursor": 13
+      },
+      {
+        "at": 4809.7,
+        "ms": 16.599999999999454,
+        "phase": "anticipation",
+        "cursor": 13
+      },
+      {
+        "at": 4826.4,
+        "ms": 16.699999999999818,
+        "phase": "anticipation",
+        "cursor": 13
+      },
+      {
+        "at": 4843.1,
+        "ms": 16.700000000000728,
+        "phase": "flight",
+        "cursor": 13
+      },
+      {
+        "at": 4859.7,
+        "ms": 16.599999999999454,
+        "phase": "flight",
+        "cursor": 13
+      },
+      {
+        "at": 4876.4,
+        "ms": 16.699999999999818,
+        "phase": "flight",
+        "cursor": 13
+      },
+      {
+        "at": 4893,
+        "ms": 16.600000000000364,
+        "phase": "flight",
+        "cursor": 13
+      },
+      {
+        "at": 4909.7,
+        "ms": 16.699999999999818,
+        "phase": "flight",
+        "cursor": 13
+      },
+      {
+        "at": 4926.4,
+        "ms": 16.699999999999818,
+        "phase": "flight",
+        "cursor": 13
+      },
+      {
+        "at": 4943,
+        "ms": 16.600000000000364,
+        "phase": "flight",
+        "cursor": 13
+      },
+      {
+        "at": 4959.8,
+        "ms": 16.800000000000182,
+        "phase": "flight",
+        "cursor": 13
+      },
+      {
+        "at": 4976.4,
+        "ms": 16.599999999999454,
+        "phase": "flight",
+        "cursor": 13
+      },
+      {
+        "at": 4993.1,
+        "ms": 16.700000000000728,
+        "phase": "flight",
+        "cursor": 13
+      },
+      {
+        "at": 5009.7,
+        "ms": 16.599999999999454,
+        "phase": "flight",
+        "cursor": 13
+      },
+      {
+        "at": 5026.4,
+        "ms": 16.699999999999818,
+        "phase": "flight",
+        "cursor": 13
+      },
+      {
+        "at": 5043.1,
+        "ms": 16.700000000000728,
+        "phase": "flight",
+        "cursor": 13
+      },
+      {
+        "at": 5059.7,
+        "ms": 16.599999999999454,
+        "phase": "flight",
+        "cursor": 13
+      },
+      {
+        "at": 5076.4,
+        "ms": 16.699999999999818,
+        "phase": "flight",
+        "cursor": 13
+      },
+      {
+        "at": 5093,
+        "ms": 16.600000000000364,
+        "phase": "flight",
+        "cursor": 13
+      },
+      {
+        "at": 5109.8,
+        "ms": 16.800000000000182,
+        "phase": "flight",
+        "cursor": 13
+      },
+      {
+        "at": 5126.4,
+        "ms": 16.599999999999454,
+        "phase": "flight",
+        "cursor": 13
+      },
+      {
+        "at": 5143.1,
+        "ms": 16.700000000000728,
+        "phase": "flight",
+        "cursor": 13
+      },
+      {
+        "at": 5159.7,
+        "ms": 16.599999999999454,
+        "phase": "flight",
+        "cursor": 13
+      },
+      {
+        "at": 5176.4,
+        "ms": 16.699999999999818,
+        "phase": "flight",
+        "cursor": 13
+      },
+      {
+        "at": 5193.1,
+        "ms": 16.700000000000728,
+        "phase": "flight",
+        "cursor": 13
+      },
+      {
+        "at": 5209.7,
+        "ms": 16.599999999999454,
+        "phase": "flight",
+        "cursor": 13
+      },
+      {
+        "at": 5226.4,
+        "ms": 16.699999999999818,
+        "phase": "impact",
+        "cursor": 13
+      },
+      {
+        "at": 5243.1,
+        "ms": 16.700000000000728,
+        "phase": "impact",
+        "cursor": 13
+      },
+      {
+        "at": 5259.8,
+        "ms": 16.699999999999818,
+        "phase": "impact",
+        "cursor": 13
+      },
+      {
+        "at": 5276.3,
+        "ms": 16.5,
+        "phase": "impact",
+        "cursor": 13
+      },
+      {
+        "at": 5293.1,
+        "ms": 16.800000000000182,
+        "phase": "impact",
+        "cursor": 13
+      },
+      {
+        "at": 5309.7,
+        "ms": 16.599999999999454,
+        "phase": "settle",
+        "cursor": 13
+      },
+      {
+        "at": 5326.3,
+        "ms": 16.600000000000364,
+        "phase": "settle",
+        "cursor": 13
+      },
+      {
+        "at": 5343.1,
+        "ms": 16.800000000000182,
+        "phase": "settle",
+        "cursor": 13
+      },
+      {
+        "at": 5359.7,
+        "ms": 16.599999999999454,
+        "phase": "settle",
+        "cursor": 13
+      },
+      {
+        "at": 5376.3,
+        "ms": 16.600000000000364,
+        "phase": "anticipation",
+        "cursor": 14
+      },
+      {
+        "at": 5393,
+        "ms": 16.699999999999818,
+        "phase": "anticipation",
+        "cursor": 14
+      },
+      {
+        "at": 5409.8,
+        "ms": 16.800000000000182,
+        "phase": "anticipation",
+        "cursor": 14
+      },
+      {
+        "at": 5426.4,
+        "ms": 16.599999999999454,
+        "phase": "flight",
+        "cursor": 14
+      },
+      {
+        "at": 5443,
+        "ms": 16.600000000000364,
+        "phase": "flight",
+        "cursor": 14
+      },
+      {
+        "at": 5459.7,
+        "ms": 16.699999999999818,
+        "phase": "flight",
+        "cursor": 14
+      },
+      {
+        "at": 5476.4,
+        "ms": 16.699999999999818,
+        "phase": "flight",
+        "cursor": 14
+      },
+      {
+        "at": 5493,
+        "ms": 16.600000000000364,
+        "phase": "flight",
+        "cursor": 14
+      },
+      {
+        "at": 5509.7,
+        "ms": 16.699999999999818,
+        "phase": "flight",
+        "cursor": 14
+      },
+      {
+        "at": 5526.4,
+        "ms": 16.699999999999818,
+        "phase": "flight",
+        "cursor": 14
+      },
+      {
+        "at": 5543,
+        "ms": 16.600000000000364,
+        "phase": "flight",
+        "cursor": 14
+      },
+      {
+        "at": 5559.7,
+        "ms": 16.699999999999818,
+        "phase": "flight",
+        "cursor": 14
+      },
+      {
+        "at": 5576.4,
+        "ms": 16.699999999999818,
+        "phase": "flight",
+        "cursor": 14
+      },
+      {
+        "at": 5593,
+        "ms": 16.600000000000364,
+        "phase": "impact",
+        "cursor": 14
+      },
+      {
+        "at": 5609.7,
+        "ms": 16.699999999999818,
+        "phase": "impact",
+        "cursor": 14
+      },
+      {
+        "at": 5626.4,
+        "ms": 16.699999999999818,
+        "phase": "settle",
+        "cursor": 14
+      },
+      {
+        "at": 5643.1,
+        "ms": 16.700000000000728,
+        "phase": "settle",
+        "cursor": 14
+      },
+      {
+        "at": 5659.7,
+        "ms": 16.599999999999454,
+        "phase": "anticipation",
+        "cursor": 15
+      },
+      {
+        "at": 5676.4,
+        "ms": 16.699999999999818,
+        "phase": "anticipation",
+        "cursor": 15
+      },
+      {
+        "at": 5693.1,
+        "ms": 16.700000000000728,
+        "phase": "flight",
+        "cursor": 15
+      },
+      {
+        "at": 5709.7,
+        "ms": 16.599999999999454,
+        "phase": "flight",
+        "cursor": 15
+      },
+      {
+        "at": 5726.4,
+        "ms": 16.699999999999818,
+        "phase": "flight",
+        "cursor": 15
+      },
+      {
+        "at": 5743,
+        "ms": 16.600000000000364,
+        "phase": "flight",
+        "cursor": 15
+      },
+      {
+        "at": 5759.7,
+        "ms": 16.699999999999818,
+        "phase": "flight",
+        "cursor": 15
+      },
+      {
+        "at": 5776.3,
+        "ms": 16.600000000000364,
+        "phase": "flight",
+        "cursor": 15
+      },
+      {
+        "at": 5793,
+        "ms": 16.699999999999818,
+        "phase": "impact",
+        "cursor": 15
+      },
+      {
+        "at": 5809.7,
+        "ms": 16.699999999999818,
+        "phase": "settle",
+        "cursor": 15
+      },
+      {
+        "at": 5826.3,
+        "ms": 16.600000000000364,
+        "phase": "anticipation",
+        "cursor": 16
+      },
+      {
+        "at": 5843,
+        "ms": 16.699999999999818,
+        "phase": "anticipation",
+        "cursor": 16
+      },
+      {
+        "at": 5859.7,
+        "ms": 16.699999999999818,
+        "phase": "anticipation",
+        "cursor": 16
+      },
+      {
+        "at": 5876.3,
+        "ms": 16.600000000000364,
+        "phase": "anticipation",
+        "cursor": 16
+      },
+      {
+        "at": 5893,
+        "ms": 16.699999999999818,
+        "phase": "flight",
+        "cursor": 16
+      },
+      {
+        "at": 5909.6,
+        "ms": 16.600000000000364,
+        "phase": "flight",
+        "cursor": 16
+      },
+      {
+        "at": 5926.4,
+        "ms": 16.799999999999272,
+        "phase": "flight",
+        "cursor": 16
+      },
+      {
+        "at": 5943.1,
+        "ms": 16.700000000000728,
+        "phase": "flight",
+        "cursor": 16
+      },
+      {
+        "at": 5959.7,
+        "ms": 16.599999999999454,
+        "phase": "flight",
+        "cursor": 16
+      },
+      {
+        "at": 5976.3,
+        "ms": 16.600000000000364,
+        "phase": "flight",
+        "cursor": 16
+      },
+      {
+        "at": 5993.1,
+        "ms": 16.800000000000182,
+        "phase": "flight",
+        "cursor": 16
+      },
+      {
+        "at": 6009.7,
+        "ms": 16.599999999999454,
+        "phase": "flight",
+        "cursor": 16
+      },
+      {
+        "at": 6026.4,
+        "ms": 16.699999999999818,
+        "phase": "flight",
+        "cursor": 16
+      },
+      {
+        "at": 6043,
+        "ms": 16.600000000000364,
+        "phase": "flight",
+        "cursor": 16
+      },
+      {
+        "at": 6059.7,
+        "ms": 16.699999999999818,
+        "phase": "flight",
+        "cursor": 16
+      },
+      {
+        "at": 6076.3,
+        "ms": 16.600000000000364,
+        "phase": "flight",
+        "cursor": 16
+      },
+      {
+        "at": 6093,
+        "ms": 16.699999999999818,
+        "phase": "flight",
+        "cursor": 16
+      },
+      {
+        "at": 6109.7,
+        "ms": 16.699999999999818,
+        "phase": "impact",
+        "cursor": 16
+      },
+      {
+        "at": 6126.3,
+        "ms": 16.600000000000364,
+        "phase": "impact",
+        "cursor": 16
+      },
+      {
+        "at": 6143,
+        "ms": 16.699999999999818,
+        "phase": "impact",
+        "cursor": 16
+      },
+      {
+        "at": 6159.6,
+        "ms": 16.600000000000364,
+        "phase": "settle",
+        "cursor": 16
+      },
+      {
+        "at": 6176.4,
+        "ms": 16.799999999999272,
+        "phase": "settle",
+        "cursor": 16
+      },
+      {
+        "at": 6193.1,
+        "ms": 16.700000000000728,
+        "phase": "anticipation",
+        "cursor": 17
+      },
+      {
+        "at": 6209.7,
+        "ms": 16.599999999999454,
+        "phase": "anticipation",
+        "cursor": 17
+      },
+      {
+        "at": 6226.3,
+        "ms": 16.600000000000364,
+        "phase": "anticipation",
+        "cursor": 17
+      },
+      {
+        "at": 6243,
+        "ms": 16.699999999999818,
+        "phase": "anticipation",
+        "cursor": 17
+      },
+      {
+        "at": 6259.7,
+        "ms": 16.699999999999818,
+        "phase": "anticipation",
+        "cursor": 17
+      },
+      {
+        "at": 6276.4,
+        "ms": 16.699999999999818,
+        "phase": "anticipation",
+        "cursor": 17
+      },
+      {
+        "at": 6293,
+        "ms": 16.600000000000364,
+        "phase": "anticipation",
+        "cursor": 17
+      },
+      {
+        "at": 6309.7,
+        "ms": 16.699999999999818,
+        "phase": "flight",
+        "cursor": 17
+      },
+      {
+        "at": 6326.3,
+        "ms": 16.600000000000364,
+        "phase": "flight",
+        "cursor": 17
+      },
+      {
+        "at": 6343,
+        "ms": 16.699999999999818,
+        "phase": "flight",
+        "cursor": 17
+      },
+      {
+        "at": 6359.7,
+        "ms": 16.699999999999818,
+        "phase": "flight",
+        "cursor": 17
+      },
+      {
+        "at": 6376.3,
+        "ms": 16.600000000000364,
+        "phase": "flight",
+        "cursor": 17
+      },
+      {
+        "at": 6393,
+        "ms": 16.699999999999818,
+        "phase": "flight",
+        "cursor": 17
+      },
+      {
+        "at": 6409.6,
+        "ms": 16.600000000000364,
+        "phase": "flight",
+        "cursor": 17
+      },
+      {
+        "at": 6426.3,
+        "ms": 16.699999999999818,
+        "phase": "flight",
+        "cursor": 17
+      },
+      {
+        "at": 6443,
+        "ms": 16.699999999999818,
+        "phase": "flight",
+        "cursor": 17
+      },
+      {
+        "at": 6459.6,
+        "ms": 16.600000000000364,
+        "phase": "flight",
+        "cursor": 17
+      },
+      {
+        "at": 6476.3,
+        "ms": 16.699999999999818,
+        "phase": "flight",
+        "cursor": 17
+      },
+      {
+        "at": 6493,
+        "ms": 16.699999999999818,
+        "phase": "flight",
+        "cursor": 17
+      },
+      {
+        "at": 6509.7,
+        "ms": 16.699999999999818,
+        "phase": "flight",
+        "cursor": 17
+      },
+      {
+        "at": 6526.3,
+        "ms": 16.600000000000364,
+        "phase": "flight",
+        "cursor": 17
+      },
+      {
+        "at": 6543,
+        "ms": 16.699999999999818,
+        "phase": "flight",
+        "cursor": 17
+      },
+      {
+        "at": 6559.7,
+        "ms": 16.699999999999818,
+        "phase": "flight",
+        "cursor": 17
+      },
+      {
+        "at": 6576.3,
+        "ms": 16.600000000000364,
+        "phase": "flight",
+        "cursor": 17
+      },
+      {
+        "at": 6593,
+        "ms": 16.699999999999818,
+        "phase": "flight",
+        "cursor": 17
+      },
+      {
+        "at": 6609.6,
+        "ms": 16.600000000000364,
+        "phase": "flight",
+        "cursor": 17
+      },
+      {
+        "at": 6626.3,
+        "ms": 16.699999999999818,
+        "phase": "flight",
+        "cursor": 17
+      },
+      {
+        "at": 6643,
+        "ms": 16.699999999999818,
+        "phase": "flight",
+        "cursor": 17
+      },
+      {
+        "at": 6659.6,
+        "ms": 16.600000000000364,
+        "phase": "flight",
+        "cursor": 17
+      },
+      {
+        "at": 6676.3,
+        "ms": 16.699999999999818,
+        "phase": "flight",
+        "cursor": 17
+      },
+      {
+        "at": 6693,
+        "ms": 16.699999999999818,
+        "phase": "flight",
+        "cursor": 17
+      },
+      {
+        "at": 6709.6,
+        "ms": 16.600000000000364,
+        "phase": "impact",
+        "cursor": 17
+      },
+      {
+        "at": 6726.3,
+        "ms": 16.699999999999818,
+        "phase": "impact",
+        "cursor": 17
+      },
+      {
+        "at": 6743,
+        "ms": 16.699999999999818,
+        "phase": "impact",
+        "cursor": 17
+      },
+      {
+        "at": 6759.6,
+        "ms": 16.600000000000364,
+        "phase": "impact",
+        "cursor": 17
+      },
+      {
+        "at": 6776.3,
+        "ms": 16.699999999999818,
+        "phase": "settle",
+        "cursor": 17
+      },
+      {
+        "at": 6793,
+        "ms": 16.699999999999818,
+        "phase": "settle",
+        "cursor": 17
+      },
+      {
+        "at": 6809.7,
+        "ms": 16.699999999999818,
+        "phase": "settle",
+        "cursor": 17
+      },
+      {
+        "at": 6826.3,
+        "ms": 16.600000000000364,
+        "phase": "settle",
+        "cursor": 17
+      },
+      {
+        "at": 6843,
+        "ms": 16.699999999999818,
+        "phase": "anticipation",
+        "cursor": 18
+      },
+      {
+        "at": 6859.6,
+        "ms": 16.600000000000364,
+        "phase": "anticipation",
+        "cursor": 18
+      },
+      {
+        "at": 6876.3,
+        "ms": 16.699999999999818,
+        "phase": "flight",
+        "cursor": 18
+      },
+      {
+        "at": 6893,
+        "ms": 16.699999999999818,
+        "phase": "flight",
+        "cursor": 18
+      },
+      {
+        "at": 6909.6,
+        "ms": 16.600000000000364,
+        "phase": "flight",
+        "cursor": 18
+      },
+      {
+        "at": 6926.4,
+        "ms": 16.799999999999272,
+        "phase": "flight",
+        "cursor": 18
+      },
+      {
+        "at": 6943,
+        "ms": 16.600000000000364,
+        "phase": "flight",
+        "cursor": 18
+      },
+      {
+        "at": 6959.7,
+        "ms": 16.699999999999818,
+        "phase": "impact",
+        "cursor": 18
+      },
+      {
+        "at": 6976.3,
+        "ms": 16.600000000000364,
+        "phase": "impact",
+        "cursor": 18
+      },
+      {
+        "at": 6993,
+        "ms": 16.699999999999818,
+        "phase": "settle",
+        "cursor": 18
+      },
+      {
+        "at": 7009.6,
+        "ms": 16.600000000000364,
+        "phase": "anticipation",
+        "cursor": 19
+      },
+      {
+        "at": 7026.3,
+        "ms": 16.699999999999818,
+        "phase": "anticipation",
+        "cursor": 19
+      },
+      {
+        "at": 7043,
+        "ms": 16.699999999999818,
+        "phase": "anticipation",
+        "cursor": 19
+      },
+      {
+        "at": 7059.7,
+        "ms": 16.699999999999818,
+        "phase": "anticipation",
+        "cursor": 19
+      },
+      {
+        "at": 7076.3,
+        "ms": 16.600000000000364,
+        "phase": "anticipation",
+        "cursor": 19
+      },
+      {
+        "at": 7092.9,
+        "ms": 16.599999999999454,
+        "phase": "anticipation",
+        "cursor": 19
+      },
+      {
+        "at": 7109.6,
+        "ms": 16.700000000000728,
+        "phase": "anticipation",
+        "cursor": 19
+      },
+      {
+        "at": 7126.3,
+        "ms": 16.699999999999818,
+        "phase": "flight",
+        "cursor": 19
+      },
+      {
+        "at": 7142.9,
+        "ms": 16.599999999999454,
+        "phase": "flight",
+        "cursor": 19
+      },
+      {
+        "at": 7159.6,
+        "ms": 16.700000000000728,
+        "phase": "flight",
+        "cursor": 19
+      },
+      {
+        "at": 7176.3,
+        "ms": 16.699999999999818,
+        "phase": "flight",
+        "cursor": 19
+      },
+      {
+        "at": 7192.9,
+        "ms": 16.599999999999454,
+        "phase": "flight",
+        "cursor": 19
+      },
+      {
+        "at": 7209.6,
+        "ms": 16.700000000000728,
+        "phase": "flight",
+        "cursor": 19
+      },
+      {
+        "at": 7226.3,
+        "ms": 16.699999999999818,
+        "phase": "flight",
+        "cursor": 19
+      },
+      {
+        "at": 7242.9,
+        "ms": 16.599999999999454,
+        "phase": "flight",
+        "cursor": 19
+      },
+      {
+        "at": 7259.6,
+        "ms": 16.700000000000728,
+        "phase": "flight",
+        "cursor": 19
+      },
+      {
+        "at": 7276.3,
+        "ms": 16.699999999999818,
+        "phase": "flight",
+        "cursor": 19
+      },
+      {
+        "at": 7292.9,
+        "ms": 16.599999999999454,
+        "phase": "flight",
+        "cursor": 19
+      },
+      {
+        "at": 7309.6,
+        "ms": 16.700000000000728,
+        "phase": "flight",
+        "cursor": 19
+      },
+      {
+        "at": 7326.3,
+        "ms": 16.699999999999818,
+        "phase": "flight",
+        "cursor": 19
+      },
+      {
+        "at": 7342.9,
+        "ms": 16.599999999999454,
+        "phase": "flight",
+        "cursor": 19
+      },
+      {
+        "at": 7359.7,
+        "ms": 16.800000000000182,
+        "phase": "flight",
+        "cursor": 19
+      },
+      {
+        "at": 7376.3,
+        "ms": 16.600000000000364,
+        "phase": "flight",
+        "cursor": 19
+      },
+      {
+        "at": 7393,
+        "ms": 16.699999999999818,
+        "phase": "flight",
+        "cursor": 19
+      },
+      {
+        "at": 7409.6,
+        "ms": 16.600000000000364,
+        "phase": "flight",
+        "cursor": 19
+      },
+      {
+        "at": 7426.3,
+        "ms": 16.699999999999818,
+        "phase": "flight",
+        "cursor": 19
+      },
+      {
+        "at": 7442.9,
+        "ms": 16.599999999999454,
+        "phase": "flight",
+        "cursor": 19
+      },
+      {
+        "at": 7459.6,
+        "ms": 16.700000000000728,
+        "phase": "flight",
+        "cursor": 19
+      },
+      {
+        "at": 7476.3,
+        "ms": 16.699999999999818,
+        "phase": "flight",
+        "cursor": 19
+      },
+      {
+        "at": 7493,
+        "ms": 16.699999999999818,
+        "phase": "flight",
+        "cursor": 19
+      },
+      {
+        "at": 7509.6,
+        "ms": 16.600000000000364,
+        "phase": "impact",
+        "cursor": 19
+      },
+      {
+        "at": 7526.3,
+        "ms": 16.699999999999818,
+        "phase": "impact",
+        "cursor": 19
+      },
+      {
+        "at": 7542.9,
+        "ms": 16.599999999999454,
+        "phase": "impact",
+        "cursor": 19
+      },
+      {
+        "at": 7559.6,
+        "ms": 16.700000000000728,
+        "phase": "impact",
+        "cursor": 19
+      },
+      {
+        "at": 7576.3,
+        "ms": 16.699999999999818,
+        "phase": "impact",
+        "cursor": 19
+      },
+      {
+        "at": 7592.9,
+        "ms": 16.599999999999454,
+        "phase": "settle",
+        "cursor": 19
+      },
+      {
+        "at": 7609.6,
+        "ms": 16.700000000000728,
+        "phase": "settle",
+        "cursor": 19
+      },
+      {
+        "at": 7626.3,
+        "ms": 16.699999999999818,
+        "phase": "settle",
+        "cursor": 19
+      },
+      {
+        "at": 7643,
+        "ms": 16.699999999999818,
+        "phase": "settle",
+        "cursor": 19
+      },
+      {
+        "at": 7659.7,
+        "ms": 16.699999999999818,
+        "phase": "anticipation",
+        "cursor": 20
+      },
+      {
+        "at": 7676.3,
+        "ms": 16.600000000000364,
+        "phase": "flight",
+        "cursor": 20
+      },
+      {
+        "at": 7693,
+        "ms": 16.699999999999818,
+        "phase": "flight",
+        "cursor": 20
+      },
+      {
+        "at": 7709.7,
+        "ms": 16.699999999999818,
+        "phase": "flight",
+        "cursor": 20
+      },
+      {
+        "at": 7726.2,
+        "ms": 16.5,
+        "phase": "flight",
+        "cursor": 20
+      },
+      {
+        "at": 7742.9,
+        "ms": 16.699999999999818,
+        "phase": "flight",
+        "cursor": 20
+      },
+      {
+        "at": 7759.6,
+        "ms": 16.700000000000728,
+        "phase": "flight",
+        "cursor": 20
+      },
+      {
+        "at": 7776.2,
+        "ms": 16.599999999999454,
+        "phase": "impact",
+        "cursor": 20
+      },
+      {
+        "at": 7792.9,
+        "ms": 16.699999999999818,
+        "phase": "settle",
+        "cursor": 20
+      },
+      {
+        "at": 7809.6,
+        "ms": 16.700000000000728,
+        "phase": "anticipation",
+        "cursor": 21
+      },
+      {
+        "at": 7826.3,
+        "ms": 16.699999999999818,
+        "phase": "anticipation",
+        "cursor": 21
+      },
+      {
+        "at": 7842.9,
+        "ms": 16.599999999999454,
+        "phase": "anticipation",
+        "cursor": 21
+      },
+      {
+        "at": 7859.6,
+        "ms": 16.700000000000728,
+        "phase": "anticipation",
+        "cursor": 21
+      },
+      {
+        "at": 7876.2,
+        "ms": 16.599999999999454,
+        "phase": "anticipation",
+        "cursor": 21
+      },
+      {
+        "at": 7893,
+        "ms": 16.800000000000182,
+        "phase": "anticipation",
+        "cursor": 21
+      },
+      {
+        "at": 7909.6,
+        "ms": 16.600000000000364,
+        "phase": "anticipation",
+        "cursor": 21
+      },
+      {
+        "at": 7926.3,
+        "ms": 16.699999999999818,
+        "phase": "flight",
+        "cursor": 21
+      },
+      {
+        "at": 7943,
+        "ms": 16.699999999999818,
+        "phase": "flight",
+        "cursor": 21
+      },
+      {
+        "at": 7959.6,
+        "ms": 16.600000000000364,
+        "phase": "flight",
+        "cursor": 21
+      },
+      {
+        "at": 7976.3,
+        "ms": 16.699999999999818,
+        "phase": "flight",
+        "cursor": 21
+      },
+      {
+        "at": 7992.9,
+        "ms": 16.599999999999454,
+        "phase": "flight",
+        "cursor": 21
+      },
+      {
+        "at": 8009.6,
+        "ms": 16.700000000000728,
+        "phase": "flight",
+        "cursor": 21
+      },
+      {
+        "at": 8026.3,
+        "ms": 16.699999999999818,
+        "phase": "flight",
+        "cursor": 21
+      },
+      {
+        "at": 8042.9,
+        "ms": 16.599999999999454,
+        "phase": "flight",
+        "cursor": 21
+      },
+      {
+        "at": 8059.6,
+        "ms": 16.700000000000728,
+        "phase": "flight",
+        "cursor": 21
+      },
+      {
+        "at": 8076.3,
+        "ms": 16.699999999999818,
+        "phase": "flight",
+        "cursor": 21
+      },
+      {
+        "at": 8092.9,
+        "ms": 16.599999999999454,
+        "phase": "flight",
+        "cursor": 21
+      },
+      {
+        "at": 8109.6,
+        "ms": 16.700000000000728,
+        "phase": "flight",
+        "cursor": 21
+      },
+      {
+        "at": 8126.3,
+        "ms": 16.699999999999818,
+        "phase": "flight",
+        "cursor": 21
+      },
+      {
+        "at": 8143,
+        "ms": 16.699999999999818,
+        "phase": "flight",
+        "cursor": 21
+      },
+      {
+        "at": 8159.6,
+        "ms": 16.600000000000364,
+        "phase": "flight",
+        "cursor": 21
+      },
+      {
+        "at": 8176.3,
+        "ms": 16.699999999999818,
+        "phase": "flight",
+        "cursor": 21
+      },
+      {
+        "at": 8192.9,
+        "ms": 16.599999999999454,
+        "phase": "flight",
+        "cursor": 21
+      },
+      {
+        "at": 8209.6,
+        "ms": 16.700000000000728,
+        "phase": "flight",
+        "cursor": 21
+      },
+      {
+        "at": 8226.2,
+        "ms": 16.600000000000364,
+        "phase": "flight",
+        "cursor": 21
+      },
+      {
+        "at": 8242.9,
+        "ms": 16.69999999999891,
+        "phase": "flight",
+        "cursor": 21
+      },
+      {
+        "at": 8259.6,
+        "ms": 16.700000000000728,
+        "phase": "flight",
+        "cursor": 21
+      },
+      {
+        "at": 8276.2,
+        "ms": 16.600000000000364,
+        "phase": "flight",
+        "cursor": 21
+      },
+      {
+        "at": 8293,
+        "ms": 16.799999999999272,
+        "phase": "flight",
+        "cursor": 21
+      },
+      {
+        "at": 8309.6,
+        "ms": 16.600000000000364,
+        "phase": "impact",
+        "cursor": 21
+      },
+      {
+        "at": 8326.3,
+        "ms": 16.69999999999891,
+        "phase": "impact",
+        "cursor": 21
+      },
+      {
+        "at": 8342.9,
+        "ms": 16.600000000000364,
+        "phase": "impact",
+        "cursor": 21
+      },
+      {
+        "at": 8359.6,
+        "ms": 16.700000000000728,
+        "phase": "impact",
+        "cursor": 21
+      },
+      {
+        "at": 8376.3,
+        "ms": 16.69999999999891,
+        "phase": "impact",
+        "cursor": 21
+      },
+      {
+        "at": 8392.9,
+        "ms": 16.600000000000364,
+        "phase": "settle",
+        "cursor": 21
+      },
+      {
+        "at": 8409.6,
+        "ms": 16.700000000000728,
+        "phase": "settle",
+        "cursor": 21
+      },
+      {
+        "at": 8426.3,
+        "ms": 16.69999999999891,
+        "phase": "settle",
+        "cursor": 21
+      },
+      {
+        "at": 8442.9,
+        "ms": 16.600000000000364,
+        "phase": "settle",
+        "cursor": 21
+      },
+      {
+        "at": 8459.6,
+        "ms": 16.700000000000728,
+        "phase": "anticipation",
+        "cursor": 22
+      },
+      {
+        "at": 8476.3,
+        "ms": 16.69999999999891,
+        "phase": "anticipation",
+        "cursor": 22
+      },
+      {
+        "at": 8492.9,
+        "ms": 16.600000000000364,
+        "phase": "flight",
+        "cursor": 22
+      },
+      {
+        "at": 8509.6,
+        "ms": 16.700000000000728,
+        "phase": "flight",
+        "cursor": 22
+      },
+      {
+        "at": 8526.3,
+        "ms": 16.69999999999891,
+        "phase": "flight",
+        "cursor": 22
+      },
+      {
+        "at": 8542.9,
+        "ms": 16.600000000000364,
+        "phase": "flight",
+        "cursor": 22
+      },
+      {
+        "at": 8559.6,
+        "ms": 16.700000000000728,
+        "phase": "flight",
+        "cursor": 22
+      },
+      {
+        "at": 8576.2,
+        "ms": 16.600000000000364,
+        "phase": "impact",
+        "cursor": 22
+      },
+      {
+        "at": 8592.9,
+        "ms": 16.69999999999891,
+        "phase": "settle",
+        "cursor": 22
+      },
+      {
+        "at": 8609.6,
+        "ms": 16.700000000000728,
+        "phase": "anticipation",
+        "cursor": 23
+      },
+      {
+        "at": 8626.3,
+        "ms": 16.69999999999891,
+        "phase": "anticipation",
+        "cursor": 23
+      },
+      {
+        "at": 8642.9,
+        "ms": 16.600000000000364,
+        "phase": "anticipation",
+        "cursor": 23
+      },
+      {
+        "at": 8659.6,
+        "ms": 16.700000000000728,
+        "phase": "anticipation",
+        "cursor": 23
+      },
+      {
+        "at": 8676.3,
+        "ms": 16.69999999999891,
+        "phase": "anticipation",
+        "cursor": 23
+      },
+      {
+        "at": 8692.9,
+        "ms": 16.600000000000364,
+        "phase": "anticipation",
+        "cursor": 23
+      },
+      {
+        "at": 8709.6,
+        "ms": 16.700000000000728,
+        "phase": "anticipation",
+        "cursor": 23
+      },
+      {
+        "at": 8726.2,
+        "ms": 16.600000000000364,
+        "phase": "flight",
+        "cursor": 23
+      },
+      {
+        "at": 8742.9,
+        "ms": 16.69999999999891,
+        "phase": "flight",
+        "cursor": 23
+      },
+      {
+        "at": 8759.5,
+        "ms": 16.600000000000364,
+        "phase": "flight",
+        "cursor": 23
+      },
+      {
+        "at": 8776.3,
+        "ms": 16.799999999999272,
+        "phase": "flight",
+        "cursor": 23
+      },
+      {
+        "at": 8792.9,
+        "ms": 16.600000000000364,
+        "phase": "flight",
+        "cursor": 23
+      },
+      {
+        "at": 8809.6,
+        "ms": 16.700000000000728,
+        "phase": "flight",
+        "cursor": 23
+      },
+      {
+        "at": 8826.2,
+        "ms": 16.600000000000364,
+        "phase": "flight",
+        "cursor": 23
+      },
+      {
+        "at": 8842.9,
+        "ms": 16.69999999999891,
+        "phase": "flight",
+        "cursor": 23
+      },
+      {
+        "at": 8859.5,
+        "ms": 16.600000000000364,
+        "phase": "flight",
+        "cursor": 23
+      },
+      {
+        "at": 8876.2,
+        "ms": 16.700000000000728,
+        "phase": "flight",
+        "cursor": 23
+      },
+      {
+        "at": 8892.9,
+        "ms": 16.69999999999891,
+        "phase": "flight",
+        "cursor": 23
+      },
+      {
+        "at": 8909.6,
+        "ms": 16.700000000000728,
+        "phase": "flight",
+        "cursor": 23
+      },
+      {
+        "at": 8926.3,
+        "ms": 16.69999999999891,
+        "phase": "flight",
+        "cursor": 23
+      },
+      {
+        "at": 8942.9,
+        "ms": 16.600000000000364,
+        "phase": "flight",
+        "cursor": 23
+      },
+      {
+        "at": 8959.6,
+        "ms": 16.700000000000728,
+        "phase": "flight",
+        "cursor": 23
+      },
+      {
+        "at": 8976.2,
+        "ms": 16.600000000000364,
+        "phase": "flight",
+        "cursor": 23
+      },
+      {
+        "at": 8992.9,
+        "ms": 16.69999999999891,
+        "phase": "flight",
+        "cursor": 23
+      },
+      {
+        "at": 9009.6,
+        "ms": 16.700000000000728,
+        "phase": "flight",
+        "cursor": 23
+      },
+      {
+        "at": 9026.2,
+        "ms": 16.600000000000364,
+        "phase": "flight",
+        "cursor": 23
+      },
+      {
+        "at": 9042.9,
+        "ms": 16.69999999999891,
+        "phase": "flight",
+        "cursor": 23
+      },
+      {
+        "at": 9059.5,
+        "ms": 16.600000000000364,
+        "phase": "flight",
+        "cursor": 23
+      },
+      {
+        "at": 9076.2,
+        "ms": 16.700000000000728,
+        "phase": "flight",
+        "cursor": 23
+      },
+      {
+        "at": 9092.9,
+        "ms": 16.69999999999891,
+        "phase": "flight",
+        "cursor": 23
+      },
+      {
+        "at": 9109.5,
+        "ms": 16.600000000000364,
+        "phase": "flight",
+        "cursor": 23
+      },
+      {
+        "at": 9126.2,
+        "ms": 16.700000000000728,
+        "phase": "impact",
+        "cursor": 23
+      },
+      {
+        "at": 9142.9,
+        "ms": 16.69999999999891,
+        "phase": "impact",
+        "cursor": 23
+      },
+      {
+        "at": 9159.5,
+        "ms": 16.600000000000364,
+        "phase": "impact",
+        "cursor": 23
+      },
+      {
+        "at": 9176.3,
+        "ms": 16.799999999999272,
+        "phase": "impact",
+        "cursor": 23
+      },
+      {
+        "at": 9192.9,
+        "ms": 16.600000000000364,
+        "phase": "settle",
+        "cursor": 23
+      },
+      {
+        "at": 9209.6,
+        "ms": 16.700000000000728,
+        "phase": "settle",
+        "cursor": 23
+      },
+      {
+        "at": 9226.3,
+        "ms": 16.69999999999891,
+        "phase": "settle",
+        "cursor": 23
+      },
+      {
+        "at": 9242.9,
+        "ms": 16.600000000000364,
+        "phase": "settle",
+        "cursor": 23
+      },
+      {
+        "at": 9259.5,
+        "ms": 16.600000000000364,
+        "phase": "anticipation",
+        "cursor": 24
+      },
+      {
+        "at": 9276.2,
+        "ms": 16.700000000000728,
+        "phase": "anticipation",
+        "cursor": 24
+      },
+      {
+        "at": 9292.9,
+        "ms": 16.69999999999891,
+        "phase": "flight",
+        "cursor": 24
+      },
+      {
+        "at": 9309.6,
+        "ms": 16.700000000000728,
+        "phase": "flight",
+        "cursor": 24
+      },
+      {
+        "at": 9326.2,
+        "ms": 16.600000000000364,
+        "phase": "flight",
+        "cursor": 24
+      },
+      {
+        "at": 9342.8,
+        "ms": 16.599999999998545,
+        "phase": "flight",
+        "cursor": 24
+      },
+      {
+        "at": 9359.5,
+        "ms": 16.700000000000728,
+        "phase": "flight",
+        "cursor": 24
+      },
+      {
+        "at": 9376.3,
+        "ms": 16.799999999999272,
+        "phase": "flight",
+        "cursor": 24
+      },
+      {
+        "at": 9392.9,
+        "ms": 16.600000000000364,
+        "phase": "impact",
+        "cursor": 24
+      },
+      {
+        "at": 9409.6,
+        "ms": 16.700000000000728,
+        "phase": "settle",
+        "cursor": 24
+      },
+      {
+        "at": 9426.2,
+        "ms": 16.600000000000364,
+        "phase": "anticipation",
+        "cursor": 25
+      },
+      {
+        "at": 9442.9,
+        "ms": 16.69999999999891,
+        "phase": "anticipation",
+        "cursor": 25
+      },
+      {
+        "at": 9459.6,
+        "ms": 16.700000000000728,
+        "phase": "anticipation",
+        "cursor": 25
+      },
+      {
+        "at": 9476.2,
+        "ms": 16.600000000000364,
+        "phase": "anticipation",
+        "cursor": 25
+      },
+      {
+        "at": 9492.9,
+        "ms": 16.69999999999891,
+        "phase": "anticipation",
+        "cursor": 25
+      },
+      {
+        "at": 9509.5,
+        "ms": 16.600000000000364,
+        "phase": "anticipation",
+        "cursor": 25
+      },
+      {
+        "at": 9526.3,
+        "ms": 16.799999999999272,
+        "phase": "anticipation",
+        "cursor": 25
+      },
+      {
+        "at": 9542.9,
+        "ms": 16.600000000000364,
+        "phase": "flight",
+        "cursor": 25
+      },
+      {
+        "at": 9559.5,
+        "ms": 16.600000000000364,
+        "phase": "flight",
+        "cursor": 25
+      },
+      {
+        "at": 9576.2,
+        "ms": 16.700000000000728,
+        "phase": "flight",
+        "cursor": 25
+      },
+      {
+        "at": 9592.8,
+        "ms": 16.599999999998545,
+        "phase": "flight",
+        "cursor": 25
+      },
+      {
+        "at": 9609.5,
+        "ms": 16.700000000000728,
+        "phase": "flight",
+        "cursor": 25
+      },
+      {
+        "at": 9626.2,
+        "ms": 16.700000000000728,
+        "phase": "flight",
+        "cursor": 25
+      },
+      {
+        "at": 9642.9,
+        "ms": 16.69999999999891,
+        "phase": "flight",
+        "cursor": 25
+      },
+      {
+        "at": 9659.5,
+        "ms": 16.600000000000364,
+        "phase": "flight",
+        "cursor": 25
+      },
+      {
+        "at": 9676.2,
+        "ms": 16.700000000000728,
+        "phase": "flight",
+        "cursor": 25
+      },
+      {
+        "at": 9692.8,
+        "ms": 16.599999999998545,
+        "phase": "flight",
+        "cursor": 25
+      },
+      {
+        "at": 9709.6,
+        "ms": 16.80000000000109,
+        "phase": "flight",
+        "cursor": 25
+      },
+      {
+        "at": 9726.2,
+        "ms": 16.600000000000364,
+        "phase": "flight",
+        "cursor": 25
+      },
+      {
+        "at": 9742.9,
+        "ms": 16.69999999999891,
+        "phase": "flight",
+        "cursor": 25
+      },
+      {
+        "at": 9759.5,
+        "ms": 16.600000000000364,
+        "phase": "flight",
+        "cursor": 25
+      },
+      {
+        "at": 9776.2,
+        "ms": 16.700000000000728,
+        "phase": "flight",
+        "cursor": 25
+      },
+      {
+        "at": 9792.9,
+        "ms": 16.69999999999891,
+        "phase": "flight",
+        "cursor": 25
+      },
+      {
+        "at": 9809.5,
+        "ms": 16.600000000000364,
+        "phase": "flight",
+        "cursor": 25
+      },
+      {
+        "at": 9826.2,
+        "ms": 16.700000000000728,
+        "phase": "flight",
+        "cursor": 25
+      },
+      {
+        "at": 9842.9,
+        "ms": 16.69999999999891,
+        "phase": "flight",
+        "cursor": 25
+      },
+      {
+        "at": 9859.6,
+        "ms": 16.700000000000728,
+        "phase": "flight",
+        "cursor": 25
+      },
+      {
+        "at": 9876.2,
+        "ms": 16.600000000000364,
+        "phase": "flight",
+        "cursor": 25
+      },
+      {
+        "at": 9892.8,
+        "ms": 16.599999999998545,
+        "phase": "flight",
+        "cursor": 25
+      },
+      {
+        "at": 9909.5,
+        "ms": 16.700000000000728,
+        "phase": "flight",
+        "cursor": 25
+      },
+      {
+        "at": 9926.2,
+        "ms": 16.700000000000728,
+        "phase": "impact",
+        "cursor": 25
+      },
+      {
+        "at": 9942.9,
+        "ms": 16.69999999999891,
+        "phase": "impact",
+        "cursor": 25
+      },
+      {
+        "at": 9959.5,
+        "ms": 16.600000000000364,
+        "phase": "impact",
+        "cursor": 25
+      },
+      {
+        "at": 9976.2,
+        "ms": 16.700000000000728,
+        "phase": "impact",
+        "cursor": 25
+      },
+      {
+        "at": 9992.9,
+        "ms": 16.69999999999891,
+        "phase": "impact",
+        "cursor": 25
+      },
+      {
+        "at": 10009.5,
+        "ms": 16.600000000000364,
+        "phase": "settle",
+        "cursor": 25
+      },
+      {
+        "at": 10026.2,
+        "ms": 16.700000000000728,
+        "phase": "settle",
+        "cursor": 25
+      },
+      {
+        "at": 10042.9,
+        "ms": 16.69999999999891,
+        "phase": "settle",
+        "cursor": 25
+      },
+      {
+        "at": 10059.6,
+        "ms": 16.700000000000728,
+        "phase": "settle",
+        "cursor": 25
+      },
+      {
+        "at": 10076.2,
+        "ms": 16.600000000000364,
+        "phase": "anticipation",
+        "cursor": 26
+      },
+      {
+        "at": 10092.9,
+        "ms": 16.69999999999891,
+        "phase": "flight",
+        "cursor": 26
+      },
+      {
+        "at": 10109.5,
+        "ms": 16.600000000000364,
+        "phase": "flight",
+        "cursor": 26
+      },
+      {
+        "at": 10126.2,
+        "ms": 16.700000000000728,
+        "phase": "flight",
+        "cursor": 26
+      },
+      {
+        "at": 10142.9,
+        "ms": 16.69999999999891,
+        "phase": "flight",
+        "cursor": 26
+      },
+      {
+        "at": 10159.5,
+        "ms": 16.600000000000364,
+        "phase": "flight",
+        "cursor": 26
+      },
+      {
+        "at": 10176.2,
+        "ms": 16.700000000000728,
+        "phase": "flight",
+        "cursor": 26
+      },
+      {
+        "at": 10192.9,
+        "ms": 16.69999999999891,
+        "phase": "impact",
+        "cursor": 26
+      },
+      {
+        "at": 10209.5,
+        "ms": 16.600000000000364,
+        "phase": "settle",
+        "cursor": 26
+      },
+      {
+        "at": 10226.2,
+        "ms": 16.700000000000728,
+        "phase": "anticipation",
+        "cursor": 27
+      },
+      {
+        "at": 10242.8,
+        "ms": 16.599999999998545,
+        "phase": "anticipation",
+        "cursor": 27
+      },
+      {
+        "at": 10259.5,
+        "ms": 16.700000000000728,
+        "phase": "anticipation",
+        "cursor": 27
+      },
+      {
+        "at": 10276.2,
+        "ms": 16.700000000000728,
+        "phase": "anticipation",
+        "cursor": 27
+      },
+      {
+        "at": 10292.8,
+        "ms": 16.599999999998545,
+        "phase": "anticipation",
+        "cursor": 27
+      },
+      {
+        "at": 10309.5,
+        "ms": 16.700000000000728,
+        "phase": "anticipation",
+        "cursor": 27
+      },
+      {
+        "at": 10326.2,
+        "ms": 16.700000000000728,
+        "phase": "anticipation",
+        "cursor": 27
+      },
+      {
+        "at": 10342.9,
+        "ms": 16.69999999999891,
+        "phase": "flight",
+        "cursor": 27
+      },
+      {
+        "at": 10359.5,
+        "ms": 16.600000000000364,
+        "phase": "flight",
+        "cursor": 27
+      },
+      {
+        "at": 10376.2,
+        "ms": 16.700000000000728,
+        "phase": "flight",
+        "cursor": 27
+      },
+      {
+        "at": 10392.8,
+        "ms": 16.599999999998545,
+        "phase": "flight",
+        "cursor": 27
+      },
+      {
+        "at": 10409.5,
+        "ms": 16.700000000000728,
+        "phase": "flight",
+        "cursor": 27
+      },
+      {
+        "at": 10426.1,
+        "ms": 16.600000000000364,
+        "phase": "flight",
+        "cursor": 27
+      },
+      {
+        "at": 10442.9,
+        "ms": 16.799999999999272,
+        "phase": "flight",
+        "cursor": 27
+      },
+      {
+        "at": 10459.5,
+        "ms": 16.600000000000364,
+        "phase": "flight",
+        "cursor": 27
+      },
+      {
+        "at": 10476.2,
+        "ms": 16.700000000000728,
+        "phase": "flight",
+        "cursor": 27
+      },
+      {
+        "at": 10492.8,
+        "ms": 16.599999999998545,
+        "phase": "flight",
+        "cursor": 27
+      },
+      {
+        "at": 10509.5,
+        "ms": 16.700000000000728,
+        "phase": "flight",
+        "cursor": 27
+      },
+      {
+        "at": 10526.2,
+        "ms": 16.700000000000728,
+        "phase": "flight",
+        "cursor": 27
+      },
+      {
+        "at": 10542.9,
+        "ms": 16.69999999999891,
+        "phase": "flight",
+        "cursor": 27
+      },
+      {
+        "at": 10559.5,
+        "ms": 16.600000000000364,
+        "phase": "flight",
+        "cursor": 27
+      },
+      {
+        "at": 10576.2,
+        "ms": 16.700000000000728,
+        "phase": "flight",
+        "cursor": 27
+      },
+      {
+        "at": 10592.8,
+        "ms": 16.599999999998545,
+        "phase": "flight",
+        "cursor": 27
+      },
+      {
+        "at": 10609.6,
+        "ms": 16.80000000000109,
+        "phase": "flight",
+        "cursor": 27
+      },
+      {
+        "at": 10626.2,
+        "ms": 16.600000000000364,
+        "phase": "flight",
+        "cursor": 27
+      },
+      {
+        "at": 10642.9,
+        "ms": 16.69999999999891,
+        "phase": "flight",
+        "cursor": 27
+      },
+      {
+        "at": 10659.5,
+        "ms": 16.600000000000364,
+        "phase": "flight",
+        "cursor": 27
+      },
+      {
+        "at": 10676.1,
+        "ms": 16.600000000000364,
+        "phase": "flight",
+        "cursor": 27
+      },
+      {
+        "at": 10692.8,
+        "ms": 16.69999999999891,
+        "phase": "flight",
+        "cursor": 27
+      },
+      {
+        "at": 10709.5,
+        "ms": 16.700000000000728,
+        "phase": "flight",
+        "cursor": 27
+      },
+      {
+        "at": 10726.2,
+        "ms": 16.700000000000728,
+        "phase": "impact",
+        "cursor": 27
+      },
+      {
+        "at": 10742.9,
+        "ms": 16.69999999999891,
+        "phase": "impact",
+        "cursor": 27
+      },
+      {
+        "at": 10759.5,
+        "ms": 16.600000000000364,
+        "phase": "impact",
+        "cursor": 27
+      },
+      {
+        "at": 10776.2,
+        "ms": 16.700000000000728,
+        "phase": "impact",
+        "cursor": 27
+      },
+      {
+        "at": 10792.9,
+        "ms": 16.69999999999891,
+        "phase": "impact",
+        "cursor": 27
+      },
+      {
+        "at": 10809.5,
+        "ms": 16.600000000000364,
+        "phase": "settle",
+        "cursor": 27
+      },
+      {
+        "at": 10826.1,
+        "ms": 16.600000000000364,
+        "phase": "settle",
+        "cursor": 27
+      },
+      {
+        "at": 10842.8,
+        "ms": 16.69999999999891,
+        "phase": "settle",
+        "cursor": 27
+      },
+      {
+        "at": 10859.5,
+        "ms": 16.700000000000728,
+        "phase": "settle",
+        "cursor": 27
+      },
+      {
+        "at": 10876.1,
+        "ms": 16.600000000000364,
+        "phase": "anticipation",
+        "cursor": 28
+      },
+      {
+        "at": 10892.8,
+        "ms": 16.69999999999891,
+        "phase": "anticipation",
+        "cursor": 28
+      },
+      {
+        "at": 10909.5,
+        "ms": 16.700000000000728,
+        "phase": "flight",
+        "cursor": 28
+      },
+      {
+        "at": 10926.1,
+        "ms": 16.600000000000364,
+        "phase": "flight",
+        "cursor": 28
+      },
+      {
+        "at": 10942.8,
+        "ms": 16.69999999999891,
+        "phase": "flight",
+        "cursor": 28
+      },
+      {
+        "at": 10959.5,
+        "ms": 16.700000000000728,
+        "phase": "flight",
+        "cursor": 28
+      },
+      {
+        "at": 10976.2,
+        "ms": 16.700000000000728,
+        "phase": "flight",
+        "cursor": 28
+      },
+      {
+        "at": 10992.8,
+        "ms": 16.599999999998545,
+        "phase": "impact",
+        "cursor": 28
+      }
+    ],
+    "tasks": [
+      {
+        "at": 287.5,
+        "ms": 63
+      }
+    ]
+  },
+  "steady": [
+    {
+      "at": 976.6,
+      "ms": 16.800000000000068,
+      "phase": "flight",
+      "cursor": 2
+    },
+    {
+      "at": 993.2,
+      "ms": 16.600000000000023,
+      "phase": "flight",
+      "cursor": 2
+    },
+    {
+      "at": 1009.9,
+      "ms": 16.699999999999932,
+      "phase": "impact",
+      "cursor": 2
+    },
+    {
+      "at": 1026.6,
+      "ms": 16.699999999999932,
+      "phase": "impact",
+      "cursor": 2
+    },
+    {
+      "at": 1043.2,
+      "ms": 16.600000000000136,
+      "phase": "settle",
+      "cursor": 2
+    },
+    {
+      "at": 1059.8,
+      "ms": 16.59999999999991,
+      "phase": "settle",
+      "cursor": 2
+    },
+    {
+      "at": 1076.5,
+      "ms": 16.700000000000045,
+      "phase": "anticipation",
+      "cursor": 3
+    },
+    {
+      "at": 1093.2,
+      "ms": 16.700000000000045,
+      "phase": "anticipation",
+      "cursor": 3
+    },
+    {
+      "at": 1109.9,
+      "ms": 16.700000000000045,
+      "phase": "anticipation",
+      "cursor": 3
+    },
+    {
+      "at": 1126.5,
+      "ms": 16.59999999999991,
+      "phase": "flight",
+      "cursor": 3
+    },
+    {
+      "at": 1143.2,
+      "ms": 16.700000000000045,
+      "phase": "flight",
+      "cursor": 3
+    },
+    {
+      "at": 1159.9,
+      "ms": 16.700000000000045,
+      "phase": "flight",
+      "cursor": 3
+    },
+    {
+      "at": 1176.6,
+      "ms": 16.699999999999818,
+      "phase": "flight",
+      "cursor": 3
+    },
+    {
+      "at": 1193.3,
+      "ms": 16.700000000000045,
+      "phase": "flight",
+      "cursor": 3
+    },
+    {
+      "at": 1209.8,
+      "ms": 16.5,
+      "phase": "flight",
+      "cursor": 3
+    },
+    {
+      "at": 1226.6,
+      "ms": 16.799999999999955,
+      "phase": "flight",
+      "cursor": 3
+    },
+    {
+      "at": 1243.2,
+      "ms": 16.600000000000136,
+      "phase": "flight",
+      "cursor": 3
+    },
+    {
+      "at": 1259.9,
+      "ms": 16.700000000000045,
+      "phase": "flight",
+      "cursor": 3
+    },
+    {
+      "at": 1276.6,
+      "ms": 16.699999999999818,
+      "phase": "flight",
+      "cursor": 3
+    },
+    {
+      "at": 1293.2,
+      "ms": 16.600000000000136,
+      "phase": "impact",
+      "cursor": 3
+    },
+    {
+      "at": 1309.9,
+      "ms": 16.700000000000045,
+      "phase": "impact",
+      "cursor": 3
+    },
+    {
+      "at": 1326.5,
+      "ms": 16.59999999999991,
+      "phase": "settle",
+      "cursor": 3
+    },
+    {
+      "at": 1343.2,
+      "ms": 16.700000000000045,
+      "phase": "anticipation",
+      "cursor": 4
+    },
+    {
+      "at": 1359.9,
+      "ms": 16.700000000000045,
+      "phase": "anticipation",
+      "cursor": 4
+    },
+    {
+      "at": 1376.5,
+      "ms": 16.59999999999991,
+      "phase": "flight",
+      "cursor": 4
+    },
+    {
+      "at": 1393.2,
+      "ms": 16.700000000000045,
+      "phase": "flight",
+      "cursor": 4
+    },
+    {
+      "at": 1409.9,
+      "ms": 16.700000000000045,
+      "phase": "flight",
+      "cursor": 4
+    },
+    {
+      "at": 1426.6,
+      "ms": 16.699999999999818,
+      "phase": "flight",
+      "cursor": 4
+    },
+    {
+      "at": 1443.2,
+      "ms": 16.600000000000136,
+      "phase": "flight",
+      "cursor": 4
+    },
+    {
+      "at": 1459.9,
+      "ms": 16.700000000000045,
+      "phase": "flight",
+      "cursor": 4
+    },
+    {
+      "at": 1476.6,
+      "ms": 16.699999999999818,
+      "phase": "impact",
+      "cursor": 4
+    },
+    {
+      "at": 1493.2,
+      "ms": 16.600000000000136,
+      "phase": "settle",
+      "cursor": 4
+    },
+    {
+      "at": 1509.8,
+      "ms": 16.59999999999991,
+      "phase": "anticipation",
+      "cursor": 5
+    },
+    {
+      "at": 1526.6,
+      "ms": 16.799999999999955,
+      "phase": "anticipation",
+      "cursor": 5
+    },
+    {
+      "at": 1543.2,
+      "ms": 16.600000000000136,
+      "phase": "anticipation",
+      "cursor": 5
+    },
+    {
+      "at": 1559.8,
+      "ms": 16.59999999999991,
+      "phase": "anticipation",
+      "cursor": 5
+    },
+    {
+      "at": 1576.5,
+      "ms": 16.700000000000045,
+      "phase": "anticipation",
+      "cursor": 5
+    },
+    {
+      "at": 1593.2,
+      "ms": 16.700000000000045,
+      "phase": "anticipation",
+      "cursor": 5
+    },
+    {
+      "at": 1609.9,
+      "ms": 16.700000000000045,
+      "phase": "anticipation",
+      "cursor": 5
+    },
+    {
+      "at": 1626.5,
+      "ms": 16.59999999999991,
+      "phase": "flight",
+      "cursor": 5
+    },
+    {
+      "at": 1643.2,
+      "ms": 16.700000000000045,
+      "phase": "flight",
+      "cursor": 5
+    },
+    {
+      "at": 1659.9,
+      "ms": 16.700000000000045,
+      "phase": "flight",
+      "cursor": 5
+    },
+    {
+      "at": 1676.5,
+      "ms": 16.59999999999991,
+      "phase": "flight",
+      "cursor": 5
+    },
+    {
+      "at": 1693.2,
+      "ms": 16.700000000000045,
+      "phase": "flight",
+      "cursor": 5
+    },
+    {
+      "at": 1709.8,
+      "ms": 16.59999999999991,
+      "phase": "flight",
+      "cursor": 5
+    },
+    {
+      "at": 1726.5,
+      "ms": 16.700000000000045,
+      "phase": "flight",
+      "cursor": 5
+    },
+    {
+      "at": 1743.2,
+      "ms": 16.700000000000045,
+      "phase": "flight",
+      "cursor": 5
+    },
+    {
+      "at": 1759.8,
+      "ms": 16.59999999999991,
+      "phase": "flight",
+      "cursor": 5
+    },
+    {
+      "at": 1776.5,
+      "ms": 16.700000000000045,
+      "phase": "flight",
+      "cursor": 5
+    },
+    {
+      "at": 1793.2,
+      "ms": 16.700000000000045,
+      "phase": "flight",
+      "cursor": 5
+    },
+    {
+      "at": 1809.9,
+      "ms": 16.700000000000045,
+      "phase": "flight",
+      "cursor": 5
+    },
+    {
+      "at": 1826.5,
+      "ms": 16.59999999999991,
+      "phase": "flight",
+      "cursor": 5
+    },
+    {
+      "at": 1843.1,
+      "ms": 16.59999999999991,
+      "phase": "flight",
+      "cursor": 5
+    },
+    {
+      "at": 1859.8,
+      "ms": 16.700000000000045,
+      "phase": "flight",
+      "cursor": 5
+    },
+    {
+      "at": 1876.5,
+      "ms": 16.700000000000045,
+      "phase": "flight",
+      "cursor": 5
+    },
+    {
+      "at": 1893.2,
+      "ms": 16.700000000000045,
+      "phase": "flight",
+      "cursor": 5
+    },
+    {
+      "at": 1909.9,
+      "ms": 16.700000000000045,
+      "phase": "flight",
+      "cursor": 5
+    },
+    {
+      "at": 1926.5,
+      "ms": 16.59999999999991,
+      "phase": "flight",
+      "cursor": 5
+    },
+    {
+      "at": 1943.2,
+      "ms": 16.700000000000045,
+      "phase": "flight",
+      "cursor": 5
+    },
+    {
+      "at": 1959.9,
+      "ms": 16.700000000000045,
+      "phase": "flight",
+      "cursor": 5
+    },
+    {
+      "at": 1976.5,
+      "ms": 16.59999999999991,
+      "phase": "flight",
+      "cursor": 5
+    },
+    {
+      "at": 1993.2,
+      "ms": 16.700000000000045,
+      "phase": "flight",
+      "cursor": 5
+    },
+    {
+      "at": 2009.8,
+      "ms": 16.59999999999991,
+      "phase": "impact",
+      "cursor": 5
+    },
+    {
+      "at": 2026.5,
+      "ms": 16.700000000000045,
+      "phase": "impact",
+      "cursor": 5
+    },
+    {
+      "at": 2043.1,
+      "ms": 16.59999999999991,
+      "phase": "impact",
+      "cursor": 5
+    },
+    {
+      "at": 2059.8,
+      "ms": 16.700000000000273,
+      "phase": "impact",
+      "cursor": 5
+    },
+    {
+      "at": 2076.6,
+      "ms": 16.799999999999727,
+      "phase": "impact",
+      "cursor": 5
+    },
+    {
+      "at": 2093.2,
+      "ms": 16.59999999999991,
+      "phase": "settle",
+      "cursor": 5
+    },
+    {
+      "at": 2109.9,
+      "ms": 16.700000000000273,
+      "phase": "settle",
+      "cursor": 5
+    },
+    {
+      "at": 2126.5,
+      "ms": 16.59999999999991,
+      "phase": "settle",
+      "cursor": 5
+    },
+    {
+      "at": 2143.2,
+      "ms": 16.699999999999818,
+      "phase": "settle",
+      "cursor": 5
+    },
+    {
+      "at": 2159.8,
+      "ms": 16.600000000000364,
+      "phase": "anticipation",
+      "cursor": 6
+    },
+    {
+      "at": 2176.6,
+      "ms": 16.799999999999727,
+      "phase": "flight",
+      "cursor": 6
+    },
+    {
+      "at": 2193.2,
+      "ms": 16.59999999999991,
+      "phase": "flight",
+      "cursor": 6
+    },
+    {
+      "at": 2209.9,
+      "ms": 16.700000000000273,
+      "phase": "flight",
+      "cursor": 6
+    },
+    {
+      "at": 2226.5,
+      "ms": 16.59999999999991,
+      "phase": "flight",
+      "cursor": 6
+    },
+    {
+      "at": 2243.2,
+      "ms": 16.699999999999818,
+      "phase": "flight",
+      "cursor": 6
+    },
+    {
+      "at": 2259.8,
+      "ms": 16.600000000000364,
+      "phase": "flight",
+      "cursor": 6
+    },
+    {
+      "at": 2276.5,
+      "ms": 16.699999999999818,
+      "phase": "impact",
+      "cursor": 6
+    },
+    {
+      "at": 2293.1,
+      "ms": 16.59999999999991,
+      "phase": "settle",
+      "cursor": 6
+    },
+    {
+      "at": 2309.8,
+      "ms": 16.700000000000273,
+      "phase": "anticipation",
+      "cursor": 7
+    },
+    {
+      "at": 2326.5,
+      "ms": 16.699999999999818,
+      "phase": "anticipation",
+      "cursor": 7
+    },
+    {
+      "at": 2343.2,
+      "ms": 16.699999999999818,
+      "phase": "anticipation",
+      "cursor": 7
+    },
+    {
+      "at": 2359.9,
+      "ms": 16.700000000000273,
+      "phase": "anticipation",
+      "cursor": 7
+    },
+    {
+      "at": 2376.5,
+      "ms": 16.59999999999991,
+      "phase": "anticipation",
+      "cursor": 7
+    },
+    {
+      "at": 2393.2,
+      "ms": 16.699999999999818,
+      "phase": "anticipation",
+      "cursor": 7
+    },
+    {
+      "at": 2409.8,
+      "ms": 16.600000000000364,
+      "phase": "anticipation",
+      "cursor": 7
+    },
+    {
+      "at": 2426.5,
+      "ms": 16.699999999999818,
+      "phase": "flight",
+      "cursor": 7
+    },
+    {
+      "at": 2443.2,
+      "ms": 16.699999999999818,
+      "phase": "flight",
+      "cursor": 7
+    },
+    {
+      "at": 2459.9,
+      "ms": 16.700000000000273,
+      "phase": "flight",
+      "cursor": 7
+    },
+    {
+      "at": 2476.5,
+      "ms": 16.59999999999991,
+      "phase": "flight",
+      "cursor": 7
+    },
+    {
+      "at": 2493.2,
+      "ms": 16.699999999999818,
+      "phase": "flight",
+      "cursor": 7
+    },
+    {
+      "at": 2509.8,
+      "ms": 16.600000000000364,
+      "phase": "flight",
+      "cursor": 7
+    },
+    {
+      "at": 2526.5,
+      "ms": 16.699999999999818,
+      "phase": "flight",
+      "cursor": 7
+    },
+    {
+      "at": 2543.2,
+      "ms": 16.699999999999818,
+      "phase": "flight",
+      "cursor": 7
+    },
+    {
+      "at": 2559.8,
+      "ms": 16.600000000000364,
+      "phase": "flight",
+      "cursor": 7
+    },
+    {
+      "at": 2576.5,
+      "ms": 16.699999999999818,
+      "phase": "flight",
+      "cursor": 7
+    },
+    {
+      "at": 2593.2,
+      "ms": 16.699999999999818,
+      "phase": "flight",
+      "cursor": 7
+    },
+    {
+      "at": 2609.8,
+      "ms": 16.600000000000364,
+      "phase": "flight",
+      "cursor": 7
+    },
+    {
+      "at": 2626.5,
+      "ms": 16.699999999999818,
+      "phase": "flight",
+      "cursor": 7
+    },
+    {
+      "at": 2643.2,
+      "ms": 16.699999999999818,
+      "phase": "flight",
+      "cursor": 7
+    },
+    {
+      "at": 2659.9,
+      "ms": 16.700000000000273,
+      "phase": "flight",
+      "cursor": 7
+    },
+    {
+      "at": 2676.4,
+      "ms": 16.5,
+      "phase": "flight",
+      "cursor": 7
+    },
+    {
+      "at": 2693.1,
+      "ms": 16.699999999999818,
+      "phase": "flight",
+      "cursor": 7
+    },
+    {
+      "at": 2709.8,
+      "ms": 16.700000000000273,
+      "phase": "flight",
+      "cursor": 7
+    },
+    {
+      "at": 2726.5,
+      "ms": 16.699999999999818,
+      "phase": "flight",
+      "cursor": 7
+    },
+    {
+      "at": 2743.1,
+      "ms": 16.59999999999991,
+      "phase": "flight",
+      "cursor": 7
+    },
+    {
+      "at": 2759.8,
+      "ms": 16.700000000000273,
+      "phase": "flight",
+      "cursor": 7
+    },
+    {
+      "at": 2776.5,
+      "ms": 16.699999999999818,
+      "phase": "flight",
+      "cursor": 7
+    },
+    {
+      "at": 2793.1,
+      "ms": 16.59999999999991,
+      "phase": "flight",
+      "cursor": 7
+    },
+    {
+      "at": 2809.8,
+      "ms": 16.700000000000273,
+      "phase": "impact",
+      "cursor": 7
+    },
+    {
+      "at": 2826.4,
+      "ms": 16.59999999999991,
+      "phase": "impact",
+      "cursor": 7
+    },
+    {
+      "at": 2843.2,
+      "ms": 16.799999999999727,
+      "phase": "impact",
+      "cursor": 7
+    },
+    {
+      "at": 2859.9,
+      "ms": 16.700000000000273,
+      "phase": "impact",
+      "cursor": 7
+    },
+    {
+      "at": 2876.5,
+      "ms": 16.59999999999991,
+      "phase": "impact",
+      "cursor": 7
+    },
+    {
+      "at": 2893.2,
+      "ms": 16.699999999999818,
+      "phase": "settle",
+      "cursor": 7
+    },
+    {
+      "at": 2909.8,
+      "ms": 16.600000000000364,
+      "phase": "settle",
+      "cursor": 7
+    },
+    {
+      "at": 2926.5,
+      "ms": 16.699999999999818,
+      "phase": "settle",
+      "cursor": 7
+    },
+    {
+      "at": 2943.2,
+      "ms": 16.699999999999818,
+      "phase": "settle",
+      "cursor": 7
+    },
+    {
+      "at": 2959.8,
+      "ms": 16.600000000000364,
+      "phase": "anticipation",
+      "cursor": 8
+    },
+    {
+      "at": 2976.5,
+      "ms": 16.699999999999818,
+      "phase": "anticipation",
+      "cursor": 8
+    },
+    {
+      "at": 2993.2,
+      "ms": 16.699999999999818,
+      "phase": "flight",
+      "cursor": 8
+    },
+    {
+      "at": 3009.8,
+      "ms": 16.600000000000364,
+      "phase": "flight",
+      "cursor": 8
+    },
+    {
+      "at": 3026.5,
+      "ms": 16.699999999999818,
+      "phase": "flight",
+      "cursor": 8
+    },
+    {
+      "at": 3043.2,
+      "ms": 16.699999999999818,
+      "phase": "flight",
+      "cursor": 8
+    },
+    {
+      "at": 3059.8,
+      "ms": 16.600000000000364,
+      "phase": "flight",
+      "cursor": 8
+    },
+    {
+      "at": 3076.4,
+      "ms": 16.59999999999991,
+      "phase": "impact",
+      "cursor": 8
+    },
+    {
+      "at": 3093.1,
+      "ms": 16.699999999999818,
+      "phase": "settle",
+      "cursor": 8
+    },
+    {
+      "at": 3109.8,
+      "ms": 16.700000000000273,
+      "phase": "anticipation",
+      "cursor": 9
+    },
+    {
+      "at": 3126.5,
+      "ms": 16.699999999999818,
+      "phase": "anticipation",
+      "cursor": 9
+    },
+    {
+      "at": 3143.2,
+      "ms": 16.699999999999818,
+      "phase": "anticipation",
+      "cursor": 9
+    },
+    {
+      "at": 3159.8,
+      "ms": 16.600000000000364,
+      "phase": "anticipation",
+      "cursor": 9
+    },
+    {
+      "at": 3176.5,
+      "ms": 16.699999999999818,
+      "phase": "anticipation",
+      "cursor": 9
+    },
+    {
+      "at": 3193.1,
+      "ms": 16.59999999999991,
+      "phase": "anticipation",
+      "cursor": 9
+    },
+    {
+      "at": 3209.8,
+      "ms": 16.700000000000273,
+      "phase": "anticipation",
+      "cursor": 9
+    },
+    {
+      "at": 3226.5,
+      "ms": 16.699999999999818,
+      "phase": "flight",
+      "cursor": 9
+    },
+    {
+      "at": 3243.1,
+      "ms": 16.59999999999991,
+      "phase": "flight",
+      "cursor": 9
+    },
+    {
+      "at": 3259.8,
+      "ms": 16.700000000000273,
+      "phase": "flight",
+      "cursor": 9
+    },
+    {
+      "at": 3276.4,
+      "ms": 16.59999999999991,
+      "phase": "flight",
+      "cursor": 9
+    },
+    {
+      "at": 3293.1,
+      "ms": 16.699999999999818,
+      "phase": "flight",
+      "cursor": 9
+    },
+    {
+      "at": 3309.8,
+      "ms": 16.700000000000273,
+      "phase": "flight",
+      "cursor": 9
+    },
+    {
+      "at": 3326.5,
+      "ms": 16.699999999999818,
+      "phase": "flight",
+      "cursor": 9
+    },
+    {
+      "at": 3343.1,
+      "ms": 16.59999999999991,
+      "phase": "flight",
+      "cursor": 9
+    },
+    {
+      "at": 3359.8,
+      "ms": 16.700000000000273,
+      "phase": "flight",
+      "cursor": 9
+    },
+    {
+      "at": 3376.5,
+      "ms": 16.699999999999818,
+      "phase": "flight",
+      "cursor": 9
+    },
+    {
+      "at": 3393.2,
+      "ms": 16.699999999999818,
+      "phase": "flight",
+      "cursor": 9
+    },
+    {
+      "at": 3409.8,
+      "ms": 16.600000000000364,
+      "phase": "flight",
+      "cursor": 9
+    },
+    {
+      "at": 3426.4,
+      "ms": 16.59999999999991,
+      "phase": "flight",
+      "cursor": 9
+    },
+    {
+      "at": 3443.1,
+      "ms": 16.699999999999818,
+      "phase": "flight",
+      "cursor": 9
+    },
+    {
+      "at": 3459.8,
+      "ms": 16.700000000000273,
+      "phase": "flight",
+      "cursor": 9
+    },
+    {
+      "at": 3476.4,
+      "ms": 16.59999999999991,
+      "phase": "flight",
+      "cursor": 9
+    },
+    {
+      "at": 3493.1,
+      "ms": 16.699999999999818,
+      "phase": "flight",
+      "cursor": 9
+    },
+    {
+      "at": 3509.7,
+      "ms": 16.59999999999991,
+      "phase": "flight",
+      "cursor": 9
+    },
+    {
+      "at": 3526.5,
+      "ms": 16.800000000000182,
+      "phase": "flight",
+      "cursor": 9
+    },
+    {
+      "at": 3543.1,
+      "ms": 16.59999999999991,
+      "phase": "flight",
+      "cursor": 9
+    },
+    {
+      "at": 3559.8,
+      "ms": 16.700000000000273,
+      "phase": "flight",
+      "cursor": 9
+    },
+    {
+      "at": 3576.4,
+      "ms": 16.59999999999991,
+      "phase": "flight",
+      "cursor": 9
+    },
+    {
+      "at": 3593.1,
+      "ms": 16.699999999999818,
+      "phase": "flight",
+      "cursor": 9
+    },
+    {
+      "at": 3609.8,
+      "ms": 16.700000000000273,
+      "phase": "flight",
+      "cursor": 9
+    },
+    {
+      "at": 3626.4,
+      "ms": 16.59999999999991,
+      "phase": "impact",
+      "cursor": 9
+    },
+    {
+      "at": 3643.1,
+      "ms": 16.699999999999818,
+      "phase": "impact",
+      "cursor": 9
+    },
+    {
+      "at": 3659.8,
+      "ms": 16.700000000000273,
+      "phase": "impact",
+      "cursor": 9
+    },
+    {
+      "at": 3676.5,
+      "ms": 16.699999999999818,
+      "phase": "impact",
+      "cursor": 9
+    },
+    {
+      "at": 3693.1,
+      "ms": 16.59999999999991,
+      "phase": "settle",
+      "cursor": 9
+    },
+    {
+      "at": 3709.8,
+      "ms": 16.700000000000273,
+      "phase": "settle",
+      "cursor": 9
+    },
+    {
+      "at": 3726.5,
+      "ms": 16.699999999999818,
+      "phase": "settle",
+      "cursor": 9
+    },
+    {
+      "at": 3743.1,
+      "ms": 16.59999999999991,
+      "phase": "settle",
+      "cursor": 9
+    },
+    {
+      "at": 3759.7,
+      "ms": 16.59999999999991,
+      "phase": "anticipation",
+      "cursor": 10
+    },
+    {
+      "at": 3776.4,
+      "ms": 16.700000000000273,
+      "phase": "anticipation",
+      "cursor": 10
+    },
+    {
+      "at": 3793.1,
+      "ms": 16.699999999999818,
+      "phase": "flight",
+      "cursor": 10
+    },
+    {
+      "at": 3809.8,
+      "ms": 16.700000000000273,
+      "phase": "flight",
+      "cursor": 10
+    },
+    {
+      "at": 3826.4,
+      "ms": 16.59999999999991,
+      "phase": "flight",
+      "cursor": 10
+    },
+    {
+      "at": 3843.1,
+      "ms": 16.699999999999818,
+      "phase": "flight",
+      "cursor": 10
+    },
+    {
+      "at": 3859.8,
+      "ms": 16.700000000000273,
+      "phase": "flight",
+      "cursor": 10
+    },
+    {
+      "at": 3876.5,
+      "ms": 16.699999999999818,
+      "phase": "flight",
+      "cursor": 10
+    },
+    {
+      "at": 3893.1,
+      "ms": 16.59999999999991,
+      "phase": "impact",
+      "cursor": 10
+    },
+    {
+      "at": 3909.8,
+      "ms": 16.700000000000273,
+      "phase": "settle",
+      "cursor": 10
+    },
+    {
+      "at": 3926.4,
+      "ms": 16.59999999999991,
+      "phase": "anticipation",
+      "cursor": 11
+    },
+    {
+      "at": 3943.1,
+      "ms": 16.699999999999818,
+      "phase": "anticipation",
+      "cursor": 11
+    },
+    {
+      "at": 3959.8,
+      "ms": 16.700000000000273,
+      "phase": "anticipation",
+      "cursor": 11
+    },
+    {
+      "at": 3976.5,
+      "ms": 16.699999999999818,
+      "phase": "anticipation",
+      "cursor": 11
+    },
+    {
+      "at": 3993.1,
+      "ms": 16.59999999999991,
+      "phase": "anticipation",
+      "cursor": 11
+    },
+    {
+      "at": 4009.8,
+      "ms": 16.700000000000273,
+      "phase": "anticipation",
+      "cursor": 11
+    },
+    {
+      "at": 4026.4,
+      "ms": 16.59999999999991,
+      "phase": "anticipation",
+      "cursor": 11
+    },
+    {
+      "at": 4043.1,
+      "ms": 16.699999999999818,
+      "phase": "flight",
+      "cursor": 11
+    },
+    {
+      "at": 4059.7,
+      "ms": 16.59999999999991,
+      "phase": "flight",
+      "cursor": 11
+    },
+    {
+      "at": 4076.4,
+      "ms": 16.700000000000273,
+      "phase": "flight",
+      "cursor": 11
+    },
+    {
+      "at": 4093.1,
+      "ms": 16.699999999999818,
+      "phase": "flight",
+      "cursor": 11
+    },
+    {
+      "at": 4109.7,
+      "ms": 16.59999999999991,
+      "phase": "flight",
+      "cursor": 11
+    },
+    {
+      "at": 4126.5,
+      "ms": 16.800000000000182,
+      "phase": "flight",
+      "cursor": 11
+    },
+    {
+      "at": 4143.1,
+      "ms": 16.600000000000364,
+      "phase": "flight",
+      "cursor": 11
+    },
+    {
+      "at": 4159.8,
+      "ms": 16.699999999999818,
+      "phase": "flight",
+      "cursor": 11
+    },
+    {
+      "at": 4176.4,
+      "ms": 16.599999999999454,
+      "phase": "flight",
+      "cursor": 11
+    },
+    {
+      "at": 4193.1,
+      "ms": 16.700000000000728,
+      "phase": "flight",
+      "cursor": 11
+    },
+    {
+      "at": 4209.8,
+      "ms": 16.699999999999818,
+      "phase": "flight",
+      "cursor": 11
+    },
+    {
+      "at": 4226.4,
+      "ms": 16.599999999999454,
+      "phase": "flight",
+      "cursor": 11
+    },
+    {
+      "at": 4243.1,
+      "ms": 16.700000000000728,
+      "phase": "flight",
+      "cursor": 11
+    },
+    {
+      "at": 4259.8,
+      "ms": 16.699999999999818,
+      "phase": "flight",
+      "cursor": 11
+    },
+    {
+      "at": 4276.4,
+      "ms": 16.599999999999454,
+      "phase": "flight",
+      "cursor": 11
+    },
+    {
+      "at": 4293.1,
+      "ms": 16.700000000000728,
+      "phase": "flight",
+      "cursor": 11
+    },
+    {
+      "at": 4309.8,
+      "ms": 16.699999999999818,
+      "phase": "flight",
+      "cursor": 11
+    },
+    {
+      "at": 4326.4,
+      "ms": 16.599999999999454,
+      "phase": "flight",
+      "cursor": 11
+    },
+    {
+      "at": 4343.1,
+      "ms": 16.700000000000728,
+      "phase": "flight",
+      "cursor": 11
+    },
+    {
+      "at": 4359.7,
+      "ms": 16.599999999999454,
+      "phase": "flight",
+      "cursor": 11
+    },
+    {
+      "at": 4376.4,
+      "ms": 16.699999999999818,
+      "phase": "flight",
+      "cursor": 11
+    },
+    {
+      "at": 4393.1,
+      "ms": 16.700000000000728,
+      "phase": "flight",
+      "cursor": 11
+    },
+    {
+      "at": 4409.7,
+      "ms": 16.599999999999454,
+      "phase": "flight",
+      "cursor": 11
+    },
+    {
+      "at": 4426.4,
+      "ms": 16.699999999999818,
+      "phase": "impact",
+      "cursor": 11
+    },
+    {
+      "at": 4443,
+      "ms": 16.600000000000364,
+      "phase": "impact",
+      "cursor": 11
+    },
+    {
+      "at": 4459.7,
+      "ms": 16.699999999999818,
+      "phase": "impact",
+      "cursor": 11
+    },
+    {
+      "at": 4476.4,
+      "ms": 16.699999999999818,
+      "phase": "impact",
+      "cursor": 11
+    },
+    {
+      "at": 4493.1,
+      "ms": 16.700000000000728,
+      "phase": "impact",
+      "cursor": 11
+    },
+    {
+      "at": 4509.7,
+      "ms": 16.599999999999454,
+      "phase": "settle",
+      "cursor": 11
+    },
+    {
+      "at": 4526.4,
+      "ms": 16.699999999999818,
+      "phase": "settle",
+      "cursor": 11
+    },
+    {
+      "at": 4543,
+      "ms": 16.600000000000364,
+      "phase": "settle",
+      "cursor": 11
+    },
+    {
+      "at": 4559.7,
+      "ms": 16.699999999999818,
+      "phase": "settle",
+      "cursor": 11
+    },
+    {
+      "at": 4576.4,
+      "ms": 16.699999999999818,
+      "phase": "anticipation",
+      "cursor": 12
+    },
+    {
+      "at": 4593.1,
+      "ms": 16.700000000000728,
+      "phase": "flight",
+      "cursor": 12
+    },
+    {
+      "at": 4609.7,
+      "ms": 16.599999999999454,
+      "phase": "flight",
+      "cursor": 12
+    },
+    {
+      "at": 4626.4,
+      "ms": 16.699999999999818,
+      "phase": "flight",
+      "cursor": 12
+    },
+    {
+      "at": 4643.1,
+      "ms": 16.700000000000728,
+      "phase": "flight",
+      "cursor": 12
+    },
+    {
+      "at": 4659.8,
+      "ms": 16.699999999999818,
+      "phase": "flight",
+      "cursor": 12
+    },
+    {
+      "at": 4676.4,
+      "ms": 16.599999999999454,
+      "phase": "flight",
+      "cursor": 12
+    },
+    {
+      "at": 4693.1,
+      "ms": 16.700000000000728,
+      "phase": "impact",
+      "cursor": 12
+    },
+    {
+      "at": 4709.7,
+      "ms": 16.599999999999454,
+      "phase": "settle",
+      "cursor": 12
+    },
+    {
+      "at": 4726.4,
+      "ms": 16.699999999999818,
+      "phase": "anticipation",
+      "cursor": 13
+    },
+    {
+      "at": 4743.1,
+      "ms": 16.700000000000728,
+      "phase": "anticipation",
+      "cursor": 13
+    },
+    {
+      "at": 4759.8,
+      "ms": 16.699999999999818,
+      "phase": "anticipation",
+      "cursor": 13
+    },
+    {
+      "at": 4776.4,
+      "ms": 16.599999999999454,
+      "phase": "anticipation",
+      "cursor": 13
+    },
+    {
+      "at": 4793.1,
+      "ms": 16.700000000000728,
+      "phase": "anticipation",
+      "cursor": 13
+    },
+    {
+      "at": 4809.7,
+      "ms": 16.599999999999454,
+      "phase": "anticipation",
+      "cursor": 13
+    },
+    {
+      "at": 4826.4,
+      "ms": 16.699999999999818,
+      "phase": "anticipation",
+      "cursor": 13
+    },
+    {
+      "at": 4843.1,
+      "ms": 16.700000000000728,
+      "phase": "flight",
+      "cursor": 13
+    },
+    {
+      "at": 4859.7,
+      "ms": 16.599999999999454,
+      "phase": "flight",
+      "cursor": 13
+    },
+    {
+      "at": 4876.4,
+      "ms": 16.699999999999818,
+      "phase": "flight",
+      "cursor": 13
+    },
+    {
+      "at": 4893,
+      "ms": 16.600000000000364,
+      "phase": "flight",
+      "cursor": 13
+    },
+    {
+      "at": 4909.7,
+      "ms": 16.699999999999818,
+      "phase": "flight",
+      "cursor": 13
+    },
+    {
+      "at": 4926.4,
+      "ms": 16.699999999999818,
+      "phase": "flight",
+      "cursor": 13
+    },
+    {
+      "at": 4943,
+      "ms": 16.600000000000364,
+      "phase": "flight",
+      "cursor": 13
+    },
+    {
+      "at": 4959.8,
+      "ms": 16.800000000000182,
+      "phase": "flight",
+      "cursor": 13
+    },
+    {
+      "at": 4976.4,
+      "ms": 16.599999999999454,
+      "phase": "flight",
+      "cursor": 13
+    },
+    {
+      "at": 4993.1,
+      "ms": 16.700000000000728,
+      "phase": "flight",
+      "cursor": 13
+    },
+    {
+      "at": 5009.7,
+      "ms": 16.599999999999454,
+      "phase": "flight",
+      "cursor": 13
+    },
+    {
+      "at": 5026.4,
+      "ms": 16.699999999999818,
+      "phase": "flight",
+      "cursor": 13
+    },
+    {
+      "at": 5043.1,
+      "ms": 16.700000000000728,
+      "phase": "flight",
+      "cursor": 13
+    },
+    {
+      "at": 5059.7,
+      "ms": 16.599999999999454,
+      "phase": "flight",
+      "cursor": 13
+    },
+    {
+      "at": 5076.4,
+      "ms": 16.699999999999818,
+      "phase": "flight",
+      "cursor": 13
+    },
+    {
+      "at": 5093,
+      "ms": 16.600000000000364,
+      "phase": "flight",
+      "cursor": 13
+    },
+    {
+      "at": 5109.8,
+      "ms": 16.800000000000182,
+      "phase": "flight",
+      "cursor": 13
+    },
+    {
+      "at": 5126.4,
+      "ms": 16.599999999999454,
+      "phase": "flight",
+      "cursor": 13
+    },
+    {
+      "at": 5143.1,
+      "ms": 16.700000000000728,
+      "phase": "flight",
+      "cursor": 13
+    },
+    {
+      "at": 5159.7,
+      "ms": 16.599999999999454,
+      "phase": "flight",
+      "cursor": 13
+    },
+    {
+      "at": 5176.4,
+      "ms": 16.699999999999818,
+      "phase": "flight",
+      "cursor": 13
+    },
+    {
+      "at": 5193.1,
+      "ms": 16.700000000000728,
+      "phase": "flight",
+      "cursor": 13
+    },
+    {
+      "at": 5209.7,
+      "ms": 16.599999999999454,
+      "phase": "flight",
+      "cursor": 13
+    },
+    {
+      "at": 5226.4,
+      "ms": 16.699999999999818,
+      "phase": "impact",
+      "cursor": 13
+    },
+    {
+      "at": 5243.1,
+      "ms": 16.700000000000728,
+      "phase": "impact",
+      "cursor": 13
+    },
+    {
+      "at": 5259.8,
+      "ms": 16.699999999999818,
+      "phase": "impact",
+      "cursor": 13
+    },
+    {
+      "at": 5276.3,
+      "ms": 16.5,
+      "phase": "impact",
+      "cursor": 13
+    },
+    {
+      "at": 5293.1,
+      "ms": 16.800000000000182,
+      "phase": "impact",
+      "cursor": 13
+    },
+    {
+      "at": 5309.7,
+      "ms": 16.599999999999454,
+      "phase": "settle",
+      "cursor": 13
+    },
+    {
+      "at": 5326.3,
+      "ms": 16.600000000000364,
+      "phase": "settle",
+      "cursor": 13
+    },
+    {
+      "at": 5343.1,
+      "ms": 16.800000000000182,
+      "phase": "settle",
+      "cursor": 13
+    },
+    {
+      "at": 5359.7,
+      "ms": 16.599999999999454,
+      "phase": "settle",
+      "cursor": 13
+    },
+    {
+      "at": 5376.3,
+      "ms": 16.600000000000364,
+      "phase": "anticipation",
+      "cursor": 14
+    },
+    {
+      "at": 5393,
+      "ms": 16.699999999999818,
+      "phase": "anticipation",
+      "cursor": 14
+    },
+    {
+      "at": 5409.8,
+      "ms": 16.800000000000182,
+      "phase": "anticipation",
+      "cursor": 14
+    },
+    {
+      "at": 5426.4,
+      "ms": 16.599999999999454,
+      "phase": "flight",
+      "cursor": 14
+    },
+    {
+      "at": 5443,
+      "ms": 16.600000000000364,
+      "phase": "flight",
+      "cursor": 14
+    },
+    {
+      "at": 5459.7,
+      "ms": 16.699999999999818,
+      "phase": "flight",
+      "cursor": 14
+    },
+    {
+      "at": 5476.4,
+      "ms": 16.699999999999818,
+      "phase": "flight",
+      "cursor": 14
+    },
+    {
+      "at": 5493,
+      "ms": 16.600000000000364,
+      "phase": "flight",
+      "cursor": 14
+    },
+    {
+      "at": 5509.7,
+      "ms": 16.699999999999818,
+      "phase": "flight",
+      "cursor": 14
+    },
+    {
+      "at": 5526.4,
+      "ms": 16.699999999999818,
+      "phase": "flight",
+      "cursor": 14
+    },
+    {
+      "at": 5543,
+      "ms": 16.600000000000364,
+      "phase": "flight",
+      "cursor": 14
+    },
+    {
+      "at": 5559.7,
+      "ms": 16.699999999999818,
+      "phase": "flight",
+      "cursor": 14
+    },
+    {
+      "at": 5576.4,
+      "ms": 16.699999999999818,
+      "phase": "flight",
+      "cursor": 14
+    },
+    {
+      "at": 5593,
+      "ms": 16.600000000000364,
+      "phase": "impact",
+      "cursor": 14
+    },
+    {
+      "at": 5609.7,
+      "ms": 16.699999999999818,
+      "phase": "impact",
+      "cursor": 14
+    },
+    {
+      "at": 5626.4,
+      "ms": 16.699999999999818,
+      "phase": "settle",
+      "cursor": 14
+    },
+    {
+      "at": 5643.1,
+      "ms": 16.700000000000728,
+      "phase": "settle",
+      "cursor": 14
+    },
+    {
+      "at": 5659.7,
+      "ms": 16.599999999999454,
+      "phase": "anticipation",
+      "cursor": 15
+    },
+    {
+      "at": 5676.4,
+      "ms": 16.699999999999818,
+      "phase": "anticipation",
+      "cursor": 15
+    },
+    {
+      "at": 5693.1,
+      "ms": 16.700000000000728,
+      "phase": "flight",
+      "cursor": 15
+    },
+    {
+      "at": 5709.7,
+      "ms": 16.599999999999454,
+      "phase": "flight",
+      "cursor": 15
+    },
+    {
+      "at": 5726.4,
+      "ms": 16.699999999999818,
+      "phase": "flight",
+      "cursor": 15
+    },
+    {
+      "at": 5743,
+      "ms": 16.600000000000364,
+      "phase": "flight",
+      "cursor": 15
+    },
+    {
+      "at": 5759.7,
+      "ms": 16.699999999999818,
+      "phase": "flight",
+      "cursor": 15
+    },
+    {
+      "at": 5776.3,
+      "ms": 16.600000000000364,
+      "phase": "flight",
+      "cursor": 15
+    },
+    {
+      "at": 5793,
+      "ms": 16.699999999999818,
+      "phase": "impact",
+      "cursor": 15
+    },
+    {
+      "at": 5809.7,
+      "ms": 16.699999999999818,
+      "phase": "settle",
+      "cursor": 15
+    },
+    {
+      "at": 5826.3,
+      "ms": 16.600000000000364,
+      "phase": "anticipation",
+      "cursor": 16
+    },
+    {
+      "at": 5843,
+      "ms": 16.699999999999818,
+      "phase": "anticipation",
+      "cursor": 16
+    },
+    {
+      "at": 5859.7,
+      "ms": 16.699999999999818,
+      "phase": "anticipation",
+      "cursor": 16
+    },
+    {
+      "at": 5876.3,
+      "ms": 16.600000000000364,
+      "phase": "anticipation",
+      "cursor": 16
+    },
+    {
+      "at": 5893,
+      "ms": 16.699999999999818,
+      "phase": "flight",
+      "cursor": 16
+    },
+    {
+      "at": 5909.6,
+      "ms": 16.600000000000364,
+      "phase": "flight",
+      "cursor": 16
+    },
+    {
+      "at": 5926.4,
+      "ms": 16.799999999999272,
+      "phase": "flight",
+      "cursor": 16
+    },
+    {
+      "at": 5943.1,
+      "ms": 16.700000000000728,
+      "phase": "flight",
+      "cursor": 16
+    },
+    {
+      "at": 5959.7,
+      "ms": 16.599999999999454,
+      "phase": "flight",
+      "cursor": 16
+    },
+    {
+      "at": 5976.3,
+      "ms": 16.600000000000364,
+      "phase": "flight",
+      "cursor": 16
+    },
+    {
+      "at": 5993.1,
+      "ms": 16.800000000000182,
+      "phase": "flight",
+      "cursor": 16
+    },
+    {
+      "at": 6009.7,
+      "ms": 16.599999999999454,
+      "phase": "flight",
+      "cursor": 16
+    },
+    {
+      "at": 6026.4,
+      "ms": 16.699999999999818,
+      "phase": "flight",
+      "cursor": 16
+    },
+    {
+      "at": 6043,
+      "ms": 16.600000000000364,
+      "phase": "flight",
+      "cursor": 16
+    },
+    {
+      "at": 6059.7,
+      "ms": 16.699999999999818,
+      "phase": "flight",
+      "cursor": 16
+    },
+    {
+      "at": 6076.3,
+      "ms": 16.600000000000364,
+      "phase": "flight",
+      "cursor": 16
+    },
+    {
+      "at": 6093,
+      "ms": 16.699999999999818,
+      "phase": "flight",
+      "cursor": 16
+    },
+    {
+      "at": 6109.7,
+      "ms": 16.699999999999818,
+      "phase": "impact",
+      "cursor": 16
+    },
+    {
+      "at": 6126.3,
+      "ms": 16.600000000000364,
+      "phase": "impact",
+      "cursor": 16
+    },
+    {
+      "at": 6143,
+      "ms": 16.699999999999818,
+      "phase": "impact",
+      "cursor": 16
+    },
+    {
+      "at": 6159.6,
+      "ms": 16.600000000000364,
+      "phase": "settle",
+      "cursor": 16
+    },
+    {
+      "at": 6176.4,
+      "ms": 16.799999999999272,
+      "phase": "settle",
+      "cursor": 16
+    },
+    {
+      "at": 6193.1,
+      "ms": 16.700000000000728,
+      "phase": "anticipation",
+      "cursor": 17
+    },
+    {
+      "at": 6209.7,
+      "ms": 16.599999999999454,
+      "phase": "anticipation",
+      "cursor": 17
+    },
+    {
+      "at": 6226.3,
+      "ms": 16.600000000000364,
+      "phase": "anticipation",
+      "cursor": 17
+    },
+    {
+      "at": 6243,
+      "ms": 16.699999999999818,
+      "phase": "anticipation",
+      "cursor": 17
+    },
+    {
+      "at": 6259.7,
+      "ms": 16.699999999999818,
+      "phase": "anticipation",
+      "cursor": 17
+    },
+    {
+      "at": 6276.4,
+      "ms": 16.699999999999818,
+      "phase": "anticipation",
+      "cursor": 17
+    },
+    {
+      "at": 6293,
+      "ms": 16.600000000000364,
+      "phase": "anticipation",
+      "cursor": 17
+    },
+    {
+      "at": 6309.7,
+      "ms": 16.699999999999818,
+      "phase": "flight",
+      "cursor": 17
+    },
+    {
+      "at": 6326.3,
+      "ms": 16.600000000000364,
+      "phase": "flight",
+      "cursor": 17
+    },
+    {
+      "at": 6343,
+      "ms": 16.699999999999818,
+      "phase": "flight",
+      "cursor": 17
+    },
+    {
+      "at": 6359.7,
+      "ms": 16.699999999999818,
+      "phase": "flight",
+      "cursor": 17
+    },
+    {
+      "at": 6376.3,
+      "ms": 16.600000000000364,
+      "phase": "flight",
+      "cursor": 17
+    },
+    {
+      "at": 6393,
+      "ms": 16.699999999999818,
+      "phase": "flight",
+      "cursor": 17
+    },
+    {
+      "at": 6409.6,
+      "ms": 16.600000000000364,
+      "phase": "flight",
+      "cursor": 17
+    },
+    {
+      "at": 6426.3,
+      "ms": 16.699999999999818,
+      "phase": "flight",
+      "cursor": 17
+    },
+    {
+      "at": 6443,
+      "ms": 16.699999999999818,
+      "phase": "flight",
+      "cursor": 17
+    },
+    {
+      "at": 6459.6,
+      "ms": 16.600000000000364,
+      "phase": "flight",
+      "cursor": 17
+    },
+    {
+      "at": 6476.3,
+      "ms": 16.699999999999818,
+      "phase": "flight",
+      "cursor": 17
+    },
+    {
+      "at": 6493,
+      "ms": 16.699999999999818,
+      "phase": "flight",
+      "cursor": 17
+    },
+    {
+      "at": 6509.7,
+      "ms": 16.699999999999818,
+      "phase": "flight",
+      "cursor": 17
+    },
+    {
+      "at": 6526.3,
+      "ms": 16.600000000000364,
+      "phase": "flight",
+      "cursor": 17
+    },
+    {
+      "at": 6543,
+      "ms": 16.699999999999818,
+      "phase": "flight",
+      "cursor": 17
+    },
+    {
+      "at": 6559.7,
+      "ms": 16.699999999999818,
+      "phase": "flight",
+      "cursor": 17
+    },
+    {
+      "at": 6576.3,
+      "ms": 16.600000000000364,
+      "phase": "flight",
+      "cursor": 17
+    },
+    {
+      "at": 6593,
+      "ms": 16.699999999999818,
+      "phase": "flight",
+      "cursor": 17
+    },
+    {
+      "at": 6609.6,
+      "ms": 16.600000000000364,
+      "phase": "flight",
+      "cursor": 17
+    },
+    {
+      "at": 6626.3,
+      "ms": 16.699999999999818,
+      "phase": "flight",
+      "cursor": 17
+    },
+    {
+      "at": 6643,
+      "ms": 16.699999999999818,
+      "phase": "flight",
+      "cursor": 17
+    },
+    {
+      "at": 6659.6,
+      "ms": 16.600000000000364,
+      "phase": "flight",
+      "cursor": 17
+    },
+    {
+      "at": 6676.3,
+      "ms": 16.699999999999818,
+      "phase": "flight",
+      "cursor": 17
+    },
+    {
+      "at": 6693,
+      "ms": 16.699999999999818,
+      "phase": "flight",
+      "cursor": 17
+    },
+    {
+      "at": 6709.6,
+      "ms": 16.600000000000364,
+      "phase": "impact",
+      "cursor": 17
+    },
+    {
+      "at": 6726.3,
+      "ms": 16.699999999999818,
+      "phase": "impact",
+      "cursor": 17
+    },
+    {
+      "at": 6743,
+      "ms": 16.699999999999818,
+      "phase": "impact",
+      "cursor": 17
+    },
+    {
+      "at": 6759.6,
+      "ms": 16.600000000000364,
+      "phase": "impact",
+      "cursor": 17
+    },
+    {
+      "at": 6776.3,
+      "ms": 16.699999999999818,
+      "phase": "settle",
+      "cursor": 17
+    },
+    {
+      "at": 6793,
+      "ms": 16.699999999999818,
+      "phase": "settle",
+      "cursor": 17
+    },
+    {
+      "at": 6809.7,
+      "ms": 16.699999999999818,
+      "phase": "settle",
+      "cursor": 17
+    },
+    {
+      "at": 6826.3,
+      "ms": 16.600000000000364,
+      "phase": "settle",
+      "cursor": 17
+    },
+    {
+      "at": 6843,
+      "ms": 16.699999999999818,
+      "phase": "anticipation",
+      "cursor": 18
+    },
+    {
+      "at": 6859.6,
+      "ms": 16.600000000000364,
+      "phase": "anticipation",
+      "cursor": 18
+    },
+    {
+      "at": 6876.3,
+      "ms": 16.699999999999818,
+      "phase": "flight",
+      "cursor": 18
+    },
+    {
+      "at": 6893,
+      "ms": 16.699999999999818,
+      "phase": "flight",
+      "cursor": 18
+    },
+    {
+      "at": 6909.6,
+      "ms": 16.600000000000364,
+      "phase": "flight",
+      "cursor": 18
+    },
+    {
+      "at": 6926.4,
+      "ms": 16.799999999999272,
+      "phase": "flight",
+      "cursor": 18
+    },
+    {
+      "at": 6943,
+      "ms": 16.600000000000364,
+      "phase": "flight",
+      "cursor": 18
+    },
+    {
+      "at": 6959.7,
+      "ms": 16.699999999999818,
+      "phase": "impact",
+      "cursor": 18
+    },
+    {
+      "at": 6976.3,
+      "ms": 16.600000000000364,
+      "phase": "impact",
+      "cursor": 18
+    },
+    {
+      "at": 6993,
+      "ms": 16.699999999999818,
+      "phase": "settle",
+      "cursor": 18
+    },
+    {
+      "at": 7009.6,
+      "ms": 16.600000000000364,
+      "phase": "anticipation",
+      "cursor": 19
+    },
+    {
+      "at": 7026.3,
+      "ms": 16.699999999999818,
+      "phase": "anticipation",
+      "cursor": 19
+    },
+    {
+      "at": 7043,
+      "ms": 16.699999999999818,
+      "phase": "anticipation",
+      "cursor": 19
+    },
+    {
+      "at": 7059.7,
+      "ms": 16.699999999999818,
+      "phase": "anticipation",
+      "cursor": 19
+    },
+    {
+      "at": 7076.3,
+      "ms": 16.600000000000364,
+      "phase": "anticipation",
+      "cursor": 19
+    },
+    {
+      "at": 7092.9,
+      "ms": 16.599999999999454,
+      "phase": "anticipation",
+      "cursor": 19
+    },
+    {
+      "at": 7109.6,
+      "ms": 16.700000000000728,
+      "phase": "anticipation",
+      "cursor": 19
+    },
+    {
+      "at": 7126.3,
+      "ms": 16.699999999999818,
+      "phase": "flight",
+      "cursor": 19
+    },
+    {
+      "at": 7142.9,
+      "ms": 16.599999999999454,
+      "phase": "flight",
+      "cursor": 19
+    },
+    {
+      "at": 7159.6,
+      "ms": 16.700000000000728,
+      "phase": "flight",
+      "cursor": 19
+    },
+    {
+      "at": 7176.3,
+      "ms": 16.699999999999818,
+      "phase": "flight",
+      "cursor": 19
+    },
+    {
+      "at": 7192.9,
+      "ms": 16.599999999999454,
+      "phase": "flight",
+      "cursor": 19
+    },
+    {
+      "at": 7209.6,
+      "ms": 16.700000000000728,
+      "phase": "flight",
+      "cursor": 19
+    },
+    {
+      "at": 7226.3,
+      "ms": 16.699999999999818,
+      "phase": "flight",
+      "cursor": 19
+    },
+    {
+      "at": 7242.9,
+      "ms": 16.599999999999454,
+      "phase": "flight",
+      "cursor": 19
+    },
+    {
+      "at": 7259.6,
+      "ms": 16.700000000000728,
+      "phase": "flight",
+      "cursor": 19
+    },
+    {
+      "at": 7276.3,
+      "ms": 16.699999999999818,
+      "phase": "flight",
+      "cursor": 19
+    },
+    {
+      "at": 7292.9,
+      "ms": 16.599999999999454,
+      "phase": "flight",
+      "cursor": 19
+    },
+    {
+      "at": 7309.6,
+      "ms": 16.700000000000728,
+      "phase": "flight",
+      "cursor": 19
+    },
+    {
+      "at": 7326.3,
+      "ms": 16.699999999999818,
+      "phase": "flight",
+      "cursor": 19
+    },
+    {
+      "at": 7342.9,
+      "ms": 16.599999999999454,
+      "phase": "flight",
+      "cursor": 19
+    },
+    {
+      "at": 7359.7,
+      "ms": 16.800000000000182,
+      "phase": "flight",
+      "cursor": 19
+    },
+    {
+      "at": 7376.3,
+      "ms": 16.600000000000364,
+      "phase": "flight",
+      "cursor": 19
+    },
+    {
+      "at": 7393,
+      "ms": 16.699999999999818,
+      "phase": "flight",
+      "cursor": 19
+    },
+    {
+      "at": 7409.6,
+      "ms": 16.600000000000364,
+      "phase": "flight",
+      "cursor": 19
+    },
+    {
+      "at": 7426.3,
+      "ms": 16.699999999999818,
+      "phase": "flight",
+      "cursor": 19
+    },
+    {
+      "at": 7442.9,
+      "ms": 16.599999999999454,
+      "phase": "flight",
+      "cursor": 19
+    },
+    {
+      "at": 7459.6,
+      "ms": 16.700000000000728,
+      "phase": "flight",
+      "cursor": 19
+    },
+    {
+      "at": 7476.3,
+      "ms": 16.699999999999818,
+      "phase": "flight",
+      "cursor": 19
+    },
+    {
+      "at": 7493,
+      "ms": 16.699999999999818,
+      "phase": "flight",
+      "cursor": 19
+    },
+    {
+      "at": 7509.6,
+      "ms": 16.600000000000364,
+      "phase": "impact",
+      "cursor": 19
+    },
+    {
+      "at": 7526.3,
+      "ms": 16.699999999999818,
+      "phase": "impact",
+      "cursor": 19
+    },
+    {
+      "at": 7542.9,
+      "ms": 16.599999999999454,
+      "phase": "impact",
+      "cursor": 19
+    },
+    {
+      "at": 7559.6,
+      "ms": 16.700000000000728,
+      "phase": "impact",
+      "cursor": 19
+    },
+    {
+      "at": 7576.3,
+      "ms": 16.699999999999818,
+      "phase": "impact",
+      "cursor": 19
+    },
+    {
+      "at": 7592.9,
+      "ms": 16.599999999999454,
+      "phase": "settle",
+      "cursor": 19
+    },
+    {
+      "at": 7609.6,
+      "ms": 16.700000000000728,
+      "phase": "settle",
+      "cursor": 19
+    },
+    {
+      "at": 7626.3,
+      "ms": 16.699999999999818,
+      "phase": "settle",
+      "cursor": 19
+    },
+    {
+      "at": 7643,
+      "ms": 16.699999999999818,
+      "phase": "settle",
+      "cursor": 19
+    },
+    {
+      "at": 7659.7,
+      "ms": 16.699999999999818,
+      "phase": "anticipation",
+      "cursor": 20
+    },
+    {
+      "at": 7676.3,
+      "ms": 16.600000000000364,
+      "phase": "flight",
+      "cursor": 20
+    },
+    {
+      "at": 7693,
+      "ms": 16.699999999999818,
+      "phase": "flight",
+      "cursor": 20
+    },
+    {
+      "at": 7709.7,
+      "ms": 16.699999999999818,
+      "phase": "flight",
+      "cursor": 20
+    },
+    {
+      "at": 7726.2,
+      "ms": 16.5,
+      "phase": "flight",
+      "cursor": 20
+    },
+    {
+      "at": 7742.9,
+      "ms": 16.699999999999818,
+      "phase": "flight",
+      "cursor": 20
+    },
+    {
+      "at": 7759.6,
+      "ms": 16.700000000000728,
+      "phase": "flight",
+      "cursor": 20
+    },
+    {
+      "at": 7776.2,
+      "ms": 16.599999999999454,
+      "phase": "impact",
+      "cursor": 20
+    },
+    {
+      "at": 7792.9,
+      "ms": 16.699999999999818,
+      "phase": "settle",
+      "cursor": 20
+    },
+    {
+      "at": 7809.6,
+      "ms": 16.700000000000728,
+      "phase": "anticipation",
+      "cursor": 21
+    },
+    {
+      "at": 7826.3,
+      "ms": 16.699999999999818,
+      "phase": "anticipation",
+      "cursor": 21
+    },
+    {
+      "at": 7842.9,
+      "ms": 16.599999999999454,
+      "phase": "anticipation",
+      "cursor": 21
+    },
+    {
+      "at": 7859.6,
+      "ms": 16.700000000000728,
+      "phase": "anticipation",
+      "cursor": 21
+    },
+    {
+      "at": 7876.2,
+      "ms": 16.599999999999454,
+      "phase": "anticipation",
+      "cursor": 21
+    },
+    {
+      "at": 7893,
+      "ms": 16.800000000000182,
+      "phase": "anticipation",
+      "cursor": 21
+    },
+    {
+      "at": 7909.6,
+      "ms": 16.600000000000364,
+      "phase": "anticipation",
+      "cursor": 21
+    },
+    {
+      "at": 7926.3,
+      "ms": 16.699999999999818,
+      "phase": "flight",
+      "cursor": 21
+    },
+    {
+      "at": 7943,
+      "ms": 16.699999999999818,
+      "phase": "flight",
+      "cursor": 21
+    },
+    {
+      "at": 7959.6,
+      "ms": 16.600000000000364,
+      "phase": "flight",
+      "cursor": 21
+    },
+    {
+      "at": 7976.3,
+      "ms": 16.699999999999818,
+      "phase": "flight",
+      "cursor": 21
+    },
+    {
+      "at": 7992.9,
+      "ms": 16.599999999999454,
+      "phase": "flight",
+      "cursor": 21
+    },
+    {
+      "at": 8009.6,
+      "ms": 16.700000000000728,
+      "phase": "flight",
+      "cursor": 21
+    },
+    {
+      "at": 8026.3,
+      "ms": 16.699999999999818,
+      "phase": "flight",
+      "cursor": 21
+    },
+    {
+      "at": 8042.9,
+      "ms": 16.599999999999454,
+      "phase": "flight",
+      "cursor": 21
+    },
+    {
+      "at": 8059.6,
+      "ms": 16.700000000000728,
+      "phase": "flight",
+      "cursor": 21
+    },
+    {
+      "at": 8076.3,
+      "ms": 16.699999999999818,
+      "phase": "flight",
+      "cursor": 21
+    },
+    {
+      "at": 8092.9,
+      "ms": 16.599999999999454,
+      "phase": "flight",
+      "cursor": 21
+    },
+    {
+      "at": 8109.6,
+      "ms": 16.700000000000728,
+      "phase": "flight",
+      "cursor": 21
+    },
+    {
+      "at": 8126.3,
+      "ms": 16.699999999999818,
+      "phase": "flight",
+      "cursor": 21
+    },
+    {
+      "at": 8143,
+      "ms": 16.699999999999818,
+      "phase": "flight",
+      "cursor": 21
+    },
+    {
+      "at": 8159.6,
+      "ms": 16.600000000000364,
+      "phase": "flight",
+      "cursor": 21
+    },
+    {
+      "at": 8176.3,
+      "ms": 16.699999999999818,
+      "phase": "flight",
+      "cursor": 21
+    },
+    {
+      "at": 8192.9,
+      "ms": 16.599999999999454,
+      "phase": "flight",
+      "cursor": 21
+    },
+    {
+      "at": 8209.6,
+      "ms": 16.700000000000728,
+      "phase": "flight",
+      "cursor": 21
+    },
+    {
+      "at": 8226.2,
+      "ms": 16.600000000000364,
+      "phase": "flight",
+      "cursor": 21
+    },
+    {
+      "at": 8242.9,
+      "ms": 16.69999999999891,
+      "phase": "flight",
+      "cursor": 21
+    },
+    {
+      "at": 8259.6,
+      "ms": 16.700000000000728,
+      "phase": "flight",
+      "cursor": 21
+    },
+    {
+      "at": 8276.2,
+      "ms": 16.600000000000364,
+      "phase": "flight",
+      "cursor": 21
+    },
+    {
+      "at": 8293,
+      "ms": 16.799999999999272,
+      "phase": "flight",
+      "cursor": 21
+    },
+    {
+      "at": 8309.6,
+      "ms": 16.600000000000364,
+      "phase": "impact",
+      "cursor": 21
+    },
+    {
+      "at": 8326.3,
+      "ms": 16.69999999999891,
+      "phase": "impact",
+      "cursor": 21
+    },
+    {
+      "at": 8342.9,
+      "ms": 16.600000000000364,
+      "phase": "impact",
+      "cursor": 21
+    },
+    {
+      "at": 8359.6,
+      "ms": 16.700000000000728,
+      "phase": "impact",
+      "cursor": 21
+    },
+    {
+      "at": 8376.3,
+      "ms": 16.69999999999891,
+      "phase": "impact",
+      "cursor": 21
+    },
+    {
+      "at": 8392.9,
+      "ms": 16.600000000000364,
+      "phase": "settle",
+      "cursor": 21
+    },
+    {
+      "at": 8409.6,
+      "ms": 16.700000000000728,
+      "phase": "settle",
+      "cursor": 21
+    },
+    {
+      "at": 8426.3,
+      "ms": 16.69999999999891,
+      "phase": "settle",
+      "cursor": 21
+    },
+    {
+      "at": 8442.9,
+      "ms": 16.600000000000364,
+      "phase": "settle",
+      "cursor": 21
+    },
+    {
+      "at": 8459.6,
+      "ms": 16.700000000000728,
+      "phase": "anticipation",
+      "cursor": 22
+    },
+    {
+      "at": 8476.3,
+      "ms": 16.69999999999891,
+      "phase": "anticipation",
+      "cursor": 22
+    },
+    {
+      "at": 8492.9,
+      "ms": 16.600000000000364,
+      "phase": "flight",
+      "cursor": 22
+    },
+    {
+      "at": 8509.6,
+      "ms": 16.700000000000728,
+      "phase": "flight",
+      "cursor": 22
+    },
+    {
+      "at": 8526.3,
+      "ms": 16.69999999999891,
+      "phase": "flight",
+      "cursor": 22
+    },
+    {
+      "at": 8542.9,
+      "ms": 16.600000000000364,
+      "phase": "flight",
+      "cursor": 22
+    },
+    {
+      "at": 8559.6,
+      "ms": 16.700000000000728,
+      "phase": "flight",
+      "cursor": 22
+    },
+    {
+      "at": 8576.2,
+      "ms": 16.600000000000364,
+      "phase": "impact",
+      "cursor": 22
+    },
+    {
+      "at": 8592.9,
+      "ms": 16.69999999999891,
+      "phase": "settle",
+      "cursor": 22
+    },
+    {
+      "at": 8609.6,
+      "ms": 16.700000000000728,
+      "phase": "anticipation",
+      "cursor": 23
+    },
+    {
+      "at": 8626.3,
+      "ms": 16.69999999999891,
+      "phase": "anticipation",
+      "cursor": 23
+    },
+    {
+      "at": 8642.9,
+      "ms": 16.600000000000364,
+      "phase": "anticipation",
+      "cursor": 23
+    },
+    {
+      "at": 8659.6,
+      "ms": 16.700000000000728,
+      "phase": "anticipation",
+      "cursor": 23
+    },
+    {
+      "at": 8676.3,
+      "ms": 16.69999999999891,
+      "phase": "anticipation",
+      "cursor": 23
+    },
+    {
+      "at": 8692.9,
+      "ms": 16.600000000000364,
+      "phase": "anticipation",
+      "cursor": 23
+    },
+    {
+      "at": 8709.6,
+      "ms": 16.700000000000728,
+      "phase": "anticipation",
+      "cursor": 23
+    },
+    {
+      "at": 8726.2,
+      "ms": 16.600000000000364,
+      "phase": "flight",
+      "cursor": 23
+    },
+    {
+      "at": 8742.9,
+      "ms": 16.69999999999891,
+      "phase": "flight",
+      "cursor": 23
+    },
+    {
+      "at": 8759.5,
+      "ms": 16.600000000000364,
+      "phase": "flight",
+      "cursor": 23
+    },
+    {
+      "at": 8776.3,
+      "ms": 16.799999999999272,
+      "phase": "flight",
+      "cursor": 23
+    },
+    {
+      "at": 8792.9,
+      "ms": 16.600000000000364,
+      "phase": "flight",
+      "cursor": 23
+    },
+    {
+      "at": 8809.6,
+      "ms": 16.700000000000728,
+      "phase": "flight",
+      "cursor": 23
+    },
+    {
+      "at": 8826.2,
+      "ms": 16.600000000000364,
+      "phase": "flight",
+      "cursor": 23
+    },
+    {
+      "at": 8842.9,
+      "ms": 16.69999999999891,
+      "phase": "flight",
+      "cursor": 23
+    },
+    {
+      "at": 8859.5,
+      "ms": 16.600000000000364,
+      "phase": "flight",
+      "cursor": 23
+    },
+    {
+      "at": 8876.2,
+      "ms": 16.700000000000728,
+      "phase": "flight",
+      "cursor": 23
+    },
+    {
+      "at": 8892.9,
+      "ms": 16.69999999999891,
+      "phase": "flight",
+      "cursor": 23
+    },
+    {
+      "at": 8909.6,
+      "ms": 16.700000000000728,
+      "phase": "flight",
+      "cursor": 23
+    },
+    {
+      "at": 8926.3,
+      "ms": 16.69999999999891,
+      "phase": "flight",
+      "cursor": 23
+    },
+    {
+      "at": 8942.9,
+      "ms": 16.600000000000364,
+      "phase": "flight",
+      "cursor": 23
+    },
+    {
+      "at": 8959.6,
+      "ms": 16.700000000000728,
+      "phase": "flight",
+      "cursor": 23
+    },
+    {
+      "at": 8976.2,
+      "ms": 16.600000000000364,
+      "phase": "flight",
+      "cursor": 23
+    },
+    {
+      "at": 8992.9,
+      "ms": 16.69999999999891,
+      "phase": "flight",
+      "cursor": 23
+    },
+    {
+      "at": 9009.6,
+      "ms": 16.700000000000728,
+      "phase": "flight",
+      "cursor": 23
+    },
+    {
+      "at": 9026.2,
+      "ms": 16.600000000000364,
+      "phase": "flight",
+      "cursor": 23
+    },
+    {
+      "at": 9042.9,
+      "ms": 16.69999999999891,
+      "phase": "flight",
+      "cursor": 23
+    },
+    {
+      "at": 9059.5,
+      "ms": 16.600000000000364,
+      "phase": "flight",
+      "cursor": 23
+    },
+    {
+      "at": 9076.2,
+      "ms": 16.700000000000728,
+      "phase": "flight",
+      "cursor": 23
+    },
+    {
+      "at": 9092.9,
+      "ms": 16.69999999999891,
+      "phase": "flight",
+      "cursor": 23
+    },
+    {
+      "at": 9109.5,
+      "ms": 16.600000000000364,
+      "phase": "flight",
+      "cursor": 23
+    },
+    {
+      "at": 9126.2,
+      "ms": 16.700000000000728,
+      "phase": "impact",
+      "cursor": 23
+    },
+    {
+      "at": 9142.9,
+      "ms": 16.69999999999891,
+      "phase": "impact",
+      "cursor": 23
+    },
+    {
+      "at": 9159.5,
+      "ms": 16.600000000000364,
+      "phase": "impact",
+      "cursor": 23
+    },
+    {
+      "at": 9176.3,
+      "ms": 16.799999999999272,
+      "phase": "impact",
+      "cursor": 23
+    },
+    {
+      "at": 9192.9,
+      "ms": 16.600000000000364,
+      "phase": "settle",
+      "cursor": 23
+    },
+    {
+      "at": 9209.6,
+      "ms": 16.700000000000728,
+      "phase": "settle",
+      "cursor": 23
+    },
+    {
+      "at": 9226.3,
+      "ms": 16.69999999999891,
+      "phase": "settle",
+      "cursor": 23
+    },
+    {
+      "at": 9242.9,
+      "ms": 16.600000000000364,
+      "phase": "settle",
+      "cursor": 23
+    },
+    {
+      "at": 9259.5,
+      "ms": 16.600000000000364,
+      "phase": "anticipation",
+      "cursor": 24
+    },
+    {
+      "at": 9276.2,
+      "ms": 16.700000000000728,
+      "phase": "anticipation",
+      "cursor": 24
+    },
+    {
+      "at": 9292.9,
+      "ms": 16.69999999999891,
+      "phase": "flight",
+      "cursor": 24
+    },
+    {
+      "at": 9309.6,
+      "ms": 16.700000000000728,
+      "phase": "flight",
+      "cursor": 24
+    },
+    {
+      "at": 9326.2,
+      "ms": 16.600000000000364,
+      "phase": "flight",
+      "cursor": 24
+    },
+    {
+      "at": 9342.8,
+      "ms": 16.599999999998545,
+      "phase": "flight",
+      "cursor": 24
+    },
+    {
+      "at": 9359.5,
+      "ms": 16.700000000000728,
+      "phase": "flight",
+      "cursor": 24
+    },
+    {
+      "at": 9376.3,
+      "ms": 16.799999999999272,
+      "phase": "flight",
+      "cursor": 24
+    },
+    {
+      "at": 9392.9,
+      "ms": 16.600000000000364,
+      "phase": "impact",
+      "cursor": 24
+    },
+    {
+      "at": 9409.6,
+      "ms": 16.700000000000728,
+      "phase": "settle",
+      "cursor": 24
+    },
+    {
+      "at": 9426.2,
+      "ms": 16.600000000000364,
+      "phase": "anticipation",
+      "cursor": 25
+    },
+    {
+      "at": 9442.9,
+      "ms": 16.69999999999891,
+      "phase": "anticipation",
+      "cursor": 25
+    },
+    {
+      "at": 9459.6,
+      "ms": 16.700000000000728,
+      "phase": "anticipation",
+      "cursor": 25
+    },
+    {
+      "at": 9476.2,
+      "ms": 16.600000000000364,
+      "phase": "anticipation",
+      "cursor": 25
+    },
+    {
+      "at": 9492.9,
+      "ms": 16.69999999999891,
+      "phase": "anticipation",
+      "cursor": 25
+    },
+    {
+      "at": 9509.5,
+      "ms": 16.600000000000364,
+      "phase": "anticipation",
+      "cursor": 25
+    },
+    {
+      "at": 9526.3,
+      "ms": 16.799999999999272,
+      "phase": "anticipation",
+      "cursor": 25
+    },
+    {
+      "at": 9542.9,
+      "ms": 16.600000000000364,
+      "phase": "flight",
+      "cursor": 25
+    },
+    {
+      "at": 9559.5,
+      "ms": 16.600000000000364,
+      "phase": "flight",
+      "cursor": 25
+    },
+    {
+      "at": 9576.2,
+      "ms": 16.700000000000728,
+      "phase": "flight",
+      "cursor": 25
+    },
+    {
+      "at": 9592.8,
+      "ms": 16.599999999998545,
+      "phase": "flight",
+      "cursor": 25
+    },
+    {
+      "at": 9609.5,
+      "ms": 16.700000000000728,
+      "phase": "flight",
+      "cursor": 25
+    },
+    {
+      "at": 9626.2,
+      "ms": 16.700000000000728,
+      "phase": "flight",
+      "cursor": 25
+    },
+    {
+      "at": 9642.9,
+      "ms": 16.69999999999891,
+      "phase": "flight",
+      "cursor": 25
+    },
+    {
+      "at": 9659.5,
+      "ms": 16.600000000000364,
+      "phase": "flight",
+      "cursor": 25
+    },
+    {
+      "at": 9676.2,
+      "ms": 16.700000000000728,
+      "phase": "flight",
+      "cursor": 25
+    },
+    {
+      "at": 9692.8,
+      "ms": 16.599999999998545,
+      "phase": "flight",
+      "cursor": 25
+    },
+    {
+      "at": 9709.6,
+      "ms": 16.80000000000109,
+      "phase": "flight",
+      "cursor": 25
+    },
+    {
+      "at": 9726.2,
+      "ms": 16.600000000000364,
+      "phase": "flight",
+      "cursor": 25
+    },
+    {
+      "at": 9742.9,
+      "ms": 16.69999999999891,
+      "phase": "flight",
+      "cursor": 25
+    },
+    {
+      "at": 9759.5,
+      "ms": 16.600000000000364,
+      "phase": "flight",
+      "cursor": 25
+    },
+    {
+      "at": 9776.2,
+      "ms": 16.700000000000728,
+      "phase": "flight",
+      "cursor": 25
+    },
+    {
+      "at": 9792.9,
+      "ms": 16.69999999999891,
+      "phase": "flight",
+      "cursor": 25
+    },
+    {
+      "at": 9809.5,
+      "ms": 16.600000000000364,
+      "phase": "flight",
+      "cursor": 25
+    },
+    {
+      "at": 9826.2,
+      "ms": 16.700000000000728,
+      "phase": "flight",
+      "cursor": 25
+    },
+    {
+      "at": 9842.9,
+      "ms": 16.69999999999891,
+      "phase": "flight",
+      "cursor": 25
+    },
+    {
+      "at": 9859.6,
+      "ms": 16.700000000000728,
+      "phase": "flight",
+      "cursor": 25
+    },
+    {
+      "at": 9876.2,
+      "ms": 16.600000000000364,
+      "phase": "flight",
+      "cursor": 25
+    },
+    {
+      "at": 9892.8,
+      "ms": 16.599999999998545,
+      "phase": "flight",
+      "cursor": 25
+    },
+    {
+      "at": 9909.5,
+      "ms": 16.700000000000728,
+      "phase": "flight",
+      "cursor": 25
+    },
+    {
+      "at": 9926.2,
+      "ms": 16.700000000000728,
+      "phase": "impact",
+      "cursor": 25
+    },
+    {
+      "at": 9942.9,
+      "ms": 16.69999999999891,
+      "phase": "impact",
+      "cursor": 25
+    },
+    {
+      "at": 9959.5,
+      "ms": 16.600000000000364,
+      "phase": "impact",
+      "cursor": 25
+    },
+    {
+      "at": 9976.2,
+      "ms": 16.700000000000728,
+      "phase": "impact",
+      "cursor": 25
+    },
+    {
+      "at": 9992.9,
+      "ms": 16.69999999999891,
+      "phase": "impact",
+      "cursor": 25
+    },
+    {
+      "at": 10009.5,
+      "ms": 16.600000000000364,
+      "phase": "settle",
+      "cursor": 25
+    },
+    {
+      "at": 10026.2,
+      "ms": 16.700000000000728,
+      "phase": "settle",
+      "cursor": 25
+    },
+    {
+      "at": 10042.9,
+      "ms": 16.69999999999891,
+      "phase": "settle",
+      "cursor": 25
+    },
+    {
+      "at": 10059.6,
+      "ms": 16.700000000000728,
+      "phase": "settle",
+      "cursor": 25
+    },
+    {
+      "at": 10076.2,
+      "ms": 16.600000000000364,
+      "phase": "anticipation",
+      "cursor": 26
+    },
+    {
+      "at": 10092.9,
+      "ms": 16.69999999999891,
+      "phase": "flight",
+      "cursor": 26
+    },
+    {
+      "at": 10109.5,
+      "ms": 16.600000000000364,
+      "phase": "flight",
+      "cursor": 26
+    },
+    {
+      "at": 10126.2,
+      "ms": 16.700000000000728,
+      "phase": "flight",
+      "cursor": 26
+    },
+    {
+      "at": 10142.9,
+      "ms": 16.69999999999891,
+      "phase": "flight",
+      "cursor": 26
+    },
+    {
+      "at": 10159.5,
+      "ms": 16.600000000000364,
+      "phase": "flight",
+      "cursor": 26
+    },
+    {
+      "at": 10176.2,
+      "ms": 16.700000000000728,
+      "phase": "flight",
+      "cursor": 26
+    },
+    {
+      "at": 10192.9,
+      "ms": 16.69999999999891,
+      "phase": "impact",
+      "cursor": 26
+    },
+    {
+      "at": 10209.5,
+      "ms": 16.600000000000364,
+      "phase": "settle",
+      "cursor": 26
+    },
+    {
+      "at": 10226.2,
+      "ms": 16.700000000000728,
+      "phase": "anticipation",
+      "cursor": 27
+    },
+    {
+      "at": 10242.8,
+      "ms": 16.599999999998545,
+      "phase": "anticipation",
+      "cursor": 27
+    },
+    {
+      "at": 10259.5,
+      "ms": 16.700000000000728,
+      "phase": "anticipation",
+      "cursor": 27
+    },
+    {
+      "at": 10276.2,
+      "ms": 16.700000000000728,
+      "phase": "anticipation",
+      "cursor": 27
+    },
+    {
+      "at": 10292.8,
+      "ms": 16.599999999998545,
+      "phase": "anticipation",
+      "cursor": 27
+    },
+    {
+      "at": 10309.5,
+      "ms": 16.700000000000728,
+      "phase": "anticipation",
+      "cursor": 27
+    },
+    {
+      "at": 10326.2,
+      "ms": 16.700000000000728,
+      "phase": "anticipation",
+      "cursor": 27
+    },
+    {
+      "at": 10342.9,
+      "ms": 16.69999999999891,
+      "phase": "flight",
+      "cursor": 27
+    },
+    {
+      "at": 10359.5,
+      "ms": 16.600000000000364,
+      "phase": "flight",
+      "cursor": 27
+    },
+    {
+      "at": 10376.2,
+      "ms": 16.700000000000728,
+      "phase": "flight",
+      "cursor": 27
+    },
+    {
+      "at": 10392.8,
+      "ms": 16.599999999998545,
+      "phase": "flight",
+      "cursor": 27
+    },
+    {
+      "at": 10409.5,
+      "ms": 16.700000000000728,
+      "phase": "flight",
+      "cursor": 27
+    },
+    {
+      "at": 10426.1,
+      "ms": 16.600000000000364,
+      "phase": "flight",
+      "cursor": 27
+    },
+    {
+      "at": 10442.9,
+      "ms": 16.799999999999272,
+      "phase": "flight",
+      "cursor": 27
+    },
+    {
+      "at": 10459.5,
+      "ms": 16.600000000000364,
+      "phase": "flight",
+      "cursor": 27
+    },
+    {
+      "at": 10476.2,
+      "ms": 16.700000000000728,
+      "phase": "flight",
+      "cursor": 27
+    },
+    {
+      "at": 10492.8,
+      "ms": 16.599999999998545,
+      "phase": "flight",
+      "cursor": 27
+    },
+    {
+      "at": 10509.5,
+      "ms": 16.700000000000728,
+      "phase": "flight",
+      "cursor": 27
+    },
+    {
+      "at": 10526.2,
+      "ms": 16.700000000000728,
+      "phase": "flight",
+      "cursor": 27
+    },
+    {
+      "at": 10542.9,
+      "ms": 16.69999999999891,
+      "phase": "flight",
+      "cursor": 27
+    },
+    {
+      "at": 10559.5,
+      "ms": 16.600000000000364,
+      "phase": "flight",
+      "cursor": 27
+    },
+    {
+      "at": 10576.2,
+      "ms": 16.700000000000728,
+      "phase": "flight",
+      "cursor": 27
+    },
+    {
+      "at": 10592.8,
+      "ms": 16.599999999998545,
+      "phase": "flight",
+      "cursor": 27
+    },
+    {
+      "at": 10609.6,
+      "ms": 16.80000000000109,
+      "phase": "flight",
+      "cursor": 27
+    },
+    {
+      "at": 10626.2,
+      "ms": 16.600000000000364,
+      "phase": "flight",
+      "cursor": 27
+    },
+    {
+      "at": 10642.9,
+      "ms": 16.69999999999891,
+      "phase": "flight",
+      "cursor": 27
+    },
+    {
+      "at": 10659.5,
+      "ms": 16.600000000000364,
+      "phase": "flight",
+      "cursor": 27
+    },
+    {
+      "at": 10676.1,
+      "ms": 16.600000000000364,
+      "phase": "flight",
+      "cursor": 27
+    },
+    {
+      "at": 10692.8,
+      "ms": 16.69999999999891,
+      "phase": "flight",
+      "cursor": 27
+    },
+    {
+      "at": 10709.5,
+      "ms": 16.700000000000728,
+      "phase": "flight",
+      "cursor": 27
+    },
+    {
+      "at": 10726.2,
+      "ms": 16.700000000000728,
+      "phase": "impact",
+      "cursor": 27
+    },
+    {
+      "at": 10742.9,
+      "ms": 16.69999999999891,
+      "phase": "impact",
+      "cursor": 27
+    },
+    {
+      "at": 10759.5,
+      "ms": 16.600000000000364,
+      "phase": "impact",
+      "cursor": 27
+    },
+    {
+      "at": 10776.2,
+      "ms": 16.700000000000728,
+      "phase": "impact",
+      "cursor": 27
+    },
+    {
+      "at": 10792.9,
+      "ms": 16.69999999999891,
+      "phase": "impact",
+      "cursor": 27
+    },
+    {
+      "at": 10809.5,
+      "ms": 16.600000000000364,
+      "phase": "settle",
+      "cursor": 27
+    },
+    {
+      "at": 10826.1,
+      "ms": 16.600000000000364,
+      "phase": "settle",
+      "cursor": 27
+    },
+    {
+      "at": 10842.8,
+      "ms": 16.69999999999891,
+      "phase": "settle",
+      "cursor": 27
+    },
+    {
+      "at": 10859.5,
+      "ms": 16.700000000000728,
+      "phase": "settle",
+      "cursor": 27
+    },
+    {
+      "at": 10876.1,
+      "ms": 16.600000000000364,
+      "phase": "anticipation",
+      "cursor": 28
+    },
+    {
+      "at": 10892.8,
+      "ms": 16.69999999999891,
+      "phase": "anticipation",
+      "cursor": 28
+    },
+    {
+      "at": 10909.5,
+      "ms": 16.700000000000728,
+      "phase": "flight",
+      "cursor": 28
+    },
+    {
+      "at": 10926.1,
+      "ms": 16.600000000000364,
+      "phase": "flight",
+      "cursor": 28
+    },
+    {
+      "at": 10942.8,
+      "ms": 16.69999999999891,
+      "phase": "flight",
+      "cursor": 28
+    },
+    {
+      "at": 10959.5,
+      "ms": 16.700000000000728,
+      "phase": "flight",
+      "cursor": 28
+    }
+  ]
+}

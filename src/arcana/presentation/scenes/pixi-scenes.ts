@@ -400,8 +400,11 @@ export async function createPixiScene(host: HTMLElement, data: SceneData) {
         observe('creaturePose', 'rest');
         observe('creatureActor', '');
       }
-      host.dataset.artReady = String(
-        [...current.frame.player, ...current.frame.rival].every((unit) => figures.has(unit.id)),
+      observe(
+        'artReady',
+        String(
+          [...current.frame.player, ...current.frame.rival].every((unit) => figures.has(unit.id)),
+        ),
       );
       for (const [id, figure] of figures) {
         const pose = poses.get(id)!;
@@ -582,8 +585,8 @@ export async function createPixiScene(host: HTMLElement, data: SceneData) {
             x: from.x + (to.x - from.x) * flight,
             y: from.y + (to.y - from.y) * flight - offset - (event.missed ? flight * 42 : 0),
           };
-        host.dataset.castHouse = castHouse ?? 'legacy';
-        host.dataset.castOffset = String(offset);
+        observe('castHouse', castHouse ?? 'legacy');
+        observe('castOffset', String(offset));
         if (host.dataset.castProfile !== (profile ?? castHouse ?? 'legacy'))
           host.dataset.castProfile = profile ?? castHouse ?? 'legacy';
         if (p >= 0.18 && p < 0.78) {

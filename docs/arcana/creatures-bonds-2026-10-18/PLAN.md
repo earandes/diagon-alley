@@ -10,7 +10,9 @@
 - [x] Revisar composición/poses/audio/rendimiento47b5892, run39182975065. A75correcta; A70detecta scrollTop6 enWebKit390 y A87una inyección de emblema inválida. Check fallido, regresión omitida; evidencia conservada.
 - [x] Implementar posición inicial del diálogo y anclaje acotados, inyección nativa de recurso ausente y footer de fixture solo enmapa; tipos/build/harness correctos. Aserciones originales conservadas.
 - [x] Cerrar jobcheck completof79:380gráficos,681unit y111PG/Redis correctos; nueve fallos de expectativas en regresión conservados.
-- [ ] Repetir regresión en fase resumeoriginal tras corregir contador34 y selección del primer combate público. Aplicación/arte idénticos af79. Restaurar full y comprobar main completo antes de finalizar.
+- [x] Corregir las dos expectativas de regresión. Resume057detecta por primera vez elensayoWebKitpareado:23ms frentea20; regresión aún no repetida.
+- [ ] Validar deduplicación de publicación DOM delrenderer con fullrestaurado y ensayo WebKitobligatorio. Mismas figuras/log/budget; investigar si elobjetivo no se alcanza.
+- [ ] Cerrar los dos recorridos de QAcorregidos y comprobar maincompleto antes de finalizar.
 - [ ] Consolidar documentación/evidencia, revisar diff, integrar resultado validado y comprobar main/CI; sin despliegue.
 
 Ningún navegador abierto en elMac. Matrices enCI protegida, una batería cada vez. La revisión humana, escucha perceptiva y móvil físico siguen pendientes y no se presentan como realizadas.
