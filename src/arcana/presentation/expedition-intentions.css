@@ -76,17 +76,39 @@
   background: #294940;
 }
 .intention-explanation {
-  margin-top: 0.2rem;
-  font-size: 0.75rem;
+  margin-block: 1rem;
+  text-align: start;
 }
-.intention-explanation summary,
-.intention-purpose summary {
+.expedition-intentions .intention-purpose > summary {
   min-height: 44px;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
+  gap: 0.4rem;
+  padding: 0.25rem 0.5rem;
+  border: 0;
+  background: transparent;
+  list-style: none;
   cursor: pointer;
   text-align: center;
+  color: #e6c77f;
+}
+.intention-purpose > summary::-webkit-details-marker {
+  display: none;
+}
+.intention-purpose > summary img {
+  width: 2rem;
+  height: 2rem;
+  object-fit: contain;
+}
+.intention-purpose > summary:focus-visible,
+.intention-object:focus-visible {
+  outline: 3px solid var(--pack-focus, #a7e8ed);
+  outline-offset: 3px;
+}
+.intention-explanation h4 {
+  margin: 0 0 0.3rem;
+  font-size: 1em;
   color: #e6c77f;
 }
 .intention-explanation p,
@@ -96,8 +118,10 @@
   margin: 0.5rem 0;
 }
 .intention-purpose {
-  font-size: 0.75rem;
+  font-size: 0.875rem;
   text-align: center;
+  margin-block: 0.5rem;
+  max-width: 36rem;
 }
 .intention-release {
   display: block;
@@ -126,9 +150,11 @@
   padding: 0.35rem 0.55rem;
   cursor: pointer;
 }
-.intention-reminder > summary > img {
+.intention-reminder > summary > img,
+.intention-reminder > summary > .house-insignia {
   width: 2rem;
   height: 2rem;
+  flex-shrink: 0;
   object-fit: contain;
 }
 .intention-reminder summary small {

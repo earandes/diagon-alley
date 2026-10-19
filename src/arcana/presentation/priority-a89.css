@@ -38,6 +38,13 @@ html[data-reading-size='large'] {
   font-size: 0.875rem;
   max-width: 12rem;
 }
+.priority-guide-trigger > .priority-guide-fallback {
+  display: none;
+}
+.priority-guide-trigger:not(:has(> img)) > .priority-guide-fallback {
+  display: inline;
+  font-size: 0.875rem;
+}
 .priority-guide-actions {
   display: flex;
   flex-wrap: wrap;
@@ -51,10 +58,6 @@ html[data-reading-size='large'] {
   background: transparent;
   text-decoration: underline;
   text-underline-offset: 0.2em;
-}
-.priority-company-progress {
-  display: block;
-  margin-top: 0.3rem;
 }
 @media (max-width: 480px) {
   .priority-guide-trigger span {

@@ -31,7 +31,7 @@ export function CollectionSources({
           <p>
             <strong>{t('own', { product: text(language, 'cocoaToad') })}</strong>
           </p>
-          <p>{t('probability', { chance: chance!, version: sources.tableVersion! })}</p>
+          <p>{t('probability', { chance: chance! })}</p>
           {onAcquire && (
             <button
               type="button"
@@ -55,6 +55,9 @@ export function CollectionSources({
       <details>
         <summary>{t('source')}</summary>
         <p>{t('sourceHelp')}</p>
+        {sources.tableVersion !== null && (
+          <small>{t('table', { version: sources.tableVersion })}</small>
+        )}
       </details>
     </section>
   );

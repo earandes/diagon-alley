@@ -66,10 +66,15 @@ export function ExpeditionGuide({
         <summary
           ref={trigger}
           className="priority-guide-trigger"
-          aria-label={t(language, hidden ? 'showGuide' : 'guide')}
+          aria-label={hidden ? t(language, 'showGuide') : undefined}
         >
           <Artwork asset={icon} language={language} decorative />
           {!hidden && <span>{t(language, objective.kind)}</span>}
+          {hidden && (
+            <small className="priority-guide-fallback" aria-hidden="true">
+              {t(language, 'showGuide')}
+            </small>
+          )}
         </summary>
         <div className="priority-guide-body">
           <p>{t(language, help, { cost: COMBAT_ESSENCE_COST })}</p>

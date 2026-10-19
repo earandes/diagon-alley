@@ -50,9 +50,9 @@ const messages = {
     'Intenta activar {name} en un combate. No concede premios ni garantiza victoria.',
     'Try activating {name} in combat. It grants no reward and does not guarantee victory.',
   ],
-  contributors: [
-    '{count} identidades en pie · nivel {tier}',
-    '{count} distinct standing identities · tier {tier}',
+  availableCompany: [
+    '{count} identidades propias disponibles. Elige tu formación: solo contribuyen las identidades distintas en pie al confirmar.',
+    '{count} owned identities available. Choose your formation: only distinct standing identities contribute at confirmation.',
   ],
   houseFact: ['Se activó {name} · nivel {tier}', '{name} activated · tier {tier}'],
   bondFact: ['Se activó {name} · nivel {tier}', '{name} activated · tier {tier}'],

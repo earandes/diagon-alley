@@ -152,23 +152,34 @@ async function widthFits(page: Page) {
   }));
   expect(geometry.document, JSON.stringify(geometry)).toBeLessThanOrEqual(geometry.viewport + 1);
 }
-/** Exactly five selected screenshots across the suite. Explicit Linux opt-in, no automatic matrix. */
+/** Eight selected screenshots: five A89 + guide, reading and one desktop help view. Linux opt-in only. */
 async function selected(
   page: Page,
-  name: 'company' | 'collection' | 'forge' | 'beans' | 'battle',
+  name:
+    | 'company'
+    | 'company-help'
+    | 'collection'
+    | 'forge'
+    | 'beans'
+    | 'battle'
+    | 'guide'
+    | 'reading',
   lang: string,
   pack: string,
 ) {
   if (
     process.platform !== 'linux' ||
     (process.env.ARCANA_CAPTURE_A89 !== '1' && process.env.ARCANA_CAPTURE_A76 !== '1') ||
-    test.info().project.name !== 'chromium-390-a89' ||
-    lang !== 'es' ||
-    pack !== 'diagon-alley'
+    !(name === 'company-help'
+      ? test.info().project.name === 'chromium-1280-a89' && lang === 'en' && pack === 'arcana'
+      : test.info().project.name === 'chromium-390-a89' && lang === 'es' && pack === 'diagon-alley')
   )
     return;
   await mkdir(directory, { recursive: true });
-  await page.screenshot({ path: resolve(directory, `selected-${name}-390.png`), fullPage: false });
+  await page.screenshot({
+    path: resolve(directory, `selected-${name}-${page.viewportSize()!.width}.png`),
+    fullPage: false,
+  });
 }
 
 test('A89 declared guide and company choices preserve resources, ownership and explicit confirmation', async ({
@@ -179,6 +190,9 @@ test('A89 declared guide and company choices preserve resources, ownership and e
     await load(page, 'guide', lang, pack, '&single=1');
     const before = economic(await read(page));
     const help = page.locator('.priority-guide-help');
+    await expect(help.locator('summary')).toHaveAccessibleName(
+      lang === 'es' ? 'Recluta aliados' : 'Recruit companions',
+    );
     await help.locator('summary').focus();
     await page.keyboard.press('Enter');
     await expect(help.locator('.priority-guide-body')).toBeVisible();
@@ -202,6 +216,21 @@ test('A89 declared guide and company choices preserve resources, ownership and e
     );
     expect((await read(page)).game.exploration.intention.version).toBe(1);
     const companyBefore = economic(await read(page));
+    const intentionBefore = (await read(page)).game.exploration.intention;
+    const planHelp = page.locator('.intention-purpose');
+    await expect(planHelp.locator('summary')).toHaveCount(1);
+    await planHelp.locator('summary').focus();
+    await page.keyboard.press('Enter');
+    await expect(planHelp).toContainText(
+      lang === 'es' ? 'identidades propias disponibles' : 'owned identities available',
+    );
+    await expect(planHelp.locator('section')).toHaveCount(
+      await page.locator('[data-intention-choice]').count(),
+    );
+    expect((await read(page)).game.exploration.intention).toEqual(intentionBefore);
+    expect(economic(await read(page))).toBe(companyBefore);
+    await selected(page, 'company-help', lang, pack);
+    await planHelp.locator('summary').click();
     const choose = page.locator('[data-intention-choice=company] .intention-object');
     await expect(choose).toBeVisible();
     await choose.focus();
@@ -211,6 +240,7 @@ test('A89 declared guide and company choices preserve resources, ownership and e
     const intent = (await read(page)).game.exploration.intention;
     expect(intent.choice).toEqual({ kind: 'company', focus: 'house', house: 'gryffindor' });
     expect(intent.runId).toBeNull();
+    await expect(page.locator('.intention-reminder [data-house=gryffindor]')).toBeVisible();
     expect(economic(await read(page))).toBe(companyBefore);
     await selected(page, 'company', lang, pack);
     await page.locator('.intention-release').click();
@@ -507,6 +537,7 @@ test('A89 battle book appears only after a usable outcome and keeps at most two 
       .locator('.game-settings[open]')
       .getByRole('button', { name: lang === 'es' ? 'Texto ampliado' : 'Larger text', exact: true })
       .click();
+    await selected(page, 'reading', lang, pack);
     await page.keyboard.press('Escape');
     await closeBattleOptions(page);
     await expect(page.locator('.arena-a63')).toHaveAttribute('data-replay-cursor', pausedCursor!);
@@ -560,6 +591,38 @@ test('A89 narrow text reflow and missing renderer keep readable actions and fact
   });
   // A readable result action survives absent art as well as the failed renderer import.
   await page.route(/\/assets\/.*\.(?:webp|png|svg)$/, (route) => route.abort());
+  await page.setViewportSize({ width: 390, height: 844 });
+  for (const [lang, pack] of pairs) {
+    await freshPreferences(page);
+    await load(page, 'guide', lang, pack, '&single=1');
+    const guide = page.locator('.priority-guide-help');
+    const unchanged = economic(await read(page));
+    await guide.locator('summary').tap();
+    await guide.locator('.priority-guide-dismiss').click();
+    await page.reload();
+    const trigger = guide.locator('summary');
+    // Inline SVG URLs cannot be aborted by a network route. Explicitly inject their image-error event.
+    if (await trigger.locator('img').count()) await trigger.locator('img').dispatchEvent('error');
+    await expect(trigger).toHaveAccessibleName(
+      lang === 'es' ? 'Consultar orientación' : 'Show guidance',
+    );
+    await expect(trigger.locator('img')).toHaveCount(0);
+    await expect(trigger.locator('small')).toBeVisible();
+    await trigger.focus();
+    await page.keyboard.press('Enter');
+    await guide
+      .getByRole('button', {
+        name: lang === 'es' ? 'Consultar orientación' : 'Show guidance',
+        exact: true,
+      })
+      .click();
+    await expect(trigger).toHaveAccessibleName(
+      lang === 'es' ? 'Recluta aliados' : 'Recruit companions',
+    );
+    expect(economic(await read(page))).toBe(unchanged);
+    await widthFits(page);
+  }
+  await page.setViewportSize({ width: 320, height: 844 });
   await load(page, 'battle', 'en', 'arcana', '&reduced=1');
   const before = economic(await read(page));
   await expect.poll(() => importsFailed).toBeGreaterThan(0);
@@ -639,6 +702,7 @@ test('A89 real compiled welcome, starter, guide and Pact consultation cancel wit
         )
         .toBe(true);
     }
+    await selected(page, 'guide', lang, pack);
     await guide.locator('summary').tap();
     const consult = guide.getByRole('button', {
       name: lang === 'es' ? 'Consultar Pacto' : 'Inspect Pact',
