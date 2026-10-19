@@ -92,7 +92,7 @@ export class SetIntentionUseCase {
         request.choice === null
           ? null
           : intentionSnapshot({
-              version: 1,
+              version: request.choice.kind === 'company' ? 2 : 1,
               afterRunId: request.afterRunId,
               runId: null,
               choice: request.choice,

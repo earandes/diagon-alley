@@ -1,0 +1,104 @@
+html[data-reading-size='large'] {
+  font-size: 115%;
+}
+@media (forced-colors: none) {
+  html[data-reading-contrast='true'] .arcana-shell {
+    --pack-ink: #fff8e5 !important;
+    --pack-muted: #eee1c8 !important;
+    --pack-border: #e8cc8c !important;
+    --pack-surface: #09111d !important;
+    --pack-focus: #b5f6ff !important;
+  }
+}
+@media (prefers-contrast: more) and (forced-colors: none) {
+  .arcana-shell {
+    --pack-ink: #fff8e5 !important;
+    --pack-muted: #eee1c8 !important;
+    --pack-border: #e8cc8c !important;
+    --pack-surface: #09111d !important;
+  }
+}
+.reading-preferences p {
+  margin: 0.35rem 0;
+  font-size: 0.875rem;
+}
+.priority-guide-trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  min-height: 44px;
+}
+.priority-guide-trigger img {
+  width: 24px;
+  height: 28px;
+  object-fit: contain;
+}
+.priority-guide-trigger span {
+  font-size: 0.875rem;
+  max-width: 12rem;
+}
+.priority-guide-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.priority-guide-actions button {
+  font-size: 0.875rem;
+}
+.priority-guide-dismiss {
+  border: 0;
+  background: transparent;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+.priority-company-progress {
+  display: block;
+  margin-top: 0.3rem;
+}
+@media (max-width: 480px) {
+  .priority-guide-trigger span {
+    max-width: 8rem;
+  }
+}
+
+.priority-guide {
+  z-index: 4;
+  max-width: min(15rem, 70vw);
+}
+.priority-guide-help > summary {
+  list-style: none;
+  cursor: pointer;
+}
+.priority-guide-help > summary::-webkit-details-marker {
+  display: none;
+}
+.priority-guide-help[open] .priority-guide-body {
+  position: absolute;
+  z-index: 5;
+  right: 0;
+  width: min(320px, calc(100vw - 36px));
+  padding: 1rem;
+  background: var(--pack-surface);
+  border: 1px solid var(--pack-gold);
+  box-shadow: 0 10px 24px #0008;
+}
+.priority-guide-body p {
+  font-size: 0.9rem;
+  margin-top: 0;
+}
+
+.arena-result-book {
+  width: 44px;
+  height: 44px;
+  padding: 5px;
+  background: transparent;
+}
+.arena-result-book img {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+}
+.intention-object > .house-insignia {
+  width: 4rem;
+  height: 4rem;
+}

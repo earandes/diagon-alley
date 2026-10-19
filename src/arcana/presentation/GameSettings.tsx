@@ -7,6 +7,7 @@ import './settings-case.css';
 import { mapSettingsText } from './map-settings-messages';
 import { PlaybackPreferences } from './motion/PlaybackPreferences';
 import { AudioPreferences } from './audio/AudioPreferences';
+import { ReadingPreferences } from './ReadingPreferences';
 
 export const AccountSettingsContext = createContext<ReactNode>(null);
 
@@ -112,6 +113,7 @@ export function GameSettings({
               </button>
             ))}
           </fieldset>
+          <ReadingPreferences language={language} />
           <PlaybackPreferences language={language} />
           <AudioPreferences language={language} />
           <MotionPreference

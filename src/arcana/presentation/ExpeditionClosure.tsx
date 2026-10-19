@@ -49,6 +49,10 @@ export function ExpeditionClosure({
   }, [runId]);
   if (!closure) return null;
   const { run, receipt, actions } = closure;
+  const preferredIntention =
+    game.exploration?.intention?.runId === receipt?.request.runId
+      ? game.exploration?.intention?.choice
+      : undefined;
   const bossBattle =
     receipt?.battle &&
     run.graph.nodes.some((node) => node.id === receipt.request.nodeId && node.kind === 'boss')
@@ -167,7 +171,9 @@ export function ExpeditionClosure({
           <Artwork asset="ui.map" language={language} decorative />
           <span>{t('details')}</span>
         </summary>
-        {bossBattle && <BossBattleFacts combat={bossBattle} language={language} />}
+        {bossBattle && (
+          <BossBattleFacts combat={bossBattle} language={language} preferred={preferredIntention} />
+        )}
         <p>{t('kept')}</p>
         <div className="closure-companions" aria-label={t('companions')}>
           {run.members.map((member) => (
@@ -191,6 +197,8 @@ export function ExpeditionClosure({
         {receipt && (
           <NodeResult
             receipt={receipt}
+            showFacts={!bossBattle}
+            preferredIntention={preferredIntention}
             language={language}
             onReplay={onReplay}
             onMissions={onMissions}

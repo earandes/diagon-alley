@@ -93,6 +93,16 @@ export const setIntentionSchema = command({
       object({ kind: { const: 'bean' } }),
       object({ kind: { const: 'new-companion' }, wizardId: id }),
       object({ kind: { const: 'synergy' }, affinity: { enum: ['alchemy', 'fire', 'shadows'] } }),
+      object({
+        kind: { const: 'company' },
+        focus: { const: 'house' },
+        house: { enum: ['gryffindor', 'ravenclaw', 'hufflepuff', 'slytherin'] },
+      }),
+      object({
+        kind: { const: 'company' },
+        focus: { const: 'bond' },
+        group: { enum: ['order', 'death', 'creatures'] },
+      }),
     ],
   },
 });

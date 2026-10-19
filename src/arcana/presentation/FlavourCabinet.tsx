@@ -6,6 +6,7 @@ import { Artwork } from './Artwork';
 import { text } from './translations';
 import { prepText } from './prep-messages';
 import './expedition-preparation.css';
+import { commercePrepText } from './commerce-preparation-messages';
 
 const labels = {
   mint: 'gameFlavourMint',
@@ -117,6 +118,8 @@ export function FlavourCabinet({ game, language }: { game: GameState; language: 
             ))}
           </ol>
           <p className="flavour-recipe-note">{text(language, 'gameFlavourHelp')}</p>
+          <p className="flavour-recipe-note">{commercePrepText(language, 'unknownAgain')}</p>
+          <p className="flavour-recipe-note">{commercePrepText(language, 'confirmedOnly')}</p>
         </dialog>
       )}
     </section>

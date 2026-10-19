@@ -52,7 +52,11 @@ describe('A71 jar stock is distinct from a provisional assignment', () => {
       expect(html).toContain('data-bean-stock="1"');
       expect(html).toContain('data-bean-draft="1"');
       expect(html).not.toMatch(/1\s*\/\s*1/);
-      expect(html).toContain(language === 'es' ? 'Sin consumir' : 'Not consumed');
+      // The caption now names both the valid quantity and its unconsumed draft state.
+      // Keep an exact localized assertion rather than accepting any generic status text.
+      expect(html).toContain(
+        language === 'es' ? '1 asignado · sin consumir' : '1 assigned · not consumed',
+      );
       expect(html).not.toContain('<input');
       expect(JSON.stringify({ state, run, assignments })).toBe(before);
     });
