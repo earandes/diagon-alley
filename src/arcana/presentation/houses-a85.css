@@ -308,6 +308,11 @@
   .boss-staging:has(.boss-party-member:nth-child(4)) .boss-prelude-hero {
     grid-column: 1 / -1;
   }
+  /* The global summary padding adds20px to this compact shelf. Keep its44px
+     target without shrinking the book, text or any combatant. */
+  .boss-staging:has(.boss-party-member:nth-child(4)) .boss-opponent-details > summary {
+    padding: 2px 4px;
+  }
   .boss-staging:has(.boss-party-member:nth-child(4)) .boss-opponent-details {
     grid-column: 1;
     grid-row: 2;
