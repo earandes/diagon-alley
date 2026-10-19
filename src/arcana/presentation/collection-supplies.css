@@ -1,0 +1,210 @@
+/* A92: a folio has a cover and a consultation layer. No domain state lives in its layout. */
+.game-shell .album.album-illustrated {
+  gap: clamp(10px, 2vw, 20px);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
+}
+.game-shell .album.album-illustrated[data-album-capacity='8'] {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+.game-shell .album-illustrated .card {
+  position: relative;
+  padding: 6px 6px 9px;
+  overflow: visible;
+}
+.game-shell .album-illustrated .album-card-inspect {
+  width: 100%;
+  margin: 0;
+  display: block;
+  padding: 0;
+}
+.game-shell .album-illustrated .card-portrait {
+  height: auto;
+  aspect-ratio: 4 / 5;
+  width: 100%;
+  max-height: 250px;
+  object-fit: contain;
+}
+.game-shell .album-illustrated .card h3 {
+  min-height: 2.4em;
+  margin: 6px 0 3px;
+  font-size: 0.92rem;
+  line-height: 1.2;
+  overflow-wrap: normal;
+  hyphens: none;
+}
+.album-identity-emblem {
+  position: absolute;
+  inset-inline-start: 3px;
+  inset-block-start: 3px;
+  width: 32px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  background: var(--pack-surface);
+  border-radius: 50%;
+  pointer-events: none;
+}
+.album-identity-emblem .house-insignia,
+.album-identity-emblem .bond-emblem,
+.album-identity-emblem img {
+  width: 30px;
+  height: 32px;
+  object-fit: contain;
+}
+.game-shell .album-illustrated .card-ownership,
+.game-shell .album-illustrated .card-team-state,
+.game-shell .album-illustrated .enchanted-label {
+  font-size: 0.8rem;
+  margin: 4px 0 0;
+}
+.collection-archive-count,
+.album-archive-label {
+  font-size: 0.8rem;
+  color: var(--pack-muted, #d9c7a5);
+}
+.album-active-filters {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-block: 8px;
+  font-size: 0.85rem;
+}
+.game-shell .album-active-filters button {
+  min-height: 44px;
+  padding: 6px 12px;
+  background: transparent;
+  border: 0;
+  color: var(--pack-ink);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.game-shell .album-card-folio > .enchanted-holder {
+  width: min(70%, 265px);
+}
+.album-identity-details {
+  margin-block: 10px;
+  border-block: 1px solid var(--pack-border);
+  text-align: start;
+}
+.album-identity-details > summary,
+.album-copy-details > summary {
+  min-height: 44px;
+  display: list-item;
+  padding: 12px 8px;
+  cursor: pointer;
+  color: var(--pack-ink);
+}
+.album-identity-details .trait-badge {
+  justify-content: center;
+}
+.album-identity-details p {
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+.album-identity-details .album-copy-provenance {
+  font-size: 0.8rem;
+  color: var(--pack-muted, #d9c7a5);
+}
+.game-shell .album-card-folio .album-copy-tokens {
+  max-height: 200px;
+  overflow-y: auto;
+  padding: 6px;
+  margin-block: 0;
+}
+/* One illustrated jar, regardless of stock. Navigation selects a concrete unit; never consumes. */
+.contextual-beans .bean-object-shelf {
+  overflow: visible;
+  justify-content: center;
+}
+.bean-stock-object {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.bean-stock-jar {
+  position: relative;
+  text-align: center;
+  min-width: 74px;
+  font-variant-numeric: tabular-nums;
+}
+.bean-stock-jar > img:first-child {
+  display: block;
+  width: 68px;
+  height: 72px;
+  object-fit: contain;
+  margin: auto;
+}
+.bean-stock-jar > span {
+  display: block;
+  font-size: 0.85rem;
+}
+.bean-stock-jar .bean-assigned-seal {
+  position: absolute;
+  inset-inline-end: -5px;
+  inset-block-start: 5px;
+  width: 24px;
+  height: 24px;
+}
+.game-shell .bean-stock-page {
+  width: 44px;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--pack-ink);
+  font-size: 2rem;
+}
+.bean-assigned-bookmarks {
+  display: flex;
+  gap: 6px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-block: 6px;
+}
+.game-shell .bean-assigned-bookmarks button {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  min-height: 44px;
+  padding: 3px 6px;
+  margin: 0;
+  font-size: 0.8rem;
+  border: 1px solid var(--pack-border);
+  border-radius: 8px;
+  background: var(--pack-surface);
+}
+.bean-assigned-bookmarks img {
+  width: 28px;
+  height: 35px;
+  object-fit: contain;
+}
+.game-shell .bean-assigned-bookmarks button[aria-pressed='true'] {
+  border-color: var(--pack-gold);
+  box-shadow: inset 0 -3px 0 var(--pack-gold);
+}
+.bean-assigned-bookmarks button[aria-pressed='true'] {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.game-shell .album-illustrated button:focus-visible,
+.album-identity-details summary:focus-visible,
+.album-copy-details summary:focus-visible,
+.bean-stock-page:focus-visible,
+.bean-assigned-bookmarks button:focus-visible {
+  outline: 3px solid var(--pack-focus, #85e7eb);
+  outline-offset: 3px;
+}
+@media (max-width: 360px) {
+  .game-shell .album.album-illustrated {
+    gap: 8px;
+  }
+  .game-shell .album-illustrated .card h3 {
+    font-size: 0.88rem;
+  }
+}
