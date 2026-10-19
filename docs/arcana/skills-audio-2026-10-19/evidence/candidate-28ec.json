@@ -1,0 +1,24 @@
+{
+  "source": "28ec176e27287300f5e9441a17e8cf6211b9b388",
+  "checkout": "031ef1ce1ff35cb7b31ee60c0470303e251b3783",
+  "tree": "11a994c38c135d28b080ce089b1aabd2f92075d6",
+  "base": "a74c932b9a0f6d446af057d1d746785504d1a199",
+  "runtimeAndVerificationObjects": {
+    "src": "7a0e892fac97c276fbe4761da6d06e6d3479950f",
+    "tests": "036edac3d7e6f60eb246f41c0b1920c6ef7fa478",
+    "tools": "e14457c503736ecd2154b5dc1343538ca36ba76e",
+    ".github": "9381448c7feff72c9d2f3f2607a140b2ae56d0d4",
+    "package.json": "7624c06b3bf5c620b39cb74042a7a0a3467f0823",
+    "package-lock.json": "f8d0c9d8aab1a5931825ecd76ccc979dea21862c",
+    "tsconfig.json": "eec6aa0842ae8c71f301150de6046c0a3d9d59e8",
+    "tsconfig.worker.json": "9eee2b43095e3ba8824d4f3b022a56d10288e364",
+    "vite.config.ts": "56da40f5005848024c5173161849ac578911633e",
+    "AGENTS.md": "1232f36c1e7840e04c5d414ecb70e7752e16d485",
+    ".agents/skills/arcana-audio-design": "82680c4e01a3c46115c759cf20481b2465abaab3",
+    ".agents/skills/arcana-performance-optimization": "f9d2d926714709bad10dd9ef8312d5bf1b06a026",
+    ".agents/skills/arcana-asset-audit": "e56fda31e2b3acdebe126745ee87f276d1cd5cec"
+  },
+  "ci": 39218434156,
+  "statusAtCapture": "check passed; regression pending",
+  "mainMergeVerified": false
+}

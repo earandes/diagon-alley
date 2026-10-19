@@ -114,6 +114,25 @@
     "installCommand": "npx skills add achimala/dream-loop"
   },
   {
+    "id": "game-dev-webgpu-claude-skill",
+    "name": "webgpu-claude-skill",
+    "domain": "Game Dev",
+    "domainSlug": "game-dev",
+    "niche": "Web game engines",
+    "useCase": "WebGPU applications with Three.js.",
+    "creator": "dgreenheck",
+    "link": "https://github.com/dgreenheck/webgpu-claude-skill",
+    "signal": "1k stars",
+    "signalSource": "awesome-agent-skills list (Sep 28, 2026 snapshot)",
+    "metric": {
+      "kind": "stars",
+      "value": 1000
+    },
+    "linkVerified": true,
+    "linkType": "github",
+    "installCommand": "npx skills add dgreenheck/webgpu-claude-skill"
+  },
+  {
     "id": "game-dev-godot-gdscript",
     "name": "godot-gdscript",
     "domain": "Game Dev",
@@ -217,6 +236,25 @@
     "useCase": "ScriptableObject-based data architecture.",
     "creator": "gamedev-skills",
     "link": "https://github.com/gamedev-skills/awesome-gamedev-agent-skills/blob/main/skills/unity/unity-scriptableobjects/SKILL.md",
+    "signal": "Part of 1.4k-star repo",
+    "signalSource": "Source listing / official repo",
+    "metric": {
+      "kind": "none",
+      "value": null
+    },
+    "linkVerified": true,
+    "linkType": "github",
+    "installCommand": "npx skills add gamedev-skills/awesome-gamedev-agent-skills --skill SKILL.md"
+  },
+  {
+    "id": "game-dev-unity-physics",
+    "name": "unity-physics",
+    "domain": "Game Dev",
+    "domainSlug": "game-dev",
+    "niche": "Unity",
+    "useCase": "Rigidbody, colliders, layers and joints.",
+    "creator": "gamedev-skills",
+    "link": "https://github.com/gamedev-skills/awesome-gamedev-agent-skills/blob/main/skills/unity/unity-physics/SKILL.md",
     "signal": "Part of 1.4k-star repo",
     "signalSource": "Source listing / official repo",
     "metric": {
@@ -342,6 +380,25 @@
     "installCommand": "npx skills add gamedev-skills/awesome-gamedev-agent-skills --skill SKILL.md"
   },
   {
+    "id": "game-dev-roblox-luau",
+    "name": "roblox-luau",
+    "domain": "Game Dev",
+    "domainSlug": "game-dev",
+    "niche": "Other engines",
+    "useCase": "Luau scripting, services and the client/server model.",
+    "creator": "gamedev-skills",
+    "link": "https://github.com/gamedev-skills/awesome-gamedev-agent-skills/blob/main/skills/other-engines/roblox-luau/SKILL.md",
+    "signal": "Part of 1.4k-star repo",
+    "signalSource": "Source listing / official repo",
+    "metric": {
+      "kind": "none",
+      "value": null
+    },
+    "linkVerified": true,
+    "linkType": "github",
+    "installCommand": "npx skills add gamedev-skills/awesome-gamedev-agent-skills --skill SKILL.md"
+  },
+  {
     "id": "game-dev-game-feel",
     "name": "game-feel",
     "domain": "Game Dev",
@@ -456,6 +513,25 @@
     "installCommand": "npx skills add gamedev-skills/awesome-gamedev-agent-skills --skill SKILL.md"
   },
   {
+    "id": "game-dev-steam-publish",
+    "name": "steam-publish",
+    "domain": "Game Dev",
+    "domainSlug": "game-dev",
+    "niche": "Game dev workflows",
+    "useCase": "Steamworks setup, depots, store page and release checklist.",
+    "creator": "gamedev-skills",
+    "link": "https://github.com/gamedev-skills/awesome-gamedev-agent-skills/blob/main/skills/workflows/steam-publish/SKILL.md",
+    "signal": "Part of 1.4k-star repo",
+    "signalSource": "Source listing / official repo",
+    "metric": {
+      "kind": "none",
+      "value": null
+    },
+    "linkVerified": true,
+    "linkType": "github",
+    "installCommand": "npx skills add gamedev-skills/awesome-gamedev-agent-skills --skill SKILL.md"
+  },
+  {
     "id": "game-dev-higgsfield-game-generation",
     "name": "higgsfield-game-generation",
     "domain": "Game Dev",
@@ -559,6 +635,25 @@
     "useCase": "Unity Input System actions and bindings.",
     "creator": "gamedev-skills",
     "link": "https://github.com/gamedev-skills/awesome-gamedev-agent-skills/blob/main/skills/unity/unity-input-system/SKILL.md",
+    "signal": "Part of 1.4k-star repo",
+    "signalSource": "Source listing / official repo",
+    "metric": {
+      "kind": "none",
+      "value": null
+    },
+    "linkVerified": true,
+    "linkType": "github",
+    "installCommand": "npx skills add gamedev-skills/awesome-gamedev-agent-skills --skill SKILL.md"
+  },
+  {
+    "id": "game-dev-unity-navmesh",
+    "name": "unity-navmesh",
+    "domain": "Game Dev",
+    "domainSlug": "game-dev",
+    "niche": "Unity",
+    "useCase": "Unity NavMesh pathfinding and agents.",
+    "creator": "gamedev-skills",
+    "link": "https://github.com/gamedev-skills/awesome-gamedev-agent-skills/blob/main/skills/unity/unity-navmesh/SKILL.md",
     "signal": "Part of 1.4k-star repo",
     "signalSource": "Source listing / official repo",
     "metric": {

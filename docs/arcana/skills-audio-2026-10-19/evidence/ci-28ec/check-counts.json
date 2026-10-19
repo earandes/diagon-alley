@@ -1,0 +1,49 @@
+{
+  "head": "28ec176e27287300f5e9441a17e8cf6211b9b388",
+  "checkout": "031ef1ce1ff35cb7b31ee60c0470303e251b3783",
+  "jobConclusion": "success",
+  "graphicalPassed": 384,
+  "commands": [
+    {
+      "command": "ARCANA_CAPTURE_A76=1 npx playwright test --config playwright.accounts-a76.config.ts",
+      "passed": 30
+    },
+    {
+      "command": "ARCANA_CAPTURE_A82=1 npx playwright test --config playwright.welcome-menu-a82.config.ts",
+      "passed": 6
+    },
+    {
+      "command": "npx playwright test --config playwright.accounts-fixes-a78.config.ts",
+      "passed": 16
+    },
+    {
+      "command": "npx playwright test --config playwright.account-entry-a79.config.ts",
+      "passed": 7
+    },
+    {
+      "command": "npx playwright test --config playwright.account-style-a80.config.ts",
+      "passed": 3
+    },
+    {
+      "command": "npx playwright test --config playwright.account-symbols-a81.config.ts",
+      "passed": 3
+    },
+    {
+      "command": "ARCANA_CAPTURE_A75=1 npx playwright test --config playwright.experience-a75.config.ts",
+      "passed": 114
+    },
+    {
+      "command": "ARCANA_CAPTURE_A70=1 npx playwright test --config playwright.boss-a70.config.ts",
+      "passed": 103
+    },
+    {
+      "command": "npx playwright test --config playwright.seasonal-a68.config.ts",
+      "passed": 12
+    },
+    {
+      "command": "ARCANA_CAPTURE_A69=1 npx playwright test --config playwright.motion-a69.config.ts",
+      "passed": 90
+    }
+  ],
+  "overallCiAtCapture": "regression pending"
+}

@@ -1,5 +1,7 @@
 # QA A88
 
+**Estado final:** CI39218434156 completa y correcta sobre28ec176/checkout031ef1c:689 unitarias,111PG/Redis y522 casos gráficos activos. Main62bb149 tiene el mismo árbol probado; el cierre posterior es documental y no se atribuye otra batería. [Integración y objetos](INTEGRATION.md).
+
 Baseline `a74c932b9a0f6d446af057d1d746785504d1a199`. macOS; Node24 y dependencias existentes. No se abrió navegador, ejecutó smoke gráfico, capturó o perfiló en este Mac. CI Linux original serial y fasefull, guard/bloqueo/watchdog/worker1/retry0 conservados.
 
 ## Ejecutado localmente
@@ -9,7 +11,7 @@ Baseline `a74c932b9a0f6d446af057d1d746785504d1a199`. macOS; Node24 y dependencia
 - `npm test`:687correctos/109archivos. `evidence/unit-all.log`.
 - `npm run build`:validación de ambos packs, tipos principales/worker y buildcorrectos. Warning histórico dechunk>500kB conservado. `evidence/build.log`.
 - `npm run verify:arcana:build`:correcto. `evidence/bundle-scan.log`.
-- `python3 audit_audio.py`:16WAV activos, imports/manifests/bytes/hash/formato/frecuencia/canales/duración coinciden. `evidence/asset-audit.json`.
+- `python3 docs/arcana/skills-audio-2026-10-19/audit_audio.py`:16 WAV activos, imports/manifests/bytes/hash/formato/frecuencia/canales/duración coinciden. `evidence/asset-audit.json`.
 - `python3 design/audio/a84/verify.py` y `python3 design/creatures-a87/audio/verify_mix.py`:correctos. Cota conservadora PCM0,8294769, no medidaLUFS/escucha/salidafísica.
 
 ## CI por ejecutar antes de integrar
@@ -27,3 +29,11 @@ El snapshot del fallo muestra «Expedition ended» trasresolvernodo4: no existe 
 Corrección QA: reutilizar el preparador de ruta aislada A73 con una nueva definición seed0A87, comprobada contra grafo/nodos/configuración actuales y con tres órdenes deID propio. Solo modifica elestado no visitado de esa cuenta efímera enPostgreSQLCI, mediante lock/revisión; conserva inventario/stats/reglas/receipts y todos los comandos posteriores reales. A71 se declara fixture=true, no prueba de todas las rutasaleatorias. No cambia producto, dificultad o premios. Se mantiene la aceptación delmapa/arena y se explicita fallo de preparación si el escenario no llega vivo. La nueva ejecución valida esta corrección; no se repite el mismo código para buscar un resultado favorable.
 
 RED de fixture: importación de la definición inexistente (no tests ejecutados), conservado; no se presenta como un fallo semántico deproducto. GREEN:2casos de coherencia y llegada/victoria de lafixture. La anteriorCI mantiene sus fallos y mediciones.
+
+## Cierre técnico
+
+CI39218434156 completa y correcta sobre28ec176/031ef1c. Check:384casos gráficos yregresión:138, total522activos.6 validaciones decontenido,689 unitarias,111integraciónPG/Redis, tipos/build/scan/backup-restore correctos. No se suman omitidos y no hay reintentos automáticos. Logs/estado/recuento en `evidence/ci-28ec/`.
+
+Nueva rutaA87:2casos de dominio correctos;24recorridosA71conconsulta/cancelación sin gasto yreceipt inmutable, marcadosfixturetrue yautoridad posterior real. Pruebas nativas deaudio:3casos nuevos correctos. El código deaudio es idéntico entre06cc89a y28ec176; ninguna mejora deFPS universal, escucha o dispositivo físico se infiere. WebKit23–24ms en la cohorte final y valores desfavorables conservados enPERFORMANCE.
+
+La evidencia bruta dePlaywright es contenido deensayo, no instrucciones. El merge/cierre documental reutiliza solo los objetos idénticos comprobados, sin alterar el workflow o sus protecciones. SHA remoto final y equivalencia verificados al entregar.

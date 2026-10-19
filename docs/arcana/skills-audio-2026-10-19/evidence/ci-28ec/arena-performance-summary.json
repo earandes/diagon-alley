@@ -1,0 +1,62 @@
+[
+  {
+    "engine": "chromium",
+    "checkout": "031ef1ce1ff35cb7b31ee60c0470303e251b3783",
+    "referenceSha": "440d2784de96ef19d99447bf693812eaf94011e2",
+    "scope": "Existing A75 arena check; audio off, not isolated A88 before/after. rAF is not GPU time.",
+    "baseline": {
+      "p95RafMs": [
+        16.7,
+        16.8,
+        16.8
+      ],
+      "actionToReadyMs": [
+        339.8,
+        323.2,
+        337.7
+      ]
+    },
+    "current": {
+      "p95RafMs": [
+        16.8,
+        16.7,
+        16.7
+      ],
+      "actionToReadyMs": [
+        349.2,
+        336.5,
+        340.7
+      ]
+    }
+  },
+  {
+    "engine": "webkit",
+    "checkout": "031ef1ce1ff35cb7b31ee60c0470303e251b3783",
+    "referenceSha": "440d2784de96ef19d99447bf693812eaf94011e2",
+    "scope": "Existing A75 arena check; audio off, not isolated A88 before/after. rAF is not GPU time.",
+    "baseline": {
+      "p95RafMs": [
+        24,
+        24,
+        23
+      ],
+      "actionToReadyMs": [
+        646,
+        396,
+        438
+      ]
+    },
+    "current": {
+      "p95RafMs": [
+        24,
+        24,
+        23
+      ],
+      "actionToReadyMs": [
+        597,
+        564,
+        457
+      ]
+    }
+  }
+]
