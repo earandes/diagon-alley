@@ -19,7 +19,9 @@ Game UI/UX, Impeccable y entrega-iterativa aplicados. Dos revisiones aisladas: A
 | S05 | PNG Cromodex: versión técnica acompaña probabilidad en primer plano | Mantener fuente y probabilidad exacta visibles; versión y explicación aleatoria bajo «Cómo obtenerlo». Mismo contenido/objetivo/propietario, sin cambiar azar. |
 | S06 | Source: guía oculta + Artwork ausente + marcador eliminado dejan una diana vacía | Sustituto textual breve solo al faltar imagen; nombre accesible, teclado y posibilidad de recuperar ayuda. Caso con error de imagen explícito para SVG inline, sin afirmar fallo de red real. |
 
-Varitas, grageas, resultado y Ajustes mantienen sus operaciones y composición; no se justifican assets nuevos, otra pantalla, filtros globales o rehacer arena. No se elimina información táctica para aparentar minimalismo. Se compara composición actual frente a: A) atenuar controles repetidos; B) agrupar ayuda sin cambiar elección. Se elige B por reducir cuatro disclosures a uno sin otro paso para guardar ni esconder costes.
+| S07 | Captura nueva de Linux39277262203: grid de Ajustes trata grupo de tamaños y contraste como dos columnas; pila106+106px y contraste estirado | Dos tamaños en fila ordinaria, contraste separado, controles56px y sello. Una columna en320px; preferencias/reglas intactas. Hallazgo de confirmación visual, no supuesto previo. |
+
+Varitas, grageas y resultado mantienen operaciones y composición. Ajustes conserva su familia ilustrada con S07; no se justifican assets nuevos, otra pantalla, filtros globales o rehacer arena. No se elimina información táctica para aparentar minimalismo. Se compara composición actual frente a: A) atenuar controles repetidos; B) agrupar ayuda sin cambiar elección. Se elige B por reducir cuatro disclosures a uno sin otro paso para guardar ni esconder costes.
 
 ## Persistencia, recuperación y recursos
 

@@ -1,6 +1,7 @@
 import type { Language } from '../domain/collection/wizards';
 const messages = {
   reading: ['Lectura', 'Reading'],
+  textSize: ['Tamaño del texto', 'Text size'],
   normal: ['Habitual', 'Standard'],
   large: ['Texto ampliado', 'Larger text'],
   contrast: ['Más contraste en la interfaz', 'Higher interface contrast'],

@@ -1,0 +1,27 @@
+{
+  "method": "WCAG relative luminance for explicit text and declared solid surface tokens",
+  "measuredInBrowser": false,
+  "limits": "Not a full computed/illustrated-background/hover/forced-color contrast audit; conditional UI tokens are samples, not WCAG certification.",
+  "samples": [
+    {
+      "foreground": "#e6c77f",
+      "background": "#172539",
+      "ratio": 9.44
+    },
+    {
+      "foreground": "#e6c77f",
+      "background": "#0d211f",
+      "ratio": 10.24
+    },
+    {
+      "foreground": "#f4e7c7",
+      "background": "#172539",
+      "ratio": 12.57
+    },
+    {
+      "foreground": "#f4e7c7",
+      "background": "#0d211f",
+      "ratio": 13.63
+    }
+  ]
+}

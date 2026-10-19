@@ -22,6 +22,24 @@ html[data-reading-size='large'] {
   margin: 0.35rem 0;
   font-size: 0.875rem;
 }
+.settings-case .reading-preferences {
+  grid-template-columns: minmax(0, 1fr);
+}
+.reading-preferences > [role='group'] {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+.settings-case .reading-preferences button {
+  min-height: 56px;
+  padding: 10px 32px 10px 10px;
+  overflow-wrap: anywhere;
+}
+@media (max-width: 360px) {
+  .reading-preferences > [role='group'] {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
 .priority-guide-trigger {
   display: inline-flex;
   align-items: center;

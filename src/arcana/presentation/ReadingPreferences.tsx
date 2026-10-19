@@ -15,6 +15,7 @@ import {
   type ReadingPreference,
 } from './reading-preference';
 import { priorityText as t } from './priority-messages';
+import { Artwork } from './Artwork';
 import './priority-a89.css';
 export const PreferenceOwnerContext = createContext<string | null>(null);
 const changed = 'arcana-reading-changed';
@@ -101,7 +102,7 @@ export function ReadingPreferences({ language }: { language: Language }) {
   return (
     <fieldset className="settings-choices reading-preferences">
       <legend>{t(language, 'reading')}</legend>
-      <div>
+      <div role="group" aria-label={t(language, 'textSize')}>
         {(['normal', 'large'] as const).map((size) => (
           <button
             key={size}
@@ -109,6 +110,7 @@ export function ReadingPreferences({ language }: { language: Language }) {
             onClick={() => change({ ...value, size })}
           >
             {t(language, size)}
+            {value.size === size && <Artwork asset="ui.seal" language={language} decorative />}
           </button>
         ))}
       </div>
@@ -117,6 +119,7 @@ export function ReadingPreferences({ language }: { language: Language }) {
         onClick={() => change({ ...value, contrast: !value.contrast })}
       >
         {t(language, 'contrast')}
+        {value.contrast && <Artwork asset="ui.seal" language={language} decorative />}
       </button>
       <p>{t(language, system ? 'systemContrast' : 'ownContrast')}</p>
     </fieldset>

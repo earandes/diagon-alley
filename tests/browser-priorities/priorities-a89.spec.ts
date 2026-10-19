@@ -426,6 +426,21 @@ test('A89 reading is semantic, remembers the owner and does not override forced 
     await page.locator('.game-header .settings-trigger').click();
     const settings = page.locator('.game-settings[open]');
     await expect(settings).toBeVisible();
+    const sizeOptions = settings.getByRole('group', {
+      name: lang === 'es' ? 'Tamaño del texto' : 'Text size',
+      exact: true,
+    });
+    await expect(sizeOptions.getByRole('button')).toHaveCount(2);
+    const sizeGeometry = await sizeOptions.getByRole('button').evaluateAll((buttons) =>
+      buttons.map((button) => {
+        const r = button.getBoundingClientRect();
+        return { top: r.top, bottom: r.bottom, left: r.left, right: r.right, height: r.height };
+      }),
+    );
+    // Alternative text sizes form one row; contrast is an independent option beneath them.
+    expect(Math.abs(sizeGeometry[0].top - sizeGeometry[1].top)).toBeLessThanOrEqual(1);
+    expect(sizeGeometry[1].left).toBeGreaterThanOrEqual(sizeGeometry[0].right);
+    expect(sizeGeometry.every((box) => box.height >= 44)).toBe(true);
     await settings
       .getByRole('button', { name: lang === 'es' ? 'Texto ampliado' : 'Larger text', exact: true })
       .click();
@@ -437,6 +452,15 @@ test('A89 reading is semantic, remembers the owner and does not override forced 
       .click();
     await expect(page.locator('html')).toHaveAttribute('data-reading-size', 'large');
     await expect(page.locator('html')).toHaveAttribute('data-reading-contrast', 'true');
+    await expect(
+      sizeOptions.locator('button[aria-pressed=true] [data-art="ui.seal"]'),
+    ).toBeVisible();
+    await expect(
+      settings.locator('.reading-preferences > button [data-art="ui.seal"]'),
+    ).toBeVisible();
+    const contrastGeometry = await settings.locator('.reading-preferences > button').boundingBox();
+    const refreshedSizes = await sizeOptions.boundingBox();
+    expect(contrastGeometry!.y).toBeGreaterThanOrEqual(refreshedSizes!.y + refreshedSizes!.height);
     const ownMotion = settings.locator('.settings-motion');
     await expect(ownMotion).toHaveAttribute('aria-pressed', 'false');
     await ownMotion.click();
@@ -583,6 +607,18 @@ test('A89 narrow text reflow and missing renderer keep readable actions and fact
     await page.locator('.forge-fitting-help > summary').click();
     await widthFits(page);
     await expect(page.locator('.forge-action')).toBeVisible();
+    await page.locator('.game-header .settings-trigger').click();
+    const reading = page.locator('.game-settings[open] .reading-preferences');
+    await reading.scrollIntoViewIfNeeded();
+    await expect(
+      reading.getByRole('group', {
+        name: lang === 'es' ? 'Tamaño del texto' : 'Text size',
+        exact: true,
+      }),
+    ).toBeVisible();
+    await widthFits(page);
+    await expect(reading.getByRole('button')).toHaveCount(3);
+    await page.keyboard.press('Escape');
   }
   let importsFailed = 0;
   await page.route(/\/assets\/pixi-scenes-[^/]+\.js/, async (route) => {

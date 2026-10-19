@@ -15,7 +15,7 @@ Se elige agrupar la ayuda de intenciones frente a simplemente atenuar cuatro rec
 | PM02 guía de expedición | Fuente, geometría y recorrido App A89; nuevo nombre/fallback se prueba en A90. Icono de Pacto/mapa/Esencia vigente. | Corregir S01/S06, conservar repisa real y consulta nativa. No avance tutorial automático. |
 | PM03 compañía/cierre/preparación/mapa | PNG declarado y fuente; escudo vectorial, retrato y caldero actuales. | S02/S03/S04. Una elección voluntaria, identidad visual estable y ayuda agrupada. Botín conserva prioridad. |
 | PM06 libro de hechos | PNG fixture5×5 y pruebas temporales A89. Escudo/retrato correctos, máximo dos hechos. | Conservar. Resultado y continuar predominan; detalle nativo posterior al replay. No estadísticas permanentes o causalidad inventada. |
-| PM11 lectura en Ajustes | Fuente y cohortes de preferencias A89; muestra nueva seleccionada en Linux. Controles nativos y texto funcional. | Conservar. Ajustes puede utilizar controles convencionales accesibles; no aporta valor disfrazarlos o retirarlos. |
+| PM11 lectura en Ajustes | Fuente y cohortes de preferencias A89; muestra nueva seleccionada en Linux. Controles nativos y texto funcional. | S07 descubierto en la muestra nueva: tamaños en fila y contraste independiente, sin bloques estirados; sello habitual. Controles nativos accesibles conservados. |
 | PM05 Cromodex/inspector/fuente/objetivo | PNG App conectada, dorso/figura, caja y marcapáginas existentes. | S05. Fuente, copia propia/temporal y azar exacto visibles; procedencia técnica a demanda. Objetivo distinto de intención táctica. |
 | PM18 mesa/portador/receta | PNG App; retrato y dos varitas, tres cifras comparables, una acción de gasto. | Conservar. No se ocultan valores iguales: muestran la renuncia real y evitan prometer mejoras inexistentes. Detalle a demanda. |
 | PM19 tarro/portador/riesgo | PNG fixture, preparación densa ARCANA, flujo conectado A89. | Conservar. Existencias, borrador, caídos y confirmación separados; sin nueva bolsa ni sabor seleccionable. |
@@ -32,6 +32,8 @@ Se elige agrupar la ayuda de intenciones frente a simplemente atenuar cuatro rec
 | S05/P3 | PNG: «tabla4» compite con fuente/azar | Porcentaje exacto en primer plano, versión en ayuda junto a explicación aleatoria. No se omite información ni cambia probabilidad. |
 | S06/P2 | Source: imagen ausente + guía oculta + sin marcador deja diana vacía | «Consultar orientación» visible solo si falta imagen, igual a su nombre accesible; icono compacto habitual intacto. Fallback y recuperación por teclado se prueban con error explícito de SVG inline. |
 
+| S07/P2 | PNG nuevo de Ajustes: tamaño apilado y contraste ocupando dos alturas de106px | Grupo de tamaños horizontal, contraste debajo y sello existente. Altura mínima56px ordinaria;320px permite apilar para texto ampliado. Prueba de fila, separación, selección y reflujo. |
+
 Ocho pruebas ES/EN fallaron antes del cambio por S01/S02/S03/S05 y pasan después. S04 se comprueba además por ayuda única y conservación del contenido. S06 requiere navegador permitido: el caso existente de arte ausente solo cubría arena. No se reetiqueta el finding estático como reproducción gráfica anterior.
 
 ## Heurística independiente inicial
@@ -46,6 +48,8 @@ Todos los recursos de A89 se reutilizan. [Inventario de24recursos/consumidores](
 
 Detector B inicial: siete TSX, salida0 y `[]`. Detector final sobre los bytes modificados: salida0 y `[]`; se repite por cambio real, no para buscar una muestra favorable. No consola u overlay de navegador ejecutados. Detector limpio no demuestra estilo, contraste completo, comprensión o diversión.
 
-CI nueva pendiente en el momento de redactar este contrato/informe; resultados finales en [QA](QA.md). ES/EN×packs/tamaños se comprueba por pruebas, no por una matriz de capturas. Ocho imágenes nuevas previstas y explícitas: cinco superficies seleccionadas originales, guía App, lectura y ayuda de compañía escritorio EN/ARCANA. Observación humana, lector real, zoom real y dispositivo físico pendientes.
+La primera confirmación39277262203 pasó57casos de cuentas/prioridades y39omisiones deliberadas, incluyendo S01–S06. La captura adicional de Ajustes descubrió S07. Se canceló deliberadamente el resto de esa ejecución para corregirlo y validar un único candidato final; no se presenta la cancelación como fallo de producto ni batería completa superada. Captura desfavorable preservada.
+
+CI final pendiente en el momento de redactar este contrato/informe; resultados finales en [QA](QA.md). ES/EN×packs/tamaños se comprueba por pruebas, no por una matriz de capturas. Ocho imágenes nuevas previstas y explícitas: cinco superficies seleccionadas originales, guía App, lectura y ayuda de compañía escritorio EN/ARCANA. Observación humana, lector real, zoom real y dispositivo físico pendientes.
 
 Questions skipped: Enric ya fijó estilo, concisión y autorización para corregir; no se requiere otra decisión de producto para este lote.
