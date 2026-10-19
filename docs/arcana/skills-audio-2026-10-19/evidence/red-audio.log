@@ -1,0 +1,67 @@
+
+ RUN  v5.0.3 /Users/enricarandes/work/diagon-alley
+
+ ❯ tests/domain/arcana/audio-a84.test.ts (12 tests | 3 failed) 1168ms
+   ❯ A88 bounded audio preparation (4)
+     × keeps at most two fetch/decode chains active, including a retained decode 55ms
+     × starts prepared ambience while an optional effect is still downloading 1003ms
+     × drops queued work on disposal and cannot populate the next context with old buffers 52ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 3 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/domain/arcana/audio-a84.test.ts > A88 bounded audio preparation > keeps at most two fetch/decode chains active, including a retained decode
+AssertionError: expected 16 to be 2 // Object.is equality
+
+- Expected
++ Received
+
+- 2
++ 16
+
+ ❯ tests/domain/arcana/audio-a84.test.ts:216:18
+    214|     const activation = f.audio.activate();
+    215|     await vi.waitFor(() => expect(release.length).toBeGreaterThanOrEqu…
+    216|     expect(peak).toBe(2);
+       |                  ^
+    217|     for (let index = 0; index < 16; index++) {
+    218|       await vi.waitFor(() => expect(release[index]).toBeDefined());
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/3]⎯
+
+ FAIL  tests/domain/arcana/audio-a84.test.ts > A88 bounded audio preparation > starts prepared ambience while an optional effect is still downloading
+AssertionError: expected +0 to be 1 // Object.is equality
+
+- Expected
++ Received
+
+- 1
++ 0
+
+ ❯ tests/domain/arcana/audio-a84.test.ts:235:70
+    233|     f.preferences.set({ music: true, effects: true });
+    234|     const activation = f.audio.activate();
+    235|     await vi.waitFor(() => expect(f.audio.diagnostics().musicVoices).t…
+       |                                                                      ^
+    236|     expect(f.audio.getSnapshot()).toBe('loading');
+    237|     finish(new ArrayBuffer(16));
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/3]⎯
+
+ FAIL  tests/domain/arcana/audio-a84.test.ts > A88 bounded audio preparation > drops queued work on disposal and cannot populate the next context with old buffers
+AssertionError: expected "vi.fn()" to be called 2 times, but got 16 times
+ ❯ tests/domain/arcana/audio-a84.test.ts:251:20
+    249|     await vi.waitFor(() => expect(release.length).toBeGreaterThanOrEqu…
+    250|     f.audio.dispose();
+    251|     expect(f.load).toHaveBeenCalledTimes(2);
+       |                    ^
+    252|     release.forEach((resolve) => resolve(new ArrayBuffer(16)));
+    253|     await first;
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/3]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  3 failed | 9 passed (12)
+   Start at  09:01:42
+   Duration  1.27s (tests 97%, transform 2%, import 1%)
+

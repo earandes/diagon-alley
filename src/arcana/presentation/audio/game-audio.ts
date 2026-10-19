@@ -29,6 +29,8 @@ export class GameAudio {
   private readonly buffers = new Map<SoundAsset, AudioBuffer>();
   private readonly pending = new Map<SoundAsset, Promise<void>>();
   private readonly requests = new Set<AbortController>();
+  private readonly loadQueue: (() => void)[] = [];
+  private activeLoads = 0;
   private readonly listeners = new Set<() => void>();
   private status: AudioStatus = 'off';
   private foreground = true;
@@ -97,7 +99,9 @@ export class GameAudio {
   }
   private async prepare(): Promise<boolean> {
     if (!this.unlocked || !this.context || !this.foreground) return false;
-    const names = (Object.keys(soundAssets) as SoundAsset[]).filter((name) => this.wanted(name));
+    const names = (Object.keys(soundAssets) as SoundAsset[])
+      .filter((name) => this.wanted(name))
+      .sort((a, b) => Number(b === 'ambient') - Number(a === 'ambient'));
     if (!names.length) {
       this.setStatus('off');
       return true;
@@ -122,19 +126,43 @@ export class GameAudio {
     if (pending) return pending;
     const context = this.context!;
     const generation = this.generation;
-    const request = new AbortController();
-    this.requests.add(request);
-    const task = (async () => {
-      const bytes = await this.dependencies.load(soundAssets[name], request.signal);
-      if (generation !== this.generation || !this.wanted(name)) return;
-      const buffer = await context.decodeAudioData(bytes);
-      if (generation === this.generation && this.wanted(name)) this.buffers.set(name, buffer);
-    })().finally(() => {
+    let start!: () => void;
+    const task = new Promise<void>((resolve, reject) => {
+      start = () => {
+        if (generation !== this.generation || !this.wanted(name)) {
+          resolve();
+          return;
+        }
+        this.activeLoads++;
+        const request = new AbortController();
+        this.requests.add(request);
+        void (async () => {
+          const bytes = await this.dependencies.load(soundAssets[name], request.signal);
+          if (generation !== this.generation || !this.wanted(name)) return;
+          const buffer = await context.decodeAudioData(bytes);
+          if (generation !== this.generation || !this.wanted(name)) return;
+          this.buffers.set(name, buffer);
+          // A ready ambience never waits for optional effects. Effects still have no cue queue.
+          if (name === 'ambient') this.sync();
+        })()
+          .finally(() => {
+            this.requests.delete(request);
+            this.activeLoads--;
+            this.drainLoads();
+          })
+          .then(resolve, reject);
+      };
+    }).finally(() => {
       if (this.pending.get(name) === task) this.pending.delete(name);
-      this.requests.delete(request);
     });
     this.pending.set(name, task);
+    this.loadQueue.push(start);
+    this.drainLoads();
     return task;
+  }
+  private drainLoads() {
+    // The slot covers fetch AND decode, including work still finishing on an old context.
+    while (this.activeLoads < 2 && this.loadQueue.length) this.loadQueue.shift()!();
   }
   private stop(source: AudioBufferSourceNode) {
     source.onended = null;
@@ -265,6 +293,8 @@ export class GameAudio {
     this.music = null;
     for (const request of this.requests) request.abort();
     this.requests.clear();
+    // Settle queued promises without starting requests; their captured generation is invalid.
+    for (const cancel of this.loadQueue.splice(0)) cancel();
     this.pending.clear();
     this.buffers.clear();
     this.musicBus?.disconnect();

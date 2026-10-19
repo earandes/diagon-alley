@@ -1,0 +1,88 @@
+{
+  "method": "PCM numerical checks only; no physical output or perceptual acceptance claimed",
+  "totalBytes": 1241676,
+  "maximumDecodedMonoFloatBytesAtSourceRate": 2482560,
+  "assets": [
+    {
+      "id": "ambient",
+      "peakDbFS": -14.260366170579887,
+      "rmsDbFS": -28.393406688149987,
+      "dcOffset": 1.0861290825737848e-08,
+      "boundaryStep": 0.00396728515625,
+      "durationSeconds": 24.0,
+      "bytes": 1152044
+    },
+    {
+      "id": "cast-fire",
+      "peakDbFS": -11.922205963446093,
+      "rmsDbFS": -22.819512483652137,
+      "dcOffset": -5.9800677829318577e-05,
+      "boundaryStep": 0.0,
+      "durationSeconds": 0.24,
+      "bytes": 11564
+    },
+    {
+      "id": "cast-alchemy",
+      "peakDbFS": -12.63690548074851,
+      "rmsDbFS": -21.458140634532988,
+      "dcOffset": 2.1518805088141026e-07,
+      "boundaryStep": 0.0,
+      "durationSeconds": 0.26,
+      "bytes": 12524
+    },
+    {
+      "id": "cast-shadows",
+      "peakDbFS": -13.861713650363367,
+      "rmsDbFS": -24.570765232292775,
+      "dcOffset": -6.350411309136285e-05,
+      "boundaryStep": 0.0,
+      "durationSeconds": 0.24,
+      "bytes": 11564
+    },
+    {
+      "id": "cast-neutral",
+      "peakDbFS": -13.215592061287651,
+      "rmsDbFS": -22.616411415763423,
+      "dcOffset": -9.247750946969697e-08,
+      "boundaryStep": 0.0,
+      "durationSeconds": 0.22,
+      "bytes": 10604
+    },
+    {
+      "id": "impact",
+      "peakDbFS": -13.64860775766373,
+      "rmsDbFS": -25.964143481761134,
+      "dcOffset": -0.0009036620457967122,
+      "boundaryStep": 0.0,
+      "durationSeconds": 0.16,
+      "bytes": 7724
+    },
+    {
+      "id": "miss",
+      "peakDbFS": -17.45377463388795,
+      "rmsDbFS": -31.261255781842415,
+      "dcOffset": 0.001797046661376953,
+      "boundaryStep": 0.0,
+      "durationSeconds": 0.2,
+      "bytes": 9644
+    },
+    {
+      "id": "heal",
+      "peakDbFS": -12.864707431242648,
+      "rmsDbFS": -24.386657187487817,
+      "dcOffset": -3.532127097800926e-08,
+      "boundaryStep": 0.0,
+      "durationSeconds": 0.36,
+      "bytes": 17324
+    },
+    {
+      "id": "burn",
+      "peakDbFS": -16.13548284466362,
+      "rmsDbFS": -29.690564253704036,
+      "dcOffset": -1.6346684208622684e-05,
+      "boundaryStep": 0.0,
+      "durationSeconds": 0.18,
+      "bytes": 8684
+    }
+  ]
+}

@@ -193,3 +193,129 @@ describe('A84 audio resources and cancellation', () => {
     f.audio.dispose();
   });
 });
+
+describe('A88 bounded audio preparation', () => {
+  it('keeps at most two fetch/decode chains active, including a retained decode', async () => {
+    const f = fixture();
+    let active = 0;
+    let peak = 0;
+    const release: (() => void)[] = [];
+    f.load.mockImplementation(async () => {
+      peak = Math.max(peak, ++active);
+      return new ArrayBuffer(16);
+    });
+    f.context.decodeAudioData.mockImplementation(
+      () =>
+        new Promise((resolve) =>
+          release.push(() => {
+            active--;
+            resolve({ duration: 0.2 });
+          }),
+        ),
+    );
+    f.preferences.set({ music: true, effects: true });
+    const activation = f.audio.activate();
+    await vi.waitFor(() => expect(release.length).toBeGreaterThanOrEqual(2));
+    expect(peak).toBe(2);
+    for (let index = 0; index < 16; index++) {
+      await vi.waitFor(() => expect(release[index]).toBeDefined());
+      release[index]();
+    }
+    await expect(activation).resolves.toBe(true);
+    expect(f.load).toHaveBeenCalledTimes(16);
+    expect(peak).toBe(2);
+    expect(active).toBe(0);
+    f.audio.dispose();
+  });
+
+  it('starts prepared ambience while an optional effect is still downloading', async () => {
+    const f = fixture();
+    let finish!: (bytes: ArrayBuffer) => void;
+    f.load.mockImplementationOnce(async () => new ArrayBuffer(16));
+    f.load.mockImplementationOnce(
+      () =>
+        new Promise((resolve) => {
+          finish = resolve;
+        }),
+    );
+    f.preferences.set({ music: true, effects: true });
+    const activation = f.audio.activate();
+    await vi.waitFor(() => expect(f.audio.diagnostics().musicVoices).toBe(1));
+    expect(f.audio.getSnapshot()).toBe('loading');
+    finish(new ArrayBuffer(16));
+    await expect(activation).resolves.toBe(true);
+    expect(f.voices.filter((v) => v.loop)).toHaveLength(1);
+    f.audio.dispose();
+  });
+
+  it('drops queued work on disposal and cannot populate the next context with old buffers', async () => {
+    const f = fixture();
+    const release: ((bytes: ArrayBuffer) => void)[] = [];
+    f.load.mockImplementation(() => new Promise((resolve) => release.push(resolve)));
+    f.preferences.set({ music: true, effects: true });
+    const first = f.audio.activate();
+    await vi.waitFor(() => expect(release.length).toBeGreaterThanOrEqual(2));
+    f.audio.dispose();
+    expect(f.load).toHaveBeenCalledTimes(2);
+    release.forEach((resolve) => resolve(new ArrayBuffer(16)));
+    await first;
+    expect(f.context.decodeAudioData).not.toHaveBeenCalled();
+    expect(f.audio.diagnostics().buffers).toBe(0);
+    f.load.mockImplementation(async () => new ArrayBuffer(16));
+    await expect(f.audio.activate()).resolves.toBe(true);
+    expect(f.createContext).toHaveBeenCalledTimes(2);
+    expect(f.audio.diagnostics().buffers).toBe(16);
+    f.audio.dispose();
+  });
+
+  it('continues after a missing effect without retrying it or silencing prepared ambience', async () => {
+    const f = fixture();
+    f.load.mockImplementationOnce(async () => new ArrayBuffer(16));
+    f.load.mockRejectedValueOnce(Error('missing effect'));
+    f.preferences.set({ music: true, effects: true });
+    await expect(f.audio.activate()).resolves.toBe(false);
+    expect(f.load).toHaveBeenCalledTimes(16);
+    expect(f.audio.diagnostics().buffers).toBe(15);
+    expect(f.audio.diagnostics().musicVoices).toBe(1);
+    f.audio.play('impact');
+    expect(f.audio.diagnostics().effectVoices).toBe(1);
+    f.audio.dispose();
+  });
+
+  it('does not fetch queued effects after muting while keeping ambience enabled', async () => {
+    const f = fixture();
+    const release: ((bytes: ArrayBuffer) => void)[] = [];
+    f.load.mockImplementation(() => new Promise((resolve) => release.push(resolve)));
+    f.preferences.set({ music: true, effects: true });
+    const activation = f.audio.activate();
+    await vi.waitFor(() => expect(release).toHaveLength(2));
+    f.preferences.set({ effects: false });
+    release.forEach((resolve) => resolve(new ArrayBuffer(16)));
+    await activation;
+    expect(f.load).toHaveBeenCalledTimes(2);
+    expect(f.audio.diagnostics()).toMatchObject({ buffers: 1, musicVoices: 1, effectVoices: 0 });
+    f.audio.dispose();
+  });
+
+  it('bounds overlapping contexts while an uncancellable decode finishes after disposal', async () => {
+    const f = fixture();
+    const release: (() => void)[] = [];
+    f.context.decodeAudioData.mockImplementation(
+      () => new Promise((resolve) => release.push(() => resolve({ duration: 0.2 }))),
+    );
+    f.preferences.set({ music: true, effects: true });
+    const first = f.audio.activate();
+    await vi.waitFor(() => expect(release).toHaveLength(2));
+    f.audio.dispose();
+    const second = f.audio.activate();
+    await vi.waitFor(() => expect(f.context.resume).toHaveBeenCalledTimes(2));
+    expect(f.load).toHaveBeenCalledTimes(2);
+    f.context.decodeAudioData.mockImplementation(async () => ({ duration: 0.2 }));
+    release.forEach((resolve) => resolve());
+    await expect(first).resolves.toBe(false);
+    await expect(second).resolves.toBe(true);
+    expect(f.load).toHaveBeenCalledTimes(18);
+    expect(f.audio.diagnostics().buffers).toBe(16);
+    f.audio.dispose();
+  });
+});
