@@ -1,0 +1,109 @@
+{
+  "schemaVersion": 1,
+  "sha": "3950a2d3c7d4702f491ad97fa0ada01aa08a8c12",
+  "origin": "technical-automation",
+  "fixture": true,
+  "project": "chromium-390-a89",
+  "viewport": {
+    "width": 390,
+    "height": 844
+  },
+  "language": "es",
+  "pack": "diagon-alley",
+  "clock": "performance.now in the same document",
+  "measurement": "Before activation until the usable-state assertions complete; includes automation protocol, auto-wait and assertion overhead. No economic server operation in these four fixtures.",
+  "cache": "Uncontrolled browser defaults and preceding fixture visits; not a cold-start comparison.",
+  "resourceCaveat": "Navigation/resource transfer and encoded/decoded byte fields are browser entries at the observation point, not CPU decode time, GPU time or resident memory; zero transfer is not proof of a specific cache.",
+  "expectedActions": 4,
+  "complete": true,
+  "observations": [
+    {
+      "action": "collection-goal",
+      "elapsedMs": 41.89999999999418,
+      "startMonotonicMs": 200.80000000001746,
+      "endMonotonicMs": 242.70000000001164,
+      "navigationAtStart": {
+        "type": "navigate",
+        "durationMs": 74.20000000001164,
+        "responseStartMs": 2.7000000000116415,
+        "domInteractiveMs": 9.300000000017462,
+        "loadEventEndMs": 74.20000000001164,
+        "transferBytes": 734,
+        "encodedBytes": 434,
+        "decodedBytes": 434
+      },
+      "resourcesAtStart": {
+        "entriesObserved": 13,
+        "transferBytes": 985634,
+        "encodedBytes": 981734,
+        "decodedBytes": 1816622
+      }
+    },
+    {
+      "action": "wand-reference",
+      "elapsedMs": 13.099999999976717,
+      "startMonotonicMs": 179,
+      "endMonotonicMs": 192.09999999997672,
+      "navigationAtStart": {
+        "type": "navigate",
+        "durationMs": 78.39999999999418,
+        "responseStartMs": 2.2999999999883585,
+        "domInteractiveMs": 9,
+        "loadEventEndMs": 78.39999999999418,
+        "transferBytes": 734,
+        "encodedBytes": 434,
+        "decodedBytes": 434
+      },
+      "resourcesAtStart": {
+        "entriesObserved": 13,
+        "transferBytes": 753514,
+        "encodedBytes": 749614,
+        "decodedBytes": 1584502
+      }
+    },
+    {
+      "action": "bean-draft",
+      "elapsedMs": 13.89999999999418,
+      "startMonotonicMs": 171.5,
+      "endMonotonicMs": 185.39999999999418,
+      "navigationAtStart": {
+        "type": "navigate",
+        "durationMs": 89.29999999998836,
+        "responseStartMs": 2.099999999976717,
+        "domInteractiveMs": 9.39999999999418,
+        "loadEventEndMs": 89.29999999998836,
+        "transferBytes": 734,
+        "encodedBytes": 434,
+        "decodedBytes": 434
+      },
+      "resourcesAtStart": {
+        "entriesObserved": 8,
+        "transferBytes": 551580,
+        "encodedBytes": 549180,
+        "decodedBytes": 1384068
+      }
+    },
+    {
+      "action": "battle-facts-book",
+      "elapsedMs": 33.10000000000582,
+      "startMonotonicMs": 781.3999999999942,
+      "endMonotonicMs": 814.5,
+      "navigationAtStart": {
+        "type": "navigate",
+        "durationMs": 73.89999999999418,
+        "responseStartMs": 2.099999999976717,
+        "domInteractiveMs": 8.799999999988358,
+        "loadEventEndMs": 73.89999999999418,
+        "transferBytes": 734,
+        "encodedBytes": 434,
+        "decodedBytes": 434
+      },
+      "resourcesAtStart": {
+        "entriesObserved": 20,
+        "transferBytes": 1075051,
+        "encodedBytes": 1069051,
+        "decodedBytes": 2280508
+      }
+    }
+  ]
+}

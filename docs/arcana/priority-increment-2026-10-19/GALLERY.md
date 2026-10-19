@@ -1,6 +1,6 @@
 # Evidencia visual seleccionada · A89
 
-Cinco imágenes de CI Linux39254029300, head4c85312/checkout3950a2d (mismo árbol), Chromium390×844, español y Diagon Alley. Procedencia, SHA256 y tipo de escena en [provenance.json](evidence/final/provenance.json). Selección e inspección manual de artefactos existentes; no se abrió un navegador ni se capturó el Mac. La corrección de la guía se comprueba por límites/no solape en el caso App real a los tres tamaños y cuatro parejas; estas imágenes no representan el mapa. Cuatro imágenes nuevas inspeccionadas; grageas idéntica por SHA256 a la muestra anterior revisada. La evidencia previa se conserva en evidence/attempt-6 y evidence/attempt-7/ui.
+Cinco imágenes de CI Linux39261802331, head9b2ea61/checkout200a92c (mismo árbol), Chromium390×844, español y Diagon Alley. Procedencia, SHA256 y tipo de escena en [provenance.json](evidence/final/provenance.json). Selección e inspección manual de artefactos existentes; no se abrió un navegador ni se capturó el Mac. La corrección de la guía se comprueba por límites/no solape en el caso App real a los tres tamaños y cuatro parejas; estas imágenes no representan el mapa. Tres imágenes nuevas inspeccionadas; grageas y combate idénticos por SHA256 a las muestras anteriores revisadas. La evidencia previa se conserva en evidence/attempt-6, evidence/attempt-7/ui y evidence/attempt-8/ui.
 
 ## Compañía: elegir un plan voluntario
 
@@ -31,6 +31,12 @@ Fixture declarada de preparación. El tarro permite asignar o conservar y consul
 ![Hechos aplicados](evidence/final/selected-battle-390.png)
 
 Fixture5×5, diez figuras/PV y libro posterior al desenlace. Emblema de casa y hasta dos hechos registrados, sin causalidad inventada. Una captura solo acredita composición. Pausa,2x, cambio de lectura, omisión y devolución de foco se comprobaron mediante assertions temporales; no equivalen a inspección humana del ritmo.
+
+## Corrección contrastada del tarro:390ESARCANA
+
+![Repisa de preparación sin invasión del pie](evidence/final/boss-jar/boss-390-es-arcana-a89.png)
+
+Una muestra adicional explícita deCI10, fixture densa cinco aliados equipados/cinco borradores. El tarro mantiene existencias y asignación provisional sin consumir. Geometría Chromium: repisa44px y separación24px hasta el pie, frente≈113px y≈10px de invasión enCI8. WebKit también supera la aceptación original. Se conservan nombres multilínea, cinco figuras,PV/PM,equipo y coste. Esa densidad no se presenta como comprensión humana verificada. JSON y procedencia junto a la imagen; muestras desfavorables en evidence/attempt-8.
 
 ## Límites de la revisión
 

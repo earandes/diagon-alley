@@ -1,6 +1,6 @@
 # Matriz de entrega A89
 
-Código integrado en la rama feature/roadmap-priorities-a89, PR12. Candidato de código4c85312/checkout3950a2d, mismo árbol. Comprobaciones por capa ejecutadas; el estado global del workflow se registra en QA, sin anticiparlo por la existencia de una fixture o una fase parcial.
+Código integrado en la rama feature/roadmap-priorities-a89, PR12. Código9b2ea61, checkout200a92c de árbol idéntico, CI39261802331 correcta en check/regression.751unitarias,120PG/Redis y549browser correctos;303omisiones deliberadas. Todos los ciclos autorizados técnicamente cerrados; el commit posterior solo documental conserva objetos probados. Comprobaciones por capa ejecutadas; el estado global del workflow se registra en QA, sin anticiparlo por la existencia de una fixture o una fase parcial.
 
 | Feature | Resultado integrado | Evidencia y límite |
 | --- | --- | --- |
@@ -21,6 +21,6 @@ Canjes, ranas temáticas, elaboración, bóveda con elección, tiendas, regiones
 
 ## Comprobaciones transversales
 
-A89:27activos/9omisiones deliberadas, cuatro parejas de idioma/pack; Chromium390/865/1280 y WebKit390. A75:114activos/174omisiones de cohorte. A70 incluye jefe/antesala/A71 y continuidad A73. Estos recuentos no se suman a nombres de fixtures o a cada iteración del bucle como si fueran tests adicionales. Regresiones de movimiento, Halloween y la fase restante se cierran por su resultado real en QA.
+A89:27activos/9omisiones deliberadas, cuatro parejas de idioma/pack; Chromium390/865/1280 y WebKit390. A75:114activos/174omisiones de cohorte. A70 incluye jefe/antesala/A71 y continuidad A73. Estos recuentos no se suman a nombres de fixtures o a cada iteración del bucle como si fueran tests adicionales. Movimiento90casos, Halloween12 y fase final138casos correctos; recuentos y SHA en QA.
 
 La sesión humana, toque físico, lector real y percepción de claridad/interés permanecen pendientes. Los ficheros PMxx explican decisiones, compatibilidad y alcance de cada capa.

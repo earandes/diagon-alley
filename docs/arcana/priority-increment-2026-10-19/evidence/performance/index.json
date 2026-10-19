@@ -462,6 +462,162 @@
           }
         }
       ]
+    },
+    {
+      "file": "attempt-10/paired-mobile-performance.json.gz",
+      "runId": 39261802331,
+      "sourceSha": "200a92c82ca71004223eb2f3bde886ce8d22615f",
+      "referenceSha": "440d2784de96ef19d99447bf693812eaf94011e2",
+      "originalSha256": "58cac1972d7ab805107b3096ad2285f5e34bdc0f180d0aadf0e5a4d9e0d483dc",
+      "gzipSha256": "f73490f638d3f196ef27850aa14e20051ae065232598dd9254b61a365bfb2edb",
+      "originalBytes": 970791,
+      "gzipBytes": 39788,
+      "samples": [
+        {
+          "pair": 0,
+          "variant": "baseline",
+          "actionToReadyFrameMs": 269.20000000001164,
+          "navigationToReadyFrameMs": 403.5999999999767,
+          "sustained": {
+            "samples": 600,
+            "p95": 16.799999999999272,
+            "maximum": 16.80000000000109
+          }
+        },
+        {
+          "pair": 0,
+          "variant": "current",
+          "actionToReadyFrameMs": 279.3999999999651,
+          "navigationToReadyFrameMs": 407.20000000001164,
+          "sustained": {
+            "samples": 600,
+            "p95": 16.799999999999272,
+            "maximum": 16.80000000000109
+          }
+        },
+        {
+          "pair": 1,
+          "variant": "current",
+          "actionToReadyFrameMs": 283.1000000000349,
+          "navigationToReadyFrameMs": 400.70000000001164,
+          "sustained": {
+            "samples": 600,
+            "p95": 16.799999999999272,
+            "maximum": 16.80000000000109
+          }
+        },
+        {
+          "pair": 1,
+          "variant": "baseline",
+          "actionToReadyFrameMs": 263.4000000000233,
+          "navigationToReadyFrameMs": 406.4000000000233,
+          "sustained": {
+            "samples": 600,
+            "p95": 16.700000000000728,
+            "maximum": 16.80000000000109
+          }
+        },
+        {
+          "pair": 2,
+          "variant": "baseline",
+          "actionToReadyFrameMs": 280,
+          "navigationToReadyFrameMs": 423.70000000001164,
+          "sustained": {
+            "samples": 600,
+            "p95": 16.799999999999272,
+            "maximum": 16.80000000000109
+          }
+        },
+        {
+          "pair": 2,
+          "variant": "current",
+          "actionToReadyFrameMs": 263.20000000001164,
+          "navigationToReadyFrameMs": 390.4000000000233,
+          "sustained": {
+            "samples": 600,
+            "p95": 16.700000000000728,
+            "maximum": 16.80000000000109
+          }
+        }
+      ]
+    },
+    {
+      "file": "attempt-10/paired-webkit-performance.json.gz",
+      "runId": 39261802331,
+      "sourceSha": "200a92c82ca71004223eb2f3bde886ce8d22615f",
+      "referenceSha": "440d2784de96ef19d99447bf693812eaf94011e2",
+      "originalSha256": "952be2d9af601492e04563ac85a5910108b50286f30fa52707c74e4f1267f244",
+      "gzipSha256": "aa7e61f68a0ed6db2c6f4b7cf032d62224188861760803c2eb6e6535748ba4db",
+      "originalBytes": 780889,
+      "gzipBytes": 33186,
+      "samples": [
+        {
+          "pair": 0,
+          "variant": "baseline",
+          "actionToReadyFrameMs": 538,
+          "navigationToReadyFrameMs": 694,
+          "sustained": {
+            "samples": 587,
+            "p95": 23,
+            "maximum": 179
+          }
+        },
+        {
+          "pair": 0,
+          "variant": "current",
+          "actionToReadyFrameMs": 464,
+          "navigationToReadyFrameMs": 628,
+          "sustained": {
+            "samples": 607,
+            "p95": 22,
+            "maximum": 62
+          }
+        },
+        {
+          "pair": 1,
+          "variant": "current",
+          "actionToReadyFrameMs": 396,
+          "navigationToReadyFrameMs": 551,
+          "sustained": {
+            "samples": 603,
+            "p95": 22,
+            "maximum": 77
+          }
+        },
+        {
+          "pair": 1,
+          "variant": "baseline",
+          "actionToReadyFrameMs": 382,
+          "navigationToReadyFrameMs": 561,
+          "sustained": {
+            "samples": 607,
+            "p95": 22,
+            "maximum": 45
+          }
+        },
+        {
+          "pair": 2,
+          "variant": "baseline",
+          "actionToReadyFrameMs": 409,
+          "navigationToReadyFrameMs": 574,
+          "sustained": {
+            "samples": 604,
+            "p95": 22,
+            "maximum": 27
+          }
+        },
+        {
+          "pair": 2,
+          "variant": "current",
+          "actionToReadyFrameMs": 377,
+          "navigationToReadyFrameMs": 524,
+          "sustained": {
+            "samples": 606,
+            "p95": 22,
+            "maximum": 26
+          }
+        }
+      ]
     }
   ]
 }

@@ -1,4 +1,20 @@
-# Validación A89 · registro en curso
+# Validación A89 · cierre técnico
+
+## Resultado vigente
+
+[CI39261802331](https://github.com/earandes/diagon-alley/actions/runs/39261802331) terminó **success** en ambos jobs, `check` y `regression`. Head de código `9b2ea615ee6bda258d6f21c54053d61901702626`; checkout de PR `200a92c82ca71004223eb2f3bde886ce8d22615f`, árbol idéntico verificado. Los recuentos se extraen de logs/resultados reales, sin sumar iteraciones internas como tests adicionales.
+
+- Tipos, contenido/skin, build, verificación de artefacto y copia/restauración: correctos.
+- Unitarias:117archivos/751casos. IntegraciónPG/Redis:20archivos/120casos.
+- Browser:549correctos,0fallidos,303omisiones deliberadas de cohorte. `check`:411; `regression`:138.
+- Regresión final:56recorrido general,24progresión,16gameplay,20cabecera/Pacto,8intenciones,12PWA y2comparaciones de rendimiento.
+- Cinco capturasA89 y una adicional del tarroARCANA seleccionadas e inspeccionadas; dos imágenesA89 idénticas por hash a las revisadas. Sin navegador o captura del Mac.
+
+La entrega documental posterior conserva los objetos probados; `CODE-EQUIVALENCE.json` identifica la comparación contra el índice final. No se atribuye otra batería al commit documental. La PR12 permanece abierta, sin merge ni despliegue. RendimientoWebKit22ms en la ventana declarada y variabilidad de arranque permanecen como límites explícitos, no como objetivo universal alcanzado. Humano, lector, zoom real y dispositivo físico pendientes.
+
+## Historial (estados parciales conservados)
+
+Las entradas siguientes reflejan el estado al escribir cada intento, no sustituyen el resultado vigente anterior. Fallos, cancelaciones y cifras intermedias se conservan para explicar qué cambió.
 
 ## Entorno y alcance
 
@@ -106,3 +122,13 @@ Se elige una repisa horizontal jarra/leyenda/stock frente a mantener113px y exig
 Tipos, contenido,749unitarias,120integración,build,backup y A89/A76 correctos antes de cancelar la ejecución propia. Se canceló para validar la corrección funcional R02, no por un fallo de navegador ni por reintentar el mismo código. El resto de esta CI queda sin resultado completo; no acredita jarra ARCANA ni regresión.
 
 R02 preserva intención v1 de sinergia/compañero elegida mientras sea viable, incluso ante otra sugerencia previa. Dos regresiones RED→GREEN,30focales y tipos correctos;117archivos/751pruebas correctas en batería local completa posterior. El criterio exige también descartar selecciones realmente inviables y mantiene máximo3opciones. Nuevo candidato requerido, sin navegador local.
+
+## CI décima39261802331 ·9b2ea61 (en curso)
+
+Head9b2ea615ee6bda258d6f21c54053d61901702626 y checkout200a92c82ca71004223eb2f3bde886ce8d22615f comparten exactamente el árbol verificado por API/Git. Tipos,contenido,751unitarias,120integración PG/Redis,build ybackup correctos. A89/A76 terminó57correctos/39omisiones deliberadas/0fallos/0flaky. Cinco imágenes seleccionadas descargadas; tres nuevas inspeccionadas y dos idénticas por SHA256 a las ya revisadas. Evidencia y hashes en evidence/final; el conjunto anterior se conserva en attempt-8/ui. Resto de workflow todavía en curso, sin anticipar éxito global.
+
+CI10 check completo correcto:751unitarias,120integración y411browser correctos/303omisiones deliberadas/0fallos. Jefe103/35omisiones, Halloween12 y movimiento90/42omisiones. La corrección del tarro390ESARCANA pasa enChromium yWebKit; imagen seleccionada inspeccionada y geometría conservada en evidence/final/boss-jar. La repisa Chromium mide44px y deja24px antes del pie, conservando los cinco aliados/coste/stock/borrador. Cuatro recorridos conectados A73 y seis proyecciones de fallback/lifecycle actualizados al checkout200a92c; originales anteriores en attempt-8. El jobregression está en curso, todavía no se declara workflow completo superado.
+
+### Cierre del job regression
+
+Los138casos finalizaron correctamente sobre el mismo checkout200a92c. No fallos, cancelación o reintento automático enCI10. Logs de comprobación y regresión consultados porAPI; recuentos consolidados en ci-attempt-10.json. Dos JSON de rendimientoA67 conservados íntegros con hashes/procedencia y comparación desfavorable explícita enPERFORMANCE. El cierre documental no cambia implementación, pruebas, configuración, referencias históricas ni inputs de modelos.

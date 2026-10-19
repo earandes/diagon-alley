@@ -1,0 +1,21 @@
+{
+  "runId": 39261802331,
+  "headSha": "9b2ea615ee6bda258d6f21c54053d61901702626",
+  "checkoutSha": "200a92c82ca71004223eb2f3bde886ce8d22615f",
+  "artifact": "a67-validation-evidence",
+  "referenceBaseCommit": "97573b0d95c027d0192914afcb73d32e74fb23a6",
+  "referencePatchSha256": "c01f6944b1213af3745523f2c1b2a235c0e01b4ee8f8321ac69c188ee16ba388",
+  "referenceCaveat": "Reconstructed A66 runtime with documented patch/extra files, not a historical commit or A89 baseline d4a6d36. This pair is distinct from the A75 paired arena measurements.",
+  "physicalDevice": false,
+  "humanSession": false,
+  "files": [
+    {
+      "file": "baseline.json",
+      "sha256": "c5e5d5edec5e629f2124d3df3020558e4335e604cbb4777e8f3546a6869939d2"
+    },
+    {
+      "file": "current.json",
+      "sha256": "50732b8c4574f3c0e948323fb864282c952e6c7203f6df38ac448faab998c818"
+    }
+  ]
+}

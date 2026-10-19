@@ -1,14 +1,12 @@
 {
-  "runId": 39254029300,
+  "runId": 39261802331,
   "artifact": "a76-account-evidence",
   "artifactSubfolder": "docs/arcana/accounts-2026-10-17/evidence/linux/a89",
-  "headSha": "4c8531264e1e479b2844f1151d6ab0897f49f9fb",
-  "checkoutSha": "3950a2d3c7d4702f491ad97fa0ada01aa08a8c12",
-  "tree": "9b844b67de549ccbf91cd5c87a5c370405f3bb43",
+  "headSha": "9b2ea615ee6bda258d6f21c54053d61901702626",
+  "checkoutSha": "200a92c82ca71004223eb2f3bde886ce8d22615f",
+  "tree": "4ade02dc2e15adc5315e198955bd0519ee511ebc",
   "screenshotsInspected": true,
   "captureCount": 5,
-  "newImagesInspected": 4,
-  "unchangedImageComparedByHash": "selected-beans-390.png",
   "fixtureScreens": [
     "company",
     "beans",
@@ -23,15 +21,15 @@
   "files": [
     {
       "file": "selected-collection-390.png",
-      "sha256": "d9cf0da3e9fff1e84070769822910d7d260fa1b8a62e87cf8cde752fa98f490a"
+      "sha256": "f836d83e01e15d5af1e88c7892447840b203696cead18feb31e3ad35c00d1728"
     },
     {
       "file": "selected-company-390.png",
-      "sha256": "dafb348950c7b595b0a29f6efd5620f7279d06ba8766a9beeb700d7cc33468c5"
+      "sha256": "862de9cf73e6a94faf0810e6a294ea8170f6c3890dd6483906e99e52ee61a70b"
     },
     {
       "file": "selected-forge-390.png",
-      "sha256": "92ad6a83ebd6dd61673a3de98eb49d10f0569872f70cc8e793516529a77b53bc"
+      "sha256": "a7ebd67f0672e9130c75ba967f22752cee17f7e45660757a31872fe2ea800347"
     },
     {
       "file": "selected-beans-390.png",
@@ -39,11 +37,11 @@
     },
     {
       "file": "connected-links-a89.json",
-      "sha256": "74a87803e078fb137ed9bc2f2e522d8a9712f32b23aa444db484b1af40022702"
+      "sha256": "3d009b46b910908aea2902d254d6052994b98289da50ba15bde6608927aec1ee"
     },
     {
       "file": "renderer-fallback.json",
-      "sha256": "bec07d4dfb767037710d6716a8642bd960a209ec7a750656f509372270333d38"
+      "sha256": "952dda95747217f58abf07b20dc46bc887283c5090001a68789b13edb2c11b78"
     },
     {
       "file": "selected-battle-390.png",
@@ -51,11 +49,16 @@
     },
     {
       "file": "action-usable-a89.json",
-      "sha256": "f51eca2b0f1505ea2ef3c1aa2037016a9586d2e4a91e7d768c6b49bd8cd69901"
+      "sha256": "38dc66f5a5d0f48c522573b596405926282a59b097abcf280d8c268ec20aa11b"
     },
     {
       "file": "browser-results.json",
-      "sha256": "24b3a6c1f898e933de73572059a28a89ab968840b607885861e9e27dcc7e539b"
+      "sha256": "8ec3f3854350f6ee58d2004e6596d3962746a52ee2226bf430d8ab54761eeadb"
     }
+  ],
+  "newImagesInspected": 3,
+  "unchangedImagesComparedByHash": [
+    "selected-beans-390.png",
+    "selected-battle-390.png"
   ]
 }

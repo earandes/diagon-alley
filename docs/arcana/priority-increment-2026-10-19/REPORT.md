@@ -28,9 +28,13 @@ La referencia exacta para las33 identidades obtenibles por rana es128/188/211ape
 
 ## Validación y cobertura
 
-Build/tipos/skin y749unitarias correctos en el candidato previo a CI3;120integración PostgreSQL/Redis correctas localmente y en las fases no gráficas anteriores de CI. Los fallos de fixture inicial, copy obsoleta del test y selección de compañía se conservan con su corrección y evidencia; no se atribuye éxito a repetir sin cambio. CI3 y SHA/checkout se completan en QA.
+El código `9b2ea615ee6bda258d6f21c54053d61901702626` pasó [CI39261802331](https://github.com/earandes/diagon-alley/actions/runs/39261802331), ambos jobs. El checkout200a92c comparte exactamente su árbol. Tipos/contenido/skin/build/backup correctos;751unitarias,120integraciones PostgreSQL/Redis y549casos browser correctos, con303omisiones deliberadas de cohorte y0fallos. La documentación final conserva sus objetos probados y no se presenta como otra batería sobre un SHA posterior.
 
-Las pruebas nuevas separan componentes sobre fixtures, contratos HTTP/PG y una cohorte conectada en App con invitado aislado. No existe una sola prueba humana o un E2E que fuerce todos los resultados. La continuidad de jefe/botín/nueva expedición se contrasta con A63/A73; compañía v2 se acredita por capas UI y HTTP/PG. Las cinco capturas finales serán seleccionadas en Linux; una imagen no valida animación. Rendimiento y sus límites están en PERFORMANCE.
+Se resolvieron defectos demostrados de guía/puntero y solape de nodo, navegación de fuente a Confitería, encuadre de retrato de referencia, reflujo320/200%, dependencias CSS de consumidores aislados, selección viable desplazada por sugerencias nuevas y repisa móvil del tarro. También se corrigieron fixtures y selectores obsoletos, distinguiéndolos de defectos de producto. QA conserva fallos y cancelaciones reales; no hubo reintentos automáticos.
+
+Las pruebas separan componentes de fixture, contratos HTTP/PG y una cohorte conectada con invitado aislado. Esta última recorre kit→Pactos→formación→gragea→combate→hechos→Cromodex/fuente→taller→preparación sin inyectar inventario, fijar semilla o asumir victoria. La continuidad jefe/botín/nueva expedición tiene cobertura A63/A73; compañía v2 se acredita por UI y HTTP/PG en capas, no por una colección ganada que el test no obtuvo. Cinco capturasA89 más una del caso ARCANA se inspeccionaron desde artefactos Linux; una imagen no valida animación.
+
+La fixture de arena conserva P95rAF16,7–16,8ms Chromium y22ms WebKit; el objetivo20ms no se cumple universalmente. Arranque y algunos hitos fueron más lentos en el último ensayo. Se conservan todas las muestras y no se atribuye una causa no demostrada. Método/medidas/límites en PERFORMANCE.
 
 ## Conservado y pendiente
 

@@ -1,5 +1,5 @@
 {
-  "sha": "3950a2d3c7d4702f491ad97fa0ada01aa08a8c12",
+  "sha": "200a92c82ca71004223eb2f3bde886ce8d22615f",
   "engine": "chromium",
   "viewport": {
     "width": 1280,
@@ -8,117 +8,117 @@
   "physicalDevice": false,
   "fixture": true,
   "cache": "Fresh Playwright context, service workers blocked; origin/process/OS caches not purged. Not a cold-machine claim.",
-  "entryUsableFromNavigationMs": 192.69999999995343,
+  "entryUsableFromNavigationMs": 240.79999999993015,
   "steps": [
     {
       "name": "entry-to-preparation",
-      "clickAt": 361.5,
-      "usableAt": 453.9000000000233,
-      "actionToUsableUpperBoundMs": 92.40000000002328
+      "clickAt": 429.5999999999767,
+      "usableAt": 524.5999999999767,
+      "actionToUsableUpperBoundMs": 95
     },
     {
       "name": "first-expedition-to-map",
-      "clickAt": 530.5999999999767,
-      "usableAt": 668.4000000000233,
-      "actionToUsableUpperBoundMs": 137.80000000004657,
-      "responseObservedAt": 615.0999999999767,
-      "actionToResponseObservedUpperBoundMs": 84.5,
-      "resourceResponseEnd": 603.5999999999767,
-      "actionToResponseEndMs": 73
+      "clickAt": 629.5999999999767,
+      "usableAt": 769.6999999999534,
+      "actionToUsableUpperBoundMs": 140.09999999997672,
+      "responseObservedAt": 702.3999999999069,
+      "actionToResponseObservedUpperBoundMs": 72.79999999993015,
+      "resourceResponseEnd": 686.7999999999302,
+      "actionToResponseEndMs": 57.199999999953434
     },
     {
       "name": "first-node-to-preparation",
-      "clickAt": 3563.1999999999534,
-      "usableAt": 3595,
-      "actionToUsableUpperBoundMs": 31.800000000046566
+      "clickAt": 3531.899999999907,
+      "usableAt": 3572.6999999999534,
+      "actionToUsableUpperBoundMs": 40.800000000046566
     },
     {
       "name": "first-combat-confirm-to-arena",
-      "clickAt": 3911.79999999993,
-      "usableAt": 4128.400000000023,
-      "actionToUsableUpperBoundMs": 216.60000000009313,
-      "responseObservedAt": 4044.1999999999534,
-      "actionToResponseObservedUpperBoundMs": 132.40000000002328,
-      "resourceResponseEnd": 4006.0999999999767,
-      "actionToResponseEndMs": 94.30000000004657,
-      "figuresAt": 4320.599999999977,
-      "actionToFiguresUpperBoundMs": 408.80000000004657
+      "clickAt": 3860.5,
+      "usableAt": 4100,
+      "actionToUsableUpperBoundMs": 239.5,
+      "responseObservedAt": 4010.5999999999767,
+      "actionToResponseObservedUpperBoundMs": 150.09999999997672,
+      "resourceResponseEnd": 3987.1999999999534,
+      "actionToResponseEndMs": 126.69999999995343,
+      "figuresAt": 4308.79999999993,
+      "actionToFiguresUpperBoundMs": 448.29999999993015
     },
     {
       "name": "omit-confirmed-replay",
-      "clickAt": 4761.099999999977,
-      "usableAt": 4769.900000000023,
-      "actionToUsableUpperBoundMs": 8.800000000046566
+      "clickAt": 4761.899999999907,
+      "usableAt": 4772,
+      "actionToUsableUpperBoundMs": 10.100000000093132
     },
     {
       "name": "first-arena-return-to-map",
-      "clickAt": 4844.79999999993,
-      "usableAt": 4939.5,
-      "actionToUsableUpperBoundMs": 94.70000000006985
+      "clickAt": 4862.199999999953,
+      "usableAt": 4983,
+      "actionToUsableUpperBoundMs": 120.80000000004657
     },
     {
       "name": "boss-node-to-preparation",
-      "clickAt": 5680.5,
-      "usableAt": 5716.5,
-      "actionToUsableUpperBoundMs": 36
+      "clickAt": 5882.29999999993,
+      "usableAt": 5936.29999999993,
+      "actionToUsableUpperBoundMs": 54
     },
     {
       "name": "boss-confirm-to-arena",
-      "clickAt": 6400.699999999953,
-      "usableAt": 6603.599999999977,
-      "actionToUsableUpperBoundMs": 202.90000000002328,
-      "responseObservedAt": 6516.199999999953,
-      "actionToResponseObservedUpperBoundMs": 115.5,
-      "resourceResponseEnd": 6486.5,
-      "actionToResponseEndMs": 85.80000000004657,
-      "figuresAt": 6758.900000000023,
-      "actionToFiguresUpperBoundMs": 358.20000000006985
+      "clickAt": 6389.699999999953,
+      "usableAt": 6691.29999999993,
+      "actionToUsableUpperBoundMs": 301.5999999999767,
+      "responseObservedAt": 6606,
+      "actionToResponseObservedUpperBoundMs": 216.30000000004657,
+      "resourceResponseEnd": 6565.399999999907,
+      "actionToResponseEndMs": 175.69999999995343,
+      "figuresAt": 7020.899999999907,
+      "actionToFiguresUpperBoundMs": 631.1999999999534
     },
     {
       "name": "omit-confirmed-replay",
-      "clickAt": 7227.599999999977,
-      "usableAt": 7235.400000000023,
-      "actionToUsableUpperBoundMs": 7.800000000046566
+      "clickAt": 7478.79999999993,
+      "usableAt": 7488.5,
+      "actionToUsableUpperBoundMs": 9.70000000006985
     },
     {
       "name": "boss-return-to-closure",
-      "clickAt": 7311.29999999993,
-      "usableAt": 7335.5,
-      "actionToUsableUpperBoundMs": 24.20000000006985
+      "clickAt": 7579.5,
+      "usableAt": 7614,
+      "actionToUsableUpperBoundMs": 34.5
     },
     {
       "name": "owned-loot-open-to-result",
-      "clickAt": 7378,
-      "usableAt": 7481.699999999953,
-      "actionToUsableUpperBoundMs": 103.69999999995343,
-      "responseObservedAt": 7465.199999999953,
-      "actionToResponseObservedUpperBoundMs": 87.19999999995343,
-      "resourceResponseEnd": 7441.400000000023,
-      "actionToResponseEndMs": 63.40000000002328,
-      "choreographyAt": 10297.29999999993,
-      "actionToChoreographyUpperBoundMs": 2919.29999999993
+      "clickAt": 7664.199999999953,
+      "usableAt": 7804.699999999953,
+      "actionToUsableUpperBoundMs": 140.5,
+      "responseObservedAt": 7785.699999999953,
+      "actionToResponseObservedUpperBoundMs": 121.5,
+      "resourceResponseEnd": 7754.699999999953,
+      "actionToResponseEndMs": 90.5,
+      "choreographyAt": 11153.099999999977,
+      "actionToChoreographyUpperBoundMs": 3488.9000000000233
     },
     {
       "name": "loot-return-to-closure",
-      "clickAt": 10362,
-      "usableAt": 10372.29999999993,
-      "actionToUsableUpperBoundMs": 10.29999999993015
+      "clickAt": 11211.79999999993,
+      "usableAt": 11223.599999999977,
+      "actionToUsableUpperBoundMs": 11.800000000046566
     },
     {
       "name": "closure-to-deliberate-preparation",
-      "clickAt": 10415.699999999953,
-      "usableAt": 10437.099999999977,
-      "actionToUsableUpperBoundMs": 21.400000000023283
+      "clickAt": 11262.29999999993,
+      "usableAt": 11278.699999999953,
+      "actionToUsableUpperBoundMs": 16.400000000023283
     },
     {
       "name": "explicit-next-expedition-to-map",
-      "clickAt": 10612.5,
-      "usableAt": 10790.199999999953,
-      "actionToUsableUpperBoundMs": 177.69999999995343,
-      "responseObservedAt": 10723.29999999993,
-      "actionToResponseObservedUpperBoundMs": 110.79999999993015,
-      "resourceResponseEnd": 10698.099999999977,
-      "actionToResponseEndMs": 85.59999999997672
+      "clickAt": 11496.79999999993,
+      "usableAt": 11811.79999999993,
+      "actionToUsableUpperBoundMs": 315,
+      "responseObservedAt": 11638.29999999993,
+      "actionToResponseObservedUpperBoundMs": 141.5,
+      "resourceResponseEnd": 11601.79999999993,
+      "actionToResponseEndMs": 105
     }
   ],
   "limitations": [
@@ -128,8 +128,8 @@
     "Whole-frog choreography observed; combat completion here uses explicit omission."
   ],
   "pageErrors": [],
-  "sourceArtifact": "a70-boss-evidence",
-  "originalSourceSha256": "9a277235f500aa530aaf96d5a977bb8cc83c80283b198faec5d577404fa054b2",
-  "projection": "Account identifiers, seeds, full saved run and BattleLogs omitted; timings/steps unchanged. Original GitHub artifact identified by hash.",
-  "fixtureDefinition": "Isolated technically fixed unvisited route; subsequent PG/Redis commands real, statistics/economy unchanged. Not matched to prior random-route samples or human play."
+  "fixtureDefinition": "Isolated unvisited route fixed to seed0; statistics/economy unchanged; real subsequent PG/Redis commands. Not comparable to prior random-route samples as a matched A/B.",
+  "sourceArtifact": "a70-boss-evidence / CI39261802331",
+  "originalSourceSha256": "8eef5024834c2ff7620d45fca783d477c6629c3c4f909b77eb4e5e7488d832f9",
+  "projection": "Account identifiers, seeds, full saved run and BattleLogs omitted; timings/steps unchanged. Original GitHub artifact identified by hash."
 }

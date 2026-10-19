@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "sha": "3950a2d3c7d4702f491ad97fa0ada01aa08a8c12",
+  "sha": "200a92c82ca71004223eb2f3bde886ce8d22615f",
   "origin": "technical-automation",
   "fixture": true,
   "project": "chromium-390-a89",
@@ -19,90 +19,90 @@
   "observations": [
     {
       "action": "collection-goal",
-      "elapsedMs": 41.89999999999418,
-      "startMonotonicMs": 200.80000000001746,
-      "endMonotonicMs": 242.70000000001164,
+      "elapsedMs": 36.60000000000582,
+      "startMonotonicMs": 219.89999999999418,
+      "endMonotonicMs": 256.5,
       "navigationAtStart": {
         "type": "navigate",
-        "durationMs": 74.20000000001164,
-        "responseStartMs": 2.7000000000116415,
-        "domInteractiveMs": 9.300000000017462,
-        "loadEventEndMs": 74.20000000001164,
+        "durationMs": 85.29999999998836,
+        "responseStartMs": 1.8999999999941792,
+        "domInteractiveMs": 9,
+        "loadEventEndMs": 85.29999999998836,
         "transferBytes": 734,
         "encodedBytes": 434,
         "decodedBytes": 434
       },
       "resourcesAtStart": {
-        "entriesObserved": 13,
-        "transferBytes": 985634,
-        "encodedBytes": 981734,
-        "decodedBytes": 1816622
+        "entriesObserved": 12,
+        "transferBytes": 985384,
+        "encodedBytes": 981784,
+        "decodedBytes": 1816777
       }
     },
     {
       "action": "wand-reference",
-      "elapsedMs": 13.099999999976717,
-      "startMonotonicMs": 179,
-      "endMonotonicMs": 192.09999999997672,
+      "elapsedMs": 19,
+      "startMonotonicMs": 261.20000000001164,
+      "endMonotonicMs": 280.20000000001164,
       "navigationAtStart": {
         "type": "navigate",
-        "durationMs": 78.39999999999418,
-        "responseStartMs": 2.2999999999883585,
-        "domInteractiveMs": 9,
-        "loadEventEndMs": 78.39999999999418,
+        "durationMs": 122.89999999999418,
+        "responseStartMs": 3.7000000000116415,
+        "domInteractiveMs": 11.800000000017462,
+        "loadEventEndMs": 122.89999999999418,
         "transferBytes": 734,
         "encodedBytes": 434,
         "decodedBytes": 434
       },
       "resourcesAtStart": {
         "entriesObserved": 13,
-        "transferBytes": 753514,
-        "encodedBytes": 749614,
-        "decodedBytes": 1584502
+        "transferBytes": 753564,
+        "encodedBytes": 749664,
+        "decodedBytes": 1584657
       }
     },
     {
       "action": "bean-draft",
-      "elapsedMs": 13.89999999999418,
-      "startMonotonicMs": 171.5,
-      "endMonotonicMs": 185.39999999999418,
+      "elapsedMs": 15.799999999988358,
+      "startMonotonicMs": 209.10000000000582,
+      "endMonotonicMs": 224.89999999999418,
       "navigationAtStart": {
         "type": "navigate",
-        "durationMs": 89.29999999998836,
-        "responseStartMs": 2.099999999976717,
-        "domInteractiveMs": 9.39999999999418,
-        "loadEventEndMs": 89.29999999998836,
+        "durationMs": 109.10000000000582,
+        "responseStartMs": 2.7999999999883585,
+        "domInteractiveMs": 13.5,
+        "loadEventEndMs": 109.10000000000582,
         "transferBytes": 734,
         "encodedBytes": 434,
         "decodedBytes": 434
       },
       "resourcesAtStart": {
-        "entriesObserved": 8,
-        "transferBytes": 551580,
-        "encodedBytes": 549180,
-        "decodedBytes": 1384068
+        "entriesObserved": 9,
+        "transferBytes": 551930,
+        "encodedBytes": 549230,
+        "decodedBytes": 1384223
       }
     },
     {
       "action": "battle-facts-book",
-      "elapsedMs": 33.10000000000582,
-      "startMonotonicMs": 781.3999999999942,
-      "endMonotonicMs": 814.5,
+      "elapsedMs": 41.79999999998836,
+      "startMonotonicMs": 832.7000000000116,
+      "endMonotonicMs": 874.5,
       "navigationAtStart": {
         "type": "navigate",
-        "durationMs": 73.89999999999418,
-        "responseStartMs": 2.099999999976717,
-        "domInteractiveMs": 8.799999999988358,
-        "loadEventEndMs": 73.89999999999418,
+        "durationMs": 82,
+        "responseStartMs": 1.8000000000174623,
+        "domInteractiveMs": 7.800000000017462,
+        "loadEventEndMs": 82,
         "transferBytes": 734,
         "encodedBytes": 434,
         "decodedBytes": 434
       },
       "resourcesAtStart": {
         "entriesObserved": 20,
-        "transferBytes": 1075051,
-        "encodedBytes": 1069051,
-        "decodedBytes": 2280508
+        "transferBytes": 1075105,
+        "encodedBytes": 1069105,
+        "decodedBytes": 2280663
       }
     }
   ]

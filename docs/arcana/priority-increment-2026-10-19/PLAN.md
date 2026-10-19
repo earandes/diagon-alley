@@ -3,17 +3,21 @@
 - [x] Goal explícito, autorización, baseline Git y PR, contrato previo al código.
 - [x] Ciclo0: PM01 fixtures/cálculo; PM14 referencia y corrección justificada.
 - [x] Ciclo1: PM02 guía → PM03 compañía → PM06 hechos; PM11 transversal.
-- [ ] Validación técnica ciclo1 y correcciones.
+- [x] Validación técnica ciclo1 y correcciones.
 - [x] Ciclo2: PM05 objetivo → PM18 varitas → PM19 grageas.
-- [ ] Validación técnica ciclo2 y correcciones.
+- [x] Validación técnica ciclo2 y correcciones.
 - [x] Ciclo3: PM10/22 escenarios, sensibilidad y recomendación sin cambios económicos.
 - [x] Revisión de diff y garantías; tipos/tests/build/integración local no gráfica.
-- [ ] Rama/PR, CI Linux serial y evidencia seleccionada inspeccionada.
-- [ ] Documentación coherente, SHA probado/PR/limitaciones; goal completo solo con aceptación resuelta.
+- [x] Rama/PR, CI Linux serial y evidencia seleccionada inspeccionada.
+- [x] Documentación coherente, SHA probado/PR/limitaciones; goal completo solo con aceptación resuelta.
 
 Delegación: priority_measurement posee módulos de medición/herramienta PG y game-transactions si se justifica; priority_intentions posee dominio/casos/schema de intención y proyección común de facts; priority_commerce posee CommercePanel/BeanAssignments/FlavourCabinet/modelos; coordinador posee App, guía, Cromodex, Ajustes, UI de intenciones/facts, integración, estudio económico y CI. Ningún agente ejecuta suites gráficas o Git.
 
-## Estado de integración
+## Cierre vigente
+
+Ciclos0–2 integrados y técnicamente validados; PM10/22 terminado sin implantar economía pendiente. CI39261802331 sobre9b2ea61/checkout200a92c finalizó correctamente en ambos jobs:751unitarias,120integraciónPG/Redis,549browser y303omisiones deliberadas. Tipos/build/contenido/skin/backup correctos. Documentación/evidencia final conservan objetos de código y configuración probados. PR12 abierta; main sin cambios. Límites de rendimiento/humano/físico explícitos; no siguiente feature fuera de alcance.
+
+## Historial de integración (cifras parciales conservadas por ejecución)
 
 Ciclo0 medido e implementado. Ciclos1–2 implementados y conectados;735unitarios y120integración reales correctos en comprobación compartida. La corrección posterior delimita la prioridad de hechos por runId del receipt, también en cierre/histórico. Tipos/build finales y CI necesarios antes de marcar estos ciclos técnicamente validados. PM10/22 tiene modelo corregido que conserva la run al interrumpir; no existe abandono para regenerar cofres. Informe final en elaboración. No se declara ninguna validación gráfica nueva hasta ejecutar CI. Delegación actual: measurement estable; intentions finaliza harness y regresión de presentación; commerce finaliza estudio económico. Coordinador integra y valida.
 
@@ -40,3 +44,7 @@ CI8 candidato4c85312: fuente de estilos autocontenida;57activosA89/A76 correctos
 CI8:103A70 y12Halloween correctos; movimiento88correctos/2fallidos(390ESARCANA jarra/pie). Layout compacto de jarra y sincronización de medida corregidos; candidato9 necesario. No se marca completo el goal ni se declara ejecutada la regresión omitida.
 
 CI9 sobre5111468 superó tipos/contenido/749unitarias/120integración/build y A89/A76 antes de cancelación deliberada: R02 demuestra desplazamiento de intención v1 viable al crecer colección, corregido con2RED→GREEN y751unitarias locales. Se prepara candidato10; CI9 parcial no acredita A70/A69/regresión. Goal activo.
+
+Candidato10 `9b2ea615ee6bda258d6f21c54053d61901702626`, CI39261802331.117archivos/751unitarias y tipos correctos localmente. El resultado final necesario incluye check y regression; no se modifica main.
+
+CI10 conserva57A89/A76 y114A75 correctos; jefe/A70/A71/A73 yHalloween terminados correctamente. Las cuatro proyecciones de expedición actualizadas muestran los14hitos de red/DOM/figuras/coreografía; muestras previas conservadas. Movimiento y jobregression pendientes; no se completa el goal todavía.

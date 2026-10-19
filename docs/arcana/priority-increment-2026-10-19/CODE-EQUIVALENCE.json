@@ -1,0 +1,46 @@
+{
+  "testedRunId": 39261802331,
+  "testedRunConclusion": "success",
+  "testedHead": "9b2ea615ee6bda258d6f21c54053d61901702626",
+  "testedCheckout": "200a92c82ca71004223eb2f3bde886ce8d22615f",
+  "checkoutTreeIdentical": true,
+  "comparison": "Git modes and blob IDs of all tracked paths except the new A89 documentation/evidence folder and four current product documents; compared to final staged index before documentary commit. Five original study/measurement inputs and outputs additionally protected below.",
+  "comparedPaths": 5299,
+  "identical": true,
+  "canonicalObjectMapSha256": "96b00f2cd84912f41d1f14e58577178b1a2251cd00dc5f440ef5454b2e09d44b",
+  "protectedStudyObjects": [
+    {
+      "path": "docs/arcana/priority-increment-2026-10-19/economy-input.json",
+      "testedObject": "12a238a95f9ba77e09164874a5abc72ae024ef44",
+      "finalIndexObject": "12a238a95f9ba77e09164874a5abc72ae024ef44",
+      "identical": true
+    },
+    {
+      "path": "docs/arcana/priority-increment-2026-10-19/economy-results.json",
+      "testedObject": "5dd63395e765463e7588e340c174789172ee6605",
+      "finalIndexObject": "5dd63395e765463e7588e340c174789172ee6605",
+      "identical": true
+    },
+    {
+      "path": "docs/arcana/priority-increment-2026-10-19/persistence-before.json",
+      "testedObject": "ddbbfbe5a5b0119d786ec96b829c5286a4543a7a",
+      "finalIndexObject": "ddbbfbe5a5b0119d786ec96b829c5286a4543a7a",
+      "identical": true
+    },
+    {
+      "path": "docs/arcana/priority-increment-2026-10-19/persistence-after.json",
+      "testedObject": "88e2022f4519f65ddbf354d197c070b29a596cc9",
+      "finalIndexObject": "88e2022f4519f65ddbf354d197c070b29a596cc9",
+      "identical": true
+    },
+    {
+      "path": "docs/arcana/priority-increment-2026-10-19/reused-assets.json",
+      "testedObject": "fcf1af9d2c412cc30dce04b3e1dee79ae5da48ff",
+      "finalIndexObject": "fcf1af9d2c412cc30dce04b3e1dee79ae5da48ff",
+      "identical": true
+    }
+  ],
+  "changedScope": "Documentation/evidence only. No application, test, tool, workflow, reference fixture, dependency, content or production asset change.",
+  "ciPolicy": "Final documentary commit uses [skip ci]. Successful full battery belongs to testedHead/checkout above; no new full run is attributed to the documentation commit.",
+  "humanAndPhysicalValidation": false
+}

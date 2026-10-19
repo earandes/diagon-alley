@@ -1,10 +1,10 @@
 {
-  "runId": 39254029300,
-  "headSha": "4c8531264e1e479b2844f1151d6ab0897f49f9fb",
-  "checkoutSha": "3950a2d3c7d4702f491ad97fa0ada01aa08a8c12",
+  "runId": 39261802331,
+  "headSha": "9b2ea615ee6bda258d6f21c54053d61901702626",
+  "checkoutSha": "200a92c82ca71004223eb2f3bde886ce8d22615f",
   "stats": {
-    "startTime": "2026-10-19T12:43:43.921Z",
-    "duration": 140631.124,
+    "startTime": "2026-10-19T13:40:37.437Z",
+    "duration": 161841.295,
     "expected": 57,
     "skipped": 39,
     "unexpected": 0,
@@ -18,7 +18,7 @@
       "results": [
         {
           "status": "passed",
-          "durationMs": 1903,
+          "durationMs": 2021,
           "errors": []
         }
       ]
@@ -30,7 +30,7 @@
       "results": [
         {
           "status": "passed",
-          "durationMs": 1411,
+          "durationMs": 1602,
           "errors": []
         }
       ]
@@ -42,7 +42,7 @@
       "results": [
         {
           "status": "passed",
-          "durationMs": 1333,
+          "durationMs": 1494,
           "errors": []
         }
       ]
@@ -54,7 +54,7 @@
       "results": [
         {
           "status": "passed",
-          "durationMs": 3014,
+          "durationMs": 3159,
           "errors": []
         }
       ]
@@ -66,7 +66,7 @@
       "results": [
         {
           "status": "passed",
-          "durationMs": 1879,
+          "durationMs": 1930,
           "errors": []
         }
       ]
@@ -78,7 +78,7 @@
       "results": [
         {
           "status": "passed",
-          "durationMs": 3108,
+          "durationMs": 3372,
           "errors": []
         }
       ]
@@ -90,7 +90,7 @@
       "results": [
         {
           "status": "passed",
-          "durationMs": 751,
+          "durationMs": 804,
           "errors": []
         }
       ]
@@ -102,7 +102,7 @@
       "results": [
         {
           "status": "passed",
-          "durationMs": 3375,
+          "durationMs": 3626,
           "errors": []
         }
       ]
@@ -114,7 +114,7 @@
       "results": [
         {
           "status": "passed",
-          "durationMs": 4583,
+          "durationMs": 4589,
           "errors": []
         }
       ]
@@ -126,7 +126,7 @@
       "results": [
         {
           "status": "passed",
-          "durationMs": 1897,
+          "durationMs": 2123,
           "errors": []
         }
       ]
@@ -138,7 +138,7 @@
       "results": [
         {
           "status": "passed",
-          "durationMs": 1434,
+          "durationMs": 1590,
           "errors": []
         }
       ]
@@ -150,7 +150,7 @@
       "results": [
         {
           "status": "passed",
-          "durationMs": 1392,
+          "durationMs": 1404,
           "errors": []
         }
       ]
@@ -162,7 +162,7 @@
       "results": [
         {
           "status": "passed",
-          "durationMs": 2749,
+          "durationMs": 2946,
           "errors": []
         }
       ]
@@ -174,7 +174,7 @@
       "results": [
         {
           "status": "passed",
-          "durationMs": 1902,
+          "durationMs": 2074,
           "errors": []
         }
       ]
@@ -186,7 +186,7 @@
       "results": [
         {
           "status": "passed",
-          "durationMs": 3400,
+          "durationMs": 4023,
           "errors": []
         }
       ]
@@ -198,13 +198,25 @@
       "results": [
         {
           "status": "skipped",
-          "durationMs": 45,
+          "durationMs": 38,
           "errors": []
         }
       ]
     },
     {
       "title": "A89 real compiled welcome, starter, guide and Pact consultation cancel without advancement",
+      "project": "chromium-1280-a89",
+      "status": "skipped",
+      "results": [
+        {
+          "status": "skipped",
+          "durationMs": 34,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "A89 one connected expedition joins confirmed facts, collection source, wand fitting and preparation",
       "project": "chromium-1280-a89",
       "status": "skipped",
       "results": [
@@ -216,25 +228,13 @@
       ]
     },
     {
-      "title": "A89 one connected expedition joins confirmed facts, collection source, wand fitting and preparation",
-      "project": "chromium-1280-a89",
-      "status": "skipped",
-      "results": [
-        {
-          "status": "skipped",
-          "durationMs": 25,
-          "errors": []
-        }
-      ]
-    },
-    {
       "title": "A89 declared guide and company choices preserve resources, ownership and explicit confirmation",
       "project": "chromium-865-a89",
       "status": "expected",
       "results": [
         {
           "status": "passed",
-          "durationMs": 1801,
+          "durationMs": 1987,
           "errors": []
         }
       ]
@@ -246,7 +246,7 @@
       "results": [
         {
           "status": "passed",
-          "durationMs": 1303,
+          "durationMs": 1541,
           "errors": []
         }
       ]
@@ -258,7 +258,7 @@
       "results": [
         {
           "status": "passed",
-          "durationMs": 1461,
+          "durationMs": 1616,
           "errors": []
         }
       ]
@@ -270,7 +270,7 @@
       "results": [
         {
           "status": "passed",
-          "durationMs": 2587,
+          "durationMs": 2968,
           "errors": []
         }
       ]
@@ -282,7 +282,7 @@
       "results": [
         {
           "status": "passed",
-          "durationMs": 1806,
+          "durationMs": 2202,
           "errors": []
         }
       ]
@@ -294,7 +294,7 @@
       "results": [
         {
           "status": "passed",
-          "durationMs": 3380,
+          "durationMs": 3853,
           "errors": []
         }
       ]
@@ -306,7 +306,7 @@
       "results": [
         {
           "status": "skipped",
-          "durationMs": 32,
+          "durationMs": 38,
           "errors": []
         }
       ]
@@ -318,7 +318,7 @@
       "results": [
         {
           "status": "skipped",
-          "durationMs": 27,
+          "durationMs": 33,
           "errors": []
         }
       ]
@@ -330,7 +330,7 @@
       "results": [
         {
           "status": "skipped",
-          "durationMs": 27,
+          "durationMs": 31,
           "errors": []
         }
       ]
@@ -342,7 +342,7 @@
       "results": [
         {
           "status": "passed",
-          "durationMs": 8512,
+          "durationMs": 6152,
           "errors": []
         }
       ]
@@ -354,7 +354,7 @@
       "results": [
         {
           "status": "passed",
-          "durationMs": 4086,
+          "durationMs": 5471,
           "errors": []
         }
       ]
@@ -366,7 +366,7 @@
       "results": [
         {
           "status": "passed",
-          "durationMs": 2333,
+          "durationMs": 2782,
           "errors": []
         }
       ]
@@ -378,7 +378,7 @@
       "results": [
         {
           "status": "passed",
-          "durationMs": 3301,
+          "durationMs": 3625,
           "errors": []
         }
       ]
@@ -390,7 +390,7 @@
       "results": [
         {
           "status": "passed",
-          "durationMs": 3717,
+          "durationMs": 4558,
           "errors": []
         }
       ]
@@ -402,7 +402,7 @@
       "results": [
         {
           "status": "passed",
-          "durationMs": 4915,
+          "durationMs": 5771,
           "errors": []
         }
       ]
@@ -414,7 +414,7 @@
       "results": [
         {
           "status": "skipped",
-          "durationMs": 151,
+          "durationMs": 183,
           "errors": []
         }
       ]
@@ -426,7 +426,7 @@
       "results": [
         {
           "status": "skipped",
-          "durationMs": 146,
+          "durationMs": 181,
           "errors": []
         }
       ]
@@ -438,7 +438,7 @@
       "results": [
         {
           "status": "skipped",
-          "durationMs": 142,
+          "durationMs": 183,
           "errors": []
         }
       ]
@@ -450,7 +450,7 @@
       "results": [
         {
           "status": "passed",
-          "durationMs": 418,
+          "durationMs": 616,
           "errors": []
         }
       ]
@@ -462,7 +462,7 @@
       "results": [
         {
           "status": "passed",
-          "durationMs": 223,
+          "durationMs": 275,
           "errors": []
         }
       ]
@@ -474,7 +474,7 @@
       "results": [
         {
           "status": "passed",
-          "durationMs": 676,
+          "durationMs": 759,
           "errors": []
         }
       ]
@@ -486,7 +486,7 @@
       "results": [
         {
           "status": "passed",
-          "durationMs": 8162,
+          "durationMs": 10337,
           "errors": []
         }
       ]
@@ -498,7 +498,7 @@
       "results": [
         {
           "status": "passed",
-          "durationMs": 619,
+          "durationMs": 631,
           "errors": []
         }
       ]
@@ -510,7 +510,7 @@
       "results": [
         {
           "status": "passed",
-          "durationMs": 7554,
+          "durationMs": 9637,
           "errors": []
         }
       ]
@@ -522,7 +522,7 @@
       "results": [
         {
           "status": "passed",
-          "durationMs": 483,
+          "durationMs": 522,
           "errors": []
         }
       ]
@@ -534,7 +534,7 @@
       "results": [
         {
           "status": "passed",
-          "durationMs": 6805,
+          "durationMs": 9535,
           "errors": []
         }
       ]
@@ -546,7 +546,7 @@
       "results": [
         {
           "status": "passed",
-          "durationMs": 590,
+          "durationMs": 667,
           "errors": []
         }
       ]
@@ -558,7 +558,7 @@
       "results": [
         {
           "status": "passed",
-          "durationMs": 6833,
+          "durationMs": 9869,
           "errors": []
         }
       ]
@@ -570,7 +570,7 @@
       "results": [
         {
           "status": "skipped",
-          "durationMs": 52,
+          "durationMs": 59,
           "errors": []
         }
       ]
@@ -582,7 +582,7 @@
       "results": [
         {
           "status": "skipped",
-          "durationMs": 31,
+          "durationMs": 37,
           "errors": []
         }
       ]
@@ -594,7 +594,7 @@
       "results": [
         {
           "status": "passed",
-          "durationMs": 583,
+          "durationMs": 708,
           "errors": []
         }
       ]
@@ -606,7 +606,7 @@
       "results": [
         {
           "status": "skipped",
-          "durationMs": 29,
+          "durationMs": 35,
           "errors": []
         }
       ]
@@ -618,7 +618,7 @@
       "results": [
         {
           "status": "passed",
-          "durationMs": 677,
+          "durationMs": 748,
           "errors": []
         }
       ]
@@ -630,7 +630,7 @@
       "results": [
         {
           "status": "skipped",
-          "durationMs": 32,
+          "durationMs": 37,
           "errors": []
         }
       ]
@@ -642,7 +642,7 @@
       "results": [
         {
           "status": "passed",
-          "durationMs": 566,
+          "durationMs": 628,
           "errors": []
         }
       ]
@@ -654,7 +654,7 @@
       "results": [
         {
           "status": "skipped",
-          "durationMs": 41,
+          "durationMs": 44,
           "errors": []
         }
       ]
@@ -666,7 +666,7 @@
       "results": [
         {
           "status": "passed",
-          "durationMs": 613,
+          "durationMs": 728,
           "errors": []
         }
       ]
@@ -674,30 +674,6 @@
     {
       "title": "A76 en arcana real account, guest binding, cross-context login and recovery",
       "project": "chromium-1280-a76",
-      "status": "skipped",
-      "results": [
-        {
-          "status": "skipped",
-          "durationMs": 31,
-          "errors": []
-        }
-      ]
-    },
-    {
-      "title": "A76 first activation excludes double registration through retained response",
-      "project": "chromium-865-a76",
-      "status": "skipped",
-      "results": [
-        {
-          "status": "skipped",
-          "durationMs": 61,
-          "errors": []
-        }
-      ]
-    },
-    {
-      "title": "A76 missing illustration preserves account labels, actions and keyboard return",
-      "project": "chromium-865-a76",
       "status": "skipped",
       "results": [
         {
@@ -708,13 +684,37 @@
       ]
     },
     {
+      "title": "A76 first activation excludes double registration through retained response",
+      "project": "chromium-865-a76",
+      "status": "skipped",
+      "results": [
+        {
+          "status": "skipped",
+          "durationMs": 49,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "A76 missing illustration preserves account labels, actions and keyboard return",
+      "project": "chromium-865-a76",
+      "status": "skipped",
+      "results": [
+        {
+          "status": "skipped",
+          "durationMs": 37,
+          "errors": []
+        }
+      ]
+    },
+    {
       "title": "A76 es diagon-alley entry forms, focus, cancellation and enlarged text",
       "project": "chromium-865-a76",
       "status": "expected",
       "results": [
         {
           "status": "passed",
-          "durationMs": 593,
+          "durationMs": 690,
           "errors": []
         }
       ]
@@ -726,7 +726,7 @@
       "results": [
         {
           "status": "skipped",
-          "durationMs": 29,
+          "durationMs": 35,
           "errors": []
         }
       ]
@@ -738,7 +738,7 @@
       "results": [
         {
           "status": "passed",
-          "durationMs": 677,
+          "durationMs": 768,
           "errors": []
         }
       ]
@@ -762,7 +762,7 @@
       "results": [
         {
           "status": "passed",
-          "durationMs": 530,
+          "durationMs": 592,
           "errors": []
         }
       ]
@@ -774,7 +774,7 @@
       "results": [
         {
           "status": "skipped",
-          "durationMs": 40,
+          "durationMs": 42,
           "errors": []
         }
       ]
@@ -786,7 +786,7 @@
       "results": [
         {
           "status": "passed",
-          "durationMs": 645,
+          "durationMs": 706,
           "errors": []
         }
       ]
@@ -810,7 +810,7 @@
       "results": [
         {
           "status": "skipped",
-          "durationMs": 162,
+          "durationMs": 209,
           "errors": []
         }
       ]
@@ -822,7 +822,7 @@
       "results": [
         {
           "status": "skipped",
-          "durationMs": 161,
+          "durationMs": 185,
           "errors": []
         }
       ]
@@ -834,7 +834,7 @@
       "results": [
         {
           "status": "passed",
-          "durationMs": 1283,
+          "durationMs": 1556,
           "errors": []
         }
       ]
@@ -846,7 +846,7 @@
       "results": [
         {
           "status": "skipped",
-          "durationMs": 149,
+          "durationMs": 231,
           "errors": []
         }
       ]
@@ -858,7 +858,7 @@
       "results": [
         {
           "status": "passed",
-          "durationMs": 1315,
+          "durationMs": 1693,
           "errors": []
         }
       ]
@@ -870,7 +870,7 @@
       "results": [
         {
           "status": "skipped",
-          "durationMs": 159,
+          "durationMs": 186,
           "errors": []
         }
       ]
@@ -882,7 +882,7 @@
       "results": [
         {
           "status": "passed",
-          "durationMs": 814,
+          "durationMs": 1030,
           "errors": []
         }
       ]
@@ -894,7 +894,7 @@
       "results": [
         {
           "status": "skipped",
-          "durationMs": 149,
+          "durationMs": 181,
           "errors": []
         }
       ]
@@ -906,7 +906,7 @@
       "results": [
         {
           "status": "passed",
-          "durationMs": 1174,
+          "durationMs": 1403,
           "errors": []
         }
       ]
@@ -918,7 +918,7 @@
       "results": [
         {
           "status": "skipped",
-          "durationMs": 144,
+          "durationMs": 188,
           "errors": []
         }
       ]
@@ -930,7 +930,7 @@
       "results": [
         {
           "status": "skipped",
-          "durationMs": 148,
+          "durationMs": 200,
           "errors": []
         }
       ]
@@ -942,7 +942,7 @@
       "results": [
         {
           "status": "skipped",
-          "durationMs": 149,
+          "durationMs": 185,
           "errors": []
         }
       ]
@@ -954,7 +954,7 @@
       "results": [
         {
           "status": "passed",
-          "durationMs": 1450,
+          "durationMs": 1700,
           "errors": []
         }
       ]
@@ -966,7 +966,7 @@
       "results": [
         {
           "status": "skipped",
-          "durationMs": 150,
+          "durationMs": 185,
           "errors": []
         }
       ]
@@ -978,7 +978,7 @@
       "results": [
         {
           "status": "passed",
-          "durationMs": 1399,
+          "durationMs": 1766,
           "errors": []
         }
       ]
@@ -990,7 +990,7 @@
       "results": [
         {
           "status": "skipped",
-          "durationMs": 145,
+          "durationMs": 200,
           "errors": []
         }
       ]
@@ -1002,7 +1002,7 @@
       "results": [
         {
           "status": "passed",
-          "durationMs": 901,
+          "durationMs": 1088,
           "errors": []
         }
       ]
@@ -1014,7 +1014,7 @@
       "results": [
         {
           "status": "skipped",
-          "durationMs": 265,
+          "durationMs": 185,
           "errors": []
         }
       ]
@@ -1026,7 +1026,7 @@
       "results": [
         {
           "status": "passed",
-          "durationMs": 1291,
+          "durationMs": 1539,
           "errors": []
         }
       ]
@@ -1038,7 +1038,7 @@
       "results": [
         {
           "status": "skipped",
-          "durationMs": 150,
+          "durationMs": 180,
           "errors": []
         }
       ]
@@ -1050,13 +1050,37 @@
       "results": [
         {
           "status": "skipped",
-          "durationMs": 161,
+          "durationMs": 184,
           "errors": []
         }
       ]
     },
     {
       "title": "A76 missing illustration preserves account labels, actions and keyboard return",
+      "project": "webkit-865-a76",
+      "status": "skipped",
+      "results": [
+        {
+          "status": "skipped",
+          "durationMs": 185,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "A76 es diagon-alley entry forms, focus, cancellation and enlarged text",
+      "project": "webkit-865-a76",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "durationMs": 1136,
+          "errors": []
+        }
+      ]
+    },
+    {
+      "title": "A76 es diagon-alley real account, guest binding, cross-context login and recovery",
       "project": "webkit-865-a76",
       "status": "skipped",
       "results": [
@@ -1068,37 +1092,13 @@
       ]
     },
     {
-      "title": "A76 es diagon-alley entry forms, focus, cancellation and enlarged text",
-      "project": "webkit-865-a76",
-      "status": "expected",
-      "results": [
-        {
-          "status": "passed",
-          "durationMs": 1053,
-          "errors": []
-        }
-      ]
-    },
-    {
-      "title": "A76 es diagon-alley real account, guest binding, cross-context login and recovery",
-      "project": "webkit-865-a76",
-      "status": "skipped",
-      "results": [
-        {
-          "status": "skipped",
-          "durationMs": 141,
-          "errors": []
-        }
-      ]
-    },
-    {
       "title": "A76 en diagon-alley entry forms, focus, cancellation and enlarged text",
       "project": "webkit-865-a76",
       "status": "expected",
       "results": [
         {
           "status": "passed",
-          "durationMs": 1307,
+          "durationMs": 1621,
           "errors": []
         }
       ]
@@ -1110,7 +1110,7 @@
       "results": [
         {
           "status": "skipped",
-          "durationMs": 143,
+          "durationMs": 186,
           "errors": []
         }
       ]
@@ -1122,7 +1122,7 @@
       "results": [
         {
           "status": "passed",
-          "durationMs": 881,
+          "durationMs": 1091,
           "errors": []
         }
       ]
@@ -1134,7 +1134,7 @@
       "results": [
         {
           "status": "skipped",
-          "durationMs": 144,
+          "durationMs": 185,
           "errors": []
         }
       ]
@@ -1146,7 +1146,7 @@
       "results": [
         {
           "status": "passed",
-          "durationMs": 1241,
+          "durationMs": 1632,
           "errors": []
         }
       ]
@@ -1158,7 +1158,7 @@
       "results": [
         {
           "status": "skipped",
-          "durationMs": 159,
+          "durationMs": 186,
           "errors": []
         }
       ]
