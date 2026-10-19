@@ -58,3 +58,9 @@ Seis recorridos A89 correctos en Chromium390 y cuatro parejas de idioma/pack: gu
 Corrección mínima de reflujo: tracks con mínimo0, arte acotado al puesto, estante con scroll propio y anchura acotada; comparación en una columna≤360px; título de taller con mínimo0/partición y ayuda con reflujo de palabras largas. No overflow:hidden para ocultar contenido ni reducción global de letra. Se añade diagnóstico de geometría al fallo para identificar descendientes, sin capturas/perfil adicionales o relajación del ancho de aceptación.
 
 Capturas nuevas de grageas y hechos revisadas; el encuadre seleccionado de grageas se ajusta a tarro/portadores con ayuda plegada tras comprobarla, sin cambiar su comportamiento. Los hechos de casa reutilizan su emblema existente. No más lote de assets ni rediseño general. La confirmación se realiza en el siguiente candidato.
+
+## CI cuarta39246641437 ·bd88a6a
+
+Siete recorridos correctos, incluido320/200% en las cuatro parejas y fallo de importación/arte con acción de hechos visible. La primera consulta real del libro de guía falló por interceptación de puntero: el encabezado del mapa hereda pointer-events:none y la antigua excepción solo cubría `.guide-help`, no la nueva `.priority-guide-help`. Se restaura pointer-events:auto exclusivamente en la ayuda; no se captura el resto del mapa ni se fuerza click en el test. La guía también abandona el grid heredado de la composición anterior y conserva objetivo44px.
+
+La revisión de `useNavigation` encontró una llamada redundante propia en onAcquire: setBazaarPlace ya establece vista/tienda, y setView posterior reutilizaba ruta anterior. Se elimina esa segunda llamada, sin cambiar navegación global. El caso conectado comprobará Confitería y foco/retornos.7correctos,1fallido,88omitidos/no ejecutados; CI propia cancelada tras preservar fallo. Build/tipos/skin correctos en el candidato con ambas correcciones; siguiente CI necesaria.

@@ -24,3 +24,5 @@ CIinicial39243286949 cancelada tras preservar fallo de fixture de origen. R01 co
 CI2 conserva3casos correctos antes de aserción obsoleta de copy de grageas. Capturas revisadas y estante de referencias corregido. Se añade un caso App real acotado para enlaces nuevos; CI3 pendiente. No se completa goal con estas omisiones.
 
 CI3 pasó6recorridos antes de fallo real de reflujo320/200. Corrección responsive, diagnóstico geométrico y muestra de grageas/insignia integrados. Build/tipos/skin y30focales correctos; candidato4 para verificar aceptación sin ocultación.
+
+CI4 validó reflujo/fallback (7recorridos) y demostró interceptación de puntero en guía sobre mapa real. Excepción de interacción restaurada, grid heredado eliminado y doble navegación del enlace de fuente corregida. Candidato5 pendiente deCI; no se relajó click, ancho o criterios.

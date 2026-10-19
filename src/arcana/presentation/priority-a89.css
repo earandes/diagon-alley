@@ -27,6 +27,7 @@ html[data-reading-size='large'] {
   align-items: center;
   gap: 0.4rem;
   min-height: 44px;
+  min-width: 44px;
 }
 .priority-guide-trigger img {
   width: 24px;
@@ -61,9 +62,14 @@ html[data-reading-size='large'] {
   }
 }
 
-.priority-guide {
+.expedition-guide.priority-guide {
+  display: block;
+  padding: 0;
   z-index: 4;
   max-width: min(15rem, 70vw);
+}
+.priority-guide-help {
+  pointer-events: auto;
 }
 .priority-guide-help > summary {
   list-style: none;

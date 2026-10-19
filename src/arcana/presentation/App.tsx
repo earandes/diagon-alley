@@ -1082,7 +1082,6 @@ export function App() {
                       language={language}
                       onAcquire={() => {
                         setBazaarPlace('confectionery');
-                        setView('shop');
                       }}
                       onPrepare={(origin) => openPreparation('formation', origin)}
                     />
