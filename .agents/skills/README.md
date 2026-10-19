@@ -1,5 +1,11 @@
 # Skills de diseño instaladas para Diagon Alley
 
+## A88 · Skills de juego locales · 19 octubre 2026
+
+Añadidas [Audio Design](arcana-audio-design/SKILL.md), [Performance Optimization](arcana-performance-optimization/SKILL.md) y [Asset Audit](arcana-asset-audit/SKILL.md). Textos/referencias/licencias únicamente, revisiones fijadas y adaptaciones en [SOURCES](../../docs/arcana/skills-audio-2026-10-19/SOURCES.json); [evaluación de35entradas](../../docs/arcana/skills-audio-2026-10-19/EVALUATION.md). No cambios globales, hooks o agentes automáticos. Disponibles automáticamente en el turno siguiente; pueden leerse manualmente ahora.
+
+**Los comandos gráficos históricos inferiores no se ejecutan en este Mac.** Prevalece AGENTS.md: única excepción original `npm run test:browser:local`; resto en CI Linux protegida, serial y sin reintentos. Las nuevas skills lo indican expresamente.
+
 Instalación local pedida por Enric el 10 de octubre de 2026 (A28). Orígenes, SHA upstream, hashes y licencias en [design-sources.json](design-sources.json). No modificar la instalación global.
 
 | Petición              | Skill / herramienta local                                                      | Uso en A28                                                                                                                                                  |

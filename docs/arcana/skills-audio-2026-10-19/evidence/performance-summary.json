@@ -1,0 +1,67 @@
+{
+  "scope": "Existing A75 arena regression; unchanged fixture and A86 reference, not an audio-enabled before/after. No A88 FPS improvement inferred.",
+  "rows": [
+    {
+      "engine": "chromium",
+      "baseline": {
+        "p95RafMs": [
+          16.7,
+          16.7,
+          16.8
+        ],
+        "actionToReadyMs": [
+          302.6,
+          307,
+          301.1
+        ]
+      },
+      "testedCheckout": "5c29d3f1e7286dbdd53414df5486d7bdb1496a8c",
+      "profile": "390x844 / ES Diagon / declared mastery5x5 / AB-BA-AB / fresh isolated browser contexts; application module evaluated before explicit fixture mount. rAF is not GPU time.",
+      "current": {
+        "p95RafMs": [
+          16.7,
+          16.8,
+          16.7
+        ],
+        "actionToReadyMs": [
+          318.7,
+          323.7,
+          324.5
+        ]
+      },
+      "referenceSha": "440d2784de96ef19d99447bf693812eaf94011e2",
+      "audioEnabledBeforeAfter": false
+    },
+    {
+      "engine": "webkit",
+      "baseline": {
+        "p95RafMs": [
+          22,
+          23,
+          22
+        ],
+        "actionToReadyMs": [
+          561,
+          423,
+          401
+        ]
+      },
+      "testedCheckout": "5c29d3f1e7286dbdd53414df5486d7bdb1496a8c",
+      "profile": "390x844 / ES Diagon / declared mastery5x5 / AB-BA-AB / fresh isolated browser contexts; application module evaluated before explicit fixture mount. rAF is not GPU time.",
+      "current": {
+        "p95RafMs": [
+          22,
+          22,
+          22
+        ],
+        "actionToReadyMs": [
+          507,
+          524,
+          429
+        ]
+      },
+      "referenceSha": "440d2784de96ef19d99447bf693812eaf94011e2",
+      "audioEnabledBeforeAfter": false
+    }
+  ]
+}

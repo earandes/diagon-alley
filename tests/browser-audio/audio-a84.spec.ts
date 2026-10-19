@@ -31,6 +31,63 @@ test.afterAll(async () => {
   );
 });
 
+test('A88 prepared ambience starts while an optional effect is held, with no late cue', async ({
+  page,
+}) => {
+  let release!: () => void;
+  const held = new Promise<void>((resolve) => {
+    release = resolve;
+  });
+  let intercepted = false;
+  await page.route('**/*.wav', async (route) => {
+    if (!intercepted && !route.request().url().includes('ambient')) {
+      intercepted = true;
+      await held;
+    }
+    await route.continue();
+  });
+  try {
+    await page.goto(`${fixture}?pack=diagon-alley&lang=es`);
+    await page.evaluate(() => localStorage.removeItem('arcana.presentation.audio.v1'));
+    await page.reload();
+    await page.evaluate(() => window.__a84.preferences.set({ music: true, effects: true }));
+    expect(await page.evaluate(() => window.__a84.audio.diagnostics().context)).toBe(false);
+    const started = Date.now();
+    await page.locator('.settings-trigger').click();
+    await expect.poll(() => intercepted).toBe(true);
+    await expect
+      .poll(() => page.evaluate(() => window.__a84.audio.diagnostics().musicVoices))
+      .toBe(1);
+    const usableMusicMs = Date.now() - started;
+    expect(await page.evaluate(() => window.__a84.audio.getSnapshot())).toBe('loading');
+    expect(await page.evaluate(() => window.__a84.audio.diagnostics().effectVoices)).toBe(0);
+    release();
+    await expect.poll(() => page.evaluate(() => window.__a84.audio.getSnapshot())).toBe('ready');
+    expect(await page.evaluate(() => window.__a84.audio.diagnostics().effectVoices)).toBe(0);
+    samples.push({
+      kind: 'a88-independent-ambience',
+      project: test.info().project.name,
+      usableMusicMs,
+      optionalEffectHeld: true,
+      lateEffects: 0,
+    });
+    await settings(page)
+      .getByRole('button', { name: /Ambiente musical/ })
+      .click();
+    await settings(page)
+      .getByRole('button', { name: /^Efectos/ })
+      .click();
+    await expect
+      .poll(() => page.evaluate(() => window.__a84.audio.diagnostics().musicVoices))
+      .toBe(0);
+    await page.keyboard.press('Escape');
+    await expect(page.locator('.settings-trigger')).toBeFocused();
+  } finally {
+    release();
+    await page.unroute('**/*.wav');
+  }
+});
+
 test('A84 opt-in settings, real decode, preferences and both worlds/languages', async ({
   page,
 }) => {
