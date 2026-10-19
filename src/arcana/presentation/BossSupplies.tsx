@@ -24,7 +24,9 @@ export function BossSupplies(props: ComponentProps<typeof BeanAssignments>) {
       >
         <Artwork asset="beans.jar" language={language} decorative eager />
         <span className="boss-supply-caption">
-          <span>{text(language, 'chanceBeans')}</span>
+          <span title={text(language, 'chanceBeans')}>
+            {commercePrepText(language, 'beansShort')}
+          </span>
           <strong aria-hidden="true">×{numbers.format(stock)}</strong>
           {draft > 0 && (
             <small>
