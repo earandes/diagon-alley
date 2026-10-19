@@ -335,3 +335,9 @@
   .arena-figure-space {
   max-height: var(--arena-common-figure-cap, 190px);
 }
+
+/* The absolute scene already owns a fixed viewport. Bound layout/style/paint
+   invalidation to that surface; all actor/target effects stay inside it. */
+.arena-stage > .scene-canvas {
+  contain: strict;
+}

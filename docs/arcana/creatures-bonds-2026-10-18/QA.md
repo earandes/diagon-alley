@@ -123,3 +123,7 @@ Hipótesis concreta contrastada en código: el renderer vuelve a escribir artRea
 Se restablece full porque ahora cambia código de renderer. Elensayo WebKit se ejecutará también en full, junto aChromium, con sus tres pares originales; añade una comprobación acotada y evita que el límite quede oculto por el modo. No se modifica guard/bloqueo/watchdog/worker/reintentos ni se reduce contenido. Las dos correcciones anteriores de regresión siguen pendientes de ejecución.
 
 Preparado el siguiente candidato: `artReady`, `castHouse` y `castOffset` publican solo si su valor cambia, usando el helperexistente. No cambia ningún dato mostrado, cantidad de actores, resolución, geometría, animación, efecto o reloj. Fullse restablece y la prueba pareada aplica su mismocomparador aChromium390yWebKit390en todoslosmodos, con los trespares preexistentes. Tipos/build/scan correctos; la aceptaciónWebKit y los dosrecorridos corregidos siguen pendientes deLinux. Las pasadasf79se conservan como historia, no como ejecución delrenderer modificado.
+
+### f0c7810: presupuesto WebKit continúa fallando
+
+CI39193444875 A75 fallida; no acredita regresión ni finalización. P95WebKit22ms contra17ms, guard y aserciones sin relajar. Evidencia cruda en candidate-f0. Se prepara un ensayo limitado usando la fasewebkit que ya admite la configuración, sin navegador local ni cambios deworkflow.

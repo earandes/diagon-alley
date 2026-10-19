@@ -63,3 +63,9 @@ Es un benchmark diagnóstico de recorrido frente aA66, concontenido/rivales de s
 La fase resume publica por primera vez en este incremento el [ensayoWebKit](evidence/candidate-057/paired-webkit-performance.json) deA75. BaselineP9518/19/18ms; actual23/22/23ms sobre elmismo loglegacy, seiscontextos AB–BA–AB. Arranque baseline601/403/469ms, actual553/533/393ms; máximo sostenido baseline106/104/26, actual34/27/33ms. No hay longtasks API soportadas registradas enWebKit; no significa ausencia de trabajo largo. Chromium600intervalos P9516,7ms en todas. No es la muestra de criaturasChromiumA87ni tiempoGPU.
 
 Se conserva elresultado fallido y se prueba deduplicación de tres atributos de diagnóstico porframe. Es una hipótesis sobre coste de publicación DOM, no una atribuciónconfirmada aGPU o una autorización para ocultar unidades. Fullpasará a incluir ambos motores en este ensayo, con elmismo límite y número de pares.
+
+## Contraste f0c7810 — deduplicar no basta
+
+CI39193444875 conserva el fallo WebKit: P95 referencia17/17/17ms, candidato22/22/22ms; Chromium16,7–16,8ms en ambos. La hipótesis de las tres escrituras redundantes no explica suficientemente la diferencia. No se aumenta el presupuesto ni se elimina el ensayo.
+
+Siguiente ensayo acotado con fasewebkit original: contención CSS del host absoluto deCanvas, cuyo tamaño ya pertenece alstage. No cambia resolución, tamaño/visibilidad de figuras, datos ni reloj. Hipótesis: limitar invalidación/composición de la superficie; no se afirma causa GPU. Se registra además la geometría física/CSS deCanvas y el sink acotado de métricas CPU/wall existente para distinguir geometría, paint y submit. La instrumentación es idéntica para referencia/candidato, no CPU GPU pura. Si no mejora, conservar el resultado adverso y revisar la causa.

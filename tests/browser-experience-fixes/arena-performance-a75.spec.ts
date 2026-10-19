@@ -11,6 +11,7 @@ declare global {
       frames: { at: number; ms: number; phase: string; cursor: number }[];
       tasks: { at: number; ms: number }[];
       stop: () => void;
+      sceneMetrics: { name: string; start: number; duration: number }[];
     };
   }
 }
@@ -49,7 +50,11 @@ test('A75 paired mobile sustained replay and lifecycle preserve confirmed log', 
           frames: [],
           tasks: [],
           stop: () => {},
+          sceneMetrics: [],
         } as Window['__a75Perf']);
+        window.__arcanaSceneMetric = (metric) => {
+          if (p.sceneMetrics.length < 6000) p.sceneMetrics.push(metric);
+        };
         document.addEventListener(
           'pointerdown',
           (e) => {
@@ -120,7 +125,22 @@ test('A75 paired mobile sustained replay and lifecycle preserve confirmed log', 
       const metrics = await page.evaluate(() => {
         window.__a75Perf.stop();
         const p = window.__a75Perf;
-        return { start: p.start, ready: p.ready, frames: p.frames, tasks: p.tasks };
+        return {
+          start: p.start,
+          ready: p.ready,
+          frames: p.frames,
+          tasks: p.tasks,
+          sceneMetrics: p.sceneMetrics,
+          surface: [...document.querySelectorAll<HTMLCanvasElement>('.scene-canvas canvas')].map(
+            (c) => ({
+              width: c.width,
+              height: c.height,
+              cssWidth: c.getBoundingClientRect().width,
+              cssHeight: c.getBoundingClientRect().height,
+              dpr: devicePixelRatio,
+            }),
+          ),
+        };
       });
       const steady = metrics.frames.filter(
         (f) => f.at >= metrics.ready! + 500 && f.at < metrics.ready! + 10500,
@@ -187,6 +207,8 @@ test('A75 paired mobile sustained replay and lifecycle preserve confirmed log', 
         },
         temporalFrames: steady.map((f, i) => (i % 12 === 0 ? f : null)).filter(Boolean),
         longTasks: metrics.tasks,
+        sceneMetrics: metrics.sceneMetrics,
+        surface: metrics.surface,
         pausedCursor: cursor,
         preservedBattleAndGame: true,
         errors,
