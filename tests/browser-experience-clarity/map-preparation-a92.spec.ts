@@ -221,11 +221,12 @@ for (const pack of ['diagon-alley', 'arcana'])
         frames.map((frame) => {
           const box = frame.getBoundingClientRect();
           const marker = frame.querySelector('.boss-party-origin')!.getBoundingClientRect();
-          // Coordinate subtraction can represent60px as59.99999999999994.
-          // Bound tolerance to machine precision at this coordinate magnitude,
-          // never a visible CSS pixel or a relaxed layout allowance.
+          // Translated compositor rectangles may subtract two float32 endpoints:
+          // CI c6810fc records60px as59.999969482421875. Bound numerical error
+          // to two float32 epsilons at the coordinate magnitude (<0.001CSSpx),
+          // and independently require the actual CSS layout height to remain60px.
           const precision =
-            Number.EPSILON *
+            2 ** -23 *
             Math.max(
               1,
               ...[
@@ -239,11 +240,12 @@ for (const pack of ['diagon-alley', 'arcana'])
                 marker.right,
               ].map(Math.abs),
             ) *
-            16;
+            2;
           return {
             frame: box.toJSON(),
             marker: marker.toJSON(),
             height: box.height,
+            layoutHeight: parseFloat(getComputedStyle(frame).height),
             precision,
             markerContained:
               marker.top + precision >= box.top &&
@@ -267,7 +269,10 @@ for (const pack of ['diagon-alley', 'arcana'])
       );
       expect(
         fallbackFrames.every(
-          (frame) => frame.height + frame.precision >= 60 && frame.markerContained,
+          (frame) =>
+            frame.layoutHeight >= 60 &&
+            frame.height + frame.precision >= 60 &&
+            frame.markerContained,
         ),
         JSON.stringify(fallbackFrames),
       ).toBe(true);
