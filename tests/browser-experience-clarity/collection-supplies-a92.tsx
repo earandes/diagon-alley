@@ -8,7 +8,11 @@ import { CollectionPanel } from '../../src/arcana/presentation/CollectionPanel';
 import { BeanAssignments } from '../../src/arcana/presentation/BeanAssignments';
 import { visualAsset } from '../../src/arcana/presentation/content-packs/art';
 import { ReadingScope } from '../../src/arcana/presentation/ReadingPreferences';
-import { activePack, setContentPack } from '../../src/arcana/presentation/content-packs/active';
+import {
+  activePack,
+  setContentPack,
+  regionAppearance,
+} from '../../src/arcana/presentation/content-packs/active';
 import { createPriorityFixtureState } from '../browser-priorities/fixture-state';
 import type { BeanAssignment } from '../../src/arcana/application/run-contracts';
 import type { Language } from '../../src/arcana/domain/collection/wizards';
@@ -64,6 +68,8 @@ function Fixture() {
   const [game, setGame] = useState(initial);
   const [draft, setDraft] = useState<readonly BeanAssignment[]>([]);
   const pack = activePack;
+  const sceneUrl = visualAsset(regionAppearance(fixture.active.zoneId, language).mapAsset)?.url;
+  if (!sceneUrl) throw Error('A92 collection fixture requires the real regional backdrop');
   window.__a92Supplies = {
     read: () => JSON.stringify({ game, draft }),
     invalidate: () =>
@@ -83,8 +89,9 @@ function Fixture() {
   return (
     <ReadingScope owner={game.playerId}>
       <div
-        className="game-shell"
+        className="arcana-shell game-shell"
         data-pack={pack.id}
+        data-content-pack={pack.id}
         data-reduced="true"
         style={
           {
@@ -95,13 +102,14 @@ function Fixture() {
               ]),
             ),
             minHeight: '100vh',
-            '--scene-url': `url("${visualAsset('scene.alley')?.url}")`,
+            '--scene-url': `url("${sceneUrl}")`,
+            '--control-frame': `url("${visualAsset('ui.frame')?.url ?? ''}")`,
           } as CSSProperties
         }
       >
         <div
           className="game-world-backdrop"
-          style={{ '--scene-url': `url("${visualAsset('scene.alley')?.url}")` } as CSSProperties}
+          style={{ '--scene-url': `url("${sceneUrl}")` } as CSSProperties}
         />
         <main style={{ maxWidth: 1000, margin: 'auto', padding: 12 }}>
           {query.get('view') === 'books' ? (

@@ -193,13 +193,26 @@ test('A92 a lost economic response keeps its owner across contextual sign-in and
     expect((await recovered.json()).receipt.id).toBe(key);
     await page.reload();
     expect(await readGame(page)).toEqual(committed);
+    await page.goto('/#/collection');
+    const progress = page.locator('.collection-panel progress');
+    await expect(progress).toBeVisible();
+    const numerator = await progress.getAttribute('value');
+    const denominator = await progress.getAttribute('max');
+    await page.goto('/#/missions');
+    const atlasCollection = page
+      .locator('.journey-cabinet .journey-object')
+      .filter({ has: page.locator('[data-art="ui.collection"]') });
+    await expect(atlasCollection.locator('span').first()).toHaveText(`${numerator}/${denominator}`);
+    await atlasCollection.click();
+    await expect(progress).toBeVisible();
+    expect(await readGame(page)).toEqual(committed);
     if (process.platform === 'linux' && process.env.ARCANA_CAPTURE_A92 === '1') {
       const out = resolve(
         process.env.A92_EVIDENCE_ROOT ?? 'docs/arcana/experience-clarity-2026-10-19/evidence/linux',
       );
       await mkdir(out, { recursive: true });
       // No capture of credentials or mailbox. Only the recovered game is visible.
-      await page.screenshot({ path: resolve(out, 'recovered-game.png'), fullPage: false });
+      await page.screenshot({ path: resolve(out, 'connected-collection.png'), fullPage: false });
     }
   } finally {
     await foreignContext.close();
