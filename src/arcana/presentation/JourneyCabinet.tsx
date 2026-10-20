@@ -5,6 +5,11 @@ import { FlavourCabinet } from './FlavourCabinet';
 import { text } from './translations';
 import { regionAppearance } from './content-packs/active';
 import { prepText } from './prep-messages';
+import { useMemo } from 'react';
+import type { PublicContent } from '../application/public-content';
+import { collectionCompletion } from '../application/client/collection-completion';
+import { vaultGuidance } from '../application/client/vault-guidance';
+import { progressVaultText } from './progress-vault-messages';
 import './expedition-preparation.css';
 
 export function JourneyCabinet({
@@ -14,6 +19,7 @@ export function JourneyCabinet({
   onCollection,
   onShop,
   onVault,
+  content,
 }: {
   game: GameState;
   language: Language;
@@ -21,11 +27,18 @@ export function JourneyCabinet({
   onCollection: () => void;
   onShop: () => void;
   onVault: () => void;
+  content?: PublicContent;
 }) {
   const run = game.exploration?.run;
   const bossComplete = game.exploration?.unlockedZones.includes('bosque');
   const own = new Set(game.copies.map((copy) => copy.wizard.id)).size;
   const keys = game.inventory.goldKeys ?? 0;
+  const completion = useMemo(
+    () => (content ? collectionCompletion(content.catalog, game.copies, content.toadTable) : null),
+    [content, game.copies],
+  );
+  const vault = useMemo(() => vaultGuidance(game, content), [game, content]);
+  const keySource = vault.status === 'source';
   return (
     <section className="journey-cabinet">
       <h2>{text(language, 'missions')}</h2>
@@ -45,17 +58,36 @@ export function JourneyCabinet({
           aria-label={text(language, 'chromodex')}
         >
           <Artwork asset="ui.collection" language={language} decorative />
-          <span>{own}/30</span>
+          <span>
+            {completion ? `${completion.current.discovered}/${completion.current.total}` : own}
+          </span>
           <small>{text(language, 'gameCollect')}</small>
+          {!!completion?.historical.total && (
+            <small>
+              {progressVaultText(language, 'archive', { count: completion.historical.total })}
+            </small>
+          )}
         </button>
         <button
           className="journey-object game-object"
-          onClick={keys ? onVault : onMap}
-          aria-label={text(language, keys ? 'obsidianVaults' : 'gameBossChallenge')}
+          onClick={keySource ? onMap : onVault}
+          aria-label={
+            keySource ? progressVaultText(language, 'findSource') : text(language, 'obsidianVaults')
+          }
         >
-          <Artwork asset={keys ? 'product.gold-key' : 'node.boss'} language={language} decorative />
-          <span>{keys || (bossComplete ? '✓' : '')}</span>
-          <small>{text(language, keys ? 'gameOpenVault' : 'gameBossChallenge')}</small>
+          <Artwork
+            asset={
+              keys ? 'product.gold-key' : keySource ? `node.${vault.source}` : 'product.loot-chest'
+            }
+            language={language}
+            decorative
+          />
+          <span>{keys || ''}</span>
+          <small>
+            {keySource
+              ? progressVaultText(language, 'findSource')
+              : text(language, keys ? 'gameOpenVault' : 'obsidianVaults')}
+          </small>
         </button>
       </div>
       <FlavourCabinet game={game} language={language} />

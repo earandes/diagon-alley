@@ -1,3 +1,4 @@
+import { chooseBeanJar } from './bean-controls';
 import { leaveBattle } from './battle-controls';
 import { test, expect, type Page } from '@playwright/test';
 import { randomUUID } from 'node:crypto';
@@ -196,7 +197,7 @@ for (const language of ['es', 'en'] as const)
         (p) => p.kind === 'random-beans' && p.status === 'available',
       )!;
       const unit = beforeCombat.exploration!.run!.members.find((m) => m.unit.hp > 0)!.unit.id;
-      await page.locator(`[data-bean-id="${jar.id}"]`).click();
+      await chooseBeanJar(page, jar.id);
       await page.locator(`[data-bean-unit="${unit}"]`).click();
       expect(await readGame(page)).toEqual(beforeCombat);
       await confirmEvent(page, language);

@@ -1,0 +1,331 @@
+{
+  "run": 39353793256,
+  "head": "b6c08000267a28d1851318fbcfdfeb780e459fb9",
+  "checkout": "135a4fe98a12a8efe71c166e61cda92c4bc342b8",
+  "redaction": "Only timing/geometry/public fixture flags retained; no complete run, seed, inventory, identity or operation key. Raw CI artifact 12235448055 retains original test provenance.",
+  "artifact": {
+    "id": 12235448055,
+    "name": "a70-boss-evidence"
+  },
+  "selection": [
+    {
+      "file": "selected-preparation-mobile-diagon.png",
+      "source": "a71/selected-preparation-mobile-diagon.png",
+      "bytes": 292738,
+      "sha256": "c5d3b0fcc4c0f8ca67adb9d6ec3a223dffbc847449270782b5c225071f87eb1e"
+    },
+    {
+      "file": "selected-preparation-mobile-arcana.png",
+      "source": "a71/selected-preparation-mobile-arcana.png",
+      "bytes": 280251,
+      "sha256": "46cd6bc0094ad474d825803aeded770b8eacaee5bb1d0936e4f32cd803bbfcd6"
+    }
+  ],
+  "jsonSources": [
+    {
+      "source": "chromium-1280-boss-a70-en-arcana-authority.json",
+      "sha256": "1b78c4f2e4398b914becfcb61ecb5fa183a76ec6dd24495237ab06be6b2d3328"
+    },
+    {
+      "source": "chromium-1280-boss-a70-en-diagon-alley-authority.json",
+      "sha256": "750c43ac045682bb183085e7a0d906e2184eaaec6a78308f488473cb388faae6"
+    },
+    {
+      "source": "chromium-1280-boss-a70-es-arcana-authority.json",
+      "sha256": "d105d262c1674fb059db764c668c1218f699d5b725692cc4fbb80ba48969bee5"
+    },
+    {
+      "source": "chromium-1280-boss-a70-es-diagon-alley-authority.json",
+      "sha256": "9d1351a93df36e9f9fc0a95c5c3e0cdb637a4cf3d2c80947c84ec8218ebb037d"
+    },
+    {
+      "source": "chromium-390-boss-a70-en-arcana-authority.json",
+      "sha256": "837d5e5e70c437cc393a4012023df1c9f3ce50cfbb879be980b26d48a6a9bc83"
+    },
+    {
+      "source": "chromium-390-boss-a70-en-diagon-alley-authority.json",
+      "sha256": "720ee8afeaf21ca5d2e1b7ba203a58619860359c35d917ab7adadd0f559793fb"
+    },
+    {
+      "source": "chromium-390-boss-a70-es-arcana-authority.json",
+      "sha256": "b297c8ddad8d8486567c05a2a94154a3f3e445cf0d2516dc9592d40eabf70231"
+    },
+    {
+      "source": "chromium-390-boss-a70-es-diagon-alley-authority.json",
+      "sha256": "5d5748ce5589a84527be3fbc6cac7d5247f5d2773262703ee6384c772c3c6209"
+    },
+    {
+      "source": "chromium-865-boss-a70-en-arcana-authority.json",
+      "sha256": "b2141ddd3820ec45a72cfaf4a1eea628a2bb29173efb9e70952f6681a1052a53"
+    },
+    {
+      "source": "chromium-865-boss-a70-en-diagon-alley-authority.json",
+      "sha256": "282506224e4bc7250bac3bed90117d41da954e3fa7f887c00541c8cf123b1155"
+    },
+    {
+      "source": "chromium-865-boss-a70-es-arcana-authority.json",
+      "sha256": "3c38584aaac3e1afab1d732f1c706adcd19f9be23553ac5daf059fd529416703"
+    },
+    {
+      "source": "chromium-865-boss-a70-es-diagon-alley-authority.json",
+      "sha256": "267749aa7737970af34c2aab5b0ea2990b36125c5caad0f5fa4add8057f55926"
+    },
+    {
+      "source": "webkit-1280-boss-a70-en-arcana-authority.json",
+      "sha256": "f19e1d27b4370cb3e00c76d8152063cbd33f5f392d57507cb2aaaf8de891708e"
+    },
+    {
+      "source": "webkit-1280-boss-a70-en-diagon-alley-authority.json",
+      "sha256": "0dab5dbff78a26037cd1fe141d344dc5a17704c742ac6556afe98543338d8fde"
+    },
+    {
+      "source": "webkit-1280-boss-a70-es-arcana-authority.json",
+      "sha256": "671b1a0ee4bf6b1551936a086989662693a423750c2f2ad42fa389d946c9053e"
+    },
+    {
+      "source": "webkit-1280-boss-a70-es-diagon-alley-authority.json",
+      "sha256": "e54cedfc13026faff789cf13aa1d1950c2c7b1ed43ebeabef21f5bfcea1340ee"
+    },
+    {
+      "source": "webkit-390-boss-a70-en-arcana-authority.json",
+      "sha256": "f69eb809690997f34208cc13bc87d5d0d966669fbc070f493464d053dbc04bdc"
+    },
+    {
+      "source": "webkit-390-boss-a70-en-diagon-alley-authority.json",
+      "sha256": "a91f83429f56af419dbca662945e15c046f77feffd6003478aa6cc6810ab6516"
+    },
+    {
+      "source": "webkit-390-boss-a70-es-arcana-authority.json",
+      "sha256": "65c26fd2a46c2004a44d3f592438e22da70fde1e771f22bda64e6a7873b9a92d"
+    },
+    {
+      "source": "webkit-390-boss-a70-es-diagon-alley-authority.json",
+      "sha256": "a563f0ad948f01ed8d260c5c4e116fdd4ad566fe22c0797ddd1ca0e595c35997"
+    },
+    {
+      "source": "webkit-865-boss-a70-en-arcana-authority.json",
+      "sha256": "8a094ea09c8046df958dec3d506f858a9b2505734f7d8e488922df90f8cc1cca"
+    },
+    {
+      "source": "webkit-865-boss-a70-en-diagon-alley-authority.json",
+      "sha256": "0c7a5a196a8fa8adfadba5c8a6c23c2b648926868a4e8575ee7fd7245b400921"
+    },
+    {
+      "source": "webkit-865-boss-a70-es-arcana-authority.json",
+      "sha256": "0adc9fd247ba7bd39d9d0de3022d206b6d51223e37545b973f546876adaf83f0"
+    },
+    {
+      "source": "webkit-865-boss-a70-es-diagon-alley-authority.json",
+      "sha256": "69f28c39adaea9a4c26ae7de65c9775598912156ab1ad3ded3418a50cf7e0b3f"
+    },
+    {
+      "source": "a71/chromium-1280-boss-a70-en-arcana-real-journey.json",
+      "sha256": "71614924178d5b246c90989a7a0565cdfad4cc64953c7683187f7f533f1766ef"
+    },
+    {
+      "source": "a71/chromium-1280-boss-a70-en-diagon-alley-real-journey.json",
+      "sha256": "bd8b66bfdf2aa0cfe6666779f9eff0dae7a354c05824f4fcafaa4df9838cd720"
+    },
+    {
+      "source": "a71/chromium-1280-boss-a70-es-arcana-real-journey.json",
+      "sha256": "b3205355adeb42067bf96e10a996311aed0b35bbdb2ea091deba06d6d8a140f2"
+    },
+    {
+      "source": "a71/chromium-1280-boss-a70-es-diagon-alley-real-journey.json",
+      "sha256": "6355a1d8a7d57c2e94e02a47630bacb8d0b95e53eb1db6e8ed328e0f6c450d1b"
+    },
+    {
+      "source": "a71/chromium-390-boss-a70-en-arcana-real-journey.json",
+      "sha256": "ae6988257212a040668523bd711595e0f04ad863f6de192481ebf278ff504039"
+    },
+    {
+      "source": "a71/chromium-390-boss-a70-en-diagon-alley-real-journey.json",
+      "sha256": "9cfa1acf7460f99be2a6f15f729a27b2e1c86bdd91a31e03b1460ac8636987a8"
+    },
+    {
+      "source": "a71/chromium-390-boss-a70-es-arcana-real-journey.json",
+      "sha256": "29694a748558d84012ecfa85c98e93c3e27aca080960ae313e0a3df5e3281aa4"
+    },
+    {
+      "source": "a71/chromium-390-boss-a70-es-diagon-alley-real-journey.json",
+      "sha256": "5a421f4782fde1a4ae2df0dd9f60d0645dfc43fb6dcf07e4f3a7a6c2b651be3e"
+    },
+    {
+      "source": "a71/chromium-865-boss-a70-en-arcana-real-journey.json",
+      "sha256": "79d7c27b874397ed68d9eefaa06899e3bdb1f187bcef8ac22f5cf3105cbae46e"
+    },
+    {
+      "source": "a71/chromium-865-boss-a70-en-diagon-alley-real-journey.json",
+      "sha256": "f8d72de8cb6851fded4cfb8b6f198cd6cc21bb37f2f5f2a90656472c178ab7ff"
+    },
+    {
+      "source": "a71/chromium-865-boss-a70-es-arcana-real-journey.json",
+      "sha256": "f4e13c7c23d549fdf6fdbd4c3363562e4e9d4c5d0fbe7a32f5648d5b7ff4bf5c"
+    },
+    {
+      "source": "a71/chromium-865-boss-a70-es-diagon-alley-real-journey.json",
+      "sha256": "28187b0669b25682583129770a9bd6bff55cb61155af549cfb7f339ad5734da0"
+    },
+    {
+      "source": "a71/webkit-1280-boss-a70-en-arcana-real-journey.json",
+      "sha256": "5f7ad268efe53fcf82d19b4f5e7d10b0af28be37dfb960081991653a88138a8a"
+    },
+    {
+      "source": "a71/webkit-1280-boss-a70-en-diagon-alley-real-journey.json",
+      "sha256": "d8f0f76c265ad04269627b63be97a9f351ab0d12a6a3ce4b7d0142613005f8e8"
+    },
+    {
+      "source": "a71/webkit-1280-boss-a70-es-arcana-real-journey.json",
+      "sha256": "c7f5e955c46c97a07f46de818a279a2c3653ed9344501b1187b570491426e67e"
+    },
+    {
+      "source": "a71/webkit-1280-boss-a70-es-diagon-alley-real-journey.json",
+      "sha256": "f2967494b533fae4d0aaf11fc4d8704249cf2383785df735922c5fa54f5533bb"
+    },
+    {
+      "source": "a71/webkit-390-boss-a70-en-arcana-real-journey.json",
+      "sha256": "4361efe2a14d31afc9630a776f9d8f407a768e7010d03c5bb43f50e189eeee4f"
+    },
+    {
+      "source": "a71/webkit-390-boss-a70-en-diagon-alley-real-journey.json",
+      "sha256": "7af07108a37331c903018233e589822697021bfc48b803eba969e5767c252396"
+    },
+    {
+      "source": "a71/webkit-390-boss-a70-es-arcana-real-journey.json",
+      "sha256": "f993bd7faacea4d852dafec2aa3327911b3978cf0fd6c2820fc5214b9653400a"
+    },
+    {
+      "source": "a71/webkit-390-boss-a70-es-diagon-alley-real-journey.json",
+      "sha256": "51021e5190c03058b197e2ca57c5dd3c13b4580d22dbab86800976c3a2dec061"
+    },
+    {
+      "source": "a71/webkit-865-boss-a70-en-arcana-real-journey.json",
+      "sha256": "18e9e36077fd4db66b06dc28e0e6d4dbe67715ef82c1f30214606a08501e028a"
+    },
+    {
+      "source": "a71/webkit-865-boss-a70-en-diagon-alley-real-journey.json",
+      "sha256": "e3712dcc4881c700f803019816c1fbdcae48c8f496664d9f088b38e9aa991c30"
+    },
+    {
+      "source": "a71/webkit-865-boss-a70-es-arcana-real-journey.json",
+      "sha256": "d9ce8a063cecf4df9b824cc0285972a79fc7d72be3a969f886c97de160034341"
+    },
+    {
+      "source": "a71/webkit-865-boss-a70-es-diagon-alley-real-journey.json",
+      "sha256": "7be9a86e4741d265f06a26014e98f00fe24dc1b1f6c5fad405fb7e7aae7583d0"
+    },
+    {
+      "source": "a73/en-arcana-expedition.json",
+      "sha256": "e8884863d9c1e3503d8831b7357605e1d0873567c97f76da7dbb085046b77872"
+    },
+    {
+      "source": "a73/en-diagon-alley-expedition.json",
+      "sha256": "afd3dfd784f5407108ad4946b1c757f14fd4289f0db89012d0d34eb194794a6d"
+    },
+    {
+      "source": "a73/es-arcana-expedition.json",
+      "sha256": "ec818effcef4e9c9e16bfd7ca6d0bca8dfe482ca07242851c51587afa767a327"
+    },
+    {
+      "source": "a73/es-diagon-alley-expedition.json",
+      "sha256": "ece1303cd85ae4c83b47fb318850ba5dc54d3aab02d318b01fc049a8a31facb0"
+    },
+    {
+      "source": "chromium-1280-boss-a70-initial-preparation-geometry-en-arcana.json",
+      "sha256": "29d86a856ab7bc84c8a08dddd683a321c20ff219668a522922e81325d0394260"
+    },
+    {
+      "source": "chromium-1280-boss-a70-initial-preparation-geometry-en-diagon-alley.json",
+      "sha256": "96704afe8138c93664928eb97250de229499910f0d80c52dda0b9e91f20936a8"
+    },
+    {
+      "source": "chromium-1280-boss-a70-initial-preparation-geometry-es-arcana.json",
+      "sha256": "2f547314011cc75e773009d15d91fee8994cb037428b2b45522f8c926ec770b8"
+    },
+    {
+      "source": "chromium-1280-boss-a70-initial-preparation-geometry-es-diagon-alley.json",
+      "sha256": "278915dc673e14eebfe79ba6bff58ec21e696762512a56048940a892be1f63c5"
+    },
+    {
+      "source": "chromium-390-boss-a70-initial-preparation-geometry-en-arcana.json",
+      "sha256": "3efec7ad75f106ab85c5a73fa15f042bfc3ec896ce8c86110b20a634ed0b0931"
+    },
+    {
+      "source": "chromium-390-boss-a70-initial-preparation-geometry-en-diagon-alley.json",
+      "sha256": "709c8cb7b1a7e7faeafcadbd6d4081f4d765b9f8ea85aa1cff555820feb83656"
+    },
+    {
+      "source": "chromium-390-boss-a70-initial-preparation-geometry-es-arcana.json",
+      "sha256": "109a457d90805e8d52f7fa3c374e599ea3955598031b2bc53372f1fe022542e6"
+    },
+    {
+      "source": "chromium-390-boss-a70-initial-preparation-geometry-es-diagon-alley.json",
+      "sha256": "8d18c6c3fc9f83bbb65a7ba7f23f855dbb70797846b6f7d93fcd835631b10466"
+    },
+    {
+      "source": "chromium-865-boss-a70-initial-preparation-geometry-en-arcana.json",
+      "sha256": "3ab845e0654d5f64f8522b90ecd0ef037e2464a81e0933feba9c5471b7928ced"
+    },
+    {
+      "source": "chromium-865-boss-a70-initial-preparation-geometry-en-diagon-alley.json",
+      "sha256": "b1a52e80363a6e74eb407086cee704c41cdae5f2df11efe97d1c7e24357a6e1a"
+    },
+    {
+      "source": "chromium-865-boss-a70-initial-preparation-geometry-es-arcana.json",
+      "sha256": "873cab8544e73b2c62cb1cc581c79b9cb0571b418136283cf786799b223282e9"
+    },
+    {
+      "source": "chromium-865-boss-a70-initial-preparation-geometry-es-diagon-alley.json",
+      "sha256": "a9e60c93338d8b62a8cabb805cc677bc2165f9ed2acab91db7a6c276807d0a64"
+    },
+    {
+      "source": "webkit-1280-boss-a70-initial-preparation-geometry-en-arcana.json",
+      "sha256": "662318b176b488f36006f3125d50c6bd924d986e7bf495e2c3a926027b3114d0"
+    },
+    {
+      "source": "webkit-1280-boss-a70-initial-preparation-geometry-en-diagon-alley.json",
+      "sha256": "8bdf9545cd42dd86f6c0df565d8d21ff5dde2ffb8ab8d6ed7ce36153a1459e67"
+    },
+    {
+      "source": "webkit-1280-boss-a70-initial-preparation-geometry-es-arcana.json",
+      "sha256": "2b2ec57702cb0fc4fb52edda12b6e5ac49e4f9f7b6da85c101f119c11ad76e55"
+    },
+    {
+      "source": "webkit-1280-boss-a70-initial-preparation-geometry-es-diagon-alley.json",
+      "sha256": "e8dc67c25caf2a0a1114bda3851af95d48282cd2c7c6db5d14ec7935c170bd85"
+    },
+    {
+      "source": "webkit-390-boss-a70-initial-preparation-geometry-en-arcana.json",
+      "sha256": "3b8d2e67203415e72855e3cc967a7884c29c2955492c0e41f9d6b228fc737fc2"
+    },
+    {
+      "source": "webkit-390-boss-a70-initial-preparation-geometry-en-diagon-alley.json",
+      "sha256": "6aba021d5ee72c227f90fc84151bbeab0cd47346012afad1497423c51f9dad60"
+    },
+    {
+      "source": "webkit-390-boss-a70-initial-preparation-geometry-es-arcana.json",
+      "sha256": "2c5100cdf563c08c633d2deccdc3aef6ab207484fda3db22f69a5d93e3f30608"
+    },
+    {
+      "source": "webkit-390-boss-a70-initial-preparation-geometry-es-diagon-alley.json",
+      "sha256": "67c8152d600bb3c4f3a44cee4295e6ee0b8e8b6bfa95aba5a2df2bb738dad888"
+    },
+    {
+      "source": "webkit-865-boss-a70-initial-preparation-geometry-en-arcana.json",
+      "sha256": "3635b4b785bd06699f1e44f8901c3e81d4818529a299ed492f84ff17b2d01d26"
+    },
+    {
+      "source": "webkit-865-boss-a70-initial-preparation-geometry-en-diagon-alley.json",
+      "sha256": "4e3f0aaec5d06f3635b23d89e081878fa941a47ffb7b0975980def100b18ae29"
+    },
+    {
+      "source": "webkit-865-boss-a70-initial-preparation-geometry-es-arcana.json",
+      "sha256": "bc5cbc6a21f9476c3111513576d993c0479435bdae584cbb9800e7d6e8fefcdf"
+    },
+    {
+      "source": "webkit-865-boss-a70-initial-preparation-geometry-es-diagon-alley.json",
+      "sha256": "0e49c85316057654336d0be67acab9deb82adc67f5bae13cb4971bcd74a48ddf"
+    }
+  ],
+  "capture": "Existing explicit selected A71 Linux capture; real isolated authority journeys, physicalDevice=false. Static images do not prove animation."
+}

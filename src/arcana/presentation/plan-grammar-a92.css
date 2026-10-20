@@ -1,0 +1,41 @@
+/* Character affinity is a small lozenge. The team bond is an underlined standard;
+   the route intention keeps the existing bookmark, without a power numeral. */
+.house-band > .team-bond-caption {
+  align-self: center;
+  color: var(--pack-gold, #e0b75d);
+  font-size: 0.7rem;
+  line-height: 1.25;
+  padding: 4px 2px;
+}
+.house-band[data-team-bond] {
+  align-items: center;
+}
+.team-token > .tactical-affinity {
+  position: absolute;
+  left: -2px;
+  top: -3px;
+  z-index: 2;
+  max-width: calc(100% + 8px);
+  margin: 0;
+  padding: 1px 4px;
+  font-size: 0.6rem;
+  line-height: 1.25;
+  border-radius: 10px;
+  background: #101e2bf2;
+  white-space: nowrap;
+}
+.preparation-synergies .affinity-plan-caption {
+  color: var(--pack-gold, #e0b75d);
+  font-size: 0.75rem;
+  font-weight: normal;
+}
+.boss-party-stage > .house-band > .team-bond-caption {
+  font-size: 0.65rem;
+}
+@media (max-width: 620px) {
+  /* Keep the shelf label legible while the existing compact standard uses emblems/counts. */
+  .boss-party-stage > .house-band > .team-bond-caption {
+    display: block;
+    max-width: 100%;
+  }
+}

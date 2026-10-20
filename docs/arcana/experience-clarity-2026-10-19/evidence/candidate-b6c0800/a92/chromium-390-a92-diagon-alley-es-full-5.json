@@ -1,0 +1,194 @@
+{
+  "sha": "135a4fe98a12a8efe71c166e61cda92c4bc342b8",
+  "fixture": true,
+  "count": 5,
+  "lang": "es",
+  "pack": "diagon-alley",
+  "coordinateSample": "single synchronous layout read; no animation wait",
+  "geometry": [
+    {
+      "selector": ".node-team-prepare",
+      "bottom": 727.2584228515625,
+      "footerTop": 751.2584228515625,
+      "gap": 24
+    },
+    {
+      "selector": ".node-bean-preparation > summary",
+      "bottom": 724.7584228515625,
+      "footerTop": 751.2584228515625,
+      "gap": 26.5
+    }
+  ],
+  "headerGeometry": [
+    {
+      "selector": ".boss-prelude-identity h4",
+      "box": {
+        "x": 77,
+        "y": 29.44384765625,
+        "width": 236,
+        "height": 22,
+        "top": 29.44384765625,
+        "right": 313,
+        "bottom": 51.44384765625,
+        "left": 77
+      },
+      "settings": {
+        "x": 318,
+        "y": 29.44384765625,
+        "width": 44,
+        "height": 44,
+        "top": 29.44384765625,
+        "right": 362,
+        "bottom": 73.44384765625,
+        "left": 318
+      },
+      "clear": true
+    },
+    {
+      "selector": ".boss-roster-count",
+      "box": {
+        "x": 252.75,
+        "y": 59.94384765625,
+        "width": 56.359375,
+        "height": 13,
+        "top": 59.94384765625,
+        "right": 309.109375,
+        "bottom": 72.94384765625,
+        "left": 252.75
+      },
+      "settings": {
+        "x": 318,
+        "y": 29.44384765625,
+        "width": 44,
+        "height": 44,
+        "top": 29.44384765625,
+        "right": 362,
+        "bottom": 73.44384765625,
+        "left": 318
+      },
+      "clear": true
+    }
+  ],
+  "rivalNames": [
+    [
+      {
+        "word": "Ron",
+        "fragments": 1,
+        "box": {
+          "x": 161.453125,
+          "y": 194.5651397705078,
+          "width": 19.703125,
+          "height": 12,
+          "top": 194.5651397705078,
+          "right": 181.15625,
+          "bottom": 206.5651397705078,
+          "left": 161.453125
+        }
+      },
+      {
+        "word": "Weasley",
+        "fragments": 1,
+        "box": {
+          "x": 149.671875,
+          "y": 206.5651397705078,
+          "width": 43.28125,
+          "height": 12,
+          "top": 206.5651397705078,
+          "right": 192.953125,
+          "bottom": 218.5651397705078,
+          "left": 149.671875
+        }
+      }
+    ],
+    [
+      {
+        "word": "Arthur",
+        "fragments": 1,
+        "box": {
+          "x": 202.921875,
+          "y": 194.5651397705078,
+          "width": 32.90625,
+          "height": 12,
+          "top": 194.5651397705078,
+          "right": 235.828125,
+          "bottom": 206.5651397705078,
+          "left": 202.921875
+        }
+      },
+      {
+        "word": "Weasley",
+        "fragments": 1,
+        "box": {
+          "x": 197.734375,
+          "y": 206.5651397705078,
+          "width": 43.28125,
+          "height": 12,
+          "top": 206.5651397705078,
+          "right": 241.015625,
+          "bottom": 218.5651397705078,
+          "left": 197.734375
+        }
+      }
+    ],
+    [
+      {
+        "word": "Nymphadora",
+        "fragments": 1,
+        "box": {
+          "x": 243.40625,
+          "y": 194.5651397705078,
+          "width": 67.1875,
+          "height": 12,
+          "top": 194.5651397705078,
+          "right": 310.59375,
+          "bottom": 206.5651397705078,
+          "left": 243.40625
+        }
+      },
+      {
+        "word": "Tonks",
+        "fragments": 1,
+        "box": {
+          "x": 262.515625,
+          "y": 206.5651397705078,
+          "width": 28.96875,
+          "height": 12,
+          "top": 206.5651397705078,
+          "right": 291.484375,
+          "bottom": 218.5651397705078,
+          "left": 262.515625
+        }
+      }
+    ],
+    [
+      {
+        "word": "Luna",
+        "fragments": 1,
+        "box": {
+          "x": 323.21875,
+          "y": 194.5651397705078,
+          "width": 25.15625,
+          "height": 12,
+          "top": 194.5651397705078,
+          "right": 348.375,
+          "bottom": 206.5651397705078,
+          "left": 323.21875
+        }
+      },
+      {
+        "word": "Lovegood",
+        "fragments": 1,
+        "box": {
+          "x": 310.59375,
+          "y": 206.5651397705078,
+          "width": 50.421875,
+          "height": 12,
+          "top": 206.5651397705078,
+          "right": 361.015625,
+          "bottom": 218.5651397705078,
+          "left": 310.59375
+        }
+      }
+    ]
+  ]
+}

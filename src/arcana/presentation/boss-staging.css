@@ -29,6 +29,11 @@
   grid-row: 1;
   min-width: 0;
 }
+/* NodePreparation's ordinary event margins duplicate this confrontation grid's
+   own spacing (8px above +12px below). Keep the rival in its grid cell. */
+.game-shell .boss-staging > .node-preparation.boss-opponent-stage {
+  margin-block: 0;
+}
 .boss-player-preparation {
   grid-column: 1;
   grid-row: 1;
@@ -113,11 +118,11 @@
   overflow: hidden;
   border-radius: 8px;
 }
-.boss-party-stage[data-party-pack='arcana'] .boss-party-portrait > img:first-child {
+.boss-party-stage[data-party-pack='arcana'] .boss-party-portrait > img[data-art$='.portrait'] {
   transform: scale(1.7);
   transform-origin: 50% 0;
 }
-.boss-party-portrait > img:first-child {
+.boss-party-portrait > img[data-art$='.portrait'] {
   grid-area: 1 / 1 / 3 / 3;
   width: 100%;
   height: clamp(70px, 10vw, 112px);
@@ -175,7 +180,9 @@
   height: 26px;
   object-fit: contain;
 }
-.boss-party-member[data-boss-party-condition='fallen'] .boss-party-portrait > img:first-child {
+.boss-party-member[data-boss-party-condition='fallen']
+  .boss-party-portrait
+  > img[data-art$='.portrait'] {
   filter: saturate(0.35);
 }
 .game-shell .boss-party-stage .boss-party-prepare {
@@ -346,7 +353,7 @@
     gap: 2px;
     padding-bottom: 2px;
   }
-  .boss-party-portrait > img:first-child {
+  .boss-party-portrait > img[data-art$='.portrait'] {
     height: 72px;
   }
   .game-shell .boss-party-stage .boss-party-prepare {
@@ -386,5 +393,151 @@
 @media (prefers-reduced-motion: reduce) {
   .boss-staging * {
     scroll-behavior: auto;
+  }
+}
+
+/* A92: let full names determine a post's width rather than breaking an identity mid-word. */
+.boss-party-name {
+  overflow-wrap: normal;
+  word-break: normal;
+  hyphens: none;
+  width: 100%;
+}
+/* Reserve each companion's longest word in the row, rather than letting its
+   label paint over its neighbour. The leader keeps the remaining flex space. */
+.boss-staging .boss-roster-companion {
+  min-width: min-content;
+}
+.boss-staging .boss-companion-name small {
+  overflow-wrap: normal;
+  word-break: normal;
+  hyphens: none;
+  min-width: min-content;
+  max-width: 100%;
+  align-self: center;
+}
+.boss-party-objects:empty {
+  display: none;
+}
+@media (min-width: 621px) and (max-width: 1000px) {
+  .game-shell .boss-party-member {
+    flex: 0 1 calc(33.333% - 6px);
+    width: auto;
+    min-width: min(100%, 5.75rem);
+    max-width: 7rem;
+  }
+  .boss-party-members[data-party-count='4'] .boss-party-member {
+    flex-basis: calc(50% - 6px);
+  }
+}
+.boss-member-affinity > .tactical-affinity {
+  margin: 0;
+  padding: 1px 5px;
+  font-size: 0.65rem;
+  line-height: 1.3;
+}
+@media (max-width: 620px) {
+  .boss-party-members {
+    gap: 6px 8px;
+    align-items: start;
+  }
+  .game-shell .boss-party-member {
+    flex: 0 1 calc(33.333% - 6px);
+    min-width: min(100%, 6.25rem);
+    max-width: 9.25rem;
+    padding: 0 2px 4px;
+  }
+  .boss-party-members[data-party-count='4'] .boss-party-member {
+    flex-basis: calc(50% - 8px);
+  }
+  .boss-party-name {
+    font-size: 0.78rem;
+    line-height: 1.25;
+  }
+  .boss-party-portrait > img[data-art$='.portrait'] {
+    height: 60px;
+  }
+  .boss-party-condition {
+    font-size: 0.72rem;
+  }
+}
+
+/* A92: affinity belongs to the portrait, not another line between figure and name.
+   Distinct corners keep formation position and provenance clear of its lozenge. */
+.boss-party-portrait {
+  position: relative;
+  min-height: clamp(70px, 10vw, 112px);
+}
+.boss-party-position {
+  position: absolute;
+  grid-area: auto;
+  top: 0;
+  left: 0;
+}
+.boss-party-portrait > .boss-party-origin {
+  position: absolute;
+  grid-area: auto;
+  top: 0;
+  right: 0;
+}
+.boss-party-portrait > .boss-member-affinity {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 100%;
+  z-index: 1;
+  line-height: 1;
+}
+.boss-member-affinity > .tactical-affinity {
+  max-width: 100%;
+  background: #101e2bf2;
+  white-space: nowrap;
+}
+
+@media (max-width: 620px) {
+  .boss-party-portrait {
+    min-height: 60px;
+  }
+}
+
+@media (max-width: 620px) {
+  /* One preparation shelf: formation, affinities and jar. The third object no
+     longer starts a separate row under two rows of equipped companions. */
+  .boss-party-stage.boss-party-with-supplies {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    column-gap: 4px;
+  }
+  .boss-party-with-supplies > .house-band {
+    grid-column: 1 / -1;
+  }
+  .boss-party-with-supplies > .node-bean-preparation {
+    min-width: 0;
+    margin: 0;
+  }
+  .boss-party-with-supplies > .node-bean-preparation[open] {
+    grid-column: 1 / -1;
+  }
+  .boss-party-with-supplies > .node-bean-preparation > summary {
+    grid-template-columns: 32px minmax(0, 1fr);
+    justify-content: center;
+    gap: 2px;
+    padding: 2px;
+  }
+  .game-shell .boss-party-with-supplies .boss-party-prepare {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2px;
+    padding: 2px;
+  }
+}
+
+@media (max-width: 620px) {
+  .boss-party-with-supplies > .node-bean-preparation .boss-supply-caption {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+  }
+  .boss-party-with-supplies > .node-bean-preparation > summary::after {
+    content: none;
   }
 }

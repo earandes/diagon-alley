@@ -1,0 +1,139 @@
+{
+  "run": 39341829121,
+  "head": "b6d9e3ce8426e6bafecd45cc041886460c6d9bbf",
+  "checkout": "274ac9e389523bd89a4f56487c0129996e23ed02",
+  "artifact": 12229514174,
+  "actualReport": "test-results/experience-a75/results.json",
+  "actualReportSha256": "d24624a1a48e5101500678fded01d2b67d474fef2191d1553c1e149a0c9850de",
+  "cohort": "A75 declared5x5 390x844 ES Diagon AB-BA-AB; module evaluated before mount; not GPU/cold start.",
+  "stats": {
+    "startTime": "2026-10-19T23:39:00.043Z",
+    "duration": 353897.01300000004,
+    "expected": 114,
+    "skipped": 174,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "samples": [
+    {
+      "engine": "chromium",
+      "pair": 0,
+      "variant": "baseline",
+      "battleHash": "f431632086d79fb237469f2573d6b33ddb85c5f16b6b43b26e97e3d87ce74730",
+      "p95RafMs": 16.700000000000728,
+      "maxRafMs": 16.80000000000109,
+      "actionToReadyFrameMs": 367,
+      "navigationToReadyFrameMs": 520.3000000000466
+    },
+    {
+      "engine": "chromium",
+      "pair": 0,
+      "variant": "current",
+      "battleHash": "f431632086d79fb237469f2573d6b33ddb85c5f16b6b43b26e97e3d87ce74730",
+      "p95RafMs": 16.700000000000728,
+      "maxRafMs": 16.80000000000109,
+      "actionToReadyFrameMs": 337.4000000000233,
+      "navigationToReadyFrameMs": 512.5
+    },
+    {
+      "engine": "chromium",
+      "pair": 1,
+      "variant": "current",
+      "battleHash": "f431632086d79fb237469f2573d6b33ddb85c5f16b6b43b26e97e3d87ce74730",
+      "p95RafMs": 16.799999999999272,
+      "maxRafMs": 16.80000000000109,
+      "actionToReadyFrameMs": 347.19999999995343,
+      "navigationToReadyFrameMs": 502.0999999999767
+    },
+    {
+      "engine": "chromium",
+      "pair": 1,
+      "variant": "baseline",
+      "battleHash": "f431632086d79fb237469f2573d6b33ddb85c5f16b6b43b26e97e3d87ce74730",
+      "p95RafMs": 16.799999999999272,
+      "maxRafMs": 16.80000000000109,
+      "actionToReadyFrameMs": 335.0999999999767,
+      "navigationToReadyFrameMs": 492.19999999995343
+    },
+    {
+      "engine": "chromium",
+      "pair": 2,
+      "variant": "baseline",
+      "battleHash": "f431632086d79fb237469f2573d6b33ddb85c5f16b6b43b26e97e3d87ce74730",
+      "p95RafMs": 16.700000000000728,
+      "maxRafMs": 16.80000000000109,
+      "actionToReadyFrameMs": 326.5,
+      "navigationToReadyFrameMs": 480.4000000000233
+    },
+    {
+      "engine": "chromium",
+      "pair": 2,
+      "variant": "current",
+      "battleHash": "f431632086d79fb237469f2573d6b33ddb85c5f16b6b43b26e97e3d87ce74730",
+      "p95RafMs": 16.700000000000728,
+      "maxRafMs": 16.80000000000109,
+      "actionToReadyFrameMs": 363.80000000004657,
+      "navigationToReadyFrameMs": 532.4000000000233
+    },
+    {
+      "engine": "webkit",
+      "pair": 0,
+      "variant": "baseline",
+      "battleHash": "f431632086d79fb237469f2573d6b33ddb85c5f16b6b43b26e97e3d87ce74730",
+      "p95RafMs": 23,
+      "maxRafMs": 112,
+      "actionToReadyFrameMs": 701,
+      "navigationToReadyFrameMs": 916
+    },
+    {
+      "engine": "webkit",
+      "pair": 0,
+      "variant": "current",
+      "battleHash": "f431632086d79fb237469f2573d6b33ddb85c5f16b6b43b26e97e3d87ce74730",
+      "p95RafMs": 22,
+      "maxRafMs": 30,
+      "actionToReadyFrameMs": 563,
+      "navigationToReadyFrameMs": 796
+    },
+    {
+      "engine": "webkit",
+      "pair": 1,
+      "variant": "current",
+      "battleHash": "f431632086d79fb237469f2573d6b33ddb85c5f16b6b43b26e97e3d87ce74730",
+      "p95RafMs": 23,
+      "maxRafMs": 108,
+      "actionToReadyFrameMs": 477,
+      "navigationToReadyFrameMs": 686
+    },
+    {
+      "engine": "webkit",
+      "pair": 1,
+      "variant": "baseline",
+      "battleHash": "f431632086d79fb237469f2573d6b33ddb85c5f16b6b43b26e97e3d87ce74730",
+      "p95RafMs": 22,
+      "maxRafMs": 29,
+      "actionToReadyFrameMs": 462,
+      "navigationToReadyFrameMs": 656
+    },
+    {
+      "engine": "webkit",
+      "pair": 2,
+      "variant": "baseline",
+      "battleHash": "f431632086d79fb237469f2573d6b33ddb85c5f16b6b43b26e97e3d87ce74730",
+      "p95RafMs": 23,
+      "maxRafMs": 26,
+      "actionToReadyFrameMs": 411,
+      "navigationToReadyFrameMs": 622
+    },
+    {
+      "engine": "webkit",
+      "pair": 2,
+      "variant": "current",
+      "battleHash": "f431632086d79fb237469f2573d6b33ddb85c5f16b6b43b26e97e3d87ce74730",
+      "p95RafMs": 23,
+      "maxRafMs": 32,
+      "actionToReadyFrameMs": 401,
+      "navigationToReadyFrameMs": 610
+    }
+  ]
+}

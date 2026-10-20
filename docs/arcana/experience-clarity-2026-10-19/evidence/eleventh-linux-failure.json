@@ -1,0 +1,33 @@
+{
+  "run": 39334495446,
+  "head": "082b6d630e02d4bffa5dc7d88f5ce438742e7646",
+  "checkout": "4615df55137d7f1aa98a67896492b9e221f3931a",
+  "phase": "motion-a69",
+  "result": {
+    "passed": 87,
+    "failed": 3,
+    "skipped": 42
+  },
+  "findings": [
+    {
+      "test": "A85 enlarged text and absent art",
+      "viewport": 390,
+      "scrollWidth": 404,
+      "allowed": 391
+    },
+    {
+      "test": "A85 dense equipped five + five draft beans",
+      "engine": "chromium",
+      "jarBottom": 792.8125,
+      "footerTop": 752
+    },
+    {
+      "test": "A85 dense equipped five + five draft beans",
+      "engine": "webkit",
+      "jarBottom": 793.75,
+      "footerTop": 752
+    }
+  ],
+  "regression": "skipped due to failed prerequisite",
+  "correction": "Same semantic preparation shelf for formation/affinities/jar; adaptive card tracks at enlarged text; no data, figure, control or acceptance removed."
+}

@@ -1,0 +1,1199 @@
+[
+  {
+    "id": "S01",
+    "family": "Entrada y recuperación",
+    "surface": "Carga inicial",
+    "componentFiles": [
+      "App.tsx",
+      "useTrialEntry.ts"
+    ],
+    "entry": "Raíz sin game, consulta de sesión",
+    "playerDecision": "Esperar estado utilizable",
+    "currentHierarchy": "Fondo, estado breve; accesos bloqueados durante petición",
+    "states": "Carga/entrada fallida/offline",
+    "proposal": "Mantener feedback inmediato; evitar repetir anuncio de entrada entre CTA y status.",
+    "acceptance": "Un intento activo; éxito/fallo permite continuar o reintentar deliberadamente.",
+    "evidence": "C/T",
+    "motion": "Ver MOTION-AUDIO.md; estático no acredita temporalidad.",
+    "coverage": "Código o ensayo histórico; solo V dispone de muestra seleccionada inspeccionada. Consultar EVIDENCE.md."
+  },
+  {
+    "id": "S02",
+    "family": "Entrada y recuperación",
+    "surface": "Menú de bienvenida",
+    "componentFiles": [
+      "App.tsx",
+      "FantasyActionButton.tsx"
+    ],
+    "entry": "Sin partida cargada",
+    "playerDecision": "Probar, entrar o crear cuenta",
+    "currentHierarchy": "Una marca, invitado principal, dos accesos secundarios y nota breve de recuperación",
+    "states": "Arte ausente, ES/EN, cuenta ya conocida",
+    "proposal": "Conservar jerarquía A82; revisar longitud de la nota sin ocultar límite del invitado.",
+    "acceptance": "Tres acciones reconocibles, foco y misma semántica con/sin iconos.",
+    "evidence": "C/V/T",
+    "motion": "Ver MOTION-AUDIO.md; estático no acredita temporalidad.",
+    "coverage": "Código o ensayo histórico; solo V dispone de muestra seleccionada inspeccionada. Consultar EVIDENCE.md."
+  },
+  {
+    "id": "S03",
+    "family": "Entrada y recuperación",
+    "surface": "Crear cuenta",
+    "componentFiles": [
+      "AccountAccess.tsx"
+    ],
+    "entry": "Bienvenida o Guardar mi partida→register",
+    "playerDecision": "Solicitar verificación de correo",
+    "currentHierarchy": "Pluma/folio, email y CTA; ayuda plegada",
+    "states": "Correo inválido, en curso, error, cancelación",
+    "proposal": "Conservar campo convencional y una tarea; copy de ensayo breve y veraz.",
+    "acceptance": "Pegado/autocompletado; cancelar no cambia jugador ni concede kit.",
+    "evidence": "C/T",
+    "motion": "Ver MOTION-AUDIO.md; estático no acredita temporalidad.",
+    "coverage": "Código o ensayo histórico; solo V dispone de muestra seleccionada inspeccionada. Consultar EVIDENCE.md."
+  },
+  {
+    "id": "S04",
+    "family": "Entrada y recuperación",
+    "surface": "Verificar correo y elegir contraseña",
+    "componentFiles": [
+      "AccountAccess.tsx"
+    ],
+    "entry": "Registro→verify o tengo código",
+    "playerDecision": "Verificar y fijar credencial",
+    "currentHierarchy": "Folio, código/contraseña y email contextual; ojo y ayuda",
+    "states": "Código inválido/caducado, reenviar/reparar, busy",
+    "proposal": "Mantener reparación en contexto; no esconder etiqueta o compatibilidad gestor por estilo.",
+    "acceptance": "Reenvío invalida/renueva según contrato; uso único y misma partida; no afirmar correo externo.",
+    "evidence": "C/T",
+    "motion": "Ver MOTION-AUDIO.md; estático no acredita temporalidad.",
+    "coverage": "Código o ensayo histórico; solo V dispone de muestra seleccionada inspeccionada. Consultar EVIDENCE.md."
+  },
+  {
+    "id": "S05",
+    "family": "Entrada y recuperación",
+    "surface": "Iniciar sesión",
+    "componentFiles": [
+      "AccountAccess.tsx"
+    ],
+    "entry": "Bienvenida/Ajustes→login",
+    "playerDecision": "Abrir la partida de la cuenta",
+    "currentHierarchy": "Llave/credencial, email y contraseña; una acción",
+    "states": "Credencial inválida, owner incompatible, cancelación",
+    "proposal": "Conservar A79–82; reutilizar desde aviso de sesión U03.",
+    "acceptance": "Login mismo dueño recupera pending; otro dueño no reutiliza su operación.",
+    "evidence": "C/V/T",
+    "motion": "Ver MOTION-AUDIO.md; estático no acredita temporalidad.",
+    "coverage": "Código o ensayo histórico; solo V dispone de muestra seleccionada inspeccionada. Consultar EVIDENCE.md."
+  },
+  {
+    "id": "S06",
+    "family": "Entrada y recuperación",
+    "surface": "Solicitar recuperación",
+    "componentFiles": [
+      "AccountAccess.tsx"
+    ],
+    "entry": "Ayuda login→request-reset",
+    "playerDecision": "Solicitar código privado",
+    "currentHierarchy": "Un email, envío; ayuda tengo código",
+    "states": "Sin red, rate limit, respuesta genérica",
+    "proposal": "Conservar mínima información y prevención de enumeración.",
+    "acceptance": "Respuesta no promete que exista cuenta; buzón de ensayo distinto de correo externo.",
+    "evidence": "C/T",
+    "motion": "Ver MOTION-AUDIO.md; estático no acredita temporalidad.",
+    "coverage": "Código o ensayo histórico; solo V dispone de muestra seleccionada inspeccionada. Consultar EVIDENCE.md."
+  },
+  {
+    "id": "S07",
+    "family": "Entrada y recuperación",
+    "surface": "Restablecer contraseña",
+    "componentFiles": [
+      "AccountAccess.tsx"
+    ],
+    "entry": "Código→reset",
+    "playerDecision": "Verificar código y cambiar contraseña",
+    "currentHierarchy": "Código/contraseña, identidad contextual y CTA",
+    "states": "Expirado/usado, busy, incierto",
+    "proposal": "Conservar contexto del paso; retorno a acceso con aviso breve de completado.",
+    "acceptance": "Credencial nueva válida; sesiones revocadas según contrato, inventario exacto.",
+    "evidence": "C/T",
+    "motion": "Ver MOTION-AUDIO.md; estático no acredita temporalidad.",
+    "coverage": "Código o ensayo histórico; solo V dispone de muestra seleccionada inspeccionada. Consultar EVIDENCE.md."
+  },
+  {
+    "id": "S08",
+    "family": "Entrada y recuperación",
+    "surface": "Vincular invitado",
+    "componentFiles": [
+      "AccountAccess.tsx",
+      "App.tsx"
+    ],
+    "entry": "Ajustes→Guardar mi partida",
+    "playerDecision": "Convertir el mismo jugador en recuperable",
+    "currentHierarchy": "Estado invitado y folio de verificación",
+    "states": "Sesión perdida, código inválido, pending",
+    "proposal": "No convertirlo en importación o fusión; explicar conservación con una línea.",
+    "acceptance": "Mismo playerId, copias/snapshots/receipts; cancelación intacta.",
+    "evidence": "C/T",
+    "motion": "Ver MOTION-AUDIO.md; estático no acredita temporalidad.",
+    "coverage": "Código o ensayo histórico; solo V dispone de muestra seleccionada inspeccionada. Consultar EVIDENCE.md."
+  },
+  {
+    "id": "S09",
+    "family": "Entrada y recuperación",
+    "surface": "Cambio a otra cuenta",
+    "componentFiles": [
+      "AccountAccess.tsx",
+      "App.tsx"
+    ],
+    "entry": "Ayuda login con jugador actual",
+    "playerDecision": "Elegir abrir otra partida guardada",
+    "currentHierarchy": "Advertencia pertinente y elección explícita",
+    "states": "Pending bloquea, dueño incompatible, retorno",
+    "proposal": "Mantener fricción de seguridad aunque añada texto; nunca cambio silencioso.",
+    "acceptance": "Colecciones separadas, pending no pierde propietario, cancelar vuelve a su contexto.",
+    "evidence": "C/T",
+    "motion": "Ver MOTION-AUDIO.md; estático no acredita temporalidad.",
+    "coverage": "Código o ensayo histórico; solo V dispone de muestra seleccionada inspeccionada. Consultar EVIDENCE.md."
+  },
+  {
+    "id": "S10",
+    "family": "Entrada y recuperación",
+    "surface": "Gestión y cierre de sesión",
+    "componentFiles": [
+      "AccountAccess.tsx",
+      "GameSettings.tsx"
+    ],
+    "entry": "Ajustes→cuenta vinculada",
+    "playerDecision": "Consultar identidad/salir/recuperar acceso",
+    "currentHierarchy": "Identidad mínima; acciones bajo ayuda",
+    "states": "Offline/pending/operación incierta",
+    "proposal": "Mantener fuera del HUD y agrupar en Cuenta si se prueba U13.",
+    "acceptance": "No logout con operación incierta; otra pestaña revalida sesión.",
+    "evidence": "C/T",
+    "motion": "Ver MOTION-AUDIO.md; estático no acredita temporalidad.",
+    "coverage": "Código o ensayo histórico; solo V dispone de muestra seleccionada inspeccionada. Consultar EVIDENCE.md."
+  },
+  {
+    "id": "S11",
+    "family": "Entrada y recuperación",
+    "surface": "Sesión inválida y operación pendiente",
+    "componentFiles": [
+      "RecoveryNotice.tsx",
+      "App.tsx"
+    ],
+    "entry": "Error de consulta/comando en vista o modal superior",
+    "playerDecision": "Comprobar resultado o volver a entrar",
+    "currentHierarchy": "Estado breve, acción reparadora y dueño preservado",
+    "states": "Precommit/commit perdido/otro propietario",
+    "proposal": "U03: login contextual, no nuevo ensayo por defecto.",
+    "acceptance": "Una salida recuperable al cerrar; mismo key/owner/receipt sin volver a gastar.",
+    "evidence": "C/T/H",
+    "motion": "Ver MOTION-AUDIO.md; estático no acredita temporalidad.",
+    "coverage": "Código o ensayo histórico; solo V dispone de muestra seleccionada inspeccionada. Consultar EVIDENCE.md."
+  },
+  {
+    "id": "S12",
+    "family": "Entrada y recuperación",
+    "surface": "Offline/PWA/reconexión",
+    "componentFiles": [
+      "App.tsx",
+      "../infrastructure/pwa/register.ts"
+    ],
+    "entry": "Sin conexión y shell instalado/cacheado",
+    "playerDecision": "Consultar lo conservado y reconectar",
+    "currentHierarchy": "Aviso corto, comandos bloqueados; no pantalla de instalador propia",
+    "states": "Cache previo ausente, update pendiente, reconexión",
+    "proposal": "Conservar lectura; estado utilizable tras recuperar autoridad antes de saldo definitivo.",
+    "acceptance": "API no cacheada, sin economía offline o recarga forzada. Instalar es UI del navegador.",
+    "evidence": "C/T",
+    "motion": "Ver MOTION-AUDIO.md; estático no acredita temporalidad.",
+    "coverage": "Código o ensayo histórico; solo V dispone de muestra seleccionada inspeccionada. Consultar EVIDENCE.md."
+  },
+  {
+    "id": "S13",
+    "family": "Ajustes",
+    "surface": "Estuche general",
+    "componentFiles": [
+      "GameSettings.tsx"
+    ],
+    "entry": "Engranaje de bienvenida/juego/modal/pausa",
+    "playerDecision": "Localizar preferencia o cuenta",
+    "currentHierarchy": "Idioma, mundo, lectura, reproducción, audio, movimiento; scroll accesible",
+    "states": "Cuenta/invitado, retorno foco, arte ausente",
+    "proposal": "U13: índice con estado resumido, no otra cadena modal.",
+    "acceptance": "Todas opciones alcanzables con teclado/toque; idioma solo aquí, sin pérdida de estado.",
+    "evidence": "C/V/T/H",
+    "motion": "Ver MOTION-AUDIO.md; estático no acredita temporalidad.",
+    "coverage": "Código o ensayo histórico; solo V dispone de muestra seleccionada inspeccionada. Consultar EVIDENCE.md."
+  },
+  {
+    "id": "S14",
+    "family": "Ajustes",
+    "surface": "Lectura y movimiento efectivos",
+    "componentFiles": [
+      "ReadingPreferences.tsx",
+      "GameSettings.tsx",
+      "useReducedMotion.ts"
+    ],
+    "entry": "Ajustes",
+    "playerDecision": "Elegir legibilidad y movimiento respetando sistema",
+    "currentHierarchy": "Dos tamaños, contraste separado, sello y explicación del sistema",
+    "states": "Own/system,200%,320px,recarga",
+    "proposal": "Conservar S07A90; no eliminar foco ni forzar movimiento.",
+    "acceptance": "Estado propio/efectivo distinguibles; no reiniciar replay/log; no contenido oculto.",
+    "evidence": "C/V/T",
+    "motion": "Ver MOTION-AUDIO.md; estático no acredita temporalidad.",
+    "coverage": "Código o ensayo histórico; solo V dispone de muestra seleccionada inspeccionada. Consultar EVIDENCE.md."
+  },
+  {
+    "id": "S15",
+    "family": "Ajustes",
+    "surface": "Sonido y volumen",
+    "componentFiles": [
+      "audio/AudioPreferences.tsx"
+    ],
+    "entry": "Ajustes→Sonido",
+    "playerDecision": "Optar por música/efectos y volumen",
+    "currentHierarchy": "Lira/varita y estado; rangos nativos a demanda",
+    "states": "Apagado, cargando, bloqueado, no disponible",
+    "proposal": "Mantener dos consentimientos; U17 escucha antes de producir más sonidos.",
+    "acceptance": "Sin audio/descarga antes de consentimiento; retry, ocultación y omisión sin cola.",
+    "evidence": "C/T/H",
+    "motion": "Ver MOTION-AUDIO.md; estático no acredita temporalidad.",
+    "coverage": "Código o ensayo histórico; solo V dispone de muestra seleccionada inspeccionada. Consultar EVIDENCE.md."
+  },
+  {
+    "id": "S16",
+    "family": "Preparación",
+    "surface": "Primera formación",
+    "componentFiles": [
+      "ExpeditionPreparation.tsx",
+      "ExpeditionGuide.tsx"
+    ],
+    "entry": "Mapa sin run",
+    "playerDecision": "Elegir copia real e iniciar expedición",
+    "currentHierarchy": "Cinco puestos, colección propia, CTA y ayuda contextual",
+    "states": "Una copia, incompleto, sin PV, recursos insuficientes",
+    "proposal": "Conservar orientación PM02; no regalar dos aliados ni tutorial paralelo.",
+    "acceptance": "Kit real→Pactos→formación de combate válida, cancelar conserva recursos.",
+    "evidence": "C/T",
+    "motion": "Ver MOTION-AUDIO.md; estático no acredita temporalidad.",
+    "coverage": "Código o ensayo histórico; solo V dispone de muestra seleccionada inspeccionada. Consultar EVIDENCE.md."
+  },
+  {
+    "id": "S17",
+    "family": "Preparación",
+    "surface": "Elegir desafío",
+    "componentFiles": [
+      "ExpeditionChallenge.tsx"
+    ],
+    "entry": "Preparación→desafío",
+    "playerDecision": "Escoger Descubrimiento/Táctico/Maestría",
+    "currentHierarchy": "Tres emblemas bajo consulta, composición/riesgo conocidos",
+    "states": "Recomendado tras cierre, legacy",
+    "proposal": "Conservar mismo coste/botín explícitos; no confundir mayor desafío con más premio.",
+    "acceptance": "Elegir no inicia, nueva run fija versión, anterior no cambia.",
+    "evidence": "C/T",
+    "motion": "Ver MOTION-AUDIO.md; estático no acredita temporalidad.",
+    "coverage": "Código o ensayo histórico; solo V dispone de muestra seleccionada inspeccionada. Consultar EVIDENCE.md."
+  },
+  {
+    "id": "S18",
+    "family": "Preparación",
+    "surface": "Formación, reservas y filtros",
+    "componentFiles": [
+      "ExpeditionPreparation.tsx",
+      "ClassificationChoices.tsx"
+    ],
+    "entry": "Preparación activa o inicial",
+    "playerDecision": "Seleccionar instancias y vínculo",
+    "currentHierarchy": "Retratos, puestos, sellos, filtro a demanda",
+    "states": "30copias, duplicados,temporales,caídos,filtro vacío",
+    "proposal": "U07 gramática del plan y U10 no sobrecargar stock; conservar búsqueda existente.",
+    "acceptance": "Borrador sobrevive al filtrar, cinco puestos, identidad de instancia no cambia.",
+    "evidence": "C/T/H",
+    "motion": "Ver MOTION-AUDIO.md; estático no acredita temporalidad.",
+    "coverage": "Código o ensayo histórico; solo V dispone de muestra seleccionada inspeccionada. Consultar EVIDENCE.md."
+  },
+  {
+    "id": "S19",
+    "family": "Preparación",
+    "surface": "Inspector de copia",
+    "componentFiles": [
+      "ExpeditionPreparation.tsx",
+      "EquipmentArt.tsx"
+    ],
+    "entry": "Retrato→consulta",
+    "playerDecision": "Entender condición y objetos de esa copia",
+    "currentHierarchy": "Retrato, PV/PM, origen, varita/escoba y detalle",
+    "states": "Temporales, duplicados, equipo antiguo",
+    "proposal": "Mantener datos a demanda; misma ordinal/procedencia en todas selecciones.",
+    "acceptance": "Hover/foco/toque equivalentes; devolver foco al puesto correcto.",
+    "evidence": "C/T",
+    "motion": "Ver MOTION-AUDIO.md; estático no acredita temporalidad.",
+    "coverage": "Código o ensayo histórico; solo V dispone de muestra seleccionada inspeccionada. Consultar EVIDENCE.md."
+  },
+  {
+    "id": "S20",
+    "family": "Preparación",
+    "surface": "Equipar y transferir",
+    "componentFiles": [
+      "ExpeditionPreparation.tsx"
+    ],
+    "entry": "Objeto de inspector",
+    "playerDecision": "Consultar, comparar y guardar equipamiento",
+    "currentHierarchy": "Piezas poseídas y acción de guardar separada",
+    "states": "Error, pending, conflicto, respuesta perdida",
+    "proposal": "U05 controles de cierre robustos; recuperación dentro del inspector.",
+    "acceptance": "Consultar/cerrar no cancela commit; stock/owner y receipt correctos.",
+    "evidence": "C/T",
+    "motion": "Ver MOTION-AUDIO.md; estático no acredita temporalidad.",
+    "coverage": "Código o ensayo histórico; solo V dispone de muestra seleccionada inspeccionada. Consultar EVIDENCE.md."
+  },
+  {
+    "id": "S21",
+    "family": "Ruta",
+    "surface": "Mapa ilustrado y origen",
+    "componentFiles": [
+      "MapPanel.tsx",
+      "scenes/SceneCanvas.tsx"
+    ],
+    "entry": "Run activa→#/map",
+    "playerDecision": "Elegir camino alcanzable",
+    "currentHierarchy": "Fondo, conexiones, seis siluetas, origen no interactivo",
+    "states": "Disponible/bloqueado/visitado,semilla fija,arte ausente",
+    "proposal": "U06 jerarquía de caminos, conservar mapa completo y lista.",
+    "acceptance": "Misma semilla, todos nodos visibles, no scroll ordinario; 3tamaños y ampliación accesible.",
+    "evidence": "C/V/T/H",
+    "motion": "Ver MOTION-AUDIO.md; estático no acredita temporalidad.",
+    "coverage": "Código o ensayo histórico; solo V dispone de muestra seleccionada inspeccionada. Consultar EVIDENCE.md."
+  },
+  {
+    "id": "S22",
+    "family": "Ruta",
+    "surface": "Lista equivalente",
+    "componentFiles": [
+      "MapPanel.tsx"
+    ],
+    "entry": "Mapa→cambiar lista",
+    "playerDecision": "Consultar/seleccionar ruta por texto y objetos",
+    "currentHierarchy": "Nodo con posición y relaciones bajo details",
+    "states": "Varios del mismo tipo, teclado, fallback toggle",
+    "proposal": "Conservar equivalencia; reducir repetición de “Consultar” si no pierde relaciones.",
+    "acceptance": "Bloqueado se consulta pero no avanza; misma información pública y comandos.",
+    "evidence": "C/T",
+    "motion": "Ver MOTION-AUDIO.md; estático no acredita temporalidad.",
+    "coverage": "Código o ensayo histórico; solo V dispone de muestra seleccionada inspeccionada. Consultar EVIDENCE.md."
+  },
+  {
+    "id": "S23",
+    "family": "Ruta",
+    "surface": "Inspector de nodo público",
+    "componentFiles": [
+      "RouteInspection.tsx"
+    ],
+    "entry": "Consultar nodo disponible/bloqueado/visitado",
+    "playerDecision": "Anticipar función y conexiones",
+    "currentHierarchy": "Icono, coste, estado, anterior/siguiente",
+    "states": "Sin from/to, nodo cambiado, teclado",
+    "proposal": "Relaciones como mini ruta de objetos; conservar posición y lectura textual.",
+    "acceptance": "No callback económico, secreto/seed no expuesto; cierre y foco al origen.",
+    "evidence": "C/T",
+    "motion": "Ver MOTION-AUDIO.md; estático no acredita temporalidad.",
+    "coverage": "Código o ensayo histórico; solo V dispone de muestra seleccionada inspeccionada. Consultar EVIDENCE.md."
+  },
+  {
+    "id": "S24",
+    "family": "Ruta",
+    "surface": "Equipo compacto, casa y vínculo",
+    "componentFiles": [
+      "TeamHud.tsx",
+      "BondBand.tsx",
+      "HouseInsignia.tsx"
+    ],
+    "entry": "Mapa con formación",
+    "playerDecision": "Consultar condición y plan activo",
+    "currentHierarchy": "Retratos, estandarte y sinergias a demanda",
+    "states": "Activo/inactivo, propio/temporal, duplicado",
+    "proposal": "U07 separar afinidad/vínculo/intención; no multiplicar emblemas permanentes.",
+    "acceptance": "Mismos contribuyentes y valores que reglas efectivas/log; mapa entero cabe.",
+    "evidence": "C/V/T/H",
+    "motion": "Ver MOTION-AUDIO.md; estático no acredita temporalidad.",
+    "coverage": "Código o ensayo histórico; solo V dispone de muestra seleccionada inspeccionada. Consultar EVIDENCE.md."
+  },
+  {
+    "id": "S25",
+    "family": "Nodos",
+    "surface": "Pacto de dos candidatos",
+    "componentFiles": [
+      "NodePreparation.tsx",
+      "TacticalBadge.tsx"
+    ],
+    "entry": "Nodo Pacto disponible",
+    "playerDecision": "Comparar aliado temporal y elegir o pasar",
+    "currentHierarchy": "Dos retratos protagonistas, origen y antes/después",
+    "states": "Oferta fijada, cupo disponible,consulta/cancelación",
+    "proposal": "Conservar A66; U07 mostrar solo cambio relevante de plan.",
+    "acceptance": "Recarga no reroll; elegir incorpora una vez; consultar no avanza.",
+    "evidence": "C/T",
+    "motion": "Ver MOTION-AUDIO.md; estático no acredita temporalidad.",
+    "coverage": "Código o ensayo histórico; solo V dispone de muestra seleccionada inspeccionada. Consultar EVIDENCE.md."
+  },
+  {
+    "id": "S26",
+    "family": "Nodos",
+    "surface": "Pacto con equipo completo",
+    "componentFiles": [
+      "NodePreparation.tsx"
+    ],
+    "entry": "Pacto con5miembros",
+    "playerDecision": "Sustituir explícitamente o pasar",
+    "currentHierarchy": "Candidato y miembro sustituible identificable",
+    "states": "Propio/temporal,duplicados,asignación inválida",
+    "proposal": "No compactar hasta ocultar quién sale; condición conservada.",
+    "acceptance": "Sin pérdida de copia/gear permanente; cancelación/otra pestaña seguras.",
+    "evidence": "C/T",
+    "motion": "Ver MOTION-AUDIO.md; estático no acredita temporalidad.",
+    "coverage": "Código o ensayo histórico; solo V dispone de muestra seleccionada inspeccionada. Consultar EVIDENCE.md."
+  },
+  {
+    "id": "S27",
+    "family": "Nodos",
+    "surface": "Refugio",
+    "componentFiles": [
+      "NodePreparation.tsx"
+    ],
+    "entry": "Nodo refugio",
+    "playerDecision": "Recuperar PV o PM según condición",
+    "currentHierarchy": "Dos objetos, comparación por retrato",
+    "states": "PV/PMllenos,caídos,histórico",
+    "proposal": "Conservar decisión; presentar efecto real aplicado, no repetir porcentaje como cura garantizada.",
+    "acceptance": "PMsolo en pie y reglas efectivas; antes/después exactos y retorno.",
+    "evidence": "C/T",
+    "motion": "Ver MOTION-AUDIO.md; estático no acredita temporalidad.",
+    "coverage": "Código o ensayo histórico; solo V dispone de muestra seleccionada inspeccionada. Consultar EVIDENCE.md."
+  },
+  {
+    "id": "S28",
+    "family": "Nodos",
+    "surface": "Cofre",
+    "componentFiles": [
+      "NodePreparation.tsx",
+      "NodeResult.tsx"
+    ],
+    "entry": "Nodo cofre",
+    "playerDecision": "Aceptar botín conocido o regresar",
+    "currentHierarchy": "Cofre y contenido cuantificado",
+    "states": "Primero/repetido,pendiente,error",
+    "proposal": "No ceremonia redundante; resultado breve y sello confirmado.",
+    "acceptance": "Recompensa actual intacta; consulta no gasta, commit antes de animar.",
+    "evidence": "C/T",
+    "motion": "Ver MOTION-AUDIO.md; estático no acredita temporalidad.",
+    "coverage": "Código o ensayo histórico; solo V dispone de muestra seleccionada inspeccionada. Consultar EVIDENCE.md."
+  },
+  {
+    "id": "S29",
+    "family": "Nodos",
+    "surface": "Encuentro con personaje",
+    "componentFiles": [
+      "EncounterPreparation.tsx",
+      "EncounterTradeOutcome.tsx"
+    ],
+    "entry": "Nodo encuentro",
+    "playerDecision": "Intercambiar condición, elegir alcance/portador o pasar",
+    "currentHierarchy": "Figura,2alternativas y previsualización",
+    "states": "Duplicados,equipo completo,PV/PMbajos,legacy",
+    "proposal": "U07/U08 mantener comparación local y nombres sin IDs.",
+    "acceptance": "Alternativas exactas, fuente temporal/propia y unitId coincidente con receipt.",
+    "evidence": "C/T",
+    "motion": "Ver MOTION-AUDIO.md; estático no acredita temporalidad.",
+    "coverage": "Código o ensayo histórico; solo V dispone de muestra seleccionada inspeccionada. Consultar EVIDENCE.md."
+  },
+  {
+    "id": "S30",
+    "family": "Nodos",
+    "surface": "Duelo ordinario",
+    "componentFiles": [
+      "NodePreparation.tsx"
+    ],
+    "entry": "Nodo duelo",
+    "playerDecision": "Reconocer rival y preparar/confirmar",
+    "currentHierarchy": "Rivales, amenaza, formación, coste5 y tarro",
+    "states": "Mínimo3,recursos insuficientes,stock0+",
+    "proposal": "Gramática de preparación común al jefe sin copiar toda su ceremonia.",
+    "acceptance": "Cancelar no gasta; snapshot/beans válidos; confirmación explícita.",
+    "evidence": "C/T",
+    "motion": "Ver MOTION-AUDIO.md; estático no acredita temporalidad.",
+    "coverage": "Código o ensayo histórico; solo V dispone de muestra seleccionada inspeccionada. Consultar EVIDENCE.md."
+  },
+  {
+    "id": "S31",
+    "family": "Nodos",
+    "surface": "Antesala del jefe",
+    "componentFiles": [
+      "BossPrelude.tsx",
+      "BossPartyStage.tsx",
+      "BossSupplies.tsx"
+    ],
+    "entry": "Nodo jefe",
+    "playerDecision": "Leer composición y preparar antes de confirmar",
+    "currentHierarchy": "Jefe grande, acompañantes, equipo/objetos y CTAcoste",
+    "states": "3/4/5rivales,ambos packs,nombres largos",
+    "proposal": "U08 evitar corte dentro de apellido; U07 plan legible sin otra columna de controles.",
+    "acceptance": "Todos visibles, sin dobleconfirmación; consultar no inicia; foco/error/recovery.",
+    "evidence": "C/V/T",
+    "motion": "Ver MOTION-AUDIO.md; estático no acredita temporalidad.",
+    "coverage": "Código o ensayo histórico; solo V dispone de muestra seleccionada inspeccionada. Consultar EVIDENCE.md."
+  },
+  {
+    "id": "S32",
+    "family": "Nodos",
+    "surface": "Asignación de grageas",
+    "componentFiles": [
+      "BeanAssignments.tsx",
+      "BossSupplies.tsx"
+    ],
+    "entry": "Tarro en preparación de duelo/jefe",
+    "playerDecision": "Elegir portador o conservar",
+    "currentHierarchy": "Stock, tarros, retratos, borrador; riesgos bajo demanda",
+    "states": "0/1/muchos,caído,reserva,revisionincompatible",
+    "proposal": "U10 acotar repetición visual por unidad manteniendo IDs.",
+    "acceptance": "Asignar/quitar/cancelar no consume/descubre; combate confirma una vez.",
+    "evidence": "C/V/T/H",
+    "motion": "Ver MOTION-AUDIO.md; estático no acredita temporalidad.",
+    "coverage": "Código o ensayo histórico; solo V dispone de muestra seleccionada inspeccionada. Consultar EVIDENCE.md."
+  },
+  {
+    "id": "S33",
+    "family": "Combate",
+    "surface": "Entrada neutral",
+    "componentFiles": [
+      "BattlePanel.tsx",
+      "motion/useBattlePlayback.ts"
+    ],
+    "entry": "Commit de combate→#/battle",
+    "playerDecision": "Reconocer bandos y seguir primer evento",
+    "currentHierarchy": "Figuras/PV, nombre de encuentro, ronda válida, pausa",
+    "states": "Primer evento no reproducido,latencia/import",
+    "proposal": "Conservar neutralidad; no anuncio automático de victoria anticipada.",
+    "acceptance": "Log ya confirmado, saldo veraz consultable, no reroll/commit retrasado.",
+    "evidence": "C/T",
+    "motion": "Ver MOTION-AUDIO.md; estático no acredita temporalidad.",
+    "coverage": "Código o ensayo histórico; solo V dispone de muestra seleccionada inspeccionada. Consultar EVIDENCE.md."
+  },
+  {
+    "id": "S34",
+    "family": "Combate",
+    "surface": "Reproducción y acción",
+    "componentFiles": [
+      "BattlePanel.tsx",
+      "scenes/pixi-scenes.ts"
+    ],
+    "entry": "Replay activo",
+    "playerDecision": "Ver actor/objetivo/daño/curación/caída",
+    "currentHierarchy": "Dos bandos, indicadores locales y PV",
+    "states": "3×3/5×3/5×5,miss,escudos reales",
+    "proposal": "U16 medir antes de más efecto; mantener contraste local y figuras sin grandes rectángulos.",
+    "acceptance": "Mismo log; reloj compartido y todos participantes/nombres/PV visibles.",
+    "evidence": "C/V/T",
+    "motion": "Ver MOTION-AUDIO.md; estático no acredita temporalidad.",
+    "coverage": "Código o ensayo histórico; solo V dispone de muestra seleccionada inspeccionada. Consultar EVIDENCE.md."
+  },
+  {
+    "id": "S35",
+    "family": "Combate",
+    "surface": "Pausa, velocidad y omisión",
+    "componentFiles": [
+      "BattlePanel.tsx",
+      "GameSettings.tsx"
+    ],
+    "entry": "Pausa propia de encuentro",
+    "playerDecision": "Consultar/reanudar/omitir o salir",
+    "currentHierarchy": "Menú bajo demanda, recursos y registro",
+    "states": "Pausa temprana,2x,ocultación,tab",
+    "proposal": "Conservar una pausa y velocidad recordada; sin Auto permanente redundante.",
+    "acceptance": "Cursor/DOM/Canvas/audio coherentes, omisión finita, sin operación económica nueva.",
+    "evidence": "C/T",
+    "motion": "Ver MOTION-AUDIO.md; estático no acredita temporalidad.",
+    "coverage": "Código o ensayo histórico; solo V dispone de muestra seleccionada inspeccionada. Consultar EVIDENCE.md."
+  },
+  {
+    "id": "S36",
+    "family": "Combate",
+    "surface": "Inspector y libro del combate",
+    "componentFiles": [
+      "BattlePanel.tsx",
+      "BossBattleFacts.tsx"
+    ],
+    "entry": "Unidad o libro/registro",
+    "playerDecision": "Consultar detalle sin perder evento",
+    "currentHierarchy": "PM/gear/efectos y log, foco al diálogo",
+    "states": "Unidad caída,10actores,registro largo",
+    "proposal": "Mantener detalle accesible sin estadísticas permanentes; máximo2hechos al final.",
+    "acceptance": "Pausa al consultar, retorno de foco, no reanudación o resultado anticipado.",
+    "evidence": "C/V/T",
+    "motion": "Ver MOTION-AUDIO.md; estático no acredita temporalidad.",
+    "coverage": "Código o ensayo histórico; solo V dispone de muestra seleccionada inspeccionada. Consultar EVIDENCE.md."
+  },
+  {
+    "id": "S37",
+    "family": "Combate",
+    "surface": "Victoria, derrota y empate",
+    "componentFiles": [
+      "BattlePanel.tsx",
+      "BossBattleFacts.tsx"
+    ],
+    "entry": "Fin u omisión",
+    "playerDecision": "Entender resultado y siguiente acción",
+    "currentHierarchy": "Resultado/recompensa y hasta2hechos confirmados",
+    "states": "Primer/repetido,plan sin activación,logviejo",
+    "proposal": "Conservar hechos efectivos sin “ganaste gracias a”; menos hechos si no hay evidencia.",
+    "acceptance": "Resultado correcto, cantidad aplicada, bando/instancia y continuación.",
+    "evidence": "C/T",
+    "motion": "Ver MOTION-AUDIO.md; estático no acredita temporalidad.",
+    "coverage": "Código o ensayo histórico; solo V dispone de muestra seleccionada inspeccionada. Consultar EVIDENCE.md."
+  },
+  {
+    "id": "S38",
+    "family": "Combate",
+    "surface": "Consulta histórica",
+    "componentFiles": [
+      "BattlePanel.tsx",
+      "visual-history.ts"
+    ],
+    "entry": "Ver combate guardado/recarga",
+    "playerDecision": "Revisar el mismo combate",
+    "currentHierarchy": "Escena y registro consultables",
+    "states": "Idioma/pack,recarga,no conexión",
+    "proposal": "Conservar modo histórico sin nueva celebración/recompensa.",
+    "acceptance": "BattleLog igual, recursos exactos, anuncios una vez por presentación autorizada.",
+    "evidence": "C/T",
+    "motion": "Ver MOTION-AUDIO.md; estático no acredita temporalidad.",
+    "coverage": "Código o ensayo histórico; solo V dispone de muestra seleccionada inspeccionada. Consultar EVIDENCE.md."
+  },
+  {
+    "id": "S39",
+    "family": "Combate",
+    "surface": "Arte/import/renderer fallido",
+    "componentFiles": [
+      "scenes/SceneCanvas.tsx",
+      "BattlePanel.tsx"
+    ],
+    "entry": "Fallo técnico de presentación",
+    "playerDecision": "Acceder a resultado/registro y continuar",
+    "currentHierarchy": "Fallback DOM con nombres/PV/acciones",
+    "states": "WebGLperdido,imagenrota,reducido",
+    "proposal": "No tratar fallback como otra aplicación sin estilo; preservar acción y nombres.",
+    "acceptance": "Resultado accesible sin renderer, no desaparición de controles ni nuevo cálculo.",
+    "evidence": "C/T",
+    "motion": "Ver MOTION-AUDIO.md; estático no acredita temporalidad.",
+    "coverage": "Código o ensayo histórico; solo V dispone de muestra seleccionada inspeccionada. Consultar EVIDENCE.md."
+  },
+  {
+    "id": "S40",
+    "family": "Combate",
+    "surface": "Sin combate guardado",
+    "componentFiles": [
+      "App.tsx"
+    ],
+    "entry": "#/battle sin battle",
+    "playerDecision": "Regresar al mapa",
+    "currentHierarchy": "Mensaje corto y una acción",
+    "states": "Cuenta nueva/cambio de dueño",
+    "proposal": "Mantener vacío sencillo, sin ilustración que sugiera combate inexistente.",
+    "acceptance": "Volver conserva hash/foco; no iniciar ni fabricar log.",
+    "evidence": "C",
+    "motion": "Ver MOTION-AUDIO.md; estático no acredita temporalidad.",
+    "coverage": "Código o ensayo histórico; solo V dispone de muestra seleccionada inspeccionada. Consultar EVIDENCE.md."
+  },
+  {
+    "id": "S41",
+    "family": "Resultado",
+    "surface": "Resultado de nodo",
+    "componentFiles": [
+      "NodeResult.tsx",
+      "EncounterOutcome.tsx"
+    ],
+    "entry": "Resolver un nodo→mapa",
+    "playerDecision": "Entender qué cambió y continuar",
+    "currentHierarchy": "Resumen plegable, recompensa y retorno",
+    "states": "Refugio/Pacto/encuentro/pase,repetido",
+    "proposal": "Priorizar el cambio recién confirmado; historial no debe dominar ruta.",
+    "acceptance": "Mismo receipt, no volver a animar/grant por idioma o recarga.",
+    "evidence": "C/T",
+    "motion": "Ver MOTION-AUDIO.md; estático no acredita temporalidad.",
+    "coverage": "Código o ensayo histórico; solo V dispone de muestra seleccionada inspeccionada. Consultar EVIDENCE.md."
+  },
+  {
+    "id": "S42",
+    "family": "Resultado",
+    "surface": "Cierre de expedición",
+    "componentFiles": [
+      "ExpeditionClosure.tsx"
+    ],
+    "entry": "Jefe/fin de run→mapa cerrado",
+    "playerDecision": "Usar botín o preparar otra",
+    "currentHierarchy": "Resultado, rival, recompensas y acción contextual; historia bajo consulta",
+    "states": "Primera/repetida/derrota/empate,botín usado",
+    "proposal": "Conservar A63; U02 orientación posterior sin prometer otra llave.",
+    "acceptance": "Botín ganado real, rana propia sin recompra; nueva run requiere selección/confirmación.",
+    "evidence": "C/V/T",
+    "motion": "Ver MOTION-AUDIO.md; estático no acredita temporalidad.",
+    "coverage": "Código o ensayo histórico; solo V dispone de muestra seleccionada inspeccionada. Consultar EVIDENCE.md."
+  },
+  {
+    "id": "S43",
+    "family": "Resultado",
+    "surface": "Intención siguiente y recordatorio",
+    "componentFiles": [
+      "ExpeditionIntentions.tsx"
+    ],
+    "entry": "Después del botín o durante run",
+    "playerDecision": "Escoger/cambiar/abandonar plan voluntario",
+    "currentHierarchy": "Hasta3objetos,un libro,estandarte recordatorio",
+    "states": "Viable/no viable,cumplida/intentada,legacy",
+    "proposal": "Conservar A90; U07 intención sin cifra de potencia y sin premio.",
+    "acceptance": "Elección no compra/avanza; cumplimiento solo log propio y propietario correcto.",
+    "evidence": "C/V/T",
+    "motion": "Ver MOTION-AUDIO.md; estático no acredita temporalidad.",
+    "coverage": "Código o ensayo histórico; solo V dispone de muestra seleccionada inspeccionada. Consultar EVIDENCE.md."
+  },
+  {
+    "id": "S44",
+    "family": "Comercio",
+    "surface": "Callejón de fachadas",
+    "componentFiles": [
+      "ShopHub.tsx"
+    ],
+    "entry": "#/shop",
+    "playerDecision": "Entrar en confitería/taller/bóveda",
+    "currentHierarchy": "Tres fachadas/puertas y carteles funcionales fuera del arte",
+    "states": "Pack,ES/EN,arteausente",
+    "proposal": "Conservar tienda como lugar; comprobar carteles a tamaño real antes de nuevos locales.",
+    "acceptance": "Entrar/regresar no opera; nombre accesible y foco, destinos reales.",
+    "evidence": "C",
+    "motion": "Ver MOTION-AUDIO.md; estático no acredita temporalidad.",
+    "coverage": "Código o ensayo histórico; solo V dispone de muestra seleccionada inspeccionada. Consultar EVIDENCE.md."
+  },
+  {
+    "id": "S45",
+    "family": "Comercio",
+    "surface": "Confitería: rana",
+    "componentFiles": [
+      "SweetshopScene.tsx"
+    ],
+    "entry": "#/shop/confectionery→rana",
+    "playerDecision": "Abrir poseída o comprar+abrir",
+    "currentHierarchy": "Caja protagonista, stock/coste y una acción contextual",
+    "states": "Con rana/sin rana,sin monedas,pendiente",
+    "proposal": "Conservar apertura propia sin cobro; no añadir CTA de compra equivalente.",
+    "acceptance": "Mismo unitId/tableVersion y receipt; consulta/retorno no gasta.",
+    "evidence": "C/T",
+    "motion": "Ver MOTION-AUDIO.md; estático no acredita temporalidad.",
+    "coverage": "Código o ensayo histórico; solo V dispone de muestra seleccionada inspeccionada. Consultar EVIDENCE.md."
+  },
+  {
+    "id": "S46",
+    "family": "Comercio",
+    "surface": "Confitería: grageas",
+    "componentFiles": [
+      "SweetshopScene.tsx"
+    ],
+    "entry": "Confitería→tarro",
+    "playerDecision": "Comprar o preparar el stock",
+    "currentHierarchy": "Tarro, coste,stock,preparar principal si poseído",
+    "states": "Sin combate alcanzable,stock0+,sin monedas",
+    "proposal": "Conservar conector al contexto; U10 stock agregado legible sin bolsa nueva.",
+    "acceptance": "No elegir rama automáticamente, explicación de dónde asignar y retorno seguro.",
+    "evidence": "C/T",
+    "motion": "Ver MOTION-AUDIO.md; estático no acredita temporalidad.",
+    "coverage": "Código o ensayo histórico; solo V dispone de muestra seleccionada inspeccionada. Consultar EVIDENCE.md."
+  },
+  {
+    "id": "S47",
+    "family": "Comercio",
+    "surface": "Libros de probabilidades y botines",
+    "componentFiles": [
+      "ShopBook.tsx",
+      "SweetshopScene.tsx",
+      "CommercePanel.tsx"
+    ],
+    "entry": "Objeto libro de cada tienda",
+    "playerDecision": "Conocer azar/coste antes de operar",
+    "currentHierarchy": "Tabla/objetos dentro del libro, porcentaje real y detalle acabado",
+    "states": "ES/EN,tablaactualizada,catálogo34",
+    "proposal": "U05 cierre robusto; índice visual por familia si se prueba escalabilidad, sin ocultar odds.",
+    "acceptance": "Porcentaje de identidad y acabado distinguido, consulta sin comando.",
+    "evidence": "C/T",
+    "motion": "Ver MOTION-AUDIO.md; estático no acredita temporalidad.",
+    "coverage": "Código o ensayo histórico; solo V dispone de muestra seleccionada inspeccionada. Consultar EVIDENCE.md."
+  },
+  {
+    "id": "S48",
+    "family": "Apertura",
+    "surface": "Caja, sello, rana y carta",
+    "componentFiles": [
+      "CardReveal.tsx",
+      "FrogMagic.tsx",
+      "RevealTheatre.tsx"
+    ],
+    "entry": "Resultado autoritativo de open/buy-open",
+    "playerDecision": "Ver u omitir revelación",
+    "currentHierarchy": "Piezas separadas,4rarezas,nueva/repetida,acabado",
+    "states": "Oculto/reducido/importfail/recarga",
+    "proposal": "Conservar coreografía material; U16 muestra medida antes de cambiar renderer o filtros.",
+    "acceptance": "No nuevo sorteo, mismoresultado, cleanup, omisión y estático equivalentes.",
+    "evidence": "C/T",
+    "motion": "Ver MOTION-AUDIO.md; estático no acredita temporalidad.",
+    "coverage": "Código o ensayo histórico; solo V dispone de muestra seleccionada inspeccionada. Consultar EVIDENCE.md."
+  },
+  {
+    "id": "S49",
+    "family": "Apertura",
+    "surface": "Resultado nuevo/repetido/encantado",
+    "componentFiles": [
+      "CardReveal.tsx",
+      "EnchantedFinish.tsx"
+    ],
+    "entry": "Revelación final",
+    "playerDecision": "Reconocer identidad/acabado y conservar/continuar",
+    "currentHierarchy": "Retrato grande,nombre,rareza/estrellas/casa y2destinos",
+    "states": "Repetida,encantada,arteausente,histórico",
+    "proposal": "U09 jerarquía de marcas; no reducir protagonismo de carta por más badges.",
+    "acceptance": "Acabado cosmético, no ×2; identidad única y anuncios correctos.",
+    "evidence": "C/V/T",
+    "motion": "Ver MOTION-AUDIO.md; estático no acredita temporalidad.",
+    "coverage": "Código o ensayo histórico; solo V dispone de muestra seleccionada inspeccionada. Consultar EVIDENCE.md."
+  },
+  {
+    "id": "S50",
+    "family": "Colección",
+    "surface": "Cromodex y progreso",
+    "componentFiles": [
+      "CollectionPanel.tsx"
+    ],
+    "entry": "#/collection",
+    "playerDecision": "Explorar colección y elegir meta",
+    "currentHierarchy": "Álbum4cartas, progreso/copias, fuente y objetivo",
+    "states": "Inicial/amplia/completa,históricos",
+    "proposal": "U01 universo de progreso común; U09 portada; U11navegación adaptativa.",
+    "acceptance": "No inflación por duplicados/encantados/recuerdos, archivo explícito.",
+    "evidence": "C/T/H",
+    "motion": "Ver MOTION-AUDIO.md; estático no acredita temporalidad.",
+    "coverage": "Código o ensayo histórico; solo V dispone de muestra seleccionada inspeccionada. Consultar EVIDENCE.md."
+  },
+  {
+    "id": "S51",
+    "family": "Colección",
+    "surface": "Cajón de filtros",
+    "componentFiles": [
+      "CollectionPanel.tsx",
+      "ClassificationChoices.tsx",
+      "VisualChoices.tsx"
+    ],
+    "entry": "Álbum→filtros",
+    "playerDecision": "Localizar familia/rareza/descubrimiento/acabado",
+    "currentHierarchy": "19opciones en4grupos solo al expandir",
+    "states": "Vacío,filtro combinado,páginafuera",
+    "proposal": "U11 resumen/limpiar visible; U12 emblemaArmy; no convertir todo en tabs permanentes.",
+    "acceptance": "Filtros no alteran porcentaje ni borran meta; foco/página consistentes.",
+    "evidence": "C/T",
+    "motion": "Ver MOTION-AUDIO.md; estático no acredita temporalidad.",
+    "coverage": "Código o ensayo histórico; solo V dispone de muestra seleccionada inspeccionada. Consultar EVIDENCE.md."
+  },
+  {
+    "id": "S52",
+    "family": "Colección",
+    "surface": "Ficha de identidad y copias",
+    "componentFiles": [
+      "CollectionPanel.tsx",
+      "HouseInsignia.tsx"
+    ],
+    "entry": "Retrato del álbum",
+    "playerDecision": "Inspeccionar identidad o copia concreta",
+    "currentHierarchy": "Folio,marcas,nombre,copias y snapshots",
+    "states": "Sin descubrir,duplicados,equipodistinto,archivo",
+    "proposal": "U09 dos niveles; U05 cierre fallback; equipo sigue en preparación.",
+    "acceptance": "Metadatos secretos conservadores; identidad/copias/acabado diferenciados y retorno exacto.",
+    "evidence": "C/V/T",
+    "motion": "Ver MOTION-AUDIO.md; estático no acredita temporalidad.",
+    "coverage": "Código o ensayo histórico; solo V dispone de muestra seleccionada inspeccionada. Consultar EVIDENCE.md."
+  },
+  {
+    "id": "S53",
+    "family": "Colección",
+    "surface": "Objetivo y fuentes",
+    "componentFiles": [
+      "CollectionSources.tsx",
+      "useCollectionGoal.ts"
+    ],
+    "entry": "Ficha→marcar objetivo",
+    "playerDecision": "Escoger una adquisición y conocer fuente real",
+    "currentHierarchy": "Marcapáginas, probabilidades,propia/temporal; versión a demanda",
+    "states": "Obtenido,archivado,cambiacuenta,sin fuente",
+    "proposal": "Conservar PM05/A90; integrar visualmente al folio sin otra tarjeta dominante.",
+    "acceptance": "Temporal no adquiere; consulta no consume ni cambia azar; meta por dueño/versión.",
+    "evidence": "C/V/T",
+    "motion": "Ver MOTION-AUDIO.md; estático no acredita temporalidad.",
+    "coverage": "Código o ensayo histórico; solo V dispone de muestra seleccionada inspeccionada. Consultar EVIDENCE.md."
+  },
+  {
+    "id": "S54",
+    "family": "Colección",
+    "surface": "Sabores y ayuda",
+    "componentFiles": [
+      "FlavourCabinet.tsx"
+    ],
+    "entry": "Álbum/atlas→tarro",
+    "playerDecision": "Ver descubiertos y cómo intentarlo",
+    "currentHierarchy": "Cuatro muestras y libro; no fabricar sabor",
+    "states": "0–4,activo conocido/desconocido,ayuda",
+    "proposal": "U14 lenguaje descubrir frente a receta; U05 cierre.",
+    "acceptance": "Descubrir solo activación válida, no selección/compra; porcentaje separado de cromos.",
+    "evidence": "C/T",
+    "motion": "Ver MOTION-AUDIO.md; estático no acredita temporalidad.",
+    "coverage": "Código o ensayo histórico; solo V dispone de muestra seleccionada inspeccionada. Consultar EVIDENCE.md."
+  },
+  {
+    "id": "S55",
+    "family": "Taller",
+    "surface": "Materiales y comparación",
+    "componentFiles": [
+      "CommercePanel.tsx",
+      "WandRecipeComparison.tsx"
+    ],
+    "entry": "#/shop/workshop",
+    "playerDecision": "Elegir receta y portador de referencia",
+    "currentHierarchy": "Madera/núcleo,2varitas y3diferencias; coste",
+    "states": "Sin portador,duplicados,legacy,no saldo",
+    "proposal": "Conservar muestra A90; consulta de renuncia sin promesa de victoria.",
+    "acceptance": "Fuente efectiva/motor compartido; elegir referencia no equipa ni compra.",
+    "evidence": "C/V/T",
+    "motion": "Ver MOTION-AUDIO.md; estático no acredita temporalidad.",
+    "coverage": "Código o ensayo histórico; solo V dispone de muestra seleccionada inspeccionada. Consultar EVIDENCE.md."
+  },
+  {
+    "id": "S56",
+    "family": "Taller",
+    "surface": "Confirmar forja",
+    "componentFiles": [
+      "CommercePanel.tsx"
+    ],
+    "entry": "Receta→cotización",
+    "playerDecision": "Aceptar coste o cancelar",
+    "currentHierarchy": "Pieza,coste,confirmar/cancelar y error en contexto",
+    "states": "Versiónobsoleta,pending,respuestaperdida",
+    "proposal": "Conservar confirmación económica; no ceremonializar otro paso.",
+    "acceptance": "Una entrega/consumo, recovery y foco en resultado u origen.",
+    "evidence": "C/T",
+    "motion": "Ver MOTION-AUDIO.md; estático no acredita temporalidad.",
+    "coverage": "Código o ensayo histórico; solo V dispone de muestra seleccionada inspeccionada. Consultar EVIDENCE.md."
+  },
+  {
+    "id": "S57",
+    "family": "Taller",
+    "surface": "Varita obtenida e historial",
+    "componentFiles": [
+      "CommercePanel.tsx"
+    ],
+    "entry": "Forja confirmada/regreso",
+    "playerDecision": "Inspeccionar y preparar equipo",
+    "currentHierarchy": "Pieza y CTAcontextual; equipo poseído en libro",
+    "states": "Resultadoviejo,inventariogrande",
+    "proposal": "Separar último resultado histórico del objeto aún pendiente de equipar; no fingir novedad al volver.",
+    "acceptance": "Equipar explícito; no celebrar histórico ni comprar de nuevo.",
+    "evidence": "C/T",
+    "motion": "Ver MOTION-AUDIO.md; estático no acredita temporalidad.",
+    "coverage": "Código o ensayo histórico; solo V dispone de muestra seleccionada inspeccionada. Consultar EVIDENCE.md."
+  },
+  {
+    "id": "S58",
+    "family": "Bóveda",
+    "surface": "Sin llave",
+    "componentFiles": [
+      "CommercePanel.tsx"
+    ],
+    "entry": "#/shop/vault con0llaves",
+    "playerDecision": "Entender requisito o siguiente destino viable",
+    "currentHierarchy": "Cerradura y llave; ayuda/destino",
+    "states": "Antes jefe,primera llave ya consumida",
+    "proposal": "U02 distinguir pendiente de ya completada; no añadir otra fuente o compensación.",
+    "acceptance": "Mensaje viable en cada estado y conservación de derechos únicos.",
+    "evidence": "C/T",
+    "motion": "Ver MOTION-AUDIO.md; estático no acredita temporalidad.",
+    "coverage": "Código o ensayo histórico; solo V dispone de muestra seleccionada inspeccionada. Consultar EVIDENCE.md."
+  },
+  {
+    "id": "S59",
+    "family": "Bóveda",
+    "surface": "Llave y confirmación",
+    "componentFiles": [
+      "CommercePanel.tsx"
+    ],
+    "entry": "Bóveda con llave→cotización",
+    "playerDecision": "Consumir1llave explícitamente",
+    "currentHierarchy": "Llave/cerradura,botinesconsultables,confirmar/cancelar",
+    "states": "Dobletoque,staletable,otra pestaña",
+    "proposal": "Conservar objeto protagonista y una acción pagada.",
+    "acceptance": "Consultar/cancelar no consume; llave y recompensa atómicas una vez.",
+    "evidence": "C/T",
+    "motion": "Ver MOTION-AUDIO.md; estático no acredita temporalidad.",
+    "coverage": "Código o ensayo histórico; solo V dispone de muestra seleccionada inspeccionada. Consultar EVIDENCE.md."
+  },
+  {
+    "id": "S60",
+    "family": "Bóveda",
+    "surface": "Botín y retorno",
+    "componentFiles": [
+      "CommercePanel.tsx"
+    ],
+    "entry": "Apertura confirmada",
+    "playerDecision": "Usar lo obtenido y volver",
+    "currentHierarchy": "Cofre,objeto,monedas/gear y preparar",
+    "states": "Rana/gear/beans,resultadohistórico",
+    "proposal": "Priorizar destino del objeto ganado cuando haya rana; no todo botín conduce a equipar.",
+    "acceptance": "Destino no consume automáticamente; inventario/receipt exactos y actualización tras uso.",
+    "evidence": "C/T/H",
+    "motion": "Ver MOTION-AUDIO.md; estático no acredita temporalidad.",
+    "coverage": "Código o ensayo histórico; solo V dispone de muestra seleccionada inspeccionada. Consultar EVIDENCE.md."
+  },
+  {
+    "id": "S61",
+    "family": "Atlas",
+    "surface": "Misiones/objetivos",
+    "componentFiles": [
+      "JourneyCabinet.tsx"
+    ],
+    "entry": "#/missions",
+    "playerDecision": "Reconocer avance y siguiente objetivo",
+    "currentHierarchy": "Tres objetos y orientación, sabores/atlas",
+    "states": "Inicio,avanzado,sin llaves,colección34",
+    "proposal": "U01 progreso fiable y U02meta viable; consolidar destinos duplicados si no añaden elección.",
+    "acceptance": "Mismos totales y fuentes que sus pantallas; no pantalla nueva de reclamaciones.",
+    "evidence": "C/T",
+    "motion": "Ver MOTION-AUDIO.md; estático no acredita temporalidad.",
+    "coverage": "Código o ensayo histórico; solo V dispone de muestra seleccionada inspeccionada. Consultar EVIDENCE.md."
+  },
+  {
+    "id": "S62",
+    "family": "Atlas",
+    "surface": "Región futura",
+    "componentFiles": [
+      "JourneyCabinet.tsx"
+    ],
+    "entry": "Atlas→página futura",
+    "playerDecision": "Comprender disponibilidad real",
+    "currentHierarchy": "Página actual y futura bloqueada/desbloqueada",
+    "states": "Jefe vencido sin región2jugable",
+    "proposal": "Mostrar “Próximamente”/“Coming later” junto al estado narrativo; nunca CTAjugable falso.",
+    "acceptance": "No generar otra ruta ni prometer acceso por desbloqueo de estado.",
+    "evidence": "C/T",
+    "motion": "Ver MOTION-AUDIO.md; estático no acredita temporalidad.",
+    "coverage": "Código o ensayo histórico; solo V dispone de muestra seleccionada inspeccionada. Consultar EVIDENCE.md."
+  },
+  {
+    "id": "S63",
+    "family": "Temporada",
+    "surface": "Descubrimiento y participación",
+    "componentFiles": [
+      "SeasonalEvent.tsx"
+    ],
+    "entry": "Calabaza de cabecera",
+    "playerDecision": "Conocer historia,fecha,coste y elegir participar",
+    "currentHierarchy": "Tres escaparates y recuerdo,una acción",
+    "states": "Antes/abierto/gracia/cerrado,otraediciónactiva",
+    "proposal": "Conservar voluntario; revisar muestra en contexto antes de más ambiente.",
+    "acceptance": "Hora servidor, joinidempotente y costes reales; consultar no progresa.",
+    "evidence": "C/T",
+    "motion": "Ver MOTION-AUDIO.md; estático no acredita temporalidad.",
+    "coverage": "Código o ensayo histórico; solo V dispone de muestra seleccionada inspeccionada. Consultar EVIDENCE.md."
+  },
+  {
+    "id": "S64",
+    "family": "Temporada",
+    "surface": "Progreso parcial y espera",
+    "componentFiles": [
+      "SeasonalEvent.tsx"
+    ],
+    "entry": "Participaciónactiva",
+    "playerDecision": "Saber cuándo avanzar y qué falta",
+    "currentHierarchy": "Tres objetivos/estado y destino de ruta",
+    "states": "Runactiva,cerrada,ventana no alcanzada",
+    "proposal": "Progreso por objetos, una orientación; no exigir repetición vacía o urgencia artificial.",
+    "acceptance": "Edición/snapshot conservados; cierre temporal de run permite plazo correcto.",
+    "evidence": "C/T",
+    "motion": "Ver MOTION-AUDIO.md; estático no acredita temporalidad.",
+    "coverage": "Código o ensayo histórico; solo V dispone de muestra seleccionada inspeccionada. Consultar EVIDENCE.md."
+  },
+  {
+    "id": "S65",
+    "family": "Temporada",
+    "surface": "Elección temática",
+    "componentFiles": [
+      "SeasonalEvent.tsx"
+    ],
+    "entry": "Oportunidad admitida",
+    "playerDecision": "Reparar o intercambiar condición/aplazar",
+    "currentHierarchy": "Dos objetos y cambios PV/PM,confirmación explícita",
+    "states": "Portadores/condición distinta,cancelar,error",
+    "proposal": "U04error localizado; consecuencias antes de gastar y coste de aplazar visible.",
+    "acceptance": "Consulta no resortea, resultado/progreso/operación guardados juntos.",
+    "evidence": "C/T",
+    "motion": "Ver MOTION-AUDIO.md; estático no acredita temporalidad.",
+    "coverage": "Código o ensayo histórico; solo V dispone de muestra seleccionada inspeccionada. Consultar EVIDENCE.md."
+  },
+  {
+    "id": "S66",
+    "family": "Temporada",
+    "surface": "Cierre y recuerdo",
+    "componentFiles": [
+      "SeasonalEvent.tsx"
+    ],
+    "entry": "Tres objetivos confirmados",
+    "playerDecision": "Reconocer fin y conservar recuerdo",
+    "currentHierarchy": "Linterna y cierre breve,animación450msnueva",
+    "states": "Responselost,dobletoque,recarga,pack",
+    "proposal": "Conservar recuerdo sin poder/valor ni denominador de colección principal.",
+    "acceptance": "Concesión propia única; consulta sin nueva celebración ni premio.",
+    "evidence": "C/T",
+    "motion": "Ver MOTION-AUDIO.md; estático no acredita temporalidad.",
+    "coverage": "Código o ensayo histórico; solo V dispone de muestra seleccionada inspeccionada. Consultar EVIDENCE.md."
+  },
+  {
+    "id": "S67",
+    "family": "Temporada",
+    "surface": "Histórico y próxima edición",
+    "componentFiles": [
+      "SeasonalEvent.tsx"
+    ],
+    "entry": "Evento fuera de calendario con historial",
+    "playerDecision": "Consultar lo conservado",
+    "currentHierarchy": "Recuerdo estático y reglas/fechas a demanda",
+    "states": "Calendariopasado,edicióncompatible/incompatible",
+    "proposal": "Conservar distinción evento/edición; no producir Navidad por esta auditoría.",
+    "acceptance": "Historial no se borra, progreso nuevo no migra objetivos incompatibles.",
+    "evidence": "C/T",
+    "motion": "Ver MOTION-AUDIO.md; estático no acredita temporalidad.",
+    "coverage": "Código o ensayo histórico; solo V dispone de muestra seleccionada inspeccionada. Consultar EVIDENCE.md."
+  },
+  {
+    "id": "S68",
+    "family": "Transversal",
+    "surface": "Operación, vacío y arte ausente",
+    "componentFiles": [
+      "OperationFeedback.tsx",
+      "Artwork.tsx",
+      "RecoveryNotice.tsx"
+    ],
+    "entry": "Cualquier superficie",
+    "playerDecision": "Saber si se confirmó, está pendiente o falló",
+    "currentHierarchy": "Sello/estado breve y detalle optativo",
+    "states": "Errorantescommit,replyperdida,stock0,contexto nuevo",
+    "proposal": "U04/U05/U18 coherencia por familias, sin borrar alertas por reducir texto.",
+    "acceptance": "Successsolo postreceipt; fallar medición/arte no cambia economía; foco y acción conservados.",
+    "evidence": "C/T",
+    "motion": "Ver MOTION-AUDIO.md; estático no acredita temporalidad.",
+    "coverage": "Código o ensayo histórico; solo V dispone de muestra seleccionada inspeccionada. Consultar EVIDENCE.md."
+  }
+]

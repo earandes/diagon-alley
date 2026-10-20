@@ -213,14 +213,37 @@ for (const language of ['es', 'en'] as const)
       // Visibility alone does not detect an overlapping sibling or auto-scroll on click.
       const consultation = page.locator('.node-event-dialog');
       expect(await consultation.evaluate((element) => element.scrollTop)).toBe(0);
-      const footerBox = await page.locator('.node-combat-actions').boundingBox();
       for (const control of [
         page.locator('.node-team-prepare'),
         page.locator('.node-bean-preparation > summary'),
-      ]) {
+      ])
         await expect(control).toBeInViewport({ ratio: 1 });
-        const box = await control.boundingBox();
-        expect(box!.y + box!.height).toBeLessThanOrEqual(footerBox!.y);
+      // Compare coordinates in one layout sample: the dialog entrance transforms
+      // both objects. Separate awaited boundingBox reads can compare different frames.
+      const preparationGeometry = await consultation.evaluate((dialog) => {
+        const footer = dialog.querySelector('.node-combat-actions')!.getBoundingClientRect();
+        return ['.node-team-prepare', '.node-bean-preparation > summary'].map((selector) => {
+          const box = dialog.querySelector(selector)!.getBoundingClientRect();
+          return {
+            selector,
+            bottom: box.bottom,
+            footerTop: footer.top,
+            gap: footer.top - box.bottom,
+          };
+        });
+      });
+      await report(`initial-preparation-geometry-${language}-${pack}`, {
+        fixture: false,
+        partyCount: run.members.length,
+        language,
+        pack,
+        preparationGeometry,
+      });
+      for (const box of preparationGeometry) {
+        expect(
+          box.bottom,
+          `${box.selector}: ${run.members.length} members, ${language}/${pack}`,
+        ).toBeLessThanOrEqual(box.footerTop);
       }
       expect(
         await prelude

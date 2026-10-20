@@ -177,6 +177,13 @@ for (const language of ['es', 'en'] as const)
       await expect(page.locator('.commerce-result')).toBeVisible();
       const vault = await readGame(page);
       expect(vault.inventory.goldKeys).toBe((opened.inventory.goldKeys ?? 0) - 1);
+      // A92: spending the unique first-victory key must not advertise another from repetition.
+      await expect(page.locator('#vault-key-hint')).toContainText(
+        language === 'es' ? 'No quedan fuentes de llave' : 'No key sources remain',
+      );
+      await expect(page.locator('.vault-next-goal .vault-map-action')).toHaveAccessibleName(
+        language === 'es' ? 'Preparar otra expedición' : 'Prepare another expedition',
+      );
       await page
         .locator('nav')
         .getByRole('button', { name: language === 'es' ? 'Mapa' : 'Map', exact: true })
@@ -192,12 +199,10 @@ for (const language of ['es', 'en'] as const)
       await expect(closure.locator('[data-closure-action="prepare"]')).toBeFocused();
       await page.locator('.closure-history > summary').click();
       await page.locator('.closure-history .receipt-disclosure > summary').click();
-      const historyPrepare = page
-        .locator('.closure-history')
-        .getByRole('button', {
-          name: language === 'es' ? 'Otra expedición' : 'Another expedition',
-          exact: true,
-        });
+      const historyPrepare = page.locator('.closure-history').getByRole('button', {
+        name: language === 'es' ? 'Otra expedición' : 'Another expedition',
+        exact: true,
+      });
       await historyPrepare.click();
       await expect(page.locator('.preparation-dialog[open]')).toBeVisible();
       await page.keyboard.press('Escape');

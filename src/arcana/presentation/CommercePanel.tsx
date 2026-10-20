@@ -6,7 +6,9 @@ import { EquipmentArt } from './EquipmentArt';
 import { Artwork } from './Artwork';
 import { useConfirmedMotion } from './useConfirmedMotion';
 import './motion-a69.css';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
+import { vaultGuidance } from '../application/client/vault-guidance';
+import { progressVaultText } from './progress-vault-messages';
 import type {
   CommerceCatalogs,
   ForgeWandRequest,
@@ -78,9 +80,25 @@ export function CommercePanel({
   const t = (key: MessageKey, values?: Record<string, string | number>) =>
       text(language, key, values),
     numbers = new Intl.NumberFormat(language === 'es' ? 'es-ES' : 'en-US');
-  const result = ([receipt, ...[...game.receipts].reverse()].find(
-    (r) => r?.kind === (mode === 'workshop' ? 'forge-wand' : 'open-vault'),
-  ) ?? null) as ForgeReceipt | VaultReceipt | null;
+  const result = useMemo(() => {
+    const kind = mode === 'workshop' ? 'forge-wand' : 'open-vault';
+    if (receipt?.kind === kind) return receipt as ForgeReceipt | VaultReceipt;
+    for (let index = game.receipts.length - 1; index >= 0; index--) {
+      const candidate = game.receipts[index];
+      if (candidate.kind === kind) return candidate as ForgeReceipt | VaultReceipt;
+    }
+    return null;
+  }, [receipt, game.receipts, mode]);
+  const guidance = useMemo(
+    () => vaultGuidance(game, preparationContent, result?.kind === 'open-vault'),
+    [game, preparationContent, result?.kind],
+  );
+  const vaultReturn =
+    guidance.status === 'source'
+      ? 'findSource'
+      : game.exploration?.run?.status === 'active'
+        ? 'continueRoute'
+        : 'plan';
   const resultMotion = useConfirmedMotion(
     'commerce-result',
     result?.id,
@@ -259,16 +277,29 @@ export function CommercePanel({
           </div>
           {!offers.canOpenVault && (
             <div className="vault-next-goal">
-              <p id="vault-key-hint">{t('earnBossKey')}</p>
+              <p id="vault-key-hint">
+                {progressVaultText(
+                  language,
+                  guidance.status === 'source'
+                    ? guidance.source === 'boss'
+                      ? 'source'
+                      : 'routeSource'
+                    : guidance.status === 'unknown'
+                      ? 'unknown'
+                      : guidance.opened
+                        ? 'used'
+                        : 'unavailable',
+                )}
+              </p>
               {onMap && (
                 <button
                   type="button"
                   className="game-object vault-map-action"
-                  aria-label={shopText(language, 'findKey')}
+                  aria-label={progressVaultText(language, vaultReturn)}
                   onClick={onMap}
                 >
                   <Artwork asset="ui.map" language={language} decorative />
-                  <span>{shopText(language, 'findKey')}</span>
+                  <span>{progressVaultText(language, vaultReturn)}</span>
                 </button>
               )}
             </div>

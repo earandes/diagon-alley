@@ -1,3 +1,4 @@
+import './plan-grammar-a92.css';
 import { bondText } from './bond-messages';
 import type { CombatRules } from '../domain/combat/engine';
 import {
@@ -30,7 +31,12 @@ export function BondBand({
     return <HouseBand units={units} rules={rules} language={language} />;
   const group = bondProgress(units, rules.bonds, focus);
   return (
-    <div className="house-band bond-band" aria-label={bondText(language, 'teamBond')}>
+    <div
+      className="house-band bond-band"
+      data-team-bond={focus}
+      aria-label={bondText(language, 'teamBond')}
+    >
+      <span className="team-bond-caption">{bondText(language, 'bond')}</span>
       <details data-bond-progress={focus} data-active={group.tier > 0}>
         <summary
           aria-label={`${bondName(focus, language)} · ${group.tier ? bondText(language, 'activeTier', { tier: group.tier }) : `${group.count}/3`}`}

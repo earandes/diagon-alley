@@ -18,6 +18,9 @@ import './contextual-preparation.css';
 import { beanRiskPreview, mintRecoveryPreview } from './commerce-preparation';
 import { commercePrepText as p } from './commerce-preparation-messages';
 import './commerce-preparation.css';
+import './collection-supplies.css';
+import { adjacentBeanId, beanStockSelection } from './collection-supplies-model';
+import { collectionSuppliesText as s } from './collection-supplies-messages';
 type Assignments = AdvanceNodeRequest['assignments'];
 export function BeanAssignments({
   run,
@@ -41,7 +44,8 @@ export function BeanAssignments({
     (p) => p.kind === 'random-beans' && p.status === 'available',
   );
   const [chosenJar, setChosenJar] = useState<string | null>(null);
-  const selected = available.find((p) => p.id === chosenJar)?.id ?? available[0]?.id ?? null;
+  const selection = beanStockSelection(available, chosenJar);
+  const selected = selection.id;
   const draft = validBeanAssignments(assignments, run, game);
   const flavours = {
     mint: 'mintBean',
@@ -85,29 +89,110 @@ export function BeanAssignments({
             <span>{text(language, 'noBeansAvailable')}</span>
           </div>
         )}
-        {available.map((jar, index) => (
-          <button
-            key={jar.id}
-            className="game-object bean-jar-choice"
-            data-bean-id={jar.id}
-            data-visual-value={jar.id}
-            aria-label={c(language, 'jar', { number: index + 1 })}
-            aria-pressed={selected === jar.id}
-            onClick={() => setChosenJar(jar.id)}
-          >
-            <Artwork asset="beans.jar" language={language} decorative />
-            <span>{index + 1}</span>
-            {draft.some((a) => a.beanId === jar.id) && (
-              <Artwork
-                asset="ui.seal"
-                className="bean-assigned-seal"
-                language={language}
-                decorative
-              />
+        {selected && (
+          <div className="bean-stock-object" data-bean-stock={selection.count}>
+            {selection.count > 1 && (
+              <button
+                type="button"
+                className="bean-stock-page"
+                aria-label={s(language, 'previousJar')}
+                disabled={selection.index === 0}
+                onClick={() => setChosenJar(adjacentBeanId(available, selected, -1))}
+              >
+                <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true">
+                  <path
+                    d="m15 5-7 7 7 7"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </button>
             )}
-          </button>
-        ))}
+            <div
+              className="bean-stock-jar"
+              role="group"
+              data-bean-id={selected}
+              data-visual-value={selected}
+              aria-label={s(language, 'selectedJar', {
+                number: selection.index + 1,
+                count: selection.count,
+              })}
+            >
+              <Artwork asset="beans.jar" language={language} decorative />
+              {draft.some((a) => a.beanId === selected) && (
+                <Artwork
+                  asset="ui.seal"
+                  className="bean-assigned-seal"
+                  language={language}
+                  decorative
+                />
+              )}
+              <span>{s(language, 'jarNumber', { number: selection.index + 1 })}</span>
+            </div>
+            {selection.count > 1 && (
+              <button
+                type="button"
+                className="bean-stock-page"
+                aria-label={s(language, 'nextJar')}
+                disabled={selection.index === selection.count - 1}
+                onClick={() => setChosenJar(adjacentBeanId(available, selected, 1))}
+              >
+                <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true">
+                  <path
+                    d="m9 5 7 7-7 7"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </button>
+            )}
+          </div>
+        )}
       </div>
+      {!!draft.length && (
+        <div
+          className="bean-assigned-bookmarks"
+          role="group"
+          aria-label={s(language, 'assignedJars')}
+        >
+          {draft.map((assignment) => {
+            const position = run.members.findIndex(
+              (member) => member.unit.id === assignment.unitId,
+            );
+            const unit = run.members[position].unit;
+            const jarNumber = available.findIndex((jar) => jar.id === assignment.beanId) + 1;
+            const name = themedName(unit.wizardId, text(language, 'temporaryAlly'), language);
+            return (
+              <button
+                key={assignment.beanId}
+                type="button"
+                aria-pressed={selected === assignment.beanId}
+                aria-label={s(language, 'carrierJar', {
+                  number: jarNumber,
+                  position: position + 1,
+                  name,
+                })}
+                onClick={() => setChosenJar(assignment.beanId)}
+              >
+                <Artwork
+                  asset={`character.${unit.wizardId}.thumbnail`}
+                  language={language}
+                  decorative
+                />
+                <span>
+                  {position + 1} · {jarNumber}
+                </span>
+              </button>
+            );
+          })}
+        </div>
+      )}
       {available.length > 0 && (
         <>
           <p className="bean-carrier-instruction">{c(language, 'pickCarrier')}</p>
@@ -181,7 +266,12 @@ export function BeanAssignments({
           </p>
         </>
       )}
-      <PreparationSynergies members={run.members} rules={rules} language={language} />
+      <PreparationSynergies
+        members={run.members}
+        mode={run.bondFocus}
+        rules={rules}
+        language={language}
+      />
       <details className="bean-context-help">
         <summary>{text(language, 'beanEffects')}</summary>
         <p>{p(language, 'preserve')}</p>

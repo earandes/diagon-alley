@@ -89,18 +89,32 @@ async function readGame(page: Page): Promise<GameState> {
 }
 
 async function accountFromSettings(page: Page) {
-  const active = page.locator('dialog[open]').last();
-  const activeSettings = active.getByRole('button', { name: /^(Ajustes|Settings)$/ });
-  const origin = (await activeSettings.count()) ? active : page.locator('header').first();
-  await origin.getByRole('button', { name: /^(Ajustes|Settings)$/ }).click();
   const settings = page.locator('dialog.game-settings[open]');
+  if (!(await settings.count())) {
+    const active = page.locator('dialog[open]').last();
+    const activeSettings = active.getByRole('button', { name: /^(Ajustes|Settings)$/ });
+    const origin = (await activeSettings.count()) ? active : page.locator('header').first();
+    await origin.getByRole('button', { name: /^(Ajustes|Settings)$/ }).click();
+  }
   await expect(settings).toBeVisible();
   await settings.locator('[data-account-entry="settings"]').click();
   await expect(dialog(page)).toBeVisible();
 }
 
 async function dismissSettings(page: Page) {
-  if (await page.locator('dialog.game-settings[open]').count()) await page.keyboard.press('Escape');
+  const opening = page.locator('dialog.reveal[open]');
+  if (await opening.count()) {
+    await page.keyboard.press('Escape');
+    await expect(opening).toHaveCount(0);
+  }
+  const settings = page.locator('dialog.game-settings[open]');
+  if (await settings.count()) {
+    const close = settings.locator('.settings-close');
+    await close.focus();
+    await expect(close).toBeFocused();
+    await page.keyboard.press('Escape');
+    await expect(settings).toHaveCount(0);
+  }
 }
 
 async function register(page: Page, email: string, language: Language) {
@@ -378,6 +392,8 @@ for (const pack of ['diagon-alley', 'arcana'] as const) {
         ).toHaveCount(0);
         await signIn(page, guestEmail, language);
         await expect(dialog(page)).toHaveCount(0);
+        // The recovered opening is confirmed, and now follows completed authentication.
+        await expect(page.locator('dialog.reveal[open]')).toBeVisible();
         await dismissSettings(page);
         expect(await readGame(page)).toEqual(committed);
         expect(posts).toBe(1);

@@ -1,0 +1,82 @@
+{
+  "run": 39353793256,
+  "head": "b6c08000267a28d1851318fbcfdfeb780e459fb9",
+  "checkout": "135a4fe98a12a8efe71c166e61cda92c4bc342b8",
+  "artifact": 12237335982,
+  "sources": [
+    {
+      "source": "performance/baseline.json",
+      "bytes": 2748,
+      "sha256": "d198062098d2e03af31bd65d888f4b61f79dfed1a6eb15ccfb24a63c1d8987aa",
+      "embeddedCodeSha": null
+    },
+    {
+      "source": "performance/current.json",
+      "bytes": 2642,
+      "sha256": "0eec1745a9d4145c8caf8f27b777283d5e966aaf4ef2baf7baaee4f7081fdf6c",
+      "embeddedCodeSha": null
+    },
+    {
+      "source": "browser/chromium-a67-arcana-en-encounter-metrics.json",
+      "bytes": 590,
+      "sha256": "7a38ed1582bed2546ae8b91ac87fb59a8331915c11c8629e4dcd7ce709663d4a",
+      "embeddedCodeSha": null
+    },
+    {
+      "source": "browser/chromium-a67-arcana-es-encounter-metrics.json",
+      "bytes": 590,
+      "sha256": "26480e0dbf7f3f8cfe8bb6c84dceff4b52c36f86b5442744c3704fb711f76ec4",
+      "embeddedCodeSha": null
+    },
+    {
+      "source": "browser/chromium-a67-diagon-alley-en-encounter-metrics.json",
+      "bytes": 590,
+      "sha256": "cd3599784b52114b98466353222cd06ce945c990a67c560655d6498c061c832a",
+      "embeddedCodeSha": null
+    },
+    {
+      "source": "browser/chromium-a67-diagon-alley-es-encounter-metrics.json",
+      "bytes": 590,
+      "sha256": "c9cef2576dd5bdb1c39cc0c12824dbb1ba1b6de1d13582b28bd60fa739e566fb",
+      "embeddedCodeSha": null
+    },
+    {
+      "source": "browser/webkit-a67-arcana-en-encounter-metrics.json",
+      "bytes": 590,
+      "sha256": "16eeae874c1dec66c3f6dbcd724059244fd55ecbd6e38e5da46748c6ca0e70a6",
+      "embeddedCodeSha": null
+    },
+    {
+      "source": "browser/webkit-a67-arcana-es-encounter-metrics.json",
+      "bytes": 590,
+      "sha256": "28b6b05408de3e5677f445b390d32ccd8368887e65fa57b9a4f789f987a753eb",
+      "embeddedCodeSha": null
+    },
+    {
+      "source": "browser/webkit-a67-diagon-alley-en-encounter-metrics.json",
+      "bytes": 591,
+      "sha256": "10d402ef0c6ad959b804d6b85d1fc848aa234049f5dddd1b40a324d283240d71",
+      "embeddedCodeSha": null
+    },
+    {
+      "source": "browser/webkit-a67-diagon-alley-es-encounter-metrics.json",
+      "bytes": 591,
+      "sha256": "a3b8d5876f1ac759eee0b6ce6f8238f53de2daf9ac3fb49c29ae9f497e1609c2",
+      "embeddedCodeSha": null
+    }
+  ],
+  "referenceManifest": {
+    "path": "docs/arcana/progression-increment-2026-10-16/evidence/performance-reference/manifest.json",
+    "sha256": "7b9b2089c3facd6c900228580d9ceb3e870039d0566cfed64bce4e93693947a7"
+  },
+  "archive": {
+    "file": "technical-observations.json.gz",
+    "bytes": 2481,
+    "sha256": "bebaa75f72b063036255e4549501d69e2c92697adac35fef1b2397351538186d",
+    "uncompressedSha256": "185c68bb4678838c5eb1a3c683d2a58eeaa21db6d5a5807180ad0f360d095465",
+    "performanceReports": 2,
+    "performanceActions": 18,
+    "encounterReports": 8
+  },
+  "selection": "Only legacy performance summaries, API pathname/duration pairs and encounter latency/geometry. All10reports lack embedded SHA; do not confuse attribution to current CI checkout with a self-declared result SHA. Baseline is reconstructed runtime specified by manifest, never current SHA."
+}

@@ -1,0 +1,315 @@
+{
+  "run": 39353793256,
+  "url": "https://github.com/earandes/diagon-alley/actions/runs/39353793256",
+  "head": "b6c08000267a28d1851318fbcfdfeb780e459fb9",
+  "checkout": "135a4fe98a12a8efe71c166e61cda92c4bc342b8",
+  "tree": "7fe64d45579c8ed6096769a35bce838aa59ac669",
+  "conclusion": "success",
+  "jobs": [
+    {
+      "name": "check",
+      "conclusion": "success",
+      "databaseId": 118403920397,
+      "steps": [
+        {
+          "name": "Set up job",
+          "conclusion": "success"
+        },
+        {
+          "name": "Initialize containers",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/checkout@v4",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/setup-node@v4",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run npm ci --no-fund --no-audit",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run npm run typecheck",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run npm run validate:content",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run npm test",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run npm run test:integration",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run npm run build",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run node tools/verification/verify-accounts-backup-a76.mjs",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run npm run verify:arcana:build",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run npx playwright install --with-deps chromium webkit",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run ARCANA_CAPTURE_A76=1 npx playwright test --config playwright.accounts-a76.config.ts",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/upload-artifact@v4",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run ARCANA_CAPTURE_A82=1 npx playwright test --config playwright.welcome-menu-a82.config.ts",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/upload-artifact@v4",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run node -e \"const p=require('./tools/verification/a75-phase.json').phase;if(!['baseline','full','webkit','resume','tail'].includes(p))throw Error('Invalid A75 phase');require('fs').appendFileSync(process.env.GITHUB_OUTPUT,'phase='+p+'\\\\n')\"",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run npx playwright test --config playwright.accounts-fixes-a78.config.ts",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/upload-artifact@v4",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run npx playwright test --config playwright.account-entry-a79.config.ts",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/upload-artifact@v4",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run npx playwright test --config playwright.account-style-a80.config.ts",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/upload-artifact@v4",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run npx playwright test --config playwright.account-symbols-a81.config.ts",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/upload-artifact@v4",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run ARCANA_CAPTURE_A75=1 npx playwright test --config playwright.experience-a75.config.ts",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/upload-artifact@v4",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run ARCANA_CAPTURE_A70=1 npx playwright test --config playwright.boss-a70.config.ts",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/upload-artifact@v4",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run npx playwright test --config playwright.seasonal-a68.config.ts",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run ARCANA_CAPTURE_A69=1 npx playwright test --config playwright.motion-a69.config.ts",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/upload-artifact@v4",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Run actions/setup-node@v4",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Run actions/checkout@v4",
+          "conclusion": "success"
+        },
+        {
+          "name": "Stop containers",
+          "conclusion": "success"
+        },
+        {
+          "name": "Complete job",
+          "conclusion": "success"
+        }
+      ]
+    },
+    {
+      "name": "regression",
+      "conclusion": "success",
+      "databaseId": 118419305265,
+      "steps": [
+        {
+          "name": "Set up job",
+          "conclusion": "success"
+        },
+        {
+          "name": "Initialize containers",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/checkout@v4",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/setup-node@v4",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run npm ci --no-fund --no-audit",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run npm run build",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run npx playwright install --with-deps chromium webkit",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run ARCANA_TRIAL_COMPILED=1 npm run test:e2e -- --project chromium --project webkit --reporter=line,github",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run npx playwright test --config playwright.progression-a67.config.ts --project chromium-a67 --project webkit-a67",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run npx playwright test --config playwright.gameplay-a63.config.ts",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run npx playwright test --config playwright.header-pact-a66.config.ts",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run npx playwright test --config playwright.intentions-a65.config.ts",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run npm run test:pwa -- --project chromium --project webkit",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run node tools/verification/build-a66-reference.mjs",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run A67_PERFORMANCE_VARIANT=baseline npx playwright test --config playwright.performance-a67.config.ts",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run A67_PERFORMANCE_VARIANT=current npx playwright test --config playwright.performance-a67.config.ts",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/upload-artifact@v4",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Run actions/setup-node@v4",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Run actions/checkout@v4",
+          "conclusion": "success"
+        },
+        {
+          "name": "Stop containers",
+          "conclusion": "success"
+        },
+        {
+          "name": "Complete job",
+          "conclusion": "success"
+        }
+      ]
+    }
+  ],
+  "unitPassed": 797,
+  "realPostgresRedisPassed": 120,
+  "contentPassed": 6,
+  "browser": {
+    "checkPassed": 605,
+    "regressionPassed": 138,
+    "totalPassed": 743,
+    "deliberateSkipped": 345
+  },
+  "regressionBlocks": [
+    {
+      "block": "E2E Chromium/WebKit",
+      "passed": 56
+    },
+    {
+      "block": "A67 progression",
+      "passed": 24
+    },
+    {
+      "block": "A63 gameplay",
+      "passed": 16
+    },
+    {
+      "block": "A66 header/pact",
+      "passed": 20
+    },
+    {
+      "block": "A65 intentions",
+      "passed": 8
+    },
+    {
+      "block": "PWA",
+      "passed": 12
+    },
+    {
+      "block": "A67 performance baseline",
+      "passed": 1
+    },
+    {
+      "block": "A67 performance current",
+      "passed": 1
+    }
+  ],
+  "regressionLogSha256": "bfbaf03ec9940bc7bd85c1fc7bcca20e136b2a5084d4e4fd9a6c02cb32b63d9c",
+  "regressionResultLines": [
+    "2026-10-20T02:31:42.5106866Z   56 passed (6.3m)",
+    "2026-10-20T02:36:16.9185126Z   24 passed (4.6m)",
+    "2026-10-20T02:40:34.7967440Z   16 passed (4.3m)",
+    "2026-10-20T02:43:33.6174415Z   20 passed (3.0m)",
+    "2026-10-20T02:46:06.1629871Z   8 passed (2.5m)",
+    "2026-10-20T02:46:27.9253242Z   12 passed (21.2s)",
+    "2026-10-20T02:46:47.0099876Z   1 passed (8.0s)",
+    "2026-10-20T02:46:56.4118695Z   1 passed (8.8s)"
+  ],
+  "limits": [
+    "Selected Linux emulation, not physical devices or human testing",
+    "P95 rAF20ms objective not universally met; see PERFORMANCE.md",
+    "No local graphical tests or capture; no deployment or main merge"
+  ]
+}

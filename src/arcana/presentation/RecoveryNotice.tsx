@@ -15,6 +15,8 @@ export function RecoveryNotice({
   onReload,
   onRecover,
   onEnter,
+  onSignIn,
+  accessOpening = false,
   entering = false,
   entryError = null,
   announce = true,
@@ -25,6 +27,8 @@ export function RecoveryNotice({
   onReload: () => void;
   onRecover: () => void;
   onEnter?: () => void;
+  onSignIn?: () => void;
+  accessOpening?: boolean;
   entering?: boolean;
   entryError?: string | null;
   announce?: boolean;
@@ -52,9 +56,21 @@ export function RecoveryNotice({
       <p role={announce ? (busy ? 'status' : 'alert') : undefined}>{message}</p>
       {state.pending && message !== r(language, 'pending') && <p>{r(language, 'pending')}</p>}
       {!connected && <p>{r(language, 'offline')}</p>}
-      {invalid && <small>{r(language, 'sameSession')}</small>}
+      {invalid && <small>{r(language, onSignIn ? 'accountHelp' : 'sameSession')}</small>}
       {!busy && (
         <div className="recovery-actions">
+          {invalid && onSignIn && (
+            <button
+              type="button"
+              className="game-object"
+              data-recovery-sign-in
+              disabled={!connected || accessOpening}
+              aria-busy={accessOpening}
+              onClick={onSignIn}
+            >
+              {r(language, 'signIn')}
+            </button>
+          )}
           <button
             className="game-object"
             disabled={!connected}

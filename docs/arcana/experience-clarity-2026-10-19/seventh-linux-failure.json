@@ -1,0 +1,58 @@
+{
+  "run": 39329712645,
+  "head": "5d8fa8a2bb27a887d405a33e2138fb9662b3a0d4",
+  "checkout": "4c75f78981593fbc146dbf10cd15ac2552be6520",
+  "status": "cancelled after first failed full fixture",
+  "stats": {
+    "passed": 11,
+    "failed": 1,
+    "skippedIncludingUnexecuted": 220
+  },
+  "four": {
+    "sha": "4c75f78981593fbc146dbf10cd15ac2552be6520",
+    "fixture": true,
+    "count": 4,
+    "lang": "es",
+    "pack": "diagon-alley",
+    "coordinateSample": "single synchronous layout read; no animation wait",
+    "geometry": [
+      {
+        "selector": ".node-team-prepare",
+        "bottom": 682.8141479492188,
+        "footerTop": 755.0953979492188,
+        "gap": 72.28125
+      },
+      {
+        "selector": ".node-bean-preparation > summary",
+        "bottom": 742.3141479492188,
+        "footerTop": 755.0953979492188,
+        "gap": 12.78125
+      }
+    ]
+  },
+  "five": {
+    "sha": "4c75f78981593fbc146dbf10cd15ac2552be6520",
+    "fixture": true,
+    "count": 5,
+    "lang": "es",
+    "pack": "diagon-alley",
+    "coordinateSample": "single synchronous layout read; no animation wait",
+    "geometry": [
+      {
+        "selector": ".node-team-prepare",
+        "bottom": 710.5130004882812,
+        "footerTop": 755.0911254882812,
+        "gap": 44.578125
+      },
+      {
+        "selector": ".node-bean-preparation > summary",
+        "bottom": 764.0130004882812,
+        "footerTop": 755.0911254882812,
+        "gap": -8.921875
+      }
+    ]
+  },
+  "cause": "Atomic sample confirms four posts now pass; five retain8.921875px overlap. Selected settled PNG shows bean summary under footer. Opponent book summary inherits20px global vertical padding.",
+  "change": "Only compact mobile opponent shelf summary padding2px4px; min-height44, text, figures, units, resources and footer unchanged.",
+  "retry": "No automatic retry; new corrected candidate required."
+}

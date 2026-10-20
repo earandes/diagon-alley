@@ -444,3 +444,22 @@ Autorizado por Enric: diseñar, producir arte mínimo, implementar y validar pre
 
 
 **A86 —18octubre2026 · Autorizado por Enric, implementado y pendiente de CI:** referencia67683.jpg y petición de simplificación de arena con casas. Elegida escena de duelo: cabecera propia, ronda desde1, figuras/PV, emblemas y una pausa que abre opciones. Ajustes comparte velocidad local recordada; cada combate comienza automático sin recordar pausa. Recursos/registro siguen accesibles sin anticipar ganador. La referencia no autoriza personajes, stats, escudos o reglas nuevos. Sin modificar log/servidor/inventario y conservando A85. Contrato en[arena-scene](arcana/arena-scene-2026-10-18/CONTRACT.md). Validación gráfica soloLinux original protegida; no main/despliegue ni observación humana atribuida.
+
+
+## A92 · 19 octubre 2026 · Metas verdaderas y composición de juego
+
+Autorizado por Enric: implementar U01–U11/U14 de A91, U12 solo si imprescindible y U18 acotado. Commits/rama/PR para CI; no main o despliegue. Baseline main86d6a92, preservando trabajo no rastreado y A91. [Contrato](arcana/experience-clarity-2026-10-19/CONTRACT.md).
+
+Decisiones implementadas e inspeccionadas en CI Linux; CI39353793256 completa superada sobreb6c0800/checkout135a4fe9:
+- Completitud principal = identidades vigentes del catálogo, incluido starter; archivo histórico propio separado. Aperturas obtenibles son un subconjunto de tabla compatible, no otro porcentaje principal. Sin estado persistido duplicado.
+- Bóveda proyecta fuentes públicas/alcanzables y derechos por versión; visita solo desde receipt real. Si faltan planes históricos compatibles, estado desconocido en lugar de prometer disponibilidad o agotamiento.
+- Reautenticación en aviso usa acceso ya existente; mantiene contexto cuando dueño no cambia. Pending aparece también en bienvenida con salida a la misma cuenta, sin crear invitado. Consulta/cierre no abandona commit.
+- Cierre de consulta con SVG inline independiente de red, conservando botón/nombre/foco. Errores de temporada por causa y mensajes ES/EN; incierto conserva recuperación.
+- Mapa con trazado SVG de adyacencia pública, sin reloj nuevo ni command al consultar. Afinidad junto a personaje, vínculo elegido como estandarte; corregir preview del jefe que omitía bondFocus.
+- Puestos móviles reordenados para nombres por palabras; altura, palabras completas y todas las unidades comprobadas en las muestras Linux declaradas. Folio con metadatos y copias a demanda; capacidad4/8 según ancho disponible.
+- Tarro compacto mantiene jarId concreto y borrador reversible; stock grande no crea100botones. No segunda bolsa, consumo o descubrimiento al asignar.
+
+Fuentes efectivas, fórmulas, estadísticas, precios/probabilidades/premios/regeneración, snapshots e IDs intactos. Sin nuevas dependencias o recurso de producción: SVG de sistema es código local. Pruebas técnicas y percepción humana se registran por separado.
+
+
+A92 · Cierre20octubre:797unitarias,120PG/Redis y743casosbrowser correctos/345omisiones deliberadas enCI39353793256, headb6c0800/checkout135a4fe9 de árbol idéntico. Capturas seleccionadas inspeccionadas, coreografía y operaciones comprobadas por sus pruebas; observación humana/física pendiente. Las correcciones de composición no acreditan20msrAF universales: resultados desfavorables conservados. Cierre documental equivalente sin nueva batería atribuida. [QA](arcana/experience-clarity-2026-10-19/QA.md), [informe](arcana/experience-clarity-2026-10-19/REPORT.md). No integración en main ni despliegue.

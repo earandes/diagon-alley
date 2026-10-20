@@ -1,0 +1,35 @@
+{
+  "run": 39316551396,
+  "sha": "b442decdae64e699c1dd16ba5c8587f8adb27a2a",
+  "artifact": "a76-account-evidence",
+  "stats": {
+    "startTime": "2026-10-19T20:09:38.504Z",
+    "duration": 40266.348,
+    "expected": 10,
+    "skipped": 189,
+    "unexpected": 1,
+    "flaky": 0
+  },
+  "failures": [
+    {
+      "title": "A92 diagon-alley/es names, condition and preparation remain present",
+      "project": "chromium-390-a92",
+      "results": [
+        {
+          "status": "failed",
+          "error": {
+            "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator:  getByText('Vínculo', { exact: true }).first()\nExpected: visible\nReceived: hidden\nTimeout:  12000ms\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByText('Vínculo', { exact: true }).first() with timeout 12000ms\u001b[22m\n\u001b[2m  - waiting for getByText('Vínculo', { exact: true }).first()\u001b[22m\n\u001b[2m    28 × locator resolved to <span class=\"team-bond-caption\">Vínculo</span>\u001b[22m\n\u001b[2m       - unexpected value \"hidden\"\u001b[22m\n",
+            "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator:  getByText('Vínculo', { exact: true }).first()\nExpected: visible\nReceived: hidden\nTimeout:  12000ms\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByText('Vínculo', { exact: true }).first() with timeout 12000ms\u001b[22m\n\u001b[2m  - waiting for getByText('Vínculo', { exact: true }).first()\u001b[22m\n\u001b[2m    28 × locator resolved to <span class=\"team-bond-caption\">Vínculo</span>\u001b[22m\n\u001b[2m       - unexpected value \"hidden\"\u001b[22m\n\n    at /home/runner/work/diagon-alley/diagon-alley/tests/browser-experience-clarity/map-preparation-a92.spec.ts:57:9",
+            "location": {
+              "file": "/home/runner/work/diagon-alley/diagon-alley/tests/browser-experience-clarity/map-preparation-a92.spec.ts",
+              "column": 9,
+              "line": 57
+            },
+            "snippet": "\u001b[0m \u001b[90m 55 |\u001b[39m       \u001b[36mawait\u001b[39m expect(\n \u001b[90m 56 |\u001b[39m         page\u001b[33m.\u001b[39mgetByText(lang \u001b[33m===\u001b[39m \u001b[32m'es'\u001b[39m \u001b[33m?\u001b[39m \u001b[32m'Vínculo'\u001b[39m \u001b[33m:\u001b[39m \u001b[32m'Bond'\u001b[39m\u001b[33m,\u001b[39m { exact\u001b[33m:\u001b[39m \u001b[36mtrue\u001b[39m })\u001b[33m.\u001b[39mfirst()\u001b[33m,\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 57 |\u001b[39m       )\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m         \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 58 |\u001b[39m       \u001b[36mconst\u001b[39m geometry \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'.boss-party-name'\u001b[39m)\u001b[33m.\u001b[39mevaluateAll((nodes) \u001b[33m=>\u001b[39m\n \u001b[90m 59 |\u001b[39m         nodes\u001b[33m.\u001b[39mmap((node) \u001b[33m=>\u001b[39m {\n \u001b[90m 60 |\u001b[39m           \u001b[36mconst\u001b[39m element \u001b[33m=\u001b[39m node \u001b[36mas\u001b[39m \u001b[33mHTMLElement\u001b[39m\u001b[33m;\u001b[39m\u001b[0m"
+          }
+        }
+      ]
+    }
+  ],
+  "classification": "Ambiguous test locator selected the rival disclosure. Fixture also lacked modal lifecycle and backdrop; no A92 graphical acceptance claimed."
+}

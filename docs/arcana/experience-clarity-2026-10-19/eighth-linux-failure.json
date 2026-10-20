@@ -1,0 +1,102 @@
+{
+  "run": 39330515241,
+  "head": "f1910b1361571f11fe76a7c24dc74e864bad4344",
+  "checkout": "f114369a664d9038ef25d368299fbdbdbb0233da",
+  "workflowConclusion": "cancelled after fallback assertion failed",
+  "passed": 15,
+  "failed": 1,
+  "skippedIncludingUnexecuted": 216,
+  "demonstrated": "Full preparation four/five ES/EN Diagon passes atomic non-overlap; absent portrait case ES passes. EN absent portrait every(height>=60 && markerContained) failed without recording raw coordinates.",
+  "unconfirmed": "Floating-point rectangle subtraction suspected; cannot call root cause confirmed from a boolean.",
+  "correction": "Record exact frame/marker rectangles and compare with only Number.EPSILON times coordinate magnitude times16. No CSS pixel tolerance or product change. Next run must inspect raw values even if passed.",
+  "geometry": [
+    {
+      "sha": "f114369a664d9038ef25d368299fbdbdbb0233da",
+      "fixture": true,
+      "count": 5,
+      "lang": "en",
+      "pack": "diagon-alley",
+      "coordinateSample": "single synchronous layout read; no animation wait",
+      "geometry": [
+        {
+          "selector": ".node-team-prepare",
+          "bottom": 697.3568725585938,
+          "footerTop": 753.9349975585938,
+          "gap": 56.578125
+        },
+        {
+          "selector": ".node-bean-preparation > summary",
+          "bottom": 750.8568725585938,
+          "footerTop": 753.9349975585938,
+          "gap": 3.078125
+        }
+      ]
+    },
+    {
+      "sha": "f114369a664d9038ef25d368299fbdbdbb0233da",
+      "fixture": true,
+      "count": 4,
+      "lang": "en",
+      "pack": "diagon-alley",
+      "coordinateSample": "single synchronous layout read; no animation wait",
+      "geometry": [
+        {
+          "selector": ".node-team-prepare",
+          "bottom": 670.8130493164062,
+          "footerTop": 754.3130493164062,
+          "gap": 83.5
+        },
+        {
+          "selector": ".node-bean-preparation > summary",
+          "bottom": 730.3130493164062,
+          "footerTop": 754.3130493164062,
+          "gap": 24
+        }
+      ]
+    },
+    {
+      "sha": "f114369a664d9038ef25d368299fbdbdbb0233da",
+      "fixture": true,
+      "count": 5,
+      "lang": "es",
+      "pack": "diagon-alley",
+      "coordinateSample": "single synchronous layout read; no animation wait",
+      "geometry": [
+        {
+          "selector": ".node-team-prepare",
+          "bottom": 699.807373046875,
+          "footerTop": 756.385498046875,
+          "gap": 56.578125
+        },
+        {
+          "selector": ".node-bean-preparation > summary",
+          "bottom": 753.307373046875,
+          "footerTop": 756.385498046875,
+          "gap": 3.078125
+        }
+      ]
+    },
+    {
+      "sha": "f114369a664d9038ef25d368299fbdbdbb0233da",
+      "fixture": true,
+      "count": 4,
+      "lang": "es",
+      "pack": "diagon-alley",
+      "coordinateSample": "single synchronous layout read; no animation wait",
+      "geometry": [
+        {
+          "selector": ".node-team-prepare",
+          "bottom": 669.6521606445312,
+          "footerTop": 753.1521606445312,
+          "gap": 83.5
+        },
+        {
+          "selector": ".node-bean-preparation > summary",
+          "bottom": 729.1521606445312,
+          "footerTop": 753.1521606445312,
+          "gap": 24
+        }
+      ]
+    }
+  ]
+}

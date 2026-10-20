@@ -1,0 +1,26 @@
+[
+  {
+    "antipattern": "bounce-easing",
+    "name": "Bounce or elastic easing",
+    "description": "Bounce and elastic easing feel dated and tacky. Real objects decelerate smoothly — use exponential easing (ease-out-quart/quint/expo) instead.",
+    "severity": "advisory",
+    "category": "slop",
+    "file": "/Users/enricarandes/work/diagon-alley/src/arcana/presentation/reveal-theatre.css",
+    "line": 85,
+    "snippet": "cubic-bezier(0.18, 0.8, 0.3, 1.12)",
+    "advisory": true
+  },
+  {
+    "antipattern": "side-tab",
+    "name": "Side-tab accent border",
+    "description": "Thick colored border on one side of a card — the most recognizable tell of AI-generated UIs. Use a subtler accent or remove it entirely.",
+    "severity": "warning",
+    "category": "slop",
+    "file": "/Users/enricarandes/work/diagon-alley/src/arcana/presentation/seasonal-event.css",
+    "line": 287,
+    "snippet": ".seasonal-choice[aria-pressed='true'] — inset box-shadow 3px stripe (bottom)",
+    "importedBy": [
+      "SeasonalEvent.tsx"
+    ]
+  }
+]

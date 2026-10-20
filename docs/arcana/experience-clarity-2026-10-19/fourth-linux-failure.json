@@ -1,0 +1,37 @@
+{
+  "run": 39319388177,
+  "sha": "06855e3370e6fe1250fc6bea6a1c2df6ffad3047",
+  "artifact": "a76-account-evidence",
+  "stats": {
+    "startTime": "2026-10-19T20:29:32.598Z",
+    "duration": 226620.744,
+    "expected": 120,
+    "skipped": 95,
+    "unexpected": 1,
+    "flaky": 0
+  },
+  "a92": {
+    "passed": 90,
+    "skipped": 30,
+    "unexpected": 0
+  },
+  "failures": [
+    {
+      "title": "A76 es diagon-alley real account, guest binding, cross-context login and recovery",
+      "project": "chromium-390-a76",
+      "errors": [
+        {
+          "message": "TimeoutError: locator.click: Timeout 12000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('header').first().getByRole('button', { name: /^(Ajustes|Settings)$/ })\u001b[22m\n",
+          "stack": "TimeoutError: locator.click: Timeout 12000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('header').first().getByRole('button', { name: /^(Ajustes|Settings)$/ })\u001b[22m\n\n    at accountFromSettings (/home/runner/work/diagon-alley/diagon-alley/tests/browser-accounts/accounts-a76.spec.ts:95:70)\n    at /home/runner/work/diagon-alley/diagon-alley/tests/browser-accounts/accounts-a76.spec.ts:392:9",
+          "location": {
+            "file": "/home/runner/work/diagon-alley/diagon-alley/tests/browser-accounts/accounts-a76.spec.ts",
+            "column": 70,
+            "line": 95
+          },
+          "snippet": "\u001b[0m \u001b[90m 93 |\u001b[39m   \u001b[36mconst\u001b[39m activeSettings \u001b[33m=\u001b[39m active\u001b[33m.\u001b[39mgetByRole(\u001b[32m'button'\u001b[39m\u001b[33m,\u001b[39m { name\u001b[33m:\u001b[39m \u001b[35m/^(Ajustes|Settings)$/\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m 94 |\u001b[39m   \u001b[36mconst\u001b[39m origin \u001b[33m=\u001b[39m (\u001b[36mawait\u001b[39m activeSettings\u001b[33m.\u001b[39mcount()) \u001b[33m?\u001b[39m active \u001b[33m:\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'header'\u001b[39m)\u001b[33m.\u001b[39mfirst()\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 95 |\u001b[39m   \u001b[36mawait\u001b[39m origin\u001b[33m.\u001b[39mgetByRole(\u001b[32m'button'\u001b[39m\u001b[33m,\u001b[39m { name\u001b[33m:\u001b[39m \u001b[35m/^(Ajustes|Settings)$/\u001b[39m })\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                      \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 96 |\u001b[39m   \u001b[36mconst\u001b[39m settings \u001b[33m=\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'dialog.game-settings[open]'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 97 |\u001b[39m   \u001b[36mawait\u001b[39m expect(settings)\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m 98 |\u001b[39m   \u001b[36mawait\u001b[39m settings\u001b[33m.\u001b[39mlocator(\u001b[32m'[data-account-entry=\"settings\"]'\u001b[39m)\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\u001b[0m"
+        }
+      ]
+    }
+  ],
+  "classification": "A76 helper attempted to open Settings already retained open after same-owner authentication. Reuse active Settings and require Escape to close explicitly; owner and economic assertions unchanged."
+}

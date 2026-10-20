@@ -1,0 +1,22 @@
+{
+  "run": 39341168677,
+  "head": "c6810fc61f564f07768392021e8538064ae831e5",
+  "checkout": "59af2ab8bb3d15d646c13dcd661ede21b0d334b5",
+  "stats": {
+    "startTime": "2026-10-19T23:26:04.581Z",
+    "duration": 32292.361999999997,
+    "expected": 11,
+    "skipped": 220,
+    "unexpected": 1,
+    "flaky": 0
+  },
+  "failure": {
+    "title": "A92 diagon-alley/es four and five posts keep real loot and preparation above the footer",
+    "project": "chromium-390-a92",
+    "errors": [
+      "Error: [{\"frame\":{\"x\":32.015625,\"y\":371.9581604003906,\"width\":100.65625,\"height\":60,\"top\":371.9581604003906,\"right\":132.671875,\"bottom\":431.9581604003906,\"left\":32.015625},\"marker\":{\"x\":110.671875,\"y\":371.9581604003906,\"width\":22,\"height\":22,\"top\":371.9581604003906,\"right\":132.671875,\"bottom\":393.9581604003906,\"left\":110.671875},\"height\":60,\"precision\":1.5346236651239686e-12,\"markerContained\":true},{\"frame\":{\"x\":144.671875,\"y\":371.9581604003906,\"width\":100.65625,\"height\":60,\"top\":371.9581604003906,\"right\":245.328125,\"bottom\":431.9581604003906,\"left\":144.671875},\"marker\":{\"x\":223.328125,\"y\":371.9581604003906,\"width\":22,\"height\":22,\"top\":371.9581604003906,\"right\":245.328125,\"bottom\":393.9581604003906,\"left\":223.328125},\"height\":60,\"precision\":1.5346236651239686e-12,\"markerContained\":true},{\"frame\":{\"x\":257.328125,\"y\":371.9581604003906,\"width\":100.65625,\"height\":60,\"top\":371.9581604003906,\"right\":357.984375,\"bottom\":431.9581604003906,\"left\":257.328125},\"marker\":{\"x\":335.984375,\"y\":371.9581604003906,\"width\":22,\"height\":22,\"top\":371.9581604003906,\"right\":357.984375,\"bottom\":393.9581604003906,\"left\":335.984375},\"height\":60,\"precision\":1.5346236651239686e-12,\"markerContained\":true},{\"frame\":{\"x\":88.34375,\"y\":509.3644104003906,\"width\":100.65625,\"height\":59.999969482421875,\"top\":509.3644104003906,\"right\":189,\"bottom\":569.3643798828125,\"left\":88.34375},\"marker\":{\"x\":167,\"y\":509.3644104003906,\"width\":22,\"height\":21.999969482421875,\"top\":509.3644104003906,\"right\":189,\"bottom\":531.3643798828125,\"left\":167},\"height\":59.999969482421875,\"precision\":2.0227886206314327e-12,\"markerContained\":true},{\"frame\":{\"x\":201,\"y\":509.3644104003906,\"width\":100.65625,\"height\":59.999969482421875,\"top\":509.3644104003906,\"right\":301.65625,\"bottom\":569.3643798828125,\"left\":201},\"marker\":{\"x\":279.65625,\"y\":509.3644104003906,\"width\":22,\"height\":21.999969482421875,\"top\":509.3644104003906,\"right\":301.65625,\"bottom\":531.3643798828125,\"left\":279.65625},\"height\":59.999969482421875,\"precision\":2.0227886206314327e-12,\"markerContained\":true}]\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m"
+    ]
+  },
+  "finding": "Rect height59.999969482421875 during translation; machine-double epsilon did not cover endpoint precision. All origin markers contained. Full5 footer checks passed with gap24/29.5px.",
+  "change": "Record and require CSS layoutHeight>=60 plus two float32-relative epsilons for transformed endpoints; no CSS pixel allowance; footer/header acceptance unchanged."
+}

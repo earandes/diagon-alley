@@ -1,0 +1,32 @@
+{
+  "run": 39318410598,
+  "sha": "214f7e482d38cb5bed65593b620028f13213a29d",
+  "artifact": "a76-account-evidence",
+  "stats": {
+    "startTime": "2026-10-19T20:22:47.203Z",
+    "duration": 69608.098,
+    "expected": 59,
+    "skipped": 156,
+    "unexpected": 1,
+    "flaky": 0
+  },
+  "failures": [
+    {
+      "title": "A92 diagon-alley/es names, condition and preparation remain present",
+      "project": "chromium-865-a92",
+      "errors": [
+        {
+          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m",
+          "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n    at /home/runner/work/diagon-alley/diagon-alley/tests/browser-experience-clarity/map-preparation-a92.spec.ts:86:9",
+          "location": {
+            "file": "/home/runner/work/diagon-alley/diagon-alley/tests/browser-experience-clarity/map-preparation-a92.spec.ts",
+            "column": 9,
+            "line": 86
+          },
+          "snippet": "\u001b[0m \u001b[90m 84 |\u001b[39m       expect(\n \u001b[90m 85 |\u001b[39m         geometry\u001b[33m.\u001b[39mevery((entry) \u001b[33m=>\u001b[39m entry\u001b[33m.\u001b[39mfragments \u001b[33m===\u001b[39m \u001b[35m1\u001b[39m \u001b[33m&&\u001b[39m entry\u001b[33m.\u001b[39mscrollWidth \u001b[33m<=\u001b[39m entry\u001b[33m.\u001b[39mwidth \u001b[33m+\u001b[39m \u001b[35m1\u001b[39m)\u001b[33m,\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 86 |\u001b[39m       )\u001b[33m.\u001b[39mtoBe(\u001b[36mtrue\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m         \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 87 |\u001b[39m       \u001b[36mfor\u001b[39m (\u001b[36mconst\u001b[39m member \u001b[36mof\u001b[39m \u001b[36mawait\u001b[39m members\u001b[33m.\u001b[39mall()) \u001b[36mawait\u001b[39m expect(member)\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m 88 |\u001b[39m       \u001b[36mconst\u001b[39m measurements \u001b[33m=\u001b[39m {\n \u001b[90m 89 |\u001b[39m         sha\u001b[33m:\u001b[39m process\u001b[33m.\u001b[39menv\u001b[33m.\u001b[39m\u001b[33mGITHUB_SHA\u001b[39m \u001b[33m?\u001b[39m\u001b[33m?\u001b[39m \u001b[36mnull\u001b[39m\u001b[33m,\u001b[39m\u001b[0m"
+        }
+      ]
+    }
+  ],
+  "classification": "Real name geometry failure at 865px. Preserve words by redistributing posts in the narrower desktop half-stage, not relaxing the assertion."
+}

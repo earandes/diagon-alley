@@ -1,0 +1,728 @@
+{
+  "run": 39347774137,
+  "head": "7d74cefb2c51cf31b4c10495552d0816b8d98898",
+  "checkout": "165866a6b4efeb93c98ee5c72845f0bffb231f4c",
+  "redaction": "Only timing/geometry/public fixture flags retained; no complete run, seed, inventory, identity or operation key. Raw CI artifact12233416954.",
+  "samples": [
+    {
+      "sha": "165866a6b4efeb93c98ee5c72845f0bffb231f4c",
+      "engine": "chromium",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "physicalDevice": false,
+      "fixture": false,
+      "actionToDomUsableUpperBoundMs": 565,
+      "actionToFiguresReadyUpperBoundMs": 566,
+      "battleUnchanged": true,
+      "reloadExact": true,
+      "selectionDidNotConsume": true,
+      "source": "chromium-1280-boss-a70-es-arcana-authority.json"
+    },
+    {
+      "sha": "165866a6b4efeb93c98ee5c72845f0bffb231f4c",
+      "engine": "webkit",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "physicalDevice": false,
+      "fixture": false,
+      "actionToDomUsableUpperBoundMs": 849,
+      "actionToFiguresReadyUpperBoundMs": 1330,
+      "battleUnchanged": true,
+      "reloadExact": true,
+      "selectionDidNotConsume": true,
+      "source": "webkit-1280-boss-a70-en-arcana-authority.json"
+    },
+    {
+      "sha": "165866a6b4efeb93c98ee5c72845f0bffb231f4c",
+      "engine": "webkit",
+      "viewport": {
+        "width": 865,
+        "height": 1079
+      },
+      "physicalDevice": false,
+      "fixture": false,
+      "actionToDomUsableUpperBoundMs": 1120,
+      "actionToFiguresReadyUpperBoundMs": 1122,
+      "battleUnchanged": true,
+      "reloadExact": true,
+      "selectionDidNotConsume": true,
+      "source": "webkit-865-boss-a70-es-arcana-authority.json"
+    },
+    {
+      "sha": "165866a6b4efeb93c98ee5c72845f0bffb231f4c",
+      "engine": "chromium",
+      "viewport": {
+        "width": 865,
+        "height": 1079
+      },
+      "physicalDevice": false,
+      "fixture": false,
+      "actionToDomUsableUpperBoundMs": 530,
+      "actionToFiguresReadyUpperBoundMs": 532,
+      "battleUnchanged": true,
+      "reloadExact": true,
+      "selectionDidNotConsume": true,
+      "source": "chromium-865-boss-a70-en-arcana-authority.json"
+    },
+    {
+      "sha": "165866a6b4efeb93c98ee5c72845f0bffb231f4c",
+      "engine": "webkit",
+      "viewport": {
+        "width": 865,
+        "height": 1079
+      },
+      "physicalDevice": false,
+      "fixture": false,
+      "actionToDomUsableUpperBoundMs": 1131,
+      "actionToFiguresReadyUpperBoundMs": 1133,
+      "battleUnchanged": true,
+      "reloadExact": true,
+      "selectionDidNotConsume": true,
+      "source": "webkit-865-boss-a70-en-arcana-authority.json"
+    },
+    {
+      "sha": "165866a6b4efeb93c98ee5c72845f0bffb231f4c",
+      "engine": "webkit",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "physicalDevice": false,
+      "fixture": false,
+      "actionToDomUsableUpperBoundMs": 988,
+      "actionToFiguresReadyUpperBoundMs": 995,
+      "battleUnchanged": true,
+      "reloadExact": true,
+      "selectionDidNotConsume": true,
+      "source": "webkit-1280-boss-a70-es-arcana-authority.json"
+    },
+    {
+      "sha": "165866a6b4efeb93c98ee5c72845f0bffb231f4c",
+      "engine": "chromium",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "physicalDevice": false,
+      "fixture": false,
+      "actionToDomUsableUpperBoundMs": 557,
+      "actionToFiguresReadyUpperBoundMs": 560,
+      "battleUnchanged": true,
+      "reloadExact": true,
+      "selectionDidNotConsume": true,
+      "source": "chromium-1280-boss-a70-en-arcana-authority.json"
+    },
+    {
+      "sha": "165866a6b4efeb93c98ee5c72845f0bffb231f4c",
+      "engine": "webkit",
+      "viewport": {
+        "width": 865,
+        "height": 1079
+      },
+      "physicalDevice": false,
+      "fixture": false,
+      "actionToDomUsableUpperBoundMs": 1341,
+      "actionToFiguresReadyUpperBoundMs": 1346,
+      "battleUnchanged": true,
+      "reloadExact": true,
+      "selectionDidNotConsume": true,
+      "source": "webkit-865-boss-a70-en-diagon-alley-authority.json"
+    },
+    {
+      "sha": "165866a6b4efeb93c98ee5c72845f0bffb231f4c",
+      "engine": "chromium",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "physicalDevice": false,
+      "fixture": false,
+      "actionToDomUsableUpperBoundMs": 578,
+      "actionToFiguresReadyUpperBoundMs": 588,
+      "battleUnchanged": true,
+      "reloadExact": true,
+      "selectionDidNotConsume": true,
+      "source": "chromium-390-boss-a70-es-diagon-alley-authority.json"
+    },
+    {
+      "sha": "165866a6b4efeb93c98ee5c72845f0bffb231f4c",
+      "engine": "webkit",
+      "viewport": {
+        "width": 865,
+        "height": 1079
+      },
+      "physicalDevice": false,
+      "fixture": false,
+      "actionToDomUsableUpperBoundMs": 1007,
+      "actionToFiguresReadyUpperBoundMs": 1193,
+      "battleUnchanged": true,
+      "reloadExact": true,
+      "selectionDidNotConsume": true,
+      "source": "webkit-865-boss-a70-es-diagon-alley-authority.json"
+    },
+    {
+      "sha": "165866a6b4efeb93c98ee5c72845f0bffb231f4c",
+      "engine": "chromium",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "physicalDevice": false,
+      "fixture": false,
+      "actionToDomUsableUpperBoundMs": 450,
+      "actionToFiguresReadyUpperBoundMs": 452,
+      "battleUnchanged": true,
+      "reloadExact": true,
+      "selectionDidNotConsume": true,
+      "source": "chromium-390-boss-a70-en-diagon-alley-authority.json"
+    },
+    {
+      "sha": "165866a6b4efeb93c98ee5c72845f0bffb231f4c",
+      "engine": "chromium",
+      "viewport": {
+        "width": 865,
+        "height": 1079
+      },
+      "physicalDevice": false,
+      "fixture": false,
+      "actionToDomUsableUpperBoundMs": 555,
+      "actionToFiguresReadyUpperBoundMs": 558,
+      "battleUnchanged": true,
+      "reloadExact": true,
+      "selectionDidNotConsume": true,
+      "source": "chromium-865-boss-a70-es-arcana-authority.json"
+    },
+    {
+      "sha": "165866a6b4efeb93c98ee5c72845f0bffb231f4c",
+      "engine": "chromium",
+      "viewport": {
+        "width": 865,
+        "height": 1079
+      },
+      "physicalDevice": false,
+      "fixture": false,
+      "actionToDomUsableUpperBoundMs": 625,
+      "actionToFiguresReadyUpperBoundMs": 628,
+      "battleUnchanged": true,
+      "reloadExact": true,
+      "selectionDidNotConsume": true,
+      "source": "chromium-865-boss-a70-es-diagon-alley-authority.json"
+    },
+    {
+      "sha": "165866a6b4efeb93c98ee5c72845f0bffb231f4c",
+      "engine": "webkit",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "physicalDevice": false,
+      "fixture": false,
+      "actionToDomUsableUpperBoundMs": 738,
+      "actionToFiguresReadyUpperBoundMs": 822,
+      "battleUnchanged": true,
+      "reloadExact": true,
+      "selectionDidNotConsume": true,
+      "source": "webkit-390-boss-a70-en-arcana-authority.json"
+    },
+    {
+      "sha": "165866a6b4efeb93c98ee5c72845f0bffb231f4c",
+      "engine": "webkit",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "physicalDevice": false,
+      "fixture": false,
+      "actionToDomUsableUpperBoundMs": 799,
+      "actionToFiguresReadyUpperBoundMs": 1015,
+      "battleUnchanged": true,
+      "reloadExact": true,
+      "selectionDidNotConsume": true,
+      "source": "webkit-390-boss-a70-en-diagon-alley-authority.json"
+    },
+    {
+      "sha": "165866a6b4efeb93c98ee5c72845f0bffb231f4c",
+      "engine": "webkit",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "physicalDevice": false,
+      "fixture": false,
+      "actionToDomUsableUpperBoundMs": 2126,
+      "actionToFiguresReadyUpperBoundMs": 2132,
+      "battleUnchanged": true,
+      "reloadExact": true,
+      "selectionDidNotConsume": true,
+      "source": "webkit-1280-boss-a70-es-diagon-alley-authority.json"
+    },
+    {
+      "sha": "165866a6b4efeb93c98ee5c72845f0bffb231f4c",
+      "engine": "chromium",
+      "viewport": {
+        "width": 865,
+        "height": 1079
+      },
+      "physicalDevice": false,
+      "fixture": false,
+      "actionToDomUsableUpperBoundMs": 597,
+      "actionToFiguresReadyUpperBoundMs": 626,
+      "battleUnchanged": true,
+      "reloadExact": true,
+      "selectionDidNotConsume": true,
+      "source": "chromium-865-boss-a70-en-diagon-alley-authority.json"
+    },
+    {
+      "sha": "165866a6b4efeb93c98ee5c72845f0bffb231f4c",
+      "engine": "chromium",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "physicalDevice": false,
+      "fixture": false,
+      "actionToDomUsableUpperBoundMs": 496,
+      "actionToFiguresReadyUpperBoundMs": 498,
+      "battleUnchanged": true,
+      "reloadExact": true,
+      "selectionDidNotConsume": true,
+      "source": "chromium-390-boss-a70-es-arcana-authority.json"
+    },
+    {
+      "sha": "165866a6b4efeb93c98ee5c72845f0bffb231f4c",
+      "engine": "webkit",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "physicalDevice": false,
+      "fixture": false,
+      "actionToDomUsableUpperBoundMs": 1117,
+      "actionToFiguresReadyUpperBoundMs": 1303,
+      "battleUnchanged": true,
+      "reloadExact": true,
+      "selectionDidNotConsume": true,
+      "source": "webkit-1280-boss-a70-en-diagon-alley-authority.json"
+    },
+    {
+      "sha": "165866a6b4efeb93c98ee5c72845f0bffb231f4c",
+      "engine": "webkit",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "physicalDevice": false,
+      "fixture": false,
+      "actionToDomUsableUpperBoundMs": 1300,
+      "actionToFiguresReadyUpperBoundMs": 1303,
+      "battleUnchanged": true,
+      "reloadExact": true,
+      "selectionDidNotConsume": true,
+      "source": "webkit-390-boss-a70-es-diagon-alley-authority.json"
+    },
+    {
+      "sha": "165866a6b4efeb93c98ee5c72845f0bffb231f4c",
+      "engine": "chromium",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "physicalDevice": false,
+      "fixture": false,
+      "actionToDomUsableUpperBoundMs": 643,
+      "actionToFiguresReadyUpperBoundMs": 729,
+      "battleUnchanged": true,
+      "reloadExact": true,
+      "selectionDidNotConsume": true,
+      "source": "chromium-1280-boss-a70-en-diagon-alley-authority.json"
+    },
+    {
+      "sha": "165866a6b4efeb93c98ee5c72845f0bffb231f4c",
+      "engine": "webkit",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "physicalDevice": false,
+      "fixture": false,
+      "actionToDomUsableUpperBoundMs": 675,
+      "actionToFiguresReadyUpperBoundMs": 678,
+      "battleUnchanged": true,
+      "reloadExact": true,
+      "selectionDidNotConsume": true,
+      "source": "webkit-390-boss-a70-es-arcana-authority.json"
+    },
+    {
+      "sha": "165866a6b4efeb93c98ee5c72845f0bffb231f4c",
+      "engine": "chromium",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "physicalDevice": false,
+      "fixture": false,
+      "actionToDomUsableUpperBoundMs": 693,
+      "actionToFiguresReadyUpperBoundMs": 698,
+      "battleUnchanged": true,
+      "reloadExact": true,
+      "selectionDidNotConsume": true,
+      "source": "chromium-1280-boss-a70-es-diagon-alley-authority.json"
+    },
+    {
+      "sha": "165866a6b4efeb93c98ee5c72845f0bffb231f4c",
+      "engine": "chromium",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "physicalDevice": false,
+      "fixture": false,
+      "actionToDomUsableUpperBoundMs": 497,
+      "actionToFiguresReadyUpperBoundMs": 499,
+      "battleUnchanged": true,
+      "reloadExact": true,
+      "selectionDidNotConsume": true,
+      "source": "chromium-390-boss-a70-en-arcana-authority.json"
+    },
+    {
+      "sha": "165866a6b4efeb93c98ee5c72845f0bffb231f4c",
+      "engine": "chromium",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "physicalDevice": false,
+      "fixture": true,
+      "actionToDomUsableUpperBoundMs": 496,
+      "actionToFiguresReadyUpperBoundMs": 509,
+      "confirmedReceiptImmutable": true,
+      "source": "a71/chromium-390-boss-a70-en-diagon-alley-real-journey.json"
+    },
+    {
+      "sha": "165866a6b4efeb93c98ee5c72845f0bffb231f4c",
+      "engine": "webkit",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "physicalDevice": false,
+      "fixture": true,
+      "actionToDomUsableUpperBoundMs": 732,
+      "actionToFiguresReadyUpperBoundMs": 834,
+      "confirmedReceiptImmutable": true,
+      "source": "a71/webkit-390-boss-a70-es-diagon-alley-real-journey.json"
+    },
+    {
+      "sha": "165866a6b4efeb93c98ee5c72845f0bffb231f4c",
+      "engine": "webkit",
+      "viewport": {
+        "width": 865,
+        "height": 1079
+      },
+      "physicalDevice": false,
+      "fixture": true,
+      "actionToDomUsableUpperBoundMs": 850,
+      "actionToFiguresReadyUpperBoundMs": 1055,
+      "confirmedReceiptImmutable": true,
+      "source": "a71/webkit-865-boss-a70-es-diagon-alley-real-journey.json"
+    },
+    {
+      "sha": "165866a6b4efeb93c98ee5c72845f0bffb231f4c",
+      "engine": "webkit",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "physicalDevice": false,
+      "fixture": true,
+      "actionToDomUsableUpperBoundMs": 1330,
+      "actionToFiguresReadyUpperBoundMs": 1333,
+      "confirmedReceiptImmutable": true,
+      "source": "a71/webkit-1280-boss-a70-en-arcana-real-journey.json"
+    },
+    {
+      "sha": "165866a6b4efeb93c98ee5c72845f0bffb231f4c",
+      "engine": "chromium",
+      "viewport": {
+        "width": 865,
+        "height": 1079
+      },
+      "physicalDevice": false,
+      "fixture": true,
+      "actionToDomUsableUpperBoundMs": 608,
+      "actionToFiguresReadyUpperBoundMs": 742,
+      "confirmedReceiptImmutable": true,
+      "source": "a71/chromium-865-boss-a70-en-diagon-alley-real-journey.json"
+    },
+    {
+      "sha": "165866a6b4efeb93c98ee5c72845f0bffb231f4c",
+      "engine": "chromium",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "physicalDevice": false,
+      "fixture": true,
+      "actionToDomUsableUpperBoundMs": 486,
+      "actionToFiguresReadyUpperBoundMs": 502,
+      "confirmedReceiptImmutable": true,
+      "source": "a71/chromium-390-boss-a70-en-arcana-real-journey.json"
+    },
+    {
+      "sha": "165866a6b4efeb93c98ee5c72845f0bffb231f4c",
+      "engine": "chromium",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "physicalDevice": false,
+      "fixture": true,
+      "actionToDomUsableUpperBoundMs": 582,
+      "actionToFiguresReadyUpperBoundMs": 736,
+      "confirmedReceiptImmutable": true,
+      "source": "a71/chromium-1280-boss-a70-en-diagon-alley-real-journey.json"
+    },
+    {
+      "sha": "165866a6b4efeb93c98ee5c72845f0bffb231f4c",
+      "engine": "webkit",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "physicalDevice": false,
+      "fixture": true,
+      "actionToDomUsableUpperBoundMs": 711,
+      "actionToFiguresReadyUpperBoundMs": 898,
+      "confirmedReceiptImmutable": true,
+      "source": "a71/webkit-390-boss-a70-es-arcana-real-journey.json"
+    },
+    {
+      "sha": "165866a6b4efeb93c98ee5c72845f0bffb231f4c",
+      "engine": "chromium",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "physicalDevice": false,
+      "fixture": true,
+      "actionToDomUsableUpperBoundMs": 731,
+      "actionToFiguresReadyUpperBoundMs": 737,
+      "confirmedReceiptImmutable": true,
+      "source": "a71/chromium-1280-boss-a70-es-arcana-real-journey.json"
+    },
+    {
+      "sha": "165866a6b4efeb93c98ee5c72845f0bffb231f4c",
+      "engine": "webkit",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "physicalDevice": false,
+      "fixture": true,
+      "actionToDomUsableUpperBoundMs": 694,
+      "actionToFiguresReadyUpperBoundMs": 777,
+      "confirmedReceiptImmutable": true,
+      "source": "a71/webkit-390-boss-a70-en-diagon-alley-real-journey.json"
+    },
+    {
+      "sha": "165866a6b4efeb93c98ee5c72845f0bffb231f4c",
+      "engine": "webkit",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "physicalDevice": false,
+      "fixture": true,
+      "actionToDomUsableUpperBoundMs": 935,
+      "actionToFiguresReadyUpperBoundMs": 1237,
+      "confirmedReceiptImmutable": true,
+      "source": "a71/webkit-1280-boss-a70-es-arcana-real-journey.json"
+    },
+    {
+      "sha": "165866a6b4efeb93c98ee5c72845f0bffb231f4c",
+      "engine": "chromium",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "physicalDevice": false,
+      "fixture": true,
+      "actionToDomUsableUpperBoundMs": 504,
+      "actionToFiguresReadyUpperBoundMs": 518,
+      "confirmedReceiptImmutable": true,
+      "source": "a71/chromium-390-boss-a70-es-diagon-alley-real-journey.json"
+    },
+    {
+      "sha": "165866a6b4efeb93c98ee5c72845f0bffb231f4c",
+      "engine": "chromium",
+      "viewport": {
+        "width": 865,
+        "height": 1079
+      },
+      "physicalDevice": false,
+      "fixture": true,
+      "actionToDomUsableUpperBoundMs": 679,
+      "actionToFiguresReadyUpperBoundMs": 681,
+      "confirmedReceiptImmutable": true,
+      "source": "a71/chromium-865-boss-a70-es-diagon-alley-real-journey.json"
+    },
+    {
+      "sha": "165866a6b4efeb93c98ee5c72845f0bffb231f4c",
+      "engine": "webkit",
+      "viewport": {
+        "width": 865,
+        "height": 1079
+      },
+      "physicalDevice": false,
+      "fixture": true,
+      "actionToDomUsableUpperBoundMs": 924,
+      "actionToFiguresReadyUpperBoundMs": 1125,
+      "confirmedReceiptImmutable": true,
+      "source": "a71/webkit-865-boss-a70-en-diagon-alley-real-journey.json"
+    },
+    {
+      "sha": "165866a6b4efeb93c98ee5c72845f0bffb231f4c",
+      "engine": "chromium",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "physicalDevice": false,
+      "fixture": true,
+      "actionToDomUsableUpperBoundMs": 711,
+      "actionToFiguresReadyUpperBoundMs": 713,
+      "confirmedReceiptImmutable": true,
+      "source": "a71/chromium-1280-boss-a70-en-arcana-real-journey.json"
+    },
+    {
+      "sha": "165866a6b4efeb93c98ee5c72845f0bffb231f4c",
+      "engine": "chromium",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "physicalDevice": false,
+      "fixture": true,
+      "actionToDomUsableUpperBoundMs": 695,
+      "actionToFiguresReadyUpperBoundMs": 711,
+      "confirmedReceiptImmutable": true,
+      "source": "a71/chromium-1280-boss-a70-es-diagon-alley-real-journey.json"
+    },
+    {
+      "sha": "165866a6b4efeb93c98ee5c72845f0bffb231f4c",
+      "engine": "chromium",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "physicalDevice": false,
+      "fixture": true,
+      "actionToDomUsableUpperBoundMs": 515,
+      "actionToFiguresReadyUpperBoundMs": 529,
+      "confirmedReceiptImmutable": true,
+      "source": "a71/chromium-390-boss-a70-es-arcana-real-journey.json"
+    },
+    {
+      "sha": "165866a6b4efeb93c98ee5c72845f0bffb231f4c",
+      "engine": "webkit",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "physicalDevice": false,
+      "fixture": true,
+      "actionToDomUsableUpperBoundMs": 713,
+      "actionToFiguresReadyUpperBoundMs": 958,
+      "confirmedReceiptImmutable": true,
+      "source": "a71/webkit-390-boss-a70-en-arcana-real-journey.json"
+    },
+    {
+      "sha": "165866a6b4efeb93c98ee5c72845f0bffb231f4c",
+      "engine": "webkit",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "physicalDevice": false,
+      "fixture": true,
+      "actionToDomUsableUpperBoundMs": 891,
+      "actionToFiguresReadyUpperBoundMs": 1175,
+      "confirmedReceiptImmutable": true,
+      "source": "a71/webkit-1280-boss-a70-es-diagon-alley-real-journey.json"
+    },
+    {
+      "sha": "165866a6b4efeb93c98ee5c72845f0bffb231f4c",
+      "engine": "webkit",
+      "viewport": {
+        "width": 865,
+        "height": 1079
+      },
+      "physicalDevice": false,
+      "fixture": true,
+      "actionToDomUsableUpperBoundMs": 1165,
+      "actionToFiguresReadyUpperBoundMs": 1168,
+      "confirmedReceiptImmutable": true,
+      "source": "a71/webkit-865-boss-a70-en-arcana-real-journey.json"
+    },
+    {
+      "sha": "165866a6b4efeb93c98ee5c72845f0bffb231f4c",
+      "engine": "chromium",
+      "viewport": {
+        "width": 865,
+        "height": 1079
+      },
+      "physicalDevice": false,
+      "fixture": true,
+      "actionToDomUsableUpperBoundMs": 703,
+      "actionToFiguresReadyUpperBoundMs": 706,
+      "confirmedReceiptImmutable": true,
+      "source": "a71/chromium-865-boss-a70-es-arcana-real-journey.json"
+    },
+    {
+      "sha": "165866a6b4efeb93c98ee5c72845f0bffb231f4c",
+      "engine": "webkit",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "physicalDevice": false,
+      "fixture": true,
+      "actionToDomUsableUpperBoundMs": 1193,
+      "actionToFiguresReadyUpperBoundMs": 1196,
+      "confirmedReceiptImmutable": true,
+      "source": "a71/webkit-1280-boss-a70-en-diagon-alley-real-journey.json"
+    },
+    {
+      "sha": "165866a6b4efeb93c98ee5c72845f0bffb231f4c",
+      "engine": "webkit",
+      "viewport": {
+        "width": 865,
+        "height": 1079
+      },
+      "physicalDevice": false,
+      "fixture": true,
+      "actionToDomUsableUpperBoundMs": 1482,
+      "actionToFiguresReadyUpperBoundMs": 1485,
+      "confirmedReceiptImmutable": true,
+      "source": "a71/webkit-865-boss-a70-es-arcana-real-journey.json"
+    },
+    {
+      "sha": "165866a6b4efeb93c98ee5c72845f0bffb231f4c",
+      "engine": "chromium",
+      "viewport": {
+        "width": 865,
+        "height": 1079
+      },
+      "physicalDevice": false,
+      "fixture": true,
+      "actionToDomUsableUpperBoundMs": 563,
+      "actionToFiguresReadyUpperBoundMs": 646,
+      "confirmedReceiptImmutable": true,
+      "source": "a71/chromium-865-boss-a70-en-arcana-real-journey.json"
+    }
+  ]
+}

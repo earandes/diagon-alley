@@ -38,9 +38,17 @@ const messages = {
 export const tacticalText = (language: Language, key: keyof typeof messages) =>
   messages[key][language];
 
-export function AffinityLabel({ affinity, language }: { affinity: Affinity; language: Language }) {
+export function AffinityLabel({
+  affinity,
+  language,
+  id,
+}: {
+  affinity: Affinity;
+  language: Language;
+  id?: string;
+}) {
   return (
-    <span className="tactical-affinity" data-affinity={affinity}>
+    <span id={id} className="tactical-affinity" data-affinity={affinity}>
       {tacticalText(language, affinity)}
     </span>
   );

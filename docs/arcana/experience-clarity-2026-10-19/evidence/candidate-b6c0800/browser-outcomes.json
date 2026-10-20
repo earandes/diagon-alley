@@ -1,0 +1,3260 @@
+{
+  "stats": {
+    "startTime": "2026-10-20T01:33:50.435Z",
+    "duration": 303245.294,
+    "expected": 151,
+    "skipped": 81,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "cases": [
+    {
+      "title": "A92 collection keeps identity, spread, filters and focus es/diagon-alley",
+      "file": "browser-experience-clarity/collection-supplies-a92.spec.ts",
+      "project": "chromium-390-a92",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1179,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A92 stock100 stays bounded and draft keeps unit identity es/diagon-alley",
+      "file": "browser-experience-clarity/collection-supplies-a92.spec.ts",
+      "project": "chromium-390-a92",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 808,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A92 collection keeps identity, spread, filters and focus en/diagon-alley",
+      "file": "browser-experience-clarity/collection-supplies-a92.spec.ts",
+      "project": "chromium-390-a92",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 744,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A92 stock100 stays bounded and draft keeps unit identity en/diagon-alley",
+      "file": "browser-experience-clarity/collection-supplies-a92.spec.ts",
+      "project": "chromium-390-a92",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 694,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A92 collection keeps identity, spread, filters and focus es/arcana",
+      "file": "browser-experience-clarity/collection-supplies-a92.spec.ts",
+      "project": "chromium-390-a92",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 963,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A92 stock100 stays bounded and draft keeps unit identity es/arcana",
+      "file": "browser-experience-clarity/collection-supplies-a92.spec.ts",
+      "project": "chromium-390-a92",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 647,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A92 collection keeps identity, spread, filters and focus en/arcana",
+      "file": "browser-experience-clarity/collection-supplies-a92.spec.ts",
+      "project": "chromium-390-a92",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 735,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A92 stock100 stays bounded and draft keeps unit identity en/arcana",
+      "file": "browser-experience-clarity/collection-supplies-a92.spec.ts",
+      "project": "chromium-390-a92",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 627,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A92 collection keeps identity, spread, filters and focus es/diagon-alley",
+      "file": "browser-experience-clarity/collection-supplies-a92.spec.ts",
+      "project": "chromium-1280-a92",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1510,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A92 stock100 stays bounded and draft keeps unit identity es/diagon-alley",
+      "file": "browser-experience-clarity/collection-supplies-a92.spec.ts",
+      "project": "chromium-1280-a92",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 721,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A92 collection keeps identity, spread, filters and focus en/diagon-alley",
+      "file": "browser-experience-clarity/collection-supplies-a92.spec.ts",
+      "project": "chromium-1280-a92",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 733,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A92 stock100 stays bounded and draft keeps unit identity en/diagon-alley",
+      "file": "browser-experience-clarity/collection-supplies-a92.spec.ts",
+      "project": "chromium-1280-a92",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 692,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A92 collection keeps identity, spread, filters and focus es/arcana",
+      "file": "browser-experience-clarity/collection-supplies-a92.spec.ts",
+      "project": "chromium-1280-a92",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1284,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A92 stock100 stays bounded and draft keeps unit identity es/arcana",
+      "file": "browser-experience-clarity/collection-supplies-a92.spec.ts",
+      "project": "chromium-1280-a92",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 640,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A92 collection keeps identity, spread, filters and focus en/arcana",
+      "file": "browser-experience-clarity/collection-supplies-a92.spec.ts",
+      "project": "chromium-1280-a92",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 734,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A92 stock100 stays bounded and draft keeps unit identity en/arcana",
+      "file": "browser-experience-clarity/collection-supplies-a92.spec.ts",
+      "project": "chromium-1280-a92",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 649,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A92 collection keeps identity, spread, filters and focus es/diagon-alley",
+      "file": "browser-experience-clarity/collection-supplies-a92.spec.ts",
+      "project": "chromium-865-a92",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 893,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A92 stock100 stays bounded and draft keeps unit identity es/diagon-alley",
+      "file": "browser-experience-clarity/collection-supplies-a92.spec.ts",
+      "project": "chromium-865-a92",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 725,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A92 collection keeps identity, spread, filters and focus en/diagon-alley",
+      "file": "browser-experience-clarity/collection-supplies-a92.spec.ts",
+      "project": "chromium-865-a92",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 727,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A92 stock100 stays bounded and draft keeps unit identity en/diagon-alley",
+      "file": "browser-experience-clarity/collection-supplies-a92.spec.ts",
+      "project": "chromium-865-a92",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 645,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A92 collection keeps identity, spread, filters and focus es/arcana",
+      "file": "browser-experience-clarity/collection-supplies-a92.spec.ts",
+      "project": "chromium-865-a92",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 766,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A92 stock100 stays bounded and draft keeps unit identity es/arcana",
+      "file": "browser-experience-clarity/collection-supplies-a92.spec.ts",
+      "project": "chromium-865-a92",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 624,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A92 collection keeps identity, spread, filters and focus en/arcana",
+      "file": "browser-experience-clarity/collection-supplies-a92.spec.ts",
+      "project": "chromium-865-a92",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 736,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A92 stock100 stays bounded and draft keeps unit identity en/arcana",
+      "file": "browser-experience-clarity/collection-supplies-a92.spec.ts",
+      "project": "chromium-865-a92",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 640,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A92 collection keeps identity, spread, filters and focus es/diagon-alley",
+      "file": "browser-experience-clarity/collection-supplies-a92.spec.ts",
+      "project": "webkit-390-a92",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 15074,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A92 stock100 stays bounded and draft keeps unit identity es/diagon-alley",
+      "file": "browser-experience-clarity/collection-supplies-a92.spec.ts",
+      "project": "webkit-390-a92",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1988,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A92 collection keeps identity, spread, filters and focus en/diagon-alley",
+      "file": "browser-experience-clarity/collection-supplies-a92.spec.ts",
+      "project": "webkit-390-a92",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 2397,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A92 stock100 stays bounded and draft keeps unit identity en/diagon-alley",
+      "file": "browser-experience-clarity/collection-supplies-a92.spec.ts",
+      "project": "webkit-390-a92",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1075,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A92 collection keeps identity, spread, filters and focus es/arcana",
+      "file": "browser-experience-clarity/collection-supplies-a92.spec.ts",
+      "project": "webkit-390-a92",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 2029,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A92 stock100 stays bounded and draft keeps unit identity es/arcana",
+      "file": "browser-experience-clarity/collection-supplies-a92.spec.ts",
+      "project": "webkit-390-a92",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1197,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A92 collection keeps identity, spread, filters and focus en/arcana",
+      "file": "browser-experience-clarity/collection-supplies-a92.spec.ts",
+      "project": "webkit-390-a92",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1732,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A92 stock100 stays bounded and draft keeps unit identity en/arcana",
+      "file": "browser-experience-clarity/collection-supplies-a92.spec.ts",
+      "project": "webkit-390-a92",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 998,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A92 same route and names before/after; bounded technical action comparison",
+      "file": "browser-experience-clarity/comparison-a92.spec.ts",
+      "project": "chromium-390-a92",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 3301,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A92 same route and names before/after; bounded technical action comparison",
+      "file": "browser-experience-clarity/comparison-a92.spec.ts",
+      "project": "chromium-1280-a92",
+      "expectedStatus": "skipped",
+      "status": "skipped",
+      "results": [
+        {
+          "status": "skipped",
+          "duration": 39,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A92 same route and names before/after; bounded technical action comparison",
+      "file": "browser-experience-clarity/comparison-a92.spec.ts",
+      "project": "chromium-865-a92",
+      "expectedStatus": "skipped",
+      "status": "skipped",
+      "results": [
+        {
+          "status": "skipped",
+          "duration": 48,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A92 same route and names before/after; bounded technical action comparison",
+      "file": "browser-experience-clarity/comparison-a92.spec.ts",
+      "project": "webkit-390-a92",
+      "expectedStatus": "skipped",
+      "status": "skipped",
+      "results": [
+        {
+          "status": "skipped",
+          "duration": 209,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A92 diagon-alley/es public connections and read-only consultation",
+      "file": "browser-experience-clarity/map-preparation-a92.spec.ts",
+      "project": "chromium-390-a92",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 2269,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A92 diagon-alley/es names, condition and preparation remain present",
+      "file": "browser-experience-clarity/map-preparation-a92.spec.ts",
+      "project": "chromium-390-a92",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 555,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A92 diagon-alley/es four and five posts keep real loot and preparation above the footer",
+      "file": "browser-experience-clarity/map-preparation-a92.spec.ts",
+      "project": "chromium-390-a92",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1525,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A92 diagon-alley/es preparation reflows at 320px with enlarged text",
+      "file": "browser-experience-clarity/map-preparation-a92.spec.ts",
+      "project": "chromium-390-a92",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 467,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A92 diagon-alley/en public connections and read-only consultation",
+      "file": "browser-experience-clarity/map-preparation-a92.spec.ts",
+      "project": "chromium-390-a92",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 565,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A92 diagon-alley/en names, condition and preparation remain present",
+      "file": "browser-experience-clarity/map-preparation-a92.spec.ts",
+      "project": "chromium-390-a92",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 397,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A92 diagon-alley/en four and five posts keep real loot and preparation above the footer",
+      "file": "browser-experience-clarity/map-preparation-a92.spec.ts",
+      "project": "chromium-390-a92",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1228,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A92 diagon-alley/en preparation reflows at 320px with enlarged text",
+      "file": "browser-experience-clarity/map-preparation-a92.spec.ts",
+      "project": "chromium-390-a92",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 416,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A92 arcana/es public connections and read-only consultation",
+      "file": "browser-experience-clarity/map-preparation-a92.spec.ts",
+      "project": "chromium-390-a92",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 514,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A92 arcana/es names, condition and preparation remain present",
+      "file": "browser-experience-clarity/map-preparation-a92.spec.ts",
+      "project": "chromium-390-a92",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 314,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A92 arcana/es four and five posts keep real loot and preparation above the footer",
+      "file": "browser-experience-clarity/map-preparation-a92.spec.ts",
+      "project": "chromium-390-a92",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1067,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A92 arcana/es preparation reflows at 320px with enlarged text",
+      "file": "browser-experience-clarity/map-preparation-a92.spec.ts",
+      "project": "chromium-390-a92",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 408,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A92 arcana/en public connections and read-only consultation",
+      "file": "browser-experience-clarity/map-preparation-a92.spec.ts",
+      "project": "chromium-390-a92",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 491,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A92 arcana/en names, condition and preparation remain present",
+      "file": "browser-experience-clarity/map-preparation-a92.spec.ts",
+      "project": "chromium-390-a92",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 333,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A92 arcana/en four and five posts keep real loot and preparation above the footer",
+      "file": "browser-experience-clarity/map-preparation-a92.spec.ts",
+      "project": "chromium-390-a92",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1093,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A92 arcana/en preparation reflows at 320px with enlarged text",
+      "file": "browser-experience-clarity/map-preparation-a92.spec.ts",
+      "project": "chromium-390-a92",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 390,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A92 diagon-alley/es public connections and read-only consultation",
+      "file": "browser-experience-clarity/map-preparation-a92.spec.ts",
+      "project": "chromium-1280-a92",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 627,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A92 diagon-alley/es names, condition and preparation remain present",
+      "file": "browser-experience-clarity/map-preparation-a92.spec.ts",
+      "project": "chromium-1280-a92",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 368,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A92 diagon-alley/es four and five posts keep real loot and preparation above the footer",
+      "file": "browser-experience-clarity/map-preparation-a92.spec.ts",
+      "project": "chromium-1280-a92",
+      "expectedStatus": "skipped",
+      "status": "skipped",
+      "results": [
+        {
+          "status": "skipped",
+          "duration": 46,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A92 diagon-alley/es preparation reflows at 320px with enlarged text",
+      "file": "browser-experience-clarity/map-preparation-a92.spec.ts",
+      "project": "chromium-1280-a92",
+      "expectedStatus": "skipped",
+      "status": "skipped",
+      "results": [
+        {
+          "status": "skipped",
+          "duration": 35,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A92 diagon-alley/en public connections and read-only consultation",
+      "file": "browser-experience-clarity/map-preparation-a92.spec.ts",
+      "project": "chromium-1280-a92",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 624,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A92 diagon-alley/en names, condition and preparation remain present",
+      "file": "browser-experience-clarity/map-preparation-a92.spec.ts",
+      "project": "chromium-1280-a92",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 397,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A92 diagon-alley/en four and five posts keep real loot and preparation above the footer",
+      "file": "browser-experience-clarity/map-preparation-a92.spec.ts",
+      "project": "chromium-1280-a92",
+      "expectedStatus": "skipped",
+      "status": "skipped",
+      "results": [
+        {
+          "status": "skipped",
+          "duration": 50,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A92 diagon-alley/en preparation reflows at 320px with enlarged text",
+      "file": "browser-experience-clarity/map-preparation-a92.spec.ts",
+      "project": "chromium-1280-a92",
+      "expectedStatus": "skipped",
+      "status": "skipped",
+      "results": [
+        {
+          "status": "skipped",
+          "duration": 38,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A92 arcana/es public connections and read-only consultation",
+      "file": "browser-experience-clarity/map-preparation-a92.spec.ts",
+      "project": "chromium-1280-a92",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 570,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A92 arcana/es names, condition and preparation remain present",
+      "file": "browser-experience-clarity/map-preparation-a92.spec.ts",
+      "project": "chromium-1280-a92",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 296,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A92 arcana/es four and five posts keep real loot and preparation above the footer",
+      "file": "browser-experience-clarity/map-preparation-a92.spec.ts",
+      "project": "chromium-1280-a92",
+      "expectedStatus": "skipped",
+      "status": "skipped",
+      "results": [
+        {
+          "status": "skipped",
+          "duration": 47,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A92 arcana/es preparation reflows at 320px with enlarged text",
+      "file": "browser-experience-clarity/map-preparation-a92.spec.ts",
+      "project": "chromium-1280-a92",
+      "expectedStatus": "skipped",
+      "status": "skipped",
+      "results": [
+        {
+          "status": "skipped",
+          "duration": 47,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A92 arcana/en public connections and read-only consultation",
+      "file": "browser-experience-clarity/map-preparation-a92.spec.ts",
+      "project": "chromium-1280-a92",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 591,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A92 arcana/en names, condition and preparation remain present",
+      "file": "browser-experience-clarity/map-preparation-a92.spec.ts",
+      "project": "chromium-1280-a92",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 310,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A92 arcana/en four and five posts keep real loot and preparation above the footer",
+      "file": "browser-experience-clarity/map-preparation-a92.spec.ts",
+      "project": "chromium-1280-a92",
+      "expectedStatus": "skipped",
+      "status": "skipped",
+      "results": [
+        {
+          "status": "skipped",
+          "duration": 50,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A92 arcana/en preparation reflows at 320px with enlarged text",
+      "file": "browser-experience-clarity/map-preparation-a92.spec.ts",
+      "project": "chromium-1280-a92",
+      "expectedStatus": "skipped",
+      "status": "skipped",
+      "results": [
+        {
+          "status": "skipped",
+          "duration": 38,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A92 diagon-alley/es public connections and read-only consultation",
+      "file": "browser-experience-clarity/map-preparation-a92.spec.ts",
+      "project": "chromium-865-a92",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 590,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A92 diagon-alley/es names, condition and preparation remain present",
+      "file": "browser-experience-clarity/map-preparation-a92.spec.ts",
+      "project": "chromium-865-a92",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 733,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A92 diagon-alley/es four and five posts keep real loot and preparation above the footer",
+      "file": "browser-experience-clarity/map-preparation-a92.spec.ts",
+      "project": "chromium-865-a92",
+      "expectedStatus": "skipped",
+      "status": "skipped",
+      "results": [
+        {
+          "status": "skipped",
+          "duration": 71,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A92 diagon-alley/es preparation reflows at 320px with enlarged text",
+      "file": "browser-experience-clarity/map-preparation-a92.spec.ts",
+      "project": "chromium-865-a92",
+      "expectedStatus": "skipped",
+      "status": "skipped",
+      "results": [
+        {
+          "status": "skipped",
+          "duration": 47,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A92 diagon-alley/en public connections and read-only consultation",
+      "file": "browser-experience-clarity/map-preparation-a92.spec.ts",
+      "project": "chromium-865-a92",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 569,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A92 diagon-alley/en names, condition and preparation remain present",
+      "file": "browser-experience-clarity/map-preparation-a92.spec.ts",
+      "project": "chromium-865-a92",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 349,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A92 diagon-alley/en four and five posts keep real loot and preparation above the footer",
+      "file": "browser-experience-clarity/map-preparation-a92.spec.ts",
+      "project": "chromium-865-a92",
+      "expectedStatus": "skipped",
+      "status": "skipped",
+      "results": [
+        {
+          "status": "skipped",
+          "duration": 65,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A92 diagon-alley/en preparation reflows at 320px with enlarged text",
+      "file": "browser-experience-clarity/map-preparation-a92.spec.ts",
+      "project": "chromium-865-a92",
+      "expectedStatus": "skipped",
+      "status": "skipped",
+      "results": [
+        {
+          "status": "skipped",
+          "duration": 37,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A92 arcana/es public connections and read-only consultation",
+      "file": "browser-experience-clarity/map-preparation-a92.spec.ts",
+      "project": "chromium-865-a92",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 552,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A92 arcana/es names, condition and preparation remain present",
+      "file": "browser-experience-clarity/map-preparation-a92.spec.ts",
+      "project": "chromium-865-a92",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 354,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A92 arcana/es four and five posts keep real loot and preparation above the footer",
+      "file": "browser-experience-clarity/map-preparation-a92.spec.ts",
+      "project": "chromium-865-a92",
+      "expectedStatus": "skipped",
+      "status": "skipped",
+      "results": [
+        {
+          "status": "skipped",
+          "duration": 44,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A92 arcana/es preparation reflows at 320px with enlarged text",
+      "file": "browser-experience-clarity/map-preparation-a92.spec.ts",
+      "project": "chromium-865-a92",
+      "expectedStatus": "skipped",
+      "status": "skipped",
+      "results": [
+        {
+          "status": "skipped",
+          "duration": 38,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A92 arcana/en public connections and read-only consultation",
+      "file": "browser-experience-clarity/map-preparation-a92.spec.ts",
+      "project": "chromium-865-a92",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 573,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A92 arcana/en names, condition and preparation remain present",
+      "file": "browser-experience-clarity/map-preparation-a92.spec.ts",
+      "project": "chromium-865-a92",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 348,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A92 arcana/en four and five posts keep real loot and preparation above the footer",
+      "file": "browser-experience-clarity/map-preparation-a92.spec.ts",
+      "project": "chromium-865-a92",
+      "expectedStatus": "skipped",
+      "status": "skipped",
+      "results": [
+        {
+          "status": "skipped",
+          "duration": 47,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A92 arcana/en preparation reflows at 320px with enlarged text",
+      "file": "browser-experience-clarity/map-preparation-a92.spec.ts",
+      "project": "chromium-865-a92",
+      "expectedStatus": "skipped",
+      "status": "skipped",
+      "results": [
+        {
+          "status": "skipped",
+          "duration": 38,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A92 diagon-alley/es public connections and read-only consultation",
+      "file": "browser-experience-clarity/map-preparation-a92.spec.ts",
+      "project": "webkit-390-a92",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 2260,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A92 diagon-alley/es names, condition and preparation remain present",
+      "file": "browser-experience-clarity/map-preparation-a92.spec.ts",
+      "project": "webkit-390-a92",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 2170,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A92 diagon-alley/es four and five posts keep real loot and preparation above the footer",
+      "file": "browser-experience-clarity/map-preparation-a92.spec.ts",
+      "project": "webkit-390-a92",
+      "expectedStatus": "skipped",
+      "status": "skipped",
+      "results": [
+        {
+          "status": "skipped",
+          "duration": 227,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A92 diagon-alley/es preparation reflows at 320px with enlarged text",
+      "file": "browser-experience-clarity/map-preparation-a92.spec.ts",
+      "project": "webkit-390-a92",
+      "expectedStatus": "skipped",
+      "status": "skipped",
+      "results": [
+        {
+          "status": "skipped",
+          "duration": 241,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A92 diagon-alley/en public connections and read-only consultation",
+      "file": "browser-experience-clarity/map-preparation-a92.spec.ts",
+      "project": "webkit-390-a92",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1234,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A92 diagon-alley/en names, condition and preparation remain present",
+      "file": "browser-experience-clarity/map-preparation-a92.spec.ts",
+      "project": "webkit-390-a92",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1165,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A92 diagon-alley/en four and five posts keep real loot and preparation above the footer",
+      "file": "browser-experience-clarity/map-preparation-a92.spec.ts",
+      "project": "webkit-390-a92",
+      "expectedStatus": "skipped",
+      "status": "skipped",
+      "results": [
+        {
+          "status": "skipped",
+          "duration": 232,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A92 diagon-alley/en preparation reflows at 320px with enlarged text",
+      "file": "browser-experience-clarity/map-preparation-a92.spec.ts",
+      "project": "webkit-390-a92",
+      "expectedStatus": "skipped",
+      "status": "skipped",
+      "results": [
+        {
+          "status": "skipped",
+          "duration": 201,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A92 arcana/es public connections and read-only consultation",
+      "file": "browser-experience-clarity/map-preparation-a92.spec.ts",
+      "project": "webkit-390-a92",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 986,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A92 arcana/es names, condition and preparation remain present",
+      "file": "browser-experience-clarity/map-preparation-a92.spec.ts",
+      "project": "webkit-390-a92",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 886,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A92 arcana/es four and five posts keep real loot and preparation above the footer",
+      "file": "browser-experience-clarity/map-preparation-a92.spec.ts",
+      "project": "webkit-390-a92",
+      "expectedStatus": "skipped",
+      "status": "skipped",
+      "results": [
+        {
+          "status": "skipped",
+          "duration": 263,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A92 arcana/es preparation reflows at 320px with enlarged text",
+      "file": "browser-experience-clarity/map-preparation-a92.spec.ts",
+      "project": "webkit-390-a92",
+      "expectedStatus": "skipped",
+      "status": "skipped",
+      "results": [
+        {
+          "status": "skipped",
+          "duration": 230,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A92 arcana/en public connections and read-only consultation",
+      "file": "browser-experience-clarity/map-preparation-a92.spec.ts",
+      "project": "webkit-390-a92",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1012,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A92 arcana/en names, condition and preparation remain present",
+      "file": "browser-experience-clarity/map-preparation-a92.spec.ts",
+      "project": "webkit-390-a92",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 723,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A92 arcana/en four and five posts keep real loot and preparation above the footer",
+      "file": "browser-experience-clarity/map-preparation-a92.spec.ts",
+      "project": "webkit-390-a92",
+      "expectedStatus": "skipped",
+      "status": "skipped",
+      "results": [
+        {
+          "status": "skipped",
+          "duration": 244,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A92 arcana/en preparation reflows at 320px with enlarged text",
+      "file": "browser-experience-clarity/map-preparation-a92.spec.ts",
+      "project": "webkit-390-a92",
+      "expectedStatus": "skipped",
+      "status": "skipped",
+      "results": [
+        {
+          "status": "skipped",
+          "duration": 324,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A92 es/diagon-alley expired access returns to the same inspection without replacing the game",
+      "file": "browser-experience-clarity/recovery-a92.spec.ts",
+      "project": "chromium-390-a92",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1937,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A92 en/diagon-alley expired access returns to the same inspection without replacing the game",
+      "file": "browser-experience-clarity/recovery-a92.spec.ts",
+      "project": "chromium-390-a92",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1516,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A92 es/arcana expired access returns to the same inspection without replacing the game",
+      "file": "browser-experience-clarity/recovery-a92.spec.ts",
+      "project": "chromium-390-a92",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1251,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A92 en/arcana expired access returns to the same inspection without replacing the game",
+      "file": "browser-experience-clarity/recovery-a92.spec.ts",
+      "project": "chromium-390-a92",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1726,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A92 a lost economic response keeps its owner across contextual sign-in and reload",
+      "file": "browser-experience-clarity/recovery-a92.spec.ts",
+      "project": "chromium-390-a92",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 3011,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A92 es/diagon-alley expired access returns to the same inspection without replacing the game",
+      "file": "browser-experience-clarity/recovery-a92.spec.ts",
+      "project": "chromium-1280-a92",
+      "expectedStatus": "skipped",
+      "status": "skipped",
+      "results": [
+        {
+          "status": "skipped",
+          "duration": 38,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A92 en/diagon-alley expired access returns to the same inspection without replacing the game",
+      "file": "browser-experience-clarity/recovery-a92.spec.ts",
+      "project": "chromium-1280-a92",
+      "expectedStatus": "skipped",
+      "status": "skipped",
+      "results": [
+        {
+          "status": "skipped",
+          "duration": 41,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A92 es/arcana expired access returns to the same inspection without replacing the game",
+      "file": "browser-experience-clarity/recovery-a92.spec.ts",
+      "project": "chromium-1280-a92",
+      "expectedStatus": "skipped",
+      "status": "skipped",
+      "results": [
+        {
+          "status": "skipped",
+          "duration": 41,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A92 en/arcana expired access returns to the same inspection without replacing the game",
+      "file": "browser-experience-clarity/recovery-a92.spec.ts",
+      "project": "chromium-1280-a92",
+      "expectedStatus": "skipped",
+      "status": "skipped",
+      "results": [
+        {
+          "status": "skipped",
+          "duration": 37,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A92 a lost economic response keeps its owner across contextual sign-in and reload",
+      "file": "browser-experience-clarity/recovery-a92.spec.ts",
+      "project": "chromium-1280-a92",
+      "expectedStatus": "skipped",
+      "status": "skipped",
+      "results": [
+        {
+          "status": "skipped",
+          "duration": 37,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A92 es/diagon-alley expired access returns to the same inspection without replacing the game",
+      "file": "browser-experience-clarity/recovery-a92.spec.ts",
+      "project": "chromium-865-a92",
+      "expectedStatus": "skipped",
+      "status": "skipped",
+      "results": [
+        {
+          "status": "skipped",
+          "duration": 36,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A92 en/diagon-alley expired access returns to the same inspection without replacing the game",
+      "file": "browser-experience-clarity/recovery-a92.spec.ts",
+      "project": "chromium-865-a92",
+      "expectedStatus": "skipped",
+      "status": "skipped",
+      "results": [
+        {
+          "status": "skipped",
+          "duration": 37,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A92 es/arcana expired access returns to the same inspection without replacing the game",
+      "file": "browser-experience-clarity/recovery-a92.spec.ts",
+      "project": "chromium-865-a92",
+      "expectedStatus": "skipped",
+      "status": "skipped",
+      "results": [
+        {
+          "status": "skipped",
+          "duration": 36,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A92 en/arcana expired access returns to the same inspection without replacing the game",
+      "file": "browser-experience-clarity/recovery-a92.spec.ts",
+      "project": "chromium-865-a92",
+      "expectedStatus": "skipped",
+      "status": "skipped",
+      "results": [
+        {
+          "status": "skipped",
+          "duration": 44,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A92 a lost economic response keeps its owner across contextual sign-in and reload",
+      "file": "browser-experience-clarity/recovery-a92.spec.ts",
+      "project": "chromium-865-a92",
+      "expectedStatus": "skipped",
+      "status": "skipped",
+      "results": [
+        {
+          "status": "skipped",
+          "duration": 38,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A92 es/diagon-alley expired access returns to the same inspection without replacing the game",
+      "file": "browser-experience-clarity/recovery-a92.spec.ts",
+      "project": "webkit-390-a92",
+      "expectedStatus": "skipped",
+      "status": "skipped",
+      "results": [
+        {
+          "status": "skipped",
+          "duration": 229,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A92 en/diagon-alley expired access returns to the same inspection without replacing the game",
+      "file": "browser-experience-clarity/recovery-a92.spec.ts",
+      "project": "webkit-390-a92",
+      "expectedStatus": "skipped",
+      "status": "skipped",
+      "results": [
+        {
+          "status": "skipped",
+          "duration": 222,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A92 es/arcana expired access returns to the same inspection without replacing the game",
+      "file": "browser-experience-clarity/recovery-a92.spec.ts",
+      "project": "webkit-390-a92",
+      "expectedStatus": "skipped",
+      "status": "skipped",
+      "results": [
+        {
+          "status": "skipped",
+          "duration": 237,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A92 en/arcana expired access returns to the same inspection without replacing the game",
+      "file": "browser-experience-clarity/recovery-a92.spec.ts",
+      "project": "webkit-390-a92",
+      "expectedStatus": "skipped",
+      "status": "skipped",
+      "results": [
+        {
+          "status": "skipped",
+          "duration": 236,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A92 a lost economic response keeps its owner across contextual sign-in and reload",
+      "file": "browser-experience-clarity/recovery-a92.spec.ts",
+      "project": "webkit-390-a92",
+      "expectedStatus": "skipped",
+      "status": "skipped",
+      "results": [
+        {
+          "status": "skipped",
+          "duration": 230,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A92 es/diagon-alley books retain a visible close with all artwork missing",
+      "file": "browser-experience-clarity/system-a92.spec.ts",
+      "project": "chromium-390-a92",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 338,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A92 es/diagon-alley seasonal error is localized and consultation remains reversible",
+      "file": "browser-experience-clarity/system-a92.spec.ts",
+      "project": "chromium-390-a92",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 257,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A92 en/arcana books retain a visible close with all artwork missing",
+      "file": "browser-experience-clarity/system-a92.spec.ts",
+      "project": "chromium-390-a92",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 317,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A92 en/arcana seasonal error is localized and consultation remains reversible",
+      "file": "browser-experience-clarity/system-a92.spec.ts",
+      "project": "chromium-390-a92",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 258,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A92 es/diagon-alley books retain a visible close with all artwork missing",
+      "file": "browser-experience-clarity/system-a92.spec.ts",
+      "project": "chromium-1280-a92",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 362,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A92 es/diagon-alley seasonal error is localized and consultation remains reversible",
+      "file": "browser-experience-clarity/system-a92.spec.ts",
+      "project": "chromium-1280-a92",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 277,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A92 en/arcana books retain a visible close with all artwork missing",
+      "file": "browser-experience-clarity/system-a92.spec.ts",
+      "project": "chromium-1280-a92",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 338,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A92 en/arcana seasonal error is localized and consultation remains reversible",
+      "file": "browser-experience-clarity/system-a92.spec.ts",
+      "project": "chromium-1280-a92",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 271,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A92 es/diagon-alley books retain a visible close with all artwork missing",
+      "file": "browser-experience-clarity/system-a92.spec.ts",
+      "project": "chromium-865-a92",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 335,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A92 es/diagon-alley seasonal error is localized and consultation remains reversible",
+      "file": "browser-experience-clarity/system-a92.spec.ts",
+      "project": "chromium-865-a92",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 301,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A92 en/arcana books retain a visible close with all artwork missing",
+      "file": "browser-experience-clarity/system-a92.spec.ts",
+      "project": "chromium-865-a92",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 325,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A92 en/arcana seasonal error is localized and consultation remains reversible",
+      "file": "browser-experience-clarity/system-a92.spec.ts",
+      "project": "chromium-865-a92",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 265,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A92 es/diagon-alley books retain a visible close with all artwork missing",
+      "file": "browser-experience-clarity/system-a92.spec.ts",
+      "project": "webkit-390-a92",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1379,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A92 es/diagon-alley seasonal error is localized and consultation remains reversible",
+      "file": "browser-experience-clarity/system-a92.spec.ts",
+      "project": "webkit-390-a92",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 601,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A92 en/arcana books retain a visible close with all artwork missing",
+      "file": "browser-experience-clarity/system-a92.spec.ts",
+      "project": "webkit-390-a92",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 740,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A92 en/arcana seasonal error is localized and consultation remains reversible",
+      "file": "browser-experience-clarity/system-a92.spec.ts",
+      "project": "webkit-390-a92",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 643,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A89 declared guide and company choices preserve resources, ownership and explicit confirmation",
+      "file": "browser-priorities/priorities-a89.spec.ts",
+      "project": "chromium-390-a89",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 2767,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A89 Cromodex goal persists per owner, keeps silhouettes and requires an owned acquisition",
+      "file": "browser-priorities/priorities-a89.spec.ts",
+      "project": "chromium-390-a89",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1804,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A89 wand fitting chooses exact copies, exposes trade-offs and cancels without forging",
+      "file": "browser-priorities/priorities-a89.spec.ts",
+      "project": "chromium-390-a89",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1513,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A89 bean risk stays unknown, precise carriers and draft changes never consume or discover",
+      "file": "browser-priorities/priorities-a89.spec.ts",
+      "project": "chromium-390-a89",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 3137,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A89 reading is semantic, remembers the owner and does not override forced motion preferences",
+      "file": "browser-priorities/priorities-a89.spec.ts",
+      "project": "chromium-390-a89",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 2281,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A89 battle book appears only after a usable outcome and keeps at most two confirmed facts",
+      "file": "browser-priorities/priorities-a89.spec.ts",
+      "project": "chromium-390-a89",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 4075,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A89 narrow text reflow and missing renderer keep readable actions and facts",
+      "file": "browser-priorities/priorities-a89.spec.ts",
+      "project": "chromium-390-a89",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 3054,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A89 real compiled welcome, starter, guide and Pact consultation cancel without advancement",
+      "file": "browser-priorities/priorities-a89.spec.ts",
+      "project": "chromium-390-a89",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 4730,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A89 one connected expedition joins confirmed facts, collection source, wand fitting and preparation",
+      "file": "browser-priorities/priorities-a89.spec.ts",
+      "project": "chromium-390-a89",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 6103,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A89 declared guide and company choices preserve resources, ownership and explicit confirmation",
+      "file": "browser-priorities/priorities-a89.spec.ts",
+      "project": "chromium-1280-a89",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 2784,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A89 Cromodex goal persists per owner, keeps silhouettes and requires an owned acquisition",
+      "file": "browser-priorities/priorities-a89.spec.ts",
+      "project": "chromium-1280-a89",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 2067,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A89 wand fitting chooses exact copies, exposes trade-offs and cancels without forging",
+      "file": "browser-priorities/priorities-a89.spec.ts",
+      "project": "chromium-1280-a89",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1534,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A89 bean risk stays unknown, precise carriers and draft changes never consume or discover",
+      "file": "browser-priorities/priorities-a89.spec.ts",
+      "project": "chromium-1280-a89",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 3188,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A89 reading is semantic, remembers the owner and does not override forced motion preferences",
+      "file": "browser-priorities/priorities-a89.spec.ts",
+      "project": "chromium-1280-a89",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 2429,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A89 battle book appears only after a usable outcome and keeps at most two confirmed facts",
+      "file": "browser-priorities/priorities-a89.spec.ts",
+      "project": "chromium-1280-a89",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 4484,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A89 narrow text reflow and missing renderer keep readable actions and facts",
+      "file": "browser-priorities/priorities-a89.spec.ts",
+      "project": "chromium-1280-a89",
+      "expectedStatus": "skipped",
+      "status": "skipped",
+      "results": [
+        {
+          "status": "skipped",
+          "duration": 46,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A89 real compiled welcome, starter, guide and Pact consultation cancel without advancement",
+      "file": "browser-priorities/priorities-a89.spec.ts",
+      "project": "chromium-1280-a89",
+      "expectedStatus": "skipped",
+      "status": "skipped",
+      "results": [
+        {
+          "status": "skipped",
+          "duration": 36,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A89 one connected expedition joins confirmed facts, collection source, wand fitting and preparation",
+      "file": "browser-priorities/priorities-a89.spec.ts",
+      "project": "chromium-1280-a89",
+      "expectedStatus": "skipped",
+      "status": "skipped",
+      "results": [
+        {
+          "status": "skipped",
+          "duration": 41,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A89 declared guide and company choices preserve resources, ownership and explicit confirmation",
+      "file": "browser-priorities/priorities-a89.spec.ts",
+      "project": "chromium-865-a89",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 2769,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A89 Cromodex goal persists per owner, keeps silhouettes and requires an owned acquisition",
+      "file": "browser-priorities/priorities-a89.spec.ts",
+      "project": "chromium-865-a89",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 2164,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A89 wand fitting chooses exact copies, exposes trade-offs and cancels without forging",
+      "file": "browser-priorities/priorities-a89.spec.ts",
+      "project": "chromium-865-a89",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1519,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A89 bean risk stays unknown, precise carriers and draft changes never consume or discover",
+      "file": "browser-priorities/priorities-a89.spec.ts",
+      "project": "chromium-865-a89",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 3270,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A89 reading is semantic, remembers the owner and does not override forced motion preferences",
+      "file": "browser-priorities/priorities-a89.spec.ts",
+      "project": "chromium-865-a89",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 2387,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A89 battle book appears only after a usable outcome and keeps at most two confirmed facts",
+      "file": "browser-priorities/priorities-a89.spec.ts",
+      "project": "chromium-865-a89",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 4513,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A89 narrow text reflow and missing renderer keep readable actions and facts",
+      "file": "browser-priorities/priorities-a89.spec.ts",
+      "project": "chromium-865-a89",
+      "expectedStatus": "skipped",
+      "status": "skipped",
+      "results": [
+        {
+          "status": "skipped",
+          "duration": 44,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A89 real compiled welcome, starter, guide and Pact consultation cancel without advancement",
+      "file": "browser-priorities/priorities-a89.spec.ts",
+      "project": "chromium-865-a89",
+      "expectedStatus": "skipped",
+      "status": "skipped",
+      "results": [
+        {
+          "status": "skipped",
+          "duration": 38,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A89 one connected expedition joins confirmed facts, collection source, wand fitting and preparation",
+      "file": "browser-priorities/priorities-a89.spec.ts",
+      "project": "chromium-865-a89",
+      "expectedStatus": "skipped",
+      "status": "skipped",
+      "results": [
+        {
+          "status": "skipped",
+          "duration": 40,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A89 declared guide and company choices preserve resources, ownership and explicit confirmation",
+      "file": "browser-priorities/priorities-a89.spec.ts",
+      "project": "webkit-390-a89",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 5108,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A89 Cromodex goal persists per owner, keeps silhouettes and requires an owned acquisition",
+      "file": "browser-priorities/priorities-a89.spec.ts",
+      "project": "webkit-390-a89",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 3876,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A89 wand fitting chooses exact copies, exposes trade-offs and cancels without forging",
+      "file": "browser-priorities/priorities-a89.spec.ts",
+      "project": "webkit-390-a89",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 3311,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A89 bean risk stays unknown, precise carriers and draft changes never consume or discover",
+      "file": "browser-priorities/priorities-a89.spec.ts",
+      "project": "webkit-390-a89",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 4257,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A89 reading is semantic, remembers the owner and does not override forced motion preferences",
+      "file": "browser-priorities/priorities-a89.spec.ts",
+      "project": "webkit-390-a89",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 5900,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A89 battle book appears only after a usable outcome and keeps at most two confirmed facts",
+      "file": "browser-priorities/priorities-a89.spec.ts",
+      "project": "webkit-390-a89",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 7495,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A89 narrow text reflow and missing renderer keep readable actions and facts",
+      "file": "browser-priorities/priorities-a89.spec.ts",
+      "project": "webkit-390-a89",
+      "expectedStatus": "skipped",
+      "status": "skipped",
+      "results": [
+        {
+          "status": "skipped",
+          "duration": 206,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A89 real compiled welcome, starter, guide and Pact consultation cancel without advancement",
+      "file": "browser-priorities/priorities-a89.spec.ts",
+      "project": "webkit-390-a89",
+      "expectedStatus": "skipped",
+      "status": "skipped",
+      "results": [
+        {
+          "status": "skipped",
+          "duration": 242,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A89 one connected expedition joins confirmed facts, collection source, wand fitting and preparation",
+      "file": "browser-priorities/priorities-a89.spec.ts",
+      "project": "webkit-390-a89",
+      "expectedStatus": "skipped",
+      "status": "skipped",
+      "results": [
+        {
+          "status": "skipped",
+          "duration": 239,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A76 first activation excludes double registration through retained response",
+      "file": "browser-accounts/accounts-a76.spec.ts",
+      "project": "chromium-390-a76",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 589,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A76 missing illustration preserves account labels, actions and keyboard return",
+      "file": "browser-accounts/accounts-a76.spec.ts",
+      "project": "chromium-390-a76",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 326,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A76 es diagon-alley entry forms, focus, cancellation and enlarged text",
+      "file": "browser-accounts/accounts-a76.spec.ts",
+      "project": "chromium-390-a76",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 903,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A76 es diagon-alley real account, guest binding, cross-context login and recovery",
+      "file": "browser-accounts/accounts-a76.spec.ts",
+      "project": "chromium-390-a76",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 10731,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A76 en diagon-alley entry forms, focus, cancellation and enlarged text",
+      "file": "browser-accounts/accounts-a76.spec.ts",
+      "project": "chromium-390-a76",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 763,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A76 en diagon-alley real account, guest binding, cross-context login and recovery",
+      "file": "browser-accounts/accounts-a76.spec.ts",
+      "project": "chromium-390-a76",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 11023,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A76 es arcana entry forms, focus, cancellation and enlarged text",
+      "file": "browser-accounts/accounts-a76.spec.ts",
+      "project": "chromium-390-a76",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 653,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A76 es arcana real account, guest binding, cross-context login and recovery",
+      "file": "browser-accounts/accounts-a76.spec.ts",
+      "project": "chromium-390-a76",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 10603,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A76 en arcana entry forms, focus, cancellation and enlarged text",
+      "file": "browser-accounts/accounts-a76.spec.ts",
+      "project": "chromium-390-a76",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 775,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A76 en arcana real account, guest binding, cross-context login and recovery",
+      "file": "browser-accounts/accounts-a76.spec.ts",
+      "project": "chromium-390-a76",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 10697,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A76 first activation excludes double registration through retained response",
+      "file": "browser-accounts/accounts-a76.spec.ts",
+      "project": "chromium-1280-a76",
+      "expectedStatus": "skipped",
+      "status": "skipped",
+      "results": [
+        {
+          "status": "skipped",
+          "duration": 69,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A76 missing illustration preserves account labels, actions and keyboard return",
+      "file": "browser-accounts/accounts-a76.spec.ts",
+      "project": "chromium-1280-a76",
+      "expectedStatus": "skipped",
+      "status": "skipped",
+      "results": [
+        {
+          "status": "skipped",
+          "duration": 46,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A76 es diagon-alley entry forms, focus, cancellation and enlarged text",
+      "file": "browser-accounts/accounts-a76.spec.ts",
+      "project": "chromium-1280-a76",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 756,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A76 es diagon-alley real account, guest binding, cross-context login and recovery",
+      "file": "browser-accounts/accounts-a76.spec.ts",
+      "project": "chromium-1280-a76",
+      "expectedStatus": "skipped",
+      "status": "skipped",
+      "results": [
+        {
+          "status": "skipped",
+          "duration": 37,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A76 en diagon-alley entry forms, focus, cancellation and enlarged text",
+      "file": "browser-accounts/accounts-a76.spec.ts",
+      "project": "chromium-1280-a76",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 902,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A76 en diagon-alley real account, guest binding, cross-context login and recovery",
+      "file": "browser-accounts/accounts-a76.spec.ts",
+      "project": "chromium-1280-a76",
+      "expectedStatus": "skipped",
+      "status": "skipped",
+      "results": [
+        {
+          "status": "skipped",
+          "duration": 41,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A76 es arcana entry forms, focus, cancellation and enlarged text",
+      "file": "browser-accounts/accounts-a76.spec.ts",
+      "project": "chromium-1280-a76",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 678,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A76 es arcana real account, guest binding, cross-context login and recovery",
+      "file": "browser-accounts/accounts-a76.spec.ts",
+      "project": "chromium-1280-a76",
+      "expectedStatus": "skipped",
+      "status": "skipped",
+      "results": [
+        {
+          "status": "skipped",
+          "duration": 48,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A76 en arcana entry forms, focus, cancellation and enlarged text",
+      "file": "browser-accounts/accounts-a76.spec.ts",
+      "project": "chromium-1280-a76",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 801,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A76 en arcana real account, guest binding, cross-context login and recovery",
+      "file": "browser-accounts/accounts-a76.spec.ts",
+      "project": "chromium-1280-a76",
+      "expectedStatus": "skipped",
+      "status": "skipped",
+      "results": [
+        {
+          "status": "skipped",
+          "duration": 40,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A76 first activation excludes double registration through retained response",
+      "file": "browser-accounts/accounts-a76.spec.ts",
+      "project": "chromium-865-a76",
+      "expectedStatus": "skipped",
+      "status": "skipped",
+      "results": [
+        {
+          "status": "skipped",
+          "duration": 66,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A76 missing illustration preserves account labels, actions and keyboard return",
+      "file": "browser-accounts/accounts-a76.spec.ts",
+      "project": "chromium-865-a76",
+      "expectedStatus": "skipped",
+      "status": "skipped",
+      "results": [
+        {
+          "status": "skipped",
+          "duration": 45,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A76 es diagon-alley entry forms, focus, cancellation and enlarged text",
+      "file": "browser-accounts/accounts-a76.spec.ts",
+      "project": "chromium-865-a76",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 778,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A76 es diagon-alley real account, guest binding, cross-context login and recovery",
+      "file": "browser-accounts/accounts-a76.spec.ts",
+      "project": "chromium-865-a76",
+      "expectedStatus": "skipped",
+      "status": "skipped",
+      "results": [
+        {
+          "status": "skipped",
+          "duration": 39,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A76 en diagon-alley entry forms, focus, cancellation and enlarged text",
+      "file": "browser-accounts/accounts-a76.spec.ts",
+      "project": "chromium-865-a76",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 820,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A76 en diagon-alley real account, guest binding, cross-context login and recovery",
+      "file": "browser-accounts/accounts-a76.spec.ts",
+      "project": "chromium-865-a76",
+      "expectedStatus": "skipped",
+      "status": "skipped",
+      "results": [
+        {
+          "status": "skipped",
+          "duration": 39,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A76 es arcana entry forms, focus, cancellation and enlarged text",
+      "file": "browser-accounts/accounts-a76.spec.ts",
+      "project": "chromium-865-a76",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 642,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A76 es arcana real account, guest binding, cross-context login and recovery",
+      "file": "browser-accounts/accounts-a76.spec.ts",
+      "project": "chromium-865-a76",
+      "expectedStatus": "skipped",
+      "status": "skipped",
+      "results": [
+        {
+          "status": "skipped",
+          "duration": 52,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A76 en arcana entry forms, focus, cancellation and enlarged text",
+      "file": "browser-accounts/accounts-a76.spec.ts",
+      "project": "chromium-865-a76",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 786,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A76 en arcana real account, guest binding, cross-context login and recovery",
+      "file": "browser-accounts/accounts-a76.spec.ts",
+      "project": "chromium-865-a76",
+      "expectedStatus": "skipped",
+      "status": "skipped",
+      "results": [
+        {
+          "status": "skipped",
+          "duration": 39,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A76 first activation excludes double registration through retained response",
+      "file": "browser-accounts/accounts-a76.spec.ts",
+      "project": "webkit-390-a76",
+      "expectedStatus": "skipped",
+      "status": "skipped",
+      "results": [
+        {
+          "status": "skipped",
+          "duration": 228,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A76 missing illustration preserves account labels, actions and keyboard return",
+      "file": "browser-accounts/accounts-a76.spec.ts",
+      "project": "webkit-390-a76",
+      "expectedStatus": "skipped",
+      "status": "skipped",
+      "results": [
+        {
+          "status": "skipped",
+          "duration": 215,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A76 es diagon-alley entry forms, focus, cancellation and enlarged text",
+      "file": "browser-accounts/accounts-a76.spec.ts",
+      "project": "webkit-390-a76",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1496,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A76 es diagon-alley real account, guest binding, cross-context login and recovery",
+      "file": "browser-accounts/accounts-a76.spec.ts",
+      "project": "webkit-390-a76",
+      "expectedStatus": "skipped",
+      "status": "skipped",
+      "results": [
+        {
+          "status": "skipped",
+          "duration": 249,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A76 en diagon-alley entry forms, focus, cancellation and enlarged text",
+      "file": "browser-accounts/accounts-a76.spec.ts",
+      "project": "webkit-390-a76",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 2104,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A76 en diagon-alley real account, guest binding, cross-context login and recovery",
+      "file": "browser-accounts/accounts-a76.spec.ts",
+      "project": "webkit-390-a76",
+      "expectedStatus": "skipped",
+      "status": "skipped",
+      "results": [
+        {
+          "status": "skipped",
+          "duration": 246,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A76 es arcana entry forms, focus, cancellation and enlarged text",
+      "file": "browser-accounts/accounts-a76.spec.ts",
+      "project": "webkit-390-a76",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1178,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A76 es arcana real account, guest binding, cross-context login and recovery",
+      "file": "browser-accounts/accounts-a76.spec.ts",
+      "project": "webkit-390-a76",
+      "expectedStatus": "skipped",
+      "status": "skipped",
+      "results": [
+        {
+          "status": "skipped",
+          "duration": 211,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A76 en arcana entry forms, focus, cancellation and enlarged text",
+      "file": "browser-accounts/accounts-a76.spec.ts",
+      "project": "webkit-390-a76",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1702,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A76 en arcana real account, guest binding, cross-context login and recovery",
+      "file": "browser-accounts/accounts-a76.spec.ts",
+      "project": "webkit-390-a76",
+      "expectedStatus": "skipped",
+      "status": "skipped",
+      "results": [
+        {
+          "status": "skipped",
+          "duration": 225,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A76 first activation excludes double registration through retained response",
+      "file": "browser-accounts/accounts-a76.spec.ts",
+      "project": "webkit-1280-a76",
+      "expectedStatus": "skipped",
+      "status": "skipped",
+      "results": [
+        {
+          "status": "skipped",
+          "duration": 229,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A76 missing illustration preserves account labels, actions and keyboard return",
+      "file": "browser-accounts/accounts-a76.spec.ts",
+      "project": "webkit-1280-a76",
+      "expectedStatus": "skipped",
+      "status": "skipped",
+      "results": [
+        {
+          "status": "skipped",
+          "duration": 211,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A76 es diagon-alley entry forms, focus, cancellation and enlarged text",
+      "file": "browser-accounts/accounts-a76.spec.ts",
+      "project": "webkit-1280-a76",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 2207,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A76 es diagon-alley real account, guest binding, cross-context login and recovery",
+      "file": "browser-accounts/accounts-a76.spec.ts",
+      "project": "webkit-1280-a76",
+      "expectedStatus": "skipped",
+      "status": "skipped",
+      "results": [
+        {
+          "status": "skipped",
+          "duration": 248,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A76 en diagon-alley entry forms, focus, cancellation and enlarged text",
+      "file": "browser-accounts/accounts-a76.spec.ts",
+      "project": "webkit-1280-a76",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 2188,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A76 en diagon-alley real account, guest binding, cross-context login and recovery",
+      "file": "browser-accounts/accounts-a76.spec.ts",
+      "project": "webkit-1280-a76",
+      "expectedStatus": "skipped",
+      "status": "skipped",
+      "results": [
+        {
+          "status": "skipped",
+          "duration": 241,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A76 es arcana entry forms, focus, cancellation and enlarged text",
+      "file": "browser-accounts/accounts-a76.spec.ts",
+      "project": "webkit-1280-a76",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1303,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A76 es arcana real account, guest binding, cross-context login and recovery",
+      "file": "browser-accounts/accounts-a76.spec.ts",
+      "project": "webkit-1280-a76",
+      "expectedStatus": "skipped",
+      "status": "skipped",
+      "results": [
+        {
+          "status": "skipped",
+          "duration": 271,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A76 en arcana entry forms, focus, cancellation and enlarged text",
+      "file": "browser-accounts/accounts-a76.spec.ts",
+      "project": "webkit-1280-a76",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1910,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A76 en arcana real account, guest binding, cross-context login and recovery",
+      "file": "browser-accounts/accounts-a76.spec.ts",
+      "project": "webkit-1280-a76",
+      "expectedStatus": "skipped",
+      "status": "skipped",
+      "results": [
+        {
+          "status": "skipped",
+          "duration": 252,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A76 first activation excludes double registration through retained response",
+      "file": "browser-accounts/accounts-a76.spec.ts",
+      "project": "webkit-865-a76",
+      "expectedStatus": "skipped",
+      "status": "skipped",
+      "results": [
+        {
+          "status": "skipped",
+          "duration": 228,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A76 missing illustration preserves account labels, actions and keyboard return",
+      "file": "browser-accounts/accounts-a76.spec.ts",
+      "project": "webkit-865-a76",
+      "expectedStatus": "skipped",
+      "status": "skipped",
+      "results": [
+        {
+          "status": "skipped",
+          "duration": 214,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A76 es diagon-alley entry forms, focus, cancellation and enlarged text",
+      "file": "browser-accounts/accounts-a76.spec.ts",
+      "project": "webkit-865-a76",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1372,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A76 es diagon-alley real account, guest binding, cross-context login and recovery",
+      "file": "browser-accounts/accounts-a76.spec.ts",
+      "project": "webkit-865-a76",
+      "expectedStatus": "skipped",
+      "status": "skipped",
+      "results": [
+        {
+          "status": "skipped",
+          "duration": 207,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A76 en diagon-alley entry forms, focus, cancellation and enlarged text",
+      "file": "browser-accounts/accounts-a76.spec.ts",
+      "project": "webkit-865-a76",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1942,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A76 en diagon-alley real account, guest binding, cross-context login and recovery",
+      "file": "browser-accounts/accounts-a76.spec.ts",
+      "project": "webkit-865-a76",
+      "expectedStatus": "skipped",
+      "status": "skipped",
+      "results": [
+        {
+          "status": "skipped",
+          "duration": 223,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A76 es arcana entry forms, focus, cancellation and enlarged text",
+      "file": "browser-accounts/accounts-a76.spec.ts",
+      "project": "webkit-865-a76",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1346,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A76 es arcana real account, guest binding, cross-context login and recovery",
+      "file": "browser-accounts/accounts-a76.spec.ts",
+      "project": "webkit-865-a76",
+      "expectedStatus": "skipped",
+      "status": "skipped",
+      "results": [
+        {
+          "status": "skipped",
+          "duration": 239,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A76 en arcana entry forms, focus, cancellation and enlarged text",
+      "file": "browser-accounts/accounts-a76.spec.ts",
+      "project": "webkit-865-a76",
+      "expectedStatus": "passed",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1831,
+          "retry": 0
+        }
+      ]
+    },
+    {
+      "title": "A76 en arcana real account, guest binding, cross-context login and recovery",
+      "file": "browser-accounts/accounts-a76.spec.ts",
+      "project": "webkit-865-a76",
+      "expectedStatus": "skipped",
+      "status": "skipped",
+      "results": [
+        {
+          "status": "skipped",
+          "duration": 260,
+          "retry": 0
+        }
+      ]
+    }
+  ]
+}

@@ -1,6 +1,7 @@
 import { useEffect, useId, useRef, useState, type ReactNode } from 'react';
 import type { Language } from '../domain/collection/wizards';
 import { Artwork } from './Artwork';
+import { CloseButton } from './CloseButton';
 import { shopText } from './shop-messages';
 import './shop-journey.css';
 
@@ -63,15 +64,11 @@ export function ShopBook({
         >
           <div className="shop-ledger-heading">
             <h2 id={heading}>{label}</h2>
-            <button
-              type="button"
+            <CloseButton
               className="shop-ledger-close game-object"
-              aria-label={shopText(language, 'closeBook')}
-              onClick={() => setOpen(false)}
-            >
-              <Artwork asset="ui.pass" language={language} decorative />
-              <span className="visually-hidden">{shopText(language, 'closeBook')}</span>
-            </button>
+              label={shopText(language, 'closeBook')}
+              onClose={() => setOpen(false)}
+            />
           </div>
           {children}
         </dialog>

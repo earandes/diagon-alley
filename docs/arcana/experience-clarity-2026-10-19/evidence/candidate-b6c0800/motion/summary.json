@@ -1,0 +1,428 @@
+{
+  "sha": "135a4fe98a12a8efe71c166e61cda92c4bc342b8",
+  "head": "b6c08000267a28d1851318fbcfdfeb780e459fb9",
+  "run": 39353793256,
+  "artifact": 12235069981,
+  "status": "Current A69 evidence for this exact code; general regression workflow remains pending.",
+  "provenance": "A69 artifact from completed successful full check job; general regression workflow still pending. Full check reports 797 unit tests, 120 PG/Redis tests and 605 browser tests with 345 planned skips, not a claim that the entire workflow is green.",
+  "testResult": {
+    "passed": 90,
+    "plannedSkips": 42,
+    "source": "Completed A69 step reported by coordinator; original artifact retained."
+  },
+  "jsonSourceAudit": {
+    "inputFiles": 264,
+    "withDeclaredSha": 246,
+    "shaMismatches": 0,
+    "selectedWithVerifiedSha": 224,
+    "excludedUnversioned": 18,
+    "otherVersionedNotSelected": 22
+  },
+  "cohorts": [
+    {
+      "group": "arena",
+      "engine": "chromium",
+      "windowCount": 36,
+      "frameSummaryRanges": {
+        "samples": {
+          "min": 28,
+          "max": 39
+        },
+        "p50": {
+          "min": 16.69999999999999,
+          "max": 16.700000000000003
+        },
+        "p95": {
+          "min": 16.80000000000001,
+          "max": 66.6
+        },
+        "max": {
+          "min": 49.89999999999998,
+          "max": 83.39999999999998
+        }
+      },
+      "rawMinimumFrameIntervalMs": null,
+      "percentileScope": "Range of per-window percentiles, never a pooled P95; raw frame minima were not serialized.",
+      "longTasks": {
+        "supportedWindows": 36,
+        "unsupportedWindows": 0,
+        "observedCount": 36,
+        "durationRangeMs": {
+          "min": 50,
+          "max": 72
+        }
+      },
+      "extremeP95": "chromium-865-motion-a69-arena-arcana-en-5x5.json",
+      "extremeMaximumInterval": "chromium-1280-motion-a69-arena-diagon-alley-es-3x3.json",
+      "skipUsableMs": {
+        "min": 9.400000000372529,
+        "max": 50.40000000037253
+      },
+      "navigationToSceneReadyMs": {
+        "min": 243.39999999990687,
+        "max": 491.1999999997206
+      }
+    },
+    {
+      "group": "arena",
+      "engine": "webkit",
+      "windowCount": 36,
+      "frameSummaryRanges": {
+        "samples": {
+          "min": 31,
+          "max": 50
+        },
+        "p50": {
+          "min": 15,
+          "max": 20
+        },
+        "p95": {
+          "min": 31,
+          "max": 103
+        },
+        "max": {
+          "min": 38,
+          "max": 117
+        }
+      },
+      "rawMinimumFrameIntervalMs": null,
+      "percentileScope": "Range of per-window percentiles, never a pooled P95; raw frame minima were not serialized.",
+      "longTasks": {
+        "supportedWindows": 0,
+        "unsupportedWindows": 36,
+        "observedCount": null,
+        "durationRangeMs": null
+      },
+      "extremeP95": "webkit-1280-motion-a69-arena-diagon-alley-es-3x3.json",
+      "extremeMaximumInterval": "webkit-1280-motion-a69-arena-diagon-alley-es-3x3.json",
+      "skipUsableMs": {
+        "min": 21,
+        "max": 40
+      },
+      "navigationToSceneReadyMs": {
+        "min": 299,
+        "max": 629
+      }
+    },
+    {
+      "group": "opening-new",
+      "engine": "chromium",
+      "windowCount": 48,
+      "frameSummaryRanges": {
+        "samples": {
+          "min": 175,
+          "max": 209
+        },
+        "p50": {
+          "min": 16.699999999999818,
+          "max": 16.69999999999999
+        },
+        "p95": {
+          "min": 16.700000000000273,
+          "max": 16.799999999999955
+        },
+        "max": {
+          "min": 16.799999999999955,
+          "max": 33.39999999999998
+        }
+      },
+      "rawMinimumFrameIntervalMs": null,
+      "percentileScope": "Range of per-window percentiles, never a pooled P95; raw frame minima were not serialized.",
+      "longTasks": {
+        "supportedWindows": 48,
+        "unsupportedWindows": 0,
+        "observedCount": 0,
+        "durationRangeMs": null
+      },
+      "extremeP95": "chromium-1280-motion-a69-opening-arcana-en-epic.json",
+      "extremeMaximumInterval": "chromium-1280-motion-a69-opening-diagon-alley-es-arcane-legendary.json",
+      "resultUsableMs": {
+        "min": 2829.3000000002794,
+        "max": 3357.899999999907
+      },
+      "documentBootToReadyMs": {
+        "min": 40.6999999997206,
+        "max": 156.5
+      }
+    },
+    {
+      "group": "opening-new",
+      "engine": "webkit",
+      "windowCount": 48,
+      "frameSummaryRanges": {
+        "samples": {
+          "min": 132,
+          "max": 213
+        },
+        "p50": {
+          "min": 16,
+          "max": 16
+        },
+        "p95": {
+          "min": 20,
+          "max": 57
+        },
+        "max": {
+          "min": 51,
+          "max": 132
+        }
+      },
+      "rawMinimumFrameIntervalMs": null,
+      "percentileScope": "Range of per-window percentiles, never a pooled P95; raw frame minima were not serialized.",
+      "longTasks": {
+        "supportedWindows": 0,
+        "unsupportedWindows": 48,
+        "observedCount": null,
+        "durationRangeMs": null
+      },
+      "extremeP95": "webkit-865-motion-a69-opening-diagon-alley-es-common.json",
+      "extremeMaximumInterval": "webkit-1280-motion-a69-opening-diagon-alley-es-common.json",
+      "resultUsableMs": {
+        "min": 2542,
+        "max": 3526
+      },
+      "documentBootToReadyMs": {
+        "min": 71,
+        "max": 158
+      }
+    },
+    {
+      "group": "opening-repeat",
+      "engine": "chromium",
+      "windowCount": 12,
+      "frameSummaryRanges": {
+        "samples": {
+          "min": 7,
+          "max": 10
+        },
+        "p50": {
+          "min": 16.60000000000001,
+          "max": 16.700000000000003
+        },
+        "p95": {
+          "min": 16.700000000000003,
+          "max": 50.000000000000014
+        },
+        "max": {
+          "min": 16.700000000000003,
+          "max": 50.000000000000014
+        }
+      },
+      "rawMinimumFrameIntervalMs": null,
+      "percentileScope": "Range of per-window percentiles, never a pooled P95; raw frame minima were not serialized.",
+      "longTasks": {
+        "supportedWindows": 12,
+        "unsupportedWindows": 0,
+        "observedCount": 0,
+        "durationRangeMs": null
+      },
+      "extremeP95": "chromium-1280-motion-a69-opening-diagon-alley-en-repeat.json",
+      "extremeMaximumInterval": "chromium-1280-motion-a69-opening-diagon-alley-en-repeat.json"
+    },
+    {
+      "group": "opening-repeat",
+      "engine": "webkit",
+      "windowCount": 12,
+      "frameSummaryRanges": {
+        "samples": {
+          "min": 5,
+          "max": 8
+        },
+        "p50": {
+          "min": 21,
+          "max": 65
+        },
+        "p95": {
+          "min": 43,
+          "max": 99
+        },
+        "max": {
+          "min": 43,
+          "max": 99
+        }
+      },
+      "rawMinimumFrameIntervalMs": null,
+      "percentileScope": "Range of per-window percentiles, never a pooled P95; raw frame minima were not serialized.",
+      "longTasks": {
+        "supportedWindows": 0,
+        "unsupportedWindows": 12,
+        "observedCount": null,
+        "durationRangeMs": null
+      },
+      "extremeP95": "webkit-865-motion-a69-opening-arcana-en-repeat.json",
+      "extremeMaximumInterval": "webkit-865-motion-a69-opening-arcana-en-repeat.json"
+    },
+    {
+      "group": "controls",
+      "engine": "chromium",
+      "windowCount": 3,
+      "frameSummaryRanges": {
+        "samples": {
+          "min": 110,
+          "max": 144
+        },
+        "p50": {
+          "min": 16.699999999999932,
+          "max": 16.69999999999999
+        },
+        "p95": {
+          "min": 16.799999999999955,
+          "max": 33.400000000000006
+        },
+        "max": {
+          "min": 66.70000000000005,
+          "max": 83.30000000000001
+        }
+      },
+      "rawMinimumFrameIntervalMs": null,
+      "percentileScope": "Range of per-window percentiles, never a pooled P95; raw frame minima were not serialized.",
+      "longTasks": {
+        "supportedWindows": 3,
+        "unsupportedWindows": 0,
+        "observedCount": 4,
+        "durationRangeMs": {
+          "min": 61,
+          "max": 83
+        }
+      },
+      "extremeP95": "chromium-1280-motion-a69-controls.json",
+      "extremeMaximumInterval": "chromium-1280-motion-a69-controls.json"
+    },
+    {
+      "group": "controls",
+      "engine": "webkit",
+      "windowCount": 3,
+      "frameSummaryRanges": {
+        "samples": {
+          "min": 148,
+          "max": 165
+        },
+        "p50": {
+          "min": 16,
+          "max": 16
+        },
+        "p95": {
+          "min": 41,
+          "max": 64
+        },
+        "max": {
+          "min": 94,
+          "max": 156
+        }
+      },
+      "rawMinimumFrameIntervalMs": null,
+      "percentileScope": "Range of per-window percentiles, never a pooled P95; raw frame minima were not serialized.",
+      "longTasks": {
+        "supportedWindows": 0,
+        "unsupportedWindows": 3,
+        "observedCount": null,
+        "durationRangeMs": null
+      },
+      "extremeP95": "webkit-865-motion-a69-controls.json",
+      "extremeMaximumInterval": "webkit-865-motion-a69-controls.json"
+    },
+    {
+      "group": "warm-replay",
+      "engine": "chromium",
+      "windowCount": 1,
+      "frameSummaryRanges": {
+        "samples": {
+          "min": 600,
+          "max": 600
+        },
+        "p50": {
+          "min": 16.699999999999818,
+          "max": 16.699999999999818
+        },
+        "p95": {
+          "min": 16.700000000000728,
+          "max": 16.700000000000728
+        },
+        "max": {
+          "min": 16.80000000000109,
+          "max": 16.80000000000109
+        }
+      },
+      "rawMinimumFrameIntervalMs": null,
+      "percentileScope": "Range of per-window percentiles, never a pooled P95; raw frame minima were not serialized.",
+      "longTasks": {
+        "supportedWindows": 1,
+        "unsupportedWindows": 0,
+        "observedCount": 0,
+        "durationRangeMs": null
+      },
+      "extremeP95": "chromium-1280-motion-a69-warm-replay-10s.json",
+      "extremeMaximumInterval": "chromium-1280-motion-a69-warm-replay-10s.json"
+    },
+    {
+      "group": "lifecycle",
+      "engine": "chromium",
+      "windowCount": 1,
+      "frameSummaryRanges": {
+        "samples": {
+          "min": 982,
+          "max": 982
+        },
+        "p50": {
+          "min": 16.699999999999818,
+          "max": 16.699999999999818
+        },
+        "p95": {
+          "min": 33.30000000000291,
+          "max": 33.30000000000291
+        },
+        "max": {
+          "min": 66.70000000000073,
+          "max": 66.70000000000073
+        }
+      },
+      "rawMinimumFrameIntervalMs": null,
+      "percentileScope": "Range of per-window percentiles, never a pooled P95; raw frame minima were not serialized.",
+      "longTasks": {
+        "supportedWindows": 1,
+        "unsupportedWindows": 0,
+        "observedCount": 29,
+        "durationRangeMs": {
+          "min": 53,
+          "max": 72
+        }
+      },
+      "extremeP95": "chromium-1280-motion-a69-lifecycle-30.json",
+      "extremeMaximumInterval": "chromium-1280-motion-a69-lifecycle-30.json"
+    }
+  ],
+  "lifecycle": {
+    "cycles": 30,
+    "mountedTextureCounts": [
+      6
+    ],
+    "mountedEstimatedRgbaBytes": [
+      3513024
+    ],
+    "teardownEvidence": "Versioned lifecycle spec asserts canvas count zero, every retired host destroyed, texture counter zero and ticker inactive after each unmount. Mounted counters are serialized; retired snapshots are not stored in this report. Passed assertions do not prove global absence of leaks.",
+    "spec": "tests/browser-motion/motion-a69.spec.ts",
+    "warmWindowMs": 10000,
+    "warmDraws": 508
+  },
+  "denseGeometry": {
+    "samples": 24,
+    "scenario": "Mastery5x5; five allies, ten equipment pieces, five draft beans; production footer",
+    "allGapsPositive": true,
+    "gapRangePx": {
+      "min": 15.75,
+      "max": 248.0
+    },
+    "mobileMinimumByEngine": {
+      "chromium": 16.6875,
+      "webkit": 15.75
+    }
+  },
+  "limitations": [
+    "All selected reports are technical fixtures; no human or physical device evidence.",
+    "New document does not imply cold caches. networkCacheReset=false in all200 frame reports;168 explicitly report first-navigation status (12true/156false).",
+    "rAF intervals are not GPU timing; longtask durations do not identify a causal product subsystem. WebKit longTasks=null means unsupported, not zero.",
+    "Different short windows and unpaired historical runs cannot prove a causal regression or improvement.",
+    "Estimated RGBA bytes and component counters are not GPU-process RSS, heap proof or a global leak detector.",
+    "The raw minimum frame interval and pooled frame percentiles cannot be reconstructed from saved per-window summaries."
+  ]
+}

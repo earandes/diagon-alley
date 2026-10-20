@@ -109,7 +109,7 @@ export function App() {
       return null;
     }
   };
-  const openAccount = async (mode: AccountMode) => {
+  const openAccount = async (mode: AccountMode, reauthenticate = false) => {
     if (openingAccount.current) return;
     openingAccount.current = true;
     accountOrigin.current =
@@ -121,13 +121,15 @@ export function App() {
       const owner =
         controller.getSnapshot().game?.playerId ?? controller.getSnapshot().pending?.playerId;
       setAccountMode(
-        current?.kind === 'account'
-          ? !owner || current.playerId === owner
-            ? 'manage'
-            : 'login'
-          : mode === 'manage'
-            ? 'login'
-            : mode,
+        reauthenticate
+          ? 'login'
+          : current?.kind === 'account'
+            ? !owner || current.playerId === owner
+              ? 'manage'
+              : 'login'
+            : mode === 'manage'
+              ? 'login'
+              : mode,
       );
     } finally {
       openingAccount.current = false;
@@ -152,6 +154,10 @@ export function App() {
     [preparationContext, setPreparationContext] = useState<'formation' | 'beans'>('formation'),
     [dismissedOpening, setDismissedOpening] = useState<string | null>(null);
   const { view, setView, bazaarPlace, setBazaarPlace } = useNavigation();
+  const [admittedOpening, setAdmittedOpening] = useState<{
+    playerId: string;
+    receiptId: string;
+  } | null>(null);
   const online = useOnline();
   const navigation = useRef<HTMLElement>(null);
   const motion = useReducedMotion(),
@@ -209,6 +215,26 @@ export function App() {
   }, [selected, view]);
   const state = useSyncExternalStore(controller.subscribe, controller.getSnapshot),
     t = (key: MessageKey, values?: Record<string, string | number>) => text(language, key, values);
+  useEffect(() => {
+    const receipt = state.receipt;
+    const playerId = state.game?.playerId;
+    if (
+      accountMode ||
+      view !== 'shop' ||
+      !playerId ||
+      !receipt ||
+      !['open-toad', 'buy-open-toad'].includes(receipt.kind) ||
+      dismissedOpening === receipt.id
+    )
+      return;
+    // Presentation admission only: a recovered result must not cover unfinished authentication.
+    // Keep an already admitted reveal mounted when its own Settings opens AccountAccess.
+    setAdmittedOpening((previous) =>
+      previous?.playerId === playerId && previous.receiptId === receipt.id
+        ? previous
+        : { playerId, receiptId: receipt.id },
+    );
+  }, [accountMode, view, state.game?.playerId, state.receipt, dismissedOpening]);
   useEffect(() => {
     const nav = navigation.current;
     const shell = nav?.closest<HTMLElement>('.arcana-shell');
@@ -426,6 +452,8 @@ export function App() {
       connected={online}
       onReload={() => void controller.load()}
       onRecover={() => void controller.recover()}
+      onSignIn={() => void openAccount('login', true)}
+      accessOpening={accountOpening}
       onEnter={() => void entry.enter()}
       entering={entry.pending}
       entryError={entry.error}
@@ -626,11 +654,7 @@ export function App() {
                   </FantasyActionButton>
                 </div>
                 {accountOpening && <p role="status">{accountText(language, 'sending')}</p>}
-                {state.pending && (
-                  <p role="alert" className="account-guest-hint">
-                    {accountText(language, 'pending')}
-                  </p>
-                )}
+                {state.pending && recovery}
                 <p className="account-guest-hint">{accountText(language, 'guestHint')}</p>
                 {entry.error && (
                   <p role="alert">
@@ -676,6 +700,8 @@ export function App() {
                   {view === 'shop' &&
                     (state.receipt?.kind === 'open-toad' ||
                       state.receipt?.kind === 'buy-open-toad') &&
+                    admittedOpening?.playerId === game.playerId &&
+                    admittedOpening.receiptId === state.receipt.id &&
                     dismissedOpening !== state.receipt.id && (
                       <CardReveal
                         key={state.receipt.id}
@@ -753,7 +779,7 @@ export function App() {
                           />
                           <ExpeditionIntentions
                             game={game}
-                            content={content}
+                            content={content ?? undefined}
                             language={language}
                             ready={ready}
                             onChoose={chooseIntention}
@@ -766,7 +792,7 @@ export function App() {
                             key={`new-entry:${game.playerId}`}
                             game={game}
                             catalog={content.catalog}
-                            content={content}
+                            content={content ?? undefined}
                             language={language}
                             ready={ready}
                             onTeam={(request) =>
@@ -782,14 +808,14 @@ export function App() {
                         <>
                           <IntentionReminder
                             game={game}
-                            content={content}
+                            content={content ?? undefined}
                             language={language}
                             ready={ready}
                             onCancel={() => chooseIntention(null)}
                           />
                           <TeamHud
                             game={game}
-                            content={content}
+                            content={content ?? undefined}
                             language={language}
                             onPrepare={(origin) => openPreparation('formation', origin)}
                           />
@@ -883,15 +909,17 @@ export function App() {
                                 ready={ready}
                                 rules={effectivePreparationRules(run, content.combatRules)}
                                 onPrepare={(origin) => openPreparation('formation', origin)}
-                              />
-                              <BossSupplies
-                                run={run}
-                                game={game}
-                                content={content}
-                                language={language}
-                                ready={ready}
-                                assignments={assignments}
-                                onChange={setAssignments}
+                                supplies={
+                                  <BossSupplies
+                                    run={run}
+                                    game={game}
+                                    content={content ?? undefined}
+                                    language={language}
+                                    ready={ready}
+                                    assignments={assignments}
+                                    onChange={setAssignments}
+                                  />
+                                }
                               />
                             </div>
                           )}
@@ -914,7 +942,7 @@ export function App() {
                                 <BossSupplies
                                   run={run}
                                   game={game}
-                                  content={content}
+                                  content={content ?? undefined}
                                   language={language}
                                   ready={ready}
                                   assignments={assignments}
@@ -1028,7 +1056,7 @@ export function App() {
                       {bazaarPlace === 'confectionery' && (
                         <SweetshopScene
                           game={game}
-                          content={content}
+                          content={content ?? undefined}
                           language={language}
                           ready={ready}
                           onStreet={() => setBazaarPlace('street')}
@@ -1133,6 +1161,7 @@ export function App() {
                   )}
                   {view === 'missions' && (
                     <JourneyCabinet
+                      content={content ?? undefined}
                       game={game}
                       language={language}
                       onMap={() => setView('map')}
@@ -1223,7 +1252,9 @@ export function App() {
               onClose={() => setAccountMode(null)}
               beforeIdentityChange={controller.beginIdentityChange}
               finishIdentityChange={async (outcome, samePlayerOnly, expectedPlayerId) => {
-                const previousOwner = controller.getSnapshot().game?.playerId;
+                const previousOwner =
+                  controller.getSnapshot().game?.playerId ??
+                  controller.getSnapshot().pending?.playerId;
                 await controller.finishIdentityChange(outcome, samePlayerOnly, expectedPlayerId);
                 const currentOwner = controller.getSnapshot().game?.playerId;
                 if (
@@ -1235,7 +1266,10 @@ export function App() {
                   throw new AccountRequestError(
                     controller.getSnapshot().error ?? 'AUTH_UNAVAILABLE',
                   );
-                if (outcome === 'authenticated' || outcome === 'signed-out') {
+                if (
+                  outcome === 'signed-out' ||
+                  (outcome === 'authenticated' && previousOwner !== currentOwner)
+                ) {
                   setSelected(null);
                   setPreparing(false);
                   setView('map');

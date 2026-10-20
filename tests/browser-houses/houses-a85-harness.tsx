@@ -276,15 +276,17 @@ function Fixture() {
                 ready
                 rules={content.combatRules}
                 onPrepare={() => setMode('prepare')}
-              />
-              <BossSupplies
-                run={run}
-                game={game}
-                content={content}
-                language={language}
-                ready
-                assignments={denseAssignments}
-                onChange={() => {}}
+                supplies={
+                  <BossSupplies
+                    run={run}
+                    game={game}
+                    content={content}
+                    language={language}
+                    ready
+                    assignments={denseAssignments}
+                    onChange={() => {}}
+                  />
+                }
               />
             </div>
             <div className="node-event-actions node-combat-actions">

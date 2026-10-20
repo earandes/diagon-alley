@@ -1,0 +1,707 @@
+{
+  "method": "Lexical source occurrences, including conditional branches/loops. NOT simultaneous visible controls, click counts, rendered size or accessibility pass.",
+  "entries": [
+    {
+      "path": "src/arcana/presentation/AccountAccess.tsx",
+      "lines": 662,
+      "staticButtonTags": 16,
+      "summaryTags": 1,
+      "dialogTags": 1,
+      "inputTags": 3,
+      "literalAssetKeys": [],
+      "sha256": "a78ed57e9031c5704924965633f3bc64d06d7264788b00dc1096e4d9054e2bd3"
+    },
+    {
+      "path": "src/arcana/presentation/App.tsx",
+      "lines": 1259,
+      "staticButtonTags": 6,
+      "summaryTags": 0,
+      "dialogTags": 2,
+      "inputTags": 0,
+      "literalAssetKeys": [
+        "account.login",
+        "account.register",
+        "brand.emblem",
+        "currency.essence",
+        "ui.map",
+        "ui.missions",
+        "ui.team"
+      ],
+      "sha256": "c00ef0bb872b92d8337077a2285fd5a2f5f6a1282df44bd1b35abc65e6085999"
+    },
+    {
+      "path": "src/arcana/presentation/Artwork.tsx",
+      "lines": 45,
+      "staticButtonTags": 0,
+      "summaryTags": 0,
+      "dialogTags": 0,
+      "inputTags": 0,
+      "literalAssetKeys": [],
+      "sha256": "a66721c5adbc5011556b52e2fe587b48750b14eb23846709feb0bd91fb57684f"
+    },
+    {
+      "path": "src/arcana/presentation/BattlePanel.tsx",
+      "lines": 956,
+      "staticButtonTags": 14,
+      "summaryTags": 1,
+      "dialogTags": 2,
+      "inputTags": 0,
+      "literalAssetKeys": [
+        "ui.collection"
+      ],
+      "sha256": "a7475b33a5d2b2edde1166d599331013f38873d0425b78af08b58344a5680276"
+    },
+    {
+      "path": "src/arcana/presentation/BeanAssignments.tsx",
+      "lines": 216,
+      "staticButtonTags": 2,
+      "summaryTags": 1,
+      "dialogTags": 0,
+      "inputTags": 0,
+      "literalAssetKeys": [
+        "beans.jar",
+        "ui.seal"
+      ],
+      "sha256": "b3bb8850f4f418dc304387185eece72d407b95e86cfab0def0afffeebf894d3b"
+    },
+    {
+      "path": "src/arcana/presentation/BondBand.tsx",
+      "lines": 125,
+      "staticButtonTags": 1,
+      "summaryTags": 2,
+      "dialogTags": 0,
+      "inputTags": 0,
+      "literalAssetKeys": [
+        "ui.collection"
+      ],
+      "sha256": "a94a4b9405c7b9e66cbc88574a7af498cb1982248ceb546d4b5dbb64a4bfc5ed"
+    },
+    {
+      "path": "src/arcana/presentation/BondEmblem.tsx",
+      "lines": 42,
+      "staticButtonTags": 0,
+      "summaryTags": 0,
+      "dialogTags": 0,
+      "inputTags": 0,
+      "literalAssetKeys": [],
+      "sha256": "c7631182473117c757950ae2aba87fe47052a35775865034c30beca93f1925b5"
+    },
+    {
+      "path": "src/arcana/presentation/BossBattleFacts.tsx",
+      "lines": 120,
+      "staticButtonTags": 0,
+      "summaryTags": 1,
+      "dialogTags": 0,
+      "inputTags": 0,
+      "literalAssetKeys": [],
+      "sha256": "10600c3f33d7c81c73008d5ad6bf4c4d1285782e8514412fa2f887199e305d6d"
+    },
+    {
+      "path": "src/arcana/presentation/BossPartyStage.tsx",
+      "lines": 158,
+      "staticButtonTags": 2,
+      "summaryTags": 0,
+      "dialogTags": 0,
+      "inputTags": 0,
+      "literalAssetKeys": [
+        "beans.jar",
+        "ui.team"
+      ],
+      "sha256": "132b87544fcb973b53ef6a50c3f825327bb39e6c6ca93c41a1498e878e0db69d"
+    },
+    {
+      "path": "src/arcana/presentation/BossPrelude.tsx",
+      "lines": 164,
+      "staticButtonTags": 0,
+      "summaryTags": 1,
+      "dialogTags": 0,
+      "inputTags": 0,
+      "literalAssetKeys": [
+        "ui.collection"
+      ],
+      "sha256": "e883712ed89567fbaf49e761159e0c8ae97eef711bc78e4e359420daf45ac525"
+    },
+    {
+      "path": "src/arcana/presentation/BossSupplies.tsx",
+      "lines": 39,
+      "staticButtonTags": 0,
+      "summaryTags": 1,
+      "dialogTags": 0,
+      "inputTags": 0,
+      "literalAssetKeys": [
+        "beans.jar"
+      ],
+      "sha256": "ad5faed52504664e4262dbb8ff085228913b059cd63207d8449726cefa036851"
+    },
+    {
+      "path": "src/arcana/presentation/CardReveal.tsx",
+      "lines": 407,
+      "staticButtonTags": 3,
+      "summaryTags": 0,
+      "dialogTags": 1,
+      "inputTags": 0,
+      "literalAssetKeys": [
+        "card.back",
+        "card.frame",
+        "toad.base",
+        "toad.box",
+        "toad.lid",
+        "toad.seal",
+        "toad.subject",
+        "ui.collection",
+        "ui.map"
+      ],
+      "sha256": "c4919e15667e4364c659c895db7ca49a78bfd753c1772dba81edf9e44fdc33f2"
+    },
+    {
+      "path": "src/arcana/presentation/Celebration.tsx",
+      "lines": 103,
+      "staticButtonTags": 0,
+      "summaryTags": 0,
+      "dialogTags": 0,
+      "inputTags": 0,
+      "literalAssetKeys": [],
+      "sha256": "41d3b8bdc06ca2261aa96bdb76e78892d41a23731fdc3a025c6309695adc28b0"
+    },
+    {
+      "path": "src/arcana/presentation/ClassificationChoices.tsx",
+      "lines": 56,
+      "staticButtonTags": 1,
+      "summaryTags": 0,
+      "dialogTags": 0,
+      "inputTags": 0,
+      "literalAssetKeys": [
+        "ui.collection"
+      ],
+      "sha256": "10747508a44c5208487f6189c1843b6fda51fe7c5c2ea2340119810ae78ff64e"
+    },
+    {
+      "path": "src/arcana/presentation/CollectionPanel.tsx",
+      "lines": 469,
+      "staticButtonTags": 9,
+      "summaryTags": 2,
+      "dialogTags": 1,
+      "inputTags": 0,
+      "literalAssetKeys": [
+        "ui.clear",
+        "ui.collection",
+        "ui.map",
+        "ui.owned",
+        "ui.pass"
+      ],
+      "sha256": "40f4a56490859dd46f491fa9cd065afed969d4d61b4c972a0518ae9fc33cfb72"
+    },
+    {
+      "path": "src/arcana/presentation/CollectionSources.tsx",
+      "lines": 64,
+      "staticButtonTags": 1,
+      "summaryTags": 1,
+      "dialogTags": 0,
+      "inputTags": 0,
+      "literalAssetKeys": [
+        "toad.box"
+      ],
+      "sha256": "962bc27c04858c03f372445897e960f623e434596e5bbb4adc10be615ac4e454"
+    },
+    {
+      "path": "src/arcana/presentation/CommercePanel.tsx",
+      "lines": 466,
+      "staticButtonTags": 7,
+      "summaryTags": 0,
+      "dialogTags": 1,
+      "inputTags": 0,
+      "literalAssetKeys": [
+        "currency.crowns",
+        "product.gold-key",
+        "product.loot-chest",
+        "product.wand-birch",
+        "ui.map"
+      ],
+      "sha256": "25ac6fd660c4c3e5be1ae1dbb51be8a6992a1c147e30fd5fbe1ab9b935319da5"
+    },
+    {
+      "path": "src/arcana/presentation/EnchantedFinish.tsx",
+      "lines": 59,
+      "staticButtonTags": 0,
+      "summaryTags": 0,
+      "dialogTags": 0,
+      "inputTags": 0,
+      "literalAssetKeys": [],
+      "sha256": "4daaddec68bb99b281e2f2aee1c20b6bb64783c146084a4d626f937df7a425ef"
+    },
+    {
+      "path": "src/arcana/presentation/EncounterOutcome.tsx",
+      "lines": 39,
+      "staticButtonTags": 0,
+      "summaryTags": 0,
+      "dialogTags": 0,
+      "inputTags": 0,
+      "literalAssetKeys": [],
+      "sha256": "f0f7bd7a53647543dd07f267743ed1dd14c330215fc0905d468f01f41ed0c07e"
+    },
+    {
+      "path": "src/arcana/presentation/EncounterPreparation.tsx",
+      "lines": 370,
+      "staticButtonTags": 3,
+      "summaryTags": 1,
+      "dialogTags": 0,
+      "inputTags": 0,
+      "literalAssetKeys": [
+        "ui.pass",
+        "ui.seal"
+      ],
+      "sha256": "0ec2597345332417588b8bb7f8f4c44e5ede7698e423edd0958928cbc420d480"
+    },
+    {
+      "path": "src/arcana/presentation/EncounterTradeOutcome.tsx",
+      "lines": 97,
+      "staticButtonTags": 0,
+      "summaryTags": 0,
+      "dialogTags": 0,
+      "inputTags": 0,
+      "literalAssetKeys": [
+        "ui.seal"
+      ],
+      "sha256": "24a767d8df2336a5d9db19c44a108817cf73e3268f9bb3161528e3d97dfffc95"
+    },
+    {
+      "path": "src/arcana/presentation/EquipmentArt.tsx",
+      "lines": 35,
+      "staticButtonTags": 0,
+      "summaryTags": 0,
+      "dialogTags": 0,
+      "inputTags": 0,
+      "literalAssetKeys": [],
+      "sha256": "c200b15dd8421babde1b043b1ae65e6c5586bf321d79205f22215d194631bd8f"
+    },
+    {
+      "path": "src/arcana/presentation/ExpeditionChallenge.tsx",
+      "lines": 93,
+      "staticButtonTags": 1,
+      "summaryTags": 1,
+      "dialogTags": 0,
+      "inputTags": 0,
+      "literalAssetKeys": [
+        "ui.seal"
+      ],
+      "sha256": "c95428c1bf4b74ae2eb6b875a9c6f13cae856b1e19437cca961ac12c5a6ff013"
+    },
+    {
+      "path": "src/arcana/presentation/ExpeditionClosure.tsx",
+      "lines": 214,
+      "staticButtonTags": 1,
+      "summaryTags": 1,
+      "dialogTags": 0,
+      "inputTags": 0,
+      "literalAssetKeys": [
+        "currency.crowns",
+        "product.gold-key",
+        "ui.map"
+      ],
+      "sha256": "557ecc6dda18fa3a57803285a6927b9039f805527113b5b433581a24d81a4c4e"
+    },
+    {
+      "path": "src/arcana/presentation/ExpeditionGuide.tsx",
+      "lines": 117,
+      "staticButtonTags": 3,
+      "summaryTags": 1,
+      "dialogTags": 0,
+      "inputTags": 0,
+      "literalAssetKeys": [],
+      "sha256": "def4e63f232d3045429dc1a62e4291b8c3b6da9006486b1edaf8e13b823120d7"
+    },
+    {
+      "path": "src/arcana/presentation/ExpeditionIntentions.tsx",
+      "lines": 236,
+      "staticButtonTags": 3,
+      "summaryTags": 2,
+      "dialogTags": 0,
+      "inputTags": 0,
+      "literalAssetKeys": [
+        "ui.collection"
+      ],
+      "sha256": "d23382cdb792a5ac3515e1f6ca9e5562c2f8299c462d6b7dacd6e650dd723f12"
+    },
+    {
+      "path": "src/arcana/presentation/ExpeditionPreparation.tsx",
+      "lines": 884,
+      "staticButtonTags": 20,
+      "summaryTags": 3,
+      "dialogTags": 1,
+      "inputTags": 0,
+      "literalAssetKeys": [
+        "beans.jar",
+        "currency.essence",
+        "ui.clear",
+        "ui.map",
+        "ui.pass",
+        "ui.seal",
+        "ui.temporary"
+      ],
+      "sha256": "3ebf0921c2f5738d1ec927c24c7c59efcbbef7ab1d05c3a5c2b15cf3efdcc8ff"
+    },
+    {
+      "path": "src/arcana/presentation/FantasyActionButton.tsx",
+      "lines": 33,
+      "staticButtonTags": 1,
+      "summaryTags": 0,
+      "dialogTags": 0,
+      "inputTags": 0,
+      "literalAssetKeys": [],
+      "sha256": "0e4d94abd4e9b44406e83b59137d4ead65c0f4925ee80830865891c5657d9717"
+    },
+    {
+      "path": "src/arcana/presentation/FlavourCabinet.tsx",
+      "lines": 127,
+      "staticButtonTags": 3,
+      "summaryTags": 0,
+      "dialogTags": 1,
+      "inputTags": 0,
+      "literalAssetKeys": [
+        "beans.jar",
+        "ui.clear",
+        "ui.collection"
+      ],
+      "sha256": "785bd3e5ec165242b120b2134cc2a9ca4788bb98b0b83e9d6b069eb7c0314db4"
+    },
+    {
+      "path": "src/arcana/presentation/FrogMagic.tsx",
+      "lines": 155,
+      "staticButtonTags": 0,
+      "summaryTags": 0,
+      "dialogTags": 0,
+      "inputTags": 0,
+      "literalAssetKeys": [],
+      "sha256": "67e8e9e9b916cbf0c9b5d7ab75133f2c13cb2c58ae85e990f9322e3a52dbceee"
+    },
+    {
+      "path": "src/arcana/presentation/GameSettings.tsx",
+      "lines": 186,
+      "staticButtonTags": 6,
+      "summaryTags": 0,
+      "dialogTags": 1,
+      "inputTags": 0,
+      "literalAssetKeys": [
+        "ui.missions",
+        "ui.motion",
+        "ui.pass",
+        "ui.seal",
+        "ui.settings"
+      ],
+      "sha256": "7c3b5693b8ef35478feb753f55b0c67c2dd6273610a674c5208a73cf64ae0092"
+    },
+    {
+      "path": "src/arcana/presentation/HouseInsignia.tsx",
+      "lines": 203,
+      "staticButtonTags": 0,
+      "summaryTags": 1,
+      "dialogTags": 0,
+      "inputTags": 0,
+      "literalAssetKeys": [],
+      "sha256": "c12f5c80ffd20f56f33d2dab89caf3299b89baa7e8e046ef333fd492b621d2c0"
+    },
+    {
+      "path": "src/arcana/presentation/JourneyCabinet.tsx",
+      "lines": 105,
+      "staticButtonTags": 5,
+      "summaryTags": 0,
+      "dialogTags": 0,
+      "inputTags": 0,
+      "literalAssetKeys": [
+        "ui.collection",
+        "ui.map"
+      ],
+      "sha256": "92103e47cdd0d14bafe49e2ec60f7d5c5acc9165ae426e257c02eaae5544acc4"
+    },
+    {
+      "path": "src/arcana/presentation/MapPanel.tsx",
+      "lines": 319,
+      "staticButtonTags": 3,
+      "summaryTags": 1,
+      "dialogTags": 0,
+      "inputTags": 0,
+      "literalAssetKeys": [],
+      "sha256": "b5caf4e0c2f33f2b339ca3d0d4e97a74d155db5234245064e26f180ddc6e3556"
+    },
+    {
+      "path": "src/arcana/presentation/NodeAnnouncement.tsx",
+      "lines": 31,
+      "staticButtonTags": 0,
+      "summaryTags": 0,
+      "dialogTags": 0,
+      "inputTags": 0,
+      "literalAssetKeys": [],
+      "sha256": "4c7e76f1f2f8c4eaf1bc82fb8657708f6204f570639585e0b35311656b2241f1"
+    },
+    {
+      "path": "src/arcana/presentation/NodePreparation.tsx",
+      "lines": 581,
+      "staticButtonTags": 4,
+      "summaryTags": 3,
+      "dialogTags": 0,
+      "inputTags": 0,
+      "literalAssetKeys": [
+        "currency.crowns",
+        "product.gold-key",
+        "ui.health",
+        "ui.pass",
+        "ui.seal",
+        "ui.temporary"
+      ],
+      "sha256": "8ab085a2d89d36fa312dda4c585443c112ec1dd02c7abbef8c7625ef27a569cc"
+    },
+    {
+      "path": "src/arcana/presentation/NodeResult.tsx",
+      "lines": 319,
+      "staticButtonTags": 3,
+      "summaryTags": 2,
+      "dialogTags": 0,
+      "inputTags": 0,
+      "literalAssetKeys": [
+        "currency.crowns",
+        "product.gold-key",
+        "ui.seal",
+        "ui.temporary"
+      ],
+      "sha256": "416134f7f9931e9ba5c9f84f444279209b18289083d95fc36a489a538166511d"
+    },
+    {
+      "path": "src/arcana/presentation/OperationFeedback.tsx",
+      "lines": 101,
+      "staticButtonTags": 0,
+      "summaryTags": 1,
+      "dialogTags": 0,
+      "inputTags": 0,
+      "literalAssetKeys": [
+        "currency.crowns",
+        "ui.seal"
+      ],
+      "sha256": "da8ba59c72c2a082b3969f238f5824679639d1054b496ea89819a27ea8f14109"
+    },
+    {
+      "path": "src/arcana/presentation/PlayerHud.tsx",
+      "lines": 86,
+      "staticButtonTags": 1,
+      "summaryTags": 0,
+      "dialogTags": 0,
+      "inputTags": 0,
+      "literalAssetKeys": [
+        "currency.crowns",
+        "currency.essence",
+        "product.gold-key"
+      ],
+      "sha256": "277d2b6d706fff032e5f1810e6d23eb2099fbd04a182ff237ddc54ed430b5160"
+    },
+    {
+      "path": "src/arcana/presentation/PreparationSynergies.tsx",
+      "lines": 86,
+      "staticButtonTags": 0,
+      "summaryTags": 1,
+      "dialogTags": 0,
+      "inputTags": 0,
+      "literalAssetKeys": [
+        "node.refuge"
+      ],
+      "sha256": "5a0eafa9a166a7b16fbca54a8971e7b5d4702c9d9a8ee7214a2b925bdd72de95"
+    },
+    {
+      "path": "src/arcana/presentation/RarityBadge.tsx",
+      "lines": 18,
+      "staticButtonTags": 0,
+      "summaryTags": 0,
+      "dialogTags": 0,
+      "inputTags": 0,
+      "literalAssetKeys": [],
+      "sha256": "21b46b38472ce584df37d9c37cea6aa8232608c1dc2595d760dadeb431e8b47c"
+    },
+    {
+      "path": "src/arcana/presentation/ReadingPreferences.tsx",
+      "lines": 127,
+      "staticButtonTags": 2,
+      "summaryTags": 0,
+      "dialogTags": 0,
+      "inputTags": 0,
+      "literalAssetKeys": [
+        "ui.seal"
+      ],
+      "sha256": "3d8a4addde46476f20cb58c4da0df36f902dc428bc18aa7fc4100e2a3f734f84"
+    },
+    {
+      "path": "src/arcana/presentation/RecoveryNotice.tsx",
+      "lines": 78,
+      "staticButtonTags": 2,
+      "summaryTags": 1,
+      "dialogTags": 0,
+      "inputTags": 0,
+      "literalAssetKeys": [],
+      "sha256": "0dc47db84b8a69e15e9b4ba188749631a0a179c36c054f073fedac771a565f8d"
+    },
+    {
+      "path": "src/arcana/presentation/RevealTheatre.tsx",
+      "lines": 71,
+      "staticButtonTags": 0,
+      "summaryTags": 0,
+      "dialogTags": 0,
+      "inputTags": 0,
+      "literalAssetKeys": [],
+      "sha256": "217fea63ccb77d2ecf31fed383c744981530f731ad687fd49339f7d8968255b5"
+    },
+    {
+      "path": "src/arcana/presentation/RouteInspection.tsx",
+      "lines": 116,
+      "staticButtonTags": 2,
+      "summaryTags": 0,
+      "dialogTags": 1,
+      "inputTags": 0,
+      "literalAssetKeys": [],
+      "sha256": "c599c557107e66bfe660a1af156b849dd63a44e936b491496793a9357c79f90d"
+    },
+    {
+      "path": "src/arcana/presentation/SceneAtmosphere.tsx",
+      "lines": 41,
+      "staticButtonTags": 0,
+      "summaryTags": 0,
+      "dialogTags": 0,
+      "inputTags": 0,
+      "literalAssetKeys": [],
+      "sha256": "b2e5f536994c6a8aa9a690ed42d91a2243f7352c2714ab3ccc31f22931304f2d"
+    },
+    {
+      "path": "src/arcana/presentation/SeasonalEvent.tsx",
+      "lines": 606,
+      "staticButtonTags": 11,
+      "summaryTags": 2,
+      "dialogTags": 1,
+      "inputTags": 0,
+      "literalAssetKeys": [
+        "node.refuge"
+      ],
+      "sha256": "32531c88b078e01655f7ade0bc1286fa2cf0ce86636ca0b4195505d5a71ac995"
+    },
+    {
+      "path": "src/arcana/presentation/ShopBook.tsx",
+      "lines": 108,
+      "staticButtonTags": 3,
+      "summaryTags": 0,
+      "dialogTags": 1,
+      "inputTags": 0,
+      "literalAssetKeys": [
+        "ui.pass"
+      ],
+      "sha256": "51b534e05419c77c0150dbfa00dbe5c3246c5728e80b89430ee084c94e9f4eed"
+    },
+    {
+      "path": "src/arcana/presentation/ShopHub.tsx",
+      "lines": 104,
+      "staticButtonTags": 1,
+      "summaryTags": 0,
+      "dialogTags": 0,
+      "inputTags": 0,
+      "literalAssetKeys": [],
+      "sha256": "ddff09a875e4cc98b6a43499d35dcf98662952f6f9b6fa4443e0fe45bc76b2f8"
+    },
+    {
+      "path": "src/arcana/presentation/StarRating.tsx",
+      "lines": 13,
+      "staticButtonTags": 0,
+      "summaryTags": 0,
+      "dialogTags": 0,
+      "inputTags": 0,
+      "literalAssetKeys": [],
+      "sha256": "5c57af9a712462426c47e44d7fca5f34a3031fcf35330814371ac1fa84badd99"
+    },
+    {
+      "path": "src/arcana/presentation/SweetshopScene.tsx",
+      "lines": 248,
+      "staticButtonTags": 4,
+      "summaryTags": 0,
+      "dialogTags": 0,
+      "inputTags": 0,
+      "literalAssetKeys": [
+        "currency.crowns",
+        "toad.seal",
+        "ui.map"
+      ],
+      "sha256": "084c1b20751f03aa48020f248b5fec71dfdc1e319a590ec0a47748428cebc62d"
+    },
+    {
+      "path": "src/arcana/presentation/TacticalBadge.tsx",
+      "lines": 93,
+      "staticButtonTags": 0,
+      "summaryTags": 1,
+      "dialogTags": 0,
+      "inputTags": 0,
+      "literalAssetKeys": [],
+      "sha256": "12ab05df94a4aab4c329e2cc672b899b08d0ec40d0e9faaca89cadc31d03acc4"
+    },
+    {
+      "path": "src/arcana/presentation/TeamHud.tsx",
+      "lines": 362,
+      "staticButtonTags": 3,
+      "summaryTags": 0,
+      "dialogTags": 0,
+      "inputTags": 0,
+      "literalAssetKeys": [
+        "ui.map"
+      ],
+      "sha256": "71f97de25178d604b5a17cff901ad5e6bc3d7c4a0e2309b9c365264e67d2c540"
+    },
+    {
+      "path": "src/arcana/presentation/VisualChoices.tsx",
+      "lines": 78,
+      "staticButtonTags": 1,
+      "summaryTags": 0,
+      "dialogTags": 0,
+      "inputTags": 0,
+      "literalAssetKeys": [
+        "ui.seal"
+      ],
+      "sha256": "6a838b0e3dacac6cca4f7a4455ce2e8494859ed8b90e9675b2f1735447115c0c"
+    },
+    {
+      "path": "src/arcana/presentation/WandRecipeComparison.tsx",
+      "lines": 159,
+      "staticButtonTags": 1,
+      "summaryTags": 1,
+      "dialogTags": 0,
+      "inputTags": 0,
+      "literalAssetKeys": [
+        "ui.clear",
+        "ui.seal"
+      ],
+      "sha256": "39f59924bb85329ed555070f6ff8e73b698bb2607aa6a7a72ccda46d718658e1"
+    },
+    {
+      "path": "src/arcana/presentation/audio/AudioPreferences.tsx",
+      "lines": 136,
+      "staticButtonTags": 2,
+      "summaryTags": 1,
+      "dialogTags": 0,
+      "inputTags": 1,
+      "literalAssetKeys": [
+        "ui.seal"
+      ],
+      "sha256": "17438ee3f0ad010f640f57adb96b461bc3edee1c9aec01d385bea620669d08d7"
+    },
+    {
+      "path": "src/arcana/presentation/motion/PlaybackPreferences.tsx",
+      "lines": 58,
+      "staticButtonTags": 1,
+      "summaryTags": 0,
+      "dialogTags": 0,
+      "inputTags": 0,
+      "literalAssetKeys": [],
+      "sha256": "627409e14932f5cfcc49ebad671ebcb9562c87c049bb264eea1008906c152929"
+    },
+    {
+      "path": "src/arcana/presentation/scenes/SceneCanvas.tsx",
+      "lines": 83,
+      "staticButtonTags": 0,
+      "summaryTags": 0,
+      "dialogTags": 0,
+      "inputTags": 0,
+      "literalAssetKeys": [],
+      "sha256": "ff0552f49858999ca7507b3461890f6685b43c03ca381064500a928da7e05a6e"
+    }
+  ]
+}

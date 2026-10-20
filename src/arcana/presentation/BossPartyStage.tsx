@@ -1,8 +1,10 @@
+import { useId, type ReactNode } from 'react';
 import type { GameState } from '../application/game';
 import type { BeanAssignment } from '../application/run-contracts';
 import type { CombatRules } from '../domain/combat/engine';
 import type { Language } from '../domain/collection/wizards';
 import type { Run } from '../domain/exploration/run';
+import { AffinityLabel } from './TacticalBadge';
 import { Artwork } from './Artwork';
 import { activePack, themedName } from './content-packs/active';
 import { equipmentName } from './equipment-label';
@@ -20,6 +22,7 @@ export function BossPartyStage({
   ready,
   rules,
   onPrepare,
+  supplies,
 }: {
   run: Run;
   game: GameState;
@@ -28,17 +31,19 @@ export function BossPartyStage({
   ready: boolean;
   rules?: CombatRules;
   onPrepare: (origin: HTMLButtonElement) => void;
+  supplies?: ReactNode;
 }) {
   const draft = validBeanAssignments(assignments, run, game);
+  const affinityDescription = useId();
   return (
     <section
-      className="boss-party-stage"
+      className={`boss-party-stage${supplies ? ' boss-party-with-supplies' : ''}`}
       data-boss-party
       data-party-pack={activePack.id}
       aria-label={s(language, 'party')}
     >
       <h4>{s(language, 'party')}</h4>
-      <div className="boss-party-members">
+      <div className="boss-party-members" data-party-count={run.members.length}>
         {run.members.map(({ unit, source }, index) => {
           const copy = game.copies.find((item) => item.copyId === unit.id);
           const name = themedName(
@@ -68,6 +73,7 @@ export function BossPartyStage({
               data-boss-party-condition={unit.hp <= 0 ? 'fallen' : 'standing'}
               disabled={!ready}
               onClick={(event) => onPrepare(event.currentTarget)}
+              aria-describedby={`${affinityDescription}-${index}`}
               aria-label={s(language, 'member', {
                 name,
                 position: index + 1,
@@ -101,6 +107,9 @@ export function BossPartyStage({
                   decorative
                   eager
                 />
+                <span id={`${affinityDescription}-${index}`} className="boss-member-affinity">
+                  <AffinityLabel affinity={unit.affinity} language={language} />
+                </span>
               </span>
               <span className="boss-party-name" aria-hidden="true">
                 {name}
@@ -152,7 +161,15 @@ export function BossPartyStage({
         <Artwork asset="ui.team" language={language} decorative eager />
         <span>{s(language, 'prepare')}</span>
       </button>
-      {rules && <PreparationSynergies members={run.members} rules={rules} language={language} />}
+      {rules && (
+        <PreparationSynergies
+          members={run.members}
+          rules={rules}
+          mode={run.bondFocus}
+          language={language}
+        />
+      )}
+      {supplies}
     </section>
   );
 }

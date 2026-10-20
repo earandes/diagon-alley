@@ -1,3 +1,4 @@
+import { chooseBeanJar } from './bean-controls';
 import { inspectPreparationCopy, closePreparation } from './game-fixture';
 import { startExpedition } from './game-fixture';
 import { openAlbumFilters } from './game-fixture';
@@ -107,7 +108,7 @@ for (const language of ['es', 'en'] as const) {
     const before = await read();
     const bean = before.inventory.products.find((p: { kind: string }) => p.kind === 'random-beans');
     const unit = before.exploration.run.members[0].unit.id;
-    await page.locator(`[data-bean-id="${bean.id}"]`).click();
+    await chooseBeanJar(page, bean.id);
     await page.locator(`[data-bean-unit="${unit}"]`).click();
     const otherUnit = before.exploration.run.members[1].unit.id;
     await page.locator(`[data-bean-unit="${otherUnit}"]`).click();
@@ -134,7 +135,7 @@ for (const language of ['es', 'en'] as const) {
       'aria-pressed',
       'false',
     );
-    await page.locator(`[data-bean-id="${bean.id}"]`).click();
+    await chooseBeanJar(page, bean.id);
     await page.locator(`[data-bean-unit="${unit}"]`).click();
     await confirmEvent(page, language);
     await expect(

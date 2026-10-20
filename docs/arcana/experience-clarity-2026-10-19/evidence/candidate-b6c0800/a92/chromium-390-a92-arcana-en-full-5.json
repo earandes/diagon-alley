@@ -1,0 +1,194 @@
+{
+  "sha": "135a4fe98a12a8efe71c166e61cda92c4bc342b8",
+  "fixture": true,
+  "count": 5,
+  "lang": "en",
+  "pack": "arcana",
+  "coordinateSample": "single synchronous layout read; no animation wait",
+  "geometry": [
+    {
+      "selector": ".node-team-prepare",
+      "bottom": 721.6470947265625,
+      "footerTop": 751.1470947265625,
+      "gap": 29.5
+    },
+    {
+      "selector": ".node-bean-preparation > summary",
+      "bottom": 724.6470947265625,
+      "footerTop": 751.1470947265625,
+      "gap": 26.5
+    }
+  ],
+  "headerGeometry": [
+    {
+      "selector": ".boss-prelude-identity h4",
+      "box": {
+        "x": 77,
+        "y": 31.928356170654297,
+        "width": 236,
+        "height": 22,
+        "top": 31.928356170654297,
+        "right": 313,
+        "bottom": 53.9283561706543,
+        "left": 77
+      },
+      "settings": {
+        "x": 318,
+        "y": 31.928356170654297,
+        "width": 44,
+        "height": 44.000003814697266,
+        "top": 31.928356170654297,
+        "right": 362,
+        "bottom": 75.92835998535156,
+        "left": 318
+      },
+      "clear": true
+    },
+    {
+      "selector": ".boss-roster-count",
+      "box": {
+        "x": 156.625,
+        "y": 83.92835998535156,
+        "width": 76.734375,
+        "height": 13,
+        "top": 83.92835998535156,
+        "right": 233.359375,
+        "bottom": 96.92835998535156,
+        "left": 156.625
+      },
+      "settings": {
+        "x": 318,
+        "y": 31.928356170654297,
+        "width": 44,
+        "height": 44.000003814697266,
+        "top": 31.928356170654297,
+        "right": 362,
+        "bottom": 75.92835998535156,
+        "left": 318
+      },
+      "clear": true
+    }
+  ],
+  "rivalNames": [
+    [
+      {
+        "word": "Ember",
+        "fragments": 1,
+        "box": {
+          "x": 164.1875,
+          "y": 210.57241821289062,
+          "width": 33.953125,
+          "height": 12,
+          "top": 210.57241821289062,
+          "right": 198.140625,
+          "bottom": 222.57241821289062,
+          "left": 164.1875
+        }
+      },
+      {
+        "word": "Keeper",
+        "fragments": 1,
+        "box": {
+          "x": 163,
+          "y": 222.57241821289062,
+          "width": 36.34375,
+          "height": 12,
+          "top": 222.57241821289062,
+          "right": 199.34375,
+          "bottom": 234.57241821289062,
+          "left": 163
+        }
+      }
+    ],
+    [
+      {
+        "word": "Copper",
+        "fragments": 1,
+        "box": {
+          "x": 213.8125,
+          "y": 210.57241821289062,
+          "width": 37.46875,
+          "height": 12,
+          "top": 210.57241821289062,
+          "right": 251.28125,
+          "bottom": 222.57241821289062,
+          "left": 213.8125
+        }
+      },
+      {
+        "word": "Sage",
+        "fragments": 1,
+        "box": {
+          "x": 219.578125,
+          "y": 222.57241821289062,
+          "width": 25.953125,
+          "height": 12,
+          "top": 222.57241821289062,
+          "right": 245.53125,
+          "bottom": 234.57241821289062,
+          "left": 219.578125
+        }
+      }
+    ],
+    [
+      {
+        "word": "Storm",
+        "fragments": 1,
+        "box": {
+          "x": 268.3125,
+          "y": 210.57241821289062,
+          "width": 31.25,
+          "height": 12,
+          "top": 210.57241821289062,
+          "right": 299.5625,
+          "bottom": 222.57241821289062,
+          "left": 268.3125
+        }
+      },
+      {
+        "word": "Caller",
+        "fragments": 1,
+        "box": {
+          "x": 268.90625,
+          "y": 222.57241821289062,
+          "width": 30.0625,
+          "height": 12,
+          "top": 222.57241821289062,
+          "right": 298.96875,
+          "bottom": 234.57241821289062,
+          "left": 268.90625
+        }
+      }
+    ],
+    [
+      {
+        "word": "Mist",
+        "fragments": 1,
+        "box": {
+          "x": 311.15625,
+          "y": 222.57241821289062,
+          "width": 21.34375,
+          "height": 12,
+          "top": 222.57241821289062,
+          "right": 332.5,
+          "bottom": 234.57241821289062,
+          "left": 311.15625
+        }
+      },
+      {
+        "word": "Seer",
+        "fragments": 1,
+        "box": {
+          "x": 335.796875,
+          "y": 222.57241821289062,
+          "width": 23.65625,
+          "height": 12,
+          "top": 222.57241821289062,
+          "right": 359.453125,
+          "bottom": 234.57241821289062,
+          "left": 335.796875
+        }
+      }
+    ]
+  ]
+}

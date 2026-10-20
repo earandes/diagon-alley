@@ -1,0 +1,32 @@
+{
+  "run": 39353308640,
+  "head": "31cbe9b",
+  "artifact": 12234017200,
+  "stats": {
+    "startTime": "2026-10-20T01:27:30.821Z",
+    "duration": 23660.29,
+    "expected": 11,
+    "skipped": 220,
+    "unexpected": 1,
+    "flaky": 0
+  },
+  "failures": [
+    {
+      "title": "A92 diagon-alley/es four and five posts keep real loot and preparation above the footer",
+      "project": "chromium-390-a92",
+      "errors": [
+        {
+          "location": {
+            "file": "/home/runner/work/diagon-alley/diagon-alley/tests/browser-experience-clarity/map-preparation-a92.spec.ts",
+            "column": 92,
+            "line": 181
+          },
+          "message": "Error: {\"left\":[{\"word\":\"Nymphadora\",\"fragments\":1,\"box\":{\"x\":258.25,\"y\":197.5767822265625,\"width\":67.1875,\"height\":12,\"top\":197.5767822265625,\"right\":325.4375,\"bottom\":209.5767822265625,\"left\":258.25}},{\"word\":\"Tonks\",\"fragments\":1,\"box\":{\"x\":277.359375,\"y\":209.5767822265625,\"width\":28.96875,\"height\":12,\"top\":209.5767822265625,\"right\":306.328125,\"bottom\":221.5767822265625,\"left\":277.359375}}],\"right\":[{\"word\":\"Luna\",\"fragments\":1,\"box\":{\"x\":322.734375,\"y\":197.5767822265625,\"width\":25.15625,\"height\":12,\"top\":197.5767822265625,\"right\":347.890625,\"bottom\":209.5767822265625,\"left\":322.734375}},{\"word\":\"Lovegood\",\"fragments\":1,\"box\":{\"x\":310.09375,\"y\":209.5767822265625,\"width\":50.421875,\"height\":12,\"top\":209.5767822265625,\"right\":360.515625,\"bottom\":221.5767822265625,\"left\":310.09375}}]}\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mfalse\u001b[39m\nReceived: \u001b[31mtrue\u001b[39m\n\n  179 |               ),\n  180 |             );\n> 181 |             expect(overlap, JSON.stringify({ left: rivalNames[i], right: rivalNames[j] })).toBe(\n      |                                                                                            ^\n  182 |               false,\n  183 |             );\n  184 |           }\n    at /home/runner/work/diagon-alley/diagon-alley/tests/browser-experience-clarity/map-preparation-a92.spec.ts:181:92"
+        }
+      ]
+    }
+  ],
+  "reason": "Whole words extended outside old fractional flex column; Nymphadora and Luna intersected by2.703125px. No tolerance relaxed.",
+  "correction": "Reserve min-content width on actual companion flex item so longest word has space, instead of only letting its label overflow. No font reduction or extra row.",
+  "candidate": "b6c0800"
+}

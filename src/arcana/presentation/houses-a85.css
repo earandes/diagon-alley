@@ -293,38 +293,62 @@
     width: 32px;
     height: 40px;
   }
-  /* A full roster needs one consultation shelf, not two stacked rows below the
+  /* A92: four companions also use two portrait rows. Keep their opponent book
+     and loot on the same existing shelf, rather than spending another row below the
      illustration. The book and confirmed loot preview retain their own controls
      and content; opening the book returns its inspector to the full-width flow. */
-  .boss-staging:has(.boss-party-member:nth-child(5)) .boss-opponent-stage {
+  .boss-staging:has(.boss-party-member:nth-child(4)) .boss-opponent-stage {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 4px;
   }
-  .boss-staging:has(.boss-party-member:nth-child(5)) .boss-prelude {
+  .boss-staging:has(.boss-party-member:nth-child(4)) .boss-prelude {
     display: contents;
   }
-  .boss-staging:has(.boss-party-member:nth-child(5)) .boss-prelude-hero {
+  .boss-staging:has(.boss-party-member:nth-child(4)) .boss-prelude-hero {
     grid-column: 1 / -1;
   }
-  .boss-staging:has(.boss-party-member:nth-child(5)) .boss-opponent-details {
+  /* Known threat metadata shares one wrapping line beneath the name. All labels
+     remain visible; larger text may wrap without forcing fixed columns. */
+  .boss-staging:has(.boss-party-member:nth-child(4)) .boss-prelude-identity {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 0 8px;
+    /*44px system control plus a small gap; full-row heading must not enter it. */
+    padding-inline: 48px;
+  }
+  .boss-staging:has(.boss-party-member:nth-child(4)) .boss-prelude-identity > h4 {
+    flex: 0 0 100%;
+    margin: 2px 0 0;
+  }
+  .boss-staging:has(.boss-party-member:nth-child(4)) .boss-roster-count {
+    margin-top: 0;
+  }
+  /* The global summary padding adds20px to this compact shelf. Keep its44px
+     target without shrinking the book, text or any combatant. */
+  .boss-staging:has(.boss-party-member:nth-child(4)) .boss-opponent-details > summary {
+    padding: 2px 4px;
+  }
+  .boss-staging:has(.boss-party-member:nth-child(4)) .boss-opponent-details {
     grid-column: 1;
     grid-row: 2;
     margin: 0;
     min-width: 0;
     align-self: center;
   }
-  .game-shell .boss-staging:has(.boss-party-member:nth-child(5)) .event-loot {
+  .game-shell .boss-staging:has(.boss-party-member:nth-child(4)) .event-loot {
     grid-column: 2;
     grid-row: 2;
     margin: 0;
     gap: 8px;
     align-self: center;
   }
-  .boss-staging:has(.boss-party-member:nth-child(5)) .boss-opponent-details[open] {
+  .boss-staging:has(.boss-party-member:nth-child(4)) .boss-opponent-details[open] {
     grid-column: 1 / -1;
   }
-  .boss-staging:has(.boss-party-member:nth-child(5))
+  .boss-staging:has(.boss-party-member:nth-child(4))
     .boss-opponent-stage:has(.boss-opponent-details[open])
     > .event-loot {
     grid-column: 1 / -1;

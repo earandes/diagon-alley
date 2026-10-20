@@ -1,0 +1,106 @@
+{
+  "sha": "135a4fe98a12a8efe71c166e61cda92c4bc342b8",
+  "fixture": true,
+  "count": 4,
+  "lang": "es",
+  "pack": "diagon-alley",
+  "coordinateSample": "single synchronous layout read; no animation wait",
+  "geometry": [
+    {
+      "selector": ".node-team-prepare",
+      "bottom": 674.1887817382812,
+      "footerTop": 698.1887817382812,
+      "gap": 24
+    },
+    {
+      "selector": ".node-bean-preparation > summary",
+      "bottom": 670.6887817382812,
+      "footerTop": 698.1887817382812,
+      "gap": 27.5
+    }
+  ],
+  "headerGeometry": [
+    {
+      "selector": ".boss-prelude-identity h4",
+      "box": {
+        "x": 77,
+        "y": 71.96849060058594,
+        "width": 236,
+        "height": 22,
+        "top": 71.96849060058594,
+        "right": 313,
+        "bottom": 93.96849060058594,
+        "left": 77
+      },
+      "settings": {
+        "x": 318,
+        "y": 71.96849060058594,
+        "width": 44,
+        "height": 44,
+        "top": 71.96849060058594,
+        "right": 362,
+        "bottom": 115.96849060058594,
+        "left": 318
+      },
+      "clear": true
+    },
+    {
+      "selector": ".boss-roster-count",
+      "box": {
+        "x": 188.921875,
+        "y": 95.26536560058594,
+        "width": 56.359375,
+        "height": 13,
+        "top": 95.26536560058594,
+        "right": 245.28125,
+        "bottom": 108.26536560058594,
+        "left": 188.921875
+      },
+      "settings": {
+        "x": 318,
+        "y": 71.96849060058594,
+        "width": 44,
+        "height": 44,
+        "top": 71.96849060058594,
+        "right": 362,
+        "bottom": 115.96849060058594,
+        "left": 318
+      },
+      "clear": true
+    }
+  ],
+  "rivalNames": [
+    [
+      {
+        "word": "Rival",
+        "fragments": 1,
+        "box": {
+          "x": 252.234375,
+          "y": 236.888916015625,
+          "width": 25.515625,
+          "height": 12,
+          "top": 236.888916015625,
+          "right": 277.75,
+          "bottom": 248.888916015625,
+          "left": 252.234375
+        }
+      }
+    ],
+    [
+      {
+        "word": "Rival",
+        "fragments": 1,
+        "box": {
+          "x": 316.234375,
+          "y": 236.888916015625,
+          "width": 25.515625,
+          "height": 12,
+          "top": 236.888916015625,
+          "right": 341.75,
+          "bottom": 248.888916015625,
+          "left": 316.234375
+        }
+      }
+    ]
+  ]
+}

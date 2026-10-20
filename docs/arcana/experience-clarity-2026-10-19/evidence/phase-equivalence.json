@@ -1,0 +1,57 @@
+{
+  "productCandidate": "7d74cefb2c51cf31b4c10495552d0816b8d98898",
+  "regressionCandidate": "75a89c671d965292aa993bc2a2a550eba6b7d3db",
+  "differences": [
+    "tests/browser-trial/journey.spec.ts",
+    "tools/verification/a75-phase.json"
+  ],
+  "sameObjects": [
+    {
+      "path": "src",
+      "object": "0bfef81629e760a4dc9af393c697d82f0744eff9",
+      "equal": true
+    },
+    {
+      "path": "public",
+      "object": "c753d774b0376039471d909e9266ffd49e740039",
+      "equal": true
+    },
+    {
+      "path": "tests/browser-boss",
+      "object": "09ceb5b6a1ec5cd0cca52bf1964de861badcd158",
+      "equal": true
+    },
+    {
+      "path": "tests/browser-boss-style",
+      "object": "1af6eb2c072f2b033930eb93e0a41e5a6bb22f18",
+      "equal": true
+    },
+    {
+      "path": "tests/browser-motion",
+      "object": "dd8001482925bdf40a6db3a4407772275c467b6f",
+      "equal": true
+    },
+    {
+      "path": "package.json",
+      "object": "7624c06b3bf5c620b39cb74042a7a0a3467f0823",
+      "equal": true
+    },
+    {
+      "path": "package-lock.json",
+      "object": "f8d0c9d8aab1a5931825ecd76ccc979dea21862c",
+      "equal": true
+    },
+    {
+      "path": ".github/workflows/checks.yml",
+      "object": "71c2eed32a572867c0b8f83905166636ceb43589",
+      "equal": true
+    }
+  ],
+  "phase": "resume",
+  "fullRun": 39347774137,
+  "fullRunStatus": "check job success; whole workflow cancelled only at start of old regression",
+  "regressionStatus": "39353019073 cancelled before browser, superseded by product change31cbe9b; this equivalence is historical and not used for final acceptance",
+  "reason": "Only collection-detail test interaction changes. Existing resume phase runs E2E plus full regression, reusing full phase only once that exact-product check succeeds. Original workflow/guard/worker/watchdog/retry unchanged.",
+  "regressionRun": 39353019073,
+  "supersededBy": "31cbe9b/full"
+}

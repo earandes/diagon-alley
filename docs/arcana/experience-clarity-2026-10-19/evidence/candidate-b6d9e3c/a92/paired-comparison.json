@@ -1,0 +1,160 @@
+{
+  "baseline": "86d6a92665f63616034a4fcd668c5df6ffe3e322",
+  "candidate": "274ac9e389523bd89a4f56487c0129996e23ed02",
+  "observations": [
+    {
+      "pair": "AB",
+      "variant": "baseline",
+      "action": "consult-public-node",
+      "actionToUsableMs": 131.19999999995343,
+      "graphIdentical": true,
+      "includesAutomationOverhead": true
+    },
+    {
+      "pair": "AB",
+      "variant": "current",
+      "action": "consult-public-node",
+      "actionToUsableMs": 185.39999999996508,
+      "graphIdentical": true,
+      "includesAutomationOverhead": true
+    },
+    {
+      "pair": "BA",
+      "variant": "current",
+      "action": "consult-public-node",
+      "actionToUsableMs": 91.29999999998836,
+      "graphIdentical": true,
+      "includesAutomationOverhead": true
+    },
+    {
+      "pair": "BA",
+      "variant": "baseline",
+      "action": "consult-public-node",
+      "actionToUsableMs": 73.10000000003492,
+      "graphIdentical": true,
+      "includesAutomationOverhead": true
+    },
+    {
+      "pair": "AB",
+      "variant": "baseline",
+      "action": "consult-public-node",
+      "actionToUsableMs": 88.29999999998836,
+      "graphIdentical": true,
+      "includesAutomationOverhead": true
+    },
+    {
+      "pair": "AB",
+      "variant": "current",
+      "action": "consult-public-node",
+      "actionToUsableMs": 107.09999999997672,
+      "graphIdentical": true,
+      "includesAutomationOverhead": true
+    },
+    {
+      "variant": "baseline",
+      "fixture": "same-five-names",
+      "shape": [
+        {
+          "name": "Albus Dumbledore",
+          "width": 59.390625,
+          "height": 41.4375,
+          "overflowWrap": "anywhere"
+        },
+        {
+          "name": "Minerva McGonagall",
+          "width": 59.390625,
+          "height": 41.4375,
+          "overflowWrap": "anywhere"
+        },
+        {
+          "name": "Pomona Sprout",
+          "width": 59.390625,
+          "height": 27.625,
+          "overflowWrap": "anywhere"
+        },
+        {
+          "name": "Nicolás Flamel",
+          "width": 59.390625,
+          "height": 27.625,
+          "overflowWrap": "anywhere"
+        },
+        {
+          "name": "Harry Potter",
+          "width": 59.390625,
+          "height": 27.625,
+          "overflowWrap": "anywhere"
+        }
+      ],
+      "presentation": {
+        "opacity": "1",
+        "background": "radial-gradient(at 72% 25%, rgba(84, 65, 53, 0.333), rgba(0, 0, 0, 0) 58%) repeat scroll 0% 0% / auto padding-box border-box, rgba(0, 0, 0, 0) linear-gradient(160deg, rgba(21, 40, 49, 0.96), rgba(11, 22, 34, 0.98) 70%) repeat scroll 0% 0% / auto padding-box border-box",
+        "box": {
+          "x": 12,
+          "y": 74.0625,
+          "width": 366,
+          "height": 695.875,
+          "top": 74.0625,
+          "right": 378,
+          "bottom": 769.9375,
+          "left": 12
+        },
+        "scrollHeight": 694,
+        "clientHeight": 694
+      }
+    },
+    {
+      "variant": "current",
+      "fixture": "same-five-names",
+      "shape": [
+        {
+          "name": "Albus Dumbledore",
+          "width": 100.65625,
+          "height": 31.1875,
+          "overflowWrap": "normal"
+        },
+        {
+          "name": "Minerva McGonagall",
+          "width": 100.65625,
+          "height": 31.1875,
+          "overflowWrap": "normal"
+        },
+        {
+          "name": "Pomona Sprout",
+          "width": 100.65625,
+          "height": 15.59375,
+          "overflowWrap": "normal"
+        },
+        {
+          "name": "Nicolás Flamel",
+          "width": 100.65625,
+          "height": 15.59375,
+          "overflowWrap": "normal"
+        },
+        {
+          "name": "Harry Potter",
+          "width": 100.65625,
+          "height": 15.59375,
+          "overflowWrap": "normal"
+        }
+      ],
+      "presentation": {
+        "opacity": "1",
+        "background": "radial-gradient(at 72% 25%, rgba(84, 65, 53, 0.333), rgba(0, 0, 0, 0) 58%) repeat scroll 0% 0% / auto padding-box border-box, rgba(0, 0, 0, 0) linear-gradient(160deg, rgba(21, 40, 49, 0.96), rgba(11, 22, 34, 0.98) 70%) repeat scroll 0% 0% / auto padding-box border-box",
+        "box": {
+          "x": 12,
+          "y": 41.03125,
+          "width": 366,
+          "height": 761.921875,
+          "top": 41.03125,
+          "right": 378,
+          "bottom": 802.953125,
+          "left": 12
+        },
+        "scrollHeight": 760,
+        "clientHeight": 760
+      }
+    }
+  ],
+  "cache": "uncontrolled browser default; not cold start",
+  "limitations": "3 paired technical consultations include Playwright timing overhead; no human duration, GPU or causal performance attribution"
+}
