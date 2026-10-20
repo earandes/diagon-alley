@@ -1,0 +1,14 @@
+{
+  "sourceRun": 39347774137,
+  "sourceHead": "7d74cef",
+  "sourceCheckout": "165866a6",
+  "artifact": 12233737376,
+  "sourceFile": "docs/arcana/motion-audit-2026-10-16/evidence/linux/a85/boss-390-es-arcana-a89.png",
+  "evidence": "rival-word-wrap-before.png",
+  "observation": "ARCANA companion alias Tormentas splits within the word at normal mobile size. Product behaviour was otherwise accepted by automated full check. This is a selected static visual finding, not a newly executed failing browser assertion.",
+  "causeByCode": "boss-a70.css overflow-wrap:anywhere on companion name small; own party had already been corrected.",
+  "minimumChange": "Keep whole-word minimum intrinsic label width independently of figure flex size; no font/image reduction or new row.",
+  "acceptance": "Existing four full mobile cases check all words single-fragment and no pair of rival labels has intersecting word rectangles; existing footer/control/portrait checks retained.",
+  "candidate": "31cbe9b",
+  "status": "implemented; new full CI required"
+}

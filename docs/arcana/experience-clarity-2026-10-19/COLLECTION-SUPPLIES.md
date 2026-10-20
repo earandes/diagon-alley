@@ -1,5 +1,7 @@
 # A92 · Cromodex y suministros
 
+> Actualización del coordinador: los casos propios A92 del candidato6747f81 pasan en CI39323571082 y las imágenes seleccionadas se han inspeccionado. Los apartados inferiores conservan el estado histórico del subrecorrido; el cierre integrado, sus regresiones y límites vigentes se registran en [QA](QA.md), [aceptación](ACCEPTANCE.md) y [galería](GALLERY.md).
+
 ## Contrato y elección
 
 U09/U10/U11 implementados en consumidores reales, sin reglas, consumo, dependencias o assets nuevos. U01 usa `collectionCompletion` compartida; U05 usa `CloseButton` independiente de descargas. Conservar A90, snapshots, copias y localización. La recuperación económica sigue en los comandos existentes; la selección visual no concede resultados.
@@ -76,3 +78,7 @@ Folio: retrato y nombre dominan; ficha y copias son consultas diferenciadas, cie
 **Defecto demostrado y corregido:** identidad de archivo sin asset registrado colapsaba su retrato y el marco encantado quedaba diminuto. Se añadió fallback `card.back` para portadas y folio, y reserva4/5 sobre el contenedor, sin alterar la identidad ni su acabado. Prueba SSR falló antes y pasó después. Última ejecución acotada:32pruebas correctas en3archivos. La nueva evidencia gráfica queda pendiente del siguiente candidato CI del coordinador.
 
 En la muestra ARCANA390 algunos metadatos de las dos primeras cartas se ven incompletos, a diferencia de la tercera. La revisión estática no encontró una regla de ocultación ni una condición por paquete: traducciones, datos y componentes emiten rareza/copias correctamente; `useSelectionMotion` mueve el álbum completo, no textos individuales. No se atribuye una causa o un defecto de producto confirmado a esa imagen aislada. Para el siguiente muestreo se declara movimiento reducido efectivo desde `emulateMedia`, se espera `document.fonts.ready` tras restituir el tamaño y se comprueban presencia/altura de rareza/copias antes de capturar. Esto evita presentar una fase transitoria como reposo, sin retraso arbitrario ni cambios de contenido. No sustituye inspeccionar la siguiente imagen ni probar animación aparte.
+
+### Reflujo ampliado y repisa integrada tras CI39334495446
+
+El caso A85 con texto200% y todas las imágenes ausentes reprodujo404px de ancho sobre390px. Las cartas usan tracks adaptativos respecto a rem y etiquetas/rarezas que envuelven sin recorte. El máximo4/8porpágina se conserva; columnas y cantidad porpágina son decisiones diferentes. Sin reducir fuente o eliminar información. El tarro de jefe ahora ocupa un slot de BossPartyStage, para compartir la repisa móvil con formación y afinidades. Nombre breve Grageas/Beans; cantidad y borrador separados, descripción accesible completa, asignación por IDs intacta. Resultado gráfico del candidato c6810fc pendiente en CI39341168677.

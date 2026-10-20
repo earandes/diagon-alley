@@ -1,0 +1,920 @@
+{
+  "run": 39353793256,
+  "head": "b6c08000267a28d1851318fbcfdfeb780e459fb9",
+  "checkout": "135a4fe98a12a8efe71c166e61cda92c4bc342b8",
+  "redaction": "Only timing/geometry/public fixture flags retained; no complete run, seed, inventory, identity or operation key. Raw CI artifact 12235448055 retains original test provenance.",
+  "samples": [
+    {
+      "sha": "135a4fe98a12a8efe71c166e61cda92c4bc342b8",
+      "engine": "chromium",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "physicalDevice": false,
+      "fixture": false,
+      "pageErrors": [],
+      "battleUnchanged": true,
+      "reloadExact": true,
+      "selectionDidNotConsume": true,
+      "actionToDomUsableUpperBoundMs": 570,
+      "actionToFiguresReadyUpperBoundMs": 571,
+      "cohort": "A70",
+      "source": "chromium-1280-boss-a70-en-arcana-authority.json"
+    },
+    {
+      "sha": "135a4fe98a12a8efe71c166e61cda92c4bc342b8",
+      "engine": "chromium",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "physicalDevice": false,
+      "fixture": false,
+      "pageErrors": [],
+      "battleUnchanged": true,
+      "reloadExact": true,
+      "selectionDidNotConsume": true,
+      "actionToDomUsableUpperBoundMs": 652,
+      "actionToFiguresReadyUpperBoundMs": 666,
+      "cohort": "A70",
+      "source": "chromium-1280-boss-a70-en-diagon-alley-authority.json"
+    },
+    {
+      "sha": "135a4fe98a12a8efe71c166e61cda92c4bc342b8",
+      "engine": "chromium",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "physicalDevice": false,
+      "fixture": false,
+      "pageErrors": [],
+      "battleUnchanged": true,
+      "reloadExact": true,
+      "selectionDidNotConsume": true,
+      "actionToDomUsableUpperBoundMs": 496,
+      "actionToFiguresReadyUpperBoundMs": 498,
+      "cohort": "A70",
+      "source": "chromium-1280-boss-a70-es-arcana-authority.json"
+    },
+    {
+      "sha": "135a4fe98a12a8efe71c166e61cda92c4bc342b8",
+      "engine": "chromium",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "physicalDevice": false,
+      "fixture": false,
+      "pageErrors": [],
+      "battleUnchanged": true,
+      "reloadExact": true,
+      "selectionDidNotConsume": true,
+      "actionToDomUsableUpperBoundMs": 675,
+      "actionToFiguresReadyUpperBoundMs": 694,
+      "cohort": "A70",
+      "source": "chromium-1280-boss-a70-es-diagon-alley-authority.json"
+    },
+    {
+      "sha": "135a4fe98a12a8efe71c166e61cda92c4bc342b8",
+      "engine": "chromium",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "physicalDevice": false,
+      "fixture": false,
+      "pageErrors": [],
+      "battleUnchanged": true,
+      "reloadExact": true,
+      "selectionDidNotConsume": true,
+      "actionToDomUsableUpperBoundMs": 490,
+      "actionToFiguresReadyUpperBoundMs": 492,
+      "cohort": "A70",
+      "source": "chromium-390-boss-a70-en-arcana-authority.json"
+    },
+    {
+      "sha": "135a4fe98a12a8efe71c166e61cda92c4bc342b8",
+      "engine": "chromium",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "physicalDevice": false,
+      "fixture": false,
+      "pageErrors": [],
+      "battleUnchanged": true,
+      "reloadExact": true,
+      "selectionDidNotConsume": true,
+      "actionToDomUsableUpperBoundMs": 502,
+      "actionToFiguresReadyUpperBoundMs": 504,
+      "cohort": "A70",
+      "source": "chromium-390-boss-a70-en-diagon-alley-authority.json"
+    },
+    {
+      "sha": "135a4fe98a12a8efe71c166e61cda92c4bc342b8",
+      "engine": "chromium",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "physicalDevice": false,
+      "fixture": false,
+      "pageErrors": [],
+      "battleUnchanged": true,
+      "reloadExact": true,
+      "selectionDidNotConsume": true,
+      "actionToDomUsableUpperBoundMs": 478,
+      "actionToFiguresReadyUpperBoundMs": 480,
+      "cohort": "A70",
+      "source": "chromium-390-boss-a70-es-arcana-authority.json"
+    },
+    {
+      "sha": "135a4fe98a12a8efe71c166e61cda92c4bc342b8",
+      "engine": "chromium",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "physicalDevice": false,
+      "fixture": false,
+      "pageErrors": [],
+      "battleUnchanged": true,
+      "reloadExact": true,
+      "selectionDidNotConsume": true,
+      "actionToDomUsableUpperBoundMs": 521,
+      "actionToFiguresReadyUpperBoundMs": 537,
+      "cohort": "A70",
+      "source": "chromium-390-boss-a70-es-diagon-alley-authority.json"
+    },
+    {
+      "sha": "135a4fe98a12a8efe71c166e61cda92c4bc342b8",
+      "engine": "chromium",
+      "viewport": {
+        "width": 865,
+        "height": 1079
+      },
+      "physicalDevice": false,
+      "fixture": false,
+      "pageErrors": [],
+      "battleUnchanged": true,
+      "reloadExact": true,
+      "selectionDidNotConsume": true,
+      "actionToDomUsableUpperBoundMs": 528,
+      "actionToFiguresReadyUpperBoundMs": 530,
+      "cohort": "A70",
+      "source": "chromium-865-boss-a70-en-arcana-authority.json"
+    },
+    {
+      "sha": "135a4fe98a12a8efe71c166e61cda92c4bc342b8",
+      "engine": "chromium",
+      "viewport": {
+        "width": 865,
+        "height": 1079
+      },
+      "physicalDevice": false,
+      "fixture": false,
+      "pageErrors": [],
+      "battleUnchanged": true,
+      "reloadExact": true,
+      "selectionDidNotConsume": true,
+      "actionToDomUsableUpperBoundMs": 599,
+      "actionToFiguresReadyUpperBoundMs": 622,
+      "cohort": "A70",
+      "source": "chromium-865-boss-a70-en-diagon-alley-authority.json"
+    },
+    {
+      "sha": "135a4fe98a12a8efe71c166e61cda92c4bc342b8",
+      "engine": "chromium",
+      "viewport": {
+        "width": 865,
+        "height": 1079
+      },
+      "physicalDevice": false,
+      "fixture": false,
+      "pageErrors": [],
+      "battleUnchanged": true,
+      "reloadExact": true,
+      "selectionDidNotConsume": true,
+      "actionToDomUsableUpperBoundMs": 551,
+      "actionToFiguresReadyUpperBoundMs": 553,
+      "cohort": "A70",
+      "source": "chromium-865-boss-a70-es-arcana-authority.json"
+    },
+    {
+      "sha": "135a4fe98a12a8efe71c166e61cda92c4bc342b8",
+      "engine": "chromium",
+      "viewport": {
+        "width": 865,
+        "height": 1079
+      },
+      "physicalDevice": false,
+      "fixture": false,
+      "pageErrors": [],
+      "battleUnchanged": true,
+      "reloadExact": true,
+      "selectionDidNotConsume": true,
+      "actionToDomUsableUpperBoundMs": 609,
+      "actionToFiguresReadyUpperBoundMs": 624,
+      "cohort": "A70",
+      "source": "chromium-865-boss-a70-es-diagon-alley-authority.json"
+    },
+    {
+      "sha": "135a4fe98a12a8efe71c166e61cda92c4bc342b8",
+      "engine": "webkit",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "physicalDevice": false,
+      "fixture": false,
+      "pageErrors": [],
+      "battleUnchanged": true,
+      "reloadExact": true,
+      "selectionDidNotConsume": true,
+      "actionToDomUsableUpperBoundMs": 1258,
+      "actionToFiguresReadyUpperBoundMs": 1260,
+      "cohort": "A70",
+      "source": "webkit-1280-boss-a70-en-arcana-authority.json"
+    },
+    {
+      "sha": "135a4fe98a12a8efe71c166e61cda92c4bc342b8",
+      "engine": "webkit",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "physicalDevice": false,
+      "fixture": false,
+      "pageErrors": [],
+      "battleUnchanged": true,
+      "reloadExact": true,
+      "selectionDidNotConsume": true,
+      "actionToDomUsableUpperBoundMs": 1028,
+      "actionToFiguresReadyUpperBoundMs": 1264,
+      "cohort": "A70",
+      "source": "webkit-1280-boss-a70-en-diagon-alley-authority.json"
+    },
+    {
+      "sha": "135a4fe98a12a8efe71c166e61cda92c4bc342b8",
+      "engine": "webkit",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "physicalDevice": false,
+      "fixture": false,
+      "pageErrors": [],
+      "battleUnchanged": true,
+      "reloadExact": true,
+      "selectionDidNotConsume": true,
+      "actionToDomUsableUpperBoundMs": 766,
+      "actionToFiguresReadyUpperBoundMs": 769,
+      "cohort": "A70",
+      "source": "webkit-1280-boss-a70-es-arcana-authority.json"
+    },
+    {
+      "sha": "135a4fe98a12a8efe71c166e61cda92c4bc342b8",
+      "engine": "webkit",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "physicalDevice": false,
+      "fixture": false,
+      "pageErrors": [],
+      "battleUnchanged": true,
+      "reloadExact": true,
+      "selectionDidNotConsume": true,
+      "actionToDomUsableUpperBoundMs": 2082,
+      "actionToFiguresReadyUpperBoundMs": 2087,
+      "cohort": "A70",
+      "source": "webkit-1280-boss-a70-es-diagon-alley-authority.json"
+    },
+    {
+      "sha": "135a4fe98a12a8efe71c166e61cda92c4bc342b8",
+      "engine": "webkit",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "physicalDevice": false,
+      "fixture": false,
+      "pageErrors": [],
+      "battleUnchanged": true,
+      "reloadExact": true,
+      "selectionDidNotConsume": true,
+      "actionToDomUsableUpperBoundMs": 555,
+      "actionToFiguresReadyUpperBoundMs": 557,
+      "cohort": "A70",
+      "source": "webkit-390-boss-a70-en-arcana-authority.json"
+    },
+    {
+      "sha": "135a4fe98a12a8efe71c166e61cda92c4bc342b8",
+      "engine": "webkit",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "physicalDevice": false,
+      "fixture": false,
+      "pageErrors": [],
+      "battleUnchanged": true,
+      "reloadExact": true,
+      "selectionDidNotConsume": true,
+      "actionToDomUsableUpperBoundMs": 642,
+      "actionToFiguresReadyUpperBoundMs": 645,
+      "cohort": "A70",
+      "source": "webkit-390-boss-a70-en-diagon-alley-authority.json"
+    },
+    {
+      "sha": "135a4fe98a12a8efe71c166e61cda92c4bc342b8",
+      "engine": "webkit",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "physicalDevice": false,
+      "fixture": false,
+      "pageErrors": [],
+      "battleUnchanged": true,
+      "reloadExact": true,
+      "selectionDidNotConsume": true,
+      "actionToDomUsableUpperBoundMs": 746,
+      "actionToFiguresReadyUpperBoundMs": 749,
+      "cohort": "A70",
+      "source": "webkit-390-boss-a70-es-arcana-authority.json"
+    },
+    {
+      "sha": "135a4fe98a12a8efe71c166e61cda92c4bc342b8",
+      "engine": "webkit",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "physicalDevice": false,
+      "fixture": false,
+      "pageErrors": [],
+      "battleUnchanged": true,
+      "reloadExact": true,
+      "selectionDidNotConsume": true,
+      "actionToDomUsableUpperBoundMs": 780,
+      "actionToFiguresReadyUpperBoundMs": 1067,
+      "cohort": "A70",
+      "source": "webkit-390-boss-a70-es-diagon-alley-authority.json"
+    },
+    {
+      "sha": "135a4fe98a12a8efe71c166e61cda92c4bc342b8",
+      "engine": "webkit",
+      "viewport": {
+        "width": 865,
+        "height": 1079
+      },
+      "physicalDevice": false,
+      "fixture": false,
+      "pageErrors": [],
+      "battleUnchanged": true,
+      "reloadExact": true,
+      "selectionDidNotConsume": true,
+      "actionToDomUsableUpperBoundMs": 785,
+      "actionToFiguresReadyUpperBoundMs": 968,
+      "cohort": "A70",
+      "source": "webkit-865-boss-a70-en-arcana-authority.json"
+    },
+    {
+      "sha": "135a4fe98a12a8efe71c166e61cda92c4bc342b8",
+      "engine": "webkit",
+      "viewport": {
+        "width": 865,
+        "height": 1079
+      },
+      "physicalDevice": false,
+      "fixture": false,
+      "pageErrors": [],
+      "battleUnchanged": true,
+      "reloadExact": true,
+      "selectionDidNotConsume": true,
+      "actionToDomUsableUpperBoundMs": 1235,
+      "actionToFiguresReadyUpperBoundMs": 1237,
+      "cohort": "A70",
+      "source": "webkit-865-boss-a70-en-diagon-alley-authority.json"
+    },
+    {
+      "sha": "135a4fe98a12a8efe71c166e61cda92c4bc342b8",
+      "engine": "webkit",
+      "viewport": {
+        "width": 865,
+        "height": 1079
+      },
+      "physicalDevice": false,
+      "fixture": false,
+      "pageErrors": [],
+      "battleUnchanged": true,
+      "reloadExact": true,
+      "selectionDidNotConsume": true,
+      "actionToDomUsableUpperBoundMs": 1232,
+      "actionToFiguresReadyUpperBoundMs": 1234,
+      "cohort": "A70",
+      "source": "webkit-865-boss-a70-es-arcana-authority.json"
+    },
+    {
+      "sha": "135a4fe98a12a8efe71c166e61cda92c4bc342b8",
+      "engine": "webkit",
+      "viewport": {
+        "width": 865,
+        "height": 1079
+      },
+      "physicalDevice": false,
+      "fixture": false,
+      "pageErrors": [],
+      "battleUnchanged": true,
+      "reloadExact": true,
+      "selectionDidNotConsume": true,
+      "actionToDomUsableUpperBoundMs": 1052,
+      "actionToFiguresReadyUpperBoundMs": 1247,
+      "cohort": "A70",
+      "source": "webkit-865-boss-a70-es-diagon-alley-authority.json"
+    },
+    {
+      "sha": "135a4fe98a12a8efe71c166e61cda92c4bc342b8",
+      "engine": "chromium",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "physicalDevice": false,
+      "fixture": true,
+      "pageErrors": [],
+      "subsequentAuthorityOperations": true,
+      "confirmedReceiptImmutable": true,
+      "queryCancelNoSpend": true,
+      "enlargedPopupChecked": false,
+      "actionToDomUsableUpperBoundMs": 612,
+      "actionToFiguresReadyUpperBoundMs": 695,
+      "cohort": "A71",
+      "source": "a71/chromium-1280-boss-a70-en-arcana-real-journey.json",
+      "fixtureDeclaration": "A71 isolated declared preparation and route; subsequent HTTP operations use real test authority. See versioned spec/fixture."
+    },
+    {
+      "sha": "135a4fe98a12a8efe71c166e61cda92c4bc342b8",
+      "engine": "chromium",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "physicalDevice": false,
+      "fixture": true,
+      "pageErrors": [],
+      "subsequentAuthorityOperations": true,
+      "confirmedReceiptImmutable": true,
+      "queryCancelNoSpend": true,
+      "enlargedPopupChecked": false,
+      "actionToDomUsableUpperBoundMs": 549,
+      "actionToFiguresReadyUpperBoundMs": 707,
+      "cohort": "A71",
+      "source": "a71/chromium-1280-boss-a70-en-diagon-alley-real-journey.json",
+      "fixtureDeclaration": "A71 isolated declared preparation and route; subsequent HTTP operations use real test authority. See versioned spec/fixture."
+    },
+    {
+      "sha": "135a4fe98a12a8efe71c166e61cda92c4bc342b8",
+      "engine": "chromium",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "physicalDevice": false,
+      "fixture": true,
+      "pageErrors": [],
+      "subsequentAuthorityOperations": true,
+      "confirmedReceiptImmutable": true,
+      "queryCancelNoSpend": true,
+      "enlargedPopupChecked": false,
+      "actionToDomUsableUpperBoundMs": 682,
+      "actionToFiguresReadyUpperBoundMs": 689,
+      "cohort": "A71",
+      "source": "a71/chromium-1280-boss-a70-es-arcana-real-journey.json",
+      "fixtureDeclaration": "A71 isolated declared preparation and route; subsequent HTTP operations use real test authority. See versioned spec/fixture."
+    },
+    {
+      "sha": "135a4fe98a12a8efe71c166e61cda92c4bc342b8",
+      "engine": "chromium",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "physicalDevice": false,
+      "fixture": true,
+      "pageErrors": [],
+      "subsequentAuthorityOperations": true,
+      "confirmedReceiptImmutable": true,
+      "queryCancelNoSpend": true,
+      "enlargedPopupChecked": false,
+      "actionToDomUsableUpperBoundMs": 674,
+      "actionToFiguresReadyUpperBoundMs": 699,
+      "cohort": "A71",
+      "source": "a71/chromium-1280-boss-a70-es-diagon-alley-real-journey.json",
+      "fixtureDeclaration": "A71 isolated declared preparation and route; subsequent HTTP operations use real test authority. See versioned spec/fixture."
+    },
+    {
+      "sha": "135a4fe98a12a8efe71c166e61cda92c4bc342b8",
+      "engine": "chromium",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "physicalDevice": false,
+      "fixture": true,
+      "pageErrors": [],
+      "subsequentAuthorityOperations": true,
+      "confirmedReceiptImmutable": true,
+      "queryCancelNoSpend": true,
+      "enlargedPopupChecked": false,
+      "actionToDomUsableUpperBoundMs": 508,
+      "actionToFiguresReadyUpperBoundMs": 523,
+      "cohort": "A71",
+      "source": "a71/chromium-390-boss-a70-en-arcana-real-journey.json",
+      "fixtureDeclaration": "A71 isolated declared preparation and route; subsequent HTTP operations use real test authority. See versioned spec/fixture."
+    },
+    {
+      "sha": "135a4fe98a12a8efe71c166e61cda92c4bc342b8",
+      "engine": "chromium",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "physicalDevice": false,
+      "fixture": true,
+      "pageErrors": [],
+      "subsequentAuthorityOperations": true,
+      "confirmedReceiptImmutable": true,
+      "queryCancelNoSpend": true,
+      "enlargedPopupChecked": false,
+      "actionToDomUsableUpperBoundMs": 478,
+      "actionToFiguresReadyUpperBoundMs": 494,
+      "cohort": "A71",
+      "source": "a71/chromium-390-boss-a70-en-diagon-alley-real-journey.json",
+      "fixtureDeclaration": "A71 isolated declared preparation and route; subsequent HTTP operations use real test authority. See versioned spec/fixture."
+    },
+    {
+      "sha": "135a4fe98a12a8efe71c166e61cda92c4bc342b8",
+      "engine": "chromium",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "physicalDevice": false,
+      "fixture": true,
+      "pageErrors": [],
+      "subsequentAuthorityOperations": true,
+      "confirmedReceiptImmutable": true,
+      "queryCancelNoSpend": true,
+      "enlargedPopupChecked": true,
+      "actionToDomUsableUpperBoundMs": 459,
+      "actionToFiguresReadyUpperBoundMs": 474,
+      "cohort": "A71",
+      "source": "a71/chromium-390-boss-a70-es-arcana-real-journey.json",
+      "fixtureDeclaration": "A71 isolated declared preparation and route; subsequent HTTP operations use real test authority. See versioned spec/fixture."
+    },
+    {
+      "sha": "135a4fe98a12a8efe71c166e61cda92c4bc342b8",
+      "engine": "chromium",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "physicalDevice": false,
+      "fixture": true,
+      "pageErrors": [],
+      "subsequentAuthorityOperations": true,
+      "confirmedReceiptImmutable": true,
+      "queryCancelNoSpend": true,
+      "enlargedPopupChecked": true,
+      "actionToDomUsableUpperBoundMs": 488,
+      "actionToFiguresReadyUpperBoundMs": 509,
+      "cohort": "A71",
+      "source": "a71/chromium-390-boss-a70-es-diagon-alley-real-journey.json",
+      "fixtureDeclaration": "A71 isolated declared preparation and route; subsequent HTTP operations use real test authority. See versioned spec/fixture."
+    },
+    {
+      "sha": "135a4fe98a12a8efe71c166e61cda92c4bc342b8",
+      "engine": "chromium",
+      "viewport": {
+        "width": 865,
+        "height": 1079
+      },
+      "physicalDevice": false,
+      "fixture": true,
+      "pageErrors": [],
+      "subsequentAuthorityOperations": true,
+      "confirmedReceiptImmutable": true,
+      "queryCancelNoSpend": true,
+      "enlargedPopupChecked": false,
+      "actionToDomUsableUpperBoundMs": 665,
+      "actionToFiguresReadyUpperBoundMs": 667,
+      "cohort": "A71",
+      "source": "a71/chromium-865-boss-a70-en-arcana-real-journey.json",
+      "fixtureDeclaration": "A71 isolated declared preparation and route; subsequent HTTP operations use real test authority. See versioned spec/fixture."
+    },
+    {
+      "sha": "135a4fe98a12a8efe71c166e61cda92c4bc342b8",
+      "engine": "chromium",
+      "viewport": {
+        "width": 865,
+        "height": 1079
+      },
+      "physicalDevice": false,
+      "fixture": true,
+      "pageErrors": [],
+      "subsequentAuthorityOperations": true,
+      "confirmedReceiptImmutable": true,
+      "queryCancelNoSpend": true,
+      "enlargedPopupChecked": false,
+      "actionToDomUsableUpperBoundMs": 696,
+      "actionToFiguresReadyUpperBoundMs": 702,
+      "cohort": "A71",
+      "source": "a71/chromium-865-boss-a70-en-diagon-alley-real-journey.json",
+      "fixtureDeclaration": "A71 isolated declared preparation and route; subsequent HTTP operations use real test authority. See versioned spec/fixture."
+    },
+    {
+      "sha": "135a4fe98a12a8efe71c166e61cda92c4bc342b8",
+      "engine": "chromium",
+      "viewport": {
+        "width": 865,
+        "height": 1079
+      },
+      "physicalDevice": false,
+      "fixture": true,
+      "pageErrors": [],
+      "subsequentAuthorityOperations": true,
+      "confirmedReceiptImmutable": true,
+      "queryCancelNoSpend": true,
+      "enlargedPopupChecked": false,
+      "actionToDomUsableUpperBoundMs": 676,
+      "actionToFiguresReadyUpperBoundMs": 684,
+      "cohort": "A71",
+      "source": "a71/chromium-865-boss-a70-es-arcana-real-journey.json",
+      "fixtureDeclaration": "A71 isolated declared preparation and route; subsequent HTTP operations use real test authority. See versioned spec/fixture."
+    },
+    {
+      "sha": "135a4fe98a12a8efe71c166e61cda92c4bc342b8",
+      "engine": "chromium",
+      "viewport": {
+        "width": 865,
+        "height": 1079
+      },
+      "physicalDevice": false,
+      "fixture": true,
+      "pageErrors": [],
+      "subsequentAuthorityOperations": true,
+      "confirmedReceiptImmutable": true,
+      "queryCancelNoSpend": true,
+      "enlargedPopupChecked": false,
+      "actionToDomUsableUpperBoundMs": 682,
+      "actionToFiguresReadyUpperBoundMs": 685,
+      "cohort": "A71",
+      "source": "a71/chromium-865-boss-a70-es-diagon-alley-real-journey.json",
+      "fixtureDeclaration": "A71 isolated declared preparation and route; subsequent HTTP operations use real test authority. See versioned spec/fixture."
+    },
+    {
+      "sha": "135a4fe98a12a8efe71c166e61cda92c4bc342b8",
+      "engine": "webkit",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "physicalDevice": false,
+      "fixture": true,
+      "pageErrors": [],
+      "subsequentAuthorityOperations": true,
+      "confirmedReceiptImmutable": true,
+      "queryCancelNoSpend": true,
+      "enlargedPopupChecked": false,
+      "actionToDomUsableUpperBoundMs": 973,
+      "actionToFiguresReadyUpperBoundMs": 1103,
+      "cohort": "A71",
+      "source": "a71/webkit-1280-boss-a70-en-arcana-real-journey.json",
+      "fixtureDeclaration": "A71 isolated declared preparation and route; subsequent HTTP operations use real test authority. See versioned spec/fixture."
+    },
+    {
+      "sha": "135a4fe98a12a8efe71c166e61cda92c4bc342b8",
+      "engine": "webkit",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "physicalDevice": false,
+      "fixture": true,
+      "pageErrors": [],
+      "subsequentAuthorityOperations": true,
+      "confirmedReceiptImmutable": true,
+      "queryCancelNoSpend": true,
+      "enlargedPopupChecked": false,
+      "actionToDomUsableUpperBoundMs": 789,
+      "actionToFiguresReadyUpperBoundMs": 1020,
+      "cohort": "A71",
+      "source": "a71/webkit-1280-boss-a70-en-diagon-alley-real-journey.json",
+      "fixtureDeclaration": "A71 isolated declared preparation and route; subsequent HTTP operations use real test authority. See versioned spec/fixture."
+    },
+    {
+      "sha": "135a4fe98a12a8efe71c166e61cda92c4bc342b8",
+      "engine": "webkit",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "physicalDevice": false,
+      "fixture": true,
+      "pageErrors": [],
+      "subsequentAuthorityOperations": true,
+      "confirmedReceiptImmutable": true,
+      "queryCancelNoSpend": true,
+      "enlargedPopupChecked": false,
+      "actionToDomUsableUpperBoundMs": 1502,
+      "actionToFiguresReadyUpperBoundMs": 1505,
+      "cohort": "A71",
+      "source": "a71/webkit-1280-boss-a70-es-arcana-real-journey.json",
+      "fixtureDeclaration": "A71 isolated declared preparation and route; subsequent HTTP operations use real test authority. See versioned spec/fixture."
+    },
+    {
+      "sha": "135a4fe98a12a8efe71c166e61cda92c4bc342b8",
+      "engine": "webkit",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "physicalDevice": false,
+      "fixture": true,
+      "pageErrors": [],
+      "subsequentAuthorityOperations": true,
+      "confirmedReceiptImmutable": true,
+      "queryCancelNoSpend": true,
+      "enlargedPopupChecked": false,
+      "actionToDomUsableUpperBoundMs": 1352,
+      "actionToFiguresReadyUpperBoundMs": 1355,
+      "cohort": "A71",
+      "source": "a71/webkit-1280-boss-a70-es-diagon-alley-real-journey.json",
+      "fixtureDeclaration": "A71 isolated declared preparation and route; subsequent HTTP operations use real test authority. See versioned spec/fixture."
+    },
+    {
+      "sha": "135a4fe98a12a8efe71c166e61cda92c4bc342b8",
+      "engine": "webkit",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "physicalDevice": false,
+      "fixture": true,
+      "pageErrors": [],
+      "subsequentAuthorityOperations": true,
+      "confirmedReceiptImmutable": true,
+      "queryCancelNoSpend": true,
+      "enlargedPopupChecked": false,
+      "actionToDomUsableUpperBoundMs": 684,
+      "actionToFiguresReadyUpperBoundMs": 895,
+      "cohort": "A71",
+      "source": "a71/webkit-390-boss-a70-en-arcana-real-journey.json",
+      "fixtureDeclaration": "A71 isolated declared preparation and route; subsequent HTTP operations use real test authority. See versioned spec/fixture."
+    },
+    {
+      "sha": "135a4fe98a12a8efe71c166e61cda92c4bc342b8",
+      "engine": "webkit",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "physicalDevice": false,
+      "fixture": true,
+      "pageErrors": [],
+      "subsequentAuthorityOperations": true,
+      "confirmedReceiptImmutable": true,
+      "queryCancelNoSpend": true,
+      "enlargedPopupChecked": false,
+      "actionToDomUsableUpperBoundMs": 695,
+      "actionToFiguresReadyUpperBoundMs": 796,
+      "cohort": "A71",
+      "source": "a71/webkit-390-boss-a70-en-diagon-alley-real-journey.json",
+      "fixtureDeclaration": "A71 isolated declared preparation and route; subsequent HTTP operations use real test authority. See versioned spec/fixture."
+    },
+    {
+      "sha": "135a4fe98a12a8efe71c166e61cda92c4bc342b8",
+      "engine": "webkit",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "physicalDevice": false,
+      "fixture": true,
+      "pageErrors": [],
+      "subsequentAuthorityOperations": true,
+      "confirmedReceiptImmutable": true,
+      "queryCancelNoSpend": true,
+      "enlargedPopupChecked": true,
+      "actionToDomUsableUpperBoundMs": 1040,
+      "actionToFiguresReadyUpperBoundMs": 1042,
+      "cohort": "A71",
+      "source": "a71/webkit-390-boss-a70-es-arcana-real-journey.json",
+      "fixtureDeclaration": "A71 isolated declared preparation and route; subsequent HTTP operations use real test authority. See versioned spec/fixture."
+    },
+    {
+      "sha": "135a4fe98a12a8efe71c166e61cda92c4bc342b8",
+      "engine": "webkit",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "physicalDevice": false,
+      "fixture": true,
+      "pageErrors": [],
+      "subsequentAuthorityOperations": true,
+      "confirmedReceiptImmutable": true,
+      "queryCancelNoSpend": true,
+      "enlargedPopupChecked": true,
+      "actionToDomUsableUpperBoundMs": 690,
+      "actionToFiguresReadyUpperBoundMs": 790,
+      "cohort": "A71",
+      "source": "a71/webkit-390-boss-a70-es-diagon-alley-real-journey.json",
+      "fixtureDeclaration": "A71 isolated declared preparation and route; subsequent HTTP operations use real test authority. See versioned spec/fixture."
+    },
+    {
+      "sha": "135a4fe98a12a8efe71c166e61cda92c4bc342b8",
+      "engine": "webkit",
+      "viewport": {
+        "width": 865,
+        "height": 1079
+      },
+      "physicalDevice": false,
+      "fixture": true,
+      "pageErrors": [],
+      "subsequentAuthorityOperations": true,
+      "confirmedReceiptImmutable": true,
+      "queryCancelNoSpend": true,
+      "enlargedPopupChecked": false,
+      "actionToDomUsableUpperBoundMs": 1432,
+      "actionToFiguresReadyUpperBoundMs": 1434,
+      "cohort": "A71",
+      "source": "a71/webkit-865-boss-a70-en-arcana-real-journey.json",
+      "fixtureDeclaration": "A71 isolated declared preparation and route; subsequent HTTP operations use real test authority. See versioned spec/fixture."
+    },
+    {
+      "sha": "135a4fe98a12a8efe71c166e61cda92c4bc342b8",
+      "engine": "webkit",
+      "viewport": {
+        "width": 865,
+        "height": 1079
+      },
+      "physicalDevice": false,
+      "fixture": true,
+      "pageErrors": [],
+      "subsequentAuthorityOperations": true,
+      "confirmedReceiptImmutable": true,
+      "queryCancelNoSpend": true,
+      "enlargedPopupChecked": false,
+      "actionToDomUsableUpperBoundMs": 843,
+      "actionToFiguresReadyUpperBoundMs": 1039,
+      "cohort": "A71",
+      "source": "a71/webkit-865-boss-a70-en-diagon-alley-real-journey.json",
+      "fixtureDeclaration": "A71 isolated declared preparation and route; subsequent HTTP operations use real test authority. See versioned spec/fixture."
+    },
+    {
+      "sha": "135a4fe98a12a8efe71c166e61cda92c4bc342b8",
+      "engine": "webkit",
+      "viewport": {
+        "width": 865,
+        "height": 1079
+      },
+      "physicalDevice": false,
+      "fixture": true,
+      "pageErrors": [],
+      "subsequentAuthorityOperations": true,
+      "confirmedReceiptImmutable": true,
+      "queryCancelNoSpend": true,
+      "enlargedPopupChecked": false,
+      "actionToDomUsableUpperBoundMs": 952,
+      "actionToFiguresReadyUpperBoundMs": 1151,
+      "cohort": "A71",
+      "source": "a71/webkit-865-boss-a70-es-arcana-real-journey.json",
+      "fixtureDeclaration": "A71 isolated declared preparation and route; subsequent HTTP operations use real test authority. See versioned spec/fixture."
+    },
+    {
+      "sha": "135a4fe98a12a8efe71c166e61cda92c4bc342b8",
+      "engine": "webkit",
+      "viewport": {
+        "width": 865,
+        "height": 1079
+      },
+      "physicalDevice": false,
+      "fixture": true,
+      "pageErrors": [],
+      "subsequentAuthorityOperations": true,
+      "confirmedReceiptImmutable": true,
+      "queryCancelNoSpend": true,
+      "enlargedPopupChecked": false,
+      "actionToDomUsableUpperBoundMs": 1294,
+      "actionToFiguresReadyUpperBoundMs": 1296,
+      "cohort": "A71",
+      "source": "a71/webkit-865-boss-a70-es-diagon-alley-real-journey.json",
+      "fixtureDeclaration": "A71 isolated declared preparation and route; subsequent HTTP operations use real test authority. See versioned spec/fixture."
+    }
+  ]
+}

@@ -1,0 +1,106 @@
+{
+  "sha": "135a4fe98a12a8efe71c166e61cda92c4bc342b8",
+  "fixture": true,
+  "count": 4,
+  "lang": "en",
+  "pack": "arcana",
+  "coordinateSample": "single synchronous layout read; no animation wait",
+  "geometry": [
+    {
+      "selector": ".node-team-prepare",
+      "bottom": 672.9925537109375,
+      "footerTop": 700.4925537109375,
+      "gap": 27.5
+    },
+    {
+      "selector": ".node-bean-preparation > summary",
+      "bottom": 674.9925537109375,
+      "footerTop": 700.4925537109375,
+      "gap": 25.5
+    }
+  ],
+  "headerGeometry": [
+    {
+      "selector": ".boss-prelude-identity h4",
+      "box": {
+        "x": 77,
+        "y": 76.98220825195312,
+        "width": 236,
+        "height": 22,
+        "top": 76.98220825195312,
+        "right": 313,
+        "bottom": 98.98220825195312,
+        "left": 77
+      },
+      "settings": {
+        "x": 318,
+        "y": 76.98220825195312,
+        "width": 44,
+        "height": 44,
+        "top": 76.98220825195312,
+        "right": 362,
+        "bottom": 120.98220825195312,
+        "left": 318
+      },
+      "clear": true
+    },
+    {
+      "selector": ".boss-roster-count",
+      "box": {
+        "x": 171.34375,
+        "y": 100.27908325195312,
+        "width": 76.734375,
+        "height": 13,
+        "top": 100.27908325195312,
+        "right": 248.078125,
+        "bottom": 113.27908325195312,
+        "left": 171.34375
+      },
+      "settings": {
+        "x": 318,
+        "y": 76.98220825195312,
+        "width": 44,
+        "height": 44,
+        "top": 76.98220825195312,
+        "right": 362,
+        "bottom": 120.98220825195312,
+        "left": 318
+      },
+      "clear": true
+    }
+  ],
+  "rivalNames": [
+    [
+      {
+        "word": "Opponent",
+        "fragments": 1,
+        "box": {
+          "x": 239.3125,
+          "y": 243.76809692382812,
+          "width": 51.375,
+          "height": 12,
+          "top": 243.76809692382812,
+          "right": 290.6875,
+          "bottom": 255.76809692382812,
+          "left": 239.3125
+        }
+      }
+    ],
+    [
+      {
+        "word": "Opponent",
+        "fragments": 1,
+        "box": {
+          "x": 303.3125,
+          "y": 243.76809692382812,
+          "width": 51.375,
+          "height": 12,
+          "top": 243.76809692382812,
+          "right": 354.6875,
+          "bottom": 255.76809692382812,
+          "left": 303.3125
+        }
+      }
+    ]
+  ]
+}

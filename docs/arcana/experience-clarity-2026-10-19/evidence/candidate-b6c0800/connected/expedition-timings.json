@@ -1,0 +1,516 @@
+{
+  "run": 39353793256,
+  "head": "b6c08000267a28d1851318fbcfdfeb780e459fb9",
+  "checkout": "135a4fe98a12a8efe71c166e61cda92c4bc342b8",
+  "redaction": "Only timing/geometry/public fixture flags retained; no complete run, seed, inventory, identity or operation key. Raw CI artifact 12235448055 retains original test provenance.",
+  "samples": [
+    {
+      "sha": "135a4fe98a12a8efe71c166e61cda92c4bc342b8",
+      "engine": "chromium",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "physicalDevice": false,
+      "fixture": true,
+      "pageErrors": [],
+      "cache": "Fresh Playwright context, service workers blocked; origin/process/OS caches not purged. Not a cold-machine claim.",
+      "entryUsableFromNavigationMs": 313.60000000009313,
+      "source": "a73/en-arcana-expedition.json",
+      "fixtureDeclaration": "A73 isolated declared preparation; subsequent HTTP operations use real test authority. See versioned spec/fixture.",
+      "steps": [
+        {
+          "name": "entry-to-preparation",
+          "clickAt": 521.5,
+          "usableAt": 621.9000000001397,
+          "actionToUsableUpperBoundMs": 100.4000000001397
+        },
+        {
+          "name": "first-expedition-to-map",
+          "clickAt": 739.2000000001863,
+          "usableAt": 894.9000000001397,
+          "actionToUsableUpperBoundMs": 155.69999999995343,
+          "responseObservedAt": 810.9000000001397,
+          "actionToResponseObservedUpperBoundMs": 71.69999999995343,
+          "resourceResponseEnd": 791.4000000001397,
+          "actionToResponseEndMs": 52.199999999953434
+        },
+        {
+          "name": "first-node-to-preparation",
+          "clickAt": 4400.40000000014,
+          "usableAt": 4473.800000000047,
+          "actionToUsableUpperBoundMs": 73.39999999990687
+        },
+        {
+          "name": "first-combat-confirm-to-arena",
+          "clickAt": 4716.700000000186,
+          "usableAt": 5023.300000000047,
+          "actionToUsableUpperBoundMs": 306.5999999998603,
+          "responseObservedAt": 4908.600000000093,
+          "actionToResponseObservedUpperBoundMs": 191.89999999990687,
+          "resourceResponseEnd": 4866,
+          "actionToResponseEndMs": 149.29999999981374,
+          "figuresAt": 5245,
+          "actionToFiguresUpperBoundMs": 528.2999999998137
+        },
+        {
+          "name": "omit-confirmed-replay",
+          "clickAt": 5720.800000000047,
+          "usableAt": 5730.90000000014,
+          "actionToUsableUpperBoundMs": 10.100000000093132
+        },
+        {
+          "name": "first-arena-return-to-map",
+          "clickAt": 5820.300000000047,
+          "usableAt": 5963.200000000186,
+          "actionToUsableUpperBoundMs": 142.9000000001397
+        },
+        {
+          "name": "boss-node-to-preparation",
+          "clickAt": 6913.700000000186,
+          "usableAt": 6993.200000000186,
+          "actionToUsableUpperBoundMs": 79.5
+        },
+        {
+          "name": "boss-confirm-to-arena",
+          "clickAt": 7912.40000000014,
+          "usableAt": 8232.600000000093,
+          "actionToUsableUpperBoundMs": 320.19999999995343,
+          "responseObservedAt": 8127.5,
+          "actionToResponseObservedUpperBoundMs": 215.0999999998603,
+          "resourceResponseEnd": 8080.5,
+          "actionToResponseEndMs": 168.0999999998603,
+          "figuresAt": 8467,
+          "actionToFiguresUpperBoundMs": 554.5999999998603
+        },
+        {
+          "name": "omit-confirmed-replay",
+          "clickAt": 9037.100000000093,
+          "usableAt": 9047.5,
+          "actionToUsableUpperBoundMs": 10.399999999906868
+        },
+        {
+          "name": "boss-return-to-closure",
+          "clickAt": 9153.700000000186,
+          "usableAt": 9187.90000000014,
+          "actionToUsableUpperBoundMs": 34.199999999953434
+        },
+        {
+          "name": "owned-loot-open-to-result",
+          "clickAt": 9239.300000000047,
+          "usableAt": 9413,
+          "actionToUsableUpperBoundMs": 173.69999999995343,
+          "responseObservedAt": 9382.200000000186,
+          "actionToResponseObservedUpperBoundMs": 142.9000000001397,
+          "resourceResponseEnd": 9344.700000000186,
+          "actionToResponseEndMs": 105.4000000001397,
+          "choreographyAt": 12260.600000000093,
+          "actionToChoreographyUpperBoundMs": 3021.3000000000466
+        },
+        {
+          "name": "loot-return-to-closure",
+          "clickAt": 12336.90000000014,
+          "usableAt": 12351.90000000014,
+          "actionToUsableUpperBoundMs": 15
+        },
+        {
+          "name": "closure-to-deliberate-preparation",
+          "clickAt": 12387.5,
+          "usableAt": 12403.90000000014,
+          "actionToUsableUpperBoundMs": 16.4000000001397
+        },
+        {
+          "name": "explicit-next-expedition-to-map",
+          "clickAt": 12638.800000000047,
+          "usableAt": 12923.100000000093,
+          "actionToUsableUpperBoundMs": 284.30000000004657,
+          "responseObservedAt": 12842,
+          "actionToResponseObservedUpperBoundMs": 203.19999999995343,
+          "resourceResponseEnd": 12792.90000000014,
+          "actionToResponseEndMs": 154.10000000009313
+        }
+      ]
+    },
+    {
+      "sha": "135a4fe98a12a8efe71c166e61cda92c4bc342b8",
+      "engine": "chromium",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "physicalDevice": false,
+      "fixture": true,
+      "pageErrors": [],
+      "cache": "Fresh Playwright context, service workers blocked; origin/process/OS caches not purged. Not a cold-machine claim.",
+      "entryUsableFromNavigationMs": 232.60000000009313,
+      "source": "a73/en-diagon-alley-expedition.json",
+      "fixtureDeclaration": "A73 isolated declared preparation; subsequent HTTP operations use real test authority. See versioned spec/fixture.",
+      "steps": [
+        {
+          "name": "entry-to-preparation",
+          "clickAt": 442.80000000004657,
+          "usableAt": 546.3000000000466,
+          "actionToUsableUpperBoundMs": 103.5
+        },
+        {
+          "name": "first-expedition-to-map",
+          "clickAt": 643.3000000000466,
+          "usableAt": 794.1999999999534,
+          "actionToUsableUpperBoundMs": 150.89999999990687,
+          "responseObservedAt": 714.1999999999534,
+          "actionToResponseObservedUpperBoundMs": 70.89999999990687,
+          "resourceResponseEnd": 695.8999999999069,
+          "actionToResponseEndMs": 52.5999999998603
+        },
+        {
+          "name": "first-node-to-preparation",
+          "clickAt": 4285.600000000093,
+          "usableAt": 4349.800000000047,
+          "actionToUsableUpperBoundMs": 64.19999999995343
+        },
+        {
+          "name": "first-combat-confirm-to-arena",
+          "clickAt": 4579.899999999907,
+          "usableAt": 4884.100000000093,
+          "actionToUsableUpperBoundMs": 304.20000000018626,
+          "responseObservedAt": 4763.899999999907,
+          "actionToResponseObservedUpperBoundMs": 184,
+          "resourceResponseEnd": 4726.199999999953,
+          "actionToResponseEndMs": 146.30000000004657,
+          "figuresAt": 5110.100000000093,
+          "actionToFiguresUpperBoundMs": 530.2000000001863
+        },
+        {
+          "name": "omit-confirmed-replay",
+          "clickAt": 5625.199999999953,
+          "usableAt": 5635.699999999953,
+          "actionToUsableUpperBoundMs": 10.5
+        },
+        {
+          "name": "first-arena-return-to-map",
+          "clickAt": 5758.600000000093,
+          "usableAt": 5915.399999999907,
+          "actionToUsableUpperBoundMs": 156.79999999981374
+        },
+        {
+          "name": "boss-node-to-preparation",
+          "clickAt": 6955,
+          "usableAt": 7046.199999999953,
+          "actionToUsableUpperBoundMs": 91.19999999995343
+        },
+        {
+          "name": "boss-confirm-to-arena",
+          "clickAt": 7844.600000000093,
+          "usableAt": 8138.199999999953,
+          "actionToUsableUpperBoundMs": 293.5999999998603,
+          "responseObservedAt": 8069.800000000047,
+          "actionToResponseObservedUpperBoundMs": 225.19999999995343,
+          "resourceResponseEnd": 8028.5,
+          "actionToResponseEndMs": 183.89999999990687,
+          "figuresAt": 8481.800000000047,
+          "actionToFiguresUpperBoundMs": 637.1999999999534
+        },
+        {
+          "name": "omit-confirmed-replay",
+          "clickAt": 8974.800000000047,
+          "usableAt": 8984.100000000093,
+          "actionToUsableUpperBoundMs": 9.300000000046566
+        },
+        {
+          "name": "boss-return-to-closure",
+          "clickAt": 9093.199999999953,
+          "usableAt": 9128.600000000093,
+          "actionToUsableUpperBoundMs": 35.4000000001397
+        },
+        {
+          "name": "owned-loot-open-to-result",
+          "clickAt": 9192.300000000047,
+          "usableAt": 9385.300000000047,
+          "actionToUsableUpperBoundMs": 193,
+          "responseObservedAt": 9346.399999999907,
+          "actionToResponseObservedUpperBoundMs": 154.0999999998603,
+          "resourceResponseEnd": 9306.5,
+          "actionToResponseEndMs": 114.19999999995343,
+          "choreographyAt": 12755.399999999907,
+          "actionToChoreographyUpperBoundMs": 3563.0999999998603
+        },
+        {
+          "name": "loot-return-to-closure",
+          "clickAt": 12826.5,
+          "usableAt": 12844.699999999953,
+          "actionToUsableUpperBoundMs": 18.199999999953434
+        },
+        {
+          "name": "closure-to-deliberate-preparation",
+          "clickAt": 12891.800000000047,
+          "usableAt": 12908.800000000047,
+          "actionToUsableUpperBoundMs": 17
+        },
+        {
+          "name": "explicit-next-expedition-to-map",
+          "clickAt": 13175.899999999907,
+          "usableAt": 13420.199999999953,
+          "actionToUsableUpperBoundMs": 244.30000000004657,
+          "responseObservedAt": 13353.199999999953,
+          "actionToResponseObservedUpperBoundMs": 177.30000000004657,
+          "resourceResponseEnd": 13312.100000000093,
+          "actionToResponseEndMs": 136.20000000018626
+        }
+      ]
+    },
+    {
+      "sha": "135a4fe98a12a8efe71c166e61cda92c4bc342b8",
+      "engine": "chromium",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "physicalDevice": false,
+      "fixture": true,
+      "pageErrors": [],
+      "cache": "Fresh Playwright context, service workers blocked; origin/process/OS caches not purged. Not a cold-machine claim.",
+      "entryUsableFromNavigationMs": 295.19999999995343,
+      "source": "a73/es-arcana-expedition.json",
+      "fixtureDeclaration": "A73 isolated declared preparation; subsequent HTTP operations use real test authority. See versioned spec/fixture.",
+      "steps": [
+        {
+          "name": "entry-to-preparation",
+          "clickAt": 330.60000000009313,
+          "usableAt": 441,
+          "actionToUsableUpperBoundMs": 110.39999999990687
+        },
+        {
+          "name": "first-expedition-to-map",
+          "clickAt": 563.8000000000466,
+          "usableAt": 741.3000000000466,
+          "actionToUsableUpperBoundMs": 177.5,
+          "responseObservedAt": 652.6999999999534,
+          "actionToResponseObservedUpperBoundMs": 88.89999999990687,
+          "resourceResponseEnd": 626.6000000000931,
+          "actionToResponseEndMs": 62.800000000046566
+        },
+        {
+          "name": "first-node-to-preparation",
+          "clickAt": 4197.5,
+          "usableAt": 4262.699999999953,
+          "actionToUsableUpperBoundMs": 65.19999999995343
+        },
+        {
+          "name": "first-combat-confirm-to-arena",
+          "clickAt": 4504.800000000047,
+          "usableAt": 4857.600000000093,
+          "actionToUsableUpperBoundMs": 352.80000000004657,
+          "responseObservedAt": 4697,
+          "actionToResponseObservedUpperBoundMs": 192.19999999995343,
+          "resourceResponseEnd": 4661.300000000047,
+          "actionToResponseEndMs": 156.5,
+          "figuresAt": 5049.800000000047,
+          "actionToFiguresUpperBoundMs": 545
+        },
+        {
+          "name": "omit-confirmed-replay",
+          "clickAt": 5528.300000000047,
+          "usableAt": 5538.40000000014,
+          "actionToUsableUpperBoundMs": 10.100000000093132
+        },
+        {
+          "name": "first-arena-return-to-map",
+          "clickAt": 5645.800000000047,
+          "usableAt": 5786.800000000047,
+          "actionToUsableUpperBoundMs": 141
+        },
+        {
+          "name": "boss-node-to-preparation",
+          "clickAt": 6739.40000000014,
+          "usableAt": 6838.800000000047,
+          "actionToUsableUpperBoundMs": 99.39999999990687
+        },
+        {
+          "name": "boss-confirm-to-arena",
+          "clickAt": 7591.5,
+          "usableAt": 7884.40000000014,
+          "actionToUsableUpperBoundMs": 292.9000000001397,
+          "responseObservedAt": 7801.800000000047,
+          "actionToResponseObservedUpperBoundMs": 210.30000000004657,
+          "resourceResponseEnd": 7762.800000000047,
+          "actionToResponseEndMs": 171.30000000004657,
+          "figuresAt": 8135.800000000047,
+          "actionToFiguresUpperBoundMs": 544.3000000000466
+        },
+        {
+          "name": "omit-confirmed-replay",
+          "clickAt": 8645.100000000093,
+          "usableAt": 8656.199999999953,
+          "actionToUsableUpperBoundMs": 11.099999999860302
+        },
+        {
+          "name": "boss-return-to-closure",
+          "clickAt": 8761.90000000014,
+          "usableAt": 8796.199999999953,
+          "actionToUsableUpperBoundMs": 34.299999999813735
+        },
+        {
+          "name": "owned-loot-open-to-result",
+          "clickAt": 8850.40000000014,
+          "usableAt": 9064.300000000047,
+          "actionToUsableUpperBoundMs": 213.89999999990687,
+          "responseObservedAt": 9026.5,
+          "actionToResponseObservedUpperBoundMs": 176.0999999998603,
+          "resourceResponseEnd": 8976.199999999953,
+          "actionToResponseEndMs": 125.79999999981374,
+          "choreographyAt": 12401.100000000093,
+          "actionToChoreographyUpperBoundMs": 3550.6999999999534
+        },
+        {
+          "name": "loot-return-to-closure",
+          "clickAt": 12482,
+          "usableAt": 12509.600000000093,
+          "actionToUsableUpperBoundMs": 27.600000000093132
+        },
+        {
+          "name": "closure-to-deliberate-preparation",
+          "clickAt": 12545.600000000093,
+          "usableAt": 12561.90000000014,
+          "actionToUsableUpperBoundMs": 16.300000000046566
+        },
+        {
+          "name": "explicit-next-expedition-to-map",
+          "clickAt": 12813.600000000093,
+          "usableAt": 13087.300000000047,
+          "actionToUsableUpperBoundMs": 273.69999999995343,
+          "responseObservedAt": 13004.300000000047,
+          "actionToResponseObservedUpperBoundMs": 190.69999999995343,
+          "resourceResponseEnd": 12953,
+          "actionToResponseEndMs": 139.39999999990687
+        }
+      ]
+    },
+    {
+      "sha": "135a4fe98a12a8efe71c166e61cda92c4bc342b8",
+      "engine": "chromium",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "physicalDevice": false,
+      "fixture": true,
+      "pageErrors": [],
+      "cache": "Fresh Playwright context, service workers blocked; origin/process/OS caches not purged. Not a cold-machine claim.",
+      "entryUsableFromNavigationMs": 290.69999999995343,
+      "source": "a73/es-diagon-alley-expedition.json",
+      "fixtureDeclaration": "A73 isolated declared preparation; subsequent HTTP operations use real test authority. See versioned spec/fixture.",
+      "steps": [
+        {
+          "name": "entry-to-preparation",
+          "clickAt": 327.39999999990687,
+          "usableAt": 447.0999999998603,
+          "actionToUsableUpperBoundMs": 119.69999999995343
+        },
+        {
+          "name": "first-expedition-to-map",
+          "clickAt": 543.6999999999534,
+          "usableAt": 714.3999999999069,
+          "actionToUsableUpperBoundMs": 170.69999999995343,
+          "responseObservedAt": 625.1999999999534,
+          "actionToResponseObservedUpperBoundMs": 81.5,
+          "resourceResponseEnd": 605.5,
+          "actionToResponseEndMs": 61.800000000046566
+        },
+        {
+          "name": "first-node-to-preparation",
+          "clickAt": 4285,
+          "usableAt": 4342.5,
+          "actionToUsableUpperBoundMs": 57.5
+        },
+        {
+          "name": "first-combat-confirm-to-arena",
+          "clickAt": 4577.59999999986,
+          "usableAt": 4890,
+          "actionToUsableUpperBoundMs": 312.4000000001397,
+          "responseObservedAt": 4754.799999999814,
+          "actionToResponseObservedUpperBoundMs": 177.19999999995343,
+          "resourceResponseEnd": 4719.699999999953,
+          "actionToResponseEndMs": 142.10000000009313,
+          "figuresAt": 5120.5,
+          "actionToFiguresUpperBoundMs": 542.9000000001397
+        },
+        {
+          "name": "omit-confirmed-replay",
+          "clickAt": 5609,
+          "usableAt": 5619.59999999986,
+          "actionToUsableUpperBoundMs": 10.599999999860302
+        },
+        {
+          "name": "first-arena-return-to-map",
+          "clickAt": 5726.699999999953,
+          "usableAt": 5887,
+          "actionToUsableUpperBoundMs": 160.30000000004657
+        },
+        {
+          "name": "boss-node-to-preparation",
+          "clickAt": 6885.59999999986,
+          "usableAt": 7022.399999999907,
+          "actionToUsableUpperBoundMs": 136.80000000004657
+        },
+        {
+          "name": "boss-confirm-to-arena",
+          "clickAt": 7449.799999999814,
+          "usableAt": 7757.5,
+          "actionToUsableUpperBoundMs": 307.70000000018626,
+          "responseObservedAt": 7630.399999999907,
+          "actionToResponseObservedUpperBoundMs": 180.60000000009313,
+          "resourceResponseEnd": 7593.09999999986,
+          "actionToResponseEndMs": 143.30000000004657,
+          "figuresAt": 8047.899999999907,
+          "actionToFiguresUpperBoundMs": 598.1000000000931
+        },
+        {
+          "name": "omit-confirmed-replay",
+          "clickAt": 8509,
+          "usableAt": 8519.09999999986,
+          "actionToUsableUpperBoundMs": 10.099999999860302
+        },
+        {
+          "name": "boss-return-to-closure",
+          "clickAt": 8625.899999999907,
+          "usableAt": 8660,
+          "actionToUsableUpperBoundMs": 34.10000000009313
+        },
+        {
+          "name": "owned-loot-open-to-result",
+          "clickAt": 8711,
+          "usableAt": 8917.5,
+          "actionToUsableUpperBoundMs": 206.5,
+          "responseObservedAt": 8879.09999999986,
+          "actionToResponseObservedUpperBoundMs": 168.0999999998603,
+          "resourceResponseEnd": 8837.899999999907,
+          "actionToResponseEndMs": 126.89999999990687,
+          "choreographyAt": 12290.799999999814,
+          "actionToChoreographyUpperBoundMs": 3579.7999999998137
+        },
+        {
+          "name": "loot-return-to-closure",
+          "clickAt": 12376.199999999953,
+          "usableAt": 12396.399999999907,
+          "actionToUsableUpperBoundMs": 20.199999999953434
+        },
+        {
+          "name": "closure-to-deliberate-preparation",
+          "clickAt": 12426,
+          "usableAt": 12445.09999999986,
+          "actionToUsableUpperBoundMs": 19.0999999998603
+        },
+        {
+          "name": "explicit-next-expedition-to-map",
+          "clickAt": 12726.399999999907,
+          "usableAt": 12948.59999999986,
+          "actionToUsableUpperBoundMs": 222.19999999995343,
+          "responseObservedAt": 12893.09999999986,
+          "actionToResponseObservedUpperBoundMs": 166.69999999995343,
+          "resourceResponseEnd": 12850.199999999953,
+          "actionToResponseEndMs": 123.80000000004657
+        }
+      ]
+    }
+  ]
+}

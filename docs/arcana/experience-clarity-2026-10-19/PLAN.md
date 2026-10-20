@@ -1,12 +1,14 @@
-# Plan vivo A92
+# Plan de cierre A92
 
-- [x] Baseline Git y goal; contrato antes de código.
-- [x] Leer fuentes/skills y confirmar hallazgos actuales.
-- [x] I1: metas/recuperación/errores/fallbacks con pruebas.
-- [x] I2: mapa/gramática/puestos con pruebas y muestra.
-- [x] I3: Cromodex/grageas escalables con pruebas y muestra.
-- [x] Integración, tipos/build/contenido y persistencia real pertinente; cambios posteriores se verifican en su candidato.
-- [ ] Rama/PR, CI Linux del candidato, inspección y correcciones.
-- [ ] Documentación final, SHA/CI/límites y cierre de goal.
+- [x] Baseline Git, contrato previo y goal explícito.
+- [x] Fuentes completas, skills y hallazgos vigentes contrastados.
+- [x] Recorrido1: metas verdaderas, Gringotts y recuperación contextual.
+- [x] Recorrido2: mapa, gramática de atributos y preparación legible.
+- [x] Recorrido3: Cromodex, consulta por niveles y tarro escalable.
+- [x] Defectos demostrados corregidos; fallos y alternativas conservados enQA.
+- [x] Tipos/contenido/build/797unitarias/120PGRedis reales.
+- [x] CI Linux full y regression correctas sobreb6c0800:743browser/345omisiones deliberadas.
+- [x] Evidencia seleccionada inspeccionada, mediciones y límites documentados.
+- [x] Rama/PR13 y cierre documental con equivalencia de código.
 
-Código y pruebas acotadas integrados. Las marcas de implementación no equivalen a aceptación gráfica: CI, inspección y regresiones finales siguen pendientes.
+[Resultados finales](evidence/final-ci-b6c0800.json), [cronología](QA.md), [aceptación](ACCEPTANCE.md). Candidato de producto b6c0800, checkout135a4fe9. Sin merge a main o despliegue. Observación humana y dispositivo físico pendientes; no bloquean esta entrega técnica.

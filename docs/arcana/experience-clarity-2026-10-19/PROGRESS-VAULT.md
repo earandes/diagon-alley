@@ -1,5 +1,7 @@
 # A92 · U01 / U02 · Metas de colección y bóveda
 
+> Actualización del coordinador: los casos propios A92 del candidato6747f81 pasan en CI39323571082 y las imágenes seleccionadas se han inspeccionado. Los apartados inferiores conservan el estado histórico del subrecorrido; el cierre integrado, sus regresiones y límites vigentes se registran en [QA](QA.md), [aceptación](ACCEPTANCE.md) y [galería](GALLERY.md).
+
 19 octubre 2026. Baseline `86d6a92665f63616034a4fcd668c5df6ffe3e322`. Implementación local en la rama del incremento; sin commit, push, navegador o servicios ejecutados por este subencargo. La validación integrada, el SHA probado y CI los registra el coordinador.
 
 ## Evidencia → problema → cambio → aceptación

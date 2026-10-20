@@ -1,0 +1,56 @@
+[
+  {
+    "path": "src/arcana/domain",
+    "baselineObject": "74fabb514aabd507eb15d269f883acea37972073",
+    "candidateObject": "74fabb514aabd507eb15d269f883acea37972073",
+    "equal": true
+  },
+  {
+    "path": "src/arcana/infrastructure",
+    "baselineObject": "6b40a8780f076592f3841ddf6af1f904267166d5",
+    "candidateObject": "6b40a8780f076592f3841ddf6af1f904267166d5",
+    "equal": true
+  },
+  {
+    "path": "src/arcana/application/game.ts",
+    "baselineObject": "471628bc3fc7102bdc1e3b9e0e3d1f2af2bb504e",
+    "candidateObject": "471628bc3fc7102bdc1e3b9e0e3d1f2af2bb504e",
+    "equal": true
+  },
+  {
+    "path": "src/arcana/application/run-use-cases.ts",
+    "baselineObject": "7c2c75a9e5cf2a09277c8410933522cef083a8d4",
+    "candidateObject": "7c2c75a9e5cf2a09277c8410933522cef083a8d4",
+    "equal": true
+  },
+  {
+    "path": "package.json",
+    "baselineObject": "7624c06b3bf5c620b39cb74042a7a0a3467f0823",
+    "candidateObject": "7624c06b3bf5c620b39cb74042a7a0a3467f0823",
+    "equal": true
+  },
+  {
+    "path": "package-lock.json",
+    "baselineObject": "f8d0c9d8aab1a5931825ecd76ccc979dea21862c",
+    "candidateObject": "f8d0c9d8aab1a5931825ecd76ccc979dea21862c",
+    "equal": true
+  },
+  {
+    "path": ".github/workflows/checks.yml",
+    "baselineObject": "71c2eed32a572867c0b8f83905166636ceb43589",
+    "candidateObject": "71c2eed32a572867c0b8f83905166636ceb43589",
+    "equal": true
+  },
+  {
+    "path": "src/arcana/presentation/audio",
+    "baselineObject": "9d13be01aa52d75f9a3b0bba504daec3c1af47c1",
+    "candidateObject": "9d13be01aa52d75f9a3b0bba504daec3c1af47c1",
+    "equal": true
+  },
+  {
+    "path": "src/arcana/presentation/scenes",
+    "baselineObject": "b542fc96857415afae0cba93a198b8c71c69b18f",
+    "candidateObject": "b542fc96857415afae0cba93a198b8c71c69b18f",
+    "equal": true
+  }
+]

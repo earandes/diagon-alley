@@ -1,0 +1,680 @@
+{
+  "run": 39353793256,
+  "head": "b6c08000267a28d1851318fbcfdfeb780e459fb9",
+  "checkout": "135a4fe98a12a8efe71c166e61cda92c4bc342b8",
+  "redaction": "Only timing/geometry/public fixture flags retained; no complete run, seed, inventory, identity or operation key. Raw CI artifact 12235448055 retains original test provenance.",
+  "samples": [
+    {
+      "sha": "135a4fe98a12a8efe71c166e61cda92c4bc342b8",
+      "engine": "chromium",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "physicalDevice": false,
+      "fixture": false,
+      "partyCount": 4,
+      "language": "en",
+      "pack": "arcana",
+      "preparationGeometry": [
+        {
+          "selector": ".node-team-prepare",
+          "bottom": 489.53125,
+          "footerTop": 681.53125,
+          "gap": 192
+        },
+        {
+          "selector": ".node-bean-preparation > summary",
+          "bottom": 653.53125,
+          "footerTop": 681.53125,
+          "gap": 28
+        }
+      ],
+      "source": "chromium-1280-boss-a70-initial-preparation-geometry-en-arcana.json"
+    },
+    {
+      "sha": "135a4fe98a12a8efe71c166e61cda92c4bc342b8",
+      "engine": "chromium",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "physicalDevice": false,
+      "fixture": false,
+      "partyCount": 4,
+      "language": "en",
+      "pack": "diagon-alley",
+      "preparationGeometry": [
+        {
+          "selector": ".node-team-prepare",
+          "bottom": 485.56915283203125,
+          "footerTop": 677.5691528320312,
+          "gap": 192
+        },
+        {
+          "selector": ".node-bean-preparation > summary",
+          "bottom": 649.5691528320312,
+          "footerTop": 677.5691528320312,
+          "gap": 28
+        }
+      ],
+      "source": "chromium-1280-boss-a70-initial-preparation-geometry-en-diagon-alley.json"
+    },
+    {
+      "sha": "135a4fe98a12a8efe71c166e61cda92c4bc342b8",
+      "engine": "chromium",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "physicalDevice": false,
+      "fixture": false,
+      "partyCount": 4,
+      "language": "es",
+      "pack": "arcana",
+      "preparationGeometry": [
+        {
+          "selector": ".node-team-prepare",
+          "bottom": 489.53125,
+          "footerTop": 681.53125,
+          "gap": 192
+        },
+        {
+          "selector": ".node-bean-preparation > summary",
+          "bottom": 653.53125,
+          "footerTop": 681.53125,
+          "gap": 28
+        }
+      ],
+      "source": "chromium-1280-boss-a70-initial-preparation-geometry-es-arcana.json"
+    },
+    {
+      "sha": "135a4fe98a12a8efe71c166e61cda92c4bc342b8",
+      "engine": "chromium",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "physicalDevice": false,
+      "fixture": false,
+      "partyCount": 4,
+      "language": "es",
+      "pack": "diagon-alley",
+      "preparationGeometry": [
+        {
+          "selector": ".node-team-prepare",
+          "bottom": 486.20831298828125,
+          "footerTop": 678.2083129882812,
+          "gap": 192
+        },
+        {
+          "selector": ".node-bean-preparation > summary",
+          "bottom": 650.2083129882812,
+          "footerTop": 678.2083129882812,
+          "gap": 28
+        }
+      ],
+      "source": "chromium-1280-boss-a70-initial-preparation-geometry-es-diagon-alley.json"
+    },
+    {
+      "sha": "135a4fe98a12a8efe71c166e61cda92c4bc342b8",
+      "engine": "chromium",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "physicalDevice": false,
+      "fixture": false,
+      "partyCount": 4,
+      "language": "en",
+      "pack": "arcana",
+      "preparationGeometry": [
+        {
+          "selector": ".node-team-prepare",
+          "bottom": 691.609375,
+          "footerTop": 705.109375,
+          "gap": 13.5
+        },
+        {
+          "selector": ".node-bean-preparation > summary",
+          "bottom": 693.609375,
+          "footerTop": 705.109375,
+          "gap": 11.5
+        }
+      ],
+      "source": "chromium-390-boss-a70-initial-preparation-geometry-en-arcana.json"
+    },
+    {
+      "sha": "135a4fe98a12a8efe71c166e61cda92c4bc342b8",
+      "engine": "chromium",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "physicalDevice": false,
+      "fixture": false,
+      "partyCount": 4,
+      "language": "en",
+      "pack": "diagon-alley",
+      "preparationGeometry": [
+        {
+          "selector": ".node-team-prepare",
+          "bottom": 702.4952392578125,
+          "footerTop": 712.4952392578125,
+          "gap": 10
+        },
+        {
+          "selector": ".node-bean-preparation > summary",
+          "bottom": 698.9952392578125,
+          "footerTop": 712.4952392578125,
+          "gap": 13.5
+        }
+      ],
+      "source": "chromium-390-boss-a70-initial-preparation-geometry-en-diagon-alley.json"
+    },
+    {
+      "sha": "135a4fe98a12a8efe71c166e61cda92c4bc342b8",
+      "engine": "chromium",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "physicalDevice": false,
+      "fixture": false,
+      "partyCount": 4,
+      "language": "es",
+      "pack": "arcana",
+      "preparationGeometry": [
+        {
+          "selector": ".node-team-prepare",
+          "bottom": 691.609375,
+          "footerTop": 705.109375,
+          "gap": 13.5
+        },
+        {
+          "selector": ".node-bean-preparation > summary",
+          "bottom": 693.609375,
+          "footerTop": 705.109375,
+          "gap": 11.5
+        }
+      ],
+      "source": "chromium-390-boss-a70-initial-preparation-geometry-es-arcana.json"
+    },
+    {
+      "sha": "135a4fe98a12a8efe71c166e61cda92c4bc342b8",
+      "engine": "chromium",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "physicalDevice": false,
+      "fixture": false,
+      "partyCount": 4,
+      "language": "es",
+      "pack": "diagon-alley",
+      "preparationGeometry": [
+        {
+          "selector": ".node-team-prepare",
+          "bottom": 701.2024536132812,
+          "footerTop": 711.2024536132812,
+          "gap": 10
+        },
+        {
+          "selector": ".node-bean-preparation > summary",
+          "bottom": 697.7024536132812,
+          "footerTop": 711.2024536132812,
+          "gap": 13.5
+        }
+      ],
+      "source": "chromium-390-boss-a70-initial-preparation-geometry-es-diagon-alley.json"
+    },
+    {
+      "sha": "135a4fe98a12a8efe71c166e61cda92c4bc342b8",
+      "engine": "chromium",
+      "viewport": {
+        "width": 865,
+        "height": 1079
+      },
+      "physicalDevice": false,
+      "fixture": false,
+      "partyCount": 4,
+      "language": "en",
+      "pack": "arcana",
+      "preparationGeometry": [
+        {
+          "selector": ".node-team-prepare",
+          "bottom": 639.15625,
+          "footerTop": 831.15625,
+          "gap": 192
+        },
+        {
+          "selector": ".node-bean-preparation > summary",
+          "bottom": 803.15625,
+          "footerTop": 831.15625,
+          "gap": 28
+        }
+      ],
+      "source": "chromium-865-boss-a70-initial-preparation-geometry-en-arcana.json"
+    },
+    {
+      "sha": "135a4fe98a12a8efe71c166e61cda92c4bc342b8",
+      "engine": "chromium",
+      "viewport": {
+        "width": 865,
+        "height": 1079
+      },
+      "physicalDevice": false,
+      "fixture": false,
+      "partyCount": 4,
+      "language": "en",
+      "pack": "diagon-alley",
+      "preparationGeometry": [
+        {
+          "selector": ".node-team-prepare",
+          "bottom": 637.6822509765625,
+          "footerTop": 829.6822509765625,
+          "gap": 192
+        },
+        {
+          "selector": ".node-bean-preparation > summary",
+          "bottom": 801.6822509765625,
+          "footerTop": 829.6822509765625,
+          "gap": 28
+        }
+      ],
+      "source": "chromium-865-boss-a70-initial-preparation-geometry-en-diagon-alley.json"
+    },
+    {
+      "sha": "135a4fe98a12a8efe71c166e61cda92c4bc342b8",
+      "engine": "chromium",
+      "viewport": {
+        "width": 865,
+        "height": 1079
+      },
+      "physicalDevice": false,
+      "fixture": false,
+      "partyCount": 4,
+      "language": "es",
+      "pack": "arcana",
+      "preparationGeometry": [
+        {
+          "selector": ".node-team-prepare",
+          "bottom": 615.15625,
+          "footerTop": 855.15625,
+          "gap": 240
+        },
+        {
+          "selector": ".node-bean-preparation > summary",
+          "bottom": 827.15625,
+          "footerTop": 855.15625,
+          "gap": 28
+        }
+      ],
+      "source": "chromium-865-boss-a70-initial-preparation-geometry-es-arcana.json"
+    },
+    {
+      "sha": "135a4fe98a12a8efe71c166e61cda92c4bc342b8",
+      "engine": "chromium",
+      "viewport": {
+        "width": 865,
+        "height": 1079
+      },
+      "physicalDevice": false,
+      "fixture": false,
+      "partyCount": 4,
+      "language": "es",
+      "pack": "diagon-alley",
+      "preparationGeometry": [
+        {
+          "selector": ".node-team-prepare",
+          "bottom": 635.8309326171875,
+          "footerTop": 827.8309326171875,
+          "gap": 192
+        },
+        {
+          "selector": ".node-bean-preparation > summary",
+          "bottom": 799.8309326171875,
+          "footerTop": 827.8309326171875,
+          "gap": 28
+        }
+      ],
+      "source": "chromium-865-boss-a70-initial-preparation-geometry-es-diagon-alley.json"
+    },
+    {
+      "sha": "135a4fe98a12a8efe71c166e61cda92c4bc342b8",
+      "engine": "webkit",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "physicalDevice": false,
+      "fixture": false,
+      "partyCount": 4,
+      "language": "en",
+      "pack": "arcana",
+      "preparationGeometry": [
+        {
+          "selector": ".node-team-prepare",
+          "bottom": 490.03125,
+          "footerTop": 682.03125,
+          "gap": 192
+        },
+        {
+          "selector": ".node-bean-preparation > summary",
+          "bottom": 654.03125,
+          "footerTop": 682.03125,
+          "gap": 28
+        }
+      ],
+      "source": "webkit-1280-boss-a70-initial-preparation-geometry-en-arcana.json"
+    },
+    {
+      "sha": "135a4fe98a12a8efe71c166e61cda92c4bc342b8",
+      "engine": "webkit",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "physicalDevice": false,
+      "fixture": false,
+      "partyCount": 4,
+      "language": "en",
+      "pack": "diagon-alley",
+      "preparationGeometry": [
+        {
+          "selector": ".node-team-prepare",
+          "bottom": 485.625,
+          "footerTop": 677.625,
+          "gap": 192
+        },
+        {
+          "selector": ".node-bean-preparation > summary",
+          "bottom": 649.625,
+          "footerTop": 677.625,
+          "gap": 28
+        }
+      ],
+      "source": "webkit-1280-boss-a70-initial-preparation-geometry-en-diagon-alley.json"
+    },
+    {
+      "sha": "135a4fe98a12a8efe71c166e61cda92c4bc342b8",
+      "engine": "webkit",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "physicalDevice": false,
+      "fixture": false,
+      "partyCount": 4,
+      "language": "es",
+      "pack": "arcana",
+      "preparationGeometry": [
+        {
+          "selector": ".node-team-prepare",
+          "bottom": 490.03125,
+          "footerTop": 682.03125,
+          "gap": 192
+        },
+        {
+          "selector": ".node-bean-preparation > summary",
+          "bottom": 654.03125,
+          "footerTop": 682.03125,
+          "gap": 28
+        }
+      ],
+      "source": "webkit-1280-boss-a70-initial-preparation-geometry-es-arcana.json"
+    },
+    {
+      "sha": "135a4fe98a12a8efe71c166e61cda92c4bc342b8",
+      "engine": "webkit",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "physicalDevice": false,
+      "fixture": false,
+      "partyCount": 4,
+      "language": "es",
+      "pack": "diagon-alley",
+      "preparationGeometry": [
+        {
+          "selector": ".node-team-prepare",
+          "bottom": 485.625,
+          "footerTop": 677.625,
+          "gap": 192
+        },
+        {
+          "selector": ".node-bean-preparation > summary",
+          "bottom": 649.625,
+          "footerTop": 677.625,
+          "gap": 28
+        }
+      ],
+      "source": "webkit-1280-boss-a70-initial-preparation-geometry-es-diagon-alley.json"
+    },
+    {
+      "sha": "135a4fe98a12a8efe71c166e61cda92c4bc342b8",
+      "engine": "webkit",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "physicalDevice": false,
+      "fixture": false,
+      "partyCount": 3,
+      "language": "en",
+      "pack": "arcana",
+      "preparationGeometry": [
+        {
+          "selector": ".node-team-prepare",
+          "bottom": 679.484375,
+          "footerTop": 692.984375,
+          "gap": 13.5
+        },
+        {
+          "selector": ".node-bean-preparation > summary",
+          "bottom": 681.484375,
+          "footerTop": 692.984375,
+          "gap": 11.5
+        }
+      ],
+      "source": "webkit-390-boss-a70-initial-preparation-geometry-en-arcana.json"
+    },
+    {
+      "sha": "135a4fe98a12a8efe71c166e61cda92c4bc342b8",
+      "engine": "webkit",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "physicalDevice": false,
+      "fixture": false,
+      "partyCount": 4,
+      "language": "en",
+      "pack": "diagon-alley",
+      "preparationGeometry": [
+        {
+          "selector": ".node-team-prepare",
+          "bottom": 697.59375,
+          "footerTop": 707.59375,
+          "gap": 10
+        },
+        {
+          "selector": ".node-bean-preparation > summary",
+          "bottom": 694.09375,
+          "footerTop": 707.59375,
+          "gap": 13.5
+        }
+      ],
+      "source": "webkit-390-boss-a70-initial-preparation-geometry-en-diagon-alley.json"
+    },
+    {
+      "sha": "135a4fe98a12a8efe71c166e61cda92c4bc342b8",
+      "engine": "webkit",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "physicalDevice": false,
+      "fixture": false,
+      "partyCount": 4,
+      "language": "es",
+      "pack": "arcana",
+      "preparationGeometry": [
+        {
+          "selector": ".node-team-prepare",
+          "bottom": 692.09375,
+          "footerTop": 705.59375,
+          "gap": 13.5
+        },
+        {
+          "selector": ".node-bean-preparation > summary",
+          "bottom": 694.09375,
+          "footerTop": 705.59375,
+          "gap": 11.5
+        }
+      ],
+      "source": "webkit-390-boss-a70-initial-preparation-geometry-es-arcana.json"
+    },
+    {
+      "sha": "135a4fe98a12a8efe71c166e61cda92c4bc342b8",
+      "engine": "webkit",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "physicalDevice": false,
+      "fixture": false,
+      "partyCount": 4,
+      "language": "es",
+      "pack": "diagon-alley",
+      "preparationGeometry": [
+        {
+          "selector": ".node-team-prepare",
+          "bottom": 697.59375,
+          "footerTop": 707.59375,
+          "gap": 10
+        },
+        {
+          "selector": ".node-bean-preparation > summary",
+          "bottom": 694.09375,
+          "footerTop": 707.59375,
+          "gap": 13.5
+        }
+      ],
+      "source": "webkit-390-boss-a70-initial-preparation-geometry-es-diagon-alley.json"
+    },
+    {
+      "sha": "135a4fe98a12a8efe71c166e61cda92c4bc342b8",
+      "engine": "webkit",
+      "viewport": {
+        "width": 865,
+        "height": 1079
+      },
+      "physicalDevice": false,
+      "fixture": false,
+      "partyCount": 4,
+      "language": "en",
+      "pack": "arcana",
+      "preparationGeometry": [
+        {
+          "selector": ".node-team-prepare",
+          "bottom": 639.15625,
+          "footerTop": 831.15625,
+          "gap": 192
+        },
+        {
+          "selector": ".node-bean-preparation > summary",
+          "bottom": 803.15625,
+          "footerTop": 831.15625,
+          "gap": 28
+        }
+      ],
+      "source": "webkit-865-boss-a70-initial-preparation-geometry-en-arcana.json"
+    },
+    {
+      "sha": "135a4fe98a12a8efe71c166e61cda92c4bc342b8",
+      "engine": "webkit",
+      "viewport": {
+        "width": 865,
+        "height": 1079
+      },
+      "physicalDevice": false,
+      "fixture": false,
+      "partyCount": 4,
+      "language": "en",
+      "pack": "diagon-alley",
+      "preparationGeometry": [
+        {
+          "selector": ".node-team-prepare",
+          "bottom": 634.75,
+          "footerTop": 826.75,
+          "gap": 192
+        },
+        {
+          "selector": ".node-bean-preparation > summary",
+          "bottom": 798.75,
+          "footerTop": 826.75,
+          "gap": 28
+        }
+      ],
+      "source": "webkit-865-boss-a70-initial-preparation-geometry-en-diagon-alley.json"
+    },
+    {
+      "sha": "135a4fe98a12a8efe71c166e61cda92c4bc342b8",
+      "engine": "webkit",
+      "viewport": {
+        "width": 865,
+        "height": 1079
+      },
+      "physicalDevice": false,
+      "fixture": false,
+      "partyCount": 4,
+      "language": "es",
+      "pack": "arcana",
+      "preparationGeometry": [
+        {
+          "selector": ".node-team-prepare",
+          "bottom": 639.15625,
+          "footerTop": 831.15625,
+          "gap": 192
+        },
+        {
+          "selector": ".node-bean-preparation > summary",
+          "bottom": 803.15625,
+          "footerTop": 831.15625,
+          "gap": 28
+        }
+      ],
+      "source": "webkit-865-boss-a70-initial-preparation-geometry-es-arcana.json"
+    },
+    {
+      "sha": "135a4fe98a12a8efe71c166e61cda92c4bc342b8",
+      "engine": "webkit",
+      "viewport": {
+        "width": 865,
+        "height": 1079
+      },
+      "physicalDevice": false,
+      "fixture": false,
+      "partyCount": 4,
+      "language": "es",
+      "pack": "diagon-alley",
+      "preparationGeometry": [
+        {
+          "selector": ".node-team-prepare",
+          "bottom": 634.75,
+          "footerTop": 826.75,
+          "gap": 192
+        },
+        {
+          "selector": ".node-bean-preparation > summary",
+          "bottom": 798.75,
+          "footerTop": 826.75,
+          "gap": 28
+        }
+      ],
+      "source": "webkit-865-boss-a70-initial-preparation-geometry-es-diagon-alley.json"
+    }
+  ]
+}

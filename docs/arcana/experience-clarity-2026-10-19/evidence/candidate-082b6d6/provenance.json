@@ -1,0 +1,95 @@
+{
+  "run": 39334495446,
+  "url": "https://github.com/earandes/diagon-alley/actions/runs/39334495446",
+  "head": "082b6d630e02d4bffa5dc7d88f5ce438742e7646",
+  "checkout": "4615df55137d7f1aa98a67896492b9e221f3931a",
+  "tree": "5cb3c3214ca3c44eabc0db2745c6b98a7f03954f",
+  "headCheckoutTreeEqual": true,
+  "artifact": {
+    "id": 12226761054,
+    "name": "a76-account-evidence"
+  },
+  "actualReport": "test-results/accounts-a76/results.json",
+  "actualReportSha256": "b9bc6dc1831715fd406235a3aefff555be1c031a7d4e4e8f4bdb5b4366d35af9",
+  "stats": {
+    "startTime": "2026-10-19T22:25:13.169Z",
+    "duration": 314427.358,
+    "expected": 151,
+    "skipped": 81,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "capture": "Explicit Linux opt-in; static composition, not motion proof.",
+  "selection": [
+    {
+      "file": "baseline-same-route.png",
+      "bytes": 586002,
+      "sha256": "0a991233c40a78ccc6dd9ac2cfece132e11689fbad49f9286c0103df3d23daa4"
+    },
+    {
+      "file": "current-same-route.png",
+      "bytes": 594463,
+      "sha256": "7054f90e641b4f9a24b2680322e2b1cbc5cb0c603eaa5a0ce992ec5c81027f71"
+    },
+    {
+      "file": "baseline-same-preparation.png",
+      "bytes": 277651,
+      "sha256": "453b5f090fedb94b98eab35759baa7de75be1497a0d0031052568d2f69a16f9a"
+    },
+    {
+      "file": "current-same-preparation.png",
+      "bytes": 279244,
+      "sha256": "c6834a772970ff495a68ac3386e56ec9b66f09468290ddc4f8d3278350ddcb1d"
+    },
+    {
+      "file": "chromium-865-a92-preparation-names.png",
+      "bytes": 631733,
+      "sha256": "65b529faca2a38d4f37c24bec39ae05ddcfc22e56922175ab971adc278883cfa"
+    },
+    {
+      "file": "chromium-390-a92-full-preparation-4.png",
+      "bytes": 295728,
+      "sha256": "77adf3bba4a0da01b9d2ad5cc8d8787a9bb60f0ac9f51f0bf302b3a5f3f6e4ca"
+    },
+    {
+      "file": "chromium-390-a92-full-preparation-5.png",
+      "bytes": 289836,
+      "sha256": "4b6dcadfbad94945960e66bb863969545346e5acae1c7aa9e9b9cc0c25deda07"
+    },
+    {
+      "file": "chromium-390-a92-diagon-alley-collection.png",
+      "bytes": 510405,
+      "sha256": "12d2a027ef23394d495173f3b1381a5884ac699d0ff855a75116c154b48d6461"
+    },
+    {
+      "file": "chromium-1280-a92-diagon-alley-collection.png",
+      "bytes": 1703741,
+      "sha256": "710c36e6600d28eba3971f33bab1139236b39f1e8083a92417e22ada629a07dd"
+    },
+    {
+      "file": "chromium-390-a92-arcana-collection.png",
+      "bytes": 439400,
+      "sha256": "6e61950f4c5f5226ec57ce6829b098d349be9df1df010d707b6c80f2043d753d"
+    },
+    {
+      "file": "chromium-1280-a92-arcana-collection.png",
+      "bytes": 1682890,
+      "sha256": "2ff68b1215e6b2a20f40ec67fc649cc782f7a4d736ee8df7b4960477a92ad8cb"
+    },
+    {
+      "file": "portrait-first-folio.png",
+      "bytes": 238660,
+      "sha256": "9eb42971639b558bcf746ed9d108b57b8a03b605745bcebbfce2f0a80162cb6b"
+    },
+    {
+      "file": "bounded-stock100.png",
+      "bytes": 605166,
+      "sha256": "6bd7b00420f5e3f2a549f66d54adbc65378dd1b8c81edf4bfdb22b22e83a1539"
+    },
+    {
+      "file": "connected-collection.png",
+      "bytes": 484082,
+      "sha256": "9058872994ee6e9b8f63bb9bdf5ef7fc6b57c40023013017e953e91b3f864735"
+    }
+  ]
+}

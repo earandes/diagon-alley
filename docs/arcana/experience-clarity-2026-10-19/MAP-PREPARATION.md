@@ -1,5 +1,7 @@
 # U06–U08 · Mapa y preparación
 
+> Actualización del coordinador: los casos propios A92 del candidato6747f81 pasan en CI39323571082 y las imágenes seleccionadas se han inspeccionado. Los apartados inferiores conservan el estado histórico del subrecorrido; el cierre integrado, sus regresiones y límites vigentes se registran en [QA](QA.md), [aceptación](ACCEPTANCE.md) y [galería](GALLERY.md).
+
 ## Contrato previo
 
 Baseline main86d6a92; implementación A92 en rama de trabajo. Solo presentación y proyección visual, sin modificar grafo, reglas, inventario, BattleLog ni operaciones. Consultar sigue sin emitir avance. No navegador local, servicios o CI desde este agente.
@@ -69,3 +71,15 @@ Consumidores equivalentes contrastados: TeamHud y propuesta de Pacto ya pasan ru
 La comparación con el paisaje real en72434bb mostró que aplicar soporte7px a todas las ramas futuras formaba una malla dominante. Se reduce únicamente futuro a4px/opacity0,65 con tinta1,5px; disponible/recorrido/consulta mantienen jerarquía y todos los enlaces. La consulta restituye soporte opaco local. Es una corrección de composición basada en PNG seleccionadas, no prueba de comprensión humana. Requiere nueva comparación sobre el candidato que la incluya.
 
 La prueba de palabras a865px falló realmente en214f7e4. Se amplía3+2 al tramo de media escena de escritorio621–1000px, y2+2 para cuatro. No se reduce fuente ni se permite overflow; se conserva la misma aceptación y se registra geometría antes de exigirla, también cuando falle. Las bandejas de objetos vacías dejan de reservar una fila sin información. Se añade una única captura seleccionada865 para inspeccionar el caso corregido.
+
+## Correcciones de integración posteriores a la primera muestra
+
+La antesala real añade botín y tarro que no figuraban en el primer harness aislado. Sus dos filas de cuatro/cinco puestos compiten con el pie sticky. Los errores de CI y sus cifras se conservan en QA; la nueva fixture usa NodePreparation y BossSupplies reales, stock y botín, no una copia de su markup.
+
+La afinidad pasa a una pieza localizada del retrato, sin una fila propia por integrante. Posición y procedencia mantienen esquinas separadas; texto y aria-describedby permanecen. Retrato60px móvil sin deformación; si falla, su marco conserva altura y el icono no puede tomar el selector de figura. Libro rival y botín comparten la estantería existente para cuatro y cinco; su summary conserva44px de área mínima con relleno local2px4px, sin bajar tipografía o ilustración. No se ocultan datos ni se retira un actor.
+
+La geometría se obtiene de control y footer en una sola lectura síncrona, incluyendo el estado inicial antes de desplazar el diálogo. Se conservan viewport completo y bottom≤footerTop. No se usa una espera de animación para pasar la aserción; las capturas seleccionadas se toman después para documentar composición asentada. El resultado final del candidato f1910b1 se registra en QA al terminar.
+
+### Cinco miembros equipados y borradores
+
+CI39334495446 comprobó otro caso real del harness A85: cinco miembros con varita/escoba y gragea asignada superaban la altura disponible; el tarro terminaba40,81px/41,75px dentro del footer. Se conserva el fallo. BossSupplies es ahora un slot explícito de BossPartyStage; formación, afinidades y tarro comparten una repisa de tres objetos en móvil. Ambos details abiertos recuperan todo el ancho. Props, eventos, equipo y orden semántico permanecen; no display:contents sobre secciones ni posicionamiento superpuesto. El título comercial largo se abrevia visualmente a Grageas/Beans; borrador breve tiene descripción accesible sin consumo. No se reduce la figura60px, nombre, PV/PM o equipo. Pendiente aceptación Linux c6810fc; no presentar análisis estático como resultado de navegador.

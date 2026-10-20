@@ -1,0 +1,269 @@
+{
+  "run": 39353793256,
+  "head": "b6c08000267a28d1851318fbcfdfeb780e459fb9",
+  "checkout": "135a4fe98a12a8efe71c166e61cda92c4bc342b8",
+  "artifact": 12237335982,
+  "ciStatus": "Workflow check and regression completed successfully, as reported by coordinator.",
+  "testTotals": {
+    "unit": 797,
+    "realPgRedis": 120,
+    "browserPassed": 743,
+    "plannedBrowserSkips": 345,
+    "regressionBrowserPassed": 138
+  },
+  "regressionBreakdown": {
+    "e2e": 56,
+    "a67": 24,
+    "a63": 16,
+    "a66": 20,
+    "a65": 8,
+    "pwa": 12,
+    "performanceBaseline": 1,
+    "performanceCurrent": 1
+  },
+  "baselineRuntimeReference": {
+    "baseCommit": "97573b0d95c027d0192914afcb73d32e74fb23a6",
+    "patchSha256": "c01f6944b1213af3745523f2c1b2a235c0e01b4ee8f8321ac69c188ee16ba388",
+    "extraSourceCount": 14,
+    "description": "Reconstructed A66 runtime: initial dirty-path inventory and prior patch; early A67 gear hunks excluded by restoring those paths to HEAD; ExpeditionPreparation retains only the A65 intention reminder. Types/build passed. Not a historical git commit."
+  },
+  "performance": [
+    {
+      "name": "pact-open-cold",
+      "baseline": {
+        "name": "pact-open-cold",
+        "inputObserved": true,
+        "inputToUsableMs": 77,
+        "inputToSettledMs": 493.60000000009313,
+        "maxFrameMs": 66.59999999999991,
+        "longtasks": [
+          61,
+          63
+        ],
+        "network": []
+      },
+      "current": {
+        "name": "pact-open-cold",
+        "inputObserved": true,
+        "inputToUsableMs": 102,
+        "inputToSettledMs": 537.8000000000466,
+        "maxFrameMs": 33.40000000000009,
+        "longtasks": [],
+        "network": []
+      }
+    },
+    {
+      "name": "pact-select-0",
+      "baseline": {
+        "name": "pact-select-0",
+        "inputObserved": true,
+        "inputToUsableMs": 21.800000000046566,
+        "inputToSettledMs": 458.19999999995343,
+        "maxFrameMs": 50.100000000000136,
+        "longtasks": [],
+        "network": []
+      },
+      "current": {
+        "name": "pact-select-0",
+        "inputObserved": true,
+        "inputToUsableMs": 32.9000000001397,
+        "inputToSettledMs": 482.30000000004657,
+        "maxFrameMs": 50.09999999999991,
+        "longtasks": [],
+        "network": []
+      }
+    },
+    {
+      "name": "pact-open-warm-1",
+      "baseline": {
+        "name": "pact-open-warm-1",
+        "inputObserved": true,
+        "inputToUsableMs": 38.5999999998603,
+        "inputToSettledMs": 943.6999999999534,
+        "maxFrameMs": 50.09999999999991,
+        "longtasks": [],
+        "network": []
+      },
+      "current": {
+        "name": "pact-open-warm-1",
+        "inputObserved": true,
+        "inputToUsableMs": 60.89999999990687,
+        "inputToSettledMs": 448.69999999995343,
+        "maxFrameMs": 50.09999999999991,
+        "longtasks": [],
+        "network": []
+      }
+    },
+    {
+      "name": "pact-select-1",
+      "baseline": {
+        "name": "pact-select-1",
+        "inputObserved": true,
+        "inputToUsableMs": 30.800000000046566,
+        "inputToSettledMs": 430.4000000001397,
+        "maxFrameMs": 33.40000000000009,
+        "longtasks": [],
+        "network": []
+      },
+      "current": {
+        "name": "pact-select-1",
+        "inputObserved": true,
+        "inputToUsableMs": 30.0999999998603,
+        "inputToSettledMs": 430.5,
+        "maxFrameMs": 50,
+        "longtasks": [],
+        "network": []
+      }
+    },
+    {
+      "name": "pact-open-warm-2",
+      "baseline": {
+        "name": "pact-open-warm-2",
+        "inputObserved": true,
+        "inputToUsableMs": 38.699999999953434,
+        "inputToSettledMs": 451.19999999995343,
+        "maxFrameMs": 33.40000000000009,
+        "longtasks": [],
+        "network": []
+      },
+      "current": {
+        "name": "pact-open-warm-2",
+        "inputObserved": true,
+        "inputToUsableMs": 66.29999999981374,
+        "inputToSettledMs": 460.5,
+        "maxFrameMs": 50,
+        "longtasks": [],
+        "network": []
+      }
+    },
+    {
+      "name": "pact-select-2",
+      "baseline": {
+        "name": "pact-select-2",
+        "inputObserved": true,
+        "inputToUsableMs": 24.100000000093132,
+        "inputToSettledMs": 430.69999999995343,
+        "maxFrameMs": 50.100000000000364,
+        "longtasks": [],
+        "network": []
+      },
+      "current": {
+        "name": "pact-select-2",
+        "inputObserved": true,
+        "inputToUsableMs": 27.800000000046566,
+        "inputToSettledMs": 414,
+        "maxFrameMs": 33.40000000000009,
+        "longtasks": [],
+        "network": []
+      }
+    },
+    {
+      "name": "pact-confirm",
+      "baseline": {
+        "name": "pact-confirm",
+        "inputObserved": true,
+        "inputToUsableMs": 193.80000000004657,
+        "inputToSettledMs": 232.0999999998603,
+        "maxFrameMs": 50,
+        "longtasks": [],
+        "network": [
+          {
+            "path": "/api/nodes/advance",
+            "durationMs": 44.799999999813735
+          },
+          {
+            "path": "/api/state",
+            "durationMs": 20.300000000046566
+          }
+        ]
+      },
+      "current": {
+        "name": "pact-confirm",
+        "inputObserved": true,
+        "inputToUsableMs": 238.10000000009313,
+        "inputToSettledMs": 266.19999999995343,
+        "maxFrameMs": 50,
+        "longtasks": [],
+        "network": [
+          {
+            "path": "/api/nodes/advance",
+            "durationMs": 58.300000000046566
+          },
+          {
+            "path": "/api/state",
+            "durationMs": 23.600000000093132
+          }
+        ]
+      }
+    },
+    {
+      "name": "workshop-open",
+      "baseline": {
+        "name": "workshop-open",
+        "inputObserved": true,
+        "inputToUsableMs": 73.69999999995343,
+        "inputToSettledMs": 465.80000000004657,
+        "maxFrameMs": 16.700000000000728,
+        "longtasks": [],
+        "network": []
+      },
+      "current": {
+        "name": "workshop-open",
+        "inputObserved": true,
+        "inputToUsableMs": 74.5999999998603,
+        "inputToSettledMs": 214.0999999998603,
+        "maxFrameMs": 16.800000000000182,
+        "longtasks": [],
+        "network": []
+      }
+    },
+    {
+      "name": "forge-quote",
+      "baseline": {
+        "name": "forge-quote",
+        "inputObserved": true,
+        "inputToUsableMs": 25.600000000093132,
+        "inputToSettledMs": 62.39999999990687,
+        "maxFrameMs": 16.799999999999272,
+        "longtasks": [],
+        "network": []
+      },
+      "current": {
+        "name": "forge-quote",
+        "inputObserved": true,
+        "inputToUsableMs": 18.199999999953434,
+        "inputToSettledMs": 412.80000000004657,
+        "maxFrameMs": 16.699999999999818,
+        "longtasks": [],
+        "network": []
+      }
+    }
+  ],
+  "encounters": {
+    "chromium": {
+      "observations": 4,
+      "usableMs": {
+        "min": 296,
+        "max": 391
+      },
+      "geometryNoOverflow": true
+    },
+    "webkit": {
+      "observations": 4,
+      "usableMs": {
+        "min": 686,
+        "max": 1561
+      },
+      "geometryNoOverflow": true
+    }
+  },
+  "limitations": [
+    "One observation per named performance action and variant; fixed baseline-then-current order, not replicated or randomized.",
+    "No embedded code SHA in these legacy JSON; version attribution comes from CI artifact/job and versioned reference builder.",
+    "The cold action label names first opening in this session; OS, process and network caches were not purged.",
+    "rAF maximum intervals are not GPU time. No P95 frame or pure decode mean was serialized.",
+    "Usable and settled times include runner synchronization and, where relevant, authority/network; not human timing.",
+    "Encounter reports use isolated accounts with HP/MP set to50percent in SQL before event; not human gameplay.",
+    "No seeds, account/operation keys, inventories or saves selected."
+  ]
+}

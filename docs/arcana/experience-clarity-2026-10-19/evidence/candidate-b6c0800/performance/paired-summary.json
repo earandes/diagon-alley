@@ -1,0 +1,163 @@
+{
+  "run": 39353793256,
+  "head": "b6c08000267a28d1851318fbcfdfeb780e459fb9",
+  "checkout": "135a4fe98a12a8efe71c166e61cda92c4bc342b8",
+  "actualReport": "test-results/experience-a75/results.json",
+  "actualReportSha256": "fb381e18d50ac8f56348cb15516e97ad7067c4f64c3e7dde55174c821246a82e",
+  "reportHashAvailability": "Actual test-results report recovered from the same downloaded A75 artifact; sha256 and stats verified separately from metric fixtures.",
+  "cohort": "A75 declared5x5 390x844 ES Diagon AB-BA-AB; module evaluated before mount; not GPU/cold start.",
+  "stats": {
+    "expected": 114,
+    "skipped": 174,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "samples": [
+    {
+      "engine": "chromium",
+      "pair": 0,
+      "variant": "baseline",
+      "battleHash": "f431632086d79fb237469f2573d6b33ddb85c5f16b6b43b26e97e3d87ce74730",
+      "p95RafMs": 16.700000000000728,
+      "maxRafMs": 16.80000000000109,
+      "actionToReadyFrameMs": 326.29999999993015,
+      "navigationToReadyFrameMs": 476.4000000000233
+    },
+    {
+      "engine": "chromium",
+      "pair": 0,
+      "variant": "current",
+      "battleHash": "f431632086d79fb237469f2573d6b33ddb85c5f16b6b43b26e97e3d87ce74730",
+      "p95RafMs": 16.799999999999272,
+      "maxRafMs": 16.80000000000109,
+      "actionToReadyFrameMs": 329.4000000000233,
+      "navigationToReadyFrameMs": 465
+    },
+    {
+      "engine": "chromium",
+      "pair": 1,
+      "variant": "current",
+      "battleHash": "f431632086d79fb237469f2573d6b33ddb85c5f16b6b43b26e97e3d87ce74730",
+      "p95RafMs": 16.700000000000728,
+      "maxRafMs": 16.80000000000109,
+      "actionToReadyFrameMs": 325.80000000004657,
+      "navigationToReadyFrameMs": 495.60000000009313
+    },
+    {
+      "engine": "chromium",
+      "pair": 1,
+      "variant": "baseline",
+      "battleHash": "f431632086d79fb237469f2573d6b33ddb85c5f16b6b43b26e97e3d87ce74730",
+      "p95RafMs": 16.799999999999272,
+      "maxRafMs": 16.80000000000109,
+      "actionToReadyFrameMs": 322.5,
+      "navigationToReadyFrameMs": 473.9000000000233
+    },
+    {
+      "engine": "chromium",
+      "pair": 2,
+      "variant": "baseline",
+      "battleHash": "f431632086d79fb237469f2573d6b33ddb85c5f16b6b43b26e97e3d87ce74730",
+      "p95RafMs": 16.700000000000728,
+      "maxRafMs": 16.80000000000109,
+      "actionToReadyFrameMs": 332.39999999990687,
+      "navigationToReadyFrameMs": 488.5999999999767
+    },
+    {
+      "engine": "chromium",
+      "pair": 2,
+      "variant": "current",
+      "battleHash": "f431632086d79fb237469f2573d6b33ddb85c5f16b6b43b26e97e3d87ce74730",
+      "p95RafMs": 16.700000000000728,
+      "maxRafMs": 16.80000000000109,
+      "actionToReadyFrameMs": 323.9000000000233,
+      "navigationToReadyFrameMs": 459.19999999995343
+    },
+    {
+      "engine": "webkit",
+      "pair": 0,
+      "variant": "baseline",
+      "battleHash": "f431632086d79fb237469f2573d6b33ddb85c5f16b6b43b26e97e3d87ce74730",
+      "p95RafMs": 23,
+      "maxRafMs": 118,
+      "actionToReadyFrameMs": 724,
+      "navigationToReadyFrameMs": 949
+    },
+    {
+      "engine": "webkit",
+      "pair": 0,
+      "variant": "current",
+      "battleHash": "f431632086d79fb237469f2573d6b33ddb85c5f16b6b43b26e97e3d87ce74730",
+      "p95RafMs": 23,
+      "maxRafMs": 29,
+      "actionToReadyFrameMs": 566,
+      "navigationToReadyFrameMs": 778
+    },
+    {
+      "engine": "webkit",
+      "pair": 1,
+      "variant": "current",
+      "battleHash": "f431632086d79fb237469f2573d6b33ddb85c5f16b6b43b26e97e3d87ce74730",
+      "p95RafMs": 23,
+      "maxRafMs": 110,
+      "actionToReadyFrameMs": 443,
+      "navigationToReadyFrameMs": 648
+    },
+    {
+      "engine": "webkit",
+      "pair": 1,
+      "variant": "baseline",
+      "battleHash": "f431632086d79fb237469f2573d6b33ddb85c5f16b6b43b26e97e3d87ce74730",
+      "p95RafMs": 23,
+      "maxRafMs": 28,
+      "actionToReadyFrameMs": 482,
+      "navigationToReadyFrameMs": 703
+    },
+    {
+      "engine": "webkit",
+      "pair": 2,
+      "variant": "baseline",
+      "battleHash": "f431632086d79fb237469f2573d6b33ddb85c5f16b6b43b26e97e3d87ce74730",
+      "p95RafMs": 22,
+      "maxRafMs": 27,
+      "actionToReadyFrameMs": 411,
+      "navigationToReadyFrameMs": 609
+    },
+    {
+      "engine": "webkit",
+      "pair": 2,
+      "variant": "current",
+      "battleHash": "f431632086d79fb237469f2573d6b33ddb85c5f16b6b43b26e97e3d87ce74730",
+      "p95RafMs": 23,
+      "maxRafMs": 33,
+      "actionToReadyFrameMs": 444,
+      "navigationToReadyFrameMs": 665
+    }
+  ],
+  "artifact": 12234134975,
+  "sources": [
+    {
+      "source": "test-results/a92-ci-b6c0800-a75/docs/arcana/experience-fixes-2026-10-17/evidence/linux/paired-mobile-performance.json",
+      "file": "paired-mobile-performance.json.gz",
+      "bytes": 40370,
+      "sha256": "e72dc91831f42b01daee7db046040690fd0964fd25a76eb59186f0b61dce97ab",
+      "uncompressedSha256": "faec51b290b902861997ebbea7e310880ea40e832fb515f7ac50e42d6089880c"
+    },
+    {
+      "source": "test-results/a92-ci-b6c0800-a75/docs/arcana/experience-fixes-2026-10-17/evidence/linux/paired-webkit-performance.json",
+      "file": "paired-webkit-performance.json.gz",
+      "bytes": 33011,
+      "sha256": "384bd7cd89caa381819bcd5d054ac9ab32082542b119160f9c358c162ce9c997",
+      "uncompressedSha256": "bcf1b62b851c0fbf095128e3d7a2f520caf8f57f63a5c39cb38bf03bb399a290"
+    }
+  ],
+  "actualReportPath": "test-results/a92-ci-b6c0800-a75/test-results/experience-a75/results.json",
+  "actualReportStats": {
+    "startTime": "2026-10-20T01:40:33.967Z",
+    "duration": 350688.077,
+    "expected": 114,
+    "skipped": 174,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

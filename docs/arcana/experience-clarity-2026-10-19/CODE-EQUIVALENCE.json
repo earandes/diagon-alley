@@ -1,0 +1,22 @@
+{
+  "status": "verified staged index before documentary commit",
+  "testedHead": "b6c08000267a28d1851318fbcfdfeb780e459fb9",
+  "testedCheckout": "135a4fe98a12a8efe71c166e61cda92c4bc342b8",
+  "testedTree": "7fe64d45579c8ed6096769a35bce838aa59ac669",
+  "ciRun": 39353793256,
+  "ciConclusion": "success",
+  "allowedDocumentationPaths": [
+    "DESIGN.md",
+    "README.md",
+    "docs/DECISIONS.md",
+    "docs/PRD.md",
+    "docs/arcana/experience-clarity-2026-10-19/**"
+  ],
+  "allOtherPathsEqualToTestedCandidate": true,
+  "comparedTrackedPaths": 5541,
+  "testedCodeFingerprintSha256": "b8f159e182c05baf092020a61b250e45774deac4af4681d2d101e3fbaadc8113",
+  "stagedCodeFingerprintSha256": "b8f159e182c05baf092020a61b250e45774deac4af4681d2d101e3fbaadc8113",
+  "changedDocumentationPaths": 112,
+  "phase": "full, unchanged",
+  "method": "git ls-tree -rz testedHead versus git ls-files --stage -z, exact (path, mode, object) equality after excluding only the enumerated documentation. No runtime, test, asset, dependency, workflow or validation-phase changes. The evidence folder is used only for output, not runtime/test input. The later commit contains this index proof and documentation; it does not claim a new CI execution."
+}

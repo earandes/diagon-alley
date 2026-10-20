@@ -1,4 +1,6 @@
-# Validación A92 · estado previo a CI
+# Validación A92 · ejecuciones y límites
+
+**Estado de entrega20octubre:** CI[39353793256](https://github.com/earandes/diagon-alley/actions/runs/39353793256) completa **success**, sobreb6c0800/checkout135a4fe9 de árbol idéntico.797unitarias,120PG/Redis reales,743browser correctos y345omisiones deliberadas. [Registro final](evidence/final-ci-b6c0800.json). El resto del documento conserva el orden cronológico de trabajo; sus estados pendientes anteriores no describen la entrega actual.
 
 Sin navegador, captura, perfil o audio local. Codecs/figuras existentes conservados; no nuevas dependencias, reglas, precios o premios. No se modifica SQL/gateway. Cuentas y fixtures aislados en comprobaciones reales.
 
@@ -131,3 +133,63 @@ A69:88pass/2fail/42skips. Reflujo200%/arte ausente ya correcto. Fallo restante e
 Causa de composición contrastada: `.node-event-dialog .node-preparation` conserva márgenes8px arriba/12px abajo de eventos ordinarios. En la confrontación ya existe gap de grid. Los datos encajan exactamente: libro318,515 +margen12 +gap4 +cabecera44 =integrantes378,515. Cambio único de producto: `margin-block:0` solo en el rival NodePreparation directo de boss-staging, recuperando20px sin reducir figuras, fuentes, datos o targets. No se atribuye la diferencia entre ilustraciones a un defecto de arte ni se cambia su encuadre.
 
 Se refuerza la fixture propia temprana: el caso completo de cinco usa el mismo grupo público de cuatro Hufflepuff+inicial, Maestría5, diez piezas de equipo, cinco tarros/borradores y footer ilustrado con coste/cancelación. Cuatro conserva el caso sin equipar; los otros tests mantienen temporales/caídos/nombres largos. No aumenta el número de casos ni añade configuraciones, workers, reintentos o gráficos locales. La fuente de fixtures es declarada, no progreso humano o campaña modificada. Tipos y12tests pertinentes correctos. Nueva CI necesaria para el margen y la regresión pendiente; no reintento sin cambio.
+
+### Candidato7d74cef · CI39347774137, fases iniciales
+
+Head7d74cefb2c51cf31b4c10495552d0816b8d98898 / checkout165866a6b4efeb93c98ee5c72845f0bffb231f4c, árbol idéntico5ba6b2bca899b95c0b3930ce51bd124c4fc7c7cf verificado con Git/API. Batería A76/A89/A92:151pass/81omisiones deliberadas/0fallos/0flaky,311,66s, artefacto12232042705. El caso completo5 ahora incluye Maestría5,10piezas y5borradores; ES/EN×packs pasan sin solapamiento, mínimo6,171875px (ARCANA/es). MarcoCSS60px y procedencia conservados sin arte. Captura Diagon densa inspeccionada; las PNG de colección/folio/tarro/865 idénticas por hash a las ya inspeccionadas se reutilizan, y mapa/colección conectada/ARCANA escritorio se inspeccionan nuevamente. El cromo conectado aleatorio puede aún estar cargando en esa captura temprana: acredita contadores/navegación, no todos los retratos decodificados.
+
+A75:114pass/174omisiones/0fallos/0flaky,355,73s, artefacto12231669657. La cohorte pareada conserva doce ventanas: Chromium actual16,7–16,8ms P95rAF, WebKit22–24ms; se conserva el extremo24ms y el objetivo20ms incumplido. Medianas técnicas de tres consultas de ruta: base88,1ms/actual175,8ms. Observación desfavorable conservada, sin atribución causal a GPU ni afirmación de mejora. A70/Halloween/A69/regression siguen pendientes.
+
+
+## Alineación estática de la regresión de colección
+
+Antes de iniciar la regresión general del candidato se detecta que `tests/browser-trial/journey.spec.ts` exigía estrellas visibles en portada y sin abrir la consulta del folio. U09 conserva el dato dentro de `album-identity-details`. El test ahora abre esa consulta en ambos idiomas y sigue exigiendo el número exacto confirmado en el receipt, rango1–5, dos copias y estado autoritativo idéntico tras consultar. No cambia producto, dato, recompensa ni la aceptación de localización. Es incompatibilidad contrastada por código, no defecto de producto reproducido en navegador. Tipos correctos; ejecución Linux pendiente.
+
+La revisión acotada del resto de `tests/browser-trial` no detecta otro selector incompatible en las suites activas. La batería histórica dedicada `game-redesign.spec.ts` aún fija cuatro cartas/ocho páginas a1280; está fuera del workflow actual y sus expectativas de capacidad requieren actualizarse antes de reutilizarla. No se afirma que esa batería se haya ejecutado ni que proporcione cobertura actual.
+
+
+## Check completo superado:7d74cef, CI39347774137
+
+Job118384443574 terminó **success**:tipos, contenido6,122archivos/797unitarias,20archivos/120integración PG/Redis, build, copia/restauración, verificación de build, A76/A89/A92(151/81), bienvenidaA82(6), A78(16/11), A79(7/2), A80(3), A81(3), A75(114/174), A70/A71/A73(103/35), Halloween(12) y A69/A85/A87(90/42). Sin reintentos automáticos. [Extractos sanitizados y hash del log](evidence/full-check-7d74cef.json). Las omisiones deliberadas no son pruebas ejecutadas.
+
+La ejecución global figura **cancelled**, porque se detuvo exclusivamente su job de regresión que acababa de inicializar contenedores, antes de ejecutar tests, para no ejecutar la expectativa antigua ya corregida. No se presenta como workflow completo verde. El check full sí es correcto y su evidencia permanece.
+
+Continuación autorizada mediante fase existente `resume`:CI39353019073 sobre75a89c671d965292aa993bc2a2a550eba6b7d3db. Solo cambia journey.spec y selector de fase; producto, assets, dependencias, renderer, workflow y baterías A70/Halloween/A69 idénticos. [Comparación explícita](evidence/phase-equivalence.json). Esta fase repite controles base y ejecuta E2E, A67, A63, A66, A65, PWA y rendimiento de regresión. Su resultado sigue pendiente; el goal continúa activo.
+
+
+## Hallazgo visual posterior al check completo
+
+La inspección seleccionada de A85 ARCANA en7d74cef muestra «Tormenta s» en un acompañante rival. No se infiere del detector: está en la PNG y el código conserva `overflow-wrap:anywhere` en ese rótulo. [Observación, procedencia y aceptación](evidence/fourteenth-visual-finding.json), [imagen previa](evidence/rival-word-wrap-before.png). Los nombres propios ya estaban corregidos; se amplía mínimamente esa protección al acompañante, conservando reparto/tamaño de ilustraciones y fuente. Las ocho composiciones móviles existentes exigen palabras completas y rectángulos de palabras sin solapamiento entre rivales.
+
+La continuación39353019073/75a89c6 se cancela antes de ejecutar gráficos al aparecer este cambio de producto. No aporta cobertura final. Se restaura la fase original `full` y se publica31cbe9b, que incluye la alineación de journey. La equivalencia anterior ya no se utiliza para aceptar el CSS cambiado: se requiere nuevo check full y regresión completa del candidato. Goal activo.
+
+
+### Corrección de palabra completa: fallo de solapamiento preservado
+
+31cbe9b / CI39353308640:11correctas,1fallo,220omisiones al parar la batería combinada; no se declara verde. La nueva aserción comprobó palabras íntegras, pero Nymphadora invadía Luna2,703125px. [Cajas/error original](evidence/fifteenth-linux-failure.json). Se cancela solo esta ejecución propia, sin repetirla sin cambio. b6c0800 reserva `min-content` también en el puesto del acompañante: el texto participa en el reparto en vez de pintar fuera de él. Se mantienen fuente/altura de figura, fila única y todas las unidades. Pendiente CI full nueva; no se relaja la aserción de palabras o colisión.
+
+
+### b6c0800 · primeras comprobaciones
+
+CI39353793256, headb6c08000267a28d1851318fbcfdfeb780e459fb9 / checkout135a4fe98a12a8efe71c166e61cda92c4bc342b8, mismo árbol7fe64d45579c8ed6096769a35bce838aa59ac669 verificado por Git/API. A76/A89/A92:151correctas/81omisiones deliberadas,0fallos/0flaky,303,25s. Ocho casos completos4/5×idioma×pack exigen palabras rivales enteras y sin intersección entre rótulos. Los casos cinco conservan márgenes24pxDiagon,26,5pxARCANAen y13,6875pxARCANAes; resto de controles/ausencia de arte conservados. [Procedencia](evidence/candidate-b6c0800/provenance.json), [resultados sanitizados](evidence/candidate-b6c0800/browser-outcomes.json).
+
+Inspección seleccionada nueva: cinco equipados/cinco borradores, ocho cartas en escritorio, colección conectada con retratos cargados, mapa y tarro100. Las PNG idénticas por hash de portada/folio/865/base se reutilizan explícitamente; no se vuelve a abrir un navegador. La fixture de tarro fuera del modal completo no prueba su contraste en App. No se atribuye una animación a estas PNG. Resto de check/regresión sigue pendiente.
+
+
+A75 de b6c0800:114correctas/174omisiones deliberadas,0fallos/0flaky,350,69s. Datos exactos y hash de results.json en candidate-b6c0800/performance/paired-summary.json. A70/A71/A73 y Halloween también superan sus steps; el workflow completo continúa con A69 y después regresión. No se cierra todavía el goal.
+
+
+## Check full del candidato de entrega
+
+b6c08000267a28d1851318fbcfdfeb780e459fb9 / checkout135a4fe98a12a8efe71c166e61cda92c4bc342b8, CI39353793256: job118403920397 **success**.797unitarias/122archivos,120integraciónPG/Redis/20archivos,contenido6,build,backup/restore y buildscan correctos.605casos gráficos correctos/345omisiones deliberadas:151A76/A89/A92,6A82,16A78,7A79,3A80,3A81,114A75,103A70/A71/A73,12Halloween,90A69/A85/A87. Sin retries ni workers adicionales. [Resultados y hash del log](evidence/full-check-b6c0800.json).
+
+Se ejecutó toda la fase original `full`; no hace falta aceptar este CSS por la continuación anterior. La fase sigue `full` en Git. El job de regresión118419305265 está en curso; no se presenta todavía como CI global superada ni se completa el goal.
+
+
+## Cierre técnico integrado
+
+CI39353793256 tiene **check y regression success** sobreb6c08000267a28d1851318fbcfdfeb780e459fb9. El segundo job supera138casos:56E2E Chromium/WebKit,24A67,16A63,20A66,8A65,12PWA y dos muestras A67(base/current). Junto al check son743casos gráficos correctos/345omisiones deliberadas; no se suman las líneas de notice duplicadas del log ni ejecuciones previas. [Detalle por bloque y hashes](evidence/final-ci-b6c0800.json).
+
+La consulta de estrellas se ejecutó abriendo el detalle en ES/EN; Gringotts tras el consumo único se comprobó en A63; las expectativas de conservación de log, consumos, llaves y respuesta recuperada pasaron en sus recorridos. No se concedieron recursos para corregir mensajes. La fase de validación es la original `full`, workflow y guard sin cambios frente a main.
+
+El cierre posterior añade documentación/evidencia seleccionada, con [equivalencia de código](CODE-EQUIVALENCE.json); no se le atribuye una batería nueva. A91 y Word intactos. Se conserva la misma partida y no se hizo merge/despliegue. No quedan fallos conocidos bloqueantes dentro del alcance técnico comprobado. Siguen pendientes la sesión humana, lector/gestores y dispositivo físico; las combinaciones no ejecutadas y límites de rendimiento siguen registrados, sin afirmar cobertura exhaustiva o fluidez20ms universal.
