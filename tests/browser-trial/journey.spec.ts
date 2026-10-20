@@ -152,8 +152,8 @@ for (const language of ['es', 'en'] as const)
     const article = page.locator('.album article').filter({
       has: page.getByRole('heading', { name: receipt.wizard.name[language], exact: true }),
     });
-    await expect(article.getByText(rating, { exact: true }).first()).toBeVisible();
     await article.locator('.album-card-inspect').click();
+    await page.locator('.album-card-folio .album-identity-details > summary').click();
     await expect(
       page.locator('.album-card-folio').getByText(rating, { exact: true }),
     ).toBeVisible();
@@ -164,6 +164,7 @@ for (const language of ['es', 'en'] as const)
       has: page.getByRole('heading', { name: receipt.wizard.name[otherLanguage], exact: true }),
     });
     await otherArticle.locator('.album-card-inspect').click();
+    await page.locator('.album-card-folio .album-identity-details > summary').click();
     const otherRating =
       language === 'es'
         ? `${stars} ${stars === 1 ? 'star' : 'stars'}`
