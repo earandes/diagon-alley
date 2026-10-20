@@ -147,6 +147,42 @@ for (const pack of ['diagon-alley', 'arcana'])
         for (const selector of ['.node-team-prepare', '.node-bean-preparation > summary']) {
           await expect(page.locator(selector)).toBeInViewport({ ratio: 1 });
         }
+        await page.evaluate(() => document.fonts.ready.then(() => undefined));
+        const rivalNames = await page.locator('.boss-companion-name small').evaluateAll((nodes) =>
+          nodes.map((node) => {
+            const text = node.firstChild!;
+            return [...node.textContent!.matchAll(/\S+/g)].map((match) => {
+              const range = document.createRange();
+              range.setStart(text, match.index!);
+              range.setEnd(text, match.index! + match[0].length);
+              return {
+                word: match[0],
+                fragments: range.getClientRects().length,
+                box: range.getBoundingClientRect().toJSON(),
+              };
+            });
+          }),
+        );
+        expect(
+          rivalNames.flat().every((word) => word.fragments === 1),
+          JSON.stringify(rivalNames),
+        ).toBe(true);
+        for (let i = 0; i < rivalNames.length; i++) {
+          for (let j = i + 1; j < rivalNames.length; j++) {
+            const overlap = rivalNames[i].some((a) =>
+              rivalNames[j].some(
+                (b) =>
+                  a.box.left < b.box.right &&
+                  a.box.right > b.box.left &&
+                  a.box.top < b.box.bottom &&
+                  a.box.bottom > b.box.top,
+              ),
+            );
+            expect(overlap, JSON.stringify({ left: rivalNames[i], right: rivalNames[j] })).toBe(
+              false,
+            );
+          }
+        }
         const geometry = await dialog.evaluate((element) => {
           const footer = element.querySelector('.node-combat-actions')!.getBoundingClientRect();
           return ['.node-team-prepare', '.node-bean-preparation > summary'].map((selector) => {
@@ -190,6 +226,7 @@ for (const pack of ['diagon-alley', 'arcana'])
               coordinateSample: 'single synchronous layout read; no animation wait',
               geometry,
               headerGeometry,
+              rivalNames,
             },
             null,
             2,

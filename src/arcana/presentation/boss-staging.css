@@ -403,6 +403,16 @@
   hyphens: none;
   width: 100%;
 }
+/* Keep companion aliases whole too. The label may use its longest word's
+   intrinsic width without changing the illustration's flex allocation. */
+.boss-staging .boss-companion-name small {
+  overflow-wrap: normal;
+  word-break: normal;
+  hyphens: none;
+  min-width: min-content;
+  max-width: 100%;
+  align-self: center;
+}
 .boss-party-objects:empty {
   display: none;
 }
