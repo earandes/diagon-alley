@@ -403,8 +403,11 @@
   hyphens: none;
   width: 100%;
 }
-/* Keep companion aliases whole too. The label may use its longest word's
-   intrinsic width without changing the illustration's flex allocation. */
+/* Reserve each companion's longest word in the row, rather than letting its
+   label paint over its neighbour. The leader keeps the remaining flex space. */
+.boss-staging .boss-roster-companion {
+  min-width: min-content;
+}
 .boss-staging .boss-companion-name small {
   overflow-wrap: normal;
   word-break: normal;
