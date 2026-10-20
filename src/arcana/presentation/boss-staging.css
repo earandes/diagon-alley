@@ -29,6 +29,11 @@
   grid-row: 1;
   min-width: 0;
 }
+/* NodePreparation's ordinary event margins duplicate this confrontation grid's
+   own spacing (8px above +12px below). Keep the rival in its grid cell. */
+.game-shell .boss-staging > .node-preparation.boss-opponent-stage {
+  margin-block: 0;
+}
 .boss-player-preparation {
   grid-column: 1;
   grid-row: 1;

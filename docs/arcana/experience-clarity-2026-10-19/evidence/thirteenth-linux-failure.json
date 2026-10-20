@@ -1,0 +1,641 @@
+{
+  "run": 39341829121,
+  "head": "b6d9e3ce8426e6bafecd45cc041886460c6d9bbf",
+  "checkout": "274ac9e389523bd89a4f56487c0129996e23ed02",
+  "artifact": 12231980507,
+  "phase": "motion-a69",
+  "result": {
+    "passed": 88,
+    "failed": 2,
+    "skipped": 42
+  },
+  "regression": "skipped after failed prerequisite",
+  "finding": "Dense mastery5 equipped +5 draft beans in ARCANA/es overlaps footer. Formation7.828/8.75px; jar10.828/11.75px. Diagon/es/en passes.",
+  "causeEvidence": "NodePreparation inherited margin8px0 12px duplicates boss grid spacing. bookBottom318.515+margin12+gap4+heading44=membersTop378.515. Removing only direct boss rival margins recovers20px without resizing figures/fonts/controls.",
+  "samples": [
+    {
+      "source": "chromium-390-motion-a69-boss-es-arcana.json",
+      "sha": "274ac9e389523bd89a4f56487c0129996e23ed02",
+      "fixture": true,
+      "scope": "Mastery5x5; five equipped allies with five draft beans; production footer",
+      "footer": {
+        "x": 18,
+        "y": 752,
+        "width": 354,
+        "height": 84
+      },
+      "actionParts": [
+        {
+          "top": 778,
+          "height": 32,
+          "middle": 794
+        },
+        {
+          "top": 785.5,
+          "height": 17,
+          "middle": 794
+        },
+        {
+          "top": 778,
+          "height": 32,
+          "middle": 794
+        }
+      ],
+      "figures": [
+        {
+          "width": 172.23126220703125,
+          "height": 102,
+          "opacity": "1",
+          "visibility": "visible",
+          "naturalWidth": 512
+        },
+        {
+          "width": 172.23126220703125,
+          "height": 102,
+          "opacity": "1",
+          "visibility": "visible",
+          "naturalWidth": 512
+        },
+        {
+          "width": 172.23126220703125,
+          "height": 102,
+          "opacity": "1",
+          "visibility": "visible",
+          "naturalWidth": 512
+        },
+        {
+          "width": 172.23126220703125,
+          "height": 102,
+          "opacity": "1",
+          "visibility": "visible",
+          "naturalWidth": 512
+        },
+        {
+          "width": 172.23126220703125,
+          "height": 102,
+          "opacity": "1",
+          "visibility": "visible",
+          "naturalWidth": 512
+        }
+      ],
+      "layout": [
+        {
+          "className": "boss-prelude-hero",
+          "top": 34,
+          "bottom": 270.515625,
+          "height": 236.515625
+        },
+        {
+          "className": "boss-opponent-details",
+          "top": 274.515625,
+          "bottom": 318.515625,
+          "height": 44
+        },
+        {
+          "className": "event-loot",
+          "top": 276.515625,
+          "bottom": 316.515625,
+          "height": 40
+        },
+        {
+          "className": "boss-party-members",
+          "top": 378.515625,
+          "bottom": 708.328125,
+          "height": 329.8125
+        },
+        {
+          "className": "node-team-prepare boss-party-prepare",
+          "top": 715.828125,
+          "bottom": 759.828125,
+          "height": 44
+        },
+        {
+          "className": "",
+          "top": 712.828125,
+          "bottom": 762.828125,
+          "height": 50
+        }
+      ]
+    },
+    {
+      "source": "chromium-390-motion-a69-boss-en-diagon-alley.json",
+      "sha": "274ac9e389523bd89a4f56487c0129996e23ed02",
+      "fixture": true,
+      "scope": "Mastery5x5; five equipped allies with five draft beans; production footer",
+      "footer": {
+        "x": 18,
+        "y": 752,
+        "width": 354,
+        "height": 84
+      },
+      "actionParts": [
+        {
+          "top": 778,
+          "height": 32,
+          "middle": 794
+        },
+        {
+          "top": 785.5,
+          "height": 17,
+          "middle": 794
+        },
+        {
+          "top": 778,
+          "height": 32,
+          "middle": 794
+        }
+      ],
+      "figures": [
+        {
+          "width": 101.3125,
+          "height": 60,
+          "opacity": "1",
+          "visibility": "visible",
+          "naturalWidth": 512
+        },
+        {
+          "width": 101.3125,
+          "height": 60,
+          "opacity": "1",
+          "visibility": "visible",
+          "naturalWidth": 512
+        },
+        {
+          "width": 101.3125,
+          "height": 60,
+          "opacity": "1",
+          "visibility": "visible",
+          "naturalWidth": 512
+        },
+        {
+          "width": 101.3125,
+          "height": 60,
+          "opacity": "1",
+          "visibility": "visible",
+          "naturalWidth": 512
+        },
+        {
+          "width": 101.3125,
+          "height": 60,
+          "opacity": "1",
+          "visibility": "visible",
+          "naturalWidth": 512
+        }
+      ],
+      "layout": [
+        {
+          "className": "boss-prelude-hero",
+          "top": 34,
+          "bottom": 250,
+          "height": 216
+        },
+        {
+          "className": "boss-opponent-details",
+          "top": 254,
+          "bottom": 298,
+          "height": 44
+        },
+        {
+          "className": "event-loot",
+          "top": 256,
+          "bottom": 296,
+          "height": 40
+        },
+        {
+          "className": "boss-party-members",
+          "top": 358,
+          "bottom": 687.8125,
+          "height": 329.8125
+        },
+        {
+          "className": "node-team-prepare boss-party-prepare",
+          "top": 689.8125,
+          "bottom": 744.8125,
+          "height": 55
+        },
+        {
+          "className": "",
+          "top": 692.3125,
+          "bottom": 742.3125,
+          "height": 50
+        }
+      ]
+    },
+    {
+      "source": "webkit-390-motion-a69-boss-es-diagon-alley.json",
+      "sha": "274ac9e389523bd89a4f56487c0129996e23ed02",
+      "fixture": true,
+      "scope": "Mastery5x5; five equipped allies with five draft beans; production footer",
+      "footer": {
+        "x": 18,
+        "y": 752,
+        "width": 354,
+        "height": 84
+      },
+      "actionParts": [
+        {
+          "top": 778,
+          "height": 32,
+          "middle": 794
+        },
+        {
+          "top": 786,
+          "height": 16,
+          "middle": 794
+        },
+        {
+          "top": 778,
+          "height": 32,
+          "middle": 794
+        }
+      ],
+      "figures": [
+        {
+          "width": 101.328125,
+          "height": 60,
+          "opacity": "1",
+          "visibility": "visible",
+          "naturalWidth": 512
+        },
+        {
+          "width": 101.328125,
+          "height": 60,
+          "opacity": "1",
+          "visibility": "visible",
+          "naturalWidth": 512
+        },
+        {
+          "width": 101.328125,
+          "height": 60,
+          "opacity": "1",
+          "visibility": "visible",
+          "naturalWidth": 512
+        },
+        {
+          "width": 101.328125,
+          "height": 60,
+          "opacity": "1",
+          "visibility": "visible",
+          "naturalWidth": 512
+        },
+        {
+          "width": 101.328125,
+          "height": 60,
+          "opacity": "1",
+          "visibility": "visible",
+          "naturalWidth": 512
+        }
+      ],
+      "layout": [
+        {
+          "className": "boss-prelude-hero",
+          "top": 34,
+          "bottom": 251,
+          "height": 217
+        },
+        {
+          "className": "boss-opponent-details",
+          "top": 255,
+          "bottom": 299,
+          "height": 44
+        },
+        {
+          "className": "event-loot",
+          "top": 257,
+          "bottom": 297,
+          "height": 40
+        },
+        {
+          "className": "boss-party-members",
+          "top": 359,
+          "bottom": 688.75,
+          "height": 329.75
+        },
+        {
+          "className": "node-team-prepare boss-party-prepare",
+          "top": 690.75,
+          "bottom": 745.75,
+          "height": 55
+        },
+        {
+          "className": "",
+          "top": 693.25,
+          "bottom": 743.25,
+          "height": 50
+        }
+      ]
+    },
+    {
+      "source": "webkit-390-motion-a69-boss-en-diagon-alley.json",
+      "sha": "274ac9e389523bd89a4f56487c0129996e23ed02",
+      "fixture": true,
+      "scope": "Mastery5x5; five equipped allies with five draft beans; production footer",
+      "footer": {
+        "x": 18,
+        "y": 752,
+        "width": 354,
+        "height": 84
+      },
+      "actionParts": [
+        {
+          "top": 778,
+          "height": 32,
+          "middle": 794
+        },
+        {
+          "top": 786,
+          "height": 16,
+          "middle": 794
+        },
+        {
+          "top": 778,
+          "height": 32,
+          "middle": 794
+        }
+      ],
+      "figures": [
+        {
+          "width": 101.328125,
+          "height": 60,
+          "opacity": "1",
+          "visibility": "visible",
+          "naturalWidth": 512
+        },
+        {
+          "width": 101.328125,
+          "height": 60,
+          "opacity": "1",
+          "visibility": "visible",
+          "naturalWidth": 512
+        },
+        {
+          "width": 101.328125,
+          "height": 60,
+          "opacity": "1",
+          "visibility": "visible",
+          "naturalWidth": 512
+        },
+        {
+          "width": 101.328125,
+          "height": 60,
+          "opacity": "1",
+          "visibility": "visible",
+          "naturalWidth": 512
+        },
+        {
+          "width": 101.328125,
+          "height": 60,
+          "opacity": "1",
+          "visibility": "visible",
+          "naturalWidth": 512
+        }
+      ],
+      "layout": [
+        {
+          "className": "boss-prelude-hero",
+          "top": 34,
+          "bottom": 251,
+          "height": 217
+        },
+        {
+          "className": "boss-opponent-details",
+          "top": 255,
+          "bottom": 299,
+          "height": 44
+        },
+        {
+          "className": "event-loot",
+          "top": 257,
+          "bottom": 297,
+          "height": 40
+        },
+        {
+          "className": "boss-party-members",
+          "top": 359,
+          "bottom": 688.75,
+          "height": 329.75
+        },
+        {
+          "className": "node-team-prepare boss-party-prepare",
+          "top": 690.75,
+          "bottom": 745.75,
+          "height": 55
+        },
+        {
+          "className": "",
+          "top": 693.25,
+          "bottom": 743.25,
+          "height": 50
+        }
+      ]
+    },
+    {
+      "source": "webkit-390-motion-a69-boss-es-arcana.json",
+      "sha": "274ac9e389523bd89a4f56487c0129996e23ed02",
+      "fixture": true,
+      "scope": "Mastery5x5; five equipped allies with five draft beans; production footer",
+      "footer": {
+        "x": 18,
+        "y": 752,
+        "width": 354,
+        "height": 84
+      },
+      "actionParts": [
+        {
+          "top": 778,
+          "height": 32,
+          "middle": 794
+        },
+        {
+          "top": 786,
+          "height": 16,
+          "middle": 794
+        },
+        {
+          "top": 778,
+          "height": 32,
+          "middle": 794
+        }
+      ],
+      "figures": [
+        {
+          "width": 172.2578125,
+          "height": 102,
+          "opacity": "1",
+          "visibility": "visible",
+          "naturalWidth": 512
+        },
+        {
+          "width": 172.2578125,
+          "height": 102,
+          "opacity": "1",
+          "visibility": "visible",
+          "naturalWidth": 512
+        },
+        {
+          "width": 172.2578125,
+          "height": 102,
+          "opacity": "1",
+          "visibility": "visible",
+          "naturalWidth": 512
+        },
+        {
+          "width": 172.2578125,
+          "height": 102,
+          "opacity": "1",
+          "visibility": "visible",
+          "naturalWidth": 512
+        },
+        {
+          "width": 172.2578125,
+          "height": 102,
+          "opacity": "1",
+          "visibility": "visible",
+          "naturalWidth": 512
+        }
+      ],
+      "layout": [
+        {
+          "className": "boss-prelude-hero",
+          "top": 34,
+          "bottom": 271.5,
+          "height": 237.5
+        },
+        {
+          "className": "boss-opponent-details",
+          "top": 275.5,
+          "bottom": 319.5,
+          "height": 44
+        },
+        {
+          "className": "event-loot",
+          "top": 277.5,
+          "bottom": 317.5,
+          "height": 40
+        },
+        {
+          "className": "boss-party-members",
+          "top": 379.5,
+          "bottom": 709.25,
+          "height": 329.75
+        },
+        {
+          "className": "node-team-prepare boss-party-prepare",
+          "top": 716.75,
+          "bottom": 760.75,
+          "height": 44
+        },
+        {
+          "className": "",
+          "top": 713.75,
+          "bottom": 763.75,
+          "height": 50
+        }
+      ]
+    },
+    {
+      "source": "chromium-390-motion-a69-boss-es-diagon-alley.json",
+      "sha": "274ac9e389523bd89a4f56487c0129996e23ed02",
+      "fixture": true,
+      "scope": "Mastery5x5; five equipped allies with five draft beans; production footer",
+      "footer": {
+        "x": 18,
+        "y": 752,
+        "width": 354,
+        "height": 84
+      },
+      "actionParts": [
+        {
+          "top": 778,
+          "height": 32,
+          "middle": 794
+        },
+        {
+          "top": 785.5,
+          "height": 17,
+          "middle": 794
+        },
+        {
+          "top": 778,
+          "height": 32,
+          "middle": 794
+        }
+      ],
+      "figures": [
+        {
+          "width": 101.3125,
+          "height": 60,
+          "opacity": "1",
+          "visibility": "visible",
+          "naturalWidth": 512
+        },
+        {
+          "width": 101.3125,
+          "height": 60,
+          "opacity": "1",
+          "visibility": "visible",
+          "naturalWidth": 512
+        },
+        {
+          "width": 101.3125,
+          "height": 60,
+          "opacity": "1",
+          "visibility": "visible",
+          "naturalWidth": 512
+        },
+        {
+          "width": 101.3125,
+          "height": 60,
+          "opacity": "1",
+          "visibility": "visible",
+          "naturalWidth": 512
+        },
+        {
+          "width": 101.3125,
+          "height": 60,
+          "opacity": "1",
+          "visibility": "visible",
+          "naturalWidth": 512
+        }
+      ],
+      "layout": [
+        {
+          "className": "boss-prelude-hero",
+          "top": 34,
+          "bottom": 250,
+          "height": 216
+        },
+        {
+          "className": "boss-opponent-details",
+          "top": 254,
+          "bottom": 298,
+          "height": 44
+        },
+        {
+          "className": "event-loot",
+          "top": 256,
+          "bottom": 296,
+          "height": 40
+        },
+        {
+          "className": "boss-party-members",
+          "top": 358,
+          "bottom": 687.8125,
+          "height": 329.8125
+        },
+        {
+          "className": "node-team-prepare boss-party-prepare",
+          "top": 689.8125,
+          "bottom": 744.8125,
+          "height": 55
+        },
+        {
+          "className": "",
+          "top": 692.3125,
+          "bottom": 742.3125,
+          "height": 50
+        }
+      ]
+    }
+  ]
+}

@@ -2,6 +2,9 @@
 // No account, operation or economic authority. No new A92-only imports.
 import { useState, useEffect, useRef, type CSSProperties } from 'react';
 import { createRoot } from 'react-dom/client';
+import { Artwork } from '../../src/arcana/presentation/Artwork';
+import { nodeActionLabel } from '../../src/arcana/presentation/node-event-messages';
+import { text } from '../../src/arcana/presentation/translations';
 import { MapPanel } from '../../src/arcana/presentation/MapPanel';
 import { TeamHud } from '../../src/arcana/presentation/TeamHud';
 import { BossPartyStage } from '../../src/arcana/presentation/BossPartyStage';
@@ -11,6 +14,7 @@ import { GameSettings } from '../../src/arcana/presentation/GameSettings';
 import { BossPrelude } from '../../src/arcana/presentation/BossPrelude';
 import { projectPublicContent } from '../../src/arcana/application/public-content';
 import { trialConfiguration } from '../../src/arcana/infrastructure/content/trial-configuration';
+import { starterEquipment } from '../../src/arcana/domain/economy/equipment';
 import { createInventory } from '../../src/arcana/domain/economy/inventory';
 import type { GameState } from '../../src/arcana/application/game';
 import type { Run } from '../../src/arcana/domain/exploration/run';
@@ -36,8 +40,14 @@ document.documentElement.dataset.readingSize = params.get('large') === '1' ? 'la
 const config = trialConfiguration('a85');
 const content = projectPublicContent(config.opening, config.campaign);
 const fullPreparation = params.get('full') === '1';
+const dense = params.get('dense') === '1';
 const count = Math.min(5, Math.max(1, Number(params.get('count') ?? 5)));
-const ids = ['merlin', 'morgana', 'moon-herbalist', 'flamel', 'apprentice'];
+const ids = dense
+  ? [
+      ...content.catalog.wizards.filter((wizard) => wizard.traits?.house === 'hufflepuff'),
+      content.catalog.wizards[0],
+    ].map((wizard) => wizard.id)
+  : ['merlin', 'morgana', 'moon-herbalist', 'flamel', 'apprentice'];
 const copies = ids.slice(0, count).map((id, index) => ({
   copyId: `a92-map-copy-${index}`,
   wizard:
@@ -57,11 +67,17 @@ const run: Run = {
   bondFocus: 'houses',
   campaignSnapshot: config.campaign,
   members: copies.map((copy, index) => ({
-    source: index >= 3 ? 'temporary' : 'owned',
+    source: !dense && index >= 3 ? 'temporary' : 'owned',
     unit: {
       ...config.campaign.prepareOwned(copy),
       id: copy.copyId,
-      hp: index === 4 ? 0 : index === 3 ? 1 : copy.wizard.stats.maxHp,
+      hp: dense
+        ? copy.wizard.stats.maxHp
+        : index === 4
+          ? 0
+          : index === 3
+            ? 1
+            : copy.wizard.stats.maxHp,
     },
   })),
 };
@@ -71,18 +87,43 @@ const game: GameState = {
   revision: 1,
   inventory: {
     ...createInventory(0),
+    equipment: dense
+      ? copies.flatMap((_, index) =>
+          starterEquipment().map((item) => ({ ...item, id: `a92-gear-${index}-${item.kind}` })),
+        )
+      : [],
     products: fullPreparation
-      ? [{ id: 'a92-full-jar', kind: 'random-beans', status: 'available' }]
+      ? Array.from({ length: dense ? count : 1 }, (_, index) => ({
+          id: `a92-full-jar-${index}`,
+          kind: 'random-beans' as const,
+          status: 'available' as const,
+        }))
       : [],
   },
   copies,
   receipts: [],
-  team: { copyIds: copies.map((copy) => copy.copyId), loadouts: [] },
+  team: {
+    copyIds: copies.map((copy) => copy.copyId),
+    loadouts: dense
+      ? copies.map((copy, index) => ({
+          copyId: copy.copyId,
+          wandId: `a92-gear-${index}-wand`,
+          broomId: `a92-gear-${index}-broom`,
+        }))
+      : [],
+  },
 };
+const assignments = dense
+  ? run.members.map((member, index) => ({
+      unitId: member.unit.id,
+      beanId: game.inventory.products[index].id,
+    }))
+  : [];
 const before = JSON.stringify({ run, game });
-const boss = config.campaign.challengeContent!('discovery', config.campaign.graph).find(
-  (node) => node.kind === 'boss',
-);
+const boss = config.campaign.challengeContent!(
+  dense ? 'mastery' : 'discovery',
+  config.campaign.graph,
+).find((node) => node.kind === 'boss');
 if (boss?.kind !== 'boss') throw Error('A92 fixture requires existing boss');
 const bossPlan = boss;
 const opponents = bossPlan.opponents;
@@ -108,7 +149,8 @@ function Fixture() {
   }, []);
   return (
     <div
-      className={`arcana-shell game-shell ${mode === 'map' ? 'arcana-map-view' : ''}`}
+      className={`arcana-shell game-shell ${mode === 'map' || fullPreparation ? 'arcana-map-view' : ''}`}
+      data-view={mode === 'map' || fullPreparation ? 'map' : 'preparation'}
       data-pack={activePack.id}
       data-a92-mode={mode}
       data-reading-size={params.get('large') === '1' ? 'large' : 'normal'}
@@ -190,7 +232,7 @@ function Fixture() {
               <BossPartyStage
                 run={run}
                 game={game}
-                assignments={[]}
+                assignments={assignments}
                 language={language}
                 ready
                 rules={content.combatRules}
@@ -203,7 +245,7 @@ function Fixture() {
                       content={content}
                       language={language}
                       ready
-                      assignments={[]}
+                      assignments={assignments}
                       onChange={() => {}}
                     />
                   ) : null
@@ -212,8 +254,30 @@ function Fixture() {
             </div>
             <div className="node-event-actions node-combat-actions">
               <button className="node-confirm-action" onClick={() => setSelection('confirmed')}>
-                {language === 'es' ? 'Combatir · 5' : 'Battle · 5'}
+                {fullPreparation ? (
+                  <>
+                    <Artwork asset="node.boss" language={language} decorative />
+                    <span>{nodeActionLabel(language, 'boss')}</span>
+                    <span className="boss-challenge-cost">
+                      <Artwork asset="currency.essence" language={language} decorative />
+                      <strong>5</strong>
+                    </span>
+                  </>
+                ) : language === 'es' ? (
+                  'Combatir · 5'
+                ) : (
+                  'Battle · 5'
+                )}
               </button>
+              {fullPreparation && (
+                <button
+                  className="node-cancel-action"
+                  aria-label={text(language, 'cancel')}
+                  onClick={() => setSelection('cancelled')}
+                >
+                  <span aria-hidden="true">×</span>
+                </button>
+              )}
             </div>
             <output className="visually-hidden">{selection}</output>
           </dialog>

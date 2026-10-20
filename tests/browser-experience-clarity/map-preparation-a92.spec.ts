@@ -126,15 +126,23 @@ for (const pack of ['diagon-alley', 'arcana'])
       );
       for (const count of [4, 5]) {
         await page.goto(
-          `${fixture}?pack=${pack}&lang=${lang}&mode=preparation&count=${count}&full=1`,
+          `${fixture}?pack=${pack}&lang=${lang}&mode=preparation&count=${count}&full=1&dense=${count === 5 ? 1 : 0}`,
         );
         const dialog = page.locator('.node-event-dialog');
         await expect(page.locator('[data-boss-member]')).toHaveCount(count);
         await expect(page.locator('.event-loot')).toBeVisible();
         await expect(page.locator('.node-bean-preparation > summary')).toHaveAttribute(
           'data-bean-stock',
-          '1',
+          String(count === 5 ? 5 : 1),
         );
+        if (count === 5) {
+          await expect(page.locator('[data-boss-party-gear]')).toHaveCount(10);
+          await expect(page.locator('[data-boss-party-bean]')).toHaveCount(5);
+          await expect(page.locator('.node-bean-preparation > summary')).toHaveAttribute(
+            'data-bean-draft',
+            '5',
+          );
+        }
         expect(await dialog.evaluate((element) => element.scrollTop)).toBe(0);
         for (const selector of ['.node-team-prepare', '.node-bean-preparation > summary']) {
           await expect(page.locator(selector)).toBeInViewport({ ratio: 1 });
